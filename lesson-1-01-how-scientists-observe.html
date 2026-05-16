@@ -733,7 +733,7 @@ em { color: #5A4D3E; }
   <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson<span class="tab-check">✓</span></button>
   <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
   <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
-  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Notebook<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
 </div>
 
 
@@ -1481,10 +1481,10 @@ em { color: #5A4D3E; }
         <div class="quiz-score-label">out of 3</div>
         <div class="quiz-score-msg" id="quizScoreMsg"></div>
         <div class="video-feedback" id="quizVideoCorrect" style="margin-top:16px;">
-          <div class="mind-blow-slim"><span class="mbs-icon">🌲</span><div class="mbs-content"><div class="mbs-label">Perfect Score!</div><div class="mbs-text">You've got the eye of a real park scientist. Head to the Notebook tab to complete your work.</div></div></div>
+          <div class="mind-blow-slim"><span class="mbs-icon">🌲</span><div class="mbs-content"><div class="mbs-label">Perfect Score!</div><div class="mbs-text">You've got the eye of a real park scientist. Head to the Assignment tab to complete your work.</div></div></div>
         </div>
         <div class="video-feedback" id="quizVideoReview" style="margin-top:16px;">
-          <div class="mind-blow-slim"><span class="mbs-icon">🌿</span><div class="mbs-content"><div class="mbs-label">Keep Going</div><div class="mbs-text">Take a moment to reread the Observations vs. Inferences section, then come back and try again — or keep going to the Notebook tab.</div></div></div>
+          <div class="mind-blow-slim"><span class="mbs-icon">🌿</span><div class="mbs-content"><div class="mbs-label">Keep Going</div><div class="mbs-text">Take a moment to reread the Observations vs. Inferences section, then come back and try again — or keep going to the Assignment tab.</div></div></div>
         </div>
       </div>
 
@@ -1492,7 +1492,7 @@ em { color: #5A4D3E; }
   </div>
 
   <div class="tab-next-wrap">
-    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Notebook →</button>
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
   </div>
 
 </div><!-- /tab-quiz -->
@@ -1508,7 +1508,7 @@ em { color: #5A4D3E; }
     <div class="video-wrap-header">
       <span style="font-size:20px;">✍️</span>
       <div>
-        <div class="video-wrap-type">Activity 5 · Notebook Assignment</div>
+        <div class="video-wrap-type">Activity 5 · Assignment</div>
         <div class="video-wrap-title">Recording Your Science Thinking</div>
       </div>
     </div>
@@ -1526,7 +1526,7 @@ em { color: #5A4D3E; }
     <div class="act-head">
       <div class="act-num" style="background:#7B5EA7;">5</div>
       <div style="flex:1;">
-        <div class="act-title">✍️ Notebook: Your Science Record</div>
+        <div class="act-title">✍️ Assignment: Your Science Record</div>
         <div class="act-subtitle">Three parts — take your time and write in complete sentences</div>
       </div>
       <div class="act-time" style="background:#7B5EA7;">⏱ 15 min</div>
@@ -1623,48 +1623,76 @@ em { color: #5A4D3E; }
         </div>
       </div>
 
-      <!-- SUBMISSION CHECKLIST -->
+      <!-- WHAT TO TURN IN -->
       <div style="background:#fff;border:2px solid #0288D1;border-radius:18px;margin-top:20px;overflow:hidden;">
         <div style="display:flex;align-items:center;gap:10px;padding:14px 20px;background:#EAF8FD;border-bottom:2px solid #D6F2FB;">
-          <span style="font-size:24px;">📋</span>
+          <span style="font-size:24px;">📬</span>
           <div>
-            <div style="font-size:10px;color:#0288D1;text-transform:uppercase;letter-spacing:0.8px;font-weight:800;">Before You Finish</div>
-            <div style="font-size:18px;color:#1B4332;font-weight:800;">Notebook Checklist</div>
+            <div style="font-size:10px;color:#0288D1;text-transform:uppercase;letter-spacing:0.8px;font-weight:800;">Before You Submit</div>
+            <div style="font-size:18px;color:#1B4332;font-weight:800;">What to Turn In</div>
           </div>
         </div>
         <div style="padding:16px 20px;">
-          <p style="font-size:15px;color:#5A4D3E;margin-bottom:14px;">Tap each item when it's done. Make sure everything is complete before moving on!</p>
+          <p style="font-size:15px;color:#5A4D3E;margin-bottom:14px;">Check off each item, then submit everything on Canvas. Tap an item when it's ready.</p>
           <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
             <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
-            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My Notice &amp; Wonder warm-up is written in my notebook.</span>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">Notice &amp; Wonder warm-up (Part A)</span>
           </div>
           <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
             <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
-            <span style="font-size:16px;color:#2B1D12;font-weight:600;">I copied the key vocabulary sentence into my notebook.</span>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">Observation vs. inference labels with explanations (Part A)</span>
           </div>
           <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
             <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
-            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My Explore observations and labeled sketch are in my notebook.</span>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">Short answer questions — complete sentences (Part B)</span>
           </div>
           <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
             <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
-            <span style="font-size:16px;color:#2B1D12;font-weight:600;">I completed Parts A and B (observation/inference practice &amp; short answer).</span>
-          </div>
-          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
-            <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
-            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My Write and Explain uses at least one vocabulary word and complete sentences.</span>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">Write and Explain — uses at least one vocab word (Part B)</span>
           </div>
           <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;cursor:pointer;">
             <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
-            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My Part C park scientist drawing has 3 labeled observations.</span>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">Park scientist drawing with 3 labeled observations (Part C)</span>
           </div>
         </div>
       </div>
 
-      <!-- Final Submit Callout -->
-      <div class="callout callout-submit" style="margin-top:18px;">
-        <span class="callout-icon">✅</span>
-        <p>When everything on your checklist is complete, you're done with Lesson 1.01! Submit your notebook work as directed, or move on to the next lesson.</p>
+      <!-- How to Submit -->
+      <div style="background:#fff;border:2px solid #52B788;border-radius:18px;margin-top:16px;overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:10px;padding:14px 20px;background:#EEF8F0;border-bottom:2px solid #C4E5CC;">
+          <span style="font-size:24px;">📤</span>
+          <div>
+            <div style="font-size:10px;color:#2D6A4F;text-transform:uppercase;letter-spacing:0.8px;font-weight:800;">Submit on Canvas</div>
+            <div style="font-size:18px;color:#1B4332;font-weight:800;">How to Turn It In</div>
+          </div>
+        </div>
+        <div style="padding:16px 20px;display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;">
+            <span style="font-size:22px;flex-shrink:0;">⌨️</span>
+            <div>
+              <div style="font-size:15px;font-weight:800;color:#1B4332;margin-bottom:2px;">Type your answers</div>
+              <div style="font-size:14px;color:#5A4D3E;line-height:1.55;">Type directly into the Canvas assignment text box. Use complete sentences.</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;">
+            <span style="font-size:22px;flex-shrink:0;">📸</span>
+            <div>
+              <div style="font-size:15px;font-weight:800;color:#1B4332;margin-bottom:2px;">Upload a photo</div>
+              <div style="font-size:14px;color:#5A4D3E;line-height:1.55;">Take a clear picture of your handwritten work and upload it to the Canvas assignment.</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border:1.5px solid #E8DDD2;border-radius:12px;">
+            <span style="font-size:22px;flex-shrink:0;">🎤</span>
+            <div>
+              <div style="font-size:15px;font-weight:800;color:#1B4332;margin-bottom:2px;">Record a video</div>
+              <div style="font-size:14px;color:#5A4D3E;line-height:1.55;">Record yourself explaining what you did and what you learned. Upload the video to the Canvas assignment.</div>
+            </div>
+          </div>
+          <div class="callout callout-submit" style="margin:4px 0 0;">
+            <span class="callout-icon">✅</span>
+            <p>Choose whichever option works best for you — then submit on Canvas. All three count the same.</p>
+          </div>
+        </div>
       </div>
 
     </div>
