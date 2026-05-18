@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – What Patterns Do We See in Weather?</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Nunito','Century Gothic','Arial Rounded MT Bold',Verdana,sans-serif;
+  background: #F2F0E8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #2B1D12; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.page-wrap { max-width: 920px; margin: 0 auto; background: #FAF8F4; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg,#0E1C42 0%,#1A2D5A 60%,#243868 100%);
+  border-bottom: 6px solid #0288D1;
+  padding: 22px 28px 24px; position: relative; overflow: hidden;
+}
+.header::after {
+  content:''; position:absolute; bottom:6px; left:0; right:0; height:3px;
+  background: linear-gradient(90deg,#0288D1,#4DD0E1,#0288D1);
+}
+.header-brand { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+.header-logo { width:52px; height:52px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 2px 8px rgba(0,0,0,0.15); }
+.header-logo img { width:48px; height:38px; }
+.header-org { font-size:22px; color:#fff; font-weight:800; line-height:1.15; }
+.header-sub { font-size:11px; color:#55C8E8; letter-spacing:0.5px; }
+.header-title { font-size:30px; color:#fff; font-weight:900; line-height:1.15; margin-bottom:10px; text-shadow:0 2px 12px rgba(2,136,209,0.4); }
+.header-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(2,136,209,0.18); border:1.5px solid rgba(2,136,209,0.4); border-radius:28px; padding:6px 16px; }
+.header-badge span:first-child { font-size:22px; }
+.header-badge span:last-child { font-size:18px; color:#fff; font-weight:800; }
+
+/* ── Hero ── */
+.hero-visual { padding:0; position:relative; overflow:hidden; border-bottom:3px solid #0288D1; }
+.hero-visual svg { display:block; width:100%; height:auto; }
+
+/* ── Hero Animations ── */
+@keyframes cloud-drift-1 { 0%{transform:translateX(0)} 100%{transform:translateX(40px)} }
+@keyframes cloud-drift-2 { 0%{transform:translateX(0)} 100%{transform:translateX(-32px)} }
+@keyframes sun-pulse { 0%,100%{opacity:0.65;transform:scale(1)} 50%{opacity:1;transform:scale(1.12)} }
+@keyframes rain-fall {
+  0%{transform:translateY(-20px);opacity:0}
+  20%{opacity:0.8}
+  100%{transform:translateY(70px);opacity:0}
+}
+@keyframes lightning-flash {
+  0%,87%,93%,100%{opacity:0}
+  90%{opacity:1}
+}
+@keyframes hero-sway { 0%,100%{transform:rotate(-2.5deg)} 50%{transform:rotate(2.5deg)} }
+@keyframes hero-shimmer { 0%,100%{opacity:0.25} 50%{opacity:0.7} }
+@keyframes mind-blow-bounce { 0%,100%{transform:scale(1)} 50%{transform:scale(1.12)} }
+
+.hero-cloud-1  { animation: cloud-drift-1 9s ease-in-out infinite alternate; }
+.hero-cloud-2  { animation: cloud-drift-2 13s ease-in-out infinite alternate; }
+.hero-cloud-3  { animation: cloud-drift-1 7s ease-in-out infinite alternate 2s; }
+.hero-sun-glow { animation: sun-pulse 4s ease-in-out infinite; transform-origin:center; transform-box:fill-box; }
+.hero-rain-1   { animation: rain-fall 1.4s linear infinite; }
+.hero-rain-2   { animation: rain-fall 1.4s linear infinite 0.5s; }
+.hero-rain-3   { animation: rain-fall 1.4s linear infinite 0.9s; }
+.hero-lightning{ animation: lightning-flash 5s linear infinite; }
+.hero-sway     { animation: hero-sway 4s ease-in-out infinite; transform-origin:bottom center; transform-box:fill-box; }
+.hero-shimmer  { animation: hero-shimmer 3s ease-in-out infinite; }
+
+/* ── Info Strip ── */
+.info-strip { display:flex; flex-wrap:wrap; background:#fff; border-bottom:2px solid #E8DDD2; }
+.info-item { flex:1; min-width:150px; padding:12px 16px; border-right:1px solid #E8DDD2; display:flex; align-items:center; gap:10px; }
+.info-item:last-child { border-right:none; }
+.info-icon { width:40px; height:40px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
+.info-label { font-size:10px; color:#9A8E82; text-transform:uppercase; letter-spacing:0.5px; font-weight:700; }
+.info-value { font-size:16px; color:#1B4332; font-weight:800; line-height:1.2; }
+.info-detail { font-size:11px; color:#5A4D3E; line-height:1.3; }
+
+/* ── Cards ── */
+.card { background:#fff; border:2px solid #E8DDD2; border-radius:18px; margin-bottom:22px; overflow:hidden; box-shadow:0 2px 12px rgba(27,67,50,0.04); }
+.card-head { display:flex; align-items:center; gap:10px; padding:14px 20px; border-bottom:2px solid; }
+.card-head-icon { width:42px; height:42px; border-radius:50%; color:#fff; font-size:22px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.card-head-label { font-size:10px; color:#9A8E82; text-transform:uppercase; letter-spacing:0.8px; font-weight:700; }
+.card-head-title { font-size:20px; color:#1B4332; font-weight:800; line-height:1.2; }
+.card-body { padding:18px 22px; }
+.card-body p { font-size:17px; color:#5A4D3E; line-height:1.75; margin-bottom:12px; }
+.card-body p:last-child { margin-bottom:0; }
+.theme-earth  .card-head { background:#FFF0E8; border-color:#E8D0B8; } .theme-earth  .card-head-icon { background:#A0522D; }
+.theme-sun    .card-head { background:#FFF9E8; border-color:#F0E4C0; } .theme-sun    .card-head-icon { background:#F9A825; }
+.theme-sky    .card-head { background:#EAF8FD; border-color:#D6F2FB; } .theme-sky    .card-head-icon { background:#0288D1; }
+.theme-forest .card-head { background:#EEF8F0; border-color:#C4E5CC; } .theme-forest .card-head-icon { background:#2E7D32; }
+.theme-rock   .card-head { background:#F0EDF6; border-color:#D8D0E8; } .theme-rock   .card-head-icon { background:#7B5EA7; }
+.theme-meadow .card-head { background:#F0F8E8; border-color:#C8E0B8; } .theme-meadow .card-head-icon { background:#558B2F; }
+
+/* ── Collapsible Intro ── */
+.intro-2col { display:grid; grid-template-columns:1fr 1fr; gap:14px; padding:18px 28px 0; }
+.intro-2col .card { margin-bottom:0; }
+.intro-2col .card .card-head { cursor:pointer; user-select:none; }
+.intro-2col .card .card-body { overflow:hidden; transition:max-height 0.35s ease,opacity 0.25s ease; max-height:600px; opacity:1; }
+.intro-2col .card.collapsed .card-body { max-height:0; opacity:0; padding-top:0; padding-bottom:0; }
+
+/* ── Activity Cards ── */
+.activity-card { background:#fff; border:2px solid #E8DDD2; border-radius:18px; margin-bottom:18px; overflow:hidden; box-shadow:0 2px 10px rgba(27,67,50,0.04); }
+.activity-card.act-warmup  { border-left:6px solid #52B788; }
+.activity-card.act-lesson  { border-left:6px solid #F9A825; }
+.activity-card.act-explore { border-left:6px solid #0288D1; }
+.activity-card.act-practice{ border-left:6px solid #2E7D32; }
+.activity-card.act-check   { border-left:6px solid #7B5EA7; }
+.act-head { display:flex; align-items:center; gap:12px; padding:14px 20px 14px 18px; border-bottom:1.5px solid #E8DDD2; }
+.act-num { width:38px; height:38px; border-radius:14px; color:#fff; font-size:18px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.act-title { font-size:19px; color:#1B4332; font-weight:800; line-height:1.2; }
+.act-subtitle { font-size:12px; color:#9A8E82; }
+.act-time { display:inline-flex; align-items:center; gap:4px; padding:4px 12px; border-radius:20px; font-size:13px; font-weight:700; color:#fff; white-space:nowrap; margin-left:auto; flex-shrink:0; }
+.act-body { padding:18px 22px 18px 20px; }
+.act-body p { font-size:17px; color:#5A4D3E; line-height:1.75; margin-bottom:12px; }
+
+/* ── Callouts ── */
+.callout { border-radius:14px; padding:16px 18px; display:flex; align-items:flex-start; gap:12px; margin-bottom:14px; }
+.callout-icon { font-size:28px; flex-shrink:0; margin-top:2px; }
+.callout p { font-size:16px; color:#2B1D12; line-height:1.65; margin:0; }
+.callout-earth  { background:#FFF0E8; border:2px solid #E8D0B8; }
+.callout-think  { background:#FFF9E8; border:2px solid #F0E4C0; }
+.callout-vocab  { background:#F0EDF6; border:2px solid #D8D0E8; }
+.callout-tip    { background:#EEF8F0; border:2px solid #C4E5CC; }
+.callout-submit { background:#EAF8FD; border:2px solid #D6F2FB; }
+
+/* ── Socratic Questions ── */
+.socratic-q { background:linear-gradient(135deg,#EAF8FD,#E0F4FF); border:2px solid #AED6F1; border-radius:16px; padding:16px 20px; margin:16px 0; display:flex; align-items:flex-start; gap:12px; }
+.socratic-q .sq-icon { font-size:26px; flex-shrink:0; line-height:1; }
+.socratic-q .label { font-size:11px; color:#0277BD; text-transform:uppercase; letter-spacing:1px; font-weight:800; margin-bottom:4px; }
+.socratic-q .question { font-size:17px; color:#2B1D12; font-weight:700; line-height:1.6; font-style:italic; }
+
+/* ── Diagram ── */
+.diagram-wrap { background:#fff; border:2px solid #E8DDD2; border-radius:16px; padding:16px; margin:16px 0; text-align:center; }
+.diagram-wrap svg { max-width:100%; height:auto; }
+.diagram-caption { font-size:13px; color:#9A8E82; margin-top:10px; font-weight:600; text-align:center; }
+.diagram-interactive { position:relative; }
+.hotspot { opacity:0; cursor:pointer; transition:opacity 0.2s; }
+.hotspot:hover,.hotspot.active { opacity:0.2; }
+.diagram-info-panel { background:#0E3A5C; color:#fff; border-radius:12px; padding:14px 18px; margin-top:12px; font-size:15px; line-height:1.6; display:none; }
+.diagram-info-panel.visible { display:block; }
+.dip-word { font-size:17px; font-weight:800; display:block; margin-bottom:4px; color:#4DD0E1; }
+.diagram-tap-hint { font-size:12px; color:#B0A698; margin-top:8px; font-style:italic; }
+
+/* ── Lesson Figure ── */
+.lesson-figure { background:#fff; border:2px solid #E8DDD2; border-radius:16px; padding:10px; margin:0 0 22px; box-shadow:0 2px 10px rgba(27,67,50,0.04); }
+.lesson-figure-label { font-size:11px; color:#0277BD; text-transform:uppercase; letter-spacing:0.8px; font-weight:800; margin-bottom:10px; }
+.lesson-figure img { display:block; max-width:100%; height:auto; border-radius:10px; margin:0 auto; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+.lesson-figure-caption { font-size:14px; color:#5A4D3E; margin-top:12px; line-height:1.55; font-weight:600; text-align:center; }
+.lesson-figure-caption strong { color:#1B4332; }
+
+/* ── Key Concept ── */
+.key-concept { background:#EAF8FD; border:2px solid #AED6F1; border-radius:14px; padding:18px 20px; margin:14px 0; }
+.key-concept .kc-label { font-size:13px; color:#0277BD; text-transform:uppercase; letter-spacing:0.5px; font-weight:800; margin-bottom:8px; }
+.key-concept p { font-size:16px; color:#2B1D12; line-height:1.7; margin-bottom:8px; }
+.key-concept p:last-child { margin-bottom:0; }
+
+/* ── Practice Questions ── */
+.pq { background:#FAFAF6; border:2px solid #E8DDD2; border-radius:14px; padding:14px 18px; margin-bottom:12px; }
+.pq-num { display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:50%; color:#fff; font-weight:800; font-size:14px; margin-right:8px; vertical-align:middle; }
+.pq-text { font-size:17px; color:#2B1D12; line-height:1.65; margin-bottom:8px; }
+
+/* ── Vocab ── */
+.vocab-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:14px 0; }
+.flip-card { perspective:800px; height:195px; cursor:pointer; }
+.flip-card-inner { position:relative; width:100%; height:100%; transition:transform 0.5s ease; transform-style:preserve-3d; }
+.flip-card.flipped .flip-card-inner { transform:rotateY(180deg); }
+.flip-card-front,.flip-card-back { position:absolute; top:0; left:0; width:100%; height:100%; border-radius:16px; backface-visibility:hidden; -webkit-backface-visibility:hidden; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:14px 18px; text-align:center; border:2px solid #E8DDD2; box-shadow:0 2px 10px rgba(27,67,50,0.06); }
+.flip-card-front { background:#FAFAF6; border-top:5px solid; }
+.flip-card-front .fc-emoji { font-size:32px; margin-bottom:8px; }
+.flip-card-front .fc-word { font-size:18px; font-weight:800; color:#1B4332; margin-bottom:6px; }
+.flip-card-front .fc-tap { font-size:11px; color:#B0A698; font-weight:600; }
+.flip-card-back { background:linear-gradient(145deg,#0E3A5C,#0277BD); border-color:#0E3A5C; transform:rotateY(180deg); }
+.flip-card-back .fc-def { font-size:14.5px; color:#fff; line-height:1.5; font-weight:600; }
+.flip-card-back .fc-word-back { font-size:11px; color:#4DD0E1; text-transform:uppercase; letter-spacing:1px; font-weight:800; margin-bottom:6px; }
+.flip-card-back .fc-tap-back { font-size:11px; color:rgba(255,255,255,0.4); margin-top:8px; font-weight:600; }
+.fc-color-1 .flip-card-front { border-top-color:#0288D1; }
+.fc-color-2 .flip-card-front { border-top-color:#4DD0E1; }
+.fc-color-3 .flip-card-front { border-top-color:#F9A825; }
+.fc-color-4 .flip-card-front { border-top-color:#2E7D32; }
+.fc-color-5 .flip-card-front { border-top-color:#7B5EA7; }
+.fc-color-6 .flip-card-front { border-top-color:#52B788; }
+
+/* ── Vocab Tooltips ── */
+.vtip { position:relative; color:#7B5EA7; font-weight:700; cursor:help; border-bottom:2px dotted rgba(123,94,167,0.45); }
+.vtip .vtip-box { position:fixed; background:#0E3A5C; color:#fff; padding:12px 16px; border-radius:12px; font-size:14px; font-weight:600; font-style:normal; line-height:1.55; width:250px; text-align:center; opacity:0; visibility:hidden; z-index:200; transition:opacity 0.2s; pointer-events:none; }
+.vtip .vtip-box .vtip-word { display:block; color:#4DD0E1; font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:4px; }
+.vtip:hover .vtip-box { opacity:1; visibility:visible; }
+
+/* ── Progress ── */
+.progress-wrap { display:flex; align-items:center; gap:10px; background:#fff; padding:10px 28px; border-bottom:1px solid #E8DDD2; position:sticky; top:0; z-index:110; }
+.progress-label { font-size:12px; color:#9A8E82; font-weight:700; white-space:nowrap; }
+.progress-track { flex:1; height:8px; background:#E8DDD2; border-radius:6px; overflow:hidden; }
+.progress-fill { height:100%; background:linear-gradient(90deg,#0288D1,#4DD0E1); border-radius:6px; width:0%; transition:width 0.4s ease; }
+.progress-pct { font-size:12px; color:#0288D1; font-weight:800; min-width:36px; text-align:right; }
+
+/* ── Need Strip ── */
+.need-strip { background:#F0F8E8; border-bottom:2px solid #C8E0B8; padding:10px 28px; display:flex; align-items:center; flex-wrap:wrap; gap:8px; }
+.need-strip-label { font-size:13px; color:#558B2F; font-weight:800; margin-right:4px; }
+.need-chip { display:inline-flex; align-items:center; gap:6px; background:#fff; border:1.5px solid #C8E0B8; border-radius:20px; padding:4px 12px; font-size:13px; font-weight:700; color:#2B1D12; }
+
+/* ── Tabs ── */
+.tab-bar { display:flex; background:#fff; border-bottom:2px solid #E8DDD2; position:sticky; top:38px; z-index:100; overflow-x:auto; }
+.tab-btn { flex:1; min-width:90px; padding:14px 8px; border:none; background:none; font-family:inherit; font-size:13px; font-weight:700; color:#9A8E82; cursor:pointer; border-bottom:3px solid transparent; transition:all 0.2s; position:relative; white-space:nowrap; }
+.tab-btn:hover { color:#0277BD; background:#EAF8FD; }
+.tab-btn.active { color:#0E3A5C; border-bottom-color:#0288D1; background:#EAF8FD; }
+.tab-btn.visited::after { content:'✓'; font-size:10px; color:#0288D1; margin-left:4px; }
+.tab-check { display:none; }
+.tab-panel { display:none; padding:24px 28px 36px; }
+.tab-panel.active { display:block; background:#ffffff; }
+
+/* ── Video Slots ── */
+.video-wrap { background:#fff; border:2px solid #E8DDD2; border-radius:18px; margin-bottom:20px; overflow:hidden; }
+.video-wrap-header { display:flex; align-items:center; gap:10px; padding:12px 18px; background:#EAF8FD; border-bottom:1.5px solid #AED6F1; }
+.video-wrap-type { font-size:11px; color:#9A8E82; text-transform:uppercase; letter-spacing:0.5px; font-weight:700; }
+.video-wrap-title { font-size:16px; color:#0E3A5C; font-weight:800; }
+.video-ratio { position:relative; padding-bottom:42%; background:#F0EEE8; }
+.video-placeholder { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; }
+.video-placeholder-icon { font-size:40px; opacity:0.4; }
+.video-placeholder-text { font-size:14px; color:#9A8E82; font-weight:600; }
+.video-placeholder-id { font-size:11px; color:#C0B8B0; font-family:monospace; }
+
+/* ── Quiz ── */
+.quiz-card { background:#fff; border:2px solid #E8DDD2; border-radius:18px; margin-bottom:18px; overflow:hidden; }
+.quiz-q { background:#FAFAF6; border:1.5px solid #E8DDD2; border-radius:14px; padding:16px 18px; margin-bottom:14px; }
+.quiz-q-text { font-size:17px; color:#1B4332; font-weight:700; margin-bottom:12px; line-height:1.55; }
+.quiz-options { display:flex; flex-direction:column; gap:8px; }
+.quiz-opt { display:flex; align-items:center; gap:12px; background:#fff; border:2px solid #E8DDD2; border-radius:12px; padding:10px 14px; font-size:15px; color:#2B1D12; font-weight:600; cursor:pointer; transition:all 0.15s; }
+.quiz-opt:hover { border-color:#0288D1; background:#EAF8FD; }
+.quiz-opt.correct { background:#EAF8FD; border-color:#0288D1; color:#0E3A5C; }
+.quiz-opt.wrong   { background:#FFF0F0; border-color:#E57373; color:#B71C1C; }
+.quiz-opt.disabled { opacity:0.5; cursor:default; pointer-events:none; }
+.opt-letter { width:28px; height:28px; border-radius:50%; background:#E8DDD2; font-size:13px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:#5A4D3E; }
+.quiz-opt.correct .opt-letter { background:#0288D1; color:#fff; }
+.quiz-opt.wrong   .opt-letter { background:#E57373; color:#fff; }
+.quiz-feedback { margin-top:10px; padding:10px 14px; border-radius:10px; font-size:14px; font-weight:600; line-height:1.5; display:none; }
+.quiz-feedback.show { display:block; }
+.fb-correct { background:#EAF8FD; color:#0E3A5C; border:1.5px solid #AED6F1; }
+.fb-wrong   { background:#FFF9E8; color:#4A3300; border:1.5px solid #F0E4C0; }
+.quiz-score-box { background:linear-gradient(135deg,#0E3A5C,#0277BD); color:#fff; border-radius:16px; padding:20px 22px; margin-top:16px; text-align:center; display:none; }
+.quiz-score-box.show { display:block; }
+.quiz-score-num { font-size:52px; font-weight:900; line-height:1; }
+.quiz-score-label { font-size:14px; color:#4DD0E1; margin-bottom:4px; }
+.quiz-score-msg { font-size:18px; font-weight:700; margin-top:8px; }
+.quiz-video-wrap { margin-top:16px; display:none; }
+.quiz-video-wrap.show { display:block; }
+
+/* ── Mind Blow ── */
+.mind-blow { display:flex; align-items:flex-start; gap:16px; background:linear-gradient(135deg,#0E3A5C,#0277BD); border-radius:18px; padding:20px 22px; margin:18px 0; color:#fff; }
+.mind-blow-icon { font-size:40px; animation:mind-blow-bounce 2.5s ease-in-out infinite; flex-shrink:0; }
+.mind-blow-content { flex:1; }
+.mind-blow-label { font-size:11px; color:#4DD0E1; text-transform:uppercase; letter-spacing:1px; font-weight:800; margin-bottom:6px; }
+.mind-blow-text { font-size:16px; line-height:1.65; }
+
+/* ── Go Deeper ── */
+details.go-deeper { background:#F0EDF6; border:2px solid #D8D0E8; border-radius:16px; margin:16px 0; overflow:hidden; }
+details.go-deeper summary { padding:14px 18px; font-size:16px; font-weight:800; color:#7B5EA7; cursor:pointer; list-style:none; display:flex; align-items:center; gap:8px; }
+details.go-deeper summary::before { content:'🌩️'; font-size:20px; }
+.gd-body { padding:0 18px 18px; }
+.gd-body p { font-size:16px; color:#2B1D12; line-height:1.7; margin-bottom:12px; }
+
+/* ── Tab Next ── */
+.tab-next-wrap { text-align:center; margin-top:24px; }
+.tab-next-btn { background:linear-gradient(135deg,#0E3A5C,#0277BD); color:#fff; border:none; border-radius:28px; padding:12px 28px; font-family:inherit; font-size:15px; font-weight:800; cursor:pointer; transition:transform 0.15s,box-shadow 0.15s; box-shadow:0 4px 14px rgba(14,58,92,0.3); }
+.tab-next-btn:hover { transform:translateY(-2px); box-shadow:0 6px 18px rgba(14,58,92,0.4); }
+
+/* ── Scroll Reveal ── */
+.scroll-reveal { opacity:0; transform:translateY(14px); transition:opacity 0.45s ease,transform 0.45s ease; }
+.scroll-reveal.in-view { opacity:1; transform:translateY(0); }
+
+/* ── Footer ── */
+.footer { background:linear-gradient(135deg,#0E1C42,#1A2D5A); color:#fff; padding:20px 28px; text-align:center; }
+.footer-line1 { font-size:14px; font-weight:700; color:rgba(255,255,255,0.8); }
+.footer-line1 span { color:#4DD0E1; }
+.footer-line2 { font-size:13px; color:#4DD0E1; margin:4px 0 2px; }
+.footer-line3 { font-size:11px; color:rgba(255,255,255,0.4); }
+
+/* ── Back to Top ── */
+#backToTop { position:fixed; bottom:2rem; right:2rem; display:none; align-items:center; gap:0.5rem; padding:0.6rem 1.2rem; border-radius:999px; background:#0288D1; color:#fff; font-weight:600; border:none; cursor:pointer; font-family:inherit; font-size:14px; box-shadow:0 4px 12px rgba(0,0,0,0.2); transition:opacity 0.3s,transform 0.3s; }
+#backToTop:hover { transform:translateY(-2px); }
+#confettiCanvas { position:fixed; inset:0; pointer-events:none; z-index:999; }
+
+@media(max-width:600px){
+  .intro-2col{grid-template-columns:1fr;padding:12px 16px 0;}
+  .tab-panel{padding:16px 16px 28px;}
+  .vocab-grid{grid-template-columns:1fr;}
+  .info-strip{flex-direction:column;}
+  .info-item{border-right:none;border-bottom:1px solid #E8DDD2;}
+  .info-item:last-child{border-bottom:none;}
+}
+</style>
+</head>
+
+<body>
+<canvas id="confettiCanvas"></canvas>
+<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">⛅ Back to Top</button>
+
+<div class="page-wrap">
+
+<!-- ═══════════ PROGRESS BAR ═══════════ -->
+<div class="progress-wrap">
+  <span class="progress-label">⛅ Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">What Patterns Do We See in Weather?</div>
+  <div class="header-badge">
+    <span>⛅</span>
+    <span>Lesson 2.01</span>
+  </div>
+</div>
+
+<!-- ═══════════ HERO BANNER ═══════════ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A dramatic sky showing sun, clouds, and rain — different kinds of weather patterns">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A6FA8"/>
+      <stop offset="45%" stop-color="#5AA8D8"/>
+      <stop offset="100%" stop-color="#87CEEB"/>
+    </linearGradient>
+    <linearGradient id="stormGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A4A5C"/>
+      <stop offset="100%" stop-color="#5A6A7C"/>
+    </linearGradient>
+    <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6AAD3A"/>
+      <stop offset="100%" stop-color="#4A8A20"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="920" height="260" fill="url(#skyGrad)"/>
+
+  <!-- Ground strip -->
+  <rect x="0" y="218" width="920" height="42" fill="url(#groundGrad)"/>
+
+  <!-- Distant treeline silhouette -->
+  <ellipse cx="80"  cy="222" rx="40" ry="20" fill="#2D6A10" opacity="0.7"/>
+  <ellipse cx="130" cy="218" rx="35" ry="18" fill="#246010" opacity="0.7"/>
+  <ellipse cx="180" cy="224" rx="30" ry="16" fill="#2D6A10" opacity="0.7"/>
+  <ellipse cx="820" cy="220" rx="38" ry="17" fill="#2D6A10" opacity="0.65"/>
+  <ellipse cx="870" cy="217" rx="32" ry="15" fill="#246010" opacity="0.65"/>
+
+  <!-- === LEFT SIDE: Sun peeking out === -->
+  <!-- Sun glow rings -->
+  <g>
+    <circle cx="158" cy="82" r="52" fill="#FFF9C4" opacity="0.3"/>
+    <circle cx="158" cy="82" r="38" fill="#FDD835" opacity="0.55"/>
+    <circle cx="158" cy="82" r="28" fill="#F9A825"/>
+  </g>
+
+  <!-- === CENTER: Big dramatic storm cloud === -->
+  <g class="hero-cloud-2" style="transform-origin:480px 95px;">
+    <!-- Main storm cloud body -->
+    <ellipse cx="480" cy="100" rx="170" ry="62" fill="#3A4A5C"/>
+    <ellipse cx="390" cy="108" rx="90" ry="52" fill="#3E5068"/>
+    <ellipse cx="570" cy="106" rx="85" ry="48" fill="#3E5068"/>
+    <ellipse cx="480" cy="88" rx="120" ry="44" fill="#4A5C70"/>
+    <ellipse cx="440" cy="80" rx="80" ry="38" fill="#5A6878"/>
+    <ellipse cx="520" cy="78" rx="75" ry="36" fill="#5A6878"/>
+    <!-- Dark underbelly -->
+    <ellipse cx="480" cy="118" rx="150" ry="30" fill="#2A3848"/>
+  </g>
+
+  <!-- === RIGHT SIDE: White fluffy cloud === -->
+  <g class="hero-cloud-1" style="transform-origin:760px 70px;">
+    <ellipse cx="760" cy="78" rx="90" ry="36" fill="#fff" opacity="0.9"/>
+    <ellipse cx="720" cy="85" rx="55" ry="30" fill="#fff" opacity="0.85"/>
+    <ellipse cx="800" cy="83" rx="52" ry="28" fill="#fff" opacity="0.82"/>
+    <ellipse cx="760" cy="68" rx="60" ry="28" fill="#fff" opacity="0.9"/>
+  </g>
+
+  <!-- === RAIN falling from storm cloud === -->
+  <!-- Rain group 1 -->
+  <g class="hero-rain-1">
+    <line x1="420" y1="140" x2="412" y2="195" stroke="#AED6F1" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+    <line x1="445" y1="138" x2="437" y2="193" stroke="#AED6F1" stroke-width="2" stroke-linecap="round" opacity="0.75"/>
+    <line x1="470" y1="142" x2="462" y2="197" stroke="#AED6F1" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+    <line x1="495" y1="140" x2="487" y2="195" stroke="#AED6F1" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+    <line x1="520" y1="138" x2="512" y2="193" stroke="#AED6F1" stroke-width="2" stroke-linecap="round" opacity="0.75"/>
+    <line x1="545" y1="142" x2="537" y2="197" stroke="#AED6F1" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+  </g>
+  <!-- Rain group 2 (offset) -->
+  <g class="hero-rain-2">
+    <line x1="432" y1="140" x2="424" y2="195" stroke="#AED6F1" stroke-width="1.5" stroke-linecap="round" opacity="0.65"/>
+    <line x1="457" y1="138" x2="449" y2="193" stroke="#AED6F1" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+    <line x1="482" y1="142" x2="474" y2="197" stroke="#AED6F1" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+    <line x1="507" y1="140" x2="499" y2="195" stroke="#AED6F1" stroke-width="1.5" stroke-linecap="round" opacity="0.65"/>
+    <line x1="532" y1="138" x2="524" y2="193" stroke="#AED6F1" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  </g>
+  <!-- Rain group 3 -->
+  <g class="hero-rain-3">
+    <line x1="408" y1="140" x2="400" y2="195" stroke="#AED6F1" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+    <line x1="458" y1="142" x2="450" y2="197" stroke="#AED6F1" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
+    <line x1="510" y1="140" x2="502" y2="195" stroke="#AED6F1" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
+    <line x1="555" y1="138" x2="547" y2="193" stroke="#AED6F1" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  </g>
+
+  <!-- Lightning bolt -->
+  <g class="hero-lightning">
+    <polygon points="488,120 478,153 486,153 476,182 500,148 491,148 502,120" fill="#FFF59D"/>
+  </g>
+
+  <!-- Puddle shimmer on ground -->
+  <g class="hero-shimmer">
+    <ellipse cx="480" cy="232" rx="52" ry="8" fill="#AED6F1" opacity="0.55"/>
+    <ellipse cx="455" cy="238" rx="28" ry="5" fill="#AED6F1" opacity="0.35"/>
+  </g>
+
+  <!-- Grass sway left -->
+  <g class="hero-sway">
+    <line x1="270" y1="220" x2="266" y2="202" stroke="#4A8A20" stroke-width="3" stroke-linecap="round"/>
+    <line x1="282" y1="218" x2="280" y2="198" stroke="#3A7810" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="294" y1="220" x2="298" y2="202" stroke="#4A8A20" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Thermometer icon — placed below the right cloud, near the ground -->
+  <g transform="translate(868,178)">
+    <rect x="-7" y="-40" width="14" height="50" rx="7" fill="#fff" opacity="0.85"/>
+    <rect x="-4" y="-15" width="8" height="22" rx="0" fill="#E57373" opacity="0.8"/>
+    <circle cx="0" cy="16" r="10" fill="#E57373" opacity="0.9"/>
+    <line x1="8"  y1="-30" x2="16" y2="-30" stroke="#fff" stroke-width="2" opacity="0.7"/>
+    <line x1="8"  y1="-18" x2="16" y2="-18" stroke="#fff" stroke-width="2" opacity="0.7"/>
+    <line x1="8"  y1="-6"  x2="16" y2="-6"  stroke="#fff" stroke-width="2" opacity="0.7"/>
+  </g>
+
+
+</svg>
+</div>
+
+<!-- ═══════════ INFO STRIP ═══════════ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q1 · Unit 2</div>
+      <div class="info-detail">Weather, Climate &amp; Earth Systems</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF9E8;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 1</div>
+      <div class="info-detail">Lesson 2.01 — 3rd Grade Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">⛅</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Weather</div>
+      <div class="info-detail">Temperature, clouds, precipitation, patterns</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">NGSS 3-ESS2-1</div>
+      <div class="info-detail">Earth's Systems — Weather &amp; Climate</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ INTRO CARDS ═══════════ -->
+<div class="intro-2col">
+
+  <div class="card theme-sky">
+    <div class="card-head">
+      <div class="card-head-icon">⛅</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This…</div>
+          <div class="question">"How do scientists know what kind of weather is coming — and how can patterns help them figure it out?"</div>
+        </div>
+      </div>
+      <p>Think about this question as you work through today's lesson. By the end, you should be able to explain what patterns scientists look for — and why those patterns matter.</p>
+    </div>
+  </div>
+
+  <div class="card theme-forest">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#0288D1;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> describe different types of weather and what scientists measure to understand them.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2D6A4F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> identify patterns in weather data and explain the difference between weather and climate.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2E7D32;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> use my weather observations to make a prediction and begin collecting data in a table.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════ NEED STRIP ═══════════ -->
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Pencil &amp; colored pencils</span>
+  <span class="need-chip"><span>🌡️</span>Access to a window or weather app</span>
+</div>
+
+<!-- ═══════════ TAB BAR ═══════════ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 1: VOCABULARY                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to Today's Lesson!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🎬</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 2-1-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 1: NOTICE & WONDER -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#52B788;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Notice &amp; Wonder</div>
+        <div class="act-subtitle">Look outside — what do you actually see right now?</div>
+      </div>
+      <div class="act-time" style="background:#52B788;">⏱ 5–8 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>Before we read anything, look outside a window or step to the door for a moment. What does the sky look like right now? What does the air feel like? What's happening out there?</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">👀</span>
+        <div>
+          <div class="label">In Your Science Notebook</div>
+          <div class="question">"Write down at least 3 things you notice about today's weather — be specific. Then write 1 question: something you wonder about weather that you don't know the answer to yet."</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>Good observations are specific. "It's cloudy" is okay. "There are thick, dark clouds low in the sky and the air feels damp" is even better. Scientists pay attention to the details most people walk right past.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- VOCABULARY FLIP CARDS -->
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>These are the words that scientists use when they study weather. <strong>Tap each card to flip it</strong> and read the definition. You'll see these throughout the lesson — notice them when they come up!</p>
+
+      <div class="vocab-grid">
+
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌤️</div><div class="fc-word">weather</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">weather</div><div class="fc-def">What the atmosphere is like outside at a certain place and time — sunny, rainy, hot, windy, and so on.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🗺️</div><div class="fc-word">climate</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">climate</div><div class="fc-def">The usual weather pattern for an area over many, many years — not just what's happening today.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌡️</div><div class="fc-word">temperature</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">temperature</div><div class="fc-def">How hot or cold the air is, measured in degrees. Scientists use thermometers to read temperature.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌧️</div><div class="fc-word">precipitation</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">precipitation</div><div class="fc-def">Any water that falls from clouds — rain, snow, sleet, or hail. If it falls from the sky, it counts.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🔁</div><div class="fc-word">pattern</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">pattern</div><div class="fc-def">Something that happens in a predictable, repeating way — like afternoons being warmer than mornings.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🔭</div><div class="fc-word">meteorologist</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">meteorologist</div><div class="fc-def">A scientist who studies weather. They collect data every day and look for patterns to predict future weather.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">📓</span>
+        <p>Copy this sentence carefully into your science notebook:<br><strong>"Scientists record patterns of the weather so they can predict what might happen next."</strong></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button>
+  </div>
+
+</div><!-- /tab-vocab -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 2: THE LESSON                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">📖</span>
+      <div>
+        <div class="video-wrap-type">Activity 2 · Core Lesson</div>
+        <div class="video-wrap-title">What Patterns Do We See in Weather?</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">📖</div>
+        <div class="video-placeholder-text">Core lesson video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 2-1-lesson-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- UPLOADED LESSON IMAGE -->
+  <div class="lesson-figure">
+    <img src="images/2-01-weather-patterns.avif"
+         alt="Storm clouds building over an open landscape, showing dramatic weather conditions with dark clouds and changing light" />
+  </div>
+
+  <!-- ACTIVITY 2: CORE LESSON -->
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#F9A825;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📖 The Lesson: Weather Patterns</div>
+        <div class="act-subtitle">Read carefully — notice the vocabulary words when they appear.</div>
+      </div>
+      <div class="act-time" style="background:#F9A825;">⏱ 12 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- SECTION 1: What Is Weather? -->
+      <div class="card theme-sky" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌤️</div>
+          <div>
+            <div class="card-head-label">Section 1</div>
+            <div class="card-head-title">What Is Weather?</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><span class="vtip">Weather<span class="vtip-box"><span class="vtip-word">weather</span>What the atmosphere is like outside at a certain place and time.</span></span> is what's happening in the atmosphere right now — or over the past few hours or days. It can change quickly. A sunny morning can turn into a stormy afternoon.</p>
+          <p>Scientists measure several things to describe weather:</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;">
+            <div style="background:#EAF8FD;border:1.5px solid #AED6F1;border-radius:12px;padding:12px 14px;">
+              <div style="font-size:22px;margin-bottom:4px;">🌡️</div>
+              <div style="font-size:15px;font-weight:800;color:#0E3A5C;margin-bottom:2px;">Temperature</div>
+              <div style="font-size:14px;color:#5A4D3E;line-height:1.5;">How hot or cold the air is. Measured with a thermometer.</div>
+            </div>
+            <div style="background:#EAF8FD;border:1.5px solid #AED6F1;border-radius:12px;padding:12px 14px;">
+              <div style="font-size:22px;margin-bottom:4px;">☁️</div>
+              <div style="font-size:15px;font-weight:800;color:#0E3A5C;margin-bottom:2px;">Clouds</div>
+              <div style="font-size:14px;color:#5A4D3E;line-height:1.5;">The shapes, thickness, and amount of clouds in the sky.</div>
+            </div>
+            <div style="background:#EAF8FD;border:1.5px solid #AED6F1;border-radius:12px;padding:12px 14px;">
+              <div style="font-size:22px;margin-bottom:4px;">🌧️</div>
+              <div style="font-size:15px;font-weight:800;color:#0E3A5C;margin-bottom:2px;">Precipitation</div>
+              <div style="font-size:14px;color:#5A4D3E;line-height:1.5;">Any water falling from clouds — rain, snow, hail, or sleet.</div>
+            </div>
+            <div style="background:#EAF8FD;border:1.5px solid #AED6F1;border-radius:12px;padding:12px 14px;">
+              <div style="font-size:22px;margin-bottom:4px;">💨</div>
+              <div style="font-size:15px;font-weight:800;color:#0E3A5C;margin-bottom:2px;">Wind</div>
+              <div style="font-size:14px;color:#5A4D3E;line-height:1.5;">Moving air. Scientists measure wind speed and direction.</div>
+            </div>
+          </div>
+
+          <div class="socratic-q" style="margin-top:14px;">
+            <span class="sq-icon">💭</span>
+            <div>
+              <div class="label">Think About It</div>
+              <div class="question">"Look back at the observations you wrote in your notebook. Which of these four things — temperature, clouds, precipitation, or wind — did you notice? Which one did you miss?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2: Weather Patterns -->
+      <div class="card theme-earth" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🔁</div>
+          <div>
+            <div class="card-head-label">Section 2</div>
+            <div class="card-head-title">Finding Patterns</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>One rainy day doesn't tell you much. But what if you recorded weather every single day for a whole month? You'd start to see things repeat. That's a <span class="vtip">pattern<span class="vtip-box"><span class="vtip-word">pattern</span>Something that happens in a predictable, repeating way.</span></span> — something that repeats in a way you can start to predict.</p>
+          <p>Here are some patterns meteorologists have noticed over time:</p>
+          <ul style="font-size:16px;color:#5A4D3E;line-height:1.9;padding-left:20px;margin-bottom:12px;">
+            <li>Afternoons are usually warmer than mornings.</li>
+            <li>Dark, low clouds often come before rain.</li>
+            <li>Some seasons are much wetter or drier than others.</li>
+            <li>Summer in Florida brings more thunderstorms than winter does.</li>
+          </ul>
+          <p>Scientists don't just notice these patterns — they write them down. They use tables, charts, and bar graphs to keep track of data over time. The more data you have, the clearer the pattern gets.</p>
+
+          <div class="callout callout-think">
+            <span class="callout-icon">🧠</span>
+            <p>Think about your week so far. Has the weather been similar each day, or has it changed a lot? What pattern, if any, do you notice?</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 3: Weather vs. Climate -->
+      <div class="card theme-forest" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌎</div>
+          <div>
+            <div class="card-head-label">Section 3</div>
+            <div class="card-head-title">Weather vs. Climate — and How Scientists Predict</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>People sometimes use "weather" and "<span class="vtip">climate<span class="vtip-box"><span class="vtip-word">climate</span>The usual weather pattern for an area over many years.</span></span>" to mean the same thing — but they're different.</p>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;">
+            <div style="background:#EAF8FD;border:2px solid #AED6F1;border-radius:14px;padding:14px 16px;text-align:center;">
+              <div style="font-size:28px;margin-bottom:6px;">⛅</div>
+              <div style="font-size:16px;font-weight:800;color:#0E3A5C;margin-bottom:6px;">Weather</div>
+              <div style="font-size:14px;color:#5A4D3E;line-height:1.55;">What's happening in the atmosphere right now or over a short time. It changes often.</div>
+              <div style="margin-top:8px;font-size:13px;color:#0277BD;font-weight:700;font-style:italic;">"It's raining this Tuesday."</div>
+            </div>
+            <div style="background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;text-align:center;">
+              <div style="font-size:28px;margin-bottom:6px;">🗺️</div>
+              <div style="font-size:16px;font-weight:800;color:#1B4332;margin-bottom:6px;">Climate</div>
+              <div style="font-size:14px;color:#5A4D3E;line-height:1.55;">The usual, expected weather for a place based on many years of data. It changes very slowly.</div>
+              <div style="margin-top:8px;font-size:13px;color:#2E7D32;font-weight:700;font-style:italic;">"Florida summers are usually hot and rainy."</div>
+            </div>
+          </div>
+
+          <p>When scientists — called <span class="vtip">meteorologists<span class="vtip-box"><span class="vtip-word">meteorologist</span>A scientist who studies weather and uses data to predict future conditions.</span></span> — look at enough weather data over enough time, they can make predictions. If the sky turns dark and the wind picks up, they know from past patterns that rain is probably coming. If it's July in Florida, they know to watch for afternoon thunderstorms.</p>
+
+          <p>Those predictions don't just help people plan a picnic — they help communities prepare for dangerous weather like floods and hurricanes. That's real science doing real work.</p>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE DIAGRAM: Weather Conditions -->
+      <div class="diagram-wrap scroll-reveal">
+        <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
+          🗺 Tap a weather condition to learn about it
+        </div>
+        <div class="diagram-interactive">
+          <svg viewBox="0 0 860 280" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;" role="img" aria-label="Interactive diagram showing five weather conditions: sunny, partly cloudy, overcast, rainy, and stormy">
+
+            <!-- Background -->
+            <rect x="0" y="0" width="860" height="280" rx="14" fill="#EAF8FD"/>
+
+            <!-- === SUNNY === -->
+            <rect x="10" y="10" width="156" height="260" rx="10" fill="#FFF9E8"/>
+            <!-- Sun -->
+            <circle cx="88" cy="80" r="32" fill="#FDD835"/>
+            <!-- Sun rays -->
+            <line x1="88" y1="36" x2="88" y2="26" stroke="#F9A825" stroke-width="3" stroke-linecap="round"/>
+            <line x1="88" y1="124" x2="88" y2="134" stroke="#F9A825" stroke-width="3" stroke-linecap="round"/>
+            <line x1="44" y1="80" x2="34" y2="80" stroke="#F9A825" stroke-width="3" stroke-linecap="round"/>
+            <line x1="132" y1="80" x2="142" y2="80" stroke="#F9A825" stroke-width="3" stroke-linecap="round"/>
+            <line x1="56" y1="48" x2="49" y2="41" stroke="#F9A825" stroke-width="3" stroke-linecap="round"/>
+            <line x1="120" y1="112" x2="127" y2="119" stroke="#F9A825" stroke-width="3" stroke-linecap="round"/>
+            <line x1="120" y1="48" x2="127" y2="41" stroke="#F9A825" stroke-width="3" stroke-linecap="round"/>
+            <line x1="56" y1="112" x2="49" y2="119" stroke="#F9A825" stroke-width="3" stroke-linecap="round"/>
+            <!-- Ground line -->
+            <line x1="20" y1="200" x2="156" y2="200" stroke="#C8E0A8" stroke-width="2"/>
+            <ellipse cx="88" cy="198" rx="50" ry="8" fill="#D4E8B4"/>
+            <text x="88" y="228" text-anchor="middle" font-size="15" font-weight="800" fill="#B8860B">☀️ Sunny</text>
+            <text x="88" y="248" text-anchor="middle" font-size="11" fill="#9A8E82">Clear skies</text>
+            <text x="88" y="264" text-anchor="middle" font-size="11" fill="#9A8E82">High temp</text>
+
+            <!-- === PARTLY CLOUDY === -->
+            <rect x="176" y="10" width="156" height="260" rx="10" fill="#F5FAFF"/>
+            <!-- Sun behind cloud -->
+            <circle cx="232" cy="75" r="24" fill="#FDD835" opacity="0.85"/>
+            <!-- Cloud -->
+            <ellipse cx="272" cy="90" rx="48" ry="22" fill="#fff"/>
+            <ellipse cx="248" cy="95" rx="32" ry="20" fill="#fff"/>
+            <ellipse cx="296" cy="95" rx="28" ry="18" fill="#fff"/>
+            <ellipse cx="272" cy="80" rx="36" ry="20" fill="#f8f8f8"/>
+            <line x1="186" y1="200" x2="322" y2="200" stroke="#C8E0A8" stroke-width="2"/>
+            <ellipse cx="254" cy="198" rx="50" ry="8" fill="#D4E8B4"/>
+            <text x="254" y="228" text-anchor="middle" font-size="15" font-weight="800" fill="#5A7A9A">⛅ Partly</text>
+            <text x="254" y="246" text-anchor="middle" font-size="15" font-weight="800" fill="#5A7A9A">Cloudy</text>
+            <text x="254" y="264" text-anchor="middle" font-size="11" fill="#9A8E82">Mix of sun &amp; cloud</text>
+
+            <!-- === OVERCAST === -->
+            <rect x="342" y="10" width="156" height="260" rx="10" fill="#ECEFF1"/>
+            <!-- Full cloud cover -->
+            <ellipse cx="420" cy="70" rx="75" ry="28" fill="#B0BEC5"/>
+            <ellipse cx="385" cy="78" rx="50" ry="24" fill="#CFD8DC"/>
+            <ellipse cx="455" cy="76" rx="48" ry="22" fill="#CFD8DC"/>
+            <ellipse cx="420" cy="60" rx="60" ry="24" fill="#ECEFF1"/>
+            <ellipse cx="420" cy="105" rx="72" ry="18" fill="#B0BEC5" opacity="0.5"/>
+            <line x1="352" y1="200" x2="488" y2="200" stroke="#C8E0A8" stroke-width="2"/>
+            <ellipse cx="420" cy="198" rx="50" ry="8" fill="#D4E8B4"/>
+            <text x="420" y="228" text-anchor="middle" font-size="15" font-weight="800" fill="#546E7A">☁️ Overcast</text>
+            <text x="420" y="248" text-anchor="middle" font-size="11" fill="#9A8E82">Full cloud cover</text>
+            <text x="420" y="264" text-anchor="middle" font-size="11" fill="#9A8E82">Rain may follow</text>
+
+            <!-- === RAINY === -->
+            <rect x="508" y="10" width="156" height="260" rx="10" fill="#E3F2FD"/>
+            <!-- Cloud -->
+            <ellipse cx="586" cy="65" rx="60" ry="26" fill="#78909C"/>
+            <ellipse cx="558" cy="72" rx="38" ry="22" fill="#90A4AE"/>
+            <ellipse cx="614" cy="70" rx="36" ry="20" fill="#90A4AE"/>
+            <ellipse cx="586" cy="55" rx="48" ry="22" fill="#90A4AE"/>
+            <!-- Rain drops -->
+            <line x1="555" y1="110" x2="548" y2="140" stroke="#1976D2" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+            <line x1="575" y1="108" x2="568" y2="138" stroke="#1976D2" stroke-width="2.5" stroke-linecap="round" opacity="0.75"/>
+            <line x1="595" y1="110" x2="588" y2="140" stroke="#1976D2" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+            <line x1="615" y1="108" x2="608" y2="138" stroke="#1976D2" stroke-width="2.5" stroke-linecap="round" opacity="0.75"/>
+            <line x1="564" y1="148" x2="557" y2="178" stroke="#1976D2" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+            <line x1="585" y1="146" x2="578" y2="176" stroke="#1976D2" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+            <line x1="606" y1="148" x2="599" y2="178" stroke="#1976D2" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+            <!-- Puddle -->
+            <ellipse cx="586" cy="200" rx="42" ry="8" fill="#90CAF9" opacity="0.6"/>
+            <text x="586" y="228" text-anchor="middle" font-size="15" font-weight="800" fill="#1565C0">🌧️ Rainy</text>
+            <text x="586" y="248" text-anchor="middle" font-size="11" fill="#9A8E82">Precipitation falling</text>
+            <text x="586" y="264" text-anchor="middle" font-size="11" fill="#9A8E82">Cool temps</text>
+
+            <!-- === STORMY === -->
+            <rect x="674" y="10" width="176" height="260" rx="10" fill="#ECEFF1"/>
+            <!-- Storm cloud -->
+            <ellipse cx="762" cy="62" rx="76" ry="30" fill="#37474F"/>
+            <ellipse cx="732" cy="70" rx="48" ry="26" fill="#455A64"/>
+            <ellipse cx="792" cy="68" rx="46" ry="24" fill="#455A64"/>
+            <ellipse cx="762" cy="50" rx="60" ry="26" fill="#546E7A"/>
+            <!-- Heavy rain -->
+            <line x1="730" y1="108" x2="720" y2="145" stroke="#1565C0" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+            <line x1="748" y1="106" x2="738" y2="143" stroke="#1565C0" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+            <line x1="766" y1="108" x2="756" y2="145" stroke="#1565C0" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+            <line x1="784" y1="106" x2="774" y2="143" stroke="#1565C0" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+            <line x1="800" y1="108" x2="790" y2="145" stroke="#1565C0" stroke-width="3" stroke-linecap="round" opacity="0.65"/>
+            <!-- Lightning -->
+            <polygon points="770,90 758,122 765,122 754,152 778,118 770,118 782,90" fill="#FFF59D" opacity="0.9"/>
+            <ellipse cx="762" cy="200" rx="50" ry="9" fill="#78909C" opacity="0.4"/>
+            <text x="762" y="228" text-anchor="middle" font-size="15" font-weight="800" fill="#263238">⛈️ Stormy</text>
+            <text x="762" y="248" text-anchor="middle" font-size="11" fill="#9A8E82">Heavy rain &amp; wind</text>
+            <text x="762" y="264" text-anchor="middle" font-size="11" fill="#9A8E82">Lightning possible</text>
+
+            <!-- HOTSPOT RECTS -->
+            <rect class="hotspot" x="10"  y="10" width="156" height="260" rx="10" fill="#F9A825"
+                  data-part="sunny"
+                  data-info="On sunny days, the sky is clear and the sun shines brightly. Temperatures are usually high. These days have no clouds or precipitation. They often follow dry weather patterns."/>
+            <rect class="hotspot" x="176" y="10" width="156" height="260" rx="10" fill="#4DD0E1"
+                  data-part="partly cloudy"
+                  data-info="Partly cloudy means the sky has some clouds but the sun is still visible. This is one of the most common weather conditions. It's often comfortable and mild."/>
+            <rect class="hotspot" x="342" y="10" width="156" height="260" rx="10" fill="#90A4AE"
+                  data-part="overcast"
+                  data-info="Overcast means the sky is completely covered by thick clouds. No sun gets through. Overcast skies are often a pattern that comes just before rain begins to fall."/>
+            <rect class="hotspot" x="508" y="10" width="156" height="260" rx="10" fill="#1976D2"
+                  data-part="rainy"
+                  data-info="Rainy weather means precipitation is falling. Scientists measure how much rain falls using a rain gauge. Meteorologists often predict rain when they see dark clouds and humid air moving in."/>
+            <rect class="hotspot" x="674" y="10" width="176" height="260" rx="10" fill="#37474F"
+                  data-part="stormy"
+                  data-info="Stormy weather includes heavy rain, strong wind, thunder, and sometimes lightning. Thunderstorms are especially common in Florida during summer afternoons. Scientists track storm patterns to keep communities safe."/>
+          </svg>
+
+          <div class="diagram-info-panel" id="diagramPanel">
+            <span class="dip-word" id="diagramWord"></span>
+            <span id="diagramInfo"></span>
+          </div>
+        </div>
+        <div class="diagram-tap-hint">Tap any weather condition to read about it.</div>
+        <div class="diagram-caption">Five common weather conditions — each one is part of a pattern that scientists learn to recognize and predict.</div>
+      </div>
+
+      <!-- Key Concept -->
+      <div class="key-concept scroll-reveal">
+        <div class="kc-label">⭐ Key Concept</div>
+        <p><strong>Weather describes what the atmosphere is doing right now. Climate is the long-term pattern of weather for a place over many years.</strong> The two are related — but they're not the same thing.</p>
+        <p>When scientists record weather data day after day, they start to see patterns. Those patterns let them predict what weather is likely to come next — and help people stay safe when dangerous weather is on the way.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mind-Blow -->
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Amazing Science Fact</div>
+      <div class="mind-blow-text"><strong>A single Florida thunderstorm can release more energy than an atomic bomb.</strong> All that power comes from warm, humid air rising into the atmosphere — which is exactly why Florida has more lightning strikes per square mile than almost anywhere else on Earth.</div>
+    </div>
+  </div>
+
+  <!-- Go Deeper -->
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper</summary>
+    <div class="gd-body">
+      <p><strong>How do meteorologists actually predict the weather?</strong> They use a huge network of weather stations, radar towers, satellites, and weather balloons — all collecting data at the same time from all over the world. That data gets fed into powerful computer models that simulate how the atmosphere behaves.</p>
+      <p>Even with all that technology, weather prediction gets harder the further out you go. A one-day forecast is usually quite accurate. A ten-day forecast? It's a reasonable guess, but the atmosphere is complicated enough that small errors early on can lead to big differences later. This sensitivity to small changes is sometimes called the "butterfly effect."</p>
+      <p>The patterns scientists study aren't just useful for planning your week. Long-term climate records help researchers understand how Earth's atmosphere has changed over centuries — and what might happen in the future.</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+
+</div><!-- /tab-lesson -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 3: EXPLORE                                            -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🔬</span>
+      <div>
+        <div class="video-wrap-type">Activity 3 · Investigation</div>
+        <div class="video-wrap-title">Starting Your Weather Observation Log</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🔬</div>
+        <div class="video-placeholder-text">Exploration video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 2-1-exploration-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 3: WEATHER OBSERVATION LOG -->
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#0288D1;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🌦️ Investigation: Weather Observation Log</div>
+        <div class="act-subtitle">You're going to start collecting real weather data — just like a meteorologist.</div>
+      </div>
+      <div class="act-time" style="background:#0288D1;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="callout callout-tip" style="margin-bottom:18px;">
+        <span class="callout-icon">🎒</span>
+        <p><strong>You'll need:</strong> Science notebook, pencil, colored pencils, and a way to check today's weather — look outside a window or use a weather app or report.</p>
+      </div>
+
+      <p>Today you're starting a Weather Observation Log. Follow each step carefully.</p>
+
+      <div style="position:relative;margin:16px 0;">
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#0E3A5C,#0277BD);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(14,58,92,0.3);">1</div>
+          <div style="flex:1;background:#EAF8FD;border:2px solid #AED6F1;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Set up your log.</strong> Create a new page in your science notebook. Title it: <em>Weather Observation Log.</em> Write today's date underneath. Leave room — you'll use this same page format for several more days this week.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#0277BD,#0288D1);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(2,119,189,0.3);">2</div>
+          <div style="flex:1;background:#EAF8FD;border:2px solid #AED6F1;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Record today's conditions.</strong> Look outside or check a weather report. Write down all four of these things: the temperature (the actual number, in degrees), what the clouds look like, whether there's any precipitation, and whether it's windy or calm. Be specific.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#0288D1,#4DD0E1);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(77,208,225,0.3);">3</div>
+          <div style="flex:1;background:#EAF8FD;border:2px solid #AED6F1;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Draw today's sky.</strong> In your notebook, draw what the sky actually looks like — the clouds, sun (or no sun), any rain or wind. Use colored pencils if you have them. Label what you drew.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#4DD0E1,#52B788);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(82,183,136,0.3);">4</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Write a prediction.</strong> Based on what you observed today, what do you predict tomorrow's weather will be like? Write one sentence. Then write one sentence explaining why you think that — what clue from today led you to that prediction?</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#52B788,#2E7D32);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(82,183,136,0.3);">5</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Weather or climate?</strong> Write one sentence: is your observation about today's <em>weather</em> or about the <em>climate</em> of your area? How do you know the difference?</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">💭</span>
+        <div>
+          <div class="label">Think Like a Meteorologist</div>
+          <div class="question">"What pattern — if any — do you notice between the clouds you see and whether it's raining? What would you expect to see tomorrow if the clouds looked the same as today?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RECORD YOUR THINKING -->
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#2E7D32;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">📓 Record Your Thinking</div>
+        <div class="act-subtitle">Look at what you wrote. What do you actually know — and what are you still not sure about?</div>
+      </div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>Go back to your observation log. Answer these questions in your notebook. Write in complete sentences — a short answer is fine, but use specific details from what you observed.</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#0288D1;">1</span>
+        <span class="pq-text">What did you observe about today's weather? List the four things you recorded — temperature, clouds, precipitation, and wind — with the specific details for each one.</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#0288D1;">2</span>
+        <span class="pq-text">What pattern, if any, do you notice? Think about the connection between what the clouds looked like and the other conditions you recorded.</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#0288D1;">3</span>
+        <span class="pq-text">Draw a small table with two columns labeled <em>Weather</em> and <em>Climate</em>. Write today's observation in one column and write one example of climate in the other.</span>
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">🗣</span>
+        <p>Tell the story of your observation from beginning to end — what you looked at, what you noticed, what you recorded, and what your prediction was. Use your notebook notes to help you.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DISCUSS -->
+  <div class="card theme-meadow scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">💬</div>
+      <div>
+        <div class="card-head-label">Discussion</div>
+        <div class="card-head-title">Think It Through</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Think through each question on your own. Write your answers in your science notebook before moving on.</p>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Question 1</div>
+          <div class="question">"What did you notice about the clouds today? What does that cloud condition usually come before or after?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">💡</span>
+        <div>
+          <div class="label">Question 2</div>
+          <div class="question">"Your prediction is based on today's weather. What evidence did you use to make it? Could someone disagree with your prediction — and why might they?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🌎</span>
+        <div>
+          <div class="label">Question 3</div>
+          <div class="question">"Why does it matter that meteorologists can predict dangerous weather? Think of a specific situation where a weather prediction might protect someone."</div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🔁</span>
+        <div>
+          <div class="label">Question 4 — Look Ahead</div>
+          <div class="question">"If you collected weather data for a whole year, what patterns do you think you'd start to see? What would you expect to be true about each season?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+
+</div><!-- /tab-explore -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 4: SELF-CHECK QUIZ                                    -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div class="quiz-card scroll-reveal" style="margin-top:0;margin-bottom:18px;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#0288D1;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">⛅</div>
+      <div style="flex:1;">
+        <div style="font-size:19px;color:#1B4332;font-weight:800;line-height:1.2;">🧠 Quick Self-Check</div>
+        <div style="font-size:12px;color:#9A8E82;">Not graded — just for you! See how much you remember before starting the notebook work.</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+
+      <!-- QUESTION 1 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. Florida usually has hot, rainy summers every year. This is an example of —</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>weather, because it happens every summer</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>climate, because it's the long-term pattern for that area</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>precipitation, because rain is falling</div>
+        </div>
+        <div class="quiz-feedback fb-correct">⛅ That's right! Climate is the long-term expected pattern for a place — like Florida's predictably hot, wet summers. One rainy summer is weather; the pattern across many years is climate.</div>
+        <div class="quiz-feedback fb-wrong">Think about the difference: weather is what's happening right now or for a short time. Climate is the expected, long-term pattern. Which one describes a pattern that repeats year after year?</div>
+      </div>
+
+      <!-- QUESTION 2 -->
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-text">2. A scientist notices that cloudy skies appear almost every time it rains, and rarely appear on sunny days. This is an example of —</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>a weather pattern that can be used to predict rain</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>climate data about a specific region</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>temperature changing through the day</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌧️ Exactly! When something happens in a predictable, repeating way — like clouds appearing before rain — that's a pattern. Meteorologists use patterns like this to predict future weather.</div>
+        <div class="quiz-feedback fb-wrong">Remember: a pattern is something that repeats in a predictable way. What's repeating in this example, and how could a scientist use it to make a prediction?</div>
+      </div>
+
+      <!-- QUESTION 3 -->
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">3. Which of these is an example of weather — not climate?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>The Amazon rainforest receives about 80 inches of rain every year.</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>The Sahara Desert is very hot and dry throughout the year.</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>It rained in our city last Thursday afternoon.</div>
+        </div>
+        <div class="quiz-feedback fb-correct">⭐ That's it! A specific rain event last Thursday is weather — one event, at one time, in one place. The other options describe long-term patterns, which is climate.</div>
+        <div class="quiz-feedback fb-wrong">Weather happens at a specific place and time — often just a few hours or days. Climate is what's typical over many years. Which answer describes something short and specific?</div>
+      </div>
+
+      <!-- Score Box -->
+      <div class="quiz-score-box" id="quizScore">
+        <div class="quiz-score-label">Your Score</div>
+        <div class="quiz-score-num" id="quizScoreNum">0</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.7);">out of 3</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+      </div>
+
+      <div class="quiz-video-wrap" id="quizVideoCorrect">
+        <div class="video-wrap">
+          <div class="video-wrap-header">
+            <span style="font-size:20px;">⭐</span>
+            <div>
+              <div class="video-wrap-type">Perfect Score · Great Work!</div>
+              <div class="video-wrap-title">You nailed it — let's celebrate!</div>
+            </div>
+          </div>
+          <div class="video-ratio">
+            <div class="video-placeholder">
+              <div class="video-placeholder-icon">⭐</div>
+              <div class="video-placeholder-text">Perfect score video coming soon</div>
+              <div class="video-placeholder-id"><!-- slot: 2-1-quiz-perfect --></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz-video-wrap" id="quizVideoReview">
+        <div class="video-wrap">
+          <div class="video-wrap-header">
+            <span style="font-size:20px;">🔄</span>
+            <div>
+              <div class="video-wrap-type">Review · Keep Going!</div>
+              <div class="video-wrap-title">Let's look at those tricky questions.</div>
+            </div>
+          </div>
+          <div class="video-ratio">
+            <div class="video-placeholder">
+              <div class="video-placeholder-icon">🔄</div>
+              <div class="video-placeholder-text">Review video coming soon</div>
+              <div class="video-placeholder-id"><!-- slot: 2-1-quiz-review --></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+
+</div><!-- /tab-quiz -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 5: ASSIGNMENT                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">✍️</span>
+      <div>
+        <div class="video-wrap-type">Activity 5 · Assignment</div>
+        <div class="video-wrap-title">What to Do for Your Assignment</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">✍️</div>
+        <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 2-1-assignment-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-card act-check scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#7B5EA7;">5</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment: Weather Observation Log</div>
+        <div class="act-subtitle">Show what you observed and what you know about weather and climate.</div>
+      </div>
+      <div class="act-time" style="background:#7B5EA7;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- PART A -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔎 Part A — Identify &amp; Label</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Look at the five weather conditions from the diagram you explored. In your notebook, draw all five weather symbols and label each one. Under each label, write one example of when that type of weather might happen — be specific about the season or time of day.</p>
+
+      <!-- PART B -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">✏️ Part B — Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer each question in a complete sentence or two. Use at least one vocabulary word in each answer.</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#7B5EA7;">1</span>
+        <span class="pq-text">What four things do scientists measure to describe weather? Pick one and explain what a high reading of it might look like.</span>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#7B5EA7;">2</span>
+        <span class="pq-text">What is the difference between weather and climate? Use one example of each in your answer.</span>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#7B5EA7;">3</span>
+        <span class="pq-text">How do weather patterns help meteorologists make predictions? Give one specific example of a pattern a meteorologist might notice.</span>
+      </div>
+
+      <!-- WRITE & EXPLAIN -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">📝 Write &amp; Explain</p>
+      <div class="key-concept" style="margin-bottom:16px;">
+        <div class="kc-label">📝 Write &amp; Explain</div>
+        <p>Think about the weather observation you recorded today.</p>
+        <p><strong>What did you observe?</strong> Describe the specific conditions you recorded — temperature, clouds, precipitation, and wind.</p>
+        <p><strong>What does that tell you?</strong> Based on those conditions, what type of weather pattern might be forming? What do you predict will come next?</p>
+        <p><strong>Why do you think that?</strong> Use one detail from your observation to explain your prediction. Connect it to something you learned about weather patterns today.</p>
+      </div>
+
+      <!-- PART C -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Label</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Draw a labeled sketch of today's sky in your science notebook. Label at least 4 parts — show the clouds (or lack of them), the sun, any precipitation, and write the temperature in a corner of your drawing. At the bottom, write one sentence describing what you see.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Reflect</div>
+          <div class="question">"Look back at the Notice &amp; Wonder you wrote at the start of today's lesson. Did you observe or predict anything correctly? What surprised you? What do you still wonder about?"</div>
+        </div>
+      </div>
+
+      <!-- WHAT TO TURN IN -->
+      <div style="background:#fff;border:2px solid #0288D1;border-radius:18px;margin-top:20px;overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:10px;padding:14px 20px;background:#EAF8FD;border-bottom:2px solid #AED6F1;">
+          <span style="font-size:24px;">📋</span>
+          <div>
+            <div style="font-size:10px;color:#0288D1;text-transform:uppercase;letter-spacing:0.8px;font-weight:800;">Canvas Submission</div>
+            <div style="font-size:18px;color:#0E3A5C;font-weight:800;">What to Turn In</div>
+          </div>
+        </div>
+        <div style="padding:16px 20px;">
+          <p style="font-size:15px;color:#5A4D3E;margin-bottom:14px;">Submit your work on Canvas using <strong>one of these options:</strong></p>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;">
+            <div style="background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:12px 14px;text-align:center;">
+              <div style="font-size:28px;margin-bottom:6px;">⌨️</div>
+              <div style="font-size:13px;font-weight:800;color:#1B4332;margin-bottom:4px;">Type It</div>
+              <div style="font-size:12px;color:#5A4D3E;line-height:1.4;">Type your answers directly into the Canvas assignment.</div>
+            </div>
+            <div style="background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:12px 14px;text-align:center;">
+              <div style="font-size:28px;margin-bottom:6px;">📸</div>
+              <div style="font-size:13px;font-weight:800;color:#1B4332;margin-bottom:4px;">Photo It</div>
+              <div style="font-size:12px;color:#5A4D3E;line-height:1.4;">Take a clear photo of your notebook work and upload it.</div>
+            </div>
+            <div style="background:#F0EDF6;border:2px solid #D8D0E8;border-radius:14px;padding:12px 14px;text-align:center;">
+              <div style="font-size:28px;margin-bottom:6px;">🎥</div>
+              <div style="font-size:13px;font-weight:800;color:#1B4332;margin-bottom:4px;">Record It</div>
+              <div style="font-size:12px;color:#5A4D3E;line-height:1.4;">Record a short video explaining what you did and learned.</div>
+            </div>
+          </div>
+          <p style="font-size:15px;color:#5A4D3E;margin-bottom:12px;">Make sure your submission includes all of these:</p>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
+            <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #AED6F1;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EAF8FD;">☐</div>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My Notice &amp; Wonder observations from the start of the lesson.</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
+            <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #AED6F1;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EAF8FD;">☐</div>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">The copywork sentence from the vocabulary page.</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
+            <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #AED6F1;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EAF8FD;">☐</div>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My completed Weather Observation Log — with date, all four conditions, my drawing, my prediction, and my weather vs. climate sentence.</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
+            <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #AED6F1;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EAF8FD;">☐</div>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">Parts A, B, and C completed in my notebook.</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;cursor:pointer;">
+            <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #AED6F1;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EAF8FD;">☐</div>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My Write &amp; Explain uses at least one vocabulary word and complete sentences.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-submit" style="margin-top:18px;">
+        <span class="callout-icon">✅</span>
+        <p>When your checklist is complete, submit everything on <strong>Canvas</strong>. Type, upload a photo, or record a video — whichever works best for you!</p>
+      </div>
+
+      <!-- CLOSING VIDEO -->
+      <div class="video-wrap" style="margin-top:24px;">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">👋</span>
+          <div>
+            <div class="video-wrap-type">Closing · Wrap-Up</div>
+            <div class="video-wrap-title">Great work today — next we'll graph a whole week of weather!</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">👋</div>
+            <div class="video-placeholder-text">Closing video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 2-1-closing --></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /tab-assignment -->
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <div class="footer-line1">Optima Academy Online · <span>3rd Grade Science</span></div>
+  <div class="footer-line2">Lesson 2.01 · NGSS 3-ESS2-1</div>
+  <div class="footer-line3">© Optima Academy · All rights reserved</div>
+</div>
+
+</div><!-- /page-wrap -->
+
+
+<script>
+// ── Tab System ──
+var tabProgress = {vocab:false,lesson:false,explore:false,quiz:false,assignment:false};
+var tabOrder = ['vocab','lesson','explore','quiz','assignment'];
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-'+name).classList.add('active');
+  document.querySelector('[data-tab="'+name+'"]').classList.add('active');
+  tabProgress[name] = true;
+  document.querySelector('[data-tab="'+name+'"]').classList.add('visited');
+  var visited = Object.values(tabProgress).filter(Boolean).length;
+  var pct = Math.round((visited/tabOrder.length)*100);
+  document.getElementById('progressFill').style.width = pct+'%';
+  document.getElementById('progressPct').textContent = pct+'%';
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c){
+    if (name==='vocab'){ c.classList.remove('collapsed'); }
+    else { c.classList.add('collapsed'); }
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ── Checklist ──
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  var icon = item.querySelector('.check-icon');
+  icon.textContent = item.classList.contains('checked') ? '⛅' : '☐';
+  var items = document.querySelectorAll('.checklist-item');
+  setTimeout(function(){
+    if (Array.from(items).every(function(it){ return it.classList.contains('checked'); })){
+      setTimeout(window.launchConfetti,200);
+    }
+  },50);
+}
+
+// ── Clickable Diagram ──
+(function(){
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel = document.getElementById('diagramPanel');
+  var wordEl = document.getElementById('diagramWord');
+  var infoEl = document.getElementById('diagramInfo');
+  if (!panel) return;
+  hotspots.forEach(function(hs){
+    hs.addEventListener('click',function(e){
+      e.stopPropagation();
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+      hs.classList.add('active');
+      var part = hs.getAttribute('data-part').replace(/-/g,' ');
+      wordEl.textContent = part.charAt(0).toUpperCase()+part.slice(1);
+      infoEl.innerHTML = hs.getAttribute('data-info');
+      panel.classList.add('visible');
+      panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+    });
+  });
+  document.addEventListener('click',function(e){
+    if (!e.target.classList.contains('hotspot')){
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+    }
+  });
+})();
+
+// ── Quiz ──
+var quizAnswered=0,quizCorrect=0;
+function checkQuiz(optEl){
+  var q = optEl.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered'); quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen  = optEl.getAttribute('data-val');
+  q.querySelectorAll('.quiz-opt').forEach(function(o){
+    if (o.getAttribute('data-val')===correct){ o.classList.add('correct'); }
+    else { o.classList.add('disabled'); }
+  });
+  if (chosen===correct){ quizCorrect++; optEl.classList.add('correct'); var fb=q.querySelector('.fb-correct'); if(fb) fb.classList.add('show'); }
+  else { optEl.classList.add('wrong'); var fb=q.querySelector('.fb-wrong'); if(fb) fb.classList.add('show'); }
+  if (quizAnswered===3){
+    var scoreBox=document.getElementById('quizScore');
+    document.getElementById('quizScoreNum').textContent=quizCorrect;
+    if (quizCorrect===3){
+      document.getElementById('quizScoreMsg').textContent='⭐ Perfect! You got every question right!';
+      document.getElementById('quizVideoCorrect').classList.add('show');
+      setTimeout(window.launchConfetti,300);
+    } else if (quizCorrect===2){
+      document.getElementById('quizScoreMsg').textContent='⛅ Great job! Almost there!';
+      document.getElementById('quizVideoReview').classList.add('show');
+    } else {
+      document.getElementById('quizScoreMsg').textContent='👍 Good effort! Review the lesson and try again.';
+      document.getElementById('quizVideoReview').classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip){
+  var box=tip.querySelector('.vtip-box');
+  if(!box) return;
+  tip.addEventListener('mouseenter',function(){
+    var rect=tip.getBoundingClientRect(),bw=250;
+    var left=rect.left+rect.width/2-bw/2;
+    if(left<8) left=8;
+    if(left+bw>window.innerWidth-8) left=window.innerWidth-bw-8;
+    box.style.left=left+'px';
+    var topPos=rect.top-140;
+    if(topPos<8) topPos=rect.bottom+10;
+    box.style.top=topPos+'px';
+  });
+});
+
+// ── Back to Top ──
+(function(){
+  var btn = document.getElementById('backToTop');
+
+  // Direct style toggle — avoids class specificity conflicts
+  function showBtn()  { btn.style.display = 'flex'; }
+  function hideBtn()  { btn.style.display = 'none'; }
+
+  // Method 1: standard scroll on window + document (covers most browsers)
+  function onScroll() {
+    var y = window.pageYOffset
+          || document.documentElement.scrollTop
+          || document.body.scrollTop
+          || 0;
+    y > 300 ? showBtn() : hideBtn();
+  }
+  window.addEventListener('scroll',   onScroll, { passive: true });
+  document.addEventListener('scroll', onScroll, { passive: true });
+
+  // Method 2: IntersectionObserver watches the header leaving the viewport.
+  // This fires reliably even inside Canvas iframes where the parent page scrolls.
+  if (window.IntersectionObserver) {
+    var header = document.querySelector('.header');
+    if (header) {
+      new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          e.isIntersecting ? hideBtn() : showBtn();
+        });
+      }, { threshold: 0 }).observe(header);
+    }
+  }
+})();
+
+// ── Sticky fallback for Canvas iframes ──
+// position:sticky works fine in a normal browser. But when Canvas auto-expands
+// the iframe to fit content, the *parent* page scrolls — not the iframe window —
+// so sticky elements snap back to position:relative. Fix: use IntersectionObserver
+// to detect when the header leaves the viewport, then switch the progress bar and
+// tab bar to position:fixed so they stay pinned regardless of who is scrolling.
+(function(){
+  if (!window.IntersectionObserver) return;
+  var header  = document.querySelector('.header');
+  var progBar = document.querySelector('.progress-wrap');
+  var tabBar  = document.getElementById('tabBar');
+  if (!header || !progBar || !tabBar) return;
+
+  // Measure natural heights once so we can offset the tab bar correctly.
+  var progH = progBar.offsetHeight || 38;
+
+  new IntersectionObserver(function(entries) {
+    var gone = !entries[0].isIntersecting;
+    if (gone) {
+      progBar.style.position = 'fixed';
+      progBar.style.top      = '0';
+      progBar.style.left     = '0';
+      progBar.style.right    = '0';
+      progBar.style.zIndex   = '110';
+      tabBar.style.position  = 'fixed';
+      tabBar.style.top       = progH + 'px';
+      tabBar.style.left      = '0';
+      tabBar.style.right     = '0';
+      tabBar.style.zIndex    = '100';
+      // Push content down so the fixed bars don't overlap it
+      document.querySelector('.page-wrap').style.paddingTop = (progH + tabBar.offsetHeight) + 'px';
+    } else {
+      progBar.style.position = '';
+      progBar.style.top      = '';
+      progBar.style.left     = '';
+      progBar.style.right    = '';
+      tabBar.style.position  = '';
+      tabBar.style.top       = '';
+      tabBar.style.left      = '';
+      tabBar.style.right     = '';
+      document.querySelector('.page-wrap').style.paddingTop = '';
+    }
+  }, { threshold: 0 }).observe(header);
+})();
+
+// ── Scroll Reveal ──
+(function(){
+  var els=document.querySelectorAll('.scroll-reveal');
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('in-view'); });
+  },{threshold:0.1});
+  els.forEach(function(el){ io.observe(el); });
+})();
+
+// ── Confetti ──
+(function(){
+  var canvas=document.getElementById('confettiCanvas');
+  var ctx=canvas.getContext('2d');
+  var particles=[],animating=false;
+  var colors=['#0288D1','#4DD0E1','#FDD835','#52B788','#F9A825','#7B5EA7','#FF8F00','#2E7D32'];
+  function resize(){ canvas.width=window.innerWidth; canvas.height=window.innerHeight; }
+  window.addEventListener('resize',resize); resize();
+  function Particle(x,y){
+    this.x=x;this.y=y;this.vx=(Math.random()-.5)*16;this.vy=Math.random()*-18-4;
+    this.gravity=.45;this.drag=.98;this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360;this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1;this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){ for(var i=0;i<count;i++) particles.push(new Particle(x,y)); if(!animating){animating=true;animate();} }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity;p.vx*=p.drag;p.x+=p.vx;p.y+=p.vy;
+      p.rotation+=p.rotSpeed;p.opacity-=.008;
+      if(p.opacity<=0){particles.splice(i,1);return;}
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity;ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6);}
+      else{ctx.beginPath();ctx.arc(0,0,p.size/2,0,Math.PI*2);ctx.fill();}
+      ctx.restore();
+    });
+    if(particles.length>0){requestAnimationFrame(animate);}else{animating=false;ctx.clearRect(0,0,canvas.width,canvas.height);}
+  }
+  window.launchConfetti=function(){
+    var cx=window.innerWidth/2;
+    burst(cx-100,window.innerHeight*.45,50);
+    burst(cx,window.innerHeight*.35,60);
+    burst(cx+100,window.innerHeight*.45,50);
+  };
+})();
+
+// ── Collapsible Intro Cards ──
+var introCards=document.querySelectorAll('.intro-2col .card');
+introCards.forEach(function(card){
+  var head=card.querySelector('.card-head');
+  if(!head) return;
+  head.addEventListener('click',function(){ card.classList.toggle('collapsed'); });
+});
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+tabProgress['vocab']=true;
+document.getElementById('progressFill').style.width='20%';
+document.getElementById('progressPct').textContent='20%';
+</script>
+</body>
+</html>
