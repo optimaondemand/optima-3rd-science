@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – Lesson 2.02: Investigation: Graphing Weekly Weather</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+  background: #F2F0E8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #2B1D12;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap { max-width: 920px; margin: 0 auto; background: #FAF8F4; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%);
+  border-bottom: 6px solid #0288D1;
+  padding: 22px 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 6px; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0288D1, #4DD0E1, #0288D1);
+}
+.header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.header-logo {
+  width: 52px; height: 52px; border-radius: 50%; background: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title {
+  font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+  text-shadow: 0 2px 12px rgba(2,136,209,0.3);
+}
+.header-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(2,136,209,0.15); border: 1.5px solid rgba(2,136,209,0.35);
+  border-radius: 28px; padding: 6px 16px;
+}
+.header-badge span:first-child { font-size: 22px; }
+.header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ── Hero Visual ── */
+.hero-visual {
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #0288D1;
+}
+.hero-visual svg { display: block; width: 100%; height: auto; }
+
+/* ── Hero Animations ── */
+@keyframes cloud-drift-1 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(40px); }
+}
+@keyframes cloud-drift-2 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-32px); }
+}
+@keyframes sun-pulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.12); }
+}
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes rain-fall {
+  0%   { transform: translateY(-20px); opacity: 0; }
+  20%  { opacity: 0.7; }
+  100% { transform: translateY(60px); opacity: 0; }
+}
+@keyframes bar-rise {
+  0%   { transform: scaleY(0.7); }
+  100% { transform: scaleY(1); }
+}
+@keyframes hero-shimmer {
+  0%, 100% { opacity: 0.25; }
+  50%       { opacity: 0.65; }
+}
+
+.hero-cloud-1   { animation: cloud-drift-1 9s ease-in-out infinite alternate; }
+.hero-cloud-2   { animation: cloud-drift-2 13s ease-in-out infinite alternate; }
+.hero-sun-glow  { animation: sun-pulse 4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-float     { animation: hero-float 3.5s ease-in-out infinite; }
+.hero-shimmer   { animation: hero-shimmer 3s ease-in-out infinite; }
+.rain-1 { animation: rain-fall 1.8s linear infinite; }
+.rain-2 { animation: rain-fall 1.8s linear infinite 0.3s; }
+.rain-3 { animation: rain-fall 1.8s linear infinite 0.6s; }
+.rain-4 { animation: rain-fall 1.8s linear infinite 0.9s; }
+.rain-5 { animation: rain-fall 1.8s linear infinite 1.2s; }
+
+/* ── Mind-Blow ── */
+@keyframes mind-blow-bounce {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.12); }
+}
+
+/* ── Info Strip ── */
+.info-strip {
+  display: flex; flex-wrap: wrap; background: #fff;
+  border-bottom: 2px solid #E8DDD2;
+}
+.info-item {
+  flex: 1; min-width: 150px; padding: 12px 16px;
+  border-right: 1px solid #E8DDD2;
+  display: flex; align-items: center; gap: 10px;
+}
+.info-item:last-child { border-right: none; }
+.info-icon {
+  width: 40px; height: 40px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.info-value { font-size: 16px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+/* ── Content Area ── */
+.content { padding: 24px 28px 36px; }
+
+/* ── Card System ── */
+.card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 22px; overflow: hidden;
+  box-shadow: 0 2px 12px rgba(27,67,50,0.04);
+}
+.card-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 20px; border-bottom: 2px solid;
+}
+.card-head-icon {
+  width: 42px; height: 42px; border-radius: 50%; color: #fff;
+  font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.card-head-title { font-size: 20px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.card-body { padding: 18px 22px; }
+.card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+.card-body p:last-child { margin-bottom: 0; }
+
+/* ── Card Color Themes ── */
+.theme-earth  .card-head { background: #FFF0E8; border-color: #E8D0B8; }
+.theme-earth  .card-head-icon { background: #A0522D; }
+.theme-sun    .card-head { background: #FFF9E8; border-color: #F0E4C0; }
+.theme-sun    .card-head-icon { background: #F9A825; }
+.theme-sky    .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-sky    .card-head-icon { background: #0288D1; }
+.theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+.theme-forest .card-head-icon { background: #2E7D32; }
+.theme-rock   .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+.theme-rock   .card-head-icon { background: #7B5EA7; }
+.theme-meadow .card-head { background: #F0F8E8; border-color: #C8E0B8; }
+.theme-meadow .card-head-icon { background: #558B2F; }
+
+/* ── Activity Cards ── */
+.activity-card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 18px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.activity-card.act-warmup  { border-left: 6px solid #52B788; }
+.activity-card.act-lesson  { border-left: 6px solid #F9A825; }
+.activity-card.act-explore { border-left: 6px solid #0288D1; }
+.activity-card.act-practice{ border-left: 6px solid #2E7D32; }
+.activity-card.act-check   { border-left: 6px solid #7B5EA7; }
+
+.act-head {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px 14px 18px;
+  border-bottom: 1.5px solid #E8DDD2;
+}
+.act-num {
+  width: 38px; height: 38px; border-radius: 14px; color: #fff;
+  font-size: 18px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.act-title { font-size: 19px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.act-subtitle { font-size: 12px; color: #9A8E82; }
+.act-time {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap;
+  margin-left: auto; flex-shrink: 0;
+}
+.act-body { padding: 18px 22px 18px 20px; }
+.act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+/* ── Callout Boxes ── */
+.callout {
+  border-radius: 14px; padding: 16px 18px;
+  display: flex; align-items: flex-start; gap: 12px;
+  margin-bottom: 14px;
+}
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+.callout-earth  { background: #FFF0E8; border: 2px solid #E8D0B8; }
+.callout-think  { background: #FFF9E8; border: 2px solid #F0E4C0; }
+.callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+.callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+.callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+
+/* ── Socratic Questions ── */
+.socratic-q {
+  background: linear-gradient(135deg, #EEF8F0, #E8F5E9);
+  border: 2px solid #A8D5B8;
+  border-radius: 16px; padding: 16px 20px;
+  margin: 16px 0;
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.socratic-q .label {
+  font-size: 11px; color: #2D6A4F; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px;
+}
+.socratic-q .question {
+  font-size: 17px; color: #2B1D12; font-weight: 700;
+  line-height: 1.6; font-style: italic;
+}
+
+/* ── Diagram Containers ── */
+.diagram-wrap {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 16px; margin: 16px 0;
+  text-align: center;
+}
+.diagram-wrap svg { max-width: 100%; height: auto; }
+.diagram-caption {
+  font-size: 13px; color: #9A8E82; margin-top: 10px;
+  font-weight: 600; text-align: center;
+}
+
+/* ── Lesson Figure ── */
+.lesson-figure {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 14px 14px 18px; margin: 0 0 22px;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.lesson-figure-label {
+  font-size: 11px; color: #2D6A4F;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  font-weight: 800; margin-bottom: 10px;
+}
+.lesson-figure img {
+  display: block; max-width: 100%; height: auto;
+  border-radius: 10px; margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.lesson-figure-caption {
+  font-size: 14px; color: #5A4D3E;
+  margin-top: 12px; line-height: 1.55; font-weight: 600;
+  text-align: center;
+}
+.lesson-figure-caption strong { color: #1B4332; }
+
+/* ── Interactive Diagram ── */
+.diagram-interactive { position: relative; }
+.diagram-interactive svg { display: block; width: 100%; height: auto; cursor: pointer; }
+.hotspot {
+  opacity: 0; cursor: pointer; transition: opacity 0.2s;
+  fill: #4DD0E1;
+}
+.hotspot:hover, .hotspot.active { opacity: 0.28; }
+.diagram-info-panel {
+  display: none; background: #1B4332; color: #fff;
+  border-radius: 12px; padding: 14px 18px;
+  font-size: 15px; line-height: 1.6; margin-top: 12px;
+  font-weight: 600;
+}
+.diagram-info-panel.visible { display: block; }
+.dip-word {
+  display: block; font-size: 12px; text-transform: uppercase;
+  letter-spacing: 1px; color: #95D5B2; font-weight: 800;
+  margin-bottom: 6px;
+}
+.diagram-tap-hint { font-size: 13px; color: #9A8E82; font-weight: 600; margin-top: 8px; text-align: center; }
+
+/* ── Key Concept Box ── */
+.key-concept {
+  background: #F0F8E8; border: 2px solid #C8E0B8;
+  border-radius: 14px; padding: 18px 20px; margin: 14px 0;
+}
+.key-concept .kc-label {
+  font-size: 13px; color: #558B2F; text-transform: uppercase;
+  letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px;
+}
+.key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+.key-concept p:last-child { margin-bottom: 0; }
+
+/* ── Practice Questions ── */
+.pq {
+  background: #FAFAF6; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 14px 18px; margin-bottom: 12px;
+  display: flex; align-items: flex-start; gap: 10px;
+}
+.pq-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  color: #fff; font-weight: 800; font-size: 14px;
+  flex-shrink: 0; margin-top: 1px;
+}
+.pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; }
+
+/* ── Vocab Flashcards ── */
+.vocab-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px; margin: 14px 0;
+}
+.flip-card { perspective: 800px; height: 195px; cursor: pointer; }
+.flip-card-inner {
+  position: relative; width: 100%; height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 14px 18px; text-align: center;
+  border: 2px solid #E8DDD2;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.06);
+}
+.flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+.flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+.flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #1B4332; margin-bottom: 6px; }
+.flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+.flip-card-back {
+  background: linear-gradient(145deg, #1B4332, #2D6A4F);
+  border-color: #1B4332;
+  transform: rotateY(180deg);
+}
+.flip-card-back .fc-def { font-size: 14.5px; color: #fff; line-height: 1.5; font-weight: 600; }
+.flip-card-back .fc-word-back {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 6px;
+}
+.flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 8px; font-weight: 600; }
+.fc-color-1 .flip-card-front { border-top-color: #52B788; }
+.fc-color-2 .flip-card-front { border-top-color: #0288D1; }
+.fc-color-3 .flip-card-front { border-top-color: #F9A825; }
+.fc-color-4 .flip-card-front { border-top-color: #2D6A4F; }
+.fc-color-5 .flip-card-front { border-top-color: #2E7D32; }
+.fc-color-6 .flip-card-front { border-top-color: #7B5EA7; }
+
+/* ── Vocab Tooltips ── */
+.vtip {
+  position: relative; color: #7B5EA7; font-weight: 700;
+  cursor: help; border-bottom: 2px dotted rgba(123,94,167,0.45);
+  transition: color 0.15s;
+}
+.vtip:hover { color: #5B3EA7; }
+.vtip .vtip-box {
+  position: fixed; background: #1B4332; color: #fff;
+  padding: 12px 16px; border-radius: 12px;
+  font-size: 14px; font-weight: 600; font-style: normal;
+  line-height: 1.55; width: 250px; text-align: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  pointer-events: none; z-index: 9999;
+  transform: translateY(-4px);
+}
+.vtip:hover .vtip-box { opacity: 1; visibility: visible; transform: translateY(0); }
+.vtip .vtip-word { display: block; color: #95D5B2; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+
+/* ── Quiz ── */
+.quiz-card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 18px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.quiz-q { padding: 16px 0; border-bottom: 1.5px solid #E8DDD2; }
+.quiz-q:last-of-type { border-bottom: none; }
+.quiz-q-text { font-size: 17px; color: #1B4332; font-weight: 700; margin-bottom: 12px; line-height: 1.5; }
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt {
+  display: flex; align-items: center; gap: 12px;
+  padding: 11px 16px; border: 2px solid #E8DDD2; border-radius: 12px;
+  font-size: 16px; color: #2B1D12; cursor: pointer; transition: all 0.15s;
+  background: #FAFAF6; font-weight: 600;
+}
+.quiz-opt:hover:not(.correct):not(.wrong):not(.disabled) { border-color: #0288D1; background: #EAF8FD; }
+.quiz-opt .opt-letter {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: #E8DDD2; color: #5A4D3E;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 800; flex-shrink: 0;
+}
+.quiz-opt.correct { background: #E8F5E9; border-color: #2E7D32; }
+.quiz-opt.correct .opt-letter { background: #2E7D32; color: #fff; }
+.quiz-opt.wrong { background: #FFEBEE; border-color: #E53935; }
+.quiz-opt.wrong .opt-letter { background: #E53935; color: #fff; }
+.quiz-opt.disabled { opacity: 0.45; cursor: default; }
+.quiz-feedback {
+  display: none; margin-top: 10px; padding: 10px 14px;
+  border-radius: 10px; font-size: 15px; font-weight: 600; line-height: 1.5;
+}
+.quiz-feedback.show { display: block; }
+.fb-correct { background: #E8F5E9; color: #1B5E20; border: 1.5px solid #A5D6A7; }
+.fb-wrong   { background: #FFF9E8; color: #5A4D3E; border: 1.5px solid #F0E4C0; }
+.quiz-score {
+  display: none; margin-top: 20px; padding: 20px;
+  background: linear-gradient(135deg, #EEF8F0, #E8F5E9);
+  border: 2px solid #A5D6A7; border-radius: 16px; text-align: center;
+}
+.quiz-score.show { display: block; }
+.quiz-score-num { font-size: 52px; font-weight: 900; color: #1B4332; line-height: 1; }
+.quiz-score-label { font-size: 16px; color: #5A4D3E; font-weight: 700; margin-bottom: 8px; }
+.quiz-score-msg { font-size: 17px; color: #2D6A4F; font-weight: 700; }
+.video-feedback { display: none; }
+.video-feedback.show { display: block; }
+
+/* ── Progress Bar ── */
+.progress-wrap {
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  padding: 10px 20px;
+  display: flex; align-items: center; gap: 12px;
+  position: sticky; top: 0; z-index: 101;
+}
+.progress-label { font-size: 13px; color: #95D5B2; font-weight: 700; white-space: nowrap; }
+.progress-track {
+  flex: 1; height: 8px; background: rgba(255,255,255,0.15);
+  border-radius: 4px; overflow: hidden;
+}
+.progress-fill {
+  height: 100%; background: linear-gradient(90deg, #0288D1, #4DD0E1);
+  border-radius: 4px; width: 0%; transition: width 0.5s ease;
+}
+.progress-pct { font-size: 13px; color: #fff; font-weight: 800; min-width: 36px; text-align: right; }
+
+/* ── Tab Bar ── */
+.tab-bar {
+  display: flex; background: #fff;
+  border-bottom: 2px solid #E8DDD2;
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.tab-btn {
+  flex: 1; min-width: 90px; padding: 12px 10px 10px;
+  background: none; border: none; cursor: pointer;
+  font-family: inherit; font-size: 13px; font-weight: 700;
+  color: #9A8E82; position: relative; transition: all 0.2s;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+.tab-btn:hover { color: #0288D1; background: #EAF8FD; }
+.tab-btn.active { color: #0288D1; border-bottom-color: #0288D1; background: #EAF8FD; }
+.tab-btn.visited::after {
+  content: '✓'; font-size: 10px; color: #2E7D32;
+  position: absolute; top: 4px; right: 6px;
+}
+.tab-check { display: none; }
+
+/* ── Tab Panels ── */
+.tab-panel { display: none; padding: 20px 24px 32px; background: #ffffff; }
+.tab-panel.active { display: block; }
+
+/* ── Tab Navigation ── */
+.tab-next-wrap { text-align: center; margin-top: 24px; }
+.tab-next-btn {
+  background: linear-gradient(135deg, #0288D1, #0277BD);
+  color: #fff; border: none; border-radius: 28px;
+  padding: 12px 28px; font-size: 16px; font-weight: 800;
+  font-family: inherit; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 4px 14px rgba(2,136,209,0.3);
+}
+.tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(2,136,209,0.35); }
+
+/* ── Intro 2-col ── */
+.intro-2col {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+  padding: 18px 24px 0; background: #FAF8F4;
+}
+.intro-2col .card { margin-bottom: 0; }
+.intro-2col .card.collapsed .card-body { display: none; }
+.intro-2col .card .card-head { cursor: pointer; user-select: none; }
+
+/* ── Need Strip ── */
+.need-strip {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  background: #EEF8F0; padding: 10px 24px;
+  border-bottom: 1.5px solid #C4E5CC;
+}
+.need-strip-label { font-size: 13px; font-weight: 800; color: #1B4332; white-space: nowrap; }
+.need-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #fff; border: 1.5px solid #C4E5CC; border-radius: 20px;
+  padding: 4px 12px; font-size: 13px; color: #2B1D12; font-weight: 600;
+}
+
+/* ── Video Wrap ── */
+.video-wrap {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 20px; overflow: hidden;
+}
+.video-wrap-header {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 18px; border-bottom: 1.5px solid #E8DDD2;
+  background: #FAFAF6;
+}
+.video-wrap-type { font-size: 11px; color: #9A8E82; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+.video-wrap-title { font-size: 16px; color: #1B4332; font-weight: 800; }
+.video-ratio { position: relative; padding-bottom: 56.25%; background: #F2F0E8; }
+.video-placeholder {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 10px;
+}
+.video-placeholder-icon { font-size: 40px; opacity: 0.5; }
+.video-placeholder-text { font-size: 15px; color: #9A8E82; font-weight: 700; }
+.video-placeholder-id { font-size: 11px; color: #C0B8B0; font-family: monospace; }
+
+/* ── Mind-Blowing Fact ── */
+.mind-blow {
+  display: flex; align-items: flex-start; gap: 16px;
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  border-radius: 18px; padding: 20px 24px; margin-bottom: 22px;
+  box-shadow: 0 4px 18px rgba(14,28,66,0.2);
+}
+.mind-blow-icon {
+  font-size: 40px; flex-shrink: 0;
+  animation: mind-blow-bounce 2s ease-in-out infinite;
+  transform-origin: center;
+}
+.mind-blow-content { flex: 1; }
+.mind-blow-label {
+  font-size: 11px; color: #4DD0E1; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 6px;
+}
+.mind-blow-text { font-size: 16px; color: #fff; line-height: 1.65; font-weight: 600; }
+
+/* ── Go Deeper ── */
+.go-deeper {
+  background: #F0EDF6; border: 2px solid #D8D0E8; border-radius: 16px;
+  margin-bottom: 22px; overflow: hidden;
+}
+.go-deeper summary {
+  padding: 14px 20px; font-size: 16px; font-weight: 800; color: #7B5EA7;
+  cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px;
+}
+.go-deeper summary::before { content: '🔭'; font-size: 20px; }
+.go-deeper[open] summary::before { content: '🔭'; }
+.gd-body { padding: 0 20px 18px; }
+.gd-body p { font-size: 16px; color: #5A4D3E; line-height: 1.7; margin-bottom: 10px; }
+
+/* ── Checklist ── */
+.checklist-item.checked .check-icon { background: #1B4332 !important; border-color: #1B4332 !important; color: #fff; }
+
+/* ── Back to Top ── */
+#backToTop {
+  position: fixed; bottom: 2rem; right: 2rem;
+  opacity: 0; visibility: hidden;
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.6rem 1.2rem; border-radius: 999px;
+  background: #0288D1; color: #fff;
+  font-weight: 600; font-family: inherit; font-size: 14px;
+  border: none; cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+  z-index: 500;
+}
+#backToTop.show { opacity: 1; visibility: visible; }
+#backToTop:hover { transform: translateY(-2px); }
+
+/* ── Footer ── */
+.footer {
+  background: #1B4332; padding: 18px 24px; text-align: center;
+}
+.footer-line1 { font-size: 14px; color: #95D5B2; font-weight: 700; }
+.footer-line1 span { color: #fff; }
+.footer-line2 { font-size: 13px; color: #95D5B2; margin-top: 4px; }
+.footer-line3 { font-size: 11px; color: rgba(149,213,178,0.6); margin-top: 4px; }
+
+/* ── Scroll Reveal ── */
+.scroll-reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.scroll-reveal.revealed { opacity: 1; transform: none; }
+
+/* ── Confetti ── */
+#confettiCanvas {
+  position: fixed; inset: 0; pointer-events: none; z-index: 9000;
+  width: 100%; height: 100%;
+}
+
+@media (max-width: 600px) {
+  .intro-2col { grid-template-columns: 1fr; padding: 12px 14px 0; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .tab-panel { padding: 14px 14px 24px; }
+  .header-title { font-size: 22px; }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="confettiCanvas"></canvas>
+<button id="backToTop" type="button" aria-label="Back to top">⛅ Back to Top</button>
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- ═══════════ PROGRESS BAR ═══════════ -->
+<div class="progress-wrap">
+  <span class="progress-label">⛅ Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">Investigation: Graphing Weekly Weather</div>
+  <div class="header-badge">
+    <span>⛅</span>
+    <span>Lesson 2.02</span>
+  </div>
+</div>
+
+<!-- ═══════════ HERO BANNER ═══════════ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Weather graphing scene with bar chart, clouds, and rain">
+
+  <!-- Sky gradient background -->
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#87CEEB"/>
+      <stop offset="60%" stop-color="#B8E0F7"/>
+      <stop offset="100%" stop-color="#D4ECFF"/>
+    </linearGradient>
+    <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C8DEB0"/>
+      <stop offset="100%" stop-color="#A8C880"/>
+    </linearGradient>
+  </defs>
+  <rect width="920" height="260" fill="url(#skyGrad)"/>
+
+  <!-- Ground strip -->
+  <rect y="218" width="920" height="42" fill="url(#groundGrad)"/>
+
+  <!-- Sun (left side) -->
+  <g class="hero-sun-glow">
+    <circle cx="820" cy="58" r="36" fill="#FDD835" opacity="0.9"/>
+    <circle cx="820" cy="58" r="46" fill="#FDD835" opacity="0.25"/>
+    <!-- Sun rays -->
+    <g stroke="#FDD835" stroke-width="3" opacity="0.7">
+      <line x1="820" y1="5"  x2="820" y2="18"/>
+      <line x1="820" y1="98" x2="820" y2="111"/>
+      <line x1="767" y1="58" x2="780" y2="58"/>
+      <line x1="860" y1="58" x2="873" y2="58"/>
+      <line x1="783" y1="21" x2="793" y2="31"/>
+      <line x1="847" y1="85" x2="857" y2="95"/>
+      <line x1="857" y1="21" x2="847" y2="31"/>
+      <line x1="793" y1="85" x2="783" y2="95"/>
+    </g>
+  </g>
+
+  <!-- Cloud 1 (drifting right) -->
+  <g class="hero-cloud-1">
+    <ellipse cx="160" cy="60" rx="65" ry="28" fill="#fff" opacity="0.9"/>
+    <ellipse cx="130" cy="68" rx="42" ry="22" fill="#fff" opacity="0.9"/>
+    <ellipse cx="192" cy="68" rx="38" ry="20" fill="#fff" opacity="0.9"/>
+    <!-- Rain from cloud 1 -->
+    <g class="rain-1" opacity="0.7">
+      <line x1="138" y1="90" x2="132" y2="110" stroke="#5BA4D0" stroke-width="2" stroke-linecap="round"/>
+      <line x1="152" y1="90" x2="146" y2="110" stroke="#5BA4D0" stroke-width="2" stroke-linecap="round"/>
+      <line x1="166" y1="90" x2="160" y2="110" stroke="#5BA4D0" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g class="rain-2" opacity="0.7">
+      <line x1="145" y1="88" x2="139" y2="108" stroke="#5BA4D0" stroke-width="2" stroke-linecap="round"/>
+      <line x1="159" y1="88" x2="153" y2="108" stroke="#5BA4D0" stroke-width="2" stroke-linecap="round"/>
+      <line x1="173" y1="88" x2="167" y2="108" stroke="#5BA4D0" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Cloud 2 (drifting left) -->
+  <g class="hero-cloud-2">
+    <ellipse cx="460" cy="42" rx="55" ry="22" fill="#fff" opacity="0.75"/>
+    <ellipse cx="435" cy="50" rx="36" ry="18" fill="#fff" opacity="0.75"/>
+    <ellipse cx="485" cy="50" rx="32" ry="17" fill="#fff" opacity="0.75"/>
+  </g>
+
+  <!-- Bar graph / clipboard (floating) -->
+  <g class="hero-float">
+    <!-- Clipboard background -->
+    <rect x="280" y="50" width="180" height="160" rx="10" fill="#FFFDE7" stroke="#E0C040" stroke-width="2.5"/>
+    <!-- Clipboard clip -->
+    <rect x="346" y="42" width="48" height="16" rx="8" fill="#BDBDBD"/>
+    <rect x="354" y="46" width="32" height="8" rx="4" fill="#9E9E9E"/>
+    <!-- Graph title -->
+    <text x="370" y="77" text-anchor="middle" font-family="Nunito,Arial,sans-serif" font-size="11" font-weight="800" fill="#1565C0">Weekly Temps (°F)</text>
+    <!-- Y-axis -->
+    <line x1="302" y1="84" x2="302" y2="176" stroke="#9E9E9E" stroke-width="1.5"/>
+    <!-- X-axis -->
+    <line x1="302" y1="176" x2="448" y2="176" stroke="#9E9E9E" stroke-width="1.5"/>
+    <!-- Bars (Mon–Fri) -->
+    <!-- Mon: 60°F -->
+    <rect x="310" y="140" width="20" height="36" rx="3" fill="#2196F3" opacity="0.85"/>
+    <!-- Tue: 72°F -->
+    <rect x="336" y="124" width="20" height="52" rx="3" fill="#4CAF50" opacity="0.85"/>
+    <!-- Wed: 80°F -->
+    <rect x="362" y="112" width="20" height="64" rx="3" fill="#FF9800" opacity="0.85"/>
+    <!-- Thu: 68°F -->
+    <rect x="388" y="132" width="20" height="44" rx="3" fill="#F44336" opacity="0.85"/>
+    <!-- Fri: 55°F -->
+    <rect x="414" y="148" width="20" height="28" rx="3" fill="#9C27B0" opacity="0.85"/>
+    <!-- X labels -->
+    <text x="320" y="187" text-anchor="middle" font-family="Nunito,Arial,sans-serif" font-size="9" fill="#555">M</text>
+    <text x="346" y="187" text-anchor="middle" font-family="Nunito,Arial,sans-serif" font-size="9" fill="#555">T</text>
+    <text x="372" y="187" text-anchor="middle" font-family="Nunito,Arial,sans-serif" font-size="9" fill="#555">W</text>
+    <text x="398" y="187" text-anchor="middle" font-family="Nunito,Arial,sans-serif" font-size="9" fill="#555">Th</text>
+    <text x="424" y="187" text-anchor="middle" font-family="Nunito,Arial,sans-serif" font-size="9" fill="#555">F</text>
+    <!-- Pencil (all parts grouped under one transform) -->
+    <g transform="rotate(-20, 472, 170)">
+      <rect x="469" y="134" width="6" height="6" rx="1" fill="#EF9A9A"/>
+      <rect x="469" y="140" width="6" height="3" fill="#9E9E9E"/>
+      <rect x="469" y="143" width="6" height="32" rx="1" fill="#F9A825"/>
+      <rect x="469" y="175" width="6" height="5" fill="#D7B26A"/>
+      <polygon points="469,180 475,180 472,190" fill="#2B1D12"/>
+    </g>
+  </g>
+
+  <!-- Shimmer lines on ground -->
+  <g class="hero-shimmer">
+    <line x1="0" y1="228" x2="920" y2="228" stroke="#fff" stroke-width="1.5" opacity="0.4"/>
+    <line x1="0" y1="238" x2="920" y2="238" stroke="#fff" stroke-width="1" opacity="0.25"/>
+  </g>
+
+
+
+</svg>
+</div>
+
+<!-- ═══════════ INFO STRIP ═══════════ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q1 &middot; Unit 2</div>
+      <div class="info-detail">Weather, Climate &amp; Earth Systems</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF9E8;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 2</div>
+      <div class="info-detail">Lesson 2.02 &mdash; 3rd Grade Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">📊</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Data &amp; Patterns</div>
+      <div class="info-detail">Graphing weather, finding patterns</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">NGSS 3-ESS2-1</div>
+      <div class="info-detail">Earth's Systems: Weather &amp; Climate</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ INTRO 2-COL CARDS ═══════════ -->
+<div class="intro-2col">
+
+  <!-- Essential Question -->
+  <div class="card theme-forest">
+    <div class="card-head">
+      <div class="card-head-icon">📊</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This…</div>
+          <div class="question">"How can a graph help a scientist see something that a list of numbers might not?"</div>
+        </div>
+      </div>
+      <p>Keep this question in mind as you work through the investigation. By the end, you should have a good answer — and some data to prove it!</p>
+    </div>
+  </div>
+
+  <!-- I Can Statements -->
+  <div class="card theme-sky">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#0288D1;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> organize weather data in a table.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#0277BD;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> create a bar graph to show a week of temperatures.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#01579B;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> identify a weather pattern and use it to make a prediction.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════ NEED STRIP ═══════════ -->
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Pencil &amp; colored pencils</span>
+  <span class="need-chip"><span>📏</span>Ruler</span>
+  <span class="need-chip"><span>📊</span>Weather data (from Lesson 2.01)</span>
+
+</div>
+
+<!-- ═══════════ TAB BAR ═══════════ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary</button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson</button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore</button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check</button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment</button>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 1: VOCABULARY                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <!-- Welcome Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to the Weather Investigation!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🎬</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 2-2-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 1: NOTICE & WONDER -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#52B788;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Notice &amp; Wonder</div>
+        <div class="act-subtitle">What do you already know about charts and graphs?</div>
+      </div>
+      <div class="act-time" style="background:#52B788;">⏱ 5 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>Take a look at these two things — a list of temperatures and a bar graph of the same temperatures.</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;">
+        <div style="background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;padding:14px;">
+          <div style="font-size:13px;color:#9A8E82;font-weight:700;margin-bottom:10px;text-transform:uppercase;">List of Temperatures</div>
+          <div style="font-size:15px;color:#2B1D12;line-height:2;">
+            Monday: 60°F<br>
+            Tuesday: 72°F<br>
+            Wednesday: 80°F<br>
+            Thursday: 68°F<br>
+            Friday: 55°F
+          </div>
+        </div>
+        <div style="background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px;">
+          <div style="font-size:13px;color:#0288D1;font-weight:700;margin-bottom:8px;text-transform:uppercase;">Bar Graph</div>
+          <svg viewBox="0 0 200 130" style="width:100%;height:auto;">
+            <line x1="28" y1="10" x2="28" y2="115" stroke="#9E9E9E" stroke-width="1.5"/>
+            <line x1="28" y1="115" x2="195" y2="115" stroke="#9E9E9E" stroke-width="1.5"/>
+            <rect x="35"  y="79" width="22" height="36" rx="3" fill="#2196F3" opacity="0.85"/>
+            <rect x="65"  y="63" width="22" height="52" rx="3" fill="#4CAF50" opacity="0.85"/>
+            <rect x="95"  y="51" width="22" height="64" rx="3" fill="#FF9800" opacity="0.85"/>
+            <rect x="125" y="71" width="22" height="44" rx="3" fill="#F44336" opacity="0.85"/>
+            <rect x="155" y="87" width="22" height="28" rx="3" fill="#9C27B0" opacity="0.85"/>
+            <text x="46"  y="125" text-anchor="middle" font-size="9" fill="#555" font-family="Nunito,sans-serif">M</text>
+            <text x="76"  y="125" text-anchor="middle" font-size="9" fill="#555" font-family="Nunito,sans-serif">Tu</text>
+            <text x="106" y="125" text-anchor="middle" font-size="9" fill="#555" font-family="Nunito,sans-serif">W</text>
+            <text x="136" y="125" text-anchor="middle" font-size="9" fill="#555" font-family="Nunito,sans-serif">Th</text>
+            <text x="166" y="125" text-anchor="middle" font-size="9" fill="#555" font-family="Nunito,sans-serif">F</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">👀</span>
+        <div>
+          <div class="label">In Your Science Notebook</div>
+          <div class="question">"Write 2 things you notice — one about the list and one about the graph. Then write this question: Which one makes it easier to see which day was warmest? Why?"</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>Both the list and the graph show the exact same information — but one of them might make the pattern a lot easier to spot. We'll find out why today.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- VOCABULARY FLIP CARDS -->
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>These are the words you'll use today as you work like a real meteorologist. <strong>Tap each card</strong> to flip it and read the definition.</p>
+
+      <div class="vocab-grid">
+
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">📋</div><div class="fc-word">data</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">data</div><div class="fc-def">Information collected by observing or measuring — like temperatures, rainfall amounts, or cloud types.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">📊</div><div class="fc-word">graph</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">graph</div><div class="fc-def">A picture that shows information in a visual way, making it easier to compare and understand.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">📈</div><div class="fc-word">bar graph</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">bar graph</div><div class="fc-def">A type of graph that uses bars of different heights to compare information. Taller bars mean bigger values.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🔁</div><div class="fc-word">pattern</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">pattern</div><div class="fc-def">Something that repeats in a predictable way. Scientists look for patterns to understand the natural world.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🔮</div><div class="fc-word">prediction</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">prediction</div><div class="fc-def">A statement about what will probably happen, based on patterns in your evidence — not just a guess.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌡️</div><div class="fc-word">temperature</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">temperature</div><div class="fc-def">A measure of how hot or cold something is. We measure temperature in degrees Fahrenheit (°F) or Celsius (°C).</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copywork -->
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">📓</span>
+        <p>Copy this sentence carefully into your science notebook:<br><strong>"Scientists record and graph data so they can find patterns and make predictions."</strong></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button>
+  </div>
+
+</div><!-- /tab-vocab -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 2: THE LESSON (lighter for .02 investigation lessons)  -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+
+  <!-- Lesson Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">📖</span>
+      <div>
+        <div class="video-wrap-type">Activity 2 · Core Lesson</div>
+        <div class="video-wrap-title">Why Scientists Use Graphs</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">📖</div>
+        <div class="video-placeholder-text">Core lesson video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 2-2-lesson-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- UPLOADED LESSON IMAGE -->
+  <div class="lesson-figure">
+    <div class="lesson-figure-label">📷 In the Classroom · Real Investigation</div>
+    <img src="images/2-02-graphing-weather-student.png"
+         alt="A student filling out a weather observation log and bar graph worksheet at a desk, with a laptop showing a colorful weekly temperature bar chart and a spiral-bound weather observation notebook nearby" />
+    <div class="lesson-figure-caption">
+      This is exactly what you'll be doing today. Notice the <strong>weather observation log</strong> on the right — that's where raw data gets collected. Then it gets turned into the <strong>bar graph</strong> on the left, which makes the pattern much easier to see.
+    </div>
+  </div>
+
+  <!-- ACTIVITY 2: CORE LESSON CONTENT (brief for .02) -->
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#F9A825;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📖 Background: Why Scientists Graph Data</div>
+        <div class="act-subtitle">A little reading before you start the investigation.</div>
+      </div>
+      <div class="act-time" style="background:#F9A825;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- SECTION 1 -->
+      <div class="card theme-sky" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">📋</div>
+          <div>
+            <div class="card-head-label">Section 1</div>
+            <div class="card-head-title">Data Is Just the Beginning</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>When scientists study the weather, they collect <span class="vtip">data<span class="vtip-box"><span class="vtip-word">data</span>Information collected by observing or measuring.</span></span> — things like how warm it was, whether it rained, and what the wind was doing. This is important work. But a long list of numbers can be hard to read.</p>
+          <p>Imagine you wrote down the temperature every day for a whole year. That's 365 numbers. Looking through that list for a pattern would take a long time. That's where graphs come in.</p>
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"Have you ever seen someone look at a chart or graph to make a decision — like checking a weather app? What were they trying to figure out?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2 -->
+      <div class="card theme-forest" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">📈</div>
+          <div>
+            <div class="card-head-label">Section 2</div>
+            <div class="card-head-title">How a Bar Graph Works</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>A <span class="vtip">bar graph<span class="vtip-box"><span class="vtip-word">bar graph</span>A graph that uses bars of different heights to compare information.</span></span> turns numbers into shapes you can compare with your eyes — fast. Each bar stands for one category (like a day of the week). The height of the bar shows the value (like the temperature).</p>
+          <p>You can look at a good bar graph for three seconds and answer questions that would take three minutes to work out from a list. The tallest bar? That's the highest temperature. A bunch of bars the same height? That's a steady pattern.</p>
+        </div>
+      </div>
+
+      <!-- SECTION 3 -->
+      <div class="card theme-sky" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🔁</div>
+          <div>
+            <div class="card-head-label">Section 3</div>
+            <div class="card-head-title">Patterns Lead to Predictions</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Here's what makes graphs really powerful: once you can see a <span class="vtip">pattern<span class="vtip-box"><span class="vtip-word">pattern</span>Something that repeats in a predictable way.</span></span>, you can make a <span class="vtip">prediction<span class="vtip-box"><span class="vtip-word">prediction</span>A statement about what will probably happen, based on evidence.</span></span>. If temperatures have been rising all week and the sky is clear, you might predict it will be warm tomorrow.</p>
+          <p>That's not guessing — that's science. Real meteorologists do this every time they say "expect a high of 75° on Tuesday." They found the pattern, and they used it to look ahead.</p>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE DIAGRAM: bar graph with clickable zones -->
+      <div class="diagram-wrap scroll-reveal">
+        <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
+          📊 Tap a bar to learn what it tells you
+        </div>
+        <div class="diagram-interactive">
+          <svg viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;">
+
+            <!-- Background -->
+            <rect width="860" height="300" fill="#F4F8FF" rx="10"/>
+
+            <!-- Grid lines -->
+            <g stroke="#D0D8E8" stroke-width="1" stroke-dasharray="4 3">
+              <line x1="80" y1="50" x2="800" y2="50"/>
+              <line x1="80" y1="90" x2="800" y2="90"/>
+              <line x1="80" y1="130" x2="800" y2="130"/>
+              <line x1="80" y1="170" x2="800" y2="170"/>
+              <line x1="80" y1="210" x2="800" y2="210"/>
+            </g>
+
+            <!-- Y-axis labels -->
+            <text x="68" y="54" text-anchor="end" font-size="13" fill="#9A8E82" font-weight="700">90°</text>
+            <text x="68" y="94" text-anchor="end" font-size="13" fill="#9A8E82" font-weight="700">80°</text>
+            <text x="68" y="134" text-anchor="end" font-size="13" fill="#9A8E82" font-weight="700">70°</text>
+            <text x="68" y="174" text-anchor="end" font-size="13" fill="#9A8E82" font-weight="700">60°</text>
+            <text x="68" y="214" text-anchor="end" font-size="13" fill="#9A8E82" font-weight="700">50°</text>
+
+            <!-- Axes -->
+            <line x1="80" y1="45" x2="80" y2="250" stroke="#9E9E9E" stroke-width="2"/>
+            <line x1="80" y1="250" x2="810" y2="250" stroke="#9E9E9E" stroke-width="2"/>
+
+            <!-- Axis title -->
+            <text x="430" y="290" text-anchor="middle" font-size="14" fill="#1B4332" font-weight="800">Day of the Week</text>
+            <text x="22" y="160" text-anchor="middle" font-size="13" fill="#1B4332" font-weight="700" transform="rotate(-90,22,160)">Temperature (°F)</text>
+
+            <!-- Graph title -->
+            <text x="430" y="30" text-anchor="middle" font-size="16" fill="#0D47A1" font-weight="900">Weekly Temperatures</text>
+
+            <!-- BAR POSITIONS: each bar is 80px wide, with 60px gap between -->
+            <!-- 5 days: Mon, Tue, Wed, Thu, Fri -->
+            <!-- scale: 50°F=210px, 90°F=50px → 4px per degree, 50° baseline is at y=210 -->
+            <!-- Mon: 60°F → height=40 → y=170 -->
+            <rect x="120" y="170" width="80" height="80" rx="6" fill="#42A5F5" opacity="0.9"/>
+            <text x="160" y="162" text-anchor="middle" font-size="14" fill="#1565C0" font-weight="900">60°</text>
+            <text x="160" y="270" text-anchor="middle" font-size="14" fill="#2B1D12" font-weight="800">Mon</text>
+
+            <!-- Tue: 72°F → height=88 → y=122 -->
+            <rect x="240" y="122" width="80" height="128" rx="6" fill="#66BB6A" opacity="0.9"/>
+            <text x="280" y="114" text-anchor="middle" font-size="14" fill="#2E7D32" font-weight="900">72°</text>
+            <text x="280" y="270" text-anchor="middle" font-size="14" fill="#2B1D12" font-weight="800">Tue</text>
+
+            <!-- Wed: 80°F → height=120 → y=90 -->
+            <rect x="360" y="90" width="80" height="160" rx="6" fill="#FFA726" opacity="0.9"/>
+            <text x="400" y="82" text-anchor="middle" font-size="14" fill="#E65100" font-weight="900">80°</text>
+            <text x="400" y="270" text-anchor="middle" font-size="14" fill="#2B1D12" font-weight="800">Wed</text>
+
+            <!-- Thu: 68°F → height=72 → y=138 -->
+            <rect x="480" y="138" width="80" height="112" rx="6" fill="#EF5350" opacity="0.9"/>
+            <text x="520" y="130" text-anchor="middle" font-size="14" fill="#B71C1C" font-weight="900">68°</text>
+            <text x="520" y="270" text-anchor="middle" font-size="14" fill="#2B1D12" font-weight="800">Thu</text>
+
+            <!-- Fri: 55°F → height=20 → y=190 -->
+            <rect x="600" y="190" width="80" height="60" rx="6" fill="#AB47BC" opacity="0.9"/>
+            <text x="640" y="182" text-anchor="middle" font-size="14" fill="#6A1B9A" font-weight="900">55°</text>
+            <text x="640" y="270" text-anchor="middle" font-size="14" fill="#2B1D12" font-weight="800">Fri</text>
+
+            <!-- INVISIBLE HOTSPOT RECTS over each bar -->
+            <rect class="hotspot" x="110" y="45" width="100" height="215"
+                  data-part="Monday — 60°F"
+                  data-info="Monday's temperature was 60°F — a mild start to the week. The bar is about mid-height. Scientists would write this value in their data table before plotting the bar."/>
+
+            <rect class="hotspot" x="230" y="45" width="100" height="215"
+                  data-part="Tuesday — 72°F"
+                  data-info="Tuesday was warmer at 72°F. The bar is noticeably taller than Monday's. When you see bars getting taller from left to right, you're spotting a rising temperature pattern."/>
+
+            <rect class="hotspot" x="350" y="45" width="100" height="215"
+                  data-part="Wednesday — 80°F"
+                  data-info="Wednesday was the warmest day at 80°F — the tallest bar on the graph. Scientists call this the peak. A bar graph makes the peak easy to find with just one look."/>
+
+            <rect class="hotspot" x="470" y="45" width="100" height="215"
+                  data-part="Thursday — 68°F"
+                  data-info="Thursday dropped to 68°F. A shorter bar after a taller one shows temperatures are falling. This change is part of the pattern — mid-week is often warmer."/>
+
+            <rect class="hotspot" x="590" y="45" width="100" height="215"
+                  data-part="Friday — 55°F"
+                  data-info="Friday was the coolest day at 55°F. Looking at the whole graph, the pattern shows temperatures rising to a peak mid-week, then falling by Friday. A scientist could use this pattern to predict next week!"/>
+
+          </svg>
+
+          <div class="diagram-info-panel" id="diagramPanel">
+            <span class="dip-word" id="diagramWord"></span>
+            <span id="diagramInfo"></span>
+          </div>
+        </div>
+        <div class="diagram-tap-hint">Tap any bar to learn what it tells you about weather patterns.</div>
+        <div class="diagram-caption">Sample weekly temperature data. Each bar shows one day. Tap a bar to explore what scientists read from the data.</div>
+      </div>
+
+      <!-- Key Concept Box -->
+      <div class="key-concept scroll-reveal">
+        <div class="kc-label">⭐ Key Concept</div>
+        <p><strong>Scientists record and graph data to find patterns they might miss in a list of numbers.</strong> When the same pattern repeats week after week, scientists can use it to predict what the weather will probably do next.</p>
+        <p>Patterns are everywhere in weather — and bar graphs are one of the best tools for making them visible.</p>
+      </div>
+
+      <!-- Mind-Blowing Fact -->
+      <div class="mind-blow scroll-reveal">
+        <div class="mind-blow-icon">🤯</div>
+        <div class="mind-blow-content">
+          <div class="mind-blow-label">Amazing Science Fact</div>
+          <div class="mind-blow-text">There are more than <strong>10,000 weather stations</strong> in the United States alone — and they collect data every single hour. That means scientists graph millions of data points every day just to figure out tomorrow's forecast!</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Go Deeper -->
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper</summary>
+    <div class="gd-body">
+      <p>Bar graphs aren't the only kind scientists use. A <strong>line graph</strong> connects points with a line and is great for showing how something changes over time — like a temperature rising throughout a single day. A <strong>pictograph</strong> uses tiny pictures instead of bars.</p>
+      <p>Meteorologists also use something called a <strong>scatter plot</strong> to see if two things are connected — like whether humidity and rainfall go up together. If the dots all slant in the same direction, there's a relationship worth investigating further.</p>
+      <p>Next time you see a weather forecast, look carefully at the graphs they use. What kind are they? What pattern are they trying to show you?</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+
+</div><!-- /tab-lesson -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 3: EXPLORE (Main investigation for .02 lesson)        -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+
+  <!-- Explore Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🔬</span>
+      <div>
+        <div class="video-wrap-type">Activity 3 · Investigation</div>
+        <div class="video-wrap-title">Let's Graph Some Weather!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🔬</div>
+        <div class="video-placeholder-text">Investigation walkthrough video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 2-2-exploration-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 3: INVESTIGATION -->
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#0288D1;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🔬 Investigation: Graphing Weekly Weather</div>
+        <div class="act-subtitle">Organize data, build a bar graph, find a pattern, make a prediction</div>
+      </div>
+      <div class="act-time" style="background:#0288D1;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="callout callout-tip" style="margin-bottom:18px;">
+        <span class="callout-icon">🎒</span>
+        <p><strong>You'll need:</strong> Your science notebook, pencil, colored pencils, and a ruler. Use the weather data from Lesson 2.01 if you have it — or use the sample data table below.</p>
+      </div>
+
+      <!-- Sample Data Table -->
+      <div style="background:#EAF8FD;border:2px solid #0288D1;border-radius:14px;padding:16px;margin-bottom:20px;">
+        <div style="font-size:13px;color:#0288D1;font-weight:800;text-transform:uppercase;margin-bottom:12px;">📊 Sample Weather Data (use this if you don't have your own)</div>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:15px;">
+            <thead>
+              <tr style="background:#0288D1;color:#fff;">
+                <th style="padding:8px 12px;text-align:left;border-radius:8px 0 0 0;">Day</th>
+                <th style="padding:8px 12px;text-align:center;">Temperature (°F)</th>
+                <th style="padding:8px 12px;text-align:center;">Conditions</th>
+                <th style="padding:8px 12px;text-align:center;border-radius:0 8px 0 0;">Precipitation?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background:#fff;border-bottom:1px solid #E8DDD2;">
+                <td style="padding:8px 12px;font-weight:700;">Monday</td>
+                <td style="padding:8px 12px;text-align:center;">60°F</td>
+                <td style="padding:8px 12px;text-align:center;">☁️ Cloudy</td>
+                <td style="padding:8px 12px;text-align:center;">No</td>
+              </tr>
+              <tr style="background:#F8FEFF;border-bottom:1px solid #E8DDD2;">
+                <td style="padding:8px 12px;font-weight:700;">Tuesday</td>
+                <td style="padding:8px 12px;text-align:center;">72°F</td>
+                <td style="padding:8px 12px;text-align:center;">⛅ Partly Cloudy</td>
+                <td style="padding:8px 12px;text-align:center;">No</td>
+              </tr>
+              <tr style="background:#fff;border-bottom:1px solid #E8DDD2;">
+                <td style="padding:8px 12px;font-weight:700;">Wednesday</td>
+                <td style="padding:8px 12px;text-align:center;">80°F</td>
+                <td style="padding:8px 12px;text-align:center;">☀️ Sunny</td>
+                <td style="padding:8px 12px;text-align:center;">No</td>
+              </tr>
+              <tr style="background:#F8FEFF;border-bottom:1px solid #E8DDD2;">
+                <td style="padding:8px 12px;font-weight:700;">Thursday</td>
+                <td style="padding:8px 12px;text-align:center;">68°F</td>
+                <td style="padding:8px 12px;text-align:center;">⛅ Partly Cloudy</td>
+                <td style="padding:8px 12px;text-align:center;">No</td>
+              </tr>
+              <tr style="background:#fff;">
+                <td style="padding:8px 12px;font-weight:700;">Friday</td>
+                <td style="padding:8px 12px;text-align:center;">55°F</td>
+                <td style="padding:8px 12px;text-align:center;">🌧 Rainy</td>
+                <td style="padding:8px 12px;text-align:center;">Yes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p>Follow each step carefully. Record everything in your science notebook as you go.</p>
+
+      <div style="position:relative; margin:16px 0;">
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#0288D1,#0277BD);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(2,136,209,0.3);">1</div>
+          <div style="flex:1;background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Copy the data table.</strong> In your notebook, draw a table with four columns: Day, Temperature (°F), Conditions, and Precipitation. Copy in the data — either from the sample above or from your own Lesson 2.01 weather log.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#0277BD,#01579B);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(2,119,189,0.3);">2</div>
+          <div style="flex:1;background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Set up your bar graph.</strong> On a fresh notebook page, draw two axes — a vertical line (going up) and a horizontal line (going across). Label the horizontal axis "Day of the Week" and mark Monday through Friday. Label the vertical axis "Temperature (°F)" and mark it from 40°F at the bottom to 90°F at the top, going up in steps of 10.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#01579B,#0288D1);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(1,87,155,0.3);">3</div>
+          <div style="flex:1;background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Draw and color the bars.</strong> For each day, find the right temperature on your vertical axis and draw a bar up to that height. Use a different color for each bar. Use your ruler to keep the bars straight and the same width. Write the temperature number at the top of each bar.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#0288D1,#4DD0E1);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(77,208,225,0.3);">4</div>
+          <div style="flex:1;background:#E0F7FA;border:2px solid #B2EBF2;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Add a title and weather symbols.</strong> Give your graph a title at the top — something like "Weekly Temperatures." Then, below the day labels, draw a small weather symbol for each day: ☀️ sunny, ⛅ partly cloudy, ☁️ cloudy, 🌧 rainy.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#4DD0E1,#F9A825);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(249,168,37,0.3);">5</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Find the pattern and make a prediction.</strong> Look at your finished graph. In your notebook, answer these questions in complete sentences: Which day was warmest? Which was coolest? Describe the overall pattern — did temperatures rise, fall, or rise and then fall? Based on this pattern, what do you predict the weather will be like on Saturday?</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">💭</span>
+        <div>
+          <div class="label">Think Like a Meteorologist</div>
+          <div class="question">"Look at your graph. If you didn't have the numbers written at the top of each bar, could you still tell which day was warmest just by looking? What does that tell you about why graphs are useful?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RECORD YOUR THINKING -->
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#2E7D32;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">📓 Record Your Thinking</div>
+        <div class="act-subtitle">Organize what you discovered in your notebook.</div>
+      </div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>In your science notebook, write your answers to these questions in complete sentences. Be specific — "it went up and then down" is more useful than "it changed."</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#0288D1;">1</span>
+        <span class="pq-text">Look at your bar graph. Which day had the highest temperature? Which had the lowest? Write the exact temperatures.</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#0288D1;">2</span>
+        <span class="pq-text">Describe the pattern you see in the graph. Did temperatures rise, fall, or do something more complicated across the week? Be specific about when.</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#0288D1;">3</span>
+        <span class="pq-text">Write your prediction for Saturday's temperature. Explain what pattern in your graph supports that prediction — not just what you think the weather will be, but why.</span>
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">🗣</span>
+        <p>Tell the story of your investigation from beginning to end — what you did, what your graph showed, and what you figured out. Use your notebook notes to help you. A good scientist can explain their work to someone else!</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DISCUSS -->
+  <div class="card theme-meadow scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">💬</div>
+      <div>
+        <div class="card-head-label">Discussion</div>
+        <div class="card-head-title">Think It Through</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Think through each question on your own. Write your answers in complete sentences in your science notebook.</p>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Question 1 — Observe</div>
+          <div class="question">"Look at your finished graph. What's the difference in temperature between the warmest day and the coolest day? Is that a big difference or a small one?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">💡</span>
+        <div>
+          <div class="label">Question 2 — Evidence</div>
+          <div class="question">"How does your bar graph make the pattern easier to see than the data table does? What in the graph supports that idea?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🌲</span>
+        <div>
+          <div class="label">Question 3 — Connect</div>
+          <div class="question">"If you graphed temperatures for the same week every year for ten years, what would you be looking for? How might that help you plan something — like a school picnic?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🔁</span>
+        <div>
+          <div class="label">Question 4 — Improve</div>
+          <div class="question">"What other type of weather data would you want to graph if you could? What patterns might you find?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+
+</div><!-- /tab-explore -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 4: SELF-CHECK QUIZ                                    -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#0288D1;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">⛅</div>
+      <div style="flex:1;">
+        <div style="font-size:19px;color:#1B4332;font-weight:800;line-height:1.2;">🧠 Quick Self-Check</div>
+        <div style="font-size:12px;color:#9A8E82;">Not graded — just for you! See how well you're understanding the lesson.</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+
+      <!-- QUESTION 1 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. What does a bar graph help scientists do?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Measure the temperature outside</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Compare data visually so patterns are easier to see</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Predict the weather without collecting any data</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌲 That's right! Bar graphs are visual tools — they turn numbers into shapes you can compare with your eyes in just a few seconds.</div>
+        <div class="quiz-feedback fb-wrong">💡 Think back to the Notice &amp; Wonder warm-up. Which was easier to read — the list of temperatures or the bar graph? That's what bar graphs are for.</div>
+      </div>
+
+      <!-- QUESTION 2 -->
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">2. A scientist notices temperatures rise each day for five days. What can she most likely do with that pattern?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>She can prove it will never get cold again</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>She can ignore the pattern and collect more data</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>She can predict that the next day will probably be warm too</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌿 Exactly! A prediction based on a pattern isn't a guarantee — but it's a reasonable, evidence-based statement. That's science!</div>
+        <div class="quiz-feedback fb-wrong">💡 Remember — patterns lead to predictions. If temperatures have been going up every day, what would you expect tomorrow to be like?</div>
+      </div>
+
+      <!-- QUESTION 3 -->
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-text">3. Which of these is an example of a weather pattern?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>It rains almost every afternoon in the summer</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>It snowed once on a Tuesday last year</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>A thermometer shows 72°F right now</div>
+        </div>
+        <div class="quiz-feedback fb-correct">⭐ Yes! A pattern is something that repeats — not a single event. "Almost every afternoon" tells you it happens again and again, which means you can predict it.</div>
+        <div class="quiz-feedback fb-wrong">💡 A pattern has to repeat. Something that happened once isn't a pattern yet — and a single temperature reading is just one piece of data, not a pattern.</div>
+      </div>
+
+      <!-- Score Display -->
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum">0</div>
+        <div class="quiz-score-label">out of 3</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+
+        <div class="video-feedback" id="quizVideoCorrect" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">⭐</span>
+              <div>
+                <div class="video-wrap-type">Quiz Feedback · Perfect Score</div>
+                <div class="video-wrap-title">You nailed it — great thinking!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">⭐</div>
+                <div class="video-placeholder-text">Celebration video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 2-2-quiz-perfect --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">📖</span>
+              <div>
+                <div class="video-wrap-type">Quiz Feedback · Review</div>
+                <div class="video-wrap-title">Let's go over the tricky parts together.</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">📖</div>
+                <div class="video-placeholder-text">Review video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 2-2-quiz-review --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+
+</div><!-- /tab-quiz -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 5: ASSIGNMENT                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <!-- Assignment Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">✍️</span>
+      <div>
+        <div class="video-wrap-type">Activity 5 · Assignment</div>
+        <div class="video-wrap-title">Here's What to Submit</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">✍️</div>
+        <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 2-2-assignment-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-card act-check scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#7B5EA7;">5</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment</div>
+        <div class="act-subtitle">Show what you found in your investigation.</div>
+      </div>
+      <div class="act-time" style="background:#7B5EA7;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- PART A -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔍 Part A — Read the Graph</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use the graph you made in the investigation — or the diagram on the Lesson tab — to answer these questions.</p>
+
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">Which day had the highest temperature? What was that temperature?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">Which day had the lowest temperature? What was the difference between the warmest and coolest days?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">On which day did it rain? Was that day warmer or cooler than the day before it?</span></div>
+
+      <!-- PART B -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🚀 Part B — Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer each question in <strong>complete sentences</strong>. Use your science vocabulary!</p>
+
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">4</span><span class="pq-text">Describe the temperature pattern you see in your graph. What did temperatures do over the course of the week?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">5</span><span class="pq-text">How is a bar graph different from just writing down a list of numbers? Why does that difference matter for a scientist?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">6</span><span class="pq-text">What prediction would you make about next Monday's temperature, based on this week's pattern? Explain your reasoning.</span></div>
+
+      <!-- WRITE & EXPLAIN -->
+      <div class="key-concept scroll-reveal" style="background:#FFF9E8;border-color:#F0E4C0;margin-top:20px;">
+        <div class="kc-label" style="color:#F9A825;">✍️ Write and Explain</div>
+        <p style="font-size:16px;font-weight:700;color:#1B4332;margin-bottom:14px;">Look at your finished bar graph. What weather pattern does it show — and how could a meteorologist use that pattern?</p>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What do you think?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"The pattern I see in my graph is…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What did you observe that supports your thinking?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I know this because when I looked at my graph, I noticed…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">Why does that make sense?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="background:#EEF8F0;border-radius:10px;padding:10px 14px;border-left:3px solid #0288D1;">
+          <p style="margin:0;font-size:14px;color:#1B4332;">📚 Try to use at least one of these words: <strong>data</strong>, <strong>pattern</strong>, <strong>prediction</strong>, <strong>bar graph</strong></p>
+        </div>
+      </div>
+
+      <!-- PART C -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Label</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Take a photo of the bar graph you made in your science notebook and upload it. Make sure it shows all five days, labeled axes, a title, and your weather symbols. Or, if you prefer, draw a new final version here on paper before photographing it.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Reflect</div>
+          <div class="question">"Go back to your Notice &amp; Wonder warm-up. You wrote down which you thought was easier — the list or the graph. Does your answer feel the same now that you've made a graph yourself? What changed in your thinking?"</div>
+        </div>
+      </div>
+
+      <!-- WHAT TO TURN IN -->
+      <div style="background:#fff;border:2px solid #0288D1;border-radius:18px;margin-top:20px;overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:10px;padding:14px 20px;background:#EAF8FD;border-bottom:2px solid #D6F2FB;">
+          <span style="font-size:24px;">📋</span>
+          <div>
+            <div style="font-size:10px;color:#0288D1;text-transform:uppercase;letter-spacing:0.8px;font-weight:800;">Canvas Submission</div>
+            <div style="font-size:18px;color:#1B4332;font-weight:800;">What to Turn In</div>
+          </div>
+        </div>
+        <div style="padding:16px 20px;">
+
+          <p style="font-size:15px;color:#5A4D3E;margin-bottom:14px;">Submit your work on Canvas using <strong>one of these options:</strong></p>
+
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;">
+            <div style="background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:12px 14px;text-align:center;">
+              <div style="font-size:28px;margin-bottom:6px;">⌨️</div>
+              <div style="font-size:13px;font-weight:800;color:#1B4332;margin-bottom:4px;">Type It</div>
+              <div style="font-size:12px;color:#5A4D3E;line-height:1.4;">Type your Part A, B, and Write &amp; Explain answers directly into Canvas.</div>
+            </div>
+            <div style="background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:12px 14px;text-align:center;">
+              <div style="font-size:28px;margin-bottom:6px;">📸</div>
+              <div style="font-size:13px;font-weight:800;color:#1B4332;margin-bottom:4px;">Photo It</div>
+              <div style="font-size:12px;color:#5A4D3E;line-height:1.4;">Take a clear photo of your notebook work including the bar graph.</div>
+            </div>
+            <div style="background:#F0EDF6;border:2px solid #D8D0E8;border-radius:14px;padding:12px 14px;text-align:center;">
+              <div style="font-size:28px;margin-bottom:6px;">🎥</div>
+              <div style="font-size:13px;font-weight:800;color:#1B4332;margin-bottom:4px;">Record It</div>
+              <div style="font-size:12px;color:#5A4D3E;line-height:1.4;">Record a short video explaining your graph and what pattern you found.</div>
+            </div>
+          </div>
+
+          <p style="font-size:15px;color:#5A4D3E;margin-bottom:12px;">Make sure your submission includes all of these:</p>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
+            <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My Notice &amp; Wonder observations from the Vocabulary tab.</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
+            <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">The copywork sentence from the vocabulary page.</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
+            <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My completed data table and bar graph (photo of notebook work).</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
+            <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">Parts A, B, and Write &amp; Explain answered in complete sentences.</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;cursor:pointer;">
+            <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My Write &amp; Explain uses at least one vocabulary word and complete sentences.</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="callout callout-submit" style="margin-top:18px;">
+        <span class="callout-icon">✅</span>
+        <p>When your checklist is complete, submit everything on <strong>Canvas</strong>. Type, upload a photo, or record a video — whichever works best for you!</p>
+      </div>
+
+      <!-- CLOSING VIDEO -->
+      <div class="video-wrap" style="margin-top:24px;">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">👋</span>
+          <div>
+            <div class="video-wrap-type">Closing · Wrap-Up</div>
+            <div class="video-wrap-title">Nice work today — see you in Lesson 3.01!</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">👋</div>
+            <div class="video-placeholder-text">Closing video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 2-2-closing --></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /tab-assignment -->
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <div class="footer-line1">Optima Academy Online · <span>3rd Grade Science</span></div>
+  <div class="footer-line2">Lesson 2.02 · NGSS 3-ESS2-1</div>
+  <div class="footer-line3">© Optima Academy · All rights reserved</div>
+</div>
+
+</div><!-- /page-wrap -->
+
+
+<script>
+// ── Tab System ──
+var tabProgress = { vocab: false, lesson: false, explore: false, quiz: false, assignment: false };
+var tabOrder = ['vocab','lesson','explore','quiz','assignment'];
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelector('[data-tab="' + name + '"]').classList.add('active');
+  tabProgress[name] = true;
+  document.querySelector('[data-tab="' + name + '"]').classList.add('visited');
+  var visited = Object.values(tabProgress).filter(Boolean).length;
+  var pct = Math.round((visited / tabOrder.length) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c){
+    if (name === 'vocab') { c.classList.remove('collapsed'); }
+    else { c.classList.add('collapsed'); }
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── Checklist ──
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  var icon = item.querySelector('.check-icon');
+  if (item.classList.contains('checked')) {
+    icon.textContent = '⛅';
+  } else {
+    icon.textContent = '☐';
+  }
+  var items = document.querySelectorAll('.checklist-item');
+  setTimeout(function(){
+    if (Array.from(items).every(function(it){ return it.classList.contains('checked'); })) {
+      setTimeout(window.launchConfetti, 200);
+    }
+  }, 50);
+}
+
+// ── Clickable Diagram ──
+(function() {
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel    = document.getElementById('diagramPanel');
+  var wordEl   = document.getElementById('diagramWord');
+  var infoEl   = document.getElementById('diagramInfo');
+  if (!panel) return;
+  hotspots.forEach(function(hs) {
+    hs.addEventListener('click', function(e) {
+      e.stopPropagation();
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+      hs.classList.add('active');
+      var part = hs.getAttribute('data-part');
+      wordEl.textContent = part;
+      infoEl.innerHTML   = hs.getAttribute('data-info');
+      panel.classList.add('visible');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+    }
+  });
+})();
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip) {
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function() {
+    var rect = tip.getBoundingClientRect();
+    var bw   = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Self-Check Quiz ──
+var quizAnswered = 0;
+var quizCorrect  = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen  = optEl.getAttribute('data-val');
+  q.querySelectorAll('.quiz-opt').forEach(function(o){
+    if (o.getAttribute('data-val') === correct) { o.classList.add('correct'); }
+    else { o.classList.add('disabled'); }
+  });
+  var fbCorrect = q.querySelector('.fb-correct');
+  var fbWrong   = q.querySelector('.fb-wrong');
+  if (chosen === correct) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+  if (quizAnswered === 3) {
+    var scoreBox  = document.getElementById('quizScore');
+    var scoreNum  = document.getElementById('quizScoreNum');
+    var scoreMsg  = document.getElementById('quizScoreMsg');
+    var vCorrect  = document.getElementById('quizVideoCorrect');
+    var vReview   = document.getElementById('quizVideoReview');
+    scoreNum.textContent = quizCorrect;
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '⭐ Perfect! You got every question right!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌿 Great job! Almost there!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Back to Top ──
+(function() {
+  var btn = document.getElementById('backToTop');
+  if (!btn) return;
+  var inIframe = (function(){
+    try { return window.self !== window.top; } catch (e) { return true; }
+  })();
+  btn.addEventListener('click', function() {
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    var top = document.getElementById('pageTop');
+    if (top && top.scrollIntoView) {
+      try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+    }
+    try {
+      if (window.frameElement && window.frameElement.scrollIntoView) {
+        window.frameElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (e) {}
+    if (inIframe) {
+      try { window.parent.postMessage({ type: 'optima-lesson:scroll-to-top' }, '*'); } catch (e) {}
+    }
+  });
+  if (inIframe) {
+    setTimeout(function() { btn.classList.add('show'); }, 1500);
+  } else {
+    window.addEventListener('scroll', function() {
+      btn.classList.toggle('show', window.pageYOffset > 400);
+    });
+  }
+})();
+
+// ── Scroll Reveal ──
+(function() {
+  var els = document.querySelectorAll('.scroll-reveal');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('revealed'); }); return;
+  }
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); }});
+  }, { threshold: 0.1 });
+  els.forEach(function(el){ obs.observe(el); });
+})();
+
+// ── Collapsible Intro Cards ──
+// Clicking either card header toggles BOTH cards together
+var introCards = document.querySelectorAll('.intro-2col .card');
+introCards.forEach(function(card){
+  var head = card.querySelector('.card-head');
+  if (!head) return;
+  head.addEventListener('click', function(){
+    var collapsed = card.classList.contains('collapsed');
+    introCards.forEach(function(c){
+      if (collapsed) { c.classList.remove('collapsed'); }
+      else { c.classList.add('collapsed'); }
+    });
+  });
+});
+
+// ── Confetti ──
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx    = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#0288D1','#F9A825','#FDD835','#4DD0E1','#2E7D32','#7B5EA7','#FF8F00','#52B788'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+tabProgress['vocab'] = true;
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+</script>
+</body>
+</html>
