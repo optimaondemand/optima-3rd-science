@@ -1,0 +1,1896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – Lesson 3.01: Why Are National Parks So Different?</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+  background: #F2F0E8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #2B1D12;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap { max-width: 920px; margin: 0 auto; background: #FAF8F4; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%);
+  border-bottom: 6px solid #0288D1;
+  padding: 22px 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 6px; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0288D1, #55C8E8, #0288D1);
+}
+.header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.header-logo {
+  width: 52px; height: 52px; border-radius: 50%; background: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title {
+  font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+  text-shadow: 0 2px 12px rgba(2,136,209,0.3);
+}
+.header-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(2,136,209,0.15); border: 1.5px solid rgba(2,136,209,0.35);
+  border-radius: 28px; padding: 6px 16px;
+}
+.header-badge span:first-child { font-size: 22px; }
+.header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ── Hero Visual ── */
+.hero-visual {
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #0288D1;
+}
+.hero-visual svg { display: block; width: 100%; height: auto; }
+
+/* ── Hero Animations ── */
+@keyframes cloud-drift-1 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(40px); }
+}
+@keyframes cloud-drift-2 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-35px); }
+}
+@keyframes sun-pulse {
+  0%, 100% { opacity: 0.65; transform: scale(1); }
+  50%       { opacity: 1;    transform: scale(1.12); }
+}
+@keyframes bird-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(6px, -8px); }
+}
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes hero-shimmer {
+  0%, 100% { opacity: 0.25; }
+  50%       { opacity: 0.7; }
+}
+@keyframes hero-sway {
+  0%, 100% { transform: rotate(-2.5deg); }
+  50%       { transform: rotate(2.5deg); }
+}
+@keyframes hero-twinkle {
+  0%, 100% { opacity: 0.4; transform: scale(0.85); }
+  50%       { opacity: 1;   transform: scale(1.15); }
+}
+@keyframes mind-blow-bounce {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.12); }
+}
+
+.hero-cloud-1   { animation: cloud-drift-1 9s ease-in-out infinite alternate; }
+.hero-cloud-2   { animation: cloud-drift-2 13s ease-in-out infinite alternate; }
+.hero-sun-glow  { animation: sun-pulse 4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-birds     { animation: bird-drift 5s ease-in-out infinite; }
+.hero-float     { animation: hero-float 3.5s ease-in-out infinite; }
+.hero-shimmer   { animation: hero-shimmer 3s ease-in-out infinite; }
+.hero-sway      { animation: hero-sway 4s ease-in-out infinite; transform-origin: bottom center; transform-box: fill-box; }
+.hero-twinkle   { animation: hero-twinkle 2.2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-twinkle-2 { animation: hero-twinkle 3.1s ease-in-out infinite 0.5s; transform-origin: center; transform-box: fill-box; }
+
+/* ── Info Strip ── */
+.info-strip {
+  display: flex; flex-wrap: wrap; background: #fff;
+  border-bottom: 2px solid #E8DDD2;
+}
+.info-item {
+  flex: 1; min-width: 150px; padding: 12px 16px;
+  border-right: 1px solid #E8DDD2;
+  display: flex; align-items: center; gap: 10px;
+}
+.info-item:last-child { border-right: none; }
+.info-icon {
+  width: 40px; height: 40px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.info-value { font-size: 16px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+/* ── Content Area ── */
+.content { padding: 24px 28px 36px; }
+
+/* ── Card System ── */
+.card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 22px; overflow: hidden;
+  box-shadow: 0 2px 12px rgba(27,67,50,0.04);
+}
+.card-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 20px; border-bottom: 2px solid;
+}
+.card-head-icon {
+  width: 42px; height: 42px; border-radius: 50%; color: #fff;
+  font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.card-head-title { font-size: 20px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.card-body { padding: 18px 22px; }
+.card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+.card-body p:last-child { margin-bottom: 0; }
+
+/* ── Card Color Themes ── */
+.theme-earth  .card-head { background: #FFF0E8; border-color: #E8D0B8; }
+.theme-earth  .card-head-icon { background: #A0522D; }
+.theme-sun    .card-head { background: #FFF9E8; border-color: #F0E4C0; }
+.theme-sun    .card-head-icon { background: #F9A825; }
+.theme-sky    .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-sky    .card-head-icon { background: #0288D1; }
+.theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+.theme-forest .card-head-icon { background: #2E7D32; }
+.theme-rock   .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+.theme-rock   .card-head-icon { background: #7B5EA7; }
+.theme-meadow .card-head { background: #F0F8E8; border-color: #C8E0B8; }
+.theme-meadow .card-head-icon { background: #558B2F; }
+
+/* ── Activity Cards ── */
+.activity-card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 18px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.activity-card.act-warmup  { border-left: 6px solid #52B788; }
+.activity-card.act-lesson  { border-left: 6px solid #F9A825; }
+.activity-card.act-explore { border-left: 6px solid #0288D1; }
+.activity-card.act-practice{ border-left: 6px solid #2E7D32; }
+.activity-card.act-check   { border-left: 6px solid #7B5EA7; }
+
+.act-head {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px 14px 18px;
+  border-bottom: 1.5px solid #E8DDD2;
+}
+.act-num {
+  width: 38px; height: 38px; border-radius: 14px; color: #fff;
+  font-size: 18px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.act-title { font-size: 19px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.act-subtitle { font-size: 12px; color: #9A8E82; }
+.act-time {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap;
+  margin-left: auto; flex-shrink: 0;
+}
+.act-body { padding: 18px 22px 18px 20px; }
+.act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+/* ── Callout Boxes ── */
+.callout {
+  border-radius: 14px; padding: 16px 18px;
+  display: flex; align-items: flex-start; gap: 12px;
+  margin-bottom: 14px;
+}
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+.callout-earth  { background: #FFF0E8; border: 2px solid #E8D0B8; }
+.callout-think  { background: #FFF9E8; border: 2px solid #F0E4C0; }
+.callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+.callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+.callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+
+/* ── Socratic Questions ── */
+.socratic-q {
+  background: linear-gradient(135deg, #EEF8F0, #E8F5E9);
+  border: 2px solid #A8D5B8;
+  border-radius: 16px; padding: 16px 20px;
+  margin: 16px 0;
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.socratic-q .label {
+  font-size: 11px; color: #2D6A4F; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px;
+}
+.socratic-q .question {
+  font-size: 17px; color: #2B1D12; font-weight: 700;
+  line-height: 1.6; font-style: italic;
+}
+
+/* ── Diagram Containers ── */
+.diagram-wrap {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 16px; margin: 16px 0;
+  text-align: center;
+}
+.diagram-wrap svg { max-width: 100%; height: auto; }
+.diagram-caption {
+  font-size: 13px; color: #9A8E82; margin-top: 10px;
+  font-weight: 600; text-align: center;
+}
+
+/* ── Lesson Figure (uploaded images) ── */
+.lesson-figure {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 14px 14px 18px; margin: 0 0 22px;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.lesson-figure-label {
+  font-size: 11px; color: #2D6A4F;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  font-weight: 800; margin-bottom: 10px;
+}
+.lesson-figure img {
+  display: block; max-width: 100%; height: auto;
+  border-radius: 10px; margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.lesson-figure-caption {
+  font-size: 14px; color: #5A4D3E;
+  margin-top: 12px; line-height: 1.55; font-weight: 600;
+  text-align: center;
+}
+.lesson-figure-caption strong { color: #1B4332; }
+
+/* ── Key Concept Box ── */
+.key-concept {
+  background: #F0F8E8; border: 2px solid #C8E0B8;
+  border-radius: 14px; padding: 18px 20px; margin: 14px 0;
+}
+.key-concept .kc-label {
+  font-size: 13px; color: #558B2F; text-transform: uppercase;
+  letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px;
+}
+.key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+.key-concept p:last-child { margin-bottom: 0; }
+
+/* ── Practice Questions ── */
+.pq {
+  background: #FAFAF6; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 14px 18px; margin-bottom: 12px;
+}
+.pq-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  color: #fff; font-weight: 800; font-size: 14px;
+  margin-right: 8px; vertical-align: middle;
+}
+.pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+.pq-answer { font-size: 15px; color: #9A8E82; font-style: italic; }
+
+/* ── Vocab Flashcards ── */
+.vocab-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px; margin: 14px 0;
+}
+.flip-card { perspective: 800px; height: 195px; cursor: pointer; }
+.flip-card-inner {
+  position: relative; width: 100%; height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 14px 18px; text-align: center;
+  border: 2px solid #E8DDD2;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.06);
+}
+.flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+.flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+.flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #1B4332; margin-bottom: 6px; }
+.flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+.flip-card-back {
+  background: linear-gradient(145deg, #1B4332, #2D6A4F);
+  border-color: #1B4332;
+  transform: rotateY(180deg);
+}
+.flip-card-back .fc-def { font-size: 14.5px; color: #fff; line-height: 1.5; font-weight: 600; }
+.flip-card-back .fc-word-back {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 6px;
+}
+.flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 8px; font-weight: 600; }
+.fc-color-1 .flip-card-front { border-top-color: #52B788; }
+.fc-color-2 .flip-card-front { border-top-color: #2D6A4F; }
+.fc-color-3 .flip-card-front { border-top-color: #F9A825; }
+.fc-color-4 .flip-card-front { border-top-color: #0288D1; }
+.fc-color-5 .flip-card-front { border-top-color: #2E7D32; }
+.fc-color-6 .flip-card-front { border-top-color: #7B5EA7; }
+
+/* ── Vocab Tooltips ── */
+.vtip {
+  position: relative; color: #7B5EA7; font-weight: 700;
+  cursor: help; border-bottom: 2px dotted rgba(123,94,167,0.45);
+  transition: color 0.15s;
+}
+.vtip:hover { color: #5B3EA7; }
+.vtip .vtip-box {
+  position: fixed; background: #1B4332; color: #fff;
+  padding: 12px 16px; border-radius: 12px;
+  font-size: 14px; font-weight: 600; font-style: normal;
+  width: 250px; line-height: 1.5; pointer-events: none;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+  z-index: 9999;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+.vtip .vtip-box .vtip-word {
+  display: block; font-size: 11px; color: #95D5B2;
+  text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 4px;
+}
+.vtip:hover .vtip-box { opacity: 1; visibility: visible; }
+
+/* ── Interactive Diagram ── */
+.diagram-interactive { position: relative; cursor: pointer; }
+.diagram-interactive svg { display: block; width: 100%; height: auto; border-radius: 12px; }
+.hotspot { opacity: 0; cursor: pointer; transition: opacity 0.2s; }
+.hotspot:hover, .hotspot.active { opacity: 0.18; }
+.diagram-info-panel {
+  background: linear-gradient(135deg, #1B4332, #2D6A4F);
+  border-radius: 12px; padding: 14px 18px; margin-top: 12px;
+  color: #fff; font-size: 15px; line-height: 1.6; font-weight: 600;
+  display: none;
+}
+.diagram-info-panel.visible { display: block; }
+.dip-word {
+  display: block; font-size: 11px; color: #95D5B2;
+  text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 6px;
+}
+.diagram-tap-hint {
+  font-size: 12px; color: #9A8E82; text-align: center;
+  margin-top: 10px; font-style: italic;
+}
+
+/* ── Mind-Blowing Fact ── */
+.mind-blow {
+  background: linear-gradient(135deg, #1B4332, #2D6A4F, #0E3D5F);
+  border-radius: 18px; padding: 22px 24px; margin: 18px 0;
+  display: flex; align-items: flex-start; gap: 18px;
+  box-shadow: 0 4px 18px rgba(27,67,50,0.12);
+}
+.mind-blow-icon {
+  font-size: 46px; flex-shrink: 0; line-height: 1;
+  animation: mind-blow-bounce 2.5s ease-in-out infinite;
+}
+.mind-blow-content {}
+.mind-blow-label {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 6px;
+}
+.mind-blow-text { font-size: 17px; color: #fff; line-height: 1.65; font-weight: 600; }
+
+/* ── Go Deeper ── */
+details.go-deeper {
+  background: #F0EDF6; border: 2px solid #D8D0E8;
+  border-radius: 14px; margin: 14px 0; overflow: hidden;
+}
+details.go-deeper summary {
+  padding: 14px 18px; font-size: 15px; font-weight: 800;
+  color: #7B5EA7; cursor: pointer; list-style: none;
+}
+details.go-deeper summary::-webkit-details-marker { display: none; }
+details.go-deeper summary::before { content: '🔭 '; }
+.gd-body { padding: 0 18px 18px; }
+.gd-body p { font-size: 15px; color: #5A4D3E; line-height: 1.7; margin-bottom: 10px; }
+
+/* ── Need Strip ── */
+.need-strip {
+  background: #fff; border-bottom: 2px solid #E8DDD2;
+  padding: 10px 24px; display: flex; flex-wrap: wrap;
+  align-items: center; gap: 8px;
+}
+.need-strip-label { font-size: 13px; font-weight: 800; color: #1B4332; margin-right: 4px; }
+.need-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #F0F8E8; border: 1.5px solid #C8E0B8;
+  border-radius: 20px; padding: 4px 12px;
+  font-size: 13px; font-weight: 700; color: #2D6A4F;
+}
+
+/* ── Progress Bar ── */
+.progress-wrap {
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  padding: 10px 24px; display: flex; align-items: center; gap: 14px;
+  position: sticky; top: 0; z-index: 200;
+}
+.progress-label { font-size: 13px; color: #95D5B2; font-weight: 800; white-space: nowrap; }
+.progress-track {
+  flex: 1; height: 8px; background: rgba(255,255,255,0.12);
+  border-radius: 4px; overflow: hidden;
+}
+.progress-fill {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, #0288D1, #55C8E8, #FDD835);
+  border-radius: 4px; transition: width 0.4s ease;
+}
+.progress-pct { font-size: 13px; color: #FDD835; font-weight: 800; min-width: 36px; text-align: right; }
+
+/* ── Tab Bar ── */
+.tab-bar {
+  display: flex; overflow-x: auto;
+  background: #fff; border-bottom: 2px solid #E8DDD2;
+  position: sticky; top: 46px; z-index: 100;
+}
+.tab-btn {
+  flex: 1; min-width: 110px; padding: 14px 8px 12px;
+  background: none; border: none; border-bottom: 3px solid transparent;
+  font-family: inherit; font-size: 12px; font-weight: 800; color: #9A8E82;
+  cursor: pointer; transition: all 0.2s; white-space: nowrap;
+  display: flex; align-items: center; justify-content: center; gap: 4px;
+}
+.tab-btn:hover { background: #F0F8E8; color: #1B4332; }
+.tab-btn.active { color: #0288D1; border-bottom-color: #0288D1; background: #EAF8FD; }
+.tab-btn.visited .tab-check { opacity: 1; }
+.tab-check { opacity: 0; font-size: 10px; color: #52B788; transition: opacity 0.3s; }
+
+/* ── Intro 2-col ── */
+.intro-2col {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px; padding: 20px 24px 4px;
+}
+.intro-2col .card { margin-bottom: 0; }
+.intro-2col .card.collapsed .card-body { display: none; }
+.intro-2col .card .card-head { cursor: pointer; user-select: none; }
+
+/* ── Tab Panels ── */
+.tab-content { background: #ffffff; }
+.tab-panel { display: none; padding: 20px 24px 36px; background: #ffffff; }
+.tab-panel.active { display: block; }
+
+/* ── Inline Progress Chip ── */
+.tab-progress-inline {
+  display: flex; align-items: center; gap: 10px;
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+  border-radius: 10px; padding: 8px 14px; margin-bottom: 18px;
+}
+.tab-progress-inline-label {
+  font-size: 12px; color: #95D5B2; font-weight: 800; white-space: nowrap;
+}
+.tab-progress-inline-track {
+  flex: 1; height: 8px; background: rgba(255,255,255,0.12);
+  border-radius: 4px; overflow: hidden;
+}
+.tab-progress-inline-fill {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, #0288D1, #55C8E8, #FDD835);
+  border-radius: 4px; transition: width 0.4s ease;
+}
+.tab-progress-inline-pct {
+  font-size: 12px; color: #FDD835; font-weight: 800;
+  min-width: 34px; text-align: right;
+}
+
+/* ── Video Slots ── */
+.video-wrap {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; margin-bottom: 20px; overflow: hidden;
+}
+.video-wrap-header {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 18px; background: #F6F4F0;
+  border-bottom: 1.5px solid #E8DDD2;
+}
+.video-wrap-type { font-size: 11px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.video-wrap-title { font-size: 16px; color: #1B4332; font-weight: 800; }
+.video-ratio { position: relative; width: 100%; padding-bottom: 56.25%; }
+.video-placeholder {
+  position: absolute; inset: 0;
+  background: #E8EEF2; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 8px;
+  color: #9A8E82;
+}
+.video-placeholder-icon { font-size: 48px; }
+.video-placeholder-text { font-size: 14px; font-weight: 600; }
+.video-placeholder-id { font-size: 11px; color: #B0A698; }
+.video-feedback { display: none; }
+.video-feedback.show { display: block; }
+
+/* ── Quiz ── */
+.quiz-q {
+  background: #FAFAF6; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 18px 20px; margin-bottom: 16px;
+}
+.quiz-q-text { font-size: 17px; color: #1B4332; font-weight: 700; margin-bottom: 14px; line-height: 1.6; }
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt {
+  display: flex; align-items: center; gap: 12px;
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 12px;
+  padding: 12px 16px; font-size: 16px; color: #2B1D12; font-weight: 600;
+  cursor: pointer; transition: all 0.2s;
+}
+.quiz-opt:hover { background: #EAF8FD; border-color: #0288D1; }
+.quiz-opt.correct { background: #EEF8F0; border-color: #2E7D32; color: #1B4332; }
+.quiz-opt.wrong   { background: #FFF0E8; border-color: #E8D0B8; color: #5A4D3E; }
+.quiz-opt.disabled { opacity: 0.4; cursor: not-allowed; }
+.opt-letter {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: #E8DDD2; color: #5A4D3E; font-weight: 800; font-size: 14px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.quiz-opt.correct .opt-letter { background: #2E7D32; color: #fff; }
+.quiz-opt.wrong   .opt-letter { background: #E8D0B8; }
+.quiz-feedback {
+  display: none; border-radius: 10px; padding: 10px 14px; margin-top: 10px;
+  font-size: 14px; font-weight: 600; line-height: 1.55;
+}
+.quiz-feedback.show { display: block; }
+.fb-correct { background: #EEF8F0; color: #1B4332; border: 1.5px solid #C4E5CC; }
+.fb-wrong   { background: #FFF0E8; color: #5A4D3E; border: 1.5px solid #E8D0B8; }
+.quiz-score {
+  display: none; text-align: center; background: #EEF8F0;
+  border: 2px solid #C4E5CC; border-radius: 16px; padding: 22px; margin-top: 20px;
+}
+.quiz-score.show { display: block; }
+.quiz-score-num {
+  font-size: 52px; font-weight: 900; color: #1B4332;
+  line-height: 1; margin-bottom: 4px;
+}
+.quiz-score-label { font-size: 14px; color: #9A8E82; font-weight: 700; }
+.quiz-score-msg { font-size: 17px; color: #2D6A4F; font-weight: 800; margin-top: 10px; }
+
+/* ── Tab Next Button ── */
+.tab-next-wrap { text-align: center; padding: 10px 0 6px; }
+.tab-next-btn {
+  background: linear-gradient(135deg, #0288D1, #0277BD);
+  color: #fff; border: none; border-radius: 30px;
+  padding: 14px 30px; font-family: inherit; font-size: 16px; font-weight: 800;
+  cursor: pointer; box-shadow: 0 4px 14px rgba(2,136,209,0.25);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(2,136,209,0.35); }
+
+/* ── Scroll Reveal ── */
+.scroll-reveal { opacity: 1; }
+
+/* ── Footer ── */
+.footer {
+  background: #1B4332; color: #95D5B2;
+  text-align: center; padding: 22px 24px;
+}
+.footer-line1 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.footer-line1 span { color: #FDD835; }
+.footer-line2 { font-size: 12px; opacity: 0.7; margin-bottom: 2px; }
+.footer-line3 { font-size: 11px; opacity: 0.5; }
+
+/* ── Back to Top ── */
+.back-to-top {
+  position: fixed; bottom: 2rem; right: 2rem;
+  opacity: 0; visibility: hidden;
+  display: flex; align-items: center; gap: 6px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  background: #0288D1;
+  color: #fff; font-weight: 800; font-size: 14px;
+  border: none; cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+  z-index: 500; font-family: inherit;
+}
+.back-to-top.show { opacity: 1; visibility: visible; }
+.back-to-top:hover { transform: translateY(-2px); }
+
+/* ── Confetti canvas ── */
+#confettiCanvas {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none; z-index: 9999;
+}
+
+strong { color: #1B4332; }
+em { color: #5A4D3E; }
+.mind-blow-text strong { color: #fff; }
+.gold { color: #F9A825; font-weight: 700; }
+.forest { color: #2D6A4F; font-weight: 700; }
+.earth { color: #A0522D; font-weight: 700; }
+
+@media (max-width: 620px) {
+  .intro-2col { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .flip-card { height: 175px; }
+  .header-title { font-size: 22px; }
+  .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 6px 9px; }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="confettiCanvas"></canvas>
+<button class="back-to-top" id="backToTop" type="button">⛅ Back to Top</button>
+
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- ═══════════ PROGRESS BAR ═══════════ -->
+<div class="progress-wrap">
+  <span class="progress-label">⛅ Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">Why Are National Parks So Different?</div>
+  <div class="header-badge">
+    <span>⛅</span>
+    <span>Lesson 3.01</span>
+  </div>
+</div>
+
+<!-- ═══════════ HERO BANNER ═══════════ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three side-by-side landscapes: desert, wetland, and mountain">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5BB8E8"/>
+      <stop offset="65%" stop-color="#A8D9F5"/>
+      <stop offset="100%" stop-color="#C8ECC0"/>
+    </linearGradient>
+    <linearGradient id="desertGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8C56A"/>
+      <stop offset="100%" stop-color="#C4963A"/>
+    </linearGradient>
+    <linearGradient id="wetlandGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5AAE73"/>
+      <stop offset="100%" stop-color="#2D6A4F"/>
+    </linearGradient>
+    <linearGradient id="mtGradL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#9BB8CC"/>
+      <stop offset="100%" stop-color="#7A9EBA"/>
+    </linearGradient>
+    <linearGradient id="mtGradR" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7A9EBA"/>
+      <stop offset="100%" stop-color="#5A7E96"/>
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4EB8D8"/>
+      <stop offset="100%" stop-color="#2090B8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky background — full width -->
+  <rect width="920" height="260" fill="url(#skyGrad)"/>
+
+  <!-- Sun with glow — centered above wetland panel -->
+  <g class="hero-sun-glow">
+    <circle cx="460" cy="50" r="30" fill="#FDD835" opacity="0.92"/>
+    <circle cx="460" cy="50" r="44" fill="#FDD835" opacity="0.14"/>
+  </g>
+
+  <!-- Cloud left — drifts right -->
+  <g class="hero-cloud-1">
+    <ellipse cx="110" cy="52" rx="50" ry="18" fill="#fff" opacity="0.88"/>
+    <ellipse cx="136" cy="43" rx="30" ry="15" fill="#fff" opacity="0.92"/>
+    <ellipse cx="86"  cy="47" rx="26" ry="13" fill="#fff" opacity="0.78"/>
+  </g>
+  <!-- Cloud right — drifts left -->
+  <g class="hero-cloud-2">
+    <ellipse cx="780" cy="46" rx="46" ry="16" fill="#fff" opacity="0.82"/>
+    <ellipse cx="805" cy="38" rx="27" ry="14" fill="#fff" opacity="0.88"/>
+    <ellipse cx="756" cy="42" rx="22" ry="12" fill="#fff" opacity="0.72"/>
+  </g>
+
+  <!-- Panel dividers -->
+  <line x1="306" y1="92" x2="306" y2="260" stroke="#0288D1" stroke-width="2" opacity="0.35"/>
+  <line x1="614" y1="92" x2="614" y2="260" stroke="#0288D1" stroke-width="2" opacity="0.35"/>
+
+  <!-- ═══ PANEL 1: DESERT ═══ -->
+  <!-- Ground fill from y=158 to bottom -->
+  <rect x="0" y="158" width="306" height="102" fill="url(#desertGrad)"/>
+  <!-- Darker sand shadow band -->
+  <rect x="0" y="205" width="306" height="55" fill="#C4963A" opacity="0.55"/>
+  <!-- Dune curves sitting on the ground line -->
+  <ellipse cx="85"  cy="158" rx="106" ry="20" fill="#D4A84C"/>
+  <ellipse cx="228" cy="162" rx="88"  ry="16" fill="#C8973E"/>
+  <!-- Cactus 1 — trunk base exactly at dune top (y=158) -->
+  <rect x="68" y="108" width="14" height="50" rx="6" fill="#5A8C3A"/>
+  <rect x="44" y="122" width="26" height="10" rx="5" fill="#5A8C3A"/>
+  <rect x="44" y="113" width="10" height="20" rx="5" fill="#5A8C3A"/>
+  <!-- Cactus 2 — trunk base at y=162 (dune surface) -->
+  <rect x="200" y="118" width="12" height="44" rx="5" fill="#4A7C2E"/>
+  <rect x="180" y="128" width="22" height="9"  rx="4" fill="#4A7C2E"/>
+  <rect x="180" y="120" width="9"  height="17" rx="4" fill="#4A7C2E"/>
+  <!-- Heat shimmer on sand -->
+  <g class="hero-shimmer">
+    <line x1="55"  y1="182" x2="115" y2="182" stroke="#FFE082" stroke-width="1.5" opacity="0.5"/>
+    <line x1="155" y1="195" x2="228" y2="195" stroke="#FFE082" stroke-width="1.5" opacity="0.4"/>
+    <line x1="28"  y1="215" x2="78"  y2="215" stroke="#FFE082" stroke-width="1.5" opacity="0.3"/>
+  </g>
+
+  <!-- ═══ PANEL 2: WETLAND ═══ -->
+
+  <!-- TRUNKS DRAWN FIRST — extend from sky all the way down to y=260.
+       Ground and water layers are painted AFTER, covering the lower trunk.
+       This makes the trees visually grow out of the ground. -->
+  <rect x="377" y="90"  width="14" height="170" rx="5" fill="#3D6E30"/>
+  <rect x="527" y="100" width="14" height="160" rx="5" fill="#3D6E30"/>
+
+  <!-- Green ground — paints over the lower portion of each trunk (roots disappear into ground) -->
+  <rect x="306" y="155" width="308" height="105" fill="url(#wetlandGrad)"/>
+  <!-- Water layer — paints over trunks below water line -->
+  <rect x="306" y="198" width="308" height="62"  fill="url(#waterGrad)" opacity="0.75"/>
+  <!-- Water shimmer -->
+  <g class="hero-shimmer">
+    <line x1="328" y1="212" x2="395" y2="212" stroke="#fff" stroke-width="1.5" opacity="0.35"/>
+    <line x1="418" y1="224" x2="492" y2="224" stroke="#fff" stroke-width="1.5" opacity="0.28"/>
+    <line x1="524" y1="215" x2="592" y2="215" stroke="#fff" stroke-width="1.5" opacity="0.32"/>
+  </g>
+
+  <!-- CANOPIES DRAWN LAST — sit visibly on top of ground and trunks -->
+  <!-- Tree 1 canopy -->
+  <ellipse cx="384" cy="74" rx="32" ry="28" fill="#4A8C38"/>
+  <ellipse cx="384" cy="63" rx="22" ry="19" fill="#5AAE3A"/>
+  <!-- Tree 2 canopy -->
+  <ellipse cx="534" cy="82" rx="27" ry="24" fill="#4A8C38"/>
+  <ellipse cx="534" cy="72" rx="18" ry="16" fill="#5AAE3A"/>
+
+  <!-- Egret bird in flight -->
+  <g class="hero-birds">
+    <ellipse cx="455" cy="174" rx="13" ry="5" fill="#fff" opacity="0.9"/>
+    <line x1="461" y1="174" x2="470" y2="170" stroke="#fff" stroke-width="2" opacity="0.9"/>
+    <line x1="461" y1="175" x2="467" y2="180" stroke="#aaa" stroke-width="1.5" opacity="0.65"/>
+  </g>
+
+  <!-- ═══ PANEL 3: MOUNTAINS ═══ -->
+  <!-- Panel spans x=614 to x=920 (306 px wide)                    -->
+  <!-- Left mountain:  base 614–822, peak at x=718 y=88            -->
+  <!-- Right mountain: base 760–920, peak at x=858 y=74 (taller)   -->
+  <!-- Draw right mountain first so left mountain overlaps it       -->
+
+  <!-- Right mountain — back/taller -->
+  <polygon points="760,260 858,74 920,260" fill="#7A9EBA"/>
+  <!-- Right mountain shadow face -->
+  <polygon points="858,74 920,260 858,260" fill="#5A7E96"/>
+  <!-- Right snow cap -->
+  <polygon points="858,74 878,118 838,118" fill="#fff" opacity="0.95"/>
+
+  <!-- Left mountain — front/slightly lower -->
+  <polygon points="614,260 718,88 822,260" fill="#9BB8CC"/>
+  <!-- Left mountain shadow face (right slope darker) -->
+  <polygon points="718,88 822,260 718,260" fill="#7A9EBA"/>
+  <!-- Left snow cap -->
+  <polygon points="718,88 740,130 696,130" fill="#fff" opacity="0.9"/>
+
+  <!-- Flat ground strip at base of mountains for pine trees to sit on -->
+  <rect x="614" y="238" width="306" height="22" fill="#4A7032" opacity="0.7"/>
+
+  <!-- Pine tree 1 — base at y=260, peak at y=222 -->
+  <polygon points="628,260 638,222 648,260" fill="#2D5A26"/>
+  <polygon points="628,258 638,224 648,258" fill="#3A7032"/>
+  <rect x="634" y="260" width="7" height="0" fill="#5A3820"/>
+
+  <!-- Pine tree 2 — slightly taller, base at y=260 -->
+  <polygon points="652,260 664,216 676,260" fill="#2D5A26"/>
+  <polygon points="652,258 664,218 676,258" fill="#3A7032"/>
+
+  <!-- Pine tree 3 — shorter, to the right -->
+  <polygon points="680,260 689,230 698,260" fill="#2D5A26"/>
+  <polygon points="680,258 689,232 698,258" fill="#3A7032"/>
+
+  <!-- Snowflake sparkles in mountain sky -->
+  <g class="hero-twinkle">
+    <circle cx="730" cy="68"  r="3" fill="#fff" opacity="0.85"/>
+    <line x1="730" y1="62" x2="730" y2="74" stroke="#fff" stroke-width="1.2" opacity="0.6"/>
+    <line x1="724" y1="68" x2="736" y2="68" stroke="#fff" stroke-width="1.2" opacity="0.6"/>
+  </g>
+  <g class="hero-twinkle-2">
+    <circle cx="876" cy="58"  r="3" fill="#fff" opacity="0.8"/>
+    <line x1="876" y1="52" x2="876" y2="64" stroke="#fff" stroke-width="1.2" opacity="0.55"/>
+    <line x1="870" y1="58" x2="882" y2="58" stroke="#fff" stroke-width="1.2" opacity="0.55"/>
+  </g>
+
+</svg>
+</div>
+
+<!-- ═══════════ INFO STRIP ═══════════ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q1 &middot; Unit 2</div>
+      <div class="info-detail">Weather, Climate &amp; Earth Systems</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF9E8;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 3</div>
+      <div class="info-detail">Lesson 3.01 &mdash; 3rd Grade Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">⛅</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Climate Zones</div>
+      <div class="info-detail">Deserts, wetlands, mountains &amp; sunlight</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#F0EDF6;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">NGSS 3-ESS2-1</div>
+      <div class="info-detail">Earth's Systems: Weather &amp; Climate</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ INTRO 2-COL CARDS ═══════════ -->
+<div class="intro-2col">
+
+  <!-- Essential Question -->
+  <div class="card theme-forest">
+    <div class="card-head">
+      <div class="card-head-icon">🌲</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This…</div>
+          <div class="question">"The Everglades in Florida is a watery swamp full of alligators and birds. Death Valley in California is a scorching desert that almost never gets rain. They're both in the United States — so why are they so completely different?"</div>
+        </div>
+      </div>
+      <p>Hold this question in your mind as you work through the lesson. By the end, you should be able to answer it with evidence!</p>
+    </div>
+  </div>
+
+  <!-- I Can Statements -->
+  <div class="card theme-sky">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#52B788;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain what <em>climate</em> means and describe how it's different from weather.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2D6A4F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> compare at least three climate zones and describe what makes each one different.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2E7D32;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain how sunlight patterns cause different places to have different climates.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════ NEED STRIP ═══════════ -->
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Pencil &amp; colored pencils</span>
+  <span class="need-chip"><span>📊</span>Colored pencils for your climate chart</span>
+</div>
+
+<!-- ═══════════ TAB BAR ═══════════ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 1: VOCABULARY                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <!-- Welcome Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to Today's Lesson!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🎬</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 3-1-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 1: NOTICE & WONDER -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#52B788;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Notice &amp; Wonder</div>
+        <div class="act-subtitle">What do you see? What do you wonder?</div>
+      </div>
+      <div class="act-time" style="background:#52B788;">⏱ 5–8 min</div>
+    </div>
+    <div class="act-body">
+      <p>Look at the three scenes in the banner at the top of this page: a desert, a wetland, and a mountain. These are all real landscapes found in national parks across the United States.</p>
+      <p>Before we learn anything new, just look carefully and notice what you can already see.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">👀</span>
+        <div>
+          <div class="label">In Your Science Notebook</div>
+          <div class="question">"Write at least 3 things you notice about how these places look different from each other. Then write 1 question: What do you wonder about why they look so different?"</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>There are no wrong observations. Write down whatever you actually notice — colors, plants, water, sky, temperature clues, anything. We'll come back to your question at the end of the lesson.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOCABULARY FLIP CARDS -->
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>These are the words scientists use when they study climate and the patterns of weather across different regions. <strong>Tap each card to flip it</strong> and read the definition. You'll see these words throughout the lesson!</p>
+
+      <div class="vocab-grid">
+
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">⛅</div><div class="fc-word">climate</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">climate</div><div class="fc-def">The typical weather conditions in a place, observed over many years — not just one rainy day.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🗺️</div><div class="fc-word">climate zone</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">climate zone</div><div class="fc-def">A large region that shares similar long-term weather patterns, like a desert belt or a tropical area.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌧️</div><div class="fc-word">precipitation</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">precipitation</div><div class="fc-def">Water that falls from clouds — as rain, snow, sleet, or hail. Some places get very little; others get a lot.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">💧</div><div class="fc-word">evaporation</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">evaporation</div><div class="fc-def">When liquid water warms up and turns into water vapor — the invisible gas that rises into the air.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🐊</div><div class="fc-word">wetland</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">wetland</div><div class="fc-def">Land that stays covered by shallow water much of the year, like swamps, marshes, and bogs.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🏔️</div><div class="fc-word">elevation</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">elevation</div><div class="fc-def">How high a place is above sea level. Higher elevation usually means cooler temperatures and more snow.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">📓</span>
+        <p>Copy this sentence carefully into your science notebook:<br><strong>"Climate describes the typical weather conditions of a place measured over many years."</strong></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button>
+  </div>
+
+</div><!-- /tab-vocab -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 2: THE LESSON                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+  <!-- Lesson Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">📖</span>
+      <div>
+        <div class="video-wrap-type">Activity 2 · Core Lesson</div>
+        <div class="video-wrap-title">Why Are National Parks So Different?</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">📖</div>
+        <div class="video-placeholder-text">Core lesson video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 3-1-lesson-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Uploaded lesson image -->
+  <div class="lesson-figure">
+    <div class="lesson-figure-label">📷 Photo · In the Classroom</div>
+    <img src="images/3-01-climate-zones-comparison.png"
+         alt="A student holds a color-coded Climate Zones map of the United States while photo cards of Desert, Wetland, Mountain, and Forest national parks sit on the desk alongside a completed Comparing Climate Zones chart in a spiral notebook." />
+    <div class="lesson-figure-caption">
+      A color-coded climate zones map, national park photo cards, and a comparison chart — the same tools you'll use as you work through this lesson.
+    </div>
+  </div>
+
+  <!-- ACTIVITY 2: CORE LESSON CONTENT -->
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#F9A825;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📖 The Lesson: Climate &amp; the Zones of the United States</div>
+        <div class="act-subtitle">Read and think carefully — science is all about noticing!</div>
+      </div>
+      <div class="act-time" style="background:#F9A825;">⏱ 12 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- SECTION 1: Weather vs. Climate -->
+      <div class="card theme-forest" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌦️</div>
+          <div>
+            <div class="card-head-label">Section 1</div>
+            <div class="card-head-title">Weather and Climate Are Not the Same Thing</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>You've probably checked the weather before — maybe to decide whether to bring an umbrella or wear a jacket. Weather tells you what's happening <em>right now</em>, or what's expected tomorrow. It changes from day to day and even hour to hour.</p>
+          <p><span class="vtip">Climate<span class="vtip-box"><span class="vtip-word">climate</span>The typical weather conditions of a place, observed over many years — not just one rainy day.</span></span> is different. Climate describes the <strong>patterns</strong> of weather in a place over many, many years. A single rainy afternoon doesn't change a desert's climate. But if it's almost always hot and dry there, year after year — that's a desert climate.</p>
+          <p>Here's one way to think about it: weather is your mood today, but climate is your personality. Your personality takes years to form and doesn't change because of one bad morning.</p>
+
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"If it snowed in Florida one unusual January, would that change Florida's climate? What would you need to see to say a place's climate had actually changed?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2: Three Climate Zones -->
+      <div class="card theme-sky" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🗺️</div>
+          <div>
+            <div class="card-head-label">Section 2</div>
+            <div class="card-head-title">Three Very Different Climate Zones</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>The United States contains several distinct <span class="vtip">climate zones<span class="vtip-box"><span class="vtip-word">climate zone</span>A large region that shares similar long-term weather patterns, like hot-and-dry or cool-and-rainy.</span></span>. Three of the most recognizable are deserts, wetlands, and mountains — and they're strikingly different.</p>
+
+          <!-- Desert -->
+          <div style="background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;margin-bottom:12px;">
+            <p style="font-weight:800;color:#C4963A;margin-bottom:4px;">🏜 Desert Zones — Hot, Dry, and Extreme</p>
+            <p style="margin-bottom:0;">Very little <span class="vtip">precipitation<span class="vtip-box"><span class="vtip-word">precipitation</span>Water that falls from clouds — rain, snow, sleet, or hail.</span></span>, scorching days, and cold nights. Plants store water in thick stems; animals come out after dark. <strong>Example: Death Valley National Park, California.</strong></p>
+          </div>
+
+          <!-- Wetland -->
+          <div style="background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;margin-bottom:12px;">
+            <p style="font-weight:800;color:#2D6A4F;margin-bottom:4px;">🌴 Wetland Zones — Warm, Wet, and Teeming with Life</p>
+            <p style="margin-bottom:0;"><span class="vtip">Wetlands<span class="vtip-box"><span class="vtip-word">wetland</span>Land covered by shallow water much of the year, like swamps, marshes, and bogs.</span></span> stay warm and wet year-round, with soft flooded ground and habitat for hundreds of species. <strong>Example: Everglades National Park, Florida.</strong></p>
+          </div>
+
+          <!-- Mountain -->
+          <div style="background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;margin-bottom:12px;">
+            <p style="font-weight:800;color:#0288D1;margin-bottom:4px;">🏔 Mountain Zones — Cool, Snowy, and Layered</p>
+            <p style="margin-bottom:0;">Temperature drops with <span class="vtip">elevation<span class="vtip-box"><span class="vtip-word">elevation</span>How high a place is above sea level. Higher elevation usually means cooler temperatures.</span></span> — thin air holds less heat. Peaks stay snow-covered even in summer; pine forests grow on the slopes below. <strong>Example: Rocky Mountain National Park, Colorado.</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 3: Sunlight and Climate -->
+      <div class="card theme-earth" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">☀️</div>
+          <div>
+            <div class="card-head-label">Section 3</div>
+            <div class="card-head-title">Sunlight: The Engine Behind It All</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>All of Earth's climate patterns start with sunlight. The sun's energy heats the land, the water, and the air — and those differences in heating are what drive everything else.</p>
+          <p>Places closer to the equator receive more direct sunlight. Direct sunlight hits the ground at a more concentrated angle, which means more energy per square meter — and more heat. That's why tropical regions near the equator stay warm and wet year-round.</p>
+          <p>Places farther from the equator receive sunlight at a shallower angle, which spreads the same amount of energy over a wider area. Less concentrated energy means cooler temperatures — which is why regions farther north or south tend to be cooler.</p>
+          <p>Sunlight also drives <span class="vtip">evaporation<span class="vtip-box"><span class="vtip-word">evaporation</span>When liquid water heats up and turns into water vapor — the invisible gas that rises into the air.</span></span>. Where the sun is intense, water evaporates quickly from the ground and from bodies of water. That water vapor rises, forms clouds, and eventually falls as rain — feeding wetlands and forests. In deserts, there's so little water to begin with that even evaporation happens quickly, leaving the ground dry and cracked.</p>
+
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"The Everglades gets over 60 inches of rain every year. Death Valley gets less than 2 inches. Both places get a lot of direct sunlight. What do you think explains why one is so wet and the other is so dry?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Concept Box -->
+      <div class="key-concept scroll-reveal">
+        <div class="kc-label">⭐ Key Concept</div>
+        <p><strong>Climate is the long-term pattern of weather in a place.</strong> Different regions receive different amounts of sunlight and precipitation, which creates distinct climate zones — each with its own temperature range, moisture level, and types of living things.</p>
+        <p>The crosscutting concept here is <strong>Patterns</strong>: climate zones show consistent, repeating conditions that scientists can measure and use to make predictions.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mind-Blowing Fact -->
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Amazing Nature Fact</div>
+      <div class="mind-blow-text"><strong>Death Valley, California holds the record for the hottest temperature ever reliably measured on Earth: 130°F (54°C), recorded in August 2020.</strong> Meanwhile, the Everglades — just a few states away — receives more than 60 inches of rain per year and barely drops below 50°F even in winter. Same country, same planet, wildly different climates.</div>
+    </div>
+  </div>
+
+  <!-- Go Deeper -->
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper</summary>
+    <div class="gd-body">
+      <p><strong>Why does elevation make mountains colder?</strong> It comes down to something called the lapse rate — the rate at which air temperature drops as you go higher into the atmosphere. On average, for every 1,000 feet you climb, temperature drops about 3.5°F. So a mountain peak at 14,000 feet could be 49°F colder than a valley at sea level, even on a warm day. That's why the tops of mountains are often snow-covered while the valley below is green and sunny.</p>
+      <p><strong>Why are deserts so cold at night?</strong> Moisture in the air traps heat — think of it as a blanket. Humid places hold warmth after the sun goes down. Deserts have almost no moisture, so heat escapes rapidly. Death Valley can swing from 115°F during the day to below 40°F the same night. The dryness works both ways.</p>
+      <p>Scientists who study Earth's climate zones are called <strong>climatologists</strong>. They use weather station data collected over decades to identify patterns — and some of those stations have been recording temperature and rainfall every single day for over 100 years.</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+
+</div><!-- /tab-lesson -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 3: EXPLORE                                            -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+
+  <!-- Explore Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🔬</span>
+      <div>
+        <div class="video-wrap-type">Activity 3 · Investigation</div>
+        <div class="video-wrap-title">Comparing Climate Zones Like a Scientist</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🔬</div>
+        <div class="video-placeholder-text">Exploration video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 3-1-exploration-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 3: INVESTIGATION -->
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#0288D1;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🔬 Climate Zone Comparison</div>
+        <div class="act-subtitle">Organize what you've learned like a real climatologist</div>
+      </div>
+      <div class="act-time" style="background:#0288D1;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="callout callout-tip" style="margin-bottom:18px;">
+        <span class="callout-icon">🎒</span>
+        <p><strong>You'll need:</strong> Your science notebook, pencil, and colored pencils. If you have access to the photo cards or a climate zones map like the one shown in the lesson image, get those out too.</p>
+      </div>
+
+      <p>In this activity, you'll build a comparison chart for three climate zones. Scientists use charts like this to organize observations and spot patterns — and you're going to do exactly the same thing.</p>
+
+      <div style="position:relative; margin:16px 0;">
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">1</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Draw Your Chart:</strong> In your science notebook, draw a chart with 5 rows and 4 columns. Label the top row with: <em>Climate Zone, Temperature, Precipitation, Plants &amp; Animals</em>. Label the left column with: <em>Desert, Wetland, Mountain</em>. Leave the rest of the cells blank — you'll fill those in next.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2D6A4F,#52B788);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(45,106,79,0.3);">2</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Fill In What You Know:</strong> Use what you learned in the lesson to fill in the chart. For each climate zone, record: typical temperature range, how much precipitation it gets, and two or three plants or animals that live there. Use the interactive map if you need a reminder.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#52B788,#F9A825);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(82,183,136,0.3);">3</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Add Color:</strong> Use colored pencils to color-code each row — yellow for desert, blue for wetland, green for mountain. This is exactly what scientists do when they make climate maps: color makes patterns easier to see at a glance.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F9A825,#FDD835);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(249,168,37,0.3);">4</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Find the Pattern:</strong> Look at your finished chart. Write one sentence below the chart that starts: <em>"One pattern I notice across these three climate zones is…"</em> What do you see when you compare them side by side?</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🌲</span>
+        <div>
+          <div class="label">Think Like a Scientist</div>
+          <div class="question">"If you were a scientist studying a new park you'd never visited, what two pieces of climate information would you want to know first — and why? What would those numbers tell you about the place?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RECORD YOUR THINKING -->
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#2E7D32;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">📓 Record Your Thinking</div>
+        <div class="act-subtitle">Organize what you observed and discovered.</div>
+      </div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+      <p>In your science notebook, answer these questions in complete sentences. Write what you actually think — not what you think you're "supposed" to say.</p>
+
+      <div style="display:flex;flex-direction:column;gap:12px;margin-top:4px;">
+        <div style="background:#F0F8E8;border:2px solid #C8E0B8;border-radius:12px;padding:14px 16px;">
+          <p style="font-size:15px;color:#1B4332;font-weight:800;margin-bottom:6px;">1. Tell the story of your chart.</p>
+          <p style="font-size:15px;color:#5A4D3E;margin:0;">Walk through your comparison chart from top to bottom. Which climate zone surprised you the most — and why?</p>
+        </div>
+        <div style="background:#F0F8E8;border:2px solid #C8E0B8;border-radius:12px;padding:14px 16px;">
+          <p style="font-size:15px;color:#1B4332;font-weight:800;margin-bottom:6px;">2. The pattern you found.</p>
+          <p style="font-size:15px;color:#5A4D3E;margin:0;">Write the pattern sentence you completed in Step 4. Then explain: what do you think causes that pattern?</p>
+        </div>
+        <div style="background:#F0F8E8;border:2px solid #C8E0B8;border-radius:12px;padding:14px 16px;">
+          <p style="font-size:15px;color:#1B4332;font-weight:800;margin-bottom:6px;">3. Go back to your Notice &amp; Wonder question.</p>
+          <p style="font-size:15px;color:#5A4D3E;margin:0;">Read the question you wrote at the beginning of this lesson. Can you answer it now? Write what you know — and what you're still not sure about.</p>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-top:16px;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think It Through</div>
+          <div class="question">"What would happen to the plants and animals of a wetland if the climate slowly got drier over many years? What do you think they would do — and what evidence from today's lesson supports your idea?"</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+
+</div><!-- /tab-explore -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 4: SELF-CHECK QUIZ                                    -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+
+
+  <div class="card theme-rock" style="margin-bottom:18px;">
+    <div class="card-head">
+      <div class="card-head-icon">🧠</div>
+      <div>
+        <div class="card-head-label">Check Your Understanding</div>
+        <div class="card-head-title">Self-Check Quiz</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Let's see what you've learned. There are 3 questions. Click the answer you think is correct — you'll get immediate feedback after each one. Take your time and think before you click!</p>
+    </div>
+  </div>
+
+  <!-- QUESTION 1 -->
+  <div class="quiz-q" data-answer="b">
+    <div class="quiz-q-text">1. What is the best way to describe <em>climate</em>?</div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>What the weather is doing right now, like whether it is sunny or raining today</div>
+      <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>The typical pattern of weather conditions in a place over many years</div>
+      <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>The highest and lowest temperatures ever recorded in a city</div>
+    </div>
+    <div class="quiz-feedback fb-correct">🌿 Exactly right! Climate is all about long-term patterns — not today's forecast. Weather changes day to day, but climate describes what a place is typically like year after year.</div>
+    <div class="quiz-feedback fb-wrong">That describes weather, not climate. Climate is the pattern you'd see if you collected weather data for many, many years. Think of weather as today's outfit and climate as your whole wardrobe.</div>
+  </div>
+
+  <!-- QUESTION 2 -->
+  <div class="quiz-q" data-answer="c">
+    <div class="quiz-q-text">2. Why are mountaintops usually colder than the valleys below them?</div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Because the sun never reaches the tops of tall mountains</div>
+      <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Because mountains are always covered in snow that blocks the sun's heat</div>
+      <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Because air gets thinner and holds less heat at higher elevations</div>
+    </div>
+    <div class="quiz-feedback fb-correct">🌿 That's it! As elevation increases, the atmosphere gets thinner. Thinner air can't hold as much heat — so even though the sun still shines, the warmth doesn't stay. That's why you might hike through a meadow and find snow at the top of the same mountain.</div>
+    <div class="quiz-feedback fb-wrong">The sun does reach mountaintops — think of mountain sunburns! The real reason is about the air itself. Go back to Section 3 of the lesson and look at what happens to air temperature as you go higher.</div>
+  </div>
+
+  <!-- QUESTION 3 -->
+  <div class="quiz-q" data-answer="a">
+    <div class="quiz-q-text">3. Which national park is an example of a wetland climate zone?</div>
+    <div class="quiz-options">
+      <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Everglades National Park in Florida — warm, wet, and full of shallow water year-round</div>
+      <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Rocky Mountain National Park in Colorado — cold peaks and pine forests at high elevation</div>
+      <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Death Valley National Park in California — extremely hot and dry with very little rain</div>
+    </div>
+    <div class="quiz-feedback fb-correct">⭐ Correct! The Everglades is one of the most famous wetland ecosystems in the world — and in the United States. It stays warm and wet all year, receives over 60 inches of rain annually, and is home to alligators, manatees, and hundreds of bird species.</div>
+    <div class="quiz-feedback fb-wrong">Check the interactive map on the Lesson tab and look at what makes a wetland different from a mountain or desert. The key clues are temperature, rainfall, and whether water covers the ground.</div>
+  </div>
+
+  <!-- Score Display -->
+  <div class="quiz-score" id="quizScore">
+    <div class="quiz-score-num" id="quizScoreNum">0</div>
+    <div class="quiz-score-label">out of 3</div>
+    <div class="quiz-score-msg" id="quizScoreMsg"></div>
+
+    <!-- Perfect score video -->
+    <div class="video-feedback" id="quizVideoCorrect" style="margin-top:18px;">
+      <div class="video-wrap">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">✅</span>
+          <div>
+            <div class="video-wrap-type">Feedback · Perfect Score</div>
+            <div class="video-wrap-title">Excellent work, scientist!</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">⭐</div>
+            <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 3-1-quiz-perfect --></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review video -->
+    <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;">
+      <div class="video-wrap">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">📚</span>
+          <div>
+            <div class="video-wrap-type">Feedback · Keep Going</div>
+            <div class="video-wrap-title">You're on the right track — let's review!</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">💪</div>
+            <div class="video-placeholder-text">Review and encouragement video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 3-1-quiz-review --></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+
+</div><!-- /tab-quiz -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 5: ASSIGNMENT                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <!-- Assignment Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">✍️</span>
+      <div>
+        <div class="video-wrap-type">Activity 5 · Assignment</div>
+        <div class="video-wrap-title">Here's What to Do for Your Assignment</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">✍️</div>
+        <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 3-1-assignment-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 5: ASSIGNMENT -->
+  <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
+    <div class="act-head">
+      <div class="act-num" style="background:#7B5EA7;">5</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment</div>
+        <div class="act-subtitle">Show what you've learned about climate zones.</div>
+      </div>
+      <div class="act-time" style="background:#7B5EA7;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- PART A -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔍 Part A — Complete Your Climate Zone Chart</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use your comparison chart from the Explore tab. Make sure each row is completely filled in before moving on to Part B.</p>
+
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">Check that your chart has all three climate zones: Desert, Wetland, and Mountain. Each row should include temperature, precipitation, and at least two plants or animals.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">Color-code your chart using at least two different colors — one for the zone with the most precipitation and one for the zone with the least.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">At the bottom of your chart, write the national park name that belongs to each climate zone. (Hint: look at the interactive map on the Lesson tab.)</span></div>
+
+      <!-- PART B -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🚀 Part B — Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer each question in <strong>complete sentences</strong>. Use your science vocabulary!</p>
+
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">4</span><span class="pq-text">What is the difference between weather and climate? Use a real example to explain your answer — it can be a national park or a place you know.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">5</span><span class="pq-text">How does sunlight cause different climate zones to form? Explain what would happen to climate if a place suddenly received much more sunlight.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">6</span><span class="pq-text">How is a wetland different from a desert? Compare their temperatures, precipitation, and the types of living things you'd find there.</span></div>
+
+      <!-- WRITE AND EXPLAIN -->
+      <div class="key-concept scroll-reveal" style="background:#FFF9E8;border-color:#F0E4C0;margin-top:20px;">
+        <div class="kc-label" style="color:#F9A825;">✍️ Write and Explain</div>
+        <p style="font-size:16px;font-weight:700;color:#1B4332;margin-bottom:14px;">Look at your finished climate comparison chart. Choose the two climate zones that are most different from each other. Explain what you see.</p>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What do you notice?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"When I compare the ___ zone and the ___ zone, I notice that…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What does your chart tell you?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"My chart shows me that the main reason these places are different is…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">Why does that make sense?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because what I learned about sunlight and precipitation shows…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="background:#EEF8F0;border-radius:10px;padding:10px 14px;border-left:3px solid #52B788;">
+          <p style="margin:0;font-size:14px;color:#1B4332;">📚 Try to use at least one of these words in your answer: <strong>climate</strong>, <strong>precipitation</strong>, <strong>elevation</strong></p>
+        </div>
+      </div>
+
+      <!-- PART C -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Label</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">In your science notebook, draw two climate zones side by side — one that gets very little precipitation and one that gets a lot. Label at least three features in each drawing: typical temperature, one plant, and one animal that lives there.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Reflect</div>
+          <div class="question">"Look back at the question you wrote during Notice &amp; Wonder. Can you answer it now? What changed in your thinking after working through this lesson?"</div>
+        </div>
+      </div>
+
+      <!-- WHAT TO TURN IN -->
+      <div style="background:#fff;border:2px solid #0288D1;border-radius:18px;margin-top:20px;overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:10px;padding:14px 20px;background:#EAF8FD;border-bottom:2px solid #D6F2FB;">
+          <span style="font-size:24px;">📋</span>
+          <div>
+            <div style="font-size:10px;color:#0288D1;text-transform:uppercase;letter-spacing:0.8px;font-weight:800;">Canvas Submission</div>
+            <div style="font-size:18px;color:#1B4332;font-weight:800;">What to Turn In</div>
+          </div>
+        </div>
+        <div style="padding:16px 20px;">
+
+          <p style="font-size:15px;color:#5A4D3E;margin-bottom:14px;">Submit your work on Canvas using <strong>one of these options:</strong></p>
+
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;">
+            <div style="background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:12px 14px;text-align:center;">
+              <div style="font-size:28px;margin-bottom:6px;">⌨️</div>
+              <div style="font-size:13px;font-weight:800;color:#1B4332;margin-bottom:4px;">Type It</div>
+              <div style="font-size:12px;color:#5A4D3E;line-height:1.4;">Type your answers directly into the Canvas assignment.</div>
+            </div>
+            <div style="background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:12px 14px;text-align:center;">
+              <div style="font-size:28px;margin-bottom:6px;">📸</div>
+              <div style="font-size:13px;font-weight:800;color:#1B4332;margin-bottom:4px;">Photo It</div>
+              <div style="font-size:12px;color:#5A4D3E;line-height:1.4;">Take a clear photo of your handwritten work and upload it.</div>
+            </div>
+            <div style="background:#F0EDF6;border:2px solid #D8D0E8;border-radius:14px;padding:12px 14px;text-align:center;">
+              <div style="font-size:28px;margin-bottom:6px;">🎥</div>
+              <div style="font-size:13px;font-weight:800;color:#1B4332;margin-bottom:4px;">Record It</div>
+              <div style="font-size:12px;color:#5A4D3E;line-height:1.4;">Record a short video explaining what you did and learned.</div>
+            </div>
+          </div>
+
+          <p style="font-size:15px;color:#5A4D3E;margin-bottom:12px;">Make sure your submission includes all of these:</p>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
+            <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My Notice &amp; Wonder warm-up observations and question.</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
+            <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">The copywork sentence from the Vocabulary page.</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
+            <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My completed climate comparison chart from the Explore tab (Part A).</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
+            <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My short answer responses to Part B questions (4, 5, 6).</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
+            <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My Write and Explain response comparing two climate zones.</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
+            <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My Part C drawing with two labeled climate zone sketches.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CLOSING VIDEO -->
+      <div class="video-wrap" style="margin-top:24px;">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">👋</span>
+          <div>
+            <div class="video-wrap-type">Closing · Wrap-Up</div>
+            <div class="video-wrap-title">Great work today! Up next: Investigating Real Climate Data.</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">👋</div>
+            <div class="video-placeholder-text">Closing video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 3-1-closing --></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /tab-assignment -->
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <div class="footer-line1">Optima Academy Online · <span>3rd Grade Science</span></div>
+  <div class="footer-line2">Lesson 3.01 · NGSS 3-ESS2-1</div>
+  <div class="footer-line3">© Optima Academy · All rights reserved</div>
+</div>
+
+</div><!-- /page-wrap -->
+
+
+<script>
+// ── Tab System ──
+var tabProgress = { vocab: false, lesson: false, explore: false, quiz: false, assignment: false };
+var tabOrder = ['vocab','lesson','explore','quiz','assignment'];
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelector('[data-tab="' + name + '"]').classList.add('active');
+  tabProgress[name] = true;
+  document.querySelector('[data-tab="' + name + '"]').classList.add('visited');
+  var visited = Object.values(tabProgress).filter(Boolean).length;
+  var pct = Math.round((visited / tabOrder.length) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+  document.querySelectorAll('.tab-progress-inline-fill').forEach(function(el){ el.style.width = pct + '%'; });
+  document.querySelectorAll('.tab-progress-inline-pct').forEach(function(el){ el.textContent = pct + '%'; });
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c){
+    if (name === 'vocab') { c.classList.remove('collapsed'); }
+    else { c.classList.add('collapsed'); }
+  });
+  try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+  var top = document.getElementById('pageTop');
+  if (top && top.scrollIntoView) {
+    try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+  }
+}
+
+// ── Checklist ──
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  var icon = item.querySelector('.check-icon');
+  if (item.classList.contains('checked')) {
+    icon.textContent = '⛅';
+  } else {
+    icon.textContent = '☐';
+  }
+  var items = document.querySelectorAll('.checklist-item');
+  setTimeout(function(){
+    if (Array.from(items).every(function(it){ return it.classList.contains('checked'); })) {
+      setTimeout(window.launchConfetti, 200);
+    }
+  }, 50);
+}
+
+// ── Clickable Diagram ──
+(function() {
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel    = document.getElementById('diagramPanel');
+  var wordEl   = document.getElementById('diagramWord');
+  var infoEl   = document.getElementById('diagramInfo');
+  if (!panel) return;
+  hotspots.forEach(function(hs) {
+    hs.addEventListener('click', function(e) {
+      e.stopPropagation();
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+      hs.classList.add('active');
+      var part = hs.getAttribute('data-part');
+      wordEl.textContent = part;
+      infoEl.innerHTML   = hs.getAttribute('data-info');
+      panel.classList.add('visible');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+    }
+  });
+})();
+
+// ── Self-Check Quiz ──
+var quizAnswered = 0;
+var quizCorrect  = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen  = optEl.getAttribute('data-val');
+  q.querySelectorAll('.quiz-opt').forEach(function(o){
+    if (o.getAttribute('data-val') === correct) { o.classList.add('correct'); }
+    else { o.classList.add('disabled'); }
+  });
+  var fbCorrect = q.querySelector('.fb-correct');
+  var fbWrong   = q.querySelector('.fb-wrong');
+  if (chosen === correct) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+  if (quizAnswered === 3) {
+    var scoreBox  = document.getElementById('quizScore');
+    var scoreNum  = document.getElementById('quizScoreNum');
+    var scoreMsg  = document.getElementById('quizScoreMsg');
+    var vCorrect  = document.getElementById('quizVideoCorrect');
+    var vReview   = document.getElementById('quizVideoReview');
+    scoreNum.textContent = quizCorrect;
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '⭐ Perfect! You got every question right!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌿 Great job! Almost there!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip) {
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function() {
+    var rect = tip.getBoundingClientRect();
+    var bw   = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Back to Top ──
+(function() {
+  var btn = document.getElementById('backToTop');
+  if (!btn) return;
+  var inIframe = (function() {
+    try { return window.self !== window.top; }
+    catch (e) { return true; }
+  })();
+  btn.addEventListener('click', function() {
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    var top = document.getElementById('pageTop');
+    if (top && top.scrollIntoView) {
+      try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+    }
+    try {
+      if (window.frameElement && window.frameElement.scrollIntoView) {
+        window.frameElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (e) {}
+    if (inIframe) {
+      try { window.parent.postMessage({ type: 'optima-lesson:scroll-to-top' }, '*'); } catch (e) {}
+    }
+  });
+  if (inIframe) {
+    setTimeout(function() { btn.classList.add('show'); }, 1500);
+  } else {
+    window.addEventListener('scroll', function() {
+      btn.classList.toggle('show', window.pageYOffset > 400);
+    });
+  }
+})();
+
+// ── Confetti ──
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx    = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#0288D1','#55C8E8','#FDD835','#52B788','#2E7D32','#7B5EA7','#FF8F00','#4DD0E1'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── Collapsible Intro Cards ──
+var introCards = document.querySelectorAll('.intro-2col .card');
+introCards.forEach(function(card){
+  var head = card.querySelector('.card-head');
+  if (!head) return;
+  head.addEventListener('click', function(){
+    var willCollapse = !card.classList.contains('collapsed');
+    introCards.forEach(function(c){
+      c.classList.toggle('collapsed', willCollapse);
+    });
+  });
+});
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+tabProgress['vocab'] = true;
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+document.querySelectorAll('.tab-progress-inline-fill').forEach(function(el){ el.style.width = '20%'; });
+document.querySelectorAll('.tab-progress-inline-pct').forEach(function(el){ el.textContent = '20%'; });
+</script>
+</body>
+</html>
