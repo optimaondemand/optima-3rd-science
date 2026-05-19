@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – What Motion Patterns Can We Predict?</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+  background: #F2F0E8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #2B1D12;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap { max-width: 920px; margin: 0 auto; background: #FAF8F4; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%);
+  border-bottom: 6px solid #F9A825;
+  padding: 22px 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 6px; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #F9A825, #FDD835, #F9A825);
+}
+.header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.header-logo {
+  width: 52px; height: 52px; border-radius: 50%; background: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title {
+  font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+  text-shadow: 0 2px 12px rgba(249,168,37,0.3);
+}
+.header-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(249,168,37,0.15); border: 1.5px solid rgba(249,168,37,0.35);
+  border-radius: 28px; padding: 6px 16px;
+}
+.header-badge span:first-child { font-size: 22px; }
+.header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ── Hero Visual ── */
+.hero-visual {
+  background: linear-gradient(180deg, #FFF8E1 0%, #FBE9B0 50%, #E8D89A 100%);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #F9A825;
+}
+.hero-visual svg { display: block; width: 100%; height: auto; }
+
+/* ── Hero Animations ── */
+@keyframes cloud-drift-1 { 0% { transform: translateX(0); } 100% { transform: translateX(40px); } }
+@keyframes cloud-drift-2 { 0% { transform: translateX(0); } 100% { transform: translateX(-32px); } }
+@keyframes sun-pulse { 0%, 100% { opacity: 0.65; transform: scale(1); } 50% { opacity: 1; transform: scale(1.12); } }
+@keyframes hero-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes hero-twinkle { 0%, 100% { opacity: 0.4; transform: scale(0.85); } 50% { opacity: 1; transform: scale(1.15); } }
+@keyframes hero-shimmer { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.7; } }
+@keyframes hero-spin-slow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes hero-sway { 0%, 100% { transform: rotate(-2.5deg); } 50% { transform: rotate(2.5deg); } }
+
+/* Motion-specific animations */
+@keyframes pendulum-swing {
+  0%, 100% { transform: rotate(-22deg); }
+  50%       { transform: rotate(22deg); }
+}
+@keyframes swing-motion {
+  0%, 100% { transform: rotate(-20deg); }
+  50%       { transform: rotate(20deg); }
+}
+@keyframes ball-bounce {
+  0%   { transform: translateY(0); }
+  20%  { transform: translateY(-52px); }
+  40%  { transform: translateY(0); }
+  55%  { transform: translateY(-32px); }
+  70%  { transform: translateY(0); }
+  82%  { transform: translateY(-16px); }
+  92%  { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}
+
+.hero-cloud-1   { animation: cloud-drift-1 9s ease-in-out infinite alternate; }
+.hero-cloud-2   { animation: cloud-drift-2 13s ease-in-out infinite alternate; }
+.hero-sun-glow  { animation: sun-pulse 4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-float     { animation: hero-float 3.5s ease-in-out infinite; }
+.hero-shimmer   { animation: hero-shimmer 3s ease-in-out infinite; }
+.hero-spin-slow { animation: hero-spin-slow 18s linear infinite; transform-origin: center; transform-box: fill-box; }
+
+.pendulum-arm   { animation: pendulum-swing 2.4s ease-in-out infinite; transform-origin: 155px 78px; transform-box: user-space-on-use; }
+.swing-chains   { animation: swing-motion 3.0s ease-in-out infinite; transform-origin: 720px 55px; transform-box: user-space-on-use; }
+.ball-anim      { animation: ball-bounce 3.2s ease-in-out infinite; transform-origin: center bottom; transform-box: fill-box; }
+
+/* ── Mind-Blow Animation ── */
+@keyframes mind-blow-bounce { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+
+/* ── Info Strip ── */
+.info-strip { display: flex; flex-wrap: wrap; background: #fff; border-bottom: 2px solid #E8DDD2; }
+.info-item { flex: 1; min-width: 150px; padding: 12px 16px; border-right: 1px solid #E8DDD2; display: flex; align-items: center; gap: 10px; }
+.info-item:last-child { border-right: none; }
+.info-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.info-value { font-size: 16px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+/* ── Content Area ── */
+.content { padding: 24px 28px 36px; }
+
+/* ── Card System ── */
+.card { background: #fff; border: 2px solid #E8DDD2; border-radius: 18px; margin-bottom: 22px; overflow: hidden; box-shadow: 0 2px 12px rgba(27,67,50,0.04); }
+.card-head { display: flex; align-items: center; gap: 10px; padding: 14px 20px; border-bottom: 2px solid; }
+.card-head-icon { width: 42px; height: 42px; border-radius: 50%; color: #fff; font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.card-head-title { font-size: 20px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.card-body { padding: 18px 22px; }
+.card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+.card-body p:last-child { margin-bottom: 0; }
+
+/* ── Card Color Themes ── */
+.theme-earth  .card-head { background: #FFF0E8; border-color: #E8D0B8; }
+.theme-earth  .card-head-icon { background: #A0522D; }
+.theme-sun    .card-head { background: #FFF9E8; border-color: #F0E4C0; }
+.theme-sun    .card-head-icon { background: #F9A825; }
+.theme-sky    .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-sky    .card-head-icon { background: #0288D1; }
+.theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+.theme-forest .card-head-icon { background: #2E7D32; }
+.theme-rock   .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+.theme-rock   .card-head-icon { background: #7B5EA7; }
+.theme-meadow .card-head { background: #F0F8E8; border-color: #C8E0B8; }
+.theme-meadow .card-head-icon { background: #558B2F; }
+
+/* ── Activity Cards ── */
+.activity-card { background: #fff; border: 2px solid #E8DDD2; border-radius: 18px; margin-bottom: 18px; overflow: hidden; box-shadow: 0 2px 10px rgba(27,67,50,0.04); }
+.activity-card.act-warmup  { border-left: 6px solid #52B788; }
+.activity-card.act-lesson  { border-left: 6px solid #F9A825; }
+.activity-card.act-explore { border-left: 6px solid #0288D1; }
+.activity-card.act-practice{ border-left: 6px solid #2E7D32; }
+.activity-card.act-check   { border-left: 6px solid #7B5EA7; }
+
+.act-head { display: flex; align-items: center; gap: 12px; padding: 14px 20px 14px 18px; border-bottom: 1.5px solid #E8DDD2; }
+.act-num { width: 38px; height: 38px; border-radius: 14px; color: #fff; font-size: 18px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.act-title { font-size: 19px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.act-subtitle { font-size: 12px; color: #9A8E82; }
+.act-time { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap; margin-left: auto; flex-shrink: 0; }
+.act-body { padding: 18px 22px 18px 20px; }
+.act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+/* ── Callout Boxes ── */
+.callout { border-radius: 14px; padding: 16px 18px; display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+.callout-earth  { background: #FFF0E8; border: 2px solid #E8D0B8; }
+.callout-think  { background: #FFF9E8; border: 2px solid #F0E4C0; }
+.callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+.callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+.callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+
+/* ── Socratic Questions ── */
+.socratic-q { background: linear-gradient(135deg, #EEF8F0, #E8F5E9); border: 2px solid #A8D5B8; border-radius: 16px; padding: 16px 20px; margin: 16px 0; display: flex; align-items: flex-start; gap: 12px; }
+.socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.socratic-q .label { font-size: 11px; color: #2D6A4F; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; }
+.socratic-q .question { font-size: 17px; color: #2B1D12; font-weight: 700; line-height: 1.6; font-style: italic; }
+
+/* ── Diagram Containers ── */
+.diagram-wrap { background: #fff; border: 2px solid #E8DDD2; border-radius: 16px; padding: 16px; margin: 16px 0; text-align: center; }
+.diagram-wrap svg { max-width: 100%; height: auto; }
+.diagram-caption { font-size: 13px; color: #9A8E82; margin-top: 10px; font-weight: 600; text-align: center; }
+
+/* ── Lesson Figure ── */
+.lesson-figure { background: #fff; border: 2px solid #E8DDD2; border-radius: 16px; padding: 14px 14px 18px; margin: 0 0 22px; box-shadow: 0 2px 10px rgba(27,67,50,0.04); }
+.lesson-figure-label { font-size: 11px; color: #2D6A4F; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 800; margin-bottom: 10px; }
+.lesson-figure img { display: block; max-width: 100%; height: auto; border-radius: 10px; margin: 0 auto; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.lesson-figure-caption { font-size: 14px; color: #5A4D3E; margin-top: 12px; line-height: 1.55; font-weight: 600; text-align: center; }
+.lesson-figure-caption strong { color: #1B4332; }
+
+/* ── Key Concept Box ── */
+.key-concept { background: #F0F8E8; border: 2px solid #C8E0B8; border-radius: 14px; padding: 18px 20px; margin: 14px 0; }
+.key-concept .kc-label { font-size: 13px; color: #558B2F; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px; }
+.key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+.key-concept p:last-child { margin-bottom: 0; }
+
+/* ── Practice Questions ── */
+.pq { background: #FAFAF6; border: 2px solid #E8DDD2; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; }
+.pq-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; color: #fff; font-weight: 800; font-size: 14px; margin-right: 8px; vertical-align: middle; }
+.pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+
+/* ── Vocab Flashcards ── */
+.vocab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+.flip-card { perspective: 800px; height: 195px; cursor: pointer; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.5s ease; transform-style: preserve-3d; }
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 16px; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 14px 18px; text-align: center; border: 2px solid #E8DDD2; box-shadow: 0 2px 10px rgba(27,67,50,0.06); }
+.flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+.flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+.flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #1B4332; margin-bottom: 6px; }
+.flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+.flip-card-back { background: linear-gradient(145deg, #1B4332, #2D6A4F); border-color: #1B4332; transform: rotateY(180deg); }
+.flip-card-back .fc-def { font-size: 14.5px; color: #fff; line-height: 1.5; font-weight: 600; }
+.flip-card-back .fc-word-back { font-size: 11px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 6px; }
+.flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 8px; font-weight: 600; }
+.fc-color-1 .flip-card-front { border-top-color: #52B788; }
+.fc-color-2 .flip-card-front { border-top-color: #2D6A4F; }
+.fc-color-3 .flip-card-front { border-top-color: #F9A825; }
+.fc-color-4 .flip-card-front { border-top-color: #0288D1; }
+.fc-color-5 .flip-card-front { border-top-color: #2E7D32; }
+.fc-color-6 .flip-card-front { border-top-color: #7B5EA7; }
+
+/* ── Vocab Tooltips ── */
+.vtip { position: relative; color: #7B5EA7; font-weight: 700; cursor: help; border-bottom: 2px dotted rgba(123,94,167,0.45); transition: color 0.15s; }
+.vtip:hover { color: #5B3EA7; }
+.vtip .vtip-box { position: fixed; background: #1B4332; color: #fff; padding: 12px 16px; border-radius: 12px; font-size: 14px; font-weight: 600; font-style: normal; line-height: 1.55; width: 250px; text-align: center; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s; pointer-events: none; z-index: 9999; box-shadow: 0 6px 24px rgba(27,67,50,0.35); border: 1.5px solid rgba(149,213,178,0.3); transform: translateY(6px); }
+.vtip .vtip-box::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 7px solid transparent; border-top-color: #1B4332; }
+.vtip .vtip-word { font-size: 11px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block; }
+.vtip:hover .vtip-box { opacity: 1; visibility: visible; transform: translateY(0); }
+
+/* ── Diagram Interactive ── */
+.diagram-interactive { position: relative; overflow: hidden; border-radius: 12px; }
+.diagram-interactive svg { display: block; width: 100%; }
+.hotspot { opacity: 0; cursor: pointer; transition: opacity 0.2s; }
+.hotspot:hover, .hotspot.active { opacity: 0.18; }
+.diagram-tap-hint { font-size: 12px; color: #9A8E82; text-align: center; margin-top: 8px; font-weight: 600; font-style: italic; }
+.diagram-info-panel { background: #1B4332; color: #fff; border-radius: 12px; padding: 14px 18px; margin-top: 12px; display: none; }
+.diagram-info-panel.visible { display: block; }
+.dip-word { display: block; font-size: 12px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 6px; }
+.diagram-info-panel strong { color: #95D5B2; }
+
+/* ── Mind Blow ── */
+.mind-blow { background: linear-gradient(135deg, #1a3a28, #1B4332); border: 2px solid rgba(149,213,178,0.3); border-radius: 16px; padding: 18px 22px; margin: 0 0 22px; display: flex; align-items: flex-start; gap: 16px; }
+.mind-blow-icon { font-size: 38px; flex-shrink: 0; animation: mind-blow-bounce 2s ease-in-out infinite; }
+.mind-blow-content { flex: 1; }
+.mind-blow-label { font-size: 11px; color: #FDD835; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 4px; }
+.mind-blow-text { font-size: 16px; color: #fff; line-height: 1.6; }
+.mind-blow-text strong { color: #95D5B2; }
+
+/* ── Go Deeper ── */
+details.go-deeper { background: #F0EDF6; border: 2px solid #D8D0E8; border-radius: 16px; margin-bottom: 22px; overflow: hidden; }
+details.go-deeper summary { padding: 16px 22px; font-size: 17px; color: #7B5EA7; font-weight: 800; cursor: pointer; list-style: none; }
+details.go-deeper summary::before { content: '▶ '; font-size: 13px; }
+details.go-deeper[open] summary::before { content: '▼ '; }
+.gd-body { padding: 4px 22px 18px; }
+.gd-body p { font-size: 16px; color: #5A4D3E; line-height: 1.75; margin-bottom: 10px; }
+
+/* ── Video Wrap ── */
+.video-wrap { background: #fff; border: 2px solid #E8DDD2; border-radius: 16px; margin-bottom: 22px; overflow: hidden; }
+.video-wrap-header { display: flex; align-items: center; gap: 12px; padding: 12px 18px; border-bottom: 1.5px solid #E8DDD2; background: #FAFAF6; }
+.video-wrap-type { font-size: 11px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.video-wrap-title { font-size: 16px; color: #1B4332; font-weight: 800; }
+.video-ratio { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.video-ratio iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.video-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+.video-placeholder-icon { font-size: 48px; opacity: 0.7; }
+.video-placeholder-text { font-size: 16px; color: rgba(255,255,255,0.8); font-weight: 700; }
+.video-placeholder-id { font-size: 11px; color: rgba(255,255,255,0.4); font-family: monospace; }
+.video-feedback { display: none; }
+.video-feedback.show { display: block; }
+
+/* ── Collapsible Intro Cards ── */
+.intro-2col .card .card-head { cursor: pointer; user-select: none; position: relative; }
+.intro-2col .card .card-head::after { content: '▾'; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #9A8E82; transition: transform 0.25s ease; }
+.intro-2col .card.collapsed .card-head::after { transform: translateY(-50%) rotate(-90deg); }
+.intro-2col .card.collapsed .card-body { display: none; }
+
+/* ── Tab Bar ── */
+.tab-bar { position: sticky; top: 44px; z-index: 100; background: #FAF8F4; border-bottom: 3px solid #E8DDD2; display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn { flex: 1; min-width: 130px; padding: 12px 8px 11px; background: transparent; border: none; border-bottom: 4px solid transparent; font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700; color: #9A8E82; cursor: pointer; transition: all 0.2s; white-space: nowrap; line-height: 1.3; text-align: center; }
+.tab-btn:hover { color: #1B4332; background: #EEF8F0; }
+.tab-btn.active { color: #1B4332; border-bottom-color: #F9A825; background: #fff; }
+.tab-btn .tab-check { display: none; font-size: 12px; color: #2E7D32; margin-left: 4px; font-weight: 800; }
+.tab-btn.visited .tab-check { display: inline; }
+
+/* ── Tab Panels ── */
+.tab-panel { display: none; padding: 24px 28px 36px; }
+.tab-panel.active { display: block; }
+.scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+/* ── Intro 2-col ── */
+.intro-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px 28px 0; }
+.intro-2col .card { margin-bottom: 0; }
+
+/* ── Need Strip ── */
+.need-strip { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 28px 16px; }
+.need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 700; white-space: nowrap; }
+.need-chip { display: inline-flex; align-items: center; gap: 5px; background: #EEF8F0; border: 1.5px solid #C4E5CC; border-radius: 20px; padding: 5px 12px; font-size: 13px; color: #1B4332; font-weight: 700; }
+
+/* ── Tab Next Button ── */
+.tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+.tab-next-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px; background: linear-gradient(135deg, #2D6A4F, #52B788); color: #fff; border: none; border-radius: 28px; font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 16px rgba(45,106,79,0.3); transition: transform 0.2s, box-shadow 0.2s; }
+.tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(45,106,79,0.4); }
+
+/* ── Quiz ── */
+.quiz-card { background: #fff; border: 2px solid #F9A825; border-radius: 18px; margin-bottom: 22px; overflow: hidden; box-shadow: 0 2px 12px rgba(249,168,37,0.08); }
+.quiz-q { background: #FAFAF6; border: 1.5px solid #E8DDD2; border-radius: 14px; padding: 16px 18px; margin-bottom: 14px; }
+.quiz-q-text { font-size: 17px; color: #2B1D12; font-weight: 700; margin-bottom: 12px; line-height: 1.6; }
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #fff; border: 2px solid #E8DDD2; border-radius: 12px; cursor: pointer; font-size: 16px; color: #2B1D12; font-weight: 600; transition: all 0.15s; }
+.quiz-opt:hover { background: #F0F8E8; border-color: #A8D5B8; }
+.quiz-opt.correct { background: #EEF8F0; border-color: #52B788; color: #1B4332; }
+.quiz-opt.wrong { background: #FFF0F0; border-color: #EF9A9A; color: #C62828; text-decoration: line-through; }
+.quiz-opt.disabled { opacity: 0.5; cursor: default; }
+.opt-letter { width: 28px; height: 28px; border-radius: 50%; background: #F9A825; color: #fff; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.quiz-feedback { display: none; margin-top: 10px; padding: 10px 14px; border-radius: 10px; font-size: 15px; font-weight: 600; }
+.quiz-feedback.show { display: block; }
+.fb-correct { background: #EEF8F0; color: #1B4332; border: 1.5px solid #C4E5CC; }
+.fb-wrong { background: #FFF9E8; color: #5A4D3E; border: 1.5px solid #F0E4C0; }
+.quiz-score { display: none; background: linear-gradient(135deg, #1B4332, #2D6A4F); border-radius: 16px; padding: 22px; text-align: center; margin-top: 16px; }
+.quiz-score.show { display: block; }
+.quiz-score-num { font-size: 56px; color: #FDD835; font-weight: 900; line-height: 1; }
+.quiz-score-label { font-size: 18px; color: rgba(255,255,255,0.7); margin-bottom: 8px; }
+.quiz-score-msg { font-size: 20px; color: #fff; font-weight: 800; }
+
+/* ── What to Turn In ── */
+.turn-in-block { background: #fff; border: 2.5px solid #0288D1; border-radius: 18px; margin-top: 22px; overflow: hidden; box-shadow: 0 4px 16px rgba(2,136,209,0.1); }
+.turn-in-header { display: flex; align-items: center; gap: 14px; background: #E8F4FB; padding: 18px 22px; border-bottom: 2px solid #B3E5FC; }
+.turn-in-header-icon { font-size: 36px; line-height: 1; flex-shrink: 0; }
+.turn-in-header-label { font-size: 11px; color: #0288D1; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+.turn-in-header-title { font-size: 24px; color: #1B4332; font-weight: 900; line-height: 1.15; }
+.turn-in-body { padding: 22px 24px 24px; }
+.turn-in-intro { font-size: 16px; color: #5A4D3E; margin-bottom: 18px; line-height: 1.55; }
+.turn-in-intro strong { color: #1B4332; }
+.turn-in-options { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 26px; }
+.turn-in-option { border-radius: 16px; padding: 20px 14px; text-align: center; border: 2px solid; }
+.turn-in-option-type  { background: #EEF8F0; border-color: #C4E5CC; }
+.turn-in-option-photo { background: #FFF9E8; border-color: #F0E4C0; }
+.turn-in-option-video { background: #F0EDF6; border-color: #D8D0E8; }
+.turn-in-option-icon  { font-size: 34px; line-height: 1; margin-bottom: 12px; }
+.turn-in-option-title { font-size: 17px; color: #1B4332; font-weight: 800; margin-bottom: 8px; }
+.turn-in-option-text  { font-size: 14px; color: #5A4D3E; line-height: 1.5; }
+.turn-in-subhead { font-size: 16px; color: #5A4D3E; margin-bottom: 14px; line-height: 1.55; }
+.turn-in-checklist { display: flex; flex-direction: column; gap: 10px; }
+.turn-in-item { display: flex; align-items: center; gap: 16px; padding: 14px 18px; background: #FAFAF6; border: 1.5px solid #E8DDD2; border-radius: 14px; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+.turn-in-item:hover { background: #F4FAF5; border-color: #C4E5CC; }
+.turn-in-item.checked { background: #EEF8F0; border-color: #B8E8CF; }
+.turn-in-item .turn-in-check { width: 30px; height: 30px; border-radius: 8px; border: 2px solid #95D5B2; background: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; line-height: 1; transition: background 0.2s, border-color 0.2s; }
+.turn-in-item.checked .turn-in-check { background: #2E7D32; border-color: #2E7D32; }
+.turn-in-item-text { font-size: 16px; color: #2B1D12; font-weight: 600; line-height: 1.55; flex: 1; }
+.turn-in-item.checked .turn-in-item-text { color: #5A4D3E; }
+
+/* ── Progress Bar ── */
+.progress-wrap { position: sticky; top: 0; z-index: 200; background: #0E1C42; padding: 8px 20px 10px; border-bottom: 2px solid rgba(85,200,232,0.3); display: flex; align-items: center; gap: 14px; }
+.progress-label { font-size: 12px; color: #55C8E8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+.progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; position: relative; }
+.progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #F9A825, #FDD835, #52B788); border-radius: 10px; transition: width 0.4s ease; }
+.progress-pct { font-size: 13px; color: #FDD835; font-weight: 800; min-width: 36px; text-align: right; }
+
+/* ── Back to Top ── */
+#backToTop { position: fixed; bottom: 2rem; right: 2rem; opacity: 0; visibility: hidden; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; border-radius: 999px; background: #F9A825; color: #1B4332; font-weight: 800; font-family: 'Nunito', sans-serif; font-size: 14px; border: none; cursor: pointer; box-shadow: 0 4px 12px rgba(249,168,37,0.35); transition: opacity 0.3s, visibility 0.3s, transform 0.3s; display: flex; z-index: 500; }
+#backToTop.show { opacity: 1; visibility: visible; }
+
+/* ── Utility ── */
+strong { color: #1B4332; }
+em { color: #5A4D3E; }
+.gold { color: #F9A825; font-weight: 700; }
+.forest { color: #2D6A4F; font-weight: 700; }
+
+/* ── Footer ── */
+.footer { background: #1B4332; padding: 20px 28px; text-align: center; }
+.footer-line1 { font-size: 14px; color: rgba(255,255,255,0.7); font-weight: 700; margin-bottom: 4px; }
+.footer-line1 span { color: #95D5B2; }
+.footer-line2 { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
+.footer-line3 { font-size: 11px; color: rgba(255,255,255,0.3); }
+
+/* ── Confetti Canvas ── */
+#confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; }
+
+@media (max-width: 620px) {
+  .intro-2col { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .flip-card { height: 175px; }
+  .header-title { font-size: 22px; }
+  .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 6px 9px; }
+  .turn-in-options { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="confettiCanvas"></canvas>
+<button id="backToTop" type="button" aria-label="Back to top">⏱️ Back to Top</button>
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- ═══ PROGRESS BAR ═══ -->
+<div class="progress-wrap">
+  <span class="progress-label">⏱️ Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══ HEADER ═══ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">What Motion Patterns Can We Predict?</div>
+  <div class="header-badge">
+    <span>⏱️</span>
+    <span>Lesson 6.01</span>
+  </div>
+</div>
+
+<!-- ═══ HERO BANNER ═══ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Grandfather clock with pendulum, a bouncing ball, and a swing set illustrating motion patterns">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF8DC"/>
+      <stop offset="55%" stop-color="#FDEEA0"/>
+      <stop offset="100%" stop-color="#E8C97A"/>
+    </linearGradient>
+    <linearGradient id="clockBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5C3A1E"/>
+      <stop offset="100%" stop-color="#3D2009"/>
+    </linearGradient>
+    <linearGradient id="swingPost" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7B5530"/>
+      <stop offset="100%" stop-color="#4A3018"/>
+    </linearGradient>
+    <!-- Cloud filter -->
+    <filter id="cloudSoft">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+
+  <!-- Sky background -->
+  <rect width="920" height="260" fill="url(#skyGrad)"/>
+
+  <!-- Soft clouds -->
+  <g class="hero-cloud-1" opacity="0.55">
+    <ellipse cx="280" cy="48" rx="65" ry="22" fill="#fff" filter="url(#cloudSoft)"/>
+    <ellipse cx="260" cy="52" rx="40" ry="16" fill="#fff"/>
+    <ellipse cx="310" cy="50" rx="38" ry="15" fill="#fff"/>
+  </g>
+  <g class="hero-cloud-2" opacity="0.45">
+    <ellipse cx="620" cy="38" rx="55" ry="18" fill="#fff" filter="url(#cloudSoft)"/>
+    <ellipse cx="600" cy="42" rx="34" ry="13" fill="#fff"/>
+    <ellipse cx="648" cy="40" rx="32" ry="13" fill="#fff"/>
+  </g>
+
+  <!-- Ground -->
+  <rect x="0" y="220" width="920" height="40" fill="#8B6914" rx="0"/>
+  <rect x="0" y="220" width="920" height="6" fill="#A07820" rx="0"/>
+
+  <!-- ── GRANDFATHER CLOCK (LEFT) ── -->
+  <!-- Clock case body -->
+  <rect x="90" y="60" width="64" height="160" rx="6" fill="url(#clockBody)"/>
+  <!-- Clock hood (top) -->
+  <rect x="82" y="42" width="80" height="28" rx="8" fill="#4A2E0E"/>
+  <polygon points="122,22 82,42 162,42" fill="#3D2009"/>
+  <!-- Clock face circle -->
+  <circle cx="122" cy="90" r="26" fill="#F5E8C0" stroke="#2A1800" stroke-width="3"/>
+  <!-- Clock face numerals (simple lines for tick marks) -->
+  <g stroke="#3D2009" stroke-width="2">
+    <line x1="122" y1="67" x2="122" y2="74"/>
+    <line x1="122" y1="106" x2="122" y2="113"/>
+    <line x1="99" y1="90" x2="106" y2="90"/>
+    <line x1="138" y1="90" x2="145" y2="90"/>
+    <!-- Diagonal ticks -->
+    <line x1="105" y1="73" x2="109" y2="77"/>
+    <line x1="135" y1="73" x2="139" y2="77" transform="rotate(0)"/>
+    <line x1="105" y1="107" x2="109" y2="103"/>
+    <line x1="135" y1="107" x2="139" y2="103"/>
+  </g>
+  <!-- Clock hands -->
+  <line x1="122" y1="90" x2="122" y2="72" stroke="#2A1800" stroke-width="3" stroke-linecap="round"/>
+  <line x1="122" y1="90" x2="135" y2="90" stroke="#2A1800" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Clock center dot -->
+  <circle cx="122" cy="90" r="3" fill="#2A1800"/>
+  <!-- Pendulum shaft opening -->
+  <rect x="110" y="118" width="24" height="80" rx="2" fill="#2A1500"/>
+  <!-- PENDULUM (animated) — pivot at clock center bottom area -->
+  <g class="pendulum-arm">
+    <!-- The rod -->
+    <line x1="122" y1="120" x2="122" y2="180" stroke="#C8920A" stroke-width="4" stroke-linecap="round"/>
+    <!-- The bob (pendulum weight) -->
+    <ellipse cx="122" cy="186" rx="14" ry="10" fill="#C8920A" stroke="#8B6200" stroke-width="2"/>
+    <!-- Shine on bob -->
+    <ellipse cx="118" cy="182" rx="4" ry="3" fill="rgba(255,255,200,0.45)"/>
+  </g>
+  <!-- Clock base molding -->
+  <rect x="84" y="216" width="76" height="8" rx="3" fill="#3D2009"/>
+
+  <!-- ── BOUNCING BALL (CENTER) ── -->
+  <!-- Bounce path guide lines (static, dotted) showing previous bounces -->
+  <g opacity="0.28" stroke="#D4780A" stroke-width="2" stroke-dasharray="4 4" fill="none">
+    <!-- first full bounce arc -->
+    <path d="M 435,220 Q 450,160 465,220"/>
+    <!-- second smaller bounce arc -->
+    <path d="M 465,220 Q 475,185 485,220"/>
+    <!-- third even smaller -->
+    <path d="M 485,220 Q 491,202 497,220"/>
+  </g>
+  <!-- Ground line for ball -->
+  <!-- Ball itself (animated bouncing) -->
+  <g class="ball-anim" style="transform-origin:435px 220px;">
+    <circle cx="435" cy="208" r="18" fill="#E85D04" stroke="#A03000" stroke-width="2"/>
+    <!-- Ball highlight -->
+    <ellipse cx="428" cy="200" rx="5" ry="4" fill="rgba(255,220,180,0.6)"/>
+    <!-- Ball shadow line -->
+    <ellipse cx="435" cy="226" rx="14" ry="4" fill="rgba(0,0,0,0.15)"/>
+  </g>
+  <!-- Label: "Same path every time" -->
+  <text x="435" y="252" text-anchor="middle" font-family="Nunito,Arial,sans-serif" font-size="11" font-weight="700" fill="#5C3A00" opacity="0.75">repeating bounce</text>
+
+  <!-- ── SWING SET (RIGHT) ── -->
+  <!-- Left post -->
+  <rect x="668" y="60" width="10" height="162" rx="4" fill="url(#swingPost)"/>
+  <!-- Right post -->
+  <rect x="762" y="60" width="10" height="162" rx="4" fill="url(#swingPost)"/>
+  <!-- Top crossbar -->
+  <rect x="660" y="55" width="120" height="12" rx="5" fill="#7B5530"/>
+  <!-- Post feet / base anchors -->
+  <rect x="656" y="216" width="24" height="8" rx="3" fill="#5C3A18"/>
+  <rect x="760" y="216" width="24" height="8" rx="3" fill="#5C3A18"/>
+
+  <!-- SWING (animated) — pivot at top bar center -->
+  <g class="swing-chains">
+    <!-- Left chain -->
+    <line x1="685" y1="66" x2="680" y2="166" stroke="#888" stroke-width="3" stroke-linecap="round"/>
+    <!-- Right chain -->
+    <line x1="755" y1="66" x2="760" y2="166" stroke="#888" stroke-width="3" stroke-linecap="round"/>
+    <!-- Seat -->
+    <rect x="673" y="164" width="94" height="14" rx="5" fill="#D4540A"/>
+    <!-- Seat highlight -->
+    <rect x="676" y="165" width="88" height="5" rx="2" fill="rgba(255,200,150,0.4)"/>
+  </g>
+  <!-- Label -->
+  <text x="720" y="252" text-anchor="middle" font-family="Nunito,Arial,sans-serif" font-size="11" font-weight="700" fill="#5C3A00" opacity="0.75">back and forth</text>
+
+  <!-- ── SUN GLOW (top right corner) ── -->
+  <g class="hero-sun-glow" transform-origin="858 30">
+    <circle cx="858" cy="30" r="28" fill="#FDD835" opacity="0.6"/>
+    <circle cx="858" cy="30" r="18" fill="#FDD835" opacity="0.85"/>
+  </g>
+
+</svg>
+</div>
+
+<!-- ═══ INFO STRIP ═══ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q2 · Unit 3</div>
+      <div class="info-detail">Forces &amp; Motion</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF9E8;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 6</div>
+      <div class="info-detail">Lesson 6.01 — 3rd Grade Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF9E8;">⏱️</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Motion Patterns</div>
+      <div class="info-detail">Repeating motion &amp; prediction</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">NGSS 3-PS2-2</div>
+      <div class="info-detail">Motion and Stability</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ INTRO 2-COL CARDS ═══ -->
+<div class="intro-2col">
+
+  <div class="card theme-forest">
+    <div class="card-head">
+      <div class="card-head-icon">🌲</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This…</div>
+          <div class="question">"If you watch something move over and over, could you predict exactly what it will do next?"</div>
+        </div>
+      </div>
+      <p>Hold that question in your mind as you work. By the end, you should be able to answer it — with evidence.</p>
+    </div>
+  </div>
+
+  <div class="card theme-sky">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#52B788;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> describe a pattern in how an object moves.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2D6A4F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> observe repeated motion and use that pattern to predict what will happen next.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2E7D32;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain how patterns in motion help scientists make predictions.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══ NEED STRIP ═══ -->
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Pencil &amp; colored pencils</span>
+  <span class="need-chip"><span>🧵</span>String (~30 cm)</span>
+  <span class="need-chip"><span>🔩</span>A small weight (key, washer, or eraser)</span>
+  <span class="need-chip"><span>⏱️</span>Timer or clock</span>
+</div>
+
+<!-- ═══ TAB BAR ═══ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 1: VOCABULARY                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to Today's Lesson!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🎬</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 6-1-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 1: NOTICE & WONDER -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#52B788;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Notice &amp; Wonder</div>
+        <div class="act-subtitle">Look closely before you read anything.</div>
+      </div>
+      <div class="act-time" style="background:#52B788;">⏱ 5 min</div>
+    </div>
+    <div class="act-body">
+      <p>Think about a playground swing. Someone gives it a push. It swings forward — then back. Forward — then back. Does it keep doing the same thing? What do you notice about <em>how</em> it moves?</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">💭</span>
+        <div>
+          <div class="label">Write in your notebook</div>
+          <div class="question">"What do you notice? What does it make you wonder?"</div>
+        </div>
+      </div>
+
+      <p>Write at least two things you notice and one question you're wondering about. Don't worry about being right — just look and think.</p>
+    </div>
+  </div>
+
+  <!-- VOCAB FLIP CARDS -->
+  <div class="activity-card act-check scroll-reveal" style="margin-top:22px;">
+    <div class="act-head">
+      <div class="act-num" style="background:#7B5EA7;">📚</div>
+      <div style="flex:1;">
+        <div class="act-title">Words to Know</div>
+        <div class="act-subtitle">Tap each card to flip it and read the definition.</div>
+      </div>
+      <div class="act-time" style="background:#7B5EA7;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+      <div class="vocab-grid">
+
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fc-emoji">🏃</div>
+              <div class="fc-word">motion</div>
+              <div class="fc-tap">Tap to flip</div>
+            </div>
+            <div class="flip-card-back">
+              <div class="fc-word-back">motion</div>
+              <div class="fc-def">Movement from one place to another — any time an object changes its position.</div>
+              <div class="fc-tap-back">Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fc-emoji">🔁</div>
+              <div class="fc-word">pattern</div>
+              <div class="fc-tap">Tap to flip</div>
+            </div>
+            <div class="flip-card-back">
+              <div class="fc-word-back">pattern</div>
+              <div class="fc-def">Something that repeats in a predictable, regular way.</div>
+              <div class="fc-tap-back">Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fc-emoji">🔮</div>
+              <div class="fc-word">predict</div>
+              <div class="fc-tap">Tap to flip</div>
+            </div>
+            <div class="flip-card-back">
+              <div class="fc-word-back">predict</div>
+              <div class="fc-def">To use what you already know or observed to say what will happen next.</div>
+              <div class="fc-tap-back">Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fc-emoji">🕰️</div>
+              <div class="fc-word">pendulum</div>
+              <div class="fc-tap">Tap to flip</div>
+            </div>
+            <div class="flip-card-back">
+              <div class="fc-word-back">pendulum</div>
+              <div class="fc-def">An object attached to a fixed point that swings back and forth.</div>
+              <div class="fc-tap-back">Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fc-emoji">🔄</div>
+              <div class="fc-word">cycle</div>
+              <div class="fc-tap">Tap to flip</div>
+            </div>
+            <div class="flip-card-back">
+              <div class="fc-word-back">cycle</div>
+              <div class="fc-def">One complete trip through a repeating motion — like one full swing back and forth.</div>
+              <div class="fc-tap-back">Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="fc-emoji">👁️</div>
+              <div class="fc-word">observation</div>
+              <div class="fc-tap">Tap to flip</div>
+            </div>
+            <div class="flip-card-back">
+              <div class="fc-word-back">observation</div>
+              <div class="fc-def">Information gathered by watching or measuring carefully, using your senses.</div>
+              <div class="fc-tap-back">Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copywork sentence -->
+      <div class="callout callout-vocab" style="margin-top:18px;">
+        <span class="callout-icon">✍️</span>
+        <p><strong>Copy this sentence carefully into your notebook:</strong><br><em>"When motion repeats in a pattern, scientists can predict what will happen next."</em></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button>
+  </div>
+
+</div><!-- /tab-vocab -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 2: THE LESSON                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">📖</span>
+      <div>
+        <div class="video-wrap-type">Activity 2 · Main Lesson Video</div>
+        <div class="video-wrap-title">What Motion Patterns Can We Predict?</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">📖</div>
+        <div class="video-placeholder-text">Lesson explainer video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 6-1-lesson-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Uploaded lesson image — playground swing photo -->
+  <div class="lesson-figure">
+    <div class="lesson-figure-label">📷 Photo · Motion in Action</div>
+    <img src="images/6-01-swing-in-motion.png"
+         alt="A child on a playground swing, mid-swing with hair blowing, showing the arc of repeating back-and-forth motion" />
+    <div class="lesson-figure-caption">
+      A swing in motion. Notice the <strong>arc it travels</strong> — forward, then back, then forward again. That repeating path is exactly what makes it a <strong>pattern</strong>.
+    </div>
+  </div>
+
+  <!-- ACTIVITY 2: CORE LESSON CONTENT -->
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#F9A825;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📖 The Lesson: Motion Patterns</div>
+        <div class="act-subtitle">Read carefully — notice the patterns as you go.</div>
+      </div>
+      <div class="act-time" style="background:#F9A825;">⏱ 12 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- SECTION 1 -->
+      <div class="card theme-forest" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🔁</div>
+          <div>
+            <div class="card-head-label">Section 1</div>
+            <div class="card-head-title">Some Motion Repeats</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Not all motion is random. Some objects move in a way that repeats. A <span class="vtip">pendulum<span class="vtip-box"><span class="vtip-word">pendulum</span>An object attached to a fixed point that swings back and forth.</span></span> swings one way, then the other — and keeps doing it. A swing at a playground does the same thing.</p>
+          <p>Each complete swing back and forth is called a <span class="vtip">cycle<span class="vtip-box"><span class="vtip-word">cycle</span>One complete trip through a repeating motion — like one full swing back and forth.</span></span>. The motion follows the same path every cycle. That's what makes it a <strong>pattern</strong>.</p>
+
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"Can you think of another moving thing that follows the same path over and over? What makes it keep repeating?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2 -->
+      <div class="card theme-sky" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🔮</div>
+          <div>
+            <div class="card-head-label">Section 2</div>
+            <div class="card-head-title">Patterns Help Us Predict</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>When motion repeats the same way, it forms a <span class="vtip">pattern<span class="vtip-box"><span class="vtip-word">pattern</span>Something that repeats in a predictable, regular way.</span></span>. Patterns are powerful — they let you say what will happen next, before it happens.</p>
+          <p>If a pendulum swings 10 times in one minute, it will probably swing about 10 times in the next minute too. That's not a guess. It's a <span class="vtip">prediction<span class="vtip-box"><span class="vtip-word">predict</span>To use what you already know or observed to say what will happen next.</span></span> backed by <span class="vtip">observation<span class="vtip-box"><span class="vtip-word">observation</span>Information gathered by watching or measuring carefully.</span></span> and evidence. Scientists rely on this kind of thinking all the time.</p>
+        </div>
+      </div>
+
+      <!-- SECTION 3 -->
+      <div class="card theme-earth" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">📊</div>
+          <div>
+            <div class="card-head-label">Section 3</div>
+            <div class="card-head-title">Patterns Can Change — Slowly</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>A bouncing ball bounces a little lower each time. A swing slows down if nobody pushes it. The motion is changing — but the <em>pattern</em> is still there. Scientists track changes like these by counting and measuring over time.</p>
+          <p>Even when motion fades, the data shows the pattern clearly. That's why scientists record their observations carefully. The numbers tell the story.</p>
+          <p><strong>Real-World Connection:</strong> The pendulum inside a grandfather clock swings in such a regular pattern that it can move the clock's hands forward by exactly one second per tick.</p>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE DIAGRAM -->
+      <div class="diagram-wrap scroll-reveal">
+        <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
+          🗺 Tap a zone to explore it
+        </div>
+        <div class="diagram-interactive">
+          <svg viewBox="0 0 860 280" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;" role="img" aria-label="Three motion pattern examples: pendulum, bouncing ball, and see-saw">
+
+            <!-- Background -->
+            <rect width="860" height="280" fill="#F4F1EC" rx="10"/>
+
+            <!-- Dividers -->
+            <line x1="287" y1="20" x2="287" y2="260" stroke="#D8CEBC" stroke-width="2" stroke-dasharray="5 4"/>
+            <line x1="574" y1="20" x2="574" y2="260" stroke="#D8CEBC" stroke-width="2" stroke-dasharray="5 4"/>
+
+            <!-- Zone labels -->
+            <text x="143" y="38" text-anchor="middle" font-size="15" font-weight="800" fill="#3D2009">Pendulum</text>
+            <text x="430" y="38" text-anchor="middle" font-size="15" font-weight="800" fill="#3D2009">Bouncing Ball</text>
+            <text x="717" y="38" text-anchor="middle" font-size="15" font-weight="800" fill="#3D2009">Swing / See-Saw</text>
+
+            <!-- ── PENDULUM DRAWING ── -->
+            <!-- Fixed point -->
+            <circle cx="143" cy="70" r="7" fill="#5C3A1E"/>
+            <line x1="110" y1="55" x2="175" y2="55" stroke="#5C3A1E" stroke-width="4"/>
+            <!-- Three positions of pendulum arm showing arc -->
+            <!-- Left position -->
+            <line x1="143" y1="70" x2="105" y2="168" stroke="#C8A060" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+            <circle cx="105" cy="172" r="10" fill="#C8A060" opacity="0.4"/>
+            <!-- Center position (rest) -->
+            <line x1="143" y1="70" x2="143" y2="174" stroke="#C8920A" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="143" cy="180" r="13" fill="#C8920A"/>
+            <ellipse cx="138" cy="175" rx="4" ry="3" fill="rgba(255,240,200,0.5)"/>
+            <!-- Right position -->
+            <line x1="143" y1="70" x2="181" y2="168" stroke="#C8A060" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+            <circle cx="181" cy="172" r="10" fill="#C8A060" opacity="0.4"/>
+            <!-- Arc path -->
+            <path d="M 105,172 Q 143,130 181,172" stroke="#D4780A" stroke-width="2" stroke-dasharray="6 3" fill="none" opacity="0.6"/>
+            <!-- Arrow indicators -->
+            <text x="95" y="200" text-anchor="middle" font-size="11" fill="#7B5530">←</text>
+            <text x="190" y="200" text-anchor="middle" font-size="11" fill="#7B5530">→</text>
+            <text x="143" y="235" text-anchor="middle" font-size="11" fill="#9A8E82">same arc every cycle</text>
+
+            <!-- ── BOUNCING BALL DRAWING ── -->
+            <!-- Ground -->
+            <line x1="310" y1="248" x2="555" y2="248" stroke="#7B5530" stroke-width="3"/>
+            <!-- Bounce path -->
+            <path d="M 355,248 Q 380,155 405,248 Q 420,195 435,248 Q 444,222 453,248" stroke="#E85D04" stroke-width="2" stroke-dasharray="5 3" fill="none" opacity="0.5"/>
+            <!-- Ball at peak -->
+            <circle cx="380" cy="148" r="18" fill="#E85D04" stroke="#A03000" stroke-width="2"/>
+            <ellipse cx="374" cy="141" rx="5" ry="4" fill="rgba(255,220,180,0.6)"/>
+            <!-- Smaller echo positions -->
+            <circle cx="420" cy="191" r="13" fill="#E85D04" opacity="0.5" stroke="#A03000" stroke-width="1.5"/>
+            <circle cx="449" cy="219" r="9" fill="#E85D04" opacity="0.35" stroke="#A03000" stroke-width="1.5"/>
+            <!-- Arrows -->
+            <text x="430" y="265" text-anchor="middle" font-size="11" fill="#9A8E82">lower each bounce</text>
+
+            <!-- ── SEE-SAW / SWING DRAWING ── -->
+            <!-- Ground base -->
+            <rect x="695" y="244" width="50" height="8" rx="3" fill="#7B5530"/>
+            <!-- Center pivot triangle -->
+            <polygon points="720,244 706,244 720,224 734,244" fill="#A07820"/>
+            <!-- See-saw plank - tilted left (going down on left) -->
+            <rect x="632" y="211" width="176" height="12" rx="5" fill="#D4A040" transform="rotate(-12, 720, 217)"/>
+            <!-- End dots -->
+            <circle cx="637" cy="228" r="9" fill="#0288D1" stroke="#1565C0" stroke-width="2"/>
+            <circle cx="803" cy="210" r="9" fill="#2E7D32" stroke="#1B5E20" stroke-width="2"/>
+            <!-- Dashed other position -->
+            <rect x="632" y="211" width="176" height="12" rx="5" fill="none" stroke="#D4A040" stroke-width="2" stroke-dasharray="5 4" transform="rotate(12, 720, 217)" opacity="0.5"/>
+            <!-- Arrows showing movement -->
+            <text x="637" y="255" text-anchor="middle" font-size="11" fill="#9A8E82">down ↕ up</text>
+            <text x="717" y="270" text-anchor="middle" font-size="11" fill="#9A8E82">back and forth</text>
+
+            <!-- HOTSPOT RECTS -->
+            <rect class="hotspot" x="0" y="0" width="287" height="280" fill="#F9A825"
+                  data-part="pendulum"
+                  data-info="A <strong>pendulum</strong> swings back and forth in a regular arc. Each swing is one cycle. Because the arc is always the same, scientists can count swings and predict exactly how many will happen in the next minute."/>
+            <rect class="hotspot" x="287" y="0" width="287" height="280" fill="#E85D04"
+                  data-part="bouncing ball"
+                  data-info="A <strong>bouncing ball</strong> shows a fading pattern. Each bounce is a little lower than the last — but the pattern of 'bounce, lower, bounce, lower' repeats in a predictable way. Scientists can use this pattern to predict when the ball will stop."/>
+            <rect class="hotspot" x="574" y="0" width="286" height="280" fill="#2D6A4F"
+                  data-part="swing and see-saw"
+                  data-info="A <strong>swing or see-saw</strong> is another repeating motion. One side goes down, the other goes up — over and over. Because the motion is regular, scientists can predict where each side will be at any moment."/>
+          </svg>
+
+          <div class="diagram-info-panel" id="diagramPanel">
+            <span class="dip-word" id="diagramWord"></span>
+            <span id="diagramInfo"></span>
+          </div>
+        </div>
+        <div class="diagram-tap-hint">Tap any zone to learn about that motion.</div>
+        <div class="diagram-caption">Three examples of repeating motion. Each one follows a pattern — and patterns make prediction possible.</div>
+      </div>
+
+      <!-- Key Concept -->
+      <div class="key-concept scroll-reveal">
+        <div class="kc-label">⭐ Key Concept</div>
+        <p><strong>When an object moves in a repeating pattern, you can use that pattern to predict future motion.</strong> Observations are evidence — and evidence is how scientists make reliable predictions.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mind-Blowing Fact -->
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Amazing Science Fact</div>
+      <div class="mind-blow-text">In the 1580s, a young scientist named Galileo watched a lamp swinging in a church and timed it with his own heartbeat. He discovered that the lamp always took <strong>the same amount of time to swing</strong> — no matter how far it traveled. That observation helped invent the mechanical clock.</div>
+    </div>
+  </div>
+
+  <!-- Go Deeper -->
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper</summary>
+    <div class="gd-body">
+      <p>Galileo's discovery about pendulums was one of the most important in the history of science. He found that a longer pendulum swings more slowly than a shorter one — but both are perfectly regular. That regularity is exactly what makes a pendulum useful for keeping time.</p>
+      <p>Engineers who design clocks still use this principle today. A pendulum that is exactly 99.4 cm long swings once per second — every time, like clockwork. That's a prediction you can set your watch to. Scientists also study repeating motion in nature: the beating of a heart, ocean waves rolling in, the wings of a hummingbird. All of them follow patterns. All of them can be measured and predicted.</p>
+      <p>What other repeating patterns do you see in the world around you? How might a scientist measure and record them?</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+
+</div><!-- /tab-lesson -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 3: EXPLORE                                            -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🔬</span>
+      <div>
+        <div class="video-wrap-type">Activity 3 · Investigation</div>
+        <div class="video-wrap-title">Build a Pendulum and Find Its Pattern</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🔬</div>
+        <div class="video-placeholder-text">Exploration video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 6-1-exploration-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 3: INVESTIGATION -->
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#0288D1;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🔬 Investigation: Your Own Pendulum</div>
+        <div class="act-subtitle">Make it, watch it, count it, predict it.</div>
+      </div>
+      <div class="act-time" style="background:#0288D1;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="callout callout-tip" style="margin-bottom:18px;">
+        <span class="callout-icon">🎒</span>
+        <p><strong>You'll need:</strong> A piece of string about 30 cm long, a small heavy object (key, washer, large eraser), tape or a table edge, a timer or phone clock, and your science notebook.</p>
+      </div>
+
+      <p>Follow each step carefully. Record what you find in your notebook as you go.</p>
+
+      <div style="position:relative; margin:16px 0;">
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">1</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Build it:</strong> Tie your heavy object to one end of the string. Tape the other end to the edge of a table or hold it steady with your hand. Make sure the weight hangs freely.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2D6A4F,#52B788);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(45,106,79,0.3);">2</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Watch it:</strong> Give it a small, gentle push. Watch it swing back and forth. Count one cycle as the weight going out and coming back. Watch 5 swings before you start counting.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#52B788,#F9A825);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(82,183,136,0.3);">3</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Count it:</strong> Start your timer. Count how many full swings happen in 15 seconds. Write that number down. Do it again — a second trial. Did you get a similar number?</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F9A825,#FDD835);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(249,168,37,0.3);">4</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Predict it:</strong> Based on your count, predict: how many swings will happen in 30 seconds? Write your prediction first — then time it and check. Was your prediction close?</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🌲</span>
+        <div>
+          <div class="label">Think Like a Scientist</div>
+          <div class="question">"Your two trials probably gave similar counts. Why do you think that happened? What does it tell you about the pendulum's pattern?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RECORD YOUR THINKING -->
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#2E7D32;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">📓 Record Your Thinking</div>
+        <div class="act-subtitle">Put your observations into words and drawings.</div>
+      </div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>In your science notebook, record your investigation. Be specific — write down what you actually saw, not just what you expected.</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">1</span>
+        <span class="pq-text">Draw your pendulum and label it. Draw arrows showing the direction of motion on each side. Label: starting point, lowest point, and turning point.</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">2</span>
+        <span class="pq-text">Write your counts from both trials. Were they the same or close? What does that tell you about the pattern?</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">3</span>
+        <span class="pq-text">Write your 30-second prediction and your actual count. Was your prediction accurate? What helped you predict?</span>
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">🗣️</span>
+        <p>Tell the story of your investigation from beginning to end — what you did, what you counted, and what you figured out. Use your notes to help you say it clearly.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DISCUSS / THINK IT THROUGH -->
+  <div class="card theme-meadow scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">💬</div>
+      <div>
+        <div class="card-head-label">Discussion</div>
+        <div class="card-head-title">Think It Through</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Think through each question on your own. Write your answers in your science notebook before moving on.</p>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Question 1</div>
+          <div class="question">"What did you notice about your pendulum's motion? Did it keep repeating in the same way?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">💡</span>
+        <div>
+          <div class="label">Question 2</div>
+          <div class="question">"How did counting the swings help you make a prediction? What evidence did you use?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🌍</span>
+        <div>
+          <div class="label">Question 3 — Real World</div>
+          <div class="question">"Where else have you seen repeating motion? Think about things at home, outside, or in a machine."</div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🔁</span>
+        <div>
+          <div class="label">Question 4 — What If?</div>
+          <div class="question">"What do you think would happen if you made the string shorter? Would the pattern change? Would your prediction still work?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+
+</div><!-- /tab-explore -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 4: SELF-CHECK QUIZ                                    -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#F9A825;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">⏱️</div>
+      <div style="flex:1;">
+        <div style="font-size:19px;color:#1B4332;font-weight:800;line-height:1.2;">🧠 Quick Self-Check</div>
+        <div style="font-size:12px;color:#9A8E82;">Not graded — just for you! See how much you remember before the notebook work.</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+
+      <!-- QUESTION 1 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. What does it mean when we say motion has a <strong>pattern</strong>?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>The object moves in a different direction every time.</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>The object moves in a way that repeats.</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>The object speeds up every time it moves.</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌲 Right! A pattern in motion means the object keeps repeating the same movement — that's what makes it predictable.</div>
+        <div class="quiz-feedback fb-wrong">Not quite. Think about a swing — it goes out and comes back the same way every time. That's a pattern.</div>
+      </div>
+
+      <!-- QUESTION 2 -->
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">2. You watch a pendulum swing 12 times in one minute. What could you predict?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>It will stop completely after 5 more swings.</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>It will swing much faster next minute.</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>It will swing about 12 times in the next minute.</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌿 Exactly! Past patterns give us evidence to predict future motion. That's one of the most useful things scientists do.</div>
+        <div class="quiz-feedback fb-wrong">Think about it — the pendulum has been swinging 12 times every minute. What does that pattern tell you about the next minute?</div>
+      </div>
+
+      <!-- QUESTION 3 -->
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-text">3. Which of these is the best example of a repeating motion pattern?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>A playground swing going back and forth.</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>A leaf blowing in different directions in the wind.</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>A rock falling straight down to the ground.</div>
+        </div>
+        <div class="quiz-feedback fb-correct">⭐ Yes! The swing follows the same path over and over — forward and back, forward and back. That's a motion pattern.</div>
+        <div class="quiz-feedback fb-wrong">A pattern means the motion repeats the same way. A leaf in the wind or a falling rock don't repeat — they happen once. Which one keeps doing the same thing?</div>
+      </div>
+
+      <!-- Score Display -->
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum">0</div>
+        <div class="quiz-score-label">out of 3</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+
+        <div class="video-feedback" id="quizVideoCorrect" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">✅</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Perfect Score</div>
+                <div class="video-wrap-title">Amazing work, scientist! You've got it!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">⭐</div>
+                <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 6-1-quiz-perfect --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">📚</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Keep Going</div>
+                <div class="video-wrap-title">You're close — let's review the patterns together!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">📚</div>
+                <div class="video-placeholder-text">Review video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 6-1-quiz-review --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+
+</div><!-- /tab-quiz -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 5: ASSIGNMENT                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">✍️</span>
+      <div>
+        <div class="video-wrap-type">Activity 5 · Assignment</div>
+        <div class="video-wrap-title">Show What You Know</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">✍️</div>
+        <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 6-1-assignment-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-card act-check scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#7B5EA7;">5</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment: Motion Patterns</div>
+        <div class="act-subtitle">Answer in complete sentences. Use your science vocabulary.</div>
+      </div>
+      <div class="act-time" style="background:#7B5EA7;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- PART A -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔍 Part A — Identify the Pattern</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Read each motion below. Write <strong>yes</strong> if it shows a repeating pattern or <strong>no</strong> if it does not. Then write one sentence explaining your answer.</p>
+
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">A pendulum swings back and forth the same way over and over. Is this a repeating pattern?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">A ball rolls off a table and lands on the floor once. Is this a repeating pattern?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">A swing moves back and forth at the playground. Is this a repeating pattern?</span></div>
+
+      <!-- PART B -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🚀 Part B — Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer each question in <strong>complete sentences</strong>. Use your science vocabulary!</p>
+
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">4</span><span class="pq-text">Explain what a pattern in motion is. Use the word <strong>repeats</strong> in your answer.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">5</span><span class="pq-text">A bouncing ball bounces lower and lower each time it hits the floor. Is this still a pattern? Explain why.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">6</span><span class="pq-text">How is a pendulum similar to a playground swing? Name at least two things they have in common.</span></div>
+
+      <!-- WRITE & EXPLAIN -->
+      <div class="key-concept scroll-reveal" style="background:#FFF9E8;border-color:#F0E4C0;margin-top:20px;">
+        <div class="kc-label" style="color:#F9A825;">✍️ Write and Explain</div>
+        <p style="font-size:16px;font-weight:700;color:#1B4332;margin-bottom:14px;">How does a repeating pattern in motion help you predict what will happen next?</p>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What do you think?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I think that a pattern in motion helps because…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What did you observe or learn that supports your thinking?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I know this because when I observed my pendulum…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">Why does that make sense?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="background:#EEF8F0;border-radius:10px;padding:10px 14px;border-left:3px solid #52B788;">
+          <p style="margin:0;font-size:14px;color:#1B4332;">📚 Try to use at least one of these words in your answer: <strong>pattern</strong>, <strong>predict</strong>, <strong>observation</strong>, <strong>cycle</strong></p>
+        </div>
+      </div>
+
+      <!-- PART C -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Label</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Draw a pendulum in motion. Show at least <strong>three positions</strong> of the pendulum during one swing. Label: the <em>fixed point</em> at the top, the <em>lowest point</em>, both <em>turning points</em>, and the <em>direction of motion</em> with arrows.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Reflect</div>
+          <div class="question">"At the start of this lesson, you observed a swing in the photo. Now you've investigated a pendulum yourself. What changed in your thinking? What do you understand now that you didn't before?"</div>
+        </div>
+      </div>
+
+      <!-- WHAT TO TURN IN -->
+      <div class="turn-in-block">
+        <div class="turn-in-header">
+          <div class="turn-in-header-icon">📋</div>
+          <div>
+            <div class="turn-in-header-label">Canvas Submission</div>
+            <div class="turn-in-header-title">What to Turn In</div>
+          </div>
+        </div>
+        <div class="turn-in-body">
+
+          <p class="turn-in-intro">Submit your work on Canvas using <strong>one of these options:</strong></p>
+
+          <div class="turn-in-options">
+            <div class="turn-in-option turn-in-option-type">
+              <div class="turn-in-option-icon">⌨️</div>
+              <div class="turn-in-option-title">Type It</div>
+              <div class="turn-in-option-text">Type your answers directly into the Canvas assignment.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-photo">
+              <div class="turn-in-option-icon">📸</div>
+              <div class="turn-in-option-title">Photo It</div>
+              <div class="turn-in-option-text">Take a clear photo of your handwritten work and upload it.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-video">
+              <div class="turn-in-option-icon">🎥</div>
+              <div class="turn-in-option-title">Record It</div>
+              <div class="turn-in-option-text">Record a short video explaining what you did and learned.</div>
+            </div>
+          </div>
+
+          <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
+
+          <div class="turn-in-checklist">
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Notice &amp; Wonder warm-up — two observations and one question I had about the swing photo.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page, written carefully in my notebook.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My pendulum investigation — both trial counts, my 30-second prediction, and my actual result.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Part A, B, and C written answers, in complete sentences.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Write &amp; Explain response using at least one vocabulary word.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Part C pendulum drawing with all labels and direction arrows.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CLOSING VIDEO -->
+      <div class="video-wrap" style="margin-top:24px;">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">👋</span>
+          <div>
+            <div class="video-wrap-type">Closing · Wrap-Up</div>
+            <div class="video-wrap-title">Great work today! Next up — we investigate patterns ourselves!</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">👋</div>
+            <div class="video-placeholder-text">Closing video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 6-1-closing --></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /tab-assignment -->
+
+
+<!-- ═══ FOOTER ═══ -->
+<div class="footer">
+  <div class="footer-line1">Optima Academy Online · <span>3rd Grade Science</span></div>
+  <div class="footer-line2">Lesson 6.01 · NGSS 3-PS2-2</div>
+  <div class="footer-line3">© Optima Academy · All rights reserved</div>
+</div>
+
+</div><!-- /page-wrap -->
+
+
+<script>
+
+// ═══════════════════════════════════════════════════════════════
+// Primary topic emoji — must match progress-label and backToTop
+// ═══════════════════════════════════════════════════════════════
+var LESSON_EMOJI = '⏱️';
+
+// ── Tab System ──
+var tabProgress = { vocab: false, lesson: false, explore: false, quiz: false, assignment: false };
+var tabOrder = ['vocab','lesson','explore','quiz','assignment'];
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelector('[data-tab="' + name + '"]').classList.add('active');
+  tabProgress[name] = true;
+  document.querySelector('[data-tab="' + name + '"]').classList.add('visited');
+  var visited = Object.values(tabProgress).filter(Boolean).length;
+  var pct = Math.round((visited / tabOrder.length) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c){
+    if (name === 'vocab') { c.classList.remove('collapsed'); }
+    else { c.classList.add('collapsed'); }
+  });
+  try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+  var top = document.getElementById('pageTop');
+  if (top && top.scrollIntoView) {
+    try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+  }
+}
+
+// ── Checklist ──
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  var icon = item.querySelector('.check-icon');
+  if (!icon) return;
+  icon.textContent = item.classList.contains('checked') ? LESSON_EMOJI : '';
+  var items = document.querySelectorAll('.turn-in-item');
+  setTimeout(function(){
+    if (Array.from(items).every(function(it){ return it.classList.contains('checked'); })) {
+      setTimeout(window.launchConfetti, 200);
+    }
+  }, 50);
+}
+
+// ── Clickable Diagram ──
+(function() {
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel    = document.getElementById('diagramPanel');
+  var wordEl   = document.getElementById('diagramWord');
+  var infoEl   = document.getElementById('diagramInfo');
+  if (!panel) return;
+  hotspots.forEach(function(hs) {
+    hs.addEventListener('click', function(e) {
+      e.stopPropagation();
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+      hs.classList.add('active');
+      var part = hs.getAttribute('data-part').replace(/-/g, ' ');
+      wordEl.textContent = part.charAt(0).toUpperCase() + part.slice(1);
+      infoEl.innerHTML   = hs.getAttribute('data-info');
+      panel.classList.add('visible');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+    }
+  });
+})();
+
+// ── Self-Check Quiz ──
+var quizAnswered = 0;
+var quizCorrect  = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen  = optEl.getAttribute('data-val');
+  q.querySelectorAll('.quiz-opt').forEach(function(o){
+    if (o.getAttribute('data-val') === correct) { o.classList.add('correct'); }
+    else { o.classList.add('disabled'); }
+  });
+  var fbCorrect = q.querySelector('.fb-correct');
+  var fbWrong   = q.querySelector('.fb-wrong');
+  if (chosen === correct) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+  if (quizAnswered === 3) {
+    var scoreBox = document.getElementById('quizScore');
+    var scoreNum = document.getElementById('quizScoreNum');
+    var scoreMsg = document.getElementById('quizScoreMsg');
+    var vCorrect = document.getElementById('quizVideoCorrect');
+    var vReview  = document.getElementById('quizVideoReview');
+    scoreNum.textContent = quizCorrect;
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '⭐ Perfect! You got every question right!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌿 Great job! Almost there!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip) {
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function() {
+    var rect = tip.getBoundingClientRect();
+    var bw   = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Back to Top ──
+(function() {
+  var btn = document.getElementById('backToTop');
+  if (!btn) return;
+  var inIframe = (function() {
+    try { return window.self !== window.top; }
+    catch (e) { return true; }
+  })();
+  btn.addEventListener('click', function() {
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    var top = document.getElementById('pageTop');
+    if (top && top.scrollIntoView) {
+      try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+    }
+    try {
+      if (window.frameElement && window.frameElement.scrollIntoView) {
+        window.frameElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (e) {}
+    if (inIframe) {
+      try { window.parent.postMessage({ type: 'optima-lesson:scroll-to-top' }, '*'); } catch (e) {}
+    }
+  });
+  if (inIframe) {
+    setTimeout(function() { btn.classList.add('show'); }, 1500);
+  } else {
+    window.addEventListener('scroll', function() {
+      btn.classList.toggle('show', window.pageYOffset > 400);
+    });
+  }
+})();
+
+// ── Confetti ──
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx    = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#F9A825','#FDD835','#52B788','#4DD0E1','#2E7D32','#FF8F00','#0288D1','#7B5EA7'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── Collapsible Intro Cards ──
+var introCards = document.querySelectorAll('.intro-2col .card');
+introCards.forEach(function(card){
+  var head = card.querySelector('.card-head');
+  if (!head) return;
+  head.addEventListener('click', function(){
+    var willCollapse = !card.classList.contains('collapsed');
+    introCards.forEach(function(c){
+      c.classList.toggle('collapsed', willCollapse);
+    });
+  });
+});
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+tabProgress['vocab'] = true;
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+
+</script>
+</body>
+</html>
