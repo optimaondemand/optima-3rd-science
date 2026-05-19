@@ -1,0 +1,2042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – Investigation: Ramp &amp; Ball Motion</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+  background: #F2F0E8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #2B1D12;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap { max-width: 920px; margin: 0 auto; background: #FAF8F4; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%);
+  border-bottom: 6px solid #F9A825;
+  padding: 22px 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 6px; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #F9A825, #FDD835, #F9A825);
+}
+.header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.header-logo {
+  width: 52px; height: 52px; border-radius: 50%; background: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title {
+  font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+  text-shadow: 0 2px 12px rgba(249,168,37,0.3);
+}
+.header-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(249,168,37,0.15); border: 1.5px solid rgba(249,168,37,0.35);
+  border-radius: 28px; padding: 6px 16px;
+}
+.header-badge span:first-child { font-size: 22px; }
+.header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ── Hero Visual ── */
+.hero-visual {
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #F9A825;
+}
+.hero-visual svg { display: block; width: 100%; height: auto; }
+
+/* ── Hero Animations ── */
+@keyframes cloud-drift-1 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(40px); }
+}
+@keyframes cloud-drift-2 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-32px); }
+}
+@keyframes sun-pulse {
+  0%, 100% { opacity: 0.65; transform: scale(1); }
+  50%       { opacity: 1;    transform: scale(1.12); }
+}
+@keyframes bird-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(6px, -8px); }
+}
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes hero-twinkle {
+  0%, 100% { opacity: 0.4; transform: scale(0.85); }
+  50%       { opacity: 1;   transform: scale(1.15); }
+}
+@keyframes hero-shimmer {
+  0%, 100% { opacity: 0.25; }
+  50%       { opacity: 0.7; }
+}
+@keyframes hero-spin-slow {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes hero-sway {
+  0%, 100% { transform: rotate(-2.5deg); }
+  50%       { transform: rotate(2.5deg); }
+}
+@keyframes mind-blow-bounce {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.12); }
+}
+
+/* Forces/Motion — ball rolls down the ramp slope then resets */
+/* Ramp hypotenuse: (192,120) → (500,172), slope 52/308 ≈ 0.169         */
+/* Ball starts near ramp top, translates (293px right, 50px down)        */
+/* matching the slope exactly, then fades and snaps back to the top.     */
+@keyframes ball-roll-ramp {
+  0%   { transform: translate(0px,   0px)  rotate(0deg);    opacity: 1; }
+  52%  { transform: translate(293px, 50px) rotate(1080deg); opacity: 1; }
+  63%  { transform: translate(340px, 50px) rotate(1253deg); opacity: 0; }
+  64%  { transform: translate(0px,   0px)  rotate(0deg);    opacity: 0; }
+  80%  { transform: translate(0px,   0px)  rotate(0deg);    opacity: 1; }
+  100% { transform: translate(0px,   0px)  rotate(0deg);    opacity: 1; }
+}
+@keyframes tape-shimmer {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
+@keyframes notebook-bob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+.hero-cloud-1   { animation: cloud-drift-1 9s ease-in-out infinite alternate; }
+.hero-cloud-2   { animation: cloud-drift-2 13s ease-in-out infinite alternate; }
+.hero-sun-glow  { animation: sun-pulse 4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-birds     { animation: bird-drift 5s ease-in-out infinite; }
+.hero-float     { animation: hero-float 3.5s ease-in-out infinite; }
+.hero-twinkle   { animation: hero-twinkle 2.2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-twinkle-2 { animation: hero-twinkle 3.1s ease-in-out infinite 0.5s; transform-origin: center; transform-box: fill-box; }
+.hero-twinkle-3 { animation: hero-twinkle 2.7s ease-in-out infinite 1.1s; transform-origin: center; transform-box: fill-box; }
+.hero-shimmer   { animation: hero-shimmer 3s ease-in-out infinite; }
+.hero-spin-slow { animation: hero-spin-slow 18s linear infinite; transform-origin: center; transform-box: fill-box; }
+.hero-sway      { animation: hero-sway 4s ease-in-out infinite; transform-origin: bottom center; transform-box: fill-box; }
+.hero-ball-roll { animation: ball-roll-ramp 5s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-tape      { animation: tape-shimmer 2.5s ease-in-out infinite; }
+.hero-notebook  { animation: notebook-bob 3.5s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+
+/* ── Info Strip ── */
+.info-strip {
+  display: flex; flex-wrap: wrap; background: #fff;
+  border-bottom: 2px solid #E8DDD2;
+}
+.info-item {
+  flex: 1; min-width: 150px; padding: 12px 16px;
+  border-right: 1px solid #E8DDD2;
+  display: flex; align-items: center; gap: 10px;
+}
+.info-item:last-child { border-right: none; }
+.info-icon {
+  width: 40px; height: 40px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.info-value { font-size: 16px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+/* ── Content Area ── */
+.content { padding: 24px 28px 36px; }
+
+/* ── Card System ── */
+.card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 22px; overflow: hidden;
+  box-shadow: 0 2px 12px rgba(27,67,50,0.04);
+}
+.card-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 20px; border-bottom: 2px solid;
+}
+.card-head-icon {
+  width: 42px; height: 42px; border-radius: 50%; color: #fff;
+  font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.card-head-title { font-size: 20px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.card-body { padding: 18px 22px; }
+.card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+.card-body p:last-child { margin-bottom: 0; }
+
+/* ── Card Color Themes ── */
+.theme-earth  .card-head { background: #FFF0E8; border-color: #E8D0B8; }
+.theme-earth  .card-head-icon { background: #A0522D; }
+.theme-sun    .card-head { background: #FFF9E8; border-color: #F0E4C0; }
+.theme-sun    .card-head-icon { background: #F9A825; }
+.theme-sky    .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-sky    .card-head-icon { background: #0288D1; }
+.theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+.theme-forest .card-head-icon { background: #2E7D32; }
+.theme-rock   .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+.theme-rock   .card-head-icon { background: #7B5EA7; }
+.theme-meadow .card-head { background: #F0F8E8; border-color: #C8E0B8; }
+.theme-meadow .card-head-icon { background: #558B2F; }
+
+/* ── Activity Cards ── */
+.activity-card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 18px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.activity-card.act-warmup  { border-left: 6px solid #52B788; }
+.activity-card.act-lesson  { border-left: 6px solid #F9A825; }
+.activity-card.act-explore { border-left: 6px solid #0288D1; }
+.activity-card.act-practice{ border-left: 6px solid #2E7D32; }
+.activity-card.act-check   { border-left: 6px solid #7B5EA7; }
+
+.act-head {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px 14px 18px;
+  border-bottom: 1.5px solid #E8DDD2;
+}
+.act-num {
+  width: 38px; height: 38px; border-radius: 14px; color: #fff;
+  font-size: 18px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.act-title { font-size: 19px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.act-subtitle { font-size: 12px; color: #9A8E82; }
+.act-time {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap;
+  margin-left: auto; flex-shrink: 0;
+}
+.act-body { padding: 18px 22px 18px 20px; }
+.act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+/* ── Callout Boxes ── */
+.callout {
+  border-radius: 14px; padding: 16px 18px;
+  display: flex; align-items: flex-start; gap: 12px;
+  margin-bottom: 14px;
+}
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+.callout-earth  { background: #FFF0E8; border: 2px solid #E8D0B8; }
+.callout-think  { background: #FFF9E8; border: 2px solid #F0E4C0; }
+.callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+.callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+.callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+
+/* ── Socratic Questions ── */
+.socratic-q {
+  background: linear-gradient(135deg, #EEF8F0, #E8F5E9);
+  border: 2px solid #A8D5B8;
+  border-radius: 16px; padding: 16px 20px;
+  margin: 16px 0;
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.socratic-q .label {
+  font-size: 11px; color: #2D6A4F; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px;
+}
+.socratic-q .question {
+  font-size: 17px; color: #2B1D12; font-weight: 700;
+  line-height: 1.6; font-style: italic;
+}
+
+/* ── Diagram Containers ── */
+.diagram-wrap {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 16px; margin: 16px 0;
+  text-align: center;
+}
+.diagram-wrap svg { max-width: 100%; height: auto; }
+.diagram-caption {
+  font-size: 13px; color: #9A8E82; margin-top: 10px;
+  font-weight: 600; text-align: center;
+}
+
+/* ── Lesson Figure ── */
+.lesson-figure {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 14px 14px 18px; margin: 0 0 22px;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.lesson-figure-label {
+  font-size: 11px; color: #2D6A4F;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  font-weight: 800; margin-bottom: 10px;
+}
+.lesson-figure img {
+  display: block; max-width: 100%; height: auto;
+  border-radius: 10px; margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.lesson-figure-caption {
+  font-size: 14px; color: #5A4D3E;
+  margin-top: 12px; line-height: 1.55; font-weight: 600;
+  text-align: center;
+}
+.lesson-figure-caption strong { color: #1B4332; }
+
+/* ── Key Concept Box ── */
+.key-concept {
+  background: #F0F8E8; border: 2px solid #C8E0B8;
+  border-radius: 14px; padding: 18px 20px; margin: 14px 0;
+}
+.key-concept .kc-label {
+  font-size: 13px; color: #558B2F; text-transform: uppercase;
+  letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px;
+}
+.key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+.key-concept p:last-child { margin-bottom: 0; }
+
+/* ── Practice Questions ── */
+.pq {
+  background: #FAFAF6; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 14px 18px; margin-bottom: 12px;
+}
+.pq-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  color: #fff; font-weight: 800; font-size: 14px;
+  margin-right: 8px; vertical-align: middle;
+}
+.pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+.pq-answer { font-size: 15px; color: #9A8E82; font-style: italic; }
+
+/* ── Vocab Flashcards ── */
+.vocab-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px; margin: 14px 0;
+}
+.flip-card { perspective: 800px; height: 195px; cursor: pointer; }
+.flip-card-inner {
+  position: relative; width: 100%; height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 14px 18px; text-align: center;
+  border: 2px solid #E8DDD2;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.06);
+}
+.flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+.flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+.flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #1B4332; margin-bottom: 6px; }
+.flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+.flip-card-back {
+  background: linear-gradient(145deg, #1B4332, #2D6A4F);
+  border-color: #1B4332;
+  transform: rotateY(180deg);
+}
+.flip-card-back .fc-def { font-size: 14.5px; color: #fff; line-height: 1.5; font-weight: 600; }
+.flip-card-back .fc-word-back {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 6px;
+}
+.flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 8px; font-weight: 600; }
+.fc-color-1 .flip-card-front { border-top-color: #52B788; }
+.fc-color-2 .flip-card-front { border-top-color: #2D6A4F; }
+.fc-color-3 .flip-card-front { border-top-color: #F9A825; }
+.fc-color-4 .flip-card-front { border-top-color: #0288D1; }
+.fc-color-5 .flip-card-front { border-top-color: #2E7D32; }
+.fc-color-6 .flip-card-front { border-top-color: #7B5EA7; }
+
+/* ── Vocab Tooltips ── */
+.vtip {
+  position: relative; color: #7B5EA7; font-weight: 700;
+  cursor: help; border-bottom: 2px dotted rgba(123,94,167,0.45);
+  transition: color 0.15s;
+}
+.vtip:hover { color: #5B3EA7; }
+.vtip .vtip-box {
+  position: fixed; background: #1B4332; color: #fff;
+  padding: 12px 16px; border-radius: 12px;
+  font-size: 14px; font-weight: 600; font-style: normal;
+  line-height: 1.55; width: 250px; text-align: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  pointer-events: none; z-index: 9999;
+  box-shadow: 0 6px 24px rgba(27,67,50,0.35);
+  border: 1.5px solid rgba(149,213,178,0.3);
+  transform: translateY(6px);
+}
+.vtip .vtip-box::after {
+  content: ''; position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent; border-top-color: #1B4332;
+}
+.vtip .vtip-word {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block;
+}
+.vtip:hover .vtip-box { opacity: 1; visibility: visible; transform: translateY(0); }
+
+/* ── Mind-Blow ── */
+.mind-blow {
+  background: linear-gradient(135deg, #1a3a28, #1B4332);
+  border: 2px solid rgba(149,213,178,0.3);
+  border-radius: 18px; padding: 20px 22px; margin: 0 0 22px;
+  display: flex; align-items: flex-start; gap: 16px;
+}
+.mind-blow-icon {
+  font-size: 44px; flex-shrink: 0; line-height: 1;
+  animation: mind-blow-bounce 3s ease-in-out infinite;
+  transform-origin: center; display: block;
+}
+.mind-blow-content { flex: 1; }
+.mind-blow-label { font-size: 11px; color: #FDD835; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 6px; }
+.mind-blow-text { font-size: 16px; color: #fff; line-height: 1.6; font-weight: 600; }
+.mind-blow-text strong { color: #95D5B2; }
+
+/* ── Go Deeper ── */
+.go-deeper {
+  background: #F0EDF6; border: 2px solid #D8D0E8;
+  border-radius: 16px; margin: 0 0 22px; overflow: hidden;
+}
+.go-deeper summary {
+  padding: 14px 20px; font-size: 16px; font-weight: 800;
+  color: #7B5EA7; cursor: pointer; list-style: none;
+  display: flex; align-items: center; gap: 8px;
+}
+.go-deeper summary::before { content: '🔭'; font-size: 20px; }
+.go-deeper summary::marker { display: none; }
+.go-deeper[open] summary { border-bottom: 2px solid #D8D0E8; }
+.gd-body { padding: 18px 22px; }
+.gd-body p { font-size: 16px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+/* ── Diagram interactive ── */
+.diagram-interactive { position: relative; }
+.diagram-interactive svg { display: block; width: 100%; height: auto; }
+.hotspot { cursor: pointer; opacity: 0.01; transition: opacity 0.2s; }
+.hotspot:hover, .hotspot.active { opacity: 0.18; }
+.diagram-info-panel {
+  display: none; background: #1B4332; color: #fff;
+  border-radius: 12px; padding: 14px 18px; margin-top: 12px;
+  font-size: 15px; line-height: 1.6; font-weight: 600;
+}
+.diagram-info-panel.visible { display: block; }
+.dip-word {
+  display: block; font-size: 11px; color: #95D5B2;
+  text-transform: uppercase; letter-spacing: 1px; font-weight: 800;
+  margin-bottom: 6px;
+}
+.diagram-tap-hint { font-size: 12px; color: #9A8E82; margin-top: 8px; font-weight: 600; }
+
+/* ── Video Slots ── */
+.video-wrap {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 22px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.video-wrap-header {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 18px; border-bottom: 1.5px solid #E8DDD2;
+  background: #FAFAF6;
+}
+.video-wrap-type { font-size: 11px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.video-wrap-title { font-size: 17px; color: #1B4332; font-weight: 800; line-height: 1.3; }
+.video-ratio { position: relative; width: 100%; padding-top: 56.25%; background: #F4F1EC; }
+.video-ratio iframe,
+.video-ratio .video-placeholder {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+}
+.video-placeholder {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 8px; background: linear-gradient(135deg, #EEF8F0, #F0F8E8);
+}
+.video-placeholder-icon { font-size: 48px; opacity: 0.5; }
+.video-placeholder-text { font-size: 15px; color: #9A8E82; font-weight: 700; }
+.video-placeholder-id { font-size: 11px; color: #B8B0A8; font-family: monospace; }
+.video-feedback { display: none; }
+.video-feedback.show { display: block; }
+
+/* ── Collapsible Intro Cards ── */
+.intro-2col .card .card-head { cursor: pointer; user-select: none; position: relative; }
+.intro-2col .card .card-head::after {
+  content: '▾'; position: absolute; right: 16px; top: 50%;
+  transform: translateY(-50%); font-size: 16px; color: #9A8E82; transition: transform 0.25s ease;
+}
+.intro-2col .card.collapsed .card-head::after { transform: translateY(-50%) rotate(-90deg); }
+.intro-2col .card.collapsed .card-body { display: none; }
+
+/* ── Tab Bar ── */
+.tab-bar {
+  position: sticky; top: 44px; z-index: 100;
+  background: #FAF8F4; border-bottom: 3px solid #E8DDD2;
+  display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex: 1; min-width: 130px; padding: 12px 8px 11px;
+  background: transparent; border: none;
+  border-bottom: 4px solid transparent;
+  font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700;
+  color: #9A8E82; cursor: pointer; transition: all 0.2s;
+  white-space: nowrap; line-height: 1.3; text-align: center;
+}
+.tab-btn:hover { color: #1B4332; background: #EEF8F0; }
+.tab-btn.active { color: #1B4332; border-bottom-color: #2D6A4F; background: #fff; }
+.tab-btn .tab-check { display: none; font-size: 12px; color: #2E7D32; margin-left: 4px; font-weight: 800; }
+.tab-btn.visited .tab-check { display: inline; }
+
+/* ── Tab Panels ── */
+.tab-panel { display: none; padding: 24px 28px 36px; }
+.tab-panel.active { display: block; }
+.scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+/* ── Intro 2-col ── */
+.intro-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px 28px 0; }
+.intro-2col .card { margin-bottom: 0; }
+
+/* ── Need Strip ── */
+.need-strip { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 28px 16px; }
+.need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 700; white-space: nowrap; }
+.need-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: #EEF8F0; border: 1.5px solid #C4E5CC;
+  border-radius: 20px; padding: 5px 12px;
+  font-size: 13px; color: #1B4332; font-weight: 700;
+}
+
+/* ── Tab Next Button ── */
+.tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+.tab-next-btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px;
+  background: linear-gradient(135deg, #2D6A4F, #52B788);
+  color: #fff; border: none; border-radius: 28px;
+  font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800;
+  cursor: pointer; box-shadow: 0 4px 16px rgba(45,106,79,0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(45,106,79,0.4); }
+
+/* ── Quiz ── */
+.quiz-card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 18px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.quiz-q { border-bottom: 1.5px solid #E8DDD2; padding: 18px 20px; }
+.quiz-q:last-of-type { border-bottom: none; }
+.quiz-q-text { font-size: 17px; color: #1B4332; font-weight: 700; line-height: 1.6; margin-bottom: 14px; }
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 16px; border-radius: 12px;
+  border: 2px solid #E8DDD2; background: #FAFAF6;
+  font-size: 16px; color: #2B1D12; font-weight: 600;
+  cursor: pointer; transition: border-color 0.2s, background 0.2s;
+}
+.quiz-opt:hover { border-color: #52B788; background: #EEF8F0; }
+.quiz-opt.correct { border-color: #2E7D32 !important; background: #EEF8F0 !important; color: #1B4332; }
+.quiz-opt.wrong   { border-color: #E57373 !important; background: #FFF0EE !important; }
+.quiz-opt.disabled { opacity: 0.5; pointer-events: none; }
+.opt-letter {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: #E8DDD2; color: #5A4D3E; font-weight: 800; font-size: 14px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.quiz-feedback {
+  display: none; margin-top: 10px; padding: 10px 14px;
+  border-radius: 10px; font-size: 15px; font-weight: 700; line-height: 1.5;
+}
+.quiz-feedback.show { display: block; }
+.fb-correct { background: #EEF8F0; color: #2E7D32; border: 1.5px solid #C4E5CC; }
+.fb-wrong   { background: #FFF9E8; color: #F57F17; border: 1.5px solid #F0E4C0; }
+.quiz-score {
+  display: none; text-align: center; padding: 24px;
+  background: #EEF8F0; border-top: 2px solid #C4E5CC;
+}
+.quiz-score.show { display: block; }
+.quiz-score-num { font-size: 64px; font-weight: 900; color: #1B4332; line-height: 1; }
+.quiz-score-label { font-size: 18px; color: #5A4D3E; font-weight: 700; margin-bottom: 8px; }
+.quiz-score-msg { font-size: 18px; color: #2D6A4F; font-weight: 800; }
+
+/* ── What to Turn In ── */
+.turn-in-block {
+  background: #fff; border: 2.5px solid #0288D1; border-radius: 18px;
+  margin-top: 22px; overflow: hidden;
+  box-shadow: 0 4px 16px rgba(2,136,209,0.1);
+}
+.turn-in-header {
+  display: flex; align-items: center; gap: 14px;
+  background: #E8F4FB; padding: 18px 22px;
+  border-bottom: 2px solid #B3E5FC;
+}
+.turn-in-header-icon { font-size: 36px; line-height: 1; flex-shrink: 0; }
+.turn-in-header-label { font-size: 11px; color: #0288D1; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+.turn-in-header-title { font-size: 24px; color: #1B4332; font-weight: 900; line-height: 1.15; }
+.turn-in-body { padding: 22px 24px 24px; }
+.turn-in-intro { font-size: 16px; color: #5A4D3E; margin-bottom: 18px; line-height: 1.55; }
+.turn-in-intro strong { color: #1B4332; }
+.turn-in-options { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 26px; }
+.turn-in-option { border-radius: 16px; padding: 20px 14px; text-align: center; border: 2px solid; }
+.turn-in-option-type  { background: #EEF8F0; border-color: #C4E5CC; }
+.turn-in-option-photo { background: #FFF9E8; border-color: #F0E4C0; }
+.turn-in-option-video { background: #F0EDF6; border-color: #D8D0E8; }
+.turn-in-option-icon  { font-size: 34px; line-height: 1; margin-bottom: 12px; }
+.turn-in-option-title { font-size: 17px; color: #1B4332; font-weight: 800; margin-bottom: 8px; }
+.turn-in-option-text  { font-size: 14px; color: #5A4D3E; line-height: 1.5; }
+.turn-in-subhead { font-size: 16px; color: #5A4D3E; margin-bottom: 14px; line-height: 1.55; }
+.turn-in-checklist { display: flex; flex-direction: column; gap: 10px; }
+.turn-in-item {
+  display: flex; align-items: center; gap: 16px; padding: 14px 18px;
+  background: #FAFAF6; border: 1.5px solid #E8DDD2; border-radius: 14px;
+  cursor: pointer; transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item:hover { background: #F4FAF5; border-color: #C4E5CC; }
+.turn-in-item.checked { background: #EEF8F0; border-color: #B8E8CF; }
+.turn-in-item .turn-in-check {
+  width: 30px; height: 30px; border-radius: 8px; border: 2px solid #95D5B2;
+  background: #fff; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: 18px; line-height: 1; transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item.checked .turn-in-check { background: #2E7D32; border-color: #2E7D32; }
+.turn-in-item-text { font-size: 16px; color: #2B1D12; font-weight: 600; line-height: 1.55; flex: 1; }
+.turn-in-item.checked .turn-in-item-text { color: #5A4D3E; }
+
+/* ── Progress Bar ── */
+.progress-wrap {
+  position: sticky; top: 0; z-index: 200;
+  background: #0E1C42; padding: 8px 20px 10px;
+  border-bottom: 2px solid rgba(85,200,232,0.3);
+  display: flex; align-items: center; gap: 14px;
+}
+.progress-label { font-size: 12px; color: #55C8E8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+.progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; position: relative; }
+.progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #F9A825, #FDD835, #52B788); border-radius: 10px; transition: width 0.4s ease; }
+.progress-pct { font-size: 13px; color: #FDD835; font-weight: 800; min-width: 36px; text-align: right; }
+
+/* ── Back to Top ── */
+#backToTop {
+  position: fixed; bottom: 2rem; right: 2rem;
+  opacity: 0; visibility: hidden;
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.6rem 1.2rem; border-radius: 999px;
+  background: #F9A825; color: #1B1B1B;
+  font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 14px;
+  border: none; cursor: pointer;
+  box-shadow: 0 4px 12px rgba(249,168,37,0.35);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+  z-index: 500;
+}
+#backToTop.show { opacity: 1; visibility: visible; }
+#backToTop:hover { transform: translateY(-2px); }
+
+/* ── Footer ── */
+.footer {
+  background: #1B4332; padding: 20px 28px; text-align: center;
+}
+.footer-line1 { font-size: 15px; color: #95D5B2; font-weight: 700; margin-bottom: 4px; }
+.footer-line1 span { color: #fff; }
+.footer-line2 { font-size: 13px; color: #52B788; font-weight: 600; margin-bottom: 4px; }
+.footer-line3 { font-size: 11px; color: #5A8A70; }
+
+/* ── Confetti Canvas ── */
+#confettiCanvas {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 9999;
+}
+
+/* ── Utility ── */
+strong { color: #1B4332; }
+em { color: #5A4D3E; }
+.gold { color: #F9A825; font-weight: 700; }
+.forest { color: #2D6A4F; font-weight: 700; }
+
+@media (max-width: 620px) {
+  .intro-2col { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .turn-in-options { grid-template-columns: 1fr; }
+  .header-title { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+<canvas id="confettiCanvas"></canvas>
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- ═══════════ PROGRESS BAR ═══════════ -->
+<div class="progress-wrap">
+  <span class="progress-label">⚽ Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">Investigation: Ramp &amp; Ball Motion</div>
+  <div class="header-badge">
+    <span>⚽</span>
+    <span>Lesson 5.02</span>
+  </div>
+</div>
+
+<!-- ═══════════ HERO BANNER ═══════════ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a ramp investigation setup on a classroom desk with books, a cardboard ramp, a rolling ball, and a measuring tape">
+
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF8E7"/>
+      <stop offset="100%" stop-color="#FFF0C8"/>
+    </linearGradient>
+    <linearGradient id="deskGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C8A870"/>
+      <stop offset="100%" stop-color="#A07840"/>
+    </linearGradient>
+    <linearGradient id="rampGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#D4A860"/>
+      <stop offset="100%" stop-color="#B89050"/>
+    </linearGradient>
+    <linearGradient id="sunGlow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%" gradientUnits="objectBoundingBox" id="sunG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FDD835" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#F9A825" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="920" height="260" fill="url(#bgGrad)"/>
+
+  <!-- Warm light glow top-right (sun pulse effect) -->
+  <g class="hero-sun-glow">
+    <ellipse cx="820" cy="40" rx="90" ry="60" fill="#FDD835" opacity="0.12"/>
+  </g>
+
+  <!-- Desk surface -->
+  <rect x="60" y="170" width="800" height="28" rx="4" fill="url(#deskGrad)"/>
+  <rect x="60" y="170" width="800" height="5" rx="2" fill="#E0BC78" opacity="0.6"/>
+
+  <!-- Stack of books (ramp support) — left side -->
+  <rect x="120" y="120" width="72" height="52" rx="3" fill="#2D6A4F"/>
+  <rect x="120" y="120" width="72" height="6" rx="2" fill="#3A8A68"/>
+  <rect x="124" y="148" width="64" height="26" rx="3" fill="#1B4332"/>
+  <rect x="124" y="148" width="64" height="5" rx="2" fill="#2D6A4F"/>
+  <rect x="128" y="158" width="56" height="18" rx="3" fill="#0D3020"/>
+  <!-- Book labels (decorative lines) -->
+  <line x1="138" y1="132" x2="138" y2="144" stroke="#95D5B2" stroke-width="1.5" opacity="0.5"/>
+  <line x1="150" y1="132" x2="150" y2="144" stroke="#95D5B2" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Cardboard ramp -->
+  <polygon points="192,172 500,172 192,120" fill="url(#rampGrad)" opacity="0.95"/>
+  <polygon points="192,172 500,172 192,120" fill="none" stroke="#A07840" stroke-width="2"/>
+  <!-- Ramp surface texture line -->
+  <line x1="192" y1="137" x2="420" y2="168" stroke="#C8A060" stroke-width="1" opacity="0.6"/>
+  <line x1="192" y1="150" x2="350" y2="170" stroke="#C8A060" stroke-width="1" opacity="0.5"/>
+
+  <!-- Rolling ball — starts at top of ramp, rolls down the slope -->
+  <!-- Ramp surface normal offset places center ~14px above the hypotenuse -->
+  <g class="hero-ball-roll">
+    <circle cx="207" cy="108" r="14" fill="#4499CC"/>
+    <circle cx="202" cy="104" r="4" fill="#66BBEE" opacity="0.6"/>
+    <circle cx="211" cy="102" r="3" fill="#66BBEE" opacity="0.4"/>
+  </g>
+
+  <!-- Measurement tape on the desk -->
+  <g class="hero-tape">
+    <rect x="500" y="162" width="280" height="10" rx="3" fill="#F9A825" opacity="0.85"/>
+    <!-- Tick marks -->
+    <line x1="540" y1="162" x2="540" y2="156" stroke="#E07800" stroke-width="1.5"/>
+    <line x1="600" y1="162" x2="600" y2="154" stroke="#E07800" stroke-width="2"/>
+    <line x1="660" y1="162" x2="660" y2="156" stroke="#E07800" stroke-width="1.5"/>
+    <line x1="720" y1="162" x2="720" y2="154" stroke="#E07800" stroke-width="2"/>
+    <!-- Labels -->
+    <text x="598" y="151" text-anchor="middle" font-family="Nunito,Arial,sans-serif" font-size="11" font-weight="700" fill="#A05500">50 cm</text>
+    <text x="718" y="151" text-anchor="middle" font-family="Nunito,Arial,sans-serif" font-size="11" font-weight="700" fill="#A05500">100 cm</text>
+    <!-- Start label -->
+    <rect x="497" y="174" width="38" height="16" rx="3" fill="#FDD835"/>
+    <text x="516" y="185" text-anchor="middle" font-family="Nunito,Arial,sans-serif" font-size="10" font-weight="800" fill="#A05500">Start</text>
+  </g>
+
+  <!-- Science notebook floating on lower right -->
+  <g class="hero-notebook">
+    <rect x="720" y="90" width="90" height="72" rx="6" fill="#fff" stroke="#D0C8B8" stroke-width="2"/>
+    <rect x="720" y="90" width="14" height="72" rx="4" fill="#F9A825" opacity="0.8"/>
+    <line x1="742" y1="108" x2="800" y2="108" stroke="#E8DDD2" stroke-width="2"/>
+    <line x1="742" y1="120" x2="800" y2="120" stroke="#E8DDD2" stroke-width="2"/>
+    <line x1="742" y1="132" x2="800" y2="132" stroke="#E8DDD2" stroke-width="2"/>
+    <!-- Mini data table -->
+    <rect x="742" y="140" width="58" height="16" rx="2" fill="#EEF8F0" stroke="#C4E5CC" stroke-width="1"/>
+    <line x1="771" y1="140" x2="771" y2="156" stroke="#C4E5CC" stroke-width="1"/>
+    <text x="753" y="151" text-anchor="middle" font-family="Nunito,Arial,sans-serif" font-size="8" fill="#2D6A4F" font-weight="700">Low</text>
+    <text x="780" y="151" text-anchor="middle" font-family="Nunito,Arial,sans-serif" font-size="8" fill="#2D6A4F" font-weight="700">42 cm</text>
+    <!-- Pencil beside notebook -->
+    <rect x="815" y="95" width="6" height="52" rx="3" fill="#F9A825" transform="rotate(8,818,120)"/>
+    <polygon points="815,145 821,145 818,157" fill="#2B1D12" transform="rotate(8,818,120)"/>
+  </g>
+
+  <!-- Sparkle accents (measuring success!) -->
+  <g class="hero-twinkle">
+    <polygon points="640,80 643,90 653,90 645,96 648,106 640,100 632,106 635,96 627,90 637,90" fill="#FDD835" opacity="0.8"/>
+  </g>
+  <g class="hero-twinkle-2">
+    <polygon points="560,50 562,57 570,57 563,62 566,69 560,65 554,69 557,62 550,57 558,57" fill="#F9A825" opacity="0.7"/>
+  </g>
+  <g class="hero-twinkle-3">
+    <polygon points="440,45 442,51 449,51 443,55 445,62 440,58 435,62 437,55 431,51 438,51" fill="#FDD835" opacity="0.6"/>
+  </g>
+
+  <!-- Small "force arrow" above the ball to hint at the concept -->
+  <g opacity="0.7">
+    <line x1="260" y1="120" x2="310" y2="140" stroke="#E07800" stroke-width="2.5"/>
+    <polygon points="310,140 300,135 306,146" fill="#E07800"/>
+  </g>
+
+  <!-- Decorative dots - lab table texture -->
+  <circle cx="90" cy="182" r="3" fill="#B89050" opacity="0.4"/>
+  <circle cx="860" cy="182" r="3" fill="#B89050" opacity="0.4"/>
+
+</svg>
+</div>
+
+<!-- ═══════════ INFO STRIP ═══════════ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF9E8;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q1 &middot; Unit 3</div>
+      <div class="info-detail">Forces &amp; Motion</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 5</div>
+      <div class="info-detail">Lesson 5.02 &mdash; 3rd Grade Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF0E8;">⚽</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Forces &amp; Motion</div>
+      <div class="info-detail">Ramp investigation — force &amp; distance</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">NGSS 3-PS2-1</div>
+      <div class="info-detail">Forces and Interactions</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ INTRO 2-COL CARDS ═══════════ -->
+<div class="intro-2col">
+
+  <div class="card theme-sun">
+    <div class="card-head">
+      <div class="card-head-icon">⚽</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This…</div>
+          <div class="question">"What happens to a ball's motion when the force pushing it gets stronger?"</div>
+        </div>
+      </div>
+      <p>Hold this question in your mind as you investigate. By the end, you should be able to answer it with your own data!</p>
+    </div>
+  </div>
+
+  <div class="card theme-sky">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#52B788;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> test how changing force strength changes how far a ball moves.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2D6A4F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> collect data in a table and look for a pattern.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2E7D32;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> use my evidence to explain how force and distance are related.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════ NEED STRIP ═══════════ -->
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Pencil &amp; ruler</span>
+  <span class="need-chip"><span>📦</span>Cardboard or a stiff board</span>
+  <span class="need-chip"><span>📚</span>2–4 books (for stacking)</span>
+  <span class="need-chip"><span>⚽</span>Small ball</span>
+  <span class="need-chip"><span>📏</span>Measuring tape or meter stick</span>
+</div>
+
+<!-- ═══════════ TAB BAR ═══════════ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 1: VOCABULARY                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <!-- Welcome Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome — Let's Be Scientists!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🎬</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 5-2-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 1: NOTICE & WONDER -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#52B788;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Notice &amp; Wonder</div>
+        <div class="act-subtitle">Look carefully before you start.</div>
+      </div>
+      <div class="act-time" style="background:#52B788;">⏱ 5 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>Look at the photo on the Lesson tab. Before you read anything, take a minute to just <strong>notice</strong> what you can see and write down any <strong>questions</strong> that come to mind.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">👀</span>
+        <div>
+          <div class="label">Notice &amp; Wonder</div>
+          <div class="question">"What do you see in the setup? What do you wonder about what the ball might do?"</div>
+        </div>
+      </div>
+
+      <p>Write at least two observations and one question in your science notebook.</p>
+
+      <div style="font-size:16px;color:#1B4332;font-weight:800;margin:14px 0 10px;">📚 Vocabulary — tap each card to see the definition</div>
+
+      <div class="vocab-grid">
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">💥</div><div class="fc-word">force</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">force</div><div class="fc-def">A push or a pull. Forces can change the way an object moves.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">➡️</div><div class="fc-word">motion</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">motion</div><div class="fc-def">Movement from one place to another. An object is in motion when its position is changing.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">⚡</div><div class="fc-word">speed</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">speed</div><div class="fc-def">How fast an object moves. A ball rolling quickly has more speed than one rolling slowly.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">📏</div><div class="fc-word">distance</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">distance</div><div class="fc-def">How far an object travels. We can measure distance in centimeters or meters.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">📊</div><div class="fc-word">data</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">data</div><div class="fc-def">Information collected during an investigation, like measurements and observations.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🔁</div><div class="fc-word">variable</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">variable</div><div class="fc-def">The one thing you change in an investigation. Everything else stays the same.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">📓</span>
+        <p>Copy this sentence carefully into your science notebook:<br><strong>"A stronger force can make an object move faster and travel farther."</strong></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button>
+  </div>
+
+</div><!-- /tab-vocab -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 2: THE LESSON                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+
+  <!-- Lesson Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">📖</span>
+      <div>
+        <div class="video-wrap-type">Activity 2 · Core Lesson</div>
+        <div class="video-wrap-title">How Forces Change Motion</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">📖</div>
+        <div class="video-placeholder-text">Core lesson video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 5-2-lesson-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- UPLOADED LESSON IMAGE -->
+  <div class="lesson-figure">
+    <div class="lesson-figure-label">📷 Photo · Investigation Setup</div>
+    <img src="images/5-02-ramp-investigation.png"
+         alt="Two students testing a cardboard ramp propped on stacked books. A blue ball rests on the ramp. A measuring tape runs along the desk showing 50 cm and 100 cm marks, with a science notebook open showing a data table for ramp height, distance, and notes." />
+    <div class="lesson-figure-caption">
+      This is the setup you'll use today. Notice the <strong>ramp height</strong> is set by how many books you stack. The <strong>measuring tape</strong> tells you exactly how far the ball travels after it rolls off the end.
+    </div>
+  </div>
+
+  <!-- ACTIVITY 2: CORE LESSON CONTENT -->
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#F9A825;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📖 The Lesson: Forces &amp; Motion</div>
+        <div class="act-subtitle">Read this before you investigate.</div>
+      </div>
+      <div class="act-time" style="background:#F9A825;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- SECTION 1 -->
+      <div class="card theme-forest" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">💥</div>
+          <div>
+            <div class="card-head-label">Section 1</div>
+            <div class="card-head-title">What Is a Force?</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>A <span class="vtip">force<span class="vtip-box"><span class="vtip-word">force</span>A push or a pull that can change the way an object moves.</span></span> is any push or pull. Forces are what make things start moving, stop moving, or change direction.</p>
+          <p>When you push a shopping cart, you're applying a force. When gravity pulls a ball toward the ground, that's a force too.</p>
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"Can you think of two forces acting on the ball the moment it leaves the ramp?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2 -->
+      <div class="card theme-sky" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">📐</div>
+          <div>
+            <div class="card-head-label">Section 2</div>
+            <div class="card-head-title">Ramp Height Changes the Force</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>When you raise the ramp higher, gravity pulls the ball down a steeper slope. That means a <strong>stronger force</strong> is acting on the ball.</p>
+          <p>A stronger force makes the ball <span class="vtip">speed<span class="vtip-box"><span class="vtip-word">speed</span>How fast something moves. More force usually means more speed.</span></span> up faster and travel a greater <span class="vtip">distance<span class="vtip-box"><span class="vtip-word">distance</span>How far something travels from start to finish.</span></span>. A lower ramp means a weaker force — and a shorter roll.</p>
+        </div>
+      </div>
+
+      <!-- SECTION 3 -->
+      <div class="card theme-earth" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">📊</div>
+          <div>
+            <div class="card-head-label">Section 3</div>
+            <div class="card-head-title">Collecting Evidence</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Scientists don't just watch — they <strong>measure</strong>. In this investigation, ramp height is your <span class="vtip">variable<span class="vtip-box"><span class="vtip-word">variable</span>The one thing you change on purpose. Everything else stays the same.</span></span>. Distance is what you measure. Everything else stays the same.</p>
+          <p>Recording <span class="vtip">data<span class="vtip-box"><span class="vtip-word">data</span>The measurements and observations you collect during an investigation.</span></span> carefully is what turns an experiment into evidence. Numbers don't lie.</p>
+          <p><strong>Real-World Connection:</strong> Engineers who design skate ramps and roller coasters think about force and distance the same way. A steeper ramp = more speed at the bottom.</p>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE DIAGRAM -->
+      <div class="diagram-wrap scroll-reveal">
+        <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
+          🗺 Tap a part of the diagram to learn about it
+        </div>
+        <div class="diagram-interactive">
+          <svg viewBox="0 0 860 290" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;" role="img" aria-label="Interactive diagram showing ramp investigation setup with labeled parts">
+
+            <!-- Background -->
+            <rect width="860" height="290" fill="#FFF8F0" rx="12"/>
+
+            <!-- Desk surface -->
+            <rect x="0" y="230" width="860" height="20" fill="#C8A870" rx="2"/>
+            <rect x="0" y="230" width="860" height="5" fill="#E0BC78" opacity="0.5"/>
+
+            <!-- Book stack -->
+            <rect x="100" y="155" width="80" height="78" rx="4" fill="#2D6A4F"/>
+            <rect x="100" y="155" width="80" height="8" rx="3" fill="#3A8A68"/>
+            <rect x="105" y="188" width="70" height="45" rx="4" fill="#1B4332"/>
+            <rect x="110" y="208" width="60" height="26" rx="3" fill="#0D3020"/>
+            <text x="140" y="177" text-anchor="middle" font-size="9" font-weight="700" fill="#95D5B2">BOOKS</text>
+
+            <!-- Ramp -->
+            <polygon points="180,233 580,233 180,155" fill="#D4A860" opacity="0.9"/>
+            <polygon points="180,233 580,233 180,155" fill="none" stroke="#A07840" stroke-width="2"/>
+
+            <!-- Ball -->
+            <circle cx="360" cy="207" r="16" fill="#4499CC"/>
+            <circle cx="355" cy="202" r="5" fill="#88CCEE" opacity="0.6"/>
+
+            <!-- Force arrow -->
+            <line x1="320" y1="174" x2="385" y2="200" stroke="#E07800" stroke-width="3"/>
+            <polygon points="385,200 372,194 376,206" fill="#E07800"/>
+            <text x="320" y="165" font-size="12" font-weight="800" fill="#E07800">FORCE</text>
+
+            <!-- Measurement distance arrows -->
+            <line x1="580" y1="233" x2="780" y2="233" stroke="#7B5EA7" stroke-width="2.5" stroke-dasharray="6 4"/>
+            <line x1="580" y1="220" x2="580" y2="246" stroke="#7B5EA7" stroke-width="2"/>
+            <line x1="780" y1="220" x2="780" y2="246" stroke="#7B5EA7" stroke-width="2"/>
+            <text x="680" y="260" text-anchor="middle" font-size="12" font-weight="700" fill="#7B5EA7">distance traveled</text>
+
+            <!-- Ramp height indicator -->
+            <line x1="140" y1="155" x2="140" y2="233" stroke="#E57373" stroke-width="2.5" stroke-dasharray="5 4"/>
+            <line x1="130" y1="155" x2="150" y2="155" stroke="#E57373" stroke-width="2"/>
+            <line x1="130" y1="233" x2="150" y2="233" stroke="#E57373" stroke-width="2"/>
+            <text x="100" y="200" font-size="11" font-weight="700" fill="#C62828" transform="rotate(-90,100,200)">HEIGHT</text>
+
+            <!-- Labels -->
+            <text x="140" y="145" text-anchor="middle" font-size="12" font-weight="800" fill="#1B4332">Ramp Height</text>
+            <text x="380" y="195" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">Ball</text>
+            <text x="380" y="260" text-anchor="middle" font-size="11" font-weight="600" fill="#9A8E82">surface (table)</text>
+
+            <!-- HOTSPOTS -->
+            <rect class="hotspot" x="80" y="140" width="120" height="100"
+                  fill="#E57373"
+                  data-part="ramp-height"
+                  data-info="Ramp height is the variable you change. Stacking more books makes the ramp steeper, which creates a stronger force on the ball. A taller ramp = stronger force."/>
+            <rect class="hotspot" x="200" y="140" width="280" height="100"
+                  fill="#D4A860"
+                  data-part="the-ramp"
+                  data-info="The ramp is your track. It changes a force that pulls down (gravity) into a force that pushes the ball forward. The steeper the angle, the more forward force the ball gains."/>
+            <rect class="hotspot" x="325" y="185" width="60" height="50"
+                  fill="#4499CC"
+                  data-part="the-ball"
+                  data-info="The ball starts at rest — it has no motion. When you release it, the force of gravity pulls it down the ramp, setting it in motion. We measure how far it rolls after leaving the ramp."/>
+            <rect class="hotspot" x="580" y="200" width="200" height="40"
+                  fill="#7B5EA7"
+                  data-part="distance"
+                  data-info="Distance is what you measure in this investigation. It tells you how far the ball traveled from the end of the ramp. More force = greater distance. This is the evidence that supports your conclusion."/>
+          </svg>
+
+          <div class="diagram-info-panel" id="diagramPanel">
+            <span class="dip-word" id="diagramWord"></span>
+            <span id="diagramInfo"></span>
+          </div>
+        </div>
+        <div class="diagram-tap-hint">Tap any labeled part to learn about it.</div>
+        <div class="diagram-caption">The ramp investigation setup — each part plays a role in the science.</div>
+      </div>
+
+      <!-- Key Concept -->
+      <div class="key-concept scroll-reveal">
+        <div class="kc-label">⭐ Key Concept</div>
+        <p><strong>A stronger force causes greater motion.</strong> When the ramp height increases, the force on the ball increases — and the ball travels farther.</p>
+        <p>This is cause and effect: changing the force causes a change in distance.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mind-Blowing Fact -->
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Wait — Really?</div>
+      <div class="mind-blow-text">The world's fastest roller coaster starts from a ramp-like launch track. At full height, the cars accelerate from 0 to <strong>240 km/h</strong> in under five seconds — all because of one strong downhill force.</div>
+    </div>
+  </div>
+
+  <!-- Go Deeper -->
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper</summary>
+    <div class="gd-body">
+      <p><strong>What's really happening on the ramp?</strong> When the ramp is flat, gravity still pulls the ball straight down — but the ramp surface pushes back up. Those two forces are balanced, so the ball doesn't move. When you tilt the ramp, those forces become unbalanced. The forward-pushing part gets bigger as the angle increases, which is why steeper = faster and farther.</p>
+      <p>Scientists call the measure of how unbalanced the forces are the "net force." You don't need that word yet, but you're already doing net force thinking when you notice that the higher ramp makes the ball go much farther than the low one.</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+
+</div><!-- /tab-lesson -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 3: EXPLORE — INVESTIGATION                            -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+
+  <!-- Explore Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🔬</span>
+      <div>
+        <div class="video-wrap-type">Activity 3 · Investigation</div>
+        <div class="video-wrap-title">Let's Investigate — Ramp &amp; Ball Motion</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🔬</div>
+        <div class="video-placeholder-text">Exploration video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 5-2-exploration-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 3: INVESTIGATION -->
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#0288D1;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🔬 Investigation: Ramp &amp; Ball Motion</div>
+        <div class="act-subtitle">Change the force — measure the result.</div>
+      </div>
+      <div class="act-time" style="background:#0288D1;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="callout callout-tip" style="margin-bottom:18px;">
+        <span class="callout-icon">🎒</span>
+        <p><strong>You'll need:</strong> A stiff piece of cardboard or a flat board for your ramp · 2–4 books to stack · a small ball (any kind) · a measuring tape or meter stick · your science notebook · a pencil</p>
+      </div>
+
+      <p>Follow each step carefully. Measure in centimeters. Record your results in your notebook as you go.</p>
+
+      <div style="position:relative; margin:16px 0;">
+
+        <!-- STEP 1 -->
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">1</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Set Up Your Ramp:</strong> Lay your cardboard on a flat table. Put one book under one end to prop it up. That's your <em>low</em> ramp. Place a small strip of tape or a piece of paper at the spot where the ramp meets the table — label it <strong>Start</strong>.</p>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2D6A4F,#52B788);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(45,106,79,0.3);">2</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Make a Prediction:</strong> Before you test, write this in your notebook: <em>What do you think will happen to the distance when you raise the ramp higher?</em> Write a prediction sentence. Predictions don't have to be right — just honest.</p>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#52B788,#F9A825);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(82,183,136,0.3);">3</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0 0 8px;"><strong>Test Three Heights:</strong> For each height below, place the ball at the top of the ramp and release it gently (don't push!). Measure how far it travels from the Start mark. Do each height <em>twice</em> and record both measurements.</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:8px;">
+              <div style="background:#EEF8F0;border:2px solid #C4E5CC;border-radius:10px;padding:10px;text-align:center;font-size:15px;font-weight:800;color:#1B4332;">📚 Low<br><span style="font-size:12px;font-weight:600;color:#5A4D3E;">1 book</span></div>
+              <div style="background:#FFF9E8;border:2px solid #F0E4C0;border-radius:10px;padding:10px;text-align:center;font-size:15px;font-weight:800;color:#1B4332;">📚📚 Medium<br><span style="font-size:12px;font-weight:600;color:#5A4D3E;">2 books</span></div>
+              <div style="background:#EAF8FD;border:2px solid #D6F2FB;border-radius:10px;padding:10px;text-align:center;font-size:15px;font-weight:800;color:#1B4332;">📚📚📚 High<br><span style="font-size:12px;font-weight:600;color:#5A4D3E;">3–4 books</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F9A825,#FDD835);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(249,168,37,0.3);">4</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Fill In Your Data Table:</strong> Draw this table in your notebook and fill it in as you test. For each height, write both measurements and any notes you notice (did the ball go straight? did it curve?).</p>
+            <div style="overflow-x:auto;margin-top:10px;">
+              <table style="width:100%;border-collapse:collapse;font-size:14px;">
+                <thead>
+                  <tr style="background:#2D6A4F;color:#fff;">
+                    <th style="padding:8px 12px;text-align:left;border-radius:8px 0 0 0;">Ramp Height</th>
+                    <th style="padding:8px 12px;text-align:center;">Trial 1 (cm)</th>
+                    <th style="padding:8px 12px;text-align:center;">Trial 2 (cm)</th>
+                    <th style="padding:8px 12px;text-align:left;border-radius:0 8px 0 0;">Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="background:#F4FAF5;">
+                    <td style="padding:10px 12px;font-weight:700;border-bottom:1px solid #E8DDD2;">Low (1 book)</td>
+                    <td style="padding:10px 12px;text-align:center;border-bottom:1px solid #E8DDD2;color:#9A8E82;font-style:italic;">_______</td>
+                    <td style="padding:10px 12px;text-align:center;border-bottom:1px solid #E8DDD2;color:#9A8E82;font-style:italic;">_______</td>
+                    <td style="padding:10px 12px;border-bottom:1px solid #E8DDD2;color:#9A8E82;font-style:italic;">__________</td>
+                  </tr>
+                  <tr style="background:#FFF9EE;">
+                    <td style="padding:10px 12px;font-weight:700;border-bottom:1px solid #E8DDD2;">Medium (2 books)</td>
+                    <td style="padding:10px 12px;text-align:center;border-bottom:1px solid #E8DDD2;color:#9A8E82;font-style:italic;">_______</td>
+                    <td style="padding:10px 12px;text-align:center;border-bottom:1px solid #E8DDD2;color:#9A8E82;font-style:italic;">_______</td>
+                    <td style="padding:10px 12px;border-bottom:1px solid #E8DDD2;color:#9A8E82;font-style:italic;">__________</td>
+                  </tr>
+                  <tr style="background:#EEF8FF;">
+                    <td style="padding:10px 12px;font-weight:700;">High (3–4 books)</td>
+                    <td style="padding:10px 12px;text-align:center;color:#9A8E82;font-style:italic;">_______</td>
+                    <td style="padding:10px 12px;text-align:center;color:#9A8E82;font-style:italic;">_______</td>
+                    <td style="padding:10px 12px;color:#9A8E82;font-style:italic;">__________</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 5 -->
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#0288D1,#4DD0E1);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(2,136,209,0.3);">5</div>
+          <div style="flex:1;background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Make a Bar Graph:</strong> Draw a bar graph in your notebook. Put ramp height on the bottom (Low, Medium, High) and distance in cm on the side. Draw a bar showing how far the ball traveled from each height. You can use either trial or the one you think was most accurate.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Think Like a Scientist -->
+      <div class="socratic-q">
+        <span class="sq-icon">🌲</span>
+        <div>
+          <div class="label">Think Like a Scientist</div>
+          <div class="question">"What pattern do you see in your data? As the ramp got higher, what happened to the distance — and why do you think that is?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RECORD YOUR THINKING -->
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#2E7D32;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">📓 Record Your Thinking</div>
+        <div class="act-subtitle">Organize what you observed and discovered.</div>
+      </div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>In your science notebook, answer these questions about what you just tested. Be specific — write actual numbers from your data.</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">1</span>
+        <span class="pq-text">Which ramp height made the ball travel the farthest? How far did it go (in cm)?</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">2</span>
+        <span class="pq-text">What happened to the distance each time you raised the ramp? Describe the pattern you see in your data.</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">3</span>
+        <span class="pq-text">Draw and label a quick sketch of your bar graph. Label the bars Low, Medium, and High. Label the tallest bar with your measurement.</span>
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">🗣</span>
+        <p>Tell the story of your investigation from beginning to end — what you set up, what you changed, what you measured, and what you figured out.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DISCUSS -->
+  <div class="card theme-meadow scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">💬</div>
+      <div>
+        <div class="card-head-label">Discussion</div>
+        <div class="card-head-title">Think It Through</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Think through each question on your own. Write your answers in your notebook before moving on.</p>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Question 1</div>
+          <div class="question">"What changed in your results when you raised the ramp? What stayed the same?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">💡</span>
+        <div>
+          <div class="label">Question 2</div>
+          <div class="question">"What evidence in your data tells you that ramp height and distance are connected?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🌿</span>
+        <div>
+          <div class="label">Question 3 — Real World</div>
+          <div class="question">"Where in the real world have you seen a bigger drop making something move farther or faster? Think of at least two examples."</div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🔁</span>
+        <div>
+          <div class="label">Question 4 — Improve or Extend</div>
+          <div class="question">"What would happen if you used a heavier ball? Or a surface that was more slippery? What new question do you want to test next?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+
+</div><!-- /tab-explore -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 4: SELF-CHECK QUIZ                                    -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#F9A825;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">⚽</div>
+      <div style="flex:1;">
+        <div style="font-size:19px;color:#1B4332;font-weight:800;line-height:1.2;">🧠 Quick Self-Check</div>
+        <div style="font-size:12px;color:#9A8E82;">Not graded — just for you! See how much you remember before starting the notebook work.</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+
+      <!-- Q1 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. What does "force" mean in science?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>How far an object travels</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>A push or a pull that changes motion</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>The weight of an object</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌲 Exactly right! A force is any push or pull. In this investigation, gravity pulls the ball down the ramp — that's the force.</div>
+        <div class="quiz-feedback fb-wrong">Look at your vocab card for "force" — it says push or pull. Distance and weight are different ideas.</div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">2. You raise the ramp from 1 book to 3 books. What do you expect to happen to the ball's distance?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>The ball will travel a shorter distance</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>The distance will stay the same</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>The ball will travel a greater distance</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌿 Yes! A higher ramp creates a stronger force, and a stronger force means the ball travels farther. Your data should show this.</div>
+        <div class="quiz-feedback fb-wrong">Think about what you tested — what happened in real life when you raised the ramp? The data tells you the answer.</div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-text">3. In this investigation, what was the one thing you changed on purpose?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>The height of the ramp</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>The size of the ball</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>The surface of the table</div>
+        </div>
+        <div class="quiz-feedback fb-correct">⭐ Right! Ramp height was the variable. Changing only one thing at a time is how scientists know which change caused the result.</div>
+        <div class="quiz-feedback fb-wrong">Remember what a "variable" is — it's the one thing you change on purpose. You used the same ball and the same table every time.</div>
+      </div>
+
+      <!-- Score -->
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum">0</div>
+        <div class="quiz-score-label">out of 3</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+
+        <div class="video-feedback" id="quizVideoCorrect" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">✅</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Perfect Score</div>
+                <div class="video-wrap-title">You nailed it, scientist!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">⭐</div>
+                <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 5-2-quiz-perfect --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">📚</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Keep Going</div>
+                <div class="video-wrap-title">Almost there — let's review the key ideas!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">💪</div>
+                <div class="video-placeholder-text">Review and encouragement video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 5-2-quiz-review --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+
+</div><!-- /tab-quiz -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 5: ASSIGNMENT                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <!-- Assignment Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">✍️</span>
+      <div>
+        <div class="video-wrap-type">Activity 5 · Assignment</div>
+        <div class="video-wrap-title">Here's What to Turn In</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">✍️</div>
+        <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 5-2-assignment-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 5: NOTEBOOK WORK -->
+  <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
+    <div class="act-head">
+      <div class="act-num" style="background:#7B5EA7;">5</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment</div>
+        <div class="act-subtitle">Show what you found and what it means.</div>
+      </div>
+      <div class="act-time" style="background:#7B5EA7;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- PART A -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔍 Part A — Label the Setup</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Draw a simple side-view sketch of the ramp investigation (just a quick diagram — it doesn't need to be perfect). Then label each part using the word bank below.</p>
+
+      <div class="callout callout-vocab" style="margin-bottom:12px;">
+        <span class="callout-icon">📚</span>
+        <p><strong>Word Bank:</strong> force · ramp · ramp height · ball · distance · Start</p>
+      </div>
+
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">Draw your sketch. Label at least 4 of the 6 words from the word bank.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">Draw a small arrow on your sketch showing which direction the force acts on the ball.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">On your sketch, mark where the ball was measured from and to.</span></div>
+
+      <!-- PART B -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🚀 Part B — Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer in <strong>complete sentences</strong>. Use your investigation data in your answers.</p>
+
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">4</span><span class="pq-text">Which ramp height made the ball travel the farthest? Write the actual distance from your data.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">5</span><span class="pq-text">What happened to the distance each time the ramp got higher? Explain the pattern you saw.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">6</span><span class="pq-text">Why do you think a higher ramp made the ball go farther? Use the word <em>force</em> in your answer.</span></div>
+
+      <!-- WRITE AND EXPLAIN -->
+      <div class="key-concept scroll-reveal" style="background:#FFF9E8;border-color:#F0E4C0;">
+        <div class="kc-label" style="color:#F9A825;">✍️ Write and Explain</div>
+        <p style="font-size:16px;font-weight:700;color:#1B4332;margin-bottom:14px;">Use your data to explain: How does changing the ramp height change the ball's motion?</p>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What did you observe?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"When I raised the ramp, I noticed that…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What does your data tell you?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I know this because when I measured… my data showed…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">Why does that make sense?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because a stronger force…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="background:#EEF8F0;border-radius:10px;padding:10px 14px;border-left:3px solid #52B788;">
+          <p style="margin:0;font-size:14px;color:#1B4332;">📚 Try to use at least one of these words: <strong>force</strong>, <strong>distance</strong>, <strong>variable</strong>, <strong>data</strong></p>
+        </div>
+      </div>
+
+      <!-- PART C -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Bar Graph</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Draw a neat bar graph in your notebook using your data. Put ramp height on the bottom (Low, Medium, High) and distance in centimeters on the side. Give your graph a title and label both axes.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Reflect</div>
+          <div class="question">"Look back at your prediction from Step 2. Was it right? What did the actual data show you that you didn't expect?"</div>
+        </div>
+      </div>
+
+      <!-- WHAT TO TURN IN -->
+      <div class="turn-in-block">
+        <div class="turn-in-header">
+          <div class="turn-in-header-icon">📋</div>
+          <div>
+            <div class="turn-in-header-label">Canvas Submission</div>
+            <div class="turn-in-header-title">What to Turn In</div>
+          </div>
+        </div>
+        <div class="turn-in-body">
+
+          <p class="turn-in-intro">Submit your work on Canvas using <strong>one of these options:</strong></p>
+
+          <div class="turn-in-options">
+            <div class="turn-in-option turn-in-option-type">
+              <div class="turn-in-option-icon">⌨️</div>
+              <div class="turn-in-option-title">Type It</div>
+              <div class="turn-in-option-text">Type your answers directly into the Canvas assignment.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-photo">
+              <div class="turn-in-option-icon">📸</div>
+              <div class="turn-in-option-title">Photo It</div>
+              <div class="turn-in-option-text">Take a clear photo of your notebook work and upload it.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-video">
+              <div class="turn-in-option-icon">🎥</div>
+              <div class="turn-in-option-title">Record It</div>
+              <div class="turn-in-option-text">Record a short video showing your data and explaining what you found.</div>
+            </div>
+          </div>
+
+          <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
+
+          <div class="turn-in-checklist">
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Notice &amp; Wonder observations and question from the Vocabulary tab.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My prediction sentence from Step 2 of the investigation.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My completed data table with measurements for all three ramp heights.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My labeled sketch from Part A with the force arrow.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My short answer responses to Part B questions (complete sentences).</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Write &amp; Explain response using evidence from my data.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My labeled bar graph from Part C with a title and axis labels.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CLOSING VIDEO -->
+      <div class="video-wrap" style="margin-top:24px;">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">👋</span>
+          <div>
+            <div class="video-wrap-type">Closing · Wrap-Up</div>
+            <div class="video-wrap-title">Great work today! Next up: Patterns of Motion…</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">👋</div>
+            <div class="video-placeholder-text">Closing video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 5-2-closing --></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /tab-assignment -->
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <div class="footer-line1">Optima Academy Online · <span>3rd Grade Science</span></div>
+  <div class="footer-line2">Lesson 5.02 · NGSS 3-PS2-1</div>
+  <div class="footer-line3">© Optima Academy · All rights reserved</div>
+</div>
+
+</div><!-- /page-wrap -->
+
+<button id="backToTop" type="button" aria-label="Back to top">⚽ Back to Top</button>
+
+<script>
+
+// ═══════════════════════════════════════════════════════════════
+// Primary topic emoji — Forces/Motion
+// ═══════════════════════════════════════════════════════════════
+var LESSON_EMOJI = '⚽';
+
+// ── Tab System ──
+var tabProgress = { vocab: false, lesson: false, explore: false, quiz: false, assignment: false };
+var tabOrder = ['vocab','lesson','explore','quiz','assignment'];
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelector('[data-tab="' + name + '"]').classList.add('active');
+  tabProgress[name] = true;
+  document.querySelector('[data-tab="' + name + '"]').classList.add('visited');
+  var visited = Object.values(tabProgress).filter(Boolean).length;
+  var pct = Math.round((visited / tabOrder.length) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c){
+    if (name === 'vocab') { c.classList.remove('collapsed'); }
+    else { c.classList.add('collapsed'); }
+  });
+  try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+  var top = document.getElementById('pageTop');
+  if (top && top.scrollIntoView) {
+    try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+  }
+}
+
+// ── Checklist ──
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  var icon = item.querySelector('.check-icon');
+  if (!icon) return;
+  if (item.classList.contains('checked')) {
+    icon.textContent = LESSON_EMOJI;
+  } else {
+    icon.textContent = '';
+  }
+  var items = document.querySelectorAll('.turn-in-item');
+  setTimeout(function(){
+    if (Array.from(items).every(function(it){ return it.classList.contains('checked'); })) {
+      setTimeout(window.launchConfetti, 200);
+    }
+  }, 50);
+}
+
+// ── Clickable Diagram ──
+(function() {
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel    = document.getElementById('diagramPanel');
+  var wordEl   = document.getElementById('diagramWord');
+  var infoEl   = document.getElementById('diagramInfo');
+  if (!panel) return;
+  hotspots.forEach(function(hs) {
+    hs.addEventListener('click', function(e) {
+      e.stopPropagation();
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+      hs.classList.add('active');
+      var part = hs.getAttribute('data-part').replace(/-/g, ' ');
+      wordEl.textContent = part.charAt(0).toUpperCase() + part.slice(1);
+      infoEl.innerHTML   = hs.getAttribute('data-info');
+      panel.classList.add('visible');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+    }
+  });
+})();
+
+// ── Self-Check Quiz ──
+var quizAnswered = 0;
+var quizCorrect  = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen  = optEl.getAttribute('data-val');
+  q.querySelectorAll('.quiz-opt').forEach(function(o){
+    if (o.getAttribute('data-val') === correct) { o.classList.add('correct'); }
+    else { o.classList.add('disabled'); }
+  });
+  var fbCorrect = q.querySelector('.fb-correct');
+  var fbWrong   = q.querySelector('.fb-wrong');
+  if (chosen === correct) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+  if (quizAnswered === 3) {
+    var scoreBox  = document.getElementById('quizScore');
+    var scoreNum  = document.getElementById('quizScoreNum');
+    var scoreMsg  = document.getElementById('quizScoreMsg');
+    var vCorrect  = document.getElementById('quizVideoCorrect');
+    var vReview   = document.getElementById('quizVideoReview');
+    scoreNum.textContent = quizCorrect;
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '⭐ Perfect! You got every question right!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌿 Great job! Almost there!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip) {
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function() {
+    var rect = tip.getBoundingClientRect();
+    var bw   = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Back to Top ──
+(function() {
+  var btn = document.getElementById('backToTop');
+  if (!btn) return;
+  var inIframe = (function() {
+    try { return window.self !== window.top; }
+    catch (e) { return true; }
+  })();
+  btn.addEventListener('click', function() {
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    var top = document.getElementById('pageTop');
+    if (top && top.scrollIntoView) {
+      try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+    }
+    try {
+      if (window.frameElement && window.frameElement.scrollIntoView) {
+        window.frameElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (e) {}
+    if (inIframe) {
+      try { window.parent.postMessage({ type: 'optima-lesson:scroll-to-top' }, '*'); } catch (e) {}
+    }
+  });
+  if (inIframe) {
+    setTimeout(function() { btn.classList.add('show'); }, 1500);
+  } else {
+    window.addEventListener('scroll', function() {
+      btn.classList.toggle('show', window.pageYOffset > 400);
+    });
+  }
+})();
+
+// ── Confetti ──
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx    = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#52B788','#F9A825','#FDD835','#4DD0E1','#2E7D32','#7B5EA7','#FF8F00','#0288D1'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── Collapsible Intro Cards ──
+var introCards = document.querySelectorAll('.intro-2col .card');
+introCards.forEach(function(card){
+  var head = card.querySelector('.card-head');
+  if (!head) return;
+  head.addEventListener('click', function(){
+    var willCollapse = !card.classList.contains('collapsed');
+    introCards.forEach(function(c){
+      c.classList.toggle('collapsed', willCollapse);
+    });
+  });
+});
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+tabProgress['vocab'] = true;
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+
+</script>
+</body>
+</html>
