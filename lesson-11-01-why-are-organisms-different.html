@@ -1,0 +1,2115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – Why Are Organisms Different?</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+  background: #F2F0E8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #2B1D12;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap { max-width: 920px; margin: 0 auto; background: #FAF8F4; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%);
+  border-bottom: 6px solid #2D6A4F;
+  padding: 22px 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 6px; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2D6A4F, #52B788, #2D6A4F);
+}
+.header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.header-logo {
+  width: 52px; height: 52px; border-radius: 50%; background: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title {
+  font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+  text-shadow: 0 2px 12px rgba(82,183,136,0.3);
+}
+.header-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(82,183,136,0.15); border: 1.5px solid rgba(82,183,136,0.35);
+  border-radius: 28px; padding: 6px 16px;
+}
+.header-badge span:first-child { font-size: 22px; }
+.header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ── Hero Visual ── */
+.hero-visual {
+  background: linear-gradient(180deg, #87CEEB 0%, #C8E6F7 50%, #D4E8B4 100%);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #2D6A4F;
+}
+.hero-visual svg { display: block; width: 100%; height: auto; }
+
+/* ── Hero Animations ── */
+@keyframes cloud-drift-1 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(40px); }
+}
+@keyframes cloud-drift-2 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-32px); }
+}
+@keyframes sun-pulse {
+  0%, 100% { opacity: 0.65; transform: scale(1); }
+  50%       { opacity: 1;    transform: scale(1.12); }
+}
+@keyframes bird-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(6px, -8px); }
+}
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes hero-twinkle {
+  0%, 100% { opacity: 0.4; transform: scale(0.85); }
+  50%       { opacity: 1;   transform: scale(1.15); }
+}
+@keyframes hero-shimmer {
+  0%, 100% { opacity: 0.25; }
+  50%       { opacity: 0.7; }
+}
+@keyframes hero-sway {
+  0%, 100% { transform: rotate(-2.5deg); }
+  50%       { transform: rotate(2.5deg); }
+}
+@keyframes wing-flap {
+  0%, 100% { transform: scaleX(1); }
+  50%       { transform: scaleX(0.72); }
+}
+@keyframes bird-bob-a {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50%       { transform: translateY(-12px) rotate(2deg); }
+}
+@keyframes bird-bob-b {
+  0%, 100% { transform: translateY(0) rotate(4deg); }
+  50%       { transform: translateY(-9px) rotate(-2deg); }
+}
+
+.hero-cloud-1   { animation: cloud-drift-1 9s ease-in-out infinite alternate; }
+.hero-cloud-2   { animation: cloud-drift-2 13s ease-in-out infinite alternate; }
+.hero-sun-glow  { animation: sun-pulse 4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-sway      { animation: hero-sway 4s ease-in-out infinite; transform-origin: bottom center; transform-box: fill-box; }
+.hero-shimmer   { animation: hero-shimmer 3s ease-in-out infinite; }
+.bird-a         { animation: bird-bob-a 5.2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.bird-b         { animation: bird-bob-b 6.8s ease-in-out infinite 0.7s; transform-origin: center; transform-box: fill-box; }
+
+/* ── Mind-Blow Bounce ── */
+@keyframes mind-blow-bounce {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.12); }
+}
+
+/* ── Info Strip ── */
+.info-strip {
+  display: flex; flex-wrap: wrap; background: #fff;
+  border-bottom: 2px solid #E8DDD2;
+}
+.info-item {
+  flex: 1; min-width: 150px; padding: 12px 16px;
+  border-right: 1px solid #E8DDD2;
+  display: flex; align-items: center; gap: 10px;
+}
+.info-item:last-child { border-right: none; }
+.info-icon {
+  width: 40px; height: 40px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.info-value { font-size: 16px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+/* ── Content Area ── */
+.content { padding: 24px 28px 36px; }
+
+/* ── Card System ── */
+.card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 22px; overflow: hidden;
+  box-shadow: 0 2px 12px rgba(27,67,50,0.04);
+}
+.card-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 20px; border-bottom: 2px solid;
+}
+.card-head-icon {
+  width: 42px; height: 42px; border-radius: 50%; color: #fff;
+  font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.card-head-title { font-size: 20px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.card-body { padding: 18px 22px; }
+.card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+.card-body p:last-child { margin-bottom: 0; }
+
+/* ── Card Color Themes ── */
+.theme-earth  .card-head { background: #FFF0E8; border-color: #E8D0B8; }
+.theme-earth  .card-head-icon { background: #A0522D; }
+.theme-sun    .card-head { background: #FFF9E8; border-color: #F0E4C0; }
+.theme-sun    .card-head-icon { background: #F9A825; }
+.theme-sky    .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-sky    .card-head-icon { background: #0288D1; }
+.theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+.theme-forest .card-head-icon { background: #2E7D32; }
+.theme-rock   .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+.theme-rock   .card-head-icon { background: #7B5EA7; }
+.theme-meadow .card-head { background: #F0F8E8; border-color: #C8E0B8; }
+.theme-meadow .card-head-icon { background: #558B2F; }
+
+/* ── Intro 2-col ── */
+.intro-2col {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+  padding: 20px 28px 0;
+}
+.intro-2col .card { margin-bottom: 0; }
+.intro-2col .card .card-body { display: block; }
+.intro-2col .card.collapsed .card-body { display: none; }
+.intro-2col .card .card-head { cursor: pointer; }
+
+/* ── Activity Cards ── */
+.activity-card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 18px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.activity-card.act-warmup  { border-left: 6px solid #52B788; }
+.activity-card.act-lesson  { border-left: 6px solid #F9A825; }
+.activity-card.act-explore { border-left: 6px solid #0288D1; }
+.activity-card.act-practice{ border-left: 6px solid #2E7D32; }
+.activity-card.act-check   { border-left: 6px solid #7B5EA7; }
+
+.act-head {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px 14px 18px;
+  border-bottom: 1.5px solid #E8DDD2;
+}
+.act-num {
+  width: 38px; height: 38px; border-radius: 14px; color: #fff;
+  font-size: 18px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.act-title { font-size: 19px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.act-subtitle { font-size: 12px; color: #9A8E82; }
+.act-time {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap;
+  margin-left: auto; flex-shrink: 0;
+}
+.act-body { padding: 18px 22px 18px 20px; }
+.act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+/* ── Callout Boxes ── */
+.callout {
+  border-radius: 14px; padding: 16px 18px;
+  display: flex; align-items: flex-start; gap: 12px;
+  margin-bottom: 14px;
+}
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+.callout-earth  { background: #FFF0E8; border: 2px solid #E8D0B8; }
+.callout-think  { background: #FFF9E8; border: 2px solid #F0E4C0; }
+.callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+.callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+.callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+
+/* ── Socratic Questions ── */
+.socratic-q {
+  background: linear-gradient(135deg, #EEF8F0, #E8F5E9);
+  border: 2px solid #A8D5B8;
+  border-radius: 16px; padding: 16px 20px;
+  margin: 16px 0;
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.socratic-q .label {
+  font-size: 11px; color: #2D6A4F; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px;
+}
+.socratic-q .question {
+  font-size: 17px; color: #2B1D12; font-weight: 700;
+  line-height: 1.6; font-style: italic;
+}
+
+/* ── Diagram ── */
+.diagram-wrap {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 16px; margin: 16px 0;
+  text-align: center;
+}
+.diagram-wrap svg { max-width: 100%; height: auto; }
+.diagram-caption {
+  font-size: 13px; color: #9A8E82; margin-top: 10px;
+  font-weight: 600; text-align: center;
+}
+
+/* ── Lesson Figure ── */
+.lesson-figure {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 14px 14px 18px; margin: 0 0 22px;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.lesson-figure-label {
+  font-size: 11px; color: #2D6A4F;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  font-weight: 800; margin-bottom: 10px;
+}
+.lesson-figure img {
+  display: block; max-width: 100%; height: auto;
+  border-radius: 10px; margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.lesson-figure-caption {
+  font-size: 14px; color: #5A4D3E;
+  margin-top: 12px; line-height: 1.55; font-weight: 600;
+  text-align: center;
+}
+.lesson-figure-caption strong { color: #1B4332; }
+
+/* ── Key Concept Box ── */
+.key-concept {
+  background: #F0F8E8; border: 2px solid #C8E0B8;
+  border-radius: 14px; padding: 18px 20px; margin: 14px 0;
+}
+.key-concept .kc-label {
+  font-size: 13px; color: #558B2F; text-transform: uppercase;
+  letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px;
+}
+.key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+.key-concept p:last-child { margin-bottom: 0; }
+
+/* ── Practice Questions ── */
+.pq {
+  background: #FAFAF6; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 14px 18px; margin-bottom: 12px;
+}
+.pq-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  color: #fff; font-weight: 800; font-size: 14px;
+  margin-right: 8px; vertical-align: middle;
+}
+.pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+
+/* ── Vocab Flashcards ── */
+.vocab-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px; margin: 14px 0;
+}
+.flip-card { perspective: 800px; height: 195px; cursor: pointer; }
+.flip-card-inner {
+  position: relative; width: 100%; height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 14px 18px; text-align: center;
+  border: 2px solid #E8DDD2;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.06);
+}
+.flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+.flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+.flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #1B4332; margin-bottom: 6px; }
+.flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+.flip-card-back {
+  background: linear-gradient(145deg, #1B4332, #2D6A4F);
+  border-color: #1B4332;
+  transform: rotateY(180deg);
+}
+.flip-card-back .fc-def { font-size: 14.5px; color: #fff; line-height: 1.5; font-weight: 600; }
+.flip-card-back .fc-word-back {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 6px;
+}
+.flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 8px; font-weight: 600; }
+.fc-color-1 .flip-card-front { border-top-color: #52B788; }
+.fc-color-2 .flip-card-front { border-top-color: #2D6A4F; }
+.fc-color-3 .flip-card-front { border-top-color: #F9A825; }
+.fc-color-4 .flip-card-front { border-top-color: #0288D1; }
+.fc-color-5 .flip-card-front { border-top-color: #2E7D32; }
+.fc-color-6 .flip-card-front { border-top-color: #7B5EA7; }
+
+/* ── Vocab Tooltips ── */
+.vtip {
+  position: relative; color: #7B5EA7; font-weight: 700;
+  cursor: help; border-bottom: 2px dotted rgba(123,94,167,0.45);
+  transition: color 0.15s;
+}
+.vtip:hover { color: #5B3EA7; }
+.vtip .vtip-box {
+  position: fixed; background: #1B4332; color: #fff;
+  padding: 12px 16px; border-radius: 12px;
+  font-size: 14px; font-weight: 600; font-style: normal;
+  line-height: 1.55; width: 250px; text-align: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  pointer-events: none; z-index: 9999;
+  box-shadow: 0 6px 24px rgba(27,67,50,0.35);
+  border: 1.5px solid rgba(149,213,178,0.3);
+  transform: translateY(6px);
+}
+.vtip .vtip-box::after {
+  content: ''; position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent; border-top-color: #1B4332;
+}
+.vtip .vtip-word {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block;
+}
+.vtip:hover .vtip-box { opacity: 1; visibility: visible; transform: translateY(0); }
+
+/* ── Reveal / Details ── */
+details {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-left: 5px solid #7B5EA7;
+  border-radius: 14px; margin-bottom: 12px; overflow: hidden;
+}
+details summary {
+  padding: 12px 18px; font-size: 16px; font-weight: 700;
+  color: #1B4332; cursor: pointer;
+}
+details summary:hover { background: #FAFAF6; }
+details > div { padding: 12px 18px 14px; font-size: 16px; color: #5A4D3E; line-height: 1.65; border-top: 1.5px solid #E8DDD2; }
+
+/* ── Activities Header ── */
+.activities-header { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.activities-header-icon {
+  width: 44px; height: 44px; border-radius: 50%; background: #1B4332;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0;
+}
+.activities-header-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.activities-header-title { font-size: 22px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+
+/* ── Need Strip ── */
+.need-strip {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+  padding: 12px 28px; background: #fff;
+  border-bottom: 1.5px solid #E8DDD2;
+}
+.need-strip-label { font-size: 13px; color: #2D6A4F; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
+.need-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px; background: #fff; border: 1.5px solid #C4E5CC;
+  border-radius: 20px; font-size: 13px; font-weight: 700; color: #1B4332;
+}
+
+/* ── Footer ── */
+.footer {
+  background: #1B4332; border-top: 4px solid #52B788;
+  padding: 18px 28px; text-align: center;
+}
+.footer-line1 { font-size: 15px; color: #fff; margin-bottom: 4px; }
+.footer-line1 span { color: #95D5B2; font-weight: 700; }
+.footer-line2 { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+.footer-line3 { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+/* ── Mind-Blowing Fact ── */
+.mind-blow {
+  background: linear-gradient(135deg, #1a3a28, #1B4332);
+  border: 2px solid rgba(149,213,178,0.3);
+  border-radius: 18px; padding: 18px 22px;
+  margin: 18px 0; display: flex;
+  align-items: flex-start; gap: 14px;
+  position: relative; overflow: hidden;
+}
+.mind-blow::before {
+  content: ''; position: absolute; top: -30px; right: -30px;
+  width: 100px; height: 100px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(82,183,136,0.15), transparent);
+}
+.mind-blow-icon {
+  font-size: 36px; flex-shrink: 0;
+  animation: mind-blow-bounce 2s ease-in-out infinite;
+}
+.mind-blow-content { flex: 1; }
+.mind-blow-label {
+  font-size: 11px; color: #FDD835; text-transform: uppercase;
+  letter-spacing: 1.5px; font-weight: 800; margin-bottom: 4px;
+}
+.mind-blow-text { font-size: 16px; color: #fff; line-height: 1.6; font-weight: 600; }
+.mind-blow-text strong { color: #95D5B2; }
+
+/* ── Clickable Diagram ── */
+.diagram-interactive { position: relative; }
+.diagram-interactive .hotspot {
+  cursor: pointer; opacity: 0; transition: opacity 0.2s;
+}
+.diagram-interactive .hotspot:hover { opacity: 0.2; }
+.diagram-interactive .hotspot.active { opacity: 0.28; }
+.diagram-info-panel {
+  background: #1B4332; color: #fff;
+  padding: 14px 20px; border-radius: 14px;
+  font-size: 15px; line-height: 1.55; font-weight: 600;
+  text-align: center;
+  border: 1.5px solid rgba(149,213,178,0.3);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  margin: 10px 0 0; display: none;
+}
+.diagram-info-panel.visible { display: block; }
+.diagram-info-panel .dip-word {
+  font-size: 11px; color: #FDD835; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; display: block; margin-bottom: 3px;
+}
+.diagram-tap-hint {
+  text-align: center; font-size: 13px; color: #9A8E82;
+  font-weight: 600; margin-top: 8px;
+}
+
+/* ── Self-Check Quiz ── */
+.quiz-q {
+  background: #FAFAF6; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 16px 18px; margin-bottom: 14px;
+}
+.quiz-q-text { font-size: 17px; color: #2B1D12; font-weight: 700; line-height: 1.6; margin-bottom: 12px; }
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt {
+  padding: 10px 16px; border-radius: 12px;
+  border: 2px solid #E8DDD2; background: #fff;
+  font-size: 15px; font-weight: 700; color: #2B1D12;
+  cursor: pointer; transition: all 0.2s;
+  display: flex; align-items: center; gap: 10px;
+  user-select: none;
+}
+.quiz-opt:hover { background: #EEF8F0; border-color: #52B788; }
+.quiz-opt.correct { background: #EEF8F0 !important; border-color: #2E7D32 !important; color: #1a6b35 !important; }
+.quiz-opt.wrong { background: #FFF0EC !important; border-color: #E8636B !important; color: #a33 !important; }
+.quiz-opt.disabled { pointer-events: none; opacity: 0.6; }
+.quiz-opt .opt-letter {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: #E8DDD2; color: #5A4D3E;
+  font-size: 14px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all 0.2s;
+}
+.quiz-opt.correct .opt-letter { background: #2E7D32; color: #fff; }
+.quiz-opt.wrong .opt-letter { background: #E8636B; color: #fff; }
+.quiz-feedback { font-size: 14px; padding: 10px 14px; border-radius: 10px; margin-top: 10px; display: none; font-weight: 600; line-height: 1.5; }
+.quiz-feedback.show { display: block; }
+.quiz-feedback.fb-correct { background: #EEF8F0; color: #1a6b35; border: 1.5px solid #B8E8CF; }
+.quiz-feedback.fb-wrong { background: #FFF0EC; color: #8a3030; border: 1.5px solid #F5C4BA; }
+.quiz-score {
+  text-align: center; padding: 16px; background: linear-gradient(135deg, #EEF8F0, #E8F5E9);
+  border: 2px solid #C4E5CC; border-radius: 14px; margin-top: 8px; display: none;
+}
+.quiz-score.show { display: block; }
+.quiz-score-num { font-size: 36px; font-weight: 900; color: #1B4332; }
+.quiz-score-label { font-size: 14px; color: #9A8E82; font-weight: 700; }
+.quiz-score-msg { font-size: 16px; color: #2B1D12; font-weight: 700; margin-top: 6px; }
+
+/* ── Video Feedback ── */
+.video-feedback { display: none; }
+.video-feedback.show { display: block; }
+
+/* ── Go Deeper ── */
+.go-deeper {
+  background: linear-gradient(135deg, #F0EDF6, #E8E2F2);
+  border: 2px solid #D8D0E8; border-radius: 16px;
+  margin: 16px 0; overflow: hidden;
+}
+.go-deeper summary {
+  padding: 14px 18px; font-size: 16px; font-weight: 800;
+  color: #1B4332; cursor: pointer;
+  display: flex; align-items: center; gap: 10px;
+  list-style: none;
+}
+.go-deeper summary::-webkit-details-marker { display: none; }
+.go-deeper summary::before { content: '🔭'; font-size: 22px; }
+.go-deeper summary::after {
+  content: '▸'; margin-left: auto; font-size: 18px; color: #7B5EA7;
+  transition: transform 0.3s;
+}
+.go-deeper[open] summary::after { transform: rotate(90deg); }
+.go-deeper .gd-body {
+  padding: 4px 18px 16px; font-size: 15px;
+  color: #5A4D3E; line-height: 1.7;
+  border-top: 1.5px solid #D8D0E8;
+}
+.go-deeper .gd-body p { margin-bottom: 10px; }
+
+/* ── Scroll Animations ── */
+.scroll-reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── Back to Top ── */
+.back-to-top {
+  position: fixed; bottom: 28px; right: 24px; z-index: 300;
+  background: linear-gradient(135deg, #2D6A4F, #52B788);
+  color: #fff; border: none; border-radius: 40px;
+  padding: 0 16px; height: 38px;
+  font-family: inherit; font-size: 13px; font-weight: 800;
+  cursor: pointer; box-shadow: 0 4px 16px rgba(45,106,79,0.35);
+  transition: opacity 0.3s, transform 0.3s;
+  opacity: 0; transform: translateY(12px); pointer-events: none;
+  display: flex; align-items: center; gap: 6px;
+}
+.back-to-top.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.back-to-top:hover { background: linear-gradient(135deg, #1B4332, #2D6A4F); }
+
+/* ── Tab Bar ── */
+.tab-bar {
+  display: flex; background: #fff;
+  border-bottom: 3px solid #E8DDD2;
+  position: sticky; top: 44px; z-index: 100;
+  overflow-x: auto; scrollbar-width: none;
+}
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex: 1; min-width: 110px; padding: 12px 8px 11px;
+  font-family: inherit; font-size: 12px; font-weight: 800;
+  color: #9A8E82; background: #fff; border: none;
+  border-bottom: 3px solid transparent; cursor: pointer;
+  transition: all 0.2s; white-space: nowrap;
+  display: flex; align-items: center; justify-content: center; gap: 5px;
+  position: relative; margin-bottom: -3px;
+}
+.tab-btn:hover { color: #2D6A4F; background: #EEF8F0; }
+.tab-btn.active { color: #2D6A4F; border-bottom-color: #2D6A4F; background: #F0F8E8; }
+.tab-btn.visited .tab-check { opacity: 1; }
+.tab-check { font-size: 10px; opacity: 0; transition: opacity 0.3s; color: #52B788; }
+
+/* ── Tab Panels ── */
+.tab-panel { display: none; padding: 20px 28px 32px; }
+.tab-panel.active { display: block; }
+
+/* ── Tab-next button ── */
+.tab-next-wrap { text-align: center; margin-top: 28px; }
+.tab-next-btn {
+  background: linear-gradient(135deg, #2D6A4F, #52B788);
+  color: #fff; border: none; border-radius: 28px;
+  padding: 12px 26px; font-family: inherit;
+  font-size: 15px; font-weight: 800; cursor: pointer;
+  box-shadow: 0 4px 14px rgba(45,106,79,0.25);
+  transition: background 0.2s, transform 0.15s;
+}
+.tab-next-btn:hover { background: linear-gradient(135deg, #1B4332, #2D6A4F); transform: translateY(-1px); }
+
+/* ── Video Wrap ── */
+.video-wrap {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; overflow: hidden; margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.video-wrap-header {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 18px; background: #EEF8F0;
+  border-bottom: 1.5px solid #C4E5CC;
+}
+.video-wrap-type { font-size: 11px; color: #2D6A4F; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 800; }
+.video-wrap-title { font-size: 17px; color: #1B4332; font-weight: 800; }
+.video-ratio { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.video-ratio iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.video-placeholder {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, #EEF8F0, #E8F5E9);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+}
+.video-placeholder-icon { font-size: 48px; }
+.video-placeholder-text { font-size: 16px; color: #9A8E82; font-weight: 700; }
+.video-placeholder-id { font-size: 11px; color: #B0A698; font-family: monospace; }
+
+/* ── Turn-in Block ── */
+.turn-in-block {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  overflow: hidden; margin-top: 24px;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.turn-in-header {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 22px; background: linear-gradient(135deg, #1B4332, #2D6A4F);
+}
+.turn-in-header-icon {
+  width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.15);
+  display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0;
+}
+.turn-in-header-label { font-size: 11px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.8px; font-weight: 800; }
+.turn-in-header-title { font-size: 22px; color: #fff; font-weight: 900; }
+.turn-in-body { padding: 20px 22px; }
+.turn-in-intro { font-size: 16px; color: #5A4D3E; margin-bottom: 16px; line-height: 1.6; }
+.turn-in-options {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+  margin-bottom: 20px;
+}
+.turn-in-option {
+  border-radius: 14px; padding: 14px 16px; text-align: center;
+  border: 2px solid;
+}
+.turn-in-option-type  { background: #EAF8FD; border-color: #D6F2FB; }
+.turn-in-option-photo { background: #FFF9E8; border-color: #F0E4C0; }
+.turn-in-option-video { background: #F0EDF6; border-color: #D8D0E8; }
+.turn-in-option-icon { font-size: 28px; margin-bottom: 6px; }
+.turn-in-option-title { font-size: 17px; color: #1B4332; font-weight: 800; margin-bottom: 8px; }
+.turn-in-option-text  { font-size: 14px; color: #5A4D3E; line-height: 1.5; }
+.turn-in-subhead {
+  font-size: 16px; color: #5A4D3E; margin-bottom: 14px; line-height: 1.55;
+}
+.turn-in-checklist { display: flex; flex-direction: column; gap: 10px; }
+.turn-in-item {
+  display: flex; align-items: center; gap: 16px;
+  padding: 14px 18px;
+  background: #FAFAF6;
+  border: 1.5px solid #E8DDD2;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item:hover { background: #F4FAF5; border-color: #C4E5CC; }
+.turn-in-item.checked { background: #EEF8F0; border-color: #B8E8CF; }
+.turn-in-item .turn-in-check {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  border: 2px solid #95D5B2;
+  background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px; line-height: 1;
+  transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item.checked .turn-in-check {
+  background: #2E7D32;
+  border-color: #2E7D32;
+}
+.turn-in-item-text {
+  font-size: 16px; color: #2B1D12; font-weight: 600;
+  line-height: 1.55; flex: 1;
+}
+.turn-in-item.checked .turn-in-item-text { color: #5A4D3E; }
+
+/* ── Progress Bar ── */
+.progress-wrap {
+  position: sticky; top: 0; z-index: 200;
+  background: #0E1C42; padding: 8px 20px 10px;
+  border-bottom: 2px solid rgba(85,200,232,0.3);
+  display: flex; align-items: center; gap: 14px;
+}
+.progress-label { font-size: 12px; color: #55C8E8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+.progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; position: relative; }
+.progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #52B788, #95D5B2, #FDD835); border-radius: 10px; transition: width 0.4s ease; }
+.progress-pct { font-size: 13px; color: #FDD835; font-weight: 800; min-width: 36px; text-align: right; }
+
+/* ── Utility ── */
+strong { color: #1B4332; }
+em { color: #5A4D3E; }
+.gold { color: #F9A825; font-weight: 700; }
+.forest { color: #2D6A4F; font-weight: 700; }
+
+@media (max-width: 620px) {
+  .intro-2col { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .flip-card { height: 175px; }
+  .header-title { font-size: 22px; }
+  .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 6px 9px; }
+  .turn-in-options { grid-template-columns: 1fr; }
+  .turn-in-header-title { font-size: 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="confettiCanvas" style="position:fixed;top:0;left:0;pointer-events:none;z-index:9999;"></canvas>
+<button class="back-to-top" id="backToTop" type="button">🐦 Back to Top</button>
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- ═══════════ PROGRESS BAR ═══════════ -->
+<div class="progress-wrap">
+  <span class="progress-label">🐦 Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">Why Are Organisms Different?</div>
+  <div class="header-badge">
+    <span>🐦</span>
+    <span>Lesson 11.01</span>
+  </div>
+</div>
+
+<!-- ═══════════ HERO BANNER ═══════════ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four birds with different beak shapes perched in a garden setting">
+
+  <!-- Sky gradient background -->
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#87CEEB"/>
+      <stop offset="60%" stop-color="#B8DFF0"/>
+      <stop offset="100%" stop-color="#C8E8B4"/>
+    </linearGradient>
+    <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7CB85A"/>
+      <stop offset="100%" stop-color="#5A8C3A"/>
+    </linearGradient>
+    <linearGradient id="branchGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6D4C41"/>
+      <stop offset="100%" stop-color="#8D6E53"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="920" height="260" fill="url(#skyGrad)"/>
+
+  <!-- Ground strip -->
+  <rect x="0" y="210" width="920" height="50" fill="url(#groundGrad)"/>
+  <!-- Grass blades -->
+  <g class="hero-sway">
+    <line x1="30" y1="210" x2="26" y2="196" stroke="#5A9C32" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="38" y1="210" x2="35" y2="193" stroke="#4E8C2A" stroke-width="2" stroke-linecap="round"/>
+    <line x1="46" y1="210" x2="50" y2="196" stroke="#5A9C32" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <g class="hero-sway" style="animation-delay:0.8s;">
+    <line x1="860" y1="210" x2="856" y2="196" stroke="#5A9C32" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="872" y1="210" x2="869" y2="193" stroke="#4E8C2A" stroke-width="2" stroke-linecap="round"/>
+    <line x1="882" y1="210" x2="886" y2="197" stroke="#5A9C32" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Cloud 1 -->
+  <g class="hero-cloud-1">
+    <ellipse cx="120" cy="52" rx="52" ry="22" fill="white" opacity="0.85"/>
+    <ellipse cx="148" cy="45" rx="34" ry="20" fill="white" opacity="0.9"/>
+    <ellipse cx="90" cy="58" rx="30" ry="16" fill="white" opacity="0.75"/>
+  </g>
+  <!-- Cloud 2 -->
+  <g class="hero-cloud-2">
+    <ellipse cx="750" cy="40" rx="58" ry="20" fill="white" opacity="0.8"/>
+    <ellipse cx="778" cy="32" rx="36" ry="18" fill="white" opacity="0.85"/>
+    <ellipse cx="722" cy="46" rx="28" ry="14" fill="white" opacity="0.7"/>
+  </g>
+
+  <!-- Main branch -->
+  <rect x="80" y="148" width="760" height="18" rx="9" fill="url(#branchGrad)"/>
+  <!-- Branch texture lines -->
+  <line x1="120" y1="148" x2="140" y2="166" stroke="#5A3D2E" stroke-width="1.5" opacity="0.4"/>
+  <line x1="280" y1="148" x2="295" y2="166" stroke="#5A3D2E" stroke-width="1.5" opacity="0.4"/>
+  <line x1="540" y1="148" x2="558" y2="166" stroke="#5A3D2E" stroke-width="1.5" opacity="0.4"/>
+  <line x1="720" y1="148" x2="735" y2="166" stroke="#5A3D2E" stroke-width="1.5" opacity="0.4"/>
+  <!-- Branch support -->
+  <rect x="88" y="148" width="14" height="62" rx="6" fill="#6D4C41"/>
+  <rect x="818" y="148" width="14" height="62" rx="6" fill="#6D4C41"/>
+
+  <!-- Leaves on branch -->
+  <ellipse cx="160" cy="144" rx="14" ry="8" fill="#4CAF50" opacity="0.8" transform="rotate(-20,160,144)"/>
+  <ellipse cx="400" cy="143" rx="16" ry="9" fill="#388E3C" opacity="0.75" transform="rotate(15,400,143)"/>
+  <ellipse cx="640" cy="144" rx="13" ry="7" fill="#4CAF50" opacity="0.8" transform="rotate(-10,640,144)"/>
+
+  <!-- ── BIRD 1: Short, thick seed-cracker beak (left) ── -->
+  <g class="bird-a" style="transform-origin:170px 140px;">
+    <!-- Body -->
+    <ellipse cx="170" cy="132" rx="22" ry="15" fill="#8B6914"/>
+    <!-- Head -->
+    <circle cx="190" cy="122" r="13" fill="#8B6914"/>
+    <!-- Wing detail -->
+    <ellipse cx="164" cy="133" rx="16" ry="9" fill="#6D5010" transform="rotate(8,164,133)"/>
+    <line x1="155" y1="130" x2="158" y2="138" stroke="#5A4010" stroke-width="1.5"/>
+    <line x1="161" y1="128" x2="164" y2="137" stroke="#5A4010" stroke-width="1.5"/>
+    <!-- Eye -->
+    <circle cx="195" cy="120" r="3.5" fill="#1B1B1B"/>
+    <circle cx="196.5" cy="119" r="1" fill="white"/>
+    <!-- SHORT THICK BEAK -->
+    <path d="M200 120 L210 118 L210 122 Z" fill="#D4A017"/>
+    <line x1="200" y1="121" x2="210" y2="121" stroke="#B8860B" stroke-width="1"/>
+    <!-- Tail -->
+    <path d="M150 130 L138 138 L148 136 L136 144 L152 138" fill="#6D5010"/>
+    <!-- Feet on branch -->
+    <line x1="172" y1="147" x2="168" y2="157" stroke="#8B6914" stroke-width="2.5"/>
+    <line x1="178" y1="147" x2="180" y2="157" stroke="#8B6914" stroke-width="2.5"/>
+    <line x1="168" y1="157" x2="162" y2="160" stroke="#8B6914" stroke-width="2"/>
+    <line x1="168" y1="157" x2="172" y2="161" stroke="#8B6914" stroke-width="2"/>
+    <line x1="180" y1="157" x2="176" y2="161" stroke="#8B6914" stroke-width="2"/>
+    <line x1="180" y1="157" x2="184" y2="160" stroke="#8B6914" stroke-width="2"/>
+  </g>
+
+  <!-- ── BIRD 2: Long, thin nectar-sipping beak ── -->
+  <g class="bird-b" style="transform-origin:370px 138px;">
+    <!-- Body -->
+    <ellipse cx="370" cy="132" rx="20" ry="13" fill="#2E7D5A"/>
+    <!-- Head -->
+    <circle cx="388" cy="122" r="12" fill="#2E7D5A"/>
+    <!-- Wing detail -->
+    <ellipse cx="364" cy="133" rx="14" ry="8" fill="#1B5E40" transform="rotate(6,364,133)"/>
+    <line x1="356" y1="130" x2="359" y2="138" stroke="#145230" stroke-width="1.5"/>
+    <line x1="362" y1="128" x2="365" y2="137" stroke="#145230" stroke-width="1.5"/>
+    <!-- Eye -->
+    <circle cx="393" cy="120" r="3" fill="#1B1B1B"/>
+    <circle cx="394" cy="119" r="1" fill="white"/>
+    <!-- LONG THIN BEAK -->
+    <path d="M398 121 L424 119 L424 122 Z" fill="#555"/>
+    <path d="M398 121 L424 120 L424 123 Z" fill="#777"/>
+    <!-- Tail -->
+    <path d="M352 130 L338 134 L350 134 L336 140 L352 136" fill="#1B5E40"/>
+    <!-- Feet -->
+    <line x1="372" y1="145" x2="368" y2="155" stroke="#2E7D5A" stroke-width="2.5"/>
+    <line x1="378" y1="145" x2="380" y2="155" stroke="#2E7D5A" stroke-width="2.5"/>
+    <line x1="368" y1="155" x2="362" y2="158" stroke="#2E7D5A" stroke-width="2"/>
+    <line x1="368" y1="155" x2="372" y2="159" stroke="#2E7D5A" stroke-width="2"/>
+    <line x1="380" y1="155" x2="376" y2="159" stroke="#2E7D5A" stroke-width="2"/>
+    <line x1="380" y1="155" x2="384" y2="158" stroke="#2E7D5A" stroke-width="2"/>
+  </g>
+
+  <!-- ── BIRD 3: Medium speckled beak ── -->
+  <g class="bird-a" style="transform-origin:570px 136px; animation-delay:1.2s;">
+    <!-- Body -->
+    <ellipse cx="570" cy="132" rx="21" ry="14" fill="#7B4F82"/>
+    <!-- Head -->
+    <circle cx="589" cy="122" r="12.5" fill="#7B4F82"/>
+    <!-- Wing detail -->
+    <ellipse cx="563" cy="133" rx="15" ry="8" fill="#5C3862" transform="rotate(7,563,133)"/>
+    <line x1="554" y1="130" x2="558" y2="138" stroke="#4A2E50" stroke-width="1.5"/>
+    <line x1="561" y1="128" x2="564" y2="137" stroke="#4A2E50" stroke-width="1.5"/>
+    <!-- Eye -->
+    <circle cx="594" cy="120" r="3.2" fill="#1B1B1B"/>
+    <circle cx="595.5" cy="119" r="1" fill="white"/>
+    <!-- MEDIUM CURVED BEAK -->
+    <path d="M598 120 Q610 116 614 118 Q610 122 598 122 Z" fill="#C0782A"/>
+    <line x1="598" y1="121" x2="614" y2="120" stroke="#A0601A" stroke-width="0.8"/>
+    <!-- Tail -->
+    <path d="M550 130 L537 137 L550 135 L535 142 L551 137" fill="#5C3862"/>
+    <!-- Feet -->
+    <line x1="572" y1="146" x2="568" y2="156" stroke="#7B4F82" stroke-width="2.5"/>
+    <line x1="578" y1="146" x2="580" y2="156" stroke="#7B4F82" stroke-width="2.5"/>
+    <line x1="568" y1="156" x2="562" y2="159" stroke="#7B4F82" stroke-width="2"/>
+    <line x1="568" y1="156" x2="572" y2="160" stroke="#7B4F82" stroke-width="2"/>
+    <line x1="580" y1="156" x2="576" y2="160" stroke="#7B4F82" stroke-width="2"/>
+    <line x1="580" y1="156" x2="584" y2="159" stroke="#7B4F82" stroke-width="2"/>
+  </g>
+
+  <!-- ── BIRD 4: Wide flat scooping beak ── -->
+  <g class="bird-b" style="transform-origin:760px 140px; animation-delay:0.3s;">
+    <!-- Body -->
+    <ellipse cx="760" cy="133" rx="22" ry="14" fill="#B05C2A"/>
+    <!-- Head -->
+    <circle cx="779" cy="123" r="13" fill="#B05C2A"/>
+    <!-- Wing detail -->
+    <ellipse cx="753" cy="134" rx="15" ry="8" fill="#8C4218" transform="rotate(8,753,134)"/>
+    <line x1="745" y1="131" x2="748" y2="139" stroke="#6E3210" stroke-width="1.5"/>
+    <line x1="752" y1="129" x2="755" y2="138" stroke="#6E3210" stroke-width="1.5"/>
+    <!-- Eye -->
+    <circle cx="784" cy="121" r="3.5" fill="#1B1B1B"/>
+    <circle cx="785.5" cy="120" r="1" fill="white"/>
+    <!-- WIDE FLAT BEAK -->
+    <path d="M788 119 L803 117 L803 125 L788 125 Z" fill="#D4852A"/>
+    <line x1="788" y1="122" x2="803" y2="122" stroke="#B86A18" stroke-width="1"/>
+    <!-- Tail -->
+    <path d="M740 132 L726 138 L740 136 L724 143 L741 138" fill="#8C4218"/>
+    <!-- Feet -->
+    <line x1="762" y1="147" x2="758" y2="157" stroke="#B05C2A" stroke-width="2.5"/>
+    <line x1="768" y1="147" x2="770" y2="157" stroke="#B05C2A" stroke-width="2.5"/>
+    <line x1="758" y1="157" x2="752" y2="160" stroke="#B05C2A" stroke-width="2"/>
+    <line x1="758" y1="157" x2="762" y2="161" stroke="#B05C2A" stroke-width="2"/>
+    <line x1="770" y1="157" x2="766" y2="161" stroke="#B05C2A" stroke-width="2"/>
+    <line x1="770" y1="157" x2="774" y2="160" stroke="#B05C2A" stroke-width="2"/>
+  </g>
+
+  <!-- Sun glow (top right) -->
+  <g class="hero-sun-glow">
+    <circle cx="870" cy="36" r="28" fill="#FFD54F" opacity="0.85"/>
+    <circle cx="870" cy="36" r="36" fill="#FFD54F" opacity="0.25"/>
+    <circle cx="870" cy="36" r="44" fill="#FFD54F" opacity="0.10"/>
+  </g>
+
+  <!-- Shimmer lines on branch -->
+  <g class="hero-shimmer">
+    <line x1="200" y1="150" x2="340" y2="150" stroke="white" stroke-width="1.5" opacity="0.6"/>
+    <line x1="480" y1="152" x2="580" y2="152" stroke="white" stroke-width="1" opacity="0.5"/>
+  </g>
+
+</svg>
+</div>
+
+<!-- ═══════════ INFO STRIP ═══════════ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q2 &middot; Unit 4</div>
+      <div class="info-detail">Life Cycles, Traits &amp; Inheritance</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF9E8;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 11</div>
+      <div class="info-detail">Lesson 11.01 &mdash; 3rd Grade Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#F0EDF6;">🐦</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Trait Variation</div>
+      <div class="info-detail">Differences within a species</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">3-LS3-2 &amp; 3-LS4-2</div>
+      <div class="info-detail">Heredity &amp; Biological Evolution</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ INTRO 2-COL CARDS ═══════════ -->
+<div class="intro-2col">
+
+  <div class="card theme-forest">
+    <div class="card-head">
+      <div class="card-head-icon">🌲</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This…</div>
+          <div class="question">"Why do organisms of the same kind look different from each other — and does that difference ever matter?"</div>
+        </div>
+      </div>
+      <p>Hold onto this question as you work through the lesson. By the end, you should be able to answer it with evidence.</p>
+    </div>
+  </div>
+
+  <div class="card theme-sky">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#52B788;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain that organisms of the same kind can have different traits.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2D6A4F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> use evidence to explain how the environment can influence traits.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2E7D32;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> describe how some trait differences give organisms a survival advantage.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════ NEED STRIP ═══════════ -->
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Pencil &amp; colored pencils</span>
+  <span class="need-chip"><span>🔍</span>Curious eyes</span>
+</div>
+
+<!-- ═══════════ TAB BAR ═══════════ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 1: VOCABULARY                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to Today's Lesson!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🎬</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 11-1-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 1: NOTICE & WONDER -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#52B788;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Notice &amp; Wonder</div>
+        <div class="act-subtitle">Look closely before you learn anything new.</div>
+      </div>
+      <div class="act-time" style="background:#52B788;">⏱ 5–8 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>Look at the photo of four birds in your lesson. They are all birds — but look at those beaks. Something is different. Before we find out why, just <strong>observe</strong>.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">👀</span>
+        <div>
+          <div class="label">In Your Science Notebook</div>
+          <div class="question">"Write down 3 things you notice about the birds. Then write 1 question you're wondering about."</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>There are no wrong observations. Good scientists look carefully and ask questions before they try to explain anything. We'll come back to your question at the end.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- VOCABULARY CARDS -->
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>These are the words scientists use when they study how organisms are different. <strong>Tap each card</strong> to read the definition. You'll see these words throughout the lesson.</p>
+
+      <div class="vocab-grid">
+
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌈</div><div class="fc-word">variation</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">variation</div><div class="fc-def">Differences in traits among organisms of the same kind.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🔎</div><div class="fc-word">trait</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">trait</div><div class="fc-def">A feature of a living thing — like color, size, shape, or behavior.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🐾</div><div class="fc-word">species</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">species</div><div class="fc-def">A group of living things that look similar and can reproduce together.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🏆</div><div class="fc-word">advantage</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">advantage</div><div class="fc-def">A trait that helps an organism survive, find food, or reproduce.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌿</div><div class="fc-word">environment</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">environment</div><div class="fc-def">All the living and nonliving things that surround an organism where it lives.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🍃</div><div class="fc-word">camouflage</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">camouflage</div><div class="fc-def">Colors or patterns that help an organism blend into its surroundings.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">📓</span>
+        <p>Copy this sentence carefully into your science notebook:<br><strong>"Organisms of the same species can look different from each other, and those differences can affect how well they survive."</strong></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button>
+  </div>
+
+</div><!-- /tab-vocab -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 2: THE LESSON                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">📖</span>
+      <div>
+        <div class="video-wrap-type">Activity 2 · Core Lesson</div>
+        <div class="video-wrap-title">Why Are Organisms Different?</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">📖</div>
+        <div class="video-placeholder-text">Core lesson video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 11-1-lesson-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LESSON FIGURE: uploaded bird photo -->
+  <div class="lesson-figure">
+    <div class="lesson-figure-label">📷 Photo · Look Closely</div>
+    <img src="images/11-01-birds-variation.png"
+         alt="Four small birds perched on a rock and branch. Each bird has a noticeably different beak shape — one short and thick, one long and curved, one straight and thin, and one wide and flat. They are eating different foods including berries and seeds." />
+    <div class="lesson-figure-caption">
+      Four birds — same kind of animal, but look at those beaks. <strong>Notice how different they are.</strong> Each beak shape is a trait. By the end of this lesson, you'll understand why those differences matter.
+    </div>
+  </div>
+
+  <!-- ACTIVITY 2: CORE LESSON CONTENT -->
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#F9A825;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📖 The Lesson: Trait Variation &amp; Survival</div>
+        <div class="act-subtitle">Read carefully and think about the evidence.</div>
+      </div>
+      <div class="act-time" style="background:#F9A825;">⏱ 12 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- SECTION 1: What Is Variation? -->
+      <div class="card theme-forest" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌱</div>
+          <div>
+            <div class="card-head-label">Section 1</div>
+            <div class="card-head-title">What Is Variation?</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Look at a litter of puppies. Same mother, same father — but different spots, different fur colors, maybe different ear shapes. Those differences are called <span class="vtip">variation<span class="vtip-box"><span class="vtip-word">variation</span>Differences in traits among organisms of the same kind.</span></span>.</p>
+          <p>Variation happens in almost every species. Some dogs have curly fur; others have straight fur. Some sunflowers grow tall; others stay short. These differences come from the <span class="vtip">traits<span class="vtip-box"><span class="vtip-word">trait</span>A feature of a living thing — like color, size, shape, or behavior.</span></span> passed down from parents. But not every offspring gets exactly the same set.</p>
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"Think of two people in your family. What traits do you share? What looks different?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2: How Does the Environment Shape Traits? -->
+      <div class="card theme-sky" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌤</div>
+          <div>
+            <div class="card-head-label">Section 2</div>
+            <div class="card-head-title">How Does the Environment Affect Traits?</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Traits don't only come from parents. The <span class="vtip">environment<span class="vtip-box"><span class="vtip-word">environment</span>All the living and nonliving things that surround an organism where it lives.</span></span> can shape them too.</p>
+          <p>A plant that doesn't get enough sunlight grows shorter and paler — even if its parent was tall and green. A dog that doesn't get enough food stays small. The inherited trait sets the starting point, but conditions around an organism can push that trait in a different direction.</p>
+          <div class="callout callout-earth">
+            <span class="callout-icon">🧠</span>
+            <p><strong>Key idea:</strong> Some traits come from your parents. Some are shaped by where and how you grow. Many involve both.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 3: When Does a Difference Matter? -->
+      <div class="card theme-earth" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌍</div>
+          <div>
+            <div class="card-head-label">Section 3</div>
+            <div class="card-head-title">When Does a Difference Matter?</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Here's where it gets interesting. Sometimes a small difference in a trait gives an organism a real <span class="vtip">advantage<span class="vtip-box"><span class="vtip-word">advantage</span>A trait that helps an organism survive, find food, or reproduce.</span></span> — and sometimes it doesn't.</p>
+          <p>A bird with a thicker beak can crack open hard seeds. Where seeds are the main food source, that trait is an advantage. A bird with a longer, thinner beak can reach nectar deep inside a flower. In a place full of flowering plants, that's an advantage instead. Neither beak is better in every place — it depends on the environment.</p>
+          <p><strong>Real-World Connection:</strong> <span class="vtip">Camouflage<span class="vtip-box"><span class="vtip-word">camouflage</span>Colors or patterns that help an organism blend into its surroundings.</span></span> is another example. A moth that blends into tree bark is harder for a bird to spot. That color variation might mean the difference between surviving and not.</p>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE DIAGRAM: Beak types -->
+      <div class="diagram-wrap scroll-reveal">
+        <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
+          🗺 Tap a beak type to learn about it
+        </div>
+        <div class="diagram-interactive">
+          <svg viewBox="0 0 860 280" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;" role="img" aria-label="Four bird beak types with their food sources">
+
+            <!-- Background -->
+            <rect x="0" y="0" width="860" height="280" fill="#F0F8F0" rx="12"/>
+
+            <!-- Column backgrounds -->
+            <rect x="10"  y="10" width="200" height="260" rx="10" fill="#FFF9E8" stroke="#F0E4C0" stroke-width="1.5"/>
+            <rect x="220" y="10" width="200" height="260" rx="10" fill="#EAF8FD" stroke="#D6F2FB" stroke-width="1.5"/>
+            <rect x="440" y="10" width="200" height="260" rx="10" fill="#EEF8F0" stroke="#C4E5CC" stroke-width="1.5"/>
+            <rect x="650" y="10" width="200" height="260" rx="10" fill="#F0EDF6" stroke="#D8D0E8" stroke-width="1.5"/>
+
+            <!-- Column headers -->
+            <text x="110" y="38" text-anchor="middle" font-size="13" font-weight="800" fill="#A0522D">Short, Thick</text>
+            <text x="320" y="38" text-anchor="middle" font-size="13" font-weight="800" fill="#0288D1">Long, Thin</text>
+            <text x="540" y="38" text-anchor="middle" font-size="13" font-weight="800" fill="#2E7D32">Curved</text>
+            <text x="750" y="38" text-anchor="middle" font-size="13" font-weight="800" fill="#7B5EA7">Wide, Flat</text>
+
+            <!-- Bird 1: Short thick beak -->
+            <ellipse cx="110" cy="95" rx="22" ry="15" fill="#8B6914"/>
+            <circle cx="128" cy="84" r="13" fill="#8B6914"/>
+            <circle cx="133" cy="82" r="3" fill="#1B1B1B"/>
+            <path d="M136 83 L148 81 L148 85 Z" fill="#D4A017"/>
+            <line x1="136" y1="84" x2="148" y2="84" stroke="#B8860B" stroke-width="1"/>
+            <!-- Seed -->
+            <ellipse cx="110" cy="165" rx="14" ry="10" fill="#D4A017" stroke="#B8860B" stroke-width="1.5"/>
+            <ellipse cx="110" cy="165" rx="7" ry="5" fill="#F5C842" stroke="#B8860B" stroke-width="1"/>
+            <text x="110" y="200" text-anchor="middle" font-size="12" font-weight="700" fill="#6D4C41">Hard seeds</text>
+            <text x="110" y="216" text-anchor="middle" font-size="11" fill="#9A8E82">Thick beak</text>
+            <text x="110" y="231" text-anchor="middle" font-size="11" fill="#9A8E82">cracks shells.</text>
+
+            <!-- Arrow 1 -->
+            <line x1="110" y1="112" x2="110" y2="148" stroke="#B8860B" stroke-width="2" stroke-dasharray="5 3"/>
+            <polygon points="110,148 106,140 114,140" fill="#B8860B"/>
+
+            <!-- Bird 2: Long thin beak -->
+            <ellipse cx="320" cy="95" rx="20" ry="13" fill="#2E7D5A"/>
+            <circle cx="337" cy="85" r="12" fill="#2E7D5A"/>
+            <circle cx="342" cy="83" r="3" fill="#1B1B1B"/>
+            <path d="M344 84 L368 82 L368 85 Z" fill="#555"/>
+            <!-- Flower -->
+            <circle cx="320" cy="168" r="10" fill="#FF80AB"/>
+            <circle cx="304" cy="162" r="8" fill="#FF80AB"/>
+            <circle cx="336" cy="162" r="8" fill="#FF80AB"/>
+            <circle cx="304" cy="175" r="8" fill="#FF80AB"/>
+            <circle cx="336" cy="175" r="8" fill="#FF80AB"/>
+            <circle cx="320" cy="168" r="6" fill="#FFD54F"/>
+            <text x="320" y="205" text-anchor="middle" font-size="12" font-weight="700" fill="#0288D1">Nectar &amp; insects</text>
+            <text x="320" y="221" text-anchor="middle" font-size="11" fill="#9A8E82">Long beak reaches</text>
+            <text x="320" y="237" text-anchor="middle" font-size="11" fill="#9A8E82">deep into flowers.</text>
+
+            <!-- Arrow 2 -->
+            <line x1="320" y1="99" x2="320" y2="153" stroke="#0288D1" stroke-width="2" stroke-dasharray="5 3"/>
+            <polygon points="320,153 316,145 324,145" fill="#0288D1"/>
+
+            <!-- Bird 3: Curved beak -->
+            <ellipse cx="540" cy="95" rx="21" ry="14" fill="#7B4F82"/>
+            <circle cx="557" cy="85" r="12" fill="#7B4F82"/>
+            <circle cx="562" cy="83" r="3" fill="#1B1B1B"/>
+            <path d="M564 83 Q574 79 578 81 Q574 85 564 85 Z" fill="#C0782A"/>
+            <!-- Bark/beetle -->
+            <rect x="518" y="155" width="44" height="24" rx="4" fill="#8D6E53" stroke="#6D4C41" stroke-width="1.5"/>
+            <line x1="522" y1="158" x2="558" y2="158" stroke="#6D4C41" stroke-width="1"/>
+            <line x1="522" y1="163" x2="558" y2="163" stroke="#6D4C41" stroke-width="1"/>
+            <circle cx="540" cy="167" r="6" fill="#3E2723"/>
+            <text x="540" y="205" text-anchor="middle" font-size="12" font-weight="700" fill="#2E7D32">Bark insects</text>
+            <text x="540" y="221" text-anchor="middle" font-size="11" fill="#9A8E82">Curved beak pries</text>
+            <text x="540" y="237" text-anchor="middle" font-size="11" fill="#9A8E82">under bark.</text>
+
+            <!-- Arrow 3 -->
+            <line x1="540" y1="111" x2="540" y2="150" stroke="#2E7D32" stroke-width="2" stroke-dasharray="5 3"/>
+            <polygon points="540,150 536,142 544,142" fill="#2E7D32"/>
+
+            <!-- Bird 4: Wide flat beak -->
+            <ellipse cx="750" cy="95" rx="22" ry="14" fill="#B05C2A"/>
+            <circle cx="768" cy="85" r="13" fill="#B05C2A"/>
+            <circle cx="773" cy="83" r="3" fill="#1B1B1B"/>
+            <path d="M776 82 L793 80 L793 88 L776 88 Z" fill="#D4852A"/>
+            <line x1="776" y1="85" x2="793" y2="85" stroke="#B86A18" stroke-width="1"/>
+            <!-- Mud/insect -->
+            <ellipse cx="750" cy="168" rx="26" ry="12" fill="#8D6E53"/>
+            <ellipse cx="750" cy="166" rx="22" ry="8" fill="#A08060" opacity="0.7"/>
+            <circle cx="742" cy="167" r="4" fill="#3E2723"/>
+            <circle cx="756" cy="165" r="3" fill="#3E2723"/>
+            <text x="750" y="205" text-anchor="middle" font-size="12" font-weight="700" fill="#7B5EA7">Mud insects</text>
+            <text x="750" y="221" text-anchor="middle" font-size="11" fill="#9A8E82">Flat beak scoops</text>
+            <text x="750" y="237" text-anchor="middle" font-size="11" fill="#9A8E82">through mud.</text>
+
+            <!-- Arrow 4 -->
+            <line x1="750" y1="111" x2="750" y2="151" stroke="#7B5EA7" stroke-width="2" stroke-dasharray="5 3"/>
+            <polygon points="750,151 746,143 754,143" fill="#7B5EA7"/>
+
+            <!-- HOTSPOT RECTS -->
+            <rect class="hotspot" x="10" y="10" width="200" height="260" rx="10"
+                  fill="#D4A017"
+                  data-part="short-thick"
+                  data-info="Short, thick beak: This beak can crush hard seeds. It acts like a pair of pliers. Where seeds are plentiful, a bird with this beak has an advantage — it can eat foods other birds can't crack open."/>
+            <rect class="hotspot" x="220" y="10" width="200" height="260" rx="10"
+                  fill="#0288D1"
+                  data-part="long-thin"
+                  data-info="Long, thin beak: This beak reaches deep into flowers to sip nectar, or picks insects from tiny cracks. In a habitat full of flowering plants, this is a big advantage for finding food."/>
+            <rect class="hotspot" x="440" y="10" width="200" height="260" rx="10"
+                  fill="#2E7D32"
+                  data-part="curved"
+                  data-info="Curved beak: This beak hooks and pries under bark to find insects. In forests with lots of dead or insect-filled trees, this shape makes it much easier to find a meal."/>
+            <rect class="hotspot" x="650" y="10" width="200" height="260" rx="10"
+                  fill="#7B5EA7"
+                  data-part="wide-flat"
+                  data-info="Wide, flat beak: This beak acts like a shovel, scooping mud and water to filter out small insects and seeds. Near muddy riverbanks or wetlands, this trait is a huge advantage."/>
+          </svg>
+
+          <div class="diagram-info-panel" id="diagramPanel">
+            <span class="dip-word" id="diagramWord"></span>
+            <span id="diagramInfo"></span>
+          </div>
+        </div>
+        <div class="diagram-tap-hint">Tap any beak type to learn why that shape matters.</div>
+        <div class="diagram-caption">Same group of birds — four different beak shapes, each suited to a different food source. Variation in action.</div>
+      </div>
+
+      <!-- KEY CONCEPT -->
+      <div class="key-concept scroll-reveal">
+        <div class="kc-label">⭐ Key Concept</div>
+        <p><strong>Organisms of the same species can have different traits.</strong> The environment can influence some of those traits. And sometimes, a trait difference gives one organism an advantage — making it easier to survive and reproduce in that place.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MIND-BLOWING FACT -->
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Amazing Nature Fact</div>
+      <div class="mind-blow-text">An Arctic fox grows <strong>pure white fur in winter</strong> — and then sheds it for brown summer fur. The same fox, two totally different coats, each perfectly matching the season. That's one organism using trait variation as camouflage.</div>
+    </div>
+  </div>
+
+  <!-- GO DEEPER -->
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper</summary>
+    <div class="gd-body">
+      <p><strong>Darwin's Finches:</strong> In the 1830s, a scientist named Charles Darwin visited a group of islands called the Galápagos. He noticed something strange — there were many types of small birds that all looked similar, but their beaks were very different from each other.</p>
+      <p>Over time, he figured out that all these birds came from one common ancestor. But on different islands, with different food available, the birds with the most useful beaks survived better and had more offspring. Over many, many generations, the beak shapes slowly changed — different on each island, each matching what food was there.</p>
+      <p>Scientists today still study these finches. They're one of the clearest real-world examples of how variation and environment work together to shape living things.</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+
+</div><!-- /tab-lesson -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 3: EXPLORE                                            -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🔬</span>
+      <div>
+        <div class="video-wrap-type">Activity 3 · Observation Activity</div>
+        <div class="video-wrap-title">Explore: What Do You See in the Birds?</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🔬</div>
+        <div class="video-placeholder-text">Exploration video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 11-1-exploration-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 3 -->
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#0288D1;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🔬 Observation Activity: Bird Variation</div>
+        <div class="act-subtitle">Look closely and record what you find.</div>
+      </div>
+      <div class="act-time" style="background:#0288D1;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="callout callout-tip" style="margin-bottom:18px;">
+        <span class="callout-icon">🎒</span>
+        <p><strong>You'll need:</strong> Your science notebook, a pencil, colored pencils, and the bird photo in the lesson.</p>
+      </div>
+
+      <p>You're going to look at the four birds in the lesson photo. Your job is to observe carefully, record what you notice, and start thinking about what those differences might mean.</p>
+
+      <!-- Step 1 -->
+      <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+        <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">1</div>
+        <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+          <p style="margin:0;font-size:16px;color:#1B4332;font-weight:700;">Draw a simple chart in your notebook with four columns — one for each bird. Label them Bird 1, Bird 2, Bird 3, Bird 4.</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+        <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">2</div>
+        <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+          <p style="margin:0;font-size:16px;color:#1B4332;font-weight:700;">Look at the photo. For each bird, write at least two things you notice about its beak — the shape, size, or what it seems to be doing.</p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+        <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">3</div>
+        <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+          <p style="margin:0;font-size:16px;color:#1B4332;font-weight:700;">Now pick one bird. Draw it in your notebook and label the beak. Write a sentence: "This beak might help this bird by ___."</p>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+        <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">4</div>
+        <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+          <p style="margin:0;font-size:16px;color:#1B4332;font-weight:700;">Look at the interactive diagram on the Lesson tab. Check your prediction. Were you right? Write a note about what you found.</p>
+        </div>
+      </div>
+
+      <!-- Record Your Thinking -->
+      <div class="card theme-meadow" style="margin-top:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">📓</div>
+          <div>
+            <div class="card-head-label">Record Your Thinking</div>
+            <div class="card-head-title">In Your Notebook</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Answer each question in your science notebook. Write in complete sentences.</p>
+          <div class="pq"><span class="pq-num" style="background:#558B2F;">1</span><span class="pq-text">What is one way the four birds are the same?</span></div>
+          <div class="pq"><span class="pq-num" style="background:#558B2F;">2</span><span class="pq-text">What is one way the four birds are different?</span></div>
+          <div class="pq"><span class="pq-num" style="background:#558B2F;">3</span><span class="pq-text">Which beak shape do you think would be most useful in a meadow full of seed-producing plants? Explain your thinking.</span></div>
+        </div>
+      </div>
+
+      <!-- Think It Through -->
+      <div class="card theme-sun" style="margin-top:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">💭</div>
+          <div>
+            <div class="card-head-label">Think It Through</div>
+            <div class="card-head-title">Discuss or Write</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Big Thinking Question</div>
+              <div class="question">"If the long-beaked bird moved to a place with no flowers — only seeds on the ground — what do you think would happen? What evidence from today supports your thinking?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+
+</div><!-- /tab-explore -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 4: SELF-CHECK QUIZ                                    -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div class="activity-card act-check scroll-reveal" style="border-left:6px solid #F9A825;">
+    <div class="act-head">
+      <div class="act-num" style="background:#F9A825;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">🧠 Self-Check Quiz</div>
+        <div class="act-subtitle">Three questions. Do your best — no pressure!</div>
+      </div>
+      <div class="act-time" style="background:#F9A825;">⏱ 5 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- Q1 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. What does the word <em>variation</em> mean in science?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkAnswer(this)"><span class="opt-letter">A</span>All organisms of the same species look exactly the same.</div>
+          <div class="quiz-opt" data-val="b" onclick="checkAnswer(this)"><span class="opt-letter">B</span>Differences in traits among organisms of the same kind.</div>
+          <div class="quiz-opt" data-val="c" onclick="checkAnswer(this)"><span class="opt-letter">C</span>Changes in the weather over time.</div>
+        </div>
+        <div class="quiz-feedback fb-correct">✅ Yes! Variation means organisms of the same kind can have different traits from each other.</div>
+        <div class="quiz-feedback fb-wrong">Not quite. Variation is about differences that exist within a group — same species, different traits.</div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">2. A bird has a long, thin beak. It lives where flowers with deep nectar grow everywhere. How might this trait help it survive?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkAnswer(this)"><span class="opt-letter">A</span>It can hide from predators more easily.</div>
+          <div class="quiz-opt" data-val="b" onclick="checkAnswer(this)"><span class="opt-letter">B</span>It can reach nectar that short-beaked birds cannot get to.</div>
+          <div class="quiz-opt" data-val="c" onclick="checkAnswer(this)"><span class="opt-letter">C</span>It can fly faster than other birds.</div>
+        </div>
+        <div class="quiz-feedback fb-correct">✅ Exactly! A long beak is an advantage in that environment — it helps the bird reach food others can't.</div>
+        <div class="quiz-feedback fb-wrong">Think about what a long beak is good for. It's a shape — what does that shape help the bird do?</div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">3. Which explains why some organisms look different from others of the same species?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkAnswer(this)"><span class="opt-letter">A</span>They are completely different animals.</div>
+          <div class="quiz-opt" data-val="b" onclick="checkAnswer(this)"><span class="opt-letter">B</span>They only eat different foods.</div>
+          <div class="quiz-opt" data-val="c" onclick="checkAnswer(this)"><span class="opt-letter">C</span>They inherited different traits, and their environment can also influence how traits develop.</div>
+        </div>
+        <div class="quiz-feedback fb-correct">✅ Right! Both inherited traits and the environment play a role in how organisms look and grow.</div>
+        <div class="quiz-feedback fb-wrong">Think back to Section 2 — traits come from parents, but what else can change them?</div>
+      </div>
+
+      <!-- Score Box -->
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum">0</div>
+        <div class="quiz-score-label">out of 3</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+
+        <div class="video-feedback" id="quizVideoCorrect" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">⭐</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Perfect Score</div>
+                <div class="video-wrap-title">You nailed it — great science thinking!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">🎉</div>
+                <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 11-1-quiz-perfect --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">📚</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Keep Going</div>
+                <div class="video-wrap-title">You're getting there — let's review!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">💪</div>
+                <div class="video-placeholder-text">Review and encouragement video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 11-1-quiz-review --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+
+</div><!-- /tab-quiz -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 5: ASSIGNMENT                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">✍️</span>
+      <div>
+        <div class="video-wrap-type">Activity 5 · Assignment</div>
+        <div class="video-wrap-title">Assignment Explainer: What You'll Do</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">✍️</div>
+        <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 11-1-assignment-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
+    <div class="act-head">
+      <div class="act-num" style="background:#7B5EA7;">5</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment</div>
+        <div class="act-subtitle">Show what you've learned.</div>
+      </div>
+      <div class="act-time" style="background:#7B5EA7;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- PART A -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔍 Part A — Match the Beak</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">For each beak shape, write which food it helps a bird find. Use what you learned in the lesson.</p>
+
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">A short, thick beak — what kind of food would this bird be best at eating?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">A long, thin beak — what kind of food or environment would give this bird an advantage?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">A wide, flat beak — name one place where this bird would probably survive well. Why?</span></div>
+
+      <!-- PART B -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🚀 Part B — Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer in <strong>complete sentences</strong>. Use your science vocabulary.</p>
+
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">4</span><span class="pq-text">What is variation? Give one example from the lesson or your own life.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">5</span><span class="pq-text">A plant gets very little sunlight and grows shorter than normal. What does this tell you about how the environment can affect traits?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">6</span><span class="pq-text">How is a trait difference different from just being a different species? Explain in your own words.</span></div>
+
+      <!-- WRITE & EXPLAIN -->
+      <div class="key-concept scroll-reveal" style="background:#FFF9E8;border-color:#F0E4C0;margin-top:20px;">
+        <div class="kc-label" style="color:#F9A825;">✍️ Write and Explain</div>
+        <p style="font-size:16px;font-weight:700;color:#1B4332;margin-bottom:14px;">Imagine two butterflies of the same species. One is bright orange. The other is pale brown — almost the same color as dead leaves. They both live in a forest. Which butterfly do you think survives longer? Explain your thinking with evidence from what you learned.</p>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What do you think?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I think the ___ butterfly would survive longer because…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What did you observe or learn that supports your thinking?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I know this because the lesson showed…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">Why does that make sense?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because when an organism blends in…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="background:#EEF8F0;border-radius:10px;padding:10px 14px;border-left:3px solid #52B788;">
+          <p style="margin:0;font-size:14px;color:#1B4332;">📚 Try to use at least one of these words: <strong>variation</strong>, <strong>advantage</strong>, <strong>camouflage</strong></p>
+        </div>
+      </div>
+
+      <!-- PART C -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Label</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Draw two animals of the same kind that look a little different from each other. Label at least two traits that are different. Then write one sentence explaining which animal would have an advantage in a specific place — and why.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Reflect</div>
+          <div class="question">"Look back at the question you wrote in your Notice &amp; Wonder warm-up. Can you answer it now? What changed in your thinking?"</div>
+        </div>
+      </div>
+
+      <!-- TURN IN BLOCK -->
+      <div class="turn-in-block">
+        <div class="turn-in-header">
+          <div class="turn-in-header-icon">📋</div>
+          <div>
+            <div class="turn-in-header-label">Canvas Submission</div>
+            <div class="turn-in-header-title">What to Turn In</div>
+          </div>
+        </div>
+        <div class="turn-in-body">
+
+          <p class="turn-in-intro">Submit your work on Canvas using <strong>one of these options:</strong></p>
+
+          <div class="turn-in-options">
+            <div class="turn-in-option turn-in-option-type">
+              <div class="turn-in-option-icon">⌨️</div>
+              <div class="turn-in-option-title">Type It</div>
+              <div class="turn-in-option-text">Type your answers directly into the Canvas assignment.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-photo">
+              <div class="turn-in-option-icon">📸</div>
+              <div class="turn-in-option-title">Photo It</div>
+              <div class="turn-in-option-text">Take a clear photo of your handwritten work and upload it.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-video">
+              <div class="turn-in-option-icon">🎥</div>
+              <div class="turn-in-option-title">Record It</div>
+              <div class="turn-in-option-text">Record a short video explaining what you did and learned.</div>
+            </div>
+          </div>
+
+          <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
+
+          <div class="turn-in-checklist">
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Notice &amp; Wonder observations and my original question from the Vocabulary tab.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page — copied carefully in my own handwriting.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My bird observation chart and labeled drawing from the Explore tab.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Part A beak-matching answers and Part B short answer responses.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Write &amp; Explain response — in complete sentences, using at least one vocabulary word.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Part C drawing showing two animals of the same kind with labeled differences.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CLOSING VIDEO -->
+      <div class="video-wrap" style="margin-top:24px;">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">👋</span>
+          <div>
+            <div class="video-wrap-type">Closing · Wrap-Up</div>
+            <div class="video-wrap-title">Great work! Next lesson: Survival Traits Challenge 🐦</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">👋</div>
+            <div class="video-placeholder-text">Closing video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 11-1-closing --></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /tab-assignment -->
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <div class="footer-line1">Optima Academy Online · <span>3rd Grade Science</span></div>
+  <div class="footer-line2">Lesson 11.01 · NGSS 3-LS3-2 &amp; 3-LS4-2</div>
+  <div class="footer-line3">© Optima Academy · All rights reserved</div>
+</div>
+
+</div><!-- /page-wrap -->
+
+
+<script>
+
+var LESSON_EMOJI = '🐦';
+
+// ── Tab System ──
+var tabProgress = { vocab: false, lesson: false, explore: false, quiz: false, assignment: false };
+var tabOrder = ['vocab','lesson','explore','quiz','assignment'];
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelector('[data-tab="' + name + '"]').classList.add('active');
+  tabProgress[name] = true;
+  document.querySelector('[data-tab="' + name + '"]').classList.add('visited');
+  var visited = Object.values(tabProgress).filter(Boolean).length;
+  var pct = Math.round((visited / tabOrder.length) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c){
+    if (name === 'vocab') { c.classList.remove('collapsed'); }
+    else { c.classList.add('collapsed'); }
+  });
+  try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+  var top = document.getElementById('pageTop');
+  if (top && top.scrollIntoView) {
+    try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+  }
+  try {
+    if (window.frameElement && window.frameElement.scrollIntoView) {
+      window.frameElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  } catch (e) {}
+  try { window.parent.postMessage({ type: 'optima-lesson:scroll-to-top' }, '*'); } catch (e) {}
+}
+
+// ── Scroll Reveal ──
+function initScrollReveal() {
+  var els = document.querySelectorAll('.scroll-reveal');
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12 });
+  els.forEach(function(el){ obs.observe(el); });
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initScrollReveal);
+} else {
+  initScrollReveal();
+}
+
+// ── Diagram Hotspots ──
+var diagramPanel = document.getElementById('diagramPanel');
+var diagramWord  = document.getElementById('diagramWord');
+var diagramInfo  = document.getElementById('diagramInfo');
+document.querySelectorAll('.hotspot').forEach(function(h) {
+  h.addEventListener('click', function() {
+    document.querySelectorAll('.hotspot').forEach(function(x){ x.classList.remove('active'); });
+    h.classList.add('active');
+    var part = h.getAttribute('data-part') || '';
+    var info = h.getAttribute('data-info') || '';
+    diagramWord.textContent = part.replace(/-/g,' ');
+    diagramInfo.textContent = info;
+    diagramPanel.classList.add('visible');
+  });
+});
+
+// ── Turn-in Check ──
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  var check = item.querySelector('.turn-in-check');
+  if (item.classList.contains('checked')) {
+    check.textContent = LESSON_EMOJI;
+  } else {
+    check.textContent = '';
+  }
+}
+
+// ── Quiz ──
+var quizAnswered = 0;
+var quizCorrect  = 0;
+function checkAnswer(optEl) {
+  var qEl    = optEl.closest('.quiz-q');
+  if (qEl.classList.contains('answered')) return;
+  qEl.classList.add('answered');
+  quizAnswered++;
+  var correct = qEl.getAttribute('data-answer');
+  var chosen  = optEl.getAttribute('data-val');
+  var opts    = qEl.querySelectorAll('.quiz-opt');
+  var fbCorrect = qEl.querySelector('.quiz-feedback.fb-correct');
+  var fbWrong   = qEl.querySelector('.quiz-feedback.fb-wrong');
+  opts.forEach(function(o){ o.classList.add('disabled'); });
+  if (chosen === correct) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+    opts.forEach(function(o){
+      if (o.getAttribute('data-val') === correct) o.classList.add('correct');
+    });
+  }
+  if (quizAnswered === 3) {
+    var scoreBox  = document.getElementById('quizScore');
+    var scoreNum  = document.getElementById('quizScoreNum');
+    var scoreMsg  = document.getElementById('quizScoreMsg');
+    var vCorrect  = document.getElementById('quizVideoCorrect');
+    var vReview   = document.getElementById('quizVideoReview');
+    scoreNum.textContent = quizCorrect;
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '⭐ Perfect! You got every question right!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌿 Great job! Almost there!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip) {
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function() {
+    var rect = tip.getBoundingClientRect();
+    var bw   = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Back to Top ──
+(function() {
+  var btn = document.getElementById('backToTop');
+  if (!btn) return;
+  var inIframe = (function() {
+    try { return window.self !== window.top; }
+    catch (e) { return true; }
+  })();
+  btn.addEventListener('click', function() {
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    var top = document.getElementById('pageTop');
+    if (top && top.scrollIntoView) {
+      try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+    }
+    try {
+      if (window.frameElement && window.frameElement.scrollIntoView) {
+        window.frameElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (e) {}
+    if (inIframe) {
+      try { window.parent.postMessage({ type: 'optima-lesson:scroll-to-top' }, '*'); } catch (e) {}
+    }
+  });
+  if (inIframe) {
+    setTimeout(function() { btn.classList.add('show'); }, 1500);
+  } else {
+    window.addEventListener('scroll', function() {
+      btn.classList.toggle('show', window.pageYOffset > 400);
+    });
+  }
+})();
+
+// ── Confetti ──
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx    = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#52B788','#F9A825','#FDD835','#4DD0E1','#2E7D32','#7B5EA7','#FF8F00','#0288D1'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── Collapsible Intro Cards ──
+var introCards = document.querySelectorAll('.intro-2col .card');
+introCards.forEach(function(card){
+  var head = card.querySelector('.card-head');
+  if (!head) return;
+  head.addEventListener('click', function(){
+    var willCollapse = !card.classList.contains('collapsed');
+    introCards.forEach(function(c){
+      c.classList.toggle('collapsed', willCollapse);
+    });
+  });
+});
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+tabProgress['vocab'] = true;
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+
+</script>
+</body>
+</html>
