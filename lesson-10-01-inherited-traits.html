@@ -1,0 +1,2030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – Why Do Offspring Look Like Their Parents?</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+  background: #F2F0E8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #2B1D12;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap { max-width: 920px; margin: 0 auto; background: #FAF8F4; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%);
+  border-bottom: 6px solid #2D6A4F;
+  padding: 22px 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 6px; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2D6A4F, #52B788, #2D6A4F);
+}
+.header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.header-logo {
+  width: 52px; height: 52px; border-radius: 50%; background: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title {
+  font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+  text-shadow: 0 2px 12px rgba(82,183,136,0.3);
+}
+.header-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(82,183,136,0.15); border: 1.5px solid rgba(82,183,136,0.35);
+  border-radius: 28px; padding: 6px 16px;
+}
+.header-badge span:first-child { font-size: 22px; }
+.header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ── Hero Visual ── */
+.hero-visual {
+  background: linear-gradient(180deg, #87CEEB 0%, #C8E6F7 50%, #D4E8B4 100%);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #2D6A4F;
+}
+.hero-visual svg { display: block; width: 100%; height: auto; }
+
+/* ── Hero Animations ── */
+@keyframes cloud-drift-1 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(40px); }
+}
+@keyframes cloud-drift-2 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-32px); }
+}
+@keyframes sun-pulse {
+  0%, 100% { opacity: 0.65; transform: scale(1); }
+  50%       { opacity: 1;    transform: scale(1.12); }
+}
+@keyframes bird-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(6px, -8px); }
+}
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes hero-twinkle {
+  0%, 100% { opacity: 0.4; transform: scale(0.85); }
+  50%       { opacity: 1;   transform: scale(1.15); }
+}
+@keyframes hero-shimmer {
+  0%, 100% { opacity: 0.25; }
+  50%       { opacity: 0.7; }
+}
+@keyframes hero-spin-slow {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes hero-sway {
+  0%, 100% { transform: rotate(-2.5deg); }
+  50%       { transform: rotate(2.5deg); }
+}
+@keyframes puppy-bob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-9px); }
+}
+@keyframes tail-wag {
+  0%, 100% { transform: rotate(-20deg); }
+  50%       { transform: rotate(20deg); }
+}
+@keyframes heart-float {
+  0%        { transform: translateY(0) scale(1); opacity: 0.8; }
+  100%      { transform: translateY(-30px) scale(0.7); opacity: 0; }
+}
+
+.hero-cloud-1   { animation: cloud-drift-1 9s ease-in-out infinite alternate; }
+.hero-cloud-2   { animation: cloud-drift-2 13s ease-in-out infinite alternate; }
+.hero-sun-glow  { animation: sun-pulse 4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-birds     { animation: bird-drift 5s ease-in-out infinite; }
+.hero-float     { animation: hero-float 3.5s ease-in-out infinite; }
+.hero-twinkle   { animation: hero-twinkle 2.2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-twinkle-2 { animation: hero-twinkle 3.1s ease-in-out infinite 0.5s; transform-origin: center; transform-box: fill-box; }
+.hero-shimmer   { animation: hero-shimmer 3s ease-in-out infinite; }
+.hero-spin-slow { animation: hero-spin-slow 18s linear infinite; transform-origin: center; transform-box: fill-box; }
+.hero-sway      { animation: hero-sway 4s ease-in-out infinite; transform-origin: bottom center; transform-box: fill-box; }
+.puppy-bob-1    { animation: puppy-bob 3.2s ease-in-out infinite; transform-origin: bottom center; transform-box: fill-box; }
+.puppy-bob-2    { animation: puppy-bob 4.0s ease-in-out infinite 0.7s; transform-origin: bottom center; transform-box: fill-box; }
+.puppy-bob-3    { animation: puppy-bob 3.6s ease-in-out infinite 1.4s; transform-origin: bottom center; transform-box: fill-box; }
+.tail-wag       { animation: tail-wag 0.8s ease-in-out infinite; transform-origin: 240px 193px; transform-box: view-box; }
+.heart-float-1  { animation: heart-float 3s ease-in-out infinite; }
+.heart-float-2  { animation: heart-float 3s ease-in-out infinite 1.5s; }
+
+/* ── Nature Diagram Animations ── */
+@keyframes mind-blow-bounce {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.12); }
+}
+
+/* ── Info Strip ── */
+.info-strip {
+  display: flex; flex-wrap: wrap; background: #fff;
+  border-bottom: 2px solid #E8DDD2;
+}
+.info-item {
+  flex: 1; min-width: 150px; padding: 12px 16px;
+  border-right: 1px solid #E8DDD2;
+  display: flex; align-items: center; gap: 10px;
+}
+.info-item:last-child { border-right: none; }
+.info-icon {
+  width: 40px; height: 40px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.info-value { font-size: 16px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+/* ── Content Area ── */
+.content { padding: 24px 28px 36px; }
+
+/* ── Card System ── */
+.card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 22px; overflow: hidden;
+  box-shadow: 0 2px 12px rgba(27,67,50,0.04);
+}
+.card-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 20px; border-bottom: 2px solid;
+}
+.card-head-icon {
+  width: 42px; height: 42px; border-radius: 50%; color: #fff;
+  font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.card-head-title { font-size: 20px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.card-body { padding: 18px 22px; }
+.card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+.card-body p:last-child { margin-bottom: 0; }
+
+/* ── Card Color Themes ── */
+.theme-earth  .card-head { background: #FFF0E8; border-color: #E8D0B8; }
+.theme-earth  .card-head-icon { background: #A0522D; }
+.theme-sun    .card-head { background: #FFF9E8; border-color: #F0E4C0; }
+.theme-sun    .card-head-icon { background: #F9A825; }
+.theme-sky    .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-sky    .card-head-icon { background: #0288D1; }
+.theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+.theme-forest .card-head-icon { background: #2E7D32; }
+.theme-rock   .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+.theme-rock   .card-head-icon { background: #7B5EA7; }
+.theme-meadow .card-head { background: #F0F8E8; border-color: #C8E0B8; }
+.theme-meadow .card-head-icon { background: #558B2F; }
+
+/* ── Activity Cards ── */
+.activity-card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 18px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.activity-card.act-warmup  { border-left: 6px solid #52B788; }
+.activity-card.act-lesson  { border-left: 6px solid #F9A825; }
+.activity-card.act-explore { border-left: 6px solid #0288D1; }
+.activity-card.act-practice{ border-left: 6px solid #2E7D32; }
+.activity-card.act-check   { border-left: 6px solid #7B5EA7; }
+
+.act-head {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px 14px 18px;
+  border-bottom: 1.5px solid #E8DDD2;
+}
+.act-num {
+  width: 38px; height: 38px; border-radius: 14px; color: #fff;
+  font-size: 18px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.act-title { font-size: 19px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.act-subtitle { font-size: 12px; color: #9A8E82; }
+.act-time {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap;
+  margin-left: auto; flex-shrink: 0;
+}
+.act-body { padding: 18px 22px 18px 20px; }
+.act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+/* ── Callout Boxes ── */
+.callout {
+  border-radius: 14px; padding: 16px 18px;
+  display: flex; align-items: flex-start; gap: 12px;
+  margin-bottom: 14px;
+}
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+.callout-earth  { background: #FFF0E8; border: 2px solid #E8D0B8; }
+.callout-think  { background: #FFF9E8; border: 2px solid #F0E4C0; }
+.callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+.callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+.callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+
+/* ── Socratic Questions ── */
+.socratic-q {
+  background: linear-gradient(135deg, #EEF8F0, #E8F5E9);
+  border: 2px solid #A8D5B8;
+  border-radius: 16px; padding: 16px 20px;
+  margin: 16px 0;
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.socratic-q .label {
+  font-size: 11px; color: #2D6A4F; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px;
+}
+.socratic-q .question {
+  font-size: 17px; color: #2B1D12; font-weight: 700;
+  line-height: 1.6; font-style: italic;
+}
+
+/* ── Diagram Containers ── */
+.diagram-wrap {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 16px; margin: 16px 0;
+  text-align: center;
+}
+.diagram-wrap svg { max-width: 100%; height: auto; }
+.diagram-caption {
+  font-size: 13px; color: #9A8E82; margin-top: 10px;
+  font-weight: 600; text-align: center;
+}
+
+/* ── Lesson Figure (uploaded images) ── */
+.lesson-figure {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 14px 14px 18px; margin: 0 0 22px;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.lesson-figure-label {
+  font-size: 11px; color: #2D6A4F;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  font-weight: 800; margin-bottom: 10px;
+}
+.lesson-figure img {
+  display: block; max-width: 100%; height: auto;
+  border-radius: 10px; margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.lesson-figure-caption {
+  font-size: 14px; color: #5A4D3E;
+  margin-top: 12px; line-height: 1.55; font-weight: 600;
+  text-align: center;
+}
+.lesson-figure-caption strong { color: #1B4332; }
+
+/* ── Key Concept Box ── */
+.key-concept {
+  background: #F0F8E8; border: 2px solid #C8E0B8;
+  border-radius: 14px; padding: 18px 20px; margin: 14px 0;
+}
+.key-concept .kc-label {
+  font-size: 13px; color: #558B2F; text-transform: uppercase;
+  letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px;
+}
+.key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+.key-concept p:last-child { margin-bottom: 0; }
+
+/* ── Practice Questions ── */
+.pq {
+  background: #FAFAF6; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 14px 18px; margin-bottom: 12px;
+}
+.pq-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  color: #fff; font-weight: 800; font-size: 14px;
+  margin-right: 8px; vertical-align: middle;
+}
+.pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+.pq-answer { font-size: 15px; color: #9A8E82; font-style: italic; }
+
+/* ── Vocab Flashcards ── */
+.vocab-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px; margin: 14px 0;
+}
+.flip-card { perspective: 800px; height: 195px; cursor: pointer; }
+.flip-card-inner {
+  position: relative; width: 100%; height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 14px 18px; text-align: center;
+  border: 2px solid #E8DDD2;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.06);
+}
+.flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+.flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+.flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #1B4332; margin-bottom: 6px; }
+.flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+.flip-card-back {
+  background: linear-gradient(145deg, #1B4332, #2D6A4F);
+  border-color: #1B4332;
+  transform: rotateY(180deg);
+}
+.flip-card-back .fc-def { font-size: 14.5px; color: #fff; line-height: 1.5; font-weight: 600; }
+.flip-card-back .fc-word-back {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 6px;
+}
+.flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 8px; font-weight: 600; }
+.fc-color-1 .flip-card-front { border-top-color: #52B788; }
+.fc-color-2 .flip-card-front { border-top-color: #2D6A4F; }
+.fc-color-3 .flip-card-front { border-top-color: #F9A825; }
+.fc-color-4 .flip-card-front { border-top-color: #0288D1; }
+.fc-color-5 .flip-card-front { border-top-color: #2E7D32; }
+.fc-color-6 .flip-card-front { border-top-color: #7B5EA7; }
+
+/* ── Vocab Tooltips ── */
+.vtip {
+  position: relative; color: #7B5EA7; font-weight: 700;
+  cursor: help; border-bottom: 2px dotted rgba(123,94,167,0.45);
+  transition: color 0.15s;
+}
+.vtip:hover { color: #5B3EA7; }
+.vtip .vtip-box {
+  position: fixed; background: #1B4332; color: #fff;
+  padding: 12px 16px; border-radius: 12px;
+  font-size: 14px; font-weight: 600; font-style: normal;
+  line-height: 1.55; width: 250px; text-align: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  pointer-events: none; z-index: 9999;
+  box-shadow: 0 6px 24px rgba(27,67,50,0.35);
+  border: 1.5px solid rgba(149,213,178,0.3);
+  transform: translateY(6px);
+}
+.vtip .vtip-box::after {
+  content: ''; position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent; border-top-color: #1B4332;
+}
+.vtip .vtip-word {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block;
+}
+.vtip:hover .vtip-box, .vtip:focus .vtip-box {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+
+/* ── Mind-Blow ── */
+.mind-blow {
+  background: linear-gradient(135deg, #1a3a28, #1B4332);
+  border: 2px solid rgba(149,213,178,0.3);
+  border-radius: 18px; padding: 18px 22px; margin: 0 0 22px;
+  display: flex; align-items: flex-start; gap: 16px;
+}
+.mind-blow-icon {
+  font-size: 36px; flex-shrink: 0;
+  animation: mind-blow-bounce 2s ease-in-out infinite;
+  transform-origin: center; transform-box: fill-box;
+}
+.mind-blow-content { flex: 1; }
+.mind-blow-label {
+  font-size: 11px; color: #FDD835; text-transform: uppercase;
+  letter-spacing: 1.5px; font-weight: 800; margin-bottom: 4px;
+}
+.mind-blow-text { font-size: 15px; color: #fff; line-height: 1.6; font-weight: 600; }
+.mind-blow-text strong { color: #95D5B2; }
+
+/* ── Go Deeper ── */
+.go-deeper {
+  background: #F0EDF6; border: 2px solid #D8D0E8;
+  border-radius: 16px; margin: 0 0 22px; overflow: hidden;
+}
+.go-deeper summary {
+  padding: 16px 20px; font-size: 17px; font-weight: 800; color: #7B5EA7;
+  cursor: pointer; user-select: none; list-style: none;
+}
+.go-deeper summary::before { content: '🔭 '; }
+.go-deeper .gd-body { padding: 6px 20px 18px; }
+.go-deeper .gd-body p { font-size: 16px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+/* ── Diagram Interactive ── */
+.diagram-interactive { position: relative; }
+.diagram-interactive svg { display: block; max-width: 100%; height: auto; cursor: pointer; }
+.hotspot { opacity: 0; cursor: pointer; transition: opacity 0.2s; }
+.hotspot:hover, .hotspot.active { opacity: 0.25; }
+.diagram-info-panel {
+  background: #1B4332; color: #fff;
+  border-radius: 12px; padding: 14px 18px;
+  font-size: 15px; line-height: 1.6; font-weight: 600;
+  margin-top: 10px; display: none;
+}
+.diagram-info-panel.visible { display: block; }
+.dip-word {
+  display: block; font-size: 11px; color: #95D5B2;
+  text-transform: uppercase; letter-spacing: 1px; font-weight: 800;
+  margin-bottom: 4px;
+}
+.diagram-tap-hint {
+  font-size: 13px; color: #9A8E82; margin-top: 8px;
+  font-style: italic; font-weight: 600;
+}
+
+/* ── Video Slots ── */
+.video-wrap { margin-bottom: 22px; }
+.video-wrap-header {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 18px; background: #EEF8F0;
+  border: 2px solid #C4E5CC; border-bottom: none;
+  border-radius: 14px 14px 0 0;
+}
+.video-wrap-type { font-size: 11px; color: #2D6A4F; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
+.video-wrap-title { font-size: 17px; color: #1B4332; font-weight: 800; }
+.video-ratio {
+  position: relative; padding-bottom: 56.25%;
+  background: #1B4332; border-radius: 0 0 14px 14px;
+  overflow: hidden; border: 2px solid #C4E5CC; border-top: none;
+}
+.video-ratio iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.video-placeholder {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 10px;
+}
+.video-placeholder-icon { font-size: 44px; }
+.video-placeholder-text { font-size: 16px; color: #95D5B2; font-weight: 700; }
+.video-placeholder-id { font-size: 11px; color: rgba(149,213,178,0.4); font-family: monospace; margin-top: 6px; letter-spacing: 0.5px; }
+.video-feedback { display: none; }
+.video-feedback.show { display: block; }
+
+/* ── Quiz ── */
+.quiz-q {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 20px 22px; margin-bottom: 18px;
+}
+.quiz-q-num {
+  font-size: 11px; color: #9A8E82; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;
+}
+.quiz-stem { font-size: 18px; color: #1B4332; font-weight: 800; line-height: 1.5; margin-bottom: 16px; }
+.quiz-opts { display: flex; flex-direction: column; gap: 10px; }
+.quiz-opt {
+  padding: 13px 18px; border-radius: 12px;
+  border: 2px solid #E8DDD2; background: #FAFAF6;
+  font-size: 16px; color: #2B1D12; font-weight: 600;
+  cursor: pointer; transition: all 0.2s; line-height: 1.45;
+}
+.quiz-opt:hover { border-color: #52B788; background: #EEF8F0; }
+.quiz-opt.correct { border-color: #2E7D32; background: #EEF8F0; color: #1B4332; }
+.quiz-opt.wrong   { border-color: #E57373; background: #FFF0F0; color: #B71C1C; }
+.quiz-opt.disabled{ opacity: 0.45; cursor: not-allowed; }
+.quiz-feedback { font-size: 14px; font-weight: 700; border-radius: 10px; padding: 10px 14px; margin-top: 12px; display: none; }
+.quiz-feedback.show { display: block; }
+.fb-correct { background: #EEF8F0; color: #1B4332; border: 1.5px solid #A8D5B8; }
+.fb-wrong   { background: #FFF0F0; color: #B71C1C; border: 1.5px solid #FFABAB; }
+.quiz-score-box {
+  background: linear-gradient(135deg, #1B4332, #2D6A4F);
+  border-radius: 18px; padding: 24px 28px; text-align: center;
+  margin-top: 10px; display: none;
+}
+.quiz-score-box.show { display: block; }
+.quiz-score-num { font-size: 52px; color: #FDD835; font-weight: 900; line-height: 1; margin-bottom: 6px; }
+.quiz-score-of  { font-size: 18px; color: #95D5B2; }
+.quiz-score-msg { font-size: 18px; color: #fff; font-weight: 700; margin-top: 10px; }
+
+/* ── Collapsible Intro Cards ── */
+.intro-2col .card .card-head { cursor: pointer; user-select: none; position: relative; }
+.intro-2col .card .card-head::after {
+  content: '▾'; position: absolute; right: 16px; top: 50%;
+  transform: translateY(-50%); font-size: 16px; color: #9A8E82; transition: transform 0.25s ease;
+}
+.intro-2col .card.collapsed .card-head::after { transform: translateY(-50%) rotate(-90deg); }
+.intro-2col .card.collapsed .card-body { display: none; }
+
+/* ── Tab Bar ── */
+.tab-bar {
+  position: sticky; top: 44px; z-index: 100;
+  background: #FAF8F4; border-bottom: 3px solid #E8DDD2;
+  display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex: 1; min-width: 130px; padding: 12px 8px 11px;
+  background: transparent; border: none;
+  border-bottom: 4px solid transparent;
+  font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700;
+  color: #9A8E82; cursor: pointer; transition: all 0.2s;
+  white-space: nowrap; line-height: 1.3; text-align: center;
+}
+.tab-btn:hover { color: #1B4332; background: #EEF8F0; }
+.tab-btn.active { color: #1B4332; border-bottom-color: #2D6A4F; background: #fff; }
+.tab-btn .tab-check { display: none; font-size: 12px; color: #2E7D32; margin-left: 4px; font-weight: 800; }
+.tab-btn.visited .tab-check { display: inline; }
+
+/* ── Tab Panels ── */
+.tab-panel { display: none; padding: 24px 28px 36px; }
+.tab-panel.active { display: block; }
+.scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+/* ── Intro 2-col ── */
+.intro-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px 28px 0; }
+.intro-2col .card { margin-bottom: 0; }
+
+/* ── Need Strip ── */
+.need-strip { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 28px 16px; }
+.need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 700; white-space: nowrap; }
+.need-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: #EEF8F0; border: 1.5px solid #C4E5CC;
+  border-radius: 20px; padding: 5px 12px;
+  font-size: 13px; color: #1B4332; font-weight: 700;
+}
+
+/* ── Tab Next Button ── */
+.tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+.tab-next-btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px;
+  background: linear-gradient(135deg, #2D6A4F, #52B788);
+  color: #fff; border: none; border-radius: 28px;
+  font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800;
+  cursor: pointer; box-shadow: 0 4px 16px rgba(45,106,79,0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(45,106,79,0.4); }
+
+/* ── What to Turn In ── */
+.turn-in-block {
+  background: #fff; border: 2.5px solid #0288D1;
+  border-radius: 18px; margin-top: 22px; overflow: hidden;
+  box-shadow: 0 4px 16px rgba(2,136,209,0.1);
+}
+.turn-in-header {
+  display: flex; align-items: center; gap: 14px;
+  background: #E8F4FB; padding: 18px 22px;
+  border-bottom: 2px solid #B3E5FC;
+}
+.turn-in-header-icon { font-size: 36px; line-height: 1; flex-shrink: 0; }
+.turn-in-header-label { font-size: 11px; color: #0288D1; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+.turn-in-header-title { font-size: 24px; color: #1B4332; font-weight: 900; line-height: 1.15; }
+.turn-in-body { padding: 22px 24px 24px; }
+.turn-in-intro { font-size: 16px; color: #5A4D3E; margin-bottom: 18px; line-height: 1.55; }
+.turn-in-intro strong { color: #1B4332; }
+.turn-in-options { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 26px; }
+.turn-in-option { border-radius: 16px; padding: 20px 14px; text-align: center; border: 2px solid; }
+.turn-in-option-type  { background: #EEF8F0; border-color: #C4E5CC; }
+.turn-in-option-photo { background: #FFF9E8; border-color: #F0E4C0; }
+.turn-in-option-video { background: #F0EDF6; border-color: #D8D0E8; }
+.turn-in-option-icon  { font-size: 34px; line-height: 1; margin-bottom: 12px; }
+.turn-in-option-title { font-size: 17px; color: #1B4332; font-weight: 800; margin-bottom: 8px; }
+.turn-in-option-text  { font-size: 14px; color: #5A4D3E; line-height: 1.5; }
+.turn-in-subhead { font-size: 16px; color: #5A4D3E; margin-bottom: 14px; line-height: 1.55; }
+.turn-in-checklist { display: flex; flex-direction: column; gap: 10px; }
+.turn-in-item {
+  display: flex; align-items: center; gap: 16px; padding: 14px 18px;
+  background: #FAFAF6; border: 1.5px solid #E8DDD2;
+  border-radius: 14px; cursor: pointer; transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item:hover { background: #F4FAF5; border-color: #C4E5CC; }
+.turn-in-item.checked { background: #EEF8F0; border-color: #B8E8CF; }
+.turn-in-item .turn-in-check {
+  width: 30px; height: 30px; border-radius: 8px; border: 2px solid #95D5B2;
+  background: #fff; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: 18px; line-height: 1;
+  transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item.checked .turn-in-check { background: #2E7D32; border-color: #2E7D32; }
+.turn-in-item-text { font-size: 16px; color: #2B1D12; font-weight: 600; line-height: 1.55; flex: 1; }
+.turn-in-item.checked .turn-in-item-text { color: #5A4D3E; }
+
+/* ── Progress Bar ── */
+.progress-wrap {
+  position: sticky; top: 0; z-index: 200;
+  background: #0E1C42; padding: 8px 20px 10px;
+  border-bottom: 2px solid rgba(85,200,232,0.3);
+  display: flex; align-items: center; gap: 14px;
+}
+.progress-label { font-size: 12px; color: #55C8E8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+.progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; position: relative; }
+.progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #52B788, #95D5B2, #FDD835); border-radius: 10px; transition: width 0.4s ease; }
+.progress-pct { font-size: 13px; color: #FDD835; font-weight: 800; min-width: 36px; text-align: right; }
+
+/* ── Back to Top ── */
+.back-to-top {
+  position: fixed; bottom: 24px; right: 20px; z-index: 500;
+  height: 38px; padding: 0 18px;
+  background: linear-gradient(135deg, #2D6A4F, #52B788);
+  color: #fff; border: none; border-radius: 999px;
+  font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800;
+  cursor: pointer; box-shadow: 0 4px 14px rgba(45,106,79,0.4);
+  opacity: 0; pointer-events: none; transition: opacity 0.3s, transform 0.3s;
+  transform: translateY(8px);
+}
+.back-to-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.back-to-top:hover { transform: translateY(-2px); }
+
+/* ── Utility ── */
+strong { color: #1B4332; }
+em { color: #5A4D3E; }
+.gold { color: #F9A825; font-weight: 700; }
+.forest { color: #2D6A4F; font-weight: 700; }
+
+@media (max-width: 620px) {
+  .intro-2col { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .flip-card { height: 175px; }
+  .header-title { font-size: 22px; }
+  .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 6px 9px; }
+  .turn-in-options { grid-template-columns: 1fr; }
+  .turn-in-header-title { font-size: 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="confettiCanvas" style="position:fixed;top:0;left:0;pointer-events:none;z-index:9999;"></canvas>
+<button class="back-to-top" id="backToTop" type="button">🧬 Back to Top</button>
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- ═══════════ PROGRESS BAR ═══════════ -->
+<div class="progress-wrap">
+  <span class="progress-label">🧬 Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">Why Do Offspring Look Like Their Parents?</div>
+  <div class="header-badge">
+    <span>🧬</span>
+    <span>Lesson 10.01</span>
+  </div>
+</div>
+
+<!-- ═══════════ HERO BANNER ═══════════ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A warm outdoor scene showing a large golden dog resting on green grass with four smaller puppies nearby, surrounded by flowers and a blue sky.">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#87CEEB"/>
+      <stop offset="55%" stop-color="#BFE4F8"/>
+      <stop offset="100%" stop-color="#C8E6A4"/>
+    </linearGradient>
+    <linearGradient id="grassGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7BBF4A"/>
+      <stop offset="100%" stop-color="#4E8C25"/>
+    </linearGradient>
+    <linearGradient id="dogBodyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8A848"/>
+      <stop offset="100%" stop-color="#C07A28"/>
+    </linearGradient>
+    <linearGradient id="puppyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F0C060"/>
+      <stop offset="100%" stop-color="#D4943A"/>
+    </linearGradient>
+    <linearGradient id="lightPuppyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FAE4A8"/>
+      <stop offset="100%" stop-color="#E8C070"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky background -->
+  <rect width="920" height="260" fill="url(#skyGrad)"/>
+
+  <!-- Sun -->
+  <g class="hero-sun-glow">
+    <circle cx="820" cy="55" r="36" fill="#FDD835" opacity="0.9"/>
+    <circle cx="820" cy="55" r="48" fill="#FDD835" opacity="0.18"/>
+  </g>
+
+  <!-- Clouds -->
+  <g class="hero-cloud-1">
+    <ellipse cx="180" cy="52" rx="68" ry="22" fill="#fff" opacity="0.85"/>
+    <ellipse cx="148" cy="58" rx="40" ry="17" fill="#fff" opacity="0.8"/>
+    <ellipse cx="218" cy="56" rx="44" ry="16" fill="#fff" opacity="0.8"/>
+  </g>
+  <g class="hero-cloud-2">
+    <ellipse cx="580" cy="44" rx="56" ry="18" fill="#fff" opacity="0.75"/>
+    <ellipse cx="554" cy="50" rx="34" ry="14" fill="#fff" opacity="0.7"/>
+    <ellipse cx="612" cy="48" rx="36" ry="13" fill="#fff" opacity="0.7"/>
+  </g>
+
+  <!-- Grass ground -->
+  <ellipse cx="460" cy="245" rx="480" ry="55" fill="url(#grassGrad)"/>
+  <rect x="0" y="220" width="920" height="40" fill="#5C9A30"/>
+
+  <!-- Grass blades -->
+  <g class="hero-sway">
+    <path d="M 60 222 Q 55 205 62 195" stroke="#4A8020" stroke-width="3" fill="none"/>
+    <path d="M 68 220 Q 72 200 65 188" stroke="#5AAA30" stroke-width="2.5" fill="none"/>
+  </g>
+  <g class="hero-sway" style="animation-delay:0.8s">
+    <path d="M 840 220 Q 836 204 843 192" stroke="#4A8020" stroke-width="3" fill="none"/>
+    <path d="M 850 222 Q 855 202 848 190" stroke="#5AAA30" stroke-width="2.5" fill="none"/>
+  </g>
+
+  <!-- Flowers left -->
+  <g class="hero-float" style="animation-delay:0.3s">
+    <circle cx="90" cy="200" r="8" fill="#FF7BAC" opacity="0.9"/>
+    <circle cx="83" cy="194" r="6" fill="#FF7BAC" opacity="0.8"/>
+    <circle cx="98" cy="195" r="6" fill="#FF9EC5" opacity="0.8"/>
+    <circle cx="90" cy="200" r="4" fill="#FDD835"/>
+    <path d="M 90 208 L 90 220" stroke="#4A8020" stroke-width="2"/>
+  </g>
+  <g class="hero-float" style="animation-delay:1.1s">
+    <circle cx="112" cy="205" r="6" fill="#FFB347" opacity="0.9"/>
+    <circle cx="107" cy="200" r="5" fill="#FFB347" opacity="0.8"/>
+    <circle cx="118" cy="200" r="5" fill="#FFC870" opacity="0.8"/>
+    <circle cx="112" cy="205" r="3" fill="#FDD835"/>
+    <path d="M 112 211 L 112 222" stroke="#4A8020" stroke-width="2"/>
+  </g>
+
+  <!-- Flowers right -->
+  <g class="hero-float" style="animation-delay:0.6s">
+    <circle cx="800" cy="202" r="7" fill="#B57AFF" opacity="0.9"/>
+    <circle cx="793" cy="197" r="5" fill="#B57AFF" opacity="0.8"/>
+    <circle cx="808" cy="197" r="5" fill="#C89AFF" opacity="0.8"/>
+    <circle cx="800" cy="202" r="3.5" fill="#FDD835"/>
+    <path d="M 800 209 L 800 222" stroke="#4A8020" stroke-width="2"/>
+  </g>
+  <g class="hero-float" style="animation-delay:1.6s">
+    <circle cx="825" cy="207" r="6" fill="#FF7BAC" opacity="0.85"/>
+    <circle cx="819" cy="202" r="5" fill="#FF7BAC" opacity="0.75"/>
+    <circle cx="831" cy="202" r="5" fill="#FF9EC5" opacity="0.75"/>
+    <circle cx="825" cy="207" r="3" fill="#FDD835"/>
+    <path d="M 825 213 L 825 222" stroke="#4A8020" stroke-width="2"/>
+  </g>
+
+  <!-- ═══ PARENT DOG (large golden retriever) ═══ -->
+  <!-- Body - lying down -->
+  <ellipse cx="350" cy="195" rx="110" ry="38" fill="url(#dogBodyGrad)"/>
+  <!-- Head -->
+  <circle cx="445" cy="175" r="32" fill="#E0A040"/>
+  <!-- Snout -->
+  <ellipse cx="466" cy="183" rx="18" ry="12" fill="#C87828"/>
+  <!-- Nose -->
+  <ellipse cx="470" cy="181" rx="7" ry="5" fill="#4A2800"/>
+  <!-- Eye -->
+  <circle cx="452" cy="170" r="5" fill="#3A2000"/>
+  <circle cx="450" cy="169" r="2" fill="#fff" opacity="0.5"/>
+  <!-- Ear -->
+  <ellipse cx="428" cy="158" rx="14" ry="20" fill="#C07828" transform="rotate(-15,428,158)"/>
+  <!-- Fur texture on body -->
+  <path d="M 260 185 Q 300 170 340 178 Q 380 186 420 180" stroke="#D49030" stroke-width="3" fill="none" opacity="0.5"/>
+  <path d="M 250 200 Q 300 195 360 198 Q 410 200 450 195" stroke="#D49030" stroke-width="2.5" fill="none" opacity="0.4"/>
+  <!-- Legs -->
+  <ellipse cx="280" cy="215" rx="18" ry="10" fill="#C07828"/>
+  <ellipse cx="430" cy="215" rx="18" ry="10" fill="#C07828"/>
+  <!-- Tail — starts at rear edge of body ellipse (x=240, y=193) -->
+  <g class="tail-wag">
+    <path d="M 240 193 Q 214 170 204 150 Q 197 133 210 128" stroke="#D49030" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M 240 193 Q 214 170 204 150 Q 197 133 210 128" stroke="#E8A848" stroke-width="7" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- ═══ PUPPY 1 (left, darker golden) ═══ -->
+  <g class="puppy-bob-1">
+    <ellipse cx="148" cy="210" rx="32" ry="18" fill="url(#puppyGrad)"/>
+    <circle cx="174" cy="200" r="17" fill="#D4943A"/>
+    <ellipse cx="183" cy="206" rx="10" ry="7" fill="#C07828"/>
+    <ellipse cx="186" cy="204" rx="4" ry="3" fill="#3A2000"/>
+    <circle cx="178" cy="199" r="3" fill="#3A2000"/>
+    <ellipse cx="166" cy="193" rx="8" ry="11" fill="#B86820" transform="rotate(-10,166,193)"/>
+  </g>
+
+  <!-- ═══ PUPPY 2 (lighter, cream-golden) ═══ -->
+  <g class="puppy-bob-2">
+    <ellipse cx="530" cy="212" rx="28" ry="16" fill="url(#lightPuppyGrad)"/>
+    <circle cx="553" cy="203" r="15" fill="#F0C060"/>
+    <ellipse cx="561" cy="208" rx="9" ry="6" fill="#D4943A"/>
+    <ellipse cx="564" cy="207" rx="3.5" ry="2.5" fill="#3A2000"/>
+    <circle cx="557" cy="202" r="2.5" fill="#3A2000"/>
+    <ellipse cx="545" cy="196" rx="7" ry="10" fill="#D4943A" transform="rotate(-8,545,196)"/>
+  </g>
+
+  <!-- ═══ PUPPY 3 (mid-tone, sitting up a bit) ═══ -->
+  <g class="puppy-bob-3">
+    <ellipse cx="620" cy="210" rx="25" ry="15" fill="url(#puppyGrad)"/>
+    <circle cx="638" cy="199" r="16" fill="#D4943A"/>
+    <ellipse cx="647" cy="205" rx="9" ry="6" fill="#C07828"/>
+    <ellipse cx="650" cy="204" rx="3.5" ry="2.5" fill="#3A2000"/>
+    <circle cx="642" cy="197" r="2.5" fill="#3A2000"/>
+    <ellipse cx="629" cy="192" rx="7" ry="10" fill="#B86820" transform="rotate(-12,629,192)"/>
+  </g>
+
+  <!-- ═══ PUPPY 4 (right, cream) ═══ -->
+  <g class="puppy-bob-1" style="animation-delay:1.8s">
+    <ellipse cx="700" cy="213" rx="26" ry="14" fill="url(#lightPuppyGrad)"/>
+    <circle cx="720" cy="203" r="15" fill="#F0C060"/>
+    <ellipse cx="728" cy="209" rx="9" ry="6" fill="#D4943A"/>
+    <ellipse cx="731" cy="207" rx="3.5" ry="2.5" fill="#3A2000"/>
+    <circle cx="724" cy="201" r="2.5" fill="#3A2000"/>
+    <ellipse cx="712" cy="196" rx="7" ry="10" fill="#D4943A" transform="rotate(-8,712,196)"/>
+  </g>
+
+  <!-- Floating hearts -->
+  <g class="heart-float-1" style="transform-origin:385px 160px;">
+    <path d="M 385 165 C 383 160 378 158 378 163 C 378 168 385 173 385 173 C 385 173 392 168 392 163 C 392 158 387 160 385 165 Z" fill="#FF6B9D" opacity="0.8"/>
+  </g>
+  <g class="heart-float-2" style="transform-origin:420px 152px;">
+    <path d="M 420 157 C 418 152 413 150 413 155 C 413 160 420 165 420 165 C 420 165 427 160 427 155 C 427 150 422 152 420 157 Z" fill="#FF8FAF" opacity="0.7"/>
+  </g>
+
+  <!-- Paw prints decorative -->
+  <g opacity="0.25">
+    <circle cx="150" cy="237" r="4" fill="#8B5A2B"/>
+    <circle cx="145" cy="232" r="2.5" fill="#8B5A2B"/>
+    <circle cx="151" cy="231" r="2.5" fill="#8B5A2B"/>
+    <circle cx="157" cy="232" r="2.5" fill="#8B5A2B"/>
+  </g>
+  <g opacity="0.25">
+    <circle cx="750" cy="238" r="4" fill="#8B5A2B"/>
+    <circle cx="745" cy="233" r="2.5" fill="#8B5A2B"/>
+    <circle cx="751" cy="232" r="2.5" fill="#8B5A2B"/>
+    <circle cx="757" cy="233" r="2.5" fill="#8B5A2B"/>
+  </g>
+</svg>
+</div>
+
+<!-- ═══════════ INFO STRIP ═══════════ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q2 &middot; Unit 4</div>
+      <div class="info-detail">Life Cycles, Traits, &amp; Inheritance</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF9E8;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 10</div>
+      <div class="info-detail">Lesson 10.01 — 3rd Grade Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#F0EDF6;">🧬</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Inherited Traits</div>
+      <div class="info-detail">Traits passed from parents to offspring</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">NGSS 3-LS3-1</div>
+      <div class="info-detail">Heredity: Inheritance &amp; Variation of Traits</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ INTRO 2-COL CARDS ═══════════ -->
+<div class="intro-2col">
+
+  <div class="card theme-forest">
+    <div class="card-head">
+      <div class="card-head-icon">🌲</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This…</div>
+          <div class="question">"Why do puppies look like their parents — but not exactly the same?"</div>
+        </div>
+      </div>
+      <p>Hold this question as you work through the lesson. By the end, you should be able to answer it with evidence!</p>
+    </div>
+  </div>
+
+  <div class="card theme-sky">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#52B788;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain what a trait is and give examples of traits that organisms inherit from their parents.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2D6A4F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> compare traits between parents and offspring and describe similarities and differences.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2E7D32;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> use data about traits to find patterns and explain why offspring are similar but not identical to their parents.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════ NEED STRIP ═══════════ -->
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Pencil &amp; colored pencils</span>
+  <span class="need-chip"><span>📊</span>Trait comparison chart</span>
+</div>
+
+<!-- ═══════════ TAB BAR ═══════════ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 1: VOCABULARY                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to Today's Lesson!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🎬</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 10-1-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Activity 1: Notice & Wonder -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#52B788;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">👁️ Notice &amp; Wonder</div>
+        <div class="act-subtitle">Look carefully before we start</div>
+      </div>
+      <div class="act-time" style="background:#52B788;">⏱ 5 min</div>
+    </div>
+    <div class="act-body">
+      <p>Look at the photo of the golden retriever and her puppies in the banner above — or picture a family of animals you've seen.</p>
+      <p>In your science notebook, write or draw your answers:</p>
+      <div style="display:flex;flex-direction:column;gap:10px;margin:14px 0;">
+        <div style="display:flex;gap:12px;align-items:flex-start;background:#EEF8F0;border-radius:12px;padding:12px 16px;">
+          <span style="font-size:22px;">👀</span>
+          <p style="margin:0;font-size:16px;"><strong>What do you notice?</strong> List at least three things the puppies and their mother have in common.</p>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;background:#FFF9E8;border-radius:12px;padding:12px 16px;">
+          <span style="font-size:22px;">🤔</span>
+          <p style="margin:0;font-size:16px;"><strong>What do you wonder?</strong> Write one question you have about why they look similar — but not exactly alike.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vocabulary Cards -->
+  <div class="card theme-meadow scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Before we dive in, let's learn the words scientists use when they study how traits are passed down. <strong>Tap each card to flip it</strong> and read the definition.</p>
+
+      <div class="vocab-grid">
+
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🧬</div><div class="fc-word">trait</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">trait</div><div class="fc-def">A feature or characteristic of a living thing, like fur color, eye color, or leaf shape.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">👨‍👩‍👧</div><div class="fc-word">inherit</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">inherit</div><div class="fc-def">To receive traits from your parents. You inherit your eye color; a puppy inherits its fur color.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🐾</div><div class="fc-word">offspring</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">offspring</div><div class="fc-def">The young of a plant or animal. Puppies are the offspring of their parents.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🎨</div><div class="fc-word">variation</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">variation</div><div class="fc-def">Small differences in traits among organisms in the same group, like puppies with slightly different shades of fur.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">👁️</div><div class="fc-word">resemblance</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">resemblance</div><div class="fc-def">When two organisms look similar to each other because they share inherited traits.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">📊</div><div class="fc-word">pattern</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">pattern</div><div class="fc-def">Something that repeats in a predictable way. Scientists look for patterns in traits to understand how they are passed on.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">📓</span>
+        <p>Copy this sentence carefully into your science notebook:<br><strong>"Offspring inherit traits from their parents, but small variations mean no two offspring are exactly alike."</strong></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button>
+  </div>
+
+</div><!-- /tab-vocab -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 2: THE LESSON                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">📖</span>
+      <div>
+        <div class="video-wrap-type">Activity 2 · Core Lesson</div>
+        <div class="video-wrap-title">Why Do Offspring Look Like Their Parents?</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">📖</div>
+        <div class="video-placeholder-text">Core lesson video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 10-1-lesson-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Uploaded image: golden retriever with puppies -->
+  <div class="lesson-figure">
+    <div class="lesson-figure-label">📷 Photo · Real Organisms</div>
+    <img src="images/10-01-golden-retriever-puppies.png"
+         alt="A golden retriever mother lying on green grass with five puppies of varying shades — from deep golden to very pale cream — gathered in front of her." />
+    <div class="lesson-figure-caption">
+      Look closely at the mother and her puppies. <strong>What traits do they share?</strong> Now notice the differences — some puppies are darker gold, others are nearly cream. That's variation in an inherited trait.
+    </div>
+  </div>
+
+  <!-- Activity 2: Lesson Content -->
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#F9A825;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📖 The Lesson: Inherited Traits</div>
+        <div class="act-subtitle">Read and think carefully — science is all about noticing!</div>
+      </div>
+      <div class="act-time" style="background:#F9A825;">⏱ 12 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- Section 1 -->
+      <div class="card theme-forest" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🧬</div>
+          <div>
+            <div class="card-head-label">Section 1</div>
+            <div class="card-head-title">What Is a Trait?</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>A <span class="vtip">trait<span class="vtip-box"><span class="vtip-word">trait</span>A feature or characteristic of a living thing, like fur color or leaf shape.</span></span> is any feature of a living thing. Fur color, eye color, leaf shape, flower color, and body size are all traits.</p>
+          <p>Plants and animals get many of their traits from their parents. This is called <span class="vtip">inheriting<span class="vtip-box"><span class="vtip-word">inherit</span>To receive traits from your parents.</span></span> a trait. Traits pass from one generation to the next.</p>
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"What traits do you share with someone in your family? Which traits are inherited?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="card theme-sky" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🐾</div>
+          <div>
+            <div class="card-head-label">Section 2</div>
+            <div class="card-head-title">Similar but Not Identical</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><span class="vtip">Offspring<span class="vtip-box"><span class="vtip-word">offspring</span>The young of a plant or animal.</span></span> usually look similar to their parents — but they are never exactly the same. Look at the photo above. The puppies are all golden retrievers, and they all have soft fur and floppy ears. But some are darker gold; others are nearly cream.</p>
+          <p>Those small differences are called <span class="vtip">variation<span class="vtip-box"><span class="vtip-word">variation</span>Small differences in traits within a group of similar organisms.</span></span>. Variation shows up in every species — birds of the same type may have slightly different patterns, and flowers from the same plant may open at slightly different sizes.</p>
+          <div class="callout callout-tip">
+            <span class="callout-icon">💡</span>
+            <p><strong>Examples of variation:</strong> coat color in a litter of kittens · height of sunflower plants grown from the same packet of seeds · feather patterns among siblings in a bird nest.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="card theme-earth" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">📊</div>
+          <div>
+            <div class="card-head-label">Section 3</div>
+            <div class="card-head-title">Scientists Look for Patterns</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Scientists don't just observe one parent and one offspring. They collect data on many organisms and look for <span class="vtip">patterns<span class="vtip-box"><span class="vtip-word">pattern</span>Something that repeats in a predictable way. Scientists use patterns to make predictions.</span></span>. They ask: which traits are almost always shared? Which ones vary the most?</p>
+          <p>When a trait shows up in parents <em>and</em> in most of their offspring, that's strong evidence the trait is inherited. Variation within the group tells scientists that inherited traits come with small, natural differences.</p>
+          <p><strong>Real-World Connection:</strong> Researchers who study bald eagles in Yellowstone have recorded wing patterns, beak shape, and feather color across hundreds of birds. The patterns help them identify family groups and track how traits pass through generations.</p>
+        </div>
+      </div>
+
+      <!-- Interactive Diagram: parent-to-offspring trait flow -->
+      <div class="diagram-wrap scroll-reveal">
+        <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
+          🗺 Tap a zone to learn about it
+        </div>
+        <div class="diagram-interactive">
+          <svg viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;" role="img" aria-label="Diagram showing a parent plant on the left passing traits through an arrow to offspring on the right, with labels for inherited traits and variation.">
+
+            <!-- Background -->
+            <rect x="0" y="0" width="860" height="300" rx="12" fill="#F4F9F0"/>
+
+            <!-- Parent side background -->
+            <rect x="10" y="10" width="240" height="280" rx="12" fill="#EEF8F0" stroke="#A8D5B8" stroke-width="2"/>
+            <text x="130" y="38" text-anchor="middle" font-size="13" font-weight="800" fill="#1B4332" letter-spacing="1">PARENT</text>
+
+            <!-- Parent flower stem -->
+            <line x1="130" y1="260" x2="130" y2="175" stroke="#558B2F" stroke-width="5"/>
+            <!-- Leaf -->
+            <ellipse cx="113" cy="215" rx="22" ry="10" fill="#7BBF4A" transform="rotate(-30,113,215)"/>
+            <!-- Parent flower -->
+            <circle cx="130" cy="155" r="30" fill="#FF7BAC"/>
+            <circle cx="110" cy="140" r="18" fill="#FF9EC5"/>
+            <circle cx="150" cy="140" r="18" fill="#FF9EC5"/>
+            <circle cx="130" cy="125" r="18" fill="#FF9EC5"/>
+            <circle cx="130" cy="155" r="14" fill="#FDD835"/>
+            <!-- Parent leaf shape label -->
+            <text x="130" y="278" text-anchor="middle" font-size="11" fill="#2D6A4F" font-weight="700">oval leaves · pink petals</text>
+
+            <!-- Arrow zone -->
+            <rect x="258" y="90" width="150" height="120" rx="10" fill="#FFF9E8" stroke="#F9A825" stroke-width="2"/>
+            <text x="333" y="148" text-anchor="middle" font-size="12" font-weight="800" fill="#8B6000">INHERITED</text>
+            <text x="333" y="164" text-anchor="middle" font-size="12" font-weight="800" fill="#8B6000">TRAITS PASS</text>
+            <!-- Arrow -->
+            <path d="M 420 148 L 460 148" stroke="#2D6A4F" stroke-width="4" marker-end="url(#arrowHead)"/>
+            <defs>
+              <marker id="arrowHead" markerWidth="8" markerHeight="6" refX="6" refY="3" orient="auto">
+                <polygon points="0 0, 8 3, 0 6" fill="#2D6A4F"/>
+              </marker>
+            </defs>
+
+            <!-- Offspring area background -->
+            <rect x="480" y="10" width="370" height="280" rx="12" fill="#EAF8FD" stroke="#9FD4F8" stroke-width="2"/>
+            <text x="665" y="38" text-anchor="middle" font-size="13" font-weight="800" fill="#0D47A1" letter-spacing="1">OFFSPRING — variation in color</text>
+
+            <!-- Offspring 1: pink like parent -->
+            <line x1="575" y1="255" x2="575" y2="180" stroke="#558B2F" stroke-width="4"/>
+            <ellipse cx="561" cy="218" rx="16" ry="8" fill="#7BBF4A" transform="rotate(-30,561,218)"/>
+            <circle cx="575" cy="162" r="22" fill="#FF7BAC"/>
+            <circle cx="559" cy="150" r="14" fill="#FF9EC5"/>
+            <circle cx="591" cy="150" r="14" fill="#FF9EC5"/>
+            <circle cx="575" cy="141" r="14" fill="#FF9EC5"/>
+            <circle cx="575" cy="162" r="10" fill="#FDD835"/>
+
+            <!-- Offspring 2: slightly different shade -->
+            <line x1="665" y1="255" x2="665" y2="180" stroke="#558B2F" stroke-width="4"/>
+            <ellipse cx="651" cy="218" rx="16" ry="8" fill="#7BBF4A" transform="rotate(-30,651,218)"/>
+            <circle cx="665" cy="162" r="22" fill="#E0609A"/>
+            <circle cx="649" cy="150" r="14" fill="#F080B8"/>
+            <circle cx="681" cy="150" r="14" fill="#F080B8"/>
+            <circle cx="665" cy="141" r="14" fill="#F080B8"/>
+            <circle cx="665" cy="162" r="10" fill="#FDD835"/>
+
+            <!-- Offspring 3: lighter shade -->
+            <line x1="755" y1="255" x2="755" y2="180" stroke="#558B2F" stroke-width="4"/>
+            <ellipse cx="741" cy="218" rx="16" ry="8" fill="#7BBF4A" transform="rotate(-30,741,218)"/>
+            <circle cx="755" cy="162" r="22" fill="#F8A8CC"/>
+            <circle cx="739" cy="150" r="14" fill="#FAC0DA"/>
+            <circle cx="771" cy="150" r="14" fill="#FAC0DA"/>
+            <circle cx="755" cy="141" r="14" fill="#FAC0DA"/>
+            <circle cx="755" cy="162" r="10" fill="#FDD835"/>
+
+            <!-- Leaf labels for offspring -->
+            <text x="575" y="272" text-anchor="middle" font-size="10" fill="#2D6A4F" font-weight="700">similar</text>
+            <text x="665" y="272" text-anchor="middle" font-size="10" fill="#2D6A4F" font-weight="700">slightly different</text>
+            <text x="755" y="272" text-anchor="middle" font-size="10" fill="#2D6A4F" font-weight="700">lighter shade</text>
+
+            <!-- Variation brace -->
+            <path d="M 500 285 Q 500 294 665 294 Q 830 294 830 285" stroke="#0288D1" stroke-width="2" fill="none"/>
+            <text x="665" y="305" text-anchor="middle" font-size="11" fill="#0288D1" font-weight="800">← variation within the group →</text>
+
+            <!-- HOTSPOT RECTS -->
+            <rect class="hotspot" x="10" y="10" width="240" height="280" rx="12" fill="#52B788"
+                  data-part="parent"
+                  data-info="Parent: This flower has oval leaves and pink petals. These are its inherited traits. It got these traits from its own parents — just like you inherited traits from yours."/>
+            <rect class="hotspot" x="258" y="90" width="195" height="120" rx="10" fill="#F9A825"
+                  data-part="inheritance"
+                  data-info="Inheritance: Traits pass from parent to offspring. The offspring inherit the same basic plan — the same leaf shape, the same flower structure. This is what makes offspring resemble their parents."/>
+            <rect class="hotspot" x="480" y="120" width="110" height="110" rx="8" fill="#0288D1"
+                  data-part="offspring1"
+                  data-info="Offspring 1: This plant has the same petal shape as the parent and a similar pink color. It closely resembles its parent — but notice it isn't completely identical."/>
+            <rect class="hotspot" x="608" y="120" width="110" height="110" rx="8" fill="#2D6A4F"
+                  data-part="offspring2"
+                  data-info="Offspring 2: This plant inherited the same traits — oval leaves, pink petals, yellow center — but the pink is a deeper shade. That's variation. Same trait, slightly different expression."/>
+            <rect class="hotspot" x="698" y="120" width="110" height="110" rx="8" fill="#7B5EA7"
+                  data-part="offspring3"
+                  data-info="Offspring 3: This plant's petals are much lighter — nearly pale pink. It still inherited the same flower structure, but variation caused the color to be different from the parent and its siblings."/>
+          </svg>
+
+          <div class="diagram-info-panel" id="diagramPanel">
+            <span class="dip-word" id="diagramWord"></span>
+            <span id="diagramInfo"></span>
+          </div>
+        </div>
+        <div class="diagram-tap-hint">Tap any zone in the diagram to learn about it.</div>
+        <div class="diagram-caption">A parent plant passes traits to its offspring. Notice how the offspring share the same basic structure but show variation in petal color.</div>
+      </div>
+
+      <!-- Key Concept -->
+      <div class="key-concept scroll-reveal">
+        <div class="kc-label">⭐ Key Concept</div>
+        <p><strong>Offspring inherit traits from their parents, so they look similar.</strong> But variation means no two offspring are exactly the same — even in the same litter or seed pod.</p>
+        <p>Patterns of similarity across many organisms are evidence that traits are inherited. Variation within a group tells us those traits can come in slightly different forms.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mind-Blowing Fact -->
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Amazing Nature Fact</div>
+      <div class="mind-blow-text"><strong>A single litter of kittens can have</strong> <strong style="color:#95D5B2;">five different coat colors</strong> — even if the mother has solid black fur. That's because kittens inherit traits from both parents, and the combinations can look completely different from either one.</div>
+    </div>
+  </div>
+
+  <!-- Go Deeper -->
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper</summary>
+    <div class="gd-body">
+      <p><strong>Where does variation actually come from?</strong> When parents have offspring, the traits don't just copy from one parent — they mix. A puppy might inherit fur color closer to one parent and ear shape closer to the other. That mixing is what produces variation.</p>
+      <p>Scientists who study heredity look at hundreds or even thousands of plants and animals to find the patterns. They count how often certain traits appear. When a trait shows up in most offspring, that's a strong clue it's reliably inherited. When a trait varies a lot, scientists investigate why — sometimes the environment plays a role too. A normally tall plant grown without enough sunlight will be smaller than its siblings. Same inherited potential, different outcome.</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+
+</div><!-- /tab-lesson -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 3: EXPLORE                                            -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🔬</span>
+      <div>
+        <div class="video-wrap-type">Activity 3 · Investigation</div>
+        <div class="video-wrap-title">Trait Detectives: Compare Parent and Offspring</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🔬</div>
+        <div class="video-placeholder-text">Exploration video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 10-1-exploration-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#0288D1;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🔬 Trait Detective Investigation</div>
+        <div class="act-subtitle">Compare traits across a parent and offspring group</div>
+      </div>
+      <div class="act-time" style="background:#0288D1;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="callout callout-tip" style="margin-bottom:18px;">
+        <span class="callout-icon">🎒</span>
+        <p><strong>You'll need:</strong> your science notebook, pencil, colored pencils, and the golden retriever photo from the Lesson tab (or any plant or animal family photo you can observe).</p>
+      </div>
+
+      <p>Work through each step carefully. Record your observations in your science notebook as you go.</p>
+
+      <div style="position:relative; margin:16px 0;">
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:36px;height:36px;border-radius:12px;background:#0288D1;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+          <div style="flex:1;background:#EAF8FD;border-radius:12px;padding:14px 16px;">
+            <p style="margin:0;font-size:16px;"><strong>Pick your organism family.</strong> Use the golden retriever photo — or choose a plant or animal family you can observe or look up. Write the name at the top of your chart.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:36px;height:36px;border-radius:12px;background:#0288D1;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+          <div style="flex:1;background:#EAF8FD;border-radius:12px;padding:14px 16px;">
+            <p style="margin:0;font-size:16px;"><strong>Make a trait chart.</strong> Draw a simple two-column chart: one side for the parent, one side for one offspring. Label it "Trait Comparison Chart."</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:36px;height:36px;border-radius:12px;background:#0288D1;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+          <div style="flex:1;background:#EAF8FD;border-radius:12px;padding:14px 16px;">
+            <p style="margin:0;font-size:16px;"><strong>Record at least four traits.</strong> Choose traits you can actually see — like fur/coat color, ear shape, eye color, or body size. Fill in what you observe for both parent and offspring.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:36px;height:36px;border-radius:12px;background:#0288D1;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
+          <div style="flex:1;background:#EAF8FD;border-radius:12px;padding:14px 16px;">
+            <p style="margin:0;font-size:16px;"><strong>Circle the shared traits.</strong> Which traits did the offspring inherit from the parent? Circle or highlight those in your chart.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:36px;height:36px;border-radius:12px;background:#0288D1;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">5</div>
+          <div style="flex:1;background:#EAF8FD;border-radius:12px;padding:14px 16px;">
+            <p style="margin:0;font-size:16px;"><strong>Look for variation.</strong> Now compare two or three offspring to each other. Do all the offspring look identical? Write one sentence describing the variation you notice.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Record Your Thinking -->
+      <div style="background:#F0F8E8;border:2px solid #C8E0B8;border-radius:14px;padding:18px 20px;margin:18px 0;">
+        <div style="font-size:13px;color:#558B2F;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;margin-bottom:10px;">📝 Record Your Thinking</div>
+
+        <p style="font-size:16px;color:#1B4332;font-weight:700;margin-bottom:12px;">Answer these questions in your notebook. Write in complete sentences.</p>
+
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="background:#fff;border:1.5px solid #C8E0B8;border-radius:10px;padding:12px 16px;">
+            <p style="margin:0;font-size:15px;color:#2B1D12;">1. Which traits were clearly inherited by the offspring?</p>
+          </div>
+          <div style="background:#fff;border:1.5px solid #C8E0B8;border-radius:10px;padding:12px 16px;">
+            <p style="margin:0;font-size:15px;color:#2B1D12;">2. How were the offspring similar to the parent? How were they different?</p>
+          </div>
+          <div style="background:#fff;border:1.5px solid #C8E0B8;border-radius:10px;padding:12px 16px;">
+            <p style="margin:0;font-size:15px;color:#2B1D12;">3. Did all of the offspring look exactly the same? What does that tell you about variation?</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Think It Through -->
+      <div style="background:#FFF0E8;border:2px solid #E8D0B8;border-radius:14px;padding:18px 20px;margin:18px 0;">
+        <div style="font-size:13px;color:#A0522D;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;margin-bottom:10px;">🧠 Think It Through</div>
+
+        <div class="socratic-q" style="margin-top:0;margin-bottom:12px;">
+          <span class="sq-icon">💭</span>
+          <div>
+            <div class="label">Discuss or Write</div>
+            <div class="question">"If two puppies from the same litter have different fur shades, does that mean they didn't inherit their fur color from their parents? Explain your thinking."</div>
+          </div>
+        </div>
+
+        <div class="socratic-q" style="margin-bottom:0;">
+          <span class="sq-icon">💭</span>
+          <div>
+            <div class="label">Go Further</div>
+            <div class="question">"How could a scientist use trait data from many litters to find a pattern? What would that data help them understand?"</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+
+</div><!-- /tab-explore -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 4: SELF-CHECK QUIZ                                    -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div style="text-align:center;padding:8px 0 20px;">
+    <div style="font-size:36px;margin-bottom:8px;">🧠</div>
+    <div style="font-size:22px;font-weight:900;color:#1B4332;margin-bottom:6px;">Self-Check</div>
+    <div style="font-size:15px;color:#5A4D3E;">Three questions — let's see what you know!</div>
+  </div>
+
+  <!-- Q1 -->
+  <div class="quiz-q" data-answer="b">
+    <div class="quiz-q-num">Question 1 of 3</div>
+    <div class="quiz-stem">A puppy has the same golden fur as its parent. What best explains this?</div>
+    <div class="quiz-opts">
+      <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)">The puppy learned to grow golden fur by watching its parent.</div>
+      <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)">The puppy inherited the fur color trait from its parent.</div>
+      <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)">The puppy's fur color is random and has nothing to do with its parents.</div>
+    </div>
+    <div class="quiz-feedback fb-correct">✅ Correct! Fur color is an inherited trait — it's passed from parent to offspring.</div>
+    <div class="quiz-feedback fb-wrong">Try again! Traits like fur color are inherited, not learned. They come from the parent.</div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="quiz-q" data-answer="c">
+    <div class="quiz-q-num">Question 2 of 3</div>
+    <div class="quiz-stem">A litter of kittens has four different coat patterns, even though the parents look similar. This is an example of —</div>
+    <div class="quiz-opts">
+      <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)">the kittens not having any inherited traits</div>
+      <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)">the kittens learning their patterns from their environment</div>
+      <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)">variation — small differences within a group that share the same inherited traits</div>
+    </div>
+    <div class="quiz-feedback fb-correct">✅ Right! Variation means inherited traits can come in slightly different forms within a group.</div>
+    <div class="quiz-feedback fb-wrong">Not quite. The kittens do inherit coat traits — they just vary. That's called variation.</div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="quiz-q" data-answer="a">
+    <div class="quiz-q-num">Question 3 of 3</div>
+    <div class="quiz-stem">Which is the best evidence that a trait is inherited?</div>
+    <div class="quiz-opts">
+      <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)">The trait appears in parents and in most of their offspring, over and over again.</div>
+      <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)">The trait only shows up in one individual and never in the parent.</div>
+      <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)">The trait changes completely depending on the weather.</div>
+    </div>
+    <div class="quiz-feedback fb-correct">✅ Excellent! Scientists look for patterns — traits that consistently appear in parents and offspring are inherited traits.</div>
+    <div class="quiz-feedback fb-wrong">Think about patterns. Inherited traits show up reliably across parents and offspring — that's the evidence.</div>
+  </div>
+
+  <!-- Score Box -->
+  <div class="quiz-score-box" id="quizScore">
+    <div class="quiz-score-num" id="quizScoreNum">0</div>
+    <div class="quiz-score-of">out of 3</div>
+    <div class="quiz-score-msg" id="quizScoreMsg"></div>
+
+    <div class="video-feedback" id="quizVideoCorrect">
+      <div class="video-wrap" style="margin-top:18px;">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">⭐</span>
+          <div>
+            <div class="video-wrap-type">Perfect Score!</div>
+            <div class="video-wrap-title">Amazing work — you really know your inherited traits!</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">⭐</div>
+            <div class="video-placeholder-text">Celebration video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 10-1-quiz-perfect --></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-feedback" id="quizVideoReview">
+      <div class="video-wrap" style="margin-top:18px;">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">📖</span>
+          <div>
+            <div class="video-wrap-type">Review</div>
+            <div class="video-wrap-title">Let's go back and look at the key ideas together.</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">📖</div>
+            <div class="video-placeholder-text">Review video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 10-1-quiz-review --></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+
+</div><!-- /tab-quiz -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 5: ASSIGNMENT                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">✍️</span>
+      <div>
+        <div class="video-wrap-type">Activity 5 · Assignment</div>
+        <div class="video-wrap-title">Showing What You Know About Inherited Traits</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">✍️</div>
+        <div class="video-placeholder-text">Assignment overview video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 10-1-assignment-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-card act-check scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#7B5EA7;">5</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment: Inherited Traits</div>
+        <div class="act-subtitle">Use what you learned — show your evidence!</div>
+      </div>
+      <div class="act-time" style="background:#7B5EA7;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- Reference photo -->
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">📷 Photo · Reference — Golden Retriever Family</div>
+        <img src="images/10-01-golden-retriever-puppies.png"
+             alt="A golden retriever mother lying on green grass with five puppies of varying shades — from deep golden to very pale cream — gathered in front of her." />
+        <div class="lesson-figure-caption">
+          Use this photo for Parts A, B, and C. <strong>Look carefully</strong> at the traits you can see — fur shade, ear shape, body size, and more.
+        </div>
+      </div>
+
+      <!-- Part A -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔍 Part A — Identify the Traits</p>
+      <p style="font-size:15px;color:#5A4D3E;margin-bottom:14px;">Look at the photo of the golden retriever and her puppies. In your science notebook, make a simple two-column chart.</p>
+
+      <div style="background:#EEF8F0;border:2px solid #C4E5CC;border-radius:12px;padding:16px 20px;margin-bottom:18px;">
+        <p style="font-size:15px;color:#1B4332;font-weight:700;margin-bottom:10px;">Your chart should have:</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <div style="background:#fff;border:1.5px solid #C4E5CC;border-radius:10px;padding:10px 14px;flex:1;min-width:160px;">
+            <div style="font-size:13px;font-weight:800;color:#2D6A4F;margin-bottom:4px;">Column 1</div>
+            <div style="font-size:15px;color:#2B1D12;">The trait <em>(e.g., ear shape)</em></div>
+          </div>
+          <div style="background:#fff;border:1.5px solid #C4E5CC;border-radius:10px;padding:10px 14px;flex:1;min-width:160px;">
+            <div style="font-size:13px;font-weight:800;color:#2D6A4F;margin-bottom:4px;">Column 2</div>
+            <div style="font-size:15px;color:#2B1D12;">Inherited? Yes / Varies?</div>
+          </div>
+        </div>
+        <p style="font-size:15px;color:#5A4D3E;margin-top:12px;margin-bottom:0;">Record at least <strong>four traits</strong>. Circle any traits that show variation across the puppies.</p>
+      </div>
+
+      <!-- Part B -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">📝 Part B — Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer each question in complete sentences.</p>
+
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:20px;">
+        <div style="background:#FAFAF6;border:2px solid #E8DDD2;border-radius:12px;padding:14px 18px;">
+          <p style="font-size:16px;color:#2B1D12;margin-bottom:8px;"><strong>1.</strong> What is an inherited trait? Give one example from the photo.</p>
+          <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+          <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:8px;"></div>
+        </div>
+        <div style="background:#FAFAF6;border:2px solid #E8DDD2;border-radius:12px;padding:14px 18px;">
+          <p style="font-size:16px;color:#2B1D12;margin-bottom:8px;"><strong>2.</strong> Why do the puppies look similar to their mother but not exactly the same?</p>
+          <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+          <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:8px;"></div>
+        </div>
+        <div style="background:#FAFAF6;border:2px solid #E8DDD2;border-radius:12px;padding:14px 18px;">
+          <p style="font-size:16px;color:#2B1D12;margin-bottom:8px;"><strong>3.</strong> How would a scientist use data from many litters to show that fur color is an inherited trait?</p>
+          <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+          <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:8px;"></div>
+        </div>
+      </div>
+
+      <!-- Write & Explain -->
+      <div class="key-concept" style="background:#FFF9E8;border-color:#F0E4C0;margin:20px 0;">
+        <div class="kc-label" style="color:#F9A825;">✍️ Write and Explain</div>
+        <p style="font-size:16px;font-weight:700;color:#1B4332;margin-bottom:14px;">How do inherited traits explain why offspring look like their parents — but also show variation?</p>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What did you observe?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"When I looked at the parent and offspring, I noticed that…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What does that tell you?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This tells me that traits are… because…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">Why does that make sense?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="background:#EEF8F0;border-radius:10px;padding:10px 14px;border-left:3px solid #52B788;">
+          <p style="margin:0;font-size:14px;color:#1B4332;">📚 Try to use at least one of these words: <strong>trait</strong>, <strong>inherit</strong>, <strong>variation</strong>, <strong>offspring</strong></p>
+        </div>
+      </div>
+
+      <!-- Part C -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Label</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Draw a parent organism and two of its offspring. Label at least three inherited traits. Show how the offspring are similar — and where you see variation. Your diagram should look like the one in the lesson, but for your chosen organism.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Reflect</div>
+          <div class="question">"Go back to your Notice &amp; Wonder from the very beginning. Did what you noticed turn out to be about inherited traits or variation — or both? What changed in your thinking?"</div>
+        </div>
+      </div>
+
+      <!-- What to Turn In -->
+      <div class="turn-in-block">
+        <div class="turn-in-header">
+          <div class="turn-in-header-icon">📋</div>
+          <div>
+            <div class="turn-in-header-label">Canvas Submission</div>
+            <div class="turn-in-header-title">What to Turn In</div>
+          </div>
+        </div>
+        <div class="turn-in-body">
+
+          <p class="turn-in-intro">Submit your work on Canvas using <strong>one of these options:</strong></p>
+
+          <div class="turn-in-options">
+            <div class="turn-in-option turn-in-option-type">
+              <div class="turn-in-option-icon">⌨️</div>
+              <div class="turn-in-option-title">Type It</div>
+              <div class="turn-in-option-text">Type your answers directly into the Canvas assignment.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-photo">
+              <div class="turn-in-option-icon">📸</div>
+              <div class="turn-in-option-title">Photo It</div>
+              <div class="turn-in-option-text">Take a clear photo of your handwritten work and upload it.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-video">
+              <div class="turn-in-option-icon">🎥</div>
+              <div class="turn-in-option-title">Record It</div>
+              <div class="turn-in-option-text">Record a short video explaining what you did and learned.</div>
+            </div>
+          </div>
+
+          <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
+
+          <div class="turn-in-checklist">
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Notice &amp; Wonder observations and question from the Vocabulary tab.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">The copywork sentence copied carefully into my science notebook.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Trait Comparison Chart from the Explore investigation, with shared traits circled.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My answers to the three Part B short-answer questions.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Write &amp; Explain response, written in complete sentences using lesson vocabulary.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Part C diagram with a parent, two offspring, and at least three labeled traits.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Closing Video -->
+      <div class="video-wrap" style="margin-top:24px;">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">👋</span>
+          <div>
+            <div class="video-wrap-type">Closing · Wrap-Up</div>
+            <div class="video-wrap-title">Great work today! Coming up next: the Family Traits Survey investigation…</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">👋</div>
+            <div class="video-placeholder-text">Closing video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 10-1-closing --></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /tab-assignment -->
+
+</div><!-- /page-wrap -->
+
+<script>
+const LESSON_EMOJI = '🧬';
+
+// ── Tab switching ──
+var tabProgress = {};
+function switchTab(id) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + id).classList.add('active');
+  document.querySelector('[data-tab="' + id + '"]').classList.add('active');
+  document.querySelector('[data-tab="' + id + '"]').classList.add('visited');
+  tabProgress[id] = true;
+  var tabs = ['vocab','lesson','explore','quiz','assignment'];
+  var pct = Math.round((Object.keys(tabProgress).length / tabs.length) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  if (id === 'vocab') {
+    introCards.forEach(function(c){ c.classList.remove('collapsed'); });
+  } else {
+    introCards.forEach(function(c){ c.classList.add('collapsed'); });
+  }
+}
+
+// ── Turn-in checklist ──
+function toggleCheck(el) {
+  el.classList.toggle('checked');
+  var icon = el.querySelector('.turn-in-check');
+  if (el.classList.contains('checked')) {
+    icon.textContent = LESSON_EMOJI;
+  } else {
+    icon.textContent = '';
+  }
+}
+
+// ── Vocab flip cards ──
+document.querySelectorAll('.flip-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    this.classList.toggle('flipped');
+  });
+});
+
+// ── Interactive diagram ──
+(function() {
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel    = document.getElementById('diagramPanel');
+  var wordEl   = document.getElementById('diagramWord');
+  var infoEl   = document.getElementById('diagramInfo');
+  if (!panel) return;
+  hotspots.forEach(function(h) {
+    h.addEventListener('click', function(e) {
+      e.stopPropagation();
+      hotspots.forEach(function(x){ x.classList.remove('active'); });
+      h.classList.add('active');
+      wordEl.textContent = h.getAttribute('data-part').replace(/-/g,' ').toUpperCase();
+      infoEl.textContent = h.getAttribute('data-info');
+      panel.classList.add('visible');
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+    }
+  });
+})();
+
+// ── Self-Check Quiz ──
+var quizAnswered = 0;
+var quizCorrect  = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen  = optEl.getAttribute('data-val');
+  q.querySelectorAll('.quiz-opt').forEach(function(o){
+    if (o.getAttribute('data-val') === correct) { o.classList.add('correct'); }
+    else { o.classList.add('disabled'); }
+  });
+  var fbCorrect = q.querySelector('.fb-correct');
+  var fbWrong   = q.querySelector('.fb-wrong');
+  if (chosen === correct) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+  if (quizAnswered === 3) {
+    var scoreBox  = document.getElementById('quizScore');
+    var scoreNum  = document.getElementById('quizScoreNum');
+    var scoreMsg  = document.getElementById('quizScoreMsg');
+    var vCorrect  = document.getElementById('quizVideoCorrect');
+    var vReview   = document.getElementById('quizVideoReview');
+    scoreNum.textContent = quizCorrect;
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '⭐ Perfect! You got every question right!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌿 Great job! Almost there!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip) {
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function() {
+    var rect = tip.getBoundingClientRect();
+    var bw   = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Back to Top ──
+(function() {
+  var btn = document.getElementById('backToTop');
+  if (!btn) return;
+  var inIframe = (function() {
+    try { return window.self !== window.top; }
+    catch (e) { return true; }
+  })();
+  btn.addEventListener('click', function() {
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    var top = document.getElementById('pageTop');
+    if (top && top.scrollIntoView) {
+      try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+    }
+    try {
+      if (window.frameElement && window.frameElement.scrollIntoView) {
+        window.frameElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (e) {}
+    if (inIframe) {
+      try { window.parent.postMessage({ type: 'optima-lesson:scroll-to-top' }, '*'); } catch (e) {}
+    }
+  });
+  if (inIframe) {
+    setTimeout(function() { btn.classList.add('show'); }, 1500);
+  } else {
+    window.addEventListener('scroll', function() {
+      btn.classList.toggle('show', window.pageYOffset > 400);
+    });
+  }
+})();
+
+// ── Confetti ──
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx    = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#52B788','#F9A825','#FDD835','#4DD0E1','#2E7D32','#7B5EA7','#FF8F00','#0288D1'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── Collapsible Intro Cards ──
+var introCards = document.querySelectorAll('.intro-2col .card');
+introCards.forEach(function(card){
+  var head = card.querySelector('.card-head');
+  if (!head) return;
+  head.addEventListener('click', function(){
+    var willCollapse = !card.classList.contains('collapsed');
+    introCards.forEach(function(c){
+      c.classList.toggle('collapsed', willCollapse);
+    });
+  });
+});
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+tabProgress['vocab'] = true;
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+</script>
+</body>
+</html>
