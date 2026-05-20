@@ -1,0 +1,2068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – Lesson 8.02: Investigation — Comparing Plant Growth Data</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+  background: #F2F0E8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #2B1D12;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap { max-width: 920px; margin: 0 auto; background: #FAF8F4; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%);
+  border-bottom: 6px solid #2D6A4F;
+  padding: 22px 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 6px; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2D6A4F, #95D5B2, #2D6A4F);
+}
+.header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.header-logo {
+  width: 52px; height: 52px; border-radius: 50%; background: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title {
+  font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+  text-shadow: 0 2px 12px rgba(45,106,79,0.3);
+}
+.header-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(45,106,79,0.2); border: 1.5px solid rgba(82,183,136,0.4);
+  border-radius: 28px; padding: 6px 16px;
+}
+.header-badge span:first-child { font-size: 22px; }
+.header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ── Hero Visual ── */
+.hero-visual {
+  padding: 0; position: relative; overflow: hidden;
+  border-bottom: 3px solid #2D6A4F;
+}
+.hero-visual svg { display: block; width: 100%; height: auto; }
+
+/* ── Hero Animations ── */
+@keyframes cloud-drift-1 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(40px); }
+}
+@keyframes cloud-drift-2 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-32px); }
+}
+@keyframes sun-pulse {
+  0%, 100% { opacity: 0.65; transform: scale(1); }
+  50%       { opacity: 1;    transform: scale(1.12); }
+}
+@keyframes bird-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(6px, -8px); }
+}
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes hero-twinkle {
+  0%, 100% { opacity: 0.4; transform: scale(0.85); }
+  50%       { opacity: 1;   transform: scale(1.15); }
+}
+@keyframes hero-shimmer {
+  0%, 100% { opacity: 0.25; }
+  50%       { opacity: 0.7; }
+}
+@keyframes hero-spin-slow {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes hero-sway {
+  0%, 100% { transform: rotate(-2.5deg); }
+  50%       { transform: rotate(2.5deg); }
+}
+@keyframes plant-grow {
+  0%, 100% { transform: scaleY(0.94); }
+  50%       { transform: scaleY(1); }
+}
+@keyframes light-ray {
+  0%, 100% { opacity: 0.15; }
+  50%       { opacity: 0.38; }
+}
+
+.hero-cloud-1   { animation: cloud-drift-1 9s ease-in-out infinite alternate; }
+.hero-cloud-2   { animation: cloud-drift-2 13s ease-in-out infinite alternate; }
+.hero-sun-glow  { animation: sun-pulse 4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-float     { animation: hero-float 3.5s ease-in-out infinite; }
+.hero-shimmer   { animation: hero-shimmer 3s ease-in-out infinite; }
+.hero-sway      { animation: hero-sway 4s ease-in-out infinite; transform-origin: bottom center; transform-box: fill-box; }
+.hero-sway-slow { animation: hero-sway 5.5s ease-in-out infinite 0.8s; transform-origin: bottom center; transform-box: fill-box; }
+.hero-light-ray { animation: light-ray 3.5s ease-in-out infinite; }
+.hero-plant-a   { animation: plant-grow 3.2s ease-in-out infinite; transform-origin: bottom center; transform-box: fill-box; }
+.hero-plant-b   { animation: plant-grow 4.1s ease-in-out infinite 0.7s; transform-origin: bottom center; transform-box: fill-box; }
+
+@keyframes can-tilt {
+  0%, 100% { transform: rotate(-8deg); }
+  50%       { transform: rotate(-14deg); }
+}
+@keyframes drop-fall-1 {
+  0%   { transform: translateY(0); opacity: 0.9; }
+  80%  { opacity: 0.7; }
+  100% { transform: translateY(52px); opacity: 0; }
+}
+@keyframes drop-fall-2 {
+  0%   { transform: translateY(0); opacity: 0.9; }
+  80%  { opacity: 0.7; }
+  100% { transform: translateY(52px); opacity: 0; }
+}
+@keyframes drop-fall-3 {
+  0%   { transform: translateY(0); opacity: 0.9; }
+  80%  { opacity: 0.7; }
+  100% { transform: translateY(52px); opacity: 0; }
+}
+.hero-can       { animation: can-tilt 2.8s ease-in-out infinite; transform-origin: 490px 118px; transform-box: view-box; }
+.hero-drop-1    { animation: drop-fall-1 1.1s ease-in infinite 0s; }
+.hero-drop-2    { animation: drop-fall-2 1.1s ease-in infinite 0.37s; }
+.hero-drop-3    { animation: drop-fall-3 1.1s ease-in infinite 0.72s; }
+
+/* ── Mind-Blow Animation ── */
+@keyframes mind-blow-bounce {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.12); }
+}
+
+/* ── Info Strip ── */
+.info-strip {
+  display: flex; flex-wrap: wrap; background: #fff;
+  border-bottom: 2px solid #E8DDD2;
+}
+.info-item {
+  flex: 1; min-width: 150px; padding: 12px 16px;
+  border-right: 1px solid #E8DDD2;
+  display: flex; align-items: center; gap: 10px;
+}
+.info-item:last-child { border-right: none; }
+.info-icon {
+  width: 40px; height: 40px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.info-value { font-size: 16px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+/* ── Content Area ── */
+.content { padding: 24px 28px 36px; }
+
+/* ── Card System ── */
+.card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 22px; overflow: hidden;
+  box-shadow: 0 2px 12px rgba(27,67,50,0.04);
+}
+.card-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 20px; border-bottom: 2px solid;
+}
+.card-head-icon {
+  width: 42px; height: 42px; border-radius: 50%; color: #fff;
+  font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.card-head-title { font-size: 20px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.card-body { padding: 18px 22px; }
+.card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+.card-body p:last-child { margin-bottom: 0; }
+
+/* ── Card Color Themes ── */
+.theme-earth  .card-head { background: #FFF0E8; border-color: #E8D0B8; }
+.theme-earth  .card-head-icon { background: #A0522D; }
+.theme-sun    .card-head { background: #FFF9E8; border-color: #F0E4C0; }
+.theme-sun    .card-head-icon { background: #F9A825; }
+.theme-sky    .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-sky    .card-head-icon { background: #0288D1; }
+.theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+.theme-forest .card-head-icon { background: #2E7D32; }
+.theme-rock   .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+.theme-rock   .card-head-icon { background: #7B5EA7; }
+.theme-meadow .card-head { background: #F0F8E8; border-color: #C8E0B8; }
+.theme-meadow .card-head-icon { background: #558B2F; }
+
+/* ── Activity Cards ── */
+.activity-card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 18px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.activity-card.act-warmup  { border-left: 6px solid #52B788; }
+.activity-card.act-lesson  { border-left: 6px solid #F9A825; }
+.activity-card.act-explore { border-left: 6px solid #0288D1; }
+.activity-card.act-practice{ border-left: 6px solid #2E7D32; }
+.activity-card.act-check   { border-left: 6px solid #7B5EA7; }
+.act-head {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px 14px 18px;
+  border-bottom: 1.5px solid #E8DDD2;
+}
+.act-num {
+  width: 38px; height: 38px; border-radius: 14px; color: #fff;
+  font-size: 18px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.act-title { font-size: 19px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.act-subtitle { font-size: 12px; color: #9A8E82; }
+.act-time {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap;
+  margin-left: auto; flex-shrink: 0;
+}
+.act-body { padding: 18px 22px 18px 20px; }
+.act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+/* ── Callout Boxes ── */
+.callout {
+  border-radius: 14px; padding: 16px 18px;
+  display: flex; align-items: flex-start; gap: 12px;
+  margin-bottom: 14px;
+}
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+.callout-earth  { background: #FFF0E8; border: 2px solid #E8D0B8; }
+.callout-think  { background: #FFF9E8; border: 2px solid #F0E4C0; }
+.callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+.callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+.callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+
+/* ── Socratic Questions ── */
+.socratic-q {
+  background: linear-gradient(135deg, #EEF8F0, #E8F5E9);
+  border: 2px solid #A8D5B8;
+  border-radius: 16px; padding: 16px 20px;
+  margin: 16px 0;
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.socratic-q .label {
+  font-size: 11px; color: #2D6A4F; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px;
+}
+.socratic-q .question {
+  font-size: 17px; color: #2B1D12; font-weight: 700;
+  line-height: 1.6; font-style: italic;
+}
+
+/* ── Diagram Containers ── */
+.diagram-wrap {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 16px; margin: 16px 0;
+  text-align: center;
+}
+.diagram-wrap svg { max-width: 100%; height: auto; }
+.diagram-caption {
+  font-size: 13px; color: #9A8E82; margin-top: 10px;
+  font-weight: 600; text-align: center;
+}
+
+/* ── Diagram Interactive ── */
+.diagram-interactive { position: relative; display: inline-block; width: 100%; }
+.diagram-interactive svg { display: block; width: 100%; height: auto; border-radius: 12px; }
+.hotspot {
+  fill-opacity: 0; cursor: pointer; transition: fill-opacity 0.2s;
+  stroke: none;
+}
+.hotspot:hover { fill-opacity: 0.15; }
+.hotspot.active { fill-opacity: 0.22; }
+.diagram-info-panel {
+  display: none; background: #1B4332; color: #fff;
+  border-radius: 12px; padding: 14px 18px;
+  margin-top: 10px; font-size: 15px; line-height: 1.6;
+}
+.diagram-info-panel.visible { display: block; }
+.dip-word {
+  display: block; font-size: 12px; color: #95D5B2;
+  text-transform: uppercase; letter-spacing: 1px;
+  font-weight: 800; margin-bottom: 6px;
+}
+.diagram-tap-hint {
+  font-size: 12px; color: #9A8E82; font-weight: 600;
+  margin-top: 8px; text-align: center;
+}
+
+/* ── Lesson Figure (uploaded images) ── */
+.lesson-figure {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 14px 14px 18px; margin: 0 0 22px;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.lesson-figure-label {
+  font-size: 11px; color: #2D6A4F;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  font-weight: 800; margin-bottom: 10px;
+}
+.lesson-figure img {
+  display: block; max-width: 100%; height: auto;
+  border-radius: 10px; margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.lesson-figure-caption {
+  font-size: 14px; color: #5A4D3E;
+  margin-top: 12px; line-height: 1.55; font-weight: 600;
+  text-align: center;
+}
+.lesson-figure-caption strong { color: #1B4332; }
+
+/* ── Key Concept Box ── */
+.key-concept {
+  background: #F0F8E8; border: 2px solid #C8E0B8;
+  border-radius: 14px; padding: 18px 20px; margin: 14px 0;
+}
+.key-concept .kc-label {
+  font-size: 13px; color: #558B2F; text-transform: uppercase;
+  letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px;
+}
+.key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+.key-concept p:last-child { margin-bottom: 0; }
+
+/* ── Practice Questions ── */
+.pq {
+  background: #FAFAF6; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 14px 18px; margin-bottom: 12px;
+}
+.pq-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  color: #fff; font-weight: 800; font-size: 14px;
+  margin-right: 8px; vertical-align: middle;
+}
+.pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+.pq-answer { font-size: 15px; color: #9A8E82; font-style: italic; }
+
+/* ── Vocab Flashcards ── */
+.vocab-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px; margin: 14px 0;
+}
+.flip-card { perspective: 800px; height: 195px; cursor: pointer; }
+.flip-card-inner {
+  position: relative; width: 100%; height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 14px 18px; text-align: center;
+  border: 2px solid #E8DDD2;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.06);
+}
+.flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+.flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+.flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #1B4332; margin-bottom: 6px; }
+.flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+.flip-card-back {
+  background: linear-gradient(145deg, #1B4332, #2D6A4F);
+  border-color: #1B4332;
+  transform: rotateY(180deg);
+}
+.flip-card-back .fc-def { font-size: 14.5px; color: #fff; line-height: 1.5; font-weight: 600; }
+.flip-card-back .fc-word-back {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 6px;
+}
+.flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 8px; font-weight: 600; }
+.fc-color-1 .flip-card-front { border-top-color: #52B788; }
+.fc-color-2 .flip-card-front { border-top-color: #2D6A4F; }
+.fc-color-3 .flip-card-front { border-top-color: #F9A825; }
+.fc-color-4 .flip-card-front { border-top-color: #0288D1; }
+.fc-color-5 .flip-card-front { border-top-color: #2E7D32; }
+.fc-color-6 .flip-card-front { border-top-color: #7B5EA7; }
+
+/* ── Vocab Tooltips ── */
+.vtip {
+  position: relative; color: #7B5EA7; font-weight: 700;
+  cursor: help; border-bottom: 2px dotted rgba(123,94,167,0.45);
+  transition: color 0.15s;
+}
+.vtip:hover { color: #5B3EA7; }
+.vtip .vtip-box {
+  position: fixed; background: #1B4332; color: #fff;
+  padding: 12px 16px; border-radius: 12px;
+  font-size: 14px; font-weight: 600; font-style: normal;
+  line-height: 1.55; width: 250px; text-align: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  pointer-events: none; z-index: 9999;
+  box-shadow: 0 6px 24px rgba(27,67,50,0.35);
+  border: 1.5px solid rgba(149,213,178,0.3);
+  transform: translateY(6px);
+}
+.vtip .vtip-box::after {
+  content: ''; position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent; border-top-color: #1B4332;
+}
+.vtip .vtip-word {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block;
+}
+.vtip:hover .vtip-box { opacity: 1; visibility: visible; transform: translateY(0); }
+
+/* ── Mind-Blowing Fact ── */
+.mind-blow {
+  background: linear-gradient(135deg, #1a3a28, #1B4332);
+  border: 2px solid rgba(149,213,178,0.3);
+  border-radius: 18px; padding: 22px 24px; margin: 0 0 22px;
+  display: flex; align-items: flex-start; gap: 16px;
+}
+.mind-blow-icon {
+  font-size: 40px; line-height: 1; flex-shrink: 0;
+  animation: mind-blow-bounce 3s ease-in-out infinite;
+  transform-origin: center; transform-box: fill-box;
+}
+.mind-blow-content { flex: 1; }
+.mind-blow-label {
+  font-size: 11px; color: #FDD835; text-transform: uppercase;
+  letter-spacing: 1.5px; font-weight: 800; margin-bottom: 6px;
+}
+.mind-blow-text { font-size: 16px; color: #fff; line-height: 1.6; font-weight: 600; }
+.mind-blow-text strong { color: #95D5B2; }
+
+/* ── Go Deeper ── */
+.go-deeper {
+  background: #F0EDF6; border: 2px solid #D8D0E8;
+  border-radius: 14px; margin: 0 0 22px;
+}
+.go-deeper summary {
+  padding: 16px 20px; font-size: 16px; color: #7B5EA7;
+  font-weight: 800; cursor: pointer; list-style: none;
+}
+.go-deeper summary::before { content: '🔭 '; }
+.gd-body { padding: 4px 20px 18px; }
+.gd-body p { font-size: 16px; color: #5A4D3E; line-height: 1.7; margin-bottom: 10px; }
+
+/* ── Video Wraps ── */
+.video-wrap {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 18px; margin-bottom: 22px; overflow: hidden;
+}
+.video-wrap-header {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px; border-bottom: 1.5px solid #E8DDD2;
+}
+.video-wrap-type { font-size: 11px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.video-wrap-title { font-size: 18px; color: #1B4332; font-weight: 800; }
+.video-ratio { position: relative; width: 100%; padding-bottom: 56.25%; background: #0E1C42; }
+.video-ratio iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.video-placeholder {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #0E1C42, #1B4332);
+}
+.video-placeholder-icon { font-size: 52px; margin-bottom: 12px; opacity: 0.7; }
+.video-placeholder-text { font-size: 16px; color: rgba(255,255,255,0.6); font-weight: 700; }
+.video-placeholder-id { font-size: 11px; color: rgba(149,213,178,0.4); font-family: monospace; margin-top: 6px; letter-spacing: 0.5px; }
+.video-feedback { display: none; }
+.video-feedback.show { display: block; }
+
+/* ── Collapsible Intro Cards ── */
+.intro-2col .card .card-head { cursor: pointer; user-select: none; position: relative; }
+.intro-2col .card .card-head::after {
+  content: '▾'; position: absolute; right: 16px; top: 50%;
+  transform: translateY(-50%); font-size: 16px; color: #9A8E82; transition: transform 0.25s ease;
+}
+.intro-2col .card.collapsed .card-head::after { transform: translateY(-50%) rotate(-90deg); }
+.intro-2col .card.collapsed .card-body { display: none; }
+
+/* ── Tab Bar ── */
+.tab-bar {
+  position: sticky; top: 44px; z-index: 100;
+  background: #FAF8F4; border-bottom: 3px solid #E8DDD2;
+  display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex: 1; min-width: 130px; padding: 12px 8px 11px;
+  background: transparent; border: none;
+  border-bottom: 4px solid transparent;
+  font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700;
+  color: #9A8E82; cursor: pointer; transition: all 0.2s;
+  white-space: nowrap; line-height: 1.3; text-align: center;
+}
+.tab-btn:hover { color: #1B4332; background: #EEF8F0; }
+.tab-btn.active { color: #1B4332; border-bottom-color: #2D6A4F; background: #fff; }
+.tab-btn .tab-check { display: none; font-size: 12px; color: #2E7D32; margin-left: 4px; font-weight: 800; }
+.tab-btn.visited .tab-check { display: inline; }
+
+/* ── Tab Panels ── */
+.tab-panel { display: none; padding: 24px 28px 36px; }
+.tab-panel.active { display: block; }
+.scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+/* ── Intro 2-col ── */
+.intro-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px 28px 0; }
+.intro-2col .card { margin-bottom: 0; }
+
+/* ── Need Strip ── */
+.need-strip { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 28px 16px; }
+.need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 700; white-space: nowrap; }
+.need-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: #EEF8F0; border: 1.5px solid #C4E5CC;
+  border-radius: 20px; padding: 5px 12px;
+  font-size: 13px; color: #1B4332; font-weight: 700;
+}
+
+/* ── Tab Next Button ── */
+.tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+.tab-next-btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px;
+  background: linear-gradient(135deg, #2D6A4F, #52B788);
+  color: #fff; border: none; border-radius: 28px;
+  font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800;
+  cursor: pointer; box-shadow: 0 4px 16px rgba(45,106,79,0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(45,106,79,0.4); }
+
+/* ── What to Turn In ── */
+.turn-in-block {
+  background: #fff; border: 2.5px solid #0288D1;
+  border-radius: 18px; margin-top: 22px; overflow: hidden;
+  box-shadow: 0 4px 16px rgba(2,136,209,0.1);
+}
+.turn-in-header {
+  display: flex; align-items: center; gap: 14px;
+  background: #E8F4FB; padding: 18px 22px;
+  border-bottom: 2px solid #B3E5FC;
+}
+.turn-in-header-icon { font-size: 36px; line-height: 1; flex-shrink: 0; }
+.turn-in-header-label { font-size: 11px; color: #0288D1; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+.turn-in-header-title { font-size: 24px; color: #1B4332; font-weight: 900; line-height: 1.15; }
+.turn-in-body { padding: 22px 24px 24px; }
+.turn-in-intro { font-size: 16px; color: #5A4D3E; margin-bottom: 18px; line-height: 1.55; }
+.turn-in-intro strong { color: #1B4332; }
+.turn-in-options {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px; margin-bottom: 26px;
+}
+.turn-in-option { border-radius: 16px; padding: 20px 14px; text-align: center; border: 2px solid; }
+.turn-in-option-type  { background: #EEF8F0; border-color: #C4E5CC; }
+.turn-in-option-photo { background: #FFF9E8; border-color: #F0E4C0; }
+.turn-in-option-video { background: #F0EDF6; border-color: #D8D0E8; }
+.turn-in-option-icon  { font-size: 34px; line-height: 1; margin-bottom: 12px; }
+.turn-in-option-title { font-size: 17px; color: #1B4332; font-weight: 800; margin-bottom: 8px; }
+.turn-in-option-text  { font-size: 14px; color: #5A4D3E; line-height: 1.5; }
+.turn-in-subhead { font-size: 16px; color: #5A4D3E; margin-bottom: 14px; line-height: 1.55; }
+.turn-in-checklist { display: flex; flex-direction: column; gap: 10px; }
+.turn-in-item {
+  display: flex; align-items: center; gap: 16px;
+  padding: 14px 18px; background: #FAFAF6;
+  border: 1.5px solid #E8DDD2; border-radius: 14px;
+  cursor: pointer; transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item:hover { background: #F4FAF5; border-color: #C4E5CC; }
+.turn-in-item.checked { background: #EEF8F0; border-color: #B8E8CF; }
+.turn-in-item .turn-in-check {
+  width: 30px; height: 30px; border-radius: 8px;
+  border: 2px solid #95D5B2; background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: 18px; line-height: 1;
+  transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item.checked .turn-in-check { background: #2E7D32; border-color: #2E7D32; }
+.turn-in-item-text { font-size: 16px; color: #2B1D12; font-weight: 600; line-height: 1.55; flex: 1; }
+.turn-in-item.checked .turn-in-item-text { color: #5A4D3E; }
+
+/* ── Quiz ── */
+.quiz-card {
+  background: #fff; border: 2px solid #F9A825;
+  border-radius: 18px; overflow: hidden;
+  box-shadow: 0 2px 12px rgba(249,168,37,0.08);
+}
+.quiz-q { margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1.5px solid #E8DDD2; }
+.quiz-q:last-of-type { border-bottom: none; }
+.quiz-q-text { font-size: 17px; color: #1B4332; font-weight: 700; margin-bottom: 12px; line-height: 1.55; }
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 16px; background: #FAFAF6;
+  border: 2px solid #E8DDD2; border-radius: 12px;
+  font-size: 16px; color: #2B1D12; font-weight: 600;
+  cursor: pointer; transition: background 0.15s, border-color 0.15s;
+}
+.quiz-opt:hover { background: #EEF8F0; border-color: #95D5B2; }
+.quiz-opt.correct { background: #EEF8F0; border-color: #2E7D32; color: #1B4332; }
+.quiz-opt.wrong   { background: #FFF0F0; border-color: #E57373; color: #5A3030; }
+.quiz-opt.disabled { opacity: 0.5; cursor: not-allowed; pointer-events: none; }
+.opt-letter {
+  width: 28px; height: 28px; border-radius: 50%; background: #2D6A4F;
+  color: #fff; font-size: 13px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.quiz-feedback {
+  display: none; margin-top: 10px; padding: 12px 16px;
+  border-radius: 10px; font-size: 15px; line-height: 1.55; font-weight: 600;
+}
+.quiz-feedback.fb-correct { background: #EEF8F0; color: #1B4332; border-left: 4px solid #2E7D32; }
+.quiz-feedback.fb-wrong   { background: #FFF9E8; color: #5A3030; border-left: 4px solid #F9A825; }
+.quiz-feedback.show { display: block; }
+.quiz-score {
+  display: none; text-align: center; padding: 22px 18px;
+  background: linear-gradient(135deg, #1B4332, #2D6A4F);
+  border-radius: 14px; margin-top: 10px;
+}
+.quiz-score.show { display: block; }
+.quiz-score-num { font-size: 56px; font-weight: 900; color: #FDD835; line-height: 1; }
+.quiz-score-label { font-size: 18px; color: #95D5B2; font-weight: 700; margin-bottom: 8px; }
+.quiz-score-msg { font-size: 18px; color: #fff; font-weight: 700; }
+
+/* ── Progress Bar ── */
+.progress-wrap {
+  position: sticky; top: 0; z-index: 200;
+  background: #0E1C42; padding: 8px 20px 10px;
+  border-bottom: 2px solid rgba(85,200,232,0.3);
+  display: flex; align-items: center; gap: 14px;
+}
+.progress-label { font-size: 12px; color: #55C8E8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+.progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; position: relative; }
+.progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #52B788, #95D5B2, #FDD835); border-radius: 10px; transition: width 0.4s ease; }
+.progress-pct { font-size: 13px; color: #FDD835; font-weight: 800; min-width: 36px; text-align: right; }
+
+/* ── Back to Top ── */
+.back-to-top {
+  position: fixed; bottom: 24px; right: 20px; z-index: 500;
+  height: 38px; padding: 0 14px 0 12px;
+  background: #2D6A4F; color: #fff; border: none; border-radius: 20px;
+  font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800;
+  cursor: pointer; box-shadow: 0 4px 16px rgba(27,67,50,0.35);
+  opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+  display: flex; align-items: center; gap: 5px;
+}
+.back-to-top.show { opacity: 1; pointer-events: auto; }
+.back-to-top:hover { background: #1B4332; }
+
+/* ── Footer ── */
+.footer {
+  background: #1B4332; padding: 22px 28px; text-align: center;
+}
+.footer-line1 { font-size: 16px; color: #95D5B2; font-weight: 800; margin-bottom: 4px; }
+.footer-line1 span { color: #FDD835; }
+.footer-line2 { font-size: 13px; color: rgba(149,213,178,0.7); margin-bottom: 4px; }
+.footer-line3 { font-size: 11px; color: rgba(149,213,178,0.4); }
+
+/* ── Utility ── */
+strong { color: #1B4332; }
+em { color: #5A4D3E; }
+.gold { color: #F9A825; font-weight: 700; }
+.forest { color: #2D6A4F; font-weight: 700; }
+
+/* ── Confetti Canvas ── */
+#confettiCanvas {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 9999;
+}
+
+@media (max-width: 620px) {
+  .intro-2col { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .flip-card { height: 175px; }
+  .header-title { font-size: 22px; }
+  .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 6px 9px; }
+  .turn-in-options { grid-template-columns: 1fr; }
+  .turn-in-header-title { font-size: 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="confettiCanvas"></canvas>
+<button class="back-to-top" id="backToTop" type="button">↑ Top</button>
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- ═══════════ PROGRESS BAR ═══════════ -->
+<div class="progress-wrap">
+  <span class="progress-label">🌱 Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">Lesson 8.02 — Investigation: Comparing Plant Growth Data</div>
+  <div class="header-badge">
+    <span>🌱</span>
+    <span>Lesson 8.02</span>
+  </div>
+</div>
+
+<!-- ═══════════ HERO BANNER ═══════════ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hero banner showing four plant pots on a sunny windowsill">
+
+  <!-- Sky background -->
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#AEE4F8"/>
+      <stop offset="100%" stop-color="#E8F5E9"/>
+    </linearGradient>
+    <linearGradient id="sillGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D7CCC8"/>
+      <stop offset="100%" stop-color="#BCAAA4"/>
+    </linearGradient>
+    <linearGradient id="potGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8D6E63"/>
+      <stop offset="100%" stop-color="#6D4C41"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background sky -->
+  <rect width="920" height="260" fill="url(#skyGrad)"/>
+
+  <!-- Sun glow -->
+  <g class="hero-sun-glow">
+    <circle cx="820" cy="55" r="42" fill="#FFF9C4" opacity="0.55"/>
+    <circle cx="820" cy="55" r="28" fill="#FDD835" opacity="0.9"/>
+  </g>
+
+  <!-- Light rays from sun -->
+  <g class="hero-light-ray">
+    <line x1="820" y1="55" x2="460" y2="260" stroke="#FDD835" stroke-width="30" opacity="0.12"/>
+    <line x1="820" y1="55" x2="580" y2="260" stroke="#FDD835" stroke-width="20" opacity="0.10"/>
+    <line x1="820" y1="55" x2="700" y2="260" stroke="#FDD835" stroke-width="15" opacity="0.09"/>
+  </g>
+
+  <!-- Window frame -->
+  <rect x="60" y="10" width="800" height="220" rx="6" fill="none" stroke="#90A4AE" stroke-width="10"/>
+  <!-- Window crossbar horizontal -->
+  <line x1="60" y1="120" x2="860" y2="120" stroke="#90A4AE" stroke-width="8"/>
+  <!-- Window crossbar vertical -->
+  <line x1="460" y1="10" x2="460" y2="230" stroke="#90A4AE" stroke-width="8"/>
+
+  <!-- Windowsill -->
+  <rect x="40" y="225" width="840" height="28" rx="4" fill="url(#sillGrad)"/>
+  <rect x="40" y="222" width="840" height="6" rx="2" fill="#E0D5CF"/>
+
+  <!-- Soil in pots -->
+  <!-- Pot 1: More Sunlight (tallest plant) -->
+  <rect x="130" y="195" width="80" height="15" rx="3" fill="#5D4037" opacity="0.9"/>
+  <path d="M120 210 Q170 208 220 210 L215 225 Q170 226 125 225 Z" fill="url(#potGrad)"/>
+
+  <!-- Pot 2: Less Sunlight (shortest plant) -->
+  <rect x="300" y="205" width="80" height="10" rx="3" fill="#5D4037" opacity="0.9"/>
+  <path d="M290 215 Q340 213 390 215 L385 225 Q340 226 295 225 Z" fill="url(#potGrad)"/>
+
+  <!-- Pot 3: More Water -->
+  <rect x="530" y="200" width="80" height="13" rx="3" fill="#5D4037" opacity="0.9"/>
+  <path d="M520 213 Q570 211 620 213 L615 225 Q570 226 525 225 Z" fill="url(#potGrad)"/>
+
+  <!-- Pot 4: Less Water (small plant) -->
+  <rect x="700" y="208" width="80" height="10" rx="3" fill="#5D4037" opacity="0.9"/>
+  <path d="M690 218 Q740 216 790 218 L785 225 Q740 226 695 225 Z" fill="url(#potGrad)"/>
+
+  <!-- Plant 1 — tall, full sunlight, sways -->
+  <g class="hero-plant-a">
+    <rect x="168" y="120" width="6" height="78" rx="3" fill="#388E3C"/>
+    <ellipse cx="171" cy="100" rx="24" ry="30" fill="#43A047" opacity="0.9"/>
+    <ellipse cx="155" cy="115" rx="16" ry="20" fill="#66BB6A" opacity="0.85"/>
+    <ellipse cx="187" cy="112" rx="16" ry="20" fill="#66BB6A" opacity="0.85"/>
+    <ellipse cx="171" cy="88" rx="18" ry="22" fill="#81C784" opacity="0.8"/>
+  </g>
+
+  <!-- Plant 2 — short, less sunlight, slight sway -->
+  <g class="hero-sway-slow">
+    <rect x="338" y="175" width="5" height="32" rx="2" fill="#558B2F"/>
+    <ellipse cx="340" cy="165" rx="14" ry="16" fill="#7CB342" opacity="0.85"/>
+    <ellipse cx="330" cy="172" rx="10" ry="12" fill="#9CCC65" opacity="0.8"/>
+    <ellipse cx="350" cy="170" rx="10" ry="12" fill="#9CCC65" opacity="0.8"/>
+  </g>
+
+  <!-- Plant 3 — medium-tall, more water -->
+  <g class="hero-plant-b">
+    <rect x="559" y="135" width="5" height="67" rx="2" fill="#2E7D32"/>
+    <ellipse cx="562" cy="118" rx="20" ry="24" fill="#388E3C" opacity="0.9"/>
+    <ellipse cx="547" cy="130" rx="14" ry="17" fill="#43A047" opacity="0.85"/>
+    <ellipse cx="577" cy="128" rx="14" ry="17" fill="#43A047" opacity="0.85"/>
+    <ellipse cx="562" cy="108" rx="16" ry="18" fill="#66BB6A" opacity="0.8"/>
+  </g>
+
+  <!-- Plant 4 — small, less water, drooping look -->
+  <g class="hero-sway">
+    <rect x="739" y="185" width="5" height="26" rx="2" fill="#689F38"/>
+    <ellipse cx="741" cy="177" rx="13" ry="14" fill="#8BC34A" opacity="0.8"/>
+    <ellipse cx="733" cy="183" rx="9" ry="10" fill="#AED581" opacity="0.75"/>
+    <ellipse cx="750" cy="181" rx="9" ry="10" fill="#AED581" opacity="0.75"/>
+  </g>
+
+  <!-- Watering can over pot 3 (More Water) -->
+  <g class="hero-can">
+    <!-- Can body -->
+    <path d="M458 90 Q456 118 468 124 L520 124 Q532 118 530 90 Z" fill="#1565C0" opacity="0.92"/>
+    <!-- Can top -->
+    <rect x="460" y="85" width="68" height="8" rx="4" fill="#1976D2"/>
+    <!-- Handle arch -->
+    <path d="M520 92 Q545 92 545 104 Q545 116 520 116" fill="none" stroke="#1565C0" stroke-width="7" stroke-linecap="round"/>
+    <!-- Spout base -->
+    <path d="M468 108 Q455 108 444 100 L436 92" fill="none" stroke="#1976D2" stroke-width="8" stroke-linecap="round"/>
+    <!-- Spout tip / rose head -->
+    <ellipse cx="432" cy="90" rx="9" ry="6" fill="#0D47A1"/>
+    <!-- Spout holes (decorative dots) -->
+    <circle cx="428" cy="89" r="1.5" fill="#90CAF9" opacity="0.8"/>
+    <circle cx="433" cy="87" r="1.5" fill="#90CAF9" opacity="0.8"/>
+    <circle cx="438" cy="89" r="1.5" fill="#90CAF9" opacity="0.8"/>
+    <circle cx="430" cy="93" r="1.5" fill="#90CAF9" opacity="0.8"/>
+    <circle cx="436" cy="93" r="1.5" fill="#90CAF9" opacity="0.8"/>
+    <!-- Can shine -->
+    <ellipse cx="478" cy="99" rx="7" ry="10" fill="#fff" opacity="0.14" transform="rotate(-10 478 99)"/>
+  </g>
+
+  <!-- Animated water drops falling from spout toward pot 3 -->
+  <g class="hero-drop-1">
+    <ellipse cx="428" cy="100" rx="2.5" ry="4" fill="#64B5F6" opacity="0.85"/>
+  </g>
+  <g class="hero-drop-2">
+    <ellipse cx="433" cy="98" rx="2.5" ry="4" fill="#90CAF9" opacity="0.80"/>
+  </g>
+  <g class="hero-drop-3">
+    <ellipse cx="438" cy="100" rx="2.5" ry="4" fill="#64B5F6" opacity="0.85"/>
+  </g>
+
+  <!-- Floating data notebook icon -->
+  <g class="hero-float" style="transform-origin:310px 50px; transform-box: view-box;">
+    <rect x="280" y="32" width="60" height="46" rx="6" fill="#fff" opacity="0.9" stroke="#90A4AE" stroke-width="1.5"/>
+    <line x1="290" y1="44" x2="330" y2="44" stroke="#B0BEC5" stroke-width="2"/>
+    <line x1="290" y1="52" x2="330" y2="52" stroke="#B0BEC5" stroke-width="2"/>
+    <line x1="290" y1="60" x2="316" y2="60" stroke="#B0BEC5" stroke-width="2"/>
+    <rect x="290" y="65" width="6" height="8" rx="1" fill="#66BB6A"/>
+    <rect x="299" y="60" width="6" height="13" rx="1" fill="#43A047"/>
+    <rect x="308" y="62" width="6" height="11" rx="1" fill="#81C784"/>
+    <rect x="317" y="68" width="6" height="5" rx="1" fill="#AED581"/>
+  </g>
+
+</svg>
+</div>
+
+<!-- ═══════════ INFO STRIP ═══════════ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q2 · Unit 4</div>
+      <div class="info-detail">Life Cycles, Traits, &amp; Inheritance</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF9E8;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 8</div>
+      <div class="info-detail">Lesson 8.02 — 3rd Grade Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#F0EDF6;">🌱</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Plant Life Cycles</div>
+      <div class="info-detail">Comparing growing conditions &amp; data</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">NGSS 3-LS1-1</div>
+      <div class="info-detail">Plant life cycles &amp; survival needs</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ INTRO 2-COL CARDS ═══════════ -->
+<div class="intro-2col">
+
+  <div class="card theme-forest">
+    <div class="card-head">
+      <div class="card-head-icon">🌱</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This…</div>
+          <div class="question">"What happens to plants when you change what they get — like sunlight or water?"</div>
+        </div>
+      </div>
+      <p>Keep this question in mind. By the end, you'll have real data to answer it!</p>
+    </div>
+  </div>
+
+  <div class="card theme-sky">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#52B788;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> compare plant growth data from two different growing conditions.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2D6A4F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> find patterns in a data table and bar graph.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2E7D32;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> use evidence from data to explain what plants need to grow well.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════ NEED STRIP ═══════════ -->
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Pencil &amp; colored pencils</span>
+  <span class="need-chip"><span>📏</span>Ruler</span>
+  <span class="need-chip"><span>📊</span>Graph paper (optional)</span>
+</div>
+
+<!-- ═══════════ TAB BAR ═══════════ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 1: VOCABULARY                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <!-- Welcome Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to Today's Investigation!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🎬</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 8-2-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Activity 1: Notice & Wonder -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#52B788;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Notice &amp; Wonder</div>
+        <div class="act-subtitle">Look carefully before we get started.</div>
+      </div>
+      <div class="act-time" style="background:#52B788;">⏱ 5–8 min</div>
+    </div>
+    <div class="act-body">
+      <p>Look at the photo at the top of this lesson — four pots of plants sitting on a windowsill. Each plant grew under a different condition.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">👀</span>
+        <div>
+          <div class="label">In Your Science Notebook</div>
+          <div class="question">"What do you notice about the plants? Write at least 3 observations. Then write 1 question you're wondering about."</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>Good scientists notice things before they explain them. Look at the size of the plants, the color, how full the leaves are. Write what you actually see — not what you think should be there.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Vocabulary Flip Cards -->
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Scientists who study plants use these words every day. <strong>Tap each card</strong> to flip it and read the definition. You'll need these words during the investigation!</p>
+
+      <div class="vocab-grid">
+
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">📊</div><div class="fc-word">data</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">data</div><div class="fc-def">Information collected during an investigation — like measurements, counts, or observations.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">👁️</div><div class="fc-word">observation</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">observation</div><div class="fc-def">Something you notice using your senses — what you see, hear, smell, touch, or measure directly.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🔄</div><div class="fc-word">pattern</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">pattern</div><div class="fc-def">Something that repeats or changes in a predictable way — like plants always growing toward light.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🔍</div><div class="fc-word">evidence</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">evidence</div><div class="fc-def">Information from your investigation that helps you support or explain your conclusion.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌡️</div><div class="fc-word">condition</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">condition</div><div class="fc-def">The setting or situation a plant is growing in — like how much light or water it receives.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">💡</div><div class="fc-word">conclusion</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">conclusion</div><div class="fc-def">An explanation that uses evidence to answer your question — not just a guess, but based on what you found.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">📓</span>
+        <p>Copy this sentence carefully into your science notebook:<br><strong>"Scientists use data and evidence to find patterns and draw conclusions about how plants grow."</strong></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button>
+  </div>
+
+</div><!-- /tab-vocab -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 2: THE LESSON (lighter for .02 investigation)         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+
+  <!-- Lesson Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">📖</span>
+      <div>
+        <div class="video-wrap-type">Activity 2 · Core Lesson</div>
+        <div class="video-wrap-title">How Scientists Study Plant Growth</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">📖</div>
+        <div class="video-placeholder-text">Core lesson video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 8-2-lesson-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Uploaded Image -->
+  <div class="lesson-figure">
+    <div class="lesson-figure-label">📷 Photo · Comparing Plant Growth Data</div>
+    <img src="images/8-02-plant-growth-data.png"
+         alt="Four potted plants on a windowsill labeled More Sunlight, Less Sunlight, More Water, and Less Water. In front are a student notebook with written observations and a hand-drawn bar graph, a ruler, and a data table showing plant heights in centimeters." />
+    <div class="lesson-figure-caption">
+      This is what our investigation looks like. Four plants, each grown under a <strong>different condition</strong>. The data table and bar graph help us compare what we found. Look closely — what patterns do you notice before we even start?
+    </div>
+  </div>
+
+  <!-- Activity 2: Lesson Content -->
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#F9A825;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📖 The Lesson: How Scientists Study Plant Growth</div>
+        <div class="act-subtitle">Read and think carefully before you investigate.</div>
+      </div>
+      <div class="act-time" style="background:#F9A825;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- Section 1 -->
+      <div class="card theme-forest" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌱</div>
+          <div>
+            <div class="card-head-label">Section 1</div>
+            <div class="card-head-title">What Scientists Watch For</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Plants don't all grow the same way. When scientists study plant growth, they collect <span class="vtip">data<span class="vtip-box"><span class="vtip-word">data</span>Information collected during an investigation — like measurements or counts.</span></span> about things they can measure — plant height, number of leaves, and color.</p>
+          <p>They write everything down carefully. A good observation is specific: "13 cm tall with 8 dark green leaves" is much more useful than "it grew a lot."</p>
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"Why do scientists measure plant height instead of just saying 'the plant looks big'?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="card theme-sky" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">⚖️</div>
+          <div>
+            <div class="card-head-label">Section 2</div>
+            <div class="card-head-title">Changing One Thing at a Time</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>To find out what helps plants grow, scientists change only one <span class="vtip">condition<span class="vtip-box"><span class="vtip-word">condition</span>The setting a plant is growing in — like how much light or water it gets.</span></span> at a time. In our investigation, some plants got more sunlight and some got less. Others got more water or less water.</p>
+          <p>Everything else — the same kind of seed, the same soil, the same pot size — stays the same. That way, if the plants grow differently, we know exactly why.</p>
+        </div>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="card theme-earth" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">📊</div>
+          <div>
+            <div class="card-head-label">Section 3</div>
+            <div class="card-head-title">Using Graphs to Find Patterns</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>A data table shows the numbers. A bar graph makes those numbers easy to <em>see</em>. When the bars are different heights, you can spot a <span class="vtip">pattern<span class="vtip-box"><span class="vtip-word">pattern</span>Something that repeats or changes in a predictable way.</span></span> right away.</p>
+          <p>When you find a pattern in your data, you're ready to write a <span class="vtip">conclusion<span class="vtip-box"><span class="vtip-word">conclusion</span>An explanation based on evidence from your investigation.</span></span> — an explanation that uses your <span class="vtip">evidence<span class="vtip-box"><span class="vtip-word">evidence</span>Information that supports or explains your answer.</span></span> to answer the original question.</p>
+          <p><strong>Real-World Connection:</strong> Farmers and gardeners do exactly this — they compare how crops grow in different spots to figure out where to plant next season.</p>
+        </div>
+      </div>
+
+      <!-- Interactive Diagram -->
+      <div class="diagram-wrap scroll-reveal">
+        <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
+          🗺 Tap a plant to learn about its growing condition
+        </div>
+        <div class="diagram-interactive">
+          <svg viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;" role="img" aria-label="Four plant pots diagram showing different growing conditions">
+
+            <!-- Background -->
+            <rect width="860" height="300" fill="#F4F9F0" rx="12"/>
+            <!-- Shelf -->
+            <rect x="0" y="255" width="860" height="20" rx="4" fill="#D7CCC8"/>
+
+            <!-- Labels for zones -->
+            <text x="107" y="292" text-anchor="middle" font-size="11" font-weight="700" fill="#5D4037">More Sunlight</text>
+            <text x="322" y="292" text-anchor="middle" font-size="11" font-weight="700" fill="#5D4037">Less Sunlight</text>
+            <text x="537" y="292" text-anchor="middle" font-size="11" font-weight="700" fill="#5D4037">More Water</text>
+            <text x="752" y="292" text-anchor="middle" font-size="11" font-weight="700" fill="#5D4037">Less Water</text>
+
+            <!-- Pot 1: More Sunlight — tall -->
+            <path d="M77 250 Q107 248 137 250 L132 265 Q107 266 82 265 Z" fill="#8D6E63"/>
+            <rect x="100" y="250" width="14" height="8" rx="2" fill="#5D4037"/>
+            <rect x="105" y="148" width="4" height="104" rx="2" fill="#388E3C"/>
+            <ellipse cx="107" cy="135" rx="22" ry="25" fill="#43A047"/>
+            <ellipse cx="93" cy="148" rx="14" ry="18" fill="#66BB6A"/>
+            <ellipse cx="121" cy="145" rx="14" ry="18" fill="#66BB6A"/>
+            <ellipse cx="107" cy="125" rx="16" ry="18" fill="#81C784"/>
+
+            <!-- Height label for pot 1 -->
+            <text x="145" y="150" font-size="13" font-weight="800" fill="#2E7D32">13 cm</text>
+
+            <!-- Pot 2: Less Sunlight — short -->
+            <path d="M292 250 Q322 248 352 250 L347 265 Q322 266 297 265 Z" fill="#8D6E63"/>
+            <rect x="315" y="250" width="14" height="8" rx="2" fill="#5D4037"/>
+            <rect x="320" y="215" width="4" height="37" rx="2" fill="#558B2F"/>
+            <ellipse cx="322" cy="205" rx="14" ry="16" fill="#7CB342"/>
+            <ellipse cx="312" cy="212" rx="10" ry="12" fill="#9CCC65"/>
+            <ellipse cx="332" cy="210" rx="10" ry="12" fill="#9CCC65"/>
+
+            <!-- Height label for pot 2 -->
+            <text x="358" y="208" font-size="13" font-weight="800" fill="#2E7D32">4 cm</text>
+
+            <!-- Pot 3: More Water — medium tall -->
+            <path d="M507 250 Q537 248 567 250 L562 265 Q537 266 512 265 Z" fill="#8D6E63"/>
+            <rect x="530" y="250" width="14" height="8" rx="2" fill="#5D4037"/>
+            <rect x="535" y="168" width="4" height="84" rx="2" fill="#2E7D32"/>
+            <ellipse cx="537" cy="155" rx="18" ry="20" fill="#388E3C"/>
+            <ellipse cx="524" cy="165" rx="13" ry="15" fill="#43A047"/>
+            <ellipse cx="550" cy="162" rx="13" ry="15" fill="#43A047"/>
+            <ellipse cx="537" cy="145" rx="14" ry="16" fill="#66BB6A"/>
+
+            <!-- Height label for pot 3 -->
+            <text x="573" y="160" font-size="13" font-weight="800" fill="#2E7D32">10 cm</text>
+
+            <!-- Pot 4: Less Water — small -->
+            <path d="M722 250 Q752 248 782 250 L777 265 Q752 266 727 265 Z" fill="#8D6E63"/>
+            <rect x="745" y="250" width="14" height="8" rx="2" fill="#5D4037"/>
+            <rect x="750" y="228" width="4" height="24" rx="2" fill="#8D6E63"/>
+            <ellipse cx="752" cy="220" rx="12" ry="13" fill="#A5D6A7"/>
+            <ellipse cx="743" cy="226" rx="8" ry="9" fill="#C5E1A5"/>
+            <ellipse cx="761" cy="224" rx="8" ry="9" fill="#C5E1A5"/>
+
+            <!-- Height label for pot 4 -->
+            <text x="787" y="222" font-size="13" font-weight="800" fill="#2E7D32">2 cm</text>
+
+            <!-- Sun in corner -->
+            <circle cx="810" cy="50" r="28" fill="#FDD835" opacity="0.8"/>
+            <circle cx="810" cy="50" r="20" fill="#FDD835"/>
+
+            <!-- HOTSPOT RECTS -->
+            <rect class="hotspot" x="0" y="90" width="215" height="180" fill="#FDD835"
+                  data-part="More Sunlight"
+                  data-info="This plant had the most sunlight every day. It grew to 13 cm — the tallest in our investigation. Sunlight gives plants the energy they need to grow tall and produce healthy green leaves."/>
+            <rect class="hotspot" x="215" y="160" width="215" height="110" fill="#607D8B"
+                  data-part="Less Sunlight"
+                  data-info="This plant was kept away from the window. It only grew 4 cm. Without enough sunlight, the plant can't make the energy it needs to grow strong."/>
+            <rect class="hotspot" x="430" y="120" width="215" height="150" fill="#0288D1"
+                  data-part="More Water"
+                  data-info="This plant received extra water and grew 10 cm. Plants need water to carry nutrients through their stems and leaves. With enough water, growth was healthy and steady."/>
+            <rect class="hotspot" x="645" y="180" width="215" height="90" fill="#8D6E63"
+                  data-part="Less Water"
+                  data-info="This plant barely received any water and only reached 2 cm. Without water, plants can't survive for long. The pale color of the leaves shows it was struggling."/>
+          </svg>
+
+          <div class="diagram-info-panel" id="diagramPanel">
+            <span class="dip-word" id="diagramWord"></span>
+            <span id="diagramInfo"></span>
+          </div>
+        </div>
+        <div class="diagram-tap-hint">Tap any plant to learn about its growing condition.</div>
+        <div class="diagram-caption">The four plants from our investigation — tap each one to read what happened and why.</div>
+      </div>
+
+      <!-- Key Concept -->
+      <div class="key-concept scroll-reveal">
+        <div class="kc-label">⭐ Key Concept</div>
+        <p><strong>Plants need sunlight and water to grow.</strong> When scientists change one condition at a time and collect data, patterns in the results show which conditions matter most.</p>
+        <p>Data and graphs help us see those patterns clearly — so our conclusions are based on evidence, not guesses.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mind-Blowing Fact -->
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Amazing Plant Fact</div>
+      <div class="mind-blow-text">A sunflower can grow <strong>up to 12 feet tall</strong> in a single summer — but only if it gets full sun. Plant it in deep shade, and it might barely make it past your knees.</div>
+    </div>
+  </div>
+
+  <!-- Go Deeper -->
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper</summary>
+    <div class="gd-body">
+      <p><strong>Why does sunlight matter so much?</strong> Plants make their own food using a process called photosynthesis. They take in sunlight, water, and air — and turn those ingredients into sugar for energy. Without light, there's no energy, and without energy, there's no growth.</p>
+      <p>Here's something interesting: not all plants need the same amount. Ferns love the shade. Cacti love full sun. That's why different plants live in different places — forests, deserts, meadows — and why scientists pay close attention to growing conditions when they study plant life cycles.</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+
+</div><!-- /tab-lesson -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 3: EXPLORE — Main Investigation                       -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+
+  <!-- Explore Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🔬</span>
+      <div>
+        <div class="video-wrap-type">Activity 3 · Investigation</div>
+        <div class="video-wrap-title">Let's Analyze Plant Growth Data!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🔬</div>
+        <div class="video-placeholder-text">Exploration video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 8-2-exploration-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Activity 3: Investigation -->
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#0288D1;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🔬 Investigation: Comparing Plant Growth Data</div>
+        <div class="act-subtitle">Read the data, find the patterns, draw your conclusions.</div>
+      </div>
+      <div class="act-time" style="background:#0288D1;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="callout callout-tip" style="margin-bottom:18px;">
+        <span class="callout-icon">🎒</span>
+        <p><strong>You'll need:</strong> The plant data from the diagram on the Lesson tab, your science notebook, a pencil, and colored pencils. Optional: graph paper.</p>
+      </div>
+
+      <p>In this investigation, you'll study real plant growth data — the same data from the four plants on the windowsill. Follow each step and record your work as you go.</p>
+
+      <div style="position:relative; margin:16px 0;">
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">1</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Set Up Your Data Table:</strong> In your notebook, draw a table with two columns — Condition and Height (cm). Fill in the four rows using the data you see in the plant diagram: <em>More Sunlight: 13 cm · Less Sunlight: 4 cm · More Water: 10 cm · Less Water: 2 cm.</em></p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2D6A4F,#52B788);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(45,106,79,0.3);">2</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Create a Bar Graph:</strong> On the next page of your notebook (or on graph paper), draw a bar graph. Put the four conditions on the bottom. Put height in centimeters (0–15) on the side. Draw and color a bar for each condition. Make each bar a different color.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#52B788,#F9A825);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(82,183,136,0.3);">3</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Compare Two Conditions:</strong> Pick one pair to compare: either the sunlight pair (More vs Less) or the water pair (More vs Less). Write down the difference in centimeters. Which condition had a bigger impact on plant growth?</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F9A825,#FDD835);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(249,168,37,0.3);">4</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Find the Pattern:</strong> Look at your graph. Write one sentence in your notebook that describes the pattern you see. Start with: <em>"Plants with more ___ grew ___ than plants with less ___."</em></p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🌲</span>
+        <div>
+          <div class="label">Think Like a Scientist</div>
+          <div class="question">"If you grew these plants for two more weeks without changing anything, what do you think the data would look like? Would the pattern stay the same?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Record Your Thinking -->
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#2E7D32;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">📓 Record Your Thinking</div>
+        <div class="act-subtitle">Write down what you found — be specific.</div>
+      </div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>In your science notebook, answer these questions after you finish the investigation steps. Write in complete sentences.</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">1</span>
+        <span class="pq-text">Which plant grew the tallest? Which grew the shortest? Write the heights in centimeters.</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">2</span>
+        <span class="pq-text">What pattern do you see between the sunlight conditions? Between the water conditions?</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">3</span>
+        <span class="pq-text">Draw a simple sketch of your bar graph in your notebook. Label each bar with the condition name and height.</span>
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">🗣</span>
+        <p>Tell the story of this investigation from beginning to end — what the scientists wanted to find out, what they did, what they measured, and what the data showed. Use your notebook to help you.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Discuss -->
+  <div class="card theme-meadow scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">💬</div>
+      <div>
+        <div class="card-head-label">Discussion</div>
+        <div class="card-head-title">Think It Through</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Think through each question on your own. Write your answers in your science notebook before moving on.</p>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Question 1</div>
+          <div class="question">"Which growing condition made the biggest difference in plant height? How do you know — what in your data shows that?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">💡</span>
+        <div>
+          <div class="label">Question 2</div>
+          <div class="question">"The plants with more water and less sunlight both had green leaves, but different heights. What does that tell you about what plants need most to grow tall?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🌲</span>
+        <div>
+          <div class="label">Question 3 — Connect to Nature</div>
+          <div class="question">"A garden in the middle of a shady yard grows poorly every year. Based on your data, what would you tell the gardener to change?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🔁</span>
+        <div>
+          <div class="label">Question 4 — Improve or Extend</div>
+          <div class="question">"What is one more condition you'd want to test? What do you predict would happen, and why?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+
+</div><!-- /tab-explore -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 4: SELF-CHECK QUIZ                                    -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#F9A825;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">🌱</div>
+      <div style="flex:1;">
+        <div style="font-size:19px;color:#1B4332;font-weight:800;line-height:1.2;">🧠 Quick Self-Check</div>
+        <div style="font-size:12px;color:#9A8E82;">Not graded — just for you! See how much you remember before starting the assignment.</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+
+      <!-- QUESTION 1 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. In a plant investigation, what is <em>data</em>?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>A guess about what might happen before you test</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Information collected during an investigation, like measurements</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>A drawing of the plant you want to grow</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌲 Exactly right! Data is the actual information — the numbers and observations — you collect during the investigation.</div>
+        <div class="quiz-feedback fb-wrong">Not quite. A guess before testing is a prediction. Data is the real information you collect while things are happening. Check the vocab card!</div>
+      </div>
+
+      <!-- QUESTION 2 -->
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-text">2. The plant in full sunlight grew 13 cm. The plant in shade grew 4 cm. What does this data tell you?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Sunlight helps plants grow taller</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Shade is better for very tall plants</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>The two plants had different kinds of seeds</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌿 Yes! The difference in height — 13 cm vs 4 cm — is evidence that more sunlight leads to more growth.</div>
+        <div class="quiz-feedback fb-wrong">Look at the numbers again: 13 cm in full sun, 4 cm in shade. The only thing that changed was the sunlight. What does that tell you about which helps plants grow?</div>
+      </div>
+
+      <!-- QUESTION 3 -->
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">3. A scientist notices that every time she gives plants more water, they grow taller — until they get too much. This is an example of what?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>A conclusion with no evidence</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>A single observation</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>A pattern in data</div>
+        </div>
+        <div class="quiz-feedback fb-correct">⭐ Exactly! Something that happens the same way over and over — "every time more water = more growth" — is a pattern. Patterns help scientists make predictions.</div>
+        <div class="quiz-feedback fb-wrong">Think about the word pattern — it means something that happens the same way more than once. "Every time I give more water, they grow taller" repeats consistently. What does that sound like?</div>
+      </div>
+
+      <!-- Score Display -->
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum">0</div>
+        <div class="quiz-score-label">out of 3</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+
+        <div class="video-feedback" id="quizVideoCorrect" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">✅</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Perfect Score</div>
+                <div class="video-wrap-title">Amazing work, scientist! You've got this!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">⭐</div>
+                <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 8-2-quiz-perfect --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">📖</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Keep Going</div>
+                <div class="video-wrap-title">Good try — let's go back and review!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">🌱</div>
+                <div class="video-placeholder-text">Review video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 8-2-quiz-review --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+
+</div><!-- /tab-quiz -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 5: ASSIGNMENT                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <!-- Assignment Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">✍️</span>
+      <div>
+        <div class="video-wrap-type">Activity 5 · Assignment</div>
+        <div class="video-wrap-title">Here's What to Do for Your Assignment</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">✍️</div>
+        <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 8-2-assignment-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-card act-check scroll-reveal" style="border-left-color:#7B5EA7;">
+    <div class="act-head">
+      <div class="act-num" style="background:#7B5EA7;">5</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment — Comparing Plant Growth</div>
+        <div class="act-subtitle">Use your data, your graph, and your thinking.</div>
+      </div>
+      <div class="act-time" style="background:#7B5EA7;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- Part A -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔍 Part A — Identify &amp; Organize</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Look at the data table below. Use it to answer questions 1–3 in your notebook.</p>
+
+      <div style="background:#fff;border:2px solid #C4E5CC;border-radius:14px;padding:14px 18px;margin-bottom:16px;overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:15px;">
+          <thead>
+            <tr>
+              <th style="padding:10px 14px;background:#EEF8F0;color:#1B4332;font-weight:800;text-align:left;border-bottom:2px solid #C4E5CC;">Condition</th>
+              <th style="padding:10px 14px;background:#EEF8F0;color:#1B4332;font-weight:800;text-align:center;border-bottom:2px solid #C4E5CC;">Height (cm)</th>
+              <th style="padding:10px 14px;background:#EEF8F0;color:#1B4332;font-weight:800;text-align:center;border-bottom:2px solid #C4E5CC;">Grew Most / Least?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:10px 14px;border-bottom:1px solid #E8DDD2;">More Sunlight</td><td style="padding:10px 14px;text-align:center;border-bottom:1px solid #E8DDD2;font-weight:700;">13</td><td style="padding:10px 14px;text-align:center;border-bottom:1px solid #E8DDD2;color:#9A8E82;font-style:italic;">your answer</td></tr>
+            <tr><td style="padding:10px 14px;border-bottom:1px solid #E8DDD2;">Less Sunlight</td><td style="padding:10px 14px;text-align:center;border-bottom:1px solid #E8DDD2;font-weight:700;">4</td><td style="padding:10px 14px;text-align:center;border-bottom:1px solid #E8DDD2;color:#9A8E82;font-style:italic;">your answer</td></tr>
+            <tr><td style="padding:10px 14px;border-bottom:1px solid #E8DDD2;">More Water</td><td style="padding:10px 14px;text-align:center;border-bottom:1px solid #E8DDD2;font-weight:700;">10</td><td style="padding:10px 14px;text-align:center;border-bottom:1px solid #E8DDD2;color:#9A8E82;font-style:italic;">your answer</td></tr>
+            <tr><td style="padding:10px 14px;">Less Water</td><td style="padding:10px 14px;text-align:center;font-weight:700;">2</td><td style="padding:10px 14px;text-align:center;color:#9A8E82;font-style:italic;">your answer</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">Copy this data table into your notebook. All four plants started as seeds — 0 cm tall. In the third column, compare the two sunlight plants to each other and write "most" or "least." Then do the same for the two water plants. You are <em>not</em> comparing sunlight plants to water plants.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">How many centimeters taller was the More Sunlight plant compared to the Less Sunlight plant? Show your subtraction.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">Which pair showed the bigger difference — the sunlight pair or the water pair? Write the answer in a complete sentence.</span></div>
+
+      <!-- Part B -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🚀 Part B — Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer each question in <strong>complete sentences</strong>. Use your science vocabulary!</p>
+
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">4</span><span class="pq-text">What pattern do you see in the data? Describe it using at least two of the conditions from the investigation.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">5</span><span class="pq-text">Explain why scientists only change one condition at a time when they test plants. Why does that matter?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">6</span><span class="pq-text">A friend says "the plant with more sunlight grew the most because we gave it a better pot." Is this a good conclusion? Why or why not?</span></div>
+
+      <!-- Write & Explain -->
+      <div class="key-concept scroll-reveal" style="background:#FFF9E8;border-color:#F0E4C0;">
+        <div class="kc-label" style="color:#F9A825;">✍️ Write and Explain</div>
+        <p style="font-size:16px;font-weight:700;color:#1B4332;margin-bottom:14px;">What did the data from this investigation tell you about what plants need to grow?</p>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What did you observe?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"When I looked at the data, I noticed that…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What does that tell you?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This evidence shows me that plants…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">Why does that make sense?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because plants need…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="background:#EEF8F0;border-radius:10px;padding:10px 14px;border-left:3px solid #52B788;">
+          <p style="margin:0;font-size:14px;color:#1B4332;">📚 Try to use at least one of these words: <strong>data</strong>, <strong>evidence</strong>, <strong>pattern</strong>, <strong>condition</strong>, <strong>conclusion</strong></p>
+        </div>
+      </div>
+
+      <!-- Part C -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Label</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">In your notebook, draw a bar graph showing the four conditions and plant heights. Make it neat and label everything clearly — condition names, height scale, title, and a color key.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Reflect</div>
+          <div class="question">"Look back at your Notice &amp; Wonder from the beginning. Did your observations match what the data showed? What surprised you?"</div>
+        </div>
+      </div>
+
+      <!-- What to Turn In -->
+      <div class="turn-in-block">
+        <div class="turn-in-header">
+          <div class="turn-in-header-icon">📋</div>
+          <div>
+            <div class="turn-in-header-label">Canvas Submission</div>
+            <div class="turn-in-header-title">What to Turn In</div>
+          </div>
+        </div>
+        <div class="turn-in-body">
+
+          <p class="turn-in-intro">Submit your work on Canvas using <strong>one of these options:</strong></p>
+
+          <div class="turn-in-options">
+            <div class="turn-in-option turn-in-option-type">
+              <div class="turn-in-option-icon">⌨️</div>
+              <div class="turn-in-option-title">Type It</div>
+              <div class="turn-in-option-text">Type your written answers directly into the Canvas assignment.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-photo">
+              <div class="turn-in-option-icon">📸</div>
+              <div class="turn-in-option-title">Photo It</div>
+              <div class="turn-in-option-text">Take a clear photo of your notebook work and upload it.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-video">
+              <div class="turn-in-option-icon">🎥</div>
+              <div class="turn-in-option-title">Record It</div>
+              <div class="turn-in-option-text">Record a short video explaining your graph and conclusions.</div>
+            </div>
+          </div>
+
+          <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
+
+          <div class="turn-in-checklist">
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Notice &amp; Wonder observations and question from the beginning of the lesson.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page (copied neatly into my notebook).</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My completed data table with all four conditions and heights filled in.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My short answer responses to Part B questions (complete sentences, science vocabulary used).</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Write &amp; Explain response using evidence from the data.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Part C bar graph with labeled conditions, height scale, title, and color key.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Closing Video -->
+      <div class="video-wrap" style="margin-top:24px;">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">👋</span>
+          <div>
+            <div class="video-wrap-type">Closing · Wrap-Up</div>
+            <div class="video-wrap-title">Great work today! Next up: Animal Life Cycles…</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">👋</div>
+            <div class="video-placeholder-text">Closing video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 8-2-closing --></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /tab-assignment -->
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <div class="footer-line1">Optima Academy Online · <span>3rd Grade Science</span></div>
+  <div class="footer-line2">Lesson 8.02 · NGSS 3-LS1-1</div>
+  <div class="footer-line3">© Optima Academy · All rights reserved</div>
+</div>
+
+</div><!-- /page-wrap -->
+
+
+<script>
+
+var LESSON_EMOJI = '🌱';
+
+// ── Tab System ──
+var tabProgress = { vocab: false, lesson: false, explore: false, quiz: false, assignment: false };
+var tabOrder = ['vocab','lesson','explore','quiz','assignment'];
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelector('[data-tab="' + name + '"]').classList.add('active');
+  tabProgress[name] = true;
+  document.querySelector('[data-tab="' + name + '"]').classList.add('visited');
+  var visited = Object.values(tabProgress).filter(Boolean).length;
+  var pct = Math.round((visited / tabOrder.length) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c){
+    if (name === 'vocab') { c.classList.remove('collapsed'); }
+    else { c.classList.add('collapsed'); }
+  });
+  try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+  var top = document.getElementById('pageTop');
+  if (top && top.scrollIntoView) {
+    try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+  }
+}
+
+// ── Checklist ──
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  var icon = item.querySelector('.check-icon');
+  if (!icon) return;
+  if (item.classList.contains('checked')) {
+    icon.textContent = LESSON_EMOJI;
+  } else {
+    icon.textContent = '';
+  }
+  var items = document.querySelectorAll('.turn-in-item');
+  setTimeout(function(){
+    if (Array.from(items).every(function(it){ return it.classList.contains('checked'); })) {
+      setTimeout(window.launchConfetti, 200);
+    }
+  }, 50);
+}
+
+// ── Clickable Diagram ──
+(function() {
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel    = document.getElementById('diagramPanel');
+  var wordEl   = document.getElementById('diagramWord');
+  var infoEl   = document.getElementById('diagramInfo');
+  if (!panel) return;
+  hotspots.forEach(function(hs) {
+    hs.addEventListener('click', function(e) {
+      e.stopPropagation();
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+      hs.classList.add('active');
+      var part = hs.getAttribute('data-part');
+      wordEl.textContent = part;
+      infoEl.innerHTML   = hs.getAttribute('data-info');
+      panel.classList.add('visible');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+    }
+  });
+})();
+
+// ── Self-Check Quiz ──
+var quizAnswered = 0;
+var quizCorrect  = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen  = optEl.getAttribute('data-val');
+  q.querySelectorAll('.quiz-opt').forEach(function(o){
+    if (o.getAttribute('data-val') === correct) { o.classList.add('correct'); }
+    else { o.classList.add('disabled'); }
+  });
+  var fbCorrect = q.querySelector('.fb-correct');
+  var fbWrong   = q.querySelector('.fb-wrong');
+  if (chosen === correct) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+  if (quizAnswered === 3) {
+    var scoreBox  = document.getElementById('quizScore');
+    var scoreNum  = document.getElementById('quizScoreNum');
+    var scoreMsg  = document.getElementById('quizScoreMsg');
+    var vCorrect  = document.getElementById('quizVideoCorrect');
+    var vReview   = document.getElementById('quizVideoReview');
+    scoreNum.textContent = quizCorrect;
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '⭐ Perfect! You got every question right!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌿 Great job! Almost there!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip) {
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function() {
+    var rect = tip.getBoundingClientRect();
+    var bw   = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Back to Top ──
+(function() {
+  var btn = document.getElementById('backToTop');
+  if (!btn) return;
+  var inIframe = (function() {
+    try { return window.self !== window.top; }
+    catch (e) { return true; }
+  })();
+  btn.addEventListener('click', function() {
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    var top = document.getElementById('pageTop');
+    if (top && top.scrollIntoView) {
+      try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+    }
+    try {
+      if (window.frameElement && window.frameElement.scrollIntoView) {
+        window.frameElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (e) {}
+    if (inIframe) {
+      try { window.parent.postMessage({ type: 'optima-lesson:scroll-to-top' }, '*'); } catch (e) {}
+    }
+  });
+  if (inIframe) {
+    setTimeout(function() { btn.classList.add('show'); }, 1500);
+  } else {
+    window.addEventListener('scroll', function() {
+      btn.classList.toggle('show', window.pageYOffset > 400);
+    });
+  }
+})();
+
+// ── Confetti ──
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx    = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#52B788','#F9A825','#FDD835','#4DD0E1','#2E7D32','#7B5EA7','#FF8F00','#0288D1'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── Collapsible Intro Cards ──
+var introCards = document.querySelectorAll('.intro-2col .card');
+introCards.forEach(function(card){
+  var head = card.querySelector('.card-head');
+  if (!head) return;
+  head.addEventListener('click', function(){
+    var willCollapse = !card.classList.contains('collapsed');
+    introCards.forEach(function(c){
+      c.classList.toggle('collapsed', willCollapse);
+    });
+  });
+});
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+tabProgress['vocab'] = true;
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+</script>
+</body>
+</html>
