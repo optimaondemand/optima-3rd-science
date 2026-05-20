@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – Engineering Challenge: Magnetic Rescue Tool</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+  background: #F2F0E8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #2B1D12;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap { max-width: 920px; margin: 0 auto; background: #FAF8F4; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%);
+  border-bottom: 6px solid #2E7D32;
+  padding: 22px 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 6px; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2E7D32, #66BB6A, #2E7D32);
+}
+.header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.header-logo {
+  width: 52px; height: 52px; border-radius: 50%; background: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title {
+  font-size: 28px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+  text-shadow: 0 2px 12px rgba(46,125,50,0.4);
+}
+.header-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(46,125,50,0.2); border: 1.5px solid rgba(46,125,50,0.4);
+  border-radius: 28px; padding: 6px 16px;
+}
+.header-badge span:first-child { font-size: 22px; }
+.header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ── Hero Visual ── */
+.hero-visual {
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #2E7D32;
+}
+.hero-visual svg { display: block; width: 100%; height: auto; }
+
+/* ── Hero Animations ── */
+@keyframes cloud-drift-1 { 0% { transform: translateX(0); } 100% { transform: translateX(40px); } }
+@keyframes cloud-drift-2 { 0% { transform: translateX(0); } 100% { transform: translateX(-32px); } }
+@keyframes sun-pulse { 0%, 100% { opacity: 0.65; transform: scale(1); } 50% { opacity: 1; transform: scale(1.12); } }
+@keyframes bird-drift { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(6px, -8px); } }
+@keyframes hero-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes hero-twinkle { 0%, 100% { opacity: 0.4; transform: scale(0.85); } 50% { opacity: 1; transform: scale(1.15); } }
+@keyframes hero-shimmer { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.7; } }
+@keyframes hero-spin-slow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes hero-sway { 0%, 100% { transform: rotate(-2.5deg); } 50% { transform: rotate(2.5deg); } }
+@keyframes magnet-pulse { 0%, 100% { opacity: 0.35; stroke-width: 1.5; } 50% { opacity: 0.85; stroke-width: 2.5; } }
+@keyframes clip-float-1 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+@keyframes clip-float-2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-11px); } }
+@keyframes clip-float-3 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-18px); } }
+
+.hero-cloud-1   { animation: cloud-drift-1 9s ease-in-out infinite alternate; }
+.hero-cloud-2   { animation: cloud-drift-2 13s ease-in-out infinite alternate; }
+.hero-sun-glow  { animation: sun-pulse 4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-float     { animation: hero-float 3.5s ease-in-out infinite; }
+.hero-twinkle   { animation: hero-twinkle 2.2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-twinkle-2 { animation: hero-twinkle 3.1s ease-in-out infinite 0.5s; transform-origin: center; transform-box: fill-box; }
+.hero-twinkle-3 { animation: hero-twinkle 2.7s ease-in-out infinite 1.1s; transform-origin: center; transform-box: fill-box; }
+.hero-shimmer   { animation: hero-shimmer 3s ease-in-out infinite; }
+.hero-spin-slow { animation: hero-spin-slow 18s linear infinite; transform-origin: center; transform-box: fill-box; }
+.hero-sway      { animation: hero-sway 4s ease-in-out infinite; transform-origin: bottom center; transform-box: fill-box; }
+.magnet-field   { animation: magnet-pulse 2.4s ease-in-out infinite; }
+.magnet-field-2 { animation: magnet-pulse 2.4s ease-in-out infinite 0.8s; }
+.clip-rise-1    { animation: clip-float-1 2.8s ease-in-out infinite; }
+.clip-rise-2    { animation: clip-float-2 3.3s ease-in-out infinite 0.4s; }
+.clip-rise-3    { animation: clip-float-3 2.6s ease-in-out infinite 1.0s; }
+
+@keyframes mind-blow-bounce { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+
+/* ── Info Strip ── */
+.info-strip { display: flex; flex-wrap: wrap; background: #fff; border-bottom: 2px solid #E8DDD2; }
+.info-item { flex: 1; min-width: 150px; padding: 12px 16px; border-right: 1px solid #E8DDD2; display: flex; align-items: center; gap: 10px; }
+.info-item:last-child { border-right: none; }
+.info-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.info-value { font-size: 16px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+/* ── Progress Bar ── */
+.progress-wrap { background: linear-gradient(135deg, #0E1C42, #1A2D5A); padding: 10px 20px; display: flex; align-items: center; gap: 14px; position: sticky; top: 0; z-index: 200; }
+.progress-label { font-size: 12px; color: #95D5B2; font-weight: 800; white-space: nowrap; }
+.progress-bar { flex: 1; height: 8px; background: rgba(255,255,255,0.15); border-radius: 4px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, #2E7D32, #66BB6A); border-radius: 4px; transition: width 0.5s ease; }
+.progress-pct { font-size: 12px; color: #95D5B2; font-weight: 800; white-space: nowrap; }
+
+/* ── Content Area ── */
+.content { padding: 24px 28px 36px; }
+
+/* ── Card System ── */
+.card { background: #fff; border: 2px solid #E8DDD2; border-radius: 18px; margin-bottom: 22px; overflow: hidden; box-shadow: 0 2px 12px rgba(27,67,50,0.04); }
+.card-head { display: flex; align-items: center; gap: 10px; padding: 14px 20px; border-bottom: 2px solid; }
+.card-head-icon { width: 42px; height: 42px; border-radius: 50%; color: #fff; font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.card-head-title { font-size: 20px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.card-body { padding: 18px 22px; }
+.card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+.card-body p:last-child { margin-bottom: 0; }
+
+/* ── Card Color Themes ── */
+.theme-earth  .card-head { background: #FFF0E8; border-color: #E8D0B8; }
+.theme-earth  .card-head-icon { background: #A0522D; }
+.theme-sun    .card-head { background: #FFF9E8; border-color: #F0E4C0; }
+.theme-sun    .card-head-icon { background: #F9A825; }
+.theme-sky    .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-sky    .card-head-icon { background: #0288D1; }
+.theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+.theme-forest .card-head-icon { background: #2E7D32; }
+.theme-rock   .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+.theme-rock   .card-head-icon { background: #7B5EA7; }
+.theme-meadow .card-head { background: #F0F8E8; border-color: #C8E0B8; }
+.theme-meadow .card-head-icon { background: #558B2F; }
+
+/* ── Activity Cards ── */
+.activity-card { background: #fff; border: 2px solid #E8DDD2; border-radius: 18px; margin-bottom: 18px; overflow: hidden; box-shadow: 0 2px 10px rgba(27,67,50,0.04); }
+.activity-card.act-warmup  { border-left: 6px solid #52B788; }
+.activity-card.act-lesson  { border-left: 6px solid #F9A825; }
+.activity-card.act-explore { border-left: 6px solid #0288D1; }
+.activity-card.act-practice{ border-left: 6px solid #2E7D32; }
+.activity-card.act-check   { border-left: 6px solid #7B5EA7; }
+.act-head { display: flex; align-items: center; gap: 12px; padding: 14px 20px 14px 18px; border-bottom: 1.5px solid #E8DDD2; }
+.act-num { width: 38px; height: 38px; border-radius: 14px; color: #fff; font-size: 18px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.act-title { font-size: 19px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.act-subtitle { font-size: 12px; color: #9A8E82; }
+.act-time { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap; margin-left: auto; flex-shrink: 0; }
+.act-body { padding: 18px 22px 18px 20px; }
+.act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+/* ── Callout Boxes ── */
+.callout { border-radius: 14px; padding: 16px 18px; display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+.callout-earth  { background: #FFF0E8; border: 2px solid #E8D0B8; }
+.callout-think  { background: #FFF9E8; border: 2px solid #F0E4C0; }
+.callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+.callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+.callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+
+/* ── Socratic Questions ── */
+.socratic-q { background: linear-gradient(135deg, #EEF8F0, #E8F5E9); border: 2px solid #A8D5B8; border-radius: 16px; padding: 16px 20px; margin: 16px 0; display: flex; align-items: flex-start; gap: 12px; }
+.socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.socratic-q .label { font-size: 11px; color: #2D6A4F; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; }
+.socratic-q .question { font-size: 17px; color: #2B1D12; font-weight: 700; line-height: 1.6; font-style: italic; }
+
+/* ── Diagram Containers ── */
+.diagram-wrap { background: #fff; border: 2px solid #E8DDD2; border-radius: 16px; padding: 16px; margin: 16px 0; text-align: center; }
+.diagram-wrap svg { max-width: 100%; height: auto; }
+.diagram-caption { font-size: 13px; color: #9A8E82; margin-top: 10px; font-weight: 600; text-align: center; }
+
+/* ── Lesson Figure ── */
+.lesson-figure { background: #fff; border: 2px solid #E8DDD2; border-radius: 16px; padding: 14px 14px 18px; margin: 0 0 22px; box-shadow: 0 2px 10px rgba(27,67,50,0.04); }
+.lesson-figure-label { font-size: 11px; color: #2D6A4F; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 800; margin-bottom: 10px; }
+.lesson-figure img { display: block; max-width: 100%; height: auto; border-radius: 10px; margin: 0 auto; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.lesson-figure-caption { font-size: 14px; color: #5A4D3E; margin-top: 12px; line-height: 1.55; font-weight: 600; text-align: center; }
+.lesson-figure-caption strong { color: #1B4332; }
+
+/* ── Interactive Diagram ── */
+.diagram-interactive { position: relative; cursor: pointer; user-select: none; }
+.diagram-interactive svg { display: block; width: 100%; height: auto; }
+.hotspot { fill: transparent; cursor: pointer; opacity: 0; transition: opacity 0.2s; }
+.hotspot:hover, .hotspot.active { opacity: 0.18; }
+.diagram-info-panel { display: none; background: #1B4332; color: #fff; border-radius: 12px; padding: 14px 18px; margin-top: 12px; font-size: 15px; line-height: 1.65; font-weight: 600; }
+.diagram-info-panel.visible { display: block; }
+.dip-word { display: block; font-size: 13px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 6px; }
+.diagram-tap-hint { font-size: 12px; color: #B0A698; font-weight: 600; margin-top: 8px; }
+
+/* ── Key Concept Box ── */
+.key-concept { background: #F0F8E8; border: 2px solid #C8E0B8; border-radius: 14px; padding: 18px 20px; margin: 14px 0; }
+.key-concept .kc-label { font-size: 13px; color: #558B2F; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px; }
+.key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+.key-concept p:last-child { margin-bottom: 0; }
+
+/* ── Practice Questions ── */
+.pq { background: #FAFAF6; border: 2px solid #E8DDD2; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; }
+.pq-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; color: #fff; font-weight: 800; font-size: 14px; margin-right: 8px; vertical-align: middle; }
+.pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; }
+
+/* ── Vocab Flashcards ── */
+.vocab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+.flip-card { perspective: 800px; height: 195px; cursor: pointer; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.5s ease; transform-style: preserve-3d; }
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 16px; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 14px 18px; text-align: center; border: 2px solid #E8DDD2; box-shadow: 0 2px 10px rgba(27,67,50,0.06); }
+.flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+.flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+.flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #1B4332; margin-bottom: 6px; }
+.flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+.flip-card-back { background: linear-gradient(145deg, #1B4332, #2D6A4F); border-color: #1B4332; transform: rotateY(180deg); }
+.flip-card-back .fc-def { font-size: 14.5px; color: #fff; line-height: 1.5; font-weight: 600; }
+.flip-card-back .fc-word-back { font-size: 11px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 6px; }
+.flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 8px; font-weight: 600; }
+.fc-color-1 .flip-card-front { border-top-color: #52B788; }
+.fc-color-2 .flip-card-front { border-top-color: #2D6A4F; }
+.fc-color-3 .flip-card-front { border-top-color: #F9A825; }
+.fc-color-4 .flip-card-front { border-top-color: #0288D1; }
+.fc-color-5 .flip-card-front { border-top-color: #2E7D32; }
+.fc-color-6 .flip-card-front { border-top-color: #7B5EA7; }
+
+/* ── Vocab Tooltips ── */
+.vtip { position: relative; color: #7B5EA7; font-weight: 700; cursor: help; border-bottom: 2px dotted rgba(123,94,167,0.45); transition: color 0.15s; }
+.vtip:hover { color: #5B3EA7; }
+.vtip .vtip-box { position: fixed; background: #1B4332; color: #fff; padding: 12px 16px; border-radius: 12px; font-size: 14px; font-weight: 600; font-style: normal; line-height: 1.55; width: 250px; text-align: center; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s; pointer-events: none; z-index: 9999; box-shadow: 0 6px 24px rgba(27,67,50,0.35); }
+.vtip:hover .vtip-box { opacity: 1; visibility: visible; }
+.vtip-box .vtip-word { display: block; font-size: 12px; color: #95D5B2; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 800; margin-bottom: 5px; }
+
+/* ── Mind-Blowing Fact ── */
+.mind-blow { display: flex; align-items: flex-start; gap: 16px; background: linear-gradient(135deg, #1a3a28, #1B4332); border: 2px solid rgba(149,213,178,0.3); border-radius: 18px; padding: 20px 22px; margin: 22px 0; }
+.mind-blow-icon { font-size: 38px; flex-shrink: 0; animation: mind-blow-bounce 2.5s ease-in-out infinite; }
+.mind-blow-content { flex: 1; }
+.mind-blow-label { font-size: 11px; color: #FDD835; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 6px; }
+.mind-blow-text { font-size: 16px; color: #fff; line-height: 1.65; font-weight: 600; }
+.mind-blow-text strong { color: #95D5B2; }
+
+/* ── Go Deeper ── */
+.go-deeper { background: linear-gradient(135deg, #F0EDF6, #E8E2F2); border: 2px solid #D8D0E8; border-radius: 16px; margin: 16px 0; overflow: hidden; }
+.go-deeper summary { padding: 14px 18px; font-size: 16px; font-weight: 800; color: #1B4332; cursor: pointer; display: flex; align-items: center; gap: 10px; list-style: none; }
+.go-deeper summary::-webkit-details-marker { display: none; }
+.go-deeper summary::before { content: '🔭'; font-size: 22px; }
+.go-deeper summary::after { content: '▸'; margin-left: auto; font-size: 18px; color: #7B5EA7; transition: transform 0.3s; }
+.go-deeper[open] summary::after { transform: rotate(90deg); }
+.go-deeper .gd-body { padding: 4px 18px 16px; font-size: 15px; color: #5A4D3E; line-height: 1.7; border-top: 1.5px solid #D8D0E8; }
+.go-deeper .gd-body p { margin-bottom: 10px; }
+
+/* ── Scroll Animations ── */
+.scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+/* ── Back to Top ── */
+.back-to-top { position: fixed; bottom: 24px; right: 24px; height: 38px; padding: 0 16px; border-radius: 19px; background: linear-gradient(135deg, #1B4332, #2E7D32); color: #fff; border: none; font-size: 13px; font-weight: 800; font-family: 'Nunito', sans-serif; cursor: pointer; box-shadow: 0 4px 14px rgba(27,67,50,0.35); display: flex; align-items: center; gap: 6px; opacity: 0; visibility: hidden; transform: translateY(20px); transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.2s; z-index: 500; letter-spacing: 0.2px; white-space: nowrap; }
+.back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { box-shadow: 0 6px 20px rgba(27,67,50,0.5); transform: translateY(-3px); }
+
+/* ── Confetti Canvas ── */
+#confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000; }
+
+/* ── Video Embed System ── */
+.video-wrap { border-radius: 18px; overflow: hidden; border: 2px solid #E8DDD2; box-shadow: 0 4px 20px rgba(27,67,50,0.08); background: #000; margin: 0 0 22px; }
+.video-wrap-header { display: flex; align-items: center; gap: 12px; padding: 12px 18px; background: linear-gradient(135deg, #1B4332, #2D6A4F); border-bottom: 2px solid rgba(149,213,178,0.2); }
+.video-wrap-type { font-size: 10px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+.video-wrap-title { font-size: 16px; color: #fff; font-weight: 800; line-height: 1.2; }
+.video-ratio { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.video-ratio iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.video-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #1a3a28, #1B4332); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; }
+.video-placeholder-icon { font-size: 44px; margin-bottom: 10px; opacity: 0.55; }
+.video-placeholder-text { font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 600; line-height: 1.5; font-family: 'Nunito', sans-serif; }
+.video-placeholder-id { font-size: 11px; color: rgba(149,213,178,0.4); font-family: monospace; margin-top: 6px; letter-spacing: 0.5px; }
+.video-feedback { display: none; }
+.video-feedback.show { display: block; }
+
+/* ── Collapsible Intro Cards ── */
+.intro-2col .card .card-head { cursor: pointer; user-select: none; position: relative; }
+.intro-2col .card .card-head::after { content: '▾'; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #9A8E82; transition: transform 0.25s ease; }
+.intro-2col .card.collapsed .card-head::after { transform: translateY(-50%) rotate(-90deg); }
+.intro-2col .card.collapsed .card-body { display: none; }
+
+/* ── Tab Bar ── */
+.tab-bar { position: sticky; top: 44px; z-index: 100; background: #FAF8F4; border-bottom: 3px solid #E8DDD2; display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn { flex: 1; min-width: 130px; padding: 12px 8px 11px; background: transparent; border: none; border-bottom: 4px solid transparent; font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700; color: #9A8E82; cursor: pointer; transition: all 0.2s; white-space: nowrap; line-height: 1.3; text-align: center; }
+.tab-btn:hover { color: #1B4332; background: #EEF8F0; }
+.tab-btn.active { color: #1B4332; border-bottom-color: #2D6A4F; background: #fff; }
+.tab-btn .tab-check { display: none; font-size: 12px; color: #2E7D32; margin-left: 4px; font-weight: 800; }
+.tab-btn.visited .tab-check { display: inline; }
+
+/* ── Tab Panels ── */
+.tab-panel { display: none; padding: 24px 28px 36px; }
+.tab-panel.active { display: block; }
+
+/* ── Intro 2-col ── */
+.intro-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px 28px 0; }
+.intro-2col .card { margin-bottom: 0; }
+
+/* ── Need Strip ── */
+.need-strip { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 28px 16px; }
+.need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 700; white-space: nowrap; }
+.need-chip { display: inline-flex; align-items: center; gap: 5px; background: #EEF8F0; border: 1.5px solid #C4E5CC; border-radius: 20px; padding: 5px 12px; font-size: 13px; color: #1B4332; font-weight: 700; }
+
+/* ── Tab Next Button ── */
+.tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+.tab-next-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px; background: linear-gradient(135deg, #2D6A4F, #52B788); color: #fff; border: none; border-radius: 28px; font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 16px rgba(45,106,79,0.3); transition: transform 0.2s, box-shadow 0.2s; }
+.tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(45,106,79,0.4); }
+
+/* ── Quiz ── */
+.quiz-q { background: #FAFAF6; border: 2px solid #E8DDD2; border-radius: 16px; padding: 16px 18px; margin-bottom: 18px; }
+.quiz-q-stem { font-size: 17px; color: #2B1D12; font-weight: 700; line-height: 1.6; margin-bottom: 14px; }
+.quiz-opts { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt { display: flex; align-items: center; gap: 12px; padding: 11px 16px; background: #fff; border: 2px solid #E8DDD2; border-radius: 12px; cursor: pointer; transition: all 0.15s; font-size: 16px; color: #2B1D12; font-weight: 600; }
+.quiz-opt:hover:not(.correct):not(.wrong):not(.disabled) { border-color: #2D6A4F; background: #EEF8F0; }
+.quiz-opt.correct { background: #EEF8F0; border-color: #2E7D32; }
+.quiz-opt.wrong { background: #FFF0EC; border-color: #E8636B; }
+.quiz-opt.disabled { opacity: 0.5; cursor: default; }
+.opt-letter { width: 30px; height: 30px; border-radius: 50%; background: #E8DDD2; color: #5A4D3E; font-size: 14px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s; }
+.quiz-opt.correct .opt-letter { background: #2E7D32; color: #fff; }
+.quiz-opt.wrong .opt-letter { background: #E8636B; color: #fff; }
+.quiz-feedback { font-size: 14px; padding: 10px 14px; border-radius: 10px; margin-top: 10px; display: none; font-weight: 600; line-height: 1.5; }
+.quiz-feedback.show { display: block; }
+.quiz-feedback.fb-correct { background: #EEF8F0; color: #1a6b35; border: 1.5px solid #B8E8CF; }
+.quiz-feedback.fb-wrong { background: #FFF0EC; color: #8a3030; border: 1.5px solid #F5C4BA; }
+.quiz-score { text-align: center; padding: 16px; background: linear-gradient(135deg, #EEF8F0, #E8F5E9); border: 2px solid #C4E5CC; border-radius: 14px; margin-top: 8px; display: none; }
+.quiz-score.show { display: block; }
+.quiz-score-num { font-size: 36px; font-weight: 900; color: #1B4332; }
+.quiz-score-label { font-size: 14px; color: #9A8E82; font-weight: 700; }
+.quiz-score-msg { font-size: 16px; color: #2B1D12; font-weight: 700; margin-top: 6px; }
+
+/* ── What to Turn In ── */
+.turn-in-block { background: #fff; border: 2.5px solid #0288D1; border-radius: 18px; margin-top: 22px; overflow: hidden; box-shadow: 0 4px 16px rgba(2,136,209,0.1); }
+.turn-in-header { display: flex; align-items: center; gap: 14px; padding: 14px 20px; background: linear-gradient(135deg, #0277BD, #0288D1); }
+.turn-in-header-icon { font-size: 30px; }
+.turn-in-header-label { font-size: 10px; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 2px; }
+.turn-in-header-title { font-size: 20px; color: #fff; font-weight: 900; }
+.turn-in-body { padding: 18px 20px; }
+.turn-in-intro { font-size: 15px; color: #5A4D3E; margin-bottom: 16px; line-height: 1.6; }
+.turn-in-options { display: flex; gap: 10px; margin-bottom: 18px; flex-wrap: wrap; }
+.turn-in-option { flex: 1; min-width: 120px; border-radius: 14px; padding: 12px 14px; text-align: center; border: 2px solid; }
+.turn-in-option-type  { background: #EEF8F0; border-color: #C4E5CC; }
+.turn-in-option-photo { background: #FFF9E8; border-color: #F0E4C0; }
+.turn-in-option-video { background: #F0EDF6; border-color: #D8D0E8; }
+.turn-in-option-icon  { font-size: 24px; margin-bottom: 4px; }
+.turn-in-option-title { font-size: 14px; font-weight: 800; color: #1B4332; margin-bottom: 3px; }
+.turn-in-option-text  { font-size: 12px; color: #5A4D3E; line-height: 1.4; }
+.turn-in-subhead { font-size: 14px; color: #1B4332; font-weight: 800; margin-bottom: 12px; }
+.turn-in-checklist { display: flex; flex-direction: column; gap: 8px; }
+.turn-in-item { display: flex; align-items: flex-start; gap: 12px; padding: 10px 14px; background: #FAFAF6; border: 1.5px solid #E8DDD2; border-radius: 12px; cursor: pointer; transition: background 0.15s; }
+.turn-in-item:hover { background: #EEF8F0; }
+.turn-in-item.checked { background: #EEF8F0; border-color: #A8D5B8; }
+.turn-in-check { width: 22px; height: 22px; border-radius: 50%; border: 2.5px solid #C4E5CC; background: #fff; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 13px; transition: all 0.2s; }
+.turn-in-item.checked .turn-in-check { background: #2E7D32; border-color: #2E7D32; }
+.turn-in-item.checked .turn-in-check::after { content: '🧲'; font-size: 12px; }
+.turn-in-item-text { font-size: 15px; color: #2B1D12; line-height: 1.55; font-weight: 600; }
+</style>
+</head>
+<body>
+<canvas id="confettiCanvas"></canvas>
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- ═══════════ PROGRESS BAR ═══════════ -->
+<div class="progress-wrap">
+  <span class="progress-label">🧲 Progress</span>
+  <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:20%"></div></div>
+  <span class="progress-pct" id="progressPct">20%</span>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://optimadomi.instructure.com/courses/2150/files/733296/preview" alt="Optima Academy logo" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">3RD GRADE SCIENCE · UNIT 3 — FORCES &amp; MOTION</div>
+    </div>
+  </div>
+  <div class="header-title">Lesson 7.02 — Engineering Challenge: Magnetic Rescue Tool</div>
+  <div class="header-badge">
+    <span>🧲</span>
+    <span>Lesson 7.02</span>
+  </div>
+</div>
+
+<!-- ═══════════ HERO BANNER ═══════════ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An engineering workshop scene with a magnetic tool picking up metal objects">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2e1a"/>
+      <stop offset="100%" stop-color="#2d4a20"/>
+    </linearGradient>
+    <linearGradient id="tableGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5d3e20"/>
+      <stop offset="100%" stop-color="#3e2a12"/>
+    </linearGradient>
+    <linearGradient id="magnetGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c0392b"/>
+      <stop offset="50%" stop-color="#bdc3c7"/>
+      <stop offset="100%" stop-color="#2980b9"/>
+    </linearGradient>
+    <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#66BB6A" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#66BB6A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="920" height="260" fill="url(#bgGrad)"/>
+
+  <!-- Bench top -->
+  <rect x="0" y="170" width="920" height="90" fill="url(#tableGrad)"/>
+  <rect x="0" y="170" width="920" height="8" fill="#8B6040" opacity="0.8"/>
+
+  <!-- Tray on bench -->
+  <rect x="280" y="185" width="220" height="65" rx="8" fill="#d0d0d0" stroke="#a0a0a0" stroke-width="2"/>
+  <rect x="284" y="189" width="212" height="57" rx="6" fill="#e8e8e8"/>
+
+  <!-- Static paperclips in tray -->
+  <ellipse cx="310" cy="220" rx="14" ry="5" fill="none" stroke="#888" stroke-width="2.5" transform="rotate(-30,310,220)"/>
+  <ellipse cx="330" cy="230" rx="14" ry="5" fill="none" stroke="#999" stroke-width="2.5" transform="rotate(15,330,230)"/>
+  <ellipse cx="460" cy="215" rx="14" ry="5" fill="none" stroke="#888" stroke-width="2.5" transform="rotate(-10,460,215)"/>
+  <ellipse cx="445" cy="232" rx="14" ry="5" fill="none" stroke="#999" stroke-width="2.5" transform="rotate(25,445,232)"/>
+
+  <!-- Washers in tray -->
+  <circle cx="360" cy="222" r="9" fill="none" stroke="#777" stroke-width="3"/>
+  <circle cx="360" cy="222" r="4" fill="none" stroke="#777" stroke-width="1.5"/>
+  <circle cx="410" cy="228" r="9" fill="none" stroke="#888" stroke-width="3"/>
+  <circle cx="410" cy="228" r="4" fill="none" stroke="#888" stroke-width="1.5"/>
+
+  <!-- Craft stick "handle" -->
+  <rect x="388" y="30" width="24" height="120" rx="4" fill="#D4A857" stroke="#B8922E" stroke-width="1.5"/>
+  <!-- String -->
+  <line x1="400" y1="148" x2="400" y2="162" stroke="#e8e0d0" stroke-width="2"/>
+  <!-- Magnet (horseshoe shape) -->
+  <path d="M380,162 Q380,195 400,195 Q420,195 420,162" fill="none" stroke="url(#magnetGrad)" stroke-width="12" stroke-linecap="round"/>
+  <!-- Magnet tips -->
+  <rect x="374" y="152" width="14" height="18" rx="3" fill="#c0392b"/>
+  <rect x="412" y="152" width="14" height="18" rx="3" fill="#2980b9"/>
+
+  <!-- Magnetic field lines pulsing around magnet -->
+  <g class="magnet-field">
+    <ellipse cx="400" cy="182" rx="35" ry="25" fill="none" stroke="#66BB6A" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/>
+    <ellipse cx="400" cy="182" rx="50" ry="38" fill="none" stroke="#66BB6A" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.35"/>
+  </g>
+  <g class="magnet-field-2">
+    <ellipse cx="400" cy="182" rx="65" ry="50" fill="none" stroke="#4DD0E1" stroke-width="1" stroke-dasharray="3 5" opacity="0.25"/>
+  </g>
+
+  <!-- Floating paperclips being attracted to magnet -->
+  <g class="clip-rise-1">
+    <ellipse cx="355" cy="158" rx="13" ry="4.5" fill="none" stroke="#aaa" stroke-width="2.5" transform="rotate(-40,355,158)"/>
+  </g>
+  <g class="clip-rise-2">
+    <ellipse cx="445" cy="153" rx="13" ry="4.5" fill="none" stroke="#aaa" stroke-width="2.5" transform="rotate(40,445,153)"/>
+  </g>
+  <g class="clip-rise-3">
+    <ellipse cx="400" cy="147" rx="13" ry="4.5" fill="none" stroke="#bbb" stroke-width="2.5" transform="rotate(0,400,147)"/>
+  </g>
+
+  <!-- Glow under magnet (pulsing) -->
+  <g class="hero-sun-glow">
+    <ellipse cx="400" cy="200" rx="40" ry="15" fill="url(#glowGrad)"/>
+  </g>
+
+  <!-- Science notebook on bench -->
+  <rect x="570" y="178" width="130" height="90" rx="6" fill="#fff9e8" stroke="#d4b896" stroke-width="2"/>
+  <rect x="570" y="178" width="130" height="22" rx="6" fill="#c0392b" opacity="0.85"/>
+  <line x1="578" y1="212" x2="692" y2="212" stroke="#d4c8b8" stroke-width="1.2"/>
+  <line x1="578" y1="224" x2="692" y2="224" stroke="#d4c8b8" stroke-width="1.2"/>
+  <line x1="578" y1="236" x2="692" y2="236" stroke="#d4c8b8" stroke-width="1.2"/>
+  <line x1="578" y1="248" x2="692" y2="248" stroke="#d4c8b8" stroke-width="1.2"/>
+  <!-- Tiny pencil floating above notebook -->
+  <g class="hero-float">
+    <rect x="660" y="148" width="6" height="36" rx="2" fill="#F9A825" transform="rotate(20,663,166)"/>
+    <polygon points="660,184 666,184 663,194" fill="#f0c040" transform="rotate(20,663,166)"/>
+  </g>
+
+  <!-- Tape roll on bench -->
+  <g class="hero-sway">
+    <circle cx="750" cy="198" r="22" fill="none" stroke="#c8a060" stroke-width="10" opacity="0.7"/>
+    <circle cx="750" cy="198" r="9" fill="#e8c880" stroke="#c8a060" stroke-width="2"/>
+  </g>
+
+  <!-- Sparkle / glint near magnet tips -->
+  <g class="hero-twinkle">
+    <polygon points="381,156 383,150 385,156 391,158 385,160 383,166 381,160 375,158" fill="#FDD835" opacity="0.9"/>
+  </g>
+  <g class="hero-twinkle-2">
+    <polygon points="416,151 418,145 420,151 426,153 420,155 418,161 416,155 410,153" fill="#4DD0E1" opacity="0.8"/>
+  </g>
+  <g class="hero-twinkle-3">
+    <polygon points="348,168 350,162 352,168 358,170 352,172 350,178 348,172 342,170" fill="#FDD835" opacity="0.6"/>
+  </g>
+</svg>
+</div>
+
+<!-- ═══════════ INFO STRIP ═══════════ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q1 &middot; Unit 3</div>
+      <div class="info-detail">Forces &amp; Motion</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF9E8;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 7</div>
+      <div class="info-detail">Lesson 7.02 &mdash; 3rd Grade Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">🔧</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Engineering Design</div>
+      <div class="info-detail">Magnets · Build · Test · Improve</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">3-PS2-3 / ETS1</div>
+      <div class="info-detail">Magnetic Force &amp; Engineering Design</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ INTRO 2-COL CARDS ═══════════ -->
+<div class="intro-2col">
+  <div class="card theme-forest">
+    <div class="card-head">
+      <div class="card-head-icon">🌲</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This…</div>
+          <div class="question">"How can you use magnetic force to design a tool that picks up metal objects — and how will you make it better after you test it?"</div>
+        </div>
+      </div>
+      <p>Hold this question in your mind. By the end, you'll have an answer — built, tested, and improved by you.</p>
+    </div>
+  </div>
+
+  <div class="card theme-sky">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#52B788;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain how magnetic force can pull objects without touching them.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2D6A4F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> design and build a tool that uses a magnet to solve a problem.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2E7D32;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> test my design, record data, and improve it based on what I find.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ NEED STRIP ═══════════ -->
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span> Science notebook</span>
+  <span class="need-chip"><span>✏️</span> Pencil</span>
+  <span class="need-chip"><span>🧲</span> Magnet(s)</span>
+  <span class="need-chip"><span>🪵</span> Craft stick</span>
+  <span class="need-chip"><span>🧵</span> String &amp; tape</span>
+  <span class="need-chip"><span>📦</span> Cardboard scraps</span>
+  <span class="need-chip"><span>📎</span> Paper clips &amp; washers</span>
+</div>
+
+<!-- ═══════════ TAB BAR ═══════════ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 1: VOCABULARY                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to Today's Engineering Challenge!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🎬</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 7-2-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Activity 1: Notice & Wonder -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#52B788;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Notice &amp; Wonder</div>
+        <div class="act-subtitle">What do you already know about magnets?</div>
+      </div>
+      <div class="act-time" style="background:#52B788;">⏱ 5–8 min</div>
+    </div>
+    <div class="act-body">
+      <p>Look at the photo below. A student built something using a craft stick, string, and a magnet. Look carefully before you read anything else.</p>
+      <div class="socratic-q">
+        <span class="sq-icon">👀</span>
+        <div>
+          <div class="label">In Your Science Notebook</div>
+          <div class="question">"What do you notice? Write 3 things. Then write 1 question: what do you wonder about how this tool works?"</div>
+        </div>
+      </div>
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>There are no wrong ideas. You're already thinking like an engineer — noticing a problem and asking how to solve it.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vocabulary Flip Cards -->
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Engineers and scientists use these words. <strong>Tap each card to flip it</strong> and read the definition. You'll use all of these today!</p>
+
+      <div class="vocab-grid">
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🧲</div><div class="fc-word">magnet</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">magnet</div><div class="fc-def">An object that creates a pulling or pushing force on certain metals, like iron and steel.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🔵</div><div class="fc-word">magnetic force</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">magnetic force</div><div class="fc-def">The invisible push or pull between a magnet and a magnetic material — they don't need to touch.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">⚙️</div><div class="fc-word">engineer</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">engineer</div><div class="fc-def">A person who designs, builds, and tests tools or systems to solve real problems.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🔨</div><div class="fc-word">prototype</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">prototype</div><div class="fc-def">A first working model of a design, built to test and improve before a final version.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">✏️</div><div class="fc-word">redesign</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">redesign</div><div class="fc-def">To change or improve a design based on what you learned from testing it.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">✅</div><div class="fc-word">criteria</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">criteria</div><div class="fc-def">The requirements a design must meet to be considered successful. "How many objects can it pick up?"</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">📓</span>
+        <p>Copy this sentence carefully into your science notebook:<br><strong>"Engineers test their prototypes, collect data, and redesign to find the best solution."</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button>
+  </div>
+</div><!-- /tab-vocab -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 2: THE LESSON (Brief — .02 engineering lesson)        -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">📖</span>
+      <div>
+        <div class="video-wrap-type">Activity 2 · Core Lesson</div>
+        <div class="video-wrap-title">Magnets as Tools — What Engineers Do</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">📖</div>
+        <div class="video-placeholder-text">Core lesson video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 7-2-lesson-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Uploaded photo from the field -->
+  <div class="lesson-figure">
+    <div class="lesson-figure-label">📷 Photo · From the Classroom</div>
+    <img src="images/7-02-magnetic-rescue-tool.png"
+         alt="A student holds a craft-stick handle with a magnet dangling by string over a white tray full of paper clips and metal washers. Several paper clips cling to the magnet. A science notebook shows a hand-drawn data table tracking objects collected and design changes across three trials." />
+    <div class="lesson-figure-caption">
+      A real magnetic rescue tool — craft stick, string, and a magnet. Notice how the <strong>paper clips cling to the magnet without being touched</strong>. The notebook shows data from three redesign trials.
+    </div>
+  </div>
+
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#F9A825;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📖 The Lesson: Magnets as Tools</div>
+        <div class="act-subtitle">Read carefully — this is the science behind what you're about to build.</div>
+      </div>
+      <div class="act-time" style="background:#F9A825;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- Section 1 -->
+      <div class="card theme-forest" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🧲</div>
+          <div>
+            <div class="card-head-label">Section 1</div>
+            <div class="card-head-title">How Magnetic Force Works</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>A magnet creates a <span class="vtip">magnetic force<span class="vtip-box"><span class="vtip-word">magnetic force</span>A push or pull between a magnet and a magnetic material — no touching required.</span></span> around it. That force can pull certain metal objects toward the magnet without any contact.</p>
+          <p>Not all metals are magnetic. Paper clips and washers work. Aluminum foil does not. Knowing <em>which</em> materials respond to a magnet is part of solving the problem.</p>
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"If a magnet can pull objects without touching them, what determines how many objects it can pick up at once?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="card theme-sky" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🏗️</div>
+          <div>
+            <div class="card-head-label">Section 2</div>
+            <div class="card-head-title">The Engineering Design Process</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Engineers don't just build — they follow a process. They start with a problem, plan a solution, build and test it, then <span class="vtip">redesign<span class="vtip-box"><span class="vtip-word">redesign</span>To change a design after testing, using evidence to make it better.</span></span> based on what the data shows.</p>
+          <p>Today you'll follow that same cycle: Ask → Plan → Build → Test → Improve. Each round of testing gives you evidence for what to change next.</p>
+        </div>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="card theme-earth" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🔍</div>
+          <div>
+            <div class="card-head-label">Section 3</div>
+            <div class="card-head-title">Why Testing Matters</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>A <span class="vtip">prototype<span class="vtip-box"><span class="vtip-word">prototype</span>A first working model — built to test and learn from, not to be perfect.</span></span> is never meant to be perfect. It's meant to teach you something. When you test it and record data, you find exactly where it fails — and that tells you what to fix.</p>
+          <p><strong>Real-World Connection:</strong> Engineers who build cranes for recycling yards use magnets to sort metal from trash. They test different magnet strengths and arm lengths to lift the most material safely.</p>
+        </div>
+      </div>
+
+      <!-- Interactive Diagram: Engineering Design Cycle -->
+      <div class="diagram-wrap scroll-reveal">
+        <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
+          🗺 Tap a step to learn more
+        </div>
+        <div class="diagram-interactive">
+          <svg viewBox="0 0 860 215" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;" role="img" aria-label="Engineering Design Cycle: Ask, Plan, Build, Test, Improve">
+            <defs>
+              <marker id="arrowR" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+                <path d="M0,0 L0,9 L9,4.5 z" fill="#52B788"/>
+              </marker>
+              <marker id="arrowU" markerWidth="9" markerHeight="9" refX="4.5" refY="2" orient="auto">
+                <path d="M0,9 L9,9 L4.5,0 z" fill="#A0A0A0"/>
+              </marker>
+              <filter id="boxShadow" x="-8%" y="-12%" width="116%" height="130%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="rgba(0,0,0,0.13)"/>
+              </filter>
+            </defs>
+            <!-- Background -->
+            <rect width="860" height="215" fill="#F6F4F0" rx="12"/>
+
+            <!-- Box 1 — ASK -->
+            <rect x="31" y="24" width="124" height="88" rx="14" fill="#2E7D32" filter="url(#boxShadow)"/>
+            <rect x="31" y="24" width="124" height="88" rx="14" fill="white" fill-opacity="0.07"/>
+            <circle cx="54" cy="47" r="13" fill="rgba(255,255,255,0.2)"/>
+            <text x="54" y="52" text-anchor="middle" font-size="14" font-weight="900" fill="#fff">1</text>
+            <text x="93" y="62" text-anchor="middle" font-size="19" font-weight="900" fill="#fff" letter-spacing="1">ASK</text>
+            <text x="93" y="79" text-anchor="middle" font-size="11" font-weight="700" fill="rgba(255,255,255,0.78)">Define the</text>
+            <text x="93" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="rgba(255,255,255,0.78)">problem</text>
+            <!-- Arrow 1→2 -->
+            <line x1="159" y1="68" x2="172" y2="68" stroke="#52B788" stroke-width="2.5" marker-end="url(#arrowR)"/>
+            <!-- Box 2 — PLAN -->
+            <rect x="175" y="24" width="124" height="88" rx="14" fill="#0277BD" filter="url(#boxShadow)"/>
+            <rect x="175" y="24" width="124" height="88" rx="14" fill="white" fill-opacity="0.07"/>
+            <circle cx="198" cy="47" r="13" fill="rgba(255,255,255,0.2)"/>
+            <text x="198" y="52" text-anchor="middle" font-size="14" font-weight="900" fill="#fff">2</text>
+            <text x="237" y="62" text-anchor="middle" font-size="19" font-weight="900" fill="#fff" letter-spacing="1">PLAN</text>
+            <text x="237" y="79" text-anchor="middle" font-size="11" font-weight="700" fill="rgba(255,255,255,0.78)">Draw &amp; label</text>
+            <text x="237" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="rgba(255,255,255,0.78)">your design</text>
+            <!-- Arrow 2→3 -->
+            <line x1="303" y1="68" x2="316" y2="68" stroke="#52B788" stroke-width="2.5" marker-end="url(#arrowR)"/>
+            <!-- Box 3 — BUILD -->
+            <rect x="319" y="24" width="124" height="88" rx="14" fill="#E65100" filter="url(#boxShadow)"/>
+            <rect x="319" y="24" width="124" height="88" rx="14" fill="white" fill-opacity="0.07"/>
+            <circle cx="342" cy="47" r="13" fill="rgba(255,255,255,0.2)"/>
+            <text x="342" y="52" text-anchor="middle" font-size="14" font-weight="900" fill="#fff">3</text>
+            <text x="381" y="62" text-anchor="middle" font-size="19" font-weight="900" fill="#fff" letter-spacing="1">BUILD</text>
+            <text x="381" y="79" text-anchor="middle" font-size="11" font-weight="700" fill="rgba(255,255,255,0.78)">Make your</text>
+            <text x="381" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="rgba(255,255,255,0.78)">prototype</text>
+            <!-- Arrow 3→4 -->
+            <line x1="447" y1="68" x2="460" y2="68" stroke="#52B788" stroke-width="2.5" marker-end="url(#arrowR)"/>
+            <!-- Box 4 — TEST -->
+            <rect x="463" y="24" width="124" height="88" rx="14" fill="#B71C1C" filter="url(#boxShadow)"/>
+            <rect x="463" y="24" width="124" height="88" rx="14" fill="white" fill-opacity="0.07"/>
+            <circle cx="486" cy="47" r="13" fill="rgba(255,255,255,0.2)"/>
+            <text x="486" y="52" text-anchor="middle" font-size="14" font-weight="900" fill="#fff">4</text>
+            <text x="525" y="62" text-anchor="middle" font-size="19" font-weight="900" fill="#fff" letter-spacing="1">TEST</text>
+            <text x="525" y="79" text-anchor="middle" font-size="11" font-weight="700" fill="rgba(255,255,255,0.78)">Collect</text>
+            <text x="525" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="rgba(255,255,255,0.78)">data</text>
+            <!-- Arrow 4→5 -->
+            <line x1="591" y1="68" x2="604" y2="68" stroke="#52B788" stroke-width="2.5" marker-end="url(#arrowR)"/>
+            <!-- Box 5 — IMPROVE -->
+            <rect x="607" y="24" width="124" height="88" rx="14" fill="#5E35B1" filter="url(#boxShadow)"/>
+            <rect x="607" y="24" width="124" height="88" rx="14" fill="white" fill-opacity="0.07"/>
+            <circle cx="630" cy="47" r="13" fill="rgba(255,255,255,0.2)"/>
+            <text x="630" y="52" text-anchor="middle" font-size="14" font-weight="900" fill="#fff">5</text>
+            <text x="669" y="62" text-anchor="middle" font-size="16" font-weight="900" fill="#fff" letter-spacing="0.5">IMPROVE</text>
+            <text x="669" y="79" text-anchor="middle" font-size="11" font-weight="700" fill="rgba(255,255,255,0.78)">Redesign</text>
+            <text x="669" y="92" text-anchor="middle" font-size="11" font-weight="700" fill="rgba(255,255,255,0.78)">&amp; repeat</text>
+            <!-- Return arrow: box 5 bottom → curves under → box 1 bottom -->
+            <path d="M669,112 L669,152 Q669,165 656,165 L106,165 Q93,165 93,152 L93,112"
+                  fill="none" stroke="#B8B0A8" stroke-width="2" stroke-dasharray="5 4"
+                  marker-end="url(#arrowU)"/>
+            <text x="381" y="185" text-anchor="middle" font-size="11" font-weight="600" fill="#9A8E82" letter-spacing="0.3">repeat the cycle — each round improves your design</text>
+            <!-- Hotspot rects (invisible, cover each box) -->
+            <rect class="hotspot" x="31" y="24" width="124" height="88" rx="14" fill="#2E7D32"
+                  data-part="step-ask"
+                  data-info="Ask: Define the problem. What does your tool need to do? What materials can you use? What counts as success? Writing this down first keeps your design focused."/>
+            <rect class="hotspot" x="175" y="24" width="124" height="88" rx="14" fill="#0277BD"
+                  data-part="step-plan"
+                  data-info="Plan: Draw and label your tool before you build anything. Where does the magnet go? How will you hold it? A good sketch saves time and helps you spot problems early."/>
+            <rect class="hotspot" x="319" y="24" width="124" height="88" rx="14" fill="#E65100"
+                  data-part="step-build"
+                  data-info="Build: Assemble your prototype as close to your drawing as you can. This is where your idea becomes a real object you can actually test."/>
+            <rect class="hotspot" x="463" y="24" width="124" height="88" rx="14" fill="#B71C1C"
+                  data-part="step-test"
+                  data-info="Test: Lower your tool over the pile of paper clips and washers. Count carefully and record the exact numbers — how many of each you picked up. Data tells you what's working and what isn't."/>
+            <rect class="hotspot" x="607" y="24" width="124" height="88" rx="14" fill="#5E35B1"
+                  data-part="step-improve"
+                  data-info="Improve: Look at your data and pick one thing to change — try a stronger magnet, shorter string, or extra tape. Then test again. Real engineers repeat this cycle many times before settling on a final design."/>
+          </svg>
+
+          <div class="diagram-info-panel" id="diagramPanel">
+            <span class="dip-word" id="diagramWord"></span>
+            <span id="diagramInfo"></span>
+          </div>
+        </div>
+        <div class="diagram-tap-hint">Tap any step in the cycle to learn about it.</div>
+        <div class="diagram-caption">The Engineering Design Cycle — five steps that repeat until your solution works well.</div>
+      </div>
+
+      <div class="key-concept scroll-reveal">
+        <div class="kc-label">⭐ Key Concept</div>
+        <p><strong>Magnetic force acts at a distance.</strong> A magnet can pull on certain metal objects without touching them. Engineers use this property to design tools that pick up, sort, or hold metal objects.</p>
+        <p>Testing a prototype and collecting data is how engineers decide what to improve. One small change at a time gives you clear evidence of what's working.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Amazing Engineering Fact</div>
+      <div class="mind-blow-text">Scrapyard cranes use <strong>electromagnets powerful enough to lift entire cars</strong>. When the power switches off, the metal just drops. Engineers use the same magnetic-force idea you're exploring today — just at a much bigger scale.</div>
+    </div>
+  </div>
+
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper</summary>
+    <div class="gd-body">
+      <p><strong>What makes some magnets stronger than others?</strong> It comes down to the material. Neodymium magnets (made from a rare metal) are the strongest permanent magnets you can hold in your hand — a small one can lift 10 times its own weight. The disc-shaped magnet in a craft-store pack is much weaker.</p>
+      <p>Distance also changes magnetic force dramatically. Move a magnet twice as far away from an object and the force doesn't just halve — it drops much more sharply. That's why shortening the string on your rescue tool makes such a noticeable difference in how many clips it can grab.</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+</div><!-- /tab-lesson -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 3: EXPLORE — Engineering Challenge (MAIN EVENT)       -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🏗️</span>
+      <div>
+        <div class="video-wrap-type">Activity 3 · Engineering Challenge</div>
+        <div class="video-wrap-title">Let's Build the Magnetic Rescue Tool</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🏗️</div>
+        <div class="video-placeholder-text">Exploration video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 7-2-exploration-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Activity 3: Engineering Challenge -->
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#2E7D32;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🧲 Engineering Challenge: Magnetic Rescue Tool</div>
+        <div class="act-subtitle">Design, build, test, and improve a magnetic tool.</div>
+      </div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 25 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="callout callout-tip" style="margin-bottom:18px;">
+        <span class="callout-icon">🎒</span>
+        <p><strong>Materials available:</strong> 1–2 magnets · 2 craft sticks · string · tape · small cardboard pieces · paper clips and metal washers for testing</p>
+      </div>
+
+      <p>Work through each step below. Follow the engineering design cycle — and remember, your first version doesn't have to be perfect. That's what testing is for.</p>
+
+      <div style="position:relative; margin:16px 0;">
+
+        <!-- Step 1: Define -->
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">1</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Define the Problem:</strong> Write in your notebook — what does your tool need to do? What counts as success? Try writing one sentence that starts: <em>"My tool should be able to…"</em></p>
+          </div>
+        </div>
+
+        <!-- Step 2: Plan -->
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2D6A4F,#52B788);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(45,106,79,0.3);">2</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Plan Your Design:</strong> Draw your tool and label the parts. Mark where the magnet goes, how the string is attached, and how you'll hold it. Use the available materials — don't build yet.</p>
+          </div>
+        </div>
+
+        <!-- Step 3: Build -->
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#52B788,#F9A825);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(82,183,136,0.3);">3</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Build Your Prototype:</strong> Assemble your tool as close to your plan as you can. Tape securely — the magnet needs to hang freely at the end, not be pressed against the stick.</p>
+          </div>
+        </div>
+
+        <!-- Step 4: Test -->
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F9A825,#FDD835);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(249,168,37,0.3);">4</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Test Your Tool:</strong> Lower the magnet over a pile of paper clips and washers. Count exactly how many of each you picked up. Write the numbers in your data table under "Trial 1." Be specific — "3 paper clips, 2 washers" is better than "a few."</p>
+          </div>
+        </div>
+
+        <!-- Step 5: Redesign -->
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#c0392b,#e74c3c);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(192,57,43,0.3);">5</div>
+          <div style="flex:1;background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Redesign:</strong> Look at your Trial 1 data. What's one thing you could change to pick up more objects? Make that single change and record it in your "design changes" column. Then test again and record Trial 2.</p>
+          </div>
+        </div>
+
+        <!-- Step 6: Third trial -->
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#7B5EA7,#9C6BC0);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(123,94,167,0.3);">6</div>
+          <div style="flex:1;background:#F0EDF6;border:2px solid #D8D0E8;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>One More Improvement:</strong> Make a second design change for Trial 3. After all three trials, circle your best result. What made it work better than the others?</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🌲</span>
+        <div>
+          <div class="label">Think Like an Engineer</div>
+          <div class="question">"When you made a change to your design, what did your data actually show? Did the result go up, down, or stay the same — and what does that tell you about what matters?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Record Your Thinking -->
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#2E7D32;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">📓 Record Your Thinking</div>
+        <div class="act-subtitle">Organize your data and explain what you found.</div>
+      </div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>A data table makes it easy to spot patterns. In your notebook, set up a table with three columns: <strong>Trial</strong> | <strong>Objects Collected</strong> | <strong>Design Change</strong>. Fill it in for all three rounds.</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">1</span>
+        <span class="pq-text">Which trial collected the most objects? What was different about that design?</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">2</span>
+        <span class="pq-text">What pattern do you notice across your three trials? Did results generally get better, worse, or stay about the same?</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">3</span>
+        <span class="pq-text">Draw and label your best prototype design. Label at least 4 parts: the handle, the attachment point, the string, and the magnet.</span>
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">🗣</span>
+        <p>Tell the story of your engineering challenge — what you built first, what you changed, and what the data showed you. Use the numbers from your table to explain your thinking.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Think It Through -->
+  <div class="card theme-meadow scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">💬</div>
+      <div>
+        <div class="card-head-label">Discussion</div>
+        <div class="card-head-title">Think It Through</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Think through each question on your own. Write your answers in your notebook before moving on.</p>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Question 1</div>
+          <div class="question">"Which design change made the biggest difference in your results — and why do you think that is?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">💡</span>
+        <div>
+          <div class="label">Question 2</div>
+          <div class="question">"How did counting and recording your results help you decide what to change? What would have been harder without the data?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🌲</span>
+        <div>
+          <div class="label">Question 3 — Connect to the World</div>
+          <div class="question">"Think of one real-world job where a magnetic tool like this could be useful. What problem would it solve?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🔁</span>
+        <div>
+          <div class="label">Question 4 — Keep Going</div>
+          <div class="question">"If you had a fourth trial, what change would you try? What evidence from your data makes you think that would help?"</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+</div><!-- /tab-explore -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 4: SELF-CHECK QUIZ                                    -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">🧠</div>
+      <div>
+        <div class="card-head-label">Self-Check</div>
+        <div class="card-head-title">⚡ Check Your Understanding</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Answer all three questions. Select the best answer for each one, then check your score at the bottom.</p>
+
+      <!-- Q1 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-stem">1. You hold a magnet near a pile of paper clips. The clips jump toward the magnet without being touched. What is causing this?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><div class="opt-letter">A</div> Gravity pulling the clips upward</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><div class="opt-letter">B</div> Magnetic force acting at a distance</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><div class="opt-letter">C</div> Friction between the clips and the table</div>
+        </div>
+        <div class="quiz-feedback fb-correct">⭐ Exactly right! Magnetic force works even when the magnet and the object aren't touching — that's what makes it so useful for engineering tools.</div>
+        <div class="quiz-feedback fb-wrong">Think about what you know about magnets. Do the magnet and the paper clip need to be touching for the clip to move?</div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-stem">2. You test your magnetic rescue tool and it only picks up 2 paper clips. What should you do next?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><div class="opt-letter">A</div> Start over with a completely new design from scratch</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><div class="opt-letter">B</div> Keep testing with the same design — never change anything</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><div class="opt-letter">C</div> Make one change, test again, and compare the results</div>
+        </div>
+        <div class="quiz-feedback fb-correct">⭐ That's the engineering way! Changing one thing at a time gives you clear evidence of what's actually making the difference.</div>
+        <div class="quiz-feedback fb-wrong">Engineers don't scrap everything or refuse to change anything. They test, look at the data, and make small, thoughtful improvements.</div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-stem">3. A student keeps a data table recording how many objects her tool picks up in each trial. Why is recording data important?</div>
+        <div class="quiz-opts">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><div class="opt-letter">A</div> It shows which design changes actually made a difference</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><div class="opt-letter">B</div> It makes the project take longer so you learn more</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><div class="opt-letter">C</div> It is just a rule — it doesn't really help the design</div>
+        </div>
+        <div class="quiz-feedback fb-correct">⭐ Yes! Without data, you're just guessing. With numbers from each trial, you can see exactly which change improved the result — and which didn't.</div>
+        <div class="quiz-feedback fb-wrong">Data isn't just a rule. Think about how it helped you during the challenge today. What would have been harder without the numbers?</div>
+      </div>
+
+      <!-- Score Display -->
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum">0</div>
+        <div class="quiz-score-label">out of 3</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+
+        <div class="video-feedback" id="quizVideoCorrect" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">✅</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Perfect Score</div>
+                <div class="video-wrap-title">Amazing engineering thinking — 3 out of 3!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">⭐</div>
+                <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 7-2-quiz-perfect --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">📚</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Keep Going</div>
+                <div class="video-wrap-title">Good effort — let's review the key ideas!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">💪</div>
+                <div class="video-placeholder-text">Review and encouragement video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 7-2-quiz-review --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+</div><!-- /tab-quiz -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 5: ASSIGNMENT                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">✍️</span>
+      <div>
+        <div class="video-wrap-type">Activity 5 · Assignment</div>
+        <div class="video-wrap-title">Show What You Built and Learned</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">✍️</div>
+        <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 7-2-assignment-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
+    <div class="act-head">
+      <div class="act-num" style="background:#7B5EA7;">5</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment</div>
+        <div class="act-subtitle">Show what you built, tested, and learned.</div>
+      </div>
+      <div class="act-time" style="background:#7B5EA7;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- Part A -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔍 Part A — Sort the Materials</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Look at the list below. Write each item in the correct column in your notebook: <strong>Magnetic</strong> or <strong>Not Magnetic</strong>.</p>
+
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">Paper clip — Magnetic or Not Magnetic?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">Aluminum foil — Magnetic or Not Magnetic?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">Steel washer — Magnetic or Not Magnetic?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">4</span><span class="pq-text">Plastic bottle cap — Magnetic or Not Magnetic?</span></div>
+
+      <!-- Part B -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🚀 Part B — Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer each question in <strong>complete sentences</strong>. Use your science vocabulary!</p>
+
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">5</span><span class="pq-text">Explain how magnetic force made your rescue tool work. Why didn't the magnet need to touch the paper clips to pick them up?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">6</span><span class="pq-text">Describe one change you made between trials. What did your data show after that change? Did it help?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">7</span><span class="pq-text">Why is it important to change only one thing at a time when you redesign and test again?</span></div>
+
+      <!-- Write & Explain -->
+      <div class="key-concept scroll-reveal" style="background:#FFF9E8;border-color:#F0E4C0;margin-top:20px;">
+        <div class="kc-label" style="color:#F9A825;">✍️ Write and Explain</div>
+        <p style="font-size:16px;font-weight:700;color:#1B4332;margin-bottom:14px;">Your magnetic rescue tool changed between Trial 1 and your best trial. What did you observe happening, and what does that tell you about how magnetic force and design choices work together?</p>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What did you observe?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"When I tested my tool, I noticed that…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What does that tell you?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This shows me that magnetic force…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">Why does that make sense?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because engineers…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="background:#EEF8F0;border-radius:10px;padding:10px 14px;border-left:3px solid #52B788;">
+          <p style="margin:0;font-size:14px;color:#1B4332;">📚 Try to use at least one of these words: <strong>magnetic force</strong>, <strong>prototype</strong>, <strong>redesign</strong>, <strong>criteria</strong></p>
+        </div>
+      </div>
+
+      <!-- Part C -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Label</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Draw your <strong>best prototype design</strong>. Label at least 5 parts: the handle, the magnet, the string or connector, the attachment point, and one thing you changed from your first design. Add a small arrow showing where the magnetic force is acting.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Reflect</div>
+          <div class="question">"Look back at your Notice &amp; Wonder question from the start. Now that you've built and tested the tool yourself — can you answer it? What changed in your thinking?"</div>
+        </div>
+      </div>
+
+      <!-- What to Turn In -->
+      <div class="turn-in-block">
+        <div class="turn-in-header">
+          <div class="turn-in-header-icon">📋</div>
+          <div>
+            <div class="turn-in-header-label">Canvas Submission</div>
+            <div class="turn-in-header-title">What to Turn In</div>
+          </div>
+        </div>
+        <div class="turn-in-body">
+          <p class="turn-in-intro">Submit your work on Canvas using <strong>one of these options:</strong></p>
+          <div class="turn-in-options">
+            <div class="turn-in-option turn-in-option-type">
+              <div class="turn-in-option-icon">⌨️</div>
+              <div class="turn-in-option-title">Type It</div>
+              <div class="turn-in-option-text">Type your answers directly into the Canvas assignment.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-photo">
+              <div class="turn-in-option-icon">📸</div>
+              <div class="turn-in-option-title">Photo It</div>
+              <div class="turn-in-option-text">Take a clear photo of your handwritten work and upload it.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-video">
+              <div class="turn-in-option-icon">🎥</div>
+              <div class="turn-in-option-title">Record It</div>
+              <div class="turn-in-option-text">Record a short video showing your tool and explaining what you learned.</div>
+            </div>
+          </div>
+          <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
+          <div class="turn-in-checklist">
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Notice &amp; Wonder observations and question from the Vocabulary page.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My data table showing all three trials — objects collected and design changes for each.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My answers to Part A (sorting magnetic vs. not magnetic) and Part B (short answer questions 5–7).</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Write &amp; Explain response, written in complete sentences using lesson vocabulary.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Part C drawing of my best prototype with at least 5 labeled parts and a force arrow.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Closing Video -->
+      <div class="video-wrap" style="margin-top:24px;">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">👋</span>
+          <div>
+            <div class="video-wrap-type">Closing · Wrap-Up</div>
+            <div class="video-wrap-title">Great work, engineer! In Lesson 8.01 we start exploring life cycles.</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">👋</div>
+            <div class="video-placeholder-text">Closing video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 7-2-closing --></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div><!-- /tab-assignment -->
+
+</div><!-- /page-wrap -->
+
+<!-- ── Back to Top ── -->
+<button class="back-to-top" id="backToTop" type="button">🧲 Back to Top</button>
+
+<script>
+const LESSON_EMOJI = '🧲';
+
+// ── Tab switching ──
+var tabProgress = {};
+function switchTab(id) {
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  var btn = document.querySelector('[data-tab="' + id + '"]');
+  var panel = document.getElementById('tab-' + id);
+  if (btn) btn.classList.add('active', 'visited');
+  if (panel) panel.classList.add('active');
+  tabProgress[id] = true;
+  var visited = Object.keys(tabProgress).length;
+  var pct = Math.round((visited / 5) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+}
+
+// ── Checklist toggles ──
+function toggleCheck(el) {
+  el.classList.toggle('checked');
+  var icon = el.querySelector('.turn-in-check');
+  if (el.classList.contains('checked')) {
+    icon.textContent = LESSON_EMOJI;
+    icon.style.fontSize = '13px';
+    icon.style.background = '#2E7D32';
+    icon.style.border = '2.5px solid #2E7D32';
+  } else {
+    icon.textContent = '';
+    icon.style.fontSize = '';
+    icon.style.background = '#fff';
+    icon.style.border = '2.5px solid #C4E5CC';
+  }
+}
+
+// ── Interactive Diagram ──
+(function() {
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel    = document.getElementById('diagramPanel');
+  var word     = document.getElementById('diagramWord');
+  var info     = document.getElementById('diagramInfo');
+  if (!panel) return;
+  hotspots.forEach(function(h) {
+    h.addEventListener('click', function(e) {
+      e.stopPropagation();
+      hotspots.forEach(function(x){ x.classList.remove('active'); });
+      h.classList.add('active');
+      var labels = { 'step-ask':'Step 1 — Ask', 'step-plan':'Step 2 — Plan', 'step-build':'Step 3 — Build', 'step-test':'Step 4 — Test', 'step-improve':'Step 5 — Improve' };
+      word.textContent = labels[h.getAttribute('data-part')] || h.getAttribute('data-part');
+      info.textContent = h.getAttribute('data-info');
+      panel.classList.add('visible');
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+    }
+  });
+})();
+
+// ── Self-Check Quiz ──
+var quizAnswered = 0;
+var quizCorrect  = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen  = optEl.getAttribute('data-val');
+  q.querySelectorAll('.quiz-opt').forEach(function(o){
+    if (o.getAttribute('data-val') === correct) { o.classList.add('correct'); }
+    else { o.classList.add('disabled'); }
+  });
+  var fbCorrect = q.querySelector('.fb-correct');
+  var fbWrong   = q.querySelector('.fb-wrong');
+  if (chosen === correct) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+  if (quizAnswered === 3) {
+    var scoreBox = document.getElementById('quizScore');
+    var scoreNum = document.getElementById('quizScoreNum');
+    var scoreMsg = document.getElementById('quizScoreMsg');
+    var vCorrect = document.getElementById('quizVideoCorrect');
+    var vReview  = document.getElementById('quizVideoReview');
+    scoreNum.textContent = quizCorrect;
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '⭐ Perfect! You got every question right!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌿 Great job! Almost there!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip) {
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function() {
+    var rect = tip.getBoundingClientRect();
+    var bw   = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Back to Top ──
+(function() {
+  var btn = document.getElementById('backToTop');
+  if (!btn) return;
+  var inIframe = (function(){
+    try { return window.self !== window.top; } catch (e) { return true; }
+  })();
+  btn.addEventListener('click', function() {
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    var top = document.getElementById('pageTop');
+    if (top && top.scrollIntoView) {
+      try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+    }
+    try {
+      if (window.frameElement && window.frameElement.scrollIntoView) {
+        window.frameElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (e) {}
+    if (inIframe) {
+      try { window.parent.postMessage({ type: 'optima-lesson:scroll-to-top' }, '*'); } catch (e) {}
+    }
+  });
+  if (inIframe) {
+    setTimeout(function() { btn.classList.add('show'); }, 1500);
+  } else {
+    window.addEventListener('scroll', function() {
+      btn.classList.toggle('show', window.pageYOffset > 400);
+    });
+  }
+})();
+
+// ── Confetti ──
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx    = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#52B788','#F9A825','#FDD835','#4DD0E1','#2E7D32','#7B5EA7','#FF8F00','#0288D1'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── Collapsible Intro Cards ──
+var introCards = document.querySelectorAll('.intro-2col .card');
+introCards.forEach(function(card){
+  var head = card.querySelector('.card-head');
+  if (!head) return;
+  head.addEventListener('click', function(){
+    var willCollapse = !card.classList.contains('collapsed');
+    introCards.forEach(function(c){
+      c.classList.toggle('collapsed', willCollapse);
+    });
+  });
+});
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+tabProgress['vocab'] = true;
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+</script>
+</body>
+</html>
