@@ -1,0 +1,2327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- ✏️ CUSTOMIZE: Update title to match the lesson -->
+<title>Optima Academy Online – Investigation: Survival Traits Challenge</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+  background: #F2F0E8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #2B1D12;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap { max-width: 920px; margin: 0 auto; background: #FAF8F4; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%);
+  border-bottom: 6px solid #52B788;
+  padding: 22px 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 6px; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #52B788, #95D5B2, #52B788);
+}
+.header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.header-logo {
+  width: 52px; height: 52px; border-radius: 50%; background: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title {
+  font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+  text-shadow: 0 2px 12px rgba(82,183,136,0.3);
+}
+.header-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(82,183,136,0.15); border: 1.5px solid rgba(82,183,136,0.35);
+  border-radius: 28px; padding: 6px 16px;
+}
+.header-badge span:first-child { font-size: 22px; }
+.header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ── Hero Visual ── */
+.hero-visual {
+  background: linear-gradient(180deg, #87CEEB 0%, #C8E6F7 50%, #D4E8B4 100%);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #52B788;
+}
+.hero-visual svg { display: block; width: 100%; height: auto; }
+
+/* ── Hero Animations ───────────────────────────────────────────────────── */
+/* Magnitudes are tuned to be SUBTLE BUT VISIBLE. A movement under ~15px on  */
+/* a 920px-wide banner reads as static — don't shrink these values further.  */
+
+/* Slow horizontal drift for clouds, fog, distant objects */
+@keyframes cloud-drift-1 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(40px); }
+}
+@keyframes cloud-drift-2 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-32px); }
+}
+/* Sun / glow pulse — opacity + scale for breathable feel */
+@keyframes sun-pulse {
+  0%, 100% { opacity: 0.65; transform: scale(1); }
+  50%       { opacity: 1;    transform: scale(1.12); }
+}
+/* Birds / floating objects — vertical bob with slight horizontal drift */
+@keyframes bird-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(6px, -8px); }
+}
+/* Generic float — for notebooks, leaves, bubbles, anything bobbing */
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+/* Twinkle — for stars, sparks, tiny glints */
+@keyframes hero-twinkle {
+  0%, 100% { opacity: 0.4; transform: scale(0.85); }
+  50%       { opacity: 1;   transform: scale(1.15); }
+}
+/* Shimmer — for water surface lines, light rays, heat haze */
+@keyframes hero-shimmer {
+  0%, 100% { opacity: 0.25; }
+  50%       { opacity: 0.7; }
+}
+/* Slow spin — for gears, planets, fan blades, wheels */
+@keyframes hero-spin-slow {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* Sway — for grass, trees, plant stems */
+@keyframes hero-sway {
+  0%, 100% { transform: rotate(-2.5deg); }
+  50%       { transform: rotate(2.5deg); }
+}
+
+.hero-cloud-1   { animation: cloud-drift-1 9s ease-in-out infinite alternate; }
+.hero-cloud-2   { animation: cloud-drift-2 13s ease-in-out infinite alternate; }
+.hero-sun-glow  { animation: sun-pulse 4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-birds     { animation: bird-drift 5s ease-in-out infinite; }
+.hero-float     { animation: hero-float 3.5s ease-in-out infinite; }
+.hero-twinkle   { animation: hero-twinkle 2.2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-twinkle-2 { animation: hero-twinkle 3.1s ease-in-out infinite 0.5s; transform-origin: center; transform-box: fill-box; }
+.hero-twinkle-3 { animation: hero-twinkle 2.7s ease-in-out infinite 1.1s; transform-origin: center; transform-box: fill-box; }
+.hero-shimmer   { animation: hero-shimmer 3s ease-in-out infinite; }
+.hero-spin-slow { animation: hero-spin-slow 18s linear infinite; transform-origin: center; transform-box: fill-box; }
+.hero-sway      { animation: hero-sway 4s ease-in-out infinite; transform-origin: bottom center; transform-box: fill-box; }
+
+/* ── Nature Diagram Animations ── */
+@keyframes mind-blow-bounce {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.12); }
+}
+
+/* ── Info Strip ── */
+.info-strip {
+  display: flex; flex-wrap: wrap; background: #fff;
+  border-bottom: 2px solid #E8DDD2;
+}
+.info-item {
+  flex: 1; min-width: 150px; padding: 12px 16px;
+  border-right: 1px solid #E8DDD2;
+  display: flex; align-items: center; gap: 10px;
+}
+.info-item:last-child { border-right: none; }
+.info-icon {
+  width: 40px; height: 40px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.info-value { font-size: 16px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+/* ── Content Area ── */
+.content { padding: 24px 28px 36px; }
+
+/* ── Card System ── */
+.card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 22px; overflow: hidden;
+  box-shadow: 0 2px 12px rgba(27,67,50,0.04);
+}
+.card-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 20px; border-bottom: 2px solid;
+}
+.card-head-icon {
+  width: 42px; height: 42px; border-radius: 50%; color: #fff;
+  font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.card-head-title { font-size: 20px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.card-body { padding: 18px 22px; }
+.card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+.card-body p:last-child { margin-bottom: 0; }
+
+/* ── Card Color Themes ── */
+.theme-earth  .card-head { background: #FFF0E8; border-color: #E8D0B8; }
+.theme-earth  .card-head-icon { background: #A0522D; }
+.theme-sun    .card-head { background: #FFF9E8; border-color: #F0E4C0; }
+.theme-sun    .card-head-icon { background: #F9A825; }
+.theme-sky    .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-sky    .card-head-icon { background: #0288D1; }
+.theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+.theme-forest .card-head-icon { background: #2E7D32; }
+.theme-rock   .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+.theme-rock   .card-head-icon { background: #7B5EA7; }
+.theme-meadow .card-head { background: #F0F8E8; border-color: #C8E0B8; }
+.theme-meadow .card-head-icon { background: #558B2F; }
+
+/* ── Activity Cards ── */
+.activity-card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 18px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.activity-card.act-warmup  { border-left: 6px solid #52B788; }
+.activity-card.act-lesson  { border-left: 6px solid #F9A825; }
+.activity-card.act-explore { border-left: 6px solid #0288D1; }
+.activity-card.act-practice{ border-left: 6px solid #2E7D32; }
+.activity-card.act-check   { border-left: 6px solid #7B5EA7; }
+
+.act-head {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px 14px 18px;
+  border-bottom: 1.5px solid #E8DDD2;
+}
+.act-num {
+  width: 38px; height: 38px; border-radius: 14px; color: #fff;
+  font-size: 18px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.act-title { font-size: 19px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.act-subtitle { font-size: 12px; color: #9A8E82; }
+.act-time {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap;
+  margin-left: auto; flex-shrink: 0;
+}
+.act-body { padding: 18px 22px 18px 20px; }
+.act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+/* ── Callout Boxes ── */
+.callout {
+  border-radius: 14px; padding: 16px 18px;
+  display: flex; align-items: flex-start; gap: 12px;
+  margin-bottom: 14px;
+}
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+.callout-earth  { background: #FFF0E8; border: 2px solid #E8D0B8; }
+.callout-think  { background: #FFF9E8; border: 2px solid #F0E4C0; }
+.callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+.callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+.callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+
+/* ── Socratic Questions ── */
+.socratic-q {
+  background: linear-gradient(135deg, #EEF8F0, #E8F5E9);
+  border: 2px solid #A8D5B8;
+  border-radius: 16px; padding: 16px 20px;
+  margin: 16px 0;
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.socratic-q .label {
+  font-size: 11px; color: #2D6A4F; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px;
+}
+.socratic-q .question {
+  font-size: 17px; color: #2B1D12; font-weight: 700;
+  line-height: 1.6; font-style: italic;
+}
+
+/* ── Diagram Containers ── */
+.diagram-wrap {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 16px; margin: 16px 0;
+  text-align: center;
+}
+.diagram-wrap svg { max-width: 100%; height: auto; }
+.diagram-caption {
+  font-size: 13px; color: #9A8E82; margin-top: 10px;
+  font-weight: 600; text-align: center;
+}
+
+/* ── Lesson Figure (uploaded images) ── */
+.lesson-figure {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 14px 14px 18px; margin: 0 0 22px;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.lesson-figure-label {
+  font-size: 11px; color: #2D6A4F;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  font-weight: 800; margin-bottom: 10px;
+}
+.lesson-figure img {
+  display: block; max-width: 100%; height: auto;
+  border-radius: 10px; margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.lesson-figure-caption {
+  font-size: 14px; color: #5A4D3E;
+  margin-top: 12px; line-height: 1.55; font-weight: 600;
+  text-align: center;
+}
+.lesson-figure-caption strong { color: #1B4332; }
+
+/* ── Key Concept Box ── */
+.key-concept {
+  background: #F0F8E8; border: 2px solid #C8E0B8;
+  border-radius: 14px; padding: 18px 20px; margin: 14px 0;
+}
+.key-concept .kc-label {
+  font-size: 13px; color: #558B2F; text-transform: uppercase;
+  letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px;
+}
+.key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+.key-concept p:last-child { margin-bottom: 0; }
+
+/* ── Practice Questions ── */
+.pq {
+  background: #FAFAF6; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 14px 18px; margin-bottom: 12px;
+}
+.pq-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  color: #fff; font-weight: 800; font-size: 14px;
+  margin-right: 8px; vertical-align: middle;
+}
+.pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+.pq-answer { font-size: 15px; color: #9A8E82; font-style: italic; }
+
+/* ── Vocab Flashcards ── */
+.vocab-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px; margin: 14px 0;
+}
+.flip-card { perspective: 800px; height: 195px; cursor: pointer; }
+.flip-card-inner {
+  position: relative; width: 100%; height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 14px 18px; text-align: center;
+  border: 2px solid #E8DDD2;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.06);
+}
+.flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+.flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+.flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #1B4332; margin-bottom: 6px; }
+.flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+.flip-card-back {
+  background: linear-gradient(145deg, #1B4332, #2D6A4F);
+  border-color: #1B4332;
+  transform: rotateY(180deg);
+}
+.flip-card-back .fc-def { font-size: 14.5px; color: #fff; line-height: 1.5; font-weight: 600; }
+.flip-card-back .fc-word-back {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 6px;
+}
+.flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 8px; font-weight: 600; }
+.fc-color-1 .flip-card-front { border-top-color: #52B788; }
+.fc-color-2 .flip-card-front { border-top-color: #2D6A4F; }
+.fc-color-3 .flip-card-front { border-top-color: #F9A825; }
+.fc-color-4 .flip-card-front { border-top-color: #0288D1; }
+.fc-color-5 .flip-card-front { border-top-color: #2E7D32; }
+.fc-color-6 .flip-card-front { border-top-color: #7B5EA7; }
+
+/* ── Vocab Tooltips ── */
+.vtip {
+  position: relative; color: #7B5EA7; font-weight: 700;
+  cursor: help; border-bottom: 2px dotted rgba(123,94,167,0.45);
+  transition: color 0.15s;
+}
+.vtip:hover { color: #5B3EA7; }
+.vtip .vtip-box {
+  position: fixed; background: #1B4332; color: #fff;
+  padding: 12px 16px; border-radius: 12px;
+  font-size: 14px; font-weight: 600; font-style: normal;
+  line-height: 1.55; width: 250px; text-align: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  pointer-events: none; z-index: 9999;
+  box-shadow: 0 6px 24px rgba(27,67,50,0.35);
+  border: 1.5px solid rgba(149,213,178,0.3);
+  transform: translateY(6px);
+}
+.vtip .vtip-box::after {
+  content: ''; position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent; border-top-color: #1B4332;
+}
+.vtip .vtip-word {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block;
+}
+.vtip:hover .vtip-box { opacity: 1; visibility: visible; transform: translateY(0); }
+
+/* ── Reveal / Details ── */
+details {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-left: 5px solid #7B5EA7;
+  border-radius: 14px; margin-bottom: 12px; overflow: hidden;
+}
+details summary {
+  padding: 12px 18px; font-size: 16px; font-weight: 700;
+  color: #1B4332; cursor: pointer;
+}
+details summary:hover { background: #FAFAF6; }
+details > div { padding: 12px 18px 14px; font-size: 16px; color: #5A4D3E; line-height: 1.65; border-top: 1.5px solid #E8DDD2; }
+
+/* ── Activities Header ── */
+.activities-header { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.activities-header-icon {
+  width: 44px; height: 44px; border-radius: 50%; background: #1B4332;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0;
+}
+.activities-header-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.activities-header-title { font-size: 22px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.activities-header-time { font-size: 14px; color: #9A8E82; font-weight: 600; }
+
+/* ── Need Item ── */
+.need-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 14px; margin-bottom: 8px; }
+.need-item span:first-child { font-size: 24px; flex-shrink: 0; }
+.need-item span:last-child { font-size: 17px; color: #1B4332; font-weight: 600; }
+
+/* ── Footer ── */
+.footer {
+  background: #1B4332; border-top: 4px solid #52B788;
+  padding: 18px 28px; text-align: center;
+}
+.footer-line1 { font-size: 15px; color: #fff; margin-bottom: 4px; }
+.footer-line1 span { color: #95D5B2; font-weight: 700; }
+.footer-line2 { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+.footer-line3 { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+/* ── Mind-Blowing Fact ── */
+.mind-blow {
+  background: linear-gradient(135deg, #1a3a28, #1B4332);
+  border: 2px solid rgba(149,213,178,0.3);
+  border-radius: 18px; padding: 18px 22px;
+  margin: 18px 0; display: flex;
+  align-items: flex-start; gap: 14px;
+  position: relative; overflow: hidden;
+}
+.mind-blow::before {
+  content: ''; position: absolute; top: -30px; right: -30px;
+  width: 100px; height: 100px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(82,183,136,0.15), transparent);
+}
+.mind-blow-icon {
+  font-size: 36px; flex-shrink: 0;
+  animation: mind-blow-bounce 2s ease-in-out infinite;
+}
+.mind-blow-content { flex: 1; }
+.mind-blow-label {
+  font-size: 11px; color: #FDD835; text-transform: uppercase;
+  letter-spacing: 1.5px; font-weight: 800; margin-bottom: 4px;
+}
+.mind-blow-text { font-size: 16px; color: #fff; line-height: 1.6; font-weight: 600; }
+.mind-blow-text strong { color: #95D5B2; }
+
+/* ── Clickable Diagram ── */
+.diagram-interactive { position: relative; }
+.diagram-interactive .hotspot {
+  cursor: pointer; opacity: 0; transition: opacity 0.2s;
+}
+.diagram-interactive .hotspot:hover { opacity: 0.2; }
+.diagram-interactive .hotspot.active { opacity: 0.28; }
+.diagram-info-panel {
+  background: #1B4332; color: #fff;
+  padding: 14px 20px; border-radius: 14px;
+  font-size: 15px; line-height: 1.55; font-weight: 600;
+  text-align: center;
+  border: 1.5px solid rgba(149,213,178,0.3);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  margin: 10px 0 0; display: none;
+}
+.diagram-info-panel.visible { display: block; }
+.diagram-info-panel .dip-word {
+  font-size: 11px; color: #FDD835; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; display: block; margin-bottom: 3px;
+}
+.diagram-tap-hint {
+  text-align: center; font-size: 13px; color: #9A8E82;
+  font-weight: 600; margin-top: 8px;
+}
+
+/* ── Self-Check Quiz ── */
+.quiz-card {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-left: 6px solid #F9A825;
+  border-radius: 18px; margin-bottom: 18px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.quiz-q {
+  background: #FAFAF6; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 16px 18px; margin-bottom: 14px;
+}
+.quiz-q-text { font-size: 17px; color: #2B1D12; font-weight: 700; line-height: 1.6; margin-bottom: 12px; }
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt {
+  padding: 10px 16px; border-radius: 12px;
+  border: 2px solid #E8DDD2; background: #fff;
+  font-size: 15px; font-weight: 700; color: #2B1D12;
+  cursor: pointer; transition: all 0.2s;
+  display: flex; align-items: center; gap: 10px;
+  user-select: none;
+}
+.quiz-opt:hover { background: #EEF8F0; border-color: #52B788; }
+.quiz-opt.correct { background: #EEF8F0 !important; border-color: #2E7D32 !important; color: #1a6b35 !important; }
+.quiz-opt.wrong { background: #FFF0EC !important; border-color: #E8636B !important; color: #a33 !important; }
+.quiz-opt.disabled { pointer-events: none; opacity: 0.6; }
+.quiz-opt .opt-letter {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: #E8DDD2; color: #5A4D3E;
+  font-size: 14px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all 0.2s;
+}
+.quiz-opt.correct .opt-letter { background: #2E7D32; color: #fff; }
+.quiz-opt.wrong .opt-letter { background: #E8636B; color: #fff; }
+.quiz-feedback { font-size: 14px; padding: 10px 14px; border-radius: 10px; margin-top: 10px; display: none; font-weight: 600; line-height: 1.5; }
+.quiz-feedback.show { display: block; }
+.quiz-feedback.fb-correct { background: #EEF8F0; color: #1a6b35; border: 1.5px solid #B8E8CF; }
+.quiz-feedback.fb-wrong { background: #FFF0EC; color: #8a3030; border: 1.5px solid #F5C4BA; }
+.quiz-score {
+  text-align: center; padding: 16px; background: linear-gradient(135deg, #EEF8F0, #E8F5E9);
+  border: 2px solid #C4E5CC; border-radius: 14px; margin-top: 8px; display: none;
+}
+.quiz-score.show { display: block; }
+.quiz-score-num { font-size: 36px; font-weight: 900; color: #1B4332; }
+.quiz-score-label { font-size: 14px; color: #9A8E82; font-weight: 700; }
+.quiz-score-msg { font-size: 16px; color: #2B1D12; font-weight: 700; margin-top: 6px; }
+
+/* ── Go Deeper ── */
+.go-deeper {
+  background: linear-gradient(135deg, #F0EDF6, #E8E2F2);
+  border: 2px solid #D8D0E8; border-radius: 16px;
+  margin: 16px 0; overflow: hidden;
+}
+.go-deeper summary {
+  padding: 14px 18px; font-size: 16px; font-weight: 800;
+  color: #1B4332; cursor: pointer;
+  display: flex; align-items: center; gap: 10px;
+  list-style: none;
+}
+.go-deeper summary::-webkit-details-marker { display: none; }
+.go-deeper summary::before { content: '🔭'; font-size: 22px; }
+.go-deeper summary::after {
+  content: '▸'; margin-left: auto; font-size: 18px; color: #7B5EA7;
+  transition: transform 0.3s;
+}
+.go-deeper[open] summary::after { transform: rotate(90deg); }
+.go-deeper .gd-body {
+  padding: 4px 18px 16px; font-size: 15px;
+  color: #5A4D3E; line-height: 1.7;
+  border-top: 1.5px solid #D8D0E8;
+}
+.go-deeper .gd-body p { margin-bottom: 10px; }
+
+/* ── Scroll Animations ── */
+.scroll-reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── Back to Top ── */
+/* Fixed pill button at bottom right. The text is ALWAYS "↑ Top" — do not add
+   the lesson emoji here (it goes in the progress bar label and the LESSON_EMOJI
+   JS constant only). The arrow + word is universal and keeps the button tight. */
+.back-to-top {
+  position: fixed; bottom: 24px; right: 24px;
+  height: 38px; padding: 0 14px 0 12px; border-radius: 19px;
+  background: linear-gradient(135deg, #2D6A4F, #52B788);
+  color: #fff; border: none;
+  font-size: 13px; font-weight: 800;
+  font-family: 'Nunito', sans-serif; cursor: pointer;
+  box-shadow: 0 4px 14px rgba(45,106,79,0.35);
+  display: flex; align-items: center; gap: 5px;
+  opacity: 0; visibility: hidden; transform: translateY(20px);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.2s;
+  z-index: 500; letter-spacing: 0.2px; white-space: nowrap;
+}
+.back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { box-shadow: 0 6px 20px rgba(45,106,79,0.5); transform: translateY(-3px); }
+
+/* ── Confetti Canvas ── */
+#confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000; }
+
+/* ── Video Embed System ── */
+.video-wrap { border-radius: 18px; overflow: hidden; border: 2px solid #E8DDD2; box-shadow: 0 4px 20px rgba(27,67,50,0.08); background: #000; margin: 0 0 22px; }
+.video-wrap-header {
+  display: flex; align-items: center; gap: 12px; padding: 12px 18px;
+  background: linear-gradient(135deg, #1B4332, #2D6A4F);
+  border-bottom: 2px solid rgba(149,213,178,0.2);
+}
+.video-wrap-type { font-size: 10px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+.video-wrap-title { font-size: 16px; color: #fff; font-weight: 800; line-height: 1.2; }
+.video-ratio { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.video-ratio iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.video-placeholder {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, #1a3a28, #1B4332);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 24px;
+}
+.video-placeholder-icon { font-size: 44px; margin-bottom: 10px; opacity: 0.55; }
+.video-placeholder-text { font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 600; line-height: 1.5; font-family: 'Nunito', sans-serif; }
+.video-placeholder-id { font-size: 11px; color: rgba(149,213,178,0.4); font-family: monospace; margin-top: 6px; letter-spacing: 0.5px; }
+.video-feedback { display: none; }
+.video-feedback.show { display: block; }
+
+/* ── Collapsible Intro Cards ── */
+.intro-2col .card .card-head { cursor: pointer; user-select: none; position: relative; }
+.intro-2col .card .card-head::after {
+  content: '▾'; position: absolute; right: 16px; top: 50%;
+  transform: translateY(-50%); font-size: 16px; color: #9A8E82; transition: transform 0.25s ease;
+}
+.intro-2col .card.collapsed .card-head::after { transform: translateY(-50%) rotate(-90deg); }
+.intro-2col .card.collapsed .card-body { display: none; }
+
+/* ── Tab Bar ── */
+.tab-bar {
+  position: sticky; top: 44px; z-index: 100;
+  background: #FAF8F4; border-bottom: 3px solid #E8DDD2;
+  display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex: 1; min-width: 130px; padding: 12px 8px 11px;
+  background: transparent; border: none;
+  border-bottom: 4px solid transparent;
+  font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700;
+  color: #9A8E82; cursor: pointer; transition: all 0.2s;
+  white-space: nowrap; line-height: 1.3; text-align: center;
+}
+.tab-btn:hover { color: #1B4332; background: #EEF8F0; }
+.tab-btn.active { color: #1B4332; border-bottom-color: #2D6A4F; background: #fff; }
+.tab-btn .tab-check { display: none; font-size: 12px; color: #2E7D32; margin-left: 4px; font-weight: 800; }
+.tab-btn.visited .tab-check { display: inline; }
+
+/* ── Tab Panels ── */
+.tab-panel { display: none; padding: 24px 28px 36px; }
+.tab-panel.active { display: block; }
+.scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+/* ── Intro 2-col ── */
+.intro-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px 28px 0; }
+.intro-2col .card { margin-bottom: 0; }
+
+/* ── Need Strip ── */
+.need-strip { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 28px 16px; }
+.need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 700; white-space: nowrap; }
+.need-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: #EEF8F0; border: 1.5px solid #C4E5CC;
+  border-radius: 20px; padding: 5px 12px;
+  font-size: 13px; color: #1B4332; font-weight: 700;
+}
+
+/* ── Slim Mind-Blow ── */
+.mind-blow-slim {
+  background: linear-gradient(135deg, #1a3a28, #1B4332);
+  border: 2px solid rgba(149,213,178,0.3);
+  border-radius: 14px; padding: 12px 18px; margin: 0 0 18px;
+  display: flex; align-items: center; gap: 12px;
+}
+.mbs-icon { font-size: 26px; flex-shrink: 0; }
+.mbs-content { flex: 1; }
+.mbs-label { font-size: 10px; color: #FDD835; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+.mbs-text { font-size: 14px; color: #fff; line-height: 1.55; font-weight: 600; }
+.mbs-text strong { color: #95D5B2; }
+
+/* ── Tab Next Button ── */
+.tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+.tab-next-btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px;
+  background: linear-gradient(135deg, #2D6A4F, #52B788);
+  color: #fff; border: none; border-radius: 28px;
+  font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800;
+  cursor: pointer; box-shadow: 0 4px 16px rgba(45,106,79,0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(45,106,79,0.4); }
+
+/* ── Vocab 3-col ── */
+.vocab-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 14px 0; }
+.vocab-grid-3 .flip-card { height: 150px; }
+.vocab-grid-3 .fc-word { font-size: 16px; }
+.vocab-grid-3 .fc-def { font-size: 14px; }
+
+/* ── What to Turn In (Canvas Submission Block) ── */
+/* Use ONE of these per Assignment tab, near the bottom (after Part C, before
+   the closing video). Replaces the older inline-styled version. */
+.turn-in-block {
+  background: #fff;
+  border: 2.5px solid #0288D1;
+  border-radius: 18px;
+  margin-top: 22px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(2,136,209,0.1);
+}
+.turn-in-header {
+  display: flex; align-items: center; gap: 14px;
+  background: #E8F4FB;
+  padding: 18px 22px;
+  border-bottom: 2px solid #B3E5FC;
+}
+.turn-in-header-icon { font-size: 36px; line-height: 1; flex-shrink: 0; }
+.turn-in-header-label {
+  font-size: 11px; color: #0288D1; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 3px;
+}
+.turn-in-header-title {
+  font-size: 24px; color: #1B4332; font-weight: 900; line-height: 1.15;
+}
+.turn-in-body { padding: 22px 24px 24px; }
+.turn-in-intro {
+  font-size: 16px; color: #5A4D3E; margin-bottom: 18px; line-height: 1.55;
+}
+.turn-in-intro strong { color: #1B4332; }
+.turn-in-options {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px; margin-bottom: 26px;
+}
+.turn-in-option {
+  border-radius: 16px;
+  padding: 20px 14px;
+  text-align: center;
+  border: 2px solid;
+}
+.turn-in-option-type  { background: #EEF8F0; border-color: #C4E5CC; }
+.turn-in-option-photo { background: #FFF9E8; border-color: #F0E4C0; }
+.turn-in-option-video { background: #F0EDF6; border-color: #D8D0E8; }
+.turn-in-option-icon  { font-size: 34px; line-height: 1; margin-bottom: 12px; }
+.turn-in-option-title { font-size: 17px; color: #1B4332; font-weight: 800; margin-bottom: 8px; }
+.turn-in-option-text  { font-size: 14px; color: #5A4D3E; line-height: 1.5; }
+.turn-in-subhead {
+  font-size: 16px; color: #5A4D3E; margin-bottom: 14px; line-height: 1.55;
+}
+.turn-in-checklist { display: flex; flex-direction: column; gap: 10px; }
+.turn-in-item {
+  display: flex; align-items: center; gap: 16px;
+  padding: 14px 18px;
+  background: #FAFAF6;
+  border: 1.5px solid #E8DDD2;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item:hover { background: #F4FAF5; border-color: #C4E5CC; }
+.turn-in-item.checked { background: #EEF8F0; border-color: #B8E8CF; }
+.turn-in-item .turn-in-check {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  border: 2px solid #95D5B2;
+  background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px; line-height: 1;
+  transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item.checked .turn-in-check {
+  background: #2E7D32;
+  border-color: #2E7D32;
+}
+.turn-in-item-text {
+  font-size: 16px; color: #2B1D12; font-weight: 600;
+  line-height: 1.55; flex: 1;
+}
+.turn-in-item.checked .turn-in-item-text { color: #5A4D3E; }
+
+/* ── Old Checklist (legacy — kept for any non-Assignment checklists) ── */
+.checklist-item:hover { background: #EEF8F0 !important; }
+.checklist-item.checked { background: #EEF8F0 !important; border-color: #B8E8CF !important; }
+.checklist-item.checked .check-icon { border-color: transparent !important; background: transparent !important; font-size: 22px !important; }
+.checklist-item.checked span:last-child { color: #5A4D3E; }
+
+/* ── Progress Bar ── */
+.progress-wrap {
+  position: sticky; top: 0; z-index: 200;
+  background: #0E1C42; padding: 8px 20px 10px;
+  border-bottom: 2px solid rgba(85,200,232,0.3);
+  display: flex; align-items: center; gap: 14px;
+}
+.progress-label { font-size: 12px; color: #55C8E8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+.progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; position: relative; }
+.progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #52B788, #95D5B2, #FDD835); border-radius: 10px; transition: width 0.4s ease; }
+.progress-pct { font-size: 13px; color: #FDD835; font-weight: 800; min-width: 36px; text-align: right; }
+
+/* (Inline tab navigator removed — see SKILL.md "Progress Bar & Tab Access" for
+   why sticky tabs cannot work in Canvas iframes. The single progress bar at the
+   top of the page is .progress-wrap, defined above.) */
+
+/* ── Utility ── */
+strong { color: #1B4332; }
+em { color: #5A4D3E; }
+.gold { color: #F9A825; font-weight: 700; }
+.forest { color: #2D6A4F; font-weight: 700; }
+.earth { color: #A0522D; font-weight: 700; }
+
+
+@media (max-width: 620px) {
+  .intro-2col { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .vocab-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .flip-card { height: 175px; }
+  .header-title { font-size: 22px; }
+  .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 6px 9px; }
+  .turn-in-options { grid-template-columns: 1fr; }
+  .turn-in-header-title { font-size: 20px; }
+}
+
+/* Falling snow for hero banner */
+@keyframes snow-fall {
+  0%   { transform: translateY(0px);   opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 0.8; }
+  100% { transform: translateY(240px); opacity: 0; }
+}
+.sf-a { animation: snow-fall 4.2s ease-in infinite; }
+.sf-b { animation: snow-fall 5.8s ease-in infinite 0.7s; }
+.sf-c { animation: snow-fall 3.9s ease-in infinite 1.4s; }
+.sf-d { animation: snow-fall 5.2s ease-in infinite 2.1s; }
+.sf-e { animation: snow-fall 4.6s ease-in infinite 0.4s; }
+.sf-f { animation: snow-fall 6.1s ease-in infinite 1.8s; }
+.sf-g { animation: snow-fall 4.8s ease-in infinite 3.0s; }
+.sf-h { animation: snow-fall 5.4s ease-in infinite 2.5s; }
+
+</style>
+</head>
+
+<body>
+
+<canvas id="confettiCanvas"></canvas>
+<!-- Back to Top button — text is ALWAYS exactly "↑ Top". Do NOT add the lesson
+     emoji or change "Top" to "Back to Top" — the button gets cluttered. The
+     lesson emoji belongs in the progress-label and the LESSON_EMOJI constant only. -->
+<button class="back-to-top" id="backToTop" type="button">🦊 Back to Top</button>
+
+<!-- Anchor used by the Back-to-Top button. Lives at the very top so scrollIntoView
+     can scroll both this iframe AND the Canvas parent page when needed. -->
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- ═══════════ PROGRESS BAR ═══════════ -->
+<div class="progress-wrap">
+  <span class="progress-label">🦊 Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <!-- ✏️ CUSTOMIZE: Lesson title -->
+  <div class="header-title">Investigation: Survival Traits Challenge</div>
+  <div class="header-badge">
+    <!-- ✏️ CUSTOMIZE: Lesson emoji and number -->
+    <span>🦊</span>
+    <span>Lesson 11.02</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<!-- HERO BANNER — REPLACE THIS ENTIRE <svg>...</svg> BLOCK FOR EVERY LESSON.   -->
+<!--                                                                           -->
+<!-- The SVG below is a PLACEHOLDER ONLY. It is not a default to keep.         -->
+<!-- Build a new lesson-specific scene from scratch every time:                -->
+<!--   • viewBox stays "0 0 920 260"                                           -->
+<!--   • background gradient should fit the topic                              -->
+<!--   • include 2–4 animated elements (drifting, pulsing, floating, etc.)     -->
+<!--   • NO words, labels, or <text> elements inside the SVG. The banner is    -->
+<!--     pure illustration. The lesson title already appears in .header-title  -->
+<!--     above the banner — students do not need it repeated in the art.       -->
+<!--                                                                           -->
+<!-- See SKILL.md → "Hero Banner — Hand-Coded SVG Scene" for the topic-to-     -->
+<!-- scene mapping table and animation patterns.                               -->
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arctic fox in snowy tundra on left, fennec fox in desert on right">
+  <defs>
+    <linearGradient id="arcticSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#a8c8e8"/><stop offset="100%" stop-color="#d8eef8"/></linearGradient>
+    <linearGradient id="desertSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f5c87a"/><stop offset="100%" stop-color="#f0e2c0"/></linearGradient>
+    <linearGradient id="snowGnd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e8f4fc"/><stop offset="100%" stop-color="#c8dcf0"/></linearGradient>
+    <linearGradient id="sandGnd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e8b86d"/><stop offset="100%" stop-color="#c89040"/></linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ffe066" stop-opacity="1"/><stop offset="100%" stop-color="#f5c842" stop-opacity="0"/></radialGradient>
+  </defs>
+
+  <!-- Arctic half -->
+  <rect x="0" y="0" width="455" height="260" fill="url(#arcticSky)"/>
+  <!-- Aurora shimmer bands -->
+  <g class="hero-shimmer" style="animation-duration:4s;">
+    <rect x="0" y="30" width="455" height="18" fill="#7ecfb0" opacity="0.18" rx="9"/>
+    <rect x="0" y="55" width="455" height="12" fill="#55c8e8" opacity="0.13" rx="6"/>
+  </g>
+  <!-- Mountains -->
+  <polygon points="30,200 100,110 170,200" fill="#b0cce0" opacity="0.8"/>
+  <polygon points="90,200 175,95 260,200" fill="#96b8d0" opacity="0.7"/>
+  <polygon points="200,200 270,130 340,200" fill="#b8d4e8" opacity="0.6"/>
+  <!-- Snow ground -->
+  <ellipse cx="228" cy="240" rx="200" ry="38" fill="url(#snowGnd)"/>
+  <!-- Falling snowflakes (CSS animated) -->
+  <circle class="sf-a" cx="45"  cy="20" r="4" fill="#c8e4f5" opacity="0.85"/>
+  <circle class="sf-b" cx="110" cy="10" r="3" fill="#c8e4f5" opacity="0.75"/>
+  <circle class="sf-c" cx="190" cy="30" r="5" fill="#d8eef8" opacity="0.8"/>
+  <circle class="sf-d" cx="270" cy="15" r="3" fill="#c8e4f5" opacity="0.7"/>
+  <circle class="sf-e" cx="340" cy="25" r="4" fill="#d8eef8" opacity="0.85"/>
+  <circle class="sf-f" cx="80"  cy="5"  r="3" fill="#b8d4f0" opacity="0.65"/>
+  <circle class="sf-g" cx="230" cy="8"  r="4" fill="#c8e4f5" opacity="0.75"/>
+  <circle class="sf-h" cx="390" cy="10" r="3" fill="#d8eef8" opacity="0.7"/>
+  <!-- Arctic fox silhouette (white, small ears) -->
+  <ellipse cx="200" cy="210" rx="62" ry="36" fill="#f4f4f4"/>
+  <ellipse cx="252" cy="192" rx="30" ry="25" fill="#f4f4f4"/>
+  <ellipse cx="240" cy="170" rx="9" ry="12" fill="#f0f0f0"/>
+  <ellipse cx="266" cy="168" rx="9" ry="12" fill="#f0f0f0"/>
+  <ellipse cx="240" cy="172" rx="5" ry="7" fill="#e8c0c0"/>
+  <ellipse cx="266" cy="170" rx="5" ry="7" fill="#e8c0c0"/>
+  <ellipse cx="244" cy="196" rx="4" ry="3" fill="#333"/>
+  <ellipse cx="260" cy="196" rx="4" ry="3" fill="#333"/>
+  <ellipse cx="252" cy="204" rx="5" ry="4" fill="#bbb"/>
+  <ellipse cx="130" cy="222" rx="26" ry="11" fill="#ececec" transform="rotate(-12,130,222)"/>
+
+  <!-- Divider -->
+  <rect x="451" y="0" width="8" height="260" fill="#445566" opacity="0.5"/>
+
+  <!-- Desert half -->
+  <rect x="459" y="0" width="461" height="260" fill="url(#desertSky)"/>
+  <!-- Sun glow -->
+  <circle cx="840" cy="38" r="34" fill="url(#sunGlow)" class="hero-sun-glow"/>
+  <circle cx="840" cy="38" r="22" fill="#f5c842" opacity="0.9" class="hero-sun-glow"/>
+  <!-- Heat shimmer -->
+  <g class="hero-shimmer" style="animation-duration:2.5s;animation-delay:0.3s;">
+    <path d="M480 190 Q510 184 540 190 Q570 196 600 190" stroke="#e8a830" stroke-width="2.5" fill="none" opacity="0.35"/>
+    <path d="M620 195 Q655 188 690 195 Q725 202 760 195" stroke="#e8a830" stroke-width="2" fill="none" opacity="0.3"/>
+  </g>
+  <!-- Dunes -->
+  <ellipse cx="700" cy="238" rx="200" ry="50" fill="#d4905a" opacity="0.5"/>
+  <ellipse cx="550" cy="248" rx="140" ry="38" fill="#c87840" opacity="0.4"/>
+  <!-- Sand ground -->
+  <ellipse cx="688" cy="248" rx="195" ry="36" fill="url(#sandGnd)"/>
+  <!-- Static desert cacti -->
+  <rect x="476" y="218" width="8" height="28" rx="4" fill="#4a7c40"/>
+  <ellipse cx="480" cy="215" rx="10" ry="16" fill="#5a9c50"/>
+  <rect x="886" y="220" width="7" height="22" rx="3" fill="#4a7c40"/>
+  <text x="877" y="222" font-size="18" opacity="0.75">🌵</text>
+  <!-- Fennec fox (tan, big ears) -->
+  <ellipse cx="640" cy="214" rx="58" ry="34" fill="#e8a84a"/>
+  <ellipse cx="688" cy="197" rx="28" ry="24" fill="#e8a84a"/>
+  <!-- Giant ears -->
+  <ellipse cx="668" cy="162" rx="16" ry="29" fill="#e8a84a" transform="rotate(-10,668,162)"/>
+  <ellipse cx="706" cy="158" rx="16" ry="29" fill="#e8a84a" transform="rotate(10,706,158)"/>
+  <ellipse cx="668" cy="165" rx="9" ry="19" fill="#c87840" opacity="0.45" transform="rotate(-10,668,165)"/>
+  <ellipse cx="706" cy="161" rx="9" ry="19" fill="#c87840" opacity="0.45" transform="rotate(10,706,161)"/>
+  <ellipse cx="680" cy="201" rx="4" ry="3" fill="#333"/>
+  <ellipse cx="696" cy="201" rx="4" ry="3" fill="#333"/>
+  <ellipse cx="688" cy="208" rx="5" ry="4" fill="#c87840"/>
+  <ellipse cx="576" cy="228" rx="25" ry="10" fill="#d4904a" transform="rotate(-10,576,228)"/>
+  <ellipse cx="554" cy="234" rx="9" ry="7" fill="#333" transform="rotate(-10,554,234)"/>
+</svg>
+</div>
+
+<!-- ═══════════ INFO STRIP<!-- ═══════════ INFO STRIP ═══════════ -->
+<!-- ✏️ CUSTOMIZE: Update all 4 chips for each lesson -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q2 &middot; Unit 4</div>
+      <div class="info-detail">Life Cycles, Traits &amp; Inheritance</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF9E8;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 11</div>
+      <div class="info-detail">Lesson 11.02 &mdash; 3rd Grade Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#F0EDF6;">🌿</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Trait Variations</div>
+      <div class="info-detail">Survival Advantages &amp; Environments</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">NGSS 3-LS4-2</div>
+      <div class="info-detail">Variations &amp; Survival Advantages</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ INTRO 2-COL CARDS ═══════════ -->
+<div class="intro-2col">
+
+  <!-- Essential Question -->
+  <div class="card theme-forest">
+    <div class="card-head">
+      <div class="card-head-icon">🌲</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This…</div>
+          <!-- ✏️ CUSTOMIZE: Replace with the lesson's essential/driving question -->
+          <div class="question">"Why might two animals that look very different both be perfectly suited to survive&mdash;just in different places?"</div>
+        </div>
+      </div>
+      <p>Hold this question as you work. By the end, you'll be able to answer it with evidence from your investigation!</p>
+    </div>
+  </div>
+
+  <!-- I Can Statements -->
+  <div class="card theme-sky">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <!-- ✏️ CUSTOMIZE: Write 2–3 clear, student-facing I Can statements for this lesson -->
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#52B788;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain how a variation in a trait can help an animal survive in its environment.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2D6A4F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> compare traits from two environments and explain which gives a bigger survival advantage.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2E7D32;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> use evidence from an investigation to construct an explanation about survival traits.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════ NEED STRIP ═══════════ -->
+<!-- ✏️ CUSTOMIZE: Update materials for this specific lesson -->
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>🖊️</span>Pencil &amp; colored pencils</span>
+  <span class="need-chip"><span>📊</span>Blank chart page</span>
+</div>
+
+<!-- ═══════════ TAB BAR ═══════════ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 1: VOCABULARY                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+  <!-- Inline progress chip — visible whenever student switches to this tab.
+       Workaround for Canvas iframes where sticky/fixed CSS can't stay visible. -->
+  <!-- Welcome Video -->
+  <!-- ✏️ CUSTOMIZE: Replace placeholder with actual OneDrive embed iframe -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to Lesson 11.02 &mdash; Let's Get Started!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🎬</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 11-2-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ACTIVITY 1: NOTICE & WONDER (WARM-UP) ═══ -->
+  <!-- PURPOSE: Activate curiosity. Students observe before they learn. ~5-8 min -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#52B788;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">👀 Notice &amp; Wonder</div>
+        <div class="act-subtitle">Look first. Ask questions second.</div>
+      </div>
+      <div class="act-time" style="background:#52B788;">⏱ 5 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>Head to the <strong>Lesson tab</strong> and look at the photo of the two foxes. Same animal family&mdash;but they couldn't look more different.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🦊</span>
+        <div>
+          <div class="label">In Your Science Notebook</div>
+          <div class="question">"List at least 3 differences you notice between the two animals. Be specific. Then write one 'I wonder why\...' question."</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>Be specific. Don't write "different colors." Write "the arctic fox has white fur; the fennec fox has sandy tan fur." Specifics matter in science.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ VOCABULARY FLIP CARDS ═══ -->
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <!-- ✏️ CUSTOMIZE: Update intro sentence to match lesson topic -->
+      <p>Before we dive in, learn the words scientists use. <strong>Tap each card to flip it</strong> and read the definition out loud.</p>
+
+      <div class="vocab-grid">
+
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🐾</div><div class="fc-word">trait</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">trait</div><div class="fc-def">A feature of an organism&mdash;like fur color, ear size, or body shape.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🔀</div><div class="fc-word">variation</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">variation</div><div class="fc-def">A difference in a trait among individuals of the same species. No two animals are exactly alike.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">⭐</div><div class="fc-word">advantage</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">advantage</div><div class="fc-def">Something that helps an organism survive or reproduce better than others in its environment.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🎨</div><div class="fc-word">camouflage</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">camouflage</div><div class="fc-def">Colors or patterns that help an organism blend into its surroundings to stay hidden.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌍</div><div class="fc-word">environment</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">environment</div><div class="fc-def">The place where an organism lives&mdash;its weather, food sources, and other organisms nearby.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🏆</div><div class="fc-word">survive</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">survive</div><div class="fc-def">To stay alive through the challenges an environment presents&mdash;cold, heat, predators, or scarce food.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">📓</span>
+        <p>Copy this sentence carefully into your science notebook:<br><strong>"Animals with traits that match their environment have a better chance of survival."</strong></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button>
+  </div>
+
+</div><!-- /tab-vocab -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 2: THE LESSON                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+  <!-- Inline progress chip — visible whenever student switches to this tab.
+       Workaround for Canvas iframes where sticky/fixed CSS can't stay visible. -->
+  <!-- Lesson Video -->
+  <!-- ✏️ CUSTOMIZE: Replace placeholder with actual OneDrive embed iframe -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">📖</span>
+      <div>
+        <div class="video-wrap-type">Activity 2 · Core Lesson</div>
+        <!-- ✏️ CUSTOMIZE: Video title -->
+        <div class="video-wrap-title">Trait Variations &amp; Survival Advantages</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">📖</div>
+        <div class="video-placeholder-text">Core lesson video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 11-2-lesson-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fox comparison photo from uploaded image -->
+  <div class="lesson-figure">
+    <div class="lesson-figure-label">📷 Photo &middot; Real Animals, Two Environments</div>
+    <img src="images/11-02-fox-comparison.png"
+         alt="Arctic fox on the left standing in snow with thick white fur and small ears; fennec fox on the right in sandy desert with enormous ears and tan coat" />
+    <div class="lesson-figure-caption">
+      Two foxes&mdash;same animal family, completely different homes. <strong>Arctic fox (left)</strong> lives where it snows most of the year. <strong>Fennec fox (right)</strong> lives in the blazing desert.
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <!-- UPLOADED LESSON IMAGE — INSERT HERE IF USER UPLOADED A PHOTO/DIAGRAM   -->
+  <!--                                                                        -->
+  <!-- This is the designated slot for any image the user uploaded as lesson  -->
+  <!-- content (a photo, specimen, chart, illustration, etc.). If they did    -->
+  <!-- not upload one, leave this comment in place and skip the figure.       -->
+  <!--                                                                        -->
+  <!-- Pattern to use when an image WAS uploaded:                             -->
+  <!--                                                                        -->
+  <!--   <div class="lesson-figure">                                          -->
+  <!--     <div class="lesson-figure-label">📷 Photo · [topic frame]</div>    -->
+  <!--     <img src="images/[M]-[L]-[short-desc].jpg"                         -->
+  <!--          alt="[Detailed description for screen readers]"/>             -->
+  <!--     <div class="lesson-figure-caption">                                -->
+  <!--       [1–2 sentences. Point out what students should notice.]          -->
+  <!--     </div>                                                             -->
+  <!--   </div>                                                               -->
+  <!--                                                                        -->
+  <!-- After generating the HTML, tell the user in chat:                      -->
+  <!--   • The exact filename to save the image as                            -->
+  <!--   • That it goes in an images/ folder next to the lesson HTML          -->
+  <!--                                                                        -->
+  <!-- DO NOT embed screenshots of bugs, layout issues, or feedback the user  -->
+  <!-- shares for diagnostic purposes — those are not lesson content.         -->
+  <!-- When in doubt, ask once before embedding.                              -->
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+
+  <!-- ═══ ACTIVITY 2: CORE LESSON CONTENT ═══ -->
+  <!-- PURPOSE: Teach the science content clearly. ~10-12 min reading + thinking -->
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#F9A825;">2</div>
+      <div style="flex:1;">
+        <!-- ✏️ CUSTOMIZE: Activity title matching the lesson topic -->
+        <div class="act-title">📖 What Are Survival Traits?</div>
+        <div class="act-subtitle">Read and think carefully — science is all about noticing!</div>
+      </div>
+      <div class="act-time" style="background:#F9A825;">⏱ 12 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- ══ SECTION 1 of lesson content ══ -->
+      <!-- ✏️ CUSTOMIZE: First content section. Keep paragraphs short. Use vtip for vocab. -->
+      <div class="card theme-forest" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌱</div>
+          <div>
+            <div class="card-head-label">Section 1</div>
+            <div class="card-head-title">What Are Trait Variations?</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Every living thing has <span class="vtip">traits<span class="vtip-box"><span class="vtip-word">trait</span>A feature of an organism — like fur color, ear size, or body shape.</span></span> like color, size, and shape. But individuals of the same species are not all identical. A litter of puppies might have one with longer fur, one with bigger paws, one with a spotted coat.</p>
+          <p>That difference is a <span class="vtip">variation<span class="vtip-box"><span class="vtip-word">variation</span>A difference in a trait among individuals of the same species.</span></span>. Variations happen naturally. Most of the time they do not matter much. But sometimes, a variation turns out to be exactly right for where an animal lives.</p>
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"Think of two dogs of the same breed. Can you spot any differences? What kind of traits might vary?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ SECTION 2 of lesson content ══ -->
+      <div class="card theme-sky" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌤</div>
+          <div>
+            <div class="card-head-label">Section 2</div>
+            <div class="card-head-title">How Do Traits Help Animals Survive?</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>When a variation helps an animal survive, we call it an <span class="vtip">advantage<span class="vtip-box"><span class="vtip-word">advantage</span>Something that helps an organism survive or reproduce better than others.</span></span>. An animal with an advantage lives longer&mdash;and living longer means more chances to have offspring.</p>
+          <p>Those offspring can inherit the helpful trait too. Over time, the variation becomes more common. Not because animals decide to change&mdash;but because animals with that trait survive and reproduce more.</p>
+        </div>
+      </div>
+
+      <!-- ══ SECTION 3 of lesson content ══ -->
+      <div class="card theme-earth" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌍</div>
+          <div>
+            <div class="card-head-label">Section 3</div>
+            <div class="card-head-title">Same Family, Different Worlds</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Arctic foxes and fennec foxes are both foxes&mdash;same family, similar body plan. But their traits fit very different places. The arctic fox has thick white fur and small rounded ears. The fennec fox has enormous ears and a sandy coat.</p>
+          <p>Here is the key: a trait helpful in one environment could be harmful in another. Big ears in the arctic would cause rapid heat loss. Thick white fur in the desert would cause overheating.</p>
+          <p><strong>Real-World Connection:</strong> Researchers track which traits offspring inherit to understand how survival advantages spread through animal populations over generations.</p>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════════════════════════════════ -->
+      <!-- INTERACTIVE DIAGRAM — REPLACE THIS ENTIRE <svg>...</svg> BLOCK.        -->
+      <!--                                                                        -->
+      <!-- The SVG below is a PLACEHOLDER ONLY. Do not keep the placeholder.      -->
+      <!-- Build a diagram unique to the lesson topic every time:                 -->
+      <!--   • weather → water cycle, cloud-types, or weather station             -->
+      <!--   • forces / motion → ramp + ball with force arrows, or push/pull      -->
+      <!--   • magnets → field lines with attract/repel zones                     -->
+      <!--   • ecosystems → food web OR habitat cross-section                     -->
+      <!--   • life cycles → labeled stage diagram (egg → larva → pupa → adult)   -->
+      <!--   • engineering → labeled prototype with named parts                   -->
+      <!--                                                                        -->
+      <!-- WHAT TO KEEP (the JS depends on these):                                -->
+      <!--   • the <div class="diagram-interactive"> wrapper                      -->
+      <!--   • exactly 3–6 <rect class="hotspot"> elements with unique            -->
+      <!--     data-part and data-info attributes                                 -->
+      <!--   • the <div id="diagramPanel"> below                                  -->
+      <!--                                                                        -->
+      <!-- WHAT TO REPLACE:                                                       -->
+      <!--   • everything inside <svg>...</svg> (defs, scene art, labels)         -->
+      <!--   • every data-info string with lesson-specific content                -->
+      <!--   • the diagram caption below                                          -->
+      <!-- ══════════════════════════════════════════════════════════════════════ -->
+
+      <div class="diagram-wrap scroll-reveal">
+        <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
+          🦊 Tap a zone to explore that trait
+        </div>
+        <div class="diagram-interactive">
+          <svg viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;" role="img" aria-label="Side-by-side arctic fox and fennec fox trait diagram">
+            <defs>
+              <linearGradient id="dArcticSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#b8d8f0"/><stop offset="100%" stop-color="#deeef8"/></linearGradient>
+              <linearGradient id="dDesertSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f5c87a"/><stop offset="100%" stop-color="#f0e0b0"/></linearGradient>
+              <linearGradient id="dSnow" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e0eff8"/><stop offset="100%" stop-color="#c0d8ec"/></linearGradient>
+              <linearGradient id="dSand" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e8b060"/><stop offset="100%" stop-color="#c88838"/></linearGradient>
+            </defs>
+
+            <!-- Arctic background -->
+            <rect x="0" y="0" width="415" height="300" fill="url(#dArcticSky)"/>
+            <polygon points="20,200 80,130 140,200" fill="#b0cce0" opacity="0.7"/>
+            <polygon points="80,200 150,110 230,200" fill="#9ab8d0" opacity="0.6"/>
+            <ellipse cx="207" cy="270" rx="175" ry="38" fill="url(#dSnow)"/>
+            <text x="207" y="22" text-anchor="middle" font-size="13" font-weight="800" fill="#2a5a7a">🧊 ARCTIC</text>
+
+            <!-- Arctic fox -->
+            <ellipse cx="185" cy="218" rx="65" ry="38" fill="#f5f5f5"/>
+            <ellipse cx="236" cy="194" rx="32" ry="27" fill="#f5f5f5"/>
+            <ellipse cx="223" cy="170" rx="10" ry="14" fill="#f2f2f2"/>
+            <ellipse cx="250" cy="168" rx="10" ry="14" fill="#f2f2f2"/>
+            <ellipse cx="223" cy="172" rx="6" ry="8" fill="#edc8c8"/>
+            <ellipse cx="250" cy="170" rx="6" ry="8" fill="#edc8c8"/>
+            <ellipse cx="228" cy="198" rx="4" ry="3" fill="#333"/>
+            <ellipse cx="244" cy="198" rx="4" ry="3" fill="#333"/>
+            <ellipse cx="117" cy="232" rx="28" ry="12" fill="#eee" transform="rotate(-12,117,232)"/>
+
+            <!-- Divider -->
+            <rect x="412" y="0" width="6" height="300" fill="#334455" opacity="0.45"/>
+
+            <!-- Desert background -->
+            <rect x="418" y="0" width="442" height="300" fill="url(#dDesertSky)"/>
+            <circle cx="820" cy="36" r="26" fill="#f5c842" opacity="0.85"/>
+            <ellipse cx="640" cy="248" rx="190" ry="36" fill="url(#dSand)"/>
+            <ellipse cx="500" cy="255" rx="110" ry="28" fill="#c87840" opacity="0.4"/>
+            <text x="640" y="22" text-anchor="middle" font-size="13" font-weight="800" fill="#7a3a10">🏜️ DESERT</text>
+
+            <!-- Fennec fox -->
+            <ellipse cx="598" cy="218" rx="60" ry="35" fill="#e8a84a"/>
+            <ellipse cx="648" cy="196" rx="30" ry="25" fill="#e8a84a"/>
+            <ellipse cx="628" cy="158" rx="18" ry="30" fill="#e8a84a" transform="rotate(-12,628,158)"/>
+            <ellipse cx="665" cy="154" rx="18" ry="30" fill="#e8a84a" transform="rotate(12,665,154)"/>
+            <ellipse cx="628" cy="161" rx="11" ry="20" fill="#c07830" opacity="0.4" transform="rotate(-12,628,161)"/>
+            <ellipse cx="665" cy="157" rx="11" ry="20" fill="#c07830" opacity="0.4" transform="rotate(12,665,157)"/>
+            <ellipse cx="639" cy="200" rx="4" ry="3" fill="#333"/>
+            <ellipse cx="657" cy="200" rx="4" ry="3" fill="#333"/>
+            <ellipse cx="535" cy="232" rx="26" ry="10" fill="#d4904a" transform="rotate(-10,535,232)"/>
+            <ellipse cx="513" cy="238" rx="9" ry="7" fill="#333" transform="rotate(-10,513,238)"/>
+
+            <!-- Labels -->
+            <rect x="14" y="130" width="118" height="22" rx="5" fill="#2D6A4F" opacity="0.88"/>
+            <text x="73" y="145" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Thick White Fur</text>
+            <line x1="73" y1="152" x2="175" y2="218" stroke="#2D6A4F" stroke-width="1.5" opacity="0.7"/>
+
+            <rect x="248" y="108" width="144" height="22" rx="5" fill="#2D6A4F" opacity="0.88"/>
+            <text x="320" y="123" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Small Rounded Ears</text>
+            <line x1="280" y1="130" x2="236" y2="170" stroke="#2D6A4F" stroke-width="1.5" opacity="0.7"/>
+
+            <rect x="424" y="108" width="120" height="22" rx="5" fill="#e8720c" opacity="0.9"/>
+            <text x="484" y="123" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Giant Ears</text>
+            <line x1="484" y1="130" x2="645" y2="155" stroke="#e8720c" stroke-width="1.5" opacity="0.7"/>
+
+            <rect x="720" y="130" width="128" height="22" rx="5" fill="#e8720c" opacity="0.9"/>
+            <text x="784" y="145" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Sandy-Colored Coat</text>
+            <line x1="775" y1="152" x2="650" y2="218" stroke="#e8720c" stroke-width="1.5" opacity="0.7"/>
+
+            <!-- HOTSPOT RECTS (the JS depends on these) -->
+            <rect class="hotspot" x="0" y="0" width="415" height="100"
+                  fill="#3a6b8a"
+                  data-part="Arctic Environment"
+                  data-info="The arctic is one of Earth's harshest places. Temperatures drop below -40°F in winter. Snow and ice cover the ground for most of the year. Animals need traits that protect them from extreme cold — or they cannot survive."/>
+            <rect class="hotspot" x="0" y="100" width="200" height="200"
+                  fill="#52B788"
+                  data-part="Thick White Fur"
+                  data-info="The arctic fox has two layers of fur — a dense undercoat that traps body heat, and a longer outer coat that blocks wind. The white color acts as camouflage, making the fox nearly invisible against snow. One trait does two jobs: warmth and hiding."/>
+            <rect class="hotspot" x="200" y="100" width="212" height="130"
+                  fill="#2E7D32"
+                  data-part="Small Rounded Ears"
+                  data-info="Smaller ears mean less surface area exposed to freezing air, so the fox loses less body heat. In temperatures below -40°F, keeping heat inside is a survival advantage. Compare those tiny ears to the fennec fox — the difference is dramatic."/>
+            <rect class="hotspot" x="418" y="0" width="442" height="130"
+                  fill="#e8720c"
+                  data-part="Giant Ears"
+                  data-info="The fennec fox's enormous ears are packed with blood vessels near the skin's surface. When the fox overheats in the 100°F+ desert, blood flows through those vessels and heat escapes through the thin ear skin. The ears act like a built-in radiator — a cooling system."/>
+            <rect class="hotspot" x="418" y="130" width="442" height="170"
+                  fill="#c87840"
+                  data-part="Sandy-Colored Coat"
+                  data-info="The fennec fox's pale tan coat does two jobs. First, it is camouflage — the sandy color blends into desert surroundings and hides the fox from predators. Second, lighter colors reflect more sunlight than dark ones, helping the fox stay a little cooler in the blazing heat."/>
+          </svg>
+
+          <!-- Diagram info panel (appears on hotspot click) -->
+          <div class="diagram-info-panel" id="diagramPanel">
+            <span class="dip-word" id="diagramWord"></span>
+            <span id="diagramInfo"></span>
+          </div>
+        </div>
+        <div class="diagram-tap-hint">Tap any zone in the diagram to learn about that trait.</div>
+        <div class="diagram-caption">Arctic fox (left) vs. fennec fox (right) — same animal family, completely different survival traits for completely different environments.</div>
+      </div>
+
+            <!-- Key Concept Box -->
+      <div class="key-concept scroll-reveal">
+        <div class="kc-label">⭐ Key Concept</div>
+        <p><strong>When a trait matches the challenges of an environment, it gives a survival advantage.</strong></p>
+        <p>Cause and effect: right trait &#8594; better chance of surviving &#8594; more offspring &#8594; trait gets passed on.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mind-Blowing Fact -->
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Mind-Blowing Fact</div>
+      <div class="mind-blow-text"><strong>An arctic fox can survive &#8722;58&#176;F without shivering at all.</strong> Its fur is so well-insulated that scientists using thermal cameras can barely detect its body heat. It is nearly invisible to heat sensors.</div>
+    </div>
+  </div>
+
+  <!-- Go Deeper -->
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper</summary>
+    <div class="gd-body">
+      <p><strong>Fennec ears as a cooling system:</strong> The huge ears are packed with blood vessels near the surface. When the fox gets hot, blood flows through those vessels and the heat escapes through the thin skin. It works like a built-in radiator.</p>
+      <p><strong>The arctic fox changes its coat twice a year:</strong> white in winter for snow camouflage, brown in summer when the tundra thaws. Same genes&mdash;a seasonal signal triggers the color change.</p>
+      <p><strong>Natural selection across generations:</strong> When a trait gives an advantage, individuals with that trait survive and reproduce more. Over many generations, the helpful trait becomes more common in the population. Scientists call this natural selection.</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+
+</div><!-- /tab-lesson -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 3: EXPLORE (Investigation / Lab / Engineering)        -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+  <!-- Inline progress chip — visible whenever student switches to this tab.
+       Workaround for Canvas iframes where sticky/fixed CSS can't stay visible. -->
+  <!-- Explore Video -->
+  <!-- ✏️ CUSTOMIZE: Replace with actual OneDrive embed iframe -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🔬</span>
+      <div>
+        <div class="video-wrap-type">Activity 3 · Investigation</div>
+        <!-- ✏️ CUSTOMIZE: Video title -->
+        <div class="video-wrap-title">How to Run Your Survival Traits Investigation</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🔬</div>
+        <div class="video-placeholder-text">Exploration video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 11-2-exploration-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ACTIVITY 3: INVESTIGATION / LAB / ENGINEERING CHALLENGE ═══ -->
+  <!-- ✏️ CUSTOMIZE: Change act-explore to act-practice for .02 engineering/lab lessons -->
+  <!-- PURPOSE: Hands-on investigation. Students observe, collect data, test, or build. ~15-20 min -->
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#0288D1;">3</div>
+      <div style="flex:1;">
+        <!-- ✏️ CUSTOMIZE: Activity type and title (Investigation / Lab / Engineering Challenge) -->
+        <div class="act-title">🔬 Survival Traits Investigation</div>
+        <!-- ✏️ CUSTOMIZE: Short subtitle -->
+        <div class="act-subtitle">Observe &#8594; Choose &#8594; Design &#8594; Chart &#8594; Conclude</div>
+      </div>
+      <div class="act-time" style="background:#0288D1;">⏱ 25 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- Materials needed (for labs/investigations) -->
+      <!-- ✏️ CUSTOMIZE: List materials — or remove this section if not needed for this lesson type -->
+      <div class="callout callout-tip" style="margin-bottom:18px;">
+        <span class="callout-icon">🎒</span>
+        <p><strong>You will need:</strong> Science notebook, pencil, colored pencils, and a blank chart page.</p>
+      </div>
+
+      <p>Follow each step. Record your observations as you go.</p>
+
+      <div style="position:relative; margin:16px 0;">
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">1</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Observe the Foxes:</strong> Look at the photo in the Lesson tab. List at least 4 specific differences you see between the arctic fox and the fennec fox. Be specific&mdash;describe exactly what you see.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2D6A4F,#52B788);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(45,106,79,0.3);">2</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Choose an Environment:</strong> Pick one: arctic tundra, desert, forest, or wetland. Write its name and describe it&mdash;temperature, wet or dry, food available.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#52B788,#F9A825);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(82,183,136,0.3);">3</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Design an Organism:</strong> Invent an animal for your environment. Give it at least 4 specific traits. For each, think: how does it help the animal find food, stay safe, handle the weather, or find a mate?</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F9A825,#FDD835);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(249,168,37,0.3);">4</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Build a Chart:</strong> Draw a 4-column chart in your notebook: <em>Environment &middot; Survival Challenge &middot; Helpful Trait &middot; Why It Helps</em>. Fill in one row for each of your 4+ traits.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#7B5EA7,#5a3e8a);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(123,94,167,0.3);">5</div>
+          <div style="flex:1;background:#F0EDF6;border:2px solid #D8D0E8;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Write a Conclusion:</strong> Using your chart as evidence, write one sentence that explains how a trait variation improves an organism's chances of survival.</p>
+          </div>
+        </div>
+
+      </div>
+
+            <!-- Socratic check-in during exploration -->
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Stop and Think</div>
+          <div class="question">"If your environment suddenly changed&mdash;the temperature doubled&mdash;which of your organism's traits would still help? Which might make things worse?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ RECORD YOUR THINKING ═══ -->
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#2E7D32;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">📓 Record Your Thinking</div>
+        <div class="act-subtitle">Organize what you observed and discovered.</div>
+      </div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>In your science notebook, record what you found. Being specific matters — a good scientist writes down exactly what they saw, not just "it worked" or "it didn't work."</p>
+
+      <!-- ✏️ CUSTOMIZE: Adapt these notebook prompts for the specific investigation type. -->
+      <!-- Options: data table, labeled sketch, bar graph, comparison chart, before/after drawing -->
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">1</span>
+        <span class="pq-text">For each of your 4 traits, explain your reasoning. Why did you choose that specific trait for that environment? How does it help the organism survive?</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">2</span>
+        <span class="pq-text">Which trait gives your organism the <strong>biggest survival advantage</strong>? Explain why that one matters most.</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">3</span>
+        <span class="pq-text">Draw your organism in its environment. Label all 4 traits. Add a short phrase next to each label explaining how it helps.</span>
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">🗣</span>
+        <p>Tell the story of your investigation: what you chose, what you designed, and what the evidence shows about survival traits. Use your chart and notebook notes.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ DISCUSS ═══ -->
+  <div class="card theme-meadow scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">💬</div>
+      <div>
+        <div class="card-head-label">Discussion</div>
+        <div class="card-head-title">Think It Through</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Think through each question on your own. Write your answers in your science notebook.</p>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Question 1</div>
+          <div class="question">"What would happen to your organism if it ended up in the opposite environment? Which traits would hurt it most?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">💡</span>
+        <div>
+          <div class="label">Question 2</div>
+          <div class="question">"Look back at your chart. Can you use it as evidence for each trait choice? If a column feels thin, go back and add detail."</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🌲</span>
+        <div>
+          <div class="label">Question 3 — Connect to Nature</div>
+          <div class="question">"Could either the arctic fox or the fennec fox survive in the other's home? What would have to change?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🔁</span>
+        <div>
+          <div class="label">Question 4 — Still Wondering</div>
+          <div class="question">"Write one 'I still wonder...' question about survival traits that this investigation left you curious about."</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+
+</div><!-- /tab-explore -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 4: SELF-CHECK QUIZ                                    -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+  <!-- Inline progress chip — visible whenever student switches to this tab.
+       Workaround for Canvas iframes where sticky/fixed CSS can't stay visible. -->
+  <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#F9A825;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">🦊</div>
+      <div style="flex:1;">
+        <div style="font-size:19px;color:#1B4332;font-weight:800;line-height:1.2;">🧠 Quick Self-Check</div>
+        <div style="font-size:12px;color:#9A8E82;">Not graded — just for you! See how much you remember before starting the notebook work.</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+
+      <!-- ✏️ CUSTOMIZE: Replace all 3 questions, options, answers, and feedback for this lesson -->
+      <!-- data-answer should be: "a", "b", or "c" (matching one option's data-val) -->
+
+      <!-- QUESTION 1 -->
+      <!-- ✏️ Recommended type: vocabulary/definition question -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. What is a <strong>variation</strong>?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>A type of habitat where animals live</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>A difference in a trait among individuals of the same species</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>When an animal changes its behavior each season</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🦊 Exactly! A variation is a difference in a trait — like one fox having larger ears than another of the same species.</div>
+        <div class="quiz-feedback fb-wrong">Think back to the vocab cards. A variation is about differences in traits, not habitats or behaviors.</div>
+      </div>
+
+      <!-- QUESTION 2 -->
+      <!-- ✏️ Recommended type: "what would happen if" or cause-and-effect question -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">2. An arctic fox has <strong>thick white fur</strong>. How does this trait help it survive?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>It allows the fox to run faster across ice and snow</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>It keeps the fox warm and helps it blend into the snow</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>It protects the fox from insects during summer months</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌿 Right! Thick white fur gives two advantages at once: warmth from extreme cold and camouflage in the snow.</div>
+        <div class="quiz-feedback fb-wrong">Look back at the diagram. Thick white fur helps with heat and hiding&mdash;not speed or insects.</div>
+      </div>
+
+      <!-- QUESTION 3 -->
+      <!-- ✏️ Recommended type: real-world connection question -->
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-text">3. An animal lives in a <strong>hot, dry desert</strong>. Which trait gives the biggest survival advantage?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Large ears with blood vessels near the surface to release body heat</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Thick dense fur to stay warm on cold nights</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Small eyes designed to work best in low-light conditions</div>
+        </div>
+        <div class="quiz-feedback fb-correct">⭐ That's it! Large ears full of blood vessels act like a radiator&mdash;the desert animal's built-in cooling system.</div>
+        <div class="quiz-feedback fb-wrong">Think about the fennec fox. What does it need most in a desert over 100°F? Cooling&mdash;not more warmth or dimmer vision.</div>
+      </div>
+
+      <!-- Score Display -->
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum">0</div>
+        <div class="quiz-score-label">out of 3</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- CONDITIONAL VIDEO FEEDBACK                                         -->
+        <!-- Hidden by default. JS adds .show to ONE of these based on score:   -->
+        <!--   • 3/3 correct  → quizVideoCorrect is revealed + confetti fires   -->
+        <!--   • 2/3 or less  → quizVideoReview is revealed                     -->
+        <!-- Each block is a normal video-wrap that swaps in like any other.    -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+
+        <!-- Perfect-score celebration video (shown when score === 3) -->
+        <div class="video-feedback" id="quizVideoCorrect" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">✅</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Perfect Score</div>
+                <!-- ✏️ CUSTOMIZE: Short celebration title for a 3/3 score -->
+                <div class="video-wrap-title">Perfect! You nailed every question!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">⭐</div>
+                <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 11-2-quiz-perfect --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review / encouragement video (shown when score < 3) -->
+        <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">📚</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Keep Going</div>
+                <!-- ✏️ CUSTOMIZE: Short encouragement title for a partial score -->
+                <div class="video-wrap-title">Good effort&mdash;let's review together!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">💪</div>
+                <div class="video-placeholder-text">Review and encouragement video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 11-2-quiz-review --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+
+</div><!-- /tab-quiz -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 5: NOTEBOOK / ASSIGNMENT                              -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+  <!-- Inline progress chip — visible whenever student switches to this tab.
+       Workaround for Canvas iframes where sticky/fixed CSS can't stay visible. -->
+  <!-- Assignment Video -->
+  <!-- ✏️ CUSTOMIZE: Replace with actual OneDrive embed iframe -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">✍️</span>
+      <div>
+        <div class="video-wrap-type">Activity 5 · Assignment</div>
+        <!-- ✏️ CUSTOMIZE: Video title -->
+        <div class="video-wrap-title">Here's What to Turn In</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">✍️</div>
+        <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 11-2-assignment-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ACTIVITY 5: NOTEBOOK WORK ═══ -->
+  <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
+    <div class="act-head">
+      <div class="act-num" style="background:#7B5EA7;">5</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment</div>
+        <div class="act-subtitle">Show what you've learned.</div>
+      </div>
+      <div class="act-time" style="background:#7B5EA7;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- ══ PART A: LABEL / IDENTIFY ══ -->
+      <!-- ✏️ CUSTOMIZE: Adapt Part A for this lesson. Options: label a diagram, fill a data table, -->
+      <!--   sort/classify cards, identify examples, complete a comparison chart. -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔍 Part A &mdash; Identify the Traits</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use what you learned from the photo and diagram.</p>
+
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">Name one trait of the <strong>arctic fox</strong> and explain how it helps the fox survive in the arctic. Be specific about the trait and what it does.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">Name one trait of the <strong>fennec fox</strong> and explain how it helps the fox survive in the desert. Be specific.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">Each fox has camouflage. Describe the camouflage of each fox and match it to the environment where it helps.</span></div>
+
+      <!-- ══ PART B: SHORT ANSWER ══ -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">💬 Part B &mdash; Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer each question in <strong>complete sentences</strong>. Use your science vocabulary!</p>
+
+      <!-- ✏️ CUSTOMIZE: Write 2-3 short-answer questions that require explanation, not just recall -->
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">4</span><span class="pq-text">In your own words, what is a <strong>trait variation</strong>? Give one specific example using the foxes.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">5</span><span class="pq-text">Thick white fur is great for the arctic fox. Why would that same trait be a problem for a fox in the desert? Use cause and effect.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">6</span><span class="pq-text">If an animal has a helpful trait, how might that affect its ability to reproduce and pass that trait to offspring?</span></div>
+
+      <!-- ══ EXPLAIN YOUR THINKING ══ -->
+      <!-- ✏️ CUSTOMIZE: Write one clear question students will answer in writing.        -->
+      <!-- It should be something they can answer using the lesson or investigation.      -->
+      <!-- Avoid yes/no questions. Aim for "how" or "why" or "what do you think about."  -->
+      <div class="key-concept scroll-reveal" style="background:#FFF9E8;border-color:#F0E4C0;">
+        <div class="kc-label" style="color:#F9A825;">✍️ Write and Explain</div>
+        <p style="font-size:16px;font-weight:700;color:#1B4332;margin-bottom:14px;">How do trait variations help animals survive in different environments? Use one fox example and your designed organism as evidence.</p>
+
+        <!-- Prompt 1: What do you think? -->
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What do you think?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <!-- ✏️ CUSTOMIZE: Sentence starter matched to the question above -->
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I think trait variations help animals survive because&hellip;"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+          </div>
+        </div>
+
+        <!-- Prompt 2: What did you see or learn? -->
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What did you observe or learn that supports your thinking?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <!-- ✏️ CUSTOMIZE: Tailor starter to whether it's a .01 lesson (learned) or .02 lab (observed) -->
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I know this because when I designed my organism, I observed&hellip;"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <!-- Prompt 3: Why does that make sense? -->
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">Why does that make sense?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <!-- Vocab reminder -->
+        <!-- ✏️ CUSTOMIZE: List 2-3 vocab words from this lesson students should try to use -->
+        <div style="background:#EEF8F0;border-radius:10px;padding:10px 14px;border-left:3px solid #52B788;">
+          <p style="margin:0;font-size:14px;color:#1B4332;">📚 Try to use at least two of these words in your answer: <strong>variation</strong>, <strong>advantage</strong>, <strong>camouflage</strong></p>
+        </div>
+      </div>
+
+      <!-- ══ PART C: DRAW & LABEL ══ -->
+      <!-- ✏️ CUSTOMIZE: Adapt based on lesson. Options: diagram, comparison sketch, -->
+      <!--   before/after drawing, "design your own" sketch, data graph. -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Label</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Draw your designed organism in its environment. Label all 4 traits. Next to each label, write a short phrase explaining how that trait helps the organism survive.</p>
+
+      <!-- Imitation / reflection prompt (classical pedagogy) -->
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Reflect</div>
+          <!-- ✏️ CUSTOMIZE: A comparison or reflection prompt that brings closure -->
+          <div class="question">"Look back at your Notice &amp; Wonder observations. Did you notice the things that turned out to matter most? What did this investigation help you see that you did not notice at first?"</div>
+        </div>
+      </div>
+
+      <!-- ══ WHAT TO TURN IN ══ -->
+      <div class="turn-in-block">
+        <div class="turn-in-header">
+          <div class="turn-in-header-icon">📋</div>
+          <div>
+            <div class="turn-in-header-label">Canvas Submission</div>
+            <div class="turn-in-header-title">What to Turn In</div>
+          </div>
+        </div>
+        <div class="turn-in-body">
+
+          <p class="turn-in-intro">Submit your work on Canvas using <strong>one of these options:</strong></p>
+
+          <div class="turn-in-options">
+            <div class="turn-in-option turn-in-option-type">
+              <div class="turn-in-option-icon">⌨️</div>
+              <div class="turn-in-option-title">Type It</div>
+              <div class="turn-in-option-text">Type your answers directly into the Canvas assignment.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-photo">
+              <div class="turn-in-option-icon">📸</div>
+              <div class="turn-in-option-title">Photo It</div>
+              <div class="turn-in-option-text">Take a clear photo of your handwritten work and upload it.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-video">
+              <div class="turn-in-option-icon">🎥</div>
+              <div class="turn-in-option-title">Record It</div>
+              <div class="turn-in-option-text">Record a short video explaining what you did and learned.</div>
+            </div>
+          </div>
+
+          <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
+
+          <div class="turn-in-checklist">
+            <!-- ✏️ CUSTOMIZE: Each item should describe exactly one piece of work the student is submitting for THIS lesson. Phrase each starting with "My …" or "The …" — first-person, concrete, naming the section it came from (Notice & Wonder, Vocabulary, Explore tab, Part A/B/C, Write & Explain). Aim for 5–7 items. -->
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Notice &amp; Wonder observations (3+ differences) and my wonder question.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My 4+ fox observations from Explore Step 1, plus my 4-column survival traits chart from Steps 3&ndash;4.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Part B short-answer responses (Questions 4, 5, 6 in complete sentences).</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Write &amp; Explain response (complete sentences, using lesson vocabulary).</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Write &amp; Explain response and my Part C labeled organism drawing.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ════════════════════════════════════════════════════════════════════ -->
+      <!-- CLOSING VIDEO — wrap-up + next-lesson tease                          -->
+      <!-- Bottom of Tab 5. Appears after the submission callout. Shown to all  -->
+      <!-- students once they reach the end of the assignment tab.              -->
+      <!-- ════════════════════════════════════════════════════════════════════ -->
+      <div class="video-wrap" style="margin-top:24px;">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">👋</span>
+          <div>
+            <div class="video-wrap-type">Closing · Wrap-Up</div>
+            <!-- ✏️ CUSTOMIZE: Short closing title — wrap-up + tease the next lesson -->
+            <div class="video-wrap-title">Great work today! Here's what's coming up next&hellip;</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">👋</div>
+            <div class="video-placeholder-text">Closing video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 11-2-closing --></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /tab-assignment -->
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <div class="footer-line1">Optima Academy Online · <span>3rd Grade Science</span></div>
+  <!-- ✏️ CUSTOMIZE: Update module/lesson number and NGSS standard code -->
+  <div class="footer-line2">Lesson 11.02 &middot; NGSS 3-LS4-2</div>
+  <div class="footer-line3">© Optima Academy · All rights reserved</div>
+</div>
+
+</div><!-- /page-wrap -->
+
+
+<script>
+
+// ═══════════════════════════════════════════════════════════════════════════
+// ✏️ CUSTOMIZE PER LESSON — Primary topic emoji
+// This single emoji should match the lesson's theme. Used by the checklist
+// when items are marked complete. Also appears in the progress bar label
+// (search this file for "progress-label" and update the HTML to match).
+// Do NOT put this emoji in the Back to Top button — that text is always "↑ Top".
+// Examples by topic:
+//   weather/climate → ⛅   forces/motion → ⚙   magnets → 🧲
+//   life cycles → 🐛       ecosystems → 🌳     fossils → 🦴
+//   plants → 🌱           engineering → 🛠    SEP / observation → 🔬
+// ═══════════════════════════════════════════════════════════════════════════
+var LESSON_EMOJI = '🦊';
+
+// ── Tab System ──
+var tabProgress = { vocab: false, lesson: false, explore: false, quiz: false, assignment: false };
+var tabOrder = ['vocab','lesson','explore','quiz','assignment'];
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelector('[data-tab="' + name + '"]').classList.add('active');
+  tabProgress[name] = true;
+  document.querySelector('[data-tab="' + name + '"]').classList.add('visited');
+  var visited = Object.values(tabProgress).filter(Boolean).length;
+  var pct = Math.round((visited / tabOrder.length) * 100);
+  // Update the ONLY progress bar in the lesson (at the very top of the page)
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+  // Intro cards: open on vocab, collapsed on all other tabs
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c){
+    if (name === 'vocab') { c.classList.remove('collapsed'); }
+    else { c.classList.add('collapsed'); }
+  });
+  // Scroll to the top of the new tab content. Works standalone and in Canvas iframes
+  // (scrollIntoView propagates up the frame chain to scroll the parent page).
+  try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+  var top = document.getElementById('pageTop');
+  if (top && top.scrollIntoView) {
+    try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+  }
+}
+
+// ── Checklist ──
+// Works for both the new .turn-in-item (Canvas Submission block) and any
+// legacy .checklist-item usage. Empty when unchecked, LESSON_EMOJI when checked.
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  var icon = item.querySelector('.check-icon');
+  if (!icon) return;
+  if (item.classList.contains('checked')) {
+    // Use the lesson's primary topic emoji (set as LESSON_EMOJI at top of script)
+    icon.textContent = LESSON_EMOJI;
+  } else {
+    icon.textContent = '';
+  }
+  // Confetti only when ALL turn-in checklist items are checked
+  var items = document.querySelectorAll('.turn-in-item');
+  if (items.length > 0) {
+    setTimeout(function(){
+      if (Array.from(items).every(function(it){ return it.classList.contains('checked'); })) {
+        setTimeout(window.launchConfetti, 200);
+      }
+    }, 50);
+  }
+}
+
+// ── Clickable Diagram ──
+(function() {
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel    = document.getElementById('diagramPanel');
+  var wordEl   = document.getElementById('diagramWord');
+  var infoEl   = document.getElementById('diagramInfo');
+  if (!panel) return;
+  hotspots.forEach(function(hs) {
+    hs.addEventListener('click', function(e) {
+      e.stopPropagation();
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+      hs.classList.add('active');
+      var part = hs.getAttribute('data-part').replace(/-/g, ' ');
+      wordEl.textContent = part.charAt(0).toUpperCase() + part.slice(1);
+      infoEl.innerHTML   = hs.getAttribute('data-info');
+      panel.classList.add('visible');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+    }
+  });
+})();
+
+// ── Self-Check Quiz ──
+var quizAnswered = 0;
+var quizCorrect  = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen  = optEl.getAttribute('data-val');
+  q.querySelectorAll('.quiz-opt').forEach(function(o){
+    if (o.getAttribute('data-val') === correct) { o.classList.add('correct'); }
+    else { o.classList.add('disabled'); }
+  });
+  var fbCorrect = q.querySelector('.fb-correct');
+  var fbWrong   = q.querySelector('.fb-wrong');
+  if (chosen === correct) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+  if (quizAnswered === 3) {
+    var scoreBox  = document.getElementById('quizScore');
+    var scoreNum  = document.getElementById('quizScoreNum');
+    var scoreMsg  = document.getElementById('quizScoreMsg');
+    var vCorrect  = document.getElementById('quizVideoCorrect');
+    var vReview   = document.getElementById('quizVideoReview');
+    scoreNum.textContent = quizCorrect;
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '⭐ Perfect! You got every question right!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌿 Great job! Almost there!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip) {
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function() {
+    var rect = tip.getBoundingClientRect();
+    var bw   = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Back to Top ──
+// Designed to work in two contexts:
+//   1. Standalone (lesson viewed directly on GitHub Pages) — scroll our own window
+//   2. Canvas iframe (lesson embedded as a tall iframe) — the parent page scrolls,
+//      so scrollIntoView on a top anchor is what actually moves the user up.
+(function() {
+  var btn = document.getElementById('backToTop');
+  if (!btn) return;
+
+  var inIframe = (function() {
+    try { return window.self !== window.top; }
+    catch (e) { return true; } // cross-origin block means we're definitely embedded
+  })();
+
+  // Click handler — try every scroll target available
+  btn.addEventListener('click', function() {
+    // Scroll our own document (works standalone, no-op in fixed-height iframe)
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    // Bring the top anchor into view — this is what moves the parent Canvas page
+    // when we're embedded, because browsers propagate scrollIntoView up the frame chain.
+    var top = document.getElementById('pageTop');
+    if (top && top.scrollIntoView) {
+      try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+    }
+
+    // Same-origin iframe fallback (rare with Canvas, but free to try)
+    try {
+      if (window.frameElement && window.frameElement.scrollIntoView) {
+        window.frameElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (e) {}
+
+    // Cross-origin parent: announce intent via postMessage. Canvas doesn't listen by
+    // default, but custom embedders can opt in.
+    if (inIframe) {
+      try { window.parent.postMessage({ type: 'optima-lesson:scroll-to-top' }, '*'); } catch (e) {}
+    }
+  });
+
+  // Visibility logic
+  if (inIframe) {
+    // We can't read parent scroll position cross-origin. Reveal the button after a
+    // short delay so it's there when the student wants it, without popping in
+    // immediately on page load.
+    setTimeout(function() { btn.classList.add('show'); }, 1500);
+  } else {
+    // Standalone — show after the user has scrolled past 400px
+    window.addEventListener('scroll', function() {
+      btn.classList.toggle('show', window.pageYOffset > 400);
+    });
+  }
+})();
+
+// ── Confetti ──
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx    = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#52B788','#F9A825','#FDD835','#4DD0E1','#2E7D32','#7B5EA7','#FF8F00','#0288D1'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── Collapsible Intro Cards ──
+// The Big Question and I Can Statements cards always open/close together as a
+// unit — clicking either header toggles both. This matches how switchTab handles
+// them (both open on vocab tab, both collapsed on other tabs).
+var introCards = document.querySelectorAll('.intro-2col .card');
+introCards.forEach(function(card){
+  var head = card.querySelector('.card-head');
+  if (!head) return;
+  head.addEventListener('click', function(){
+    // If the clicked card is currently open, collapse both. If it's collapsed, open both.
+    var willCollapse = !card.classList.contains('collapsed');
+    introCards.forEach(function(c){
+      c.classList.toggle('collapsed', willCollapse);
+    });
+  });
+});
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+tabProgress['vocab'] = true;
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+</script>
+</body>
+</html>

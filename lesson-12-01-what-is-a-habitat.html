@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – What Is a Habitat?</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Nunito','Century Gothic','Arial Rounded MT Bold',Verdana,sans-serif;background:#F2F0E8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");color:#2B1D12;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.page-wrap{max-width:920px;margin:0 auto;background:#FAF8F4;box-shadow:0 0 40px rgba(0,0,0,0.07);}
+/* Header */
+.header{background:linear-gradient(135deg,#0E1C42 0%,#1A2D5A 60%,#243868 100%);border-bottom:6px solid #F9A825;padding:22px 28px 24px;position:relative;overflow:hidden;}
+.header::after{content:'';position:absolute;bottom:6px;left:0;right:0;height:3px;background:linear-gradient(90deg,#F9A825,#FFD740,#F9A825);}
+.header-brand{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.header-logo{width:52px;height:52px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,0.15);}
+.header-logo img{width:48px;height:38px;}
+.header-org{font-size:22px;color:#fff;font-weight:800;line-height:1.15;}
+.header-sub{font-size:11px;color:#55C8E8;letter-spacing:0.5px;}
+.header-title{font-size:30px;color:#fff;font-weight:900;line-height:1.15;margin-bottom:10px;text-shadow:0 2px 12px rgba(249,168,37,0.3);}
+.header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(249,168,37,0.15);border:1.5px solid rgba(249,168,37,0.35);border-radius:28px;padding:6px 16px;}
+.header-badge span:first-child{font-size:22px;}
+.header-badge span:last-child{font-size:18px;color:#fff;font-weight:800;}
+/* Hero */
+.hero-visual{padding:0;position:relative;overflow:hidden;border-bottom:3px solid #F9A825;}
+.hero-visual svg{display:block;width:100%;height:auto;}
+/* Hero Animations */
+@keyframes cloud-drift-1{0%{transform:translateX(0);}100%{transform:translateX(40px);}}
+@keyframes cloud-drift-2{0%{transform:translateX(0);}100%{transform:translateX(-32px);}}
+@keyframes sun-pulse{0%,100%{opacity:0.65;transform:scale(1);}50%{opacity:1;transform:scale(1.12);}}
+@keyframes bird-drift{0%,100%{transform:translate(0,0);}50%{transform:translate(6px,-8px);}}
+@keyframes hero-float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+@keyframes hero-shimmer{0%,100%{opacity:0.15;}50%{opacity:0.55;}}
+@keyframes hero-spin-slow{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+@keyframes hero-sway{0%,100%{transform:rotate(-2.5deg);}50%{transform:rotate(2.5deg);}}
+@keyframes cactus-sway{0%,100%{transform:rotate(-1.8deg);}50%{transform:rotate(1.8deg);}}
+@keyframes lizard-breathe{0%,100%{transform:scaleX(1);}50%{transform:scaleX(1.06);}}
+@keyframes heat-rise{0%{opacity:0;transform:translateY(0);}40%{opacity:0.45;}100%{opacity:0;transform:translateY(-22px);}}
+@keyframes mind-blow-bounce{0%,100%{transform:scale(1);}50%{transform:scale(1.12);}}
+.hero-cloud-1{animation:cloud-drift-1 9s ease-in-out infinite alternate;}
+.hero-cloud-2{animation:cloud-drift-2 13s ease-in-out infinite alternate;}
+.hero-sun-glow{animation:sun-pulse 4s ease-in-out infinite;transform-origin:center;transform-box:fill-box;}
+.hero-birds{animation:bird-drift 5s ease-in-out infinite;}
+.hero-float{animation:hero-float 3.5s ease-in-out infinite;}
+.hero-shimmer{animation:hero-shimmer 3s ease-in-out infinite;}
+.hero-cactus-l{animation:cactus-sway 5s ease-in-out infinite;transform-origin:bottom center;transform-box:fill-box;}
+.hero-cactus-r{animation:cactus-sway 6.5s ease-in-out infinite 0.8s;transform-origin:bottom center;transform-box:fill-box;}
+.hero-lizard{animation:lizard-breathe 2.8s ease-in-out infinite;transform-origin:center;transform-box:fill-box;}
+.hero-heat-1{animation:heat-rise 3.2s ease-in-out infinite;}
+.hero-heat-2{animation:heat-rise 3.2s ease-in-out infinite 1.1s;}
+.hero-heat-3{animation:heat-rise 3.2s ease-in-out infinite 2.2s;}
+/* Progress */
+.progress-wrap{display:flex;align-items:center;gap:12px;background:linear-gradient(90deg,#0E1C42,#1A2D5A);padding:10px 20px;border-bottom:2px solid rgba(249,168,37,0.25);position:sticky;top:0;z-index:200;}
+.progress-label{font-size:13px;color:#FFD740;font-weight:800;white-space:nowrap;letter-spacing:0.3px;}
+.progress-track{flex:1;height:8px;border-radius:4px;background:rgba(255,255,255,0.12);overflow:hidden;}
+.progress-fill{height:100%;width:0%;border-radius:4px;background:linear-gradient(90deg,#F9A825,#FFD740);transition:width 0.6s ease;}
+.progress-pct{font-size:12px;color:#FFD740;font-weight:800;white-space:nowrap;min-width:36px;text-align:right;}
+/* Info Strip */
+.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E8DDD2;}
+.info-item{flex:1;min-width:150px;padding:12px 16px;border-right:1px solid #E8DDD2;display:flex;align-items:center;gap:10px;}
+.info-item:last-child{border-right:none;}
+.info-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.info-label{font-size:10px;color:#9A8E82;text-transform:uppercase;letter-spacing:0.5px;font-weight:700;}
+.info-value{font-size:16px;color:#1B4332;font-weight:800;line-height:1.2;}
+.info-detail{font-size:11px;color:#5A4D3E;line-height:1.3;}
+/* Cards */
+.card{background:#fff;border:2px solid #E8DDD2;border-radius:18px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 12px rgba(27,67,50,0.04);}
+.card-head{display:flex;align-items:center;gap:10px;padding:14px 20px;border-bottom:2px solid;}
+.card-head-icon{width:42px;height:42px;border-radius:50%;color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.card-head-label{font-size:10px;color:#9A8E82;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;}
+.card-head-title{font-size:20px;color:#1B4332;font-weight:800;line-height:1.2;}
+.card-body{padding:18px 22px;}
+.card-body p{font-size:17px;color:#5A4D3E;line-height:1.75;margin-bottom:12px;}
+.card-body p:last-child{margin-bottom:0;}
+.theme-earth .card-head{background:#FFF0E8;border-color:#E8D0B8;}.theme-earth .card-head-icon{background:#A0522D;}
+.theme-sun .card-head{background:#FFF9E8;border-color:#F0E4C0;}.theme-sun .card-head-icon{background:#F9A825;}
+.theme-sky .card-head{background:#EAF8FD;border-color:#D6F2FB;}.theme-sky .card-head-icon{background:#0288D1;}
+.theme-forest .card-head{background:#EEF8F0;border-color:#C4E5CC;}.theme-forest .card-head-icon{background:#2E7D32;}
+.theme-rock .card-head{background:#F0EDF6;border-color:#D8D0E8;}.theme-rock .card-head-icon{background:#7B5EA7;}
+.theme-meadow .card-head{background:#F0F8E8;border-color:#C8E0B8;}.theme-meadow .card-head-icon{background:#558B2F;}
+/* Activity Cards */
+.activity-card{background:#fff;border:2px solid #E8DDD2;border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:0 2px 10px rgba(27,67,50,0.04);}
+.activity-card.act-warmup{border-left:6px solid #52B788;}.activity-card.act-lesson{border-left:6px solid #F9A825;}
+.activity-card.act-explore{border-left:6px solid #0288D1;}.activity-card.act-practice{border-left:6px solid #2E7D32;}
+.activity-card.act-check{border-left:6px solid #7B5EA7;}
+.act-head{display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;}
+.act-num{width:38px;height:38px;border-radius:14px;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.act-title{font-size:19px;color:#1B4332;font-weight:800;line-height:1.2;}
+.act-subtitle{font-size:12px;color:#9A8E82;}
+.act-time{display:inline-flex;align-items:center;gap:4px;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:700;color:#fff;white-space:nowrap;margin-left:auto;flex-shrink:0;}
+.act-body{padding:18px 22px 18px 20px;}
+.act-body p{font-size:17px;color:#5A4D3E;line-height:1.75;margin-bottom:12px;}
+/* Callouts */
+.callout{border-radius:14px;padding:16px 18px;display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;}
+.callout-icon{font-size:28px;flex-shrink:0;margin-top:2px;}
+.callout p{font-size:16px;color:#2B1D12;line-height:1.65;margin:0;}
+.callout-earth{background:#FFF0E8;border:2px solid #E8D0B8;}
+.callout-think{background:#FFF9E8;border:2px solid #F0E4C0;}
+.callout-vocab{background:#F0EDF6;border:2px solid #D8D0E8;}
+.callout-tip{background:#EEF8F0;border:2px solid #C4E5CC;}
+.callout-submit{background:#EAF8FD;border:2px solid #D6F2FB;}
+/* Socratic */
+.socratic-q{background:linear-gradient(135deg,#EEF8F0,#E8F5E9);border:2px solid #A8D5B8;border-radius:16px;padding:16px 20px;margin:16px 0;display:flex;align-items:flex-start;gap:12px;}
+.socratic-q .sq-icon{font-size:26px;flex-shrink:0;line-height:1;}
+.socratic-q .label{font-size:11px;color:#2D6A4F;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:4px;}
+.socratic-q .question{font-size:17px;color:#2B1D12;font-weight:700;line-height:1.6;font-style:italic;}
+/* Diagram */
+.diagram-wrap{background:#fff;border:2px solid #E8DDD2;border-radius:16px;padding:16px;margin:16px 0;text-align:center;}
+.diagram-wrap svg{max-width:100%;height:auto;}
+.diagram-caption{font-size:13px;color:#9A8E82;margin-top:10px;font-weight:600;text-align:center;}
+.diagram-interactive{position:relative;}
+.diagram-interactive svg{display:block;width:100%;height:auto;cursor:pointer;}
+.hotspot{fill-opacity:0;cursor:pointer;transition:fill-opacity 0.2s;}
+.hotspot:hover,.hotspot.active{fill-opacity:0.18;}
+.diagram-tap-hint{font-size:12px;color:#B0A698;font-weight:600;margin-top:6px;text-align:center;}
+.diagram-info-panel{background:#1B4332;color:#fff;border-radius:12px;padding:14px 18px;margin-top:12px;font-size:15px;line-height:1.6;font-weight:600;display:none;}
+.diagram-info-panel.visible{display:block;}
+.dip-word{display:block;font-size:11px;color:#95D5B2;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:6px;}
+/* Key Concept */
+.key-concept{background:#F0F8E8;border:2px solid #C8E0B8;border-radius:14px;padding:18px 20px;margin:14px 0;}
+.key-concept .kc-label{font-size:13px;color:#558B2F;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;margin-bottom:8px;}
+.key-concept p{font-size:16px;color:#2B1D12;line-height:1.7;margin-bottom:8px;}
+.key-concept p:last-child{margin-bottom:0;}
+/* PQ */
+.pq{background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;padding:14px 18px;margin-bottom:12px;}
+.pq-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;color:#fff;font-weight:800;font-size:14px;margin-right:8px;vertical-align:middle;}
+.pq-text{font-size:17px;color:#2B1D12;line-height:1.65;}
+/* Vocab */
+.vocab-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
+.flip-card{perspective:800px;height:195px;cursor:pointer;}
+.flip-card-inner{position:relative;width:100%;height:100%;transition:transform 0.5s ease;transform-style:preserve-3d;}
+.flip-card.flipped .flip-card-inner{transform:rotateY(180deg);}
+.flip-card-front,.flip-card-back{position:absolute;top:0;left:0;width:100%;height:100%;border-radius:16px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px 18px;text-align:center;border:2px solid #E8DDD2;box-shadow:0 2px 10px rgba(27,67,50,0.06);}
+.flip-card-front{background:#FAFAF6;border-top:5px solid;}
+.flip-card-front .fc-emoji{font-size:32px;margin-bottom:8px;}
+.flip-card-front .fc-word{font-size:18px;font-weight:800;color:#1B4332;margin-bottom:6px;}
+.flip-card-front .fc-tap{font-size:11px;color:#B0A698;font-weight:600;letter-spacing:0.3px;}
+.flip-card-back{background:linear-gradient(145deg,#1B4332,#2D6A4F);border-color:#1B4332;transform:rotateY(180deg);}
+.flip-card-back .fc-def{font-size:14.5px;color:#fff;line-height:1.5;font-weight:600;}
+.flip-card-back .fc-word-back{font-size:11px;color:#95D5B2;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:6px;}
+.flip-card-back .fc-tap-back{font-size:11px;color:rgba(255,255,255,0.4);margin-top:8px;font-weight:600;}
+.fc-color-1 .flip-card-front{border-top-color:#52B788;}.fc-color-2 .flip-card-front{border-top-color:#2D6A4F;}
+.fc-color-3 .flip-card-front{border-top-color:#F9A825;}.fc-color-4 .flip-card-front{border-top-color:#0288D1;}
+.fc-color-5 .flip-card-front{border-top-color:#2E7D32;}.fc-color-6 .flip-card-front{border-top-color:#7B5EA7;}
+/* Vtip */
+.vtip{position:relative;color:#7B5EA7;font-weight:700;cursor:help;border-bottom:2px dotted rgba(123,94,167,0.45);transition:color 0.15s;}
+.vtip:hover{color:#5B3EA7;}
+.vtip .vtip-box{position:fixed;background:#1B4332;color:#fff;padding:12px 16px;border-radius:12px;font-size:14px;font-weight:600;font-style:normal;line-height:1.55;width:250px;text-align:center;opacity:0;visibility:hidden;transition:opacity 0.2s ease,transform 0.2s ease,visibility 0.2s;pointer-events:none;z-index:9999;box-shadow:0 6px 24px rgba(27,67,50,0.35);}
+.vtip:hover .vtip-box{opacity:1;visibility:visible;}
+.vtip-word{display:block;color:#95D5B2;font-size:12px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
+/* Mind Blow */
+.mind-blow{background:linear-gradient(135deg,#1a3a28,#1B4332);border:2px solid rgba(149,213,178,0.3);border-radius:18px;padding:18px 22px;margin:0 0 22px;display:flex;align-items:flex-start;gap:16px;}
+.mind-blow-icon{font-size:36px;flex-shrink:0;animation:mind-blow-bounce 2.8s ease-in-out infinite;transform-origin:center;transform-box:fill-box;}
+.mind-blow-content{flex:1;}
+.mind-blow-label{font-size:11px;color:#FDD835;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:4px;}
+.mind-blow-text{font-size:15px;color:#fff;line-height:1.6;font-weight:600;}
+.mind-blow-text strong{color:#95D5B2;}
+/* Go Deeper */
+.go-deeper{background:linear-gradient(135deg,#F0EDF6,#E8E2F2);border:2px solid #D8D0E8;border-radius:16px;margin:16px 0;overflow:hidden;}
+.go-deeper summary{padding:14px 18px;font-size:16px;font-weight:800;color:#1B4332;cursor:pointer;display:flex;align-items:center;gap:10px;list-style:none;}
+.go-deeper summary::-webkit-details-marker{display:none;}
+.go-deeper summary::before{content:'🔭';font-size:22px;}
+.go-deeper summary::after{content:'▸';margin-left:auto;font-size:18px;color:#7B5EA7;transition:transform 0.3s;}
+.go-deeper[open] summary::after{transform:rotate(90deg);}
+.go-deeper .gd-body{padding:4px 18px 16px;font-size:15px;color:#5A4D3E;line-height:1.7;border-top:1.5px solid #D8D0E8;}
+.go-deeper .gd-body p{margin-bottom:10px;}
+/* Back to Top */
+.back-to-top{position:fixed;bottom:24px;right:24px;height:38px;padding:0 14px 0 12px;border-radius:19px;background:linear-gradient(135deg,#2D6A4F,#52B788);color:#fff;border:none;font-size:13px;font-weight:800;font-family:'Nunito',sans-serif;cursor:pointer;box-shadow:0 4px 14px rgba(45,106,79,0.35);display:flex;align-items:center;gap:5px;opacity:0;visibility:hidden;transform:translateY(20px);transition:opacity 0.3s,visibility 0.3s,transform 0.3s,box-shadow 0.2s;z-index:500;letter-spacing:0.2px;white-space:nowrap;}
+.back-to-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+.back-to-top:hover{box-shadow:0 6px 20px rgba(45,106,79,0.5);transform:translateY(-3px);}
+#confettiCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:10000;}
+/* Video */
+.video-wrap{border-radius:18px;overflow:hidden;border:2px solid #E8DDD2;box-shadow:0 4px 20px rgba(27,67,50,0.08);background:#000;margin:0 0 22px;}
+.video-wrap-header{display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#1B4332,#2D6A4F);border-bottom:2px solid rgba(149,213,178,0.2);}
+.video-wrap-type{font-size:10px;color:#95D5B2;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:2px;}
+.video-wrap-title{font-size:16px;color:#fff;font-weight:800;line-height:1.2;}
+.video-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;}
+.video-ratio iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+.video-placeholder{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#1a3a28,#1B4332);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;}
+.video-placeholder-icon{font-size:44px;margin-bottom:10px;opacity:0.55;}
+.video-placeholder-text{font-size:14px;color:rgba(255,255,255,0.45);font-weight:600;line-height:1.5;font-family:'Nunito',sans-serif;}
+.video-placeholder-id{font-size:11px;color:rgba(149,213,178,0.4);font-family:monospace;margin-top:6px;letter-spacing:0.5px;}
+.video-feedback{display:none;}.video-feedback.show{display:block;}
+/* Collapsible intro */
+.intro-2col .card .card-head{cursor:pointer;user-select:none;position:relative;}
+.intro-2col .card .card-head::after{content:'▾';position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:16px;color:#9A8E82;transition:transform 0.25s ease;}
+.intro-2col .card.collapsed .card-head::after{transform:translateY(-50%) rotate(-90deg);}
+.intro-2col .card.collapsed .card-body{display:none;}
+/* Tab Bar */
+.tab-bar{position:sticky;top:44px;z-index:100;background:#FAF8F4;border-bottom:3px solid #E8DDD2;display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.tab-bar::-webkit-scrollbar{display:none;}
+.tab-btn{flex:1;min-width:130px;padding:12px 8px 11px;background:transparent;border:none;border-bottom:4px solid transparent;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;color:#9A8E82;cursor:pointer;transition:all 0.2s;white-space:nowrap;line-height:1.3;text-align:center;}
+.tab-btn:hover{color:#1B4332;background:#EEF8F0;}
+.tab-btn.active{color:#1B4332;border-bottom-color:#F9A825;background:#fff;}
+.tab-btn .tab-check{display:none;font-size:12px;color:#2E7D32;margin-left:4px;font-weight:800;}
+.tab-btn.visited .tab-check{display:inline;}
+/* Tab Panels */
+.tab-panel{display:none;padding:24px 28px 36px;}
+.tab-panel.active{display:block;}
+.scroll-reveal{opacity:1;transform:none;transition:none;}
+/* Intro 2-col */
+.intro-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 28px 0;}
+.intro-2col .card{margin-bottom:0;}
+/* Need Strip */
+.need-strip{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:12px 28px 16px;}
+.need-strip-label{font-size:13px;color:#5A4D3E;font-weight:700;white-space:nowrap;}
+.need-chip{display:inline-flex;align-items:center;gap:5px;background:#EEF8F0;border:1.5px solid #C4E5CC;border-radius:20px;padding:5px 12px;font-size:13px;color:#1B4332;font-weight:700;}
+/* Turn In */
+.turn-in-block{background:#fff;border:2px solid #E0DDD8;border-radius:20px;margin-top:22px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);}
+.turn-in-header{background:linear-gradient(135deg,#1B5E3B,#2D6A4F);padding:20px 24px;display:flex;align-items:center;gap:16px;}
+.turn-in-header-icon-wrap{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,0.16);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;}
+.turn-in-header-sub{font-size:11px;color:#95D5B2;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:4px;}
+.turn-in-header-title{font-size:26px;color:#fff;font-weight:900;line-height:1.1;}
+.turn-in-body{padding:22px 24px;}
+.turn-in-intro{font-size:16px;color:#2B1D12;line-height:1.6;margin-bottom:18px;}
+.turn-in-options{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:26px;}
+.turn-in-option{border-radius:16px;padding:22px 16px 18px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;}
+.turn-in-option.opt-type{background:#EBF5FB;border:1.5px solid #AED6F1;}
+.turn-in-option.opt-photo{background:#FEF9E7;border:1.5px solid #F0E0A0;}
+.turn-in-option.opt-record{background:#F4EEF8;border:1.5px solid #D7BDE2;}
+.turn-in-option-icon{font-size:38px;line-height:1;}
+.turn-in-option-label{font-size:17px;color:#1B4332;font-weight:900;}
+.turn-in-option-desc{font-size:13px;color:#5A4D3E;line-height:1.55;font-weight:600;}
+.turn-in-checklist-intro{font-size:15px;color:#2B1D12;font-weight:600;margin-bottom:12px;}
+.turn-in-checklist{display:flex;flex-direction:column;gap:8px;}
+.turn-in-item{display:flex;align-items:flex-start;gap:14px;padding:14px 16px;border:2px solid #C4E5CC;border-radius:14px;background:#fff;font-size:15px;color:#2B1D12;font-weight:600;cursor:pointer;transition:background 0.15s,border-color 0.15s;line-height:1.55;user-select:none;}
+.turn-in-item:hover{background:#F0FAF3;border-color:#88CCA0;}
+.turn-in-item.checked{background:#F0FAF3;border-color:#52B788;color:#1B5E2C;}
+.turn-in-check{width:34px;height:34px;border-radius:9px;flex-shrink:0;border:2.5px solid #52B788;background:#fff;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;margin-top:0;transition:all 0.2s;}
+.turn-in-item.checked .turn-in-check{background:#2E7D32;border-color:#2E7D32;color:#fff;}
+/* Quiz */
+.quiz-card{background:#fff;border:2px solid #F9A825;border-radius:18px;overflow:hidden;box-shadow:0 2px 10px rgba(249,168,37,0.08);}
+.quiz-q{padding:16px 20px;border-bottom:1.5px solid #E8DDD2;}
+.quiz-q:last-of-type{border-bottom:none;}
+.quiz-q.answered .quiz-opt{pointer-events:none;}
+.quiz-q-text{font-size:17px;color:#1B4332;font-weight:700;line-height:1.55;margin-bottom:12px;}
+.quiz-options{display:flex;flex-direction:column;gap:8px;}
+.quiz-opt{display:flex;align-items:center;gap:10px;padding:11px 14px;border:2px solid #E8DDD2;border-radius:12px;cursor:pointer;transition:all 0.18s;font-size:16px;color:#2B1D12;font-weight:600;background:#FAFAF6;}
+.quiz-opt:hover{border-color:#F9A825;background:#FFF9E8;}
+.quiz-opt.correct{border-color:#2E7D32;background:#EEF8F0;color:#1a6b35;}
+.quiz-opt.wrong{border-color:#E8636B;background:#FFF0EC;color:#8a3030;}
+.quiz-opt.disabled{opacity:0.55;}
+.opt-letter{width:30px;height:30px;border-radius:8px;background:#E8DDD2;color:#5A4D3E;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;}
+.quiz-opt.correct .opt-letter{background:#2E7D32;color:#fff;}
+.quiz-opt.wrong .opt-letter{background:#E8636B;color:#fff;}
+.quiz-feedback{font-size:14px;padding:10px 14px;border-radius:10px;margin-top:10px;display:none;font-weight:600;line-height:1.5;}
+.quiz-feedback.show{display:block;}
+.quiz-feedback.fb-correct{background:#EEF8F0;color:#1a6b35;border:1.5px solid #B8E8CF;}
+.quiz-feedback.fb-wrong{background:#FFF0EC;color:#8a3030;border:1.5px solid #F5C4BA;}
+.quiz-score{text-align:center;padding:16px;background:linear-gradient(135deg,#EEF8F0,#E8F5E9);border:2px solid #C4E5CC;border-radius:14px;margin-top:8px;display:none;}
+.quiz-score.show{display:block;}
+.quiz-score-num{font-size:36px;font-weight:900;color:#1B4332;}
+.quiz-score-label{font-size:14px;color:#9A8E82;font-weight:700;}
+.quiz-score-msg{font-size:16px;color:#2B1D12;font-weight:700;margin-top:6px;}
+/* Tab Next */
+.tab-next-wrap{text-align:center;padding:24px 0 8px;}
+.tab-next-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;background:linear-gradient(135deg,#2D6A4F,#52B788);color:#fff;border:none;border-radius:28px;font-family:'Nunito',sans-serif;font-size:16px;font-weight:800;cursor:pointer;box-shadow:0 4px 16px rgba(45,106,79,0.3);transition:transform 0.2s,box-shadow 0.2s;}
+.tab-next-btn:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(45,106,79,0.4);}
+@media(max-width:620px){.intro-2col{grid-template-columns:1fr;}.vocab-grid{grid-template-columns:1fr;}.flip-card{height:175px;}.header-title{font-size:22px;}.tab-btn{min-width:100px;font-size:11px;padding:10px 6px 9px;}.turn-in-options{grid-template-columns:1fr;}.turn-in-header-title{font-size:20px;}}
+</style>
+</head>
+<body>
+<canvas id="confettiCanvas"></canvas>
+<button class="back-to-top" id="backToTop" type="button">🌵 Back to Top</button>
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- PROGRESS BAR -->
+<div class="progress-wrap">
+  <span class="progress-label">🌵 Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">What Is a Habitat?</div>
+  <div class="header-badge"><span>🌵</span><span>Lesson 12.01</span></div>
+</div>
+
+<!-- HERO BANNER — DESERT -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A Sonoran desert habitat with saguaro cacti, a hawk, a lizard, and heat shimmer">
+  <defs>
+    <linearGradient id="dSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#2E86C8"/>
+      <stop offset="45%"  stop-color="#7EC8E3"/>
+      <stop offset="78%"  stop-color="#D4B483"/>
+      <stop offset="100%" stop-color="#C4953E"/>
+    </linearGradient>
+    <linearGradient id="dSand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#D4A44A"/>
+      <stop offset="40%"  stop-color="#C48C32"/>
+      <stop offset="100%" stop-color="#A0681A"/>
+    </linearGradient>
+    <linearGradient id="dMesa" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#8B5E3C"/>
+      <stop offset="100%" stop-color="#6B4028"/>
+    </linearGradient>
+    <radialGradient id="dSunG" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#FFFDE7"/>
+      <stop offset="35%"  stop-color="#FFE082" stop-opacity="0.85"/>
+      <stop offset="65%"  stop-color="#FFCA28" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#FFB300" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="dCactus" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#2E6B28"/>
+      <stop offset="35%"  stop-color="#3E8C34"/>
+      <stop offset="65%"  stop-color="#4EA042"/>
+      <stop offset="100%" stop-color="#336030"/>
+    </linearGradient>
+    <filter id="dGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Sky gradient -->
+  <rect width="920" height="260" fill="url(#dSky)"/>
+
+  <!-- Atmospheric heat-haze glow near horizon -->
+  <rect x="0" y="148" width="920" height="26" fill="#E8C870" opacity="0.22"/>
+
+  <!-- 1 — SUN (top right, blazing) -->
+  <circle cx="848" cy="42" r="72" fill="url(#dSunG)"/>
+  <g class="hero-sun-glow">
+    <circle cx="848" cy="42" r="28" fill="#FFE57A" opacity="0.60"/>
+    <circle cx="848" cy="42" r="19" fill="#FFF59D" opacity="0.92"/>
+    <circle cx="848" cy="42" r="11" fill="#FFFDE7"/>
+  </g>
+  <!-- Sun rays (static, subtle) -->
+  <g stroke="#FFE082" stroke-width="1.5" opacity="0.30">
+    <line x1="848" y1="10" x2="848" y2="2"/><line x1="878" y1="20" x2="884" y2="14"/>
+    <line x1="890" y1="46" x2="898" y2="46"/><line x1="878" y1="68" x2="884" y2="74"/>
+    <line x1="818" y1="18" x2="812" y2="12"/><line x1="806" y1="46" x2="798" y2="46"/>
+  </g>
+
+  <!-- 2 — DISTANT MESA / BUTTE silhouettes at horizon -->
+  <!-- Left mesa -->
+  <path d="M0,172 L0,155 L38,128 L74,128 L110,155 L140,155 L168,136 L200,136 L230,155 L230,172 Z"
+        fill="url(#dMesa)" opacity="0.55"/>
+  <!-- Centre butte -->
+  <path d="M360,172 L380,148 L408,138 L436,138 L462,148 L480,172 Z"
+        fill="#7A4E30" opacity="0.42"/>
+  <!-- Right mesa -->
+  <path d="M650,172 L672,145 L704,132 L752,132 L784,148 L810,160 L810,172 Z"
+        fill="#7A4E30" opacity="0.38"/>
+
+  <!-- 3 — DESERT FLOOR -->
+  <path d="M0,170 Q120,162 280,167 Q460,172 640,165 Q780,160 920,164 L920,260 L0,260 Z"
+        fill="url(#dSand)"/>
+  <!-- Surface shadow / depth at base -->
+  <rect x="0" y="228" width="920" height="32" fill="#8B5E20" opacity="0.18"/>
+  <!-- Scattered pebbles on sand -->
+  <ellipse cx="310" cy="185" rx="10" ry="5" fill="#9E7640" opacity="0.55"/>
+  <ellipse cx="326" cy="190" rx="7"  ry="3" fill="#8B6030" opacity="0.50"/>
+  <ellipse cx="550" cy="178" rx="12" ry="5" fill="#A07848" opacity="0.50"/>
+  <ellipse cx="568" cy="186" rx="8"  ry="3" fill="#8B6030" opacity="0.45"/>
+  <ellipse cx="700" cy="188" rx="9"  ry="4" fill="#9E7640" opacity="0.45"/>
+  <!-- Sand ripple lines -->
+  <path d="M240,195 Q340,190 440,193" fill="none" stroke="#C49038" stroke-width="1.5" opacity="0.35" stroke-linecap="round"/>
+  <path d="M480,202 Q580,197 680,200" fill="none" stroke="#C49038" stroke-width="1.5" opacity="0.30" stroke-linecap="round"/>
+
+  <!-- 4 — HEAT SHIMMER (animated wavy lines near horizon) -->
+  <g class="hero-heat-1">
+    <path d="M200,170 Q235,166 270,170 Q305,174 340,170" fill="none" stroke="#E8C870" stroke-width="2" opacity="0.55" stroke-linecap="round"/>
+  </g>
+  <g class="hero-heat-2">
+    <path d="M480,168 Q520,163 560,168 Q600,173 640,168" fill="none" stroke="#E8C870" stroke-width="2" opacity="0.50" stroke-linecap="round"/>
+  </g>
+  <g class="hero-heat-3">
+    <path d="M720,170 Q758,165 796,170 Q830,175 860,170" fill="none" stroke="#E8C870" stroke-width="2" opacity="0.45" stroke-linecap="round"/>
+  </g>
+
+  <!-- 5 — LEFT SAGUARO GROUP (animateTransform pivots at trunk base — no CSS conflict) -->
+  <g>
+    <ellipse cx="162" cy="215" rx="18" ry="5" fill="#8B5E20" opacity="0.30"/>
+    <g>
+      <animateTransform attributeName="transform" type="rotate"
+        values="-1.6 148 260; 1.6 148 260; -1.6 148 260"
+        dur="5s" repeatCount="indefinite" calcMode="spline"
+        keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"/>
+      <path d="M141,260 Q138,220 139,180 Q139,140 141,118 Q144,108 148,106 Q152,104 155,108 Q158,118 158,140 Q159,180 159,220 Q159,250 157,260 Z" fill="url(#dCactus)"/>
+      <path d="M144,260 Q142,200 143,130" fill="none" stroke="#2A6024" stroke-width="1.2" opacity="0.50"/>
+      <path d="M148,260 Q148,200 148,120" fill="none" stroke="#4AAA40" stroke-width="0.8" opacity="0.40"/>
+      <path d="M153,260 Q154,200 154,125" fill="none" stroke="#2A6024" stroke-width="1.2" opacity="0.50"/>
+      <path d="M141,165 Q128,162 120,158 Q110,154 108,145 Q108,132 112,128 Q116,124 120,128 Q124,132 124,145 Q124,152 128,155 Q136,158 141,162 Z" fill="url(#dCactus)"/>
+      <path d="M114,145 Q114,135 114,128" fill="none" stroke="#2A6024" stroke-width="1" opacity="0.45"/>
+      <path d="M118,148 Q118,136 118,128" fill="none" stroke="#4AAA40" stroke-width="0.7" opacity="0.35"/>
+      <path d="M157,152 Q168,148 178,146 Q188,144 192,136 Q194,124 190,120 Q186,116 182,120 Q178,124 178,136 Q178,142 170,146 Q162,148 158,152 Z" fill="url(#dCactus)"/>
+      <path d="M189,134 Q189,124 189,120" fill="none" stroke="#2A6024" stroke-width="1" opacity="0.45"/>
+      <path d="M185,136 Q185,125 185,121" fill="none" stroke="#4AAA40" stroke-width="0.7" opacity="0.35"/>
+      <circle cx="148" cy="115" r="1.8" fill="#C8E6B0" opacity="0.70"/>
+      <circle cx="142" cy="135" r="1.5" fill="#C8E6B0" opacity="0.65"/>
+      <circle cx="155" cy="128" r="1.5" fill="#C8E6B0" opacity="0.65"/>
+      <circle cx="140" cy="158" r="1.5" fill="#C8E6B0" opacity="0.60"/>
+      <circle cx="158" cy="165" r="1.5" fill="#C8E6B0" opacity="0.60"/>
+      <circle cx="148" cy="104" r="5" fill="#FFF176" opacity="0.80"/>
+      <circle cx="148" cy="104" r="3" fill="#FFE082" opacity="0.90"/>
+      <!-- Shorter companion cactus -->
+      <ellipse cx="192" cy="220" rx="10" ry="4" fill="#8B5E20" opacity="0.25"/>
+      <path d="M188,260 Q186,230 187,198 Q187,176 188,164 Q190,158 192,157 Q194,156 196,158 Q198,164 198,176 Q199,198 199,230 Q199,250 198,260 Z" fill="url(#dCactus)"/>
+      <path d="M198,186 Q206,183 212,182 Q218,181 220,175 Q221,167 218,164 Q215,161 212,164 Q210,167 210,175 Q210,180 204,182 Q200,183 198,186 Z" fill="url(#dCactus)"/>
+      <path d="M192,260 Q192,210 192,165" fill="none" stroke="#4AAA40" stroke-width="0.7" opacity="0.35"/>
+    </g>
+  </g>
+
+  <!-- Small desert shrub near left cactus -->
+  <g transform="translate(94,200)">
+    <circle cx="0"   cy="0" r="12" fill="#556B2F" opacity="0.70"/>
+    <circle cx="14"  cy="2" r="9"  fill="#4A5E28" opacity="0.65"/>
+    <circle cx="-10" cy="3" r="8"  fill="#506628" opacity="0.60"/>
+  </g>
+
+  <!-- 6 — CENTRE ROCK + LIZARD (outer group positions; no CSS animation class = no conflict) -->
+  <path d="M390,185 Q406,176 430,174 Q454,172 468,178 Q480,184 476,194 Q472,202 452,204 Q428,206 408,202 Q390,198 390,190 Z" fill="#9E7248" opacity="0.90"/>
+  <path d="M392,186 Q408,178 432,176 Q455,174 468,180" fill="none" stroke="#C49060" stroke-width="1.5" opacity="0.50"/>
+  <g transform="translate(424,183)">
+    <ellipse cx="2" cy="12" rx="22" ry="4" fill="#7A5030" opacity="0.30"/>
+    <ellipse cx="0" cy="0" rx="20" ry="7" fill="#8BC34A"/>
+    <ellipse cx="20" cy="-1" rx="10" ry="6" fill="#7CB342"/>
+    <path d="M28,-1 Q34,0 36,2" fill="none" stroke="#689F38" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="24" cy="-4" r="3"     fill="#FFF176"/>
+    <circle cx="24.5" cy="-4" r="1.8" fill="#1A1A1A"/>
+    <circle cx="25"   cy="-4.5" r="0.7" fill="#fff"/>
+    <ellipse cx="0" cy="2" rx="14" ry="3.5" fill="#DCEDC8" opacity="0.55"/>
+    <path d="M-20,0 Q-34,3 -44,8 Q-52,12 -56,16" fill="none" stroke="#7CB342" stroke-width="5" stroke-linecap="round"/>
+    <path d="M-44,8 Q-52,12 -56,16" fill="none" stroke="#689F38" stroke-width="3" stroke-linecap="round"/>
+    <line x1="8"  y1="7"  x2="12" y2="16" stroke="#689F38" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="-4" y1="7"  x2="-8" y2="17" stroke="#689F38" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="12" y1="16" x2="17" y2="20" stroke="#689F38" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="-8" y1="17" x2="-14" y2="21" stroke="#689F38" stroke-width="1.8" stroke-linecap="round"/>
+    <circle cx="-8" cy="-3" r="2.5" fill="#558B2F" opacity="0.55"/>
+    <circle cx="2"  cy="-4" r="2.5" fill="#558B2F" opacity="0.55"/>
+    <circle cx="12" cy="-3" r="2"   fill="#558B2F" opacity="0.50"/>
+    <!-- Gentle breathing pulse using SVG native animate -->
+    <animate attributeName="opacity" values="0.92;1;0.92" dur="2.8s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- 7 — RIGHT SAGUARO GROUP (animateTransform pivots at trunk base) -->
+  <g>
+    <ellipse cx="696" cy="210" rx="16" ry="4" fill="#8B5E20" opacity="0.28"/>
+    <g>
+      <animateTransform attributeName="transform" type="rotate"
+        values="1.6 690 260; -1.6 690 260; 1.6 690 260"
+        dur="6.5s" begin="0.8s" repeatCount="indefinite" calcMode="spline"
+        keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"/>
+      <path d="M683,260 Q681,220 682,180 Q682,145 683,126 Q685,116 690,114 Q695,112 697,116 Q700,126 700,148 Q701,185 700,225 Q700,248 698,260 Z" fill="url(#dCactus)"/>
+      <path d="M686,260 Q685,200 686,130" fill="none" stroke="#2A6024" stroke-width="1.2" opacity="0.50"/>
+      <path d="M690,260 Q690,200 690,120" fill="none" stroke="#4AAA40" stroke-width="0.8" opacity="0.40"/>
+      <path d="M695,260 Q695,200 695,124" fill="none" stroke="#2A6024" stroke-width="1.2" opacity="0.50"/>
+      <path d="M683,174 Q672,170 664,168 Q654,166 652,157 Q651,145 655,142 Q659,139 663,142 Q667,145 667,158 Q667,164 674,167 Q680,169 683,172 Z" fill="url(#dCactus)"/>
+      <path d="M699,160 Q710,155 718,154 Q728,152 730,143 Q732,132 728,128 Q724,125 720,128 Q717,132 717,143 Q717,150 709,153 Q703,155 700,159 Z" fill="url(#dCactus)"/>
+      <circle cx="690" cy="120" r="1.8" fill="#C8E6B0" opacity="0.70"/>
+      <circle cx="684" cy="140" r="1.5" fill="#C8E6B0" opacity="0.65"/>
+      <circle cx="697" cy="134" r="1.5" fill="#C8E6B0" opacity="0.65"/>
+      <circle cx="690" cy="112" r="5" fill="#FFF176" opacity="0.75"/>
+      <circle cx="690" cy="112" r="3" fill="#FFE082" opacity="0.90"/>
+      <g transform="translate(722,196)">
+        <ellipse cx="0"   cy="0"  rx="14" ry="18" fill="#3E8C34" transform="rotate(10)"/>
+        <ellipse cx="16"  cy="-5" rx="12" ry="16" fill="#4A9E3E" transform="rotate(-8,16,-5)"/>
+        <ellipse cx="-12" cy="-4" rx="10" ry="14" fill="#3A8030" transform="rotate(15,-12,-4)"/>
+        <ellipse cx="4"   cy="-20" rx="11" ry="14" fill="#4A9E3E" transform="rotate(-5,4,-20)"/>
+        <circle cx="0"  cy="0"   r="1.5" fill="#C8E6B0" opacity="0.70"/>
+        <circle cx="16" cy="-6"  r="1.5" fill="#C8E6B0" opacity="0.65"/>
+        <circle cx="-8" cy="-6"  r="1.5" fill="#C8E6B0" opacity="0.65"/>
+        <circle cx="4"  cy="-18" r="1.5" fill="#C8E6B0" opacity="0.65"/>
+        <circle cx="18" cy="-14" r="4.5" fill="#FFE082" opacity="0.90"/>
+        <circle cx="18" cy="-14" r="2.5" fill="#F9A825"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Small desert shrub right side -->
+  <g transform="translate(782,205)">
+    <circle cx="0"  cy="0" r="10" fill="#556B2F" opacity="0.65"/>
+    <circle cx="12" cy="2" r="8"  fill="#4A5E28" opacity="0.60"/>
+    <circle cx="-8" cy="3" r="7"  fill="#506628" opacity="0.55"/>
+  </g>
+
+  <!-- 8 — HAWK (outer group positions; INNER group carries CSS animation — no conflict) -->
+  <g transform="translate(490,64)">
+    <g class="hero-birds">
+      <ellipse cx="0" cy="0" rx="16" ry="6" fill="#6B4226" opacity="0.82"/>
+      <path d="M-16,0 L-24,-4 L-22,4 Z" fill="#7A4E30" opacity="0.80"/>
+      <path d="M0,-4 Q-22,-18 -44,-10 Q-36,-4 0,-4 Z"  fill="#8B5E38" opacity="0.78"/>
+      <path d="M0,-4 Q22,-18 44,-10 Q36,-4 0,-4 Z"     fill="#8B5E38" opacity="0.78"/>
+      <path d="M-44,-10 Q-40,-6 -28,-6" fill="none" stroke="#C4956A" stroke-width="1.5" opacity="0.50"/>
+      <path d="M44,-10 Q40,-6 28,-6"    fill="none" stroke="#C4956A" stroke-width="1.5" opacity="0.50"/>
+      <circle cx="14" cy="-2" r="7" fill="#5A3820" opacity="0.88"/>
+      <circle cx="16" cy="-3" r="4" fill="#EDE0D0" opacity="0.70"/>
+      <path d="M20,-2 L26,2" stroke="#D4A030" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="16" cy="-4" r="2.5" fill="#FFE082" opacity="0.90"/>
+      <circle cx="16.5" cy="-4" r="1.2" fill="#111"/>
+    </g>
+  </g>
+
+  <!-- 9 — Second smaller bird (static — too small to need animation) -->
+  <g transform="translate(330,88)" opacity="0.50">
+    <path d="M0,0 Q8,-5 16,0"  fill="none" stroke="#4A6080" stroke-width="2"   stroke-linecap="round"/>
+    <path d="M20,4 Q27,-1 34,4" fill="none" stroke="#4A6080" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+</svg>
+</div>
+
+<!-- INFO STRIP -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF9E8;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q2 &middot; Unit 5</div>
+      <div class="info-detail">Adaptations &amp; Survival</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF9E8;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 12</div>
+      <div class="info-detail">Lesson 12.01 &mdash; 3rd Grade Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF0E8;">🌵</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Habitats</div>
+      <div class="info-detail">Organisms &amp; survival needs</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">NGSS 3-LS4-3</div>
+      <div class="info-detail">Organisms &amp; habitats</div>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO 2-COL -->
+<div class="intro-2col">
+  <div class="card theme-sun">
+    <div class="card-head">
+      <div class="card-head-icon">☀️</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This…</div>
+          <div class="question">"What makes a place the right home for a living thing?"</div>
+        </div>
+      </div>
+      <p>Hold this question in your mind as you work through the lesson. By the end, you should be able to answer it with evidence!</p>
+    </div>
+  </div>
+  <div class="card theme-sky">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#F9A825;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain what a habitat is and name what organisms need to survive.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#E65100;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> describe how environmental conditions affect which organisms live in a habitat.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2E7D32;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> use evidence to argue whether an organism would survive well, less well, or not at all in a desert habitat.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NEED STRIP -->
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Pencil &amp; colored pencils</span>
+  <span class="need-chip"><span>🔍</span>Observation eyes</span>
+</div>
+
+<!-- TAB BAR -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+<!-- TAB 1: VOCABULARY -->
+<div class="tab-panel active" id="tab-vocab">
+  <div class="video-wrap">
+    <div class="video-wrap-header"><span style="font-size:20px;">🎬</span><div><div class="video-wrap-type">Introduction · Welcome Video</div><div class="video-wrap-title">Welcome to Today's Lesson!</div></div></div>
+    <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🎬</div><div class="video-placeholder-text">Welcome video coming soon</div><div class="video-placeholder-id"><!-- slot: 12-1-welcome --></div></div></div>
+  </div>
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#F9A825;">1</div>
+      <div style="flex:1;"><div class="act-title">📚 Vocabulary</div><div class="act-subtitle">Learn the words scientists use when studying habitats.</div></div>
+      <div class="act-time" style="background:#F9A825;">⏱ 8 min</div>
+    </div>
+    <div class="card-body">
+      <p>Before we start, let's learn some key words. <strong>Tap each card to flip it</strong> and read the definition. You'll see these words throughout the lesson!</p>
+      <div class="vocab-grid">
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🏠</div><div class="fc-word">habitat</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">habitat</div><div class="fc-def">The place where an organism lives and gets the food, water, shelter, and space it needs.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🦎</div><div class="fc-word">organism</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">organism</div><div class="fc-def">Any living thing — a cactus, a lizard, a hawk, even a tiny desert beetle.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">💧</div><div class="fc-word">resource</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">resource</div><div class="fc-def">Something a living thing needs to survive — food, water, shelter, or space.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌡️</div><div class="fc-word">condition</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">condition</div><div class="fc-def">A feature of a habitat — like temperature, rainfall, or soil type — that affects the living things there.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">☀️</div><div class="fc-word">environment</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">environment</div><div class="fc-def">All the surrounding conditions — heat, rainfall, soil, air — where an organism lives.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">💪</div><div class="fc-word">survive</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">survive</div><div class="fc-def">To stay alive by meeting all basic needs — finding food, water, shelter, and handling the conditions.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">📓</span>
+        <p>Copy this sentence carefully into your science notebook:<br><strong>"A habitat gives an organism everything it needs to survive."</strong></p>
+      </div>
+    </div>
+  </div>
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button>
+  </div>
+</div>
+
+<!-- TAB 2: THE LESSON -->
+<div class="tab-panel" id="tab-lesson">
+  <div class="video-wrap">
+    <div class="video-wrap-header"><span style="font-size:20px;">📖</span><div><div class="video-wrap-type">Activity 2 · Core Lesson</div><div class="video-wrap-title">What Is a Habitat?</div></div></div>
+    <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">📖</div><div class="video-placeholder-text">Core lesson video coming soon</div><div class="video-placeholder-id"><!-- slot: 12-1-lesson-explainer --></div></div></div>
+  </div>
+
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#F9A825;">2</div>
+      <div style="flex:1;"><div class="act-title">📖 The Lesson: Habitats and Survival</div><div class="act-subtitle">Read and think carefully — science is all about noticing!</div></div>
+      <div class="act-time" style="background:#F9A825;">⏱ 12 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- Section 1 -->
+      <div class="card theme-sun" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🏠</div>
+          <div>
+            <div class="card-head-label">Section 1</div>
+            <div class="card-head-title">What Does a Habitat Provide?</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>A <span class="vtip">habitat<span class="vtip-box"><span class="vtip-word">habitat</span>The place where an organism lives and gets everything it needs to survive.</span></span> is the place where an organism lives. It's not just an address — a habitat has to provide everything the organism needs to stay alive. That means food, water, air, shelter, and space.</p>
+          <p>A desert might not look like a great home at first glance. It's searingly hot, barely gets rain, and seems empty. But for the right organisms, it has everything. Insects and seeds to eat. Rocky crevices and burrows for shelter. Intense heat that lizards and snakes depend on to warm their bodies. Even water — stored inside cactus stems, buried seeds, and deep underground.</p>
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"If you took a fish out of its pond and dropped it in the middle of the desert, what would it be missing? What does that tell you about habitats?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="card theme-earth" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌡️</div>
+          <div>
+            <div class="card-head-label">Section 2</div>
+            <div class="card-head-title">Desert Conditions</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Every habitat has its own set of <span class="vtip">conditions<span class="vtip-box"><span class="vtip-word">condition</span>A feature of a place — like temperature or rainfall — that affects living things.</span></span>. In the desert, those conditions are extreme. Temperatures can climb above 120°F during the day, then drop near freezing at night. Some deserts receive less than one inch of rain per year. The soil is sandy, rocky, and doesn't hold water well.</p>
+          <p>These conditions shape exactly which organisms can live there. A cactus thrives in these conditions — its waxy skin locks in water and its shallow, wide roots soak up rain the moment it falls. A polar bear's thick fur, on the other hand, would make the desert deadly. The bear's traits were shaped for cold and ice — not blazing sun.</p>
+        </div>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="card theme-forest" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">⚖️</div>
+          <div>
+            <div class="card-head-label">Section 3</div>
+            <div class="card-head-title">Some Survive Well, Some Don't</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>In any habitat, some organisms <strong>survive well</strong>, some <strong>survive less well</strong>, and some <strong>cannot survive at all</strong>. It depends on how well the organism's traits and needs match what the habitat offers.</p>
+          <p>A saguaro cactus survives extremely well in the desert. A roadrunner does too — it's fast, tolerates heat, and can get water from the lizards and snakes it eats. A coyote survives — not perfectly, but it finds enough food and water to get by. A brook trout? It cannot survive at all. It needs cold, oxygen-rich water. The desert has none of that.</p>
+          <p><strong>Real-World Connection:</strong> When scientists want to know if a species is in trouble, one of the first things they check is the condition of its habitat — because if the habitat changes, the match falls apart.</p>
+        </div>
+      </div>
+
+      <!-- Interactive Diagram — Desert Cross-Section -->
+      <div class="diagram-wrap scroll-reveal">
+        <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
+          🗺 Tap a zone to explore it
+        </div>
+        <div class="diagram-interactive">
+          <svg viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;" role="img" aria-label="Desert habitat cross-section diagram with five clickable zones">
+            <defs>
+              <linearGradient id="dgSky"  x1="0" y1="0" x2="0" y2="1"><stop offset="0%"  stop-color="#1E88E5"/><stop offset="100%" stop-color="#64B5F6"/></linearGradient>
+              <linearGradient id="dgSand" x1="0" y1="0" x2="0" y2="1"><stop offset="0%"  stop-color="#F9A825"/><stop offset="100%" stop-color="#E08020"/></linearGradient>
+              <linearGradient id="dgSoil" x1="0" y1="0" x2="0" y2="1"><stop offset="0%"  stop-color="#BF7038"/><stop offset="100%" stop-color="#9B5520"/></linearGradient>
+              <linearGradient id="dgDeep" x1="0" y1="0" x2="0" y2="1"><stop offset="0%"  stop-color="#8B5020"/><stop offset="100%" stop-color="#6B3A12"/></linearGradient>
+              <linearGradient id="dgBed"  x1="0" y1="0" x2="0" y2="1"><stop offset="0%"  stop-color="#6B4223"/><stop offset="100%" stop-color="#4A2C0F"/></linearGradient>
+            </defs>
+
+            <!-- ─── ZONE BACKGROUNDS ─────────────────────────────── -->
+            <rect x="0" y="0"   width="860" height="64"  fill="url(#dgSky)"/>
+            <rect x="0" y="64"  width="860" height="68"  fill="url(#dgSand)"/>
+            <rect x="0" y="132" width="860" height="62"  fill="url(#dgSoil)"/>
+            <rect x="0" y="194" width="860" height="56"  fill="url(#dgDeep)"/>
+            <rect x="0" y="250" width="860" height="50"  fill="url(#dgBed)"/>
+            <!-- Subtle zone dividers -->
+            <line x1="0" y1="64"  x2="860" y2="64"  stroke="#C07030" stroke-width="2" opacity="0.55"/>
+            <line x1="0" y1="132" x2="860" y2="132" stroke="#7A4018" stroke-width="1.5" opacity="0.45"/>
+            <line x1="0" y1="194" x2="860" y2="194" stroke="#4A2808" stroke-width="1.5" opacity="0.40"/>
+            <line x1="0" y1="250" x2="860" y2="250" stroke="#382010" stroke-width="1.5" opacity="0.40"/>
+
+            <!-- ─── ZONE LABELS (pill backgrounds for readability) ── -->
+            <rect x="8"  y="6"   width="136" height="32" rx="8" fill="rgba(0,0,0,0.28)"/>
+            <text x="18" y="21"  font-size="12" font-weight="800" fill="#fff">☀️ Hot Sky</text>
+            <text x="18" y="33"  font-size="9"  fill="rgba(255,255,255,0.80)">hawks · sun · dry air</text>
+
+            <rect x="8"  y="72"  width="172" height="32" rx="8" fill="rgba(0,0,0,0.22)"/>
+            <text x="18" y="87"  font-size="12" font-weight="800" fill="#fff">🌵 Desert Surface</text>
+            <text x="18" y="99"  font-size="9"  fill="rgba(255,255,255,0.80)">cacti · lizards · scorpions</text>
+
+            <rect x="8"  y="140" width="196" height="32" rx="8" fill="rgba(0,0,0,0.22)"/>
+            <text x="18" y="155" font-size="12" font-weight="800" fill="#fff">🌱 Shallow Soil</text>
+            <text x="18" y="167" font-size="9"  fill="rgba(255,255,255,0.80)">roots · insect larvae · ants</text>
+
+            <rect x="8"  y="202" width="210" height="32" rx="8" fill="rgba(0,0,0,0.22)"/>
+            <text x="18" y="217" font-size="12" font-weight="800" fill="#fff">🐭 Deep Burrows</text>
+            <text x="18" y="229" font-size="9"  fill="rgba(255,255,255,0.80)">kangaroo rats · fox dens · taproots</text>
+
+            <rect x="8"  y="258" width="196" height="32" rx="8" fill="rgba(0,0,0,0.22)"/>
+            <text x="18" y="273" font-size="12" font-weight="800" fill="#fff">🪨 Bedrock</text>
+            <text x="18" y="285" font-size="9"  fill="rgba(255,255,255,0.80)">ancient rock · water seeps · minerals</text>
+
+            <!-- ─── SKY ZONE ILLUSTRATIONS ──────────────────────── -->
+            <!-- Sun with glow -->
+            <circle cx="808" cy="30" r="26" fill="#FFD740" opacity="0.25"/>
+            <circle cx="808" cy="30" r="19" fill="#FFE57A" opacity="0.80"/>
+            <circle cx="808" cy="30" r="12" fill="#FFF9C4"/>
+            <!-- Hawk — body + spread wings -->
+            <ellipse cx="500" cy="30" rx="16" ry="7" fill="#5D4020"/>
+            <path d="M500,26 Q476,14 452,20 Q444,24 448,30 Q456,34 480,28 Q490,26 500,26 Z" fill="#6D4C28"/>
+            <path d="M500,26 Q524,14 548,20 Q556,24 552,30 Q544,34 520,28 Q510,26 500,26 Z" fill="#6D4C28"/>
+            <path d="M484,30 L474,40 L477,44 L487,36 L497,40 L501,36 Z" fill="#5D4020"/>
+            <circle cx="513" cy="27" r="7" fill="#4A3018"/>
+            <path d="M519,27 L526,31" stroke="#D4A020" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="516" cy="24" r="2.5" fill="#FFE082"/><circle cx="516.5" cy="24" r="1.2" fill="#111"/>
+            <!-- Small distant bird -->
+            <path d="M340,22 Q348,16 356,22" fill="none" stroke="#3A5070" stroke-width="2" stroke-linecap="round" opacity="0.50"/>
+
+            <!-- ─── SURFACE ZONE ILLUSTRATIONS ──────────────────── -->
+            <!-- SAGUARO CACTUS (arms go UP via proper L-shaped paths) -->
+            <!-- Main trunk -->
+            <rect x="291" y="64" width="18" height="68" rx="9" fill="#43A047"/>
+            <line x1="300" y1="64" x2="300" y2="132" stroke="#2E7D32" stroke-width="1.2" opacity="0.45"/>
+            <rect x="291" y="67" width="6"  height="60" rx="3" fill="#66BB6A" opacity="0.35"/>
+            <!-- Left arm — horizontal elbow + vertical section going UP -->
+            <path d="M 291,100 L 262,100 L 262,72 Q 262,65 269,65 L 281,65 Q 288,65 288,72 L 288,100 Z" fill="#43A047"/>
+            <line x1="275" y1="65" x2="275" y2="100" stroke="#2E7D32" stroke-width="0.9" opacity="0.40"/>
+            <rect x="262" y="68" width="5" height="28" rx="2" fill="#66BB6A" opacity="0.30"/>
+            <!-- Right arm — horizontal elbow + vertical section going UP -->
+            <path d="M 309,93 L 338,93 L 338,68 Q 338,61 331,61 L 319,61 Q 312,61 312,68 L 312,93 Z" fill="#43A047"/>
+            <line x1="325" y1="61" x2="325" y2="93" stroke="#2E7D32" stroke-width="0.9" opacity="0.40"/>
+            <rect x="312" y="64" width="5" height="26" rx="2" fill="#66BB6A" opacity="0.30"/>
+            <!-- Spine dots -->
+            <circle cx="300" cy="72" r="2"   fill="#C8E6C9" opacity="0.80"/>
+            <circle cx="293" cy="84" r="1.8" fill="#C8E6C9" opacity="0.70"/>
+            <circle cx="307" cy="92" r="1.8" fill="#C8E6C9" opacity="0.70"/>
+            <circle cx="300" cy="108" r="2"  fill="#C8E6C9" opacity="0.75"/>
+            <circle cx="269" cy="72" r="1.8" fill="#C8E6C9" opacity="0.65"/>
+            <circle cx="319" cy="68" r="1.8" fill="#C8E6C9" opacity="0.65"/>
+            <!-- Crown flower -->
+            <circle cx="300" cy="62" r="6"  fill="#FFF176" opacity="0.90"/>
+            <circle cx="300" cy="62" r="3.5" fill="#F9A825"/>
+
+            <!-- LIZARD basking on rock (top view, clearly a lizard) -->
+            <ellipse cx="562" cy="122" rx="36" ry="10" fill="#9E7248" opacity="0.88"/>
+            <ellipse cx="558" cy="120" rx="28" ry="6"  fill="#B89060" opacity="0.40"/>
+            <!-- Body -->
+            <ellipse cx="546" cy="108" rx="22" ry="8" fill="#8BC34A"/>
+            <ellipse cx="546" cy="108" rx="15" ry="5" fill="#AED581" opacity="0.45"/>
+            <!-- Head -->
+            <ellipse cx="566" cy="106" rx="13" ry="8" fill="#7CB342"/>
+            <ellipse cx="574" cy="106" rx="6"  ry="5" fill="#7CB342"/>
+            <!-- Eye -->
+            <circle cx="572" cy="103" r="4"   fill="#1A1A1A"/>
+            <circle cx="572" cy="103" r="2.5" fill="#FFF176"/>
+            <circle cx="572.5" cy="102.5" r="1.2" fill="#1A1A1A"/>
+            <circle cx="573"   cy="102"   r="0.5" fill="#fff"/>
+            <!-- Tongue -->
+            <path d="M579,106 L585,106 M585,106 L588,103 M585,106 L588,109" stroke="#E53935" stroke-width="1.8" stroke-linecap="round"/>
+            <!-- Tail (long, tapers) -->
+            <path d="M524,110 Q510,114 496,120 Q482,126 472,132" fill="none" stroke="#8BC34A" stroke-width="9" stroke-linecap="round"/>
+            <path d="M496,120 Q482,126 472,132" fill="none" stroke="#7CB342" stroke-width="6" stroke-linecap="round"/>
+            <path d="M472,132 Q464,136 458,140" fill="none" stroke="#689F38" stroke-width="3.5" stroke-linecap="round"/>
+            <!-- Legs -->
+            <line x1="536" y1="115" x2="530" y2="126" stroke="#7CB342" stroke-width="3" stroke-linecap="round"/>
+            <line x1="556" y1="114" x2="552" y2="125" stroke="#7CB342" stroke-width="3" stroke-linecap="round"/>
+            <!-- Scale dots -->
+            <circle cx="540" cy="107" r="2" fill="#558B2F" opacity="0.50"/>
+            <circle cx="550" cy="106" r="2" fill="#558B2F" opacity="0.45"/>
+
+            <!-- SCORPION (right side of surface) -->
+            <!-- Body -->
+            <ellipse cx="716" cy="108" rx="14" ry="8" fill="#D4A830"/>
+            <ellipse cx="703" cy="108" rx="10" ry="6" fill="#C49020"/>
+            <!-- Segments -->
+            <line x1="707" y1="102" x2="707" y2="114" stroke="#B07818" stroke-width="1.2" opacity="0.50"/>
+            <line x1="712" y1="101" x2="712" y2="115" stroke="#B07818" stroke-width="1.2" opacity="0.50"/>
+            <!-- Head + claws -->
+            <ellipse cx="727" cy="105" rx="8" ry="6" fill="#D4A830"/>
+            <!-- Left claw -->
+            <path d="M732,101 Q740,96 744,100 Q746,104 742,107 Q738,109 734,106 Z" fill="#C49020"/>
+            <line x1="738" y1="107" x2="744" y2="112" stroke="#C49020" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Right claw -->
+            <path d="M732,109 Q740,114 744,110 Q746,106 742,103 Q738,101 734,104 Z" fill="#C49020"/>
+            <!-- Tail segments curving up and over body -->
+            <path d="M700,103 Q695,96 695,88 Q695,80 702,77 Q709,75 712,80 Q714,85 709,88 Q705,90 704,95" fill="none" stroke="#D4A830" stroke-width="6" stroke-linecap="round"/>
+            <!-- Stinger -->
+            <circle cx="704" cy="95" r="4.5" fill="#C49020"/>
+            <path d="M706,91 Q702,85 704,80" fill="none" stroke="#A07018" stroke-width="3" stroke-linecap="round"/>
+            <!-- Legs (simplified, 3 each side) -->
+            <g stroke="#C49020" stroke-width="2" stroke-linecap="round" opacity="0.80">
+              <line x1="707" y1="114" x2="700" y2="122"/><line x1="712" y1="115" x2="707" y2="124"/><line x1="718" y1="115" x2="715" y2="124"/>
+              <line x1="707" y1="101" x2="700" y2="94"/><line x1="712" y1="100" x2="707" y2="92"/><line x1="718" y1="101" x2="715" y2="93"/>
+            </g>
+
+            <!-- ─── SHALLOW SOIL ILLUSTRATIONS ──────────────────── -->
+            <!-- Root network (organic, spreading wide) -->
+            <g fill="none" stroke="#7B4F20" stroke-linecap="round">
+              <path d="M300,132 Q296,144 292,158" stroke-width="3.5"/>
+              <path d="M300,132 Q304,146 308,160" stroke-width="3.5"/>
+              <path d="M292,142 Q276,147 256,152 Q236,157 218,162" stroke-width="2.5"/>
+              <path d="M308,140 Q326,146 346,151 Q368,156 390,160" stroke-width="2.5"/>
+              <path d="M278,150 Q260,157 242,165 Q226,172 212,180" stroke-width="1.8"/>
+              <path d="M322,149 Q342,156 360,163 Q376,170 388,178" stroke-width="1.8"/>
+              <path d="M218,162 Q202,170 188,180 Q176,188 170,194" stroke-width="1.3"/>
+              <path d="M390,160 Q406,168 418,178 Q428,186 432,194" stroke-width="1.3"/>
+            </g>
+            <!-- Root hair tips -->
+            <g fill="none" stroke="#8B6030" stroke-width="1" stroke-linecap="round" opacity="0.55">
+              <path d="M212,180 Q204,186 198,192"/><path d="M170,194 Q164,198 160,200"/>
+              <path d="M432,194 Q438,197 442,200"/><path d="M388,178 Q396,184 402,190"/>
+            </g>
+
+            <!-- ANT (clearly recognizable, center-right of soil) -->
+            <g transform="translate(556,158)">
+              <ellipse cx="-14" cy="0" rx="8" ry="5.5" fill="#2C1A0A"/>
+              <circle  cx="0"   cy="-1" r="6"    fill="#2C1A0A"/>
+              <ellipse cx="14"  cy="-2" rx="6.5" ry="5" fill="#2C1A0A"/>
+              <circle  cx="22"  cy="-4" r="5.5"  fill="#1A0A00"/>
+              <circle  cx="24"  cy="-4" r="3"    fill="#3A2010" opacity="0.50"/>
+              <path d="M24,-8 Q28,-16 24,-20" fill="none" stroke="#1A0A00" stroke-width="2" stroke-linecap="round"/>
+              <path d="M20,-8 Q22,-16 18,-20" fill="none" stroke="#1A0A00" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="24" cy="-20" r="2.2" fill="#1A0A00"/>
+              <circle cx="18" cy="-20" r="2.2" fill="#1A0A00"/>
+              <g stroke="#1A0A00" stroke-width="2" stroke-linecap="round">
+                <line x1="-16" y1="5"  x2="-22" y2="13"/>
+                <line x1="-8"  y1="6"  x2="-9"  y2="15"/>
+                <line x1="0"   y1="5"  x2="2"   y2="15"/>
+                <line x1="-16" y1="-5" x2="-22" y2="-12"/>
+                <line x1="-8"  y1="-6" x2="-9"  y2="-14"/>
+                <line x1="0"   y1="-5" x2="2"   y2="-13"/>
+              </g>
+            </g>
+
+            <!-- GRUB / LARVA (pale C-shape, right of soil zone) -->
+            <g transform="translate(690,162)">
+              <path d="M12,-14 Q24,-12 26,-2 Q26,10 14,16 Q2,18 -4,10 Q-8,2 -2,-6 Q4,-14 12,-14 Z" fill="#F0E0B0" opacity="0.92"/>
+              <circle cx="16" cy="-12" r="6"   fill="#E4CFA0" opacity="0.90"/>
+              <circle cx="18" cy="-14" r="3"   fill="#2C1A0A"/>
+              <circle cx="19" cy="-15" r="1.2" fill="#fff"/>
+              <path d="M22,2  Q20,8  16,12"  fill="none" stroke="#C8A870" stroke-width="1.5" opacity="0.55"/>
+              <path d="M18,12 Q10,16  6,16"  fill="none" stroke="#C8A870" stroke-width="1.5" opacity="0.50"/>
+              <g stroke="#C8A870" stroke-width="1.8" stroke-linecap="round">
+                <line x1="22" y1="0"  x2="27" y2="7"/>
+                <line x1="20" y1="8"  x2="25" y2="15"/>
+                <line x1="13" y1="16" x2="15" y2="23"/>
+              </g>
+            </g>
+
+            <!-- ─── DEEP BURROWS ILLUSTRATIONS ──────────────────── -->
+            <!-- Burrow arch / tunnel opening -->
+            <path d="M390,194 Q388,214 390,234 Q392,248 398,252" fill="none" stroke="#3A1E08" stroke-width="18" stroke-linecap="round" opacity="0.45"/>
+            <path d="M430,194 Q432,216 430,236 Q426,248 420,252" fill="none" stroke="#3A1E08" stroke-width="18" stroke-linecap="round" opacity="0.45"/>
+            <ellipse cx="410" cy="244" rx="22" ry="10" fill="#2C1408" opacity="0.65"/>
+
+            <!-- KANGAROO RAT (key features: huge eyes, big hind legs, long tail, round body) -->
+            <g transform="translate(415,225)">
+              <!-- Tail — long, whip-like -->
+              <path d="M-16,4 Q-30,8 -42,4 Q-52,0 -60,6 Q-66,10 -68,18" fill="none" stroke="#C89050" stroke-width="5.5" stroke-linecap="round"/>
+              <path d="M-60,6 Q-66,10 -68,18" fill="none" stroke="#A07040" stroke-width="4" stroke-linecap="round"/>
+              <ellipse cx="-67" cy="20" rx="5" ry="3" fill="#8B5C28" opacity="0.80"/>
+              <!-- Body (round, compact) -->
+              <ellipse cx="0" cy="0" rx="18" ry="14" fill="#C89050"/>
+              <ellipse cx="2" cy="4" rx="12" ry="8" fill="#E4C080" opacity="0.55"/>
+              <!-- BIG hind legs (most distinctive feature) -->
+              <path d="M-8,12 Q-14,20 -6,28 Q0,34 8,30 Q14,26 12,18" fill="none" stroke="#B07838" stroke-width="8" stroke-linecap="round"/>
+              <path d="M0,30 Q4,36 6,42 Q8,46 6,50" fill="none" stroke="#B07838" stroke-width="5" stroke-linecap="round"/>
+              <!-- Tiny front arms -->
+              <path d="M14,4 Q20,10 22,16" fill="none" stroke="#B07838" stroke-width="3.5" stroke-linecap="round"/>
+              <!-- Large round head (another key feature) -->
+              <circle cx="16" cy="-12" r="14" fill="#C89050"/>
+              <!-- Face highlight -->
+              <ellipse cx="20" cy="-11" rx="8" ry="7" fill="#DCA870" opacity="0.55"/>
+              <!-- HUGE eyes (most iconic feature — takes up a lot of the head) -->
+              <circle cx="23" cy="-15" r="6.5" fill="#1A1A1A"/>
+              <circle cx="23" cy="-15" r="4"   fill="#2A2A2A"/>
+              <circle cx="25"   cy="-17"   r="2.5" fill="#fff"/>
+              <circle cx="25.5" cy="-17.5" r="1"   fill="#fff"/>
+              <!-- Nose (small, pink) -->
+              <ellipse cx="28" cy="-9" rx="3.5" ry="2.5" fill="#C06840"/>
+              <circle  cx="28" cy="-9" r="1.8"  fill="#A05030"/>
+              <!-- Whiskers -->
+              <line x1="30" y1="-10" x2="40" y2="-12" stroke="#E4C0A0" stroke-width="1.5" opacity="0.65"/>
+              <line x1="30" y1="-8"  x2="40" y2="-7"  stroke="#E4C0A0" stroke-width="1.5" opacity="0.60"/>
+              <!-- Ear (large, rounded) -->
+              <ellipse cx="12" cy="-24" rx="6" ry="9"  fill="#C89050"/>
+              <ellipse cx="12" cy="-24" rx="3.5" ry="6" fill="#EAB080" opacity="0.65"/>
+            </g>
+
+            <!-- Deep taproot continuing down -->
+            <path d="M300,194 Q297,210 296,228 Q296,244 300,250" fill="none" stroke="#5A3010" stroke-width="3" stroke-linecap="round" opacity="0.50"/>
+
+            <!-- ─── BEDROCK ILLUSTRATIONS ────────────────────────── -->
+            <!-- Rock strata (layered lines) -->
+            <path d="M0,262 Q160,257 320,262 Q480,267 640,262 Q760,258 860,263" fill="none" stroke="#9E7858" stroke-width="2"   opacity="0.45"/>
+            <path d="M0,275 Q180,270 360,275 Q540,280 720,275 Q800,272 860,276" fill="none" stroke="#9E7858" stroke-width="1.8" opacity="0.38"/>
+            <path d="M0,287 Q200,282 400,287 Q600,292 860,287" fill="none" stroke="#9E7858" stroke-width="1.5" opacity="0.30"/>
+            <!-- Water seep droplets -->
+            <g fill="#5BB8F5" opacity="0.72">
+              <path d="M644,253 Q641,263 644,267 Q647,271 650,267 Q653,263 644,253 Z"/>
+              <path d="M664,261 Q661,270 664,273 Q667,277 670,273 Q673,270 664,261 Z" opacity="0.58"/>
+              <path d="M656,274 Q653,281 656,284 Q659,287 662,284 Q665,281 656,274 Z" opacity="0.48"/>
+            </g>
+            <!-- Rock crystal / mineral shapes (right) -->
+            <g fill="#B09070" opacity="0.38">
+              <polygon points="772,252 784,263 766,268 754,257"/>
+              <polygon points="786,261 798,271 780,276 768,266"/>
+            </g>
+            <!-- Rock crystal (left) -->
+            <g fill="#A08060" opacity="0.35">
+              <polygon points="204,254 214,264 198,268 188,258"/>
+              <polygon points="218,263 228,272 210,276 200,267"/>
+            </g>
+
+            <!-- ─── HOTSPOT RECTS (invisible tap targets) ────────── -->
+            <rect class="hotspot" x="0" y="0"   width="860" height="64"
+                  fill="#1E88E5" data-part="Hot Sky Zone"
+                  data-info="The sky above the desert is scorching and dry. Hawks soar on thermals — columns of hot rising air — barely flapping their wings. The blazing sun drives temperatures well above 100°F. Heat shimmers rise from the sand below. Very few organisms can survive out in the open here — shade and burrows become lifesavers."/>
+            <rect class="hotspot" x="0" y="64"  width="860" height="68"
+                  fill="#F9A825" data-part="Desert Surface"
+                  data-info="The desert surface looks empty at midday — but early morning and evening it buzzes with life. Lizards bask on warm rocks to heat their blood. Scorpions hunt beetles and crickets in the dark. Saguaro cacti stand 40 feet tall, with shallow roots that spread wide to soak up every drop of rain. This zone is the heart of the desert habitat."/>
+            <rect class="hotspot" x="0" y="132" width="860" height="62"
+                  fill="#BF7038" data-part="Shallow Soil"
+                  data-info="Just a few inches underground, it stays measurably cooler. Cactus roots spread here — sometimes 50 feet in every direction — ready to absorb rain the instant it falls. Ant colonies build tunnels and store seeds. Beetle larvae pupate here, safe from the blazing sun. Seeds from desert plants may wait years underground for the right conditions to sprout."/>
+            <rect class="hotspot" x="0" y="194" width="860" height="56"
+                  fill="#8B5020" data-part="Deep Burrows"
+                  data-info="Several feet underground, temperatures stay 30°F cooler than the surface — even at peak afternoon heat. Kangaroo rats sleep here all day, emerging only at night when it's safe. Deep taproots reach down searching for moisture. Fox and coyote dens keep young pups protected from predators and extreme heat. Burrowing is one of the desert's most important survival strategies."/>
+            <rect class="hotspot" x="0" y="250" width="860" height="50"
+                  fill="#6B4223" data-part="Bedrock"
+                  data-info="Far below, solid bedrock has existed for millions of years. Tiny cracks let water seep through and collect in pockets — a hidden water source some deep-rooted plants can reach during drought. Over thousands of years, the rock slowly breaks down, building the desert soil from the bottom up. Ancient minerals give the desert its warm red and orange colors."/>
+          </svg>
+          <div class="diagram-info-panel" id="diagramPanel">
+            <span class="dip-word" id="diagramWord"></span>
+            <span id="diagramInfo"></span>
+          </div>
+        </div>
+        <div class="diagram-tap-hint">Tap any zone to learn what lives there and why.</div>
+        <div class="diagram-caption">A desert habitat cross-section — from blazing sky down to ancient bedrock.</div>
+      </div>
+
+      <!-- Key Concept -->
+      <div class="key-concept scroll-reveal">
+        <div class="kc-label">⭐ Key Concept</div>
+        <p><strong>A habitat must provide the right food, water, shelter, and conditions for an organism to survive well.</strong> In any habitat, some organisms thrive, some get by, and some cannot survive at all — it depends on whether the organism's needs match what the habitat offers.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mind-Blowing Fact -->
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Amazing Desert Fact</div>
+      <div class="mind-blow-text">A full-grown saguaro cactus can absorb <strong>more than 200 gallons of water</strong> during a single rainstorm — enough to keep it alive through an entire year of drought. It can live for over 150 years, slowly becoming the tallest plant in the desert.</div>
+    </div>
+  </div>
+
+  <!-- Go Deeper -->
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper</summary>
+    <div class="gd-body">
+      <p>The Sonoran Desert — parts of Arizona, California, and Mexico — is one of the most biologically diverse deserts on Earth. More than 2,000 plant species and 500 animal species live there. Many of them are active only at night, when temperatures cool enough to be survivable. Scientists call this <em>nocturnal behavior</em>, and it's one of the most common adaptations in desert habitats.</p>
+      <p>Here's something worth wondering about: if the desert is so harsh, why do so many species choose it? Partly because of competition. Habitats with plentiful water and mild temperatures tend to be crowded — many species competing for the same things. The desert's extreme conditions keep most organisms out, which means less competition for the tough ones that can handle it.</p>
+      <p>Scientists who study desert habitats have noticed something else: when rainfall patterns change — even slightly — the whole community of organisms shifts. More rain means more plants, which means more insects, which means more lizards and birds. A habitat is a system. Change one part, and everything else responds.</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+</div>
+
+<!-- TAB 3: EXPLORE -->
+<div class="tab-panel" id="tab-explore">
+  <div class="video-wrap">
+    <div class="video-wrap-header"><span style="font-size:20px;">🔬</span><div><div class="video-wrap-type">Activity 3 · Investigation</div><div class="video-wrap-title">Habitat Match: Who Survives Here?</div></div></div>
+    <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🔬</div><div class="video-placeholder-text">Exploration video coming soon</div><div class="video-placeholder-id"><!-- slot: 12-1-exploration-explainer --></div></div></div>
+  </div>
+
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#0288D1;">3</div>
+      <div style="flex:1;"><div class="act-title">🔬 Investigation: Habitat Match</div><div class="act-subtitle">Three animals. Three habitats. Where does each one belong — and why?</div></div>
+      <div class="act-time" style="background:#0288D1;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>Your job is to match each animal to the habitat where it would survive best. Then you need to find evidence — from the animal's traits — to support your thinking.</p>
+
+      <div class="callout callout-tip" style="margin-bottom:18px;">
+        <span class="callout-icon">🦎</span>
+        <p><strong>The three animals:</strong> a <strong>roadrunner</strong> (fast ground bird, eats lizards and snakes, has scaly heat-resistant legs, gets water from its prey), a <strong>kangaroo rat</strong> (nocturnal, gets all its water from the seeds it eats, digs burrows to escape daytime heat, long hind legs for quick movement), and a <strong>brook trout</strong> (breathes through gills, needs cold oxygen-rich water between 45–65°F, eats aquatic insects).</p>
+      </div>
+
+      <div class="callout callout-earth" style="margin-bottom:18px;">
+        <span class="callout-icon">🏔️</span>
+        <p><strong>The three habitats:</strong> a <strong>hot desert</strong> (less than 10 inches of rain per year, daytime temperatures above 100°F, sandy rocky soil, intense sun), a <strong>cold mountain stream</strong> (fast-moving icy-cold water, rocky bottom, shaded by evergreen trees, temperature stays between 40–55°F), and a <strong>tropical rainforest</strong> (hot and humid, 100+ inches of rain per year, dense canopy, moisture everywhere).</p>
+      </div>
+
+      <div style="position:relative;margin:16px 0;">
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F9A825,#E65100);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(230,81,0,0.3);">1</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Predict first.</strong> Before you dig into the details, write your best guesses: which habitat does each animal belong in? No wrong answers here — just your first instinct.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#E65100,#BF360C);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(191,54,12,0.3);">2</div>
+          <div style="flex:1;background:#FFF3E0;border:2px solid #FFE0B2;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Match each animal to its best habitat.</strong> Read all three descriptions carefully. Think about what each animal needs — then decide which habitat provides it. Record your final matches in your notebook.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#BF360C,#8B2500);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(139,37,0,0.3);">3</div>
+          <div style="flex:1;background:#FBE9E7;border:2px solid #FFCCBC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Write your evidence.</strong> For each match, write one sentence explaining why. Use the animal's specific traits and the habitat's conditions as your evidence — not just "it fits" or "it looks right."</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#8B2500,#6D1E00);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(109,30,0,0.3);">4</div>
+          <div style="flex:1;background:#FBE9E7;border:2px solid #FFCCBC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Bonus challenge:</strong> Is there a habitat in the list where <em>none</em> of the three animals would survive well? Make an argument for why, using evidence from the habitat's conditions.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🌵</span>
+        <div>
+          <div class="label">Think Like a Scientist</div>
+          <div class="question">"Did you change your prediction for any animal after reading the details? What new information changed your mind — and why does that matter for how scientists make arguments?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Record Your Thinking -->
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#2E7D32;">4</div>
+      <div style="flex:1;"><div class="act-title">📓 Record Your Thinking</div><div class="act-subtitle">Organize what you discovered.</div></div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+      <p>In your science notebook, record your findings. Being specific matters — "it survives there" is not evidence. Name the trait, name the condition, show the match.</p>
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">1</span>
+        <span class="pq-text">Write your three matches. For each one: animal, habitat, and one specific trait that makes it a good fit.</span>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">2</span>
+        <span class="pq-text">Did any prediction change after reading the details? If so — what surprised you, and what evidence changed your thinking?</span>
+      </div>
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">3</span>
+        <span class="pq-text">Draw one of the three animals inside its habitat. Label at least three things the habitat provides for it.</span>
+      </div>
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">🗣</span>
+        <p>Tell the story of this investigation from start to finish — what you predicted, what you learned, and what made you certain about your final matches. Use your notes.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Think It Through -->
+  <div class="card theme-meadow scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">💬</div>
+      <div><div class="card-head-label">Discussion</div><div class="card-head-title">Think It Through</div></div>
+    </div>
+    <div class="card-body">
+      <p>Think through each question on your own. Write your answers in your science notebook before moving on.</p>
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🤔</span>
+        <div><div class="label">Question 1</div>
+        <div class="question">"The desert gets very little rainfall — but many organisms survive there. How is water available to them if it barely rains?"</div></div>
+      </div>
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">💡</span>
+        <div><div class="label">Question 2</div>
+        <div class="question">"Could the roadrunner survive in the tropical rainforest — even a little bit? What evidence supports your answer?"</div></div>
+      </div>
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🌵</span>
+        <div><div class="label">Question 3 — Connect to the Real World</div>
+        <div class="question">"If a desert got ten times more rain than usual for one year, predict what might change about which organisms live there."</div></div>
+      </div>
+      <div class="socratic-q">
+        <span class="sq-icon">🔁</span>
+        <div><div class="label">Question 4 — Push Your Thinking</div>
+        <div class="question">"Could there ever be an organism that survives equally well in every habitat? What would it need to be like — and do you think that's actually possible?"</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+</div>
+
+<!-- TAB 4: SELF-CHECK -->
+<div class="tab-panel" id="tab-quiz">
+  <div class="quiz-card scroll-reveal" style="margin-top:0;margin-bottom:18px;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#F9A825;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">🌵</div>
+      <div style="flex:1;">
+        <div style="font-size:19px;color:#1B4332;font-weight:800;line-height:1.2;">🧠 Quick Self-Check</div>
+        <div style="font-size:12px;color:#9A8E82;">Not graded — just for you! See how much you've got.</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. Which best describes the environmental conditions in a desert habitat?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Cool and wet, with plenty of shade and moisture.</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Hot and dry, with very little rainfall and intense sun.</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Cold and icy, with frozen ground most of the year.</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌵 Right! The desert's defining conditions are extreme heat and very little water — that's what shapes which organisms can live there.</div>
+        <div class="quiz-feedback fb-wrong">Think about the section on desert conditions. What two things make the desert extreme? Look back at Section 2.</div>
+      </div>
+
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">2. A kangaroo rat never drinks liquid water. It gets all the moisture it needs from the seeds it eats. What does this tell you?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>The kangaroo rat doesn't need water to survive.</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Water is not a resource for kangaroo rats.</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>The kangaroo rat is well suited to a habitat where liquid water is scarce.</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌵 Exactly! Water is still a resource — the kangaroo rat just gets it in a different way. Its traits match the desert's conditions perfectly.</div>
+        <div class="quiz-feedback fb-wrong">Water is still a resource — every organism needs it. How does the kangaroo rat get it without drinking? That's the clue.</div>
+      </div>
+
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-text">3. A brook trout needs cold water, dissolved oxygen, and aquatic insects to eat. In which habitat would it survive least well?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>A hot desert — no cold water, no aquatic food, no dissolved oxygen.</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>A cold mountain stream — too fast-moving.</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>A shaded pond — too still and calm.</div>
+        </div>
+        <div class="quiz-feedback fb-correct">⭐ Yes! The desert provides none of the resources a brook trout needs. This is a clear case of "cannot survive at all."</div>
+        <div class="quiz-feedback fb-wrong">Think about what a brook trout specifically needs. Does the desert provide any of that? Check Section 3.</div>
+      </div>
+
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum">0</div>
+        <div class="quiz-score-label">out of 3</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+        <div class="video-feedback" id="quizVideoCorrect" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header"><span style="font-size:20px;">✅</span><div><div class="video-wrap-type">Feedback · Perfect Score</div><div class="video-wrap-title">Outstanding — you're thinking like a scientist!</div></div></div>
+            <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">⭐</div><div class="video-placeholder-text">Perfect score celebration video coming soon</div><div class="video-placeholder-id"><!-- slot: 12-1-quiz-perfect --></div></div></div>
+          </div>
+        </div>
+        <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header"><span style="font-size:20px;">📚</span><div><div class="video-wrap-type">Feedback · Keep Going</div><div class="video-wrap-title">Good effort — let's review the key ideas!</div></div></div>
+            <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">💪</div><div class="video-placeholder-text">Review video coming soon</div><div class="video-placeholder-id"><!-- slot: 12-1-quiz-review --></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+</div>
+
+<!-- TAB 5: ASSIGNMENT -->
+<div class="tab-panel" id="tab-assignment">
+  <div class="video-wrap">
+    <div class="video-wrap-header"><span style="font-size:20px;">✍️</span><div><div class="video-wrap-type">Activity 5 · Assignment</div><div class="video-wrap-title">Show What You Know About Desert Habitats</div></div></div>
+    <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">✍️</div><div class="video-placeholder-text">Assignment explainer video coming soon</div><div class="video-placeholder-id"><!-- slot: 12-1-assignment-explainer --></div></div></div>
+  </div>
+
+  <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
+    <div class="act-head">
+      <div class="act-num" style="background:#7B5EA7;">5</div>
+      <div style="flex:1;"><div class="act-title">✍️ Assignment</div><div class="act-subtitle">Show what you've learned.</div></div>
+      <div class="act-time" style="background:#7B5EA7;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔍 Part A — Match and Identify</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use what you learned to identify conditions, match organisms, and explain what habitats provide.</p>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">Name three environmental conditions that make the desert a challenging place to survive.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">Circle the habitat where a saguaro cactus would survive best: &nbsp; (a) cold rainforest &nbsp; (b) hot desert &nbsp; (c) icy tundra</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">Name one specific trait of the saguaro cactus that helps it survive in the desert. Explain what it does.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">4</span><span class="pq-text">A roadrunner has scaly heat-resistant legs and eats lizards and snakes. In which of the three habitats from the investigation would it survive best? Write one sentence of evidence.</span></div>
+
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🚀 Part B — Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer in <strong>complete sentences</strong>. Use your science vocabulary!</p>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">5</span><span class="pq-text">The desert gets very little rain. How can organisms like the kangaroo rat and the saguaro cactus still get water? Use the word <em>resource</em> in your answer.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">6</span><span class="pq-text">In any habitat, some organisms survive well, some less well, and some not at all. What does this depend on?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">7</span><span class="pq-text">Imagine a desert received five times its normal rainfall for one year. Predict two ways this might change which organisms survive there.</span></div>
+
+      <!-- Write and Explain -->
+      <div class="key-concept scroll-reveal" style="background:#FFF9E8;border-color:#F0E4C0;margin-top:20px;">
+        <div class="kc-label" style="color:#F9A825;">✍️ Write and Explain</div>
+        <p style="font-size:16px;font-weight:700;color:#1B4332;margin-bottom:14px;">A brook trout lives in cold mountain streams. Could it survive well in a desert habitat? Use evidence from the lesson to support your thinking.</p>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What do you think?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I think a brook trout would / would not survive well in a desert because…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+          </div>
+        </div>
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What did you learn that supports your thinking?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I know this because the lesson showed me that a brook trout needs…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">Why does that make sense?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because a habitat must provide…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+        <div class="callout callout-vocab" style="margin-top:6px;margin-bottom:0;">
+          <span class="callout-icon">📖</span>
+          <p>Try to use these words: <strong>habitat, organism, resource, survive, condition, environment</strong></p>
+        </div>
+      </div>
+
+      <!-- Part C -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw and Label</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Choose any desert organism. Draw it in the desert habitat. Label at least <strong>four</strong> things the habitat provides for it.</p>
+      <div class="callout callout-tip">
+        <span class="callout-icon">✏️</span>
+        <p>Your drawing should show the organism <em>inside</em> the desert — not floating in space. Include sand, rocks, sun, plants, or burrows to show the habitat clearly.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- What to Turn In -->
+  <div class="turn-in-block">
+    <div class="turn-in-header">
+      <div class="turn-in-header-icon-wrap">📋</div>
+      <div>
+        <div class="turn-in-header-sub">Canvas Submission</div>
+        <div class="turn-in-header-title">What to Turn In</div>
+      </div>
+    </div>
+    <div class="turn-in-body">
+      <p class="turn-in-intro">Submit your work on Canvas using <strong>one of these options:</strong></p>
+      <div class="turn-in-options">
+        <div class="turn-in-option opt-type">
+          <div class="turn-in-option-icon">⌨️</div>
+          <div class="turn-in-option-label">Type It</div>
+          <div class="turn-in-option-desc">Type your answers directly into the Canvas assignment.</div>
+        </div>
+        <div class="turn-in-option opt-photo">
+          <div class="turn-in-option-icon">📷</div>
+          <div class="turn-in-option-label">Photo It</div>
+          <div class="turn-in-option-desc">Take a clear photo of your handwritten work and upload it.</div>
+        </div>
+        <div class="turn-in-option opt-record">
+          <div class="turn-in-option-icon">🎥</div>
+          <div class="turn-in-option-label">Record It</div>
+          <div class="turn-in-option-desc">Record a short video explaining what you did and learned.</div>
+        </div>
+      </div>
+      <p class="turn-in-checklist-intro">Make sure your submission includes all of these:</p>
+      <div class="turn-in-checklist">
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div>Part A — 4 answers: three conditions, best habitat, one cactus trait, roadrunner match</div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div>Part B — 3 short answers written in complete sentences</div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div>Write and Explain — all 3 prompts answered (brook trout in the desert)</div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div>Part C — desert organism drawing with at least 4 habitat labels</div>
+        <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check"></div>Used at least 3 vocabulary words from this lesson</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Closing Video -->
+  <div class="video-wrap" style="margin-top:22px;">
+    <div class="video-wrap-header"><span style="font-size:20px;">🌵</span><div><div class="video-wrap-type">Wrap-Up · Closing</div><div class="video-wrap-title">Great work today — here's what's coming next!</div></div></div>
+    <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🌵</div><div class="video-placeholder-text">Closing video coming soon</div><div class="video-placeholder-id"><!-- slot: 12-1-closing --></div></div></div>
+  </div>
+
+</div>
+
+</div><!-- /page-wrap -->
+
+<script>
+var LESSON_EMOJI = '🌵';
+var tabProgress = {};
+function switchTab(id) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+  var panel = document.getElementById('tab-' + id);
+  if (panel) panel.classList.add('active');
+  var btn = document.querySelector('[data-tab="' + id + '"]');
+  if (btn) { btn.classList.add('active'); btn.classList.add('visited'); }
+  tabProgress[id] = true;
+  var visited = Object.keys(tabProgress).length;
+  var pct = Math.round((visited / 5) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c){ c.classList.toggle('collapsed', id !== 'vocab'); });
+}
+function toggleCheck(el) {
+  el.classList.toggle('checked');
+  var check = el.querySelector('.turn-in-check');
+  check.textContent = el.classList.contains('checked') ? LESSON_EMOJI : '';
+  var all = document.querySelectorAll('.turn-in-item');
+  var done = document.querySelectorAll('.turn-in-item.checked');
+  if (all.length > 0 && all.length === done.length) {
+    setTimeout(window.launchConfetti, 200);
+  }
+}
+// Flip cards use inline onclick — no additional listener needed
+(function(){
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel = document.getElementById('diagramPanel');
+  var infoEl = document.getElementById('diagramInfo');
+  var wordEl = document.getElementById('diagramWord');
+  if (!panel||!infoEl||!wordEl) return;
+  hotspots.forEach(function(h){
+    h.addEventListener('click', function(e){
+      e.stopPropagation();
+      hotspots.forEach(function(x){x.classList.remove('active');});
+      h.classList.add('active');
+      wordEl.textContent = h.getAttribute('data-part');
+      infoEl.textContent = h.getAttribute('data-info');
+      panel.classList.add('visible');
+    });
+  });
+  document.addEventListener('click', function(e){
+    if (!e.target.classList.contains('hotspot')){
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h){h.classList.remove('active');});
+    }
+  });
+})();
+var quizAnswered=0,quizCorrect=0;
+function checkQuiz(optEl){
+  var q=optEl.closest('.quiz-q');
+  if(q.classList.contains('answered'))return;
+  q.classList.add('answered');quizAnswered++;
+  var correct=q.getAttribute('data-answer'),chosen=optEl.getAttribute('data-val');
+  q.querySelectorAll('.quiz-opt').forEach(function(o){
+    if(o.getAttribute('data-val')===correct){o.classList.add('correct');}
+    else{o.classList.add('disabled');}
+  });
+  var fbC=q.querySelector('.fb-correct'),fbW=q.querySelector('.fb-wrong');
+  if(chosen===correct){quizCorrect++;optEl.classList.add('correct');if(fbC)fbC.classList.add('show');}
+  else{optEl.classList.add('wrong');if(fbW)fbW.classList.add('show');}
+  if(quizAnswered===3){
+    var scoreBox=document.getElementById('quizScore'),scoreNum=document.getElementById('quizScoreNum'),scoreMsg=document.getElementById('quizScoreMsg'),vC=document.getElementById('quizVideoCorrect'),vR=document.getElementById('quizVideoReview');
+    scoreNum.textContent=quizCorrect;
+    if(quizCorrect===3){scoreMsg.textContent='⭐ Perfect! You got every question right!';if(vC)vC.classList.add('show');setTimeout(window.launchConfetti,300);}
+    else if(quizCorrect===2){scoreMsg.textContent='🌵 Great job! Almost there!';if(vR)vR.classList.add('show');}
+    else{scoreMsg.textContent='👍 Good effort! Review the lesson and try again.';if(vR)vR.classList.add('show');}
+    scoreBox.classList.add('show');
+  }
+}
+document.querySelectorAll('.vtip').forEach(function(tip){
+  var box=tip.querySelector('.vtip-box');if(!box)return;
+  tip.addEventListener('mouseenter',function(){
+    var rect=tip.getBoundingClientRect(),bw=250,left=rect.left+rect.width/2-bw/2;
+    if(left<8)left=8;if(left+bw>window.innerWidth-8)left=window.innerWidth-bw-8;
+    box.style.left=left+'px';
+    var topPos=rect.top-140;if(topPos<8)topPos=rect.bottom+10;box.style.top=topPos+'px';
+  });
+});
+(function(){
+  var btn=document.getElementById('backToTop');if(!btn)return;
+  var inIframe=(function(){try{return window.self!==window.top;}catch(e){return true;}})();
+  btn.addEventListener('click',function(){
+    try{window.scrollTo({top:0,behavior:'smooth'});}catch(e){}
+    document.documentElement.scrollTop=0;document.body.scrollTop=0;
+    var top=document.getElementById('pageTop');
+    if(top&&top.scrollIntoView){try{top.scrollIntoView({behavior:'smooth',block:'start'});}catch(e){}}
+    try{if(window.frameElement&&window.frameElement.scrollIntoView){window.frameElement.scrollIntoView({behavior:'smooth',block:'start'});}}catch(e){}
+    if(inIframe){try{window.parent.postMessage({type:'optima-lesson:scroll-to-top'},'*');}catch(e){}}
+  });
+  if(inIframe){setTimeout(function(){btn.classList.add('show');},1500);}
+  else{window.addEventListener('scroll',function(){btn.classList.toggle('show',window.pageYOffset>400);});}
+})();
+(function(){
+  var canvas=document.getElementById('confettiCanvas'),ctx=canvas.getContext('2d'),particles=[],animating=false;
+  var colors=['#F9A825','#FFD740','#FF8F00','#52B788','#4DD0E1','#7B5EA7','#E65100','#0288D1'];
+  function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
+  window.addEventListener('resize',resize);resize();
+  function Particle(x,y){this.x=x;this.y=y;this.vx=(Math.random()-.5)*16;this.vy=Math.random()*-18-4;this.gravity=.45;this.drag=.98;this.size=Math.random()*8+4;this.color=colors[Math.floor(Math.random()*colors.length)];this.rotation=Math.random()*360;this.rotSpeed=(Math.random()-.5)*12;this.opacity=1;this.shape=Math.random()>.5?'rect':'circle';}
+  function burst(x,y,count){for(var i=0;i<count;i++)particles.push(new Particle(x,y));if(!animating){animating=true;animate();}}
+  function animate(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(function(p,i){p.vy+=p.gravity;p.vx*=p.drag;p.x+=p.vx;p.y+=p.vy;p.rotation+=p.rotSpeed;p.opacity-=.008;if(p.opacity<=0){particles.splice(i,1);return;}ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rotation*Math.PI/180);ctx.globalAlpha=p.opacity;ctx.fillStyle=p.color;if(p.shape==='rect'){ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6);}else{ctx.beginPath();ctx.arc(0,0,p.size/2,0,Math.PI*2);ctx.fill();}ctx.restore();});if(particles.length>0){requestAnimationFrame(animate);}else{animating=false;ctx.clearRect(0,0,canvas.width,canvas.height);}}
+  window.launchConfetti=function(){var cx=window.innerWidth/2;burst(cx-100,window.innerHeight*.45,50);burst(cx,window.innerHeight*.35,60);burst(cx+100,window.innerHeight*.45,50);};
+})();
+var introCards=document.querySelectorAll('.intro-2col .card');
+introCards.forEach(function(card){
+  var head=card.querySelector('.card-head');if(!head)return;
+  head.addEventListener('click',function(){
+    var willCollapse=!card.classList.contains('collapsed');
+    introCards.forEach(function(c){c.classList.toggle('collapsed',willCollapse);});
+  });
+});
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+tabProgress['vocab']=true;
+document.getElementById('progressFill').style.width='20%';
+document.getElementById('progressPct').textContent='20%';
+</script>
+</body>
+</html>
