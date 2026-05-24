@@ -1,0 +1,1816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – How Do Plants Make Food?</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+  background: #F2F0E8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #2B1D12;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap { max-width: 920px; margin: 0 auto; background: #FAF8F4; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%);
+  border-bottom: 6px solid #2D6A4F;
+  padding: 22px 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 6px; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2D6A4F, #52B788, #2D6A4F);
+}
+.header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.header-logo {
+  width: 52px; height: 52px; border-radius: 50%; background: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title {
+  font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+  text-shadow: 0 2px 12px rgba(82,183,136,0.3);
+}
+.header-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(82,183,136,0.15); border: 1.5px solid rgba(82,183,136,0.35);
+  border-radius: 28px; padding: 6px 16px;
+}
+.header-badge span:first-child { font-size: 22px; }
+.header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ── Hero Visual ── */
+.hero-visual {
+  background: linear-gradient(180deg, #87CEEB 0%, #C8E6F7 50%, #D4E8B4 100%);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #2D6A4F;
+}
+.hero-visual svg { display: block; width: 100%; height: auto; }
+
+/* ── Hero Animations (template utilities) ── */
+@keyframes cloud-drift-1 { 0% { transform: translateX(0); } 100% { transform: translateX(40px); } }
+@keyframes cloud-drift-2 { 0% { transform: translateX(0); } 100% { transform: translateX(-32px); } }
+@keyframes sun-pulse {
+  0%, 100% { opacity: 0.65; transform: scale(1); }
+  50%       { opacity: 1;    transform: scale(1.12); }
+}
+@keyframes bird-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(6px, -8px); }
+}
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes hero-twinkle {
+  0%, 100% { opacity: 0.4; transform: scale(0.85); }
+  50%       { opacity: 1;   transform: scale(1.15); }
+}
+@keyframes hero-shimmer { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.7; } }
+@keyframes hero-spin-slow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes hero-sway {
+  0%, 100% { transform: rotate(-2.5deg); }
+  50%       { transform: rotate(2.5deg); }
+}
+
+.hero-cloud-1   { animation: cloud-drift-1 9s ease-in-out infinite alternate; }
+.hero-cloud-2   { animation: cloud-drift-2 13s ease-in-out infinite alternate; }
+.hero-sun-glow  { animation: sun-pulse 4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-birds     { animation: bird-drift 5s ease-in-out infinite; }
+.hero-float     { animation: hero-float 3.5s ease-in-out infinite; }
+.hero-twinkle   { animation: hero-twinkle 2.2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-twinkle-2 { animation: hero-twinkle 3.1s ease-in-out infinite 0.5s; transform-origin: center; transform-box: fill-box; }
+.hero-twinkle-3 { animation: hero-twinkle 2.7s ease-in-out infinite 1.1s; transform-origin: center; transform-box: fill-box; }
+.hero-shimmer   { animation: hero-shimmer 3s ease-in-out infinite; }
+.hero-spin-slow { animation: hero-spin-slow 18s linear infinite; transform-origin: center; transform-box: fill-box; }
+.hero-sway      { animation: hero-sway 4s ease-in-out infinite; transform-origin: bottom center; transform-box: fill-box; }
+
+/* ── Hero custom keyframes for Lesson 19.01 ── */
+@keyframes sunPulse {
+  0%,100% { transform: scale(1);    opacity: 0.24; }
+  50%     { transform: scale(1.15); opacity: 0.55; }
+}
+@keyframes waterRise {
+  0%   { transform: translateY(0);     opacity: 0;    }
+  18%  {                               opacity: 0.90; }
+  82%  {                               opacity: 0.90; }
+  100% { transform: translateY(-40px); opacity: 0;    }
+}
+@keyframes sway {
+  0%, 100% { transform: rotate(-2.5deg); }
+  50%       { transform: rotate(2.5deg); }
+}
+.sun-glow   { animation: sunPulse 4s ease-in-out infinite; transform-box: view-box; transform-origin: 790px 55px; }
+.water-drop { animation: waterRise 3.2s ease-in infinite; transform-box: view-box; }
+
+/* ── Mind-blow ── */
+@keyframes mind-blow-bounce {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.12); }
+}
+
+/* ── Info Strip ── */
+.info-strip { display: flex; flex-wrap: wrap; background: #fff; border-bottom: 2px solid #E8DDD2; }
+.info-item {
+  flex: 1; min-width: 150px; padding: 12px 16px;
+  border-right: 1px solid #E8DDD2; display: flex; align-items: center; gap: 10px;
+}
+.info-item:last-child { border-right: none; }
+.info-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.info-value { font-size: 16px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+/* ── Content Area ── */
+.content { padding: 24px 28px 36px; }
+
+/* ── Card System ── */
+.card { background: #fff; border: 2px solid #E8DDD2; border-radius: 18px; margin-bottom: 22px; overflow: hidden; box-shadow: 0 2px 12px rgba(27,67,50,0.04); }
+.card-head { display: flex; align-items: center; gap: 10px; padding: 14px 20px; border-bottom: 2px solid; }
+.card-head-icon { width: 42px; height: 42px; border-radius: 50%; color: #fff; font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.card-head-title { font-size: 20px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.card-body { padding: 18px 22px; }
+.card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+.card-body p:last-child { margin-bottom: 0; }
+
+/* ── Card Color Themes ── */
+.theme-earth  .card-head { background: #FFF0E8; border-color: #E8D0B8; }
+.theme-earth  .card-head-icon { background: #A0522D; }
+.theme-sun    .card-head { background: #FFF9E8; border-color: #F0E4C0; }
+.theme-sun    .card-head-icon { background: #F9A825; }
+.theme-sky    .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-sky    .card-head-icon { background: #0288D1; }
+.theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+.theme-forest .card-head-icon { background: #2E7D32; }
+.theme-rock   .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+.theme-rock   .card-head-icon { background: #7B5EA7; }
+.theme-meadow .card-head { background: #F0F8E8; border-color: #C8E0B8; }
+.theme-meadow .card-head-icon { background: #558B2F; }
+
+/* ── Activity Cards ── */
+.activity-card { background: #fff; border: 2px solid #E8DDD2; border-radius: 18px; margin-bottom: 18px; overflow: hidden; box-shadow: 0 2px 10px rgba(27,67,50,0.04); }
+.activity-card.act-warmup  { border-left: 6px solid #52B788; }
+.activity-card.act-lesson  { border-left: 6px solid #F9A825; }
+.activity-card.act-explore { border-left: 6px solid #0288D1; }
+.activity-card.act-practice{ border-left: 6px solid #2E7D32; }
+.activity-card.act-check   { border-left: 6px solid #7B5EA7; }
+.act-head { display: flex; align-items: center; gap: 12px; padding: 14px 20px 14px 18px; border-bottom: 1.5px solid #E8DDD2; }
+.act-num { width: 38px; height: 38px; border-radius: 14px; color: #fff; font-size: 18px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.act-title { font-size: 19px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.act-subtitle { font-size: 12px; color: #9A8E82; }
+.act-time { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap; margin-left: auto; flex-shrink: 0; }
+.act-body { padding: 18px 22px 18px 20px; }
+.act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+/* ── Callout Boxes ── */
+.callout { border-radius: 14px; padding: 16px 18px; display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+.callout-earth  { background: #FFF0E8; border: 2px solid #E8D0B8; }
+.callout-think  { background: #FFF9E8; border: 2px solid #F0E4C0; }
+.callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+.callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+.callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+
+/* ── Socratic Questions ── */
+.socratic-q { background: linear-gradient(135deg, #EEF8F0, #E8F5E9); border: 2px solid #A8D5B8; border-radius: 16px; padding: 16px 20px; margin: 16px 0; display: flex; align-items: flex-start; gap: 12px; }
+.socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.socratic-q .label { font-size: 11px; color: #2D6A4F; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; }
+.socratic-q .question { font-size: 17px; color: #2B1D12; font-weight: 700; line-height: 1.6; font-style: italic; }
+
+/* ── Diagram ── */
+.diagram-wrap { background: #fff; border: 2px solid #E8DDD2; border-radius: 16px; padding: 16px; margin: 16px 0; text-align: center; }
+.diagram-wrap svg { max-width: 100%; height: auto; }
+.diagram-caption { font-size: 13px; color: #9A8E82; margin-top: 10px; font-weight: 600; text-align: center; }
+
+/* ── Diagram Interactive ── */
+.diagram-interactive { position: relative; }
+.diagram-interactive svg { display: block; max-width: 100%; height: auto; }
+.hotspot { cursor: pointer; opacity: 0; transition: opacity 0.2s; }
+.hotspot:hover, .hotspot.active { opacity: 0.22; }
+.diagram-info-panel {
+  display: none; background: #1B4332; color: #fff;
+  border-radius: 14px; padding: 16px 20px; margin-top: 12px;
+  font-size: 15px; line-height: 1.65;
+}
+.diagram-info-panel.visible { display: block; }
+.dip-word { display: block; font-size: 13px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 6px; }
+.diagram-tap-hint { font-size: 12px; color: #9A8E82; margin-top: 8px; font-style: italic; }
+
+/* ── Lesson Figure ── */
+.lesson-figure { background: #fff; border: 2px solid #E8DDD2; border-radius: 16px; padding: 14px 14px 18px; margin: 0 0 22px; box-shadow: 0 2px 10px rgba(27,67,50,0.04); }
+.lesson-figure-label { font-size: 11px; color: #2D6A4F; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 800; margin-bottom: 10px; }
+.lesson-figure img { display: block; max-width: 100%; height: auto; border-radius: 10px; margin: 0 auto; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.lesson-figure-caption { font-size: 14px; color: #5A4D3E; margin-top: 12px; line-height: 1.55; font-weight: 600; text-align: center; }
+.lesson-figure-caption strong { color: #1B4332; }
+
+/* ── Key Concept Box ── */
+.key-concept { background: #F0F8E8; border: 2px solid #C8E0B8; border-radius: 14px; padding: 18px 20px; margin: 14px 0; }
+.key-concept .kc-label { font-size: 13px; color: #558B2F; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px; }
+.key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+.key-concept p:last-child { margin-bottom: 0; }
+
+/* ── Practice Questions ── */
+.pq { background: #FAFAF6; border: 2px solid #E8DDD2; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; }
+.pq-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; color: #fff; font-weight: 800; font-size: 14px; margin-right: 8px; vertical-align: middle; }
+.pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; }
+
+/* ── Vocab Flashcards ── */
+.vocab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+.flip-card { perspective: 800px; height: 195px; cursor: pointer; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.5s ease; transform-style: preserve-3d; }
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  border-radius: 16px; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 14px 18px; text-align: center; border: 2px solid #E8DDD2;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.06);
+}
+.flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+.flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+.flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #1B4332; margin-bottom: 6px; }
+.flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+.flip-card-back { background: linear-gradient(145deg, #1B4332, #2D6A4F); border-color: #1B4332; transform: rotateY(180deg); }
+.flip-card-back .fc-def { font-size: 14.5px; color: #fff; line-height: 1.5; font-weight: 600; }
+.flip-card-back .fc-word-back { font-size: 11px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 6px; }
+.flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 8px; font-weight: 600; }
+.fc-color-1 .flip-card-front { border-top-color: #52B788; }
+.fc-color-2 .flip-card-front { border-top-color: #2D6A4F; }
+.fc-color-3 .flip-card-front { border-top-color: #F9A825; }
+.fc-color-4 .flip-card-front { border-top-color: #0288D1; }
+.fc-color-5 .flip-card-front { border-top-color: #2E7D32; }
+.fc-color-6 .flip-card-front { border-top-color: #7B5EA7; }
+
+/* ── Vocab Tooltips ── */
+.vtip { position: relative; color: #7B5EA7; font-weight: 700; cursor: help; border-bottom: 2px dotted rgba(123,94,167,0.45); transition: color 0.15s; }
+.vtip:hover { color: #5B3EA7; }
+.vtip .vtip-box { position: fixed; background: #1B4332; color: #fff; padding: 12px 16px; border-radius: 12px; font-size: 14px; font-weight: 600; font-style: normal; line-height: 1.55; width: 250px; text-align: center; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s; pointer-events: none; z-index: 9999; box-shadow: 0 6px 24px rgba(27,67,50,0.35); border: 1.5px solid rgba(149,213,178,0.3); transform: translateY(6px); }
+.vtip .vtip-box::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 7px solid transparent; border-top-color: #1B4332; }
+.vtip .vtip-word { font-size: 11px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block; }
+.vtip:hover .vtip-box, .vtip:focus .vtip-box { opacity: 1; visibility: visible; transform: translateY(-4px); }
+
+/* ── Mind-Blowing Fact ── */
+.mind-blow { display: flex; align-items: flex-start; gap: 18px; background: linear-gradient(135deg, #1a3a28, #1B4332); border: 2px solid rgba(149,213,178,0.3); border-radius: 18px; padding: 22px 24px; margin: 22px 0; box-shadow: 0 4px 20px rgba(27,67,50,0.15); }
+.mind-blow-icon { font-size: 42px; flex-shrink: 0; animation: mind-blow-bounce 2s ease-in-out infinite; }
+.mind-blow-content { flex: 1; }
+.mind-blow-label { font-size: 11px; color: #FDD835; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 6px; }
+.mind-blow-text { font-size: 16px; color: #fff; line-height: 1.6; }
+.mind-blow-text strong { color: #95D5B2; }
+
+/* ── Go Deeper ── */
+.go-deeper { background: #F0EDF6; border: 2px solid #D8D0E8; border-radius: 16px; margin: 18px 0; overflow: hidden; }
+.go-deeper summary { padding: 16px 20px; font-size: 16px; font-weight: 800; color: #7B5EA7; cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; }
+.go-deeper summary::before { content: '🔭'; font-size: 20px; }
+.go-deeper summary::-webkit-details-marker { display: none; }
+.gd-body { padding: 4px 22px 20px; }
+.gd-body p { font-size: 16px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+/* ── Video Wraps ── */
+.video-wrap { background: #fff; border: 2px solid #E8DDD2; border-radius: 16px; margin-bottom: 22px; overflow: hidden; }
+.video-wrap-header { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: #F5F3EF; border-bottom: 1.5px solid #E8DDD2; }
+.video-wrap-type { font-size: 11px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.video-wrap-title { font-size: 16px; color: #1B4332; font-weight: 800; }
+.video-ratio { position: relative; padding-bottom: 56.25%; height: 0; }
+.video-ratio iframe, .video-ratio .video-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.video-placeholder { background: linear-gradient(135deg, #1B4332, #2D6A4F); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+.video-placeholder-icon { font-size: 36px; }
+.video-placeholder-text { font-size: 15px; color: rgba(255,255,255,0.75); font-weight: 700; }
+.video-placeholder-id { font-size: 11px; color: rgba(149,213,178,0.4); font-family: monospace; margin-top: 6px; letter-spacing: 0.5px; }
+.video-feedback { display: none; }
+.video-feedback.show { display: block; }
+
+/* ── Collapsible Intro Cards ── */
+.intro-2col .card .card-head { cursor: pointer; user-select: none; position: relative; }
+.intro-2col .card .card-head::after { content: '▾'; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #9A8E82; transition: transform 0.25s ease; }
+.intro-2col .card.collapsed .card-head::after { transform: translateY(-50%) rotate(-90deg); }
+.intro-2col .card.collapsed .card-body { display: none; }
+
+/* ── Tab Bar ── */
+.tab-bar { position: sticky; top: 44px; z-index: 100; background: #FAF8F4; border-bottom: 3px solid #E8DDD2; display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn { flex: 1; min-width: 130px; padding: 12px 8px 11px; background: transparent; border: none; border-bottom: 4px solid transparent; font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700; color: #9A8E82; cursor: pointer; transition: all 0.2s; white-space: nowrap; line-height: 1.3; text-align: center; }
+.tab-btn:hover { color: #1B4332; background: #EEF8F0; }
+.tab-btn.active { color: #1B4332; border-bottom-color: #2D6A4F; background: #fff; }
+.tab-btn .tab-check { display: none; font-size: 12px; color: #2E7D32; margin-left: 4px; font-weight: 800; }
+.tab-btn.visited .tab-check { display: inline; }
+
+/* ── Tab Panels ── */
+.tab-panel { display: none; padding: 24px 28px 36px; }
+.tab-panel.active { display: block; }
+.scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+/* ── Intro 2-col ── */
+.intro-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px 28px 0; }
+.intro-2col .card { margin-bottom: 0; }
+
+/* ── Need Strip ── */
+.need-strip { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 28px 16px; }
+.need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 700; white-space: nowrap; }
+.need-chip { display: inline-flex; align-items: center; gap: 5px; background: #EEF8F0; border: 1.5px solid #C4E5CC; border-radius: 20px; padding: 5px 12px; font-size: 13px; color: #1B4332; font-weight: 700; }
+
+/* ── Slim Mind-Blow ── */
+.mind-blow-slim { background: linear-gradient(135deg, #1a3a28, #1B4332); border: 2px solid rgba(149,213,178,0.3); border-radius: 14px; padding: 12px 18px; margin: 0 0 18px; display: flex; align-items: center; gap: 12px; }
+.mbs-icon { font-size: 26px; flex-shrink: 0; }
+.mbs-content { flex: 1; }
+.mbs-label { font-size: 10px; color: #FDD835; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+.mbs-text { font-size: 14px; color: #fff; line-height: 1.55; font-weight: 600; }
+.mbs-text strong { color: #95D5B2; }
+
+/* ── Tab Next Button ── */
+.tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+.tab-next-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px; background: linear-gradient(135deg, #2D6A4F, #52B788); color: #fff; border: none; border-radius: 28px; font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 16px rgba(45,106,79,0.3); transition: transform 0.2s, box-shadow 0.2s; }
+.tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(45,106,79,0.4); }
+
+/* ── What to Turn In ── */
+.turn-in-block { background: #fff; border: 2.5px solid #0288D1; border-radius: 18px; margin-top: 22px; overflow: hidden; box-shadow: 0 4px 16px rgba(2,136,209,0.1); }
+.turn-in-header { display: flex; align-items: center; gap: 14px; background: #E8F4FB; padding: 18px 22px; border-bottom: 2px solid #B3E5FC; }
+.turn-in-header-icon { font-size: 36px; line-height: 1; flex-shrink: 0; }
+.turn-in-header-label { font-size: 11px; color: #0288D1; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+.turn-in-header-title { font-size: 24px; color: #1B4332; font-weight: 900; line-height: 1.15; }
+.turn-in-body { padding: 22px 24px 24px; }
+.turn-in-intro { font-size: 16px; color: #5A4D3E; margin-bottom: 18px; line-height: 1.55; }
+.turn-in-intro strong { color: #1B4332; }
+.turn-in-options { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 26px; }
+.turn-in-option { border-radius: 16px; padding: 20px 14px; text-align: center; border: 2px solid; }
+.turn-in-option-type  { background: #EEF8F0; border-color: #C4E5CC; }
+.turn-in-option-photo { background: #FFF9E8; border-color: #F0E4C0; }
+.turn-in-option-video { background: #F0EDF6; border-color: #D8D0E8; }
+.turn-in-option-icon  { font-size: 34px; line-height: 1; margin-bottom: 12px; }
+.turn-in-option-title { font-size: 17px; color: #1B4332; font-weight: 800; margin-bottom: 8px; }
+.turn-in-option-text  { font-size: 14px; color: #5A4D3E; line-height: 1.5; }
+.turn-in-subhead { font-size: 16px; color: #5A4D3E; margin-bottom: 14px; line-height: 1.55; }
+.turn-in-checklist { display: flex; flex-direction: column; gap: 10px; }
+.turn-in-item { display: flex; align-items: center; gap: 16px; padding: 14px 18px; background: #FAFAF6; border: 1.5px solid #E8DDD2; border-radius: 14px; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+.turn-in-item:hover { background: #F4FAF5; border-color: #C4E5CC; }
+.turn-in-item.checked { background: #EEF8F0; border-color: #B8E8CF; }
+.turn-in-item .turn-in-check { width: 30px; height: 30px; border-radius: 8px; border: 2px solid #95D5B2; background: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; line-height: 1; transition: background 0.2s, border-color 0.2s; }
+.turn-in-item.checked .turn-in-check { background: #2E7D32; border-color: #2E7D32; }
+.turn-in-item-text { font-size: 16px; color: #2B1D12; font-weight: 600; line-height: 1.55; flex: 1; }
+.turn-in-item.checked .turn-in-item-text { color: #5A4D3E; }
+.checklist-item:hover { background: #EEF8F0 !important; }
+.checklist-item.checked { background: #EEF8F0 !important; border-color: #B8E8CF !important; }
+.checklist-item.checked .check-icon { border-color: transparent !important; background: transparent !important; font-size: 22px !important; }
+.checklist-item.checked span:last-child { color: #5A4D3E; }
+
+/* ── Progress Bar ── */
+.progress-wrap { position: sticky; top: 0; z-index: 200; background: #0E1C42; padding: 8px 20px 10px; border-bottom: 2px solid rgba(85,200,232,0.3); display: flex; align-items: center; gap: 14px; }
+.progress-label { font-size: 12px; color: #55C8E8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+.progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; position: relative; }
+.progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #52B788, #95D5B2, #FDD835); border-radius: 10px; transition: width 0.4s ease; }
+.progress-pct { font-size: 13px; color: #FDD835; font-weight: 800; min-width: 36px; text-align: right; }
+
+/* ── Quiz Card ── */
+.quiz-card { background: #fff; border: 2px solid #F9A825; border-radius: 18px; overflow: hidden; box-shadow: 0 2px 10px rgba(249,168,37,0.08); }
+.quiz-q { margin-bottom: 20px; }
+.quiz-q-text { font-size: 17px; color: #1B4332; font-weight: 700; line-height: 1.55; margin-bottom: 12px; }
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt { background: #FAFAF6; border: 2px solid #E8DDD2; border-radius: 12px; padding: 12px 16px; font-size: 16px; color: #2B1D12; cursor: pointer; transition: all 0.15s; display: flex; align-items: center; gap: 10px; }
+.quiz-opt:hover { background: #EEF8F0; border-color: #B8E8CF; }
+.quiz-opt.correct { background: #EEF8F0; border-color: #2E7D32; color: #1B4332; }
+.quiz-opt.wrong   { background: #FFF0E8; border-color: #E8A090; color: #8B2A20; }
+.quiz-opt.disabled { opacity: 0.5; pointer-events: none; }
+.opt-letter { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: #E8DDD2; font-size: 13px; font-weight: 800; flex-shrink: 0; }
+.quiz-opt.correct .opt-letter { background: #2E7D32; color: #fff; }
+.quiz-opt.wrong .opt-letter   { background: #C0392B; color: #fff; }
+.quiz-feedback { display: none; margin-top: 10px; padding: 12px 16px; border-radius: 12px; font-size: 15px; font-weight: 600; line-height: 1.55; }
+.quiz-feedback.show { display: block; }
+.fb-correct { background: #EEF8F0; border: 2px solid #C4E5CC; color: #1B4332; }
+.fb-wrong   { background: #FFF0E8; border: 2px solid #E8D0B8; color: #5A2D0C; }
+.quiz-score { display: none; background: linear-gradient(135deg, #1B4332, #2D6A4F); border-radius: 16px; padding: 24px; text-align: center; margin-top: 20px; }
+.quiz-score.show { display: block; }
+.quiz-score-num { font-size: 52px; font-weight: 900; color: #FDD835; line-height: 1; }
+.quiz-score-label { font-size: 16px; color: rgba(255,255,255,0.7); font-weight: 700; margin-bottom: 8px; }
+.quiz-score-msg { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ── Back to Top ── */
+.back-to-top { position: fixed; bottom: 28px; right: 22px; z-index: 9000; background: linear-gradient(135deg, #1B4332, #2D6A4F); color: #fff; border: none; border-radius: 30px; padding: 10px 22px; font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 18px rgba(27,67,50,0.35); opacity: 0; transform: translateY(14px); transition: opacity 0.35s, transform 0.35s; pointer-events: none; }
+.back-to-top.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.back-to-top:hover { background: linear-gradient(135deg, #2D6A4F, #52B788); }
+
+/* ── Footer ── */
+.footer { background: #1B4332; padding: 22px 28px; text-align: center; }
+.footer-line1 { font-size: 15px; color: rgba(255,255,255,0.7); font-weight: 700; margin-bottom: 4px; }
+.footer-line1 span { color: #95D5B2; }
+.footer-line2 { font-size: 14px; color: rgba(255,255,255,0.5); font-weight: 600; margin-bottom: 4px; }
+.footer-line3 { font-size: 12px; color: rgba(255,255,255,0.35); }
+
+/* ── Confetti Canvas ── */
+#confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 99999; }
+
+/* ── Utility ── */
+strong { color: #1B4332; }
+em { color: #5A4D3E; }
+.gold { color: #F9A825; font-weight: 700; }
+.forest { color: #2D6A4F; font-weight: 700; }
+.earth { color: #A0522D; font-weight: 700; }
+
+@media (max-width: 620px) {
+  .intro-2col { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .flip-card { height: 175px; }
+  .header-title { font-size: 22px; }
+  .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 6px 9px; }
+  .turn-in-options { grid-template-columns: 1fr; }
+  .turn-in-header-title { font-size: 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="confettiCanvas"></canvas>
+<button class="back-to-top" id="backToTop" type="button">✏️ Back to Top</button>
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- ═══════════ PROGRESS BAR ═══════════ -->
+<div class="progress-wrap">
+  <span class="progress-label">🌱 Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">How Do Plants Make Food?</div>
+  <div class="header-badge">
+    <span>🌱</span>
+    <span>Lesson 19.01</span>
+  </div>
+</div>
+
+<!-- ═══════════ HERO BANNER ═══════════ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A plant with visible roots absorbs water from soil while sunlight reaches its leaves and water drops travel up the stem">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#4AAAD8"/>
+      <stop offset="100%" stop-color="#86C8E6"/>
+    </linearGradient>
+    <linearGradient id="soil1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#7A4A20"/>
+      <stop offset="100%" stop-color="#5A3010"/>
+    </linearGradient>
+    <linearGradient id="soil2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#5A3010"/>
+      <stop offset="100%" stop-color="#3C2008"/>
+    </linearGradient>
+  </defs>
+
+  <!-- SKY + SOIL -->
+  <rect width="920" height="185" fill="url(#sky)"/>
+  <rect y="185" width="920" height="44" fill="url(#soil1)"/>
+  <rect y="229" width="920" height="31" fill="url(#soil2)"/>
+  <g fill="#6A4018" opacity="0.35">
+    <circle cx="120" cy="200" r="3"/><circle cx="200" cy="210" r="2.5"/>
+    <circle cx="310" cy="197" r="3"/><circle cx="450" cy="205" r="2.5"/>
+    <circle cx="560" cy="198" r="3"/><circle cx="680" cy="208" r="2"/>
+    <circle cx="780" cy="200" r="3"/><circle cx="870" cy="197" r="2.5"/>
+    <circle cx="155" cy="218" r="2"/><circle cx="390" cy="220" r="3"/>
+    <circle cx="620" cy="216" r="2.5"/><circle cx="830" cy="218" r="2"/>
+  </g>
+
+  <!-- WATER IN SOIL (static) -->
+  <g fill="#5AACD0" opacity="0.72">
+    <path d="M290,244 Q285,234 290,228 Q295,234 290,244 Z"/>
+    <path d="M330,252 Q325,242 330,236 Q335,242 330,252 Z"/>
+    <path d="M390,248 Q385,238 390,232 Q395,238 390,248 Z"/>
+    <path d="M440,242 Q435,232 440,226 Q445,232 440,242 Z"/>
+    <path d="M480,254 Q475,244 480,238 Q485,244 480,254 Z"/>
+  </g>
+
+  <!-- ROOTS -->
+  <g stroke="#A07838" stroke-width="3.5" fill="none" stroke-linecap="round">
+    <path d="M382,185 L382,255"/>
+    <path d="M380,198 Q358,208 340,218 Q318,228 305,242"/>
+    <path d="M379,210 Q360,222 346,236 Q336,246 332,255"/>
+    <path d="M380,222 Q362,234 350,248"/>
+    <path d="M384,198 Q406,208 424,218 Q446,228 459,242"/>
+    <path d="M383,210 Q402,222 416,236 Q426,246 428,255"/>
+    <path d="M384,222 Q402,234 414,248"/>
+    <path d="M305,242 Q298,248 294,254"/>
+    <path d="M459,242 Q466,248 470,254"/>
+  </g>
+
+  <!-- PLANT (stem + leaves — swaying from ground) -->
+  <g style="animation: sway 4s ease-in-out infinite; transform-origin: 382px 185px; transform-box: view-box;">
+    <!-- Main stem -->
+    <path d="M382,185 C384,158 380,128 382,68" stroke="#2E6A18" stroke-width="11" fill="none" stroke-linecap="round"/>
+    <path d="M382,185 C383,158 381,128 383,68" stroke="#48922A" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.5"/>
+    <!-- Right upper leaf -->
+    <path d="M380,88 C410,77 452,66 480,64 C448,73 410,84 380,92 Z" fill="#44B82A" stroke="#2E8018" stroke-width="1.8"/>
+    <line x1="380" y1="90" x2="480" y2="64" stroke="#2E8018" stroke-width="1.8"/>
+    <g stroke="#2E8018" stroke-width="1" opacity="0.55">
+      <line x1="406" y1="83" x2="418" y2="74"/><line x1="430" y1="76" x2="443" y2="68"/>
+      <line x1="406" y1="86" x2="420" y2="92"/><line x1="430" y1="79" x2="445" y2="85"/>
+    </g>
+    <!-- Right mid leaf -->
+    <path d="M382,120 C416,108 462,97 494,95 C460,104 416,116 382,124 Z" fill="#3EAE24" stroke="#2E8018" stroke-width="1.8"/>
+    <line x1="382" y1="122" x2="494" y2="95" stroke="#2E8018" stroke-width="1.8"/>
+    <g stroke="#2E8018" stroke-width="1" opacity="0.55">
+      <line x1="412" y1="114" x2="426" y2="104"/><line x1="440" y1="106" x2="456" y2="97"/>
+      <line x1="412" y1="118" x2="428" y2="126"/><line x1="442" y1="110" x2="458" y2="117"/>
+    </g>
+    <!-- Right lower leaf -->
+    <path d="M383,153 C416,142 460,131 490,130 C458,140 416,152 383,157 Z" fill="#48BA2C" stroke="#2E8018" stroke-width="1.8"/>
+    <line x1="383" y1="155" x2="490" y2="130" stroke="#2E8018" stroke-width="1.8"/>
+    <g stroke="#2E8018" stroke-width="1" opacity="0.55">
+      <line x1="410" y1="148" x2="424" y2="138"/><line x1="438" y1="139" x2="454" y2="131"/>
+      <line x1="410" y1="152" x2="426" y2="158"/><line x1="438" y1="144" x2="454" y2="149"/>
+    </g>
+    <!-- Left upper leaf -->
+    <path d="M378,98 C352,90 316,99 292,106 C318,114 354,112 378,104 Z" fill="#40AA26" stroke="#2E8018" stroke-width="1.6"/>
+    <line x1="378" y1="101" x2="292" y2="106" stroke="#2E8018" stroke-width="1.5"/>
+    <g stroke="#2E8018" stroke-width="0.9" opacity="0.5">
+      <line x1="352" y1="95" x2="338" y2="101"/><line x1="326" y1="101" x2="313" y2="106"/>
+    </g>
+    <!-- Left lower leaf -->
+    <path d="M379,132 C352,124 312,133 288,140 C314,148 354,146 379,138 Z" fill="#44B02A" stroke="#2E8018" stroke-width="1.6"/>
+    <line x1="379" y1="135" x2="288" y2="140" stroke="#2E8018" stroke-width="1.5"/>
+    <g stroke="#2E8018" stroke-width="0.9" opacity="0.5">
+      <line x1="350" y1="129" x2="335" y2="135"/><line x1="320" y1="135" x2="305" y2="140"/>
+    </g>
+  </g>
+
+  <!-- ANIMATED WATER DROPS rising up stem -->
+  <g class="water-drop" style="animation-delay:0s">
+    <ellipse cx="382" cy="175" rx="5.5" ry="8" fill="#4AACED"/>
+    <polygon points="382,163 378,170 386,170" fill="#4AACED"/>
+  </g>
+  <g class="water-drop" style="animation-delay:1.1s">
+    <ellipse cx="382" cy="152" rx="5.5" ry="8" fill="#5AB4F2"/>
+    <polygon points="382,140 378,147 386,147" fill="#5AB4F2"/>
+  </g>
+  <g class="water-drop" style="animation-delay:2.2s">
+    <ellipse cx="382" cy="128" rx="5" ry="7" fill="#4AACED"/>
+    <polygon points="382,117 378,124 386,124" fill="#4AACED"/>
+  </g>
+
+  <!-- AIR ARROWS near right leaf surfaces -->
+  <g stroke="#7AB8D4" stroke-width="2.2" fill="#7AB8D4" stroke-linecap="round">
+    <path d="M538,76 Q522,80 508,78" fill="none"/>
+    <polygon points="508,78 518,73 518,83"/>
+    <path d="M548,110 Q532,113 518,111" fill="none"/>
+    <polygon points="518,111 528,106 528,116"/>
+    <path d="M542,143 Q528,146 514,144" fill="none"/>
+    <polygon points="514,144 524,139 524,149"/>
+  </g>
+  <path d="M555,68 Q548,62 552,57 Q558,53 562,58 Q564,65 558,69 Q551,73 546,66" stroke="#7AB8D4" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- SUN directional rays toward leaves -->
+  <line x1="768" y1="48" x2="488" y2="66"  stroke="#FFD828" stroke-width="7" stroke-linecap="round" opacity="0.52"/>
+  <line x1="770" y1="55" x2="502" y2="97"  stroke="#FFD828" stroke-width="7" stroke-linecap="round" opacity="0.52"/>
+  <line x1="772" y1="62" x2="498" y2="132" stroke="#FFD828" stroke-width="7" stroke-linecap="round" opacity="0.48"/>
+  <line x1="764" y1="55" x2="430" y2="108" stroke="#FFD828" stroke-width="4" stroke-linecap="round" opacity="0.28"/>
+  <!-- Sun glow (animated) -->
+  <circle cx="790" cy="55" r="52" fill="#FFE030" class="sun-glow"/>
+  <circle cx="790" cy="55" r="34" fill="#FFD020"/>
+  <circle cx="790" cy="55" r="26" fill="#FFE840"/>
+  <circle cx="790" cy="55" r="18" fill="white" opacity="0.22"/>
+  <g stroke="#FFD020" stroke-width="3" stroke-linecap="round" opacity="0.45">
+    <line x1="790" y1="15" x2="790" y2="8"/>
+    <line x1="828" y1="30" x2="833" y2="25"/>
+    <line x1="842" y1="55" x2="850" y2="55"/>
+    <line x1="828" y1="80" x2="833" y2="85"/>
+    <line x1="790" y1="90" x2="790" y2="98"/>
+    <line x1="850" y1="30" x2="858" y2="22"/>
+  </g>
+</svg>
+</div>
+
+<!-- ═══════════ INFO STRIP ═══════════ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q3 · Unit 7</div>
+      <div class="info-detail">Plants &amp; Environmental Interactions</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF9E8;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 19</div>
+      <div class="info-detail">Lesson 19.01 — 3rd Grade Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#F0EDF6;">🌱</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Photosynthesis</div>
+      <div class="info-detail">How plants make food from sunlight</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">NGSS 3-LS1-1</div>
+      <div class="info-detail">Organisms: Structures and Processes</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ INTRO 2-COL CARDS ═══════════ -->
+<div class="intro-2col">
+
+  <div class="card theme-forest">
+    <div class="card-head">
+      <div class="card-head-icon">🌲</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This…</div>
+          <div class="question">"How does a plant turn sunlight into food — and where does that food actually go?"</div>
+        </div>
+      </div>
+      <p>Hold this question in mind as you work. By the end, you'll be able to answer it with evidence!</p>
+    </div>
+  </div>
+
+  <div class="card theme-sky">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#52B788;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain that plants make their own food using sunlight, water, and air.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2D6A4F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> describe what leaves and roots each do during photosynthesis.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2E7D32;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> use evidence to explain why plants kept in darkness stop growing.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════ NEED STRIP ═══════════ -->
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Pencil &amp; colored pencils</span>
+  <span class="need-chip"><span>🌱</span>A plant or leaf to observe (optional)</span>
+</div>
+
+<!-- ═══════════ TAB BAR ═══════════ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 1: VOCABULARY                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to Today's Lesson!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🎬</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 19-01-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 1: NOTICE & WONDER -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#52B788;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Notice &amp; Wonder</div>
+        <div class="act-subtitle">Look at the photo. What do you see?</div>
+      </div>
+      <div class="act-time" style="background:#52B788;">⏱ 5–8 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- UPLOADED LESSON IMAGE — lives here so students see it during Notice & Wonder -->
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">📷 Photo · From the Field</div>
+        <img src="images/19-01-plant-observation.png"
+             alt="A green plant growing in a clear plastic pot on a sunny windowsill, with visible roots in dark soil, next to an open science notebook showing plant observation notes dated May 20" />
+        <div class="lesson-figure-caption">
+          A plant growing in a clear pot — so you can see the <strong>leaves</strong> reaching for the light and the <strong>roots</strong> spreading through the soil at the same time.
+        </div>
+      </div>
+
+      <p>Take a good look at this plant before we learn anything new. Notice what you can see — above the soil and below it. What's going on in there?</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">👀</span>
+        <div>
+          <div class="label">In Your Science Notebook</div>
+          <div class="question">"Write 3 things you notice about this plant. Then write 1 question you have. What are you still wondering?"</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>No wrong observations here. Scientists always start by looking first and asking questions. We'll come back to what you noticed at the end of the lesson.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- VOCABULARY FLIP CARDS -->
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>These are the words scientists use when they talk about how plants make food. <strong>Tap each card</strong> to flip it and read the definition. You'll see these throughout the lesson!</p>
+
+      <div class="vocab-grid">
+
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">☀️</div><div class="fc-word">photosynthesis</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">photosynthesis</div><div class="fc-def">The process a plant uses to make its own food from sunlight, water, and air.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌞</div><div class="fc-word">sunlight</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">sunlight</div><div class="fc-def">Light energy from the Sun. Plants capture it with their leaves to power food-making.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">⚡</div><div class="fc-word">energy</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">energy</div><div class="fc-def">The ability to do work or cause change. Sunlight gives plants the energy they need to grow.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🍃</div><div class="fc-word">leaf</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">leaf</div><div class="fc-def">The plant part that captures sunlight and takes in air. Leaves are where photosynthesis happens.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🍬</div><div class="fc-word">sugar</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">sugar</div><div class="fc-def">The food plants make during photosynthesis. Plants use sugar to grow, flower, and make seeds.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌿</div><div class="fc-word">roots</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">roots</div><div class="fc-def">The underground plant parts that absorb water and minerals from the soil and send them up the stem.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">📓</span>
+        <p>Copy this sentence carefully into your science notebook:<br><strong>"Plants use sunlight, water, and air to make their own food in a process called photosynthesis."</strong></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button>
+  </div>
+
+</div><!-- /tab-vocab -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 2: THE LESSON                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">📖</span>
+      <div>
+        <div class="video-wrap-type">Activity 2 · Core Lesson</div>
+        <div class="video-wrap-title">How Plants Make Food</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">📖</div>
+        <div class="video-placeholder-text">Core lesson video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 19-01-lesson-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 2: CORE LESSON -->
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#F9A825;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📖 The Lesson: How Plants Make Food</div>
+        <div class="act-subtitle">Read carefully — notice how the pieces fit together.</div>
+      </div>
+      <div class="act-time" style="background:#F9A825;">⏱ 12 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- SECTION 1 -->
+      <div class="card theme-forest" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">☀️</div>
+          <div>
+            <div class="card-head-label">Section 1</div>
+            <div class="card-head-title">Plants Make Their Own Food</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Animals eat food to get energy. Plants do something different — they <em>make</em> their own food. The process is called <span class="vtip">photosynthesis<span class="vtip-box"><span class="vtip-word">photosynthesis</span>The process plants use to make food from sunlight, water, and air.</span></span>.</p>
+          <p>During photosynthesis, a plant captures <strong>sunlight</strong> and uses it to turn water and air into <span class="vtip">sugar<span class="vtip-box"><span class="vtip-word">sugar</span>The food plants make. They use it to grow and build new parts.</span></span>. That sugar is the plant's food. It gives the plant energy to grow new roots, stems, leaves, flowers, and seeds.</p>
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"You need to eat to get energy. What do plants need to get their energy? Where do you think it comes from?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2 -->
+      <div class="card theme-sky" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🍃</div>
+          <div>
+            <div class="card-head-label">Section 2</div>
+            <div class="card-head-title">Leaves, Roots, and Air All Work Together</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Three things go into photosynthesis: <strong>sunlight</strong>, <strong>water</strong>, and <strong>air</strong>. Each part of the plant has a job.</p>
+          <div style="display:flex;gap:14px;align-items:flex-start;margin:14px 0 10px;">
+            <div style="background:#EEF8F0;border:2px solid #C4E5CC;border-radius:12px;padding:12px 14px;flex:1;font-size:16px;color:#2B1D12;line-height:1.6;"><strong>🍃 Leaves</strong> — face the sun and soak up light. Tiny openings in leaves let air in.</div>
+            <div style="background:#EAF8FD;border:2px solid #D6F2FB;border-radius:12px;padding:12px 14px;flex:1;font-size:16px;color:#2B1D12;line-height:1.6;"><strong>🌿 Roots</strong> — pull water up from the soil. That water travels all the way up the stem to the leaves.</div>
+          </div>
+          <p>Inside each leaf, the plant combines sunlight, water, and air to make sugar. The sugar travels through the stem to every part of the plant that needs energy.</p>
+        </div>
+      </div>
+
+      <!-- SECTION 3 -->
+      <div class="card theme-earth" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🔬</div>
+          <div>
+            <div class="card-head-label">Section 3</div>
+            <div class="card-head-title">How We Know Sunlight Matters</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Scientists figured out photosynthesis by watching what happens when you take sunlight away. A plant kept in the dark stops making food. Its leaves turn yellow. It gets smaller and eventually dies.</p>
+          <p>A plant in bright light stays green, grows new leaves, and keeps making sugar. That difference — between the light plant and the dark plant — is the evidence that <strong>sunlight is the key ingredient</strong>.</p>
+          <p><strong>Real-World Connection:</strong> When you water a houseplant and set it near a sunny window, you're giving it everything it needs: water from the soil, air from the room, and light from the window.</p>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE DIAGRAM -->
+      <div class="diagram-wrap scroll-reveal">
+        <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
+          🗺 Tap a part to learn what it does
+        </div>
+        <div class="diagram-interactive">
+          <svg viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;" role="img" aria-label="Interactive diagram of a plant showing sunlight, leaves, stem, roots, and soil water in photosynthesis">
+
+            <!-- Background sky -->
+            <rect x="0" y="0" width="860" height="180" fill="#DAEEF9"/>
+            <!-- Soil -->
+            <rect x="0" y="180" width="860" height="120" fill="#8B5E3C"/>
+            <rect x="0" y="180" width="860" height="20" fill="#A0703A"/>
+            <!-- Soil texture -->
+            <g fill="#6A4018" opacity="0.3">
+              <circle cx="100" cy="210" r="4"/><circle cx="240" cy="225" r="3"/><circle cx="380" cy="215" r="4"/>
+              <circle cx="520" cy="228" r="3"/><circle cx="660" cy="212" r="4"/><circle cx="780" cy="224" r="3"/>
+            </g>
+
+            <!-- SUN -->
+            <circle cx="760" cy="50" r="40" fill="#FFE030" opacity="0.9"/>
+            <circle cx="760" cy="50" r="28" fill="#FFD020"/>
+            <g stroke="#FFD020" stroke-width="3" stroke-linecap="round" opacity="0.7">
+              <line x1="760" y1="4"  x2="760" y2="0"/>
+              <line x1="800" y1="18" x2="804" y2="14"/>
+              <line x1="814" y1="50" x2="820" y2="50"/>
+              <line x1="800" y1="82" x2="804" y2="86"/>
+            </g>
+
+            <!-- SUNLIGHT RAYS to leaves -->
+            <line x1="740" y1="62" x2="540" y2="100" stroke="#FFD828" stroke-width="5" stroke-linecap="round" opacity="0.55"/>
+            <line x1="745" y1="70" x2="545" y2="135" stroke="#FFD828" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+            <line x1="742" y1="78" x2="550" y2="162" stroke="#FFD828" stroke-width="4" stroke-linecap="round" opacity="0.45"/>
+
+            <!-- PLANT STEM -->
+            <path d="M430,180 C430,160 430,140 430,60" stroke="#2E7D32" stroke-width="12" fill="none" stroke-linecap="round"/>
+            <path d="M431,180 C431,160 431,140 431,60" stroke="#52B788" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.45"/>
+
+            <!-- LEAVES -->
+            <path d="M428,95 C400,82 360,82 330,88 C360,98 402,104 428,102 Z" fill="#3EAE24" stroke="#2E8018" stroke-width="2"/>
+            <line x1="428" y1="98" x2="330" y2="88" stroke="#2E8018" stroke-width="1.8"/>
+            <path d="M432,95 C460,82 500,80 530,86 C500,96 460,102 432,102 Z" fill="#44B82A" stroke="#2E8018" stroke-width="2"/>
+            <line x1="432" y1="98" x2="530" y2="86" stroke="#2E8018" stroke-width="1.8"/>
+            <path d="M429,135 C400,122 358,124 328,130 C358,140 402,144 429,142 Z" fill="#38A020" stroke="#2E8018" stroke-width="1.8"/>
+            <line x1="429" y1="138" x2="328" y2="130" stroke="#2E8018" stroke-width="1.5"/>
+            <path d="M431,135 C460,122 502,122 532,128 C502,138 460,142 431,142 Z" fill="#44B82A" stroke="#2E8018" stroke-width="1.8"/>
+            <line x1="431" y1="138" x2="532" y2="128" stroke="#2E8018" stroke-width="1.5"/>
+
+            <!-- ROOTS -->
+            <g stroke="#A07838" stroke-width="3" fill="none" stroke-linecap="round">
+              <path d="M430,180 L430,270"/>
+              <path d="M428,200 Q400,215 370,228 Q345,240 335,260"/>
+              <path d="M429,215 Q405,230 385,248"/>
+              <path d="M432,200 Q460,215 490,228 Q515,240 525,260"/>
+              <path d="M431,215 Q455,230 475,248"/>
+            </g>
+
+            <!-- WATER DROPLETS in soil near roots -->
+            <g fill="#4AACED" opacity="0.75">
+              <path d="M340,250 Q337,243 340,238 Q343,243 340,250 Z"/>
+              <path d="M380,262 Q377,255 380,250 Q383,255 380,262 Z"/>
+              <path d="M480,258 Q477,251 480,246 Q483,251 480,258 Z"/>
+              <path d="M520,248 Q517,241 520,236 Q523,241 520,248 Z"/>
+            </g>
+
+            <!-- AIR ARROWS (into leaves) -->
+            <g stroke="#8EC8E0" stroke-width="2" fill="#8EC8E0">
+              <path d="M290,90 Q310,93 322,91" fill="none"/>
+              <polygon points="322,91 312,86 312,96"/>
+              <path d="M290,133 Q310,136 322,134" fill="none"/>
+              <polygon points="322,134 312,129 312,139"/>
+            </g>
+
+            <!-- SUGAR DOTS moving down stem (visual hint) -->
+            <g fill="#F9A825" opacity="0.7">
+              <circle cx="430" cy="155" r="4"/>
+              <circle cx="430" cy="168" r="3.5"/>
+            </g>
+
+            <!-- LABELS -->
+            <text x="762" y="108" text-anchor="middle" font-size="13" font-weight="800" fill="#B8820A">Sun</text>
+            <text x="620" y="82" text-anchor="middle" font-size="12" font-weight="700" fill="#1B4332">sunlight</text>
+            <text x="247" y="93" text-anchor="middle" font-size="12" font-weight="700" fill="#1B4332">air in</text>
+            <text x="247" y="136" text-anchor="middle" font-size="12" font-weight="700" fill="#1B4332">air in</text>
+            <text x="430" y="56" text-anchor="middle" font-size="12" font-weight="700" fill="#1B4332">leaf</text>
+            <text x="455" y="162" text-anchor="middle" font-size="12" font-weight="700" fill="#1B4332">stem</text>
+            <text x="430" y="196" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">soil</text>
+            <text x="430" y="288" text-anchor="middle" font-size="12" font-weight="700" fill="#F0D0A0">roots</text>
+
+            <!-- HOTSPOT RECTS (invisible triggers) -->
+            <rect class="hotspot" x="680" y="10" width="160" height="110"
+                  fill="#FFD828"
+                  data-part="The Sun"
+                  data-info="The Sun sends light energy to Earth. Plants capture that energy with their leaves. Without sunlight, photosynthesis cannot happen — and the plant cannot make food."/>
+            <rect class="hotspot" x="280" y="72" width="280" height="80"
+                  fill="#44B82A"
+                  data-part="Leaves"
+                  data-info="Leaves are where photosynthesis happens. They capture sunlight and take in air through tiny openings. Inside each leaf, sunlight, water, and air are combined to make sugar."/>
+            <rect class="hotspot" x="408" y="152" width="44" height="32"
+                  fill="#F9A825"
+                  data-part="Stem"
+                  data-info="The stem carries water up from the roots to the leaves, and carries sugar from the leaves down to the rest of the plant. It connects every part."/>
+            <rect class="hotspot" x="330" y="195" width="200" height="90"
+                  fill="#A07838"
+                  data-part="Roots"
+                  data-info="Roots grow down into the soil to absorb water and minerals. That water travels up the stem to the leaves, where it is used in photosynthesis."/>
+            <rect class="hotspot" x="0" y="180" width="860" height="25"
+                  fill="#8B5E3C"
+                  data-part="Soil and Water"
+                  data-info="Soil holds water that plant roots absorb. The water travels up through the stem and into the leaves, where it becomes one of the ingredients for making food."/>
+          </svg>
+
+          <div class="diagram-info-panel" id="diagramPanel">
+            <span class="dip-word" id="diagramWord"></span>
+            <span id="diagramInfo"></span>
+          </div>
+        </div>
+        <div class="diagram-tap-hint">Tap any part of the diagram to learn what it does.</div>
+        <div class="diagram-caption">A plant taking in sunlight, water, and air — the three ingredients for photosynthesis. Tap each part to see its role.</div>
+      </div>
+
+      <!-- KEY CONCEPT -->
+      <div class="key-concept scroll-reveal">
+        <div class="kc-label">⭐ Key Concept</div>
+        <p><strong>Plants make their own food through photosynthesis.</strong> They use sunlight, water, and air to produce sugar, which gives them energy to grow.</p>
+        <p>Leaves capture light. Roots absorb water. Every part has a structure that matches its function.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MIND-BLOWING FACT -->
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Amazing Plant Fact</div>
+      <div class="mind-blow-text">A single large tree can absorb more than <strong>48 pounds of carbon dioxide</strong> every year during photosynthesis — and release clean oxygen in return. Every breath of fresh air partly comes from a plant doing its job.</div>
+    </div>
+  </div>
+
+  <!-- GO DEEPER -->
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper</summary>
+    <div class="gd-body">
+      <p><strong>Why are leaves green?</strong> Inside every leaf cell are tiny structures called <em>chloroplasts</em>. They contain a green pigment called <em>chlorophyll</em>. Chlorophyll is what captures light energy — and it happens to reflect green light back to our eyes, which is why most leaves look green.</p>
+      <p>In autumn, some trees stop making chlorophyll. As it breaks down, other colors — reds, oranges, yellows — that were always there get revealed. The tree is still the same tree. The color was always hiding inside the leaf.</p>
+      <p>So the next time you see a red maple leaf in fall, you're seeing what happens when a plant slows its photosynthesis for the winter.</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+
+</div><!-- /tab-lesson -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 3: EXPLORE                                            -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🔬</span>
+      <div>
+        <div class="video-wrap-type">Activity 3 · Guided Activity</div>
+        <div class="video-wrap-title">Model Photosynthesis — Draw What You Know</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🔬</div>
+        <div class="video-placeholder-text">Exploration video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 19-01-exploration-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 3: INVESTIGATION -->
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#0288D1;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🌱 Model It: Photosynthesis in Action</div>
+        <div class="act-subtitle">Build a diagram that shows how a plant makes food.</div>
+      </div>
+      <div class="act-time" style="background:#0288D1;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="callout callout-tip" style="margin-bottom:18px;">
+        <span class="callout-icon">🎒</span>
+        <p><strong>You'll need:</strong> Science notebook, pencil, and colored pencils (green, yellow, and blue are most useful).</p>
+      </div>
+
+      <p>You're going to build a diagram model of photosynthesis — showing what goes in, what comes out, and what each plant part does. Follow each step.</p>
+
+      <div style="position:relative; margin:16px 0;">
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">1</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Draw the plant.</strong> Sketch a plant with roots underground, a stem, and at least three leaves. Leave room above for the sun. Don't worry about making it perfect — a simple drawing is great.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2D6A4F,#52B788);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(45,106,79,0.3);">2</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Add the sun and draw arrows.</strong> Draw the sun in the upper corner. Then add three arrows: one from the sun to the leaves (sunlight), one from the roots upward (water), and one curving inward at the leaves (air).</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#52B788,#F9A825);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(82,183,136,0.3);">3</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Label your diagram.</strong> Label each arrow with what it shows. Add labels for: roots, stem, leaves, sunlight, water, air, and sugar/food. Each label should point to something on your drawing.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F9A825,#FDD835);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(249,168,37,0.3);">4</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Think about what would change.</strong> Look at your diagram. Cover the sun with your hand. What would stop working? What would the plant be missing? Write one sentence at the bottom of your diagram answering this.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🌲</span>
+        <div>
+          <div class="label">Think Like a Scientist</div>
+          <div class="question">"If you gave a plant plenty of water and good soil but kept it in complete darkness, what do you think would happen? What in your diagram explains why?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RECORD YOUR THINKING -->
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#2E7D32;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">📓 Record Your Thinking</div>
+        <div class="act-subtitle">Write what you figured out.</div>
+      </div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>In your science notebook, answer each question. Write in complete sentences — a scientist's notes are specific.</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">1</span>
+        <span class="pq-text">Look at your diagram. What are the three ingredients that go into photosynthesis? Where does each one come from?</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">2</span>
+        <span class="pq-text">What does the plant make during photosynthesis? What does the plant do with it?</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">3</span>
+        <span class="pq-text">Draw a simple "before and after": what a well-lit plant looks like compared to a plant kept in the dark. Label at least two differences.</span>
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">🗣</span>
+        <p>Tell the story of photosynthesis from the beginning — starting with the sun. Walk through the whole process in your own words, in order. Use your diagram to help you.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- THINK IT THROUGH -->
+  <div class="card theme-meadow scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">💬</div>
+      <div>
+        <div class="card-head-label">Discussion</div>
+        <div class="card-head-title">Think It Through</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Think through each question on your own. Write your answers in your science notebook before moving on.</p>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Question 1</div>
+          <div class="question">"Look at your diagram. Which part of the plant is doing the most work during photosynthesis — and how can you tell?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">💡</span>
+        <div>
+          <div class="label">Question 2</div>
+          <div class="question">"What would happen to a plant if it had no roots? What evidence from the lesson supports your answer?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🌲</span>
+        <div>
+          <div class="label">Question 3 — Connect to the Real World</div>
+          <div class="question">"A farmer wants to grow healthy crops. Based on what you know about photosynthesis, what two things must the farmer make sure the plants always have?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🔁</span>
+        <div>
+          <div class="label">Question 4 — Still Wondering</div>
+          <div class="question">"After building your diagram, what is one question you still have about photosynthesis or how plants grow? Write it down."</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+
+</div><!-- /tab-explore -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 4: SELF-CHECK QUIZ                                    -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#F9A825;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">🌱</div>
+      <div style="flex:1;">
+        <div style="font-size:19px;color:#1B4332;font-weight:800;line-height:1.2;">🧠 Quick Self-Check</div>
+        <div style="font-size:12px;color:#9A8E82;">Not graded — just for you! See how much you remember.</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+
+      <!-- QUESTION 1 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. What three things does a plant combine to make food during photosynthesis?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Soil, air, and sugar</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Sunlight, water, and air</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Sunlight, sugar, and roots</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌿 Yes! Sunlight, water, and air are the three ingredients. Plants use them to make sugar — their food.</div>
+        <div class="quiz-feedback fb-wrong">Think about the diagram: something comes in from the sun, something travels up from the roots, and something comes in through the leaves. What are those three things?</div>
+      </div>
+
+      <!-- QUESTION 2 -->
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">2. What would most likely happen to a plant kept in total darkness for many weeks?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>It would grow faster because it is resting.</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>It would keep making food from the water in the soil.</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>It would stop making food and its leaves would turn yellow.</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌲 Exactly right. Without sunlight, photosynthesis stops. The plant can't make food, so it weakens and its leaves lose their green color.</div>
+        <div class="quiz-feedback fb-wrong">Remember — sunlight is the energy source for photosynthesis. Without it, the plant has no way to make food. What do you think would happen then?</div>
+      </div>
+
+      <!-- QUESTION 3 -->
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-text">3. Which plant part is mainly responsible for capturing sunlight during photosynthesis?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Leaves</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Roots</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Seeds</div>
+        </div>
+        <div class="quiz-feedback fb-correct">⭐ That's it! Leaves face the sun and collect light energy. That's exactly why leaves grow so wide and flat — it's their whole purpose.</div>
+        <div class="quiz-feedback fb-wrong">Think about where photosynthesis actually happens. Which part of the plant is always angled toward the light?</div>
+      </div>
+
+      <!-- Score Display -->
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum">0</div>
+        <div class="quiz-score-label">out of 3</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+
+        <div class="video-feedback" id="quizVideoCorrect" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">✅</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Perfect Score</div>
+                <div class="video-wrap-title">Amazing work, scientist! You've got this.</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">⭐</div>
+                <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 19-01-quiz-perfect --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">📚</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Keep Going</div>
+                <div class="video-wrap-title">Almost there — let's review together!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">💪</div>
+                <div class="video-placeholder-text">Review and encouragement video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 19-01-quiz-review --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+
+</div><!-- /tab-quiz -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 5: ASSIGNMENT                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">✍️</span>
+      <div>
+        <div class="video-wrap-type">Activity 5 · Assignment</div>
+        <div class="video-wrap-title">Show What You Know About Photosynthesis</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">✍️</div>
+        <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 19-01-assignment-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 5: ASSIGNMENT -->
+  <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
+    <div class="act-head">
+      <div class="act-num" style="background:#7B5EA7;">5</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment</div>
+        <div class="act-subtitle">Show what you've learned about how plants make food.</div>
+      </div>
+      <div class="act-time" style="background:#7B5EA7;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- PART A -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔍 Part A — Label the Process</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">In your science notebook, draw a plant and fill in the photosynthesis process. Use the word bank: <strong>sunlight · water · air · sugar · roots · leaves · stem</strong>.</p>
+
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">Draw a plant with roots, stem, and leaves. Add the sun above it.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">Draw three arrows showing what comes into the plant: sunlight (to the leaves), water (up from the roots), and air (into the leaves). Label each arrow.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">Draw an arrow showing what the plant makes (sugar/food). Show it moving from the leaf toward the rest of the plant.</span></div>
+
+      <!-- PART B -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🚀 Part B — Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer each question in <strong>complete sentences</strong>. Use your science vocabulary.</p>
+
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">4</span><span class="pq-text">Why do plants need sunlight? Explain what would happen if a plant got no light at all.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">5</span><span class="pq-text">What job do the roots do in photosynthesis? How does their job connect to what happens in the leaves?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">6</span><span class="pq-text">A cactus lives in a dry desert with very little water. How do you think a cactus's roots might be different from a fern's roots? What is your evidence?</span></div>
+
+      <!-- WRITE & EXPLAIN -->
+      <div class="key-concept scroll-reveal" style="background:#FFF9E8;border-color:#F0E4C0;">
+        <div class="kc-label" style="color:#F9A825;">✍️ Write and Explain</div>
+        <p style="font-size:16px;font-weight:700;color:#1B4332;margin-bottom:14px;">A friend says, "Plants eat from the soil, just like animals eat food." Do you agree or disagree? Use what you learned about photosynthesis to explain.</p>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What do you think?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I disagree / agree because plants actually…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What did you learn that supports your thinking?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I know this because the lesson showed that plants…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">Why does that make sense?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="background:#EEF8F0;border-radius:10px;padding:10px 14px;border-left:3px solid #52B788;">
+          <p style="margin:0;font-size:14px;color:#1B4332;">📚 Try to use at least one of these words in your answer: <strong>photosynthesis</strong>, <strong>sunlight</strong>, <strong>leaves</strong></p>
+        </div>
+      </div>
+
+      <!-- PART C -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Label</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Draw a "before and after" — one plant in bright sunlight and one plant kept in the dark. Label at least 3 differences you would expect to see between them.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Reflect</div>
+          <div class="question">"Think back to the plant you observed at the start of this lesson. Based on everything you've learned today, what was that plant doing — and how do you know it was healthy?"</div>
+        </div>
+      </div>
+
+      <!-- WHAT TO TURN IN -->
+      <div class="turn-in-block">
+        <div class="turn-in-header">
+          <div class="turn-in-header-icon">📋</div>
+          <div>
+            <div class="turn-in-header-label">Canvas Submission</div>
+            <div class="turn-in-header-title">What to Turn In</div>
+          </div>
+        </div>
+        <div class="turn-in-body">
+
+          <p class="turn-in-intro">Submit your work on Canvas using <strong>one of these options:</strong></p>
+
+          <div class="turn-in-options">
+            <div class="turn-in-option turn-in-option-type">
+              <div class="turn-in-option-icon">⌨️</div>
+              <div class="turn-in-option-title">Type It</div>
+              <div class="turn-in-option-text">Type your answers directly into the Canvas assignment.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-photo">
+              <div class="turn-in-option-icon">📸</div>
+              <div class="turn-in-option-title">Photo It</div>
+              <div class="turn-in-option-text">Take a clear photo of your handwritten work and upload it.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-video">
+              <div class="turn-in-option-icon">🎥</div>
+              <div class="turn-in-option-title">Record It</div>
+              <div class="turn-in-option-text">Record a short video explaining what you did and learned.</div>
+            </div>
+          </div>
+
+          <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
+
+          <div class="turn-in-checklist">
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Notice &amp; Wonder observations and question from the beginning.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My photosynthesis model diagram from the Explore tab, with all arrows and labels.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Part A labeled diagram showing sunlight, water, air, and sugar with arrows.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Part B short answer responses to questions 4, 5, and 6.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Write &amp; Explain response in complete sentences, using lesson vocabulary.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Part C before-and-after drawing with at least 3 labeled differences.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CLOSING VIDEO -->
+      <div class="video-wrap" style="margin-top:24px;">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">👋</span>
+          <div>
+            <div class="video-wrap-type">Closing · Wrap-Up</div>
+            <div class="video-wrap-title">Great work today! Next up: Light and Plant Growth</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">👋</div>
+            <div class="video-placeholder-text">Closing video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 19-01-closing --></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /tab-assignment -->
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <div class="footer-line1">Optima Academy Online · <span>3rd Grade Science</span></div>
+  <div class="footer-line2">Lesson 19.01 · NGSS 3-LS1-1</div>
+  <div class="footer-line3">© Optima Academy · All rights reserved</div>
+</div>
+
+</div><!-- /page-wrap -->
+
+
+<script>
+
+var LESSON_EMOJI = '🌱';
+
+// ── Tab System ──
+var tabProgress = { vocab: false, lesson: false, explore: false, quiz: false, assignment: false };
+var tabOrder = ['vocab','lesson','explore','quiz','assignment'];
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelector('[data-tab="' + name + '"]').classList.add('active');
+  tabProgress[name] = true;
+  document.querySelector('[data-tab="' + name + '"]').classList.add('visited');
+  var visited = Object.values(tabProgress).filter(Boolean).length;
+  var pct = Math.round((visited / tabOrder.length) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c){
+    if (name === 'vocab') { c.classList.remove('collapsed'); }
+    else { c.classList.add('collapsed'); }
+  });
+  try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+  var top = document.getElementById('pageTop');
+  if (top && top.scrollIntoView) {
+    try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+  }
+}
+
+// ── Checklist ──
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  var icon = item.querySelector('.check-icon');
+  if (icon) {
+    icon.textContent = item.classList.contains('checked') ? LESSON_EMOJI : '';
+  }
+  var checklist = item.closest('.turn-in-checklist');
+  if (!checklist) return;
+  var items = checklist.querySelectorAll('.turn-in-item');
+  if (items.length === 0) return;
+  var allChecked = Array.prototype.every.call(items, function(it){
+    return it.classList.contains('checked');
+  });
+  if (allChecked) {
+    setTimeout(window.launchConfetti, 200);
+  }
+}
+
+// ── Clickable Diagram ──
+(function() {
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel    = document.getElementById('diagramPanel');
+  var wordEl   = document.getElementById('diagramWord');
+  var infoEl   = document.getElementById('diagramInfo');
+  if (!panel) return;
+  hotspots.forEach(function(hs) {
+    hs.addEventListener('click', function(e) {
+      e.stopPropagation();
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+      hs.classList.add('active');
+      var part = hs.getAttribute('data-part').replace(/-/g, ' ');
+      wordEl.textContent = part.charAt(0).toUpperCase() + part.slice(1);
+      infoEl.innerHTML   = hs.getAttribute('data-info');
+      panel.classList.add('visible');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+    }
+  });
+})();
+
+// ── Self-Check Quiz ──
+var quizAnswered = 0;
+var quizCorrect  = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen  = optEl.getAttribute('data-val');
+  q.querySelectorAll('.quiz-opt').forEach(function(o){
+    if (o.getAttribute('data-val') === correct) { o.classList.add('correct'); }
+    else { o.classList.add('disabled'); }
+  });
+  var fbCorrect = q.querySelector('.fb-correct');
+  var fbWrong   = q.querySelector('.fb-wrong');
+  if (chosen === correct) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+  if (quizAnswered === 3) {
+    var scoreBox  = document.getElementById('quizScore');
+    var scoreNum  = document.getElementById('quizScoreNum');
+    var scoreMsg  = document.getElementById('quizScoreMsg');
+    var vCorrect  = document.getElementById('quizVideoCorrect');
+    var vReview   = document.getElementById('quizVideoReview');
+    scoreNum.textContent = quizCorrect;
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '⭐ Perfect! You got every question right!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌿 Great job! Almost there!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip) {
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function() {
+    var rect = tip.getBoundingClientRect();
+    var bw   = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Back to Top ──
+(function() {
+  var btn = document.getElementById('backToTop');
+  if (!btn) return;
+  var inIframe = (function() {
+    try { return window.self !== window.top; }
+    catch (e) { return true; }
+  })();
+  btn.addEventListener('click', function() {
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    var top = document.getElementById('pageTop');
+    if (top && top.scrollIntoView) {
+      try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+    }
+    try {
+      if (window.frameElement && window.frameElement.scrollIntoView) {
+        window.frameElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (e) {}
+    if (inIframe) {
+      try { window.parent.postMessage({ type: 'optima-lesson:scroll-to-top' }, '*'); } catch (e) {}
+    }
+  });
+  if (inIframe) {
+    setTimeout(function() { btn.classList.add('show'); }, 1500);
+  } else {
+    window.addEventListener('scroll', function() {
+      btn.classList.toggle('show', window.pageYOffset > 400);
+    });
+  }
+})();
+
+// ── Confetti ──
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx    = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#52B788','#F9A825','#FDD835','#4DD0E1','#2E7D32','#7B5EA7','#FF8F00','#0288D1'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── Collapsible Intro Cards ──
+var introCards = document.querySelectorAll('.intro-2col .card');
+introCards.forEach(function(card){
+  var head = card.querySelector('.card-head');
+  if (!head) return;
+  head.addEventListener('click', function(){
+    var willCollapse = !card.classList.contains('collapsed');
+    introCards.forEach(function(c){
+      c.classList.toggle('collapsed', willCollapse);
+    });
+  });
+});
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+tabProgress['vocab'] = true;
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+(function(){
+  var btt = document.getElementById('backToTop');
+  if (btt) { btt.textContent = LESSON_EMOJI + ' Back to Top'; }
+})();
+</script>
+</body>
+</html>
