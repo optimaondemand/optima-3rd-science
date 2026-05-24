@@ -1,0 +1,2175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – How Do Plants Respond to Their Environment?</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+  background: #F2F0E8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #2B1D12;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap { max-width: 920px; margin: 0 auto; background: #FAF8F4; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%);
+  border-bottom: 6px solid #2D6A4F;
+  padding: 22px 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 6px; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2D6A4F, #52B788, #2D6A4F);
+}
+.header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.header-logo {
+  width: 52px; height: 52px; border-radius: 50%; background: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title {
+  font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+  text-shadow: 0 2px 12px rgba(45,106,79,0.3);
+}
+.header-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(45,106,79,0.18); border: 1.5px solid rgba(82,183,136,0.35);
+  border-radius: 28px; padding: 6px 16px;
+}
+.header-badge span:first-child { font-size: 22px; }
+.header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ── Hero Visual ── */
+.hero-visual {
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #2D6A4F;
+}
+.hero-visual svg { display: block; width: 100%; height: auto; }
+
+/* ── Hero Animations ── */
+@keyframes cloud-drift-1 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(40px); }
+}
+@keyframes cloud-drift-2 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-32px); }
+}
+@keyframes sun-pulse {
+  0%, 100% { opacity: 0.65; transform: scale(1); }
+  50%       { opacity: 1;    transform: scale(1.12); }
+}
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes hero-sway {
+  0%, 100% { transform: rotate(-2.5deg); }
+  50%       { transform: rotate(2.5deg); }
+}
+@keyframes hero-shimmer {
+  0%, 100% { opacity: 0.25; }
+  50%       { opacity: 0.7; }
+}
+/* Banner-specific keyframes from the provided SVG banner */
+@keyframes lampPulse  { 0%,100%{opacity:0.18} 50%{opacity:0.58} }
+@keyframes waterPulse {
+  0%,100% { transform: scale(1);    opacity: 0.88; }
+  50%     { transform: scale(1.14); opacity: 1.00; }
+}
+@keyframes sway {
+  0%, 100% { transform: rotate(-2.5deg); }
+  50%       { transform: rotate(2.5deg); }
+}
+
+.lamp-glow  { animation: lampPulse  3.5s ease-in-out infinite; }
+.water-drop {
+  animation: waterPulse 3.0s ease-in-out infinite;
+  transform-box: view-box;
+  transform-origin: 872px 148px;
+}
+.hero-cloud-1   { animation: cloud-drift-1 9s ease-in-out infinite alternate; }
+.hero-cloud-2   { animation: cloud-drift-2 13s ease-in-out infinite alternate; }
+.hero-sun-glow  { animation: sun-pulse 4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-float     { animation: hero-float 3.5s ease-in-out infinite; }
+.hero-shimmer   { animation: hero-shimmer 3s ease-in-out infinite; }
+.hero-sway      { animation: hero-sway 4s ease-in-out infinite; transform-origin: bottom center; transform-box: fill-box; }
+
+/* ── Nature Diagram Animations ── */
+@keyframes mind-blow-bounce {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.12); }
+}
+
+/* ── Info Strip ── */
+.info-strip {
+  display: flex; flex-wrap: wrap; background: #fff;
+  border-bottom: 2px solid #E8DDD2;
+}
+.info-item {
+  flex: 1; min-width: 150px; padding: 12px 16px;
+  border-right: 1px solid #E8DDD2;
+  display: flex; align-items: center; gap: 10px;
+}
+.info-item:last-child { border-right: none; }
+.info-icon {
+  width: 40px; height: 40px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.info-value { font-size: 16px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+/* ── Content Area ── */
+.content { padding: 24px 28px 36px; }
+
+/* ── Card System ── */
+.card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 22px;
+  box-shadow: 0 2px 12px rgba(27,67,50,0.04);
+}
+.card-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 20px; border-bottom: 2px solid;
+  border-radius: 16px 16px 0 0;
+}
+.card-head-icon {
+  width: 42px; height: 42px; border-radius: 50%; color: #fff;
+  font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.card-head-title { font-size: 20px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.card-body { padding: 18px 22px; }
+.card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+.card-body p:last-child { margin-bottom: 0; }
+
+/* ── Card Color Themes ── */
+.theme-earth  .card-head { background: #FFF0E8; border-color: #E8D0B8; }
+.theme-earth  .card-head-icon { background: #A0522D; }
+.theme-sun    .card-head { background: #FFF9E8; border-color: #F0E4C0; }
+.theme-sun    .card-head-icon { background: #F9A825; }
+.theme-sky    .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-sky    .card-head-icon { background: #0288D1; }
+.theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+.theme-forest .card-head-icon { background: #2E7D32; }
+.theme-rock   .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+.theme-rock   .card-head-icon { background: #7B5EA7; }
+.theme-meadow .card-head { background: #F0F8E8; border-color: #C8E0B8; }
+.theme-meadow .card-head-icon { background: #558B2F; }
+
+/* ── Activity Cards ── */
+.activity-card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.activity-card.act-warmup  { border-left: 6px solid #52B788; }
+.activity-card.act-lesson  { border-left: 6px solid #F9A825; }
+.activity-card.act-explore { border-left: 6px solid #0288D1; }
+.activity-card.act-practice{ border-left: 6px solid #2E7D32; }
+.activity-card.act-check   { border-left: 6px solid #7B5EA7; }
+
+.act-head {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px 14px 18px;
+  border-bottom: 1.5px solid #E8DDD2;
+  border-radius: 16px 16px 0 0;
+}
+.act-num {
+  width: 38px; height: 38px; border-radius: 14px; color: #fff;
+  font-size: 18px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.act-title { font-size: 19px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.act-subtitle { font-size: 12px; color: #9A8E82; }
+.act-time {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap;
+  margin-left: auto; flex-shrink: 0;
+}
+.act-body { padding: 18px 22px 18px 20px; }
+.act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+/* ── Callout Boxes ── */
+.callout {
+  border-radius: 14px; padding: 16px 18px;
+  display: flex; align-items: flex-start; gap: 12px;
+  margin-bottom: 14px;
+}
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+.callout-earth  { background: #FFF0E8; border: 2px solid #E8D0B8; }
+.callout-think  { background: #FFF9E8; border: 2px solid #F0E4C0; }
+.callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+.callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+.callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+
+/* ── Socratic Questions ── */
+.socratic-q {
+  background: linear-gradient(135deg, #EEF8F0, #E8F5E9);
+  border: 2px solid #A8D5B8;
+  border-radius: 16px; padding: 16px 20px;
+  margin: 16px 0;
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.socratic-q .label {
+  font-size: 11px; color: #2D6A4F; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px;
+}
+.socratic-q .question {
+  font-size: 17px; color: #2B1D12; font-weight: 700;
+  line-height: 1.6; font-style: italic;
+}
+
+/* ── Diagram Containers ── */
+.diagram-wrap {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 16px; margin: 16px 0;
+  text-align: center;
+}
+.diagram-wrap svg { max-width: 100%; height: auto; }
+.diagram-caption {
+  font-size: 13px; color: #9A8E82; margin-top: 10px;
+  font-weight: 600; text-align: center;
+}
+
+/* ── Lesson Figure ── */
+.lesson-figure {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 14px 14px 18px; margin: 0 0 22px;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.lesson-figure-label {
+  font-size: 11px; color: #2D6A4F;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  font-weight: 800; margin-bottom: 10px;
+}
+.lesson-figure img {
+  display: block; max-width: 100%; height: auto;
+  border-radius: 10px; margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.lesson-figure-caption {
+  font-size: 14px; color: #5A4D3E;
+  margin-top: 12px; line-height: 1.55; font-weight: 600;
+  text-align: center;
+}
+.lesson-figure-caption strong { color: #1B4332; }
+
+/* ── Key Concept Box ── */
+.key-concept {
+  background: #F0F8E8; border: 2px solid #C8E0B8;
+  border-radius: 14px; padding: 18px 20px; margin: 14px 0;
+}
+.key-concept .kc-label {
+  font-size: 13px; color: #558B2F; text-transform: uppercase;
+  letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px;
+}
+.key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+.key-concept p:last-child { margin-bottom: 0; }
+
+/* ── Practice Questions ── */
+.pq {
+  background: #FAFAF6; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 14px 18px; margin-bottom: 12px;
+}
+.pq-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  color: #fff; font-weight: 800; font-size: 14px;
+  margin-right: 8px; vertical-align: middle;
+}
+.pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+.pq-answer { font-size: 15px; color: #9A8E82; font-style: italic; }
+
+/* ── Vocab Flashcards ── */
+.vocab-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px; margin: 14px 0;
+}
+.flip-card { perspective: 800px; height: 195px; cursor: pointer; }
+.flip-card-inner {
+  position: relative; width: 100%; height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 14px 18px; text-align: center;
+  border: 2px solid #E8DDD2;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.06);
+}
+.flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+.flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+.flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #1B4332; margin-bottom: 6px; }
+.flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+.flip-card-back {
+  background: linear-gradient(145deg, #1B4332, #2D6A4F);
+  border-color: #1B4332;
+  transform: rotateY(180deg);
+}
+.flip-card-back .fc-def { font-size: 14.5px; color: #fff; line-height: 1.5; font-weight: 600; }
+.flip-card-back .fc-word-back {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 6px;
+}
+.flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 8px; font-weight: 600; }
+.fc-color-1 .flip-card-front { border-top-color: #52B788; }
+.fc-color-2 .flip-card-front { border-top-color: #2D6A4F; }
+.fc-color-3 .flip-card-front { border-top-color: #F9A825; }
+.fc-color-4 .flip-card-front { border-top-color: #0288D1; }
+.fc-color-5 .flip-card-front { border-top-color: #2E7D32; }
+.fc-color-6 .flip-card-front { border-top-color: #7B5EA7; }
+
+/* ── Vocab Tooltips ── */
+.vtip {
+  position: relative; color: #7B5EA7; font-weight: 700;
+  cursor: help; border-bottom: 2px dotted rgba(123,94,167,0.45);
+  transition: color 0.15s;
+}
+.vtip:hover { color: #5B3EA7; }
+.vtip .vtip-box {
+  position: absolute;
+  top: calc(100% + 7px);   /* appears BELOW the word — never clipped by overflow:hidden above */
+  bottom: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1B4332; color: #fff;
+  padding: 12px 16px; border-radius: 12px;
+  font-size: 14px; font-weight: 600; font-style: normal;
+  line-height: 1.55; width: 250px; text-align: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.18s ease, visibility 0.18s;
+  pointer-events: none; z-index: 9999;
+  box-shadow: 0 6px 24px rgba(27,67,50,0.35);
+  border: 1.5px solid rgba(149,213,178,0.3);
+  white-space: normal;
+}
+.vtip .vtip-box::after {
+  /* Arrow points UP toward the word */
+  content: ''; position: absolute;
+  bottom: 100%; top: auto; left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-bottom-color: #1B4332;
+}
+.vtip .vtip-word {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block;
+}
+.vtip:hover .vtip-box { opacity: 1; visibility: visible; }
+
+/* ── Reveal / Details ── */
+details {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-left: 5px solid #7B5EA7;
+  border-radius: 14px; margin-bottom: 12px; overflow: hidden;
+}
+details summary {
+  padding: 12px 18px; font-size: 16px; font-weight: 700;
+  color: #1B4332; cursor: pointer;
+}
+details summary:hover { background: #FAFAF6; }
+details > div { padding: 12px 18px 14px; font-size: 16px; color: #5A4D3E; line-height: 1.65; border-top: 1.5px solid #E8DDD2; }
+
+/* ── Activities Header ── */
+.activities-header { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.activities-header-icon {
+  width: 44px; height: 44px; border-radius: 50%; background: #1B4332;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0;
+}
+.activities-header-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.activities-header-title { font-size: 22px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.activities-header-time { font-size: 14px; color: #9A8E82; font-weight: 600; }
+
+/* ── Need Strip ── */
+.need-strip {
+  background: #fff; border-bottom: 1px solid #E8DDD2;
+  padding: 10px 20px; display: flex; flex-wrap: wrap;
+  align-items: center; gap: 10px;
+}
+.need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 800; white-space: nowrap; }
+.need-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #FAFAF6; border: 1.5px solid #E8DDD2;
+  border-radius: 20px; padding: 4px 12px;
+  font-size: 13px; color: #1B4332; font-weight: 700;
+}
+
+/* ── Tab Bar ── */
+.tab-bar {
+  display: flex; background: #fff; border-bottom: 2px solid #E8DDD2;
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  position: sticky; top: 44px; z-index: 100;
+}
+.tab-btn {
+  flex: 1; min-width: 110px; padding: 12px 8px 10px;
+  background: none; border: none; border-bottom: 3px solid transparent;
+  font-family: 'Nunito', sans-serif; font-size: 12px; font-weight: 800;
+  color: #9A8E82; cursor: pointer; white-space: nowrap;
+  transition: all 0.2s; position: relative;
+}
+.tab-btn:hover { background: #F4FAF5; color: #2D6A4F; }
+.tab-btn.active { color: #1B4332; border-bottom-color: #2D6A4F; background: #F4FAF5; }
+.tab-btn.visited .tab-check { opacity: 1; }
+.tab-check { font-size: 10px; color: #52B788; margin-left: 4px; opacity: 0; transition: opacity 0.3s; }
+
+/* ── Tab Panels ── */
+.tab-panel { display: none; padding: 24px 28px 36px; }
+.tab-panel.active { display: block; }
+
+/* ── Tab Navigation Button ── */
+.tab-next-wrap { text-align: center; margin-top: 28px; }
+.tab-next-btn {
+  display: inline-block; background: linear-gradient(135deg, #1B4332, #2D6A4F);
+  color: #fff; font-family: 'Nunito', sans-serif;
+  font-size: 16px; font-weight: 800; padding: 12px 30px;
+  border: none; border-radius: 30px; cursor: pointer;
+  box-shadow: 0 4px 16px rgba(27,67,50,0.25);
+  transition: all 0.2s;
+}
+.tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(27,67,50,0.35); }
+
+/* ── Intro 2-col ── */
+.intro-2col {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 20px; padding: 20px 28px 0;
+}
+.intro-2col .card { margin-bottom: 0; }
+.intro-2col .card .card-head { cursor: pointer; user-select: none; position: relative; }
+.intro-2col .card .card-head::after {
+  content: '▾'; position: absolute; right: 18px;
+  font-size: 18px; color: #9A8E82; transition: transform 0.3s;
+}
+.intro-2col .card.collapsed .card-head::after { transform: rotate(-90deg); }
+.intro-2col .card.collapsed .card-body { display: none; }
+
+/* ── Footer ── */
+.footer {
+  background: #1B4332; border-top: 4px solid #52B788;
+  padding: 18px 28px; text-align: center;
+}
+.footer-line1 { font-size: 15px; color: #fff; margin-bottom: 4px; }
+.footer-line1 span { color: #95D5B2; font-weight: 700; }
+.footer-line2 { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+.footer-line3 { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+/* ── Mind-Blowing Fact ── */
+.mind-blow {
+  background: linear-gradient(135deg, #1a3a28, #1B4332);
+  border: 2px solid rgba(149,213,178,0.3);
+  border-radius: 18px; padding: 18px 22px;
+  margin: 18px 0; display: flex;
+  align-items: flex-start; gap: 14px;
+  position: relative; overflow: hidden;
+}
+.mind-blow::before {
+  content: ''; position: absolute; top: -30px; right: -30px;
+  width: 100px; height: 100px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(82,183,136,0.15), transparent);
+}
+.mind-blow-icon {
+  font-size: 36px; flex-shrink: 0;
+  animation: mind-blow-bounce 2s ease-in-out infinite;
+}
+.mind-blow-content { flex: 1; }
+.mind-blow-label {
+  font-size: 11px; color: #FDD835; text-transform: uppercase;
+  letter-spacing: 1.5px; font-weight: 800; margin-bottom: 4px;
+}
+.mind-blow-text { font-size: 16px; color: #fff; line-height: 1.6; font-weight: 600; }
+.mind-blow-text strong { color: #95D5B2; }
+
+/* ── Clickable Diagram ── */
+.diagram-interactive { position: relative; }
+.diagram-interactive .hotspot {
+  cursor: pointer; opacity: 0; transition: opacity 0.2s;
+}
+.diagram-interactive .hotspot:hover { opacity: 0.2; }
+.diagram-interactive .hotspot.active { opacity: 0.28; }
+.diagram-info-panel {
+  background: #1B4332; color: #fff;
+  padding: 14px 20px; border-radius: 14px;
+  font-size: 15px; line-height: 1.55; font-weight: 600;
+  text-align: center;
+  border: 1.5px solid rgba(149,213,178,0.3);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  margin: 10px 0 0; display: none;
+}
+.diagram-info-panel.visible { display: block; }
+.diagram-info-panel .dip-word {
+  font-size: 11px; color: #FDD835; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; display: block; margin-bottom: 3px;
+}
+.diagram-tap-hint {
+  text-align: center; font-size: 13px; color: #9A8E82;
+  font-weight: 600; margin-top: 8px;
+}
+
+/* ── Self-Check Quiz ── */
+.quiz-card {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-left: 6px solid #F9A825;
+  border-radius: 18px; margin-bottom: 18px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.quiz-q {
+  background: #FAFAF6; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 16px 18px; margin-bottom: 14px;
+}
+.quiz-q-text { font-size: 17px; color: #2B1D12; font-weight: 700; line-height: 1.6; margin-bottom: 12px; }
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt {
+  padding: 10px 16px; border-radius: 12px;
+  border: 2px solid #E8DDD2; background: #fff;
+  font-size: 15px; font-weight: 700; color: #2B1D12;
+  cursor: pointer; transition: all 0.2s;
+  display: flex; align-items: center; gap: 10px;
+  user-select: none;
+}
+.quiz-opt:hover { background: #EEF8F0; border-color: #52B788; }
+.quiz-opt.correct { background: #EEF8F0 !important; border-color: #2E7D32 !important; color: #1a6b35 !important; }
+.quiz-opt.wrong { background: #FFF0EC !important; border-color: #E8636B !important; color: #a33 !important; }
+.quiz-opt.disabled { pointer-events: none; opacity: 0.6; }
+.quiz-opt .opt-letter {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: #E8DDD2; color: #5A4D3E;
+  font-size: 14px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all 0.2s;
+}
+.quiz-opt.correct .opt-letter { background: #2E7D32; color: #fff; }
+.quiz-opt.wrong .opt-letter { background: #E8636B; color: #fff; }
+.quiz-feedback { font-size: 14px; padding: 10px 14px; border-radius: 10px; margin-top: 10px; display: none; font-weight: 600; line-height: 1.5; }
+.quiz-feedback.show { display: block; }
+.quiz-feedback.fb-correct { background: #EEF8F0; color: #1a6b35; border: 1.5px solid #B8E8CF; }
+.quiz-feedback.fb-wrong { background: #FFF0EC; color: #8a3030; border: 1.5px solid #F5C4BA; }
+.quiz-score {
+  text-align: center; padding: 16px; background: linear-gradient(135deg, #EEF8F0, #E8F5E9);
+  border: 2px solid #C4E5CC; border-radius: 14px; margin-top: 8px; display: none;
+}
+.quiz-score.show { display: block; }
+.quiz-score-num { font-size: 36px; font-weight: 900; color: #1B4332; }
+.quiz-score-label { font-size: 14px; color: #9A8E82; font-weight: 700; }
+.quiz-score-msg { font-size: 16px; color: #2B1D12; font-weight: 700; margin-top: 6px; }
+
+/* ── Go Deeper ── */
+.go-deeper {
+  background: linear-gradient(135deg, #F0EDF6, #E8E2F2);
+  border: 2px solid #D8D0E8; border-radius: 16px;
+  margin: 16px 0; overflow: hidden;
+}
+.go-deeper summary {
+  padding: 14px 18px; font-size: 16px; font-weight: 800;
+  color: #1B4332; cursor: pointer;
+  display: flex; align-items: center; gap: 10px;
+  list-style: none;
+}
+.go-deeper summary::-webkit-details-marker { display: none; }
+.go-deeper summary::before { content: '🔭'; font-size: 22px; }
+.go-deeper summary::after {
+  content: '▸'; margin-left: auto; font-size: 18px; color: #7B5EA7;
+  transition: transform 0.3s;
+}
+.go-deeper[open] summary::after { transform: rotate(90deg); }
+.go-deeper .gd-body {
+  padding: 4px 18px 16px; font-size: 15px;
+  color: #5A4D3E; line-height: 1.7;
+  border-top: 1.5px solid #D8D0E8;
+}
+.go-deeper .gd-body p { margin-bottom: 10px; }
+
+/* ── Scroll Animations ── */
+.scroll-reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.scroll-reveal.visible { opacity: 1; transform: none; }
+
+/* ── Back to Top ── */
+.back-to-top {
+  position: fixed; bottom: 24px; right: 24px;
+  height: 40px; padding: 0 18px 0 14px; border-radius: 20px;
+  background: linear-gradient(135deg, #2D6A4F, #52B788);
+  color: #fff; border: none;
+  font-size: 14px; font-weight: 800;
+  font-family: 'Nunito', sans-serif; cursor: pointer;
+  box-shadow: 0 4px 14px rgba(45,106,79,0.35);
+  display: flex; align-items: center; gap: 6px;
+  opacity: 0; visibility: hidden; transform: translateY(20px);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.2s;
+  z-index: 500; letter-spacing: 0.2px; white-space: nowrap;
+}
+.back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { box-shadow: 0 6px 20px rgba(45,106,79,0.5); transform: translateY(-3px); }
+
+/* ── Confetti Canvas ── */
+#confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000; }
+
+/* ── Video Embed System ── */
+.video-wrap { border-radius: 18px; overflow: hidden; border: 2px solid #E8DDD2; box-shadow: 0 4px 20px rgba(27,67,50,0.08); background: #000; margin: 0 0 22px; }
+.video-wrap-header {
+  display: flex; align-items: center; gap: 12px; padding: 12px 18px;
+  background: linear-gradient(135deg, #1B4332, #2D6A4F);
+  border-bottom: 2px solid rgba(149,213,178,0.2);
+}
+.video-wrap-type { font-size: 10px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+.video-wrap-title { font-size: 16px; color: #fff; font-weight: 800; line-height: 1.2; }
+.video-ratio { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.video-ratio iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.video-placeholder {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, #1a3a28, #1B4332);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 24px;
+}
+.video-placeholder-icon { font-size: 44px; margin-bottom: 10px; opacity: 0.55; }
+.video-placeholder-text { font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 600; line-height: 1.5; font-family: 'Nunito', sans-serif; }
+.video-placeholder-id { font-size: 11px; color: rgba(149,213,178,0.4); font-family: monospace; margin-top: 6px; letter-spacing: 0.5px; }
+.video-feedback { display: none; }
+.video-feedback.show { display: block; }
+
+/* ── Turn-In Block ── */
+.turn-in-block {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 18px; margin-top: 24px; overflow: hidden;
+  box-shadow: 0 2px 12px rgba(27,67,50,0.04);
+}
+.turn-in-header {
+  display: flex; align-items: center; gap: 12px;
+  padding: 16px 20px; background: linear-gradient(135deg, #1B4332, #2D6A4F);
+  border-bottom: 2px solid rgba(149,213,178,0.2);
+}
+.turn-in-header-icon { font-size: 28px; }
+.turn-in-header-label { font-size: 10px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 2px; }
+.turn-in-header-title { font-size: 22px; color: #fff; font-weight: 900; line-height: 1.2; }
+.turn-in-body { padding: 20px 22px; }
+.turn-in-intro { font-size: 16px; color: #5A4D3E; margin-bottom: 16px; line-height: 1.65; }
+.turn-in-options {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 12px; margin-bottom: 20px;
+}
+.turn-in-option {
+  border-radius: 14px; padding: 14px 12px; text-align: center;
+  border: 2px solid;
+}
+.turn-in-option-type  { background: #EAF8FD; border-color: #D6F2FB; }
+.turn-in-option-photo { background: #FFF9E8; border-color: #F0E4C0; }
+.turn-in-option-video { background: #EEF8F0; border-color: #C4E5CC; }
+.turn-in-option-icon  { font-size: 28px; margin-bottom: 6px; }
+.turn-in-option-title { font-size: 15px; color: #1B4332; font-weight: 800; margin-bottom: 4px; }
+.turn-in-option-text  { font-size: 12px; color: #5A4D3E; line-height: 1.45; }
+.turn-in-subhead { font-size: 15px; color: #1B4332; font-weight: 800; margin-bottom: 12px; }
+.turn-in-checklist { display: flex; flex-direction: column; gap: 8px; }
+.turn-in-item {
+  display: flex; align-items: center; gap: 16px;
+  padding: 14px 18px;
+  background: #FAFAF6;
+  border: 1.5px solid #E8DDD2;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item:hover { background: #F4FAF5; border-color: #C4E5CC; }
+.turn-in-item.checked { background: #EEF8F0; border-color: #B8E8CF; }
+.turn-in-item .turn-in-check {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  border: 2px solid #95D5B2;
+  background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px; line-height: 1;
+  transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item.checked .turn-in-check {
+  background: #2E7D32;
+  border-color: #2E7D32;
+}
+.turn-in-item-text {
+  font-size: 16px; color: #2B1D12; font-weight: 600;
+  line-height: 1.55; flex: 1;
+}
+.turn-in-item.checked .turn-in-item-text { color: #5A4D3E; }
+
+/* ── Progress Bar ── */
+.progress-wrap {
+  position: sticky; top: 0; z-index: 200;
+  background: #0E1C42; padding: 8px 20px 10px;
+  border-bottom: 2px solid rgba(85,200,232,0.3);
+  display: flex; align-items: center; gap: 14px;
+}
+.progress-label { font-size: 12px; color: #55C8E8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+.progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; position: relative; }
+.progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #52B788, #95D5B2, #FDD835); border-radius: 10px; transition: width 0.4s ease; }
+.progress-pct { font-size: 13px; color: #FDD835; font-weight: 800; min-width: 36px; text-align: right; }
+
+/* ── Utility ── */
+strong { color: #1B4332; }
+em { color: #5A4D3E; }
+.gold { color: #F9A825; font-weight: 700; }
+.forest { color: #2D6A4F; font-weight: 700; }
+.earth { color: #A0522D; font-weight: 700; }
+
+@media (max-width: 620px) {
+  .intro-2col { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .flip-card { height: 175px; }
+  .header-title { font-size: 22px; }
+  .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 6px 9px; }
+  .turn-in-options { grid-template-columns: 1fr; }
+  .turn-in-header-title { font-size: 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="confettiCanvas"></canvas>
+<button class="back-to-top" id="backToTop" type="button">🌱 Back to Top</button>
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- ═══════════ PROGRESS BAR ═══════════ -->
+<div class="progress-wrap">
+  <span class="progress-label">🌱 Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">How Do Plants Respond to Their Environment?</div>
+  <div class="header-badge">
+    <span>🌱</span>
+    <span>Lesson 20.01</span>
+  </div>
+</div>
+
+<!-- ═══════════ HERO BANNER ═══════════ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrYellow" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <polygon points="0,0 0,7 9,3.5" fill="#D48C10"/>
+    </marker>
+    <marker id="arrGreen" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <polygon points="0,0 0,7 9,3.5" fill="#2E8A18"/>
+    </marker>
+    <marker id="arrBrown" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <polygon points="0,0 0,7 9,3.5" fill="#7A4820"/>
+    </marker>
+    <marker id="arrBlue" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <polygon points="0,0 0,7 9,3.5" fill="#3A8AB8"/>
+    </marker>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect width="920" height="260" fill="#F4EDD0"/>
+  <!-- Panel 2 soil -->
+  <rect x="307" y="126" width="307" height="134" fill="#7A4E26"/>
+  <!-- Panel 3 soil -->
+  <rect x="614" y="106" width="306" height="154" fill="#866030"/>
+  <!-- Soil texture -->
+  <g fill="#6A4018" opacity="0.28">
+    <circle cx="340" cy="158" r="3"/><circle cx="380" cy="172" r="2.5"/>
+    <circle cx="430" cy="148" r="2"/><circle cx="490" cy="165" r="3"/>
+    <circle cx="540" cy="143" r="2.5"/><circle cx="580" cy="178" r="2"/>
+    <circle cx="640" cy="138" r="3"/><circle cx="700" cy="155" r="2.5"/>
+    <circle cx="760" cy="130" r="2"/><circle cx="820" cy="148" r="3"/>
+    <circle cx="880" cy="165" r="2.5"/>
+  </g>
+  <!-- Panel dividers -->
+  <line x1="307" y1="0" x2="307" y2="260" stroke="#A09060" stroke-width="1.5" stroke-dasharray="8,5" opacity="0.55"/>
+  <line x1="614" y1="0" x2="614" y2="260" stroke="#A09060" stroke-width="1.5" stroke-dasharray="8,5" opacity="0.55"/>
+
+  <!-- PANEL 1 — PHOTOTROPISM -->
+  <!-- Lamp glow (animated) -->
+  <ellipse cx="72" cy="60" rx="54" ry="44" fill="#FFE828" class="lamp-glow"/>
+  <!-- Light cone -->
+  <path d="M100,32 L100,86 L198,200 L198,0 Z" fill="#FFE828" opacity="0.10"/>
+  <!-- Desk lamp base -->
+  <ellipse cx="76" cy="102" rx="21" ry="6" fill="#C09028" stroke="#9A7018" stroke-width="1.5"/>
+  <!-- Neck -->
+  <path d="M76,96 C76,80 78,66 84,56" stroke="#C09028" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <!-- Shade -->
+  <path d="M76,44 L76,78 L108,88 L108,34 Z" fill="#D4A828" stroke="#A87818" stroke-width="2"/>
+  <path d="M78,48 L78,74 L104,82 L104,40 Z" fill="#FFE848" opacity="0.82"/>
+  <line x1="76" y1="44" x2="108" y2="34" stroke="#A87818" stroke-width="1.5" opacity="0.7"/>
+  <line x1="76" y1="78" x2="108" y2="88" stroke="#A87818" stroke-width="1.5" opacity="0.7"/>
+  <!-- Light rays -->
+  <g stroke="#FFD828" stroke-width="2.5" stroke-linecap="round" opacity="0.52">
+    <line x1="108" y1="38"  x2="138" y2="30"/>
+    <line x1="108" y1="54"  x2="148" y2="52"/>
+    <line x1="108" y1="70"  x2="144" y2="72"/>
+    <line x1="108" y1="84"  x2="134" y2="92"/>
+  </g>
+  <!-- Pot -->
+  <path d="M174,202 L214,202 L208,228 L180,228 Z" fill="#D07030" stroke="#A85820" stroke-width="1.8"/>
+  <rect x="168" y="192" width="52" height="12" rx="6" fill="#E08040" stroke="#A85820" stroke-width="1.8"/>
+  <ellipse cx="194" cy="192" rx="22" ry="6" fill="#6A4018" stroke="#4A2C08" stroke-width="1.2"/>
+  <!-- Bent stem (sway animation) -->
+  <g style="animation: sway 4.2s ease-in-out infinite; transform-origin: 193px 192px; transform-box: view-box;">
+    <path d="M193,192 C190,170 180,146 162,120 C144,96 122,80 104,68" stroke="#2E7018" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M193,192 C190,170 180,146 162,120 C144,96 122,80 105,69" stroke="#48961E" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.50"/>
+    <!-- Leaves -->
+    <path d="M160,118 C142,108 116,106 100,112 C114,122 140,125 160,122 Z" fill="#42B828" stroke="#2E8018" stroke-width="1.8"/>
+    <line x1="160" y1="120" x2="101" y2="112" stroke="#2E8018" stroke-width="1.5"/>
+    <path d="M130,82 C114,72 92,70 80,76 C92,86 114,89 130,86 Z" fill="#48C02E" stroke="#2E8018" stroke-width="1.8"/>
+    <line x1="130" y1="84" x2="81" y2="76" stroke="#2E8018" stroke-width="1.5"/>
+  </g>
+  <!-- Phototropism arrow -->
+  <path d="M202,180 Q178,152 156,124 Q134,98 112,76" stroke="#D48C10" stroke-width="2.8" fill="none" stroke-linecap="round" marker-end="url(#arrYellow)"/>
+
+  <!-- PANEL 2 — GRAVITROPISM -->
+  <line x1="307" y1="126" x2="614" y2="126" stroke="#5A3A10" stroke-width="2" opacity="0.60"/>
+  <!-- Surface grass -->
+  <g stroke="#5A8A28" stroke-width="2.5" stroke-linecap="round" fill="none">
+    <path d="M378,126 Q376,116 378,108"/>
+    <path d="M384,126 Q382,114 384,106"/>
+    <path d="M540,126 Q538,115 540,107"/>
+    <path d="M546,126 Q548,114 546,106"/>
+  </g>
+  <!-- Sprouting seed (sway) -->
+  <g style="animation: sway 4.2s ease-in-out infinite; transform-origin: 460px 126px; transform-box: view-box;">
+    <ellipse cx="460" cy="128" rx="16" ry="11" fill="#9A6230" stroke="#7A4A18" stroke-width="2"/>
+    <path d="M460,118 C458,100 460,82 460,66" stroke="#2E7018" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M461,118 C459,100 461,82 461,66" stroke="#48961E" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.50"/>
+    <path d="M458,74 C444,64 424,62 412,68 C424,78 444,80 458,78 Z" fill="#44B828" stroke="#2E8018" stroke-width="1.8"/>
+    <line x1="458" y1="76" x2="413" y2="68" stroke="#2E8018" stroke-width="1.5"/>
+    <path d="M462,72 C476,62 496,60 508,66 C496,76 476,78 462,76 Z" fill="#48BE2C" stroke="#2E8018" stroke-width="1.8"/>
+    <line x1="462" y1="74" x2="507" y2="66" stroke="#2E8018" stroke-width="1.5"/>
+    <ellipse cx="460" cy="62" rx="10" ry="7" fill="#5ACC38" stroke="#2E8018" stroke-width="1.5"/>
+  </g>
+  <!-- Roots (not animated) -->
+  <g stroke="#A07838" stroke-width="4.5" fill="none" stroke-linecap="round">
+    <path d="M460,140 L460,210"/>
+    <path d="M460,160 Q438,168 420,178 Q404,186 396,198"/>
+    <path d="M460,170 Q482,178 500,188 Q516,196 524,208"/>
+    <path d="M440,182 Q428,192 422,204" stroke-width="2.8"/>
+    <path d="M480,188 Q492,196 496,208" stroke-width="2.8"/>
+  </g>
+  <!-- Upward arrow -->
+  <path d="M472,120 L472,72" stroke="#2E8A18" stroke-width="2.8" fill="none" stroke-linecap="round" marker-end="url(#arrGreen)"/>
+  <!-- Downward arrow -->
+  <path d="M448,138 Q446,168 446,202" stroke="#7A4820" stroke-width="2.8" fill="none" stroke-linecap="round" marker-end="url(#arrBrown)"/>
+  <!-- Magnifying glass -->
+  <circle cx="460" cy="128" r="78" fill="#A8C4D8" opacity="0.07"/>
+  <circle cx="460" cy="128" r="78" fill="none" stroke="#C09A40" stroke-width="9"/>
+  <line x1="520" y1="192" x2="572" y2="242" stroke="#C09A40" stroke-width="14" stroke-linecap="round"/>
+  <path d="M 396,88 A 78,78 0 0,1 452,52" stroke="#E0C060" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.65"/>
+  <path d="M 402,94 Q 416,82 430,80" stroke="white" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.50"/>
+
+  <!-- PANEL 3 — HYDROTROPISM -->
+  <line x1="614" y1="106" x2="920" y2="106" stroke="#5A3A10" stroke-width="2" opacity="0.55"/>
+  <!-- Surface plant -->
+  <path d="M638,106 C636,92 638,80 638,68" stroke="#3A8020" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M636,80 C624,72 608,70 598,76 C608,84 624,86 636,84 Z" fill="#44B828" stroke="#2E8018" stroke-width="1.5"/>
+  <line x1="636" y1="82" x2="599" y2="76" stroke="#2E8018" stroke-width="1.3"/>
+  <path d="M640,78 C652,70 666,68 676,74 C666,82 652,84 640,82 Z" fill="#48BE2C" stroke="#2E8018" stroke-width="1.5"/>
+  <!-- Roots curving toward water -->
+  <g stroke="#A07838" stroke-width="4.5" fill="none" stroke-linecap="round">
+    <path d="M640,116 Q700,118 748,128 Q796,138 842,150"/>
+    <path d="M640,122 Q696,128 742,140 Q788,152 828,164"/>
+    <path d="M640,128 Q688,136 728,148 Q762,158 788,168"/>
+    <path d="M842,150 Q852,148 860,146" stroke-width="3"/>
+    <path d="M828,164 Q840,164 850,162" stroke-width="3"/>
+    <path d="M788,168 Q798,170 806,170" stroke-width="3"/>
+  </g>
+  <!-- Water droplet (animated pulse) -->
+  <g class="water-drop">
+    <ellipse cx="872" cy="148" rx="36" ry="36" fill="#7ACCE8" opacity="0.28"/>
+    <path d="M872,118 Q898,138 888,158 Q872,174 856,158 Q846,138 872,118 Z" fill="#5AACCF" stroke="#3A88B8" stroke-width="2.2"/>
+    <path d="M866,128 Q862,136 864,144" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.55"/>
+  </g>
+  <!-- Arrow toward water -->
+  <path d="M666,122 Q726,124 778,138 Q818,148 850,152" stroke="#3A8AB8" stroke-width="2.8" fill="none" stroke-linecap="round" marker-end="url(#arrBlue)"/>
+</svg>
+</div>
+
+<!-- ═══════════ INFO STRIP ═══════════ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q3 &middot; Unit 7</div>
+      <div class="info-detail">Plants &amp; Environmental Interactions</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF9E8;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 20</div>
+      <div class="info-detail">Lesson 20.01 &mdash; 3rd Grade Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">🌱</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Plant Responses</div>
+      <div class="info-detail">How plants react to light, water &amp; gravity</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">NGSS 3-LS1-1</div>
+      <div class="info-detail">Structures and Processes</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ INTRO 2-COL CARDS ═══════════ -->
+<div class="intro-2col">
+
+  <!-- Essential Question -->
+  <div class="card theme-forest">
+    <div class="card-head">
+      <div class="card-head-icon">🌿</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This…</div>
+          <div class="question">"If a plant can't move from place to place, how does it still survive when things change around it?"</div>
+        </div>
+      </div>
+      <p>Think about this question as you work through the lesson. By the end, you'll have a real answer — and evidence to back it up.</p>
+    </div>
+  </div>
+
+  <!-- I Can Statements -->
+  <div class="card theme-sky">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#52B788;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> describe how plants respond to light, water, and gravity.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2D6A4F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain how a plant response helps the plant survive.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2E7D32;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> use evidence from observations to explain why a plant grew the way it did.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════ NEED STRIP ═══════════ -->
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Pencil &amp; colored pencils</span>
+</div>
+
+<!-- ═══════════ TAB BAR ═══════════ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 1: VOCABULARY                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to Today's Lesson!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🎬</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 20-1-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 1: NOTICE & WONDER -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#52B788;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Notice &amp; Wonder</div>
+        <div class="act-subtitle">Look closely before we start — what do you see?</div>
+      </div>
+      <div class="act-time" style="background:#52B788;">⏱ 5–8 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>Look at the photo below. A plant is growing inside a cardboard box. There's a small hole cut in one side. Take a quiet minute to look carefully before writing anything.</p>
+
+      <div class="lesson-figure" style="margin-bottom:14px;">
+        <div class="lesson-figure-label">📷 Look Closely</div>
+        <img src="images/20-01-plant-response.png" alt="A seedling growing out of a cardboard maze toward a hole where light enters, showing phototropism in a classroom experiment." />
+        <div class="lesson-figure-caption">A plant was placed inside a cardboard box with a small hole cut on one side. Study this photo carefully before you write anything.</div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">👀</span>
+        <div>
+          <div class="label">In Your Science Notebook</div>
+          <div class="question">"Write 3 things you notice about the plant in the photo. Then write 1 question you're wondering about — why did it grow that way?"</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>Don't try to answer your question yet. Good scientists notice first, then explain. Hold onto your question — you'll be able to answer it by the time you finish the lesson.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- VOCAB FLIP CARDS -->
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>These are the words scientists use when they study how plants behave. <strong>Tap each card to flip it</strong> and read the definition. You'll see these words throughout the lesson.</p>
+
+      <div class="vocab-grid">
+
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">↕️</div><div class="fc-word">response</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">response</div><div class="fc-def">A change in the way a living thing grows or behaves because of something in its surroundings.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌍</div><div class="fc-word">environment</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">environment</div><div class="fc-def">Everything around a living thing — air, water, soil, light, and other organisms.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">⚡</div><div class="fc-word">stimulus</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">stimulus</div><div class="fc-def">Something in the environment that causes a living thing to respond. Light, water, and gravity are all stimuli for plants.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">⬇️</div><div class="fc-word">gravity</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">gravity</div><div class="fc-def">The force that pulls everything toward the ground. Plants use gravity as a guide for which direction to grow.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🔦</div><div class="fc-word">phototropism</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">phototropism</div><div class="fc-def">When a plant stem or leaf bends toward a light source. "Photo" means light and "tropism" means turning.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌿</div><div class="fc-word">survival</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">survival</div><div class="fc-def">Staying alive and continuing to grow. Plant responses help plants get what they need to survive.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">📓</span>
+        <p>Copy this sentence carefully into your science notebook:<br><strong>"Plants respond to light, water, and gravity so they can get what they need to survive."</strong></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button>
+  </div>
+
+</div><!-- /tab-vocab -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 2: THE LESSON                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">📖</span>
+      <div>
+        <div class="video-wrap-type">Activity 2 · Core Lesson</div>
+        <div class="video-wrap-title">How Plants Respond to Their Environment</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">📖</div>
+        <div class="video-placeholder-text">Core lesson video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 20-1-lesson-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 2: CORE LESSON CONTENT -->
+  <!-- Photo repeated here so students don't have to navigate away to see it -->
+  <div class="lesson-figure">
+    <div class="lesson-figure-label">📷 Photo · Phototropism in action</div>
+    <img src="images/20-01-plant-response.png" alt="A seedling growing out of a cardboard maze toward a hole where light enters, showing phototropism in a classroom experiment." />
+    <div class="lesson-figure-caption">
+      <strong>This plant found the light.</strong> Over several days the stem curved and wound through openings until the leaves reached the hole. The plant didn't "know" where it was going — its cells just kept growing toward the brighter side.
+    </div>
+  </div>
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#F9A825;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📖 The Lesson: How Plants Respond</div>
+        <div class="act-subtitle">Read and think carefully — science is all about noticing!</div>
+      </div>
+      <div class="act-time" style="background:#F9A825;">⏱ 12 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- SECTION 1 -->
+      <div class="card theme-forest" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌱</div>
+          <div>
+            <div class="card-head-label">Section 1</div>
+            <div class="card-head-title">Plants Can't Walk — But They Still Respond</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>A plant can't get up and walk toward water. It can't move away from the dark. But a plant is not helpless. It responds to the world around it by <strong>changing how it grows.</strong></p>
+          <p>A <span class="vtip">response<span class="vtip-box"><span class="vtip-word">response</span>A change caused by something in the environment.</span></span> happens when something in the environment — called a <span class="vtip">stimulus<span class="vtip-box"><span class="vtip-word">stimulus</span>Something that causes a living thing to respond, like light, water, or gravity.</span></span> — causes the plant to grow differently. The plant isn't making a choice. Its cells just grow faster on one side, and the plant bends.</p>
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"Think about the plant in the photo you studied. What do you think made it grow in that curving direction? What was the stimulus, and what was the response?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2 -->
+      <div class="card theme-sky" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🔦</div>
+          <div>
+            <div class="card-head-label">Section 2</div>
+            <div class="card-head-title">Three Stimuli, Three Responses</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Plants respond to three main things in their environment.</p>
+
+          <div style="background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;margin-bottom:12px;">
+            <p style="margin:0;font-size:16px;color:#2B1D12;"><strong>🔦 Light</strong> — Stems and leaves grow <em>toward</em> light. This is called <span class="vtip">phototropism<span class="vtip-box"><span class="vtip-word">phototropism</span>When a plant bends toward a light source. "Photo" means light.</span></span>. A plant near a window will slowly lean toward the glass. That reaching helps the leaves collect more sunlight so the plant can make food.</p>
+          </div>
+
+          <div style="background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;margin-bottom:12px;">
+            <p style="margin:0;font-size:16px;color:#2B1D12;"><strong>💧 Water</strong> — Roots grow toward water in the soil. If one side of the soil is wetter, the roots tend to grow that direction. This gets the plant the water it needs to stay alive.</p>
+          </div>
+
+          <div style="background:#FFF0E8;border:2px solid #E8D0B8;border-radius:14px;padding:14px 16px;">
+            <p style="margin:0;font-size:16px;color:#2B1D12;"><strong>⬇️ Gravity</strong> — Roots grow <em>down</em> and stems grow <em>up</em>, no matter which direction you plant a seed. Even if you flip a seedling upside down, its stem will curve back upward. <span class="vtip">Gravity<span class="vtip-box"><span class="vtip-word">gravity</span>The force that pulls things toward the ground. Plants use it as a directional guide.</span></span> acts like a signal that tells the plant which way is down.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SECTION 3 -->
+      <div class="card theme-earth" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌍</div>
+          <div>
+            <div class="card-head-label">Section 3</div>
+            <div class="card-head-title">Responses Help Plants Survive</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Every one of these responses has a purpose. Stems reach toward light so leaves can make food. Roots grow toward water so the plant doesn't dry out. Roots grow down so the plant stays anchored in the soil.</p>
+          <p>None of this is accidental. Plants that respond well to their <span class="vtip">environment<span class="vtip-box"><span class="vtip-word">environment</span>Everything surrounding a living thing — light, water, soil, air, and more.</span></span> are more likely to <span class="vtip">survive<span class="vtip-box"><span class="vtip-word">survival</span>Staying alive. Plant responses help plants get what they need to keep living.</span></span> and grow.</p>
+          <p><strong>Real-World Connection:</strong> In a dense forest, tall trees block most of the sunlight. Smaller plants close to the ground have adapted to grow very quickly toward any patch of light that breaks through the canopy — phototropism helps them compete for the energy they need.</p>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE DIAGRAM -->
+      <div class="diagram-wrap scroll-reveal">
+        <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
+          🗺 Tap a zone to explore it
+        </div>
+        <div class="diagram-interactive">
+          <svg viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;" role="img" aria-label="Plant responses diagram showing phototropism, gravitropism, and hydrotropism zones">
+
+            <!-- Sky background -->
+            <rect x="0" y="0" width="860" height="140" fill="#D6EEF5"/>
+            <!-- Ground -->
+            <rect x="0" y="140" width="860" height="160" fill="#8B5E3C"/>
+            <!-- Grass surface line -->
+            <rect x="0" y="136" width="860" height="12" fill="#5A8A28"/>
+            <!-- Soil texture dots -->
+            <g fill="#7A4A20" opacity="0.3">
+              <circle cx="80" cy="175" r="4"/><circle cx="200" cy="195" r="3"/><circle cx="350" cy="170" r="4"/>
+              <circle cx="500" cy="210" r="3"/><circle cx="650" cy="185" r="4"/><circle cx="780" cy="200" r="3"/>
+              <circle cx="140" cy="230" r="3"/><circle cx="420" cy="255" r="4"/><circle cx="700" cy="245" r="3"/>
+            </g>
+
+            <!-- ZONE A: Sun -->
+            <circle cx="760" cy="55" r="42" fill="#FDD835" opacity="0.9"/>
+            <g stroke="#FFD700" stroke-width="2.5" stroke-linecap="round" opacity="0.7">
+              <line x1="760" y1="4"  x2="760" y2="18"/>
+              <line x1="760" y1="92" x2="760" y2="106"/>
+              <line x1="709" y1="55" x2="723" y2="55"/>
+              <line x1="797" y1="55" x2="811" y2="55"/>
+              <line x1="724" y1="19" x2="734" y2="29"/>
+              <line x1="786" y1="81" x2="796" y2="91"/>
+              <line x1="796" y1="19" x2="786" y2="29"/>
+              <line x1="724" y1="81" x2="734" y2="91"/>
+            </g>
+
+            <!-- ZONE B: Plant stem (phototropism) — leaning toward sun -->
+            <path d="M200,138 C202,115 215,92 238,72 C258,55 285,48 300,44" stroke="#2E7018" stroke-width="10" fill="none" stroke-linecap="round"/>
+            <!-- Leaves on stem -->
+            <path d="M235,74 C218,60 195,58 183,64 C193,74 216,77 235,78 Z" fill="#44B828" stroke="#2A7018" stroke-width="1.5"/>
+            <path d="M262,58 C278,44 302,42 314,48 C302,58 280,60 262,62 Z" fill="#52C830" stroke="#2A7018" stroke-width="1.5"/>
+            <!-- Arrow up-right toward sun -->
+            <path d="M204,125 Q230,80 295,52" stroke="#D48C10" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-dasharray="6,4" marker-end="url(#arrYellow2)"/>
+            <defs>
+              <marker id="arrYellow2" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+                <polygon points="0,0 0,7 9,3.5" fill="#D48C10"/>
+              </marker>
+              <marker id="arrGreen2" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+                <polygon points="0,0 0,7 9,3.5" fill="#2E8A18"/>
+              </marker>
+              <marker id="arrBrown2" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+                <polygon points="0,0 0,7 9,3.5" fill="#7A4820"/>
+              </marker>
+              <marker id="arrBlue2" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+                <polygon points="0,0 0,7 9,3.5" fill="#3A88B8"/>
+              </marker>
+            </defs>
+
+            <!-- ZONE B: Roots growing down -->
+            <g stroke="#C08840" stroke-width="5" fill="none" stroke-linecap="round">
+              <path d="M200,148 L200,210"/>
+              <path d="M200,170 Q182,184 168,200"/>
+              <path d="M200,180 Q218,192 232,208"/>
+              <path d="M192,198 Q180,212 175,225" stroke-width="3"/>
+              <path d="M208,195 Q222,208 228,222" stroke-width="3"/>
+            </g>
+            <!-- Arrow down for roots -->
+            <path d="M212,152 L212,200" stroke="#7A4820" stroke-width="2.8" fill="none" stroke-linecap="round" marker-end="url(#arrBrown2)"/>
+
+            <!-- ZONE C: Water source (right side underground) -->
+            <ellipse cx="680" cy="230" rx="55" ry="30" fill="#5AACCF" opacity="0.5"/>
+            <ellipse cx="680" cy="220" rx="30" ry="16" fill="#7ACCE8" opacity="0.6"/>
+            <!-- Roots curving toward water -->
+            <g stroke="#C08840" stroke-width="4.5" fill="none" stroke-linecap="round">
+              <path d="M430,148 Q500,160 560,185 Q620,210 660,225"/>
+              <path d="M430,155 Q496,168 555,193 Q612,218 648,235"/>
+              <path d="M430,162 Q490,178 548,200 Q600,220 634,238"/>
+            </g>
+            <!-- Arrow toward water -->
+            <path d="M470,155 Q555,175 635,215" stroke="#3A88B8" stroke-width="2.8" fill="none" stroke-linecap="round" marker-end="url(#arrBlue2)"/>
+
+            <!-- Labels (text inside diagram) -->
+            <rect x="5" y="8" width="160" height="30" rx="8" fill="#1B4332" opacity="0.75"/>
+            <text x="85" y="28" text-anchor="middle" font-size="13" font-weight="800" fill="#FDD835" font-family="Nunito,Arial,sans-serif">🔦 Light Response</text>
+
+            <rect x="5" y="148" width="168" height="30" rx="8" fill="#1B4332" opacity="0.75"/>
+            <text x="89" y="168" text-anchor="middle" font-size="13" font-weight="800" fill="#FDD835" font-family="Nunito,Arial,sans-serif">⬇️ Gravity Response</text>
+
+            <rect x="565" y="148" width="168" height="30" rx="8" fill="#1B4332" opacity="0.75"/>
+            <text x="649" y="168" text-anchor="middle" font-size="13" font-weight="800" fill="#FDD835" font-family="Nunito,Arial,sans-serif">💧 Water Response</text>
+
+            <!-- HOTSPOT RECTS -->
+            <rect class="hotspot" x="0"   y="0"   width="430" height="140"
+                  fill="#44B828"
+                  data-part="phototropism"
+                  data-info="Phototropism — The stem bends toward light. Cells on the shaded side grow faster, pushing the stem toward the brighter side. This helps leaves collect sunlight for making food."/>
+            <rect class="hotspot" x="0"   y="140" width="430" height="160"
+                  fill="#7A4820"
+                  data-part="gravitropism"
+                  data-info="Gravity Response — Roots grow downward and stems grow upward because of gravity. Roots growing down anchor the plant and find water. Stems growing up lift leaves toward light."/>
+            <rect class="hotspot" x="430" y="0"   width="430" height="300"
+                  fill="#3A88B8"
+                  data-part="hydrotropism"
+                  data-info="Water Response — Roots grow toward areas with more water in the soil. If one side is drier, roots turn and grow toward the wetter side. This helps the plant find the water it needs to survive."/>
+          </svg>
+
+          <div class="diagram-info-panel" id="diagramPanel">
+            <span class="dip-word" id="diagramWord"></span>
+            <span id="diagramInfo"></span>
+          </div>
+        </div>
+        <div class="diagram-tap-hint">Tap any zone in the diagram to learn about it.</div>
+        <div class="diagram-caption">A cross-section showing all three plant responses: the stem reaching toward sunlight (left, above ground), roots growing downward with gravity (left, below ground), and roots bending toward a water source (right, underground).</div>
+      </div>
+
+      <!-- KEY CONCEPT -->
+      <div class="key-concept scroll-reveal">
+        <div class="kc-label">⭐ Key Concept</div>
+        <p><strong>Plants respond to light, water, and gravity by changing the direction they grow.</strong> These responses help them get what they need to survive — even though they can never move from place to place.</p>
+        <p>This is structure and function at work: the way a plant's cells grow is the structure, and helping the plant survive is the function.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MIND-BLOWING FACT -->
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Amazing Nature Fact</div>
+      <div class="mind-blow-text">Some climbing vines can detect which direction a support structure is located and <strong>turn their tendrils toward it in under 10 minutes</strong> — responding faster to a mechanical touch than most plants respond to light.</div>
+    </div>
+  </div>
+
+  <!-- GO DEEPER -->
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper</summary>
+    <div class="gd-body">
+      <p><strong>The Science Behind the Bend.</strong> When a plant stem bends toward light, it's not moving like an animal would. What actually happens is that a chemical called auxin travels away from the bright side of the stem. The cells on the shady side get more auxin — and auxin makes cells grow longer. So the shady side grows longer than the bright side, and the stem bends toward the light. It's a slow push, not a pull.</p>
+      <p><strong>What happens underground?</strong> The same kind of chemical signaling happens in roots, but in reverse. Roots grow away from light and toward gravity. If you plant a seed sideways, the root will eventually turn and grow downward — pulled by the same force that keeps your feet on the ground.</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+
+</div><!-- /tab-lesson -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 3: EXPLORE                                            -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🔬</span>
+      <div>
+        <div class="video-wrap-type">Activity 3 · Investigation</div>
+        <div class="video-wrap-title">Plant Response Detective: Three Mystery Cases</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🔬</div>
+        <div class="video-placeholder-text">Exploration video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 20-1-exploration-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 3: INVESTIGATION -->
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#0288D1;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🔬 Investigation: Plant Response Cases</div>
+        <div class="act-subtitle">Read each case, figure out what happened, and explain it with evidence.</div>
+      </div>
+      <div class="act-time" style="background:#0288D1;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="callout callout-tip" style="margin-bottom:18px;">
+        <span class="callout-icon">🎒</span>
+        <p><strong>You'll need:</strong> Science notebook and pencil. Review the vocabulary words <em>stimulus</em>, <em>response</em>, and <em>phototropism</em> on your flip cards before you begin.</p>
+      </div>
+
+      <p>You are a plant scientist. Below are three cases. For each one, read what happened and figure out which type of response it shows.</p>
+
+      <!-- Three cases as styled boxes -->
+      <div style="background:#fff;border:2px solid #C4E5CC;border-radius:14px;padding:16px;margin-bottom:12px;">
+        <p style="font-size:16px;font-weight:800;color:#1B4332;margin-bottom:6px;">📋 Case 1</p>
+        <p style="font-size:16px;color:#2B1D12;margin:0;">A potted plant sits on a windowsill. After two weeks, the stem has curved toward the glass. The leaves on the window side are bigger than the leaves on the other side.</p>
+      </div>
+      <div style="background:#fff;border:2px solid #D6F2FB;border-radius:14px;padding:16px;margin-bottom:12px;">
+        <p style="font-size:16px;font-weight:800;color:#1B4332;margin-bottom:6px;">📋 Case 2</p>
+        <p style="font-size:16px;color:#2B1D12;margin:0;">A gardener plants a seed sideways by accident. A week later, the seedling has a stem pointing straight up and roots pointing straight down — even though the seed was tilted.</p>
+      </div>
+      <div style="background:#fff;border:2px solid #F0E4C0;border-radius:14px;padding:16px;margin-bottom:16px;">
+        <p style="font-size:16px;font-weight:800;color:#1B4332;margin-bottom:6px;">📋 Case 3</p>
+        <p style="font-size:16px;color:#2B1D12;margin:0;">A plant grows in dry soil. A drip hose is placed 10 cm to the right of the pot. After three weeks, most of the roots have grown toward the right side of the pot, closer to the water.</p>
+      </div>
+
+      <p>Now work through each step below for all three cases.</p>
+
+      <div style="position:relative; margin:16px 0;">
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">1</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0 0 14px;"><strong>Make a chart.</strong> Copy this chart into your science notebook. Fill in one row for each of the three cases above.</p>
+            <!-- Empty chart for students to copy -->
+            <div style="overflow-x:auto;">
+              <table style="width:100%;border-collapse:collapse;font-size:14px;font-family:'Nunito',Arial,sans-serif;">
+                <thead>
+                  <tr>
+                    <th style="background:#1B4332;color:#fff;padding:10px 12px;text-align:center;font-size:13px;font-weight:800;border:2px solid #1B4332;border-radius:8px 0 0 0;white-space:nowrap;">Case #</th>
+                    <th style="background:#1B4332;color:#fff;padding:10px 12px;text-align:center;font-size:13px;font-weight:800;border:2px solid #1B4332;">Stimulus</th>
+                    <th style="background:#1B4332;color:#fff;padding:10px 12px;text-align:center;font-size:13px;font-weight:800;border:2px solid #1B4332;">Plant Response</th>
+                    <th style="background:#1B4332;color:#fff;padding:10px 12px;text-align:center;font-size:13px;font-weight:800;border:2px solid #1B4332;border-radius:0 8px 0 0;">How It Helps Survival</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="padding:14px 12px;text-align:center;font-weight:800;color:#1B4332;background:#EEF8F0;border:1.5px solid #C4E5CC;font-size:15px;">1</td>
+                    <td style="padding:14px 12px;background:#fff;border:1.5px solid #C4E5CC;min-width:110px;"></td>
+                    <td style="padding:14px 12px;background:#fff;border:1.5px solid #C4E5CC;min-width:130px;"></td>
+                    <td style="padding:14px 12px;background:#fff;border:1.5px solid #C4E5CC;min-width:150px;"></td>
+                  </tr>
+                  <tr>
+                    <td style="padding:14px 12px;text-align:center;font-weight:800;color:#1B4332;background:#EEF8F0;border:1.5px solid #C4E5CC;font-size:15px;">2</td>
+                    <td style="padding:14px 12px;background:#fff;border:1.5px solid #C4E5CC;"></td>
+                    <td style="padding:14px 12px;background:#fff;border:1.5px solid #C4E5CC;"></td>
+                    <td style="padding:14px 12px;background:#fff;border:1.5px solid #C4E5CC;"></td>
+                  </tr>
+                  <tr>
+                    <td style="padding:14px 12px;text-align:center;font-weight:800;color:#1B4332;background:#EEF8F0;border:1.5px solid #C4E5CC;font-size:15px;">3</td>
+                    <td style="padding:14px 12px;background:#fff;border:1.5px solid #C4E5CC;"></td>
+                    <td style="padding:14px 12px;background:#fff;border:1.5px solid #C4E5CC;"></td>
+                    <td style="padding:14px 12px;background:#fff;border:1.5px solid #C4E5CC;"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2D6A4F,#52B788);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(45,106,79,0.3);">2</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Draw one case.</strong> Pick the case that interests you most. Draw a simple sketch of the plant and what happened. Label the part of the plant that responded (roots, stem, or leaves). Add an arrow showing which direction it grew.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#52B788,#F9A825);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(82,183,136,0.3);">3</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Answer in complete sentences.</strong> For each case, write one sentence answering: "The plant responded to _____ by _____, and this helps the plant survive because _____."</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F9A825,#FDD835);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(249,168,37,0.3);">4</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Write a conclusion.</strong> In 2–3 sentences, explain what all three cases have in common. What do they tell you about how plants survive without being able to move?</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🌲</span>
+        <div>
+          <div class="label">Think Like a Scientist</div>
+          <div class="question">"Which of the three cases above is most similar to what phototropism looks like in real life? What in that case tells you a light stimulus caused the response?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RECORD YOUR THINKING -->
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#2E7D32;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">📓 Record Your Thinking</div>
+        <div class="act-subtitle">Organize what you figured out.</div>
+      </div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>Good scientists write down their thinking while it's still fresh. Use your notebook to answer these questions before moving on.</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">1</span>
+        <span class="pq-text">Which plant response do you think is most important for survival? Explain your reasoning in 2 sentences.</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">2</span>
+        <span class="pq-text">Could a plant respond to two stimuli at the same time — for example, light and gravity together? What do you think would happen?</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">3</span>
+        <span class="pq-text">Draw and label a seed sprouting underground. Show which direction the stem grows and which direction the roots grow. Add arrows and labels.</span>
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">🗣</span>
+        <p>Tell the story of one of your cases from beginning to end — what the stimulus was, how the plant responded, and why that response matters. Use the words <em>stimulus</em>, <em>response</em>, and <em>survival</em> in your story.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DISCUSS -->
+  <div class="card theme-meadow scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">💬</div>
+      <div>
+        <div class="card-head-label">Discussion</div>
+        <div class="card-head-title">Think It Through</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Think through each question on your own. Write your answers in your science notebook before moving on.</p>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Question 1</div>
+          <div class="question">"What changed in the plant across each of the three cases? Was it the roots, the stem, or the leaves — and what direction did the change go?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">💡</span>
+        <div>
+          <div class="label">Question 2</div>
+          <div class="question">"What evidence in each case tells you which stimulus the plant was responding to? How do you know it wasn't responding to something else?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🌲</span>
+        <div>
+          <div class="label">Question 3 — Connect to Nature</div>
+          <div class="question">"If a plant grew in a very dark place — like the floor of a thick forest — which response would matter most for its survival? Why?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🔁</span>
+        <div>
+          <div class="label">Question 4 — Extend or Improve</div>
+          <div class="question">"What would you do to test whether a plant responds to water the same way it responds to light? What would you change, and what would you keep the same?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+
+</div><!-- /tab-explore -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 4: SELF-CHECK QUIZ                                    -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#F9A825;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">🌱</div>
+      <div style="flex:1;">
+        <div style="font-size:19px;color:#1B4332;font-weight:800;line-height:1.2;">🧠 Quick Self-Check</div>
+        <div style="font-size:12px;color:#9A8E82;">Not graded — just for you! See how much you remember before starting the notebook work.</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+
+      <!-- QUESTION 1 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. What is phototropism?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>When roots grow toward water</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>When a plant stem bends toward light</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>When a plant stops growing in winter</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌿 Yes! "Photo" means light. The stem bends toward the light source so leaves can collect more sunlight.</div>
+        <div class="quiz-feedback fb-wrong">Think about what "photo" means in phototropism. What does a plant need from light — and how does bending toward it help the plant get that?</div>
+      </div>
+
+      <!-- QUESTION 2 -->
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-text">2. A seedling is planted sideways. After one week, the stem is pointing up and the roots are pointing down. What caused this?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>The plant responded to gravity</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>The plant responded to water</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>The plant responded to sunlight</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌱 That's right! No matter which way the seed was planted, gravity pulls the roots downward and pushes the stem upward.</div>
+        <div class="quiz-feedback fb-wrong">Look at the clue: the seed was sideways, but both the stem and roots corrected direction on their own. Which stimulus controls which way is "up" and which is "down"?</div>
+      </div>
+
+      <!-- QUESTION 3 -->
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">3. Why do plant responses — like growing toward light — help a plant survive?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>They make the plant grow faster than other plants</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>They help the plant move to a better location</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>They help the plant get the resources it needs, like sunlight and water</div>
+        </div>
+        <div class="quiz-feedback fb-correct">⭐ Exactly! Each response helps the plant find or reach something it needs — light for food, water for growth, soil for support.</div>
+        <div class="quiz-feedback fb-wrong">Plants can't move from place to place — but they can grow differently. Which option connects the response to getting a resource the plant actually needs?</div>
+      </div>
+
+      <!-- Score Display -->
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum">0</div>
+        <div class="quiz-score-label">out of 3</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+
+        <div class="video-feedback" id="quizVideoCorrect" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">✅</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Perfect Score</div>
+                <div class="video-wrap-title">Amazing work, scientist!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">⭐</div>
+                <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 20-1-quiz-perfect --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">📚</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Keep Going</div>
+                <div class="video-wrap-title">You're getting there — let's review!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">💪</div>
+                <div class="video-placeholder-text">Review and encouragement video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 20-1-quiz-review --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+
+</div><!-- /tab-quiz -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 5: ASSIGNMENT                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">✍️</span>
+      <div>
+        <div class="video-wrap-type">Activity 5 · Assignment</div>
+        <div class="video-wrap-title">Assignment Explainer: Plant Responses</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">✍️</div>
+        <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 20-1-assignment-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 5: ASSIGNMENT -->
+  <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
+    <div class="act-head">
+      <div class="act-num" style="background:#7B5EA7;">5</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment</div>
+        <div class="act-subtitle">Show what you've learned about plant responses.</div>
+      </div>
+      <div class="act-time" style="background:#7B5EA7;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- PART A -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔍 Part A — Match the Response</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">For each plant situation below, write the name of the stimulus and the type of response. Use these words: <strong>light, water, gravity | phototropism, gravitropism, hydrotropism</strong>.</p>
+
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">A stem curves toward the window over three weeks. What is the stimulus? What is the response type?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">A seedling's roots grew straight down even though the seed was planted on its side. What stimulus caused this?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">Roots in a dry garden grew toward a leaky pipe buried in the soil. What were they responding to?</span></div>
+
+      <!-- PART B -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🚀 Part B — Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer each question in <strong>complete sentences</strong>. Use your science vocabulary!</p>
+
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">4</span><span class="pq-text">Explain why it matters that stems grow toward light. What would happen to a plant if its stem grew away from light instead?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">5</span><span class="pq-text">How is a plant's response to gravity different from its response to light? Compare the two in 2–3 sentences.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">6</span><span class="pq-text">Plants can't choose to move toward what they need. How are plant responses different from what an animal would do in the same situation?</span></div>
+
+      <!-- WRITE & EXPLAIN -->
+      <div class="key-concept scroll-reveal" style="background:#FFF9E8;border-color:#F0E4C0;">
+        <div class="kc-label" style="color:#F9A825;">✍️ Write and Explain</div>
+        <p style="font-size:16px;font-weight:700;color:#1B4332;margin-bottom:14px;">A plant is growing in a corner with light coming from only one side. Explain what will happen to this plant over the next few weeks, using evidence from what you learned.</p>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What do you think?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I think the plant will…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What did you observe or learn that supports your thinking?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I know this because…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">Why does that make sense?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because plants need…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="background:#EEF8F0;border-radius:10px;padding:10px 14px;border-left:3px solid #52B788;">
+          <p style="margin:0;font-size:14px;color:#1B4332;">📚 Try to use at least one of these words in your answer: <strong>phototropism</strong>, <strong>stimulus</strong>, <strong>response</strong></p>
+        </div>
+      </div>
+
+      <!-- PART C -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Label</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Draw a plant growing in a pot near a sunny window. Show the plant after it has responded. Label: the stem, at least 2 leaves, the roots, the direction of the light, and an arrow showing how the plant responded. Include a caption sentence explaining what type of response you drew.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Reflect</div>
+          <div class="question">"Think about the question you wrote in your science notebook at the very start of the lesson. Can you answer it now? What changed in your thinking after working through this lesson?"</div>
+        </div>
+      </div>
+
+      <!-- WHAT TO TURN IN -->
+      <div class="turn-in-block">
+        <div class="turn-in-header">
+          <div class="turn-in-header-icon">📋</div>
+          <div>
+            <div class="turn-in-header-label">Canvas Submission</div>
+            <div class="turn-in-header-title">What to Turn In</div>
+          </div>
+        </div>
+        <div class="turn-in-body">
+
+          <p class="turn-in-intro">Submit your work on Canvas using <strong>one of these options:</strong></p>
+
+          <div class="turn-in-options">
+            <div class="turn-in-option turn-in-option-type">
+              <div class="turn-in-option-icon">⌨️</div>
+              <div class="turn-in-option-title">Type It</div>
+              <div class="turn-in-option-text">Type your answers directly into the Canvas assignment.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-photo">
+              <div class="turn-in-option-icon">📸</div>
+              <div class="turn-in-option-title">Photo It</div>
+              <div class="turn-in-option-text">Take a clear photo of your handwritten work and upload it.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-video">
+              <div class="turn-in-option-icon">🎥</div>
+              <div class="turn-in-option-title">Record It</div>
+              <div class="turn-in-option-text">Record a short video explaining what you did and learned.</div>
+            </div>
+          </div>
+
+          <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
+
+          <div class="turn-in-checklist">
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Notice &amp; Wonder observations and question from the warm-up.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My plant response chart from the Explore tab (all three cases).</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My labeled sketch of one plant case with a direction arrow.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My short answer responses to Part B (complete sentences with vocabulary).</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Write &amp; Explain response with all three prompts answered.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Part C drawing of the plant, fully labeled with a caption sentence.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CLOSING VIDEO -->
+      <div class="video-wrap" style="margin-top:24px;">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">👋</span>
+          <div>
+            <div class="video-wrap-type">Closing · Wrap-Up</div>
+            <div class="video-wrap-title">Great work today! Next up — phototropism in action.</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">👋</div>
+            <div class="video-placeholder-text">Closing video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 20-1-closing --></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /tab-assignment -->
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <div class="footer-line1">Optima Academy Online · <span>3rd Grade Science</span></div>
+  <div class="footer-line2">Lesson 20.01 · NGSS 3-LS1-1</div>
+  <div class="footer-line3">© Optima Academy · All rights reserved</div>
+</div>
+
+</div><!-- /page-wrap -->
+
+
+<script>
+
+var LESSON_EMOJI = '🌱';
+
+// ── Tab System ──
+var tabProgress = { vocab: false, lesson: false, explore: false, quiz: false, assignment: false };
+var tabOrder = ['vocab','lesson','explore','quiz','assignment'];
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelector('[data-tab="' + name + '"]').classList.add('active');
+  tabProgress[name] = true;
+  document.querySelector('[data-tab="' + name + '"]').classList.add('visited');
+  var visited = Object.values(tabProgress).filter(Boolean).length;
+  var pct = Math.round((visited / tabOrder.length) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c){
+    if (name === 'vocab') { c.classList.remove('collapsed'); }
+    else { c.classList.add('collapsed'); }
+  });
+  // Scroll to top
+  try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch(e) {}
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+  var top = document.getElementById('pageTop');
+  if (top && top.scrollIntoView) {
+    try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch(e) {}
+  }
+}
+
+// ── Scroll Reveal ──
+(function() {
+  var els = document.querySelectorAll('.scroll-reveal');
+  if (!window.IntersectionObserver) {
+    els.forEach(function(el){ el.classList.add('visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  els.forEach(function(el){ io.observe(el); });
+})();
+
+// ── Diagram Hotspots ──
+document.querySelectorAll('.hotspot').forEach(function(hs) {
+  hs.addEventListener('click', function() {
+    document.querySelectorAll('.hotspot').forEach(function(h){ h.classList.remove('active'); });
+    hs.classList.add('active');
+    var panel = document.getElementById('diagramPanel');
+    var word  = document.getElementById('diagramWord');
+    var info  = document.getElementById('diagramInfo');
+    word.textContent = hs.getAttribute('data-part');
+    info.textContent = hs.getAttribute('data-info');
+    panel.classList.add('visible');
+  });
+});
+
+// ── Vocab Flip Cards ──
+// Handled by inline onclick="this.classList.toggle('flipped')" on each .flip-card element.
+
+// ── Quiz Logic ──
+var quizCorrect = 0;
+var quizDone = false;
+function checkQuiz(opt) {
+  var q = opt.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  var opts = q.querySelectorAll('.quiz-opt');
+  opts.forEach(function(o){ o.classList.add('disabled'); });
+  var correct = q.getAttribute('data-answer');
+  var fbCorrect = q.querySelector('.fb-correct');
+  var fbWrong   = q.querySelector('.fb-wrong');
+  if (opt.getAttribute('data-val') === correct) {
+    opt.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+    quizCorrect++;
+  } else {
+    opt.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+    q.querySelectorAll('.quiz-opt').forEach(function(o){
+      if (o.getAttribute('data-val') === correct) o.classList.add('correct');
+    });
+  }
+  var allAnswered = document.querySelectorAll('.quiz-q:not(.answered)').length === 0;
+  if (allAnswered && !quizDone) {
+    quizDone = true;
+    var scoreBox  = document.getElementById('quizScore');
+    var scoreNum  = document.getElementById('quizScoreNum');
+    var scoreMsg  = document.getElementById('quizScoreMsg');
+    var vCorrect  = document.getElementById('quizVideoCorrect');
+    var vReview   = document.getElementById('quizVideoReview');
+    scoreNum.textContent = quizCorrect;
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '⭐ Perfect! You got every question right!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌿 Great job! Almost there!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Toggle Checklist ──
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  var icon = item.querySelector('.turn-in-check');
+  if (icon) {
+    icon.textContent = item.classList.contains('checked') ? LESSON_EMOJI : '';
+  }
+  var checklist = item.closest('.turn-in-checklist');
+  if (!checklist) return;
+  var items = checklist.querySelectorAll('.turn-in-item');
+  if (items.length === 0) return;
+  var allChecked = Array.prototype.every.call(items, function(it){
+    return it.classList.contains('checked');
+  });
+  if (allChecked) {
+    setTimeout(window.launchConfetti, 200);
+  }
+}
+
+// ── Back to Top ──
+(function() {
+  var btn = document.getElementById('backToTop');
+  if (!btn) return;
+  var inIframe = (function() {
+    try { return window.self !== window.top; }
+    catch (e) { return true; }
+  })();
+  btn.addEventListener('click', function() {
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    var top = document.getElementById('pageTop');
+    if (top && top.scrollIntoView) {
+      try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+    }
+    try {
+      if (window.frameElement && window.frameElement.scrollIntoView) {
+        window.frameElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (e) {}
+    if (inIframe) {
+      try { window.parent.postMessage({ type: 'optima-lesson:scroll-to-top' }, '*'); } catch (e) {}
+    }
+  });
+  if (inIframe) {
+    setTimeout(function() { btn.classList.add('show'); }, 1500);
+  } else {
+    window.addEventListener('scroll', function() {
+      btn.classList.toggle('show', window.pageYOffset > 400);
+    });
+  }
+})();
+
+// ── Confetti ──
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx    = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#52B788','#F9A825','#FDD835','#4DD0E1','#2E7D32','#7B5EA7','#FF8F00','#0288D1'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── Collapsible Intro Cards ──
+var introCards = document.querySelectorAll('.intro-2col .card');
+introCards.forEach(function(card){
+  var head = card.querySelector('.card-head');
+  if (!head) return;
+  head.addEventListener('click', function(){
+    var willCollapse = !card.classList.contains('collapsed');
+    introCards.forEach(function(c){
+      c.classList.toggle('collapsed', willCollapse);
+    });
+  });
+});
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+tabProgress['vocab'] = true;
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+(function(){
+  var btt = document.getElementById('backToTop');
+  if (btt) { btt.textContent = LESSON_EMOJI + ' Back to Top'; }
+})();
+</script>
+</body>
+</html>

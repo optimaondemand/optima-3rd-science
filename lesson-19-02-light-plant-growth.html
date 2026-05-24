@@ -1,0 +1,2092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – Investigation: Light &amp; Plant Growth</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+  background: #F2F0E8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #2B1D12;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap { max-width: 920px; margin: 0 auto; background: #FAF8F4; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%);
+  border-bottom: 6px solid #2D6A4F;
+  padding: 22px 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 6px; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2D6A4F, #52B788, #2D6A4F);
+}
+.header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.header-logo {
+  width: 52px; height: 52px; border-radius: 50%; background: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title {
+  font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+  text-shadow: 0 2px 12px rgba(45,106,79,0.3);
+}
+.header-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(45,106,79,0.15); border: 1.5px solid rgba(45,106,79,0.35);
+  border-radius: 28px; padding: 6px 16px;
+}
+.header-badge span:first-child { font-size: 22px; }
+.header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ── Hero Visual ── */
+.hero-visual {
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #2D6A4F;
+}
+.hero-visual svg { display: block; width: 100%; height: auto; }
+
+/* ── Hero Banner Animations (from provided banner) ── */
+@keyframes sunPulse {
+  0%,100% { transform: scale(1);    opacity: 0.26; }
+  50%     { transform: scale(1.16); opacity: 0.58; }
+}
+@keyframes rulerShimmer {
+  0%,100% { opacity: 0.50; }
+  50%     { opacity: 1.00; }
+}
+@keyframes sway {
+  0%,100% { transform: rotate(-2.5deg); }
+  50%     { transform: rotate(2.5deg);  }
+}
+.sun-glow {
+  animation: sunPulse 4s ease-in-out infinite;
+  transform-box: view-box;
+  transform-origin: 80px 50px;
+}
+.ruler-ticks { animation: rulerShimmer 3.5s ease-in-out infinite; }
+
+/* ── Template hero animation classes (used elsewhere) ── */
+@keyframes cloud-drift-1  { 0%{ transform:translateX(0); } 100%{ transform:translateX(40px); } }
+@keyframes cloud-drift-2  { 0%{ transform:translateX(0); } 100%{ transform:translateX(-32px); } }
+@keyframes sun-pulse      { 0%,100%{opacity:.65;transform:scale(1);} 50%{opacity:1;transform:scale(1.12);} }
+@keyframes bird-drift     { 0%,100%{transform:translate(0,0);} 50%{transform:translate(6px,-8px);} }
+@keyframes hero-float     { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+@keyframes hero-twinkle   { 0%,100%{opacity:.4;transform:scale(.85);} 50%{opacity:1;transform:scale(1.15);} }
+@keyframes hero-shimmer   { 0%,100%{opacity:.25;} 50%{opacity:.7;} }
+@keyframes hero-spin-slow { 0%{transform:rotate(0deg);} 100%{transform:rotate(360deg);} }
+@keyframes hero-sway      { 0%,100%{transform:rotate(-2.5deg);} 50%{transform:rotate(2.5deg);} }
+@keyframes mind-blow-bounce { 0%,100%{transform:scale(1);} 50%{transform:scale(1.12);} }
+
+.hero-cloud-1   { animation: cloud-drift-1 9s ease-in-out infinite alternate; }
+.hero-cloud-2   { animation: cloud-drift-2 13s ease-in-out infinite alternate; }
+.hero-sun-glow  { animation: sun-pulse 4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-float     { animation: hero-float 3.5s ease-in-out infinite; }
+.hero-twinkle   { animation: hero-twinkle 2.2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-shimmer   { animation: hero-shimmer 3s ease-in-out infinite; }
+.hero-sway      { animation: hero-sway 4s ease-in-out infinite; transform-origin: bottom center; transform-box: fill-box; }
+
+/* ── Info Strip ── */
+.info-strip {
+  display: flex; flex-wrap: wrap; background: #fff;
+  border-bottom: 2px solid #E8DDD2;
+}
+.info-item {
+  flex: 1; min-width: 150px; padding: 12px 16px;
+  border-right: 1px solid #E8DDD2;
+  display: flex; align-items: center; gap: 10px;
+}
+.info-item:last-child { border-right: none; }
+.info-icon {
+  width: 40px; height: 40px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.info-value { font-size: 16px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+/* ── Content Area ── */
+.content { padding: 24px 28px 36px; }
+
+/* ── Card System ── */
+.card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 22px; overflow: hidden;
+  box-shadow: 0 2px 12px rgba(27,67,50,0.04);
+}
+.card.collapsed .card-body { display: none; }
+.card-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 20px; border-bottom: 2px solid;
+  cursor: pointer;
+}
+.card-head-icon {
+  width: 42px; height: 42px; border-radius: 50%; color: #fff;
+  font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.card-head-title { font-size: 20px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.card-body { padding: 18px 22px; }
+.card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+.card-body p:last-child { margin-bottom: 0; }
+
+/* ── Card Color Themes ── */
+.theme-earth  .card-head { background: #FFF0E8; border-color: #E8D0B8; }
+.theme-earth  .card-head-icon { background: #A0522D; }
+.theme-sun    .card-head { background: #FFF9E8; border-color: #F0E4C0; }
+.theme-sun    .card-head-icon { background: #F9A825; }
+.theme-sky    .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-sky    .card-head-icon { background: #0288D1; }
+.theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+.theme-forest .card-head-icon { background: #2E7D32; }
+.theme-rock   .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+.theme-rock   .card-head-icon { background: #7B5EA7; }
+.theme-meadow .card-head { background: #F0F8E8; border-color: #C8E0B8; }
+.theme-meadow .card-head-icon { background: #558B2F; }
+
+/* ── Intro 2-col layout ── */
+.intro-2col {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  padding: 16px 20px 0;
+  background: #fff; border-bottom: 2px solid #E8DDD2;
+}
+
+/* ── Activity Cards ── */
+.activity-card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 18px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.activity-card.act-warmup  { border-left: 6px solid #52B788; }
+.activity-card.act-lesson  { border-left: 6px solid #F9A825; }
+.activity-card.act-explore { border-left: 6px solid #0288D1; }
+.activity-card.act-practice{ border-left: 6px solid #2E7D32; }
+.activity-card.act-check   { border-left: 6px solid #7B5EA7; }
+.act-head {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px 14px 18px;
+  border-bottom: 1.5px solid #E8DDD2;
+}
+.act-num {
+  width: 38px; height: 38px; border-radius: 14px; color: #fff;
+  font-size: 18px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.act-title { font-size: 19px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.act-subtitle { font-size: 12px; color: #9A8E82; }
+.act-time {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap;
+  margin-left: auto; flex-shrink: 0;
+}
+.act-body { padding: 18px 22px 18px 20px; }
+.act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+/* ── Callout Boxes ── */
+.callout {
+  border-radius: 14px; padding: 16px 18px;
+  display: flex; align-items: flex-start; gap: 12px;
+  margin-bottom: 14px;
+}
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+.callout-earth  { background: #FFF0E8; border: 2px solid #E8D0B8; }
+.callout-think  { background: #FFF9E8; border: 2px solid #F0E4C0; }
+.callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+.callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+.callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+
+/* ── Socratic Questions ── */
+.socratic-q {
+  background: linear-gradient(135deg, #EEF8F0, #E8F5E9);
+  border: 2px solid #A8D5B8;
+  border-radius: 16px; padding: 16px 20px;
+  margin: 16px 0;
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.socratic-q .label {
+  font-size: 11px; color: #2D6A4F; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px;
+}
+.socratic-q .question {
+  font-size: 17px; color: #2B1D12; font-weight: 700;
+  line-height: 1.6; font-style: italic;
+}
+
+/* ── Diagram Containers ── */
+.diagram-wrap {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 16px; margin: 16px 0;
+  text-align: center;
+}
+.diagram-wrap svg { max-width: 100%; height: auto; }
+.diagram-caption {
+  font-size: 13px; color: #9A8E82; margin-top: 10px;
+  font-weight: 600; text-align: center;
+}
+.diagram-interactive { position: relative; }
+.diagram-info-panel {
+  display: none; margin-top: 14px;
+  background: linear-gradient(135deg, #1B4332, #2D6A4F);
+  color: #fff; border-radius: 14px; padding: 16px 20px;
+  font-size: 15px; line-height: 1.65; font-weight: 600;
+  text-align: left;
+}
+.diagram-info-panel.visible { display: block; }
+.dip-word {
+  display: block; font-size: 11px; color: #95D5B2;
+  text-transform: uppercase; letter-spacing: 1px;
+  font-weight: 800; margin-bottom: 6px;
+}
+.hotspot {
+  fill-opacity: 0; cursor: pointer;
+  transition: fill-opacity 0.2s;
+}
+.hotspot:hover, .hotspot.active { fill-opacity: 0.18; }
+.diagram-tap-hint {
+  font-size: 12px; color: #B0A698; margin-top: 8px; font-weight: 600;
+}
+
+/* ── Lesson Figure ── */
+.lesson-figure {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 14px 14px 18px; margin: 0 0 22px;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.lesson-figure-label {
+  font-size: 11px; color: #2D6A4F;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  font-weight: 800; margin-bottom: 10px;
+}
+.lesson-figure img {
+  display: block; max-width: 100%; height: auto;
+  border-radius: 10px; margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.lesson-figure-caption {
+  font-size: 14px; color: #5A4D3E;
+  margin-top: 12px; line-height: 1.55; font-weight: 600;
+  text-align: center;
+}
+.lesson-figure-caption strong { color: #1B4332; }
+
+/* ── Key Concept Box ── */
+.key-concept {
+  background: #F0F8E8; border: 2px solid #C8E0B8;
+  border-radius: 14px; padding: 18px 20px; margin: 14px 0;
+}
+.key-concept .kc-label {
+  font-size: 13px; color: #558B2F; text-transform: uppercase;
+  letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px;
+}
+.key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+.key-concept p:last-child { margin-bottom: 0; }
+
+/* ── Practice Questions ── */
+.pq {
+  background: #FAFAF6; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 14px 18px; margin-bottom: 12px;
+}
+.pq-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  color: #fff; font-weight: 800; font-size: 14px;
+  margin-right: 8px; vertical-align: middle;
+}
+.pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+
+/* ── Vocab Flashcards ── */
+.vocab-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px; margin: 14px 0;
+}
+.flip-card { perspective: 800px; height: 195px; cursor: pointer; }
+.flip-card-inner {
+  position: relative; width: 100%; height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 14px 18px; text-align: center;
+  border: 2px solid #E8DDD2;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.06);
+}
+.flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+.flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+.flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #1B4332; margin-bottom: 6px; }
+.flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+.flip-card-back {
+  background: linear-gradient(145deg, #1B4332, #2D6A4F);
+  border-color: #1B4332;
+  transform: rotateY(180deg);
+}
+.flip-card-back .fc-def { font-size: 14.5px; color: #fff; line-height: 1.5; font-weight: 600; }
+.flip-card-back .fc-word-back {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 6px;
+}
+.flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 8px; font-weight: 600; }
+.fc-color-1 .flip-card-front { border-top-color: #52B788; }
+.fc-color-2 .flip-card-front { border-top-color: #2D6A4F; }
+.fc-color-3 .flip-card-front { border-top-color: #F9A825; }
+.fc-color-4 .flip-card-front { border-top-color: #0288D1; }
+.fc-color-5 .flip-card-front { border-top-color: #2E7D32; }
+.fc-color-6 .flip-card-front { border-top-color: #7B5EA7; }
+
+/* ── Vocab Tooltips ── */
+.vtip {
+  position: relative; color: #7B5EA7; font-weight: 700;
+  cursor: help; border-bottom: 2px dotted rgba(123,94,167,0.45);
+}
+.vtip:hover { color: #5B3EA7; }
+.vtip .vtip-box {
+  position: fixed; background: #1B4332; color: #fff;
+  padding: 12px 16px; border-radius: 12px;
+  font-size: 14px; font-weight: 600; font-style: normal;
+  line-height: 1.55; width: 250px; text-align: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  pointer-events: none; z-index: 9999;
+  box-shadow: 0 6px 24px rgba(27,67,50,0.35);
+  border: 1.5px solid rgba(149,213,178,0.3);
+  transform: translateY(6px);
+}
+.vtip .vtip-box::after {
+  content: ''; position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent; border-top-color: #1B4332;
+}
+.vtip .vtip-word {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block;
+}
+.vtip:hover .vtip-box { opacity: 1; visibility: visible; transform: translateY(0); }
+
+/* ── Details / Go Deeper ── */
+details {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-left: 5px solid #7B5EA7;
+  border-radius: 14px; margin-bottom: 12px; overflow: hidden;
+}
+details summary {
+  padding: 14px 20px; cursor: pointer;
+  font-size: 17px; font-weight: 800; color: #7B5EA7;
+  list-style: none;
+}
+details summary::-webkit-details-marker { display: none; }
+.gd-body { padding: 16px 22px 20px; }
+.gd-body p { font-size: 16px; color: #5A4D3E; line-height: 1.7; margin-bottom: 12px; }
+.go-deeper summary::before { content: '🔭 '; }
+
+/* ── Mind-Blowing Fact ── */
+.mind-blow {
+  background: linear-gradient(135deg, #1B4332, #2D6A4F, #1B4332);
+  border-radius: 18px; padding: 22px 24px;
+  display: flex; align-items: flex-start; gap: 18px;
+  margin-bottom: 22px;
+}
+.mind-blow-icon {
+  font-size: 42px; line-height: 1; flex-shrink: 0;
+  animation: mind-blow-bounce 2s ease-in-out infinite;
+}
+.mind-blow-label {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1.2px; font-weight: 800; margin-bottom: 6px;
+}
+.mind-blow-text { font-size: 17px; color: #fff; line-height: 1.65; font-weight: 600; }
+.mind-blow-text strong { color: #FDD835; }
+
+/* ── Need Strip ── */
+.need-strip {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  background: #fff; padding: 12px 22px;
+  border-bottom: 2px solid #E8DDD2;
+}
+.need-strip-label { font-size: 13px; color: #2D6A4F; font-weight: 800; white-space: nowrap; }
+.need-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #fff; border: 1.5px solid #C8E0B8; border-radius: 20px;
+  padding: 5px 12px; font-size: 13px; color: #1B4332; font-weight: 700;
+}
+
+/* ── Tab Bar ── */
+.tab-bar {
+  display: flex; background: #fff;
+  border-bottom: 3px solid #2D6A4F; overflow-x: auto;
+  position: sticky; top: 42px; z-index: 100;
+}
+.tab-btn {
+  flex: 1; min-width: 100px; padding: 12px 8px 10px;
+  background: none; border: none; border-bottom: 3px solid transparent;
+  cursor: pointer; font-family: inherit;
+  font-size: 12px; font-weight: 800; color: #9A8E82;
+  text-align: center; line-height: 1.3;
+  transition: color 0.2s, border-color 0.2s;
+  margin-bottom: -3px;
+}
+.tab-btn:hover { color: #2D6A4F; }
+.tab-btn.active { color: #2D6A4F; border-bottom-color: #2D6A4F; }
+.tab-btn.visited .tab-check { color: #52B788; }
+.tab-check { display: block; font-size: 10px; color: transparent; }
+
+/* ── Tab Content ── */
+.tab-panel { display: none; background: #ffffff; }
+.tab-panel.active { display: block; }
+.tab-content { padding: 22px 24px; }
+
+/* ── Video Slots ── */
+.video-wrap {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 18px; margin: 0 0 18px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.video-wrap-header {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 18px; background: #F8F6F2;
+  border-bottom: 1.5px solid #E8DDD2;
+}
+.video-wrap-type { font-size: 11px; color: #9A8E82; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+.video-wrap-title { font-size: 17px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.video-ratio { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.video-ratio iframe { position: absolute; top:0; left:0; width:100%; height:100%; border:none; }
+.video-placeholder {
+  position: absolute; top:0; left:0; width:100%; height:100%;
+  background: linear-gradient(135deg, #F0F8E8, #EEF8F0);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 10px;
+  border-radius: 0 0 18px 18px;
+}
+.video-placeholder-icon { font-size: 40px; }
+.video-placeholder-text { font-size: 16px; color: #2D6A4F; font-weight: 700; }
+.video-placeholder-id { font-size: 11px; color: #B0A698; }
+
+/* ── Quiz ── */
+.quiz-card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 18px; overflow: hidden;
+}
+.quiz-q { margin-bottom: 20px; }
+.quiz-q-text { font-size: 17px; color: #2B1D12; font-weight: 700; line-height: 1.6; margin-bottom: 12px; }
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px; background: #FAFAF6;
+  border: 2px solid #E8DDD2; border-radius: 12px;
+  cursor: pointer; font-size: 16px; color: #2B1D12;
+  transition: background 0.2s, border-color 0.2s;
+}
+.quiz-opt:hover { background: #EEF8F0; border-color: #C4E5CC; }
+.quiz-opt.correct { background: #EEF8F0; border-color: #52B788; color: #1B4332; }
+.quiz-opt.wrong   { background: #FFF0E8; border-color: #E8D0B8; color: #A0522D; }
+.quiz-opt.disabled { opacity: 0.5; cursor: default; }
+.opt-letter {
+  width: 28px; height: 28px; border-radius: 50%; background: #E8DDD2;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 800; color: #5A4D3E; flex-shrink: 0;
+}
+.quiz-feedback {
+  display: none; margin-top: 10px;
+  padding: 12px 16px; border-radius: 12px;
+  font-size: 15px; font-weight: 600; line-height: 1.55;
+}
+.quiz-feedback.show { display: block; }
+.fb-correct { background: #EEF8F0; color: #1B4332; border: 1.5px solid #C4E5CC; }
+.fb-wrong   { background: #FFF0E8; color: #A0522D; border: 1.5px solid #E8D0B8; }
+.quiz-score-box {
+  display: none; text-align: center;
+  background: linear-gradient(135deg, #1B4332, #2D6A4F);
+  border-radius: 16px; padding: 24px; margin-top: 16px;
+}
+.quiz-score-box.show { display: block; }
+.quiz-score-num { font-size: 56px; font-weight: 900; color: #FDD835; line-height: 1; }
+.quiz-score-label { font-size: 14px; color: #95D5B2; margin: 8px 0 12px; }
+.quiz-score-msg { font-size: 20px; color: #fff; font-weight: 800; }
+.quiz-video-wrap { display: none; margin-top: 16px; }
+.quiz-video-wrap.show { display: block; }
+
+/* ── Assignment Tab ── */
+.turn-in-block {
+  background: #fff; border: 2px solid #B3E5FC;
+  border-radius: 18px; overflow: hidden;
+  margin-bottom: 22px;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.turn-in-header {
+  display: flex; align-items: center; gap: 14px;
+  background: #E8F4FB;
+  padding: 18px 22px;
+  border-bottom: 2px solid #B3E5FC;
+}
+.turn-in-header-icon { font-size: 36px; line-height: 1; flex-shrink: 0; }
+.turn-in-header-label {
+  font-size: 11px; color: #0288D1; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 3px;
+}
+.turn-in-header-title {
+  font-size: 24px; color: #1B4332; font-weight: 900; line-height: 1.15;
+}
+.turn-in-body { padding: 22px 24px 24px; }
+.turn-in-intro {
+  font-size: 16px; color: #5A4D3E; margin-bottom: 18px; line-height: 1.55;
+}
+.turn-in-intro strong { color: #1B4332; }
+.turn-in-options {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px; margin-bottom: 26px;
+}
+.turn-in-option {
+  border-radius: 16px;
+  padding: 20px 14px;
+  text-align: center;
+  border: 2px solid;
+}
+.turn-in-option-type  { background: #EEF8F0; border-color: #C4E5CC; }
+.turn-in-option-photo { background: #FFF9E8; border-color: #F0E4C0; }
+.turn-in-option-video { background: #F0EDF6; border-color: #D8D0E8; }
+.turn-in-option-icon  { font-size: 34px; line-height: 1; margin-bottom: 12px; }
+.turn-in-option-title { font-size: 17px; color: #1B4332; font-weight: 800; margin-bottom: 8px; }
+.turn-in-option-text  { font-size: 14px; color: #5A4D3E; line-height: 1.5; }
+.turn-in-subhead {
+  font-size: 16px; color: #5A4D3E; margin-bottom: 14px; line-height: 1.55;
+}
+.turn-in-checklist { display: flex; flex-direction: column; gap: 10px; }
+.turn-in-item {
+  display: flex; align-items: center; gap: 16px;
+  padding: 14px 18px;
+  background: #FAFAF6;
+  border: 1.5px solid #E8DDD2;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item:hover { background: #F4FAF5; border-color: #C4E5CC; }
+.turn-in-item.checked { background: #EEF8F0; border-color: #B8E8CF; }
+.turn-in-item .turn-in-check {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  border: 2px solid #95D5B2;
+  background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px; line-height: 1;
+  transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item.checked .turn-in-check {
+  background: #2E7D32;
+  border-color: #2E7D32;
+}
+.turn-in-item-text {
+  font-size: 16px; color: #2B1D12; font-weight: 600;
+  line-height: 1.55; flex: 1;
+}
+.turn-in-item.checked .turn-in-item-text { color: #5A4D3E; }
+
+/* ── Progress Bar ── */
+.progress-wrap {
+  position: sticky; top: 0; z-index: 200;
+  background: #0E1C42; padding: 8px 20px 10px;
+  border-bottom: 2px solid rgba(85,200,232,0.3);
+  display: flex; align-items: center; gap: 14px;
+}
+.progress-label { font-size: 12px; color: #55C8E8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+.progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+.progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #52B788, #95D5B2, #FDD835); border-radius: 10px; transition: width 0.4s ease; }
+.progress-pct { font-size: 13px; color: #FDD835; font-weight: 800; min-width: 36px; text-align: right; }
+
+/* ── Tab Next Button ── */
+.tab-next-wrap { text-align: center; padding: 10px 0 4px; }
+.tab-next-btn {
+  background: linear-gradient(135deg, #1B4332, #2D6A4F);
+  color: #fff; border: none; border-radius: 30px;
+  padding: 14px 32px; font-size: 16px; font-weight: 800;
+  cursor: pointer; font-family: inherit;
+  box-shadow: 0 4px 16px rgba(27,67,50,0.25);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(27,67,50,0.35); }
+
+/* ── Back to Top ── */
+.back-to-top {
+  position: fixed; bottom: 24px; right: 24px;
+  background: #2D6A4F; color: #fff;
+  border: none; border-radius: 30px;
+  padding: 10px 20px; font-size: 14px; font-weight: 800;
+  cursor: pointer; font-family: inherit;
+  box-shadow: 0 4px 16px rgba(27,67,50,0.3);
+  opacity: 0; visibility: hidden; z-index: 500;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+.back-to-top.show { opacity: 1; visibility: visible; }
+
+/* ── Footer ── */
+.footer {
+  background: #0E1C42; padding: 20px 28px;
+  text-align: center;
+}
+.footer-line1 { font-size: 14px; color: #55C8E8; font-weight: 700; margin-bottom: 4px; }
+.footer-line1 span { color: #95D5B2; }
+.footer-line2 { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 4px; }
+.footer-line3 { font-size: 11px; color: rgba(255,255,255,0.35); }
+
+/* ── Utility ── */
+strong { color: #1B4332; }
+em { color: #5A4D3E; }
+
+/* ── Data Table ── */
+.data-table {
+  width: 100%; border-collapse: collapse; font-size: 15px;
+  margin: 14px 0;
+}
+.data-table th {
+  background: #EEF8F0; color: #1B4332; font-weight: 800;
+  padding: 10px 14px; border: 1.5px solid #C4E5CC;
+  text-align: center;
+}
+.data-table td {
+  padding: 9px 14px; border: 1.5px solid #E8DDD2;
+  text-align: center; color: #2B1D12; font-weight: 600;
+}
+.data-table tr:nth-child(even) td { background: #F4FAF5; }
+
+/* ── Scroll Reveal ── */
+.scroll-reveal { opacity: 1; }
+
+@media (max-width: 620px) {
+  .intro-2col { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .flip-card { height: 175px; }
+  .header-title { font-size: 22px; }
+  .tab-btn { min-width: 80px; font-size: 10px; padding: 10px 4px 9px; }
+  .turn-in-options { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="confettiCanvas" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;"></canvas>
+<button class="back-to-top" id="backToTop" type="button">🌱 Back to Top</button>
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- ═══════════ PROGRESS BAR ═══════════ -->
+<div class="progress-wrap">
+  <span class="progress-label">🌱 Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">Investigation: Light &amp; Plant Growth</div>
+  <div class="header-badge">
+    <span>🌱</span>
+    <span>Lesson 19.02</span>
+  </div>
+</div>
+
+<!-- ═══════════ HERO BANNER ═══════════ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="brightSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#F4EEC8"/>
+      <stop offset="100%" stop-color="#D8EED8"/>
+    </linearGradient>
+    <linearGradient id="dimSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#B8C8D8"/>
+      <stop offset="100%" stop-color="#C8D8E4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect x="0"   y="0" width="460" height="220" fill="url(#brightSky)"/>
+  <rect x="460" y="0" width="460" height="220" fill="url(#dimSky)"/>
+  <rect x="444" y="0" width="32"  height="220" fill="#C8D8D8" opacity="0.30"/>
+  <rect y="220" width="920" height="14" fill="#9A7A48"/>
+  <rect y="234" width="920" height="26" fill="#7A5A30"/>
+
+  <!-- BRIGHT SUN (left, upper) -->
+  <circle cx="80" cy="50" r="44" fill="#FFE030" class="sun-glow"/>
+  <circle cx="80" cy="50" r="28" fill="#FFD020"/>
+  <circle cx="80" cy="50" r="21" fill="#FFE838"/>
+  <circle cx="80" cy="50" r="13" fill="white" opacity="0.20"/>
+  <g stroke="#FFD020" stroke-width="3" stroke-linecap="round" opacity="0.55">
+    <line x1="80" y1="14"  x2="80"  y2="7"/>
+    <line x1="80" y1="86"  x2="80"  y2="93"/>
+    <line x1="44" y1="50"  x2="37"  y2="50"/>
+    <line x1="116" y1="50" x2="123" y2="50"/>
+    <line x1="55" y1="25"  x2="50"  y2="20"/>
+    <line x1="105" y1="75" x2="110" y2="80"/>
+    <line x1="105" y1="25" x2="110" y2="20"/>
+    <line x1="55" y1="75"  x2="50"  y2="80"/>
+  </g>
+
+  <!-- DIM LIGHT INDICATOR (right, upper) -->
+  <circle cx="840" cy="46" r="22" fill="#D4C8A0" opacity="0.60"/>
+  <circle cx="840" cy="46" r="16" fill="#C8BA90" opacity="0.70"/>
+  <g stroke="#C8BA90" stroke-width="2" stroke-linecap="round" opacity="0.40">
+    <line x1="840" y1="20" x2="840" y2="15"/>
+    <line x1="840" y1="72" x2="840" y2="77"/>
+    <line x1="814" y1="46" x2="809" y2="46"/>
+    <line x1="866" y1="46" x2="871" y2="46"/>
+    <line x1="821" y1="27" x2="817" y2="23"/>
+    <line x1="859" y1="65" x2="863" y2="69"/>
+  </g>
+  <rect x="740" y="0" width="180" height="100" fill="#B0C0D0" opacity="0.18" rx="40"/>
+
+  <!-- LEFT POT + PLANT (tall, bright) -->
+  <path d="M186,190 L254,190 L248,220 L192,220 Z" fill="#D07030" stroke="#B05A20" stroke-width="1.8"/>
+  <rect x="180" y="178" width="80" height="14" rx="7" fill="#E08040" stroke="#B05A20" stroke-width="1.8"/>
+  <ellipse cx="220" cy="178" rx="33" ry="7" fill="#7A5028" stroke="#5A3810" stroke-width="1.2"/>
+
+  <g style="animation:sway 4.5s ease-in-out infinite;transform-origin:220px 178px;transform-box:view-box;">
+    <path d="M220,178 C222,148 218,108 220,52" stroke="#2E7018" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M221,178 C222,148 219,108 221,52" stroke="#46961E" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.55"/>
+    <path d="M218,162 C196,153 156,150 132,157 C154,167 194,169 218,166 Z" fill="#42B828" stroke="#2E8018" stroke-width="1.8"/>
+    <line x1="218" y1="164" x2="132" y2="157" stroke="#2E8018" stroke-width="1.5"/>
+    <path d="M222,152 C244,143 282,140 308,147 C286,157 248,160 222,156 Z" fill="#3EB224" stroke="#2E8018" stroke-width="1.8"/>
+    <line x1="222" y1="154" x2="308" y2="147" stroke="#2E8018" stroke-width="1.5"/>
+    <path d="M217,126 C194,117 152,114 126,121 C150,131 190,134 217,130 Z" fill="#48BE2C" stroke="#2E8018" stroke-width="1.8"/>
+    <line x1="217" y1="128" x2="127" y2="121" stroke="#2E8018" stroke-width="1.5"/>
+    <path d="M223,116 C246,107 287,104 312,111 C289,121 250,124 223,120 Z" fill="#44BE28" stroke="#2E8018" stroke-width="1.8"/>
+    <line x1="223" y1="118" x2="312" y2="111" stroke="#2E8018" stroke-width="1.5"/>
+    <path d="M216,86 C200,77 172,72 152,78 C168,88 196,91 216,90 Z" fill="#52CC34" stroke="#2E8018" stroke-width="1.8"/>
+    <line x1="216" y1="88" x2="153" y2="78" stroke="#2E8018" stroke-width="1.4"/>
+    <path d="M224,80 C240,71 266,66 286,73 C270,82 244,86 224,84 Z" fill="#4CC830" stroke="#2E8018" stroke-width="1.8"/>
+    <line x1="224" y1="82" x2="285" y2="73" stroke="#2E8018" stroke-width="1.4"/>
+    <path d="M218,56 C208,46 192,40 182,46 C192,56 208,60 218,59 Z" fill="#58D43A" stroke="#2E8018" stroke-width="1.6"/>
+    <path d="M222,54 C232,44 248,38 258,44 C248,54 232,58 222,57 Z" fill="#52D036" stroke="#2E8018" stroke-width="1.6"/>
+  </g>
+
+  <line x1="332" y1="52"  x2="446" y2="52"  stroke="#4A7A30" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.55"/>
+  <line x1="332" y1="52"  x2="332" y2="65"  stroke="#4A7A30" stroke-width="1.5" opacity="0.55"/>
+
+  <!-- RIGHT POT + PLANT (short, dim) -->
+  <path d="M666,190 L734,190 L728,220 L672,220 Z" fill="#C86828" stroke="#A05018" stroke-width="1.8"/>
+  <rect x="660" y="178" width="80" height="14" rx="7" fill="#D87838" stroke="#A05018" stroke-width="1.8"/>
+  <ellipse cx="700" cy="178" rx="33" ry="7" fill="#7A5028" stroke="#5A3810" stroke-width="1.2"/>
+
+  <path d="M700,178 C701,162 699,142 700,118" stroke="#7A9830" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <path d="M701,178 C702,162 700,142 701,118" stroke="#A0C040" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.45"/>
+  <path d="M698,162 C680,154 650,152 630,158 C648,167 678,168 698,165 Z" fill="#96BE38" stroke="#6A8828" stroke-width="1.6"/>
+  <line x1="698" y1="163" x2="631" y2="158" stroke="#6A8828" stroke-width="1.4"/>
+  <path d="M702,152 C720,144 750,142 770,148 C752,157 722,159 702,155 Z" fill="#90B832" stroke="#6A8828" stroke-width="1.6"/>
+  <line x1="702" y1="153" x2="769" y2="148" stroke="#6A8828" stroke-width="1.4"/>
+  <path d="M698,128 C686,120 668,118 654,123 C666,131 684,134 698,132 Z" fill="#9EC040" stroke="#6A8828" stroke-width="1.5"/>
+  <line x1="698" y1="130" x2="655" y2="123" stroke="#6A8828" stroke-width="1.2"/>
+
+  <line x1="474" y1="118" x2="576" y2="118" stroke="#5A6880" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.55"/>
+  <line x1="576" y1="118" x2="576" y2="130" stroke="#5A6880" stroke-width="1.5" opacity="0.55"/>
+
+  <!-- RULER (center) -->
+  <rect x="448" y="44" width="24" height="178" rx="5" fill="#F8F0DC" stroke="#C0A870" stroke-width="1.8"/>
+  <g class="ruler-ticks" stroke="#8A7048" stroke-linecap="round">
+    <line x1="460" y1="54"  x2="472" y2="54"  stroke-width="1.8"/>
+    <line x1="460" y1="70"  x2="472" y2="70"  stroke-width="1.8"/>
+    <line x1="460" y1="86"  x2="472" y2="86"  stroke-width="1.8"/>
+    <line x1="456" y1="102" x2="472" y2="102" stroke-width="2.2"/>
+    <line x1="460" y1="118" x2="472" y2="118" stroke-width="1.8"/>
+    <line x1="460" y1="134" x2="472" y2="134" stroke-width="1.8"/>
+    <line x1="456" y1="150" x2="472" y2="150" stroke-width="2.2"/>
+    <line x1="460" y1="166" x2="472" y2="166" stroke-width="1.8"/>
+    <line x1="460" y1="182" x2="472" y2="182" stroke-width="1.8"/>
+    <line x1="456" y1="198" x2="472" y2="198" stroke-width="2.2"/>
+    <line x1="448" y1="218" x2="472" y2="218" stroke-width="2.5"/>
+  </g>
+  <line x1="448" y1="44" x2="472" y2="44" stroke="#C0A870" stroke-width="2.5"/>
+  <polygon points="448,52 440,48 440,56" fill="#2D8A18"/>
+  <polygon points="448,118 440,114 440,122" fill="#6A8828"/>
+
+  <!-- BAR GRAPH (bottom strip) -->
+  <line x1="155" y1="256" x2="765" y2="256" stroke="#8A7050" stroke-width="1.5" opacity="0.55"/>
+  <rect x="183" y="236" width="74" height="20" rx="4" fill="#44B828" stroke="#2E8018" stroke-width="1.5"/>
+  <rect x="188" y="238" width="28" height="5"  rx="2.5" fill="white" opacity="0.30"/>
+  <rect x="643" y="246" width="74" height="10" rx="4" fill="#96BE38" stroke="#6A8828" stroke-width="1.5"/>
+  <rect x="648" y="248" width="24" height="3"  rx="1.5" fill="white" opacity="0.28"/>
+  <line x1="220" y1="220" x2="220" y2="236" stroke="#44B828" stroke-width="1.2" stroke-dasharray="3,3" opacity="0.50"/>
+  <line x1="700" y1="220" x2="700" y2="246" stroke="#96BE38" stroke-width="1.2" stroke-dasharray="3,3" opacity="0.50"/>
+</svg>
+</div>
+
+<!-- ═══════════ INFO STRIP ═══════════ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q3 &middot; Unit 7</div>
+      <div class="info-detail">Plants &amp; Environmental Interactions</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF9E8;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 19</div>
+      <div class="info-detail">Lesson 19.02 &mdash; 3rd Grade Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#F0EDF6;">🌿</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Plant Growth</div>
+      <div class="info-detail">Light as a growing condition</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">NGSS 3-LS1-1</div>
+      <div class="info-detail">Plant life cycles and growth</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ INTRO 2-COL CARDS ═══════════ -->
+<div class="intro-2col">
+
+  <div class="card theme-forest">
+    <div class="card-head">
+      <div class="card-head-icon">🌱</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This…</div>
+          <div class="question">"Does it matter how much light a plant gets — and how would you prove it?"</div>
+        </div>
+      </div>
+      <p>Keep this question in mind as you work. By the end, you'll have real data to answer it.</p>
+    </div>
+  </div>
+
+  <div class="card theme-sky">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#52B788;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> compare plant growth under different light conditions.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2D6A4F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> create a graph to display plant growth data.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2E7D32;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> use evidence from data to explain how light affects plant growth.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════ NEED STRIP ═══════════ -->
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Pencil &amp; colored pencils</span>
+  <span class="need-chip"><span>📏</span>Ruler</span>
+</div>
+
+<!-- ═══════════ TAB BAR ═══════════ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 1: VOCABULARY                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+  <div style="padding:20px 22px 0;">
+
+  <!-- Welcome Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to Today's Investigation!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🎬</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 19-2-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 1: NOTICE & WONDER -->
+  <div class="activity-card act-warmup">
+    <div class="act-head">
+      <div class="act-num" style="background:#52B788;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Notice &amp; Wonder</div>
+        <div class="act-subtitle">Two plants. Same soil. Very different results.</div>
+      </div>
+      <div class="act-time" style="background:#52B788;">⏱ 5 min</div>
+    </div>
+    <div class="act-body">
+      <p>Picture two small plants sitting side by side. They started out the same size. Seven days later, one is much taller. The other barely grew at all. What could cause that?</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">👀</span>
+        <div>
+          <div class="label">In Your Science Notebook</div>
+          <div class="question">"Look at the two plants in the hero image above. Write 2 things you notice about how they look different. Then write 1 question you want to answer today."</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>Good scientists notice before they explain. Don't guess the answer yet — just look carefully and write what you see.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOCABULARY FLIP CARDS -->
+  <div class="card theme-rock">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>These are the science words you'll use today. <strong>Tap each card to flip it</strong> and read the definition.</p>
+
+      <div class="vocab-grid">
+
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">📊</div><div class="fc-word">data</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">data</div><div class="fc-def">Information collected during an investigation — numbers, measurements, or observations.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">📈</div><div class="fc-word">graph</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">graph</div><div class="fc-def">A visual way to organize and display data so patterns are easier to see.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🔁</div><div class="fc-word">pattern</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">pattern</div><div class="fc-def">A change or result that repeats or makes sense across your data.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🔍</div><div class="fc-word">evidence</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">evidence</div><div class="fc-def">Information from your data or observations that supports an explanation.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">☀️</div><div class="fc-word">condition</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">condition</div><div class="fc-def">Something in the environment — like light, water, or temperature — that affects how an organism grows.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">📏</div><div class="fc-word">growth rate</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">growth rate</div><div class="fc-def">How fast something grows over a period of time. We measure it in centimeters per day.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">📓</span>
+        <p>Copy this sentence carefully into your science notebook:<br><strong>"A plant's growth rate changes depending on the conditions it lives in."</strong></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button>
+  </div>
+
+  </div>
+</div><!-- /tab-vocab -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 2: THE LESSON                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+  <div style="padding:20px 22px 0;">
+
+  <!-- Lesson Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">📖</span>
+      <div>
+        <div class="video-wrap-type">Activity 2 · Context &amp; Background</div>
+        <div class="video-wrap-title">What We Know About Light and Plants</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">📖</div>
+        <div class="video-placeholder-text">Lesson context video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 19-2-lesson-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 2: LESSON CONTEXT -->
+  <div class="activity-card act-lesson">
+    <div class="act-head">
+      <div class="act-num" style="background:#F9A825;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📖 Before the Investigation</div>
+        <div class="act-subtitle">Read this before you look at the data.</div>
+      </div>
+      <div class="act-time" style="background:#F9A825;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="card theme-forest" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">☀️</div>
+          <div>
+            <div class="card-head-label">Section 1</div>
+            <div class="card-head-title">Why Plants Need Light</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Plants make their own food using sunlight. Without enough light, a plant can't make the energy it needs to grow tall and strong. This process is called <span class="vtip">photosynthesis<span class="vtip-box"><span class="vtip-word">photosynthesis</span>The way plants use sunlight, water, and air to make their own food.</span></span>.</p>
+          <p>When a plant gets plenty of light, it grows faster. When light is weak or blocked, growth slows down — sometimes a lot.</p>
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"Have you ever seen a plant that was pale, droopy, or stretched thin? What do you think caused that?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card theme-sky" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🔬</div>
+          <div>
+            <div class="card-head-label">Section 2</div>
+            <div class="card-head-title">How Scientists Test One Variable</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>In a fair test, scientists change only one thing at a time. In this investigation, the only difference between the two plants is <strong>light</strong>. Everything else — the soil, the water, the pot — stays the same.</p>
+          <p>That way, if the plants grow differently, we know light is the reason. The thing we change on purpose is called the <span class="vtip">variable<span class="vtip-box"><span class="vtip-word">variable</span>The one thing a scientist changes on purpose in a fair test.</span></span>.</p>
+        </div>
+      </div>
+
+      <div class="card theme-earth" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">📏</div>
+          <div>
+            <div class="card-head-label">Section 3</div>
+            <div class="card-head-title">Reading the Data</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Scientists measure plant height in centimeters and record it in a data table. Then they build a graph to make the pattern visible. A graph turns rows of numbers into a picture you can read at a glance.</p>
+          <p><strong>Real-World Connection:</strong> Farmers use this same kind of data to decide where to plant crops — in full sun or partial shade — depending on what each plant needs to thrive.</p>
+        </div>
+      </div>
+
+      <!-- Interactive Diagram -->
+      <div class="diagram-wrap">
+        <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
+          🗺 Tap a zone to explore it
+        </div>
+        <div class="diagram-interactive">
+          <svg viewBox="0 0 860 280" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;" role="img" aria-label="Diagram comparing two plant growing conditions">
+
+            <!-- Background -->
+            <defs>
+              <linearGradient id="brightBg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FFF9E0"/>
+                <stop offset="100%" stop-color="#E8F5D0"/>
+              </linearGradient>
+              <linearGradient id="dimBg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#D8E4F0"/>
+                <stop offset="100%" stop-color="#C8D8E8"/>
+              </linearGradient>
+            </defs>
+
+            <rect x="0"   y="0" width="430" height="280" fill="url(#brightBg)" rx="10"/>
+            <rect x="430" y="0" width="430" height="280" fill="url(#dimBg)" rx="10"/>
+            <line x1="430" y1="0" x2="430" y2="280" stroke="#C0C8D0" stroke-width="2" stroke-dasharray="6,4"/>
+
+            <!-- Sun (bright side) -->
+            <circle cx="90" cy="45" r="30" fill="#FFE030" opacity="0.85"/>
+            <circle cx="90" cy="45" r="22" fill="#FFD020"/>
+            <g stroke="#FFD020" stroke-width="2.5" stroke-linecap="round" opacity="0.65">
+              <line x1="90" y1="8"  x2="90" y2="2"/>
+              <line x1="90" y1="82" x2="90" y2="88"/>
+              <line x1="53" y1="45" x2="47" y2="45"/>
+              <line x1="127" y1="45" x2="133" y2="45"/>
+              <line x1="64" y1="19" x2="60" y2="15"/>
+              <line x1="116" y1="71" x2="120" y2="75"/>
+            </g>
+
+            <!-- Dim sun (right side) -->
+            <circle cx="740" cy="40" r="20" fill="#D4C8A0" opacity="0.55"/>
+            <circle cx="740" cy="40" r="14" fill="#C8BA90" opacity="0.65"/>
+
+            <!-- Ground strip -->
+            <rect x="0"   y="248" width="430" height="32" fill="#9A7A48" rx="0"/>
+            <rect x="430" y="248" width="430" height="32" fill="#9A7A48" rx="0"/>
+
+            <!-- LEFT PLANT (tall) -->
+            <!-- Pot -->
+            <path d="M194,238 L246,238 L241,248 L199,248 Z" fill="#D07030" stroke="#B05A20" stroke-width="1.5"/>
+            <rect x="188" y="228" width="64" height="12" rx="6" fill="#E08040" stroke="#B05A20" stroke-width="1.5"/>
+            <ellipse cx="220" cy="228" rx="28" ry="5.5" fill="#7A5028" stroke="#5A3810" stroke-width="1.2"/>
+            <!-- Stem -->
+            <path d="M220,228 C221,208 219,170 220,90" stroke="#2E7018" stroke-width="7" fill="none" stroke-linecap="round"/>
+            <!-- Leaves -->
+            <path d="M218,210 C202,203 178,200 162,205 C176,213 200,215 218,213 Z" fill="#42B828" stroke="#2E8018" stroke-width="1.5"/>
+            <path d="M222,198 C238,191 262,188 278,194 C264,201 240,204 222,201 Z" fill="#3EB224" stroke="#2E8018" stroke-width="1.5"/>
+            <path d="M218,170 C202,163 178,160 160,166 C176,174 200,176 218,173 Z" fill="#48BE2C" stroke="#2E8018" stroke-width="1.5"/>
+            <path d="M222,158 C238,151 264,148 280,154 C266,162 242,164 222,161 Z" fill="#44BE28" stroke="#2E8018" stroke-width="1.5"/>
+            <path d="M218,126 C205,119 186,116 172,121 C184,129 204,131 218,129 Z" fill="#52CC34" stroke="#2E8018" stroke-width="1.5"/>
+            <path d="M222,118 C235,111 256,108 270,113 C258,121 238,123 222,121 Z" fill="#4CC830" stroke="#2E8018" stroke-width="1.5"/>
+            <!-- Crown -->
+            <path d="M216,96 C208,88 194,84 184,89 C192,98 207,101 216,99 Z" fill="#58D43A" stroke="#2E8018" stroke-width="1.4"/>
+            <path d="M224,94 C232,86 246,82 256,87 C248,96 234,99 224,97 Z" fill="#52D036" stroke="#2E8018" stroke-width="1.4"/>
+
+            <!-- RIGHT PLANT (short) -->
+            <!-- Pot -->
+            <path d="M674,238 L726,238 L721,248 L679,248 Z" fill="#C86828" stroke="#A05018" stroke-width="1.5"/>
+            <rect x="668" y="228" width="64" height="12" rx="6" fill="#D87838" stroke="#A05018" stroke-width="1.5"/>
+            <ellipse cx="700" cy="228" rx="28" ry="5.5" fill="#7A5028" stroke="#5A3810" stroke-width="1.2"/>
+            <!-- Stem -->
+            <path d="M700,228 C701,214 699,196 700,170" stroke="#7A9830" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <!-- Leaves -->
+            <path d="M698,214 C684,208 664,206 650,210 C662,217 682,218 698,216 Z" fill="#96BE38" stroke="#6A8828" stroke-width="1.4"/>
+            <path d="M702,204 C716,198 736,196 750,200 C738,207 718,209 702,206 Z" fill="#90B832" stroke="#6A8828" stroke-width="1.4"/>
+            <path d="M698,178 C687,172 672,170 660,174 C670,181 685,183 698,181 Z" fill="#9EC040" stroke="#6A8828" stroke-width="1.3"/>
+
+            <!-- Height dashed line + label on bright side -->
+            <line x1="264" y1="90" x2="330" y2="90" stroke="#2D6A4F" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.6"/>
+            <line x1="264" y1="90" x2="264" y2="104" stroke="#2D6A4F" stroke-width="1.5" opacity="0.6"/>
+
+            <!-- Height dashed line on dim side -->
+            <line x1="530" y1="170" x2="618" y2="170" stroke="#5A6880" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.6"/>
+            <line x1="618" y1="170" x2="618" y2="184" stroke="#5A6880" stroke-width="1.5" opacity="0.6"/>
+
+            <!-- Tiny bar chart icons (bottom) -->
+            <rect x="140" y="232" width="20" height="14" rx="3" fill="#44B828" opacity="0.7"/>
+            <rect x="166" y="238" width="20" height="8"  rx="3" fill="#96BE38" opacity="0.7"/>
+
+            <rect x="616" y="234" width="20" height="12" rx="3" fill="#44B828" opacity="0.7"/>
+            <rect x="642" y="239" width="20" height="7"  rx="3" fill="#96BE38" opacity="0.7"/>
+
+            <!-- HOTSPOT ZONES -->
+            <rect class="hotspot" x="0"   y="0" width="430" height="280" rx="10"
+                  fill="#F9A825"
+                  data-part="bright-light-plant"
+                  data-info="This plant got plenty of bright light every day. It grew quickly — almost twice as fast as the other plant. By Day 7 it was 10 cm tall. Bright light gave it the energy it needed for fast growth."/>
+            <rect class="hotspot" x="430" y="0" width="430" height="280" rx="10"
+                  fill="#0288D1"
+                  data-part="dim-light-plant"
+                  data-info="This plant had weak, dim light. It still grew — plants always try to find the light — but much more slowly. By Day 7 it was only 5 cm tall. Low light means less energy for growth."/>
+          </svg>
+
+          <div class="diagram-info-panel" id="diagramPanel">
+            <span class="dip-word" id="diagramWord"></span>
+            <span id="diagramInfo"></span>
+          </div>
+        </div>
+        <div class="diagram-tap-hint">Tap either plant to learn what's happening in its environment.</div>
+        <div class="diagram-caption">Two identical plants — one in bright light, one in dim light — after seven days of growth.</div>
+      </div>
+
+      <!-- Key Concept Box -->
+      <div class="key-concept">
+        <div class="kc-label">⭐ Key Concept</div>
+        <p><strong>Light is a growing condition for plants.</strong> The more light a plant gets, the more energy it can make — and the faster it grows.</p>
+        <p>When we compare two plants under different conditions, any difference we find is evidence of how that condition affects growth.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mind-Blowing Fact -->
+  <div class="mind-blow">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Amazing Nature Fact</div>
+      <div class="mind-blow-text">Some plants can actually <strong>bend themselves toward a light source</strong> over just a few hours. Leave a houseplant near a window, then rotate it — and it will slowly turn back toward the sun by the next morning.</div>
+    </div>
+  </div>
+
+  <!-- Go Deeper -->
+  <details class="go-deeper">
+    <summary>Curious? Go Deeper</summary>
+    <div class="gd-body">
+      <p>The reason plants bend and grow toward light is called <strong>phototropism</strong>. Inside the plant, a chemical called auxin builds up on the shady side of the stem. That side grows a little longer — which tips the plant toward the light.</p>
+      <p>Scientists who study this are called plant biologists. They do experiments just like the one you're doing today — but they often test dozens of plants at once and measure changes down to fractions of a millimeter. What you're practicing in this investigation is exactly how real science works.</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+
+  </div>
+</div><!-- /tab-lesson -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 3: EXPLORE                                            -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+  <div style="padding:20px 22px 0;">
+
+  <!-- Explore Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🔬</span>
+      <div>
+        <div class="video-wrap-type">Activity 3 · Investigation</div>
+        <div class="video-wrap-title">The Plant Detective Lab</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🔬</div>
+        <div class="video-placeholder-text">Exploration video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 19-2-exploration-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Case File Image -->
+  <div class="lesson-figure">
+    <div class="lesson-figure-label">🕵️ Investigation · Plant Detective Case File</div>
+    <img src="images/19-02-plant-detective-case-file.png"
+         alt="A Plant Detective Case File showing two polaroid photos of plants — a tall bright-light plant and a short dim-light plant — alongside a data table and completed line graph of plant growth over seven days" />
+    <div class="lesson-figure-caption">
+      Study this case file carefully before you begin. Notice the <strong>height difference</strong> between the two plants by Day 7, and look at how the lines on the graph move — which one rises faster?
+    </div>
+  </div>
+
+  <!-- ACTIVITY 3: INVESTIGATION -->
+  <div class="activity-card act-explore">
+    <div class="act-head">
+      <div class="act-num" style="background:#0288D1;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🕵️ The Plant Detective Lab</div>
+        <div class="act-subtitle">Analyze data and find the pattern.</div>
+      </div>
+      <div class="act-time" style="background:#0288D1;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="callout callout-tip" style="margin-bottom:18px;">
+        <span class="callout-icon">🎒</span>
+        <p><strong>You'll need:</strong> Science notebook, pencil, colored pencils, and the case file image above.</p>
+      </div>
+
+      <p>You are the plant detective. Your job is to study the evidence, build a graph, find a pattern, and write a scientific explanation. Follow each step carefully.</p>
+
+      <!-- Data Table -->
+      <div style="background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;margin-bottom:18px;">
+        <p style="font-size:14px;font-weight:800;color:#1B4332;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px;">📋 Sample Plant Data</p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Bright Light Plant</th>
+              <th>Dim Light Plant</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Day 1</td><td>2 cm</td><td>2 cm</td></tr>
+            <tr><td>Day 3</td><td>4 cm</td><td>3 cm</td></tr>
+            <tr><td>Day 5</td><td>7 cm</td><td>4 cm</td></tr>
+            <tr><td>Day 7</td><td>10 cm</td><td>5 cm</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="position:relative; margin:16px 0;">
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">1</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Copy the data table.</strong> Write the table above into your science notebook exactly as it looks. Include all four days and both plants.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2D6A4F,#52B788);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(45,106,79,0.3);">2</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Build a graph.</strong> Draw a bar graph or line graph showing plant height over time. Use one color for the bright-light plant and a different color for the dim-light plant. Add a title and label your axes.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#52B788,#F9A825);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(82,183,136,0.3);">3</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Find the pattern.</strong> Study your graph. Look at where the two lines (or bars) are closest together and where they are farthest apart. Write one sentence describing the pattern you see.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F9A825,#FDD835);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(249,168,37,0.3);">4</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Write an explanation.</strong> Write 2–3 sentences explaining what your data shows. Use the words <em>evidence</em>, <em>condition</em>, and <em>growth rate</em> somewhere in your answer.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🌿</span>
+        <div>
+          <div class="label">Think Like a Scientist</div>
+          <div class="question">"Both plants started at exactly 2 cm on Day 1. Why do you think the difference in their heights got bigger and bigger as time went on — instead of staying the same?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ACTIVITY 4: RECORD YOUR THINKING -->
+  <div class="activity-card act-practice">
+    <div class="act-head">
+      <div class="act-num" style="background:#2E7D32;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">📓 Record Your Thinking</div>
+        <div class="act-subtitle">Put your observations into words.</div>
+      </div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>Go back to your notebook and answer each question. Be specific — write numbers from your data, not just "one plant grew more."</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">1</span>
+        <span class="pq-text">By Day 7, how tall was each plant? How much taller was the bright-light plant than the dim-light plant?</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">2</span>
+        <span class="pq-text">What pattern do you see in the data? Did the gap between the two plants get bigger over time, stay the same, or get smaller?</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">3</span>
+        <span class="pq-text">Draw a quick sketch in your notebook showing what each plant looked like by Day 7. Label the height of each one.</span>
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">🗣</span>
+        <p>Tell the story of this investigation from beginning to end — what the plants started as, what changed, and what you figured out. Use your graph and data to help you.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- THINK IT THROUGH -->
+  <div class="card theme-meadow">
+    <div class="card-head">
+      <div class="card-head-icon">💬</div>
+      <div>
+        <div class="card-head-label">Discussion</div>
+        <div class="card-head-title">Think It Through</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Think through each question on your own. Write your answers in your science notebook before moving on.</p>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Question 1</div>
+          <div class="question">"Why was it important that both plants started at exactly the same height on Day 1?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">💡</span>
+        <div>
+          <div class="label">Question 2</div>
+          <div class="question">"What specific numbers from your data are the strongest evidence that light affected growth?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🌿</span>
+        <div>
+          <div class="label">Question 3 — Connect to the Real World</div>
+          <div class="question">"Where might you see this happening in nature — a plant that can't get enough light? What do you think happens to it?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🔁</span>
+        <div>
+          <div class="label">Question 4 — Improve or Extend</div>
+          <div class="question">"If you ran this investigation again, what is one thing you might change or add to learn even more about how light affects plants?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+
+  </div>
+</div><!-- /tab-explore -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 4: SELF-CHECK QUIZ                                    -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+  <div style="padding:20px 22px 0;">
+
+  <div class="quiz-card" style="margin-top:0; margin-bottom:18px;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#F9A825;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">🌱</div>
+      <div style="flex:1;">
+        <div style="font-size:19px;color:#1B4332;font-weight:800;line-height:1.2;">🧠 Quick Self-Check</div>
+        <div style="font-size:12px;color:#9A8E82;">Not graded — just for you! See how much you remember.</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+
+      <!-- QUESTION 1 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. What does a scientist call the information collected during an investigation?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>A pattern</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Data</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>A graph</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌱 That's right! Data is the information scientists collect — measurements, observations, and numbers from an investigation.</div>
+        <div class="quiz-feedback fb-wrong">Look back at your vocabulary cards. Data is the word for information collected during an investigation — measurements and observations.</div>
+      </div>
+
+      <!-- QUESTION 2 -->
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-text">2. In this investigation, both plants started at 2 cm but grew differently. What does that tell us?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>The light condition affected how fast each plant grew.</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>The soil must have been different in each pot.</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>The plants were different species to begin with.</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌿 Exactly! Since everything except light was the same, any difference in growth must have been caused by the light condition.</div>
+        <div class="quiz-feedback fb-wrong">Remember: in this fair test, only the light was changed. So any growth difference is evidence about light, not soil or the type of plant.</div>
+      </div>
+
+      <!-- QUESTION 3 -->
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">3. Why is a graph helpful when comparing plant growth data?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>It lets you water the plants automatically.</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>It shows you which plant is taller in real life.</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>It makes patterns in the data easier to see.</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌱 Yes! A graph turns rows of numbers into a visual picture so you can spot patterns — like which plant grew faster — at a glance.</div>
+        <div class="quiz-feedback fb-wrong">Think about what a graph does with numbers. It turns data into a picture that makes patterns easier to see and compare.</div>
+      </div>
+
+      <!-- Score Box -->
+      <div class="quiz-score-box" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum">0</div>
+        <div class="quiz-score-label">out of 3 correct</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+      </div>
+
+      <!-- Conditional Video: Perfect Score -->
+      <div class="quiz-video-wrap" id="quizVideoCorrect">
+        <div class="video-wrap" style="margin-bottom:0;">
+          <div class="video-wrap-header">
+            <span style="font-size:20px;">⭐</span>
+            <div>
+              <div class="video-wrap-type">Quiz · Perfect Score</div>
+              <div class="video-wrap-title">Outstanding work, plant detective!</div>
+            </div>
+          </div>
+          <div class="video-ratio">
+            <div class="video-placeholder">
+              <div class="video-placeholder-icon">⭐</div>
+              <div class="video-placeholder-text">Perfect score video coming soon</div>
+              <div class="video-placeholder-id"><!-- slot: 19-2-quiz-perfect --></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conditional Video: Review -->
+      <div class="quiz-video-wrap" id="quizVideoReview">
+        <div class="video-wrap" style="margin-bottom:0;">
+          <div class="video-wrap-header">
+            <span style="font-size:20px;">🔁</span>
+            <div>
+              <div class="video-wrap-type">Quiz · Let's Review</div>
+              <div class="video-wrap-title">Good try — let's look at those again.</div>
+            </div>
+          </div>
+          <div class="video-ratio">
+            <div class="video-placeholder">
+              <div class="video-placeholder-icon">🔁</div>
+              <div class="video-placeholder-text">Review video coming soon</div>
+              <div class="video-placeholder-id"><!-- slot: 19-2-quiz-review --></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+
+  </div>
+</div><!-- /tab-quiz -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 5: ASSIGNMENT                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+  <div style="padding:20px 22px 0;">
+
+  <!-- Assignment Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">✍️</span>
+      <div>
+        <div class="video-wrap-type">Activity 4 · Assignment</div>
+        <div class="video-wrap-title">How to show what you found</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">✍️</div>
+        <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 19-2-assignment-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PART A -->
+  <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">📋 Part A — Read the Data</p>
+  <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use the data table below to answer these questions in your notebook.</p>
+
+  <div style="background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;margin-bottom:16px;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Bright Light Plant</th>
+          <th>Dim Light Plant</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Day 1</td><td>2 cm</td><td>2 cm</td></tr>
+        <tr><td>Day 3</td><td>4 cm</td><td>3 cm</td></tr>
+        <tr><td>Day 5</td><td>7 cm</td><td>4 cm</td></tr>
+        <tr><td>Day 7</td><td>10 cm</td><td>5 cm</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pq" style="margin-bottom:10px;">
+    <span class="pq-num" style="background:#52B788;">1</span>
+    <span class="pq-text">On which day did the bright-light plant first grow faster than the dim-light plant?</span>
+  </div>
+  <div class="pq" style="margin-bottom:10px;">
+    <span class="pq-num" style="background:#52B788;">2</span>
+    <span class="pq-text">How much taller was the bright-light plant than the dim-light plant by Day 7?</span>
+  </div>
+  <div class="pq" style="margin-bottom:20px;">
+    <span class="pq-num" style="background:#52B788;">3</span>
+    <span class="pq-text">Did the difference between the plants grow bigger over time, stay the same, or get smaller? How can you tell?</span>
+  </div>
+
+  <!-- PART B -->
+  <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">📝 Part B — Short Answer</p>
+  <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Write a complete sentence answer for each question.</p>
+
+  <div class="pq" style="margin-bottom:10px;">
+    <span class="pq-num" style="background:#0288D1;">1</span>
+    <span class="pq-text">What was the variable in this investigation — the one thing that was different between the two plants?</span>
+  </div>
+  <div class="pq" style="margin-bottom:10px;">
+    <span class="pq-num" style="background:#0288D1;">2</span>
+    <span class="pq-text">Why did scientists keep everything the same except for the light? What would happen if both light and water were different?</span>
+  </div>
+  <div class="pq" style="margin-bottom:20px;">
+    <span class="pq-num" style="background:#0288D1;">3</span>
+    <span class="pq-text">Why is a graph more useful than just reading the data table when trying to spot a pattern?</span>
+  </div>
+
+  <!-- WRITE & EXPLAIN -->
+  <div class="key-concept" style="background:#FFF9E8;border-color:#F0E4C0;">
+    <div class="kc-label" style="color:#F9A825;">✍️ Write and Explain</div>
+    <p style="font-size:16px;font-weight:700;color:#1B4332;margin-bottom:14px;">What does your investigation tell you about how light affects plant growth?</p>
+
+    <div style="margin-bottom:14px;">
+      <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What did you observe?</p>
+      <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+        <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"In my investigation, I noticed that…"</em></p>
+        <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+        <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:14px;">
+      <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What does your data show?</p>
+      <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+        <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"The evidence in my data shows that…"</em></p>
+        <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+        <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:14px;">
+      <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">Why does that make sense?</p>
+      <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+        <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because plants need light to…"</em></p>
+        <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+        <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+      </div>
+    </div>
+
+    <div style="background:#EEF8F0;border-radius:10px;padding:10px 14px;border-left:3px solid #52B788;">
+      <p style="margin:0;font-size:14px;color:#1B4332;">📚 Try to use these words: <strong>evidence</strong>, <strong>condition</strong>, <strong>growth rate</strong></p>
+    </div>
+  </div>
+
+  <!-- PART C: DRAW & LABEL -->
+  <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Label</p>
+  <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">In your science notebook, draw both plants as they looked on Day 7. Label the height of each one and write the light condition next to each plant.</p>
+
+  <div class="socratic-q">
+    <span class="sq-icon">🤔</span>
+    <div>
+      <div class="label">Reflect</div>
+      <div class="question">"Think back to your very first observation — before you saw any data. Did things turn out the way you expected? What changed in your thinking after working through the numbers?"</div>
+    </div>
+  </div>
+
+  <!-- WHAT TO TURN IN -->
+  <div class="turn-in-block">
+    <div class="turn-in-header">
+      <div class="turn-in-header-icon">📋</div>
+      <div>
+        <div class="turn-in-header-label">Canvas Submission</div>
+        <div class="turn-in-header-title">What to Turn In</div>
+      </div>
+    </div>
+    <div class="turn-in-body">
+
+      <p class="turn-in-intro">Submit your work on Canvas using <strong>one of these options:</strong></p>
+
+      <div class="turn-in-options">
+        <div class="turn-in-option turn-in-option-type">
+          <div class="turn-in-option-icon">⌨️</div>
+          <div class="turn-in-option-title">Type It</div>
+          <div class="turn-in-option-text">Type your answers directly into the Canvas assignment.</div>
+        </div>
+        <div class="turn-in-option turn-in-option-photo">
+          <div class="turn-in-option-icon">📸</div>
+          <div class="turn-in-option-title">Photo It</div>
+          <div class="turn-in-option-text">Take a clear photo of your handwritten work and upload it.</div>
+        </div>
+        <div class="turn-in-option turn-in-option-video">
+          <div class="turn-in-option-icon">🎥</div>
+          <div class="turn-in-option-title">Record It</div>
+          <div class="turn-in-option-text">Record a short video explaining what you found and learned.</div>
+        </div>
+      </div>
+
+      <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
+
+      <div class="turn-in-checklist">
+        <div class="turn-in-item" onclick="toggleCheck(this)">
+          <div class="turn-in-check check-icon"></div>
+          <div class="turn-in-item-text">My Notice &amp; Wonder observations and question.</div>
+        </div>
+        <div class="turn-in-item" onclick="toggleCheck(this)">
+          <div class="turn-in-check check-icon"></div>
+          <div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div>
+        </div>
+        <div class="turn-in-item" onclick="toggleCheck(this)">
+          <div class="turn-in-check check-icon"></div>
+          <div class="turn-in-item-text">My copied data table and completed graph.</div>
+        </div>
+        <div class="turn-in-item" onclick="toggleCheck(this)">
+          <div class="turn-in-check check-icon"></div>
+          <div class="turn-in-item-text">My Record Your Thinking answers (Day 7 heights, pattern description, labeled sketch).</div>
+        </div>
+        <div class="turn-in-item" onclick="toggleCheck(this)">
+          <div class="turn-in-check check-icon"></div>
+          <div class="turn-in-item-text">My Part A data questions and Part B short answer responses.</div>
+        </div>
+        <div class="turn-in-item" onclick="toggleCheck(this)">
+          <div class="turn-in-check check-icon"></div>
+          <div class="turn-in-item-text">My Write &amp; Explain response using evidence, condition, and growth rate.</div>
+        </div>
+        <div class="turn-in-item" onclick="toggleCheck(this)">
+          <div class="turn-in-check check-icon"></div>
+          <div class="turn-in-item-text">My Part C drawing with both plants labeled by height and light condition.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CLOSING VIDEO -->
+  <div class="video-wrap" style="margin-top:24px;">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">👋</span>
+      <div>
+        <div class="video-wrap-type">Closing · Wrap-Up</div>
+        <div class="video-wrap-title">Great work, plant detective! Here's what's coming next…</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">👋</div>
+        <div class="video-placeholder-text">Closing video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 19-2-closing --></div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</div><!-- /tab-assignment -->
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <div class="footer-line1">Optima Academy Online · <span>3rd Grade Science</span></div>
+  <div class="footer-line2">Lesson 19.02 · NGSS 3-LS1-1</div>
+  <div class="footer-line3">© Optima Academy · All rights reserved</div>
+</div>
+
+</div><!-- /page-wrap -->
+
+
+<script>
+
+var LESSON_EMOJI = '🌱';
+
+// ── Tab System ──
+var tabProgress = { vocab: false, lesson: false, explore: false, quiz: false, assignment: false };
+var tabOrder = ['vocab','lesson','explore','quiz','assignment'];
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelector('[data-tab="' + name + '"]').classList.add('active');
+  tabProgress[name] = true;
+  document.querySelector('[data-tab="' + name + '"]').classList.add('visited');
+  var visited = Object.values(tabProgress).filter(Boolean).length;
+  var pct = Math.round((visited / tabOrder.length) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c){
+    if (name === 'vocab') { c.classList.remove('collapsed'); }
+    else { c.classList.add('collapsed'); }
+  });
+  try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+  var top = document.getElementById('pageTop');
+  if (top && top.scrollIntoView) {
+    try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+  }
+}
+
+// ── Checklist ──
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  var icon = item.querySelector('.check-icon');
+  if (icon) {
+    icon.textContent = item.classList.contains('checked') ? LESSON_EMOJI : '';
+  }
+  var checklist = item.closest('.turn-in-checklist');
+  if (!checklist) return;
+  var items = checklist.querySelectorAll('.turn-in-item');
+  if (items.length === 0) return;
+  var allChecked = Array.prototype.every.call(items, function(it){
+    return it.classList.contains('checked');
+  });
+  if (allChecked) {
+    setTimeout(window.launchConfetti, 200);
+  }
+}
+
+// ── Clickable Diagram ──
+(function() {
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel    = document.getElementById('diagramPanel');
+  var wordEl   = document.getElementById('diagramWord');
+  var infoEl   = document.getElementById('diagramInfo');
+  if (!panel) return;
+  hotspots.forEach(function(hs) {
+    hs.addEventListener('click', function(e) {
+      e.stopPropagation();
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+      hs.classList.add('active');
+      var part = hs.getAttribute('data-part').replace(/-/g, ' ');
+      wordEl.textContent = part.charAt(0).toUpperCase() + part.slice(1);
+      infoEl.innerHTML   = hs.getAttribute('data-info');
+      panel.classList.add('visible');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+    }
+  });
+})();
+
+// ── Self-Check Quiz ──
+var quizAnswered = 0;
+var quizCorrect  = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen  = optEl.getAttribute('data-val');
+  q.querySelectorAll('.quiz-opt').forEach(function(o){
+    if (o.getAttribute('data-val') === correct) { o.classList.add('correct'); }
+    else { o.classList.add('disabled'); }
+  });
+  var fbCorrect = q.querySelector('.fb-correct');
+  var fbWrong   = q.querySelector('.fb-wrong');
+  if (chosen === correct) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+  if (quizAnswered === 3) {
+    var scoreBox  = document.getElementById('quizScore');
+    var scoreNum  = document.getElementById('quizScoreNum');
+    var scoreMsg  = document.getElementById('quizScoreMsg');
+    var vCorrect  = document.getElementById('quizVideoCorrect');
+    var vReview   = document.getElementById('quizVideoReview');
+    scoreNum.textContent = quizCorrect;
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '⭐ Perfect! You got every question right!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌿 Great job! Almost there!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip) {
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function() {
+    var rect = tip.getBoundingClientRect();
+    var bw   = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Back to Top ──
+(function() {
+  var btn = document.getElementById('backToTop');
+  if (!btn) return;
+  var inIframe = (function() {
+    try { return window.self !== window.top; }
+    catch (e) { return true; }
+  })();
+  btn.addEventListener('click', function() {
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    var top = document.getElementById('pageTop');
+    if (top && top.scrollIntoView) {
+      try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+    }
+    try {
+      if (window.frameElement && window.frameElement.scrollIntoView) {
+        window.frameElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (e) {}
+    if (inIframe) {
+      try { window.parent.postMessage({ type: 'optima-lesson:scroll-to-top' }, '*'); } catch (e) {}
+    }
+  });
+  if (inIframe) {
+    setTimeout(function() { btn.classList.add('show'); }, 1500);
+  } else {
+    window.addEventListener('scroll', function() {
+      btn.classList.toggle('show', window.pageYOffset > 400);
+    });
+  }
+})();
+
+// ── Confetti ──
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx    = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#52B788','#F9A825','#FDD835','#4DD0E1','#2E7D32','#7B5EA7','#FF8F00','#0288D1'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── Collapsible Intro Cards ──
+var introCards = document.querySelectorAll('.intro-2col .card');
+introCards.forEach(function(card){
+  var head = card.querySelector('.card-head');
+  if (!head) return;
+  head.addEventListener('click', function(){
+    var willCollapse = !card.classList.contains('collapsed');
+    introCards.forEach(function(c){
+      c.classList.toggle('collapsed', willCollapse);
+    });
+  });
+});
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+tabProgress['vocab'] = true;
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+(function(){
+  var btt = document.getElementById('backToTop');
+  if (btt) { btt.textContent = LESSON_EMOJI + ' Back to Top'; }
+})();
+</script>
+</body>
+</html>
