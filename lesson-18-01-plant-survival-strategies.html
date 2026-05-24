@@ -1,0 +1,2405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- ✏️ CUSTOMIZE: Update title to match the lesson -->
+<title>Optima Academy Online – Lesson 18.01: How Do Plants Survive in Different Environments?</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+  background: #F2F0E8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #2B1D12;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap { max-width: 920px; margin: 0 auto; background: #FAF8F4; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%);
+  border-bottom: 6px solid #2D6A4F;
+  padding: 22px 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 6px; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2D6A4F, #95D5B2, #2D6A4F);
+}
+.header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.header-logo {
+  width: 52px; height: 52px; border-radius: 50%; background: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title {
+  font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+  text-shadow: 0 2px 12px rgba(82,183,136,0.3);
+}
+.header-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(82,183,136,0.15); border: 1.5px solid rgba(82,183,136,0.35);
+  border-radius: 28px; padding: 6px 16px;
+}
+.header-badge span:first-child { font-size: 22px; }
+.header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ── Hero Visual ── */
+.hero-visual {
+  background: linear-gradient(180deg, #87CEEB 0%, #C8E6F7 50%, #D4E8B4 100%);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #2D6A4F;
+}
+.hero-visual svg { display: block; width: 100%; height: auto; }
+
+/* ── Hero Animations ───────────────────────────────────────────────────── */
+/* Magnitudes are tuned to be SUBTLE BUT VISIBLE. A movement under ~15px on  */
+/* a 920px-wide banner reads as static — don't shrink these values further.  */
+
+/* Slow horizontal drift for clouds, fog, distant objects */
+@keyframes cloud-drift-1 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(40px); }
+}
+@keyframes cloud-drift-2 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-32px); }
+}
+/* Sun / glow pulse — opacity + scale for breathable feel */
+@keyframes sun-pulse {
+  0%, 100% { opacity: 0.65; transform: scale(1); }
+  50%       { opacity: 1;    transform: scale(1.12); }
+}
+/* Birds / floating objects — vertical bob with slight horizontal drift */
+@keyframes bird-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(6px, -8px); }
+}
+/* Generic float — for notebooks, leaves, bubbles, anything bobbing */
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+/* Twinkle — for stars, sparks, tiny glints */
+@keyframes hero-twinkle {
+  0%, 100% { opacity: 0.4; transform: scale(0.85); }
+  50%       { opacity: 1;   transform: scale(1.15); }
+}
+/* Shimmer — for water surface lines, light rays, heat haze */
+@keyframes hero-shimmer {
+  0%, 100% { opacity: 0.25; }
+  50%       { opacity: 0.7; }
+}
+/* Slow spin — for gears, planets, fan blades, wheels */
+@keyframes hero-spin-slow {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* Sway — for grass, trees, plant stems */
+@keyframes hero-sway {
+  0%, 100% { transform: rotate(-2.5deg); }
+  50%       { transform: rotate(2.5deg); }
+}
+
+.hero-cloud-1   { animation: cloud-drift-1 9s ease-in-out infinite alternate; }
+.hero-cloud-2   { animation: cloud-drift-2 13s ease-in-out infinite alternate; }
+.hero-sun-glow  { animation: sun-pulse 4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-birds     { animation: bird-drift 5s ease-in-out infinite; }
+.hero-float     { animation: hero-float 3.5s ease-in-out infinite; }
+.hero-twinkle   { animation: hero-twinkle 2.2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-twinkle-2 { animation: hero-twinkle 3.1s ease-in-out infinite 0.5s; transform-origin: center; transform-box: fill-box; }
+.hero-twinkle-3 { animation: hero-twinkle 2.7s ease-in-out infinite 1.1s; transform-origin: center; transform-box: fill-box; }
+.hero-shimmer   { animation: hero-shimmer 3s ease-in-out infinite; }
+.hero-spin-slow { animation: hero-spin-slow 18s linear infinite; transform-origin: center; transform-box: fill-box; }
+.hero-sway      { animation: hero-sway 4s ease-in-out infinite; transform-origin: bottom center; transform-box: fill-box; }
+
+/* ── Nature Diagram Animations ── */
+@keyframes mind-blow-bounce {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.12); }
+}
+
+/* ── Info Strip ── */
+.info-strip {
+  display: flex; flex-wrap: wrap; background: #fff;
+  border-bottom: 2px solid #E8DDD2;
+}
+.info-item {
+  flex: 1; min-width: 150px; padding: 12px 16px;
+  border-right: 1px solid #E8DDD2;
+  display: flex; align-items: center; gap: 10px;
+}
+.info-item:last-child { border-right: none; }
+.info-icon {
+  width: 40px; height: 40px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.info-value { font-size: 16px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+/* ── Content Area ── */
+.content { padding: 24px 28px 36px; }
+
+/* ── Card System ── */
+.card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 22px; overflow: hidden;
+  box-shadow: 0 2px 12px rgba(27,67,50,0.04);
+}
+.card-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 20px; border-bottom: 2px solid;
+}
+.card-head-icon {
+  width: 42px; height: 42px; border-radius: 50%; color: #fff;
+  font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.card-head-title { font-size: 20px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.card-body { padding: 18px 22px; }
+.card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+.card-body p:last-child { margin-bottom: 0; }
+
+/* ── Card Color Themes ── */
+.theme-earth  .card-head { background: #FFF0E8; border-color: #E8D0B8; }
+.theme-earth  .card-head-icon { background: #A0522D; }
+.theme-sun    .card-head { background: #FFF9E8; border-color: #F0E4C0; }
+.theme-sun    .card-head-icon { background: #F9A825; }
+.theme-sky    .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-sky    .card-head-icon { background: #0288D1; }
+.theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+.theme-forest .card-head-icon { background: #2E7D32; }
+.theme-rock   .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+.theme-rock   .card-head-icon { background: #7B5EA7; }
+.theme-meadow .card-head { background: #F0F8E8; border-color: #C8E0B8; }
+.theme-meadow .card-head-icon { background: #558B2F; }
+
+/* ── Activity Cards ── */
+.activity-card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 18px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.activity-card.act-warmup  { border-left: 6px solid #52B788; }
+.activity-card.act-lesson  { border-left: 6px solid #F9A825; }
+.activity-card.act-explore { border-left: 6px solid #0288D1; }
+.activity-card.act-practice{ border-left: 6px solid #2E7D32; }
+.activity-card.act-check   { border-left: 6px solid #7B5EA7; }
+
+.act-head {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px 14px 18px;
+  border-bottom: 1.5px solid #E8DDD2;
+}
+.act-num {
+  width: 38px; height: 38px; border-radius: 14px; color: #fff;
+  font-size: 18px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.act-title { font-size: 19px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.act-subtitle { font-size: 12px; color: #9A8E82; }
+.act-time {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap;
+  margin-left: auto; flex-shrink: 0;
+}
+.act-body { padding: 18px 22px 18px 20px; }
+.act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+/* ── Callout Boxes ── */
+.callout {
+  border-radius: 14px; padding: 16px 18px;
+  display: flex; align-items: flex-start; gap: 12px;
+  margin-bottom: 14px;
+}
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+.callout-earth  { background: #FFF0E8; border: 2px solid #E8D0B8; }
+.callout-think  { background: #FFF9E8; border: 2px solid #F0E4C0; }
+.callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+.callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+.callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+
+/* ── Socratic Questions ── */
+.socratic-q {
+  background: linear-gradient(135deg, #EEF8F0, #E8F5E9);
+  border: 2px solid #A8D5B8;
+  border-radius: 16px; padding: 16px 20px;
+  margin: 16px 0;
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.socratic-q .label {
+  font-size: 11px; color: #2D6A4F; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px;
+}
+.socratic-q .question {
+  font-size: 17px; color: #2B1D12; font-weight: 700;
+  line-height: 1.6; font-style: italic;
+}
+
+/* ── Diagram Containers ── */
+.diagram-wrap {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 16px; margin: 16px 0;
+  text-align: center;
+}
+.diagram-wrap svg { max-width: 100%; height: auto; }
+.diagram-caption {
+  font-size: 13px; color: #9A8E82; margin-top: 10px;
+  font-weight: 600; text-align: center;
+}
+
+/* ── Lesson Figure (uploaded images) ── */
+.lesson-figure {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 14px 14px 18px; margin: 0 0 22px;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.lesson-figure-label {
+  font-size: 11px; color: #2D6A4F;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  font-weight: 800; margin-bottom: 10px;
+}
+.lesson-figure img {
+  display: block; max-width: 100%; height: auto;
+  border-radius: 10px; margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.lesson-figure-caption {
+  font-size: 14px; color: #5A4D3E;
+  margin-top: 12px; line-height: 1.55; font-weight: 600;
+  text-align: center;
+}
+.lesson-figure-caption strong { color: #1B4332; }
+
+/* ── Key Concept Box ── */
+.key-concept {
+  background: #F0F8E8; border: 2px solid #C8E0B8;
+  border-radius: 14px; padding: 18px 20px; margin: 14px 0;
+}
+.key-concept .kc-label {
+  font-size: 13px; color: #558B2F; text-transform: uppercase;
+  letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px;
+}
+.key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+.key-concept p:last-child { margin-bottom: 0; }
+
+/* ── Practice Questions ── */
+.pq {
+  background: #FAFAF6; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 14px 18px; margin-bottom: 12px;
+}
+.pq-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  color: #fff; font-weight: 800; font-size: 14px;
+  margin-right: 8px; vertical-align: middle;
+}
+.pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+.pq-answer { font-size: 15px; color: #9A8E82; font-style: italic; }
+
+/* ── Vocab Flashcards ── */
+.vocab-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px; margin: 14px 0;
+}
+.flip-card { perspective: 800px; height: 195px; cursor: pointer; }
+.flip-card-inner {
+  position: relative; width: 100%; height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 14px 18px; text-align: center;
+  border: 2px solid #E8DDD2;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.06);
+}
+.flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+.flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+.flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #1B4332; margin-bottom: 6px; }
+.flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+.flip-card-back {
+  background: linear-gradient(145deg, #1B4332, #2D6A4F);
+  border-color: #1B4332;
+  transform: rotateY(180deg);
+}
+.flip-card-back .fc-def { font-size: 14.5px; color: #fff; line-height: 1.5; font-weight: 600; }
+.flip-card-back .fc-word-back {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 6px;
+}
+.flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 8px; font-weight: 600; }
+.fc-color-1 .flip-card-front { border-top-color: #52B788; }
+.fc-color-2 .flip-card-front { border-top-color: #2D6A4F; }
+.fc-color-3 .flip-card-front { border-top-color: #F9A825; }
+.fc-color-4 .flip-card-front { border-top-color: #0288D1; }
+.fc-color-5 .flip-card-front { border-top-color: #2E7D32; }
+.fc-color-6 .flip-card-front { border-top-color: #7B5EA7; }
+
+/* ── Vocab Tooltips ── */
+.vtip {
+  position: relative; color: #7B5EA7; font-weight: 700;
+  cursor: help; border-bottom: 2px dotted rgba(123,94,167,0.45);
+  transition: color 0.15s;
+}
+.vtip:hover { color: #5B3EA7; }
+.vtip .vtip-box {
+  position: fixed; background: #1B4332; color: #fff;
+  padding: 12px 16px; border-radius: 12px;
+  font-size: 14px; font-weight: 600; font-style: normal;
+  line-height: 1.55; width: 250px; text-align: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  pointer-events: none; z-index: 9999;
+  box-shadow: 0 6px 24px rgba(27,67,50,0.35);
+  border: 1.5px solid rgba(149,213,178,0.3);
+  transform: translateY(6px);
+}
+.vtip .vtip-box::after {
+  content: ''; position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent; border-top-color: #1B4332;
+}
+.vtip .vtip-word {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block;
+}
+.vtip:hover .vtip-box { opacity: 1; visibility: visible; transform: translateY(0); }
+
+/* ── Reveal / Details ── */
+details {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-left: 5px solid #7B5EA7;
+  border-radius: 14px; margin-bottom: 12px; overflow: hidden;
+}
+details summary {
+  padding: 12px 18px; font-size: 16px; font-weight: 700;
+  color: #1B4332; cursor: pointer;
+}
+details summary:hover { background: #FAFAF6; }
+details > div { padding: 12px 18px 14px; font-size: 16px; color: #5A4D3E; line-height: 1.65; border-top: 1.5px solid #E8DDD2; }
+
+/* ── Activities Header ── */
+.activities-header { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.activities-header-icon {
+  width: 44px; height: 44px; border-radius: 50%; background: #1B4332;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0;
+}
+.activities-header-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.activities-header-title { font-size: 22px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.activities-header-time { font-size: 14px; color: #9A8E82; font-weight: 600; }
+
+/* ── Need Item ── */
+.need-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 14px; margin-bottom: 8px; }
+.need-item span:first-child { font-size: 24px; flex-shrink: 0; }
+.need-item span:last-child { font-size: 17px; color: #1B4332; font-weight: 600; }
+
+/* ── Footer ── */
+.footer {
+  background: #1B4332; border-top: 4px solid #52B788;
+  padding: 18px 28px; text-align: center;
+}
+.footer-line1 { font-size: 15px; color: #fff; margin-bottom: 4px; }
+.footer-line1 span { color: #95D5B2; font-weight: 700; }
+.footer-line2 { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+.footer-line3 { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+/* ── Mind-Blowing Fact ── */
+.mind-blow {
+  background: linear-gradient(135deg, #1a3a28, #1B4332);
+  border: 2px solid rgba(149,213,178,0.3);
+  border-radius: 18px; padding: 18px 22px;
+  margin: 18px 0; display: flex;
+  align-items: flex-start; gap: 14px;
+  position: relative; overflow: hidden;
+}
+.mind-blow::before {
+  content: ''; position: absolute; top: -30px; right: -30px;
+  width: 100px; height: 100px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(82,183,136,0.15), transparent);
+}
+.mind-blow-icon {
+  font-size: 36px; flex-shrink: 0;
+  animation: mind-blow-bounce 2s ease-in-out infinite;
+}
+.mind-blow-content { flex: 1; }
+.mind-blow-label {
+  font-size: 11px; color: #FDD835; text-transform: uppercase;
+  letter-spacing: 1.5px; font-weight: 800; margin-bottom: 4px;
+}
+.mind-blow-text { font-size: 16px; color: #fff; line-height: 1.6; font-weight: 600; }
+.mind-blow-text strong { color: #95D5B2; }
+
+/* ── Clickable Diagram ── */
+.diagram-interactive { position: relative; }
+.diagram-interactive .hotspot {
+  cursor: pointer; opacity: 0; transition: opacity 0.2s;
+}
+.diagram-interactive .hotspot:hover { opacity: 0.2; }
+.diagram-interactive .hotspot.active { opacity: 0.28; }
+.diagram-info-panel {
+  background: #1B4332; color: #fff;
+  padding: 14px 20px; border-radius: 14px;
+  font-size: 15px; line-height: 1.55; font-weight: 600;
+  text-align: center;
+  border: 1.5px solid rgba(149,213,178,0.3);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  margin: 10px 0 0; display: none;
+}
+.diagram-info-panel.visible { display: block; }
+.diagram-info-panel .dip-word {
+  font-size: 11px; color: #FDD835; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; display: block; margin-bottom: 3px;
+}
+.diagram-tap-hint {
+  text-align: center; font-size: 13px; color: #9A8E82;
+  font-weight: 600; margin-top: 8px;
+}
+
+/* ── Self-Check Quiz ── */
+.quiz-card {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-left: 6px solid #F9A825;
+  border-radius: 18px; margin-bottom: 18px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.quiz-q {
+  background: #FAFAF6; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 16px 18px; margin-bottom: 14px;
+}
+.quiz-q-text { font-size: 17px; color: #2B1D12; font-weight: 700; line-height: 1.6; margin-bottom: 12px; }
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt {
+  padding: 10px 16px; border-radius: 12px;
+  border: 2px solid #E8DDD2; background: #fff;
+  font-size: 15px; font-weight: 700; color: #2B1D12;
+  cursor: pointer; transition: all 0.2s;
+  display: flex; align-items: center; gap: 10px;
+  user-select: none;
+}
+.quiz-opt:hover { background: #EEF8F0; border-color: #52B788; }
+.quiz-opt.correct { background: #EEF8F0 !important; border-color: #2E7D32 !important; color: #1a6b35 !important; }
+.quiz-opt.wrong { background: #FFF0EC !important; border-color: #E8636B !important; color: #a33 !important; }
+.quiz-opt.disabled { pointer-events: none; opacity: 0.6; }
+.quiz-opt .opt-letter {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: #E8DDD2; color: #5A4D3E;
+  font-size: 14px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all 0.2s;
+}
+.quiz-opt.correct .opt-letter { background: #2E7D32; color: #fff; }
+.quiz-opt.wrong .opt-letter { background: #E8636B; color: #fff; }
+.quiz-feedback { font-size: 14px; padding: 10px 14px; border-radius: 10px; margin-top: 10px; display: none; font-weight: 600; line-height: 1.5; }
+.quiz-feedback.show { display: block; }
+.quiz-feedback.fb-correct { background: #EEF8F0; color: #1a6b35; border: 1.5px solid #B8E8CF; }
+.quiz-feedback.fb-wrong { background: #FFF0EC; color: #8a3030; border: 1.5px solid #F5C4BA; }
+.quiz-score {
+  text-align: center; padding: 16px; background: linear-gradient(135deg, #EEF8F0, #E8F5E9);
+  border: 2px solid #C4E5CC; border-radius: 14px; margin-top: 8px; display: none;
+}
+.quiz-score.show { display: block; }
+.quiz-score-num { font-size: 36px; font-weight: 900; color: #1B4332; }
+.quiz-score-label { font-size: 14px; color: #9A8E82; font-weight: 700; }
+.quiz-score-msg { font-size: 16px; color: #2B1D12; font-weight: 700; margin-top: 6px; }
+
+/* ── Go Deeper ── */
+.go-deeper {
+  background: linear-gradient(135deg, #F0EDF6, #E8E2F2);
+  border: 2px solid #D8D0E8; border-radius: 16px;
+  margin: 16px 0; overflow: hidden;
+}
+.go-deeper summary {
+  padding: 14px 18px; font-size: 16px; font-weight: 800;
+  color: #1B4332; cursor: pointer;
+  display: flex; align-items: center; gap: 10px;
+  list-style: none;
+}
+.go-deeper summary::-webkit-details-marker { display: none; }
+.go-deeper summary::before { content: '🔭'; font-size: 22px; }
+.go-deeper summary::after {
+  content: '▸'; margin-left: auto; font-size: 18px; color: #7B5EA7;
+  transition: transform 0.3s;
+}
+.go-deeper[open] summary::after { transform: rotate(90deg); }
+.go-deeper .gd-body {
+  padding: 4px 18px 16px; font-size: 15px;
+  color: #5A4D3E; line-height: 1.7;
+  border-top: 1.5px solid #D8D0E8;
+}
+.go-deeper .gd-body p { margin-bottom: 10px; }
+
+/* ── Scroll Animations ── */
+.scroll-reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── Back to Top ── */
+/* Fixed pill button at bottom right. Text is "[LESSON_EMOJI] Back to Top" —
+   the JS init pulls the emoji from the LESSON_EMOJI constant so you only set
+   it in one place. No arrow — the emoji + words communicate purpose clearly. */
+.back-to-top {
+  position: fixed; bottom: 24px; right: 24px;
+  height: 40px; padding: 0 18px 0 14px; border-radius: 20px;
+  background: linear-gradient(135deg, #2D6A4F, #52B788);
+  color: #fff; border: none;
+  font-size: 14px; font-weight: 800;
+  font-family: 'Nunito', sans-serif; cursor: pointer;
+  box-shadow: 0 4px 14px rgba(45,106,79,0.35);
+  display: flex; align-items: center; gap: 6px;
+  opacity: 0; visibility: hidden; transform: translateY(20px);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.2s;
+  z-index: 500; letter-spacing: 0.2px; white-space: nowrap;
+}
+.back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { box-shadow: 0 6px 20px rgba(45,106,79,0.5); transform: translateY(-3px); }
+
+/* ── Confetti Canvas ── */
+#confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000; }
+
+/* ── Video Embed System ── */
+.video-wrap { border-radius: 18px; overflow: hidden; border: 2px solid #E8DDD2; box-shadow: 0 4px 20px rgba(27,67,50,0.08); background: #000; margin: 0 0 22px; }
+.video-wrap-header {
+  display: flex; align-items: center; gap: 12px; padding: 12px 18px;
+  background: linear-gradient(135deg, #1B4332, #2D6A4F);
+  border-bottom: 2px solid rgba(149,213,178,0.2);
+}
+.video-wrap-type { font-size: 10px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+.video-wrap-title { font-size: 16px; color: #fff; font-weight: 800; line-height: 1.2; }
+.video-ratio { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.video-ratio iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.video-placeholder {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, #1a3a28, #1B4332);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 24px;
+}
+.video-placeholder-icon { font-size: 44px; margin-bottom: 10px; opacity: 0.55; }
+.video-placeholder-text { font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 600; line-height: 1.5; font-family: 'Nunito', sans-serif; }
+.video-placeholder-id { font-size: 11px; color: rgba(149,213,178,0.4); font-family: monospace; margin-top: 6px; letter-spacing: 0.5px; }
+.video-feedback { display: none; }
+.video-feedback.show { display: block; }
+
+/* ── Collapsible Intro Cards ── */
+.intro-2col .card .card-head { cursor: pointer; user-select: none; position: relative; }
+.intro-2col .card .card-head::after {
+  content: '▾'; position: absolute; right: 16px; top: 50%;
+  transform: translateY(-50%); font-size: 16px; color: #9A8E82; transition: transform 0.25s ease;
+}
+.intro-2col .card.collapsed .card-head::after { transform: translateY(-50%) rotate(-90deg); }
+.intro-2col .card.collapsed .card-body { display: none; }
+
+/* ── Tab Bar ── */
+.tab-bar {
+  position: sticky; top: 44px; z-index: 100;
+  background: #FAF8F4; border-bottom: 3px solid #E8DDD2;
+  display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex: 1; min-width: 130px; padding: 12px 8px 11px;
+  background: transparent; border: none;
+  border-bottom: 4px solid transparent;
+  font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700;
+  color: #9A8E82; cursor: pointer; transition: all 0.2s;
+  white-space: nowrap; line-height: 1.3; text-align: center;
+}
+.tab-btn:hover { color: #1B4332; background: #EEF8F0; }
+.tab-btn.active { color: #1B4332; border-bottom-color: #2D6A4F; background: #fff; }
+.tab-btn .tab-check { display: none; font-size: 12px; color: #2E7D32; margin-left: 4px; font-weight: 800; }
+.tab-btn.visited .tab-check { display: inline; }
+
+/* ── Tab Panels ── */
+.tab-panel { display: none; padding: 24px 28px 36px; }
+.tab-panel.active { display: block; }
+.scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+/* ── Intro 2-col ── */
+.intro-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px 28px 0; }
+.intro-2col .card { margin-bottom: 0; }
+
+/* ── Need Strip ── */
+.need-strip { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 28px 16px; }
+.need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 700; white-space: nowrap; }
+.need-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: #EEF8F0; border: 1.5px solid #C4E5CC;
+  border-radius: 20px; padding: 5px 12px;
+  font-size: 13px; color: #1B4332; font-weight: 700;
+}
+
+/* ── Slim Mind-Blow ── */
+.mind-blow-slim {
+  background: linear-gradient(135deg, #1a3a28, #1B4332);
+  border: 2px solid rgba(149,213,178,0.3);
+  border-radius: 14px; padding: 12px 18px; margin: 0 0 18px;
+  display: flex; align-items: center; gap: 12px;
+}
+.mbs-icon { font-size: 26px; flex-shrink: 0; }
+.mbs-content { flex: 1; }
+.mbs-label { font-size: 10px; color: #FDD835; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+.mbs-text { font-size: 14px; color: #fff; line-height: 1.55; font-weight: 600; }
+.mbs-text strong { color: #95D5B2; }
+
+/* ── Tab Next Button ── */
+.tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+.tab-next-btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px;
+  background: linear-gradient(135deg, #2D6A4F, #52B788);
+  color: #fff; border: none; border-radius: 28px;
+  font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800;
+  cursor: pointer; box-shadow: 0 4px 16px rgba(45,106,79,0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(45,106,79,0.4); }
+
+/* ── Vocab 3-col ── */
+.vocab-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 14px 0; }
+.vocab-grid-3 .flip-card { height: 150px; }
+.vocab-grid-3 .fc-word { font-size: 16px; }
+.vocab-grid-3 .fc-def { font-size: 14px; }
+
+/* ── What to Turn In (Canvas Submission Block) ── */
+/* Use ONE of these per Assignment tab, near the bottom (after Part C, before
+   the closing video). Replaces the older inline-styled version. */
+.turn-in-block {
+  background: #fff;
+  border: 2.5px solid #0288D1;
+  border-radius: 18px;
+  margin-top: 22px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(2,136,209,0.1);
+}
+.turn-in-header {
+  display: flex; align-items: center; gap: 14px;
+  background: #E8F4FB;
+  padding: 18px 22px;
+  border-bottom: 2px solid #B3E5FC;
+}
+.turn-in-header-icon { font-size: 36px; line-height: 1; flex-shrink: 0; }
+.turn-in-header-label {
+  font-size: 11px; color: #0288D1; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 3px;
+}
+.turn-in-header-title {
+  font-size: 24px; color: #1B4332; font-weight: 900; line-height: 1.15;
+}
+.turn-in-body { padding: 22px 24px 24px; }
+.turn-in-intro {
+  font-size: 16px; color: #5A4D3E; margin-bottom: 18px; line-height: 1.55;
+}
+.turn-in-intro strong { color: #1B4332; }
+.turn-in-options {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px; margin-bottom: 26px;
+}
+.turn-in-option {
+  border-radius: 16px;
+  padding: 20px 14px;
+  text-align: center;
+  border: 2px solid;
+}
+.turn-in-option-type  { background: #EEF8F0; border-color: #C4E5CC; }
+.turn-in-option-photo { background: #FFF9E8; border-color: #F0E4C0; }
+.turn-in-option-video { background: #F0EDF6; border-color: #D8D0E8; }
+.turn-in-option-icon  { font-size: 34px; line-height: 1; margin-bottom: 12px; }
+.turn-in-option-title { font-size: 17px; color: #1B4332; font-weight: 800; margin-bottom: 8px; }
+.turn-in-option-text  { font-size: 14px; color: #5A4D3E; line-height: 1.5; }
+.turn-in-subhead {
+  font-size: 16px; color: #5A4D3E; margin-bottom: 14px; line-height: 1.55;
+}
+.turn-in-checklist { display: flex; flex-direction: column; gap: 10px; }
+.turn-in-item {
+  display: flex; align-items: center; gap: 16px;
+  padding: 14px 18px;
+  background: #FAFAF6;
+  border: 1.5px solid #E8DDD2;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item:hover { background: #F4FAF5; border-color: #C4E5CC; }
+.turn-in-item.checked { background: #EEF8F0; border-color: #B8E8CF; }
+.turn-in-item .turn-in-check {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  border: 2px solid #95D5B2;
+  background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px; line-height: 1;
+  transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item.checked .turn-in-check {
+  background: #2E7D32;
+  border-color: #2E7D32;
+}
+.turn-in-item-text {
+  font-size: 16px; color: #2B1D12; font-weight: 600;
+  line-height: 1.55; flex: 1;
+}
+.turn-in-item.checked .turn-in-item-text { color: #5A4D3E; }
+
+/* ── Old Checklist (legacy — kept for any non-Assignment checklists) ── */
+.checklist-item:hover { background: #EEF8F0 !important; }
+.checklist-item.checked { background: #EEF8F0 !important; border-color: #B8E8CF !important; }
+.checklist-item.checked .check-icon { border-color: transparent !important; background: transparent !important; font-size: 22px !important; }
+.checklist-item.checked span:last-child { color: #5A4D3E; }
+
+/* ── Progress Bar ── */
+.progress-wrap {
+  position: sticky; top: 0; z-index: 200;
+  background: #0E1C42; padding: 8px 20px 10px;
+  border-bottom: 2px solid rgba(85,200,232,0.3);
+  display: flex; align-items: center; gap: 14px;
+}
+.progress-label { font-size: 12px; color: #55C8E8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+.progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; position: relative; }
+.progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #52B788, #95D5B2, #FDD835); border-radius: 10px; transition: width 0.4s ease; }
+.progress-pct { font-size: 13px; color: #FDD835; font-weight: 800; min-width: 36px; text-align: right; }
+
+/* (Inline tab navigator removed — see SKILL.md "Progress Bar & Tab Access" for
+   why sticky tabs cannot work in Canvas iframes. The single progress bar at the
+   top of the page is .progress-wrap, defined above.) */
+
+/* ── Utility ── */
+strong { color: #1B4332; }
+em { color: #5A4D3E; }
+.gold { color: #F9A825; font-weight: 700; }
+.forest { color: #2D6A4F; font-weight: 700; }
+.earth { color: #A0522D; font-weight: 700; }
+
+
+/* Custom hero keyframes for Lesson 18.01 */
+@keyframes sunPulse {
+  0%,100% { opacity: 0.22; transform: scale(1); }
+  50%     { opacity: 0.52; transform: scale(1.15); }
+}
+@keyframes rainDrop {
+  0%   { transform: translateY(0);    opacity: 0;    }
+  18%  {                              opacity: 0.90; }
+  100% { transform: translateY(36px); opacity: 0;    }
+}
+.sun-glow  { animation: sunPulse 4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.rain-fall { animation: rainDrop 1.9s ease-in infinite; }
+
+@media (max-width: 620px) {
+  .intro-2col { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .vocab-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .flip-card { height: 175px; }
+  .header-title { font-size: 22px; }
+  .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 6px 9px; }
+  .turn-in-options { grid-template-columns: 1fr; }
+  .turn-in-header-title { font-size: 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="confettiCanvas"></canvas>
+<!-- Back to Top button. Text is [LESSON_EMOJI] + " Back to Top".
+     The JS init block at the bottom of <script> reads LESSON_EMOJI and sets the
+     button's textContent automatically — you do NOT need to update the emoji
+     here in the HTML. Just set LESSON_EMOJI at the top of <script> and the
+     button (and the checklist checkmarks, and the progress-label) all follow. -->
+<button class="back-to-top" id="backToTop" type="button">✏️ Back to Top</button>
+
+<!-- Anchor used by the Back-to-Top button. Lives at the very top so scrollIntoView
+     can scroll both this iframe AND the Canvas parent page when needed. -->
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- ═══════════ PROGRESS BAR ═══════════ -->
+<div class="progress-wrap">
+  <span class="progress-label">🌿 Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <!-- ✏️ CUSTOMIZE: Lesson title -->
+  <div class="header-title">Lesson 18.01: How Do Plants Survive in Different Environments?</div>
+  <div class="header-badge">
+    <!-- ✏️ CUSTOMIZE: Lesson emoji and number -->
+    <span>🌿</span>
+    <span>Lesson 18.01</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<!-- HERO BANNER — REPLACE THIS ENTIRE <svg>...</svg> BLOCK FOR EVERY LESSON.   -->
+<!--                                                                           -->
+<!-- The SVG below is a PLACEHOLDER ONLY. It is not a default to keep.         -->
+<!-- Build a new lesson-specific scene from scratch every time:                -->
+<!--   • viewBox stays "0 0 920 260"                                           -->
+<!--   • background gradient should fit the topic                              -->
+<!--   • include 2–4 animated elements (drifting, pulsing, floating, etc.)     -->
+<!--   • NO words, labels, or <text> elements inside the SVG. The banner is    -->
+<!--     pure illustration. The lesson title already appears in .header-title  -->
+<!--     above the banner — students do not need it repeated in the art.       -->
+<!--                                                                           -->
+<!-- See SKILL.md → "Hero Banner — Hand-Coded SVG Scene" for the topic-to-     -->
+<!-- scene mapping table and animation patterns.                               -->
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three environments side by side: desert with cactus and sun, rainforest with broad-leaf plant, wetland with reeds and rain cloud">
+
+  <!-- Sky backgrounds: desert / forest / wetland -->
+  <rect x="0"   y="0" width="307" height="188" fill="#F0D070"/>
+  <rect x="307" y="0" width="306" height="188" fill="#5EC048"/>
+  <rect x="613" y="0" width="307" height="188" fill="#72BCCE"/>
+  <rect x="290" y="0" width="34" height="188" fill="#5EC048" opacity="0.35"/>
+  <rect x="596" y="0" width="34" height="188" fill="#72BCCE" opacity="0.35"/>
+
+  <!-- SOIL LAYERS -->
+  <rect x="0"   y="188" width="307" height="20" fill="#D49838"/>
+  <rect x="0"   y="208" width="307" height="22" fill="#BE8228"/>
+  <rect x="0"   y="230" width="307" height="30" fill="#A86E18"/>
+  <g fill="#C88E30" opacity="0.35">
+    <circle cx="42"  cy="198" r="3"/><circle cx="88"  cy="194" r="2.5"/>
+    <circle cx="140" cy="200" r="2"/><circle cx="196" cy="196" r="3"/>
+    <circle cx="248" cy="199" r="2.5"/>
+  </g>
+  <rect x="307" y="188" width="306" height="22" fill="#7A4A20"/>
+  <rect x="307" y="210" width="306" height="26" fill="#5A3010"/>
+  <rect x="307" y="236" width="306" height="24" fill="#3E2008"/>
+  <rect x="613" y="188" width="307" height="26" fill="#4A9AB8" opacity="0.80"/>
+  <rect x="613" y="214" width="307" height="24" fill="#5A8898"/>
+  <rect x="613" y="238" width="307" height="22" fill="#4A7888"/>
+  <g stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.45">
+    <path d="M628,198 Q648,195 668,198"/>
+    <path d="M694,200 Q716,197 738,200"/>
+    <path d="M762,197 Q784,194 806,197"/>
+    <path d="M828,199 Q852,196 874,199"/>
+  </g>
+
+  <!-- Zone dividers -->
+  <line x1="307" y1="0"   x2="307" y2="188" stroke="#1A4A18" stroke-width="1.5" opacity="0.22"/>
+  <line x1="613" y1="0"   x2="613" y2="188" stroke="#1A4060" stroke-width="1.5" opacity="0.22"/>
+  <line x1="307" y1="188" x2="307" y2="260" stroke="#503010" stroke-width="1.5" opacity="0.30"/>
+  <line x1="613" y1="188" x2="613" y2="260" stroke="#304848" stroke-width="1.5" opacity="0.30"/>
+
+  <!-- ROOT SYSTEMS -->
+  <line x1="155" y1="188" x2="155" y2="254" stroke="#B07A28" stroke-width="5" stroke-linecap="round"/>
+  <path d="M155,210 Q134,214 118,222" stroke="#B07A28" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M155,232 Q176,236 192,244" stroke="#B07A28" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <g stroke="#8A5028" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M456,188 Q434,196 414,200 Q390,206 374,216"/>
+    <path d="M459,190 Q448,204 442,220 Q438,234 436,250"/>
+    <path d="M461,190 Q472,206 476,224 Q478,238 477,252"/>
+    <path d="M464,188 Q486,196 506,200 Q530,206 546,216"/>
+  </g>
+  <g stroke="#6A8A40" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M738,188 Q724,192 708,197 Q690,202 678,212"/>
+    <path d="M755,190 Q754,204 752,220 Q750,234 748,248"/>
+    <path d="M772,188 Q788,192 804,197 Q820,202 832,212"/>
+  </g>
+
+  <!-- CACTUS -->
+  <rect x="88" y="130" width="44" height="30" rx="15" fill="#6A9848" stroke="#4A7030" stroke-width="2.2"/>
+  <rect x="172" y="124" width="44" height="30" rx="15" fill="#6A9848" stroke="#4A7030" stroke-width="2.2"/>
+  <rect x="127" y="114" width="56" height="74" rx="28" fill="#6A9848" stroke="#4A7030" stroke-width="2.2"/>
+  <g stroke="#D4C050" stroke-width="2" stroke-linecap="round">
+    <line x1="128" y1="128" x2="119" y2="124"/><line x1="128" y1="128" x2="119" y2="132"/>
+    <line x1="128" y1="148" x2="119" y2="144"/><line x1="128" y1="148" x2="119" y2="152"/>
+    <line x1="183" y1="126" x2="192" y2="122"/><line x1="183" y1="126" x2="192" y2="130"/>
+    <line x1="183" y1="146" x2="192" y2="142"/><line x1="183" y1="146" x2="192" y2="150"/>
+  </g>
+
+  <!-- BROAD-LEAF CENTER PLANT (sways) -->
+  <g class="hero-sway" style="transform-origin:460px 188px">
+    <path d="M460,188 C462,158 458,118 460,48" stroke="#386A20" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M457,162 C436,152 392,148 364,154 C386,166 432,168 457,165 Z" fill="#44B02A" stroke="#2D8018" stroke-width="1.8"/>
+    <path d="M463,154 C486,144 528,140 556,146 C534,158 490,160 463,157 Z" fill="#3EA825" stroke="#2D8018" stroke-width="1.8"/>
+    <path d="M456,128 C434,118 390,112 360,118 C382,130 428,134 456,131 Z" fill="#4ABE30" stroke="#2D8018" stroke-width="1.8"/>
+    <path d="M464,122 C488,112 530,106 558,112 C536,124 494,128 464,125 Z" fill="#44B82A" stroke="#2D8018" stroke-width="1.8"/>
+    <path d="M455,88 C440,78 418,72 402,78 C414,88 438,92 455,91 Z" fill="#52C838" stroke="#2D8018" stroke-width="1.8"/>
+    <path d="M465,84 C480,74 502,68 518,74 C506,84 482,88 465,87 Z" fill="#4CC030" stroke="#2D8018" stroke-width="1.8"/>
+    <path d="M457,52 C448,43 436,38 430,44 C438,52 450,56 457,55 Z" fill="#58D040" stroke="#2D8018" stroke-width="1.6"/>
+    <path d="M463,50 C472,41 484,36 490,42 C482,50 470,54 463,53 Z" fill="#50C838" stroke="#2D8018" stroke-width="1.6"/>
+  </g>
+
+  <!-- REEDS (wetland) -->
+  <path d="M738,188 C736,162 740,134 736,72" stroke="#5A8840" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+  <path d="M755,188 C753,158 757,126 755,62" stroke="#4A8038" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+  <path d="M772,188 C774,164 770,136 772,75" stroke="#5A8840" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+  <rect x="732" y="67" width="10" height="24" rx="5" fill="#8A5828" stroke="#6A4018" stroke-width="1.5"/>
+  <rect x="750" y="57" width="10" height="26" rx="5" fill="#9A6030" stroke="#7A4820" stroke-width="1.5"/>
+  <rect x="767" y="70" width="10" height="24" rx="5" fill="#8A5828" stroke="#6A4018" stroke-width="1.5"/>
+
+  <!-- SUN (desert) — pulsing glow -->
+  <circle cx="72" cy="52" r="34" fill="#FFD020" class="sun-glow"/>
+  <circle cx="72" cy="52" r="22" fill="#FFD020"/>
+  <circle cx="72" cy="52" r="17" fill="#FFE840"/>
+  <g stroke="#FFD020" stroke-width="3" stroke-linecap="round">
+    <line x1="72" y1="24"  x2="72"  y2="16"/><line x1="72" y1="80"  x2="72"  y2="88"/>
+    <line x1="44" y1="52"  x2="36"  y2="52"/><line x1="100" y1="52" x2="108" y2="52"/>
+    <line x1="52" y1="32"  x2="46"  y2="26"/><line x1="92" y1="72"  x2="98"  y2="78"/>
+    <line x1="92" y1="32"  x2="98"  y2="26"/><line x1="52" y1="72"  x2="46"  y2="78"/>
+  </g>
+
+  <!-- RAIN CLOUD (wetland) — falling rain -->
+  <ellipse cx="828" cy="42" rx="52" ry="24" fill="white" opacity="0.92"/>
+  <ellipse cx="804" cy="47" rx="38" ry="20" fill="white" opacity="0.92"/>
+  <ellipse cx="848" cy="48" rx="32" ry="17" fill="white" opacity="0.92"/>
+  <g class="rain-fall" stroke="#5AACCC" stroke-width="2.8" stroke-linecap="round">
+    <line x1="800" y1="68" x2="800" y2="80"/>
+    <line x1="820" y1="70" x2="820" y2="82"/>
+    <line x1="840" y1="68" x2="840" y2="80"/>
+    <line x1="812" y1="82" x2="812" y2="94"/>
+    <line x1="832" y1="84" x2="832" y2="96"/>
+    <line x1="854" y1="70" x2="854" y2="82"/>
+  </g>
+
+  <!-- Soft cloud (forest) -->
+  <ellipse cx="460" cy="24" rx="44" ry="16" fill="white" opacity="0.45"/>
+  <ellipse cx="440" cy="28" rx="30" ry="14" fill="white" opacity="0.45"/>
+  <ellipse cx="478" cy="28" rx="26" ry="13" fill="white" opacity="0.45"/>
+
+</svg>
+</div>
+
+<!-- ═══════════ INFO STRIP ═══════════ -->
+<!-- ✏️ CUSTOMIZE: Update all 4 chips for each lesson -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q3 &middot; Unit 7</div>
+      <div class="info-detail">Plants &amp; Environmental Interactions</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF9E8;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 18</div>
+      <div class="info-detail">Lesson 18.01 &mdash; 3rd Grade Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#F0EDF6;">🌿</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Plant Survival</div>
+      <div class="info-detail">Traits, adaptations, and environments</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">3-LS4-2 &amp; 3-LS1-1</div>
+      <div class="info-detail">Variation &amp; life cycle structures</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ INTRO 2-COL CARDS ═══════════ -->
+<div class="intro-2col">
+
+  <!-- Essential Question -->
+  <div class="card theme-forest">
+    <div class="card-head">
+      <div class="card-head-icon">🌲</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This…</div>
+          <!-- ✏️ CUSTOMIZE: Replace with the lesson's essential/driving question -->
+          <div class="question">"Why do plants look so different from each other — and what does that tell us about where they live?"</div>
+        </div>
+      </div>
+      <p>Hold this question in your mind as you work through the lesson. By the end, you should be able to answer it with evidence!</p>
+    </div>
+  </div>
+
+  <!-- I Can Statements -->
+  <div class="card theme-sky">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <!-- ✏️ CUSTOMIZE: Write 2–3 clear, student-facing I Can statements for this lesson -->
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#52B788;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain how a plant's traits help it survive in its environment.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2D6A4F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> compare plant traits across different environments and explain which gives an advantage.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2E7D32;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> use evidence to explain why a trait helps a plant survive and reproduce in one place but not another.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════ NEED STRIP ═══════════ -->
+<!-- ✏️ CUSTOMIZE: Update materials for this specific lesson -->
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>🖊️</span>Pencil &amp; colored pencils</span>
+  <span class="need-chip"><span>🌿</span>Plant observation cards (or photos)</span>
+</div>
+
+<!-- ═══════════ TAB BAR ═══════════ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 1: VOCABULARY                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+  <!-- Inline progress chip — visible whenever student switches to this tab.
+       Workaround for Canvas iframes where sticky/fixed CSS can't stay visible. -->
+  <!-- Welcome Video -->
+  <!-- ✏️ CUSTOMIZE: Replace placeholder with actual OneDrive embed iframe -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to Today's Lesson!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🎬</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 18-1-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ACTIVITY 1: NOTICE & WONDER (WARM-UP) ═══ -->
+  <!-- PURPOSE: Activate curiosity. Students observe before they learn. ~5-8 min -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#52B788;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Notice &amp; Wonder</div>
+        <div class="act-subtitle">Look closely before you learn.</div>
+      </div>
+      <div class="act-time" style="background:#52B788;">⏱ 5–8 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>Look at the four plant cards in front of you — or the photo at the top of the Lesson tab. Each plant lives in a different place: a desert, a rainforest, a grassland, and a wetland. They all look completely different.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">👀</span>
+        <div>
+          <div class="label">In Your Science Notebook</div>
+          <div class="question">"Write 3 things you notice about how these plants look different. Then write 1 question: Why do you think they look so different?"</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>There are no wrong observations. Scientists always start by looking carefully and asking questions. We'll come back to your ideas at the end of the lesson.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ VOCABULARY FLIP CARDS ═══ -->
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>These are the words scientists use when they study how plants survive. <strong>Tap each card to flip it</strong> — you'll see these throughout the lesson!</p>
+
+      <!-- ✏️ CUSTOMIZE: Replace all 6 vocab words + definitions + emojis for this lesson -->
+      <!-- For .01 lessons: Use 4-6 key science vocabulary words from the DCI -->
+      <!-- For .02 lessons: Include any new process/investigation words students need -->
+      <div class="vocab-grid">
+
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌵</div><div class="fc-word">adaptation</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">adaptation</div><div class="fc-def">A trait that helps a plant or animal survive in its environment.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🔍</div><div class="fc-word">trait</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">trait</div><div class="fc-def">A feature of a living thing — like leaf shape, root depth, or stem thickness.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">⭐</div><div class="fc-word">advantage</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">advantage</div><div class="fc-def">Something that helps a plant survive or reproduce better than others nearby.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌍</div><div class="fc-word">environment</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">environment</div><div class="fc-def">The place where a living thing grows — including the water, soil, sunlight, and temperature there.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌱</div><div class="fc-word">reproduce</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">reproduce</div><div class="fc-def">To make new plants of the same kind, using seeds, spores, or other methods.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🪴</div><div class="fc-word">root system</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">root system</div><div class="fc-def">All of a plant's roots — they take in water and anchor the plant in the soil.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copywork / Notebook Prompt -->
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">📓</span>
+        <!-- ✏️ CUSTOMIZE: Copywork sentence — pick the most important vocabulary sentence from the lesson -->
+        <p>Copy this sentence carefully into your science notebook:<br><strong>"Plants have traits that help them survive — and the traits that work best depend on where the plant lives."</strong></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button>
+  </div>
+
+</div><!-- /tab-vocab -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 2: THE LESSON                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+  <!-- Inline progress chip — visible whenever student switches to this tab.
+       Workaround for Canvas iframes where sticky/fixed CSS can't stay visible. -->
+  <!-- Lesson Video -->
+  <!-- ✏️ CUSTOMIZE: Replace placeholder with actual OneDrive embed iframe -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">📖</span>
+      <div>
+        <div class="video-wrap-type">Activity 2 · Core Lesson</div>
+        <!-- ✏️ CUSTOMIZE: Video title -->
+        <div class="video-wrap-title">How Do Plants Survive in Different Environments?</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">📖</div>
+        <div class="video-placeholder-text">Core lesson video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 18-1-lesson-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Uploaded lesson image -->
+  <div class="lesson-figure">
+    <div class="lesson-figure-label">📷 Photo · From the Science Center</div>
+    <img src="images/18-01-plant-specimens.jpg"
+         alt="A classroom science center table with four plant specimens — a cactus, a large monstera leaf, a grassland grass clump, and wetland reeds — each placed on an environment photo card labeled desert, rainforest, grassland, and wetland. A spiral notebook below shows a handwritten plant trait comparison chart." />
+    <div class="lesson-figure-caption">
+      Four plants, four environments — and each one looks completely different. Look at the chart in the notebook below. What <strong>traits</strong> are listed? Can you figure out why each one helps the plant survive?
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+  <!-- UPLOADED LESSON IMAGE — INSERT HERE IF USER UPLOADED A PHOTO/DIAGRAM   -->
+  <!--                                                                        -->
+  <!-- This is the designated slot for any image the user uploaded as lesson  -->
+  <!-- content (a photo, specimen, chart, illustration, etc.). If they did    -->
+  <!-- not upload one, leave this comment in place and skip the figure.       -->
+  <!--                                                                        -->
+  <!-- Pattern to use when an image WAS uploaded:                             -->
+  <!--                                                                        -->
+  <!--   <div class="lesson-figure">                                          -->
+  <!--     <div class="lesson-figure-label">📷 Photo · [topic frame]</div>    -->
+  <!--     <img src="images/[M]-[L]-[short-desc].jpg"                         -->
+  <!--          alt="[Detailed description for screen readers]"/>             -->
+  <!--     <div class="lesson-figure-caption">                                -->
+  <!--       [1–2 sentences. Point out what students should notice.]          -->
+  <!--     </div>                                                             -->
+  <!--   </div>                                                               -->
+  <!--                                                                        -->
+  <!-- After generating the HTML, tell the user in chat:                      -->
+  <!--   • The exact filename to save the image as                            -->
+  <!--   • That it goes in an images/ folder next to the lesson HTML          -->
+  <!--                                                                        -->
+  <!-- DO NOT embed screenshots of bugs, layout issues, or feedback the user  -->
+  <!-- shares for diagnostic purposes — those are not lesson content.         -->
+  <!-- When in doubt, ask once before embedding.                              -->
+  <!-- ══════════════════════════════════════════════════════════════════════ -->
+
+  <!-- ═══ ACTIVITY 2: CORE LESSON CONTENT ═══ -->
+  <!-- PURPOSE: Teach the science content clearly. ~10-12 min reading + thinking -->
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#F9A825;">2</div>
+      <div style="flex:1;">
+        <!-- ✏️ CUSTOMIZE: Activity title matching the lesson topic -->
+        <div class="act-title">📖 The Lesson: Plant Survival Strategies</div>
+        <div class="act-subtitle">Read and think carefully — science is all about noticing!</div>
+      </div>
+      <div class="act-time" style="background:#F9A825;">⏱ 12 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- ══ SECTION 1 of lesson content ══ -->
+      <!-- ✏️ CUSTOMIZE: First content section. Keep paragraphs short. Use vtip for vocab. -->
+      <div class="card theme-forest" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌱</div>
+          <div>
+            <div class="card-head-label">Section 1</div>
+            <!-- ✏️ CUSTOMIZE: Section heading -->
+            <div class="card-head-title">Traits Help Plants Survive</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Every plant has <span class="vtip">traits<span class="vtip-box"><span class="vtip-word">trait</span>A feature of a living thing — like leaf size, root depth, or stem shape.</span></span> — features like leaf shape, root depth, or stem thickness. Some traits help a plant get water. Others help it catch sunlight, stay safe, or make seeds.</p>
+          <p>When a trait helps a plant survive in its environment, scientists call it an <span class="vtip">adaptation<span class="vtip-box"><span class="vtip-word">adaptation</span>A trait that helps a plant or animal survive where it lives.</span></span>. A plant with a useful adaptation has an <span class="vtip">advantage<span class="vtip-box"><span class="vtip-word">advantage</span>Something that helps a plant survive or reproduce better than others.</span></span> over plants that don't have it.</p>
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"Think of a plant you've seen. Can you describe one feature — its leaves, its stem, its thorns? That feature is a trait. What do you think it does for the plant?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ SECTION 2 of lesson content ══ -->
+      <div class="card theme-sky" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌤</div>
+          <div>
+            <div class="card-head-label">Section 2</div>
+            <!-- ✏️ CUSTOMIZE: Second section heading -->
+            <div class="card-head-title">Desert Plants vs. Rainforest Plants</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Desert plants</strong> must survive with very little water. A cactus stores water in its thick, waxy stem. Its spines — which are actually modified leaves — reduce water loss and keep animals away. These traits are adaptations to a hot, dry place.</p>
+          <p><strong>Rainforest plants</strong> live where rain falls almost every day and tall trees block the sun. Many have wide, waxy leaves to catch as much light as possible in the shade. Some have "drip tips" — pointed leaf ends that channel water off quickly so the leaf doesn't rot. Wide leaves in a desert would lose too much water. Cactus spines in a rainforest wouldn't help much either. <strong>The same trait that helps in one place may hurt in another.</strong></p>
+        </div>
+      </div>
+
+      <!-- ══ SECTION 3 of lesson content ══ -->
+      <div class="card theme-earth" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌍</div>
+          <div>
+            <div class="card-head-label">Section 3</div>
+            <!-- ✏️ CUSTOMIZE: Third section heading -->
+            <div class="card-head-title">Root Systems and Reproduction</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>The <span class="vtip">root system<span class="vtip-box"><span class="vtip-word">root system</span>All of a plant's roots — they take in water and anchor the plant in the soil.</span></span> is an adaptation too. Desert cacti have shallow roots that spread wide to catch rain before it evaporates. Grassland plants often have deep roots that survive drought and fire underground. Wetland plants have spongy roots that can grow in flooded soil where other plants would drown.</p>
+          <p>Plants also need to <span class="vtip">reproduce<span class="vtip-box"><span class="vtip-word">reproduce</span>To make new plants of the same kind, using seeds, spores, or other methods.</span></span>. A plant that survives long enough to make seeds passes its helpful traits on. Over time, the plants with the best traits for that environment are the ones that keep growing there.</p>
+          <p><strong>Real-World Connection:</strong> After a wildfire, grasslands can turn green again within weeks — because their deep roots survived underground the whole time.</p>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════════════════════════════════ -->
+      <!-- INTERACTIVE DIAGRAM — REPLACE THIS ENTIRE <svg>...</svg> BLOCK.        -->
+      <!--                                                                        -->
+      <!-- The SVG below is a PLACEHOLDER ONLY. Do not keep the placeholder.      -->
+      <!-- Build a diagram unique to the lesson topic every time:                 -->
+      <!--   • weather → water cycle, cloud-types, or weather station             -->
+      <!--   • forces / motion → ramp + ball with force arrows, or push/pull      -->
+      <!--   • magnets → field lines with attract/repel zones                     -->
+      <!--   • ecosystems → food web OR habitat cross-section                     -->
+      <!--   • life cycles → labeled stage diagram (egg → larva → pupa → adult)   -->
+      <!--   • engineering → labeled prototype with named parts                   -->
+      <!--                                                                        -->
+      <!-- WHAT TO KEEP (the JS depends on these):                                -->
+      <!--   • the <div class="diagram-interactive"> wrapper                      -->
+      <!--   • exactly 3–6 <rect class="hotspot"> elements with unique            -->
+      <!--     data-part and data-info attributes                                 -->
+      <!--   • the <div id="diagramPanel"> below                                  -->
+      <!--                                                                        -->
+      <!-- WHAT TO REPLACE:                                                       -->
+      <!--   • everything inside <svg>...</svg> (defs, scene art, labels)         -->
+      <!--   • every data-info string with lesson-specific content                -->
+      <!--   • the diagram caption below                                          -->
+      <!-- ══════════════════════════════════════════════════════════════════════ -->
+
+      <div class="diagram-wrap scroll-reveal">
+        <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
+          🗺 Tap a zone to explore it
+        </div>
+        <div class="diagram-interactive">
+          <svg viewBox="0 0 860 280" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;" role="img" aria-label="Cross-section of four plant environments: desert, rainforest, grassland, wetland">
+            <!-- Sky backgrounds -->
+            <rect x="0"   y="0" width="215" height="155" fill="#F5D678"/>
+            <rect x="215" y="0" width="215" height="155" fill="#68D04A"/>
+            <rect x="430" y="0" width="215" height="155" fill="#A8C850"/>
+            <rect x="645" y="0" width="215" height="155" fill="#6CBCCC"/>
+            <!-- Soil -->
+            <rect x="0"   y="155" width="215" height="25" fill="#D49838"/>
+            <rect x="0"   y="180" width="215" height="100" fill="#A86E18"/>
+            <rect x="215" y="155" width="215" height="25" fill="#7A4A20"/>
+            <rect x="215" y="180" width="215" height="100" fill="#5A3010"/>
+            <rect x="430" y="155" width="215" height="25" fill="#8A6830"/>
+            <rect x="430" y="180" width="215" height="100" fill="#6A4820"/>
+            <rect x="645" y="155" width="215" height="20" fill="#4A9AB8" opacity="0.8"/>
+            <rect x="645" y="175" width="215" height="105" fill="#5A8898"/>
+            <!-- Dividers -->
+            <line x1="215" y1="0" x2="215" y2="280" stroke="#3A3A3A" stroke-width="1.5" opacity="0.15"/>
+            <line x1="430" y1="0" x2="430" y2="280" stroke="#3A3A3A" stroke-width="1.5" opacity="0.15"/>
+            <line x1="645" y1="0" x2="645" y2="280" stroke="#3A3A3A" stroke-width="1.5" opacity="0.15"/>
+            <!-- DESERT: cactus barrel + arms + taproot -->
+            <rect x="100" y="85" width="28" height="70" rx="14" fill="#6A9848" stroke="#4A7030" stroke-width="2"/>
+            <rect x="72"  y="108" width="26" height="18" rx="9"  fill="#6A9848" stroke="#4A7030" stroke-width="1.5"/>
+            <rect x="130" y="102" width="26" height="18" rx="9"  fill="#6A9848" stroke="#4A7030" stroke-width="1.5"/>
+            <g stroke="#E0C040" stroke-width="1.5" stroke-linecap="round">
+              <line x1="100" y1="96" x2="93" y2="92"/><line x1="100" y1="106" x2="93" y2="109"/>
+              <line x1="128" y1="94" x2="135" y2="90"/><line x1="128" y1="104" x2="135" y2="107"/>
+            </g>
+            <line x1="114" y1="155" x2="114" y2="272" stroke="#B07A28" stroke-width="5" stroke-linecap="round"/>
+            <path d="M114,195 Q100,200 86,207" stroke="#B07A28" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M114,225 Q128,230 142,237" stroke="#B07A28" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <!-- RAINFOREST: broad-leaf + spreading roots -->
+            <path d="M322,155 L322,50" stroke="#386A20" stroke-width="5" stroke-linecap="round"/>
+            <path d="M320,118 C300,110 270,106 255,112 C270,122 300,124 320,121Z" fill="#44B02A" stroke="#2D8018" stroke-width="1.5"/>
+            <path d="M324,96 C344,88 372,84 387,90 C372,100 344,102 324,99Z" fill="#4ABE30" stroke="#2D8018" stroke-width="1.5"/>
+            <path d="M321,74 C305,66 283,62 272,68 C283,78 305,80 321,77Z" fill="#52C838" stroke="#2D8018" stroke-width="1.5"/>
+            <path d="M323,58 C338,50 360,46 371,52 C360,62 338,64 323,61Z" fill="#4CC030" stroke="#2D8018" stroke-width="1.5"/>
+            <g stroke="#8A5028" stroke-width="2.5" fill="none" stroke-linecap="round">
+              <path d="M322,155 Q308,162 292,168 Q276,174 266,182"/>
+              <path d="M322,155 Q336,162 352,168 Q368,174 378,182"/>
+              <path d="M319,160 Q312,178 308,200"/>
+              <path d="M325,160 Q332,178 336,200"/>
+            </g>
+            <!-- GRASSLAND: grasses + wide roots -->
+            <g stroke="#6A9838" stroke-width="2.5" fill="none" stroke-linecap="round">
+              <path d="M472,155 C470,138 467,118 469,82"/>
+              <path d="M492,155 C494,136 496,113 493,76"/>
+              <path d="M512,155 C510,140 508,120 510,88"/>
+              <path d="M532,155 C534,138 536,116 534,80"/>
+              <path d="M552,155 C550,140 548,122 550,92"/>
+            </g>
+            <g stroke="#8ABE48" stroke-width="2" fill="none" stroke-linecap="round">
+              <path d="M469,82 C462,68 458,60 462,52"/>
+              <path d="M493,76 C486,62 482,54 486,46"/>
+              <path d="M510,88 C503,74 499,66 503,58"/>
+              <path d="M534,80 C527,66 523,58 527,50"/>
+              <path d="M550,92 C543,78 539,70 543,62"/>
+            </g>
+            <g stroke="#8A6830" stroke-width="2.5" fill="none" stroke-linecap="round">
+              <path d="M472,155 Q459,164 446,172 Q432,180 424,192"/>
+              <path d="M512,155 Q512,172 510,192 Q508,210 507,226"/>
+              <path d="M552,155 Q565,164 578,172 Q592,180 600,192"/>
+              <path d="M492,158 Q486,182 484,210"/>
+              <path d="M532,158 Q538,182 540,210"/>
+            </g>
+            <!-- WETLAND: reeds + water ripples + spongy roots -->
+            <path d="M665,155 L663,55"  stroke="#5A8840" stroke-width="4" stroke-linecap="round"/>
+            <path d="M682,155 L682,44"  stroke="#4A8038" stroke-width="4" stroke-linecap="round"/>
+            <path d="M699,155 L699,58"  stroke="#5A8840" stroke-width="4" stroke-linecap="round"/>
+            <path d="M716,155 L716,48"  stroke="#4A8038" stroke-width="4" stroke-linecap="round"/>
+            <rect x="660" y="50" width="8" height="18" rx="4" fill="#8A5828" stroke="#6A4018" stroke-width="1.2"/>
+            <rect x="679" y="39" width="8" height="18" rx="4" fill="#9A6030" stroke="#7A4820" stroke-width="1.2"/>
+            <rect x="696" y="53" width="8" height="18" rx="4" fill="#8A5828" stroke="#6A4018" stroke-width="1.2"/>
+            <rect x="713" y="43" width="8" height="18" rx="4" fill="#9A6030" stroke="#7A4820" stroke-width="1.2"/>
+            <g stroke="#5A8840" stroke-width="2.5" fill="none" stroke-linecap="round">
+              <path d="M665,170 Q655,178 644,184 Q634,190 628,200"/>
+              <path d="M682,168 Q682,186 680,204 Q678,218 676,232"/>
+              <path d="M699,170 Q709,178 720,184 Q730,190 736,200"/>
+              <path d="M716,168 Q716,184 714,202 Q712,218 710,234"/>
+            </g>
+            <g stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.45">
+              <path d="M649,163 Q664,160 680,163"/>
+              <path d="M688,166 Q704,163 722,166"/>
+              <path d="M730,163 Q748,160 766,163"/>
+            </g>
+            <!-- Zone labels -->
+            <text x="107" y="22" text-anchor="middle" font-size="13" font-weight="800" fill="#8A5018">Desert</text>
+            <text x="322" y="22" text-anchor="middle" font-size="13" font-weight="800" fill="#2A5A18">Rainforest</text>
+            <text x="537" y="22" text-anchor="middle" font-size="13" font-weight="800" fill="#4A6018">Grassland</text>
+            <text x="752" y="22" text-anchor="middle" font-size="13" font-weight="800" fill="#1A4A68">Wetland</text>
+            <!-- HOTSPOTS -->
+            <rect class="hotspot" x="0"   y="0" width="215" height="280" fill="#F9A825"
+                  data-part="desert"
+                  data-info="Desert plants survive with almost no rain. The cactus stores water in a thick, waxy stem. Its spines are modified leaves that reduce water loss. A single deep taproot reaches water far underground. These are all adaptations to a hot, dry environment."/>
+            <rect class="hotspot" x="215" y="0" width="215" height="280" fill="#2E7D32"
+                  data-part="rainforest"
+                  data-info="Rainforest plants grow where rain is heavy and shade is deep. Wide, waxy leaves catch sunlight under tall trees. Drip-tip leaves let water run off quickly so leaves don't rot. Spreading roots anchor the plant in soft, wet soil."/>
+            <rect class="hotspot" x="430" y="0" width="215" height="280" fill="#558B2F"
+                  data-part="grassland"
+                  data-info="Grassland plants face drought, wind, and wildfires. Narrow leaves bend without breaking. Wide, medium-deep roots soak up rain quickly. Many plants grow back after fires because roots survive underground — a key adaptation to a challenging environment."/>
+            <rect class="hotspot" x="645" y="0" width="215" height="280" fill="#0288D1"
+                  data-part="wetland"
+                  data-info="Wetland plants like reeds grow where soil stays flooded. Most plants would drown, but wetland plants have spongy roots that work underwater. Tall stems hold leaves above the water surface to catch sunlight. These traits give them a big advantage here."/>
+          </svg>
+
+          <!-- Diagram info panel (appears on hotspot click) -->
+          <div class="diagram-info-panel" id="diagramPanel">
+            <span class="dip-word" id="diagramWord"></span>
+            <span id="diagramInfo"></span>
+          </div>
+        </div>
+        <div class="diagram-tap-hint">Tap any zone in the diagram to learn about it.</div>
+        <!-- ✏️ CUSTOMIZE: Caption describing what this diagram shows for this specific lesson -->
+        <div class="diagram-caption">Four environments, four sets of plant traits. Tap each zone to explore what makes plants survive there.</div>
+      </div>
+
+      <!-- Key Concept Box -->
+      <!-- ✏️ CUSTOMIZE: Write the most important "take-away" concept from this lesson -->
+      <div class="key-concept scroll-reveal">
+        <div class="kc-label">⭐ Key Concept</div>
+        <p><strong>Plants have traits that help them survive in their environment.</strong> A trait that gives a plant an advantage is called an adaptation — and what works in one place may not work at all in another.</p>
+        <p>This is cause and effect: the environment shapes which traits help, and which don't.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mind-Blowing Fact -->
+  <!-- ✏️ CUSTOMIZE: Replace with an amazing real fact from the lesson topic -->
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Amazing Nature Fact</div>
+      <div class="mind-blow-text">A saguaro cactus can absorb <strong>200 gallons of water</strong> in a single rainstorm — and its roots spread 50 feet in every direction but barely go 4 inches deep. It drinks up rain fast before it evaporates, then lives off that water for a year.</div>
+    </div>
+  </div>
+
+  <!-- Go Deeper -->
+  <!-- ✏️ CUSTOMIZE: Add an enrichment idea or deeper connection for curious students -->
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper</summary>
+    <div class="gd-body">
+      <!-- ✏️ CUSTOMIZE: 2-3 paragraphs for advanced students who want more -->
+      <p>Some plants have taken adaptations to surprising extremes. The <em>resurrection plant</em> from the Chihuahuan Desert can lose almost all of its water — curling up and turning completely brown — and survive for years. When rain finally comes, it turns green and starts growing again within hours.</p>
+      <p>Scientists call this "desiccation tolerance." Most plants die if they lose even a quarter of their water. But this plant's cells stay intact through total drying. It's an adaptation so unusual that researchers study it hoping to apply the same idea to protect crops during droughts. What other extreme environments do you think produce the most surprising plant adaptations?</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+
+</div><!-- /tab-lesson -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 3: EXPLORE (Investigation / Lab / Engineering)        -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+  <!-- Inline progress chip — visible whenever student switches to this tab.
+       Workaround for Canvas iframes where sticky/fixed CSS can't stay visible. -->
+  <!-- Explore Video -->
+  <!-- ✏️ CUSTOMIZE: Replace with actual OneDrive embed iframe -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🔬</span>
+      <div>
+        <div class="video-wrap-type">Activity 3 · Investigation</div>
+        <div class="video-wrap-title">Plant Trait Detective</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🔬</div>
+        <div class="video-placeholder-text">Exploration video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 18-1-exploration-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ACTIVITY 3: INVESTIGATION / LAB / ENGINEERING CHALLENGE ═══ -->
+  <!-- ✏️ CUSTOMIZE: Change act-explore to act-practice for .02 engineering/lab lessons -->
+  <!-- PURPOSE: Hands-on investigation. Students observe, collect data, test, or build. ~15-20 min -->
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#0288D1;">3</div>
+      <div style="flex:1;">
+        <!-- ✏️ CUSTOMIZE: Activity type and title (Investigation / Lab / Engineering Challenge) -->
+        <div class="act-title">🔬 Investigation: Plant Trait Detective</div>
+        <div class="act-subtitle">Compare two plants across two different environments.</div>
+      </div>
+      <div class="act-time" style="background:#0288D1;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- Materials needed (for labs/investigations) -->
+      <!-- ✏️ CUSTOMIZE: List materials — or remove this section if not needed for this lesson type -->
+      <div class="callout callout-tip" style="margin-bottom:18px;">
+        <span class="callout-icon">🎒</span>
+        <p><strong>You'll need:</strong> Science notebook, pencil, and the plant photo on the Lesson tab. You can also use the observation cards if you have them.</p>
+      </div>
+
+      <!-- Step-by-step investigation directions -->
+      <!-- ✏️ CUSTOMIZE: Write 3-5 steps. Each step should have one clear action. -->
+      <!-- Use numbered steps with colored circles as in the lesson tab. -->
+
+      <p>Follow each step carefully. Record your observations in your science notebook as you go.</p>
+
+      <div style="position:relative; margin:16px 0;">
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">1</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <!-- ✏️ CUSTOMIZE: Step 1 instruction -->
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Choose two environments.</strong> Pick any two from the diagram: desert, rainforest, grassland, or wetland. Write both at the top of your notebook page.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2D6A4F,#52B788);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(45,106,79,0.3);">2</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <!-- ✏️ CUSTOMIZE: Step 2 instruction -->
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Build a comparison chart.</strong> Draw a three-column table: <em>environment</em> | <em>plant trait</em> | <em>how the trait helps survival</em>. Fill in at least two traits for each environment.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#52B788,#F9A825);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(82,183,136,0.3);">3</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <!-- ✏️ CUSTOMIZE: Step 3 instruction -->
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Pick one trait and draw it.</strong> Choose one trait from your chart. Draw that plant in its environment and label the trait you chose. Add a short note explaining why the trait helps there.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F9A825,#FDD835);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(249,168,37,0.3);">4</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <!-- ✏️ CUSTOMIZE: Step 4 instruction — Often the "explain or revise" step -->
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Swap it.</strong> Now imagine moving your plant from its environment into the other one. Write one sentence: what would happen to it there, and why? Would its traits still help?</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Socratic check-in during exploration -->
+      <div class="socratic-q">
+        <span class="sq-icon">🌲</span>
+        <div>
+          <div class="label">Think Like a Scientist</div>
+          <!-- ✏️ CUSTOMIZE: A reasoning question during the investigation -->
+          <div class="question">"What would happen if you moved a cactus into a rainforest? Would any of its traits become a disadvantage? What tells you that?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ RECORD YOUR THINKING ═══ -->
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#2E7D32;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">📓 Record Your Thinking</div>
+        <div class="act-subtitle">Organize what you observed and discovered.</div>
+      </div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>In your science notebook, record what you found. Being specific matters — a good scientist writes down exactly what they saw, not just "it worked" or "it didn't work."</p>
+
+      <!-- ✏️ CUSTOMIZE: Adapt these notebook prompts for the specific investigation type. -->
+      <!-- Options: data table, labeled sketch, bar graph, comparison chart, before/after drawing -->
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">1</span>
+        <span class="pq-text">Name two plant traits from your chart. For each one, describe what the trait looks like and which environment it came from.</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">2</span>
+        <span class="pq-text">Choose one trait. Explain specifically how it helps the plant survive in its environment — what problem does it solve?</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">3</span>
+        <span class="pq-text">Look at your "swap" sentence. What does that tell you about the relationship between traits and environments?</span>
+      </div>
+
+      <!-- Optional: Narration prompt (classical pedagogy — embedded naturally) -->
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">🗣</span>
+        <p>Tell the story of your investigation from beginning to end — what you did, what you noticed, and what you figured out. Use your notes to help you.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ DISCUSS ═══ -->
+  <div class="card theme-meadow scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">💬</div>
+      <div>
+        <div class="card-head-label">Discussion</div>
+        <div class="card-head-title">Think It Through</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Think through each question on your own. Write your answers in your science notebook before moving on.</p>
+
+      <!-- ✏️ CUSTOMIZE: 3-4 Socratic discussion questions. Vary difficulty. -->
+      <!-- Good types: What did you notice? / What evidence supports? / Would everyone agree? / What would you try next? -->
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Question 1</div>
+          <div class="question">"What surprised you most about how plants are built for their environments? Why did that stand out to you?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">💡</span>
+        <div>
+          <div class="label">Question 2</div>
+          <div class="question">"Two plants live in the same environment but look very different. Could both still have good adaptations? What evidence would support that idea?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🌲</span>
+        <div>
+          <div class="label">Question 3 — Connect to Nature</div>
+          <div class="question">"Look outside or picture your neighborhood. What kind of environment are the plants growing in? Can you spot any traits that seem to help them there?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🔁</span>
+        <div>
+          <div class="label">Question 4 — Improve or Extend</div>
+          <div class="question">"If you were designing a plant for a very cold, snowy mountain, what traits would you give it and why?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+
+</div><!-- /tab-explore -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 4: SELF-CHECK QUIZ                                    -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+  <!-- Inline progress chip — visible whenever student switches to this tab.
+       Workaround for Canvas iframes where sticky/fixed CSS can't stay visible. -->
+  <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#F9A825;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">🌲</div>
+      <div style="flex:1;">
+        <div style="font-size:19px;color:#1B4332;font-weight:800;line-height:1.2;">🧠 Quick Self-Check</div>
+        <div style="font-size:12px;color:#9A8E82;">Not graded — just for you! See how much you remember before starting the notebook work.</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+
+      <!-- ✏️ CUSTOMIZE: Replace all 3 questions, options, answers, and feedback for this lesson -->
+      <!-- data-answer should be: "a", "b", or "c" (matching one option's data-val) -->
+
+      <!-- QUESTION 1 -->
+      <!-- ✏️ Recommended type: vocabulary/definition question -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. What does an adaptation do for a plant?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>It helps the plant grow faster than all other plants.</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>It helps the plant survive in its environment.</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>It makes the plant too tough for animals to eat.</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌿 That's it! An adaptation is a trait that helps a plant survive where it lives — not just any growth or defense.</div>
+        <div class="quiz-feedback fb-wrong">Look back at the Vocabulary tab. An adaptation is specifically about helping a plant survive in its environment.</div>
+      </div>
+
+      <!-- QUESTION 2 -->
+      <!-- ✏️ Recommended type: "what would happen if" or cause-and-effect question -->
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-text">2. A cactus has spines instead of wide leaves. Why is this an advantage in a desert?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Spines are much smaller than leaves, so the cactus loses less water.</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Spines catch more sunlight than wide leaves would.</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Spines help the cactus absorb more rain during storms.</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌵 Exactly right! Wide leaves lose water through evaporation. Tiny spines lose almost none — a huge advantage when rain is rare.</div>
+        <div class="quiz-feedback fb-wrong">Think about what a desert plant needs most to survive. What does a cactus have to hold onto carefully?</div>
+      </div>
+
+      <!-- QUESTION 3 -->
+      <!-- ✏️ Recommended type: real-world connection question -->
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">3. A plant has spongy roots that can grow in flooded soil. Where would this trait give it the biggest advantage?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>A desert, where the soil stays dry for months at a time.</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>A grassland, where rain is seasonal and soil drains well.</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>A wetland, where the soil is often waterlogged.</div>
+        </div>
+        <div class="quiz-feedback fb-correct">⭐ Well done! Spongy roots are an adaptation to flooded soil — most plants would drown, but wetland plants thrive because of that trait.</div>
+        <div class="quiz-feedback fb-wrong">Think about which environment has water in the soil most of the time. Where would roots that handle flooding be most useful?</div>
+      </div>
+
+      <!-- Score Display -->
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum">0</div>
+        <div class="quiz-score-label">out of 3</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+        <!-- ════════════════════════════════════════════════════════════════ -->
+        <!-- CONDITIONAL VIDEO FEEDBACK                                         -->
+        <!-- Hidden by default. JS adds .show to ONE of these based on score:   -->
+        <!--   • 3/3 correct  → quizVideoCorrect is revealed + confetti fires   -->
+        <!--   • 2/3 or less  → quizVideoReview is revealed                     -->
+        <!-- Each block is a normal video-wrap that swaps in like any other.    -->
+        <!-- ════════════════════════════════════════════════════════════════ -->
+
+        <!-- Perfect-score celebration video (shown when score === 3) -->
+        <div class="video-feedback" id="quizVideoCorrect" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">✅</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Perfect Score</div>
+                <!-- ✏️ CUSTOMIZE: Short celebration title for a 3/3 score -->
+                <div class="video-wrap-title">Outstanding work, plant scientist!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">⭐</div>
+                <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 18-1-quiz-perfect --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review / encouragement video (shown when score < 3) -->
+        <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">📚</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Keep Going</div>
+                <!-- ✏️ CUSTOMIZE: Short encouragement title for a partial score -->
+                <div class="video-wrap-title">Keep going — let's review the lesson together!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">💪</div>
+                <div class="video-placeholder-text">Review and encouragement video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 18-1-quiz-review --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+
+</div><!-- /tab-quiz -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 5: NOTEBOOK / ASSIGNMENT                              -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+  <!-- Inline progress chip — visible whenever student switches to this tab.
+       Workaround for Canvas iframes where sticky/fixed CSS can't stay visible. -->
+  <!-- Assignment Video -->
+  <!-- ✏️ CUSTOMIZE: Replace with actual OneDrive embed iframe -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">✍️</span>
+      <div>
+        <div class="video-wrap-type">Activity 5 · Assignment</div>
+        <!-- ✏️ CUSTOMIZE: Video title -->
+        <div class="video-wrap-title">Plant Survival Strategies — Your Assignment</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">✍️</div>
+        <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 18-1-assignment-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ACTIVITY 5: NOTEBOOK WORK ═══ -->
+  <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
+    <div class="act-head">
+      <div class="act-num" style="background:#7B5EA7;">5</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment</div>
+        <div class="act-subtitle">Show what you've learned.</div>
+      </div>
+      <div class="act-time" style="background:#7B5EA7;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- ══ PART A: LABEL / IDENTIFY ══ -->
+      <!-- ✏️ CUSTOMIZE: Adapt Part A for this lesson. Options: label a diagram, fill a data table, -->
+      <!--   sort/classify cards, identify examples, complete a comparison chart. -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔍 Part A — Match the Trait</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">For each trait below, write which environment it belongs to and explain why it helps there. Use: <strong>desert, rainforest, grassland, wetland</strong>.</p>
+
+      <!-- ✏️ CUSTOMIZE: Write 3-4 specific Part A tasks -->
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">Thick, waxy stem that stores water. → Environment: ___. This helps because ___.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">Wide, waxy leaves with pointed drip-tip ends. → Environment: ___. This helps because ___.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">Spongy roots that grow in waterlogged soil. → Environment: ___. This helps because ___.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">4</span><span class="pq-text">Narrow leaves and roots that spread wide near the soil surface. → Environment: ___. This helps because ___.</span></div>
+
+      <!-- ══ PART B: SHORT ANSWER ══ -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🚀 Part B — Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer each question in <strong>complete sentences</strong>. Use your science vocabulary!</p>
+
+      <!-- ✏️ CUSTOMIZE: Write 2-3 short-answer questions that require explanation, not just recall -->
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">5</span><span class="pq-text">What is an adaptation? Give one example and explain why it helps that plant survive.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">6</span><span class="pq-text">A cactus is moved to a rainforest. Predict what might happen there, and explain your reasoning.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">7</span><span class="pq-text">How is a rainforest plant's root system different from a desert plant's root system? What does that tell you about each environment?</span></div>
+
+      <!-- ══ EXPLAIN YOUR THINKING ══ -->
+      <!-- ✏️ CUSTOMIZE: Write one clear question students will answer in writing.        -->
+      <!-- It should be something they can answer using the lesson or investigation.      -->
+      <!-- Avoid yes/no questions. Aim for "how" or "why" or "what do you think about."  -->
+      <div class="key-concept scroll-reveal" style="background:#FFF9E8;border-color:#F0E4C0;">
+        <div class="kc-label" style="color:#F9A825;">✍️ Write and Explain</div>
+        <p style="font-size:16px;font-weight:700;color:#1B4332;margin-bottom:14px;">Choose one plant from the lesson. Explain how its traits help it survive — and why those traits might not work in a different environment.</p>
+
+        <!-- Prompt 1: What do you think? -->
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What do you think?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <!-- ✏️ CUSTOMIZE: Sentence starter matched to the question above -->
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I think the [plant name] survives in the [environment] because…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+          </div>
+        </div>
+
+        <!-- Prompt 2: What did you see or learn? -->
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What did you observe or learn that supports your thinking?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <!-- ✏️ CUSTOMIZE: Tailor starter to whether it's a .01 lesson (learned) or .02 lab (observed) -->
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I know this because the lesson showed that…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <!-- Prompt 3: Why does that make sense? -->
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">Why does that make sense?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <!-- Vocab reminder -->
+        <!-- ✏️ CUSTOMIZE: List 2-3 vocab words from this lesson students should try to use -->
+        <div style="background:#EEF8F0;border-radius:10px;padding:10px 14px;border-left:3px solid #52B788;">
+          <p style="margin:0;font-size:14px;color:#1B4332;">📚 Try to use at least one of these words: <strong>adaptation</strong>, <strong>trait</strong>, <strong>advantage</strong>, <strong>environment</strong></p>
+        </div>
+      </div>
+
+      <!-- ══ PART C: DRAW & LABEL ══ -->
+      <!-- ✏️ CUSTOMIZE: Adapt based on lesson. Options: diagram, comparison sketch, -->
+      <!--   before/after drawing, "design your own" sketch, data graph. -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Label</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Draw a plant in its environment. Label at least <strong>four traits</strong> on the plant. For each label, add a short note explaining what the trait does for the plant.</p>
+
+      <!-- Imitation / reflection prompt (classical pedagogy) -->
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Reflect</div>
+          <!-- ✏️ CUSTOMIZE: A comparison or reflection prompt that brings closure -->
+          <div class="question">"Look back at your Notice &amp; Wonder observations. Did any of the things you noticed turn out to be adaptations? What changed in your thinking about why plants look the way they do?"</div>
+        </div>
+      </div>
+
+      <!-- ══ WHAT TO TURN IN ══ -->
+      <div class="turn-in-block">
+        <div class="turn-in-header">
+          <div class="turn-in-header-icon">📋</div>
+          <div>
+            <div class="turn-in-header-label">Canvas Submission</div>
+            <div class="turn-in-header-title">What to Turn In</div>
+          </div>
+        </div>
+        <div class="turn-in-body">
+
+          <p class="turn-in-intro">Submit your work on Canvas using <strong>one of these options:</strong></p>
+
+          <div class="turn-in-options">
+            <div class="turn-in-option turn-in-option-type">
+              <div class="turn-in-option-icon">⌨️</div>
+              <div class="turn-in-option-title">Type It</div>
+              <div class="turn-in-option-text">Type your answers directly into the Canvas assignment.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-photo">
+              <div class="turn-in-option-icon">📸</div>
+              <div class="turn-in-option-title">Photo It</div>
+              <div class="turn-in-option-text">Take a clear photo of your handwritten work and upload it.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-video">
+              <div class="turn-in-option-icon">🎥</div>
+              <div class="turn-in-option-title">Record It</div>
+              <div class="turn-in-option-text">Record a short video explaining what you did and learned.</div>
+            </div>
+          </div>
+
+          <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
+
+          <div class="turn-in-checklist">
+            <!-- ✏️ CUSTOMIZE: Each item should describe exactly one piece of work the student is submitting for THIS lesson. Phrase each starting with "My …" or "The …" — first-person, concrete, naming the section it came from (Notice & Wonder, Vocabulary, Explore tab, Part A/B/C, Write & Explain). Aim for 5–7 items. -->
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Notice &amp; Wonder warm-up observations and question.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My plant trait comparison chart from the Explore tab (two environments, two traits each).</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Part B short answer responses in complete sentences.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Write &amp; Explain response (complete sentences, using lesson vocabulary).</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Part C drawing with at least four labeled plant traits.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ════════════════════════════════════════════════════════════════════ -->
+      <!-- CLOSING VIDEO — wrap-up + next-lesson tease                          -->
+      <!-- Bottom of Tab 5. Appears after the submission callout. Shown to all  -->
+      <!-- students once they reach the end of the assignment tab.              -->
+      <!-- ════════════════════════════════════════════════════════════════════ -->
+      <div class="video-wrap" style="margin-top:24px;">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">👋</span>
+          <div>
+            <div class="video-wrap-type">Closing · Wrap-Up</div>
+            <!-- ✏️ CUSTOMIZE: Short closing title — wrap-up + tease the next lesson -->
+            <div class="video-wrap-title">Great work today! Next up — comparing plant adaptations in the field.</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">👋</div>
+            <div class="video-placeholder-text">Closing video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 18-1-closing --></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /tab-assignment -->
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <div class="footer-line1">Optima Academy Online · <span>3rd Grade Science</span></div>
+  <!-- ✏️ CUSTOMIZE: Update module/lesson number and NGSS standard code -->
+  <div class="footer-line2">Lesson 18.01 · NGSS 3-LS4-2 &amp; 3-LS1-1</div>
+  <div class="footer-line3">© Optima Academy · All rights reserved</div>
+</div>
+
+</div><!-- /page-wrap -->
+
+
+<script>
+
+// ═══════════════════════════════════════════════════════════════════════════
+// ✏️ CUSTOMIZE PER LESSON — Primary topic emoji
+// This single emoji is the source of truth for the lesson's theme emoji.
+// Changing it here updates THREE places automatically:
+//   1. The checklist checkmarks (when a student checks a Canvas Submission item)
+//   2. The Back to Top button text — becomes "[emoji] Back to Top"
+//   3. The progress bar label (search this file for "progress-label" and
+//      update that one HTML string to match — it's the only manual edit)
+// Examples by topic:
+//   weather/climate → ⛅   forces/motion → ⚙   magnets → 🧲
+//   life cycles → 🐛       ecosystems → 🌳     fossils → 🦴
+//   plants → 🌱           engineering → 🛠    SEP / observation → 🔬
+// ═══════════════════════════════════════════════════════════════════════════
+var LESSON_EMOJI = '🌿';
+
+// ── Tab System ──
+var tabProgress = { vocab: false, lesson: false, explore: false, quiz: false, assignment: false };
+var tabOrder = ['vocab','lesson','explore','quiz','assignment'];
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelector('[data-tab="' + name + '"]').classList.add('active');
+  tabProgress[name] = true;
+  document.querySelector('[data-tab="' + name + '"]').classList.add('visited');
+  var visited = Object.values(tabProgress).filter(Boolean).length;
+  var pct = Math.round((visited / tabOrder.length) * 100);
+  // Update the ONLY progress bar in the lesson (at the very top of the page)
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+  // Intro cards: open on vocab, collapsed on all other tabs
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c){
+    if (name === 'vocab') { c.classList.remove('collapsed'); }
+    else { c.classList.add('collapsed'); }
+  });
+  // Scroll to the top of the new tab content. Works standalone and in Canvas iframes
+  // (scrollIntoView propagates up the frame chain to scroll the parent page).
+  try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+  var top = document.getElementById('pageTop');
+  if (top && top.scrollIntoView) {
+    try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+  }
+}
+
+// ── Checklist ──
+// Used by .turn-in-item rows in the Canvas Submission block. Each click:
+//   1. Toggles the .checked class on the row
+//   2. Fills/empties the checkbox with LESSON_EMOJI
+//   3. Fires confetti ONLY when every item in this checklist is now checked
+//      (not on individual clicks — the celebration is for full completion)
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  var icon = item.querySelector('.check-icon');
+  if (icon) {
+    icon.textContent = item.classList.contains('checked') ? LESSON_EMOJI : '';
+  }
+  // Scope to the closest checklist container so we only celebrate completion
+  // of THAT checklist (and only if it actually has items — Array.every on an
+  // empty NodeList returns true vacuously, which is the bug we're avoiding).
+  var checklist = item.closest('.turn-in-checklist');
+  if (!checklist) return;
+  var items = checklist.querySelectorAll('.turn-in-item');
+  if (items.length === 0) return;
+  var allChecked = Array.prototype.every.call(items, function(it){
+    return it.classList.contains('checked');
+  });
+  if (allChecked) {
+    setTimeout(window.launchConfetti, 200);
+  }
+}
+
+// ── Clickable Diagram ──
+(function() {
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel    = document.getElementById('diagramPanel');
+  var wordEl   = document.getElementById('diagramWord');
+  var infoEl   = document.getElementById('diagramInfo');
+  if (!panel) return;
+  hotspots.forEach(function(hs) {
+    hs.addEventListener('click', function(e) {
+      e.stopPropagation();
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+      hs.classList.add('active');
+      var part = hs.getAttribute('data-part').replace(/-/g, ' ');
+      wordEl.textContent = part.charAt(0).toUpperCase() + part.slice(1);
+      infoEl.innerHTML   = hs.getAttribute('data-info');
+      panel.classList.add('visible');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+    }
+  });
+})();
+
+// ── Self-Check Quiz ──
+var quizAnswered = 0;
+var quizCorrect  = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen  = optEl.getAttribute('data-val');
+  q.querySelectorAll('.quiz-opt').forEach(function(o){
+    if (o.getAttribute('data-val') === correct) { o.classList.add('correct'); }
+    else { o.classList.add('disabled'); }
+  });
+  var fbCorrect = q.querySelector('.fb-correct');
+  var fbWrong   = q.querySelector('.fb-wrong');
+  if (chosen === correct) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+  if (quizAnswered === 3) {
+    var scoreBox  = document.getElementById('quizScore');
+    var scoreNum  = document.getElementById('quizScoreNum');
+    var scoreMsg  = document.getElementById('quizScoreMsg');
+    var vCorrect  = document.getElementById('quizVideoCorrect');
+    var vReview   = document.getElementById('quizVideoReview');
+    scoreNum.textContent = quizCorrect;
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '⭐ Perfect! You got every question right!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌿 Great job! Almost there!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip) {
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function() {
+    var rect = tip.getBoundingClientRect();
+    var bw   = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Back to Top ──
+// Designed to work in two contexts:
+//   1. Standalone (lesson viewed directly on GitHub Pages) — scroll our own window
+//   2. Canvas iframe (lesson embedded as a tall iframe) — the parent page scrolls,
+//      so scrollIntoView on a top anchor is what actually moves the user up.
+(function() {
+  var btn = document.getElementById('backToTop');
+  if (!btn) return;
+
+  var inIframe = (function() {
+    try { return window.self !== window.top; }
+    catch (e) { return true; } // cross-origin block means we're definitely embedded
+  })();
+
+  // Click handler — try every scroll target available
+  btn.addEventListener('click', function() {
+    // Scroll our own document (works standalone, no-op in fixed-height iframe)
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    // Bring the top anchor into view — this is what moves the parent Canvas page
+    // when we're embedded, because browsers propagate scrollIntoView up the frame chain.
+    var top = document.getElementById('pageTop');
+    if (top && top.scrollIntoView) {
+      try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+    }
+
+    // Same-origin iframe fallback (rare with Canvas, but free to try)
+    try {
+      if (window.frameElement && window.frameElement.scrollIntoView) {
+        window.frameElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (e) {}
+
+    // Cross-origin parent: announce intent via postMessage. Canvas doesn't listen by
+    // default, but custom embedders can opt in.
+    if (inIframe) {
+      try { window.parent.postMessage({ type: 'optima-lesson:scroll-to-top' }, '*'); } catch (e) {}
+    }
+  });
+
+  // Visibility logic
+  if (inIframe) {
+    // We can't read parent scroll position cross-origin. Reveal the button after a
+    // short delay so it's there when the student wants it, without popping in
+    // immediately on page load.
+    setTimeout(function() { btn.classList.add('show'); }, 1500);
+  } else {
+    // Standalone — show after the user has scrolled past 400px
+    window.addEventListener('scroll', function() {
+      btn.classList.toggle('show', window.pageYOffset > 400);
+    });
+  }
+})();
+
+// ── Confetti ──
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx    = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#52B788','#F9A825','#FDD835','#4DD0E1','#2E7D32','#7B5EA7','#FF8F00','#0288D1'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── Collapsible Intro Cards ──
+// The Big Question and I Can Statements cards always open/close together as a
+// unit — clicking either header toggles both. This matches how switchTab handles
+// them (both open on vocab tab, both collapsed on other tabs).
+var introCards = document.querySelectorAll('.intro-2col .card');
+introCards.forEach(function(card){
+  var head = card.querySelector('.card-head');
+  if (!head) return;
+  head.addEventListener('click', function(){
+    // If the clicked card is currently open, collapse both. If it's collapsed, open both.
+    var willCollapse = !card.classList.contains('collapsed');
+    introCards.forEach(function(c){
+      c.classList.toggle('collapsed', willCollapse);
+    });
+  });
+});
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+tabProgress['vocab'] = true;
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+// Populate the Back to Top button text from LESSON_EMOJI so it stays in sync
+// without you having to edit the button HTML separately.
+(function(){
+  var btt = document.getElementById('backToTop');
+  if (btt) { btt.textContent = LESSON_EMOJI + ' Back to Top'; }
+})();
+</script>
+</body>
+</html>

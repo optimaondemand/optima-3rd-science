@@ -1,0 +1,2106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – Investigation: Survival Scenario Challenge</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+  background: #F2F0E8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #2B1D12;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap { max-width: 920px; margin: 0 auto; background: #FAF8F4; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%);
+  border-bottom: 6px solid #2D6A4F;
+  padding: 22px 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 6px; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2D6A4F, #52B788, #2D6A4F);
+}
+.header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.header-logo {
+  width: 52px; height: 52px; border-radius: 50%; background: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title {
+  font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+  text-shadow: 0 2px 12px rgba(82,183,136,0.3);
+}
+.header-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(82,183,136,0.15); border: 1.5px solid rgba(82,183,136,0.35);
+  border-radius: 28px; padding: 6px 16px;
+}
+.header-badge span:first-child { font-size: 22px; }
+.header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ── Hero Visual ── */
+.hero-visual {
+  background: linear-gradient(180deg, #87CEEB 0%, #C8E6F7 50%, #D4E8B4 100%);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #2D6A4F;
+}
+.hero-visual svg { display: block; width: 100%; height: auto; }
+
+/* ── Hero Animations (template) ── */
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes sun-pulse {
+  0%, 100% { opacity: 0.65; transform: scale(1); }
+  50%       { opacity: 1;    transform: scale(1.12); }
+}
+.hero-float     { animation: hero-float 3.5s ease-in-out infinite; }
+.hero-sun-glow  { animation: sun-pulse 4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+
+/* ── Custom hero animations for Lesson 15.02 bear banner ── */
+.heat-haze { animation: heatRise 2.8s ease-in infinite; }
+.bear-body  { animation: bearBreathe 3.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center bottom; }
+.sweat-drop { animation: sweatFall 2.2s ease-in infinite; transform-box: fill-box; }
+
+@keyframes heatRise {
+  0%   { transform: translateY(0);     opacity: 0;    }
+  18%  {                               opacity: 0.55; }
+  100% { transform: translateY(-42px); opacity: 0;    }
+}
+@keyframes bearBreathe {
+  0%, 100% { transform: scaleY(1);    }
+  50%       { transform: scaleY(1.07); }
+}
+@keyframes sweatFall {
+  0%   { transform: translateY(0);    opacity: 0;   }
+  18%  {                              opacity: 0.9; }
+  100% { transform: translateY(22px); opacity: 0;   }
+}
+
+@keyframes mind-blow-bounce {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.12); }
+}
+
+/* ── Info Strip ── */
+.info-strip {
+  display: flex; flex-wrap: wrap; background: #fff;
+  border-bottom: 2px solid #E8DDD2;
+}
+.info-item {
+  flex: 1; min-width: 150px; padding: 12px 16px;
+  border-right: 1px solid #E8DDD2;
+  display: flex; align-items: center; gap: 10px;
+}
+.info-item:last-child { border-right: none; }
+.info-icon {
+  width: 40px; height: 40px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.info-value { font-size: 16px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+/* ── Content Area ── */
+.content { padding: 24px 28px 36px; }
+
+/* ── Card System ── */
+.card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 22px; overflow: hidden;
+  box-shadow: 0 2px 12px rgba(27,67,50,0.04);
+}
+.card-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 20px; border-bottom: 2px solid;
+}
+.card-head-icon {
+  width: 42px; height: 42px; border-radius: 50%; color: #fff;
+  font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.card-head-title { font-size: 20px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.card-body { padding: 18px 22px; }
+.card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+.card-body p:last-child { margin-bottom: 0; }
+
+/* ── Card Color Themes ── */
+.theme-earth  .card-head { background: #FFF0E8; border-color: #E8D0B8; }
+.theme-earth  .card-head-icon { background: #A0522D; }
+.theme-sun    .card-head { background: #FFF9E8; border-color: #F0E4C0; }
+.theme-sun    .card-head-icon { background: #F9A825; }
+.theme-sky    .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-sky    .card-head-icon { background: #0288D1; }
+.theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+.theme-forest .card-head-icon { background: #2E7D32; }
+.theme-rock   .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+.theme-rock   .card-head-icon { background: #7B5EA7; }
+.theme-meadow .card-head { background: #F0F8E8; border-color: #C8E0B8; }
+.theme-meadow .card-head-icon { background: #558B2F; }
+
+/* ── Activity Cards ── */
+.activity-card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 18px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.activity-card.act-warmup  { border-left: 6px solid #52B788; }
+.activity-card.act-lesson  { border-left: 6px solid #F9A825; }
+.activity-card.act-explore { border-left: 6px solid #0288D1; }
+.activity-card.act-practice{ border-left: 6px solid #2E7D32; }
+.activity-card.act-check   { border-left: 6px solid #7B5EA7; }
+
+.act-head {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px 14px 18px;
+  border-bottom: 1.5px solid #E8DDD2;
+}
+.act-num {
+  width: 38px; height: 38px; border-radius: 14px; color: #fff;
+  font-size: 18px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.act-title { font-size: 19px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.act-subtitle { font-size: 12px; color: #9A8E82; }
+.act-time {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap;
+  margin-left: auto; flex-shrink: 0;
+}
+.act-body { padding: 18px 22px 18px 20px; }
+.act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+/* ── Callout Boxes ── */
+.callout {
+  border-radius: 14px; padding: 16px 18px;
+  display: flex; align-items: flex-start; gap: 12px;
+  margin-bottom: 14px;
+}
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+.callout-earth  { background: #FFF0E8; border: 2px solid #E8D0B8; }
+.callout-think  { background: #FFF9E8; border: 2px solid #F0E4C0; }
+.callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+.callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+.callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+
+/* ── Socratic Questions ── */
+.socratic-q {
+  background: linear-gradient(135deg, #EEF8F0, #E8F5E9);
+  border: 2px solid #A8D5B8;
+  border-radius: 16px; padding: 16px 20px;
+  margin: 16px 0;
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.socratic-q .label {
+  font-size: 11px; color: #2D6A4F; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px;
+}
+.socratic-q .question {
+  font-size: 17px; color: #2B1D12; font-weight: 700;
+  line-height: 1.6; font-style: italic;
+}
+
+/* ── Lesson Figure ── */
+.lesson-figure {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 14px 14px 18px; margin: 0 0 22px;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.lesson-figure-label {
+  font-size: 11px; color: #2D6A4F;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  font-weight: 800; margin-bottom: 10px;
+}
+.lesson-figure img {
+  display: block; max-width: 100%; height: auto;
+  border-radius: 10px; margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.lesson-figure-caption {
+  font-size: 14px; color: #5A4D3E;
+  margin-top: 12px; line-height: 1.55; font-weight: 600;
+  text-align: center;
+}
+.lesson-figure-caption strong { color: #1B4332; }
+
+/* ── Key Concept Box ── */
+.key-concept {
+  background: #F0F8E8; border: 2px solid #C8E0B8;
+  border-radius: 14px; padding: 18px 20px; margin: 14px 0;
+}
+.key-concept .kc-label {
+  font-size: 11px; color: #2E7D32; text-transform: uppercase;
+  letter-spacing: 1.2px; font-weight: 800; margin-bottom: 8px;
+}
+.key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+.key-concept p:last-child { margin-bottom: 0; }
+
+/* ── Diagram Containers ── */
+.diagram-wrap {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 16px; margin: 16px 0;
+  text-align: center;
+}
+.diagram-wrap svg { max-width: 100%; height: auto; }
+.diagram-caption {
+  font-size: 13px; color: #9A8E82; margin-top: 10px;
+  font-weight: 600; text-align: center;
+}
+
+/* ── Clickable Diagram ── */
+.diagram-interactive { position: relative; }
+.diagram-interactive .hotspot {
+  cursor: pointer; opacity: 0; transition: opacity 0.2s;
+}
+.diagram-interactive .hotspot:hover { opacity: 0.2; }
+.diagram-interactive .hotspot.active { opacity: 0.28; }
+.diagram-info-panel {
+  background: #1B4332; color: #fff;
+  padding: 14px 20px; border-radius: 14px;
+  font-size: 15px; line-height: 1.55; font-weight: 600;
+  text-align: center;
+  border: 1.5px solid rgba(149,213,178,0.3);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  margin: 10px 0 0; display: none;
+}
+.diagram-info-panel.visible { display: block; }
+.diagram-info-panel .dip-word {
+  font-size: 11px; color: #FDD835; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; display: block; margin-bottom: 3px;
+}
+.diagram-tap-hint {
+  text-align: center; font-size: 13px; color: #9A8E82;
+  font-weight: 600; margin-top: 8px;
+}
+
+/* ── Practice Questions ── */
+.pq {
+  background: #FAFAF6; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 14px 18px; margin-bottom: 12px;
+}
+.pq-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  color: #fff; font-weight: 800; font-size: 14px;
+  margin-right: 8px; vertical-align: middle;
+}
+.pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+
+/* ── Vocab Flashcards ── */
+.vocab-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px; margin: 14px 0;
+}
+.flip-card { perspective: 800px; height: 195px; cursor: pointer; }
+.flip-card-inner {
+  position: relative; width: 100%; height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 14px 18px; text-align: center;
+  border: 2px solid #E8DDD2;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.06);
+}
+.flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+.flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+.flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #1B4332; margin-bottom: 6px; }
+.flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+.flip-card-back {
+  background: linear-gradient(145deg, #1B4332, #2D6A4F);
+  border-color: #1B4332;
+  transform: rotateY(180deg);
+}
+.flip-card-back .fc-def { font-size: 14.5px; color: #fff; line-height: 1.5; font-weight: 600; }
+.flip-card-back .fc-word-back {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 6px;
+}
+.flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 8px; font-weight: 600; }
+.fc-color-1 .flip-card-front { border-top-color: #52B788; }
+.fc-color-2 .flip-card-front { border-top-color: #2D6A4F; }
+.fc-color-3 .flip-card-front { border-top-color: #F9A825; }
+.fc-color-4 .flip-card-front { border-top-color: #0288D1; }
+.fc-color-5 .flip-card-front { border-top-color: #2E7D32; }
+.fc-color-6 .flip-card-front { border-top-color: #7B5EA7; }
+
+/* ── Vocab Tooltips ── */
+.vtip {
+  position: relative; color: #7B5EA7; font-weight: 700;
+  cursor: help; border-bottom: 2px dotted rgba(123,94,167,0.45);
+}
+.vtip .vtip-box {
+  position: fixed; background: #1B4332; color: #fff;
+  padding: 12px 16px; border-radius: 12px;
+  font-size: 14px; font-weight: 600; font-style: normal;
+  line-height: 1.55; width: 250px; text-align: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  pointer-events: none; z-index: 9999;
+  box-shadow: 0 6px 24px rgba(27,67,50,0.35);
+  border: 1.5px solid rgba(149,213,178,0.3);
+  transform: translateY(6px);
+}
+.vtip .vtip-box::after {
+  content: ''; position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent; border-top-color: #1B4332;
+}
+.vtip .vtip-word {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block;
+}
+.vtip:hover .vtip-box { opacity: 1; visibility: visible; transform: translateY(0); }
+
+/* ── Mind-Blowing Fact ── */
+.mind-blow {
+  background: linear-gradient(135deg, #1a3a28, #1B4332);
+  border: 2px solid rgba(149,213,178,0.3);
+  border-radius: 18px; padding: 18px 22px;
+  margin: 18px 0; display: flex;
+  align-items: flex-start; gap: 14px;
+  position: relative; overflow: hidden;
+}
+.mind-blow::before {
+  content: ''; position: absolute; top: -30px; right: -30px;
+  width: 100px; height: 100px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(82,183,136,0.15), transparent);
+}
+.mind-blow-icon {
+  font-size: 36px; flex-shrink: 0;
+  animation: mind-blow-bounce 2s ease-in-out infinite;
+}
+.mind-blow-content { flex: 1; }
+.mind-blow-label {
+  font-size: 11px; color: #FDD835; text-transform: uppercase;
+  letter-spacing: 1.5px; font-weight: 800; margin-bottom: 4px;
+}
+.mind-blow-text { font-size: 16px; color: #fff; line-height: 1.6; font-weight: 600; }
+.mind-blow-text strong { color: #95D5B2; }
+
+/* ── Go Deeper ── */
+.go-deeper {
+  background: linear-gradient(135deg, #F0EDF6, #E8E2F2);
+  border: 2px solid #D8D0E8; border-radius: 16px;
+  margin: 16px 0; overflow: hidden;
+}
+.go-deeper summary {
+  padding: 14px 18px; font-size: 16px; font-weight: 800;
+  color: #1B4332; cursor: pointer;
+  display: flex; align-items: center; gap: 10px;
+  list-style: none;
+}
+.go-deeper summary::-webkit-details-marker { display: none; }
+.go-deeper summary::before { content: '🔭'; font-size: 22px; }
+.go-deeper summary::after {
+  content: '▸'; margin-left: auto; font-size: 18px; color: #7B5EA7;
+  transition: transform 0.3s;
+}
+.go-deeper[open] summary::after { transform: rotate(90deg); }
+.go-deeper .gd-body {
+  padding: 4px 18px 16px; font-size: 15px;
+  color: #5A4D3E; line-height: 1.7;
+  border-top: 1.5px solid #D8D0E8;
+}
+.go-deeper .gd-body p { margin-bottom: 10px; }
+
+/* ── Self-Check Quiz ── */
+.quiz-card {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-left: 6px solid #F9A825;
+  border-radius: 18px; margin-bottom: 18px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.quiz-q {
+  background: #FAFAF6; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 16px 18px; margin-bottom: 14px;
+}
+.quiz-q-text { font-size: 17px; color: #2B1D12; font-weight: 700; line-height: 1.6; margin-bottom: 12px; }
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt {
+  padding: 10px 16px; border-radius: 12px;
+  border: 2px solid #E8DDD2; background: #fff;
+  font-size: 15px; font-weight: 700; color: #2B1D12;
+  cursor: pointer; transition: all 0.2s;
+  display: flex; align-items: center; gap: 10px;
+  user-select: none;
+}
+.quiz-opt:hover { background: #EEF8F0; border-color: #52B788; }
+.quiz-opt.correct { background: #EEF8F0 !important; border-color: #2E7D32 !important; color: #1a6b35 !important; }
+.quiz-opt.wrong { background: #FFF0EC !important; border-color: #E8636B !important; color: #a33 !important; }
+.quiz-opt.disabled { pointer-events: none; opacity: 0.6; }
+.quiz-opt .opt-letter {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: #E8DDD2; color: #5A4D3E;
+  font-size: 14px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all 0.2s;
+}
+.quiz-opt.correct .opt-letter { background: #2E7D32; color: #fff; }
+.quiz-opt.wrong .opt-letter { background: #E8636B; color: #fff; }
+.quiz-feedback { font-size: 14px; padding: 10px 14px; border-radius: 10px; margin-top: 10px; display: none; font-weight: 600; line-height: 1.5; }
+.quiz-feedback.show { display: block; }
+.quiz-feedback.fb-correct { background: #EEF8F0; color: #1a6b35; border: 1.5px solid #B8E8CF; }
+.quiz-feedback.fb-wrong { background: #FFF0EC; color: #8a3030; border: 1.5px solid #F5C4BA; }
+.quiz-score {
+  text-align: center; padding: 16px; background: linear-gradient(135deg, #EEF8F0, #E8F5E9);
+  border: 2px solid #C4E5CC; border-radius: 14px; margin-top: 8px; display: none;
+}
+.quiz-score.show { display: block; }
+.quiz-score-num { font-size: 36px; font-weight: 900; color: #1B4332; }
+.quiz-score-label { font-size: 14px; color: #9A8E82; font-weight: 700; }
+.quiz-score-msg { font-size: 16px; color: #2B1D12; font-weight: 700; margin-top: 6px; }
+
+/* ── Scroll Animations ── */
+.scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+/* ── Back to Top ── */
+.back-to-top {
+  position: fixed; bottom: 24px; right: 24px;
+  height: 38px; padding: 0 14px 0 12px; border-radius: 19px;
+  background: linear-gradient(135deg, #2D6A4F, #52B788);
+  color: #fff; border: none;
+  font-size: 13px; font-weight: 800;
+  font-family: 'Nunito', sans-serif; cursor: pointer;
+  box-shadow: 0 4px 14px rgba(45,106,79,0.35);
+  display: flex; align-items: center; gap: 5px;
+  opacity: 0; visibility: hidden; transform: translateY(20px);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.2s;
+  z-index: 500; letter-spacing: 0.2px; white-space: nowrap;
+}
+.back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { box-shadow: 0 6px 20px rgba(45,106,79,0.5); transform: translateY(-3px); }
+
+/* ── Confetti Canvas ── */
+#confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000; }
+
+/* ── Video Embed System ── */
+.video-wrap { border-radius: 18px; overflow: hidden; border: 2px solid #E8DDD2; box-shadow: 0 4px 20px rgba(27,67,50,0.08); background: #000; margin: 0 0 22px; }
+.video-wrap-header {
+  display: flex; align-items: center; gap: 12px; padding: 12px 18px;
+  background: linear-gradient(135deg, #1B4332, #2D6A4F);
+  border-bottom: 2px solid rgba(149,213,178,0.2);
+}
+.video-wrap-type { font-size: 10px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+.video-wrap-title { font-size: 16px; color: #fff; font-weight: 800; line-height: 1.2; }
+.video-ratio { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.video-ratio iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.video-placeholder {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, #1a3a28, #1B4332);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 24px;
+}
+.video-placeholder-icon { font-size: 44px; margin-bottom: 10px; opacity: 0.55; }
+.video-placeholder-text { font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 600; line-height: 1.5; font-family: 'Nunito', sans-serif; }
+.video-placeholder-id { font-size: 11px; color: rgba(149,213,178,0.4); font-family: monospace; margin-top: 6px; letter-spacing: 0.5px; }
+.video-feedback { display: none; }
+.video-feedback.show { display: block; }
+
+/* ── Collapsible Intro Cards ── */
+.intro-2col .card .card-head { cursor: pointer; user-select: none; position: relative; }
+.intro-2col .card .card-head::after {
+  content: '▾'; position: absolute; right: 16px; top: 50%;
+  transform: translateY(-50%); font-size: 16px; color: #9A8E82; transition: transform 0.25s ease;
+}
+.intro-2col .card.collapsed .card-head::after { transform: translateY(-50%) rotate(-90deg); }
+.intro-2col .card.collapsed .card-body { display: none; }
+
+/* ── Tab Bar ── */
+.tab-bar {
+  position: sticky; top: 44px; z-index: 100;
+  background: #FAF8F4; border-bottom: 3px solid #E8DDD2;
+  display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex: 1; min-width: 130px; padding: 12px 8px 11px;
+  background: transparent; border: none;
+  border-bottom: 4px solid transparent;
+  font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700;
+  color: #9A8E82; cursor: pointer; transition: all 0.2s;
+  white-space: nowrap; line-height: 1.3; text-align: center;
+}
+.tab-btn:hover { color: #1B4332; background: #EEF8F0; }
+.tab-btn.active { color: #1B4332; border-bottom-color: #2D6A4F; background: #fff; }
+.tab-btn .tab-check { display: none; font-size: 12px; color: #2E7D32; margin-left: 4px; font-weight: 800; }
+.tab-btn.visited .tab-check { display: inline; }
+
+/* ── Tab Panels ── */
+.tab-panel { display: none; padding: 24px 28px 36px; }
+.tab-panel.active { display: block; }
+
+/* ── Intro 2-col ── */
+.intro-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px 28px 0; }
+.intro-2col .card { margin-bottom: 0; }
+
+/* ── Need Strip ── */
+.need-strip { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 28px 16px; }
+.need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 700; white-space: nowrap; }
+.need-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: #EEF8F0; border: 1.5px solid #C4E5CC;
+  border-radius: 20px; padding: 5px 12px;
+  font-size: 13px; font-weight: 700; color: #2D6A4F;
+}
+
+/* ── Tab Next Button ── */
+.tab-next-wrap { text-align: center; margin-top: 24px; padding-top: 18px; border-top: 2px solid #E8DDD2; }
+.tab-next-btn {
+  background: linear-gradient(135deg, #2D6A4F, #52B788); color: #fff;
+  border: none; border-radius: 30px; padding: 14px 32px;
+  font-size: 16px; font-weight: 800; font-family: 'Nunito', sans-serif;
+  cursor: pointer; box-shadow: 0 4px 16px rgba(45,106,79,0.3);
+  transition: all 0.2s;
+}
+.tab-next-btn:hover { box-shadow: 0 6px 24px rgba(45,106,79,0.45); transform: translateY(-2px); }
+
+/* ── Turn-In Block ── */
+.turn-in-block {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-top: 22px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.turn-in-header {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px; border-bottom: 2px solid #E8DDD2;
+  background: linear-gradient(135deg, #EEF8F0, #E8F5E9);
+}
+.turn-in-header-icon {
+  width: 44px; height: 44px; border-radius: 50%; background: #2E7D32;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0; color: #fff;
+}
+.turn-in-header-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.turn-in-header-title { font-size: 22px; color: #1B4332; font-weight: 800; }
+.turn-in-body { padding: 18px 22px; }
+.turn-in-intro { font-size: 16px; color: #5A4D3E; margin-bottom: 14px; }
+.turn-in-options {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 18px;
+}
+.turn-in-option {
+  border-radius: 14px; padding: 14px 12px; text-align: center;
+  border: 2px solid; display: flex; flex-direction: column; align-items: center; gap: 6px;
+}
+.turn-in-option-type  { background: #EAF8FD; border-color: #B8E4F5; }
+.turn-in-option-photo { background: #FFF9E8; border-color: #F0E4C0; }
+.turn-in-option-video { background: #F0EDF6; border-color: #D8D0E8; }
+.turn-in-option-icon { font-size: 28px; }
+.turn-in-option-title { font-size: 15px; color: #1B4332; font-weight: 800; }
+.turn-in-option-text { font-size: 12px; color: #5A4D3E; line-height: 1.4; }
+.turn-in-subhead { font-size: 15px; color: #1B4332; font-weight: 800; margin-bottom: 10px; }
+.turn-in-checklist { display: flex; flex-direction: column; gap: 8px; }
+.turn-in-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: #FAFAF6; border: 1.5px solid #E8DDD2;
+  border-radius: 12px; padding: 12px 14px;
+  cursor: pointer; transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item:hover { background: #F4FAF5; border-color: #C4E5CC; }
+.turn-in-item.checked { background: #EEF8F0; border-color: #B8E8CF; }
+.turn-in-item .turn-in-check {
+  width: 30px; height: 30px; border-radius: 8px;
+  border: 2px solid #95D5B2; background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: 18px; line-height: 1;
+  transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item.checked .turn-in-check { background: #2E7D32; border-color: #2E7D32; }
+.turn-in-item-text { font-size: 16px; color: #2B1D12; font-weight: 600; line-height: 1.55; flex: 1; }
+.turn-in-item.checked .turn-in-item-text { color: #5A4D3E; }
+
+/* ── Progress Bar ── */
+.progress-wrap {
+  position: sticky; top: 0; z-index: 200;
+  background: #0E1C42; padding: 8px 20px 10px;
+  border-bottom: 2px solid rgba(85,200,232,0.3);
+  display: flex; align-items: center; gap: 14px;
+}
+.progress-label { font-size: 12px; color: #55C8E8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+.progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; position: relative; }
+.progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #52B788, #95D5B2, #FDD835); border-radius: 10px; transition: width 0.4s ease; }
+.progress-pct { font-size: 13px; color: #FDD835; font-weight: 800; min-width: 36px; text-align: right; }
+
+/* ── Footer ── */
+.footer {
+  background: #1B4332; border-top: 4px solid #52B788;
+  padding: 18px 28px; text-align: center;
+}
+.footer-line1 { font-size: 15px; color: #fff; margin-bottom: 4px; }
+.footer-line1 span { color: #95D5B2; font-weight: 700; }
+.footer-line2 { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+.footer-line3 { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+/* ── Utility ── */
+strong { color: #1B4332; }
+em { color: #5A4D3E; }
+.gold { color: #F9A825; font-weight: 700; }
+.forest { color: #2D6A4F; font-weight: 700; }
+
+@media (max-width: 620px) {
+  .intro-2col { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .flip-card { height: 175px; }
+  .header-title { font-size: 22px; }
+  .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 6px 9px; }
+  .turn-in-options { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="confettiCanvas"></canvas>
+<button class="back-to-top" id="backToTop" type="button">↑ Top</button>
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- ═══════════ PROGRESS BAR ═══════════ -->
+<div class="progress-wrap">
+  <span class="progress-label">🌍 Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">Investigation: Survival Scenario Challenge</div>
+  <div class="header-badge">
+    <span>🌍</span>
+    <span>Lesson 15.02</span>
+  </div>
+</div>
+
+<!-- ═══════════ HERO BANNER — provided by user, Lesson 15.02 ═══════════ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hotSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#B04208"/>
+      <stop offset="55%"  stop-color="#D97030"/>
+      <stop offset="100%" stop-color="#EFB060"/>
+    </linearGradient>
+    <linearGradient id="dryGnd" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#7A4A30"/>
+      <stop offset="100%" stop-color="#3C1E08"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="920" height="186" fill="url(#hotSky)"/>
+  <!-- Ground -->
+  <rect y="186" width="920" height="74" fill="url(#dryGnd)"/>
+
+  <!-- Sun -->
+  <circle cx="806" cy="54" r="110" fill="#FFEEAA" opacity="0.06"/>
+  <circle cx="806" cy="54" r="88"  fill="#FFDD66" opacity="0.10"/>
+  <circle cx="806" cy="54" r="72"  fill="#FFD600" opacity="0.20"/>
+  <circle cx="806" cy="54" r="56"  fill="#FFD800" opacity="0.40"/>
+  <circle class="hero-sun-glow" cx="806" cy="54" r="36" fill="#FFD000" opacity="0.95"/>
+  <circle cx="806" cy="54" r="24" fill="#FFEE00"/>
+  <circle cx="806" cy="54" r="13" fill="white"   opacity="0.52"/>
+  <g opacity="0.55" stroke="#FFD000" stroke-width="3" stroke-linecap="round">
+    <line x1="806" y1="10"  x2="806" y2="0"/>
+    <line x1="806" y1="98"  x2="806" y2="114"/>
+    <line x1="746" y1="54"  x2="728" y2="54"/>
+    <line x1="866" y1="54"  x2="884" y2="54"/>
+    <line x1="767" y1="15"  x2="757" y2="5"/>
+    <line x1="845" y1="93"  x2="855" y2="103"/>
+    <line x1="845" y1="15"  x2="855" y2="5"/>
+    <line x1="767" y1="93"  x2="757" y2="103"/>
+  </g>
+
+  <!-- Tree 1 -->
+  <line x1="72" y1="186" x2="68" y2="88"  stroke="#3A1E08" stroke-width="14" stroke-linecap="round"/>
+  <line x1="70" y1="112" x2="34"  y2="76" stroke="#3A1E08" stroke-width="8"  stroke-linecap="round"/>
+  <line x1="70" y1="124" x2="110" y2="82" stroke="#3A1E08" stroke-width="8"  stroke-linecap="round"/>
+  <line x1="70" y1="98"  x2="46"  y2="66" stroke="#3A1E08" stroke-width="5"  stroke-linecap="round"/>
+  <line x1="70" y1="98"  x2="94"  y2="64" stroke="#3A1E08" stroke-width="5"  stroke-linecap="round"/>
+  <line x1="34" y1="76"  x2="20"  y2="66" stroke="#3A1E08" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="34" y1="76"  x2="26"  y2="88" stroke="#3A1E08" stroke-width="3"  stroke-linecap="round"/>
+  <line x1="110" y1="82" x2="122" y2="70" stroke="#3A1E08" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="110" y1="82" x2="118" y2="96" stroke="#3A1E08" stroke-width="3"  stroke-linecap="round"/>
+  <ellipse cx="20"  cy="63" rx="8" ry="5" fill="#8B6210" opacity="0.82" transform="rotate(-22,20,63)"/>
+  <ellipse cx="120" cy="68" rx="7" ry="5" fill="#9A7018" opacity="0.76" transform="rotate(18,120,68)"/>
+  <ellipse cx="92"  cy="61" rx="6" ry="4" fill="#7A5410" opacity="0.70" transform="rotate(-8,92,61)"/>
+
+  <!-- Tree 2 -->
+  <line x1="260" y1="186" x2="256" y2="104" stroke="#422410" stroke-width="12" stroke-linecap="round"/>
+  <line x1="258" y1="128" x2="222" y2="94"  stroke="#422410" stroke-width="7"  stroke-linecap="round"/>
+  <line x1="258" y1="140" x2="296" y2="100" stroke="#422410" stroke-width="7"  stroke-linecap="round"/>
+  <line x1="258" y1="114" x2="234" y2="86"  stroke="#422410" stroke-width="4.5" stroke-linecap="round"/>
+  <line x1="258" y1="114" x2="282" y2="84"  stroke="#422410" stroke-width="4.5" stroke-linecap="round"/>
+  <line x1="222" y1="94"  x2="208" y2="85"  stroke="#422410" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="222" y1="94"  x2="214" y2="106" stroke="#422410" stroke-width="3"  stroke-linecap="round"/>
+  <line x1="296" y1="100" x2="308" y2="90"  stroke="#422410" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="296" y1="100" x2="308" y2="113" stroke="#422410" stroke-width="3"  stroke-linecap="round"/>
+  <ellipse cx="207" cy="82" rx="8" ry="5" fill="#9B6C10" opacity="0.84" transform="rotate(-28,207,82)"/>
+  <ellipse cx="308" cy="87" rx="7" ry="5" fill="#AA7A18" opacity="0.78" transform="rotate(22,308,87)"/>
+  <ellipse cx="230" cy="83" rx="6" ry="4" fill="#896010" opacity="0.70" transform="rotate(-14,230,83)"/>
+  <ellipse cx="281" cy="80" rx="6" ry="4" fill="#936814" opacity="0.68" transform="rotate(10,281,80)"/>
+
+  <!-- Tree 3 -->
+  <line x1="894" y1="186" x2="892" y2="118" stroke="#3A1E08" stroke-width="11" stroke-linecap="round"/>
+  <line x1="893" y1="138" x2="866" y2="108" stroke="#3A1E08" stroke-width="6"  stroke-linecap="round"/>
+  <line x1="866" y1="108" x2="854" y2="99"  stroke="#3A1E08" stroke-width="3.5" stroke-linecap="round"/>
+  <ellipse cx="852" cy="96" rx="7" ry="4" fill="#9B6C10" opacity="0.72" transform="rotate(-18,852,96)"/>
+
+  <!-- Cracked ground -->
+  <g opacity="0.38" stroke="#2A1206" stroke-width="1.5" fill="none" stroke-linecap="round">
+    <path d="M55,208  L76,198  L94,215  L114,203"/>
+    <path d="M94,215  L100,232"/>
+    <path d="M148,196 L170,208 L188,196 L204,213"/>
+    <path d="M336,212 L358,200 L376,218"/>
+    <path d="M376,218 L382,234"/>
+    <path d="M584,200 L608,213 L626,200 L642,216"/>
+    <path d="M692,210 L716,200 L734,217"/>
+    <path d="M734,217 L740,234"/>
+    <path d="M782,196 L806,209 L826,196"/>
+    <path d="M806,209 L812,226"/>
+  </g>
+
+  <!-- Dry grass tufts -->
+  <g opacity="0.62">
+    <path d="M168,188 Q170,173 173,188" stroke="#8B6040" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M175,188 Q178,171 181,188" stroke="#7A5030" stroke-width="2"   fill="none" stroke-linecap="round"/>
+    <path d="M356,188 Q358,175 361,188" stroke="#8B6040" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M364,188 Q366,177 369,188" stroke="#7A5030" stroke-width="2"   fill="none" stroke-linecap="round"/>
+    <path d="M636,188 Q638,174 641,188" stroke="#8B6040" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M644,188 Q646,177 649,188" stroke="#7A5030" stroke-width="2"   fill="none" stroke-linecap="round"/>
+    <path d="M748,188 Q750,175 753,188" stroke="#8B6040" stroke-width="2"   fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Heat haze -->
+  <g class="heat-haze" style="animation-delay:0s">
+    <path d="M105,185 Q124,181 143,185 Q162,181 181,185" stroke="#FFC060" stroke-width="1.4" fill="none" opacity="0.5" stroke-linecap="round"/>
+  </g>
+  <g class="heat-haze" style="animation-delay:1.0s">
+    <path d="M330,185 Q352,180 374,185 Q396,180 418,185" stroke="#FFB850" stroke-width="1.3" fill="none" opacity="0.46" stroke-linecap="round"/>
+  </g>
+  <g class="heat-haze" style="animation-delay:1.9s">
+    <path d="M568,185 Q588,181 608,185 Q628,181 648,185" stroke="#FFC060" stroke-width="1.4" fill="none" opacity="0.48" stroke-linecap="round"/>
+  </g>
+  <g class="heat-haze" style="animation-delay:0.6s">
+    <path d="M706,185 Q728,180 750,185 Q772,180 794,185" stroke="#FFD070" stroke-width="1.2" fill="none" opacity="0.42" stroke-linecap="round"/>
+  </g>
+  <g class="heat-haze" style="animation-delay:2.2s; animation-duration:3.3s">
+    <path d="M210,180 Q234,176 258,180 Q282,176 306,180" stroke="#FFBA50" stroke-width="1.1" fill="none" opacity="0.38" stroke-linecap="round"/>
+  </g>
+  <g class="heat-haze" style="animation-delay:1.4s; animation-duration:3.6s">
+    <path d="M456,182 Q476,177 496,182 Q516,177 536,182" stroke="#FFC860" stroke-width="1.1" fill="none" opacity="0.40" stroke-linecap="round"/>
+  </g>
+  <g class="heat-haze" style="animation-delay:2.7s; animation-duration:2.5s">
+    <path d="M44,185 Q62,181 80,185 Q98,181 116,185" stroke="#FFC060" stroke-width="1.3" fill="none" opacity="0.44" stroke-linecap="round"/>
+  </g>
+  <g class="heat-haze" style="animation-delay:0.3s; animation-duration:3.0s">
+    <path d="M828,185 Q850,181 872,185 Q894,181 916,185" stroke="#FFD070" stroke-width="1.3" fill="none" opacity="0.42" stroke-linecap="round"/>
+  </g>
+  <g class="heat-haze" style="animation-delay:1.1s; animation-duration:2.1s">
+    <path d="M424,178 Q440,174 456,178 Q472,174 488,178" stroke="#FFAA38" stroke-width="1.2" fill="none" opacity="0.34" stroke-linecap="round"/>
+  </g>
+  <g class="heat-haze" style="animation-delay:0.7s; animation-duration:2.3s">
+    <path d="M494,174 Q510,170 526,174 Q542,170 558,174" stroke="#FFAA38" stroke-width="1.1" fill="none" opacity="0.30" stroke-linecap="round"/>
+  </g>
+
+  <!-- POLAR BEAR -->
+  <ellipse cx="468" cy="248" rx="78" ry="11" fill="#2A1206" opacity="0.26"/>
+  <rect x="400" y="216" width="22" height="36" rx="9"  fill="#DADADA"/>
+  <rect x="428" y="218" width="21" height="34" rx="9"  fill="#D4D4D4"/>
+  <ellipse cx="411" cy="251" rx="16" ry="7"  fill="#C6C6C6"/>
+  <ellipse cx="438" cy="252" rx="15" ry="6.5" fill="#C2C2C2"/>
+  <g class="bear-body">
+    <ellipse cx="460" cy="212" rx="68" ry="34" fill="#F0F0F0"/>
+    <ellipse cx="452" cy="222" rx="52" ry="22" fill="#E2E2E2" opacity="0.38"/>
+  </g>
+  <ellipse cx="518" cy="198" rx="24" ry="20" fill="#EEEEEE"/>
+  <rect x="494" y="224" width="22" height="32" rx="9"  fill="#DADADA"/>
+  <rect x="522" y="226" width="21" height="30" rx="9"  fill="#D4D4D4"/>
+  <ellipse cx="505" cy="254" rx="16" ry="7"  fill="#C8C8C8"/>
+  <ellipse cx="532" cy="254" rx="14" ry="6.5" fill="#C4C4C4"/>
+  <ellipse cx="542" cy="182" rx="34" ry="30" fill="#F2F2F2"/>
+  <ellipse cx="536" cy="190" rx="26" ry="21" fill="#E6E6E6" opacity="0.32"/>
+  <circle cx="520" cy="158" r="11"  fill="#E8E8E8"/>
+  <circle cx="520" cy="158" r="6.5" fill="#D6C4C4" opacity="0.65"/>
+  <circle cx="549" cy="154" r="10"  fill="#E8E8E8"/>
+  <circle cx="549" cy="155" r="6"   fill="#D6C4C4" opacity="0.65"/>
+  <ellipse cx="570" cy="192" rx="20" ry="14" fill="#EBEBEB"/>
+  <ellipse cx="586" cy="186" rx="7.5" ry="6" fill="#1E1E1E"/>
+  <ellipse cx="585" cy="185" rx="3.2" ry="2.2" fill="#4A4A4A" opacity="0.45"/>
+  <path d="M568,196 Q572,207 580,205 Q586,203 584,196"
+        stroke="#8A8A8A" stroke-width="1.6" fill="#C66060" opacity="0.88"/>
+  <ellipse cx="576" cy="205" rx="5.5" ry="3.5" fill="#E06060" opacity="0.82"/>
+  <circle cx="556" cy="178" r="5"   fill="#181818"/>
+  <circle cx="557" cy="177" r="2"   fill="white"   opacity="0.72"/>
+
+  <!-- Sweat drops -->
+  <g class="sweat-drop" style="animation-delay:0s">
+    <path d="M519,156 L515,164 Q519,168 523,164 Z" fill="#74CCF5" opacity="0.88"/>
+    <circle cx="519" cy="165" r="4" fill="#74CCF5" opacity="0.88"/>
+  </g>
+  <g class="sweat-drop" style="animation-delay:0.9s">
+    <path d="M537,150 L533,158 Q537,162 541,158 Z" fill="#88D8F8" opacity="0.82"/>
+    <circle cx="537" cy="159" r="3.5" fill="#88D8F8" opacity="0.82"/>
+  </g>
+  <g class="sweat-drop" style="animation-delay:1.6s; animation-duration:2.5s">
+    <path d="M511,172 L508,179 Q511,183 514,179 Z" fill="#6EC8F2" opacity="0.78"/>
+    <circle cx="511" cy="180" r="3.2" fill="#6EC8F2" opacity="0.78"/>
+  </g>
+  <g class="sweat-drop" style="animation-delay:0.5s; animation-duration:2.6s">
+    <path d="M528,192 L525,199 Q528,203 531,199 Z" fill="#80D4F6" opacity="0.74"/>
+    <circle cx="528" cy="200" r="3" fill="#80D4F6" opacity="0.74"/>
+  </g>
+
+  <!-- Drifting dead leaves -->
+  <g class="hero-float" style="animation-delay:0.5s">
+    <path d="M318,95 Q325,84 332,95 Q325,100 318,95 Z"
+          fill="#9A6C10" opacity="0.84" transform="rotate(-28,325,93)"/>
+    <line x1="318" y1="95" x2="332" y2="95" stroke="#7A5010" stroke-width="0.9" opacity="0.5"/>
+  </g>
+  <g class="hero-float" style="animation-delay:1.3s; animation-duration:4.4s">
+    <path d="M666,70 Q673,60 680,70 Q673,75 666,70 Z"
+          fill="#AA7818" opacity="0.78" transform="rotate(22,673,68)"/>
+    <line x1="666" y1="70" x2="680" y2="70" stroke="#7A5010" stroke-width="0.9" opacity="0.44"/>
+  </g>
+  <g class="hero-float" style="animation-delay:2.2s; animation-duration:5.2s">
+    <path d="M188,130 Q195,120 202,130 Q195,135 188,130 Z"
+          fill="#8B5E14" opacity="0.72" transform="rotate(-12,195,128)"/>
+  </g>
+</svg>
+</div>
+
+<!-- ═══════════ INFO STRIP ═══════════ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q2 &middot; Unit 5</div>
+      <div class="info-detail">Adaptations &amp; Survival</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF9E8;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 15</div>
+      <div class="info-detail">Lesson 15.02 &mdash; 3rd Grade Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#F0EDF6;">🌍</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Survival Scenarios</div>
+      <div class="info-detail">Habitats, limiting factors, evidence</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">🌿</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">NGSS 3-LS4-3</div>
+      <div class="info-detail">Organisms &amp; Habitat Survival</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ INTRO 2-COL CARDS ═══════════ -->
+<div class="intro-2col">
+
+  <div class="card theme-forest">
+    <div class="card-head">
+      <div class="card-head-icon">🌍</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This…</div>
+          <div class="question">"Why do some organisms survive well in a habitat while others cannot survive there at all?"</div>
+        </div>
+      </div>
+      <p>Hold this question in your mind as you work. By the end, you should be able to answer it with evidence from your investigation.</p>
+    </div>
+  </div>
+
+  <div class="card theme-sky">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#52B788;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> analyze a survival scenario and decide if an organism would survive well, less well, or not at all.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2D6A4F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> identify limiting factors that make survival harder in a habitat.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2E7D32;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> use evidence to explain my thinking about whether an organism can survive.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════ NEED STRIP ═══════════ -->
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Pencil &amp; colored pencils</span>
+  <span class="need-chip"><span>📋</span>Your scenario chart</span>
+</div>
+
+<!-- ═══════════ TAB BAR ═══════════ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+
+<!-- ════════════════════════════════════════════ -->
+<!-- TAB 1: VOCABULARY                           -->
+<!-- ════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to the Survival Scenario Challenge!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🎬</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 15-2-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#52B788;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Notice &amp; Wonder</div>
+        <div class="act-subtitle">What do you already know about where animals live?</div>
+      </div>
+      <div class="act-time" style="background:#52B788;">⏱ 5 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>Think about an animal you've seen recently — maybe a bird, a squirrel, or even a bug. It lives where it lives for a reason.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">👀</span>
+        <div>
+          <div class="label">In Your Science Notebook</div>
+          <div class="question">"Picture an animal you know. What does it need to stay alive? Write at least 3 things. Then ask yourself — what would happen if it moved somewhere those things were missing?"</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>Every living thing has needs. When a habitat meets those needs, the organism can survive. When it doesn't — that's what we're investigating today.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>These are the words scientists use when they study survival and habitats. <strong>Tap each card to flip it.</strong> You'll need every one of these during the investigation.</p>
+
+      <div class="vocab-grid">
+
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🚧</div><div class="fc-word">limiting factor</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">limiting factor</div><div class="fc-def">Something in a habitat that makes it harder for an organism to survive — like too little water or food.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌳</div><div class="fc-word">habitat</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">habitat</div><div class="fc-def">The place where an organism lives and finds what it needs — food, water, shelter, and space.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🔬</div><div class="fc-word">evidence</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">evidence</div><div class="fc-def">Information that supports an explanation. Scientists use evidence before making a claim.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🦎</div><div class="fc-word">organism</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">organism</div><div class="fc-def">Any living thing — a plant, animal, insect, or other creature that needs food, water, and energy.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">💪</div><div class="fc-word">survival</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">survival</div><div class="fc-def">Staying alive by meeting all of an organism's needs over time. Not every organism survives every habitat.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">📋</div><div class="fc-word">scenario</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">scenario</div><div class="fc-def">A short example situation used for thinking or problem solving. Scientists use scenarios to test ideas.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">📓</span>
+        <p>Copy this sentence carefully into your science notebook:<br><strong>"A limiting factor is something in a habitat that makes it harder for an organism to survive."</strong></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button>
+  </div>
+
+</div><!-- /tab-vocab -->
+
+
+<!-- ════════════════════════════════════════════ -->
+<!-- TAB 2: THE LESSON                           -->
+<!-- ════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">📖</span>
+      <div>
+        <div class="video-wrap-type">Activity 2 · Core Lesson</div>
+        <div class="video-wrap-title">What Is a Survival Scenario?</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">📖</div>
+        <div class="video-placeholder-text">Core lesson video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 15-2-lesson-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Uploaded lesson image -->
+  <div class="lesson-figure">
+    <div class="lesson-figure-label">📷 Investigation Preview · Survival Scenario Challenge</div>
+    <img src="images/15-02-survival-scenario-challenge.png"
+         alt="A student's desk showing scenario cards with photos of a frog, cactus, fish, rabbit, and polar bear alongside a survival scenario chart with columns for organism, habitat, needs, limiting factor, and survival result" />
+    <div class="lesson-figure-caption">
+      This is your investigation setup. You'll analyze each scenario by asking: <strong>What does this organism need?</strong> Does the habitat provide it? If something is missing or limited, that's your limiting factor.
+    </div>
+  </div>
+
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#F9A825;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📖 Background: Survival &amp; Habitats</div>
+        <div class="act-subtitle">Read carefully — then you'll use these ideas in the investigation.</div>
+      </div>
+      <div class="act-time" style="background:#F9A825;">⏱ 10 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="card theme-forest" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌳</div>
+          <div>
+            <div class="card-head-label">Section 1</div>
+            <div class="card-head-title">What Makes a Good Habitat?</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Every living thing has basic needs. A <span class="vtip">habitat<span class="vtip-box"><span class="vtip-word">habitat</span>The place where an organism lives and finds what it needs.</span></span> is the place where an organism gets what it needs to stay alive.</p>
+          <p>Most organisms need four things from their habitat: food, water, shelter, and space. When a habitat provides all four, an organism can survive and thrive there.</p>
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"If a fish needs clean water to breathe, what happens if it ends up in a habitat with no water at all?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card theme-sky" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🚧</div>
+          <div>
+            <div class="card-head-label">Section 2</div>
+            <div class="card-head-title">Limiting Factors</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Sometimes a habitat has most of what an organism needs — but one thing is missing or too low. That missing piece is called a <span class="vtip">limiting factor<span class="vtip-box"><span class="vtip-word">limiting factor</span>Something in a habitat that makes survival harder.</span></span>.</p>
+          <p>Limiting factors can be too little food, water, shelter, or space. Predators and extreme weather can also limit survival. When a limiting factor is present, the organism might survive less well — or not at all.</p>
+        </div>
+      </div>
+
+      <div class="card theme-earth" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🔬</div>
+          <div>
+            <div class="card-head-label">Section 3</div>
+            <div class="card-head-title">Scientists Use Evidence</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Scientists don't guess. Before explaining what they think, they look for <span class="vtip">evidence<span class="vtip-box"><span class="vtip-word">evidence</span>Information that supports an explanation.</span></span>. In this investigation, your evidence comes from each scenario — the organism's needs and whether the habitat provides them.</p>
+          <p>Ask these three questions for every scenario: What does this organism need? Does the habitat provide it? What limiting factor is present? Then decide: survive well, survive less well, or not survive at all.</p>
+          <p><strong>Real-World Connection:</strong> A polar bear is built for ice and cold. Put it in a hot, dry forest with no ice and very little food, and every need goes unmet. That's not just a story — it's what scientists call a limiting factor problem.</p>
+        </div>
+      </div>
+
+      <!-- Interactive Diagram: Survival Check diagram -->
+      <div class="diagram-wrap scroll-reveal">
+        <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
+          🗺 Tap a zone to explore it
+        </div>
+        <div class="diagram-interactive">
+          <svg viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;" role="img" aria-label="Interactive diagram showing four survival outcomes based on habitat conditions">
+
+            <!-- Background -->
+            <rect x="0" y="0" width="860" height="300" fill="#F8F6F2" rx="12"/>
+
+            <!-- Zone 1: Survive Well — lush green pond -->
+            <rect x="0" y="0" width="215" height="300" fill="#C8E6C9" rx="0"/>
+            <ellipse cx="107" cy="185" rx="68" ry="38" fill="#80DEEA" opacity="0.7"/>
+            <ellipse cx="107" cy="185" rx="42" ry="22" fill="#4DD0E1" opacity="0.5"/>
+            <!-- fish -->
+            <ellipse cx="100" cy="185" rx="18" ry="9" fill="#1565C0" opacity="0.8"/>
+            <path d="M82,185 L70,178 L70,192 Z" fill="#1565C0" opacity="0.8"/>
+            <circle cx="112" cy="182" r="3" fill="white"/>
+            <!-- grass -->
+            <path d="M60,220 Q62,205 65,220" stroke="#388E3C" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M68,220 Q71,202 74,220" stroke="#2E7D32" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M140,220 Q143,206 146,220" stroke="#388E3C" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <text x="107" y="260" text-anchor="middle" font-size="13" font-weight="800" fill="#1B5E20">Survive Well</text>
+            <text x="107" y="275" text-anchor="middle" font-size="10" fill="#388E3C">all needs met</text>
+            <!-- label top -->
+            <rect x="30" y="14" width="154" height="32" rx="8" fill="#2E7D32" opacity="0.9"/>
+            <text x="107" y="34" text-anchor="middle" font-size="13" font-weight="800" fill="white">Full Habitat</text>
+
+            <!-- Zone 2: Survive Less Well — dry meadow, limited water -->
+            <rect x="215" y="0" width="215" height="300" fill="#FFF9C4" rx="0"/>
+            <ellipse cx="322" cy="200" rx="28" ry="12" fill="#90CAF9" opacity="0.5"/>
+            <!-- rabbit -->
+            <ellipse cx="322" cy="178" rx="20" ry="14" fill="#C8A882"/>
+            <ellipse cx="322" cy="164" rx="10" ry="8" fill="#C8A882"/>
+            <ellipse cx="317" cy="157" rx="4" ry="9" fill="#C8A882"/>
+            <ellipse cx="327" cy="157" rx="4" ry="9" fill="#C8A882"/>
+            <circle cx="326" cy="162" r="2.5" fill="#1B1B1B"/>
+            <path d="M302,186 Q308,192 314,188" stroke="#A07850" stroke-width="2" fill="none"/>
+            <!-- dry grass -->
+            <path d="M258,220 Q261,207 264,220" stroke="#9E8040" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M268,220 Q270,210 273,220" stroke="#8B7030" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M370,220 Q373,208 376,220" stroke="#9E8040" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <text x="322" y="260" text-anchor="middle" font-size="13" font-weight="800" fill="#5D4037">Survive Less Well</text>
+            <text x="322" y="275" text-anchor="middle" font-size="10" fill="#8D6E63">one need limited</text>
+            <rect x="246" y="14" width="152" height="32" rx="8" fill="#F9A825" opacity="0.9"/>
+            <text x="322" y="34" text-anchor="middle" font-size="13" font-weight="800" fill="white">One Limit</text>
+
+            <!-- Zone 3: Borderline / Challenged — hot sparse desert -->
+            <rect x="430" y="0" width="215" height="300" fill="#FFCCBC" rx="0"/>
+            <!-- tiny cactus -->
+            <rect x="527" y="154" width="10" height="38" rx="4" fill="#558B2F"/>
+            <rect x="511" y="166" width="16" height="8" rx="4" fill="#558B2F"/>
+            <rect x="537" y="170" width="16" height="8" rx="4" fill="#558B2F"/>
+            <!-- frog unhappy -->
+            <ellipse cx="537" cy="210" rx="22" ry="14" fill="#81C784"/>
+            <ellipse cx="537" cy="197" rx="13" ry="10" fill="#81C784"/>
+            <circle cx="531" cy="194" r="3.5" fill="#1B5E20"/>
+            <circle cx="543" cy="194" r="3.5" fill="#1B5E20"/>
+            <path d="M530,205 Q537,210 544,205" stroke="#388E3C" stroke-width="1.5" fill="none"/>
+            <!-- cracked ground marks -->
+            <path d="M455,235 L472,228 L485,240" stroke="#BF360C" stroke-width="1.2" fill="none" opacity="0.5" stroke-linecap="round"/>
+            <path d="M590,238 L604,230 L615,242" stroke="#BF360C" stroke-width="1.2" fill="none" opacity="0.5" stroke-linecap="round"/>
+            <text x="537" y="260" text-anchor="middle" font-size="12" font-weight="800" fill="#BF360C">Not Survive Well</text>
+            <text x="537" y="275" text-anchor="middle" font-size="10" fill="#D84315">key needs missing</text>
+            <rect x="460" y="14" width="154" height="32" rx="8" fill="#E64A19" opacity="0.9"/>
+            <text x="537" y="34" text-anchor="middle" font-size="13" font-weight="800" fill="white">Major Limit</text>
+
+            <!-- Zone 4: Cannot Survive — icy zone with polar bear wrong place -->
+            <rect x="645" y="0" width="215" height="300" fill="#B3E5FC" rx="0"/>
+            <!-- hot sun in wrong zone -->
+            <circle cx="752" cy="60" r="28" fill="#FFD600" opacity="0.7"/>
+            <circle cx="752" cy="60" r="16" fill="#FFEE00" opacity="0.9"/>
+            <!-- polar bear outline small, sweating -->
+            <ellipse cx="752" cy="195" rx="38" ry="22" fill="#E8E8E8"/>
+            <ellipse cx="778" cy="178" rx="22" ry="19" fill="#EEEEEE"/>
+            <circle cx="790" cy="170" r="5" fill="#1E1E1E"/>
+            <path d="M782,182 Q788,190 795,185" stroke="#999" stroke-width="1.5" fill="#E06060" opacity="0.7"/>
+            <!-- X marks over missing needs — drawn as SVG lines not text -->
+            <g stroke="#C62828" stroke-width="2.5" stroke-linecap="round" opacity="0.75">
+              <line x1="691" y1="230" x2="703" y2="242"/><line x1="703" y1="230" x2="691" y2="242"/>
+              <line x1="741" y1="230" x2="753" y2="242"/><line x1="753" y1="230" x2="741" y2="242"/>
+              <line x1="791" y1="230" x2="803" y2="242"/><line x1="803" y1="230" x2="791" y2="242"/>
+            </g>
+            <text x="752" y="278" text-anchor="middle" font-size="12" font-weight="800" fill="#B71C1C">Cannot Survive</text>
+            <rect x="672" y="14" width="160" height="32" rx="8" fill="#B71C1C" opacity="0.9"/>
+            <text x="752" y="34" text-anchor="middle" font-size="13" font-weight="800" fill="white">All Needs Unmet</text>
+
+            <!-- Dividing lines -->
+            <line x1="215" y1="0" x2="215" y2="300" stroke="#fff" stroke-width="3"/>
+            <line x1="430" y1="0" x2="430" y2="300" stroke="#fff" stroke-width="3"/>
+            <line x1="645" y1="0" x2="645" y2="300" stroke="#fff" stroke-width="3"/>
+
+            <!-- Hotspot rectangles -->
+            <rect class="hotspot" x="0"   y="0" width="215" height="300"
+                  fill="#2E7D32"
+                  data-part="survive-well"
+                  data-info="The habitat has everything this organism needs — food, water, shelter, and space. Nothing is missing. The organism can live, grow, and stay healthy here."/>
+            <rect class="hotspot" x="215" y="0" width="215" height="300"
+                  fill="#F9A825"
+                  data-part="survive-less-well"
+                  data-info="The habitat has most of what this organism needs, but one thing is missing or very low. The organism might stay alive, but it will have a hard time. This is where a limiting factor shows up."/>
+            <rect class="hotspot" x="430" y="0" width="215" height="300"
+                  fill="#E64A19"
+                  data-part="not-survive-well"
+                  data-info="Something important is missing from this habitat — and the organism really needs it. It would struggle badly and probably not make it. The frog in the desert belongs here: frogs need water to breathe through their skin, and there is almost none."/>
+            <rect class="hotspot" x="645" y="0" width="215" height="300"
+                  fill="#B71C1C"
+                  data-part="cannot-survive"
+                  data-info="This habitat is missing almost everything the organism needs. There is no way for it to survive here. The polar bear is a good example — it needs ice, cold, and seal meat. In a warm forest, none of those things exist."/>
+          </svg>
+
+          <div class="diagram-info-panel" id="diagramPanel">
+            <span class="dip-word" id="diagramWord"></span>
+            <span id="diagramInfo"></span>
+          </div>
+        </div>
+        <div class="diagram-tap-hint">Tap any zone to see what that survival result means.</div>
+        <div class="diagram-caption">The four possible survival outcomes — from all needs met to no needs met. Every organism in the investigation fits somewhere on this scale.</div>
+      </div>
+
+      <div class="key-concept scroll-reveal">
+        <div class="kc-label">⭐ Key Concept</div>
+        <p><strong>For any habitat, some organisms survive well, some survive less well, and some cannot survive at all.</strong> It depends on whether the habitat meets the organism's needs.</p>
+        <p>When something is missing or limited, that's a limiting factor — and it's the key to explaining your survival result.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Amazing Nature Fact</div>
+      <div class="mind-blow-text">A frog doesn't just breathe through its lungs — <strong>it absorbs oxygen through its wet skin.</strong> That means if a frog's skin dries out, it can't breathe. In a desert with no water, a frog would suffocate in hours.</div>
+    </div>
+  </div>
+
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper</summary>
+    <div class="gd-body">
+      <p><strong>What happens when the environment changes?</strong> Scientists have seen this play out in the real world. When rivers dry up, frogs disappear. When ocean temperatures rise, cold-water fish move north. Some organisms adapt over long periods of time — others don't make it.</p>
+      <p>This is exactly why scientists study limiting factors. If you know what an organism needs, you can predict where it can survive — and what threatens it. That knowledge helps conservationists protect endangered species by protecting the habitats those organisms depend on.</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+
+</div><!-- /tab-lesson -->
+
+
+<!-- ════════════════════════════════════════════ -->
+<!-- TAB 3: EXPLORE — Investigation              -->
+<!-- ════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🔬</span>
+      <div>
+        <div class="video-wrap-type">Activity 3 · Investigation</div>
+        <div class="video-wrap-title">How to Run a Survival Scenario</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🔬</div>
+        <div class="video-placeholder-text">Exploration video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 15-2-exploration-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#0288D1;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🔬 Investigation: Survival Scenario Challenge</div>
+        <div class="act-subtitle">Analyze the scenarios — then argue from evidence.</div>
+      </div>
+      <div class="act-time" style="background:#0288D1;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="callout callout-tip" style="margin-bottom:18px;">
+        <span class="callout-icon">🎒</span>
+        <p><strong>You'll need:</strong> Your science notebook, a pencil, and colored pencils for your habitat drawing. Everything else is on this page.</p>
+      </div>
+
+      <!-- Scenarios -->
+      <div style="background:#FAFAF6;border:2px solid #E8DDD2;border-radius:16px;padding:16px;margin-bottom:20px;">
+        <p style="font-size:15px;font-weight:800;color:#1B4332;margin-bottom:12px;">📋 The Five Scenarios</p>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="background:#E8F5E9;border-left:5px solid #2E7D32;border-radius:10px;padding:12px 16px;font-size:16px;color:#2B1D12;"><strong>Scenario A:</strong> A frog lives in a dry desert with very little water.</div>
+          <div style="background:#E3F2FD;border-left:5px solid #1565C0;border-radius:10px;padding:12px 16px;font-size:16px;color:#2B1D12;"><strong>Scenario B:</strong> A cactus lives in a hot desert with sandy soil.</div>
+          <div style="background:#E0F7FA;border-left:5px solid #0097A7;border-radius:10px;padding:12px 16px;font-size:16px;color:#2B1D12;"><strong>Scenario C:</strong> A fish lives in a pond with clean water and insects to eat.</div>
+          <div style="background:#F3E5F5;border-left:5px solid #7B1FA2;border-radius:10px;padding:12px 16px;font-size:16px;color:#2B1D12;"><strong>Scenario D:</strong> A rabbit lives in a field with grass, water, and many hiding places.</div>
+          <div style="background:#FFF3E0;border-left:5px solid #E65100;border-radius:10px;padding:12px 16px;font-size:16px;color:#2B1D12;"><strong>Scenario E:</strong> A polar bear lives in a warm forest with no ice and little meat to eat.</div>
+        </div>
+      </div>
+
+      <p>Work through each step in your science notebook. Take your time — good scientists are careful and specific.</p>
+
+      <div style="position:relative; margin:16px 0;">
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">1</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Choose three scenarios</strong> from the list above. Write the letters you chose at the top of your notebook page.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2D6A4F,#52B788);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(45,106,79,0.3);">2</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Create a chart</strong> with these five column headings: <em>organism · habitat · needs · limiting factor · survival result.</em> Fill it in for each of your three scenarios.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#52B788,#F9A825);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(82,183,136,0.3);">3</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>For each scenario, decide:</strong> Would this organism survive well, survive less well, or not survive at all? Write your survival result in your chart. Then identify the limiting factor.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F9A825,#FDD835);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(249,168,37,0.3);">4</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Choose one scenario</strong> and draw its habitat in your notebook. Label the resources that are present and any that are missing or limited.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#0288D1,#4DD0E1);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(2,136,209,0.3);">5</div>
+          <div style="flex:1;background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Write a scientific argument</strong> for your drawn scenario using this frame:<br>
+            <em>The organism would survive ______.</em><br>
+            <em>My evidence is ______.</em><br>
+            <em>This matters because ______.</em></p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🌿</span>
+        <div>
+          <div class="label">Think Like a Scientist</div>
+          <div class="question">"Look at your three scenarios. Is there a pattern? What do the ones where the organism can't survive have in common?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Record Your Thinking -->
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#2E7D32;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">📓 Record Your Thinking</div>
+        <div class="act-subtitle">Organize what you found. Be specific.</div>
+      </div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>In your science notebook, review what you recorded. A good scientist writes exactly what they found — not just "it worked" or "it can't survive."</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">1</span>
+        <span class="pq-text">Write down the limiting factor for each of your three scenarios. Use the word "limiting factor" in your answer.</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">2</span>
+        <span class="pq-text">Which organism would survive the best? Which would survive the least well? Explain why for each one.</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">3</span>
+        <span class="pq-text">Write one scientific conclusion about how habitats affect survival. Start with: <em>"When a habitat does not provide…"</em></span>
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">🗣</span>
+        <p>Tell the story of your investigation. What did you do first? What did you find? What surprised you? Use your chart and drawing to help you explain it.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Think It Through -->
+  <div class="card theme-meadow scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">💬</div>
+      <div>
+        <div class="card-head-label">Discussion</div>
+        <div class="card-head-title">Think It Through</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Answer each question in your notebook before moving on.</p>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Question 1</div>
+          <div class="question">"What did you notice about the scenarios where the organism survived well? What did those habitats have in common?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">💡</span>
+        <div>
+          <div class="label">Question 2</div>
+          <div class="question">"What evidence from your chart helped you decide the survival result? Could you have answered without it?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🌿</span>
+        <div>
+          <div class="label">Question 3 — Connect to Nature</div>
+          <div class="question">"Think of a real animal near your home. What would happen to it if its habitat suddenly lost its main water source?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🔁</span>
+        <div>
+          <div class="label">Question 4 — Improve or Extend</div>
+          <div class="question">"What scenario would you add to this investigation? Describe the organism, the habitat, and the limiting factor."</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+
+</div><!-- /tab-explore -->
+
+
+<!-- ════════════════════════════════════════════ -->
+<!-- TAB 4: SELF-CHECK QUIZ                      -->
+<!-- ════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#F9A825;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">🌍</div>
+      <div style="flex:1;">
+        <div style="font-size:19px;color:#1B4332;font-weight:800;line-height:1.2;">🧠 Quick Self-Check</div>
+        <div style="font-size:12px;color:#9A8E82;">Not graded — just for you! See how much you remember before the notebook work.</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+
+      <!-- QUESTION 1 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. What is a limiting factor?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>A type of animal adaptation that helps it survive cold weather</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Something in a habitat that makes it harder for an organism to survive</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>A tool scientists use to measure how large a habitat is</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌿 Yes! A limiting factor is something that limits — or reduces — an organism's ability to survive. Too little water is a classic example.</div>
+        <div class="quiz-feedback fb-wrong">Think back to the vocab card. A limiting factor makes survival harder — it's something the habitat is missing or doesn't have enough of.</div>
+      </div>
+
+      <!-- QUESTION 2 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">2. A deer needs grass, water, and shelter. Its field has plenty of grass and hiding spots — but almost no water. What is most likely true?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>The deer would survive well — there's plenty of food and shelter.</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Water is a limiting factor — the deer may survive less well or not at all.</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Deer don't need much water, so the habitat is fine.</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌟 Exactly right! Two needs are met, but water is missing. That one limiting factor puts the deer at serious risk — even when other needs are covered.</div>
+        <div class="quiz-feedback fb-wrong">Check the chart again. Every need matters. Even if most needs are met, one major missing need — like water — becomes a limiting factor that changes the survival result.</div>
+      </div>
+
+      <!-- QUESTION 3 -->
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">3. Which question is most helpful when deciding if an organism can survive in a habitat?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>How old is the organism, and what color is it?</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>How far away is the nearest water source from the organism's home?</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Does this habitat provide what the organism needs to survive?</div>
+        </div>
+        <div class="quiz-feedback fb-correct">⭐ That's the key question scientists ask. Start with what the organism needs — then check whether the habitat provides it. That's evidence-based reasoning.</div>
+        <div class="quiz-feedback fb-wrong">Think about the three evidence questions from the lesson: What does the organism need? Does the habitat provide it? What limiting factor is present? Which answer choice matches that approach?</div>
+      </div>
+
+      <!-- Score Display -->
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum">0</div>
+        <div class="quiz-score-label">out of 3</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+
+        <div class="video-feedback" id="quizVideoCorrect" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">✅</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Perfect Score</div>
+                <div class="video-wrap-title">You nailed it — that's a real scientist's thinking!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">⭐</div>
+                <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 15-2-quiz-perfect --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">📚</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Keep Going</div>
+                <div class="video-wrap-title">Good effort — let's review limiting factors once more.</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">💪</div>
+                <div class="video-placeholder-text">Review video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 15-2-quiz-review --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+
+</div><!-- /tab-quiz -->
+
+
+<!-- ════════════════════════════════════════════ -->
+<!-- TAB 5: ASSIGNMENT                           -->
+<!-- ════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">✍️</span>
+      <div>
+        <div class="video-wrap-type">Activity 5 · Assignment</div>
+        <div class="video-wrap-title">Assignment Walk-Through — What to Submit</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">✍️</div>
+        <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 15-2-assignment-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
+    <div class="act-head">
+      <div class="act-num" style="background:#7B5EA7;">5</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment</div>
+        <div class="act-subtitle">Show what you've learned about survival and limiting factors.</div>
+      </div>
+      <div class="act-time" style="background:#7B5EA7;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- Part A -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔍 Part A — Identify the Limiting Factor</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">For each question below, use what you know about organisms and habitats to identify the limiting factor.</p>
+
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">A frog needs moist skin to breathe. It ends up in a hot, dry desert. What is the limiting factor? Why would the frog not survive there?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">A polar bear needs ice, cold temperatures, and seal meat. It is placed in a warm forest. Name at least two limiting factors present in this habitat.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">A cactus is planted in a pond with deep water and shade. Would it survive well, less well, or not at all? What is the limiting factor?</span></div>
+
+      <!-- Part B -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🚀 Part B — Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer each question in <strong>complete sentences</strong>. Use your science vocabulary.</p>
+
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">4</span><span class="pq-text">What is a limiting factor? Write a sentence that shows you understand what it means — not just the definition.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">5</span><span class="pq-text">Why do scientists look at an organism's needs before deciding if it can survive in a habitat? Explain in two or three sentences.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">6</span><span class="pq-text">Compare Scenario A (frog in the desert) and Scenario C (fish in the pond). How are their survival results different? What explains the difference?</span></div>
+
+      <!-- Write & Explain -->
+      <div class="key-concept scroll-reveal" style="background:#FFF9E8;border-color:#F0E4C0;">
+        <div class="kc-label" style="color:#F9A825;">✍️ Write and Explain</div>
+        <p style="font-size:16px;font-weight:700;color:#1B4332;margin-bottom:14px;">Think about the polar bear scenario. That bear's needs are not being met in the warm forest. Use your investigation to explain what happens — and why evidence matters for that explanation.</p>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What did you observe or decide about this scenario?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"When I analyzed the polar bear scenario, I found that…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What evidence supports your explanation?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"My evidence is that the polar bear needs ______, but the habitat…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">Why does that make sense scientifically?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because limiting factors show us that…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="background:#EEF8F0;border-radius:10px;padding:10px 14px;border-left:3px solid #52B788;">
+          <p style="margin:0;font-size:14px;color:#1B4332;">📚 Try to use at least one of these words: <strong>limiting factor</strong>, <strong>habitat</strong>, <strong>evidence</strong>, <strong>survival</strong></p>
+        </div>
+      </div>
+
+      <!-- Part C -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Label</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Choose one of your scenarios and draw the habitat. Label the resources that are present and any that are missing or limited. Draw the organism inside the habitat. Show whether its needs are being met.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Reflect</div>
+          <div class="question">"Go back to your Notice and Wonder from the very beginning. What did you wonder about then? Can you answer that question now? What changed in your thinking?"</div>
+        </div>
+      </div>
+
+      <!-- What to Turn In -->
+      <div class="turn-in-block">
+        <div class="turn-in-header">
+          <div class="turn-in-header-icon">📋</div>
+          <div>
+            <div class="turn-in-header-label">Canvas Submission</div>
+            <div class="turn-in-header-title">What to Turn In</div>
+          </div>
+        </div>
+        <div class="turn-in-body">
+
+          <p class="turn-in-intro">Submit your work on Canvas using <strong>one of these options:</strong></p>
+
+          <div class="turn-in-options">
+            <div class="turn-in-option turn-in-option-type">
+              <div class="turn-in-option-icon">⌨️</div>
+              <div class="turn-in-option-title">Type It</div>
+              <div class="turn-in-option-text">Type your answers directly into the Canvas assignment.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-photo">
+              <div class="turn-in-option-icon">📸</div>
+              <div class="turn-in-option-title">Photo It</div>
+              <div class="turn-in-option-text">Take a clear photo of your handwritten work and upload it.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-video">
+              <div class="turn-in-option-icon">🎥</div>
+              <div class="turn-in-option-title">Record It</div>
+              <div class="turn-in-option-text">Record a short video explaining what you did and learned.</div>
+            </div>
+          </div>
+
+          <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
+
+          <div class="turn-in-checklist">
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Notice &amp; Wonder warm-up — the needs list and my opening question.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My completed survival scenario chart — three scenarios with organism, habitat, needs, limiting factor, and survival result.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My habitat drawing with the organism and labeled resources (present and missing).</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My written argument with evidence — the three-sentence frame from Step 5.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Part A–C answers and my Write &amp; Explain response (complete sentences, using science vocabulary).</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Closing Video -->
+      <div class="video-wrap" style="margin-top:24px;">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">👋</span>
+          <div>
+            <div class="video-wrap-type">Closing · Wrap-Up</div>
+            <div class="video-wrap-title">Great thinking today! In Lesson 16.01, we'll look at how organisms adapt over time.</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">👋</div>
+            <div class="video-placeholder-text">Closing video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 15-2-closing --></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /tab-assignment -->
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <div class="footer-line1">Optima Academy Online · <span>3rd Grade Science</span></div>
+  <div class="footer-line2">Lesson 15.02 · NGSS 3-LS4-3</div>
+  <div class="footer-line3">© Optima Academy · All rights reserved</div>
+</div>
+
+</div><!-- /page-wrap -->
+
+
+<script>
+
+var LESSON_EMOJI = '🌍';
+
+// ── Tab System ──
+var tabProgress = { vocab: false, lesson: false, explore: false, quiz: false, assignment: false };
+var tabOrder = ['vocab','lesson','explore','quiz','assignment'];
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelector('[data-tab="' + name + '"]').classList.add('active');
+  tabProgress[name] = true;
+  document.querySelector('[data-tab="' + name + '"]').classList.add('visited');
+  var visited = Object.values(tabProgress).filter(Boolean).length;
+  var pct = Math.round((visited / tabOrder.length) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c){
+    if (name === 'vocab') { c.classList.remove('collapsed'); }
+    else { c.classList.add('collapsed'); }
+  });
+  try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+  var top = document.getElementById('pageTop');
+  if (top && top.scrollIntoView) {
+    try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+  }
+}
+
+// ── Interactive Diagram ──
+var activeHotspot = null;
+document.querySelectorAll('.hotspot').forEach(function(hs) {
+  hs.addEventListener('click', function() {
+    var panel = document.getElementById('diagramPanel');
+    var wordEl = document.getElementById('diagramWord');
+    var infoEl = document.getElementById('diagramInfo');
+    if (activeHotspot) activeHotspot.classList.remove('active');
+    if (activeHotspot === this) {
+      activeHotspot = null;
+      panel.classList.remove('visible');
+      return;
+    }
+    this.classList.add('active');
+    activeHotspot = this;
+    var labels = {
+      'survive-well': 'Survive Well',
+      'survive-less-well': 'Survive Less Well',
+      'not-survive-well': 'Not Survive Well',
+      'cannot-survive': 'Cannot Survive'
+    };
+    wordEl.textContent = labels[this.dataset.part] || this.dataset.part.replace(/-/g,' ');
+    infoEl.textContent = this.dataset.info;
+    panel.classList.add('visible');
+  });
+});
+
+// ── Quiz System ──
+var quizAnswered = 0, quizCorrect = 0;
+function checkQuiz(optEl) {
+  var qEl = optEl.closest('.quiz-q');
+  if (qEl.dataset.answered) return;
+  qEl.dataset.answered = '1';
+  quizAnswered++;
+  var correctVal = qEl.dataset.answer;
+  var allOpts = qEl.querySelectorAll('.quiz-opt');
+  allOpts.forEach(function(o){ o.classList.add('disabled'); });
+  var fbCorrect = qEl.querySelector('.fb-correct');
+  var fbWrong   = qEl.querySelector('.fb-wrong');
+  if (optEl.dataset.val === correctVal) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    allOpts.forEach(function(o){ if (o.dataset.val === correctVal) o.classList.add('correct'); });
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+  if (quizAnswered === 3) {
+    var scoreBox = document.getElementById('quizScore');
+    var scoreNum = document.getElementById('quizScoreNum');
+    var scoreMsg = document.getElementById('quizScoreMsg');
+    var vCorrect = document.getElementById('quizVideoCorrect');
+    var vReview  = document.getElementById('quizVideoReview');
+    scoreNum.textContent = quizCorrect;
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '⭐ Perfect! You understand limiting factors!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌿 Great job — almost there!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip) {
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function() {
+    var rect = tip.getBoundingClientRect();
+    var bw   = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Turn-In Checklist ──
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  var checkEl = item.querySelector('.turn-in-check');
+  if (item.classList.contains('checked')) {
+    checkEl.textContent = LESSON_EMOJI;
+  } else {
+    checkEl.textContent = '';
+  }
+}
+
+// ── Back to Top ──
+(function() {
+  var btn = document.getElementById('backToTop');
+  if (!btn) return;
+  var inIframe = (function() {
+    try { return window.self !== window.top; }
+    catch (e) { return true; }
+  })();
+  btn.addEventListener('click', function() {
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    var top = document.getElementById('pageTop');
+    if (top && top.scrollIntoView) {
+      try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+    }
+    try {
+      if (window.frameElement && window.frameElement.scrollIntoView) {
+        window.frameElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (e) {}
+    if (inIframe) {
+      try { window.parent.postMessage({ type: 'optima-lesson:scroll-to-top' }, '*'); } catch (e) {}
+    }
+  });
+  if (inIframe) {
+    setTimeout(function() { btn.classList.add('show'); }, 1500);
+  } else {
+    window.addEventListener('scroll', function() {
+      btn.classList.toggle('show', window.pageYOffset > 400);
+    });
+  }
+})();
+
+// ── Confetti ──
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx    = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#52B788','#F9A825','#FDD835','#4DD0E1','#2E7D32','#7B5EA7','#FF8F00','#0288D1'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── Collapsible Intro Cards ──
+var introCards = document.querySelectorAll('.intro-2col .card');
+introCards.forEach(function(card){
+  var head = card.querySelector('.card-head');
+  if (!head) return;
+  head.addEventListener('click', function(){
+    var willCollapse = !card.classList.contains('collapsed');
+    introCards.forEach(function(c){
+      c.classList.toggle('collapsed', willCollapse);
+    });
+  });
+});
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+tabProgress['vocab'] = true;
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+</script>
+</body>
+</html>
