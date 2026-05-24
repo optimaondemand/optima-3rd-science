@@ -1934,6 +1934,11 @@ function toggleCheck(el) {
   if (check) {
     check.textContent = el.classList.contains('checked') ? LESSON_EMOJI : '';
   }
+  var all   = document.querySelectorAll('.turn-in-item');
+  var done  = document.querySelectorAll('.turn-in-item.checked');
+  if (done.length === all.length && all.length > 0) {
+    setTimeout(function() { if (window.launchConfetti) window.launchConfetti(); }, 120);
+  }
 }
 
 // ── Back to Top ──
