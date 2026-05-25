@@ -424,6 +424,32 @@ em { color: #5A4D3E; }
 .forest { color: #2D6A4F; font-weight: 700; }
 .earth { color: #A0522D; font-weight: 700; }
 
+/* ── Image Suggestion Placeholder ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
 @media (max-width: 620px) {
   .intro-2col { grid-template-columns: 1fr; }
   .vocab-grid { grid-template-columns: 1fr; }
@@ -918,10 +944,24 @@ em { color: #5A4D3E; }
             <div style="background:#EAF8FD;border:2px solid #D6F2FB;border-radius:12px;padding:12px 14px;flex:1;font-size:16px;color:#2B1D12;line-height:1.6;"><strong>🌿 Roots</strong> — pull water up from the soil. That water travels all the way up the stem to the leaves.</div>
           </div>
           <p>Inside each leaf, the plant combines sunlight, water, and air to make sugar. The sugar travels through the stem to every part of the plant that needs energy.</p>
-        </div>
-      </div>
 
-      <!-- SECTION 3 -->
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">🖼️ Suggested Image</div>
+            <img src="images/19-01-leaf-inside.png"
+                 alt="A friendly cross-section illustration of a leaf showing layers of cells with small bright-green oval chloroplasts inside, sunlight arrows entering from the top surface, water droplets traveling up through the stem into the veins, and small air arrows entering through tiny openings on the underside"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A close-up cross-section of a single leaf, sliced open to show the inside. The illustration shows two or three layers of rectangular cells. Inside the cells are small bright-green oval shapes labeled "chloroplasts" — these are where photosynthesis happens. Yellow arrows enter from the top (sunlight coming in). Blue droplets travel up through a thick vein in the middle (water). Small arrows at the bottom surface show air entering through tiny pores. Clean educational illustration, bright cheerful colors, labeled, white background, friendly style suitable for 3rd graders.
+              </div>
+              <div class="image-suggestion-file">Save as: images/19-01-leaf-inside.png</div>
+            </div>
+            <div class="lesson-figure-caption">
+              Zoom in on one leaf and you'd see tiny green structures called <strong>chloroplasts</strong> packed inside each cell. That's where photosynthesis actually happens — sunlight in, sugar out.
+            </div>
+          </div>
       <div class="card theme-earth" style="margin-bottom:18px;">
         <div class="card-head">
           <div class="card-head-icon">🔬</div>
@@ -932,6 +972,25 @@ em { color: #5A4D3E; }
         </div>
         <div class="card-body">
           <p>Scientists figured out photosynthesis by watching what happens when you take sunlight away. A plant kept in the dark stops making food. Its leaves turn yellow. It gets smaller and eventually dies.</p>
+
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">🖼️ Suggested Image</div>
+            <img src="images/19-01-light-vs-dark-plant.png"
+                 alt="Side-by-side comparison of two identical potted plants: the left plant in bright sunlight is tall, green, and lush; the right plant kept in darkness is short, pale yellow, and drooping"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A side-by-side comparison of two identical small potted plants in matching clay pots. LEFT: a healthy, thriving plant with deep green upright leaves, a bright yellow sun shining above it, a cheerful expression implied by its upright posture. RIGHT: the same plant after weeks in the dark — shorter, pale yellowish-green leaves drooping downward, no sun, dim gray background behind it. A clear visual contrast between the two. Clean educational illustration, bright colors on the left vs. muted on the right to emphasize the difference, white background, simple and friendly, suitable for 3rd graders.
+              </div>
+              <div class="image-suggestion-file">Save as: images/19-01-light-vs-dark-plant.png</div>
+            </div>
+            <div class="lesson-figure-caption">
+              Same plant, same pot, same amount of water — the only difference is light. The one on the left got sunlight. The one on the right didn't. That difference <em>is</em> the evidence.
+            </div>
+          </div>
+
           <p>A plant in bright light stays green, grows new leaves, and keeps making sugar. That difference — between the light plant and the dark plant — is the evidence that <strong>sunlight is the key ingredient</strong>.</p>
           <p><strong>Real-World Connection:</strong> When you water a houseplant and set it near a sunny window, you're giving it everything it needs: water from the soil, air from the room, and light from the window.</p>
         </div>
