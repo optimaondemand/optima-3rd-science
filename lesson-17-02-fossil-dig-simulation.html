@@ -377,6 +377,7 @@ em { color: #5A4D3E; }
 
 /* ── Suggested Image Placeholder ── */
 .image-suggestion {
+  display: none;
   background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
   border: 2.5px dashed #F9A825;
   border-radius: 16px;
@@ -384,6 +385,7 @@ em { color: #5A4D3E; }
   margin: 18px 0;
   text-align: center;
 }
+.image-suggestion.show { display: block; }
 .image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
 .image-suggestion-label {
   font-size: 11px; color: #E65100; font-weight: 800;
@@ -691,26 +693,26 @@ em { color: #5A4D3E; }
     </div>
     <div class="act-body">
 
-      <p>Study the photo below. A student completed a fossil investigation chart — look at the column headings, not the fossils. Focus on the words at the top: <em>What I observe / Organism clue / Environment clue / Evidence.</em></p>
+      <p>Imagine a scientist's investigation notebook opened to a data chart. Across the top are four column headings: <em>What I observe</em> — <em>Organism clue</em> — <em>Environment clue</em> — <em>Evidence.</em> Those aren't random words. Every heading is there for a reason.</p>
 
       <div class="lesson-figure" style="margin-bottom:16px;">
         <div class="lesson-figure-label">📷 Photo · From the Lab</div>
         <img src="images/17-02-fossil-investigation.jpg"
              alt="Six fossil evidence cards arranged on a table — shell fossil, fish fossil, leaf fossil with thin veins, footprint fossil with three long toes, sharp tooth fossil, and fern-like plant fossil — beside a student's completed fossil investigation chart with observations, organism clues, environment clues, and evidence columns." />
-        <div class="lesson-figure-caption">Look at the chart headings, not the fossils. Why do scientists keep <strong>"what I observe"</strong> in a completely separate column from <strong>"evidence"</strong>? That's the question this lesson answers.</div>
+        <div class="lesson-figure-caption">A real student's fossil investigation chart. Notice the column headings — <strong>"what I observe"</strong> and <strong>"evidence"</strong> are kept completely separate. Why would that matter?</div>
       </div>
 
       <div class="socratic-q">
         <span class="sq-icon">👀</span>
         <div>
           <div class="label">In Your Science Notebook</div>
-          <div class="question">"Why do you think scientists separate 'what I observe' from 'evidence'? Write down what you think the difference is. Then write one question about how scientists decide if an inference is good or not."</div>
+          <div class="question">"Why do you think scientists separate 'what I observe' from 'evidence'? Write down what you think the difference is. Then write one question about how scientists decide whether an inference is good or not."</div>
         </div>
       </div>
 
       <div class="callout callout-tip">
         <span class="callout-icon">💡</span>
-        <p>This is a question even real scientists think hard about. Hold onto your answer — by the end of today's investigation, you'll know if you were right.</p>
+        <p>There's no wrong answer here — this is what scientists actually debate. Hold onto your response. By the end of today's investigation, you'll know if you were right.</p>
       </div>
 
     </div>
@@ -847,8 +849,8 @@ em { color: #5A4D3E; }
             <div class="lesson-figure-label">🖼️ Suggested Image</div>
             <img src="images/17-02-observation-vs-inference.png"
                  alt="Two-panel illustration: left panel shows a scientist measuring a curved tooth fossil with a ruler and writing '3.5 cm, curved, serrated edges' on a clipboard — labeled Observation. Right panel shows the same scientist with a thought bubble containing a predatory animal hunting prey — labeled Inference."
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-            <div class="image-suggestion" style="display:none;">
+                 onerror="this.style.display='none'; this.nextElementSibling.classList.add('show');" />
+            <div class="image-suggestion">
               <div class="image-suggestion-icon">🖼️</div>
               <div class="image-suggestion-label">Suggested Image — Generate This</div>
               <div class="image-suggestion-desc">
@@ -893,8 +895,8 @@ em { color: #5A4D3E; }
             <div class="lesson-figure-label">🖼️ Suggested Image</div>
             <img src="images/17-02-rock-types-comparison.png"
                  alt="Three rock sample specimens side by side on a white background, each labeled: pale gray limestone (smooth, light-colored), dark mudstone (very dark, almost black, fine-grained), and gray-green shale (thin flat layers visible, slight greenish tone). Each label includes a brief environment note."
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-            <div class="image-suggestion" style="display:none;">
+                 onerror="this.style.display='none'; this.nextElementSibling.classList.add('show');" />
+            <div class="image-suggestion">
               <div class="image-suggestion-icon">🖼️</div>
               <div class="image-suggestion-label">Suggested Image — Generate This</div>
               <div class="image-suggestion-desc">
@@ -1072,8 +1074,8 @@ em { color: #5A4D3E; }
         <div class="lesson-figure-label">🖼️ Suggested Image</div>
         <img src="images/17-02-paleontologist-recording-data.png"
              alt="A paleontologist kneeling at an outdoor dig site, holding a small ruler next to a partially exposed fossil in dark-colored rock, writing detailed measurements in a field notebook. A marker sign reading 'Find 4 — 210 cm' is visible nearby."
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-        <div class="image-suggestion" style="display:none;">
+             onerror="this.style.display='none'; this.nextElementSibling.classList.add('show');" />
+        <div class="image-suggestion">
           <div class="image-suggestion-icon">🖼️</div>
           <div class="image-suggestion-label">Suggested Image — Generate This</div>
           <div class="image-suggestion-desc">
