@@ -381,6 +381,32 @@ details > div { padding: 12px 18px 14px; font-size: 16px; color: #5A4D3E; line-h
 .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #8D6E63, #BCAAA4, #FDD835); border-radius: 10px; transition: width 0.4s ease; }
 .progress-pct { font-size: 13px; color: #FDD835; font-weight: 800; min-width: 36px; text-align: right; }
 
+/* ── Image Suggestions ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
 /* ── Utility ── */
 strong { color: #1B4332; }
 em { color: #5A4D3E; }
@@ -865,6 +891,23 @@ em { color: #5A4D3E; }
         <div class="card-body">
           <p>A <span class="vtip">fossil<span class="vtip-box"><span class="vtip-word">fossil</span>Preserved remains or traces of a living thing from long ago — pressed into rock over millions of years.</span></span> is the preserved remains or traces of an ancient living thing. Bones, shells, leaf prints, and even footprints can all become fossils when buried in sediment over a very long time.</p>
           <p>Fossils don't just show us that something once lived. They hold specific details — the shape of fins, the curve of a claw, the pattern of veins in a leaf. Each detail is a piece of <span class="vtip">evidence<span class="vtip-box"><span class="vtip-word">evidence</span>Information that supports an explanation. Scientists use evidence to reason carefully, not to guess.</span></span>.</p>
+
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">🖼️ Suggested Image</div>
+            <img src="images/17-01-fossil-formation.png"
+                 alt="Four-step illustration showing how a fossil forms: a fish dies and sinks, sediment covers it, rock hardens around it over millions of years, and a scientist finds the fossil impression in stone"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A clean 4-panel horizontal sequence showing how a fossil forms. Panel 1: a fish dies and sinks to the seafloor, surrounded by murky water and falling sediment particles. Panel 2: layers of brown and tan sediment have buried the fish completely, with an arrow showing time passing. Panel 3: the sediment layers have turned to solid rock, with a glowing impression of the fish skeleton visible inside. Panel 4: a scientist's gloved hand brushing away rock to reveal the fish fossil. Each panel has a simple label underneath (1. Dies, 2. Gets Buried, 3. Rock Forms, 4. Found!). Clean educational illustration, bright and friendly colors, white background, large clear shapes suitable for 3rd graders.
+              </div>
+              <div class="image-suggestion-file">Save as: images/17-01-fossil-formation.png</div>
+            </div>
+            <div class="lesson-figure-caption">This is how a fossil forms — it takes <strong>millions of years</strong> for sediment to harden into rock around the remains of a living thing.</div>
+          </div>
+
           <div class="socratic-q">
             <span class="sq-icon">🤔</span>
             <div>
@@ -887,10 +930,22 @@ em { color: #5A4D3E; }
         <div class="card-body">
           <p>When a scientist finds a fish fossil with visible fins and a spine, they can <span class="vtip">infer<span class="vtip-box"><span class="vtip-word">infer</span>To use clues and evidence to reach a careful explanation — not just guessing, but reasoning from what you observe.</span></span> what the fish looked like and roughly how it moved. A large tooth with sharp edges tells a different story than a flat, grinding tooth.</p>
           <p>Many of these ancient organisms are <span class="vtip">extinct<span class="vtip-box"><span class="vtip-word">extinct</span>No longer living anywhere on Earth. Fossils are often the only record that an extinct organism ever existed.</span></span> — they no longer exist anywhere on Earth. Without fossils, we would have no idea they ever lived.</p>
-        </div>
-      </div>
 
-      <!-- Section 3 -->
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">🖼️ Suggested Image</div>
+            <img src="images/17-01-trilobite-extinct.png"
+                 alt="Side-by-side illustration of a trilobite fossil in rock on the left, and a reconstructed full-color trilobite as it would have looked alive on the right, with an equals sign connecting them"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A side-by-side educational illustration. Left side: a detailed trilobite fossil impression in tan-brown rock — showing the segmented oval shell, multiple ridged body sections, a rounded head shield, and a pointed tail, all pressed into stone. Right side: a colorful reconstruction of what that same trilobite looked like alive — a small oval sea creature with a blue-brown segmented shell, tiny legs visible underneath, and antennae, shown swimming in shallow water. A simple arrow or "→" connects the two images. Label underneath left: "The fossil we found." Label underneath right: "What it looked like alive." Clean educational illustration, bright colors, white or very light blue background, friendly style suitable for 3rd graders.
+              </div>
+              <div class="image-suggestion-file">Save as: images/17-01-trilobite-extinct.png</div>
+            </div>
+            <div class="lesson-figure-caption">Trilobites lived in ancient oceans for hundreds of millions of years — then went <strong>extinct</strong>. The only reason we know they existed is because of fossils.</div>
+          </div>
       <div class="card theme-sky" style="margin-bottom:18px;">
         <div class="card-head">
           <div class="card-head-icon">🌊</div>
@@ -903,10 +958,22 @@ em { color: #5A4D3E; }
           <p>Here's something surprising: marine shell fossils have been found on top of mountains. Ocean fish fossils have been found in deserts. That isn't a mistake — it's evidence that those places used to be very different.</p>
           <p>The <span class="vtip">environment<span class="vtip-box"><span class="vtip-word">environment</span>The surroundings where an organism lives — land, water, air, temperature, and the other organisms around it.</span></span> an organism lived in left clues in the fossil record. A fern fossil tells you the area was once warm and humid. A coral fossil tells you shallow ocean water once covered that spot.</p>
           <p><strong>Real-World Connection:</strong> Scientists have found tropical plant fossils in Antarctica — evidence that millions of years ago, that frozen continent had a very different, warmer climate.</p>
-        </div>
-      </div>
 
-      <!-- Interactive Diagram: Rock Layer Cross-Section -->
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">🖼️ Suggested Image</div>
+            <img src="images/17-01-environment-then-now.png"
+                 alt="Split illustration showing the same rocky hillside location in two time periods: on the left as a warm shallow ocean full of sea life millions of years ago, and on the right as a dry desert today with a visible shell fossil in the rock"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A split-screen illustration showing the exact same rocky hillside at two points in time, divided by a jagged line down the center. Left half (labeled "Millions of Years Ago"): the hillside is underwater — a bright, warm, tropical ocean with colorful fish, coral, ammonite shells, and seaweed swaying in the water, with sunlight filtering down from above. Right half (labeled "Today"): the same rocky hillside is a dry, sunny desert with cracked brown earth, sparse dry plants, a clear blue sky, and a close-up inset circle showing a shell fossil visible in the rock face. The two halves share the same rocky layer at the bottom so it's clear it's the same location. Clean educational illustration, bright colors, white or neutral background, large shapes and labels suitable for 3rd graders.
+              </div>
+              <div class="image-suggestion-file">Save as: images/17-01-environment-then-now.png</div>
+            </div>
+            <div class="lesson-figure-caption">The <strong>same place</strong> can look completely different millions of years apart. Fossils are the evidence that tells us what it used to be like.</div>
+          </div>: Rock Layer Cross-Section -->
       <div class="diagram-wrap scroll-reveal">
         <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
           🗺 Tap a rock layer to learn what it tells scientists

@@ -375,6 +375,32 @@ em { color: #5A4D3E; }
 .forest { color: #2D6A4F; font-weight: 700; }
 .earth { color: #A0522D; font-weight: 700; }
 
+/* ── Suggested Image Placeholder ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
 @media (max-width: 620px) {
   .intro-2col { grid-template-columns: 1fr; }
   .vocab-grid { grid-template-columns: 1fr; }
@@ -665,7 +691,14 @@ em { color: #5A4D3E; }
     </div>
     <div class="act-body">
 
-      <p>Look at the photo in the Lesson tab again — the one showing the fossil cards and completed chart. But this time, focus on the chart, not the fossils. Look at the column headings: <em>What I observe / Organism clue / Environment clue / Evidence.</em></p>
+      <p>Study the photo below. A student completed a fossil investigation chart — look at the column headings, not the fossils. Focus on the words at the top: <em>What I observe / Organism clue / Environment clue / Evidence.</em></p>
+
+      <div class="lesson-figure" style="margin-bottom:16px;">
+        <div class="lesson-figure-label">📷 Photo · From the Lab</div>
+        <img src="images/17-02-fossil-investigation.jpg"
+             alt="Six fossil evidence cards arranged on a table — shell fossil, fish fossil, leaf fossil with thin veins, footprint fossil with three long toes, sharp tooth fossil, and fern-like plant fossil — beside a student's completed fossil investigation chart with observations, organism clues, environment clues, and evidence columns." />
+        <div class="lesson-figure-caption">Look at the chart headings, not the fossils. Why do scientists keep <strong>"what I observe"</strong> in a completely separate column from <strong>"evidence"</strong>? That's the question this lesson answers.</div>
+      </div>
 
       <div class="socratic-q">
         <span class="sq-icon">👀</span>
@@ -778,16 +811,6 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
-  <!-- Uploaded lesson image -->
-  <div class="lesson-figure">
-    <div class="lesson-figure-label">📷 Photo · From the Lab</div>
-    <img src="images/17-02-fossil-investigation.jpg"
-         alt="Six fossil evidence cards arranged on a table — shell fossil, fish fossil, leaf fossil with thin veins, footprint fossil with three long toes, sharp tooth fossil, and fern-like plant fossil — beside a student's completed fossil investigation chart with observations, organism clues, environment clues, and evidence columns." />
-    <div class="lesson-figure-caption">
-      These are the fossil evidence cards you'll use in today's investigation. Notice how each fossil looks different — different shapes, textures, and patterns. Those differences are your <strong>clues</strong>. The student chart on the right shows what a completed fossil investigation looks like.
-    </div>
-  </div>
-
   <!-- ═══ ACTIVITY 2: CORE LESSON CONTENT ═══ -->
   <div class="activity-card act-lesson scroll-reveal">
     <div class="act-head">
@@ -819,6 +842,22 @@ em { color: #5A4D3E; }
               <div class="question">"Which of these is an observation and which is an inference: 'The tooth is curved and sharp' vs. 'This animal was a predator'? How do you tell the difference?"</div>
             </div>
           </div>
+
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">🖼️ Suggested Image</div>
+            <img src="images/17-02-observation-vs-inference.png"
+                 alt="Two-panel illustration: left panel shows a scientist measuring a curved tooth fossil with a ruler and writing '3.5 cm, curved, serrated edges' on a clipboard — labeled Observation. Right panel shows the same scientist with a thought bubble containing a predatory animal hunting prey — labeled Inference."
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A clean two-panel split illustration with a thin vertical dividing line. Left panel labeled "OBSERVATION" in bold green text at the top: a friendly, gender-neutral scientist in a white lab coat holds a ruler next to a large curved tooth fossil resting on a lab table. A speech bubble shows the text "3.5 cm. Curved. Serrated on both edges." with a small clipboard visible showing written notes. Right panel labeled "INFERENCE" in bold blue text: the same scientist has a large thought bubble containing a simple cartoon predatory sea creature (like a mosasaur or large ancient fish) swimming toward smaller fish as prey. The thought bubble style clearly indicates it is a conclusion, not a fact. Clean educational illustration, bright primary colors, bold chunky labels, friendly cartoon style suitable for 3rd graders, white background.
+              </div>
+              <div class="image-suggestion-file">Save as: images/17-02-observation-vs-inference.png</div>
+            </div>
+            <div class="lesson-figure-caption">An <strong>observation</strong> is only what you can measure or see. An <strong>inference</strong> is the conclusion you build from those measurements — it always has to point back to specific data.</div>
+          </div>
         </div>
       </div>
 
@@ -849,6 +888,22 @@ em { color: #5A4D3E; }
         <div class="card-body">
           <p>For a fossil to form, an organism needs to be buried quickly in <span class="vtip">sediment<span class="vtip-box"><span class="vtip-word">sediment</span>Tiny pieces of rock, sand, or mud that settle in layers over time and can preserve organisms.</span></span> — sand, mud, or volcanic ash. That burial protects the remains from decay. Over millions of years, minerals replace the original material and the sediment hardens into rock.</p>
           <p>The type of sediment matters as evidence. Dark mudstone often forms in wet, swampy conditions. Fine-grained limestone can form in calm, shallow water. So the rock itself is part of the data. <strong>Real-World Connection:</strong> Fossils found in dark shale tell paleontologists that a low-oxygen swamp once existed there — the same conditions that preserve remains so well.</p>
+
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">🖼️ Suggested Image</div>
+            <img src="images/17-02-rock-types-comparison.png"
+                 alt="Three rock sample specimens side by side on a white background, each labeled: pale gray limestone (smooth, light-colored), dark mudstone (very dark, almost black, fine-grained), and gray-green shale (thin flat layers visible, slight greenish tone). Each label includes a brief environment note."
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                Three rock specimens arranged side by side on a clean white background, evenly spaced, each roughly the same size (like a hand-sized sample). Each specimen is clearly labeled below it in bold text. Left specimen: "Pale Gray Limestone" — smooth, light cream-gray color, fine-grained, looks almost powdery. Small label underneath reads "Forms in calm, shallow water." Center specimen: "Dark Mudstone" — very dark brown/black color, fine-grained, slightly rough texture with a faint sheen. Small label underneath reads "Forms in wet, swampy areas." Right specimen: "Gray-Green Shale" — layered appearance with thin flat horizontal lines visible, gray with a slight greenish tint. Small label underneath reads "Forms in quiet water with sediment." Clean educational illustration or photorealistic style, accurate rock textures, white background, bold readable labels in a friendly font suitable for 3rd graders.
+              </div>
+              <div class="image-suggestion-file">Save as: images/17-02-rock-types-comparison.png</div>
+            </div>
+            <div class="lesson-figure-caption">The <strong>rock type around a fossil is data</strong> — not just decoration. These are the three rock types you'll find in Dr. Reyes's field data. Learn to recognize them before you start the investigation.</div>
+          </div>
         </div>
       </div>
 
@@ -1011,6 +1066,22 @@ em { color: #5A4D3E; }
       <div style="background:#1B4332;border-radius:14px;padding:18px 20px;margin-bottom:20px;color:#fff;">
         <p style="font-size:13px;color:#95D5B2;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">📄 Field Memo — Site 7-B</p>
         <p style="font-size:15px;color:rgba(255,255,255,0.88);line-height:1.65;margin:0;">Paleontologist Dr. A. Reyes spent three weeks excavating Site 7-B, a dry hillside location. She documented every find carefully before drawing any conclusions. Below is her raw data — five fossil finds at different depths. Your job: analyze the full dataset and write a Field Report describing what this site's ancient landscape looked like.</p>
+      </div>
+
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">🖼️ Suggested Image</div>
+        <img src="images/17-02-paleontologist-recording-data.png"
+             alt="A paleontologist kneeling at an outdoor dig site, holding a small ruler next to a partially exposed fossil in dark-colored rock, writing detailed measurements in a field notebook. A marker sign reading 'Find 4 — 210 cm' is visible nearby."
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            A friendly paleontologist (gender-neutral, wearing a wide-brimmed hat, khaki field clothes, and safety goggles pushed up on their forehead) kneeling in the dirt at an outdoor excavation site. They hold a small yellow ruler next to a partially exposed fossil — a fish skeleton visible in dark-colored rock. Their other hand holds a spiral-bound field notebook showing handwritten measurements and sketches of the fossil. A small yellow marker sign planted in the dirt beside them reads "Find 4 — Depth 210 cm." The surrounding soil shows visible layers of different-colored rock — lighter brown at the top, dark mudstone-like layer below. Warm sunny daylight, earthy tones. Clean educational illustration, friendly realistic style (not cartoony), bright colors, suitable for 3rd graders, light sky-blue background or outdoor setting.
+          </div>
+          <div class="image-suggestion-file">Save as: images/17-02-paleontologist-recording-data.png</div>
+        </div>
+        <div class="lesson-figure-caption">This is what data collection looks like in the field. Dr. Reyes measured every fossil, recorded the rock type, and noted the exact depth — <strong>before</strong> drawing any conclusions. That's the data you're about to analyze.</div>
       </div>
 
       <!-- The 5 data finds -->
@@ -1413,7 +1484,7 @@ em { color: #5A4D3E; }
 
       <div class="pq"><span class="pq-num" style="background:#F9A825;">4</span><span class="pq-text">A scientist writes: "This was a predator." Is this a strong or weak scientific inference? Rewrite it as a strong inference using at least two specific observations from Card E (sharp tooth near bone pieces).</span></div>
       <div class="pq"><span class="pq-num" style="background:#F9A825;">5</span><span class="pq-text">Why does recording specific data — like "ridges curve from center to edge" — matter more than general data like "the fossil has a pattern"? Use an example from your investigation.</span></div>
-      <div class="pq"><span class="pq-num" style="background:#F9A825;">6</span><span class="pq-text">Card F says the fern fossil is found in dark rock. How does the type of rock add to what scientists can infer — beyond just the fossil's shape?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">6</span><span class="pq-text">In the Site 7-B data, Find 2 (the fern fossil) is preserved in dark mudstone. How does that rock type add to what scientists can infer — beyond just the fossil's shape?</span></div>
 
       <div class="key-concept scroll-reveal" style="background:#FFF9E8;border-color:#F0E4C0;margin-top:20px;">
         <div class="kc-label" style="color:#F9A825;">✍️ Write and Explain</div>
@@ -1458,7 +1529,7 @@ em { color: #5A4D3E; }
         <span class="sq-icon">🤔</span>
         <div>
           <div class="label">Reflect</div>
-          <div class="question">"Go back to your Notice &amp; Wonder response — you wrote about the difference between observation and evidence. Does your answer still hold after doing the field data analysis? What would you add or change?"</div>
+          <div class="question">"Think back to your Notice &amp; Wonder response — you wrote about the difference between observation and evidence before the investigation began. Does your original answer still hold? What would you add or change now that you've worked through the Site 7-B data?"</div>
         </div>
       </div>
 
@@ -1674,7 +1745,7 @@ function checkQuiz(optEl) {
       scoreMsg.textContent = '🌿 Almost there! Review the fossil clues and try again.';
       if (vReview) vReview.classList.add('show');
     } else {
-      scoreMsg.textContent = '👍 Good effort! Head back to the Lesson tab and check Section 2.';
+      scoreMsg.textContent = '👍 Good effort! Review what makes a strong inference, then try again.';
       if (vReview) vReview.classList.add('show');
     }
     scoreBox.classList.add('show');
