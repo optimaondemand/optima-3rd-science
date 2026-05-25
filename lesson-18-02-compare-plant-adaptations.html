@@ -364,6 +364,32 @@ body {
 .mbs-text { font-size: 14px; color: #fff; line-height: 1.55; font-weight: 600; }
 .mbs-text strong { color: #95D5B2; }
 
+/* ── Image Suggestions ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
 /* ── Utility ── */
 strong { color: #1B4332; }
 em { color: #5A4D3E; }
@@ -719,7 +745,14 @@ em { color: #5A4D3E; }
       <div class="act-time" style="background:#52B788;">⏱ 5 min</div>
     </div>
     <div class="act-body">
-      <p>Look at the photo on the Lesson tab. On one side, trees shade the rocky ground. On the other, grasses grow tall in open sunlight. Two very different worlds — right next to each other.</p>
+      <div class="lesson-figure" style="margin-bottom:14px;">
+        <div class="lesson-figure-label">📷 Photo · From the Field</div>
+        <img src="images/18-02-forest-grassland.png"
+             alt="A mountain forest on the left with tall pine trees, rocky soil, and ferns in the shade, meeting an open grassland on the right with wildflowers and tall grasses in full sunlight" />
+        <div class="lesson-figure-caption">
+          On one side, trees shade the rocky ground. On the other, grasses stretch out into open sunlight. Two very different worlds — right next to each other.
+        </div>
+      </div>
       <p>In your notebook, write down two things you notice about the plants on each side. Then write one question you're wondering about.</p>
       <div class="socratic-q">
         <span class="sq-icon">🌿</span>
@@ -819,16 +852,6 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
-  <!-- Photo -->
-  <div class="lesson-figure">
-    <div class="lesson-figure-label">📷 Photo · From the Field</div>
-    <img src="images/18-02-forest-grassland.png"
-         alt="A mountain forest on the left with tall pine trees, rocky soil, and ferns in the shade, meeting an open grassland on the right with wildflowers and tall grasses in full sunlight" />
-    <div class="lesson-figure-caption">
-      Look at both sides carefully. Notice the <strong>rocky, shaded ground</strong> under the trees and the <strong>wide, open sunlight</strong> on the grassland side. What differences do you see in the plants?
-    </div>
-  </div>
-
   <!-- Lesson content -->
   <div class="activity-card act-lesson scroll-reveal">
     <div class="act-head">
@@ -859,6 +882,21 @@ em { color: #5A4D3E; }
               <div class="question">"If you were a plant, which challenge would be harder — not enough light, or not enough water? Why?"</div>
             </div>
           </div>
+          <div class="lesson-figure" style="margin-top:14px;">
+            <div class="lesson-figure-label">🖼️ Suggested Image</div>
+            <img src="images/18-02-forest-floor-light.png"
+                 alt="A forest floor scene showing tall tree trunks and thin beams of dappled sunlight filtering down through the canopy to a small fern growing among rocks in the dim light below"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A clean educational illustration of a forest floor. Three or four tall, dark tree trunks fill the upper portion of the scene. Between the trunks, thin beams of dappled sunlight angle down through layers of leaves — only a few rays make it all the way to the ground, and they're dim and scattered. The forest floor is rocky and shadowy. A small green fern grows in the foreground, its wide, flat fronds spread out horizontally to catch the limited light. The overall mood is noticeably dim compared to bright outdoor settings. Style: bright, friendly educational illustration, clean lines, suitable for 3rd graders, light or white background outside the forest scene.
+              </div>
+              <div class="image-suggestion-file">Save as: images/18-02-forest-floor-light.png</div>
+            </div>
+            <div class="lesson-figure-caption">A forest floor gets very little sunlight — the trees above block most of it. A plant living here has a real problem to solve.</div>
+          </div>
         </div>
       </div>
 
@@ -873,6 +911,21 @@ em { color: #5A4D3E; }
         <div class="card-body">
           <p>A fern growing on the shady forest floor has wide, flat fronds. Those broad leaves catch every bit of light that filters through the trees. That trait is a solution to the problem of shade.</p>
           <p>A prairie grass has thin, tough leaves and roots that go deep — sometimes deeper than you are tall. That root system is a solution to dry seasons. It can reach water far underground when the surface dries out.</p>
+          <div class="lesson-figure" style="margin-top:14px;">
+            <div class="lesson-figure-label">🖼️ Suggested Image</div>
+            <img src="images/18-02-fern-vs-grass-leaves.png"
+                 alt="Side-by-side illustration comparing a wide flat fern frond on the left with dim light rays shown filtering down to it, and a narrow upright grass blade on the right with a bright sun shining directly overhead"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A clean side-by-side educational illustration divided into two panels. Left panel (labeled "Forest Plant"): a single fern frond with wide, flat, layered leaflets and visible veins, shown in a slightly dim setting with thin rays of scattered light angling down from above — an arrow points to the frond with the label "wide, flat leaf." Right panel (labeled "Grassland Plant"): a single prairie grass stem with narrow, stiff, upright leaves, shown in bright direct sunlight with a yellow sun near the top of the panel — an arrow points to the leaf with the label "narrow, tough leaf." Simple, bold labels. Style: clean educational illustration, bright friendly colors, white background, suitable for 3rd graders.
+              </div>
+              <div class="image-suggestion-file">Save as: images/18-02-fern-vs-grass-leaves.png</div>
+            </div>
+            <div class="lesson-figure-caption">Same problem (getting enough energy from the sun), two completely different solutions.</div>
+          </div>
         </div>
       </div>
 
@@ -1109,7 +1162,7 @@ em { color: #5A4D3E; }
         <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
           <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">1</div>
           <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
-            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Look at the photo and diagram.</strong> Study the forest and grassland plants carefully. Write down at least two traits you notice on each side. Use words like leaf shape, leaf size, stem thickness, or root depth.</p>
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Open your notebook to your Notice &amp; Wonder observations.</strong> Review the traits you wrote down for each side. Add anything new you want to record. Use words like leaf shape, leaf size, stem thickness, or root depth.</p>
           </div>
         </div>
 
