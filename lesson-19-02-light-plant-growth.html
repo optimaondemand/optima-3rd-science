@@ -681,6 +681,32 @@ em { color: #5A4D3E; }
 /* ── Scroll Reveal ── */
 .scroll-reveal { opacity: 1; }
 
+/* ── Image Suggestion Placeholders ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
 @media (max-width: 620px) {
   .intro-2col { grid-template-columns: 1fr; }
   .vocab-grid { grid-template-columns: 1fr; }
@@ -1125,6 +1151,21 @@ em { color: #5A4D3E; }
         <div class="card-body">
           <p>Plants make their own food using sunlight. Without enough light, a plant can't make the energy it needs to grow tall and strong. This process is called <span class="vtip">photosynthesis<span class="vtip-box"><span class="vtip-word">photosynthesis</span>The way plants use sunlight, water, and air to make their own food.</span></span>.</p>
           <p>When a plant gets plenty of light, it grows faster. When light is weak or blocked, growth slows down — sometimes a lot.</p>
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">🖼️ Suggested Image</div>
+            <img src="images/19-02-photosynthesis-simple.png"
+                 alt="A simple illustration of a green plant in a pot. Rays of sunlight shine down onto the leaves. Arrows show water being absorbed through the roots and air entering the leaves, with a glowing energy symbol in the center of the plant to represent food being made."
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A simple, labeled educational illustration of a green plant in a terracotta pot. Three labeled arrows point toward the plant: one from a bright yellow sun in the upper corner labeled "sunlight," one from the soil upward through the roots labeled "water," and one from the air into the leaves labeled "air." A warm glowing yellow-orange spark or star shape sits in the center of the plant labeled "food &amp; energy." Clean white background, bright friendly colors, flat illustration style suitable for 3rd graders. No text beyond the three labels.
+              </div>
+              <div class="image-suggestion-file">Save as: images/19-02-photosynthesis-simple.png</div>
+            </div>
+            <div class="lesson-figure-caption">Plants use sunlight, water, and air to make their own food. More light means more energy — and faster growth.</div>
+          </div>
           <div class="socratic-q">
             <span class="sq-icon">🤔</span>
             <div>
@@ -1146,6 +1187,21 @@ em { color: #5A4D3E; }
         <div class="card-body">
           <p>In a fair test, scientists change only one thing at a time. In this investigation, the only difference between the two plants is <strong>light</strong>. Everything else — the soil, the water, the pot — stays the same.</p>
           <p>That way, if the plants grow differently, we know light is the reason. The thing we change on purpose is called the <span class="vtip">variable<span class="vtip-box"><span class="vtip-word">variable</span>The one thing a scientist changes on purpose in a fair test.</span></span>.</p>
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">🖼️ Suggested Image</div>
+            <img src="images/19-02-fair-test-setup.png"
+                 alt="Two identical potted plants side by side on a table. Both pots are the same size and color, with the same soil and same amount of water shown. A bright lamp shines on the left plant. A dim covered lamp sits above the right plant. Green checkmarks appear next to soil, water, and pot to show they are the same. A bold arrow highlights the light as the one difference."
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A clean educational illustration showing two identical terracotta pots side by side on a white table. Both pots contain the same green plant at the same starting height, the same brown soil, and a small water droplet icon showing equal water. A bright yellow desk lamp shines strongly on the left plant. A dim gray lamp with a shade mostly blocking the light sits over the right plant. On the left side, small green checkmark labels read "same soil," "same water," "same pot." A bold orange arrow or callout box points to the lamps and reads "DIFFERENT: Light." Clean white background, flat illustration style, bright friendly colors, suitable for 3rd graders.
+              </div>
+              <div class="image-suggestion-file">Save as: images/19-02-fair-test-setup.png</div>
+            </div>
+            <div class="lesson-figure-caption">A fair test changes only one thing at a time. Here, light is the variable — everything else stays exactly the same.</div>
+          </div>
         </div>
       </div>
 
