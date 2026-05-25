@@ -821,6 +821,32 @@ em { color: #5A4D3E; }
   .turn-in-options { grid-template-columns: 1fr; }
   .turn-in-header-title { font-size: 20px; }
 }
+
+/* ── Suggested Image Placeholder ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
 </style>
 </head>
 
@@ -1147,7 +1173,25 @@ em { color: #5A4D3E; }
     </div>
     <div class="act-body">
 
-      <p>Look at the four plant cards in front of you — or the photo at the top of the Lesson tab. Each plant lives in a different place: a desert, a rainforest, a grassland, and a wetland. They all look completely different.</p>
+      <p>Look at the four plants below. Each one lives in a completely different place — a desert, a rainforest, a grassland, and a wetland. Before you read anything, just look carefully.</p>
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">🖼️ Suggested Image</div>
+        <img src="images/18-01-four-plants-noticing.png"
+             alt="Four plants side by side: a cactus in sandy desert soil, a large-leafed tropical plant in a lush rainforest, a clump of grass with exposed roots in a sunny grassland, and tall reeds standing in shallow wetland water"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            Four plants shown side by side in a clean horizontal row, each in its natural environment setting. From left to right: (1) a green barrel cactus with spines in sandy desert soil, bright sunny sky behind it; (2) a large tropical plant with wide shiny leaves in a lush green rainforest, rain visible in the background; (3) a clump of green grass with visible root system below the soil line in a sunny golden grassland; (4) tall brown-tipped reeds standing in shallow blue-green wetland water. Each plant is clearly labeled with its environment name below it. Clean educational illustration style, bright natural colors, friendly and simple, suitable for 3rd graders. White or very light background between panels.
+          </div>
+          <div class="image-suggestion-file">Save as: images/18-01-four-plants-noticing.png</div>
+        </div>
+        <div class="lesson-figure-caption">
+          Four plants, four places. What do you notice? Look at the leaves, the stems, the roots, the soil. Write down 3 things that catch your eye.
+        </div>
+      </div>
+
 
       <div class="socratic-q">
         <span class="sq-icon">👀</span>
@@ -1358,6 +1402,24 @@ em { color: #5A4D3E; }
         <div class="card-body">
           <p><strong>Desert plants</strong> must survive with very little water. A cactus stores water in its thick, waxy stem. Its spines — which are actually modified leaves — reduce water loss and keep animals away. These traits are adaptations to a hot, dry place.</p>
           <p><strong>Rainforest plants</strong> live where rain falls almost every day and tall trees block the sun. Many have wide, waxy leaves to catch as much light as possible in the shade. Some have "drip tips" — pointed leaf ends that channel water off quickly so the leaf doesn't rot. Wide leaves in a desert would lose too much water. Cactus spines in a rainforest wouldn't help much either. <strong>The same trait that helps in one place may hurt in another.</strong></p>
+
+        <div class="lesson-figure">
+          <div class="lesson-figure-label">🖼️ Suggested Image</div>
+          <img src="images/18-01-drip-tip-vs-spine.png"
+               alt="Side-by-side close-up of a cactus spine (left) and a tropical rainforest drip-tip leaf (right), showing the structural differences between the two adaptations"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+          <div class="image-suggestion" style="display:none;">
+            <div class="image-suggestion-icon">🖼️</div>
+            <div class="image-suggestion-label">Suggested Image — Generate This</div>
+            <div class="image-suggestion-desc">
+              Side-by-side educational comparison on a clean white background. Left panel: extreme close-up of a green cactus arm covered in sharp yellowish spines, with label "desert: spines reduce water loss." Right panel: the tip of a large, shiny tropical leaf narrowing to a long pointed drip tip, with a water droplet running off the end, with label "rainforest: drip tip sheds water fast." Clean educational illustration style, bright natural colors, friendly and simple, suitable for 3rd graders. Light background, bold labels.
+            </div>
+            <div class="image-suggestion-file">Save as: images/18-01-drip-tip-vs-spine.png</div>
+          </div>
+          <div class="lesson-figure-caption">
+            Left: cactus spines are actually modified leaves — tiny surface area means almost no water loss. Right: a rainforest "drip tip" channels water off the leaf quickly so it doesn't rot in the constant rain.
+          </div>
+        </div>
         </div>
       </div>
 
@@ -1541,6 +1603,24 @@ em { color: #5A4D3E; }
       <div class="mind-blow-label">Amazing Nature Fact</div>
       <div class="mind-blow-text">A saguaro cactus can absorb <strong>200 gallons of water</strong> in a single rainstorm — and its roots spread 50 feet in every direction but barely go 4 inches deep. It drinks up rain fast before it evaporates, then lives off that water for a year.</div>
     </div>
+  </div><!-- /mind-blow -->
+
+  <div class="lesson-figure">
+    <div class="lesson-figure-label">🖼️ Suggested Image</div>
+    <img src="images/18-01-saguaro-scale.png"
+         alt="A tall saguaro cactus in an Arizona desert landscape with a person standing next to it to show scale, illustrating how massive these cacti can grow"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+    <div class="image-suggestion" style="display:none;">
+      <div class="image-suggestion-icon">🖼️</div>
+      <div class="image-suggestion-label">Suggested Image — Generate This</div>
+      <div class="image-suggestion-desc">
+        A large, iconic saguaro cactus standing tall in a sunny Arizona desert landscape — sandy ground, blue sky, a few smaller desert plants around it. A friendly cartoon child (about 4 feet tall) stands next to the base of the cactus to show scale — the cactus should be 3–4 times taller than the child. The cactus has the classic two upward-curving arms. Clean educational illustration style, warm bright colors, simple and friendly, suitable for 3rd graders. Light background preferred.
+      </div>
+      <div class="image-suggestion-file">Save as: images/18-01-saguaro-scale.png</div>
+    </div>
+    <div class="lesson-figure-caption">
+      A saguaro cactus can grow taller than 40 feet — and store enough water to weigh over a ton. That shallow root system spreads out as wide as the cactus is tall.
+    </div>
   </div>
 
   <!-- Go Deeper -->
@@ -1648,6 +1728,26 @@ em { color: #5A4D3E; }
           </div>
         </div>
 
+      </div>
+
+
+      <!-- Suggested image: wrong-environment -->
+      <div class="lesson-figure" style="margin-top:16px;">
+        <div class="lesson-figure-label">🖼️ Suggested Image</div>
+        <img src="images/18-01-wrong-environment.png"
+             alt="Two panels: a cactus wilting in heavy rain in a rainforest, and a broad-leaf tropical plant shriveling in a dry sunny desert"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            Two side-by-side panels on a clean white background. Left panel: a cartoon cactus sitting in a rainy rainforest — heavy rain falling, soaking wet ground, the cactus looks rotting and droopy with a worried expression. Right panel: a cartoon broad-leaf tropical plant sitting in a dry sunny desert — cracked brown ground, blazing sun, the large leaves curled, brown-tipped, and wilting with a distressed look. Friendly and slightly humorous, clean educational illustration style, bright colors, suitable for 3rd graders.
+          </div>
+          <div class="image-suggestion-file">Save as: images/18-01-wrong-environment.png</div>
+        </div>
+        <div class="lesson-figure-caption">
+          When a plant ends up in the wrong environment, its adaptations can become disadvantages instead of advantages.
+        </div>
       </div>
 
       <!-- Socratic check-in during exploration -->
