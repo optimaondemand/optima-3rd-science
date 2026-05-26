@@ -97,6 +97,13 @@ body {
 
 @keyframes mind-blow-bounce { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
 
+/* ── Image Suggestion Placeholders ── */
+.image-suggestion { background: linear-gradient(135deg, #FFF3E0, #FFF8E1); border: 2.5px dashed #F9A825; border-radius: 16px; padding: 20px 22px; margin: 18px 0; text-align: center; }
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label { font-size: 11px; color: #E65100; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.image-suggestion-desc { font-size: 15px; color: #5A4D3E; line-height: 1.65; font-weight: 600; max-width: 680px; margin: 0 auto 12px; text-align: left; }
+.image-suggestion-file { font-size: 12px; color: #9A8E82; font-family: monospace; background: rgba(0,0,0,0.05); border-radius: 6px; padding: 4px 10px; display: inline-block; margin-top: 6px; }
+
 /* ── Info Strip ── */
 .info-strip { display: flex; flex-wrap: wrap; background: #fff; border-bottom: 2px solid #E8DDD2; }
 .info-item { flex: 1; min-width: 150px; padding: 12px 16px; border-right: 1px solid #E8DDD2; display: flex; align-items: center; gap: 10px; }
@@ -639,6 +646,15 @@ body {
     </div>
     <div class="act-body">
       <p>Look at the photo below. A student built something using a craft stick, string, and a magnet. Look carefully before you read anything else.</p>
+
+      <div class="lesson-figure" style="margin:14px 0;">
+        <div class="lesson-figure-label">📷 Photo · From the Classroom</div>
+        <img src="images/7-02-magnetic-rescue-tool.png"
+             alt="A student holds a craft-stick handle with a magnet dangling by string over a white tray full of paper clips and metal washers. Several paper clips cling to the magnet. A science notebook shows a hand-drawn data table tracking objects collected and design changes across three trials." />
+        <div class="lesson-figure-caption">
+          What do you notice? What do you wonder?
+        </div>
+      </div>
       <div class="socratic-q">
         <span class="sq-icon">👀</span>
         <div>
@@ -743,16 +759,6 @@ body {
     </div>
   </div>
 
-  <!-- Uploaded photo from the field -->
-  <div class="lesson-figure">
-    <div class="lesson-figure-label">📷 Photo · From the Classroom</div>
-    <img src="images/7-02-magnetic-rescue-tool.png"
-         alt="A student holds a craft-stick handle with a magnet dangling by string over a white tray full of paper clips and metal washers. Several paper clips cling to the magnet. A science notebook shows a hand-drawn data table tracking objects collected and design changes across three trials." />
-    <div class="lesson-figure-caption">
-      A real magnetic rescue tool — craft stick, string, and a magnet. Notice how the <strong>paper clips cling to the magnet without being touched</strong>. The notebook shows data from three redesign trials.
-    </div>
-  </div>
-
   <div class="activity-card act-lesson scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#F9A825;">2</div>
@@ -776,6 +782,20 @@ body {
         <div class="card-body">
           <p>A magnet creates a <span class="vtip">magnetic force<span class="vtip-box"><span class="vtip-word">magnetic force</span>A push or pull between a magnet and a magnetic material — no touching required.</span></span> around it. That force can pull certain metal objects toward the magnet without any contact.</p>
           <p>Not all metals are magnetic. Paper clips and washers work. Aluminum foil does not. Knowing <em>which</em> materials respond to a magnet is part of solving the problem.</p>
+
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">📷 Photo · Magnetic Force Made Visible</div>
+            <img src="images/7-02-magnetic-field.png"
+                 alt="Iron filings scattered on a flat surface around a bar magnet, forming curved lines that fan out from the poles and arc back around, revealing the invisible magnetic field in dramatic close-up detail"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">Close-up photograph of iron filings arranged around a red and silver bar magnet resting on a dark slate or wooden surface. The iron filings form clear, curved arc-shaped lines radiating outward from both magnetic poles, making the invisible magnetic field dramatically visible. Warm, directional natural lighting from the side. Shallow depth of field. Macro or close-up photography style. Real-world science photograph, no white background, no borders, no text overlays. Suitable for 3rd grade science education.</div>
+              <div class="image-suggestion-file">Save as: images/7-02-magnetic-field.png</div>
+            </div>
+            <div class="lesson-figure-caption">Iron filings reveal the invisible magnetic field around a bar magnet. The force spreads out in curved lines from each pole — this is the same force your rescue tool uses to pick up metal objects.</div>
+          </div>
           <div class="socratic-q">
             <span class="sq-icon">🤔</span>
             <div>
@@ -813,6 +833,20 @@ body {
         <div class="card-body">
           <p>A <span class="vtip">prototype<span class="vtip-box"><span class="vtip-word">prototype</span>A first working model — built to test and learn from, not to be perfect.</span></span> is never meant to be perfect. It's meant to teach you something. When you test it and record data, you find exactly where it fails — and that tells you what to fix.</p>
           <p><strong>Real-World Connection:</strong> Engineers who build cranes for recycling yards use magnets to sort metal from trash. They test different magnet strengths and arm lengths to lift the most material safely.</p>
+
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">📷 Photo · Magnets at Work in the Real World</div>
+            <img src="images/7-02-scrapyard-crane.png"
+                 alt="A large industrial electromagnet crane suspended high above a pile of scrap metal at a recycling yard, with twisted steel beams, car parts, and metal debris dangling from the powerful circular magnet below the crane arm"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">Photograph of a real industrial electromagnet crane at an outdoor scrapyard or metal recycling facility. The crane's large circular electromagnet is visible suspended from a boom arm, with scrap metal — twisted steel, car parts, iron pieces — being lifted or hanging below the magnet. The scene shows a big, chaotic pile of metal scraps below. Overcast or bright outdoor daylight. Wide or medium shot showing the full scale of the crane against the sky. No white background, no text overlays. Gritty, real-world industrial photography. Suitable as a real-world engineering connection for 3rd grade science.</div>
+              <div class="image-suggestion-file">Save as: images/7-02-scrapyard-crane.png</div>
+            </div>
+            <div class="lesson-figure-caption">An electromagnet crane at a scrapyard uses the same magnetic-force idea you're exploring — just at a massive scale. Engineers spent years testing and improving designs like this one.</div>
+          </div>
         </div>
       </div>
 
@@ -1375,11 +1409,11 @@ body {
           <div class="turn-in-checklist">
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Notice &amp; Wonder observations and question from the Vocabulary page.</div>
+              <div class="turn-in-item-text">My Notice &amp; Wonder observations and question from my science notebook.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div>
+              <div class="turn-in-item-text">The copywork sentence from my science notebook.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
