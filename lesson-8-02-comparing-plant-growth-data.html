@@ -688,6 +688,32 @@ em { color: #5A4D3E; }
   pointer-events: none; z-index: 9999;
 }
 
+/* ── Image Suggestion Placeholder ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
 @media (max-width: 620px) {
   .intro-2col { grid-template-columns: 1fr; }
   .vocab-grid { grid-template-columns: 1fr; }
@@ -1175,6 +1201,22 @@ em { color: #5A4D3E; }
         </div>
       </div>
 
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">📷 Measuring Plants in the Field</div>
+        <img src="images/8-02-scientist-measuring-plant.png"
+             alt="Close-up of a child's hands holding a centimeter ruler against a small green seedling growing in a pot of dark soil, with a notebook visible in the background"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            A close-up photograph of a child's hands pressing a centimeter ruler against the stem of a small green seedling growing in dark soil in a pot. The ruler clearly shows centimeter markings. A science notebook with handwritten observations is slightly blurred in the background. The setting is a sunny windowsill or outdoor garden table. Warm natural lighting, rich colors, no white background or borders. Real-world educational photo, no illustrations, no cartoons. Style: candid, warm, suitable for 3rd grade science.
+          </div>
+          <div class="image-suggestion-file">Save as: images/8-02-scientist-measuring-plant.png</div>
+        </div>
+        <div class="lesson-figure-caption">Scientists measure carefully and write it down. "13 cm tall" tells you a lot more than "it grew."</div>
+      </div>
+
       <!-- Section 2 -->
       <div class="card theme-sky" style="margin-bottom:18px;">
         <div class="card-head">
@@ -1323,6 +1365,23 @@ em { color: #5A4D3E; }
     <summary>Curious? Go Deeper</summary>
     <div class="gd-body">
       <p><strong>Why does sunlight matter so much?</strong> Plants make their own food using a process called photosynthesis. They take in sunlight, water, and air — and turn those ingredients into sugar for energy. Without light, there's no energy, and without energy, there's no growth.</p>
+
+      <div class="lesson-figure" style="margin:14px 0;">
+        <div class="lesson-figure-label">📷 Sunlight Entering a Leaf</div>
+        <img src="images/8-02-sunlight-through-leaves.png"
+             alt="Photograph looking up through green plant leaves toward bright sunlight, with golden light streaming through the leaf surfaces and making the veins glow"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            A photograph looking upward through the broad green leaves of a plant or low tree branch, toward bright natural sunlight. The sunlight streams through the leaf surfaces, making the leaf veins glow amber and gold and the rest of the leaf a rich, luminous green. Shot outdoors in a real garden, field, or forest. Warm golden light, deep greens, no white background or borders, no text or overlays. Real-world nature photography style, vibrant and warm, suitable for 3rd grade science. The image should feel like you are standing under the plant looking up at the sun feeding it.
+          </div>
+          <div class="image-suggestion-file">Save as: images/8-02-sunlight-through-leaves.png</div>
+        </div>
+        <div class="lesson-figure-caption">That golden glow is sunlight passing through the leaf — the plant is absorbing it as energy right now.</div>
+      </div>
+
       <p>Here's something interesting: not all plants need the same amount. Ferns love the shade. Cacti love full sun. That's why different plants live in different places — forests, deserts, meadows — and why scientists pay close attention to growing conditions when they study plant life cycles.</p>
     </div>
   </details>
@@ -1371,7 +1430,7 @@ em { color: #5A4D3E; }
 
       <div class="callout callout-tip" style="margin-bottom:18px;">
         <span class="callout-icon">🎒</span>
-        <p><strong>You'll need:</strong> The plant data from the diagram on the Lesson tab, your science notebook, a pencil, and colored pencils. Optional: graph paper.</p>
+        <p><strong>You'll need:</strong> Your science notebook, a pencil, and colored pencils. Optional: graph paper.</p>
       </div>
 
       <p>In this investigation, you'll study real plant growth data — the same data from the four plants on the windowsill. Follow each step and record your work as you go.</p>
@@ -1381,7 +1440,7 @@ em { color: #5A4D3E; }
         <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
           <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">1</div>
           <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
-            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Set Up Your Data Table:</strong> In your notebook, draw a table with two columns — Condition and Height (cm). Fill in the four rows using the data you see in the plant diagram: <em>More Sunlight: 13 cm · Less Sunlight: 4 cm · More Water: 10 cm · Less Water: 2 cm.</em></p>
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Set Up Your Data Table:</strong> In your notebook, draw a table with two columns — Condition and Height (cm). Fill in the four rows using this data: <em>More Sunlight: 13 cm · Less Sunlight: 4 cm · More Water: 10 cm · Less Water: 2 cm.</em> Remember — all four plants started as seeds at 0 cm.</p>
           </div>
         </div>
 

@@ -296,6 +296,32 @@ details > div { padding: 12px 18px 14px; font-size: 16px; color: #5A4D3E; line-h
 .mind-blow-text { font-size: 16px; color: #fff; line-height: 1.6; font-weight: 600; }
 .mind-blow-text strong { color: #95D5B2; }
 
+/* ── Image Suggestions ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
 /* ── Scroll Reveal ── */
 .scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
 
@@ -967,6 +993,22 @@ em { color: #5A4D3E; }
             </div>
           </div>
 
+          <div class="lesson-figure" style="margin:18px 0 16px;">
+            <div class="lesson-figure-label">📷 Photo · Germination Up Close</div>
+            <img src="images/8-01-seed-germination.png"
+                 alt="A bean seed that has just germinated, with a curved white root emerging downward and a tiny green shoot starting to push upward, resting on dark moist soil"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A close-up macro photograph of a bean or pea seed that has just begun to germinate. The seed coat has cracked open and a thick, curved white root (radicle) is curling downward into dark, moist soil. A tiny pale-green shoot is just beginning to push upward. The seed rests in rich dark earth with visible soil texture. Shot in natural light, slightly overhead angle. No white background — the background is dark moist soil. Real-world macro photography style, vivid and detailed, suitable for 3rd graders.
+              </div>
+              <div class="image-suggestion-file">Save as: images/8-01-seed-germination.png</div>
+            </div>
+            <div class="lesson-figure-caption">This is what germination looks like up close. The seed cracks open underground and sends a root downward and a shoot upward — all before you ever see anything above the soil.</div>
+          </div>
+
           <div class="socratic-q">
             <span class="sq-icon">🤔</span>
             <div>
@@ -1014,6 +1056,22 @@ em { color: #5A4D3E; }
             <div style="background:#FFF9E8;border:1.5px solid #F0E4C0;border-radius:12px;padding:10px 16px;font-size:16px;color:#2B1D12;"><strong>Stem</strong> — holds the plant upright and acts like a straw, moving water from roots up to leaves.</div>
             <div style="background:#EEF8F0;border:1.5px solid #C4E5CC;border-radius:12px;padding:10px 16px;font-size:16px;color:#2B1D12;"><strong>Leaves</strong> — catch sunlight and use it to make the plant's food.</div>
             <div style="background:#EAF8FD;border:1.5px solid #D6F2FB;border-radius:12px;padding:10px 16px;font-size:16px;color:#2B1D12;"><strong>Flower</strong> — helps the plant reproduce by making seeds for the next generation.</div>
+          </div>
+
+          <div class="lesson-figure" style="margin:16px 0;">
+            <div class="lesson-figure-label">📷 Photo · Roots at Work</div>
+            <img src="images/8-01-plant-roots.png"
+                 alt="A small garden plant held in a person's hands outdoors, pulled gently from soil, showing a dense branching root system fanning out below the green stem, with soil clinging to the roots"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A real photograph taken outdoors in a garden: two hands (belonging to a child or adult) holding a small plant — such as a bean seedling or small leafy garden plant — that has been gently pulled from the ground. The root system is clearly visible below the stem: a dense network of white and tan roots branching outward, with dark moist soil clinging to them. The green leafy top is visible above. Natural sunlight, garden setting with blurred soil or grass in the background. No white background. Warm natural lighting, real-world photography style.
+              </div>
+              <div class="image-suggestion-file">Save as: images/8-01-plant-roots.png</div>
+            </div>
+            <div class="lesson-figure-caption">Roots spread out in every direction underground, searching for water and nutrients. Most of the plant's work happens where you can't even see it.</div>
           </div>
 
           <p><strong>Real-World Connection:</strong> When you pull a carrot from the ground, you're eating the root. When you eat celery, you're eating the stem. When you eat spinach, you're eating the leaf. Plants use these same structures you eat — to survive.</p>
@@ -1159,6 +1217,23 @@ em { color: #5A4D3E; }
       <div class="mind-blow-label">Amazing Plant Fact</div>
       <div class="mind-blow-text">A <strong>bristlecone pine tree</strong> in the White Mountains of California is over <strong>5,000 years old</strong>. It was already a mature tree when the ancient Egyptians were building the pyramids — and it's still completing its life cycle today.</div>
     </div>
+  </div>
+
+  <!-- Bristlecone Pine Photo -->
+  <div class="lesson-figure" style="margin:0 0 18px;">
+    <div class="lesson-figure-label">📷 Photo · Ancient Bristlecone Pine</div>
+    <img src="images/8-01-bristlecone-pine.png"
+         alt="An ancient bristlecone pine tree with gnarled, twisted bare wood and sparse clusters of dark green needles, growing on a rocky mountainside under a deep blue sky"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+    <div class="image-suggestion" style="display:none;">
+      <div class="image-suggestion-icon">🖼️</div>
+      <div class="image-suggestion-label">Suggested Image — Generate This</div>
+      <div class="image-suggestion-desc">
+        A real landscape photograph of an ancient bristlecone pine tree (Pinus longaeva) in the White Mountains of California or Great Basin National Park. The tree is gnarled and sculptural — thick twisted bare wood bleached silver-white by centuries of sun, with small clusters of dark green needles still alive on a few branches. Rocky, high-altitude terrain surrounds it: pale limestone or dolomite ground, sparse low vegetation. Deep blue sky in the background. Wide or medium shot showing the full tree. Dramatic natural lighting, no white background, real-world landscape photography.
+      </div>
+      <div class="image-suggestion-file">Save as: images/8-01-bristlecone-pine.png</div>
+    </div>
+    <div class="lesson-figure-caption">This is a real bristlecone pine — one of the oldest living things on Earth. It looks ancient because it is. That twisted, weathered wood is the result of thousands of years of growing, reproducing, and surviving.</div>
   </div>
 
   <!-- Go Deeper -->
@@ -1377,7 +1452,7 @@ em { color: #5A4D3E; }
           <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>It starts to sprout — sending out a root and a tiny shoot.</div>
         </div>
         <div class="quiz-feedback fb-correct">🌿 Right! Germination is the start of growth — the seed cracks open and the first root and shoot appear.</div>
-        <div class="quiz-feedback fb-wrong">Look back at the vocabulary tab. Germination is what happens when a seed first begins to grow — think of it as "waking up."</div>
+        <div class="quiz-feedback fb-wrong">Germination is what happens when a seed first begins to grow — it's when the seed "wakes up," cracks open, and sends out its first root and shoot. Flip back to your science notebook notes on this one.</div>
       </div>
 
       <!-- QUESTION 2 -->
@@ -1592,15 +1667,15 @@ em { color: #5A4D3E; }
           <div class="turn-in-checklist">
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Notice &amp; Wonder drawing and question from the Vocabulary tab.</div>
+              <div class="turn-in-item-text">My Notice &amp; Wonder drawing and question (from my science notebook).</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div>
+              <div class="turn-in-item-text">The copywork sentence (copied into my science notebook).</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My plant observation sketch with labels and measurements from the Explore tab.</div>
+              <div class="turn-in-item-text">My plant observation sketch with labels and measurements.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
