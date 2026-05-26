@@ -623,6 +623,32 @@ body {
 .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #52B788, #95D5B2, #FDD835); border-radius: 10px; transition: width 0.4s ease; }
 .progress-pct { font-size: 13px; color: #FDD835; font-weight: 800; min-width: 36px; text-align: right; }
 
+/* ── Image Suggestions ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
 /* ── Utility ── */
 strong { color: #1B4332; }
 em { color: #5A4D3E; }
@@ -1140,6 +1166,23 @@ em { color: #5A4D3E; }
         <div class="card-body">
           <p>Every living thing needs certain <span class="vtip">resources<span class="vtip-box"><span class="vtip-word">resource</span>Something an organism needs to live — food, water, shelter, space, or air.</span></span> to stay alive. These are food, water, shelter, space, and air. When a <span class="vtip">habitat<span class="vtip-box"><span class="vtip-word">habitat</span>The place where an organism lives and finds what it needs.</span></span> provides all of these, an organism can thrive.</p>
           <p>When even one resource is hard to find, survival gets harder. That's where things get interesting for scientists.</p>
+
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">📊 Diagram · Survival Needs</div>
+            <img src="images/15-01-survival-needs-diagram.png"
+                 alt="A labeled illustration of a rabbit in a green meadow with five arrows pointing outward to symbols for each survival need: green grass for food, a blue stream for water, a burrow entrance for shelter, open ground for space, and curling breeze lines for air — each clearly labeled"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A clean educational illustration of a gray rabbit sitting in a bright green meadow. Five labeled arrows radiate outward from the rabbit, each pointing to a different element: one to green grass labeled "Food," one to a small blue stream labeled "Water," one to a burrow entrance in a grassy hill labeled "Shelter," one to the open ground/sky labeled "Space," and one to gentle curling breeze lines labeled "Air." Each label is bold and easy to read. Friendly, bright colors. White background. Style: clean educational diagram, suitable for 3rd graders.
+              </div>
+              <div class="image-suggestion-file">Save as: images/15-01-survival-needs-diagram.png</div>
+            </div>
+            <div class="lesson-figure-caption">Every organism needs all five of these resources. If even one becomes hard to find, <strong>survival gets harder</strong>.</div>
+          </div>
+
           <div class="socratic-q">
             <span class="sq-icon">🤔</span>
             <div>
@@ -1377,6 +1420,22 @@ em { color: #5A4D3E; }
       </div>
 
       <!-- STEP 3 -->
+      <div class="lesson-figure" style="margin-top:4px;">
+        <div class="lesson-figure-label">🌿 Habitat Reference · Steps 3 &amp; 4</div>
+        <img src="images/15-01-two-habitats-compare.png"
+             alt="A side-by-side illustration of two contrasting habitats divided by a thin line: on the left, a lush green forest meadow with a clear stream, tall leafy trees, thick grass, and small animals; on the right, a dry rocky hillside with cracked brown soil, sparse yellowed grass, bare rocks, and no visible water source"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            A clean educational illustration showing two contrasting habitats side by side, separated by a thin vertical dividing line. LEFT SIDE labeled "Habitat A" at the top: a bright green forest meadow with a clear blue stream winding through it, tall leafy trees, thick green grass, colorful wildflowers, and small friendly animals (a rabbit, a bird). RIGHT SIDE labeled "Habitat B" at the top: a dry, rocky hillside with cracked tan and brown soil, sparse yellowed dry grass, bare jagged grey rocks, no water visible, and a small bare dead tree. Bright and clear colors, easy to compare at a glance. White background. Style: clean educational illustration, friendly and suitable for 3rd graders.
+          </div>
+          <div class="image-suggestion-file">Save as: images/15-01-two-habitats-compare.png</div>
+        </div>
+        <div class="lesson-figure-caption">Use this as a reference for Steps 3 and 4. <strong>Habitat A</strong> is on the left. <strong>Habitat B</strong> is on the right.</div>
+      </div>
+
       <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
         <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F57F17,#F9A825);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(249,168,37,0.3);">3</div>
         <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">

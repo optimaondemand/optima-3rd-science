@@ -289,6 +289,32 @@ body {
 }
 .lesson-figure-caption strong { color: #1B4332; }
 
+/* ── Image Suggestion Fallback (shown when an image file is missing) ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
 /* ── Key Concept Box ── */
 .key-concept {
   background: #F0F8E8; border: 2px solid #C8E0B8;
@@ -1172,13 +1198,31 @@ em { color: #5A4D3E; }
     </div>
     <div class="act-body">
 
-      <p>Look closely at the meadow photo at the top of the next section. You can see the sun rising, grass everywhere, a rabbit nibbling, and a fox in the trees. Before we learn anything new, just <strong>notice</strong>. What is happening in this scene?</p>
+      <p>Before we learn anything new, just <strong>look</strong> at this meadow scene. Take your time. Notice the sun, the grass, the rabbit, and the fox in the trees. What is going on here?</p>
+
+      <!-- Meadow photo — anchor image for the warm-up. Lives on the Vocab tab
+           so the Notice & Wonder prompt and the image are in the same place. -->
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">📷 A Meadow at Sunrise</div>
+        <img src="images/14-01-rabbit-fox-meadow.jpg"
+             alt="A sunlit meadow at dawn. A brown rabbit grazes in tall green grass in the foreground while a red fox watches from the tree line in the background. Warm sunlight streams through the leaves."
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            A real photograph of a sunlit meadow at dawn or early morning. A brown rabbit grazes calmly in tall green grass in the foreground. A red fox stands watching from the tree line in the background, partly shaded. Warm golden sunlight streams down through the leaves of trees behind. Soft, natural, slightly cinematic photography. Bright, warm, friendly mood — not menacing. Suitable for 3rd graders.
+          </div>
+          <div class="image-suggestion-file">Save as: images/14-01-rabbit-fox-meadow.jpg</div>
+        </div>
+        <div class="lesson-figure-caption">A real food chain caught in one picture. The <strong>sun</strong> is shining on the <strong>grass</strong>. The grass feeds the <strong>rabbit</strong>. The <strong>fox</strong> is watching the rabbit.</div>
+      </div>
 
       <div class="socratic-q">
         <span class="sq-icon">👀</span>
         <div>
           <div class="label">In Your Science Notebook</div>
-          <div class="question">"Write 3 things you notice in the meadow scene. Then write 1 question you have about what is going on between the sun, the grass, the rabbit, and the fox."</div>
+          <div class="question">"Write 3 things you notice in this meadow scene. Then write 1 question you have about what is going on between the sun, the grass, the rabbit, and the fox."</div>
         </div>
       </div>
 
@@ -1289,18 +1333,6 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════════════════════════════ -->
-  <!-- UPLOADED LESSON IMAGE — meadow scene showing sun, grass, rabbit, fox    -->
-  <!-- ══════════════════════════════════════════════════════════════════════ -->
-  <div class="lesson-figure">
-    <div class="lesson-figure-label">📷 Photo · A Real Food Chain</div>
-    <img src="images/14-01-rabbit-fox-meadow.jpg"
-         alt="A sunlit meadow at dawn. A brown rabbit grazes in tall green grass in the foreground while a red fox watches from the tree line in the background. Warm sunlight streams through the leaves." />
-    <div class="lesson-figure-caption">
-      Look closely. The <strong>sun</strong> is shining on the <strong>grass</strong>. The grass feeds the <strong>rabbit</strong>. The <strong>fox</strong> is watching the rabbit. You are looking at a real food chain — energy moving from the sun all the way to the fox.
-    </div>
-  </div>
-
   <!-- ═══ ACTIVITY 2: CORE LESSON CONTENT ═══ -->
   <!-- PURPOSE: Teach the science content clearly. ~10-12 min reading + thinking -->
   <div class="activity-card act-lesson scroll-reveal">
@@ -1365,6 +1397,23 @@ em { color: #5A4D3E; }
         <div class="card-body">
           <p>A living thing can only stay alive in a place that gives it what it needs — food, water, shelter, and space. That place is called a <span class="vtip">habitat<span class="vtip-box"><span class="vtip-word">habitat</span>The place where a living thing finds food, water, shelter, and space.</span></span>.</p>
           <p>A fish does great in a pond. Drop it on the hot, dry desert sand and it will not survive at all. A cactus is the opposite — it lives easily in the desert, but it would rot in deep water.</p>
+
+          <!-- Suggested image: habitat survival side-by-side -->
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">🌵 The Right Place to Live</div>
+            <img src="images/14-01-habitat-survival.png"
+                 alt="A side-by-side illustration. On the left, a tall green saguaro cactus stands in a sunny desert with sand and rocks. On the right, a small orange fish swims in a clear blue pond with green water plants."
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A side-by-side illustration in two equal panels separated by a thin vertical line. <strong>Left panel:</strong> A tall, healthy green saguaro cactus standing in a bright, sunny desert with warm sandy ground, a few small rocks, and a clear blue sky. The cactus looks strong and alive. <strong>Right panel:</strong> A small orange fish swimming happily in clear blue pond water with two or three green water plants and a few smooth pebbles on the bottom. Both panels feel cheerful and safe — no danger, no sadness. Clean educational illustration style, bright colors, friendly look, suitable for 3rd graders. White or very light background outside the panel frames.
+              </div>
+              <div class="image-suggestion-file">Save as: images/14-01-habitat-survival.png</div>
+            </div>
+            <div class="lesson-figure-caption">Each one is built for its own home. The cactus saves water for the dry desert. The fish breathes underwater. <strong>Switch their habitats</strong> and neither one would last long.</div>
+          </div>
           <p><strong>Real-World Connection:</strong> Think about a rabbit. A grassy meadow gives a rabbit plenty of plants to eat and bushes to hide in. The same rabbit in a frozen, treeless place would not find what it needs.</p>
         </div>
       </div>
@@ -1588,7 +1637,7 @@ em { color: #5A4D3E; }
     <div class="gd-body">
       <p><strong>Why do food chains usually have only a few links?</strong> Every time energy passes from one living thing to the next, a lot of it gets used up — for moving, growing, and keeping warm. By the time you reach the third or fourth animal in a chain, there is not much energy left.</p>
       <p>That's why you almost never see a food chain with ten links. Most chains are short: sun, plant, plant-eater, animal-eater. Done.</p>
-      <p>Real ecosystems aren't single chains, though. They are tangled <strong>food webs</strong>, where one animal might be part of many different chains. A mouse can be eaten by a hawk, a snake, a fox, or an owl. Try drawing a food web for the meadow at the top of this lesson — how many connections can you find?</p>
+      <p>Real ecosystems aren't single chains, though. They are tangled <strong>food webs</strong>, where one animal might be part of many different chains. A mouse can be eaten by a hawk, a snake, a fox, or an owl. Try drawing a food web for a grassland — start with the sun, add a few producers, then add the animals that eat them, and finally the animals that eat <em>those</em> animals. How many connections can you find?</p>
     </div>
   </details>
 
@@ -1641,6 +1690,23 @@ em { color: #5A4D3E; }
       <div class="callout callout-tip" style="margin-bottom:18px;">
         <span class="callout-icon">🎒</span>
         <p><strong>You'll need:</strong> Your science notebook, a pencil, and colored pencils. That's it. This investigation is all about thinking and drawing.</p>
+      </div>
+
+      <!-- Suggested image: five habitats at a glance for Step 1 -->
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">🏞 Five Habitats to Choose From</div>
+        <img src="images/14-01-five-habitats.png"
+             alt="A grid showing five different habitats: a calm freshwater pond with lily pads, a leafy green forest with tall trees, a sandy desert with cacti, a wide grassland with golden grass, and a deep blue ocean with waves."
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            A clean grid of five small illustrated panels in a single row (or 2-3-2 layout), each panel showing one habitat clearly: <strong>(1) Pond</strong> — calm freshwater with green lily pads and a few cattails on the edge. <strong>(2) Forest</strong> — tall green trees with sunlight filtering through, mossy floor. <strong>(3) Desert</strong> — sandy ground with two or three cacti and a clear blue sky. <strong>(4) Grassland</strong> — wide open field of golden-green grass with a few scattered bushes and a low horizon. <strong>(5) Ocean</strong> — deep blue water with gentle waves and a hint of underwater plants below. Each panel has a small label underneath (Pond, Forest, Desert, Grassland, Ocean). Clean educational illustration style, bright cheerful colors, friendly look, suitable for 3rd graders. White background between panels.
+          </div>
+          <div class="image-suggestion-file">Save as: images/14-01-five-habitats.png</div>
+        </div>
+        <div class="lesson-figure-caption">Pick one of these five places for your food chain. Each one is home to a different set of living things.</div>
       </div>
 
       <!-- Step-by-step investigation directions -->
@@ -2024,7 +2090,7 @@ em { color: #5A4D3E; }
         <span class="sq-icon">🤔</span>
         <div>
           <div class="label">Reflect</div>
-          <div class="question">"Go back to your Notice &amp; Wonder notes from the start of the lesson. What did you write down then? What can you explain now that you couldn't explain before?"</div>
+          <div class="question">"Open your science notebook to the Notice &amp; Wonder notes you made at the very beginning. Read what you wrote. What can you explain now that you couldn't explain then?"</div>
         </div>
       </div>
 

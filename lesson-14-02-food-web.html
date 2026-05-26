@@ -289,6 +289,37 @@ body {
 }
 .lesson-figure-caption strong { color: #1B4332; }
 
+/* ── Image Suggestion Fallback ── */
+/* Shows in place of the <img> if the real image file doesn't exist yet.
+   The <img>'s onerror handler hides the broken image, hides the
+   .lesson-figure-label (which says the REAL label), and shows this amber
+   box with a generation-ready description. Once the real image file is
+   pushed, none of this fires and students just see the real figure. */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
 /* ── Key Concept Box ── */
 .key-concept {
   background: #F0F8E8; border: 2px solid #C8E0B8;
@@ -1382,6 +1413,32 @@ em { color: #5A4D3E; }
         </div>
       </div>
 
+      <!-- Suggested image: visual contrast between a chain and a web -->
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">🎨 Illustration · Food Chain vs Food Web</div>
+        <img src="images/14-02-chain-vs-web.png"
+             alt="A side-by-side educational illustration. On the left, a simple food chain shows three living things — grass, a rabbit, and a fox — connected in a straight line with two arrows. On the right, a food web shows the same animals plus a bird, a mouse, and a berry bush, all connected to each other with many arrows in a branching pattern."
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            A side-by-side educational illustration comparing a food chain and a food web for a 3rd-grade science lesson.<br><br>
+            <strong>LEFT PANEL — labeled "FOOD CHAIN" at the top in friendly bold lettering:</strong><br>
+            Three cartoon images arranged horizontally in a single straight line, connected by two green arrows pointing left to right:<br>
+            1. A small patch of green grass<br>
+            2. A friendly cartoon brown rabbit<br>
+            3. A friendly cartoon red fox<br>
+            The arrangement is clearly a single straight chain. Each organism has a small label under it.<br><br>
+            <strong>RIGHT PANEL — labeled "FOOD WEB" at the top:</strong><br>
+            The same three organisms PLUS a berry bush, a small bird, and a mouse — all arranged in a cluster and connected by 7–8 green arrows in a branching pattern that clearly forms a network. The arrows fan out so the structure is unmistakably a web, not a line.<br><br>
+            <strong>Both panels share:</strong> Clean educational illustration style, bright friendly cartoon colors, white or very light background, the same green arrow style with arrowheads pointing from food to eater. A clear vertical divider between the two panels. Suitable for 3rd graders — warm, friendly, storybook feel.
+          </div>
+          <div class="image-suggestion-file">Save as: images/14-02-chain-vs-web.png</div>
+        </div>
+        <div class="lesson-figure-caption">On the left, a <strong>food chain</strong> shows one straight path. On the right, a <strong>food web</strong> shows many connected paths. Real habitats look much more like the right side.</div>
+      </div>
+
       <!-- ══ SECTION 2 ══ -->
       <div class="card theme-sun" style="margin-bottom:18px;">
         <div class="card-head">
@@ -1669,6 +1726,28 @@ em { color: #5A4D3E; }
         <p><strong>You'll need:</strong> a blank sheet of paper or 8 index cards, a pencil, colored pencils, and yarn or string (or you can just draw arrows). You may also use animal pictures cut from old magazines.</p>
       </div>
 
+      <!-- Suggested image: visual primer for the habitat-fit thinking in Step 4 -->
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">🎨 Illustration · The Right Habitat Matters</div>
+        <img src="images/14-02-habitat-fit.png"
+             alt="Two side-by-side cartoon illustrations of the same polar bear. On the left, the polar bear stands comfortably on snowy arctic ice, labeled FITS with a green checkmark. On the right, the same polar bear stands on a hot tropical beach with palm trees, labeled DOESN'T FIT with a red X."
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            A side-by-side educational illustration showing the SAME cartoon polar bear in two different habitats, for a 3rd-grade science lesson on habitat survival.<br><br>
+            <strong>LEFT PANEL — header "FITS ✓" in green at the top:</strong><br>
+            A friendly cartoon polar bear standing comfortably on snowy arctic ice. The background shows ice floes, gentle snow, soft pale blue sky, and a few snowflakes. The polar bear looks relaxed and happy. Small text at the bottom of the panel reads "ARCTIC."<br><br>
+            <strong>RIGHT PANEL — header "DOESN'T FIT ✗" in red at the top:</strong><br>
+            The SAME cartoon polar bear (same drawing style, scale, and friendly face) standing on a hot tropical beach. Palm trees, golden sand, bright sunny sky. The polar bear has a comical sweat drop above its head and a slightly confused expression — playfully out of place, NOT depicted as suffering or sad. Small text at the bottom reads "BEACH."<br><br>
+            <strong>Both panels share:</strong> Clean educational illustration, bright friendly cartoon colors, white background outside the habitat scene, same polar bear drawing in both. A vertical divider between the two panels. Storybook style, suitable for 3rd graders. The "doesn't fit" side should feel funny and curious — never distressing.
+          </div>
+          <div class="image-suggestion-file">Save as: images/14-02-habitat-fit.png</div>
+        </div>
+        <div class="lesson-figure-caption">Every plant and animal has a habitat that <strong>fits its needs</strong>. The same animal in the wrong habitat would have a hard time surviving. Keep this idea in mind for Step 4.</div>
+      </div>
+
       <!-- Steps -->
       <p>Work through the steps below. Take your time on Step 4 — that's where your thinking really counts.</p>
 
@@ -1848,7 +1927,7 @@ em { color: #5A4D3E; }
           <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Which animal is faster</div>
         </div>
         <div class="quiz-feedback fb-correct">🌿 Right! Every arrow points from the food <em>to</em> the eater. That tells you which way the energy is moving.</div>
-        <div class="quiz-feedback fb-wrong">Look back at your web. If a rabbit eats grass, which way did the arrow point?</div>
+        <div class="quiz-feedback fb-wrong">Picture your food web in your head. If a rabbit eats grass, which way did the arrow point?</div>
       </div>
 
       <!-- QUESTION 3 — Habitat & survival (3-LS4-3) -->
@@ -2030,7 +2109,7 @@ em { color: #5A4D3E; }
         <span class="sq-icon">🤔</span>
         <div>
           <div class="label">Reflect</div>
-          <div class="question">"Look back at the food web you sketched at the start of the lesson. What's different now? What did you add or change once you knew more?"</div>
+          <div class="question">"Look in your notebook at the food web you sketched during the Notice &amp; Wonder warm-up. What's different now? What did you add or change once you knew more?"</div>
         </div>
       </div>
 
@@ -2078,7 +2157,7 @@ em { color: #5A4D3E; }
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My finished food web from the Explore tab — habitat named, 6+ organisms, labels, and arrows.</div>
+              <div class="turn-in-item-text">My finished food web from the investigation — habitat named, 6+ organisms, labels, and arrows.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>

@@ -670,6 +670,32 @@ em { color: #5A4D3E; }
 .gold { color: #F9A825; font-weight: 700; }
 .forest { color: #2D6A4F; font-weight: 700; }
 
+/* ── Image Suggestion Placeholder ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
 @media (max-width: 620px) {
   .intro-2col { grid-template-columns: 1fr; }
   .vocab-grid { grid-template-columns: 1fr; }
@@ -1191,6 +1217,23 @@ em { color: #5A4D3E; }
         <div class="card-body">
           <p>Every living thing has basic needs. A <span class="vtip">habitat<span class="vtip-box"><span class="vtip-word">habitat</span>The place where an organism lives and finds what it needs.</span></span> is the place where an organism gets what it needs to stay alive.</p>
           <p>Most organisms need four things from their habitat: food, water, shelter, and space. When a habitat provides all four, an organism can survive and thrive there.</p>
+
+          <div class="lesson-figure">
+            <div class="lesson-figure-label" style="display:none;">📷 Diagram · The Four Basic Needs</div>
+            <img src="images/15-02-four-basic-needs.png"
+                 alt="A friendly illustration of a white-tailed deer standing in a green meadow, with four labeled arrows pointing to: food (grass), water (stream), shelter (trees), and space (open field). Clean educational style, white background."
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A clean educational illustration of a white-tailed deer standing in a sunny green meadow. Four labeled arrows radiate outward from the deer pointing to: a clump of grass labeled "food," a small stream labeled "water," a cluster of trees labeled "shelter," and an open field labeled "space." Simple, friendly style with bright colors and a light or white background. Suitable for 3rd graders. No text other than the four labels.
+              </div>
+              <div class="image-suggestion-file">Save as: images/15-02-four-basic-needs.png</div>
+            </div>
+            <div class="lesson-figure-caption">Every organism needs these four things from its habitat. When even one is missing or very low, survival gets harder.</div>
+          </div>
+
           <div class="socratic-q">
             <span class="sq-icon">🤔</span>
             <div>
@@ -1434,6 +1477,22 @@ em { color: #5A4D3E; }
       </div>
 
       <p>Work through each step in your science notebook. Take your time — good scientists are careful and specific.</p>
+
+      <div class="lesson-figure">
+        <div class="lesson-figure-label" style="display:none;">📷 Real World · Limiting Factor in Action</div>
+        <img src="images/15-02-limiting-factor-drought.png"
+             alt="A split illustration showing two ponds side by side: the left pond is full with clean water, fish swimming, and frogs at the edge; the right pond is nearly dried up with cracked mud, a single struggling frog, and no fish. Clean educational illustration, bright colors, friendly style for 3rd graders."
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            A split-panel educational illustration showing two ponds side by side. Left panel: a full, healthy pond with clear blue water, two fish swimming, a green frog sitting happily at the edge, cattails, and a small label reading "All needs met." Right panel: the same scene but the pond is nearly empty — cracked dry mud, a single frog looking hot and distressed, no fish, and a label reading "Limiting factor: no water." Bright, friendly colors with a clean white background. Simple enough for a 3rd grader. No other text.
+          </div>
+          <div class="image-suggestion-file">Save as: images/15-02-limiting-factor-drought.png</div>
+        </div>
+        <div class="lesson-figure-caption">The same habitat — two different situations. One limiting factor (water) changes everything for the frog. Keep this in mind as you analyze your scenarios.</div>
+      </div>
 
       <div style="position:relative; margin:16px 0;">
 
