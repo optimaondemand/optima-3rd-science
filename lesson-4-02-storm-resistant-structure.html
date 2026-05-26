@@ -482,6 +482,32 @@ body {
 }
 .go-deeper .gd-body p { margin-bottom: 10px; }
 
+/* ── Image Suggestion fallback ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
 /* ── Scroll Animations ── */
 .scroll-reveal { opacity: 1; transform: none; transition: none; }
 
@@ -1049,6 +1075,22 @@ body {
     </div>
     <div class="act-body">
       <p>Look at the image below. One building is still standing strong. Another nearby has damage. Both faced the same storm.</p>
+
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">📷 Photo · Hurricane Damage in Florida</div>
+        <img src="images/4-02-hurricane-roof-damage.png"
+             alt="A Florida residential neighborhood after a hurricane — several houses with roofs torn off and walls damaged, debris scattered across lawns and the street, with one newer intact house visible nearby showing the contrast between damaged and undamaged structures."
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            Real documentary-style photograph of a Florida residential neighborhood after a hurricane. Several houses show significant wind damage — roofs partially or fully torn off, walls cracked or collapsed, debris scattered across the street and lawns. One more recently built house nearby is visibly intact, creating a clear contrast. Daytime scene, overcast sky, palm trees visible in background. No white background, no borders, no cartoon or illustration. Photorealistic news photography composition. No text overlays.
+          </div>
+          <div class="image-suggestion-file">Save as: images/4-02-hurricane-roof-damage.png</div>
+        </div>
+        <div class="lesson-figure-caption">A Florida neighborhood after a hurricane. Some buildings lost their roofs entirely while others nearby stayed standing. <strong>What do you notice about the ones that survived?</strong></div>
+      </div>
       <div class="callout callout-think">
         <span class="callout-icon">💭</span>
         <p>What do you notice about the building that survived? What might have made it stronger? Write at least two observations and one question in your science notebook.</p>
@@ -1430,6 +1472,23 @@ body {
         </div>
 
         <!-- Step 4 -->
+        <div class="lesson-figure" style="margin: 0 0 14px;">
+          <div class="lesson-figure-label">📷 Photo · What Real Storm Surge Looks Like</div>
+          <img src="images/4-02-storm-surge-raised-houses.png"
+               alt="Floodwater from a storm surge rising past the base of houses elevated on stilts along a Florida street, with the living floors of the homes staying dry above the waterline while water rushes underneath — showing how a raised foundation reduces flood damage."
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+          <div class="image-suggestion" style="display:none;">
+            <div class="image-suggestion-icon">🖼️</div>
+            <div class="image-suggestion-label">Suggested Image — Generate This</div>
+            <div class="image-suggestion-desc">
+              Real photograph of storm surge or heavy floodwater rising past the base of elevated homes on stilts along a Florida residential or coastal street. The floodwater is clearly visible at ground level, rising toward but staying below the elevated floors of the houses. The living spaces remain dry above the waterline while water flows underneath. Overcast or stormy sky, palm trees or Florida vegetation in the background. Outdoor, daytime, photorealistic documentary photography style. No white background, no borders, no illustration or cartoon. No text overlays.
+            </div>
+            <div class="image-suggestion-file">Save as: images/4-02-storm-surge-raised-houses.png</div>
+          </div>
+          <div class="lesson-figure-caption">Storm surge flooding in Florida. Water rises fast across the ground — but a raised foundation keeps the floor above the waterline. Your water test simulates this same force on a small scale.</div>
+        </div>
+
+        <!-- Step 4 (actual) -->
         <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
           <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F9A825,#FDD835);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(249,168,37,0.3);">4</div>
           <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
@@ -1697,7 +1756,7 @@ body {
 
       <!-- PART A -->
       <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔍 Part A — Label Your Design</p>
-      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Look at your labeled sketch from the Explore tab. Use it to answer these questions about your design choices.</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use your labeled prototype sketch from your science notebook to answer these questions about your design choices.</p>
 
       <div class="pq"><span class="pq-num" style="background:#6D4C41;">1</span><span class="pq-text">Name one feature of your structure that was meant to help it survive <strong>wind</strong>. What did that feature do?</span></div>
       <div class="pq"><span class="pq-num" style="background:#6D4C41;">2</span><span class="pq-text">Name one feature meant to help it survive <strong>flooding</strong>. How does it work?</span></div>
@@ -1795,7 +1854,7 @@ body {
           <div class="turn-in-checklist">
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Notice &amp; Wonder observations and one question from the Vocabulary tab.</div>
+              <div class="turn-in-item-text">My Notice &amp; Wonder warm-up observations and question from my science notebook.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>

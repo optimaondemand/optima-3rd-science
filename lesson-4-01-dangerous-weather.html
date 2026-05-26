@@ -305,6 +305,32 @@ body {
 }
 .lesson-figure-caption strong { color: #1B4332; }
 
+/* ── Image Suggestion Placeholders ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
 /* ── Key Concept Box ── */
 .key-concept {
   background: #F0F8E8; border: 2px solid #C8E0B8;
@@ -1255,8 +1281,37 @@ em { color: #5A4D3E; }
         </div>
         <div class="card-body">
           <p><span class="vtip">Meteorologists<span class="vtip-box"><span class="vtip-word">Meteorologist</span>A scientist who studies weather and uses data to predict storms.</span></span> track storms using satellites and radar. They can see a hurricane forming days before it reaches land. That warning time saves lives.</p>
+
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">📡 Scientists at Work</div>
+            <img src="images/4-01-meteorologist-radar.png"
+                 alt="A meteorologist studying a large radar screen showing a spiral hurricane system in a weather operations center"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">A real-world photograph of a meteorologist — a person in a professional weather operations or forecast center — seated at a workstation with multiple large monitors displaying a colorful Doppler radar image of a hurricane spiral. The room should be dimly lit with the screens glowing. The meteorologist is looking intently at the data, possibly with a headset on. The hurricane spiral on the screen should be clearly visible in red, orange, and yellow bands. No white background or edges. Real environment, no cartoon or illustration style.</div>
+              <div class="image-suggestion-file">Save as: images/4-01-meteorologist-radar.png</div>
+            </div>
+            <div class="lesson-figure-caption"><strong>A meteorologist</strong> tracks a hurricane using Doppler radar. The colorful spiral on screen shows where the storm is strongest — and which communities need to prepare.</div>
+          </div>
+
           <p>Engineers design solutions that reduce hazard damage — flood barriers, storm shelters, and wind-resistant roofs. In Florida, communities follow evacuation plans before major hurricanes arrive.</p>
           <p><strong>Real-World Connection:</strong> Every June, Florida communities review their hurricane plans. Schools, hospitals, and neighborhoods all have specific steps to follow when a warning is issued.</p>
+
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">🌊 Storm Surge in Florida</div>
+            <img src="images/4-01-storm-surge-florida.png"
+                 alt="A flooded Florida neighborhood street after a hurricane, with murky brown water reaching car doors and porch steps, palm trees visible in the background"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">A real-world photograph of a flooded street in a Florida coastal neighborhood after a hurricane. Brown or murky flood water fills the road and reaches the doors of parked cars or the front steps of houses. Palm trees are visible in the background, some bent or damaged. A stop sign or street sign partially submerged gives scale. Overcast sky, dramatic lighting. No white background or edges. No cartoon or illustration style. Should feel like a real news or documentary photo from an actual hurricane event.</div>
+              <div class="image-suggestion-file">Save as: images/4-01-storm-surge-florida.png</div>
+            </div>
+            <div class="lesson-figure-caption"><strong>Storm surge</strong> from a hurricane pushes ocean water onto land, flooding streets and homes. This is one reason Florida communities prepare carefully before every hurricane season.</div>
+          </div>
         </div>
       </div>
 
@@ -1350,6 +1405,20 @@ em { color: #5A4D3E; }
           <p style="font-size:15px;color:#2B1D12;line-height:1.6;margin-bottom:6px;">A town near the Florida coast wants to protect homes. They are deciding between two options:</p>
           <p style="font-size:14px;color:#2B1D12;line-height:1.5;margin-bottom:4px;">• Option 1: Build stronger hurricane shutters and reinforce rooftops.</p>
           <p style="font-size:14px;color:#2B1D12;line-height:1.5;margin:0;">• Option 2: Create an early warning system with sirens and evacuation routes.</p>
+        </div>
+
+        <div class="lesson-figure" style="margin:0 0 14px 62px;">
+          <div class="lesson-figure-label">🏗️ What a Flood Barrier Looks Like</div>
+          <img src="images/4-01-flood-levee.png"
+               alt="A large earthen or concrete levee running alongside a river, with green grass on top and calm water on one side, a town or neighborhood visible in the background"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+          <div class="image-suggestion" style="display:none;">
+            <div class="image-suggestion-icon">🖼️</div>
+            <div class="image-suggestion-label">Suggested Image — Generate This</div>
+            <div class="image-suggestion-desc">A real-world photograph of a large earthen or concrete flood levee or flood barrier running alongside a river or body of water. The levee should be clearly visible as a raised wall or embankment separating the water from the land. Green grass or vegetation on top of the levee. The water level on one side is noticeably higher than the protected land on the other side. A town, homes, or farmland visible in the background on the protected side. Daytime, blue sky or partly cloudy. Wide angle shot showing scale. No white background or edges. Real-world photo style, not a diagram or illustration.</div>
+            <div class="image-suggestion-file">Save as: images/4-01-flood-levee.png</div>
+          </div>
+          <div class="lesson-figure-caption">A <strong>flood barrier (levee)</strong> is a raised wall of earth or concrete built along a river. It holds back floodwater to protect neighborhoods on the other side.</div>
         </div>
 
         <div style="background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;padding:16px;margin:0 0 14px 62px;">
@@ -1506,7 +1575,7 @@ em { color: #5A4D3E; }
           <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>A storm that only happens near the ocean</div>
         </div>
         <div class="quiz-feedback fb-correct">🌲 Exactly right! A hazard is any natural event powerful enough to cause harm — and there are many types beyond just ocean storms.</div>
-        <div class="quiz-feedback fb-wrong">Take a look back at Section 1 in The Lesson tab. A natural hazard is broader than just one kind of event.</div>
+        <div class="quiz-feedback fb-wrong">A natural hazard isn't limited to ocean storms — it's any powerful natural event that can cause serious harm. Think about all four hazard types you've studied.</div>
       </div>
 
       <!-- QUESTION 2 -->
@@ -1518,7 +1587,7 @@ em { color: #5A4D3E; }
           <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Because warm ocean water surrounds Florida on three sides</div>
         </div>
         <div class="quiz-feedback fb-correct">🌿 Right! Hurricanes form over warm ocean water — and Florida is surrounded by it, which is why the state is hit so often.</div>
-        <div class="quiz-feedback fb-wrong">Think about where hurricanes form. What does the ocean have to do with it? Go back to Section 2 for a clue.</div>
+        <div class="quiz-feedback fb-wrong">Think about where hurricanes form — they need warm ocean water to get started. What does Florida's location have to do with that?</div>
       </div>
 
       <!-- QUESTION 3 -->
@@ -1530,7 +1599,7 @@ em { color: #5A4D3E; }
           <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Naming a hurricane after a person</div>
         </div>
         <div class="quiz-feedback fb-correct">⭐ Yes! A flood barrier is an engineering solution — it's a physical design that actually reduces the damage a flood can cause.</div>
-        <div class="quiz-feedback fb-wrong">A design solution actually changes or protects something physical — it's not just studying or naming. Look at Section 3 again.</div>
+        <div class="quiz-feedback fb-wrong">A design solution actually changes or protects something physical — it's not just studying data or naming a storm. Think about barriers, shelters, and reinforced buildings.</div>
       </div>
 
       <!-- Score Display -->
@@ -1682,7 +1751,7 @@ em { color: #5A4D3E; }
         <span class="sq-icon">🤔</span>
         <div>
           <div class="label">Reflect</div>
-          <div class="question">"Go back to the Notice &amp; Wonder question you wrote at the start of this lesson. Did you answer it? What do you know now that you didn't know before?"</div>
+          <div class="question">"Find the Notice &amp; Wonder question you wrote in your notebook at the start of today. Did you answer it? What do you know now that you didn't know before?"</div>
         </div>
       </div>
 
@@ -1726,7 +1795,7 @@ em { color: #5A4D3E; }
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">The copywork sentence from the Vocabulary tab, copied into my notebook.</div>
+              <div class="turn-in-item-text">The copywork sentence about natural hazards, copied into my notebook.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
