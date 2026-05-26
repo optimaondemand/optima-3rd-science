@@ -335,6 +335,32 @@ body {
 }
 .lesson-figure-caption strong { color: #1B4332; }
 
+/* ── Suggested Image Placeholder ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
 /* ── Key Concept Box ── */
 .key-concept {
   background: #F0F8E8; border: 2px solid #C8E0B8;
@@ -1080,23 +1106,23 @@ details.go-deeper summary::before { content: '🔭 '; }
       <div class="act-num" style="background:#52B788;">1</div>
       <div style="flex:1;">
         <div class="act-title">🌅 Notice &amp; Wonder</div>
-        <div class="act-subtitle">Look closely before you learn anything new.</div>
+        <div class="act-subtitle">Think about what you already know — before we test anything.</div>
       </div>
       <div class="act-time" style="background:#52B788;">⏱ 5 min</div>
     </div>
     <div class="act-body">
 
-      <p>Look at the photo below. Someone set up an investigation with a ramp, a car, and some tape marks on the floor. They haven't started yet.</p>
+      <p>Think about a toy car sitting at the top of a ramp. You haven't rolled it yet. You don't know exactly what will happen.</p>
 
       <div class="socratic-q">
         <span class="sq-icon">👀</span>
         <div>
           <div class="label">In Your Science Notebook</div>
-          <div class="question">"Write at least 3 things you notice in the photo. Then write 1 question you're wondering about."</div>
+          <div class="question">"Write at least 3 things you think you already know about ramps and rolling objects. Then write 1 question you're wondering about for today's investigation."</div>
         </div>
       </div>
 
-      <p>There's no wrong answer here. Just look carefully and write what you actually see and think.</p>
+      <p>There's no wrong answer here. Just think carefully and write what's in your head before you learn anything new.</p>
 
     </div>
   </div>
@@ -1304,6 +1330,25 @@ details.go-deeper summary::before { content: '🔭 '; }
         </div>
       </div>
 
+      <!-- Suggested Image: Ocean waves — predictable repeating motion in nature -->
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">📷 Photo · Patterns in Motion</div>
+        <img src="images/6-02-ocean-waves.png"
+             alt="Ocean waves rolling onto a sandy beach in a steady repeating pattern, photographed from shore level with multiple wave crests visible"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            A wide-angle photograph of ocean waves rolling onto a sandy beach, taken from shore level or just above the waterline. Multiple wave crests visible approaching the shore, showing the repeating, rhythmic pattern. Natural daylight, blue-green water, wet sand. Real outdoor coastal environment — no people required, though distant shoreline or footprints in sand are fine. Photographic style, no cartoons, no white background, no text overlays. The composition should clearly show the repeating wave pattern from the water toward the shore.
+          </div>
+          <div class="image-suggestion-file">Save as: images/6-02-ocean-waves.png</div>
+        </div>
+        <div class="lesson-figure-caption">
+          Ocean waves roll onto shore in almost the same pattern, over and over. Scientists can measure the time between waves and <strong>predict when the next one will arrive</strong> — because nature follows patterns.
+        </div>
+      </div>
+
       <!-- Section 3: Predictions from Patterns -->
       <div class="card theme-earth" style="margin-bottom:18px;">
         <div class="card-head">
@@ -1452,6 +1497,25 @@ details.go-deeper summary::before { content: '🔭 '; }
     </div>
   </div>
 
+  <!-- Suggested Image: NASA mission control — scientists using patterns to track spacecraft -->
+  <div class="lesson-figure">
+    <div class="lesson-figure-label">📷 Photo · Science in Action</div>
+    <img src="images/6-02-nasa-tracking.png"
+         alt="Scientists and engineers at workstations inside NASA Jet Propulsion Laboratory mission control, large screens displaying spacecraft trajectory data and orbital maps"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+    <div class="image-suggestion" style="display:none;">
+      <div class="image-suggestion-icon">🖼️</div>
+      <div class="image-suggestion-label">Suggested Image — Generate This</div>
+      <div class="image-suggestion-desc">
+        Inside NASA's Jet Propulsion Laboratory mission control room. Multiple large screens on the wall displaying spacecraft trajectory paths, orbital maps, and telemetry data. Engineers and scientists seated at workstations with glowing monitors. Dramatic wide-angle view showing the scale of the room. Atmospheric dark room lit by screen glow. Real-world science environment — photographic style, no cartoons, no white background, no text overlays. No staged or studio lighting.
+      </div>
+      <div class="image-suggestion-file">Save as: images/6-02-nasa-tracking.png</div>
+    </div>
+    <div class="lesson-figure-caption">
+      Scientists at NASA use patterns in motion to track Voyager 1 — a spacecraft now over 15 billion miles away. The same idea you're using today with your car and ramp.
+    </div>
+  </div>
+
   <!-- Go Deeper -->
   <details class="go-deeper scroll-reveal">
     <summary>Curious? Go Deeper</summary>
@@ -1574,6 +1638,25 @@ details.go-deeper summary::before { content: '🔭 '; }
     <div class="act-body">
 
       <p>In your science notebook, make sure you have recorded everything below. Being specific matters — write exactly what you saw, not just "it worked."</p>
+
+      <!-- Suggested Image: Real scientist's field notebook with measurement data -->
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">📷 Photo · Real Data Recording</div>
+        <img src="images/6-02-field-notebook-data.png"
+             alt="A scientist's open field notebook lying outdoors, showing handwritten measurement data in neat columns with a pencil alongside, natural environment in the background"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            A close-up photograph of an open scientific field notebook lying on a rough wooden or stone surface outdoors. Pages show handwritten measurement data organized in neat columns — numbers, units, and short labels written in pencil or pen. A pencil or pen rests alongside the notebook. Real outdoor nature environment visible but softly blurred in the background. Natural daylight. Photographic style — no cartoons, no white background, no studio lighting, slightly weathered notebook with authentic-looking handwriting and ruled lines.
+          </div>
+          <div class="image-suggestion-file">Save as: images/6-02-field-notebook-data.png</div>
+        </div>
+        <div class="lesson-figure-caption">
+          This is what real data recording looks like. Each measurement gets its own row. The numbers are specific — not just "it worked." That specificity is what makes the data useful.
+        </div>
+      </div>
 
       <div class="pq">
         <span class="pq-num" style="background:#2E7D32;">1</span>
