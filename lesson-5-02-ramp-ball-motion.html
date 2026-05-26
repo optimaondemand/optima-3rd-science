@@ -675,6 +675,32 @@ em { color: #5A4D3E; }
 .gold { color: #F9A825; font-weight: 700; }
 .forest { color: #2D6A4F; font-weight: 700; }
 
+/* ── Suggested Image placeholder ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
 @media (max-width: 620px) {
   .intro-2col { grid-template-columns: 1fr; }
   .vocab-grid { grid-template-columns: 1fr; }
@@ -972,7 +998,25 @@ em { color: #5A4D3E; }
     </div>
     <div class="act-body">
 
-      <p>Look at the photo on the Lesson tab. Before you read anything, take a minute to just <strong>notice</strong> what you can see and write down any <strong>questions</strong> that come to mind.</p>
+      <p>Look at the photo below. Before you read anything, take a minute to just <strong>notice</strong> what you see and write down any <strong>questions</strong> that come to mind.</p>
+
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">📷 Photo · What Do You Notice?</div>
+        <img src="images/5-02-three-ramp-heights.png"
+             alt="Three cardboard ramps side by side on a table, propped up at low, medium, and high heights using stacked books. A small ball sits at the top of each ramp. Natural classroom light, warm tones."
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            Three cardboard ramps set up side-by-side on a wooden classroom table. Each ramp is propped at a different height using stacked textbooks: one book on the left, two in the middle, three on the right. A small rubber ball rests near the top of each ramp. The ramps are made of corrugated cardboard. Warm natural light from a classroom window. A measuring tape is visible stretched out on the table in front. No white background. Real classroom setting, slightly low angle, photorealistic. Clean educational photo, bright and inviting, suitable for 3rd graders.
+          </div>
+          <div class="image-suggestion-file">Save as: images/5-02-three-ramp-heights.png</div>
+        </div>
+        <div class="lesson-figure-caption">
+          Three ramps — three different heights. What do you think will happen when a ball rolls down each one?
+        </div>
+      </div>
 
       <div class="socratic-q">
         <span class="sq-icon">👀</span>
@@ -1140,6 +1184,24 @@ em { color: #5A4D3E; }
           <p>Scientists don't just watch — they <strong>measure</strong>. In this investigation, ramp height is your <span class="vtip">variable<span class="vtip-box"><span class="vtip-word">variable</span>The one thing you change on purpose. Everything else stays the same.</span></span>. Distance is what you measure. Everything else stays the same.</p>
           <p>Recording <span class="vtip">data<span class="vtip-box"><span class="vtip-word">data</span>The measurements and observations you collect during an investigation.</span></span> carefully is what turns an experiment into evidence. Numbers don't lie.</p>
           <p><strong>Real-World Connection:</strong> Engineers who design skate ramps and roller coasters think about force and distance the same way. A steeper ramp = more speed at the bottom.</p>
+
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">📷 Photo · Force in the Real World</div>
+            <img src="images/5-02-skate-ramp-steep.png"
+                 alt="A skateboarder descending a steep concrete half-pipe ramp at a skate park, gaining speed at the bottom. Dramatic angle showing the height of the ramp above the flat ground below."
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A skateboarder at the bottom of a very steep concrete skate ramp at an outdoor skate park, caught mid-motion moving fast across the flat ground after riding down the steep drop. The ramp's tall curved wall is visible in the background, showing the height contrast between the top and the flat bottom. Sunlit outdoor scene, dynamic action shot from a low angle to emphasize how fast the skater is moving. No white edges. Photorealistic, bright and vivid colors, suitable for 3rd graders.
+              </div>
+              <div class="image-suggestion-file">Save as: images/5-02-skate-ramp-steep.png</div>
+            </div>
+            <div class="lesson-figure-caption">
+              The steeper the ramp, the stronger the force — and the faster the skater moves at the bottom. The same physics works in your investigation.
+            </div>
+          </div>
         </div>
       </div>
 
