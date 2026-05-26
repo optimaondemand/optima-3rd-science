@@ -798,6 +798,33 @@ em { color: #5A4D3E; }
 .earth { color: #A0522D; font-weight: 700; }
 
 
+/* ── Image Suggestion Fallback ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
+
 @media (max-width: 620px) {
   .intro-2col { grid-template-columns: 1fr; }
   .vocab-grid { grid-template-columns: 1fr; }
@@ -975,7 +1002,7 @@ em { color: #5A4D3E; }
   <!-- Uploaded lesson image -->
   <div class="lesson-figure">
     <div class="lesson-figure-label">📷 Photo · A Forest After Fire</div>
-    <img src="images/13-02-ecosystem-change.png" alt="A forested mountainside split between burned, blackened trees and rocks on the left and recovering green growth with a deer, fawn, chipmunk, and bird on the right." />
+    <img src="images/13-02-ecosystem-change.jpg" alt="A forested mountainside split between burned, blackened trees and rocks on the left and recovering green growth with a deer, fawn, chipmunk, and bird on the right." />
     <div class="lesson-figure-caption">A real forest after a wildfire. Notice the <strong>burned trees</strong> on one side and the <strong>new green plants</strong> and <strong>animals returning</strong> on the other.</div>
   </div>
 
@@ -1000,12 +1027,44 @@ em { color: #5A4D3E; }
         </div>
       </div>
 
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">📷 Photo · Drought Changes an Ecosystem</div>
+        <img src="images/13-02-drought-ecosystem.png"
+             alt="A dried-up pond with cracked earth, dry grasses, and a few remaining shrubs under a hazy sky — showing how drought changes an ecosystem."
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            A real-world photograph of a dried-up pond or small lake during a drought. The ground is cracked, tan, dry earth with deep cracks spreading outward. A few struggling dry grasses and brown shrubs remain at the edges. In the distance, dry rolling hills under a hazy, washed-out sky. No water visible — just the empty basin. The mood is quiet and stark. Real photographic style, natural lighting, warm muted tones. No cartoons, no white background. This should look like an actual drought scene in a U.S. grassland or western state — similar to what you'd see in a national park during a dry year.
+          </div>
+          <div class="image-suggestion-file">Save as: images/13-02-drought-ecosystem.png</div>
+        </div>
+        <div class="lesson-figure-caption">Fire isn't the only change. A <strong>drought</strong> can dry up water sources and leave plants and animals without what they need.</div>
+      </div>
+
       <div class="card theme-earth" style="margin-bottom:18px;">
         <div class="card-head"><div class="card-head-icon">🛠️</div><div><div class="card-head-label">Section 3</div><div class="card-head-title">Solutions Should Be Tested</div></div></div>
         <div class="card-body">
           <p>People can design <span class="vtip">solutions<span class="vtip-box"><span class="vtip-word">Solution</span>A way to help solve a problem.</span></span> to help ecosystems. They might plant native plants, clean water, or protect habitats.</p>
           <p><strong>Real-World Connection:</strong> After wildfires in national parks, scientists plant native trees and grasses to help the soil recover faster.</p>
         </div>
+      </div>
+
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">📷 Photo · Planting a Solution</div>
+        <img src="images/13-02-restoration-planting.png"
+             alt="Hands planting a small seedling in dark, ashy soil with green regrowth visible in the background — showing ecosystem restoration after a fire."
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            A close-up, real-world photograph of hands planting a small green seedling into dark, ashy soil on a hillside that was recently burned by wildfire. The hands belong to a person wearing work gloves — you can see their forearms and hands but not their face. The seedling is bright green with a few small leaves. The immediate ground is dark and charred, but in the background you can see patches of green regrowth and some standing burned tree trunks. Warm golden sunlight. Real photographic style, natural outdoor setting, no white background, no cartoons. Should feel hopeful — new life being planted in a damaged place. Similar to restoration work at Yellowstone or a Pacific Northwest national forest.
+          </div>
+          <div class="image-suggestion-file">Save as: images/13-02-restoration-planting.png</div>
+        </div>
+        <div class="lesson-figure-caption">Scientists and volunteers plant native seedlings to help ecosystems recover. This is one kind of <strong>solution</strong>.</div>
       </div>
 
       <!-- Interactive Diagram -->
@@ -1206,7 +1265,7 @@ em { color: #5A4D3E; }
       <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Label</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Draw a before-and-after diagram of your ecosystem. Label at least 4 parts. Show what changed and your solution.</p>
 
-      <div class="socratic-q"><span class="sq-icon">🤔</span><div><div class="label">Reflect</div><div class="question">"Look back at your Notice &amp; Wonder answers from the beginning. Has your thinking changed? What do you understand now that you didn't before?"</div></div></div>
+      <div class="socratic-q"><span class="sq-icon">🤔</span><div><div class="label">Reflect</div><div class="question">"Think about what you wrote during your Notice &amp; Wonder warm-up. Has your thinking changed? What do you understand now that you didn't before?"</div></div></div>
 
       <div class="turn-in-block">
         <div class="turn-in-header"><div class="turn-in-header-icon">📋</div><div><div class="turn-in-header-label">Canvas Submission</div><div class="turn-in-header-title">What to Turn In</div></div></div>
@@ -1220,7 +1279,7 @@ em { color: #5A4D3E; }
           <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
           <div class="turn-in-checklist">
             <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check check-icon"></div><div class="turn-in-item-text">My Notice &amp; Wonder warm-up observations and question.</div></div>
-            <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check check-icon"></div><div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div></div>
+            <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check check-icon"></div><div class="turn-in-item-text">My copywork sentence (the science sentence I copied into my notebook).</div></div>
             <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check check-icon"></div><div class="turn-in-item-text">My ecosystem model with tokens (before and after the change).</div></div>
             <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check check-icon"></div><div class="turn-in-item-text">My short answer responses to Part B questions.</div></div>
             <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check check-icon"></div><div class="turn-in-item-text">My Write &amp; Explain response (complete sentences, using lesson vocabulary).</div></div>

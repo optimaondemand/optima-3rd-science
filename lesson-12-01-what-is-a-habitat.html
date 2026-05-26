@@ -257,6 +257,18 @@ body{font-family:'Nunito','Century Gothic','Arial Rounded MT Bold',Verdana,sans-
 .tab-next-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;background:linear-gradient(135deg,#2D6A4F,#52B788);color:#fff;border:none;border-radius:28px;font-family:'Nunito',sans-serif;font-size:16px;font-weight:800;cursor:pointer;box-shadow:0 4px 16px rgba(45,106,79,0.3);transition:transform 0.2s,box-shadow 0.2s;}
 .tab-next-btn:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(45,106,79,0.4);}
 @media(max-width:620px){.intro-2col{grid-template-columns:1fr;}.vocab-grid{grid-template-columns:1fr;}.flip-card{height:175px;}.header-title{font-size:22px;}.tab-btn{min-width:100px;font-size:11px;padding:10px 6px 9px;}.turn-in-options{grid-template-columns:1fr;}.turn-in-header-title{font-size:20px;}}
+/* Lesson figures */
+.lesson-figure{background:#fff;border:2px solid #E8DDD2;border-radius:16px;padding:14px 14px 18px;margin:0 0 22px;box-shadow:0 2px 10px rgba(27,67,50,0.04);}
+.lesson-figure-label{font-size:11px;color:#F9A825;text-transform:uppercase;letter-spacing:0.8px;font-weight:800;margin-bottom:10px;}
+.lesson-figure img{display:block;max-width:100%;height:auto;border-radius:10px;margin:0 auto;box-shadow:0 2px 8px rgba(0,0,0,0.08);}
+.lesson-figure-caption{font-size:14px;color:#5A4D3E;margin-top:12px;line-height:1.55;font-weight:600;text-align:center;}
+.lesson-figure-caption strong{color:#1B4332;}
+/* Image suggestions (shown when image file not yet available) */
+.image-suggestion{background:linear-gradient(135deg,#FFF3E0,#FFF8E1);border:2.5px dashed #F9A825;border-radius:16px;padding:20px 22px;margin:18px 0;text-align:center;}
+.image-suggestion-icon{font-size:36px;margin-bottom:8px;}
+.image-suggestion-label{font-size:11px;color:#E65100;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
+.image-suggestion-desc{font-size:15px;color:#5A4D3E;line-height:1.65;font-weight:600;max-width:680px;margin:0 auto 12px;text-align:left;}
+.image-suggestion-file{font-size:12px;color:#9A8E82;font-family:monospace;background:rgba(0,0,0,0.05);border-radius:6px;padding:4px 10px;display:inline-block;margin-top:6px;}
 </style>
 </head>
 <body>
@@ -714,6 +726,21 @@ body{font-family:'Nunito','Century Gothic','Arial Rounded MT Bold',Verdana,sans-
       </div>
 
       <!-- Section 2 -->
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">📷 Photo · Sonoran Desert, Arizona</div>
+        <img src="images/12-1-sonoran-saguaro-landscape.png"
+             alt="A tall saguaro cactus stands in the Sonoran Desert in Arizona, surrounded by dry sandy ground, scattered rocks, and low desert shrubs under a bright blue sky"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            A wide-angle photograph of the Sonoran Desert in Arizona on a clear sunny day. A large, mature saguaro cactus stands prominently in the foreground, showing multiple upward-curving arms. The desert floor is visible — sandy, rocky, with scattered dry shrubs and small stones. A hawk or cactus wren perched on one arm would be a bonus. Blue sky fills the upper half. Ground-level or slightly low angle looking up at the cactus to show its true scale. Real-world nature photograph, photorealistic, no white borders or backgrounds, no cartoons. Warm midday desert light.
+          </div>
+          <div class="image-suggestion-file">Save as: images/12-1-sonoran-saguaro-landscape.png</div>
+        </div>
+        <div class="lesson-figure-caption">A saguaro cactus in the Sonoran Desert — one of the most important organisms in this habitat. It can grow 40 feet tall and live for over 150 years, providing food and shelter for dozens of other species.</div>
+      </div>
       <div class="card theme-earth" style="margin-bottom:18px;">
         <div class="card-head">
           <div class="card-head-icon">🌡️</div>
@@ -729,6 +756,21 @@ body{font-family:'Nunito','Century Gothic','Arial Rounded MT Bold',Verdana,sans-
       </div>
 
       <!-- Section 3 -->
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">📷 Photo · Desert Surface Conditions</div>
+        <img src="images/12-1-desert-floor-conditions.png"
+             alt="Cracked dry earth and scattered rocks on a Sonoran Desert floor in summer, with sparse desert plants and heat shimmer visible in the distance"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            A ground-level photograph looking across the Sonoran Desert floor in summer heat. The foreground shows cracked, dry, sun-baked earth with scattered rocks and pebbles, a few dry dead leaves or twigs, and sparse low desert shrubs. Heat shimmer is faintly visible in the mid-distance over the flat desert stretching to the horizon. Taken from knee height or lower, so the rocky ground texture fills the bottom third of the frame with the open desert receding into the background. Bright harsh midday light. No people. Photorealistic nature photograph, no white borders or backgrounds, no cartoons.
+          </div>
+          <div class="image-suggestion-file">Save as: images/12-1-desert-floor-conditions.png</div>
+        </div>
+        <div class="lesson-figure-caption">The desert floor in summer — cracked soil, rocks, intense sun. Temperatures here can reach <strong>120°F</strong>. Only organisms with the right traits can handle conditions like this.</div>
+      </div>
       <div class="card theme-forest" style="margin-bottom:18px;">
         <div class="card-head">
           <div class="card-head-icon">⚖️</div>
@@ -1085,6 +1127,22 @@ body{font-family:'Nunito','Century Gothic','Arial Rounded MT Bold',Verdana,sans-
         <p><strong>The three animals:</strong> a <strong>roadrunner</strong> (fast ground bird, eats lizards and snakes, has scaly heat-resistant legs, gets water from its prey), a <strong>kangaroo rat</strong> (nocturnal, gets all its water from the seeds it eats, digs burrows to escape daytime heat, long hind legs for quick movement), and a <strong>brook trout</strong> (breathes through gills, needs cold oxygen-rich water between 45–65°F, eats aquatic insects).</p>
       </div>
 
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">📷 Photo · Kangaroo Rat</div>
+        <img src="images/12-1-kangaroo-rat-desert.png"
+             alt="A kangaroo rat on sandy desert ground at dusk, showing its large dark eyes, oversized hind legs, tiny front arms, and long tail with a tuft"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            A close-up wildlife photograph of a Merriam's kangaroo rat (Dipodomys merriami) on sandy desert ground at dusk or nighttime. The animal faces the camera or is turned 3/4, clearly showing its most distinctive features: enormous round black eyes, disproportionately large hind legs, very small front paws held close to the chest, long tail with a dark tuft at the tip, and soft tan fur with a white belly stripe. The desert sand is visible beneath it. Low-angle shot, warm ambient light. Real-world wildlife photograph, photorealistic, no white backgrounds or borders, no cartoons.
+          </div>
+          <div class="image-suggestion-file">Save as: images/12-1-kangaroo-rat-desert.png</div>
+        </div>
+        <div class="lesson-figure-caption">A real kangaroo rat — notice the enormous eyes for seeing at night, the powerful hind legs for quick escapes, and the long tail for balance. These traits are clues about where and how it survives.</div>
+      </div>
+
       <div class="callout callout-earth" style="margin-bottom:18px;">
         <span class="callout-icon">🏔️</span>
         <p><strong>The three habitats:</strong> a <strong>hot desert</strong> (less than 10 inches of rain per year, daytime temperatures above 100°F, sandy rocky soil, intense sun), a <strong>cold mountain stream</strong> (fast-moving icy-cold water, rocky bottom, shaded by evergreen trees, temperature stays between 40–55°F), and a <strong>tropical rainforest</strong> (hot and humid, 100+ inches of rain per year, dense canopy, moisture everywhere).</p>
@@ -1212,7 +1270,7 @@ body{font-family:'Nunito','Century Gothic','Arial Rounded MT Bold',Verdana,sans-
           <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Cold and icy, with frozen ground most of the year.</div>
         </div>
         <div class="quiz-feedback fb-correct">🌵 Right! The desert's defining conditions are extreme heat and very little water — that's what shapes which organisms can live there.</div>
-        <div class="quiz-feedback fb-wrong">Think about the section on desert conditions. What two things make the desert extreme? Look back at Section 2.</div>
+        <div class="quiz-feedback fb-wrong">Think about what makes the desert extreme. What two things make it really hard to survive there — and how does that shape which organisms can live in it?</div>
       </div>
 
       <div class="quiz-q" data-answer="c">
@@ -1234,7 +1292,7 @@ body{font-family:'Nunito','Century Gothic','Arial Rounded MT Bold',Verdana,sans-
           <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>A shaded pond — too still and calm.</div>
         </div>
         <div class="quiz-feedback fb-correct">⭐ Yes! The desert provides none of the resources a brook trout needs. This is a clear case of "cannot survive at all."</div>
-        <div class="quiz-feedback fb-wrong">Think about what a brook trout specifically needs. Does the desert provide any of that? Check Section 3.</div>
+        <div class="quiz-feedback fb-wrong">Think carefully about what a brook trout needs to survive. Does the desert offer any of those things? What happens when an organism's needs and the habitat's conditions don't match?</div>
       </div>
 
       <div class="quiz-score" id="quizScore">

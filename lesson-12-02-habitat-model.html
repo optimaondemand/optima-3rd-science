@@ -708,6 +708,32 @@ em { color: #5A4D3E; }
   .turn-in-options { grid-template-columns: 1fr; }
   .turn-in-header-title { font-size: 20px; }
 }
+
+/* ── Image Suggestion Boxes ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
 </style>
 </head>
 
@@ -1192,7 +1218,23 @@ em { color: #5A4D3E; }
         </div>
       </div>
 
-      <!-- Interactive Diagram: Four Needs — beaver in wetland -->
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">📷 Photo · Real Beaver Lodge</div>
+        <img src="images/12-02-beaver-lodge-wetland.png"
+             alt="A large beaver lodge made of sticks and mud rising from a calm woodland pond, surrounded by cattails and tree reflections in still water"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            Close-up photograph of a large beaver lodge — a dome-shaped mound of sticks, mud, and branches rising from the surface of a calm freshwater pond. Water surrounds the lodge on all sides. Cattails and reeds grow at the water's edge. Woodland trees in the background, reflected in still water. Natural afternoon light, rich earthy and green tones. Real nature photography. No white borders, no text overlays, no cartoon elements. Lush, detailed, vivid.
+          </div>
+          <div class="image-suggestion-file">Save as: images/12-02-beaver-lodge-wetland.png</div>
+        </div>
+        <div class="lesson-figure-caption">This is a real beaver lodge — a dome of sticks and mud built in the middle of a pond. The entrance is underwater so predators can't reach it. The pond provides the water, the food, and the shelter all at once.</div>
+      </div>
+
+            <!-- Interactive Diagram: Four Needs — beaver in wetland -->
       <div class="diagram-wrap scroll-reveal">
         <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
           🗺 Tap each need to learn more
@@ -1404,7 +1446,24 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
-  <!-- Investigation Steps -->
+
+  <div class="lesson-figure">
+    <div class="lesson-figure-label">📷 Photo · A Real Wetland Habitat</div>
+    <img src="images/12-02-wetland-habitat-real.png"
+         alt="A freshwater wetland pond in late summer with tall green cattails, lily pads floating on calm water, and a great blue heron standing at the water's edge"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+    <div class="image-suggestion" style="display:none;">
+      <div class="image-suggestion-icon">🖼️</div>
+      <div class="image-suggestion-label">Suggested Image — Generate This</div>
+      <div class="image-suggestion-desc">
+        Wide-angle photograph of a freshwater wetland pond in late summer. Tall green cattails in the foreground, lily pads with white flowers floating on calm water. A great blue heron stands at the water's edge in shallow water, watching for fish. Dense trees and shrubs reflected in the pond surface in the background. Natural sunlight, vibrant greens and blues. Real nature photography. No white borders, no text, no cartoon elements. Lush and richly detailed.
+      </div>
+      <div class="image-suggestion-file">Save as: images/12-02-wetland-habitat-real.png</div>
+    </div>
+    <div class="lesson-figure-caption">A wetland is one of the most packed-with-life habitats on Earth. Count the living things you can spot — then think about what nonliving things this habitat provides.</div>
+  </div>
+
+    <!-- Investigation Steps -->
   <div class="activity-card act-explore scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#0288D1;">3</div>
@@ -1758,7 +1817,7 @@ em { color: #5A4D3E; }
         <span class="sq-icon">🤔</span>
         <div>
           <div class="label">Reflect</div>
-          <div class="question">"Look back at what you wrote in Notice &amp; Wonder at the start of the lesson. Was your prediction right? What do you understand now that you didn't at the beginning?"</div>
+          <div class="question">"Think back to the prediction you made before you started reading or building today. Now that you've built your model and worked through the ideas — was your prediction right? What do you understand now that you didn't at the beginning?"</div>
         </div>
       </div>
 
@@ -1802,7 +1861,7 @@ em { color: #5A4D3E; }
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div>
+              <div class="turn-in-item-text">The copywork sentence about what organisms need to survive.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>

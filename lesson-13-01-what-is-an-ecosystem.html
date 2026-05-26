@@ -299,6 +299,32 @@ body {
 }
 .lesson-figure-caption strong { color: #1B4332; }
 
+/* ── Image Suggestion Placeholder ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
 /* ── Key Concept Box ── */
 .key-concept {
   background: #F0F8E8; border: 2px solid #C8E0B8;
@@ -1245,6 +1271,21 @@ em { color: #5A4D3E; }
     <div class="card theme-forest" style="margin-bottom:18px;"><div class="card-head"><div class="card-head-icon">🌱</div><div><div class="card-head-label">Section 1</div><div class="card-head-title">A Place Full of Parts</div></div></div><div class="card-body"><p>An <span class="vtip">ecosystem<span class="vtip-box"><span class="vtip-word">ecosystem</span>A place where living and nonliving things interact.</span></span> is a place where living and nonliving things interact. A forest, pond, desert, ocean, or grassland can be an ecosystem.</p><p>Living things include plants, animals, fungi, and tiny organisms. Nonliving things include sunlight, water, air, soil, rocks, and temperature.</p><div class="socratic-q"><span class="sq-icon">🤔</span><div><div class="label">Stop and Think</div><div class="question">"Could a forest still be a forest without soil or sunlight? What makes you think so?"</div></div></div></div></div>
     <div class="card theme-sky" style="margin-bottom:18px;"><div class="card-head"><div class="card-head-icon">🔗</div><div><div class="card-head-label">Section 2</div><div class="card-head-title">Organisms Depend on Their Environment</div></div></div><div class="card-body"><p>Every <span class="vtip">organism<span class="vtip-box"><span class="vtip-word">organism</span>A living thing, such as a plant, animal, or fungus.</span></span> has needs. Plants need sunlight, water, air, and soil. Animals need food, water, shelter, and space.</p><p>These needs connect the parts of an ecosystem. A squirrel may eat seeds from a tree. The tree needs soil and water. One part leads to another.</p></div></div>
     <div class="card theme-earth" style="margin-bottom:18px;"><div class="card-head"><div class="card-head-icon">🌦️</div><div><div class="card-head-label">Section 3</div><div class="card-head-title">When One Part Changes</div></div></div><div class="card-body"><p>Ecosystems can change. A storm, drought, fire, pollution, or human activity can change the food, water, or shelter in a habitat.</p><p>When an ecosystem changes, some organisms survive. Some move away. Others may struggle if their needs are not met.</p><p><strong>Real-World Connection:</strong> If a forest stream dries up, insects may have less water. Birds that eat those insects may have less food.</p></div></div>
+    <div class="lesson-figure">
+      <div class="lesson-figure-label" style="display:block;">📷 Photo · When a Stream Dries Up</div>
+      <img src="images/13-01-drought-stream.png"
+           alt="A dried-up forest stream bed with cracked mud, exposed rocks, and no flowing water — surrounding trees visible"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+      <div class="image-suggestion" style="display:none;">
+        <div class="image-suggestion-icon">🖼️</div>
+        <div class="image-suggestion-label">Suggested Image — Generate This</div>
+        <div class="image-suggestion-desc">
+          A wide-angle photograph of a dried-up stream bed running through a deciduous forest during drought conditions. The stream channel shows deeply cracked, dried mud and exposed rocks where water once flowed. The surrounding forest floor is visible with fallen leaves and tree roots. Afternoon light filters through the tree canopy above. Shot from ground level looking along the empty stream channel. Photo-realistic, taken outdoors in a real woodland setting. No white background, no border, no artificial edges.
+        </div>
+        <div class="image-suggestion-file">Save as: images/13-01-drought-stream.png</div>
+      </div>
+      <div class="lesson-figure-caption">When a stream dries up, the whole ecosystem feels it. Insects lose their water source. Fish disappear. The birds that depend on them have to find food somewhere else.</div>
+    </div>
     <div class="diagram-wrap scroll-reveal">
         <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
           🗺 Tap a zone to explore it
@@ -1458,6 +1499,21 @@ em { color: #5A4D3E; }
     <div class="key-concept scroll-reveal"><div class="kc-label">⭐ Key Concept</div><p><strong>An ecosystem is a system.</strong> If one living or nonliving part changes, other parts may change too.</p></div>
   </div></div>
   <div class="mind-blow scroll-reveal"><div class="mind-blow-icon">🤯</div><div class="mind-blow-content"><div class="mind-blow-label">Amazing Nature Fact</div><div class="mind-blow-text">A fallen log can become a tiny ecosystem. Insects, fungi, moss, and tiny organisms may live there while the wood breaks down.</div></div></div>
+  <div class="lesson-figure scroll-reveal">
+    <div class="lesson-figure-label" style="display:block;">📷 Photo · A Log Full of Life</div>
+    <img src="images/13-01-log-ecosystem.png"
+         alt="A decomposing forest log covered in clusters of mushrooms, thick green moss, and bark beetles — surrounded by forest floor leaf litter"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+    <div class="image-suggestion" style="display:none;">
+      <div class="image-suggestion-icon">🖼️</div>
+      <div class="image-suggestion-label">Suggested Image — Generate This</div>
+      <div class="image-suggestion-desc">
+        A close-up photograph of a large decomposing log on a forest floor, covered in clusters of wild mushrooms (amber and brown caps), thick bright-green moss, and visible bark beetles or other forest insects on the wood surface. Rich natural forest colors — warm amber wood grain, deep greens, earthy browns. Soft dappled forest light coming through tree canopy above. Shot from slightly above and to the side to show the full textured surface of the log. Fallen leaves, soil, and small plants visible around the base. Photo-realistic, shot outdoors in a real deciduous forest. No white background, no artificial border.
+      </div>
+      <div class="image-suggestion-file">Save as: images/13-01-log-ecosystem.png</div>
+    </div>
+    <div class="lesson-figure-caption">This log is its own tiny ecosystem. Fungi, moss, beetles, and worms break it down slowly — and everything they release goes right back into the soil for plants to use again.</div>
+  </div>
   <details class="go-deeper scroll-reveal"><summary>Curious? Go Deeper</summary><div class="gd-body"><p>Some organisms are easy to see, like deer, birds, and trees. Others are so small that you need a microscope to see them.</p><p>Those tiny organisms still matter. Many help break down dead leaves and old wood. That returns materials to the soil, where plants can use them again.</p></div></details>
   <div class="tab-next-wrap"><button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button></div>
 </div>
