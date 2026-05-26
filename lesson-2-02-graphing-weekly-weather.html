@@ -269,6 +269,32 @@ body {
 }
 .lesson-figure-caption strong { color: #1B4332; }
 
+/* ── Image Suggestion ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
 /* ── Interactive Diagram ── */
 .diagram-interactive { position: relative; }
 .diagram-interactive svg { display: block; width: 100%; height: auto; cursor: pointer; }
@@ -453,7 +479,7 @@ body {
   display: flex; background: #fff;
   border-bottom: 2px solid #E8DDD2;
   overflow-x: auto; -webkit-overflow-scrolling: touch;
-  position: sticky; top: 0; z-index: 100;
+  position: sticky; top: 44px; z-index: 100;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 .tab-btn {
@@ -1079,6 +1105,22 @@ body {
         <div class="card-body">
           <p>When scientists study the weather, they collect <span class="vtip">data<span class="vtip-box"><span class="vtip-word">data</span>Information collected by observing or measuring.</span></span> — things like how warm it was, whether it rained, and what the wind was doing. This is important work. But a long list of numbers can be hard to read.</p>
           <p>Imagine you wrote down the temperature every day for a whole year. That's 365 numbers. Looking through that list for a pattern would take a long time. That's where graphs come in.</p>
+
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">📡 Real World · Weather Instruments</div>
+            <img src="images/2-02-rain-gauge-outdoor.png"
+                 alt="A close-up of a clear plastic rain gauge mounted on a wooden fence post in an open outdoor field, showing measurement markings and a small amount of collected rainwater, with blurred green landscape in the background"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A close-up photograph of a clear plastic rain gauge mounted on a wooden post or fence in an open outdoor field or backyard. The gauge has visible measurement markings (inches or mm) and contains a small amount of collected rainwater. The background is a blurred natural landscape — green grass, open sky, soft natural light. Photorealistic, no people, no cartoons, no white background or edges. The focus is on the gauge itself as a real scientific instrument in the real world.
+              </div>
+              <div class="image-suggestion-file">Save as: images/2-02-rain-gauge-outdoor.png</div>
+            </div>
+            <div class="lesson-figure-caption">A rain gauge records how much rain fell — that number gets written down, collected with other data, and eventually turned into a chart or graph. This is where weather data starts.</div>
+          </div>
           <div class="socratic-q">
             <span class="sq-icon">🤔</span>
             <div>
@@ -1231,6 +1273,22 @@ body {
           <div class="mind-blow-label">Amazing Science Fact</div>
           <div class="mind-blow-text">There are more than <strong>10,000 weather stations</strong> in the United States alone — and they collect data every single hour. That means scientists graph millions of data points every day just to figure out tomorrow's forecast!</div>
         </div>
+      </div>
+
+      <div class="lesson-figure scroll-reveal">
+        <div class="lesson-figure-label">📡 Real World · Automated Weather Station</div>
+        <img src="images/2-02-weather-station-field.png"
+             alt="An automated weather station standing in an open grassy field under a wide blue sky, with an anemometer on top, a white instrument shelter, solar panel, and a rain gauge visible on the post"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            A real automated weather station standing alone in an open flat grassy field or meadow under a wide blue sky with scattered clouds. The station has a metal post with a white instrument shelter (Stevenson screen), a cup anemometer (spinning wind cups) at the top, a small solar panel on the side, and possibly a rain gauge. The landscape is rural and natural — green grass, open horizon, bright natural daylight. No people, no cartoons, no white background or edges. Photorealistic. Wide composition showing the full station in its environment.
+          </div>
+          <div class="image-suggestion-file">Save as: images/2-02-weather-station-field.png</div>
+        </div>
+        <div class="lesson-figure-caption">One of over 10,000 weather stations across the US. Every hour, instruments like these measure temperature, rainfall, and wind — all of it goes into data tables and graphs that meteorologists use to build your forecast.</div>
       </div>
 
     </div>
@@ -1628,7 +1686,7 @@ body {
 
       <!-- PART A -->
       <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔍 Part A — Read the Graph</p>
-      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use the graph you made in the investigation — or the diagram on the Lesson tab — to answer these questions.</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use the bar graph you made in your science notebook to answer these questions.</p>
 
       <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">Which day had the highest temperature? What was that temperature?</span></div>
       <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">Which day had the lowest temperature? What was the difference between the warmest and coolest days?</span></div>
@@ -1724,7 +1782,7 @@ body {
           <p style="font-size:15px;color:#5A4D3E;margin-bottom:12px;">Make sure your submission includes all of these:</p>
           <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
             <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
-            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My Notice &amp; Wonder observations from the Vocabulary tab.</span>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My Notice &amp; Wonder observations from the warm-up.</span>
           </div>
           <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
             <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
