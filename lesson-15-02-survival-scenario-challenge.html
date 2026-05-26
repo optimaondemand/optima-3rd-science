@@ -710,7 +710,7 @@ em { color: #5A4D3E; }
 <body>
 
 <canvas id="confettiCanvas"></canvas>
-<button class="back-to-top" id="backToTop" type="button">↑ Top</button>
+<button class="back-to-top" id="backToTop" type="button">🌍 Back to Top</button>
 <span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
 
 <div class="page-wrap">
@@ -2063,6 +2063,13 @@ function toggleCheck(item) {
     checkEl.textContent = LESSON_EMOJI;
   } else {
     checkEl.textContent = '';
+  }
+  // confetti when all items checked
+  var allItems = document.querySelectorAll('.turn-in-item');
+  var allChecked = Array.from(allItems).every(function(i){ return i.classList.contains('checked'); });
+  if (allChecked) {
+    setTimeout(window.launchConfetti, 200);
+    setTimeout(window.launchConfetti, 700);
   }
 }
 
