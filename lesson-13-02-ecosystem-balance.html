@@ -1363,7 +1363,7 @@ function toggleCheck(item) {
     icon.textContent = '';
   }
   // Check if all complete → confetti
-  var items = document.querySelectorAll('.checklist-item');
+  var items = document.querySelectorAll('.turn-in-item');
   setTimeout(function(){
     if (Array.from(items).every(function(it){ return it.classList.contains('checked'); })) {
       setTimeout(window.launchConfetti, 200);

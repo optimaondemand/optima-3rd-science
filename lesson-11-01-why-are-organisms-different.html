@@ -292,6 +292,32 @@ body {
 }
 .lesson-figure-caption strong { color: #1B4332; }
 
+/* ── Image Suggestion Placeholder ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
 /* ── Key Concept Box ── */
 .key-concept {
   background: #F0F8E8; border: 2px solid #C8E0B8;
@@ -1101,7 +1127,21 @@ em { color: #5A4D3E; }
     </div>
     <div class="act-body">
 
-      <p>Look at the photo of four birds in your lesson. They are all birds — but look at those beaks. Something is different. Before we find out why, just <strong>observe</strong>.</p>
+      <p>Look at the photo below. These are all birds — but look at those beaks. Something is different. Before we find out why, just <strong>observe</strong>.</p>
+
+      <div class="lesson-figure" style="margin-bottom:16px;">
+        <div class="lesson-figure-label">📷 Photo · Look Closely</div>
+        <img src="images/11-01-birds-variation.png"
+             alt="Four small birds perched on a rock and branch. Each bird has a noticeably different beak shape — one short and thick, one long and curved, one straight and thin, and one wide and flat. They are eating different foods including berries and seeds."
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">Real photograph of four small songbirds perched close together on a mossy rock and a branch in a garden or woodland setting. Each bird has a clearly different beak shape — one short and thick, one long and curved, one thin and pointed, one wide and flat. Birds are eating different foods: seeds, berries, and insects. Natural outdoor lighting, green foliage background, no white edges or borders. Photo-realistic, no illustration or cartoon elements.</div>
+          <div class="image-suggestion-file">Save as: images/11-01-birds-variation.png</div>
+        </div>
+        <div class="lesson-figure-caption">Same kind of animal — but look at those beaks. <strong>What do you notice?</strong></div>
+      </div>
 
       <div class="socratic-q">
         <span class="sq-icon">👀</span>
@@ -1214,13 +1254,20 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
-  <!-- LESSON FIGURE: uploaded bird photo -->
+  <!-- LESSON FIGURE: bird photo also shown here for lesson content reference -->
   <div class="lesson-figure">
-    <div class="lesson-figure-label">📷 Photo · Look Closely</div>
+    <div class="lesson-figure-label">📷 Photo · Four Birds, Four Beaks</div>
     <img src="images/11-01-birds-variation.png"
-         alt="Four small birds perched on a rock and branch. Each bird has a noticeably different beak shape — one short and thick, one long and curved, one straight and thin, and one wide and flat. They are eating different foods including berries and seeds." />
+         alt="Four small birds perched on a rock and branch. Each bird has a noticeably different beak shape — one short and thick, one long and curved, one straight and thin, and one wide and flat. They are eating different foods including berries and seeds."
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+    <div class="image-suggestion" style="display:none;">
+      <div class="image-suggestion-icon">🖼️</div>
+      <div class="image-suggestion-label">Suggested Image — Generate This</div>
+      <div class="image-suggestion-desc">Real photograph of four small songbirds perched close together on a mossy rock and a branch in a garden or woodland setting. Each bird has a clearly different beak shape — one short and thick, one long and curved, one thin and pointed, one wide and flat. Birds are eating different foods: seeds, berries, and insects. Natural outdoor lighting, green foliage background, no white edges or borders. Photo-realistic, no illustration or cartoon elements.</div>
+      <div class="image-suggestion-file">Save as: images/11-01-birds-variation.png</div>
+    </div>
     <div class="lesson-figure-caption">
-      Four birds — same kind of animal, but look at those beaks. <strong>Notice how different they are.</strong> Each beak shape is a trait. By the end of this lesson, you'll understand why those differences matter.
+      Four birds — same kind of animal, but look at those beaks. <strong>Notice how different they are.</strong> Each beak shape is a trait. The interactive diagram below will show you exactly what each shape is good for.
     </div>
   </div>
 
@@ -1254,6 +1301,20 @@ em { color: #5A4D3E; }
               <div class="label">Stop and Think</div>
               <div class="question">"Think of two people in your family. What traits do you share? What looks different?"</div>
             </div>
+          </div>
+
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">📷 Photo · Variation in One Species</div>
+            <img src="images/11-01-puppy-variation.png"
+                 alt="Five puppies from the same litter sitting together on grass outdoors. Each puppy looks noticeably different — one is solid brown, one is black and white spotted, one is tan, one is dark gray, and one is cream-colored. They are sitting close together in natural light."
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">Real photograph of five puppies from the same litter sitting together on green grass outdoors. Each puppy looks noticeably different from the others — one solid brown, one black and white spotted, one tan/golden, one dark gray or brindle, one cream or white. They are sitting or lying close together so you can clearly see their different coat colors and patterns. Warm natural outdoor lighting, grass background, no white edges or illustration elements. Photo-realistic only.</div>
+              <div class="image-suggestion-file">Save as: images/11-01-puppy-variation.png</div>
+            </div>
+            <div class="lesson-figure-caption">Same litter, same parents — but look at how different each puppy looks. <strong>Those differences are variation.</strong> Same species, different traits.</div>
           </div>
         </div>
       </div>
@@ -1290,6 +1351,20 @@ em { color: #5A4D3E; }
           <p>Here's where it gets interesting. Sometimes a small difference in a trait gives an organism a real <span class="vtip">advantage<span class="vtip-box"><span class="vtip-word">advantage</span>A trait that helps an organism survive, find food, or reproduce.</span></span> — and sometimes it doesn't.</p>
           <p>A bird with a thicker beak can crack open hard seeds. Where seeds are the main food source, that trait is an advantage. A bird with a longer, thinner beak can reach nectar deep inside a flower. In a place full of flowering plants, that's an advantage instead. Neither beak is better in every place — it depends on the environment.</p>
           <p><strong>Real-World Connection:</strong> <span class="vtip">Camouflage<span class="vtip-box"><span class="vtip-word">camouflage</span>Colors or patterns that help an organism blend into its surroundings.</span></span> is another example. A moth that blends into tree bark is harder for a bird to spot. That color variation might mean the difference between surviving and not.</p>
+
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">📷 Photo · Camouflage in Action</div>
+            <img src="images/11-01-camouflage-moth.png"
+                 alt="A moth resting on rough tree bark. The moth's wing pattern closely matches the gray-brown mottled texture of the bark, making it very hard to spot at first glance."
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">Real close-up photograph of a camouflaged moth resting on rough tree bark in a forest. The moth's wing pattern — mottled gray, brown, and black — nearly perfectly matches the texture and color of the bark, making it very difficult to spot. The moth takes up the center-left of the frame; bark fills the rest. Shallow depth of field, natural forest lighting. No white background, no illustration elements, no text overlays. Photo-realistic only.</div>
+              <div class="image-suggestion-file">Save as: images/11-01-camouflage-moth.png</div>
+            </div>
+            <div class="lesson-figure-caption">Can you find the moth? Its wing color and pattern match the bark almost perfectly. <strong>That's camouflage — a trait that gives it a survival advantage.</strong></div>
+          </div>
         </div>
       </div>
 
@@ -1489,10 +1564,24 @@ em { color: #5A4D3E; }
 
       <div class="callout callout-tip" style="margin-bottom:18px;">
         <span class="callout-icon">🎒</span>
-        <p><strong>You'll need:</strong> Your science notebook, a pencil, colored pencils, and the bird photo in the lesson.</p>
+        <p><strong>You'll need:</strong> Your science notebook, a pencil, and colored pencils.</p>
       </div>
 
-      <p>You're going to look at the four birds in the lesson photo. Your job is to observe carefully, record what you notice, and start thinking about what those differences might mean.</p>
+      <p>You're going to look at the four birds in the photo below. Your job is to observe carefully, record what you notice, and start thinking about what those differences might mean.</p>
+
+      <div class="lesson-figure" style="margin-bottom:20px;">
+        <div class="lesson-figure-label">📷 Photo · Your Observation Subject</div>
+        <img src="images/11-01-birds-variation.png"
+             alt="Four small birds perched on a rock and branch. Each bird has a noticeably different beak shape — one short and thick, one long and curved, one straight and thin, and one wide and flat. They are eating different foods including berries and seeds."
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">Real photograph of four small songbirds perched close together on a mossy rock and a branch in a garden or woodland setting. Each bird has a clearly different beak shape — one short and thick, one long and curved, one thin and pointed, one wide and flat. Birds are eating different foods: seeds, berries, and insects. Natural outdoor lighting, green foliage background, no white edges or borders. Photo-realistic, no illustration or cartoon elements.</div>
+          <div class="image-suggestion-file">Save as: images/11-01-birds-variation.png</div>
+        </div>
+        <div class="lesson-figure-caption">Use this photo for your observation activity. <strong>Look closely at each bird's beak.</strong></div>
+      </div>
 
       <!-- Step 1 -->
       <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
@@ -1506,7 +1595,7 @@ em { color: #5A4D3E; }
       <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
         <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">2</div>
         <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
-          <p style="margin:0;font-size:16px;color:#1B4332;font-weight:700;">Look at the photo. For each bird, write at least two things you notice about its beak — the shape, size, or what it seems to be doing.</p>
+          <p style="margin:0;font-size:16px;color:#1B4332;font-weight:700;">For each bird in the photo above, write at least two things you notice about its beak — the shape, size, or what it seems to be doing.</p>
         </div>
       </div>
 
@@ -1522,7 +1611,7 @@ em { color: #5A4D3E; }
       <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
         <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">4</div>
         <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
-          <p style="margin:0;font-size:16px;color:#1B4332;font-weight:700;">Look at the interactive diagram on the Lesson tab. Check your prediction. Were you right? Write a note about what you found.</p>
+          <p style="margin:0;font-size:16px;color:#1B4332;font-weight:700;">Now think about what you read in the lesson. Go back to your prediction from Step 3. Were you right? Write a note about what evidence supports or changes your thinking.</p>
         </div>
       </div>
 
@@ -1821,7 +1910,7 @@ em { color: #5A4D3E; }
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My bird observation chart and labeled drawing from the Explore tab.</div>
+              <div class="turn-in-item-text">My bird observation chart and labeled drawing from the observation activity.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>

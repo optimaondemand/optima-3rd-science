@@ -668,6 +668,32 @@ details.go-deeper summary::-webkit-details-marker { display: none; }
 .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #52B788, #95D5B2, #FDD835); border-radius: 10px; transition: width 0.4s ease; }
 .progress-pct { font-size: 13px; color: #FDD835; font-weight: 800; min-width: 36px; text-align: right; }
 
+/* ── Image Suggestions ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
 /* ── Back to Top ── */
 .back-to-top {
   position: fixed; bottom: 22px; right: 22px; z-index: 1000;
@@ -1050,18 +1076,35 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
+  <!-- STUDENT WORK SAMPLE — shown here for Notice & Wonder -->
+  <div class="lesson-figure">
+    <div class="lesson-figure-label">📷 Real Investigation · Student Work Sample</div>
+    <img src="images/10-02-family-traits-survey.png"
+         alt="A completed Family Traits Survey on a clipboard showing a tally chart with eye color, hair color, freckles, dimples, and earlobe data, plus a colorful bar graph of the results"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+    <div class="image-suggestion" style="display:none;">
+      <div class="image-suggestion-icon">📷</div>
+      <div class="image-suggestion-label">Student Work Sample</div>
+      <div class="image-suggestion-desc">Save the student clipboard photo as images/10-02-family-traits-survey.png</div>
+      <div class="image-suggestion-file">Save as: images/10-02-family-traits-survey.png</div>
+    </div>
+    <div class="lesson-figure-caption">
+      Someone already did this investigation — they surveyed a real group and made a tally chart and a bar graph. Take a close look at their data before reading on.
+    </div>
+  </div>
+
   <!-- ACTIVITY 1: NOTICE & WONDER -->
   <div class="activity-card act-warmup scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#52B788;">1</div>
       <div style="flex:1;">
         <div class="act-title">🌅 Notice &amp; Wonder</div>
-        <div class="act-subtitle">Look at the image — what do you see in the data?</div>
+        <div class="act-subtitle">Look at the trait survey above — what do you see in the data?</div>
       </div>
       <div class="act-time" style="background:#52B788;">⏱ 5–8 min</div>
     </div>
     <div class="act-body">
-      <p>Look at the trait survey photo on the Lesson tab. Someone already did this investigation — they surveyed a real group and made a chart and graph. Before we learn anything new, just look carefully at their data.</p>
+      <p>Look carefully at the trait survey photo above. Before we learn anything new, just look at the data — the chart, the tallies, the bars.</p>
       <div class="socratic-q">
         <span class="sq-icon">👀</span>
         <div>
@@ -1171,16 +1214,6 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
-  <!-- UPLOADED LESSON IMAGE -->
-  <div class="lesson-figure">
-    <div class="lesson-figure-label">📷 Real Investigation · Student Work Sample</div>
-    <img src="images/10-02-family-traits-survey.png"
-         alt="A completed Family Traits Survey on a clipboard showing a tally chart with eye color, hair color, freckles, dimples, and earlobe data, plus a colorful bar graph of the results" />
-    <div class="lesson-figure-caption">
-      This is a real student's completed trait survey. Notice how the <strong>tally chart</strong> on top tracks counts for each trait, and the <strong>bar graph</strong> below makes the patterns easy to see at a glance. Your investigation today will look just like this.
-    </div>
-  </div>
-
   <!-- ACTIVITY 2: CORE LESSON CONTENT -->
   <div class="activity-card act-lesson scroll-reveal">
     <div class="act-head">
@@ -1210,6 +1243,22 @@ em { color: #5A4D3E; }
             <div>
               <div class="label">Stop and Think</div>
               <div class="question">"What traits do you share with a family member? Think of at least two before reading on."</div>
+            </div>
+          </div>
+
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">📷 Parent &amp; Offspring · Inherited Traits</div>
+            <img src="images/10-02-parent-offspring-traits.png"
+                 alt="A tabby cat resting with a litter of kittens that show similar but slightly different coat markings — some with stronger stripes, some lighter — showing inherited traits with natural variation"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">A tabby cat resting outdoors or on a natural surface with a litter of 3–4 kittens clustered close to her. The kittens share the tabby pattern with the mother but show visible differences — one with bolder stripes, one lighter, one with a slightly different marking pattern. Photographed in warm natural light, close and intimate framing. Real photograph, no white borders, no text overlay, no cartoon elements. The coat pattern similarities and differences should be clearly visible.</div>
+              <div class="image-suggestion-file">Save as: images/10-02-parent-offspring-traits.png</div>
+            </div>
+            <div class="lesson-figure-caption">
+              This tabby cat and her kittens share the same striped coat pattern — they <strong>inherited</strong> it from their parent. But look carefully: each kitten's markings are a little different. Same trait, natural variation.
             </div>
           </div>
         </div>
@@ -1242,6 +1291,22 @@ em { color: #5A4D3E; }
         <div class="card-body">
           <p>Even in the same group, traits don't all look the same. Some dogs have curly fur; others have straight fur. Some flowers of the same species bloom pink, others white. That difference is called <span class="vtip">variation<span class="vtip-box"><span class="vtip-word">Variation</span>Differences in traits among individuals in the same group.</span></span>.</p>
           <p>Variation is normal. It tells scientists that while traits are inherited, they don't always show up exactly the same way. Your data today will probably show variation too.</p>
+
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">📷 Variation in Nature · Same Species, Different Colors</div>
+            <img src="images/10-02-flower-variation.png"
+                 alt="A garden filled with zinnia flowers of the same species showing natural variation — pink, white, red, orange, and yellow blooms growing together among green stems"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">A dense garden bed or field filled with zinnia flowers all of the same species, showing natural variation in color — pink, white, red, orange, and yellow blooms growing together among rich green stems and leaves. Photographed outdoors in bright natural daylight from a slightly low angle looking across the flower bed. Vibrant, saturated colors. Real nature photograph, no white background, no borders, no text overlay, no cartoon elements. Should feel like looking into a real summer garden.</div>
+              <div class="image-suggestion-file">Save as: images/10-02-flower-variation.png</div>
+            </div>
+            <div class="lesson-figure-caption">
+              These flowers are all the same species — but they show <strong>variation</strong> in color. Pink, white, red, orange — all inherited, but showing up differently in each plant. This is exactly the kind of pattern scientists look for.
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1449,6 +1514,22 @@ em { color: #5A4D3E; }
           <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2D6A4F,#52B788);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(45,106,79,0.3);">2</div>
           <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
             <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Survey your group.</strong> Look at yourself first — record your own traits. Then use the data provided (family photo, chart, or list) to add at least 5–10 more individuals to your tally chart. Use tally marks as you go.</p>
+          </div>
+        </div>
+
+        <div class="lesson-figure" style="margin:0 0 14px;">
+          <div class="lesson-figure-label">📷 Investigation Skill · Using Tally Marks</div>
+          <img src="images/10-02-tally-marks-notebook.png"
+               alt="A close-up of a student's hands writing tally marks in a science notebook on a wooden desk, with a data table visible and a pencil and ruler nearby"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+          <div class="image-suggestion" style="display:none;">
+            <div class="image-suggestion-icon">🖼️</div>
+            <div class="image-suggestion-label">Suggested Image — Generate This</div>
+            <div class="image-suggestion-desc">A close-up photograph of a child's hands holding a pencil and recording tally marks in an open science notebook resting on a wooden school desk. The notebook page shows a hand-drawn data table with rows labeled for different traits and tally marks actively being added in pencil. A ruler is resting nearby. Natural warm classroom light from the side. Photographed from above and slightly to the side. Real classroom photograph, no white background edges, no text overlay, no graphic elements.</div>
+            <div class="image-suggestion-file">Save as: images/10-02-tally-marks-notebook.png</div>
+          </div>
+          <div class="lesson-figure-caption">
+            Make one tally mark for each person you survey. When you reach five, draw the diagonal line to close the group — it makes counting faster and easier.
           </div>
         </div>
 

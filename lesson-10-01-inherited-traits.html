@@ -295,6 +295,32 @@ body {
 }
 .lesson-figure-caption strong { color: #1B4332; }
 
+/* ── Image Suggestion Placeholder ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
 /* ── Key Concept Box ── */
 .key-concept {
   background: #F0F8E8; border: 2px solid #C8E0B8;
@@ -1018,7 +1044,17 @@ em { color: #5A4D3E; }
       <div class="act-time" style="background:#52B788;">⏱ 5 min</div>
     </div>
     <div class="act-body">
-      <p>Look at the photo of the golden retriever and her puppies in the banner above — or picture a family of animals you've seen.</p>
+      <p>Look at the photo below — a golden retriever and her puppies. Take a moment to really study it before you write anything.</p>
+
+      <div class="lesson-figure" style="margin-bottom:16px;">
+        <div class="lesson-figure-label">📷 Photo · Real Organisms</div>
+        <img src="images/10-01-golden-retriever-puppies.png"
+             alt="A golden retriever mother lying on green grass with five puppies of varying shades — from deep golden to very pale cream — gathered in front of her." />
+        <div class="lesson-figure-caption">
+          A golden retriever mother with her puppies. Notice the similarities — and the differences.
+        </div>
+      </div>
+
       <p>In your science notebook, write or draw your answers:</p>
       <div style="display:flex;flex-direction:column;gap:10px;margin:14px 0;">
         <div style="display:flex;gap:12px;align-items:flex-start;background:#EEF8F0;border-radius:12px;padding:12px 16px;">
@@ -1182,11 +1218,29 @@ em { color: #5A4D3E; }
           </div>
         </div>
         <div class="card-body">
-          <p><span class="vtip">Offspring<span class="vtip-box"><span class="vtip-word">offspring</span>The young of a plant or animal.</span></span> usually look similar to their parents — but they are never exactly the same. Look at the photo above. The puppies are all golden retrievers, and they all have soft fur and floppy ears. But some are darker gold; others are nearly cream.</p>
+          <p><span class="vtip">Offspring<span class="vtip-box"><span class="vtip-word">offspring</span>The young of a plant or animal.</span></span> usually look similar to their parents — but they are never exactly the same. Look at the photo of the golden retriever family. The puppies are all golden retrievers, and they all have soft fur and floppy ears. But some are darker gold; others are nearly cream.</p>
           <p>Those small differences are called <span class="vtip">variation<span class="vtip-box"><span class="vtip-word">variation</span>Small differences in traits within a group of similar organisms.</span></span>. Variation shows up in every species — birds of the same type may have slightly different patterns, and flowers from the same plant may open at slightly different sizes.</p>
           <div class="callout callout-tip">
             <span class="callout-icon">💡</span>
             <p><strong>Examples of variation:</strong> coat color in a litter of kittens · height of sunflower plants grown from the same packet of seeds · feather patterns among siblings in a bird nest.</p>
+          </div>
+
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">📷 Photo · Variation in the Wild</div>
+            <img src="images/10-01-bird-siblings-variation.png"
+                 alt="Three young barn owls side by side in a nest, each with slightly different facial disc markings and feather patterns, showing natural variation among siblings."
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A close-up photograph of two or three barn owl chicks or young birds of the same species huddled together in a natural nest. Each bird should show slightly different facial markings, feather patterns, or coloring — visibly similar but not identical. Shot outdoors or in a natural cavity. Warm natural lighting. No white background. Realistic wildlife photography style, not illustrated.
+              </div>
+              <div class="image-suggestion-file">Save as: images/10-01-bird-siblings-variation.png</div>
+            </div>
+            <div class="lesson-figure-caption">
+              These young birds are siblings — same parents, same nest. Look carefully at their markings. <strong>What's the same? What's different?</strong> That's variation.
+            </div>
           </div>
         </div>
       </div>
@@ -1204,6 +1258,24 @@ em { color: #5A4D3E; }
           <p>Scientists don't just observe one parent and one offspring. They collect data on many organisms and look for <span class="vtip">patterns<span class="vtip-box"><span class="vtip-word">pattern</span>Something that repeats in a predictable way. Scientists use patterns to make predictions.</span></span>. They ask: which traits are almost always shared? Which ones vary the most?</p>
           <p>When a trait shows up in parents <em>and</em> in most of their offspring, that's strong evidence the trait is inherited. Variation within the group tells scientists that inherited traits come with small, natural differences.</p>
           <p><strong>Real-World Connection:</strong> Researchers who study bald eagles in Yellowstone have recorded wing patterns, beak shape, and feather color across hundreds of birds. The patterns help them identify family groups and track how traits pass through generations.</p>
+
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">📷 Photo · Scientists at Work</div>
+            <img src="images/10-01-scientist-observing-animals.png"
+                 alt="A wildlife biologist crouching in a grassy field, writing observations in a notebook while watching a group of animals nearby."
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A wildlife biologist or field researcher outdoors in a natural setting — grassland, forest edge, or open field — kneeling or crouching while writing in a field notebook or using binoculars. Animals (birds, deer, or similar) visible in the soft background. The scene communicates careful, patient scientific observation in the real world. Natural lighting, no white edges, realistic photo style. The researcher can be any age or background.
+              </div>
+              <div class="image-suggestion-file">Save as: images/10-01-scientist-observing-animals.png</div>
+            </div>
+            <div class="lesson-figure-caption">
+              Scientists record trait data in the field. The more observations they collect, the clearer the pattern becomes.
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1384,7 +1456,16 @@ em { color: #5A4D3E; }
 
       <div class="callout callout-tip" style="margin-bottom:18px;">
         <span class="callout-icon">🎒</span>
-        <p><strong>You'll need:</strong> your science notebook, pencil, colored pencils, and the golden retriever photo from the Lesson tab (or any plant or animal family photo you can observe).</p>
+        <p><strong>You'll need:</strong> your science notebook, pencil, colored pencils, and the photo below — or any plant or animal family photo you can observe.</p>
+      </div>
+
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">📷 Photo · Reference</div>
+        <img src="images/10-01-golden-retriever-puppies.png"
+             alt="A golden retriever mother lying on green grass with five puppies of varying shades — from deep golden to very pale cream — gathered in front of her." />
+        <div class="lesson-figure-caption">
+          Use this photo for the investigation. Study the mother and her puppies carefully — what traits can you actually see?
+        </div>
       </div>
 
       <p>Work through each step carefully. Record your observations in your science notebook as you go.</p>
@@ -1559,7 +1640,7 @@ em { color: #5A4D3E; }
           <span style="font-size:20px;">📖</span>
           <div>
             <div class="video-wrap-type">Review</div>
-            <div class="video-wrap-title">Let's go back and look at the key ideas together.</div>
+            <div class="video-wrap-title">Let's look at the key ideas together before moving on.</div>
           </div>
         </div>
         <div class="video-ratio">
@@ -1708,7 +1789,7 @@ em { color: #5A4D3E; }
         <span class="sq-icon">🤔</span>
         <div>
           <div class="label">Reflect</div>
-          <div class="question">"Go back to your Notice &amp; Wonder from the very beginning. Did what you noticed turn out to be about inherited traits or variation — or both? What changed in your thinking?"</div>
+          <div class="question">"Think back to your Notice &amp; Wonder from the beginning of this lesson. Did what you noticed turn out to be about inherited traits or variation — or both? What changed in your thinking?"</div>
         </div>
       </div>
 
