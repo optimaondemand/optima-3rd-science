@@ -276,6 +276,32 @@ body {
 }
 .lesson-figure-caption strong { color: #1B4332; }
 
+/* ── Image Suggestion Placeholder ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
 /* ── Key Concept Box ── */
 .key-concept {
   background: #F0F8E8; border: 2px solid #C8E0B8;
@@ -1209,6 +1235,22 @@ em { color: #5A4D3E; }
               <div class="question">"What's the difference between 'it's raining today' and 'this place gets a lot of rain'?"</div>
             </div>
           </div>
+
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">📷 Photo · Weather Data in the Field</div>
+            <img src="images/3-02-weather-station-field.png"
+                 alt="A weather monitoring station in an open grassy field, with a thermometer, rain gauge, and small anemometer mounted on a post under a sunny sky"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A real-world photograph of a simple weather monitoring station standing in an open grassy field or meadow. The station is a metal post with a mounted thermometer, a clear plastic rain gauge cylinder, and a small 3-cup anemometer (wind spinner) at the top. Warm afternoon sunlight, green grass and wildflowers in the foreground, blue sky with a few clouds behind. The instruments are sharp and in focus. Natural colors, no text overlays, no borders, no white edges. Shot from about chest height looking slightly up at the equipment. Style: real documentary photography, bright natural lighting, suitable for 3rd graders.
+              </div>
+              <div class="image-suggestion-file">Save as: images/3-02-weather-station-field.png</div>
+            </div>
+            <div class="lesson-figure-caption">Scientists collect weather data every day using instruments like thermometers and rain gauges. Over many years, that data reveals a region's <strong>climate</strong>.</div>
+          </div>
         </div>
       </div>
 
@@ -1226,6 +1268,22 @@ em { color: #5A4D3E; }
           <p><strong>The Everglades</strong> is a wetland in southern Florida. It stays warm all year and gets heavy rain. Grasses, mangroves, alligators, and wading birds fill its shallow waters.</p>
           <p><strong>The Arctic</strong> is far north. It's cold almost all year, with long dark winters and very little rainfall. Only a few tough organisms survive there.</p>
           <p><em>Real-World Connection:</em> The Everglades and Yosemite are both national parks, but they feel like different planets. That's what climate does — it shapes everything living in a place.</p>
+
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">📷 Photo · Arctic Tundra in Summer</div>
+            <img src="images/3-02-arctic-tundra-summer.png"
+                 alt="A wide view of Arctic tundra in summer — low-growing wildflowers and mosses covering a flat, windswept landscape under a bright sky, with a caribou visible in the distance"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A wide real-world photograph of Arctic or sub-Arctic tundra during summer. The ground is covered in low-growing wildflowers (small yellow and purple blooms), deep green mosses, and sparse shrubby plants hugging the earth. The landscape is vast and flat, stretching to a distant horizon. One or two caribou are visible grazing in the middle distance. The sky is bright with low-angle sunlight casting long shadows across the tundra. No snow visible — this is the brief Arctic summer. The image should feel open, wild, and slightly harsh. Natural documentary photography style, no white borders, no text overlays, real colors. Suitable for 3rd graders learning about ecosystems.
+              </div>
+              <div class="image-suggestion-file">Save as: images/3-02-arctic-tundra-summer.png</div>
+            </div>
+            <div class="lesson-figure-caption">The Arctic isn't always just ice and snow. During summer, <strong>tundra plants</strong> like mosses and wildflowers bloom close to the ground — the only plants tough enough to survive the long, frozen winters.</div>
+          </div>
         </div>
       </div>
 
@@ -1390,7 +1448,7 @@ em { color: #5A4D3E; }
 
       <div class="callout callout-tip" style="margin-bottom:18px;">
         <span class="callout-icon">🎒</span>
-        <p><strong>You'll need:</strong> your science notebook, pencil, colored pencils, and a ruler. Use the data table in the diagram on the Lesson tab as your reference — or the table printed below.</p>
+        <p><strong>You'll need:</strong> your science notebook, pencil, colored pencils, and a ruler. Use the climate data reference table below to fill in your chart.</p>
       </div>
 
       <!-- Reference data table -->
@@ -1455,6 +1513,22 @@ em { color: #5A4D3E; }
           <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
             <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Make a bar graph.</strong> Choose one type of data — either rainfall or summer temperature. Draw a bar graph with three bars, one for each region. Label each bar, write a title, and add numbers on the side. Use colored pencils to color each bar differently.</p>
           </div>
+        </div>
+
+        <div class="lesson-figure" style="margin:0 0 14px;">
+          <div class="lesson-figure-label">📷 Photo · Bar Graph in a Science Notebook</div>
+          <img src="images/3-02-notebook-bar-graph.png"
+               alt="A child's open science notebook showing a hand-drawn bar graph with three colored bars comparing data for three regions, with colored pencils nearby on the desk"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+          <div class="image-suggestion" style="display:none;">
+            <div class="image-suggestion-icon">🖼️</div>
+            <div class="image-suggestion-label">Suggested Image — Generate This</div>
+            <div class="image-suggestion-desc">
+              A photograph looking down at an open science notebook on a wooden desk. The notebook shows a neatly hand-drawn bar graph with three bars of clearly different heights — one green, one orange, one blue — labeled along the bottom. A hand-written title appears at the top and numbers run up the left side. A child's hand (no face visible) rests near the page holding a colored pencil. Several colored pencils and an eraser are scattered beside the notebook. The notebook has slightly worn edges and handwritten notes. Warm natural indoor lighting, real classroom setting, no white edges or borders, no text overlays. Real documentary photography style, suitable for 3rd graders.
+            </div>
+            <div class="image-suggestion-file">Save as: images/3-02-notebook-bar-graph.png</div>
+          </div>
+          <div class="lesson-figure-caption">Your bar graph should have three labeled bars, a title, and numbers along the side. Use colored pencils to make each region easy to tell apart.</div>
         </div>
 
         <!-- Step 4 -->

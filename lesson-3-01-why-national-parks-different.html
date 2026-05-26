@@ -620,6 +620,29 @@ details.go-deeper summary::before { content: '🔭 '; }
   pointer-events: none; z-index: 9999;
 }
 
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px; text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
 strong { color: #1B4332; }
 em { color: #5A4D3E; }
 .mind-blow-text strong { color: #fff; }
@@ -1158,10 +1181,42 @@ em { color: #5A4D3E; }
             <p style="margin-bottom:0;"><span class="vtip">Wetlands<span class="vtip-box"><span class="vtip-word">wetland</span>Land covered by shallow water much of the year, like swamps, marshes, and bogs.</span></span> stay warm and wet year-round, with soft flooded ground and habitat for hundreds of species. <strong>Example: Everglades National Park, Florida.</strong></p>
           </div>
 
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">📷 Photo · Everglades National Park, Florida</div>
+            <img src="images/3-01-everglades-wetland.png"
+                 alt="Ground-level view of the Florida Everglades showing shallow water with reflections, cypress trees standing in the water, and dense green vegetation under warm sunlight"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A real photograph taken at ground level in the Florida Everglades. The scene shows wide shallow water with mirror-like reflections of the sky, bald cypress trees with flared bases standing directly in the water, and lush green sawgrass and vegetation stretching to the horizon. Warm golden light — either early morning or late afternoon. A great blue heron or alligator partially visible near the water's edge is ideal. The image should feel open, warm, and teeming with life. No text, no white edges, no borders — the scene fills the full frame. Real-world nature photography, not illustrated or cartoonish.
+              </div>
+              <div class="image-suggestion-file">Save as: images/3-01-everglades-wetland.png</div>
+            </div>
+            <div class="lesson-figure-caption">The Florida Everglades — one of the world's largest wetlands. Shallow water covers the ground year-round, and the warm, wet climate supports thousands of plant and animal species.</div>
+          </div>
+
           <!-- Mountain -->
           <div style="background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;margin-bottom:12px;">
             <p style="font-weight:800;color:#0288D1;margin-bottom:4px;">🏔 Mountain Zones — Cool, Snowy, and Layered</p>
             <p style="margin-bottom:0;">Temperature drops with <span class="vtip">elevation<span class="vtip-box"><span class="vtip-word">elevation</span>How high a place is above sea level. Higher elevation usually means cooler temperatures.</span></span> — thin air holds less heat. Peaks stay snow-covered even in summer; pine forests grow on the slopes below. <strong>Example: Rocky Mountain National Park, Colorado.</strong></p>
+          </div>
+
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">📷 Photo · Rocky Mountain National Park, Colorado</div>
+            <img src="images/3-01-mountain-elevation-zones.png"
+                 alt="A Rocky Mountain peak showing three clearly visible zones: snow-covered summit at the top, bare rocky alpine terrain in the middle, and a dense green pine forest at the base"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A real photograph of a Rocky Mountain peak in Colorado taken from a distance wide enough to show all three elevation zones in a single frame: a bright white snow-covered summit at the top, a gray rocky treeless alpine zone in the middle, and a rich dark green pine forest at the base of the mountain. Blue sky with a few white clouds above. The three zones should be clearly distinct — this contrast is the whole point of the image. Crisp, bright natural daylight. No text, no white edges, no borders — the mountain fills the frame. Real-world landscape photography, not illustrated.
+              </div>
+              <div class="image-suggestion-file">Save as: images/3-01-mountain-elevation-zones.png</div>
+            </div>
+            <div class="lesson-figure-caption">Look at this mountain from bottom to top — three completely different environments stacked on top of each other. The forest at the base, the bare rocky middle, and the snowy peak are all caused by one thing: elevation.</div>
           </div>
         </div>
       </div>
@@ -1281,7 +1336,7 @@ em { color: #5A4D3E; }
         <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
           <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2D6A4F,#52B788);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(45,106,79,0.3);">2</div>
           <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
-            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Fill In What You Know:</strong> Use what you learned in the lesson to fill in the chart. For each climate zone, record: typical temperature range, how much precipitation it gets, and two or three plants or animals that live there. Use the interactive map if you need a reminder.</p>
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Fill In What You Know:</strong> Use what you read in the lesson to fill in the chart. For each climate zone, record: typical temperature range, how much precipitation it gets, and two or three plants or animals that live there.</p>
           </div>
         </div>
 
@@ -1409,7 +1464,7 @@ em { color: #5A4D3E; }
       <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Death Valley National Park in California — extremely hot and dry with very little rain</div>
     </div>
     <div class="quiz-feedback fb-correct">⭐ Correct! The Everglades is one of the most famous wetland ecosystems in the world — and in the United States. It stays warm and wet all year, receives over 60 inches of rain annually, and is home to alligators, manatees, and hundreds of bird species.</div>
-    <div class="quiz-feedback fb-wrong">Check the interactive map on the Lesson tab and look at what makes a wetland different from a mountain or desert. The key clues are temperature, rainfall, and whether water covers the ground.</div>
+    <div class="quiz-feedback fb-wrong">Re-read the Three Very Different Climate Zones section in the lesson. The key clues are temperature, rainfall, and whether water covers the ground for most of the year.</div>
   </div>
 
   <!-- Score Display -->
@@ -1503,11 +1558,11 @@ em { color: #5A4D3E; }
 
       <!-- PART A -->
       <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔍 Part A — Complete Your Climate Zone Chart</p>
-      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use your comparison chart from the Explore tab. Make sure each row is completely filled in before moving on to Part B.</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use your comparison chart from the previous activity. Make sure each row is completely filled in before moving on to Part B.</p>
 
       <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">Check that your chart has all three climate zones: Desert, Wetland, and Mountain. Each row should include temperature, precipitation, and at least two plants or animals.</span></div>
       <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">Color-code your chart using at least two different colors — one for the zone with the most precipitation and one for the zone with the least.</span></div>
-      <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">At the bottom of your chart, write the national park name that belongs to each climate zone. (Hint: look at the interactive map on the Lesson tab.)</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">At the bottom of your chart, write the national park name that belongs to each climate zone. (Hint: Death Valley, Everglades, and Rocky Mountain National Park each belong to one zone — use your chart to match them.)</span></div>
 
       <!-- PART B -->
       <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🚀 Part B — Short Answer</p>
@@ -1608,7 +1663,7 @@ em { color: #5A4D3E; }
           </div>
           <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
             <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
-            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My completed climate comparison chart from the Explore tab (Part A).</span>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My completed climate comparison chart (Part A).</span>
           </div>
           <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
             <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
