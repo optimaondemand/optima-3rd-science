@@ -420,31 +420,271 @@ body {
 </div>
 
 <!-- ═══════════ HERO VISUAL ═══════════ -->
-<div class="hero-visual">
-<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated national park landscape hero banner for Lesson 25.01: Why Do We Protect National Parks?">
+<!-- Hero Banner — Lesson 25.01: Why Do We Protect National Parks? -->
+<!-- Accent border: border: 3px solid #52B788; -->
+<div class="hero-visual" style="border-bottom: 3px solid #52B788;">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A national park at dawn — soaring eagle, mountain ranges, deer in a meadow, wildflowers and a still lake — showing the wild places worth protecting">
 <defs>
-  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#98D1EF"/><stop offset="62%" stop-color="#D9EEF4"/><stop offset="100%" stop-color="#F0DEB7"/></linearGradient>
-  <linearGradient id="grass" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#91B65B"/><stop offset="50%" stop-color="#C1C875"/><stop offset="100%" stop-color="#7BA651"/></linearGradient>
-  <linearGradient id="water" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#A7E1F0"/><stop offset="100%" stop-color="#66B0C6"/></linearGradient>
-  <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#C9A171"/><stop offset="100%" stop-color="#916B46"/></linearGradient>
-  <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFDF7"/><stop offset="100%" stop-color="#EFE4D0"/></linearGradient>
-  <linearGradient id="teal" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#D9F4F1"/><stop offset="100%" stop-color="#A9DCD7"/></linearGradient>
-  <linearGradient id="coral" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFE1D3"/><stop offset="100%" stop-color="#F4B7A2"/></linearGradient>
-  <linearGradient id="lav" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#EEE7FA"/><stop offset="100%" stop-color="#D5C5EE"/></linearGradient>
-  <linearGradient id="soilGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#B8864E"/><stop offset="100%" stop-color="#7A5530"/></linearGradient>
-  <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#22312F" flood-opacity="0.16"/></filter>
+  <linearGradient id="hSky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%"   stop-color="#080F18"/>
+    <stop offset="30%"  stop-color="#0D2318"/>
+    <stop offset="62%"  stop-color="#B85F18"/>
+    <stop offset="82%"  stop-color="#E8843A"/>
+    <stop offset="100%" stop-color="#F0A040"/>
+  </linearGradient>
+  <linearGradient id="hMeadow" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%"   stop-color="#52B788"/>
+    <stop offset="55%"  stop-color="#2D6A4F"/>
+    <stop offset="100%" stop-color="#1B4332"/>
+  </linearGradient>
+  <linearGradient id="hLake" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%"   stop-color="#1B5E8A" stop-opacity="0.9"/>
+    <stop offset="100%" stop-color="#0D2318" stop-opacity="0.75"/>
+  </linearGradient>
+  <radialGradient id="hSunrise" cx="0.5" cy="1" r="0.7">
+    <stop offset="0%"   stop-color="#F9A825" stop-opacity="0.75"/>
+    <stop offset="45%"  stop-color="#E8843A" stop-opacity="0.35"/>
+    <stop offset="100%" stop-color="#B85F18" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="hSunDisc" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0%"   stop-color="#FFF9C4"/>
+    <stop offset="40%"  stop-color="#FDD835"/>
+    <stop offset="100%" stop-color="#F9A825" stop-opacity="0.6"/>
+  </radialGradient>
+  <filter id="hDrop"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.3"/></filter>
 </defs>
-<rect width="920" height="260" fill="url(#sky)"/>
-<g transform="translate(120,44)"><g class="cloud-move" fill="#F8FCFC" opacity=".78"><ellipse cx="0" cy="8" rx="32" ry="16"/><ellipse cx="26" cy="2" rx="22" ry="13"/><ellipse cx="52" cy="8" rx="26" ry="15"/></g></g>
-<g transform="translate(690,44)"><g class="sun-glow"><circle cx="0" cy="0" r="30" fill="#F8D766" opacity=".38"/><circle cx="0" cy="0" r="20" fill="#F3C84E"/></g></g>
-<path d="M0,130 C100,116 200,124 304,108 C418,90 520,124 626,110 C738,94 828,118 920,98 L920,168 L0,168 Z" fill="#9DBB64" opacity=".46"/>
-<path d="M0,154 C96,140 188,144 286,130 C386,116 484,146 590,130 C702,112 812,140 920,118 L920,188 L0,188 Z" fill="#7FA15A" opacity=".50"/>
-<rect y="168" width="920" height="92" fill="url(#grass)"/>
-<g filter="url(#shadow)"><path d="M0,252 C78,238 142,230 210,206 C278,182 352,174 430,178 C512,182 574,198 646,210 C730,224 820,214 920,194 L920,260 L0,260 Z" fill="url(#water)"/></g>
-<g class="water-shimmer"><path d="M42,242 C112,230 172,222 238,200" stroke="#EAFBFF" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M334,184 C418,182 496,190 580,206" stroke="#EAFBFF" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M678,218 C752,222 826,214 892,200" stroke="#EAFBFF" stroke-width="2.2" fill="none" stroke-linecap="round"/></g>
-<g transform="translate(680,172)" filter="url(#shadow)"><g class="plant-sway"><path d="M36,54 C58,36 94,28 136,32 C174,36 204,42 224,58 L224,88 L36,88 Z" fill="url(#soilGrad)"/><path d="M128,52 C130,28 132,10 134,-8" stroke="#658F40" stroke-width="5" fill="none" stroke-linecap="round"/><ellipse cx="120" cy="20" rx="14" ry="7" fill="#8BB35A" transform="rotate(-28 120 20)"/><ellipse cx="146" cy="8" rx="15" ry="7" fill="#7EA84C" transform="rotate(24 146 8)"/></g><path d="M42,72 C54,54 76,44 100,48 C114,52 124,62 128,70 C112,78 88,84 42,72 Z" fill="#D79B66"/><path d="M220,72 C206,54 186,44 162,48 C148,52 138,62 134,70 C150,78 174,84 220,72 Z" fill="#D79B66"/></g>
-<g transform="translate(62,174)" filter="url(#shadow)"><g class="plant-sway"><path d="M0,82 C8,48 16,24 28,0" stroke="#6F973B" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M28,84 C38,50 50,28 64,8" stroke="#87AE49" stroke-width="5" fill="none" stroke-linecap="round"/><ellipse cx="74" cy="28" rx="18" ry="9" fill="#8DB85A" transform="rotate(-20 74 28)"/><ellipse cx="42" cy="48" rx="18" ry="9" fill="#79A94C" transform="rotate(24 42 48)"/></g></g>
-<g transform="translate(138,202)" filter="url(#shadow)"><g class="pulse"><ellipse cx="0" cy="0" rx="8" ry="6" fill="#D83A2E"/><circle cx="0" cy="-6" r="2.2" fill="#222"/><path d="M0,-6 L0,6" stroke="#222" stroke-width="1.3"/><circle cx="-3" cy="-2" r="1.1" fill="#222"/><circle cx="3" cy="2" r="1.1" fill="#222"/></g></g>
+
+<!-- ── SKY ── -->
+<rect width="920" height="260" fill="url(#hSky)"/>
+
+<!-- Sunrise radial glow across full bottom of sky -->
+<rect width="920" height="260" fill="url(#hSunrise)"/>
+
+<!-- ── STARS (upper dark sky, twinkle) ── -->
+<circle class="hero-twinkle"   cx="62"  cy="22" r="2.2" fill="#FFF9C4" opacity="0.9"/>
+<circle class="hero-twinkle-2" cx="180" cy="14" r="1.8" fill="#FFF9C4" opacity="0.8"/>
+<circle class="hero-twinkle"   cx="310" cy="28" r="1.5" fill="#FDD835" opacity="0.7"/>
+<circle class="hero-twinkle-2" cx="440" cy="10" r="2"   fill="#FFF9C4" opacity="0.85"/>
+<circle class="hero-twinkle"   cx="620" cy="18" r="1.6" fill="#FFF9C4" opacity="0.7"/>
+<circle class="hero-twinkle-2" cx="760" cy="25" r="2"   fill="#FDD835" opacity="0.8"/>
+<circle class="hero-twinkle"   cx="874" cy="12" r="1.5" fill="#FFF9C4" opacity="0.75"/>
+
+<!-- ── SUN (cresting right mountain range) ── -->
+<g transform="translate(660, 122)">
+  <!-- outer glow blob -->
+  <circle cx="0" cy="0" r="55" fill="#F9A825" opacity="0.18"/>
+  <!-- mid glow -->
+  <circle class="hero-sun-glow" cx="0" cy="0" r="36" fill="url(#hSunDisc)" opacity="0.85"/>
+  <!-- core disc -->
+  <circle cx="0" cy="0" r="22" fill="#FFF9C4"/>
+</g>
+
+<!-- ── BACK MOUNTAINS (lightest / furthest) ── -->
+<path d="M0,152 L55,108 L115,138 L178,92 L248,124 L318,78 L400,116 L472,72 L548,108 L620,66 L680,94 L740,58 L800,88 L860,62 L920,84 L920,175 L0,175 Z"
+      fill="#1A3828" opacity="0.55"/>
+
+<!-- ── MID MOUNTAINS ── -->
+<path d="M0,175 L70,130 L155,162 L252,112 L350,148 L450,100 L555,140 L650,96 L720,130 L800,100 L870,124 L920,105 L920,200 L0,200 Z"
+      fill="#112A1E" opacity="0.8"/>
+
+<!-- ── FRONT RIDGE (darkest) ── -->
+<path d="M0,200 L90,160 L200,185 L320,152 L445,175 L560,145 L680,168 L800,148 L920,162 L920,215 L0,215 Z"
+      fill="#091610"/>
+
+<!-- ── MEADOW ── -->
+<rect x="0" y="208" width="920" height="52" fill="url(#hMeadow)"/>
+<!-- slight roll to the meadow edge -->
+<path d="M0,208 C80,203 200,212 340,207 C480,202 600,215 750,208 C840,204 890,210 920,206 L920,220 L0,220 Z"
+      fill="#52B788" opacity="0.6"/>
+
+<!-- ── LAKE / STILL WATER (center-left) ── -->
+<path d="M60,232 C110,222 185,218 265,222 C330,226 380,236 380,244 L380,260 L60,260 Z"
+      fill="url(#hLake)"/>
+<!-- lake mirror-glow (sunrise reflection) -->
+<path d="M120,238 C175,228 255,226 310,232" stroke="#F9A825" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.35"/>
+<!-- shimmer lines -->
+<g class="hero-shimmer">
+  <path d="M90,244 C145,238 215,236 275,240"  stroke="#A7E8D8" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0.55"/>
+  <path d="M110,251 C162,245 225,243 280,248" stroke="#A7E8D8" stroke-width="1.3" fill="none" stroke-linecap="round" opacity="0.45"/>
+</g>
+
+<!-- ── CONIFERS — LEFT FRAME ── -->
+<!-- Tree A (tallest, back-left) -->
+<g transform="translate(26,62)">
+  <rect x="-4" y="128" width="7" height="30" fill="#1A0E06"/>
+  <polygon points="0,0 -26,70 26,70"   fill="#071410"/>
+  <polygon points="0,22 -30,84 30,84"  fill="#091810"/>
+  <polygon points="0,44 -34,100 34,100" fill="#0B1C12"/>
+</g>
+<!-- Tree B -->
+<g transform="translate(70,82)">
+  <rect x="-3" y="108" width="6" height="24" fill="#1A0E06"/>
+  <polygon points="0,0 -21,58 21,58"  fill="#071410"/>
+  <polygon points="0,18 -25,70 25,70" fill="#091810"/>
+  <polygon points="0,36 -28,84 28,84" fill="#0B1C12"/>
+</g>
+<!-- Tree C (tallest) -->
+<g transform="translate(116,48)">
+  <rect x="-4" y="148" width="8" height="32" fill="#1A0E06"/>
+  <polygon points="0,0 -28,75 28,75"    fill="#060F0A"/>
+  <polygon points="0,24 -32,90 32,90"   fill="#071410"/>
+  <polygon points="0,48 -36,108 36,108" fill="#091810"/>
+</g>
+<!-- Tree D -->
+<g transform="translate(160,90)">
+  <rect x="-3" y="98" width="6" height="22" fill="#1A0E06"/>
+  <polygon points="0,0 -18,50 18,50"  fill="#071410"/>
+  <polygon points="0,16 -22,62 22,62" fill="#091810"/>
+  <polygon points="0,32 -26,76 26,76" fill="#0B1C12"/>
+</g>
+<!-- Tree E (very front, dark) -->
+<g transform="translate(196,108)">
+  <rect x="-3" y="88" width="5" height="20" fill="#080808"/>
+  <polygon points="0,0 -16,45 16,45"  fill="#040A06"/>
+  <polygon points="0,15 -20,56 20,56" fill="#060D08"/>
+</g>
+
+<!-- ── CONIFERS — RIGHT FRAME ── -->
+<g transform="translate(760,78)">
+  <rect x="-3" y="108" width="6" height="24" fill="#1A0E06"/>
+  <polygon points="0,0 -21,58 21,58"  fill="#071410"/>
+  <polygon points="0,18 -25,70 25,70" fill="#091810"/>
+  <polygon points="0,36 -28,84 28,84" fill="#0B1C12"/>
+</g>
+<g transform="translate(800,55)">
+  <rect x="-4" y="142" width="8" height="30" fill="#1A0E06"/>
+  <polygon points="0,0 -28,75 28,75"    fill="#060F0A"/>
+  <polygon points="0,24 -32,90 32,90"   fill="#071410"/>
+  <polygon points="0,48 -36,105 36,105" fill="#091810"/>
+</g>
+<g transform="translate(845,90)">
+  <rect x="-3" y="100" width="6" height="22" fill="#1A0E06"/>
+  <polygon points="0,0 -20,54 20,54"  fill="#071410"/>
+  <polygon points="0,18 -24,66 24,66" fill="#091810"/>
+  <polygon points="0,36 -27,80 27,80" fill="#0B1C12"/>
+</g>
+<g transform="translate(884,100)">
+  <rect x="-3" y="85" width="5" height="18" fill="#080808"/>
+  <polygon points="0,0 -16,44 16,44"  fill="#040A06"/>
+  <polygon points="0,14 -19,54 19,54" fill="#060D08"/>
+</g>
+
+<!-- ── EAGLE (soaring, hero foreground subject) ── -->
+<g class="hero-cloud-1" filter="url(#hDrop)">
+  <g transform="translate(388, 66)">
+    <!-- Left wing -->
+    <path d="M-4,-3 Q-42,-28 -85,-20 Q-90,-14 -78,-10 Q-55,-12 -30,-6 Q-16,-2 -4,4 Z" fill="#1A1008"/>
+    <!-- Left wing lower feather edge -->
+    <path d="M-4,-3 Q-42,-28 -85,-20 Q-88,-12 -72,-6 Q-48,-4 -24,4 Z" fill="#2A1C10"/>
+    <!-- Right wing -->
+    <path d="M4,-3 Q42,-26 84,-18 Q89,-12 77,-8 Q54,-10 28,-4 Q16,0 4,5 Z" fill="#1A1008"/>
+    <!-- Right wing lower -->
+    <path d="M4,-3 Q42,-26 84,-18 Q87,-10 70,-4 Q46,-2 22,4 Z" fill="#2A1C10"/>
+    <!-- Body -->
+    <ellipse cx="0" cy="2" rx="18" ry="7" fill="#1A1008"/>
+    <!-- White head (bald eagle) -->
+    <circle cx="14" cy="-4" r="10" fill="#F0F0E8"/>
+    <!-- Yellow beak -->
+    <path d="M22,-5 L30,-2 L22,1 Z" fill="#FDD835"/>
+    <!-- Eye -->
+    <circle cx="18" cy="-5" r="2.2" fill="#1A1008"/>
+    <circle cx="18.6" cy="-5.4" r="0.8" fill="#FFF"/>
+    <!-- White tail -->
+    <path d="M-18,6 L-26,18 L-12,20 L-8,10 Z" fill="#E8E8DC"/>
+    <!-- Yellow feet -->
+    <path d="M-2,8 L-4,18 L0,18 L2,12 Z" fill="#FDD835"/>
+    <path d="M6,8 L8,18 L12,17 L10,12 Z" fill="#FDD835"/>
+  </g>
+</g>
+
+<!-- ── DEER (left meadow, bold silhouette, bobs gently) ── -->
+<g transform="translate(290,197)" class="hero-float">
+  <!-- Body -->
+  <ellipse cx="0" cy="0" rx="26" ry="14" fill="#5C3618"/>
+  <!-- Neck -->
+  <path d="M18,-10 Q24,-24 26,-32 Q22,-35 19,-32 Q17,-24 13,-10 Z" fill="#5C3618"/>
+  <!-- Head -->
+  <ellipse cx="26" cy="-32" rx="10" ry="8" fill="#6D4525" transform="rotate(-12,26,-32)"/>
+  <!-- Ear -->
+  <path d="M22,-38 Q16,-50 24,-48 Q32,-46 26,-38 Z" fill="#5C3618"/>
+  <!-- Antler L -->
+  <path d="M20,-40 Q14,-54 10,-58 M12,-50 Q8,-54 6,-49" stroke="#3A2210" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <!-- Antler R -->
+  <path d="M26,-40 Q30,-54 34,-58 M32,-50 Q36,-54 38,-48" stroke="#3A2210" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <!-- Legs -->
+  <rect x="-18" y="12" width="5"  height="20" rx="2.5" fill="#47280E"/>
+  <rect x="-8"  y="12" width="5"  height="20" rx="2.5" fill="#47280E"/>
+  <rect x="4"   y="12" width="5"  height="20" rx="2.5" fill="#47280E"/>
+  <rect x="14"  y="12" width="5"  height="20" rx="2.5" fill="#47280E"/>
+  <!-- White rump patch -->
+  <ellipse cx="-22" cy="0" rx="6" ry="5" fill="#EDE8D8"/>
+  <!-- Nose highlight -->
+  <circle cx="30" cy="-31" r="2" fill="#8B5A38" opacity="0.6"/>
+</g>
+
+<!-- ── WILDFLOWERS — right meadow (sway gently) ── -->
+<!-- Sage-green flower cluster -->
+<g transform="translate(560,218)">
+  <g class="hero-sway">
+    <rect x="-1.5" y="-26" width="3" height="26" fill="#1B5E38"/>
+    <circle cx="0"  cy="-28" r="7"   fill="#52B788"/>
+    <circle cx="-5" cy="-33" r="4.5" fill="#7ECBA8"/>
+    <circle cx="5"  cy="-33" r="4.5" fill="#7ECBA8"/>
+    <circle cx="0"  cy="-36" r="4"   fill="#A8E6C8"/>
+    <circle cx="0"  cy="-28" r="3"   fill="#DFFFF0"/>
+  </g>
+</g>
+<!-- Yellow flower -->
+<g transform="translate(590,222)">
+  <g class="hero-sway" style="animation-delay:0.7s">
+    <rect x="-1.5" y="-22" width="3" height="22" fill="#2D6A4F"/>
+    <circle cx="0"  cy="-24" r="6"   fill="#FDD835"/>
+    <circle cx="-4" cy="-28" r="4"   fill="#FFF176"/>
+    <circle cx="4"  cy="-28" r="4"   fill="#FFF176"/>
+    <circle cx="0"  cy="-30" r="3.5" fill="#FFF9C4"/>
+    <circle cx="0"  cy="-24" r="2.5" fill="#F9A825"/>
+  </g>
+</g>
+<!-- Pink flower -->
+<g transform="translate(578,224)">
+  <g class="hero-sway" style="animation-delay:1.4s">
+    <rect x="-1" y="-18" width="2.5" height="18" fill="#2D6A4F"/>
+    <circle cx="0"  cy="-20" r="5.5" fill="#E57EA0"/>
+    <circle cx="-4" cy="-24" r="3.5" fill="#F4A8C0"/>
+    <circle cx="4"  cy="-24" r="3.5" fill="#F4A8C0"/>
+    <circle cx="0"  cy="-26" r="3"   fill="#FDDCE8"/>
+    <circle cx="0"  cy="-20" r="2"   fill="#FFF"/>
+  </g>
+</g>
+<!-- Small grass tufts -->
+<path d="M528,260 Q525,244 530,240 Q535,244 532,260 Z" fill="#2D6A4F"/>
+<path d="M536,260 Q540,248 542,244 Q544,248 540,260 Z" fill="#1B4332"/>
+<path d="M610,260 Q607,246 612,242 Q617,246 613,260 Z" fill="#2D6A4F"/>
+<path d="M618,260 Q622,250 624,246 Q626,250 621,260 Z" fill="#1B4332"/>
+<path d="M405,260 Q402,249 407,245 Q412,249 408,260 Z" fill="#2D6A4F"/>
+
+<!-- ── BUTTERFLY (sage accent, floats near flowers) ── -->
+<g transform="translate(545,200)" class="hero-float" style="animation-delay:0.4s">
+  <path d="M0,0 Q-13,-9 -15,-3 Q-13,4 0,2 Z"  fill="#52B788" opacity="0.9"/>
+  <path d="M0,0 Q13,-9 15,-3 Q13,4 0,2 Z"   fill="#52B788" opacity="0.9"/>
+  <path d="M0,2 Q-9,9 -11,5 Q-9,2 0,2 Z"    fill="#2D6A4F" opacity="0.85"/>
+  <path d="M0,2 Q9,9 11,5 Q9,2 0,2 Z"      fill="#2D6A4F" opacity="0.85"/>
+  <ellipse cx="0" cy="1" rx="1.5" ry="5.5" fill="#1A1008"/>
+  <path d="M0,-4 Q-5,-12 -6,-15" stroke="#1A1008" stroke-width="0.9" fill="none"/>
+  <circle cx="-6" cy="-15" r="1.3" fill="#1A1008"/>
+  <path d="M0,-4 Q5,-12 6,-15" stroke="#1A1008" stroke-width="0.9" fill="none"/>
+  <circle cx="6" cy="-15" r="1.3" fill="#1A1008"/>
+</g>
+
+<!-- Second small butterfly (amber, twinkle) -->
+<g transform="translate(625,193)" class="hero-twinkle-2">
+  <path d="M0,0 Q-10,-7 -12,-2 Q-10,4 0,2 Z" fill="#F9A825" opacity="0.85"/>
+  <path d="M0,0 Q10,-7 12,-2 Q10,4 0,2 Z"  fill="#F9A825" opacity="0.85"/>
+  <path d="M0,2 Q-7,7 -9,4 Q-7,2 0,2 Z"   fill="#E65100" opacity="0.8"/>
+  <path d="M0,2 Q7,7 9,4 Q7,2 0,2 Z"     fill="#E65100" opacity="0.8"/>
+  <ellipse cx="0" cy="1" rx="1.2" ry="4.5" fill="#1A1008"/>
+</g>
+
 </svg>
 </div>
 
@@ -699,7 +939,7 @@ body {
   <!-- LESSON FIGURE — image suggestion -->
   <div class="lesson-figure">
     <div class="lesson-figure-label">📷 Photo · National Park Biodiversity</div>
-    <img src="images/25-01-national-park-biodiversity.png"
+    <img src="images/25-01-national-park-biodiversity.jpg"
          alt="A wide view of a national park showing a mix of forest, wetland, and open sky with diverse plant life in the foreground"
          onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
     <div class="image-suggestion" style="display:none;">
