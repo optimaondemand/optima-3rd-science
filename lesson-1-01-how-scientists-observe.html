@@ -645,6 +645,37 @@ details > div { padding: 12px 18px 14px; font-size: 16px; color: #5A4D3E; line-h
 .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #52B788, #95D5B2, #FDD835); border-radius: 10px; transition: width 0.4s ease; }
 .progress-pct { font-size: 13px; color: #FDD835; font-weight: 800; min-width: 36px; text-align: right; }
 
+/* ── Image Figures ── */
+.lesson-figure { margin: 18px 0 22px; border-radius: 14px; overflow: hidden; }
+.lesson-figure-label {
+  font-size: 11px; color: #5A4D3E; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px;
+}
+.lesson-figure img { width: 100%; border-radius: 12px; display: block; }
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825; border-radius: 16px;
+  padding: 20px 22px; text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px; text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+.lesson-figure-caption {
+  font-size: 13px; color: #9A8E82; font-style: italic;
+  text-align: center; margin-top: 8px; font-weight: 600;
+}
+
 /* ── Utility ── */
 strong { color: #1B4332; }
 em { color: #5A4D3E; }
@@ -1048,7 +1079,7 @@ em { color: #5A4D3E; }
     <div class="act-body">
 
       <p>Imagine you're standing at the edge of a marsh in Everglades National Park at sunrise. The air is warm and the water is still. You hear something splash nearby — but you can't see what made the sound yet.</p>
-      <p>Before any scientist goes to work, they stop and look — really look. That's what you're going to practice right now. Look at a picture of a natural scene outside or a small object your teacher has set out, and just notice.</p>
+      <p>Before any scientist goes to work, they stop and look — really look. That's what you're going to practice right now. Look at a natural object nearby — a leaf, a rock, a pinecone, anything from outside — and just notice.</p>
 
       <div class="socratic-q">
         <span class="sq-icon">👀</span>
@@ -1250,6 +1281,23 @@ em { color: #5A4D3E; }
           <p>Writing things down is one of the most important things a scientist does. Without a record, you can't look back at your observations, spot patterns over time, or share what you found with another scientist on the other side of the world.</p>
           <p>In the Everglades, field biologists go out before dawn with their notebooks. They sketch what they see, write measurements, and note the date, time, and weather. A careful sketch with labels can tell you more than a blurry photo. And a number recorded on paper — the temperature, the water level, the number of birds in a flock — becomes <span class="vtip">data<span class="vtip-box"><span class="vtip-word">Data</span>Information collected through observation and measurement that scientists use to find patterns.</span></span>. Data is what scientists use to spot patterns. Patterns help them answer questions.</p>
           <p><strong>Real-World Connection:</strong> In 2016, a botanist working in Everglades National Park discovered a new species of orchid — not in a lab, but by noticing something slightly different while counting plants during her regular rounds. She had been keeping careful field notes for years. Without those notes, there would have been nothing to compare.</p>
+
+          <!-- IMAGE 1 -->
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">📷 Photo · Field Scientist at Work</div>
+            <img src="images/1-01-field-scientist-notes.png"
+                 alt="A field biologist crouching in a Florida wetland at sunrise, writing observations in a field notebook surrounded by sawgrass"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A field biologist crouching in a Florida wetland or marsh at sunrise, writing in a spiral field notebook. Tall sawgrass fills the background; shallow water visible in the foreground. The scientist wears a wide-brim hat and field gear and is looking closely at a plant near the ground while writing. Soft golden morning light. No white edges or vignette. Photorealistic, editorial photography style, suitable for elementary education.
+              </div>
+              <div class="image-suggestion-file">Save as: images/1-01-field-scientist-notes.png</div>
+            </div>
+            <div class="lesson-figure-caption">A field scientist records observations in the Everglades. Her notes from years of careful fieldwork became the evidence that led to discovering a species no one had documented before.</div>
+          </div>
         </div>
       </div>
 
@@ -1544,6 +1592,23 @@ em { color: #5A4D3E; }
       <div class="callout callout-tip" style="margin-bottom:18px;">
         <span class="callout-icon">🎒</span>
         <p><strong>You'll need:</strong> Your science notebook, pencil, colored pencils, and one small object — a leaf, a rock, a coin, a piece of bark, or anything interesting you can hold in your hand. A magnifying glass is great if you have one.</p>
+      </div>
+
+      <!-- IMAGE 2 -->
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">📷 Photo · Observing Up Close</div>
+        <img src="images/1-01-hands-observing-object.png"
+             alt="A child's hands holding a small natural object near a magnifying glass lens, examining it closely"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            Close-up of a child's hands holding a small natural object — a dry leaf or smooth rock — while looking at it through a handheld magnifying glass lens. The hands are in soft natural light, resting on grass or a wooden surface outdoors. The magnifying glass shows the object enlarged. Warm, natural outdoor lighting. No white background or vignette edges. Photorealistic, real-world setting, suitable for elementary education.
+          </div>
+          <div class="image-suggestion-file">Save as: images/1-01-hands-observing-object.png</div>
+        </div>
+        <div class="lesson-figure-caption">Looking closely at a small object — the same way scientists begin every investigation.</div>
       </div>
 
       <p>Follow each step carefully. Pause between steps to really look and think before writing.</p>
@@ -2201,5 +2266,9 @@ tabProgress['vocab'] = true;
 document.getElementById('progressFill').style.width = '20%';
 document.getElementById('progressPct').textContent = '20%';
 </script>
+<!-- SUGGESTED IMAGES
+  images/1-01-field-scientist-notes.png     — field biologist writing in Everglades marsh at sunrise (Lesson tab, Section 3)
+  images/1-01-hands-observing-object.png    — child's hands examining a small natural object with magnifying glass (Explore tab)
+-->
 </body>
 </html>

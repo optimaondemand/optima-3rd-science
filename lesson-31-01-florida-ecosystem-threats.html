@@ -1,0 +1,2014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – What Threatens Florida Ecosystems?</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+  background: #F2F0E8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #2B1D12;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap { max-width: 920px; margin: 0 auto; background: #FAF8F4; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%);
+  border-bottom: 6px solid #0288D1;
+  padding: 22px 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 6px; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0288D1, #4FC3F7, #0288D1);
+}
+.header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.header-logo {
+  width: 52px; height: 52px; border-radius: 50%; background: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title {
+  font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+  text-shadow: 0 2px 12px rgba(2,136,209,0.3);
+}
+.header-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(2,136,209,0.15); border: 1.5px solid rgba(2,136,209,0.35);
+  border-radius: 28px; padding: 6px 16px;
+}
+.header-badge span:first-child { font-size: 22px; }
+.header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ── Hero Visual ── */
+.hero-visual {
+  background: linear-gradient(180deg, #87CEEB 0%, #C8E6F7 50%, #D4E8B4 100%);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #0288D1;
+}
+.hero-visual svg { display: block; width: 100%; height: auto; }
+
+/* ── Hero Animations ── */
+@keyframes cloud-drift-1 { 0% { transform: translateX(0); } 100% { transform: translateX(40px); } }
+@keyframes cloud-drift-2 { 0% { transform: translateX(0); } 100% { transform: translateX(-32px); } }
+@keyframes sun-pulse { 0%, 100% { opacity: 0.65; transform: scale(1); } 50% { opacity: 1; transform: scale(1.12); } }
+@keyframes bird-drift { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(6px, -8px); } }
+@keyframes hero-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes hero-twinkle { 0%, 100% { opacity: 0.4; transform: scale(0.85); } 50% { opacity: 1; transform: scale(1.15); } }
+@keyframes hero-shimmer { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.7; } }
+@keyframes hero-spin-slow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes hero-sway { 0%, 100% { transform: rotate(-2.5deg); } 50% { transform: rotate(2.5deg); } }
+
+.hero-cloud-1   { animation: cloud-drift-1 9s ease-in-out infinite alternate; }
+.hero-cloud-2   { animation: cloud-drift-2 13s ease-in-out infinite alternate; }
+.hero-sun-glow  { animation: sun-pulse 4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-birds     { animation: bird-drift 5s ease-in-out infinite; }
+.hero-float     { animation: hero-float 3.5s ease-in-out infinite; }
+.hero-twinkle   { animation: hero-twinkle 2.2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-twinkle-2 { animation: hero-twinkle 3.1s ease-in-out infinite 0.5s; transform-origin: center; transform-box: fill-box; }
+.hero-twinkle-3 { animation: hero-twinkle 2.7s ease-in-out infinite 1.1s; transform-origin: center; transform-box: fill-box; }
+.hero-shimmer   { animation: hero-shimmer 3s ease-in-out infinite; }
+.hero-spin-slow { animation: hero-spin-slow 18s linear infinite; transform-origin: center; transform-box: fill-box; }
+.hero-sway      { animation: hero-sway 4s ease-in-out infinite; transform-origin: bottom center; transform-box: fill-box; }
+
+/* ── Mind-Blow Bounce ── */
+@keyframes mind-blow-bounce { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+
+/* ── Info Strip ── */
+.info-strip { display: flex; flex-wrap: wrap; background: #fff; border-bottom: 2px solid #E8DDD2; }
+.info-item { flex: 1; min-width: 150px; padding: 12px 16px; border-right: 1px solid #E8DDD2; display: flex; align-items: center; gap: 10px; }
+.info-item:last-child { border-right: none; }
+.info-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.info-value { font-size: 16px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+/* ── Content Area ── */
+.content { padding: 24px 28px 36px; }
+
+/* ── Card System ── */
+.card { background: #fff; border: 2px solid #E8DDD2; border-radius: 18px; margin-bottom: 22px; overflow: hidden; box-shadow: 0 2px 12px rgba(27,67,50,0.04); }
+.card-head { display: flex; align-items: center; gap: 10px; padding: 14px 20px; border-bottom: 2px solid; }
+.card-head-icon { width: 42px; height: 42px; border-radius: 50%; color: #fff; font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.card-head-title { font-size: 20px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.card-body { padding: 18px 22px; }
+.card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+.card-body p:last-child { margin-bottom: 0; }
+
+/* ── Card Color Themes ── */
+.theme-earth  .card-head { background: #FFF0E8; border-color: #E8D0B8; }
+.theme-earth  .card-head-icon { background: #A0522D; }
+.theme-sun    .card-head { background: #FFF9E8; border-color: #F0E4C0; }
+.theme-sun    .card-head-icon { background: #F9A825; }
+.theme-sky    .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-sky    .card-head-icon { background: #0288D1; }
+.theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+.theme-forest .card-head-icon { background: #2E7D32; }
+.theme-rock   .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+.theme-rock   .card-head-icon { background: #7B5EA7; }
+.theme-meadow .card-head { background: #F0F8E8; border-color: #C8E0B8; }
+.theme-meadow .card-head-icon { background: #558B2F; }
+
+/* ── Activity Cards ── */
+.activity-card { background: #fff; border: 2px solid #E8DDD2; border-radius: 18px; margin-bottom: 18px; overflow: hidden; box-shadow: 0 2px 10px rgba(27,67,50,0.04); }
+.activity-card.act-warmup  { border-left: 6px solid #52B788; }
+.activity-card.act-lesson  { border-left: 6px solid #F9A825; }
+.activity-card.act-explore { border-left: 6px solid #0288D1; }
+.activity-card.act-practice{ border-left: 6px solid #2E7D32; }
+.activity-card.act-check   { border-left: 6px solid #7B5EA7; }
+.act-head { display: flex; align-items: center; gap: 12px; padding: 14px 20px 14px 18px; border-bottom: 1.5px solid #E8DDD2; }
+.act-num { width: 38px; height: 38px; border-radius: 14px; color: #fff; font-size: 18px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.act-title { font-size: 19px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.act-subtitle { font-size: 12px; color: #9A8E82; }
+.act-time { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap; margin-left: auto; flex-shrink: 0; }
+.act-body { padding: 18px 22px 18px 20px; }
+.act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+/* ── Callout Boxes ── */
+.callout { border-radius: 14px; padding: 16px 18px; display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+.callout-earth  { background: #FFF0E8; border: 2px solid #E8D0B8; }
+.callout-think  { background: #FFF9E8; border: 2px solid #F0E4C0; }
+.callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+.callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+.callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+
+/* ── Socratic Questions ── */
+.socratic-q { background: linear-gradient(135deg, #EEF8F0, #E8F5E9); border: 2px solid #A8D5B8; border-radius: 16px; padding: 16px 20px; margin: 16px 0; display: flex; align-items: flex-start; gap: 12px; }
+.socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.socratic-q .label { font-size: 11px; color: #2D6A4F; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; }
+.socratic-q .question { font-size: 17px; color: #2B1D12; font-weight: 700; line-height: 1.6; font-style: italic; }
+
+/* ── Diagram Containers ── */
+.diagram-wrap { background: #fff; border: 2px solid #E8DDD2; border-radius: 16px; padding: 16px; margin: 16px 0; text-align: center; }
+.diagram-wrap svg { max-width: 100%; height: auto; }
+.diagram-caption { font-size: 13px; color: #9A8E82; margin-top: 10px; font-weight: 600; text-align: center; }
+
+/* ── Lesson Figure ── */
+.lesson-figure { background: #fff; border: 2px solid #E8DDD2; border-radius: 16px; padding: 14px 14px 18px; margin: 0 0 22px; box-shadow: 0 2px 10px rgba(27,67,50,0.04); }
+.lesson-figure-label { font-size: 11px; color: #2D6A4F; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 800; margin-bottom: 10px; }
+.lesson-figure img { display: block; max-width: 100%; height: auto; border-radius: 10px; margin: 0 auto; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.lesson-figure-caption { font-size: 14px; color: #5A4D3E; margin-top: 12px; line-height: 1.55; font-weight: 600; text-align: center; }
+.lesson-figure-caption strong { color: #1B4332; }
+
+/* ── Key Concept Box ── */
+.key-concept { background: #F0F8E8; border: 2px solid #C8E0B8; border-radius: 14px; padding: 18px 20px; margin: 14px 0; }
+.key-concept .kc-label { font-size: 13px; color: #558B2F; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px; }
+.key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+.key-concept p:last-child { margin-bottom: 0; }
+
+/* ── Practice Questions ── */
+.pq { background: #FAFAF6; border: 2px solid #E8DDD2; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; }
+.pq-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; color: #fff; font-weight: 800; font-size: 14px; margin-right: 8px; vertical-align: middle; }
+.pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+.pq-answer { font-size: 15px; color: #9A8E82; font-style: italic; }
+
+/* ── Vocab Flashcards ── */
+.vocab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+.flip-card { perspective: 800px; height: 195px; cursor: pointer; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.5s ease; transform-style: preserve-3d; }
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 16px; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 14px 18px; text-align: center; border: 2px solid #E8DDD2; box-shadow: 0 2px 10px rgba(27,67,50,0.06); }
+.flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+.flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+.flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #1B4332; margin-bottom: 6px; }
+.flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+.flip-card-back { background: linear-gradient(145deg, #1B4332, #2D6A4F); border-color: #1B4332; transform: rotateY(180deg); }
+.flip-card-back .fc-def { font-size: 14.5px; color: #fff; line-height: 1.5; font-weight: 600; }
+.flip-card-back .fc-word-back { font-size: 11px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 6px; }
+.flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 8px; font-weight: 600; }
+.fc-color-1 .flip-card-front { border-top-color: #52B788; }
+.fc-color-2 .flip-card-front { border-top-color: #2D6A4F; }
+.fc-color-3 .flip-card-front { border-top-color: #F9A825; }
+.fc-color-4 .flip-card-front { border-top-color: #0288D1; }
+.fc-color-5 .flip-card-front { border-top-color: #2E7D32; }
+.fc-color-6 .flip-card-front { border-top-color: #7B5EA7; }
+
+/* ── Vocab Tooltips ── */
+.vtip { position: relative; color: #7B5EA7; font-weight: 700; cursor: help; border-bottom: 2px dotted rgba(123,94,167,0.45); transition: color 0.15s; }
+.vtip:hover { color: #5B3EA7; }
+.vtip .vtip-box { position: fixed; background: #1B4332; color: #fff; padding: 12px 16px; border-radius: 12px; font-size: 14px; font-weight: 600; font-style: normal; line-height: 1.55; width: 250px; text-align: center; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s; pointer-events: none; z-index: 9999; box-shadow: 0 6px 24px rgba(27,67,50,0.35); border: 1.5px solid rgba(149,213,178,0.3); transform: translateY(6px); }
+.vtip .vtip-box::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 7px solid transparent; border-top-color: #1B4332; }
+.vtip .vtip-word { font-size: 11px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block; }
+.vtip:hover .vtip-box { opacity: 1; visibility: visible; transform: translateY(0); }
+
+/* ── Reveal / Details ── */
+details { background: #fff; border: 2px solid #E8DDD2; border-left: 5px solid #7B5EA7; border-radius: 14px; margin-bottom: 12px; overflow: hidden; }
+details summary { padding: 12px 18px; font-size: 16px; font-weight: 700; color: #1B4332; cursor: pointer; }
+details summary:hover { background: #FAFAF6; }
+details > div { padding: 12px 18px 14px; font-size: 16px; color: #5A4D3E; line-height: 1.65; border-top: 1.5px solid #E8DDD2; }
+
+/* ── Activities Header ── */
+.activities-header { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.activities-header-icon { width: 44px; height: 44px; border-radius: 50%; background: #1B4332; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+.activities-header-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.activities-header-title { font-size: 22px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.activities-header-time { font-size: 14px; color: #9A8E82; font-weight: 600; }
+
+/* ── Footer ── */
+.footer { background: #1B4332; border-top: 4px solid #0288D1; padding: 18px 28px; text-align: center; }
+.footer-line1 { font-size: 15px; color: #fff; margin-bottom: 4px; }
+.footer-line1 span { color: #95D5B2; font-weight: 700; }
+.footer-line2 { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+.footer-line3 { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+/* ── Mind-Blowing Fact ── */
+.mind-blow { background: linear-gradient(135deg, #1a3a28, #1B4332); border: 2px solid rgba(149,213,178,0.3); border-radius: 18px; padding: 18px 22px; margin: 18px 0; display: flex; align-items: flex-start; gap: 14px; position: relative; overflow: hidden; }
+.mind-blow::before { content: ''; position: absolute; top: -30px; right: -30px; width: 100px; height: 100px; border-radius: 50%; background: radial-gradient(circle, rgba(82,183,136,0.15), transparent); }
+.mind-blow-icon { font-size: 36px; flex-shrink: 0; animation: mind-blow-bounce 2s ease-in-out infinite; }
+.mind-blow-content { flex: 1; }
+.mind-blow-label { font-size: 11px; color: #FDD835; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 4px; }
+.mind-blow-text { font-size: 16px; color: #fff; line-height: 1.6; font-weight: 600; }
+.mind-blow-text strong { color: #95D5B2; }
+
+/* ── Clickable Diagram ── */
+.diagram-interactive { position: relative; }
+.diagram-interactive .hotspot { cursor: pointer; opacity: 0; transition: opacity 0.2s; }
+.diagram-interactive .hotspot:hover { opacity: 0.2; }
+.diagram-interactive .hotspot.active { opacity: 0.28; }
+.diagram-info-panel { background: #1B4332; color: #fff; padding: 14px 20px; border-radius: 14px; font-size: 15px; line-height: 1.55; font-weight: 600; text-align: center; border: 1.5px solid rgba(149,213,178,0.3); box-shadow: 0 4px 16px rgba(0,0,0,0.2); margin: 10px 0 0; display: none; }
+.diagram-info-panel.visible { display: block; }
+.diagram-info-panel .dip-word { font-size: 11px; color: #FDD835; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; display: block; margin-bottom: 3px; }
+.diagram-tap-hint { text-align: center; font-size: 13px; color: #9A8E82; font-weight: 600; margin-top: 8px; }
+
+/* ── Self-Check Quiz ── */
+.quiz-card { background: #fff; border: 2px solid #E8DDD2; border-left: 6px solid #F9A825; border-radius: 18px; margin-bottom: 18px; overflow: hidden; box-shadow: 0 2px 10px rgba(27,67,50,0.04); }
+.quiz-q { background: #FAFAF6; border: 2px solid #E8DDD2; border-radius: 14px; padding: 16px 18px; margin-bottom: 14px; }
+.quiz-q-text { font-size: 17px; color: #2B1D12; font-weight: 700; line-height: 1.6; margin-bottom: 12px; }
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt { padding: 10px 16px; border-radius: 12px; border: 2px solid #E8DDD2; background: #fff; font-size: 15px; font-weight: 700; color: #2B1D12; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 10px; user-select: none; }
+.quiz-opt:hover { background: #EEF8F0; border-color: #52B788; }
+.quiz-opt.correct { background: #EEF8F0 !important; border-color: #2E7D32 !important; color: #1a6b35 !important; }
+.quiz-opt.wrong { background: #FFF0EC !important; border-color: #E8636B !important; color: #a33 !important; }
+.quiz-opt.disabled { pointer-events: none; opacity: 0.6; }
+.quiz-opt .opt-letter { width: 28px; height: 28px; border-radius: 50%; background: #E8DDD2; color: #5A4D3E; font-size: 14px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s; }
+.quiz-opt.correct .opt-letter { background: #2E7D32; color: #fff; }
+.quiz-opt.wrong .opt-letter { background: #E8636B; color: #fff; }
+.quiz-feedback { font-size: 14px; padding: 10px 14px; border-radius: 10px; margin-top: 10px; display: none; font-weight: 600; line-height: 1.5; }
+.quiz-feedback.show { display: block; }
+.quiz-feedback.fb-correct { background: #EEF8F0; color: #1a6b35; border: 1.5px solid #B8E8CF; }
+.quiz-feedback.fb-wrong { background: #FFF0EC; color: #8a3030; border: 1.5px solid #F5C4BA; }
+.quiz-score { text-align: center; padding: 16px; background: linear-gradient(135deg, #EEF8F0, #E8F5E9); border: 2px solid #C4E5CC; border-radius: 14px; margin-top: 8px; display: none; }
+.quiz-score.show { display: block; }
+.quiz-score-num { font-size: 36px; font-weight: 900; color: #1B4332; }
+.quiz-score-label { font-size: 14px; color: #9A8E82; font-weight: 700; }
+.quiz-score-msg { font-size: 16px; color: #2B1D12; font-weight: 700; margin-top: 6px; }
+
+/* ── Go Deeper ── */
+.go-deeper { background: linear-gradient(135deg, #F0EDF6, #E8E2F2); border: 2px solid #D8D0E8; border-radius: 16px; margin: 16px 0; overflow: hidden; }
+.go-deeper summary { padding: 14px 18px; font-size: 16px; font-weight: 800; color: #1B4332; cursor: pointer; display: flex; align-items: center; gap: 10px; list-style: none; }
+.go-deeper summary::-webkit-details-marker { display: none; }
+.go-deeper summary::before { content: '🔭'; font-size: 22px; }
+.go-deeper summary::after { content: '▸'; margin-left: auto; font-size: 18px; color: #7B5EA7; transition: transform 0.3s; }
+.go-deeper[open] summary::after { transform: rotate(90deg); }
+.go-deeper .gd-body { padding: 4px 18px 16px; font-size: 15px; color: #5A4D3E; line-height: 1.7; border-top: 1.5px solid #D8D0E8; }
+.go-deeper .gd-body p { margin-bottom: 10px; }
+
+/* ── Scroll Animations ── */
+.scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+/* ── Back to Top ── */
+.back-to-top { position: fixed; bottom: 24px; right: 24px; height: 40px; padding: 0 18px 0 14px; border-radius: 20px; background: linear-gradient(135deg, #0277BD, #0288D1); color: #fff; border: none; font-size: 14px; font-weight: 800; font-family: 'Nunito', sans-serif; cursor: pointer; box-shadow: 0 4px 14px rgba(2,119,189,0.35); display: flex; align-items: center; gap: 6px; opacity: 0; visibility: hidden; transform: translateY(20px); transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.2s; z-index: 500; letter-spacing: 0.2px; white-space: nowrap; }
+.back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { box-shadow: 0 6px 20px rgba(2,119,189,0.5); transform: translateY(-3px); }
+
+/* ── Confetti Canvas ── */
+#confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000; }
+
+/* ── Video Embed System ── */
+.video-wrap { border-radius: 18px; overflow: hidden; border: 2px solid #E8DDD2; box-shadow: 0 4px 20px rgba(27,67,50,0.08); background: #000; margin: 0 0 22px; }
+.video-wrap-header { display: flex; align-items: center; gap: 12px; padding: 12px 18px; background: linear-gradient(135deg, #1B4332, #2D6A4F); border-bottom: 2px solid rgba(149,213,178,0.2); }
+.video-wrap-type { font-size: 10px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+.video-wrap-title { font-size: 16px; color: #fff; font-weight: 800; line-height: 1.2; }
+.video-ratio { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.video-ratio iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.video-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #1a3a28, #1B4332); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; }
+.video-placeholder-icon { font-size: 44px; margin-bottom: 10px; opacity: 0.55; }
+.video-placeholder-text { font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 600; line-height: 1.5; font-family: 'Nunito', sans-serif; }
+.video-placeholder-id { font-size: 11px; color: rgba(149,213,178,0.4); font-family: monospace; margin-top: 6px; letter-spacing: 0.5px; }
+.video-feedback { display: none; }
+.video-feedback.show { display: block; }
+
+/* ── Collapsible Intro Cards ── */
+.intro-2col .card .card-head { cursor: pointer; user-select: none; position: relative; }
+.intro-2col .card .card-head::after { content: '▾'; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #9A8E82; transition: transform 0.25s ease; }
+.intro-2col .card.collapsed .card-head::after { transform: translateY(-50%) rotate(-90deg); }
+.intro-2col .card.collapsed .card-body { display: none; }
+
+/* ── Tab Bar ── */
+.tab-bar { position: sticky; top: 44px; z-index: 100; background: #FAF8F4; border-bottom: 3px solid #E8DDD2; display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn { flex: 1; min-width: 130px; padding: 12px 8px 11px; background: transparent; border: none; border-bottom: 4px solid transparent; font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700; color: #9A8E82; cursor: pointer; transition: all 0.2s; white-space: nowrap; line-height: 1.3; text-align: center; }
+.tab-btn:hover { color: #1B4332; background: #EEF8F0; }
+.tab-btn.active { color: #1B4332; border-bottom-color: #0288D1; background: #fff; }
+.tab-btn .tab-check { display: none; font-size: 12px; color: #2E7D32; margin-left: 4px; font-weight: 800; }
+.tab-btn.visited .tab-check { display: inline; }
+
+/* ── Tab Panels ── */
+.tab-panel { display: none; padding: 24px 28px 36px; background: #ffffff; }
+.tab-panel.active { display: block; }
+
+/* ── Intro 2-col ── */
+.intro-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px 28px 0; }
+.intro-2col .card { margin-bottom: 0; }
+
+/* ── Need Strip ── */
+.need-strip { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 28px 16px; }
+.need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 700; white-space: nowrap; }
+.need-chip { display: inline-flex; align-items: center; gap: 5px; background: #EEF8F0; border: 1.5px solid #C4E5CC; border-radius: 20px; padding: 5px 12px; font-size: 13px; color: #1B4332; font-weight: 700; }
+
+/* ── What to Turn In ── */
+.turn-in-block { background: #fff; border: 2.5px solid #0288D1; border-radius: 18px; margin-top: 22px; overflow: hidden; box-shadow: 0 4px 16px rgba(2,136,209,0.1); }
+.turn-in-header { display: flex; align-items: center; gap: 14px; background: #E8F4FB; padding: 18px 22px; border-bottom: 2px solid #B3E5FC; }
+.turn-in-header-icon { font-size: 36px; line-height: 1; flex-shrink: 0; }
+.turn-in-header-label { font-size: 11px; color: #0288D1; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+.turn-in-header-title { font-size: 24px; color: #1B4332; font-weight: 900; line-height: 1.15; }
+.turn-in-body { padding: 22px 24px 24px; }
+.turn-in-intro { font-size: 16px; color: #5A4D3E; margin-bottom: 18px; line-height: 1.55; }
+.turn-in-intro strong { color: #1B4332; }
+.turn-in-options { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 26px; }
+.turn-in-option { border-radius: 16px; padding: 20px 14px; text-align: center; border: 2px solid; }
+.turn-in-option-type  { background: #EEF8F0; border-color: #C4E5CC; }
+.turn-in-option-photo { background: #FFF9E8; border-color: #F0E4C0; }
+.turn-in-option-video { background: #F0EDF6; border-color: #D8D0E8; }
+.turn-in-option-icon  { font-size: 34px; line-height: 1; margin-bottom: 12px; }
+.turn-in-option-title { font-size: 17px; color: #1B4332; font-weight: 800; margin-bottom: 8px; }
+.turn-in-option-text  { font-size: 14px; color: #5A4D3E; line-height: 1.5; }
+.turn-in-subhead { font-size: 16px; color: #5A4D3E; margin-bottom: 14px; line-height: 1.55; }
+.turn-in-checklist { display: flex; flex-direction: column; gap: 10px; }
+.turn-in-item { display: flex; align-items: center; gap: 16px; padding: 14px 18px; background: #FAFAF6; border: 1.5px solid #E8DDD2; border-radius: 14px; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+.turn-in-item:hover { background: #F4FAF5; border-color: #C4E5CC; }
+.turn-in-item.checked { background: #EEF8F0; border-color: #B8E8CF; }
+.turn-in-item .turn-in-check { width: 30px; height: 30px; border-radius: 8px; border: 2px solid #95D5B2; background: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; line-height: 1; transition: background 0.2s, border-color 0.2s; }
+.turn-in-item.checked .turn-in-check { background: #2E7D32; border-color: #2E7D32; }
+.turn-in-item-text { font-size: 16px; color: #2B1D12; font-weight: 600; line-height: 1.55; flex: 1; }
+.turn-in-item.checked .turn-in-item-text { color: #5A4D3E; }
+
+/* ── Progress Bar ── */
+.progress-wrap { position: sticky; top: 0; z-index: 200; background: #0E1C42; padding: 8px 20px 10px; border-bottom: 2px solid rgba(85,200,232,0.3); display: flex; align-items: center; gap: 14px; }
+.progress-label { font-size: 12px; color: #55C8E8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+.progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; position: relative; }
+.progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #0288D1, #4FC3F7, #FDD835); border-radius: 10px; transition: width 0.4s ease; }
+.progress-pct { font-size: 13px; color: #FDD835; font-weight: 800; min-width: 36px; text-align: right; }
+
+/* ── Suggested Image Placeholder ── */
+.image-suggestion { background: linear-gradient(135deg, #FFF3E0, #FFF8E1); border: 2.5px dashed #F9A825; border-radius: 16px; padding: 20px 22px; margin: 18px 0; text-align: center; }
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label { font-size: 11px; color: #E65100; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.image-suggestion-desc { font-size: 15px; color: #5A4D3E; line-height: 1.65; font-weight: 600; max-width: 680px; margin: 0 auto 12px; text-align: left; }
+.image-suggestion-file { font-size: 12px; color: #9A8E82; font-family: monospace; background: rgba(0,0,0,0.05); border-radius: 6px; padding: 4px 10px; display: inline-block; margin-top: 6px; }
+
+/* ── Student Chart ── */
+.student-chart-wrap { background: #fff; border: 2px solid #E8DDD2; border-radius: 14px; padding: 16px; margin: 16px 0; box-shadow: 0 2px 10px rgba(27,67,50,0.04); }
+.student-chart-label { font-size: 13px; color: #2D6A4F; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+.student-chart { width: 100%; border-collapse: collapse; font-size: 15px; }
+.student-chart th { background: #1B4332; color: #fff; font-weight: 800; padding: 10px 14px; text-align: left; font-size: 14px; }
+.student-chart th:first-child { border-radius: 8px 0 0 0; }
+.student-chart th:last-child { border-radius: 0 8px 0 0; }
+.student-chart td { padding: 14px; border: 1.5px dashed #C4E5CC; background: #FAFAF6; color: #C4C4C4; font-style: italic; font-size: 13px; min-height: 40px; vertical-align: middle; }
+.student-chart tr:last-child td:first-child { border-radius: 0 0 0 8px; }
+.student-chart tr:last-child td:last-child { border-radius: 0 0 8px 0; }
+.student-chart .row-label { background: #EEF8F0; color: #1B4332; font-weight: 700; font-style: normal; font-size: 15px; border: 1.5px solid #C4E5CC; }
+
+/* ── Tab Next Button ── */
+.tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+.tab-next-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px; background: linear-gradient(135deg, #0277BD, #0288D1); color: #fff; border: none; border-radius: 28px; font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 16px rgba(2,119,189,0.3); transition: transform 0.2s, box-shadow 0.2s; }
+.tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(2,119,189,0.4); }
+
+/* ── Utility ── */
+strong { color: #1B4332; }
+em { color: #5A4D3E; }
+.gold { color: #F9A825; font-weight: 700; }
+.forest { color: #2D6A4F; font-weight: 700; }
+.earth { color: #A0522D; font-weight: 700; }
+
+@media (max-width: 620px) {
+  .intro-2col { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .flip-card { height: 175px; }
+  .header-title { font-size: 22px; }
+  .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 6px 9px; }
+  .turn-in-options { grid-template-columns: 1fr; }
+  .turn-in-header-title { font-size: 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="confettiCanvas"></canvas>
+<button class="back-to-top" id="backToTop" type="button">🌊 Back to Top</button>
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- ═══════════ PROGRESS BAR ═══════════ -->
+<div class="progress-wrap">
+  <span class="progress-label">🌊 Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">What Threatens Florida Ecosystems?</div>
+  <div class="header-badge">
+    <span>🌊</span>
+    <span>Lesson 31.01</span>
+  </div>
+</div>
+
+<!-- Hero Banner — Lesson 31.01: What Threatens Florida Ecosystems? -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Split scene — healthy Florida wetland on the left, threatened ecosystem on the right">
+
+<defs>
+  <!-- Sky gradient — bright left, hazy right -->
+  <linearGradient id="heroBgSky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#5BB8E8"/>
+    <stop offset="55%" stop-color="#B3E5FC"/>
+    <stop offset="100%" stop-color="#D8EFF7"/>
+  </linearGradient>
+  <!-- Right-side haze overlay -->
+  <linearGradient id="hazeOverlay" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#546E7A" stop-opacity="0"/>
+    <stop offset="55%" stop-color="#546E7A" stop-opacity="0.30"/>
+    <stop offset="100%" stop-color="#455A64" stop-opacity="0.58"/>
+  </linearGradient>
+  <!-- Healthy ground -->
+  <linearGradient id="healthyGround31" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#4CAF50"/>
+    <stop offset="100%" stop-color="#2E7D32"/>
+  </linearGradient>
+  <!-- Degraded ground -->
+  <linearGradient id="degradedGround31" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#6D4C41"/>
+    <stop offset="100%" stop-color="#4E342E"/>
+  </linearGradient>
+  <!-- Clean water -->
+  <linearGradient id="cleanWater31" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#26C6DA"/>
+    <stop offset="100%" stop-color="#00838F"/>
+  </linearGradient>
+  <!-- Murky water -->
+  <linearGradient id="murkyWater31" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#795548"/>
+    <stop offset="100%" stop-color="#4E342E"/>
+  </linearGradient>
+  <!-- Center divider gradient -->
+  <linearGradient id="centerSplit31" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#1B4332" stop-opacity="0"/>
+    <stop offset="35%" stop-color="#1B4332" stop-opacity="0.34"/>
+    <stop offset="65%" stop-color="#1B4332" stop-opacity="0.34"/>
+    <stop offset="100%" stop-color="#1B4332" stop-opacity="0"/>
+  </linearGradient>
+  <!-- Custom animation helpers for smoke wisps (delayed) -->
+  <style>
+    .smoke-a { animation: hero-float 3.5s ease-in-out infinite alternate; }
+    .smoke-b { animation: hero-float 4.4s ease-in-out infinite alternate; animation-delay: 0.7s; }
+    .smoke-c { animation: hero-float 5.8s ease-in-out infinite alternate; animation-delay: 1.5s; }
+    .sw-a    { animation: hero-sway 4s ease-in-out infinite alternate; transform-origin: 192px 210px; transform-box: fill-box; }
+    .sw-b    { animation: hero-sway 4s ease-in-out infinite alternate; transform-origin: 316px 210px; transform-box: fill-box; animation-delay: 0.9s; }
+    .heron-a { animation: bird-drift 5s ease-in-out infinite; transform-origin: 378px 170px; transform-box: fill-box; }
+    .fbird-a { animation: bird-drift 6.2s ease-in-out infinite; transform-origin: 210px 88px; transform-box: fill-box; }
+  </style>
+</defs>
+
+<!-- ═══ SKY BACKGROUND ═══ -->
+<rect width="920" height="260" fill="url(#heroBgSky)"/>
+<!-- Right haze overlay -->
+<rect x="365" y="0" width="555" height="260" fill="url(#hazeOverlay)"/>
+
+<!-- ═══ GROUND ═══ -->
+<rect x="0"   y="208" width="492" height="52" fill="url(#healthyGround31)"/>
+<rect x="492" y="208" width="428" height="52" fill="url(#degradedGround31)"/>
+
+<!-- ═══ WATER ═══ -->
+<rect x="0"   y="167" width="492" height="45" fill="url(#cleanWater31)"/>
+<rect x="492" y="167" width="428" height="45" fill="url(#murkyWater31)"/>
+
+<!-- Algae blooms on murky water -->
+<ellipse cx="557"  cy="176" rx="55" ry="13" fill="#2E7D32" opacity=".83"/>
+<ellipse cx="654"  cy="180" rx="42" ry="11" fill="#1B5E20" opacity=".79"/>
+<ellipse cx="746"  cy="175" rx="48" ry="12" fill="#33691E" opacity=".81"/>
+<ellipse cx="834"  cy="177" rx="40" ry="10" fill="#2E7D32" opacity=".75"/>
+<ellipse cx="902"  cy="173" rx="28" ry="8"  fill="#1B5E20" opacity=".68"/>
+
+<!-- Clean water shimmer (template class) -->
+<g class="hero-shimmer">
+  <line x1="35"  y1="178" x2="118" y2="178" stroke="#fff" stroke-width="1.5" opacity=".54" stroke-linecap="round"/>
+  <line x1="150" y1="185" x2="256" y2="185" stroke="#fff" stroke-width="1.2" opacity=".44" stroke-linecap="round"/>
+  <line x1="284" y1="174" x2="400" y2="174" stroke="#fff" stroke-width="1.5" opacity=".50" stroke-linecap="round"/>
+  <line x1="422" y1="182" x2="476" y2="182" stroke="#fff" stroke-width="1.2" opacity=".40" stroke-linecap="round"/>
+</g>
+
+<!-- ═══ SUN (healthy side, template class) ═══ -->
+<g class="hero-sun-glow">
+  <circle cx="72" cy="64" r="40" fill="#FDD835" opacity=".17"/>
+  <circle cx="72" cy="64" r="28" fill="#FDD835" opacity=".92"/>
+</g>
+<!-- Sun rays -->
+<line x1="72"  y1="29" x2="72"  y2="21" stroke="#FDD835" stroke-width="2.5" opacity=".52"/>
+<line x1="99"  y1="37" x2="105" y2="31" stroke="#FDD835" stroke-width="2.5" opacity=".52"/>
+<line x1="107" y1="64" x2="116" y2="64" stroke="#FDD835" stroke-width="2.5" opacity=".52"/>
+<line x1="99"  y1="91" x2="105" y2="97" stroke="#FDD835" stroke-width="2.5" opacity=".52"/>
+<line x1="45"  y1="37" x2="39"  y2="31" stroke="#FDD835" stroke-width="2.5" opacity=".52"/>
+<line x1="37"  y1="64" x2="28"  y2="64" stroke="#FDD835" stroke-width="2.5" opacity=".52"/>
+<line x1="45"  y1="91" x2="39"  y2="97" stroke="#FDD835" stroke-width="2.5" opacity=".52"/>
+
+<!-- ═══ CLOUDS (template classes) ═══ -->
+<!-- White cloud 1 — drifting right 40px -->
+<g class="hero-cloud-1">
+  <ellipse cx="197" cy="53" rx="64" ry="23" fill="#fff" opacity=".88"/>
+  <ellipse cx="238" cy="42" rx="47" ry="18" fill="#fff" opacity=".92"/>
+  <ellipse cx="160" cy="57" rx="41" ry="17" fill="#fff" opacity=".82"/>
+</g>
+<!-- White cloud 2 — drifting left 32px -->
+<g class="hero-cloud-2">
+  <ellipse cx="376" cy="39" rx="51" ry="18" fill="#fff" opacity=".76"/>
+  <ellipse cx="415" cy="29" rx="38" ry="14" fill="#fff" opacity=".80"/>
+  <ellipse cx="340" cy="43" rx="32" ry="13" fill="#fff" opacity=".70"/>
+</g>
+<!-- Hazy gray cloud (right, drifting left) -->
+<g class="hero-cloud-2" style="animation-duration:11s;">
+  <ellipse cx="755" cy="50" rx="68" ry="22" fill="#90A4AE" opacity=".58"/>
+  <ellipse cx="800" cy="38" rx="50" ry="17" fill="#78909C" opacity=".54"/>
+  <ellipse cx="713" cy="54" rx="45" ry="16" fill="#90A4AE" opacity=".50"/>
+</g>
+
+<!-- ═══ HEALTHY SIDE — TREES ═══ -->
+<circle cx="112" cy="152" r="32" fill="#2E7D32" opacity=".95"/>
+<circle cx="97"  cy="159" r="23" fill="#388E3C" opacity=".90"/>
+<circle cx="127" cy="158" r="22" fill="#2D6A4F" opacity=".88"/>
+<rect x="108" y="177" width="9" height="34" fill="#5D4037"/>
+
+<circle cx="438" cy="154" r="26" fill="#2E7D32" opacity=".88"/>
+<circle cx="424" cy="160" r="19" fill="#388E3C" opacity=".84"/>
+<rect x="434" y="173" width="7" height="36" fill="#5D4037"/>
+
+<!-- Far-left reeds (static) -->
+<rect x="14" y="113" width="3" height="97" fill="#4CAF50" rx="1"/>
+<rect x="22" y="119" width="3" height="91" fill="#66BB6A" rx="1"/>
+<rect x="30" y="109" width="3" height="101" fill="#4CAF50" rx="1"/>
+<rect x="38" y="115" width="3" height="95" fill="#81C784" rx="1"/>
+
+<!-- ═══ SAWGRASS cluster A (swaying) ═══ -->
+<g class="sw-a">
+  <rect x="162" y="120" width="4" height="91" fill="#66BB6A" rx="2"/>
+  <rect x="172" y="112" width="4" height="99" fill="#81C784" rx="2"/>
+  <rect x="182" y="124" width="4" height="87" fill="#66BB6A" rx="2"/>
+  <rect x="192" y="115" width="4" height="96" fill="#A5D6A7" rx="2"/>
+  <rect x="202" y="121" width="4" height="90" fill="#66BB6A" rx="2"/>
+  <rect x="212" y="113" width="4" height="98" fill="#81C784" rx="2"/>
+  <rect x="222" y="119" width="4" height="92" fill="#66BB6A" rx="2"/>
+</g>
+
+<!-- ═══ SAWGRASS cluster B (swaying, offset) ═══ -->
+<g class="sw-b">
+  <rect x="286" y="116" width="4" height="95" fill="#A5D6A7" rx="2"/>
+  <rect x="296" y="109" width="4" height="102" fill="#66BB6A" rx="2"/>
+  <rect x="306" y="122" width="4" height="89" fill="#81C784" rx="2"/>
+  <rect x="316" y="114" width="4" height="97" fill="#66BB6A" rx="2"/>
+  <rect x="326" y="118" width="4" height="93" fill="#A5D6A7" rx="2"/>
+  <rect x="336" y="110" width="4" height="101" fill="#66BB6A" rx="2"/>
+</g>
+
+<!-- ═══ HERON (animated) ═══ -->
+<g class="heron-a">
+  <!-- Body -->
+  <ellipse cx="378" cy="179" rx="19" ry="11" fill="#37474F"/>
+  <!-- Neck -->
+  <path d="M374,169 Q372,156 368,143" stroke="#37474F" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <!-- Head -->
+  <ellipse cx="366" cy="139" rx="9" ry="7" fill="#37474F"/>
+  <!-- Beak -->
+  <line x1="357" y1="138" x2="339" y2="136" stroke="#F9A825" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Crest feather -->
+  <path d="M371,134 Q375,126 379,121" stroke="#546E7A" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- Legs -->
+  <line x1="372" y1="189" x2="368" y2="210" stroke="#37474F" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="385" y1="189" x2="389" y2="210" stroke="#37474F" stroke-width="2.5" stroke-linecap="round"/>
+</g>
+
+<!-- Small flying birds (upper-left healthy zone) -->
+<g class="fbird-a">
+  <path d="M196,87 Q203,80 210,87" stroke="#546E7A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <path d="M213,85 Q220,78 227,85" stroke="#546E7A" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+</g>
+
+<!-- ═══ CENTER DIVIDER ═══ -->
+<rect x="462" y="0" width="56" height="260" fill="url(#centerSplit31)"/>
+
+<!-- ═══ THREATENED SIDE — INVASIVE PLANTS ═══ -->
+<circle cx="537" cy="202" r="32" fill="#1B5E20" opacity=".93"/>
+<circle cx="573" cy="193" r="27" fill="#2E7D32" opacity=".89"/>
+<circle cx="607" cy="204" r="30" fill="#1B5E20" opacity=".91"/>
+<circle cx="642" cy="195" r="24" fill="#33691E" opacity=".87"/>
+<circle cx="670" cy="205" r="28" fill="#1B5E20" opacity=".90"/>
+<circle cx="702" cy="197" r="22" fill="#2E7D32" opacity=".84"/>
+<!-- Invasive red berries -->
+<circle cx="548" cy="181" r="4.5" fill="#C62828"/>
+<circle cx="557" cy="176" r="3.5" fill="#C62828"/>
+<circle cx="565" cy="181" r="3"   fill="#C62828"/>
+<circle cx="622" cy="183" r="4"   fill="#C62828"/>
+<circle cx="631" cy="178" r="3.5" fill="#C62828"/>
+<circle cx="639" cy="183" r="3"   fill="#C62828"/>
+
+<!-- ═══ PYTHON SILHOUETTE (invasive species indicator) ═══ -->
+<path d="M508,224 Q532,213 556,222 Q580,231 604,219 Q628,207 648,216"
+      stroke="#2E7D32" stroke-width="11" fill="none" stroke-linecap="round" opacity=".82"/>
+<ellipse cx="655" cy="216" rx="12" ry="7.5" fill="#1B5E20" opacity=".84"/>
+<!-- Forked tongue -->
+<path d="M667,216 Q674,213 678,211 M667,216 Q674,218 678,220"
+      stroke="#C62828" stroke-width="1.5" fill="none" stroke-linecap="round" opacity=".75"/>
+
+<!-- ═══ DEAD TREE (habitat loss indicator) ═══ -->
+<line x1="732" y1="210" x2="732" y2="136" stroke="#5D4037" stroke-width="7" stroke-linecap="round"/>
+<line x1="732" y1="161" x2="710" y2="147" stroke="#5D4037" stroke-width="5" stroke-linecap="round"/>
+<line x1="732" y1="153" x2="755" y2="140" stroke="#5D4037" stroke-width="5" stroke-linecap="round"/>
+<line x1="732" y1="173" x2="713" y2="161" stroke="#5D4037" stroke-width="3.5" stroke-linecap="round"/>
+<line x1="732" y1="177" x2="751" y2="165" stroke="#5D4037" stroke-width="3.5" stroke-linecap="round"/>
+
+<!-- ═══ FACTORY / BUILDING (pollution + development threat) ═══ -->
+<rect x="806" y="134" width="64" height="76" fill="#78909C" opacity=".90" rx="2"/>
+<rect x="817" y="150" width="12" height="14" fill="#90A4AE" rx="1"/>
+<rect x="836" y="150" width="12" height="14" fill="#90A4AE" rx="1"/>
+<rect x="855" y="150" width="12" height="14" fill="#90A4AE" rx="1"/>
+<rect x="817" y="171" width="12" height="12" fill="#90A4AE" rx="1"/>
+<rect x="836" y="171" width="12" height="12" fill="#90A4AE" rx="1"/>
+<!-- Smokestack -->
+<rect x="839" y="104" width="14" height="34" fill="#607D8B" rx="2"/>
+<rect x="835" y="100" width="22" height="9" fill="#546E7A" rx="2"/>
+
+<!-- Smoke wisps (animated, floating upward) -->
+<ellipse cx="846" cy="91" rx="18" ry="12" fill="#B0BEC5" opacity=".55" class="smoke-a"/>
+<ellipse cx="853" cy="70" rx="14" ry="9"  fill="#90A4AE" opacity=".41" class="smoke-b"/>
+<ellipse cx="840" cy="52" rx="10" ry="7"  fill="#78909C" opacity=".27" class="smoke-c"/>
+
+<!-- Second structure mid-right -->
+<rect x="754" y="153" width="42" height="57" fill="#90A4AE" opacity=".76" rx="2"/>
+<rect x="762" y="165" width="9" height="10" fill="#B0BEC5" rx="1"/>
+<rect x="777" y="165" width="9" height="10" fill="#B0BEC5" rx="1"/>
+
+</svg>
+</div>
+
+<!-- ═══════════ INFO STRIP ═══════════ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q4 &middot; Unit 10</div>
+      <div class="info-detail">Florida Ecosystems Focus</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF9E8;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 31</div>
+      <div class="info-detail">Lesson 31.01 &mdash; 3rd Grade Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">🌊</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Florida Ecosystems</div>
+      <div class="info-detail">Pollution, invasive species &amp; habitat loss</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">NGSS 3-ESS3-1</div>
+      <div class="info-detail">Earth &amp; Human Activity</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ INTRO 2-COL CARDS ═══════════ -->
+<div class="intro-2col">
+
+  <div class="card theme-sky">
+    <div class="card-head">
+      <div class="card-head-icon">🌊</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This…</div>
+          <div class="question">"What is threatening Florida's wild places — and what can people do about it?"</div>
+        </div>
+      </div>
+      <p>Keep this question in mind as you work through today's lesson. By the end, you should have some real answers.</p>
+    </div>
+  </div>
+
+  <div class="card theme-forest">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#52B788;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> name three major threats to Florida's ecosystems.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2D6A4F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain how each threat affects plants and animals.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2E7D32;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> describe ways people are working to protect Florida ecosystems.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════ NEED STRIP ═══════════ -->
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Pencil &amp; colored pencils</span>
+</div>
+
+<!-- ═══════════ TAB BAR ═══════════ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 1: VOCABULARY                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <!-- Welcome Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to Today's Lesson!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🎬</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 31-1-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 1: NOTICE & WONDER -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#52B788;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Notice &amp; Wonder</div>
+        <div class="act-subtitle">What do you already know about Florida's wild places?</div>
+      </div>
+      <div class="act-time" style="background:#52B788;">⏱ 5–8 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>Florida is full of wild places — wetlands, forests, coasts, and prairies packed with wildlife. But many of these places are changing, and not in a good way. Before you learn why, take a minute to <strong>look and wonder</strong>.</p>
+
+      <!-- IMAGE 1: Florida healthy wetland — photorealistic nature photo -->
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">📷 Florida Wetland · Observe Before You Learn</div>
+        <img src="images/31-01-florida-healthy-wetland.jpg"
+             alt="A healthy Florida Everglades wetland at sunrise — wide sawgrass marshes reflecting the sky, open blue water channels, and a great blue heron standing at the edge"
+             style="display:block;"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">📷</div>
+          <div class="image-suggestion-label">Suggested Photo Needed</div>
+          <div class="image-suggestion-desc"><strong>Photorealistic nature photo prompt:</strong> A ground-level or low aerial view of a healthy Florida Everglades wetland — wide sawgrass marshes, still open water channels reflecting a warm morning sky, and a great blue heron standing at the water's edge. Warm golden light. No text, no people, no overlays. Lush and serene.</div>
+          <div class="image-suggestion-file">images/31-01-florida-healthy-wetland.jpg</div>
+        </div>
+        <div class="lesson-figure-caption">A healthy Florida wetland. Look at the <strong>open water</strong>, the tall native grasses, and the bird hunting at the edge. What do you notice?</div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">👀</span>
+        <div>
+          <div class="label">In Your Science Notebook</div>
+          <div class="question">"Write at least 3 things you notice in this image. Then write 1 question: what could threaten a place like this?"</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>There are no wrong observations. Scientists always start by looking carefully. We'll come back to your question at the end of the lesson.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- VOCABULARY FLIP CARDS -->
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Before we dive in, learn the words scientists use when they study threats to ecosystems. <strong>Tap each card</strong> to flip it and read the definition.</p>
+
+      <div class="vocab-grid">
+
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌿</div><div class="fc-word">Ecosystem</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Ecosystem</div><div class="fc-def">All the living things in a place and the non-living things they depend on — like water, soil, and sunlight.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">💧</div><div class="fc-word">Pollution</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Pollution</div><div class="fc-def">Harmful materials that enter the air, water, or soil and make it hard for living things to survive.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🐍</div><div class="fc-word">Invasive Species</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Invasive Species</div><div class="fc-def">A plant or animal that spreads into a new place where it does not naturally live, often crowding out species that belong there.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🏗️</div><div class="fc-word">Habitat Loss</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Habitat Loss</div><div class="fc-def">When the natural home of a plant or animal is destroyed or changed so much that animals can no longer live there.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌧️</div><div class="fc-word">Runoff</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Runoff</div><div class="fc-def">Water that flows across the land after rain, picking up chemicals and carrying them into rivers, lakes, and wetlands.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌱</div><div class="fc-word">Conservation</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Conservation</div><div class="fc-def">The work of protecting and restoring nature so ecosystems stay healthy for living things now and in the future.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">📓</span>
+        <p>Copy this sentence carefully into your science notebook:<br><strong>"An invasive species can damage an ecosystem by crowding out the native plants and animals that belong there."</strong></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button>
+  </div>
+
+</div><!-- /tab-vocab -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 2: THE LESSON                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+
+  <!-- Lesson Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">📖</span>
+      <div>
+        <div class="video-wrap-type">Activity 2 · Core Lesson</div>
+        <div class="video-wrap-title">What Threatens Florida Ecosystems?</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">📖</div>
+        <div class="video-placeholder-text">Core lesson video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 31-1-lesson-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 2: CORE LESSON CONTENT -->
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#F9A825;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📖 The Lesson: Florida's Ecosystems Under Threat</div>
+        <div class="act-subtitle">Read and think carefully — science is all about noticing!</div>
+      </div>
+      <div class="act-time" style="background:#F9A825;">⏱ 12 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- SECTION 1 -->
+      <div class="card theme-forest" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌿</div>
+          <div>
+            <div class="card-head-label">Section 1</div>
+            <div class="card-head-title">Florida's Wild Places Are in Trouble</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Florida is home to some of the most unique <span class="vtip">ecosystems<span class="vtip-box"><span class="vtip-word">Ecosystem</span>All the living things in a place and the non-living things they depend on — water, soil, sunlight.</span></span> in North America. Wetlands like the Everglades, mangrove forests along the coast, and scrub forests inland support hundreds of species.</p>
+          <p>But scientists are watching these places change. Water is getting murkier. Animals are losing their homes. Some species that have lived here for thousands of years are disappearing.</p>
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"If a Florida wetland lost all its native plants, what do you think would happen to the animals that depend on them?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2 -->
+      <div class="card theme-sky" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">⚠️</div>
+          <div>
+            <div class="card-head-label">Section 2</div>
+            <div class="card-head-title">Three Big Threats</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><strong>Pollution</strong> happens when harmful materials enter water or soil. Farm fertilizers and lawn chemicals wash into lakes and rivers during storms. This <span class="vtip">runoff<span class="vtip-box"><span class="vtip-word">Runoff</span>Water that flows across land after rain, carrying chemicals into rivers, lakes, and wetlands.</span></span> causes algae to grow out of control — blocking sunlight and removing oxygen from the water.</p>
+          <p><strong>Invasive species</strong> are plants and animals that don't naturally belong in Florida. The Burmese python was brought as a pet. Brazilian pepper trees were planted for landscaping. Both now spread and push out native species.</p>
+
+          <!-- IMAGE 2: Invasive species in Florida — photorealistic nature photo -->
+          <div class="lesson-figure">
+            <div class="lesson-figure-label">📷 Invasive Species · Florida Everglades</div>
+            <img src="images/31-01-invasive-species-florida.jpg"
+                 alt="A large Burmese python coiled among Florida Everglades sawgrass and vegetation, partially camouflaged in the wetland plant growth"
+                 style="display:block;"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">📷</div>
+              <div class="image-suggestion-label">Suggested Photo Needed</div>
+              <div class="image-suggestion-desc"><strong>Photorealistic nature photo prompt:</strong> A large Burmese python coiled in Florida Everglades sawgrass and wetland vegetation — partially camouflaged, clearly visible, natural lighting. OR: A dense thicket of Brazilian pepper trees with red berries overtaking native Florida shrubs. Wild, real, no people, no overlays.</div>
+              <div class="image-suggestion-file">images/31-01-invasive-species-florida.jpg</div>
+            </div>
+            <div class="lesson-figure-caption">An invasive species in the Everglades. This animal doesn't belong here — and it's causing serious harm to <strong>native wildlife</strong> that evolved alongside Florida's natural ecosystem.</div>
+          </div>
+
+          <p><strong>Habitat loss</strong> occurs when natural land is cleared for buildings, farms, or roads. When a wetland is drained or a forest is bulldozed, the animals that lived there have nowhere to go.</p>
+        </div>
+      </div>
+
+      <!-- SECTION 3 -->
+      <div class="card theme-earth" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌱</div>
+          <div>
+            <div class="card-head-label">Section 3</div>
+            <div class="card-head-title">People Are Working on Solutions</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>People caused many of these problems — and people are working to fix them. Engineers design filtration systems that clean <span class="vtip">runoff<span class="vtip-box"><span class="vtip-word">Runoff</span>Water that flows across land after rain, carrying chemicals into rivers, lakes, and wetlands.</span></span> before it reaches wetlands. <span class="vtip">Conservation<span class="vtip-box"><span class="vtip-word">Conservation</span>The work of protecting and restoring nature so ecosystems stay healthy.</span></span> groups remove invasive plants and animals and replant native ones.</p>
+          <p>Laws protect wild areas from development. Florida has more protected land than almost any other state — and scientists and volunteers work every day to slow these threats.</p>
+          <p><strong>Real-World Connection:</strong> In the Everglades, engineers are rebuilding water flow systems to reduce pollution and restore the natural balance that native wildlife needs.</p>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE DIAGRAM -->
+      <div class="diagram-wrap scroll-reveal">
+        <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
+          🗺 Tap a zone to explore it
+        </div>
+        <div class="diagram-interactive">
+          <svg viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;" role="img" aria-label="Florida ecosystem zones diagram — tap to explore each zone">
+
+            <defs>
+              <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#87CEEB"/>
+                <stop offset="100%" stop-color="#C8E6F7"/>
+              </linearGradient>
+              <!-- Water ripple pattern -->
+              <pattern id="waterRipple" patternUnits="userSpaceOnUse" width="30" height="10">
+                <path d="M0 5 Q7.5 0 15 5 Q22.5 10 30 5" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.3"/>
+              </pattern>
+              <!-- Pavement pattern -->
+              <pattern id="pavement" patternUnits="userSpaceOnUse" width="20" height="20">
+                <rect width="20" height="20" fill="#9E9E9E"/>
+                <line x1="0" y1="10" x2="20" y2="10" stroke="#BDBDBD" stroke-width="1"/>
+                <line x1="10" y1="0" x2="10" y2="20" stroke="#BDBDBD" stroke-width="1"/>
+              </pattern>
+            </defs>
+
+            <!-- SKY BACKGROUND -->
+            <rect x="0" y="0" width="860" height="140" fill="url(#skyGrad)"/>
+
+            <!-- SUN -->
+            <circle cx="800" cy="45" r="26" fill="#FDD835" opacity="0.85"/>
+            <circle cx="800" cy="45" r="34" fill="#FDD835" opacity="0.18"/>
+
+            <!-- ZONE DIVIDERS -->
+            <line x1="172" y1="0" x2="172" y2="300" stroke="#fff" stroke-width="2" opacity="0.6"/>
+            <line x1="344" y1="0" x2="344" y2="300" stroke="#fff" stroke-width="2" opacity="0.6"/>
+            <line x1="516" y1="0" x2="516" y2="300" stroke="#fff" stroke-width="2" opacity="0.6"/>
+            <line x1="688" y1="0" x2="688" y2="300" stroke="#fff" stroke-width="2" opacity="0.6"/>
+
+            <!-- ═══ ZONE 1: HEALTHY WETLAND (0–172) ═══ -->
+            <!-- Water -->
+            <rect x="0" y="140" width="172" height="80" fill="#4DB6AC"/>
+            <rect x="0" y="140" width="172" height="80" fill="url(#waterRipple)"/>
+            <!-- Ground -->
+            <rect x="0" y="220" width="172" height="80" fill="#558B2F"/>
+            <!-- Sawgrass stalks -->
+            <rect x="18" y="105" width="4" height="50" fill="#66BB6A" rx="2"/>
+            <rect x="30" y="98" width="4" height="58" fill="#81C784" rx="2"/>
+            <rect x="44" y="108" width="4" height="46" fill="#66BB6A" rx="2"/>
+            <rect x="56" y="100" width="4" height="54" fill="#A5D6A7" rx="2"/>
+            <rect x="68" y="107" width="4" height="48" fill="#66BB6A" rx="2"/>
+            <rect x="80" y="96" width="4" height="58" fill="#81C784" rx="2"/>
+            <rect x="92" y="104" width="4" height="50" fill="#66BB6A" rx="2"/>
+            <rect x="105" y="100" width="4" height="52" fill="#A5D6A7" rx="2"/>
+            <rect x="118" y="106" width="4" height="46" fill="#66BB6A" rx="2"/>
+            <rect x="130" y="98" width="4" height="56" fill="#81C784" rx="2"/>
+            <rect x="143" y="104" width="4" height="50" fill="#66BB6A" rx="2"/>
+            <rect x="155" y="100" width="4" height="52" fill="#A5D6A7" rx="2"/>
+            <!-- Heron (simple silhouette) -->
+            <ellipse cx="86" cy="170" rx="7" ry="12" fill="#607D8B"/>
+            <line x1="86" y1="158" x2="86" y2="143" stroke="#607D8B" stroke-width="3"/>
+            <ellipse cx="86" cy="140" rx="5" ry="4" fill="#607D8B"/>
+            <line x1="86" y1="195" x2="79" y2="218" stroke="#607D8B" stroke-width="2"/>
+            <line x1="86" y1="195" x2="93" y2="218" stroke="#607D8B" stroke-width="2"/>
+            <!-- Zone label bg -->
+            <rect x="4" y="4" width="164" height="22" rx="4" fill="#1B4332" opacity="0.55"/>
+            <text x="86" y="19" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">✅ Healthy Wetland</text>
+
+            <!-- ═══ ZONE 2: POLLUTED WATER (172–344) ═══ -->
+            <!-- Murky water -->
+            <rect x="172" y="140" width="172" height="80" fill="#6D4C41"/>
+            <!-- Algae bloom on surface -->
+            <ellipse cx="230" cy="148" rx="38" ry="12" fill="#558B2F" opacity="0.85"/>
+            <ellipse cx="290" cy="152" rx="32" ry="10" fill="#33691E" opacity="0.85"/>
+            <ellipse cx="255" cy="155" rx="28" ry="9" fill="#2E7D32" opacity="0.7"/>
+            <!-- Dead brown ground -->
+            <rect x="172" y="220" width="172" height="80" fill="#6D4C41"/>
+            <!-- Dead plant stalks -->
+            <rect x="185" y="110" width="3" height="45" fill="#795548" rx="1"/>
+            <rect x="197" y="118" width="3" height="38" fill="#6D4C41" rx="1"/>
+            <rect x="210" y="112" width="3" height="44" fill="#795548" rx="1"/>
+            <rect x="223" y="120" width="3" height="36" fill="#6D4C41" rx="1"/>
+            <rect x="238" y="115" width="3" height="42" fill="#795548" rx="1"/>
+            <!-- Pollution indicator (factory pipe) -->
+            <rect x="290" y="85" width="18" height="60" fill="#78909C" rx="3"/>
+            <rect x="285" y="76" width="28" height="14" fill="#546E7A" rx="3"/>
+            <ellipse cx="299" cy="76" rx="10" ry="8" fill="#90A4AE" opacity="0.6"/>
+            <!-- Zone label bg -->
+            <rect x="176" y="4" width="164" height="22" rx="4" fill="#6D4C41" opacity="0.7"/>
+            <text x="258" y="19" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">⚠️ Polluted Water</text>
+
+            <!-- ═══ ZONE 3: INVASIVE SPECIES (344–516) ═══ -->
+            <!-- Dense invasive overgrowth -->
+            <rect x="344" y="80" width="172" height="220" fill="#1B5E20"/>
+            <!-- Dense shrub blobs -->
+            <circle cx="390" cy="120" r="34" fill="#2E7D32"/>
+            <circle cx="430" cy="105" r="28" fill="#33691E"/>
+            <circle cx="465" cy="115" r="30" fill="#1B5E20"/>
+            <circle cx="405" cy="145" r="24" fill="#388E3C"/>
+            <circle cx="450" cy="138" r="26" fill="#2E7D32"/>
+            <circle cx="480" cy="125" r="22" fill="#33691E"/>
+            <circle cx="370" cy="140" r="20" fill="#2E7D32"/>
+            <!-- Red berries to show invasive brazilian pepper -->
+            <circle cx="400" cy="98" r="4" fill="#C62828"/>
+            <circle cx="408" cy="93" r="3" fill="#C62828"/>
+            <circle cx="393" cy="92" r="3.5" fill="#C62828"/>
+            <circle cx="460" cy="108" r="4" fill="#C62828"/>
+            <circle cx="468" cy="103" r="3" fill="#C62828"/>
+            <!-- Ground still green but overgrown -->
+            <rect x="344" y="220" width="172" height="80" fill="#1B5E20"/>
+            <!-- Zone label bg -->
+            <rect x="348" y="4" width="164" height="22" rx="4" fill="#1B5E20" opacity="0.75"/>
+            <text x="430" y="19" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">🐍 Invasive Species</text>
+
+            <!-- ═══ ZONE 4: HABITAT LOSS (516–688) ═══ -->
+            <!-- Sky continues but with haze -->
+            <rect x="516" y="0" width="172" height="140" fill="#CFD8DC" opacity="0.4"/>
+            <!-- Paved ground -->
+            <rect x="516" y="160" width="172" height="140" fill="url(#pavement)"/>
+            <!-- Road line -->
+            <rect x="516" y="175" width="172" height="28" fill="#757575"/>
+            <rect x="530" y="186" width="30" height="6" fill="#FDD835" rx="2"/>
+            <rect x="580" y="186" width="30" height="6" fill="#FDD835" rx="2"/>
+            <rect x="630" y="186" width="30" height="6" fill="#FDD835" rx="2"/>
+            <!-- Building 1 -->
+            <rect x="530" y="75" width="65" height="90" fill="#78909C" rx="3"/>
+            <rect x="535" y="92" width="12" height="14" fill="#B0BEC5" rx="2"/>
+            <rect x="553" y="92" width="12" height="14" fill="#B0BEC5" rx="2"/>
+            <rect x="571" y="92" width="12" height="14" fill="#B0BEC5" rx="2"/>
+            <rect x="535" y="114" width="12" height="14" fill="#B0BEC5" rx="2"/>
+            <rect x="553" y="114" width="12" height="14" fill="#B0BEC5" rx="2"/>
+            <rect x="571" y="114" width="12" height="14" fill="#B0BEC5" rx="2"/>
+            <!-- Building 2 -->
+            <rect x="613" y="90" width="55" height="75" fill="#90A4AE" rx="3"/>
+            <rect x="619" y="104" width="10" height="12" fill="#B0BEC5" rx="1"/>
+            <rect x="634" y="104" width="10" height="12" fill="#B0BEC5" rx="1"/>
+            <rect x="649" y="104" width="10" height="12" fill="#B0BEC5" rx="1"/>
+            <!-- Zone label bg -->
+            <rect x="520" y="4" width="164" height="22" rx="4" fill="#546E7A" opacity="0.75"/>
+            <text x="602" y="19" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">🏗️ Habitat Loss</text>
+
+            <!-- ═══ ZONE 5: PROTECTED LAND (688–860) ═══ -->
+            <!-- Clean bright sky -->
+            <rect x="688" y="0" width="172" height="140" fill="#B3E5FC" opacity="0.5"/>
+            <!-- Clean water -->
+            <rect x="688" y="155" width="172" height="65" fill="#29B6F6"/>
+            <rect x="688" y="155" width="172" height="65" fill="url(#waterRipple)"/>
+            <!-- Healthy green ground -->
+            <rect x="688" y="220" width="172" height="80" fill="#43A047"/>
+            <!-- Trees -->
+            <circle cx="720" cy="108" r="28" fill="#2E7D32"/>
+            <rect x="716" y="130" width="8" height="28" fill="#795548"/>
+            <circle cx="760" cy="95" r="24" fill="#388E3C"/>
+            <rect x="756" y="114" width="8" height="28" fill="#795548"/>
+            <circle cx="798" cy="110" r="22" fill="#2E7D32"/>
+            <rect x="794" y="128" width="8" height="24" fill="#795548"/>
+            <circle cx="836" cy="100" r="20" fill="#1B5E20"/>
+            <rect x="832" y="117" width="8" height="24" fill="#795548"/>
+            <!-- Bird flying -->
+            <path d="M730 62 Q740 55 750 62" stroke="#607D8B" stroke-width="2.5" fill="none"/>
+            <path d="M750 62 Q760 55 770 62" stroke="#607D8B" stroke-width="2.5" fill="none"/>
+            <!-- Zone label bg -->
+            <rect x="692" y="4" width="164" height="22" rx="4" fill="#1B5E20" opacity="0.65"/>
+            <text x="774" y="19" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">🌿 Protected Land</text>
+
+            <!-- HOTSPOT RECTS (invisible — JS handles interactions) -->
+            <rect class="hotspot" x="0" y="0" width="172" height="300" fill="#4DB6AC"
+                  data-part="healthy-wetland"
+                  data-info="This is a healthy Florida wetland. Clean water, native sawgrass, and open space give animals like herons, alligators, and fish everything they need to survive. When an ecosystem is healthy, all its parts work together."/>
+            <rect class="hotspot" x="172" y="0" width="172" height="300" fill="#6D4C41"
+                  data-part="polluted-water"
+                  data-info="Runoff from nearby farms and lawns carries nutrients into this water, causing algae to grow out of control. Thick algae blocks sunlight and uses up oxygen — making it impossible for fish and other animals to breathe."/>
+            <rect class="hotspot" x="344" y="0" width="172" height="300" fill="#1B5E20"
+                  data-part="invasive-species"
+                  data-info="Invasive plants like the Brazilian pepper tree crowd out native species. Animals that depend on native plants for food and shelter are pushed out or starve. The red berries attract birds, who spread the seeds even farther."/>
+            <rect class="hotspot" x="516" y="0" width="172" height="300" fill="#78909C"
+                  data-part="habitat-loss"
+                  data-info="When wetlands are drained and forests are cleared for buildings and roads, animals lose the places they depend on. Roads also block animals from moving between habitats to find food, water, and mates."/>
+            <rect class="hotspot" x="688" y="0" width="172" height="300" fill="#29B6F6"
+                  data-part="protected-land"
+                  data-info="Protected areas like Everglades National Park give Florida's ecosystems a chance to recover. Scientists and volunteers work here to restore water flow, remove invasive species, and monitor wildlife populations."/>
+
+          </svg>
+
+          <!-- Diagram info panel -->
+          <div class="diagram-info-panel" id="diagramPanel">
+            <span class="dip-word" id="diagramWord"></span>
+            <span id="diagramInfo"></span>
+          </div>
+        </div>
+        <div class="diagram-tap-hint">Tap any zone to learn what's happening there.</div>
+        <div class="diagram-caption">Florida ecosystem zones — from healthy wetland to habitat lost, and back to protected land. Each zone shows a different condition and its effect on wildlife.</div>
+      </div>
+
+      <!-- Key Concept -->
+      <div class="key-concept scroll-reveal">
+        <div class="kc-label">⭐ Key Concept</div>
+        <p><strong>Florida's ecosystems face three major threats: pollution, invasive species, and habitat loss.</strong> Each one disrupts the balance that native plants and animals depend on.</p>
+        <p>People caused these problems — and people are designing solutions to slow the damage and help ecosystems recover.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mind-Blowing Fact -->
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Amazing Florida Fact</div>
+      <div class="mind-blow-text">Scientists tracking wildlife in the Everglades found that <strong>raccoon, opossum, and rabbit populations dropped by over 90%</strong> in areas with Burmese pythons. One invasive species changed the whole ecosystem — just by eating.</div>
+    </div>
+  </div>
+
+  <!-- Go Deeper -->
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper</summary>
+    <div class="gd-body">
+      <p>The Everglades once covered about 4,500 square miles of southern Florida. In the 1900s, farmers and developers drained and rerouted its water to make room for agriculture and cities. Wading bird populations dropped by over 90% within decades.</p>
+      <p>Today, engineers are working on one of the largest environmental restoration projects ever attempted. They're rebuilding water flow patterns, removing old canals, and constructing filtration marshes to clean polluted water before it enters the wetland.</p>
+      <p>Results come slowly — ecosystems don't heal overnight. But scientists are seeing water quality improve in some areas. It's proof that even large-scale damage can be addressed when science and engineering work together.</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+
+</div><!-- /tab-lesson -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 3: EXPLORE                                            -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+
+  <!-- Explore Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🔬</span>
+      <div>
+        <div class="video-wrap-type">Activity 3 · Investigation</div>
+        <div class="video-wrap-title">Threat Identification — Analyzing Florida Scenarios</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🔬</div>
+        <div class="video-placeholder-text">Exploration video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 31-1-exploration-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 3: INVESTIGATION -->
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#0288D1;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🔬 Investigation: Threat Identification</div>
+        <div class="act-subtitle">Read four real-world Florida scenarios. Identify the threat and explain the impact.</div>
+      </div>
+      <div class="act-time" style="background:#0288D1;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>Scientists identify threats by reading evidence carefully. Read each scenario below, then fill in the chart in your science notebook.</p>
+
+      <!-- Chart for students to copy -->
+      <div class="student-chart-wrap">
+        <div class="student-chart-label">📋 Copy this chart into your science notebook</div>
+        <table class="student-chart">
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Type of Threat</th>
+              <th>One Effect on Wildlife</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="row-label">Scenario 1</td><td></td><td></td></tr>
+            <tr><td class="row-label">Scenario 2</td><td></td><td></td></tr>
+            <tr><td class="row-label">Scenario 3</td><td></td><td></td></tr>
+            <tr><td class="row-label">Scenario 4</td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Steps -->
+      <div style="position:relative; margin:16px 0;">
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">1</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0 0 10px;"><strong>Scenario 1:</strong> After a rainstorm near a farm outside of Gainesville, fertilizer washed off the fields into a nearby river. Within weeks, thick mats of blue-green algae covered the water's surface.</p>
+            <p style="font-size:14px;color:#558B2F;font-weight:700;margin:0;">→ Fill in row 1 of your chart.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2D6A4F,#52B788);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(45,106,79,0.3);">2</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0 0 10px;"><strong>Scenario 2:</strong> A family in Miami released their pet iguana into the backyard when it got too large. Within ten years, thousands of iguanas were spotted across South Florida, eating native plants and the eggs of native birds.</p>
+            <p style="font-size:14px;color:#558B2F;font-weight:700;margin:0;">→ Fill in row 2 of your chart.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#52B788,#F9A825);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(82,183,136,0.3);">3</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0 0 10px;"><strong>Scenario 3:</strong> A developer purchased a 200-acre cypress swamp near Tampa and filled it with soil to build a shopping mall. The wood storks and river otters that lived there had nowhere to go.</p>
+            <p style="font-size:14px;color:#F9A825;font-weight:700;margin:0;">→ Fill in row 3 of your chart.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F9A825,#FDD835);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(249,168,37,0.3);">4</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0 0 10px;"><strong>Scenario 4:</strong> A new highway was built straight through Florida panther territory in Big Cypress. Rangers began finding panthers killed crossing the road. Panther populations became isolated from each other.</p>
+            <p style="font-size:14px;color:#F9A825;font-weight:700;margin:0;">→ Fill in row 4 of your chart.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="callout callout-tip" style="margin-top:16px;">
+        <span class="callout-icon">✍️</span>
+        <p><strong>Choose one scenario.</strong> In 2–3 sentences in your notebook, write: What is the threat? How does it harm the ecosystem? What do you think could help fix it?</p>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🌊</span>
+        <div>
+          <div class="label">Think Like a Scientist</div>
+          <div class="question">"All four scenarios involved human actions. Does that mean humans are always harmful to ecosystems? What evidence would you need to change your thinking?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RECORD YOUR THINKING -->
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#2E7D32;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">📓 Record Your Thinking</div>
+        <div class="act-subtitle">Organize what you observed and figured out.</div>
+      </div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>In your science notebook, record your thinking. Be specific — a good scientist writes exactly what they noticed, not just "it was bad."</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">1</span>
+        <span class="pq-text">What is one way each type of threat is different from the others?</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">2</span>
+        <span class="pq-text">Look at your chart — which threat do you think would be hardest to reverse? Why?</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">3</span>
+        <span class="pq-text">Draw a simple diagram of your chosen scenario. Label the threat and at least two effects on wildlife.</span>
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">🗣</span>
+        <p>Tell the story of one scenario — what happened, what the threat was, and what changed in the ecosystem because of it. Use your chart and notes to help.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DISCUSS -->
+  <div class="card theme-meadow scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">💬</div>
+      <div>
+        <div class="card-head-label">Discussion</div>
+        <div class="card-head-title">Think It Through</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Think through each question. Write your answers in your science notebook before moving on.</p>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Question 1</div>
+          <div class="question">"What did you write in your chart for Scenario 1? How did you decide which type of threat it was?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">💡</span>
+        <div>
+          <div class="label">Question 2</div>
+          <div class="question">"If a Florida lake turned bright green from algae, what evidence would tell a scientist that runoff was the cause — not something else?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🌊</span>
+        <div>
+          <div class="label">Question 3 — Connect to Florida</div>
+          <div class="question">"How could a highway be redesigned to help Florida panthers survive? What would an engineer need to think about?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🔁</span>
+        <div>
+          <div class="label">Question 4 — Your Turn</div>
+          <div class="question">"What is one thing you — or your family — could do to reduce one of these three threats?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+
+</div><!-- /tab-explore -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 4: SELF-CHECK QUIZ                                    -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#0288D1;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">🌊</div>
+      <div style="flex:1;">
+        <div style="font-size:19px;color:#1B4332;font-weight:800;line-height:1.2;">🧠 Quick Self-Check</div>
+        <div style="font-size:12px;color:#9A8E82;">Not graded — just for you! See how much you remember.</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+
+      <!-- QUESTION 1 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. What is an invasive species?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>A native Florida animal that migrates south for winter</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>A plant or animal that spreads into a new place and harms the ecosystem</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>A type of water pollution caused by farm chemicals</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌊 Exactly right! An invasive species moves into a new place where it doesn't belong, often crowding out native species.</div>
+        <div class="quiz-feedback fb-wrong">Review the vocabulary cards — invasive species is a key term for this lesson. Flip back to the definition and try again!</div>
+      </div>
+
+      <!-- QUESTION 2 -->
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">2. What most likely happens when too much fertilizer washes into a Florida lake?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>More fish grow because there are extra nutrients in the water</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>The water gets cleaner as plants filter the nutrients</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Algae grows out of control, blocking sunlight and reducing oxygen</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌿 Yes! Too many nutrients cause an algae bloom that blocks sunlight and uses up oxygen — making the lake harmful to fish and other animals.</div>
+        <div class="quiz-feedback fb-wrong">Think about what algae does when it grows out of control. What does it block? What does it use up? Re-read Section 2 and try again.</div>
+      </div>
+
+      <!-- QUESTION 3 -->
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-text">3. Which of these is an example of habitat loss?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>A cypress swamp is drained and filled to build a shopping center</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>A scientist removes invasive plants from a protected wetland</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>A rainstorm washes dirt and leaves into a river</div>
+        </div>
+        <div class="quiz-feedback fb-correct">⭐ That's it! Draining a swamp to build a shopping center destroys the habitat — the animals that lived there have nowhere to go.</div>
+        <div class="quiz-feedback fb-wrong">Habitat loss means the natural home is destroyed. Which option describes something being destroyed or taken away? Try again!</div>
+      </div>
+
+      <!-- Score Display -->
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum">0</div>
+        <div class="quiz-score-label">out of 3</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+
+        <!-- Perfect score video -->
+        <div class="video-feedback" id="quizVideoCorrect" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">✅</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Perfect Score</div>
+                <div class="video-wrap-title">Amazing work, scientist! 3 out of 3!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">⭐</div>
+                <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 31-1-quiz-perfect --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review video -->
+        <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">📚</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Keep Going</div>
+                <div class="video-wrap-title">You're getting there — let's review together!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">💪</div>
+                <div class="video-placeholder-text">Review and encouragement video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 31-1-quiz-review --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+
+</div><!-- /tab-quiz -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 5: ASSIGNMENT                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <!-- Assignment Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">✍️</span>
+      <div>
+        <div class="video-wrap-type">Activity 5 · Assignment</div>
+        <div class="video-wrap-title">Here's What to Do for Your Assignment</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">✍️</div>
+        <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 31-1-assignment-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 5: ASSIGNMENT -->
+  <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
+    <div class="act-head">
+      <div class="act-num" style="background:#7B5EA7;">5</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment</div>
+        <div class="act-subtitle">Show what you've learned about Florida ecosystem threats.</div>
+      </div>
+      <div class="act-time" style="background:#7B5EA7;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- PART A -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔍 Part A — Match the Threat</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">In your science notebook, write the number of each example. Next to it, write the type of threat: <strong>Pollution</strong>, <strong>Invasive Species</strong>, or <strong>Habitat Loss</strong>.</p>
+
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">Farm fertilizer washes into a Florida lake during a rainstorm.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">A Burmese python spreads through the Everglades, eating native mammals.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">A forest near Tampa is cleared to build a housing development.</span></div>
+
+      <!-- PART B -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🚀 Part B — Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer each question in <strong>complete sentences</strong>. Use your science vocabulary!</p>
+
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">4</span><span class="pq-text">Explain how runoff can harm a Florida ecosystem. Use the word <strong>pollution</strong> in your answer.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">5</span><span class="pq-text">Why is an invasive species dangerous even if it looks harmless at first?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">6</span><span class="pq-text">How is habitat loss different from pollution? How are they similar?</span></div>
+
+      <!-- WRITE & EXPLAIN -->
+      <div class="key-concept scroll-reveal" style="background:#FFF9E8;border-color:#F0E4C0;">
+        <div class="kc-label" style="color:#F9A825;">✍️ Write and Explain</div>
+        <p style="font-size:16px;font-weight:700;color:#1B4332;margin-bottom:14px;">Which of the three threats — pollution, invasive species, or habitat loss — do you think is the most serious danger to Florida's ecosystems?</p>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What do you think?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I think the most serious threat is…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What did you learn that supports your thinking?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I know this because the lesson showed…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">Why does that make sense?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="background:#EEF8F0;border-radius:10px;padding:10px 14px;border-left:3px solid #52B788;">
+          <p style="margin:0;font-size:14px;color:#1B4332;">📚 Try to use at least one of these words: <strong>ecosystem</strong>, <strong>invasive species</strong>, <strong>habitat loss</strong></p>
+        </div>
+      </div>
+
+      <!-- PART C -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Label</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Draw a Florida wetland ecosystem. Show one threat happening in your drawing. Label at least <strong>4 things</strong> — include at least one plant, one animal, and the source of the threat.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Reflect</div>
+          <div class="question">"At the start of this lesson, what did you think threatened Florida's wild places? What do you think now — and what changed your thinking?"</div>
+        </div>
+      </div>
+
+      <!-- WHAT TO TURN IN -->
+      <div class="turn-in-block">
+        <div class="turn-in-header">
+          <div class="turn-in-header-icon">📋</div>
+          <div>
+            <div class="turn-in-header-label">Canvas Submission</div>
+            <div class="turn-in-header-title">What to Turn In</div>
+          </div>
+        </div>
+        <div class="turn-in-body">
+
+          <p class="turn-in-intro">Submit your work on Canvas using <strong>one of these options:</strong></p>
+
+          <div class="turn-in-options">
+            <div class="turn-in-option turn-in-option-type">
+              <div class="turn-in-option-icon">⌨️</div>
+              <div class="turn-in-option-title">Type It</div>
+              <div class="turn-in-option-text">Type your answers directly into the Canvas assignment.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-photo">
+              <div class="turn-in-option-icon">📸</div>
+              <div class="turn-in-option-title">Photo It</div>
+              <div class="turn-in-option-text">Take a clear photo of your handwritten work and upload it.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-video">
+              <div class="turn-in-option-icon">🎥</div>
+              <div class="turn-in-option-title">Record It</div>
+              <div class="turn-in-option-text">Record a short video explaining what you did and learned.</div>
+            </div>
+          </div>
+
+          <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
+
+          <div class="turn-in-checklist">
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Notice &amp; Wonder observations (3 things I noticed) and 1 question I had about the Florida wetland photo.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page, written carefully in my notebook.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Threat Identification chart from the Explore tab, with all 4 scenarios filled in.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My written response from the Explore tab — which scenario I chose and what I think could help fix it.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Part A matching responses (1, 2, 3) and my Part B short answer responses (4, 5, 6).</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Write &amp; Explain response, written in complete sentences using science vocabulary.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Part C drawing of a Florida wetland with at least 4 labeled parts and a threat shown.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Closing Video -->
+      <div class="video-wrap" style="margin-top:24px;">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">👋</span>
+          <div>
+            <div class="video-wrap-type">Closing · Wrap-Up</div>
+            <div class="video-wrap-title">Great work today! Next time: What's being done to save Florida's ecosystems?</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">👋</div>
+            <div class="video-placeholder-text">Closing video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 31-1-closing --></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /tab-assignment -->
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <div class="footer-line1">Optima Academy Online · <span>3rd Grade Science</span></div>
+  <div class="footer-line2">Lesson 31.01 · NGSS 3-ESS3-1</div>
+  <div class="footer-line3">© Optima Academy · All rights reserved</div>
+</div>
+
+</div><!-- /page-wrap -->
+
+
+<script>
+
+var LESSON_EMOJI = '🌊';
+
+// ── Tab System ──
+var tabProgress = { vocab: false, lesson: false, explore: false, quiz: false, assignment: false };
+var tabOrder = ['vocab','lesson','explore','quiz','assignment'];
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelector('[data-tab="' + name + '"]').classList.add('active');
+  tabProgress[name] = true;
+  document.querySelector('[data-tab="' + name + '"]').classList.add('visited');
+  var visited = Object.values(tabProgress).filter(Boolean).length;
+  var pct = Math.round((visited / tabOrder.length) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c){
+    if (name === 'vocab') { c.classList.remove('collapsed'); }
+    else { c.classList.add('collapsed'); }
+  });
+  try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+  var top = document.getElementById('pageTop');
+  if (top && top.scrollIntoView) {
+    try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+  }
+}
+
+// ── Checklist ──
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  var icon = item.querySelector('.check-icon');
+  if (icon) {
+    icon.textContent = item.classList.contains('checked') ? LESSON_EMOJI : '';
+  }
+  var checklist = item.closest('.turn-in-checklist');
+  if (!checklist) return;
+  var items = checklist.querySelectorAll('.turn-in-item');
+  if (items.length === 0) return;
+  var allChecked = Array.prototype.every.call(items, function(it){
+    return it.classList.contains('checked');
+  });
+  if (allChecked) {
+    setTimeout(window.launchConfetti, 200);
+  }
+}
+
+// ── Clickable Diagram ──
+(function() {
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel    = document.getElementById('diagramPanel');
+  var wordEl   = document.getElementById('diagramWord');
+  var infoEl   = document.getElementById('diagramInfo');
+  if (!panel) return;
+  hotspots.forEach(function(hs) {
+    hs.addEventListener('click', function(e) {
+      e.stopPropagation();
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+      hs.classList.add('active');
+      var part = hs.getAttribute('data-part').replace(/-/g, ' ');
+      wordEl.textContent = part.charAt(0).toUpperCase() + part.slice(1);
+      infoEl.innerHTML   = hs.getAttribute('data-info');
+      panel.classList.add('visible');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+    }
+  });
+})();
+
+// ── Self-Check Quiz ──
+var quizAnswered = 0;
+var quizCorrect  = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen  = optEl.getAttribute('data-val');
+  q.querySelectorAll('.quiz-opt').forEach(function(o){
+    if (o.getAttribute('data-val') === correct) { o.classList.add('correct'); }
+    else { o.classList.add('disabled'); }
+  });
+  var fbCorrect = q.querySelector('.fb-correct');
+  var fbWrong   = q.querySelector('.fb-wrong');
+  if (chosen === correct) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+  if (quizAnswered === 3) {
+    var scoreBox  = document.getElementById('quizScore');
+    var scoreNum  = document.getElementById('quizScoreNum');
+    var scoreMsg  = document.getElementById('quizScoreMsg');
+    var vCorrect  = document.getElementById('quizVideoCorrect');
+    var vReview   = document.getElementById('quizVideoReview');
+    scoreNum.textContent = quizCorrect;
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '⭐ Perfect! You got every question right!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌊 Great job! Almost there!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip) {
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function() {
+    var rect = tip.getBoundingClientRect();
+    var bw   = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Back to Top ──
+(function() {
+  var btn = document.getElementById('backToTop');
+  if (!btn) return;
+
+  var inIframe = (function() {
+    try { return window.self !== window.top; }
+    catch (e) { return true; }
+  })();
+
+  btn.addEventListener('click', function() {
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    var top = document.getElementById('pageTop');
+    if (top && top.scrollIntoView) {
+      try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+    }
+    try {
+      if (window.frameElement && window.frameElement.scrollIntoView) {
+        window.frameElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (e) {}
+    if (inIframe) {
+      try { window.parent.postMessage({ type: 'optima-lesson:scroll-to-top' }, '*'); } catch (e) {}
+    }
+  });
+
+  if (inIframe) {
+    setTimeout(function() { btn.classList.add('show'); }, 1500);
+  } else {
+    window.addEventListener('scroll', function() {
+      btn.classList.toggle('show', window.pageYOffset > 400);
+    });
+  }
+})();
+
+// ── Confetti ──
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx    = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#0288D1','#4FC3F7','#FDD835','#4DD0E1','#2E7D32','#7B5EA7','#FF8F00','#26C6DA'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── Collapsible Intro Cards ──
+var introCards = document.querySelectorAll('.intro-2col .card');
+introCards.forEach(function(card){
+  var head = card.querySelector('.card-head');
+  if (!head) return;
+  head.addEventListener('click', function(){
+    var willCollapse = !card.classList.contains('collapsed');
+    introCards.forEach(function(c){
+      c.classList.toggle('collapsed', willCollapse);
+    });
+  });
+});
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+tabProgress['vocab'] = true;
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+(function(){
+  var btt = document.getElementById('backToTop');
+  if (btt) { btt.textContent = LESSON_EMOJI + ' Back to Top'; }
+})();
+</script>
+</body>
+</html>

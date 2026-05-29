@@ -1,0 +1,2381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – What Types of Pollution Harm Ecosystems?</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+  background: #F2F0E8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #2B1D12;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap { max-width: 920px; margin: 0 auto; background: #FAF8F4; box-shadow: 0 0 40px rgba(0,0,0,0.07); padding-top: 44px; }
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%);
+  border-bottom: 6px solid #2D6A4F;
+  padding: 22px 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 6px; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2D6A4F, #52B788, #2D6A4F);
+}
+.header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.header-logo {
+  width: 52px; height: 52px; border-radius: 50%; background: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title {
+  font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+  text-shadow: 0 2px 12px rgba(82,183,136,0.3);
+}
+.header-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(82,183,136,0.15); border: 1.5px solid rgba(82,183,136,0.35);
+  border-radius: 28px; padding: 6px 16px;
+}
+.header-badge span:first-child { font-size: 22px; }
+.header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ── Hero Visual ── */
+.hero-visual {
+  background: linear-gradient(180deg, #607d8b 0%, #90a4ae 50%, #78909c 100%);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #2D6A4F;
+}
+.hero-visual svg { display: block; width: 100%; height: auto; }
+
+/* ── Hero Animations ── */
+@keyframes cloud-drift-1 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(40px); }
+}
+@keyframes cloud-drift-2 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-32px); }
+}
+@keyframes sun-pulse {
+  0%, 100% { opacity: 0.65; transform: scale(1); }
+  50%       { opacity: 1;    transform: scale(1.12); }
+}
+@keyframes bird-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(6px, -8px); }
+}
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes hero-twinkle {
+  0%, 100% { opacity: 0.4; transform: scale(0.85); }
+  50%       { opacity: 1;   transform: scale(1.15); }
+}
+@keyframes hero-shimmer {
+  0%, 100% { opacity: 0.25; }
+  50%       { opacity: 0.7; }
+}
+@keyframes hero-sway {
+  0%, 100% { transform: rotate(-2.5deg); }
+  50%       { transform: rotate(2.5deg); }
+}
+@keyframes smoke-rise {
+  0%   { transform: translateY(0) scale(1); opacity: 0.7; }
+  100% { transform: translateY(-40px) scale(1.4); opacity: 0; }
+}
+@keyframes trash-bob {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50%       { transform: translateY(-9px) rotate(3deg); }
+}
+
+.hero-cloud-1   { animation: cloud-drift-1 9s ease-in-out infinite alternate; }
+.hero-cloud-2   { animation: cloud-drift-2 13s ease-in-out infinite alternate; }
+.hero-float     { animation: hero-float 3.5s ease-in-out infinite; }
+.hero-shimmer   { animation: hero-shimmer 3s ease-in-out infinite; }
+.hero-sway      { animation: hero-sway 4s ease-in-out infinite; transform-origin: bottom center; transform-box: fill-box; }
+.smoke-1        { animation: smoke-rise 3s ease-out infinite; }
+.smoke-2        { animation: smoke-rise 3s ease-out infinite 0.9s; }
+.smoke-3        { animation: smoke-rise 3s ease-out infinite 1.7s; }
+.trash-float    { animation: trash-bob 4.5s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+
+/* ── Nature Diagram Animations ── */
+@keyframes mind-blow-bounce {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.12); }
+}
+
+/* ── Info Strip ── */
+.info-strip {
+  display: flex; flex-wrap: wrap; background: #fff;
+  border-bottom: 2px solid #E8DDD2;
+}
+.info-item {
+  flex: 1; min-width: 150px; padding: 12px 16px;
+  border-right: 1px solid #E8DDD2;
+  display: flex; align-items: center; gap: 10px;
+}
+.info-item:last-child { border-right: none; }
+.info-icon {
+  width: 40px; height: 40px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.info-value { font-size: 16px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+/* ── Content Area ── */
+.content { padding: 24px 28px 36px; }
+
+/* ── Card System ── */
+.card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 22px; overflow: hidden;
+  box-shadow: 0 2px 12px rgba(27,67,50,0.04);
+}
+.card-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 20px; border-bottom: 2px solid;
+}
+.card-head-icon {
+  width: 42px; height: 42px; border-radius: 50%; color: #fff;
+  font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.card-head-title { font-size: 20px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.card-body { padding: 18px 22px; }
+.card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+.card-body p:last-child { margin-bottom: 0; }
+
+/* ── Card Color Themes ── */
+.theme-earth  .card-head { background: #FFF0E8; border-color: #E8D0B8; }
+.theme-earth  .card-head-icon { background: #A0522D; }
+.theme-sun    .card-head { background: #FFF9E8; border-color: #F0E4C0; }
+.theme-sun    .card-head-icon { background: #F9A825; }
+.theme-sky    .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-sky    .card-head-icon { background: #0288D1; }
+.theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+.theme-forest .card-head-icon { background: #2E7D32; }
+.theme-rock   .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+.theme-rock   .card-head-icon { background: #7B5EA7; }
+.theme-meadow .card-head { background: #F0F8E8; border-color: #C8E0B8; }
+.theme-meadow .card-head-icon { background: #558B2F; }
+
+/* ── Activity Cards ── */
+.activity-card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 18px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.activity-card.act-warmup  { border-left: 6px solid #52B788; }
+.activity-card.act-lesson  { border-left: 6px solid #F9A825; }
+.activity-card.act-explore { border-left: 6px solid #0288D1; }
+.activity-card.act-practice{ border-left: 6px solid #2E7D32; }
+.activity-card.act-check   { border-left: 6px solid #7B5EA7; }
+
+.act-head {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px 14px 18px;
+  border-bottom: 1.5px solid #E8DDD2;
+}
+.act-num {
+  width: 38px; height: 38px; border-radius: 14px; color: #fff;
+  font-size: 18px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.act-title { font-size: 19px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.act-subtitle { font-size: 12px; color: #9A8E82; }
+.act-time {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap;
+  margin-left: auto; flex-shrink: 0;
+}
+.act-body { padding: 18px 22px 18px 20px; }
+.act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+/* ── Callout Boxes ── */
+.callout {
+  border-radius: 14px; padding: 16px 18px;
+  display: flex; align-items: flex-start; gap: 12px;
+  margin-bottom: 14px;
+}
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+.callout-earth  { background: #FFF0E8; border: 2px solid #E8D0B8; }
+.callout-think  { background: #FFF9E8; border: 2px solid #F0E4C0; }
+.callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+.callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+.callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+
+/* ── Socratic Questions ── */
+.socratic-q {
+  background: linear-gradient(135deg, #EEF8F0, #E8F5E9);
+  border: 2px solid #A8D5B8;
+  border-radius: 16px; padding: 16px 20px;
+  margin: 16px 0;
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.socratic-q .label {
+  font-size: 11px; color: #2D6A4F; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px;
+}
+.socratic-q .question {
+  font-size: 17px; color: #2B1D12; font-weight: 700;
+  line-height: 1.6; font-style: italic;
+}
+
+/* ── Diagram Containers ── */
+.diagram-wrap {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 16px; margin: 16px 0;
+  text-align: center;
+}
+.diagram-wrap svg { max-width: 100%; height: auto; }
+.diagram-caption {
+  font-size: 13px; color: #9A8E82; margin-top: 10px;
+  font-weight: 600; text-align: center;
+}
+
+/* ── Lesson Figure ── */
+.lesson-figure {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 14px 14px 18px; margin: 0 0 22px;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.lesson-figure-label {
+  font-size: 11px; color: #2D6A4F;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  font-weight: 800; margin-bottom: 10px;
+}
+.lesson-figure img {
+  display: block; max-width: 100%; height: auto;
+  border-radius: 10px; margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.lesson-figure-caption {
+  font-size: 14px; color: #5A4D3E;
+  margin-top: 12px; line-height: 1.55; font-weight: 600;
+  text-align: center;
+}
+.lesson-figure-caption strong { color: #1B4332; }
+
+/* ── Key Concept Box ── */
+.key-concept {
+  background: #F0F8E8; border: 2px solid #C8E0B8;
+  border-radius: 14px; padding: 18px 20px; margin: 14px 0;
+}
+.key-concept .kc-label {
+  font-size: 13px; color: #558B2F; text-transform: uppercase;
+  letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px;
+}
+.key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+.key-concept p:last-child { margin-bottom: 0; }
+
+/* ── Practice Questions ── */
+.pq {
+  background: #FAFAF6; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 14px 18px; margin-bottom: 12px;
+}
+.pq-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  color: #fff; font-weight: 800; font-size: 14px;
+  margin-right: 8px; vertical-align: middle;
+}
+.pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+
+/* ── Vocab Flashcards ── */
+.vocab-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px; margin: 14px 0;
+}
+.flip-card { perspective: 800px; height: 195px; cursor: pointer; }
+.flip-card-inner {
+  position: relative; width: 100%; height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 14px 18px; text-align: center;
+  border: 2px solid #E8DDD2;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.06);
+}
+.flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+.flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+.flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #1B4332; margin-bottom: 6px; }
+.flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+.flip-card-back {
+  background: linear-gradient(145deg, #1B4332, #2D6A4F);
+  border-color: #1B4332;
+  transform: rotateY(180deg);
+}
+.flip-card-back .fc-def { font-size: 14.5px; color: #fff; line-height: 1.5; font-weight: 600; }
+.flip-card-back .fc-word-back {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 6px;
+}
+.flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 8px; font-weight: 600; }
+.fc-color-1 .flip-card-front { border-top-color: #52B788; }
+.fc-color-2 .flip-card-front { border-top-color: #2D6A4F; }
+.fc-color-3 .flip-card-front { border-top-color: #F9A825; }
+.fc-color-4 .flip-card-front { border-top-color: #0288D1; }
+.fc-color-5 .flip-card-front { border-top-color: #2E7D32; }
+.fc-color-6 .flip-card-front { border-top-color: #7B5EA7; }
+
+/* ── Vocab Tooltips ── */
+.vtip {
+  position: relative; color: #7B5EA7; font-weight: 700;
+  cursor: help; border-bottom: 2px dotted rgba(123,94,167,0.45);
+  transition: color 0.15s;
+}
+.vtip:hover { color: #5B3EA7; }
+.vtip .vtip-box {
+  position: fixed; background: #1B4332; color: #fff;
+  padding: 12px 16px; border-radius: 12px;
+  font-size: 14px; font-weight: 600; font-style: normal;
+  line-height: 1.55; width: 250px; text-align: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  pointer-events: none; z-index: 9999;
+  box-shadow: 0 6px 24px rgba(27,67,50,0.35);
+  border: 1.5px solid rgba(149,213,178,0.3);
+  transform: translateY(6px);
+}
+.vtip .vtip-box::after {
+  content: ''; position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent; border-top-color: #1B4332;
+}
+.vtip .vtip-word {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block;
+}
+.vtip:hover .vtip-box { opacity: 1; visibility: visible; transform: translateY(0); }
+
+/* ── Reveal / Details ── */
+details {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-left: 5px solid #7B5EA7;
+  border-radius: 14px; margin-bottom: 12px; overflow: hidden;
+}
+details summary {
+  padding: 12px 18px; font-size: 16px; font-weight: 700;
+  color: #1B4332; cursor: pointer;
+}
+details summary:hover { background: #FAFAF6; }
+details > div { padding: 12px 18px 14px; font-size: 16px; color: #5A4D3E; line-height: 1.65; border-top: 1.5px solid #E8DDD2; }
+
+/* ── Footer ── */
+.footer {
+  background: #1B4332; border-top: 4px solid #52B788;
+  padding: 18px 28px; text-align: center;
+}
+.footer-line1 { font-size: 15px; color: #fff; margin-bottom: 4px; }
+.footer-line1 span { color: #95D5B2; font-weight: 700; }
+.footer-line2 { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+.footer-line3 { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+/* ── Mind-Blowing Fact ── */
+.mind-blow {
+  background: linear-gradient(135deg, #1a3a28, #1B4332);
+  border: 2px solid rgba(149,213,178,0.3);
+  border-radius: 18px; padding: 18px 22px;
+  margin: 18px 0; display: flex;
+  align-items: flex-start; gap: 14px;
+  position: relative; overflow: hidden;
+}
+.mind-blow::before {
+  content: ''; position: absolute; top: -30px; right: -30px;
+  width: 100px; height: 100px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(82,183,136,0.15), transparent);
+}
+.mind-blow-icon {
+  font-size: 36px; flex-shrink: 0;
+  animation: mind-blow-bounce 2s ease-in-out infinite;
+}
+.mind-blow-content { flex: 1; }
+.mind-blow-label {
+  font-size: 11px; color: #FDD835; text-transform: uppercase;
+  letter-spacing: 1.5px; font-weight: 800; margin-bottom: 4px;
+}
+.mind-blow-text { font-size: 16px; color: #fff; line-height: 1.6; font-weight: 600; }
+.mind-blow-text strong { color: #95D5B2; }
+
+/* ── Clickable Diagram ── */
+.diagram-interactive { position: relative; }
+.diagram-interactive .hotspot {
+  cursor: pointer; opacity: 0; transition: opacity 0.2s;
+}
+.diagram-interactive .hotspot:hover { opacity: 0.2; }
+.diagram-interactive .hotspot.active { opacity: 0.28; }
+.diagram-info-panel {
+  background: #1B4332; color: #fff;
+  padding: 14px 20px; border-radius: 14px;
+  font-size: 15px; line-height: 1.55; font-weight: 600;
+  text-align: center;
+  border: 1.5px solid rgba(149,213,178,0.3);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  margin: 10px 0 0; display: none;
+}
+.diagram-info-panel.visible { display: block; }
+.diagram-info-panel .dip-word {
+  font-size: 11px; color: #FDD835; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; display: block; margin-bottom: 3px;
+}
+.diagram-tap-hint {
+  text-align: center; font-size: 13px; color: #9A8E82;
+  font-weight: 600; margin-top: 8px;
+}
+
+/* ── Self-Check Quiz ── */
+.quiz-card {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-left: 6px solid #F9A825;
+  border-radius: 18px; margin-bottom: 18px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.quiz-q {
+  background: #FAFAF6; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 16px 18px; margin-bottom: 14px;
+}
+.quiz-q-text { font-size: 17px; color: #2B1D12; font-weight: 700; line-height: 1.6; margin-bottom: 12px; }
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt {
+  padding: 10px 16px; border-radius: 12px;
+  border: 2px solid #E8DDD2; background: #fff;
+  font-size: 15px; font-weight: 700; color: #2B1D12;
+  cursor: pointer; transition: all 0.2s;
+  display: flex; align-items: center; gap: 10px;
+  user-select: none;
+}
+.quiz-opt:hover { background: #EEF8F0; border-color: #52B788; }
+.quiz-opt.correct { background: #EEF8F0 !important; border-color: #2E7D32 !important; color: #1a6b35 !important; }
+.quiz-opt.wrong { background: #FFF0EC !important; border-color: #E8636B !important; color: #a33 !important; }
+.quiz-opt.disabled { pointer-events: none; opacity: 0.6; }
+.quiz-opt .opt-letter {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: #E8DDD2; color: #5A4D3E;
+  font-size: 14px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all 0.2s;
+}
+.quiz-opt.correct .opt-letter { background: #2E7D32; color: #fff; }
+.quiz-opt.wrong .opt-letter { background: #E8636B; color: #fff; }
+.quiz-feedback { font-size: 14px; padding: 10px 14px; border-radius: 10px; margin-top: 10px; display: none; font-weight: 600; line-height: 1.5; }
+.quiz-feedback.show { display: block; }
+.quiz-feedback.fb-correct { background: #EEF8F0; color: #1a6b35; border: 1.5px solid #B8E8CF; }
+.quiz-feedback.fb-wrong { background: #FFF0EC; color: #8a3030; border: 1.5px solid #F5C4BA; }
+.quiz-score {
+  text-align: center; padding: 16px; background: linear-gradient(135deg, #EEF8F0, #E8F5E9);
+  border: 2px solid #C4E5CC; border-radius: 14px; margin-top: 8px; display: none;
+}
+.quiz-score.show { display: block; }
+.quiz-score-num { font-size: 36px; font-weight: 900; color: #1B4332; }
+.quiz-score-label { font-size: 14px; color: #9A8E82; font-weight: 700; }
+.quiz-score-msg { font-size: 16px; color: #2B1D12; font-weight: 700; margin-top: 6px; }
+
+/* ── Go Deeper ── */
+.go-deeper {
+  background: linear-gradient(135deg, #F0EDF6, #E8E2F2);
+  border: 2px solid #D8D0E8; border-radius: 16px;
+  margin: 16px 0; overflow: hidden;
+}
+.go-deeper summary {
+  padding: 14px 18px; font-size: 16px; font-weight: 800;
+  color: #1B4332; cursor: pointer;
+  display: flex; align-items: center; gap: 10px;
+  list-style: none;
+}
+.go-deeper summary::-webkit-details-marker { display: none; }
+.go-deeper summary::before { content: '🔭'; font-size: 22px; }
+.go-deeper summary::after {
+  content: '▸'; margin-left: auto; font-size: 18px; color: #7B5EA7;
+  transition: transform 0.3s;
+}
+.go-deeper[open] summary::after { transform: rotate(90deg); }
+.go-deeper .gd-body {
+  padding: 4px 18px 16px; font-size: 15px;
+  color: #5A4D3E; line-height: 1.7;
+  border-top: 1.5px solid #D8D0E8;
+}
+.go-deeper .gd-body p { margin-bottom: 10px; }
+
+/* ── Back to Top ── */
+.back-to-top {
+  position: fixed; bottom: 24px; right: 24px;
+  height: 40px; padding: 0 18px 0 14px; border-radius: 20px;
+  background: linear-gradient(135deg, #2D6A4F, #52B788);
+  color: #fff; border: none;
+  font-size: 14px; font-weight: 800;
+  font-family: 'Nunito', sans-serif; cursor: pointer;
+  box-shadow: 0 4px 14px rgba(45,106,79,0.35);
+  display: flex; align-items: center; gap: 6px;
+  opacity: 0; visibility: hidden; transform: translateY(20px);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.2s;
+  z-index: 500; letter-spacing: 0.2px; white-space: nowrap;
+}
+.back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { box-shadow: 0 6px 20px rgba(45,106,79,0.5); transform: translateY(-3px); }
+
+/* ── Confetti Canvas ── */
+#confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000; }
+
+/* ── Video Embed System ── */
+.video-wrap { border-radius: 18px; overflow: hidden; border: 2px solid #E8DDD2; box-shadow: 0 4px 20px rgba(27,67,50,0.08); background: #000; margin: 0 0 22px; }
+.video-wrap-header {
+  display: flex; align-items: center; gap: 12px; padding: 12px 18px;
+  background: linear-gradient(135deg, #1B4332, #2D6A4F);
+  border-bottom: 2px solid rgba(149,213,178,0.2);
+}
+.video-wrap-type { font-size: 10px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+.video-wrap-title { font-size: 16px; color: #fff; font-weight: 800; line-height: 1.2; }
+.video-ratio { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.video-ratio iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.video-placeholder {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, #1a3a28, #1B4332);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 24px;
+}
+.video-placeholder-icon { font-size: 44px; margin-bottom: 10px; opacity: 0.55; }
+.video-placeholder-text { font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 600; line-height: 1.5; font-family: 'Nunito', sans-serif; }
+.video-placeholder-id { font-size: 11px; color: rgba(149,213,178,0.4); font-family: monospace; margin-top: 6px; letter-spacing: 0.5px; }
+.video-feedback { display: none; }
+.video-feedback.show { display: block; }
+
+/* ── Collapsible Intro Cards ── */
+.intro-2col .card .card-head { cursor: pointer; user-select: none; position: relative; }
+.intro-2col .card .card-head::after {
+  content: '▾'; position: absolute; right: 16px; top: 50%;
+  transform: translateY(-50%); font-size: 16px; color: #9A8E82; transition: transform 0.25s ease;
+}
+.intro-2col .card.collapsed .card-head::after { transform: translateY(-50%) rotate(-90deg); }
+.intro-2col .card.collapsed .card-body { display: none; }
+
+/* ── Tab Bar ── */
+.tab-bar {
+  position: sticky; top: 44px; z-index: 100;
+  background: #FAF8F4; border-bottom: 3px solid #E8DDD2;
+  display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex: 1; min-width: 130px; padding: 12px 8px 11px;
+  background: transparent; border: none;
+  border-bottom: 4px solid transparent;
+  font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700;
+  color: #9A8E82; cursor: pointer; transition: all 0.2s;
+  white-space: nowrap; line-height: 1.3; text-align: center;
+}
+.tab-btn:hover { color: #1B4332; background: #EEF8F0; }
+.tab-btn.active { color: #1B4332; border-bottom-color: #2D6A4F; background: #fff; }
+.tab-btn .tab-check { display: none; font-size: 12px; color: #2E7D32; margin-left: 4px; font-weight: 800; }
+.tab-btn.visited .tab-check { display: inline; }
+
+/* ── Tab Panels ── */
+.tab-panel { display: none; padding: 24px 28px 36px; }
+.tab-panel.active { display: block; }
+.scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+/* ── Intro 2-col ── */
+.intro-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px 28px 0; }
+.intro-2col .card { margin-bottom: 0; }
+
+/* ── Need Strip ── */
+.need-strip { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 28px 16px; }
+.need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 700; white-space: nowrap; }
+.need-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: #EEF8F0; border: 1.5px solid #C4E5CC;
+  border-radius: 20px; padding: 5px 12px;
+  font-size: 13px; color: #1B4332; font-weight: 700;
+}
+
+/* ── Tab Next Button ── */
+.tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+.tab-next-btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px;
+  background: linear-gradient(135deg, #2D6A4F, #52B788);
+  color: #fff; border: none; border-radius: 28px;
+  font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800;
+  cursor: pointer; box-shadow: 0 4px 16px rgba(45,106,79,0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(45,106,79,0.4); }
+
+/* ── What to Turn In ── */
+.turn-in-block {
+  background: #fff; border: 2.5px solid #0288D1;
+  border-radius: 18px; margin-top: 22px; overflow: hidden;
+  box-shadow: 0 4px 16px rgba(2,136,209,0.1);
+}
+.turn-in-header {
+  display: flex; align-items: center; gap: 14px;
+  background: #E8F4FB; padding: 18px 22px;
+  border-bottom: 2px solid #B3E5FC;
+}
+.turn-in-header-icon { font-size: 36px; line-height: 1; flex-shrink: 0; }
+.turn-in-header-label {
+  font-size: 11px; color: #0288D1; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px;
+}
+.turn-in-header-title { font-size: 24px; color: #1B4332; font-weight: 900; line-height: 1.15; }
+.turn-in-body { padding: 22px 24px 24px; }
+.turn-in-intro { font-size: 16px; color: #5A4D3E; margin-bottom: 18px; line-height: 1.55; }
+.turn-in-intro strong { color: #1B4332; }
+.turn-in-options {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px; margin-bottom: 26px;
+}
+.turn-in-option { border-radius: 16px; padding: 20px 14px; text-align: center; border: 2px solid; }
+.turn-in-option-type  { background: #EEF8F0; border-color: #C4E5CC; }
+.turn-in-option-photo { background: #FFF9E8; border-color: #F0E4C0; }
+.turn-in-option-video { background: #F0EDF6; border-color: #D8D0E8; }
+.turn-in-option-icon  { font-size: 34px; line-height: 1; margin-bottom: 12px; }
+.turn-in-option-title { font-size: 17px; color: #1B4332; font-weight: 800; margin-bottom: 8px; }
+.turn-in-option-text  { font-size: 14px; color: #5A4D3E; line-height: 1.5; }
+.turn-in-subhead { font-size: 16px; color: #5A4D3E; margin-bottom: 14px; line-height: 1.55; }
+.turn-in-checklist { display: flex; flex-direction: column; gap: 10px; }
+.turn-in-item {
+  display: flex; align-items: center; gap: 16px;
+  padding: 14px 18px; background: #FAFAF6;
+  border: 1.5px solid #E8DDD2; border-radius: 14px;
+  cursor: pointer; transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item:hover { background: #F4FAF5; border-color: #C4E5CC; }
+.turn-in-item.checked { background: #EEF8F0; border-color: #B8E8CF; }
+.turn-in-item .turn-in-check {
+  width: 30px; height: 30px; border-radius: 8px;
+  border: 2px solid #95D5B2; background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: 18px; line-height: 1;
+  transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item.checked .turn-in-check { background: #2E7D32; border-color: #2E7D32; }
+.turn-in-item-text { font-size: 16px; color: #2B1D12; font-weight: 600; line-height: 1.55; flex: 1; }
+.turn-in-item.checked .turn-in-item-text { color: #5A4D3E; }
+
+/* ── Suggested Image Placeholder ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px; padding: 20px 22px;
+  margin: 18px 0; text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
+/* ── Student Chart ── */
+.student-chart-wrap {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 16px; margin: 16px 0;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.student-chart-label {
+  font-size: 13px; color: #2D6A4F; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px;
+}
+.student-chart { width: 100%; border-collapse: collapse; font-size: 15px; }
+.student-chart th {
+  background: #1B4332; color: #fff; font-weight: 800;
+  padding: 10px 14px; text-align: left; font-size: 14px;
+}
+.student-chart th:first-child { border-radius: 8px 0 0 0; }
+.student-chart th:last-child { border-radius: 0 8px 0 0; }
+.student-chart td {
+  padding: 14px; border: 1.5px dashed #C4E5CC; background: #FAFAF6;
+  color: #C4C4C4; font-style: italic; font-size: 13px;
+  min-height: 40px; vertical-align: middle;
+}
+.student-chart tr:last-child td:first-child { border-radius: 0 0 0 8px; }
+.student-chart tr:last-child td:last-child { border-radius: 0 0 8px 0; }
+.student-chart .row-label {
+  background: #EEF8F0; color: #1B4332; font-weight: 700;
+  font-style: normal; font-size: 15px; border: 1.5px solid #C4E5CC;
+}
+
+/* ── Progress Bar ── */
+.progress-wrap {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: #0E1C42; padding: 8px 20px 10px;
+  border-bottom: 2px solid rgba(85,200,232,0.3);
+  display: flex; align-items: center; gap: 14px;
+}
+.progress-label { font-size: 12px; color: #55C8E8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+.progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; position: relative; }
+.progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #52B788, #95D5B2, #FDD835); border-radius: 10px; transition: width 0.4s ease; }
+.progress-pct { font-size: 13px; color: #FDD835; font-weight: 800; min-width: 36px; text-align: right; }
+
+/* ── Utilities ── */
+strong { color: #1B4332; }
+em { color: #5A4D3E; }
+.gold { color: #F9A825; font-weight: 700; }
+.forest { color: #2D6A4F; font-weight: 700; }
+.earth { color: #A0522D; font-weight: 700; }
+
+@media (max-width: 620px) {
+  .intro-2col { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .flip-card { height: 175px; }
+  .header-title { font-size: 22px; }
+  .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 6px 9px; }
+  .turn-in-options { grid-template-columns: 1fr; }
+  .turn-in-header-title { font-size: 20px; }
+}
+
+/* ── Hero Banner Custom Animations (Lesson 23.01) ── */
+.pollution-drift { animation: pollutionDrift 7.0s ease-in-out infinite; }
+@keyframes pollutionDrift {
+  0%,100% { transform: translateX(0px); }
+  50% { transform: translateX(38px); }
+}
+.reed-sway {
+  animation: reedSway 4.6s ease-in-out infinite;
+  transform-box: view-box; transform-origin: 690px 212px;
+}
+@keyframes reedSway {
+  0%,100% { transform: rotate(0deg); }
+  34% { transform: rotate(3deg); }
+  68% { transform: rotate(-3deg); }
+}
+.bird-bob { animation: birdBob 3.8s ease-in-out infinite; }
+@keyframes birdBob {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.wsp-a { animation: waterSparkle 3.4s ease-in-out infinite; }
+.wsp-b { animation: waterSparkle 3.4s ease-in-out infinite 1.2s; }
+.wsp-c { animation: waterSparkle 3.4s ease-in-out infinite 2.5s; }
+@keyframes waterSparkle {
+  0%,100% { opacity: 0.12; }
+  50% { opacity: 0.66; }
+}
+</style>
+</head>
+
+<body>
+<canvas id="confettiCanvas"></canvas>
+<button class="back-to-top" id="backToTop" type="button">🏭 Back to Top</button>
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- ═══════════ PROGRESS BAR ═══════════ -->
+<div class="progress-wrap">
+  <span class="progress-label">🏭 Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">What Types of Pollution Harm Ecosystems?</div>
+  <div class="header-badge">
+    <span>🏭</span>
+    <span>Lesson 23.01</span>
+  </div>
+</div>
+
+<!-- ═══════════ HERO BANNER ═══════════ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" width="920" height="260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A river scene showing polluted water on the left transitioning to clean healthy water and reeds on the right">
+
+  <!-- ── SKY ── -->
+  <!-- Left sky: hazy gray (polluted side) -->
+  <rect x="0"   y="0" width="480" height="155" fill="#A8B4BC"/>
+  <rect x="0"   y="0" width="480" height="155" fill="#8899A8" opacity="0.28"/>
+  <!-- Right sky: clear blue (clean side) -->
+  <rect x="440" y="0" width="480" height="155" fill="#7BB8D4"/>
+  <rect x="440" y="0" width="480" height="155" fill="#5AA8CC" opacity="0.22"/>
+  <!-- Soft center blend strip -->
+  <rect x="420" y="0" width="80" height="155" fill="#98B4C4" opacity="0.45"/>
+
+  <!-- ── WATER ── -->
+  <!-- Left water: murky dark green-gray -->
+  <rect x="0"   y="155" width="480" height="68" fill="#4E7070"/>
+  <rect x="0"   y="155" width="480" height="68" fill="#384848" opacity="0.30"/>
+  <!-- Right water: clear blue -->
+  <rect x="440" y="155" width="480" height="68" fill="#2888B8"/>
+  <rect x="440" y="155" width="480" height="68" fill="#1A6898" opacity="0.22"/>
+  <!-- Center blend -->
+  <rect x="420" y="155" width="80"  height="68" fill="#3E7890" opacity="0.50"/>
+
+  <!-- ── BANK / GROUND ── -->
+  <!-- Left bank: bare dirt -->
+  <rect x="0"   y="220" width="480" height="40" fill="#8A7A60"/>
+  <!-- Right bank: green grass -->
+  <rect x="440" y="220" width="480" height="40" fill="#5A8C30"/>
+  <!-- Center blend -->
+  <rect x="420" y="220" width="80"  height="40" fill="#70884A" opacity="0.70"/>
+  <!-- Waterline edge -->
+  <line x1="0" y1="220" x2="920" y2="220" stroke="#2A3A2A" stroke-width="1.2" opacity="0.25"/>
+
+  <!-- ── FAR BANK SILHOUETTE (opposite shore treeline) ── -->
+  <!-- Left far bank: sparse gray-green -->
+  <ellipse cx="60"  cy="152" rx="30" ry="14" fill="#6A7868" opacity="0.60"/>
+  <ellipse cx="120" cy="149" rx="28" ry="13" fill="#6A7868" opacity="0.55"/>
+  <ellipse cx="185" cy="151" rx="32" ry="15" fill="#6A7868" opacity="0.50"/>
+  <ellipse cx="255" cy="150" rx="28" ry="13" fill="#6A7868" opacity="0.55"/>
+  <ellipse cx="320" cy="152" rx="30" ry="14" fill="#6A7868" opacity="0.50"/>
+  <!-- Trunk lines left -->
+  <line x1="120" y1="155" x2="120" y2="162" stroke="#4A4838" stroke-width="2.5" opacity="0.60"/>
+  <line x1="185" y1="158" x2="185" y2="162" stroke="#4A4838" stroke-width="2.5" opacity="0.55"/>
+  <line x1="255" y1="156" x2="255" y2="162" stroke="#4A4838" stroke-width="2.5" opacity="0.55"/>
+
+  <!-- Right far bank: dense, healthy green -->
+  <ellipse cx="510" cy="148" rx="34" ry="17" fill="#3A8028" opacity="0.68"/>
+  <ellipse cx="575" cy="145" rx="38" ry="20" fill="#2E7020" opacity="0.72"/>
+  <ellipse cx="648" cy="144" rx="36" ry="19" fill="#3A8028" opacity="0.70"/>
+  <ellipse cx="718" cy="143" rx="40" ry="20" fill="#2E7020" opacity="0.72"/>
+  <ellipse cx="790" cy="145" rx="36" ry="18" fill="#3A8028" opacity="0.68"/>
+  <ellipse cx="858" cy="146" rx="34" ry="17" fill="#2E7020" opacity="0.70"/>
+  <ellipse cx="910" cy="148" rx="28" ry="15" fill="#3A8028" opacity="0.65"/>
+  <!-- Highlight layer (lighter green tops) -->
+  <ellipse cx="575" cy="140" rx="22" ry="11" fill="#4A9838" opacity="0.45"/>
+  <ellipse cx="718" cy="138" rx="24" ry="12" fill="#4A9838" opacity="0.45"/>
+  <ellipse cx="858" cy="141" rx="20" ry="10" fill="#4A9838" opacity="0.40"/>
+  <!-- Trunk lines right -->
+  <line x1="575" y1="158" x2="575" y2="162" stroke="#2A5018" stroke-width="2.5" opacity="0.65"/>
+  <line x1="648" y1="157" x2="648" y2="162" stroke="#2A5018" stroke-width="2.5" opacity="0.65"/>
+  <line x1="718" y1="156" x2="718" y2="162" stroke="#2A5018" stroke-width="2.5" opacity="0.65"/>
+  <line x1="790" y1="157" x2="790" y2="162" stroke="#2A5018" stroke-width="2.5" opacity="0.60"/>
+
+  <!-- ── FACTORY (left side) ── -->
+  <!-- Main body -->
+  <rect x="38"  y="128" width="188" height="132" rx="3" fill="#5A6068"/>
+  <!-- Facade detail: darker lower section -->
+  <rect x="38"  y="180" width="188" height="80"  rx="0" fill="#48505A" opacity="0.55"/>
+  <!-- Windows -->
+  <rect x="58"  y="145" width="30" height="28" rx="2" fill="#EEC820" opacity="0.55"/>
+  <rect x="104" y="145" width="30" height="28" rx="2" fill="#EEC820" opacity="0.40"/>
+  <rect x="150" y="145" width="30" height="28" rx="2" fill="#EEC820" opacity="0.25"/>
+  <rect x="58"  y="188" width="30" height="26" rx="2" fill="#EEC820" opacity="0.28"/>
+  <rect x="104" y="188" width="30" height="26" rx="2" fill="#EEC820" opacity="0.20"/>
+  <!-- Smokestack pipes -->
+  <rect x="65"  y="58"  width="24" height="75" rx="3" fill="#3A4048"/>
+  <rect x="108" y="72"  width="22" height="60" rx="3" fill="#42484E"/>
+  <rect x="152" y="48"  width="20" height="85" rx="3" fill="#3A4048"/>
+  <!-- Pipe tops (darker cap) -->
+  <rect x="62"  y="54"  width="30" height="8"  rx="2" fill="#2A3038"/>
+  <rect x="105" y="68"  width="28" height="8"  rx="2" fill="#2A3038"/>
+  <rect x="149" y="44"  width="26" height="8"  rx="2" fill="#2A3038"/>
+  <!-- Drain pipe going to water -->
+  <rect x="224" y="188" width="80" height="10" rx="4" fill="#4A5058"/>
+  <ellipse cx="304" cy="193" rx="7" ry="6" fill="#5A9090" opacity="0.65"/>
+
+  <!-- ── ANIMATED SMOKE PUFFS ── -->
+  <g class="pollution-drift">
+    <!-- Stack 1 smoke -->
+    <ellipse cx="77"  cy="48" rx="22" ry="16" fill="#B0B4B8" opacity="0.68"/>
+    <ellipse cx="97"  cy="30" rx="18" ry="14" fill="#A8ACB0" opacity="0.58"/>
+    <ellipse cx="112" cy="14" rx="15" ry="11" fill="#A0A4A8" opacity="0.48"/>
+    <!-- Stack 2 smoke -->
+    <ellipse cx="119" cy="60" rx="20" ry="15" fill="#B4B8BC" opacity="0.62"/>
+    <ellipse cx="138" cy="42" rx="17" ry="13" fill="#ACAFB3" opacity="0.54"/>
+    <!-- Stack 3 smoke -->
+    <ellipse cx="162" cy="36" rx="24" ry="17" fill="#B0B4B8" opacity="0.66"/>
+    <ellipse cx="186" cy="18" rx="20" ry="14" fill="#A8ACB0" opacity="0.56"/>
+    <ellipse cx="204" cy="4"  rx="16" ry="11" fill="#A0A4A8" opacity="0.44"/>
+    <!-- Lighter cores -->
+    <ellipse cx="77"  cy="48" rx="11" ry="8"  fill="#D0D3D6" opacity="0.38"/>
+    <ellipse cx="162" cy="36" rx="12" ry="8"  fill="#D0D3D6" opacity="0.35"/>
+  </g>
+
+  <!-- ── POLLUTION DETAILS LEFT WATER ── -->
+  <!-- Algae / murky surface patches -->
+  <ellipse cx="90"  cy="172" rx="45" ry="10" fill="#3A5838" opacity="0.35"/>
+  <ellipse cx="200" cy="185" rx="55" ry="12" fill="#3A5838" opacity="0.28"/>
+  <ellipse cx="295" cy="168" rx="48" ry="10" fill="#3A5838" opacity="0.32"/>
+  <ellipse cx="375" cy="192" rx="52" ry="11" fill="#3A5838" opacity="0.28"/>
+  <!-- Murky ripple lines -->
+  <path d="M20,162 Q65,159 110,162" stroke="#2A4848" stroke-width="1.5" fill="none" opacity="0.40"/>
+  <path d="M35,174 Q80,171 125,174" stroke="#2A4848" stroke-width="1.5" fill="none" opacity="0.38"/>
+  <path d="M145,165 Q192,162 238,165" stroke="#2A4848" stroke-width="1.5" fill="none" opacity="0.36"/>
+  <path d="M165,178 Q214,175 262,178" stroke="#2A4848" stroke-width="1.5" fill="none" opacity="0.34"/>
+  <path d="M265,160 Q312,157 358,160" stroke="#2A4848" stroke-width="1.5" fill="none" opacity="0.35"/>
+  <path d="M280,174 Q330,171 380,174" stroke="#2A4848" stroke-width="1.5" fill="none" opacity="0.32"/>
+
+  <!-- ── LITTER ON LEFT BANK ── -->
+  <!-- Plastic bottle (lying on side) -->
+  <rect x="68"  y="222" width="28" height="12" rx="6" fill="#D8CC80" opacity="0.90"/>
+  <rect x="94"  y="225" width="10" height="7"  rx="2" fill="#C03020" opacity="0.92"/>
+  <!-- Crumpled wrapper -->
+  <path d="M138,224 L160,222 L158,232 L136,232 Z" fill="#D0B830" opacity="0.85"/>
+  <line x1="147" y1="222" x2="146" y2="232" stroke="#A89020" stroke-width="1" opacity="0.50"/>
+  <!-- Dark plastic bag -->
+  <path d="M218,222 C226,216 238,219 240,227 C240,236 232,239 225,236 C216,233 214,228 218,222 Z"
+        fill="#707068" opacity="0.78"/>
+  <!-- Wilted flower stem -->
+  <path d="M292,220 C292,212 290,200 286,188" stroke="#8A8848" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M286,194 C278,188 268,190 268,198 C274,204 285,202 286,198 Z" fill="#A0A860" opacity="0.60"/>
+
+  <!-- ── HEALTHY REEDS (right side, animated) ── -->
+  <g class="reed-sway">
+    <!-- Reed 1 -->
+    <path d="M530,220 C530,202 530,180 530,158 C530,135 532,112 530,88" stroke="#3A8A22" stroke-width="3.8" fill="none" stroke-linecap="round"/>
+    <path d="M530,150 C538,140 554,140 558,152 C552,164 536,162 530,158 Z" fill="#48A028" opacity="0.90"/>
+    <ellipse cx="530" cy="84" rx="5.5" ry="14" fill="#8A5820" opacity="0.88"/>
+    <!-- Reed 2 -->
+    <path d="M562,220 C562,202 562,180 562,158 C562,136 564,114 562,92" stroke="#409020" stroke-width="4.0" fill="none" stroke-linecap="round"/>
+    <path d="M562,155 C552,146 536,148 534,160 C540,169 556,167 562,162 Z" fill="#50A82E" opacity="0.88"/>
+    <!-- Reed 3 -->
+    <path d="M598,220 C598,200 598,178 598,155 C598,131 600,108 598,84" stroke="#3A8A22" stroke-width="4.2" fill="none" stroke-linecap="round"/>
+    <path d="M598,152 C606,142 622,142 626,155 C619,166 604,164 598,160 Z" fill="#48A028" opacity="0.92"/>
+    <path d="M598,118 C590,112 575,114 573,124 C580,132 596,130 598,124 Z" fill="#48A028" opacity="0.80"/>
+    <ellipse cx="598" cy="81" rx="6" ry="15" fill="#8A5820" opacity="0.90"/>
+    <!-- Reed 4 -->
+    <path d="M634,220 C634,202 634,180 634,158 C634,135 636,112 634,90" stroke="#409020" stroke-width="4.0" fill="none" stroke-linecap="round"/>
+    <path d="M634,154 C642,144 658,144 662,156 C655,167 640,165 634,161 Z" fill="#50A82E" opacity="0.90"/>
+    <!-- Reed 5 (tall) -->
+    <path d="M672,220 C672,200 672,177 672,153 C672,129 674,105 672,80" stroke="#3A8A22" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+    <path d="M672,150 C680,140 697,140 700,153 C694,165 679,163 672,159 Z" fill="#48A028" opacity="0.92"/>
+    <path d="M672,115 C664,109 649,111 647,121 C654,130 670,128 672,122 Z" fill="#50A82E" opacity="0.82"/>
+    <ellipse cx="672" cy="76" rx="6" ry="16" fill="#8A5820" opacity="0.92"/>
+    <!-- Reed 6 -->
+    <path d="M710,220 C710,202 710,180 710,158 C710,135 712,112 710,90" stroke="#409020" stroke-width="3.8" fill="none" stroke-linecap="round"/>
+    <path d="M710,154 C718,144 734,144 738,156 C731,167 716,165 710,161 Z" fill="#48A028" opacity="0.88"/>
+    <ellipse cx="710" cy="87" rx="5.5" ry="14" fill="#8A5820" opacity="0.86"/>
+    <!-- Reed 7 -->
+    <path d="M748,220 C748,203 748,185 748,165 C748,144 750,124 748,105" stroke="#3A8A22" stroke-width="4.0" fill="none" stroke-linecap="round"/>
+    <path d="M748,162 C756,152 772,152 776,164 C769,175 754,173 748,169 Z" fill="#50A82E" opacity="0.90"/>
+    <!-- Reed 8 -->
+    <path d="M786,220 C786,204 786,186 786,168 C786,148 788,128 786,110" stroke="#409020" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M786,165 C794,155 810,155 814,167 C807,178 792,176 786,172 Z" fill="#48A028" opacity="0.86"/>
+    <ellipse cx="786" cy="107" rx="5" ry="13" fill="#8A5820" opacity="0.82"/>
+    <!-- Short reeds background -->
+    <path d="M825,220 C825,208 826,196 824,184" stroke="#409020" stroke-width="3.0" fill="none" stroke-linecap="round"/>
+    <path d="M858,220 C858,210 859,200 857,190" stroke="#3A8A22" stroke-width="3.0" fill="none" stroke-linecap="round"/>
+    <path d="M888,220 C888,213 889,205 887,196" stroke="#409020" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- ── CLEAN WATER RIPPLES (right side) ── -->
+  <g stroke="#4AB0D0" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.50">
+    <path d="M450,162 Q490,159 530,162"/>
+    <path d="M470,174 Q514,171 558,174"/>
+    <path d="M508,186 Q554,183 600,186"/>
+    <path d="M548,198 Q594,195 640,198"/>
+    <path d="M590,208 Q636,205 682,208"/>
+    <path d="M660,162 Q706,159 752,162"/>
+    <path d="M698,175 Q746,172 794,175"/>
+    <path d="M738,188 Q788,185 836,188"/>
+    <path d="M780,200 Q830,197 878,200"/>
+    <path d="M820,210 Q870,207 916,210"/>
+  </g>
+
+  <!-- ── WATER SPARKLES (animated, right side) ── -->
+  <g class="wsp-a" fill="white">
+    <circle cx="490" cy="168" r="2.2"/>
+    <circle cx="622" cy="176" r="2.5"/>
+    <circle cx="768" cy="164" r="2.0"/>
+  </g>
+  <g class="wsp-b" fill="white">
+    <circle cx="534" cy="190" r="2.0"/>
+    <circle cx="692" cy="198" r="2.5"/>
+    <circle cx="845" cy="180" r="2.2"/>
+  </g>
+  <g class="wsp-c" fill="white">
+    <circle cx="565" cy="170" r="2.5"/>
+    <circle cx="730" cy="186" r="2.0"/>
+    <circle cx="884" cy="200" r="2.2"/>
+  </g>
+
+  <!-- ── BIRD (perched on reed, animated bob) ── -->
+  <line x1="668" y1="112" x2="696" y2="112" stroke="#6A4818" stroke-width="3.5" stroke-linecap="round" opacity="0.80"/>
+  <g transform="translate(684, 108)">
+    <g class="bird-bob">
+      <path d="M-12,3 L-21,8 L-21,-2 Z" fill="#5A7890"/>
+      <ellipse cx="0" cy="0" rx="12" ry="7.5" fill="#7090A8"/>
+      <ellipse cx="5" cy="2" rx="6" ry="5" fill="#8CAAC0" opacity="0.55"/>
+      <path d="M-10,-3 C-3,-11 8,-9 10,-3 C6,-1 -1,0 -10,-1 Z" fill="#5A7890"/>
+      <circle cx="11" cy="-4" r="7" fill="#5A7890"/>
+      <path d="M16,-4 L23,-3 L16,-2 Z" fill="#C8B030"/>
+      <circle cx="13.5" cy="-5.5" r="2" fill="#1A2838"/>
+      <circle cx="14" cy="-6"   r="0.7" fill="white" opacity="0.75"/>
+      <path d="M-2,5 C-2,9 -5,12 -7,13" stroke="#B09030" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+      <path d="M-2,5 C-1,9  1,12  2,13" stroke="#B09030" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+      <path d="M-2,5 C 0,8  2,11  4,12" stroke="#B09030" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- ── FOREGROUND STONES (left bank) ── -->
+  <ellipse cx="48"  cy="228" rx="8"  ry="4" fill="#7A7060" opacity="0.55"/>
+  <ellipse cx="98"  cy="234" rx="9"  ry="4.5" fill="#7A7060" opacity="0.50"/>
+  <ellipse cx="325" cy="226" rx="7"  ry="3.5" fill="#7A7060" opacity="0.52"/>
+  <ellipse cx="384" cy="230" rx="8"  ry="4"   fill="#7A7060" opacity="0.48"/>
+
+  <!-- ── RIGHT BANK GRASS TUFTS ── -->
+  <g stroke="#3A8020" stroke-width="2.8" fill="none" stroke-linecap="round" opacity="0.68">
+    <path d="M468,258 C468,248 470,238 468,226"/>
+    <path d="M482,258 C482,250 484,242 482,232"/>
+    <path d="M498,258 C498,252 500,246 498,238"/>
+    <path d="M886,258 C886,248 888,238 886,226"/>
+    <path d="M900,258 C900,250 902,242 900,232"/>
+    <path d="M914,258 C914,253 916,247 914,240"/>
+  </g>
+
+  <!-- ── WET ROCK & SNAIL EASTER EGG ── -->
+  <ellipse cx="408" cy="221" rx="26" ry="10" fill="#4A4E54" opacity="0.88"/>
+  <ellipse cx="408" cy="221" rx="24" ry="8"  fill="#5A5E64" opacity="0.55"/>
+  <ellipse cx="403" cy="218" rx="10" ry="4"  fill="#8090A0" opacity="0.28"/>
+  <g transform="translate(412, 215)">
+    <ellipse cx="0" cy="0" rx="8" ry="6" fill="#9A8050" stroke="#7A6038" stroke-width="1"/>
+    <ellipse cx="1" cy="0" rx="5" ry="3.5" fill="none" stroke="#7A6038" stroke-width="0.9" opacity="0.68"/>
+    <circle  cx="2" cy="0" r="1.8" fill="#7A6038" opacity="0.50"/>
+    <path d="M-8,1 C-13,-1 -16,2 -17,5 C-15,8 -11,8 -8,6" fill="#C0A860" stroke="#9A8040" stroke-width="0.8"/>
+    <ellipse cx="-17" cy="5" rx="3.5" ry="2.5" fill="#C8B068"/>
+    <line x1="-17" y1="3" x2="-19" y2="-1" stroke="#8A6838" stroke-width="0.9" stroke-linecap="round"/>
+    <circle cx="-19" cy="-2" r="1.1" fill="#8A6838"/>
+    <line x1="-16" y1="3" x2="-15" y2="-1" stroke="#8A6838" stroke-width="0.9" stroke-linecap="round"/>
+    <circle cx="-15" cy="-2" r="1.1" fill="#8A6838"/>
+  </g>
+
+</svg>
+</div>
+
+<!-- ═══════════ INFO STRIP ═══════════ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q3 &middot; Unit 8</div>
+      <div class="info-detail">Human Impact &amp; Conservation</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF9E8;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 23</div>
+      <div class="info-detail">Lesson 23.01 &mdash; 3rd Grade Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#F0EDF6;">🌍</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Pollution</div>
+      <div class="info-detail">Land, water, and air — effects on ecosystems</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">NGSS 3-ESS3-1</div>
+      <div class="info-detail">Human Impacts on Earth's Systems</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ INTRO 2-COL CARDS ═══════════ -->
+<div class="intro-2col">
+
+  <!-- Essential Question -->
+  <div class="card theme-forest">
+    <div class="card-head">
+      <div class="card-head-icon">🌲</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This…</div>
+          <div class="question">"What happens to the plants and animals in an ecosystem when the air, water, and land around them get polluted?"</div>
+        </div>
+      </div>
+      <p>Hold this question in your mind as you work through the lesson. By the end, you should be able to answer it with evidence!</p>
+    </div>
+  </div>
+
+  <!-- I Can Statements -->
+  <div class="card theme-sky">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#52B788;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> name three types of pollution and describe what causes each one.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2D6A4F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain how pollution harms living things and the places they call home.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2E7D32;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> describe actions people take to reduce pollution and protect wild ecosystems.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════ NEED STRIP ═══════════ -->
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Pencil &amp; colored pencils</span>
+</div>
+
+<!-- ═══════════ TAB BAR ═══════════ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 1: VOCABULARY                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <!-- Welcome Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to Today's Lesson!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🎬</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 23-1-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 1: NOTICE & WONDER -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#52B788;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Notice &amp; Wonder</div>
+        <div class="act-subtitle">Look carefully before we start learning.</div>
+      </div>
+      <div class="act-time" style="background:#52B788;">⏱ 5 min</div>
+    </div>
+    <div class="act-body">
+      <p>Imagine you're hiking a trail. The stream beside the path looks brown and foamy. Plastic wrappers are tangled in the reeds. Something smells sharp and chemical. Take a minute to think about what you see — then write your observations.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">👀</span>
+        <div>
+          <div class="label">In Your Science Notebook</div>
+          <div class="question">"Write 2 things you notice about the stream. Then write 1 question that pops into your head."</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>There are no wrong observations. Scientists always start by looking carefully. We'll come back to your ideas at the end of the lesson.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOCABULARY FLIP CARDS -->
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>These are the words scientists use when they study how humans affect the environment. <strong>Tap each card to flip it</strong> and read the definition. You'll see these words throughout the lesson!</p>
+
+      <div class="vocab-grid">
+
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🏭</div><div class="fc-word">pollution</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">pollution</div><div class="fc-def">Harmful materials that get into the air, water, or land and hurt living things.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌿</div><div class="fc-word">ecosystem</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">ecosystem</div><div class="fc-def">All the living things in a place — plants, animals, insects — plus their surroundings.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌲</div><div class="fc-word">habitat</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">habitat</div><div class="fc-def">The natural place where a plant or animal lives and finds everything it needs to survive.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🗑️</div><div class="fc-word">land pollution</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">land pollution</div><div class="fc-def">Trash, chemicals, or waste left on the ground that harms soil and the creatures living in it.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">💧</div><div class="fc-word">water pollution</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">water pollution</div><div class="fc-def">Harmful materials — like oil, plastic, or chemicals — that get into rivers, lakes, or oceans.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">💨</div><div class="fc-word">air pollution</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">air pollution</div><div class="fc-def">Smoke, dust, or gases in the air — often from cars and factories — that make it unhealthy to breathe.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">📓</span>
+        <p>Copy this sentence carefully into your science notebook:<br><strong>"Pollution harms ecosystems by making the air, water, and land unsafe for living things."</strong></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button>
+  </div>
+
+</div><!-- /tab-vocab -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 2: THE LESSON                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+
+  <!-- Lesson Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">📖</span>
+      <div>
+        <div class="video-wrap-type">Activity 2 · Core Lesson</div>
+        <div class="video-wrap-title">What Types of Pollution Harm Ecosystems?</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">📖</div>
+        <div class="video-placeholder-text">Core lesson video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 23-1-lesson-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 2: CORE LESSON CONTENT -->
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#F9A825;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📖 The Lesson: Pollution and Ecosystems</div>
+        <div class="act-subtitle">Read and think carefully — science is all about noticing!</div>
+      </div>
+      <div class="act-time" style="background:#F9A825;">⏱ 12 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- SECTION 1 -->
+      <div class="card theme-forest" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌱</div>
+          <div>
+            <div class="card-head-label">Section 1</div>
+            <div class="card-head-title">What Is Pollution?</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p><span class="vtip">Pollution<span class="vtip-box"><span class="vtip-word">pollution</span>Harmful materials that get into air, water, or land and hurt living things.</span></span> happens when harmful stuff ends up somewhere it doesn't belong. There are three main types.</p>
+          <p><strong>Land pollution</strong> is trash and chemicals left on the ground. <strong>Water pollution</strong> is oil, plastic, or waste in rivers and oceans. <strong>Air pollution</strong> is smoke and gases that make the air unhealthy to breathe. Each type can damage the living things nearby.</p>
+
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"Can you think of a place near where you live where you've seen any type of pollution? What did it look like?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Suggested Image 1 — between Section 1 and Section 2 -->
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">📷 Photo · Water Pollution</div>
+        <img src="images/23-01-water-pollution-river.png"
+             alt="A river or stream with murky brownish-gray water and a sheen on the surface, with foam gathering along the reedy banks"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            A real outdoor photograph of a river or stream showing visible water pollution. The water is murky brownish-gray with a slight oily sheen and foam gathering along the banks. Tall reeds and grasses grow at the water's edge. Shot from the riverbank looking across or downstream, with natural light and a forested or rural background. No white borders or edges — full bleed natural scene. Photorealistic, no illustration elements. No people visible.
+          </div>
+          <div class="image-suggestion-file">Save as: images/23-01-water-pollution-river.png</div>
+        </div>
+        <div class="lesson-figure-caption">
+          This is what <strong>water pollution</strong> can look like. The murky color and foam are signs that harmful materials have entered this stream — making it unsafe for the fish and insects that live here.
+        </div>
+      </div>
+
+      <!-- SECTION 2 -->
+      <div class="card theme-sky" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌤</div>
+          <div>
+            <div class="card-head-label">Section 2</div>
+            <div class="card-head-title">How Does Pollution Hurt Living Things?</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Every living thing needs clean water, clean air, and healthy soil to survive. When pollution gets into an <span class="vtip">ecosystem<span class="vtip-box"><span class="vtip-word">ecosystem</span>All the living things in a place, plus their surroundings.</span></span>, it can make animals sick and destroy <span class="vtip">habitats<span class="vtip-box"><span class="vtip-word">habitat</span>The natural place where a plant or animal lives and finds what it needs.</span></span>.</p>
+          <p>Fish die in rivers full of chemicals. Birds get tangled in floating plastic. Trees weaken when acid from smoky air soaks into the soil. Even small amounts of pollution can cause big problems over time.</p>
+        </div>
+      </div>
+
+      <!-- SECTION 3 -->
+      <div class="card theme-earth" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌍</div>
+          <div>
+            <div class="card-head-label">Section 3</div>
+            <div class="card-head-title">Why Do Ecosystems Need Our Help?</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Humans cause most pollution — from factories, cars, farming, and throwing away trash. But humans can fix it, too. <strong>National parks</strong> were created to protect wild places from pollution and development. Scientists clean up oil spills, plant trees, and restore damaged rivers.</p>
+          <p>Laws also help. They set limits on how much pollution factories are allowed to release. When people work together, ecosystems can recover.</p>
+          <p><strong>Real-World Connection:</strong> The cleanup of the Chesapeake Bay — one of the largest estuaries in the country — took decades of teamwork by scientists, governments, and everyday people to reduce water pollution and bring back fish populations.</p>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE DIAGRAM -->
+      <div class="diagram-wrap scroll-reveal">
+        <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
+          🗺 Tap a zone to explore it
+        </div>
+        <div class="diagram-interactive">
+          <svg viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;" role="img" aria-label="Interactive cross-section diagram showing land, air, and water pollution zones with factory and forest">
+
+            <defs>
+              <linearGradient id="skyPolluted" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#90a4ae"/>
+                <stop offset="70%" stop-color="#b0bec5"/>
+                <stop offset="100%" stop-color="#cfd8dc"/>
+              </linearGradient>
+              <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#8d6e63"/>
+                <stop offset="100%" stop-color="#6d4c41"/>
+              </linearGradient>
+              <linearGradient id="riverGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#546e7a"/>
+                <stop offset="100%" stop-color="#455a64"/>
+              </linearGradient>
+              <linearGradient id="forestGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#2e7d32"/>
+                <stop offset="100%" stop-color="#1b5e20"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Sky -->
+            <rect x="0" y="0" width="860" height="185" fill="url(#skyPolluted)"/>
+            <!-- Smog haze layer -->
+            <rect x="0" y="0" width="860" height="100" fill="#607d8b" opacity="0.18"/>
+
+            <!-- Ground -->
+            <rect x="0" y="185" width="860" height="115" fill="url(#groundGrad)"/>
+
+            <!-- River/water (center) -->
+            <rect x="320" y="162" width="220" height="138" fill="url(#riverGrad)"/>
+            <!-- Water surface sheen -->
+            <path d="M322,178 Q410,170 538,180" stroke="#80cbc4" stroke-width="3" fill="none" opacity="0.5" class="hero-shimmer"/>
+            <path d="M325,196 Q415,188 536,198" stroke="#4db6ac" stroke-width="2" fill="none" opacity="0.4" class="hero-shimmer"/>
+            <!-- Oil sheen color blobs -->
+            <ellipse cx="390" cy="210" rx="40" ry="12" fill="#7986cb" opacity="0.25"/>
+            <ellipse cx="460" cy="225" rx="30" ry="9" fill="#ce93d8" opacity="0.2"/>
+            <!-- Floating trash in river -->
+            <rect x="352" y="200" rx="3" ry="3" width="22" height="10" fill="#ef5350" opacity="0.75" class="trash-float"/>
+            <circle cx="445" cy="215" r="8" fill="#1565c0" opacity="0.6"/>
+            <!-- Dead fish outline in river -->
+            <path d="M480,235 Q500,225 510,235 Q500,245 480,235 Z" fill="#b0bec5" opacity="0.7"/>
+            <circle cx="511" cy="233" r="3" fill="#b0bec5" opacity="0.7"/>
+
+            <!-- FACTORY (left side) -->
+            <!-- Main building body -->
+            <rect x="30" y="130" width="200" height="170" fill="#546e7a" rx="3"/>
+            <!-- Building windows -->
+            <rect x="50" y="150" width="28" height="28" fill="#fdd835" opacity="0.55" rx="2"/>
+            <rect x="98" y="150" width="28" height="28" fill="#fdd835" opacity="0.4" rx="2"/>
+            <rect x="146" y="150" width="28" height="28" fill="#fdd835" opacity="0.25" rx="2"/>
+            <rect x="50" y="196" width="28" height="28" fill="#fdd835" opacity="0.3" rx="2"/>
+            <rect x="98" y="196" width="28" height="28" fill="#fdd835" opacity="0.2" rx="2"/>
+            <!-- Factory label bar (decorative stripe, no text) -->
+            <rect x="30" y="130" width="200" height="8" fill="#455a64"/>
+            <!-- Smokestacks -->
+            <rect x="55" y="52" width="26" height="82" fill="#37474f" rx="2"/>
+            <rect x="108" y="68" width="24" height="66" fill="#455a64" rx="2"/>
+            <rect x="158" y="44" width="22" height="90" fill="#37474f" rx="2"/>
+            <!-- Smoke puffs (animated) -->
+            <ellipse cx="68" cy="46" rx="26" ry="18" fill="#9e9e9e" opacity="0.75" class="smoke-1"/>
+            <ellipse cx="85" cy="28" rx="20" ry="14" fill="#757575" opacity="0.6" class="smoke-1"/>
+            <ellipse cx="120" cy="60" rx="24" ry="16" fill="#9e9e9e" opacity="0.65" class="smoke-2"/>
+            <ellipse cx="138" cy="42" rx="20" ry="13" fill="#616161" opacity="0.55" class="smoke-2"/>
+            <ellipse cx="169" cy="36" rx="28" ry="18" fill="#9e9e9e" opacity="0.7" class="smoke-3"/>
+            <ellipse cx="188" cy="18" rx="22" ry="14" fill="#757575" opacity="0.55" class="smoke-3"/>
+            <!-- Pipe draining into river (pollution source) -->
+            <rect x="228" y="178" width="95" height="10" fill="#546e7a" rx="3"/>
+            <ellipse cx="320" cy="183" rx="7" ry="5" fill="#80cbc4" opacity="0.6"/>
+            <!-- Chemical drums on ground -->
+            <rect x="252" y="230" rx="4" ry="4" width="24" height="36" fill="#e53935" opacity="0.85"/>
+            <rect x="282" y="235" rx="4" ry="4" width="22" height="31" fill="#1565c0" opacity="0.8"/>
+            <!-- Spill puddle -->
+            <ellipse cx="277" cy="265" rx="28" ry="8" fill="#b71c1c" opacity="0.25"/>
+
+            <!-- FOREST (right side) -->
+            <!-- Healthy trees -->
+            <rect x="670" y="175" width="16" height="125" fill="#5d4037"/>
+            <ellipse cx="678" cy="158" rx="48" ry="58" fill="url(#forestGrad)"/>
+            <rect x="738" y="183" width="14" height="117" fill="#5d4037"/>
+            <ellipse cx="745" cy="165" rx="42" ry="52" fill="#388e3c"/>
+            <rect x="796" y="178" width="13" height="122" fill="#4e342e"/>
+            <ellipse cx="803" cy="160" rx="38" ry="48" fill="#2e7d32"/>
+            <!-- Slightly stressed tree near pollution zone (yellowing) -->
+            <rect x="613" y="180" width="14" height="120" fill="#795548"/>
+            <ellipse cx="620" cy="164" rx="36" ry="44" fill="#afb42b" opacity="0.82"/>
+            <!-- Fallen leaf debris -->
+            <ellipse cx="598" cy="282" rx="14" ry="6" fill="#827717" opacity="0.5"/>
+            <ellipse cx="636" cy="290" rx="10" ry="4" fill="#827717" opacity="0.4"/>
+
+            <!-- Birds in sky (affected zone) -->
+            <path d="M540,48 Q548,41 556,48" stroke="#455a64" stroke-width="2" fill="none" class="hero-birds"/>
+            <path d="M560,38 Q568,31 576,38" stroke="#455a64" stroke-width="2" fill="none" class="hero-birds"/>
+
+            <!-- HOTSPOT ZONES (invisible but clickable) -->
+            <rect class="hotspot" x="0" y="0" width="860" height="130"
+                  fill="#9e9e9e"
+                  data-part="air-zone"
+                  data-info="Air Pollution: Smoke and gases from the factory rise up and mix with the air. This hazy sky makes it hard for birds and insects to breathe. Acid from air pollution can also fall back down as rain — soaking into soil and harming trees far from the factory."/>
+
+            <rect class="hotspot" x="0" y="130" width="320" height="170"
+                  fill="#546e7a"
+                  data-part="factory-zone"
+                  data-info="Human Activity: Factories, cars, and farms are major sources of pollution. This factory is releasing smoke into the air and dumping waste into the nearby river. Scientists and lawmakers set limits on how much pollution factories are allowed to produce — but not all places have strong protections."/>
+
+            <rect class="hotspot" x="320" y="130" width="220" height="170"
+                  fill="#546e7a"
+                  data-part="water-zone"
+                  data-info="Water Pollution: Chemicals from the factory drain into this river. Fish and frogs need clean water to breathe and reproduce — when pollution enters their habitat, they get sick and die. Animals that drink from the river can be harmed too."/>
+
+            <rect class="hotspot" x="230" y="220" width="92" height="80"
+                  fill="#8d6e63"
+                  data-part="land-zone"
+                  data-info="Land Pollution: Chemical drums and spills on the ground harm the soil. When it rains, polluted soil can wash into nearby streams and rivers, spreading the damage. Small animals like worms and beetles lose their habitat, which disrupts the whole food web."/>
+
+            <rect class="hotspot" x="595" y="130" width="265" height="170"
+                  fill="#2e7d32"
+                  data-part="forest-zone"
+                  data-info="Forest Habitat Under Stress: Even forests can be harmed by nearby pollution. The yellowing tree near the pollution zone is showing signs of stress — acid rain from air pollution is soaking into the soil and weakening it. National parks help protect forests like this by keeping pollution sources far away."/>
+
+          </svg>
+
+          <div class="diagram-info-panel" id="diagramPanel">
+            <span class="dip-word" id="diagramWord"></span>
+            <span id="diagramInfo"></span>
+          </div>
+        </div>
+        <div class="diagram-tap-hint">Tap any zone in the diagram to learn about it.</div>
+        <div class="diagram-caption">A cross-section showing how one pollution source — a factory — can affect air, water, and land in the same ecosystem. Notice how the damage spreads from one zone to others.</div>
+      </div>
+
+      <!-- Key Concept -->
+      <div class="key-concept scroll-reveal">
+        <div class="kc-label">⭐ Key Concept</div>
+        <p><strong>Pollution harms ecosystems by making the air, water, and land unsafe for living things.</strong> When the environment is polluted, plants and animals can't get what they need to survive.</p>
+        <p>This is cause and effect in action — a single pollution source can affect many different parts of an ecosystem at once.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mind-Blowing Fact -->
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Mind-Blowing Fact</div>
+      <div class="mind-blow-text">Every year, more than <strong>8 million tons of plastic</strong> end up in the ocean. That's the same as dumping a garbage truck full of plastic into the sea <strong>every single minute</strong> — all day, every day.</div>
+    </div>
+  </div>
+
+  <!-- Go Deeper -->
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper — How National Parks Fight Pollution</summary>
+    <div class="gd-body">
+      <p>The United States has over <strong>400 national parks</strong> — and one of their most important jobs is protecting ecosystems from pollution. Inside park boundaries, factories can't dump waste, cars are limited, and land can't be developed. This creates a safe zone for wildlife.</p>
+      <p>But pollution doesn't stop at the park fence. Smoke from cities far away can drift in and damage trees. Rivers flowing into parks carry pollution from upstream farms and factories. Scientists at parks like <strong>Yellowstone</strong> and <strong>the Everglades</strong> spend years monitoring air and water quality to catch problems early.</p>
+      <p>One success story: in the 1970s, acid rain from factories in the Midwest was killing fish and trees in parks across the Northeast. Scientists sounded the alarm. New laws cut factory emissions, and over the following decades, forests and streams began to recover. It took decades — but it worked.</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+
+</div><!-- /tab-lesson -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 3: EXPLORE                                            -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+
+  <!-- Explore Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🔬</span>
+      <div>
+        <div class="video-wrap-type">Activity 3 · Investigation</div>
+        <div class="video-wrap-title">Pollution Detective: Identify the Damage</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🔬</div>
+        <div class="video-placeholder-text">Exploration video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 23-1-exploration-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Suggested Image 2 — Explore tab, above investigation -->
+  <div class="lesson-figure">
+    <div class="lesson-figure-label">📷 Photo · Land Pollution</div>
+    <img src="images/23-01-land-pollution-trail.png"
+         alt="A forest trail with plastic bottles, wrappers, and litter scattered on the ground among dry leaves and tree roots"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+    <div class="image-suggestion" style="display:none;">
+      <div class="image-suggestion-icon">🖼️</div>
+      <div class="image-suggestion-label">Suggested Image — Generate This</div>
+      <div class="image-suggestion-desc">
+        A real outdoor photograph taken on a forest trail or natural park path, showing land pollution: plastic bottles, food wrappers, and a torn plastic bag scattered on the ground among fallen leaves, dry grass, and exposed tree roots. Natural afternoon light filtering through the trees. Shot from standing height looking slightly down at the path. Trees and shrubs visible in the background. No white borders, full bleed natural scene. Photorealistic, no illustration. No people visible.
+      </div>
+      <div class="image-suggestion-file">Save as: images/23-01-land-pollution-trail.png</div>
+    </div>
+    <div class="lesson-figure-caption">
+      This is <strong>land pollution</strong> on a forest trail. Trash like this can take hundreds of years to break down — and in the meantime, it harms the soil, poisons small animals, and can wash into nearby streams when it rains.
+    </div>
+  </div>
+
+  <!-- ACTIVITY 3: POLLUTION DETECTIVE -->
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#0288D1;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🔬 Pollution Detective</div>
+        <div class="act-subtitle">Read real-world scenarios and identify the damage.</div>
+      </div>
+      <div class="act-time" style="background:#0288D1;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>You're a pollution detective. Read each scenario below. For each one, decide what type of pollution it is, then record your findings in the chart in your science notebook.</p>
+
+      <!-- Chart to copy -->
+      <div class="student-chart-wrap">
+        <div class="student-chart-label">📋 Copy this chart into your notebook</div>
+        <table class="student-chart">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Type of Pollution</th>
+              <th>Who or What Is Harmed?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="row-label">Scenario 1</td><td></td><td></td></tr>
+            <tr><td class="row-label">Scenario 2</td><td></td><td></td></tr>
+            <tr><td class="row-label">Scenario 3</td><td></td><td></td></tr>
+            <tr><td class="row-label">Scenario 4</td><td></td><td></td></tr>
+            <tr><td class="row-label">Scenario 5</td><td></td><td></td></tr>
+            <tr><td class="row-label">Scenario 6</td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="position:relative; margin:16px 0;">
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">1</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Scenario 1:</strong> A factory releases thick dark smoke from its chimneys all day. The smoke drifts over the nearby forest and the town beyond it.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2D6A4F,#52B788);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(45,106,79,0.3);">2</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Scenario 2:</strong> Plastic bottles and grocery bags wash off a beach and float out to sea. Seabirds and sea turtles mistake the plastic for food.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#52B788,#F9A825);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(82,183,136,0.3);">3</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Scenario 3:</strong> Old car tires and broken appliances are dumped in a vacant lot at the edge of a meadow. Rain soaks through the trash and into the soil beneath.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F9A825,#FDD835);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(249,168,37,0.3);">4</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Scenario 4:</strong> A tanker ship leaks oil into the ocean. The oil spreads across the surface, coating the feathers of seabirds and the fur of sea otters.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#7B5EA7,#9C6FC0);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(123,94,167,0.3);">5</div>
+          <div style="flex:1;background:#F0EDF6;border:2px solid #D8D0E8;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Scenario 5:</strong> Hundreds of cars sit in traffic every morning in a city. Exhaust fumes fill the air. The smog hangs over the city for hours, making it hard for people and animals to breathe.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#0288D1,#29B6F6);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(2,136,209,0.3);">6</div>
+          <div style="flex:1;background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Scenario 6:</strong> A farmer uses too much chemical fertilizer on his crops. When it rains, the extra chemicals wash off the field and flow into a nearby stream, killing the fish and algae that live there.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🌲</span>
+        <div>
+          <div class="label">Think Like a Scientist</div>
+          <div class="question">"Look at your chart. Do any two types of pollution connect to each other? Can one type cause another type?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ACTIVITY 4: RECORD YOUR THINKING -->
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#2E7D32;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">📓 Record Your Thinking</div>
+        <div class="act-subtitle">Organize what you discovered from the scenarios.</div>
+      </div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>In your science notebook, answer these questions after finishing your chart. Use specific details from the scenarios.</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">1</span>
+        <span class="pq-text">Which type of pollution — land, water, or air — appeared the most in the scenarios? Does that surprise you?</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">2</span>
+        <span class="pq-text">Pick one scenario. Describe the harm it causes to living things as specifically as you can.</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">3</span>
+        <span class="pq-text">Did you find an example where pollution in one place — like a farm field — ended up harming a completely different place? Explain what happened.</span>
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">🗣</span>
+        <p>Tell the story of one pollution scenario from beginning to end — what caused it, what happened next, and who was harmed. Use your chart to help you.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DISCUSS -->
+  <div class="card theme-meadow scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">💬</div>
+      <div>
+        <div class="card-head-label">Discussion</div>
+        <div class="card-head-title">Think It Through</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Think through each question on your own. Write your answers in your science notebook before moving on.</p>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Question 1</div>
+          <div class="question">"From the six scenarios, which do you think causes the most harm — and what evidence from the scenario supports that idea?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">💡</span>
+        <div>
+          <div class="label">Question 2</div>
+          <div class="question">"Why do you think some pollution — like Scenario 6 — is harder to see than a pile of trash on the ground?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🌲</span>
+        <div>
+          <div class="label">Question 3 — Connect to Nature</div>
+          <div class="question">"If a river running through a national park got polluted the way it did in Scenario 6, which animals might be harmed first — and why?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🔁</span>
+        <div>
+          <div class="label">Question 4 — Your Turn</div>
+          <div class="question">"What's one thing a kid your age could actually do to help reduce one of these types of pollution? Be specific."</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+
+</div><!-- /tab-explore -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 4: SELF-CHECK QUIZ                                    -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#F9A825;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">🏭</div>
+      <div style="flex:1;">
+        <div style="font-size:19px;color:#1B4332;font-weight:800;line-height:1.2;">🧠 Quick Self-Check</div>
+        <div style="font-size:12px;color:#9A8E82;">Not graded — just for you! See how much you remember.</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+
+      <!-- QUESTION 1 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. What does the word <em>pollution</em> mean?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>The place where an animal or plant lives</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Harmful materials that get into air, water, or land</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>All the living things in a place and their environment</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌿 Exactly! Pollution is harmful material that ends up where it doesn't belong — in the air, water, or land around us.</div>
+        <div class="quiz-feedback fb-wrong">Think back to the vocabulary cards. Which word means all the living things in a place? And which one is about harmful materials? They're two different words.</div>
+      </div>
+
+      <!-- QUESTION 2 -->
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-text">2. A factory spills chemicals into a nearby river. What is most likely to happen next?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Fish and other water animals get sick or die</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>The river water gets cleaner over time</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Plants near the river begin to grow faster</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌊 Right! Water pollution makes the river unsafe for the fish, frogs, and insects that live in it. Their bodies can't handle the chemicals.</div>
+        <div class="quiz-feedback fb-wrong">Think about cause and effect. Chemicals in water hurt the animals that live there — they can't clean it up or grow better from it.</div>
+      </div>
+
+      <!-- QUESTION 3 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">3. Which of these is an example of <em>land pollution</em>?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Car exhaust fumes rising into the sky over a city</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Old tires and trash dumped in a forest clearing</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>An oil spill spreading across the surface of the ocean</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌲 Yes! Trash and waste dumped on the ground is land pollution. It harms the soil and the creatures that live in it.</div>
+        <div class="quiz-feedback fb-wrong">Look at the three types again: which happens on the ground? Fumes go into the air, oil goes into water — what's left is land.</div>
+      </div>
+
+      <!-- Score Display -->
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum">0</div>
+        <div class="quiz-score-label">out of 3</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+
+        <div class="video-feedback" id="quizVideoCorrect" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">✅</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Perfect Score</div>
+                <div class="video-wrap-title">You nailed it, scientist!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">⭐</div>
+                <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 23-1-quiz-perfect --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">📚</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Keep Going</div>
+                <div class="video-wrap-title">Good effort — let's review together!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">💪</div>
+                <div class="video-placeholder-text">Review and encouragement video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 23-1-quiz-review --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+
+</div><!-- /tab-quiz -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 5: ASSIGNMENT                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <!-- Assignment Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">✍️</span>
+      <div>
+        <div class="video-wrap-type">Activity 5 · Assignment</div>
+        <div class="video-wrap-title">Show What You Know About Pollution</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">✍️</div>
+        <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 23-1-assignment-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 5: NOTEBOOK WORK -->
+  <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
+    <div class="act-head">
+      <div class="act-num" style="background:#7B5EA7;">5</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment</div>
+        <div class="act-subtitle">Show what you've learned about pollution and ecosystems.</div>
+      </div>
+      <div class="act-time" style="background:#7B5EA7;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- PART A -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔍 Part A — Classify the Pollution</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Write <strong>land</strong>, <strong>water</strong>, or <strong>air</strong> next to each example in your notebook. Then write one living thing that could be harmed by each one.</p>
+
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">Thick smog covers a city after a week with no wind. Birds and insects are struggling to fly.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">Bags of old pesticides are buried behind a warehouse near a field where deer graze.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">A gray, foamy substance floats on the surface of a river near a paper mill.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">4</span><span class="pq-text">Smoke from burning crop fields drifts over a wetland where migratory birds stop to rest.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">5</span><span class="pq-text">Broken glass and rusted metal are left at the edge of a forest trail after a camping trip.</span></div>
+
+      <!-- PART B -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🚀 Part B — Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer each question in <strong>complete sentences</strong>. Use your science vocabulary!</p>
+
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">6</span><span class="pq-text">Explain why water pollution is dangerous even for animals that don't live in the water — like deer or birds that drink from a river.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">7</span><span class="pq-text">How is air pollution different from land pollution? Give one example of each in your answer.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">8</span><span class="pq-text">Why do you think national parks are an important tool for protecting ecosystems from pollution?</span></div>
+
+      <!-- WRITE & EXPLAIN -->
+      <div class="key-concept scroll-reveal" style="background:#FFF9E8;border-color:#F0E4C0;margin-top:20px;">
+        <div class="kc-label" style="color:#F9A825;">✍️ Write and Explain</div>
+        <p style="font-size:16px;font-weight:700;color:#1B4332;margin-bottom:14px;">Choose one type of pollution. Explain how it harms living things — and what people can do about it.</p>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What do you think?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I think [land / water / air] pollution is especially harmful because…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What did you learn that supports your thinking?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I know this because the lesson showed that…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">Why does that make sense?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="background:#EEF8F0;border-radius:10px;padding:10px 14px;border-left:3px solid #52B788;">
+          <p style="margin:0;font-size:14px;color:#1B4332;">📚 Try to use at least two of these words: <strong>pollution</strong>, <strong>ecosystem</strong>, <strong>habitat</strong>, <strong>water pollution</strong>, <strong>land pollution</strong>, <strong>air pollution</strong></p>
+        </div>
+      </div>
+
+      <!-- PART C -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Label</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Draw an outdoor ecosystem scene — a forest, river, meadow, or coastline — showing one type of pollution entering it. Label at least <strong>four parts</strong>: the pollution source, the type of pollution, and two living things that are harmed. Add arrows to show how the pollution travels or spreads.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Reflect</div>
+          <div class="question">"Look back at what you wrote in your Notice &amp; Wonder at the start of today. Has your thinking changed? What do you understand now that you didn't understand then?"</div>
+        </div>
+      </div>
+
+      <!-- WHAT TO TURN IN -->
+      <div class="turn-in-block">
+        <div class="turn-in-header">
+          <div class="turn-in-header-icon">📋</div>
+          <div>
+            <div class="turn-in-header-label">Canvas Submission</div>
+            <div class="turn-in-header-title">What to Turn In</div>
+          </div>
+        </div>
+        <div class="turn-in-body">
+
+          <p class="turn-in-intro">Submit your work on Canvas using <strong>one of these options:</strong></p>
+
+          <div class="turn-in-options">
+            <div class="turn-in-option turn-in-option-type">
+              <div class="turn-in-option-icon">⌨️</div>
+              <div class="turn-in-option-title">Type It</div>
+              <div class="turn-in-option-text">Type your answers directly into the Canvas assignment.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-photo">
+              <div class="turn-in-option-icon">📸</div>
+              <div class="turn-in-option-title">Photo It</div>
+              <div class="turn-in-option-text">Take a clear photo of your handwritten work and upload it.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-video">
+              <div class="turn-in-option-icon">🎥</div>
+              <div class="turn-in-option-title">Record It</div>
+              <div class="turn-in-option-text">Record a short video explaining what you did and learned.</div>
+            </div>
+          </div>
+
+          <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
+
+          <div class="turn-in-checklist">
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Notice &amp; Wonder observations and question from the Vocabulary page.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page, written in my notebook.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My completed Pollution Detective chart with all six scenarios filled in.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My answers to the three Record Your Thinking questions.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Part A classification answers and Part B short-answer responses.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Write &amp; Explain response, written in complete sentences with vocabulary words.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Part C ecosystem drawing with the pollution source, type, and two affected living things labeled.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Closing Video -->
+      <div class="video-wrap" style="margin-top:24px;">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">👋</span>
+          <div>
+            <div class="video-wrap-type">Closing · Wrap-Up</div>
+            <div class="video-wrap-title">Great work today! Coming up next: how humans help ecosystems recover.</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">👋</div>
+            <div class="video-placeholder-text">Closing video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 23-1-closing --></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /tab-assignment -->
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <div class="footer-line1">Optima Academy Online · <span>3rd Grade Science</span></div>
+  <div class="footer-line2">Lesson 23.01 · NGSS 3-ESS3-1</div>
+  <div class="footer-line3">© Optima Academy · All rights reserved</div>
+</div>
+
+</div><!-- /page-wrap -->
+
+
+<script>
+// ── LESSON EMOJI ──
+var LESSON_EMOJI = '🏭';
+
+// ── Tab Management ──
+var tabProgress = {};
+
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  var panel = document.getElementById('tab-' + name);
+  var btn   = document.querySelector('[data-tab="' + name + '"]');
+  if (panel) panel.classList.add('active');
+  if (btn)   btn.classList.add('active');
+  tabProgress[name] = true;
+  if (btn) btn.classList.add('visited');
+  var visited = Object.keys(tabProgress).length;
+  var pct = Math.round((visited / 5) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+  // Collapse intro cards on non-vocab tabs
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  if (name !== 'vocab') {
+    introCards.forEach(function(c){ c.classList.add('collapsed'); });
+  } else {
+    introCards.forEach(function(c){ c.classList.remove('collapsed'); });
+  }
+}
+
+// ── Interactive Diagram ──
+(function() {
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel    = document.getElementById('diagramPanel');
+  var word     = document.getElementById('diagramWord');
+  var info     = document.getElementById('diagramInfo');
+  if (!panel) return;
+
+  var labels = {
+    'air-zone':     'Air Pollution Zone',
+    'factory-zone': 'Human Activity',
+    'water-zone':   'Water Pollution Zone',
+    'land-zone':    'Land Pollution Zone',
+    'forest-zone':  'Forest Habitat'
+  };
+
+  hotspots.forEach(function(hs) {
+    hs.addEventListener('click', function(e) {
+      e.stopPropagation();
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+      hs.classList.add('active');
+      var part = hs.getAttribute('data-part');
+      word.textContent = labels[part] || part;
+      info.textContent = hs.getAttribute('data-info');
+      panel.classList.add('visible');
+    });
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+    }
+  });
+})();
+
+// ── Self-Check Quiz ──
+var quizAnswered = 0;
+var quizCorrect  = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen  = optEl.getAttribute('data-val');
+  q.querySelectorAll('.quiz-opt').forEach(function(o){
+    if (o.getAttribute('data-val') === correct) { o.classList.add('correct'); }
+    else { o.classList.add('disabled'); }
+  });
+  var fbCorrect = q.querySelector('.fb-correct');
+  var fbWrong   = q.querySelector('.fb-wrong');
+  if (chosen === correct) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+  if (quizAnswered === 3) {
+    var scoreBox  = document.getElementById('quizScore');
+    var scoreNum  = document.getElementById('quizScoreNum');
+    var scoreMsg  = document.getElementById('quizScoreMsg');
+    var vCorrect  = document.getElementById('quizVideoCorrect');
+    var vReview   = document.getElementById('quizVideoReview');
+    scoreNum.textContent = quizCorrect;
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '⭐ Perfect! You got every question right!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌿 Great job! Almost there!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Canvas Submission Checklist ──
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  var icon = item.querySelector('.check-icon');
+  if (icon) {
+    icon.textContent = item.classList.contains('checked') ? LESSON_EMOJI : '';
+  }
+  var checklist = item.closest('.turn-in-checklist');
+  if (!checklist) return;
+  var items = checklist.querySelectorAll('.turn-in-item');
+  if (items.length === 0) return;
+  var allChecked = Array.prototype.every.call(items, function(it){
+    return it.classList.contains('checked');
+  });
+  if (allChecked) {
+    setTimeout(window.launchConfetti, 200);
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip) {
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function() {
+    var rect = tip.getBoundingClientRect();
+    var bw   = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Back to Top ──
+(function() {
+  var btn = document.getElementById('backToTop');
+  if (!btn) return;
+
+  var inIframe = (function() {
+    try { return window.self !== window.top; }
+    catch (e) { return true; }
+  })();
+
+  btn.addEventListener('click', function() {
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    var top = document.getElementById('pageTop');
+    if (top && top.scrollIntoView) {
+      try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+    }
+    try {
+      if (window.frameElement && window.frameElement.scrollIntoView) {
+        window.frameElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (e) {}
+    if (inIframe) {
+      try { window.parent.postMessage({ type: 'optima-lesson:scroll-to-top' }, '*'); } catch (e) {}
+    }
+  });
+
+  if (inIframe) {
+    setTimeout(function() { btn.classList.add('show'); }, 1500);
+  } else {
+    window.addEventListener('scroll', function() {
+      btn.classList.toggle('show', window.pageYOffset > 400);
+    });
+  }
+})();
+
+// ── Confetti ──
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx    = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#52B788','#F9A825','#FDD835','#4DD0E1','#2E7D32','#7B5EA7','#FF8F00','#0288D1'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── Collapsible Intro Cards ──
+var introCards = document.querySelectorAll('.intro-2col .card');
+introCards.forEach(function(card){
+  var head = card.querySelector('.card-head');
+  if (!head) return;
+  head.addEventListener('click', function(){
+    var willCollapse = !card.classList.contains('collapsed');
+    introCards.forEach(function(c){
+      c.classList.toggle('collapsed', willCollapse);
+    });
+  });
+});
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+tabProgress['vocab'] = true;
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+(function(){
+  var btt = document.getElementById('backToTop');
+  if (btt) { btt.textContent = LESSON_EMOJI + ' Back to Top'; }
+})();
+</script>
+</body>
+</html>

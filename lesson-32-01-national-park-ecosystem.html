@@ -1,0 +1,2092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – Researching a National Park Ecosystem</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+  background: #F2F0E8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #2B1D12;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap { max-width: 920px; margin: 0 auto; background: #FAF8F4; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%);
+  border-bottom: 6px solid #2E7D32;
+  padding: 22px 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 6px; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2E7D32, #66BB6A, #2E7D32);
+}
+.header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.header-logo {
+  width: 52px; height: 52px; border-radius: 50%; background: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title {
+  font-size: 28px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+  text-shadow: 0 2px 12px rgba(46,125,50,0.3);
+}
+.header-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(46,125,50,0.2); border: 1.5px solid rgba(102,187,106,0.4);
+  border-radius: 28px; padding: 6px 16px;
+}
+.header-badge span:first-child { font-size: 22px; }
+.header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ── Hero Visual ── */
+.hero-visual {
+  background: linear-gradient(180deg, #87CEEB 0%, #C8E6F7 50%, #D4E8B4 100%);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #2E7D32;
+  min-height: 120px;
+}
+.hero-visual svg { display: block; width: 100%; height: auto; }
+
+/* ── Hero Animations ── */
+@keyframes cloud-drift-1 { 0% { transform: translateX(0); } 100% { transform: translateX(40px); } }
+@keyframes cloud-drift-2 { 0% { transform: translateX(0); } 100% { transform: translateX(-32px); } }
+@keyframes sun-pulse { 0%, 100% { opacity: 0.65; transform: scale(1); } 50% { opacity: 1; transform: scale(1.12); } }
+@keyframes bird-drift { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(6px, -8px); } }
+@keyframes hero-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes hero-twinkle { 0%, 100% { opacity: 0.4; transform: scale(0.85); } 50% { opacity: 1; transform: scale(1.15); } }
+@keyframes hero-shimmer { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.7; } }
+@keyframes hero-spin-slow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes hero-sway { 0%, 100% { transform: rotate(-2.5deg); } 50% { transform: rotate(2.5deg); } }
+
+.hero-cloud-1   { animation: cloud-drift-1 9s ease-in-out infinite alternate; }
+.hero-cloud-2   { animation: cloud-drift-2 13s ease-in-out infinite alternate; }
+.hero-sun-glow  { animation: sun-pulse 4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-birds     { animation: bird-drift 5s ease-in-out infinite; }
+.hero-float     { animation: hero-float 3.5s ease-in-out infinite; }
+.hero-shimmer   { animation: hero-shimmer 3s ease-in-out infinite; }
+.hero-sway      { animation: hero-sway 4s ease-in-out infinite; transform-origin: bottom center; transform-box: fill-box; }
+
+/* ── Hero Banner — Lesson 32.01 specific animations ── */
+@keyframes cloudDrift {
+  0%,100% { transform: translateX(0px); }
+  50%     { transform: translateX(8px); }
+}
+@keyframes treeSway {
+  0%,100% { transform: rotate(0deg); }
+  50%     { transform: rotate(1deg); }
+}
+@keyframes notebookBob {
+  0%,100% { transform: translateY(0px); }
+  50%     { transform: translateY(-2px); }
+}
+@keyframes cardBobA {
+  0%,100% { transform: rotate(-4deg) translateY(0px); }
+  50%     { transform: rotate(-4deg) translateY(-2px); }
+}
+@keyframes cardBobB {
+  0%,100% { transform: rotate(3deg) translateY(0px); }
+  50%     { transform: rotate(3deg) translateY(-2px); }
+}
+@keyframes cardBobC {
+  0%,100% { transform: rotate(-2deg) translateY(0px); }
+  50%     { transform: rotate(-2deg) translateY(-2px); }
+}
+@keyframes lensGlint {
+  0%,100% { opacity:0.16; }
+  50%     { opacity:0.52; }
+}
+@keyframes weatherPulse {
+  0%,100% { opacity:0.7; transform: scale(1); }
+  50%     { opacity:1; transform: scale(1.04); }
+}
+@keyframes pineconePulse {
+  0%,100% { opacity:0.86; transform: scale(1); }
+  50%     { opacity:1; transform: scale(1.05); }
+}
+.cloud-drift    { animation: cloudDrift 13s ease-in-out infinite; transform-box: fill-box; transform-origin: center center; }
+.tree-sway      { animation: treeSway 6.5s ease-in-out infinite; transform-box: fill-box; transform-origin: center bottom; }
+.notebook-bob   { animation: notebookBob 6.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center center; }
+.card-bob-a     { animation: cardBobA 5.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center center; }
+.card-bob-b     { animation: cardBobB 6.3s ease-in-out infinite; transform-box: fill-box; transform-origin: center center; }
+.card-bob-c     { animation: cardBobC 5.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center center; }
+.lens-glint     { animation: lensGlint 4.8s ease-in-out infinite; }
+.weather-pulse  { animation: weatherPulse 5.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center center; }
+.pinecone-pulse { animation: pineconePulse 5.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center center; }
+
+@keyframes mind-blow-bounce { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+
+/* ── Info Strip ── */
+.info-strip { display: flex; flex-wrap: wrap; background: #fff; border-bottom: 2px solid #E8DDD2; }
+.info-item { flex: 1; min-width: 150px; padding: 12px 16px; border-right: 1px solid #E8DDD2; display: flex; align-items: center; gap: 10px; }
+.info-item:last-child { border-right: none; }
+.info-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.info-value { font-size: 16px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+/* ── Card System ── */
+.card { background: #fff; border: 2px solid #E8DDD2; border-radius: 18px; margin-bottom: 22px; overflow: hidden; box-shadow: 0 2px 12px rgba(27,67,50,0.04); }
+.card-head { display: flex; align-items: center; gap: 10px; padding: 14px 20px; border-bottom: 2px solid; }
+.card-head-icon { width: 42px; height: 42px; border-radius: 50%; color: #fff; font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.card-head-title { font-size: 20px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.card-body { padding: 18px 22px; }
+.card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+.card-body p:last-child { margin-bottom: 0; }
+
+.theme-earth  .card-head { background: #FFF0E8; border-color: #E8D0B8; }
+.theme-earth  .card-head-icon { background: #A0522D; }
+.theme-sun    .card-head { background: #FFF9E8; border-color: #F0E4C0; }
+.theme-sun    .card-head-icon { background: #F9A825; }
+.theme-sky    .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-sky    .card-head-icon { background: #0288D1; }
+.theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+.theme-forest .card-head-icon { background: #2E7D32; }
+.theme-rock   .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+.theme-rock   .card-head-icon { background: #7B5EA7; }
+.theme-meadow .card-head { background: #F0F8E8; border-color: #C8E0B8; }
+.theme-meadow .card-head-icon { background: #558B2F; }
+
+/* ── Activity Cards ── */
+.activity-card { background: #fff; border: 2px solid #E8DDD2; border-radius: 18px; margin-bottom: 18px; overflow: hidden; box-shadow: 0 2px 10px rgba(27,67,50,0.04); }
+.activity-card.act-warmup  { border-left: 6px solid #52B788; }
+.activity-card.act-lesson  { border-left: 6px solid #F9A825; }
+.activity-card.act-explore { border-left: 6px solid #0288D1; }
+.activity-card.act-practice{ border-left: 6px solid #2E7D32; }
+.activity-card.act-check   { border-left: 6px solid #7B5EA7; }
+.act-head { display: flex; align-items: center; gap: 12px; padding: 14px 20px 14px 18px; border-bottom: 1.5px solid #E8DDD2; }
+.act-num { width: 38px; height: 38px; border-radius: 14px; color: #fff; font-size: 18px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.act-title { font-size: 19px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.act-subtitle { font-size: 12px; color: #9A8E82; }
+.act-time { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap; margin-left: auto; flex-shrink: 0; }
+.act-body { padding: 18px 22px 18px 20px; }
+.act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+/* ── Callout Boxes ── */
+.callout { border-radius: 14px; padding: 16px 18px; display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+.callout-earth  { background: #FFF0E8; border: 2px solid #E8D0B8; }
+.callout-think  { background: #FFF9E8; border: 2px solid #F0E4C0; }
+.callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+.callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+.callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+
+/* ── Socratic Questions ── */
+.socratic-q { background: linear-gradient(135deg, #EEF8F0, #E8F5E9); border: 2px solid #A8D5B8; border-radius: 16px; padding: 16px 20px; margin: 16px 0; display: flex; align-items: flex-start; gap: 12px; }
+.socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.socratic-q .label { font-size: 11px; color: #2D6A4F; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; }
+.socratic-q .question { font-size: 17px; color: #2B1D12; font-weight: 700; line-height: 1.6; font-style: italic; }
+
+/* ── Diagram Containers ── */
+.diagram-wrap { background: #fff; border: 2px solid #E8DDD2; border-radius: 16px; padding: 16px; margin: 16px 0; text-align: center; }
+.diagram-wrap svg { max-width: 100%; height: auto; }
+.diagram-caption { font-size: 13px; color: #9A8E82; margin-top: 10px; font-weight: 600; text-align: center; }
+.diagram-interactive { position: relative; cursor: pointer; }
+.diagram-info-panel {
+  display: none; margin-top: 12px; background: linear-gradient(135deg, #1B4332, #2D6A4F);
+  border-radius: 14px; padding: 14px 18px; text-align: left;
+}
+.diagram-info-panel.visible { display: block; }
+.diagram-info-panel .dip-word { display: block; font-size: 13px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 6px; }
+.diagram-info-panel #diagramInfo { font-size: 15px; color: #fff; line-height: 1.6; font-weight: 600; }
+.diagram-tap-hint { font-size: 12px; color: #9A8E82; margin-top: 8px; font-weight: 600; }
+.hotspot { opacity: 0; cursor: pointer; transition: opacity 0.2s; }
+.hotspot:hover, .hotspot.active { opacity: 0.22; }
+
+/* ── Lesson Figure ── */
+.lesson-figure { background: #fff; border: 2px solid #E8DDD2; border-radius: 16px; padding: 14px 14px 18px; margin: 0 0 22px; box-shadow: 0 2px 10px rgba(27,67,50,0.04); }
+.lesson-figure-label { font-size: 11px; color: #2D6A4F; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 800; margin-bottom: 10px; }
+.lesson-figure img { display: block; max-width: 100%; height: auto; border-radius: 10px; margin: 0 auto; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.lesson-figure-caption { font-size: 14px; color: #5A4D3E; margin-top: 12px; line-height: 1.55; font-weight: 600; text-align: center; }
+.lesson-figure-caption strong { color: #1B4332; }
+
+/* ── Image Suggestion ── */
+.image-suggestion { background: linear-gradient(135deg, #FFF3E0, #FFF8E1); border: 2.5px dashed #F9A825; border-radius: 16px; padding: 20px 22px; margin: 18px 0; text-align: center; }
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label { font-size: 11px; color: #E65100; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.image-suggestion-desc { font-size: 15px; color: #5A4D3E; line-height: 1.65; font-weight: 600; max-width: 680px; margin: 0 auto 12px; text-align: left; }
+.image-suggestion-file { font-size: 12px; color: #9A8E82; font-family: monospace; background: rgba(0,0,0,0.05); border-radius: 6px; padding: 4px 10px; display: inline-block; margin-top: 6px; }
+
+/* ── Key Concept Box ── */
+.key-concept { background: #F0F8E8; border: 2px solid #C8E0B8; border-radius: 14px; padding: 18px 20px; margin: 14px 0; }
+.key-concept .kc-label { font-size: 13px; color: #558B2F; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px; }
+.key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+.key-concept p:last-child { margin-bottom: 0; }
+
+/* ── Practice Questions ── */
+.pq { background: #FAFAF6; border: 2px solid #E8DDD2; border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; }
+.pq-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; color: #fff; font-weight: 800; font-size: 14px; margin-right: 8px; vertical-align: middle; }
+.pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+
+/* ── Student Chart ── */
+.student-chart-wrap { background: #fff; border: 2px solid #E8DDD2; border-radius: 14px; padding: 16px; margin: 16px 0; box-shadow: 0 2px 10px rgba(27,67,50,0.04); }
+.student-chart-label { font-size: 13px; color: #2D6A4F; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+.student-chart { width: 100%; border-collapse: collapse; font-size: 15px; }
+.student-chart th { background: #1B4332; color: #fff; font-weight: 800; padding: 10px 14px; text-align: left; font-size: 14px; }
+.student-chart th:first-child { border-radius: 8px 0 0 0; }
+.student-chart th:last-child { border-radius: 0 8px 0 0; }
+.student-chart td { padding: 14px; border: 1.5px dashed #C4E5CC; background: #FAFAF6; color: #C4C4C4; font-style: italic; font-size: 13px; min-height: 40px; vertical-align: middle; }
+.student-chart tr:last-child td:first-child { border-radius: 0 0 0 8px; }
+.student-chart tr:last-child td:last-child { border-radius: 0 0 8px 0; }
+.student-chart .row-label { background: #EEF8F0; color: #1B4332; font-weight: 700; font-style: normal; font-size: 15px; border: 1.5px solid #C4E5CC; }
+
+/* ── Vocab Flashcards ── */
+.vocab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+.flip-card { perspective: 800px; height: 195px; cursor: pointer; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.5s ease; transform-style: preserve-3d; }
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 16px; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 14px 18px; text-align: center; border: 2px solid #E8DDD2; box-shadow: 0 2px 10px rgba(27,67,50,0.06); }
+.flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+.flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+.flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #1B4332; margin-bottom: 6px; }
+.flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+.flip-card-back { background: linear-gradient(145deg, #1B4332, #2D6A4F); border-color: #1B4332; transform: rotateY(180deg); }
+.flip-card-back .fc-def { font-size: 14.5px; color: #fff; line-height: 1.5; font-weight: 600; }
+.flip-card-back .fc-word-back { font-size: 11px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 6px; }
+.flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 8px; font-weight: 600; }
+.fc-color-1 .flip-card-front { border-top-color: #52B788; }
+.fc-color-2 .flip-card-front { border-top-color: #2D6A4F; }
+.fc-color-3 .flip-card-front { border-top-color: #F9A825; }
+.fc-color-4 .flip-card-front { border-top-color: #0288D1; }
+.fc-color-5 .flip-card-front { border-top-color: #2E7D32; }
+.fc-color-6 .flip-card-front { border-top-color: #7B5EA7; }
+
+/* ── Vocab Tooltips ── */
+.vtip { position: relative; color: #7B5EA7; font-weight: 700; cursor: help; border-bottom: 2px dotted rgba(123,94,167,0.45); transition: color 0.15s; }
+.vtip:hover { color: #5B3EA7; }
+.vtip .vtip-box { position: fixed; background: #1B4332; color: #fff; padding: 12px 16px; border-radius: 12px; font-size: 14px; font-weight: 600; font-style: normal; line-height: 1.55; width: 250px; text-align: center; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s; pointer-events: none; z-index: 9999; box-shadow: 0 6px 24px rgba(27,67,50,0.35); }
+.vtip:hover .vtip-box { opacity: 1; visibility: visible; }
+.vtip .vtip-word { display: block; font-size: 11px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; }
+
+/* ── Quiz Card ── */
+.quiz-card { background: #fff; border: 2px solid #E8DDD2; border-radius: 18px; margin-bottom: 18px; overflow: hidden; box-shadow: 0 2px 10px rgba(27,67,50,0.04); }
+.quiz-q { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1.5px solid #E8DDD2; }
+.quiz-q:last-of-type { border-bottom: none; }
+.quiz-q-text { font-size: 17px; color: #1B4332; font-weight: 700; line-height: 1.5; margin-bottom: 10px; }
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt { background: #FAFAF6; border: 2px solid #E8DDD2; border-radius: 12px; padding: 12px 16px; font-size: 16px; color: #2B1D12; cursor: pointer; display: flex; align-items: center; gap: 10px; font-weight: 600; line-height: 1.4; transition: border-color 0.2s, background 0.2s; }
+.quiz-opt:hover { border-color: #95D5B2; background: #F4FAF5; }
+.quiz-opt.correct { background: #EEF8F0; border-color: #52B788; color: #1a6b35; }
+.quiz-opt.wrong   { background: #FFF0EC; border-color: #E8636B; color: #8a3030; }
+.quiz-opt.disabled { opacity: 0.5; cursor: default; }
+.opt-letter { width: 30px; height: 30px; border-radius: 8px; background: #E8DDD2; color: #5A4D3E; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s; }
+.quiz-opt.correct .opt-letter { background: #2E7D32; color: #fff; }
+.quiz-opt.wrong .opt-letter { background: #E8636B; color: #fff; }
+.quiz-feedback { font-size: 14px; padding: 10px 14px; border-radius: 10px; margin-top: 10px; display: none; font-weight: 600; line-height: 1.5; }
+.quiz-feedback.show { display: block; }
+.quiz-feedback.fb-correct { background: #EEF8F0; color: #1a6b35; border: 1.5px solid #B8E8CF; }
+.quiz-feedback.fb-wrong { background: #FFF0EC; color: #8a3030; border: 1.5px solid #F5C4BA; }
+.quiz-score { text-align: center; padding: 16px; background: linear-gradient(135deg, #EEF8F0, #E8F5E9); border: 2px solid #C4E5CC; border-radius: 14px; margin-top: 8px; display: none; }
+.quiz-score.show { display: block; }
+.quiz-score-num { font-size: 36px; font-weight: 900; color: #1B4332; }
+.quiz-score-label { font-size: 14px; color: #9A8E82; font-weight: 700; }
+.quiz-score-msg { font-size: 16px; color: #2B1D12; font-weight: 700; margin-top: 6px; }
+
+/* ── Go Deeper ── */
+.go-deeper { background: linear-gradient(135deg, #F0EDF6, #E8E2F2); border: 2px solid #D8D0E8; border-radius: 16px; margin: 16px 0; overflow: hidden; }
+.go-deeper summary { padding: 14px 18px; font-size: 16px; font-weight: 800; color: #1B4332; cursor: pointer; display: flex; align-items: center; gap: 10px; list-style: none; }
+.go-deeper summary::-webkit-details-marker { display: none; }
+.go-deeper summary::before { content: '🔭'; font-size: 22px; }
+.go-deeper summary::after { content: '▸'; margin-left: auto; font-size: 18px; color: #7B5EA7; transition: transform 0.3s; }
+.go-deeper[open] summary::after { transform: rotate(90deg); }
+.go-deeper .gd-body { padding: 4px 18px 16px; font-size: 15px; color: #5A4D3E; line-height: 1.7; border-top: 1.5px solid #D8D0E8; }
+.go-deeper .gd-body p { margin-bottom: 10px; }
+
+/* ── Mind Blow ── */
+.mind-blow { background: linear-gradient(135deg, #0A2218, #1B4332); border: 2px solid rgba(149,213,178,0.25); border-radius: 18px; padding: 20px 24px; margin: 0 0 22px; display: flex; align-items: flex-start; gap: 16px; }
+.mind-blow-icon { font-size: 38px; flex-shrink: 0; animation: mind-blow-bounce 2s ease-in-out infinite; }
+.mind-blow-content { flex: 1; }
+.mind-blow-label { font-size: 10px; color: #FDD835; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; margin-bottom: 6px; }
+.mind-blow-text { font-size: 16px; color: #fff; line-height: 1.65; }
+.mind-blow-text strong { color: #95D5B2; }
+
+/* ── Slim Mind-Blow ── */
+.mind-blow-slim { background: linear-gradient(135deg, #1a3a28, #1B4332); border: 2px solid rgba(149,213,178,0.3); border-radius: 14px; padding: 12px 18px; margin: 0 0 18px; display: flex; align-items: center; gap: 12px; }
+.mbs-icon { font-size: 26px; flex-shrink: 0; }
+.mbs-content { flex: 1; }
+.mbs-label { font-size: 10px; color: #FDD835; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+.mbs-text { font-size: 14px; color: #fff; line-height: 1.55; font-weight: 600; }
+.mbs-text strong { color: #95D5B2; }
+
+/* ── Scroll Animations ── */
+.scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+/* ── Back to Top ── */
+.back-to-top { position: fixed; bottom: 24px; right: 24px; height: 40px; padding: 0 18px 0 14px; border-radius: 20px; background: linear-gradient(135deg, #2D6A4F, #52B788); color: #fff; border: none; font-size: 14px; font-weight: 800; font-family: 'Nunito', sans-serif; cursor: pointer; box-shadow: 0 4px 14px rgba(45,106,79,0.35); display: flex; align-items: center; gap: 6px; opacity: 0; visibility: hidden; transform: translateY(20px); transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.2s; z-index: 500; letter-spacing: 0.2px; white-space: nowrap; }
+.back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { box-shadow: 0 6px 20px rgba(45,106,79,0.5); transform: translateY(-3px); }
+
+/* ── Confetti Canvas ── */
+#confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000; }
+
+/* ── Video Embed System ── */
+.video-wrap { border-radius: 18px; overflow: hidden; border: 2px solid #E8DDD2; box-shadow: 0 4px 20px rgba(27,67,50,0.08); background: #000; margin: 0 0 22px; }
+.video-wrap-header { display: flex; align-items: center; gap: 12px; padding: 12px 18px; background: linear-gradient(135deg, #1B4332, #2D6A4F); border-bottom: 2px solid rgba(149,213,178,0.2); }
+.video-wrap-type { font-size: 10px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+.video-wrap-title { font-size: 16px; color: #fff; font-weight: 800; line-height: 1.2; }
+.video-ratio { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.video-ratio iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.video-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #1a3a28, #1B4332); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; }
+.video-placeholder-icon { font-size: 44px; margin-bottom: 10px; opacity: 0.55; }
+.video-placeholder-text { font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 600; line-height: 1.5; font-family: 'Nunito', sans-serif; }
+.video-placeholder-id { font-size: 11px; color: rgba(149,213,178,0.4); font-family: monospace; margin-top: 6px; letter-spacing: 0.5px; }
+.video-feedback { display: none; }
+.video-feedback.show { display: block; }
+
+/* ── Collapsible Intro Cards ── */
+.intro-2col .card .card-head { cursor: pointer; user-select: none; position: relative; }
+.intro-2col .card .card-head::after { content: '▾'; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #9A8E82; transition: transform 0.25s ease; }
+.intro-2col .card.collapsed .card-head::after { transform: translateY(-50%) rotate(-90deg); }
+.intro-2col .card.collapsed .card-body { display: none; }
+
+/* ── Tab Bar ── */
+.tab-bar { position: sticky; top: 44px; z-index: 100; background: #FAF8F4; border-bottom: 3px solid #E8DDD2; display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn { flex: 1; min-width: 130px; padding: 12px 8px 11px; background: transparent; border: none; border-bottom: 4px solid transparent; font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700; color: #9A8E82; cursor: pointer; transition: all 0.2s; white-space: nowrap; line-height: 1.3; text-align: center; }
+.tab-btn:hover { color: #1B4332; background: #EEF8F0; }
+.tab-btn.active { color: #1B4332; border-bottom-color: #2D6A4F; background: #fff; }
+.tab-btn .tab-check { display: none; font-size: 12px; color: #2E7D32; margin-left: 4px; font-weight: 800; }
+.tab-btn.visited .tab-check { display: inline; }
+
+/* ── Tab Panels ── */
+.tab-panel { display: none; padding: 24px 28px 36px; }
+.tab-panel.active { display: block; }
+
+/* ── Intro 2-col ── */
+.intro-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px 28px 0; }
+.intro-2col .card { margin-bottom: 0; }
+
+/* ── Need Strip ── */
+.need-strip { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 28px 16px; }
+.need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 700; white-space: nowrap; }
+.need-chip { display: inline-flex; align-items: center; gap: 5px; background: #EEF8F0; border: 1.5px solid #C4E5CC; border-radius: 20px; padding: 5px 12px; font-size: 13px; color: #1B4332; font-weight: 700; }
+
+/* ── Tab Next Button ── */
+.tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+.tab-next-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px; background: linear-gradient(135deg, #2D6A4F, #52B788); color: #fff; border: none; border-radius: 28px; font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 16px rgba(45,106,79,0.3); transition: transform 0.2s, box-shadow 0.2s; }
+.tab-next-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(45,106,79,0.4); }
+
+/* ── What to Turn In ── */
+.turn-in-block { background: #fff; border: 2.5px solid #0288D1; border-radius: 18px; margin-top: 22px; overflow: hidden; box-shadow: 0 4px 16px rgba(2,136,209,0.1); }
+.turn-in-header { display: flex; align-items: center; gap: 14px; background: #E8F4FB; padding: 18px 22px; border-bottom: 2px solid #B3E5FC; }
+.turn-in-header-icon { font-size: 36px; line-height: 1; flex-shrink: 0; }
+.turn-in-header-label { font-size: 11px; color: #0288D1; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+.turn-in-header-title { font-size: 24px; color: #1B4332; font-weight: 900; line-height: 1.15; }
+.turn-in-body { padding: 22px 24px 24px; }
+.turn-in-intro { font-size: 16px; color: #5A4D3E; margin-bottom: 18px; line-height: 1.55; }
+.turn-in-intro strong { color: #1B4332; }
+.turn-in-options { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 26px; }
+.turn-in-option { border-radius: 16px; padding: 20px 14px; text-align: center; border: 2px solid; }
+.turn-in-option-type  { background: #EEF8F0; border-color: #C4E5CC; }
+.turn-in-option-photo { background: #FFF9E8; border-color: #F0E4C0; }
+.turn-in-option-video { background: #F0EDF6; border-color: #D8D0E8; }
+.turn-in-option-icon  { font-size: 34px; line-height: 1; margin-bottom: 12px; }
+.turn-in-option-title { font-size: 17px; color: #1B4332; font-weight: 800; margin-bottom: 8px; }
+.turn-in-option-text  { font-size: 14px; color: #5A4D3E; line-height: 1.5; }
+.turn-in-subhead { font-size: 16px; color: #5A4D3E; margin-bottom: 14px; line-height: 1.55; }
+.turn-in-checklist { display: flex; flex-direction: column; gap: 10px; }
+.turn-in-item { display: flex; align-items: center; gap: 16px; padding: 14px 18px; background: #FAFAF6; border: 1.5px solid #E8DDD2; border-radius: 14px; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+.turn-in-item:hover { background: #F4FAF5; border-color: #C4E5CC; }
+.turn-in-item.checked { background: #EEF8F0; border-color: #B8E8CF; }
+.turn-in-item .turn-in-check { width: 30px; height: 30px; border-radius: 8px; border: 2px solid #95D5B2; background: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; line-height: 1; transition: background 0.2s, border-color 0.2s; }
+.turn-in-item.checked .turn-in-check { background: #2E7D32; border-color: #2E7D32; }
+.turn-in-item-text { font-size: 16px; color: #2B1D12; font-weight: 600; line-height: 1.55; flex: 1; }
+.turn-in-item.checked .turn-in-item-text { color: #5A4D3E; }
+
+/* ── Progress Bar ── */
+.progress-wrap { position: sticky; top: 0; z-index: 200; background: #0E1C42; padding: 8px 20px 10px; border-bottom: 2px solid rgba(85,200,232,0.3); display: flex; align-items: center; gap: 14px; }
+.progress-label { font-size: 12px; color: #55C8E8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+.progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; position: relative; }
+.progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #52B788, #95D5B2, #FDD835); border-radius: 10px; transition: width 0.4s ease; }
+.progress-pct { font-size: 13px; color: #FDD835; font-weight: 800; min-width: 36px; text-align: right; }
+
+/* ── Footer ── */
+.footer { background: #1B4332; padding: 16px 24px; text-align: center; }
+.footer-line1 { font-size: 14px; color: #95D5B2; font-weight: 700; }
+.footer-line1 span { color: #fff; }
+.footer-line2 { font-size: 12px; color: #52B788; font-weight: 600; margin-top: 2px; }
+.footer-line3 { font-size: 11px; color: rgba(149,213,178,0.4); margin-top: 2px; }
+
+/* ── Park Profile Card ── */
+.park-profile { background: #EEF8F0; border: 2px solid #A8D5B8; border-radius: 16px; padding: 16px 20px; margin-bottom: 16px; }
+.park-profile-name { font-size: 17px; color: #1B4332; font-weight: 800; margin-bottom: 6px; }
+.park-profile-detail { font-size: 15px; color: #5A4D3E; line-height: 1.65; }
+.park-profile-detail strong { color: #1B4332; }
+
+strong { color: #1B4332; }
+em { color: #5A4D3E; }
+.gold { color: #F9A825; font-weight: 700; }
+.forest { color: #2D6A4F; font-weight: 700; }
+
+@media (max-width: 620px) {
+  .intro-2col { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .flip-card { height: 175px; }
+  .header-title { font-size: 22px; }
+  .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 6px 9px; }
+  .turn-in-options { grid-template-columns: 1fr; }
+  .turn-in-header-title { font-size: 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="confettiCanvas"></canvas>
+<button class="back-to-top" id="backToTop" type="button">🌳 Back to Top</button>
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- ═══════════ PROGRESS BAR ═══════════ -->
+<div class="progress-wrap">
+  <span class="progress-label">🌳 Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">Researching a National Park Ecosystem</div>
+  <div class="header-badge">
+    <span>🌳</span>
+    <span>Lesson 32.01</span>
+  </div>
+</div>
+
+<!-- ═══════════ HERO BANNER ═══════════ -->
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<!-- HERO BANNER PLACEHOLDER — SVG TO BE PROVIDED BY USER                      -->
+<!--                                                                           -->
+<!-- Replace this entire comment block (and the placeholder div below) with    -->
+<!-- the complete SVG scene when ready.                                         -->
+<!--                                                                           -->
+<!-- Requirements:                                                             -->
+<!--   • <svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg">       -->
+<!--   • National park / ecosystem scene (forest, wetland, wildlife, sky)     -->
+<!--   • At least 3 visibly animating elements using hero animation classes   -->
+<!--   • NO <text> elements — pure illustration only                          -->
+<!--   • Accent border on hero-visual is already set to #2E7D32 (forest)     -->
+<!-- ══════════════════════════════════════════════════════════════════════════ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An outdoor research field desk overlooking a national park ecosystem with notebook, binoculars, map, organism photo cards, and weather conditions card.">
+<defs>
+  <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#9BCFE8"/>
+    <stop offset="62%" stop-color="#D5EAF0"/>
+    <stop offset="100%" stop-color="#E7D8B2"/>
+  </linearGradient>
+  <linearGradient id="mountainGrad" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#8C9F9F"/>
+    <stop offset="100%" stop-color="#6F817A"/>
+  </linearGradient>
+  <linearGradient id="canyonGrad" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#C89B6B"/>
+    <stop offset="100%" stop-color="#9D724D"/>
+  </linearGradient>
+  <linearGradient id="forestGrad32" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#5F8B55"/>
+    <stop offset="50%" stop-color="#7FA563"/>
+    <stop offset="100%" stop-color="#557F4E"/>
+  </linearGradient>
+  <linearGradient id="meadowGrad" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#A5B96A"/>
+    <stop offset="50%" stop-color="#C1C77B"/>
+    <stop offset="100%" stop-color="#98B062"/>
+  </linearGradient>
+  <linearGradient id="deskGrad" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#B89363"/>
+    <stop offset="50%" stop-color="#CBA976"/>
+    <stop offset="100%" stop-color="#A97F55"/>
+  </linearGradient>
+  <linearGradient id="paperGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFDF5"/>
+    <stop offset="100%" stop-color="#ECE4CF"/>
+  </linearGradient>
+  <linearGradient id="mapGrad" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#E9F4DF"/>
+    <stop offset="100%" stop-color="#C9DFB5"/>
+  </linearGradient>
+  <linearGradient id="binocGrad" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#657970"/>
+    <stop offset="100%" stop-color="#354C45"/>
+  </linearGradient>
+  <filter id="softShadow" x="-20%" y="-20%" width="140%" height="160%">
+    <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#24312A" flood-opacity="0.16"/>
+  </filter>
+</defs>
+
+<!-- full background -->
+<rect width="920" height="260" fill="url(#skyGrad)"/>
+
+<!-- sunlight wash -->
+<path d="M0,0 L190,0 C124,24 68,50 0,92 Z" fill="#FFF2BF" opacity="0.25"/>
+<path d="M0,0 L124,0 C76,12 38,28 0,50 Z" fill="#FFF9DE" opacity="0.28"/>
+
+<!-- clouds -->
+<g class="cloud-drift" fill="#F8FCFC" opacity="0.76">
+  <ellipse cx="150" cy="42" rx="34" ry="17"/>
+  <ellipse cx="178" cy="36" rx="22" ry="13"/>
+  <ellipse cx="204" cy="42" rx="27" ry="16"/>
+  <ellipse cx="672" cy="44" rx="36" ry="18"/>
+  <ellipse cx="702" cy="38" rx="22" ry="13"/>
+  <ellipse cx="730" cy="44" rx="28" ry="16"/>
+</g>
+
+<!-- distant mountain / canyon shapes -->
+<path d="M0,126 C84,100 158,112 236,88 C324,60 402,114 488,84 C578,54 654,112 740,82 C806,60 862,72 920,54 L920,156 L0,156 Z"
+      fill="url(#mountainGrad)" opacity="0.45"/>
+<path d="M0,146 C92,122 178,132 270,112 C372,90 468,136 566,114 C682,88 800,126 920,102 L920,172 L0,172 Z"
+      fill="#8FA56D" opacity="0.58"/>
+<path d="M0,164 C120,142 232,150 344,132 C454,114 548,150 650,134 C762,116 842,126 920,118 L920,184 L0,184 Z"
+      fill="url(#canyonGrad)" opacity="0.46"/>
+
+<!-- forest layer -->
+<rect y="154" width="920" height="36" fill="url(#forestGrad32)"/>
+<g class="tree-sway" fill="#486F42" opacity="0.86">
+  <path d="M48,156 L68,116 L88,156 Z"/>
+  <path d="M92,158 L118,106 L144,158 Z"/>
+  <path d="M176,158 L198,116 L220,158 Z"/>
+  <path d="M672,158 L696,110 L720,158 Z"/>
+  <path d="M734,158 L760,106 L786,158 Z"/>
+  <path d="M822,158 L844,118 L866,158 Z"/>
+</g>
+
+<!-- meadow foreground -->
+<rect y="186" width="920" height="74" fill="url(#meadowGrad)"/>
+<path d="M0,198 C118,186 220,196 336,188 C462,180 584,198 702,188 C802,180 872,184 920,176 L920,260 L0,260 Z"
+      fill="#B9BE75" opacity="0.42"/>
+
+<!-- field desk / overlook table -->
+<g filter="url(#softShadow)">
+  <path d="M124,166 C250,154 420,160 544,154 C664,148 760,154 836,164 L852,260 L96,260 Z"
+        fill="url(#deskGrad)" stroke="#8F6844" stroke-width="2.5"/>
+  <g stroke="#D6B985" stroke-width="2" opacity="0.28">
+    <path d="M134,188 C298,178 456,184 622,176 C718,172 790,176 840,184"/>
+    <path d="M122,216 C280,206 456,212 638,204 C744,200 812,204 850,212"/>
+    <path d="M112,242 C286,232 474,238 662,230 C762,226 824,230 856,238"/>
+  </g>
+</g>
+
+<!-- park habitat map -->
+<g transform="translate(154,178)" filter="url(#softShadow)">
+  <g class="card-bob-a">
+    <rect x="0" y="0" width="150" height="70" rx="10" fill="url(#mapGrad)" stroke="#9EAF82" stroke-width="2"/>
+    <path d="M12,50 C38,38 58,42 78,32 C104,18 124,30 138,18" stroke="#6BA3BC" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.72"/>
+    <path d="M18,20 C40,14 60,18 82,14 C104,10 120,14 136,10" stroke="#78A258" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.8"/>
+    <path d="M18,56 C42,52 68,58 96,50 C116,44 128,46 140,42" stroke="#C59B63" stroke-width="3" fill="none" stroke-dasharray="5 4" stroke-linecap="round"/>
+    <circle cx="42" cy="36" r="4" fill="#D98F50"/>
+    <circle cx="104" cy="28" r="4" fill="#6C8B55"/>
+    <circle cx="118" cy="50" r="4" fill="#5A91A8"/>
+  </g>
+</g>
+
+<!-- open research notebook -->
+<g transform="translate(330,140)" filter="url(#softShadow)">
+  <g class="notebook-bob">
+    <rect x="0" y="0" width="244" height="106" rx="12" fill="#6F8C72" stroke="#4E6D54" stroke-width="2.4"/>
+    <rect x="10" y="10" width="104" height="84" rx="7" fill="url(#paperGrad)" stroke="#D8CCB0" stroke-width="1.5"/>
+    <rect x="130" y="10" width="104" height="84" rx="7" fill="url(#paperGrad)" stroke="#D8CCB0" stroke-width="1.5"/>
+    <line x1="122" y1="12" x2="122" y2="92" stroke="#4E6D54" stroke-width="3" opacity="0.55"/>
+    <!-- notebook left page habitat sketch -->
+    <path d="M22,72 C42,58 66,62 86,50 C98,42 106,42 112,38" stroke="#7EB4C7" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M22,42 C38,32 56,34 74,28 C90,22 100,24 110,20" stroke="#83A95A" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <g stroke="#C9BFA8" stroke-width="1.4" opacity="0.62">
+      <line x1="22" y1="82" x2="104" y2="82"/>
+      <line x1="22" y1="88" x2="96" y2="88"/>
+    </g>
+    <!-- notebook right page observation rows and icons -->
+    <g stroke="#C9BFA8" stroke-width="1.4" opacity="0.68">
+      <line x1="144" y1="28" x2="222" y2="28"/>
+      <line x1="144" y1="46" x2="222" y2="46"/>
+      <line x1="144" y1="64" x2="222" y2="64"/>
+      <line x1="144" y1="82" x2="206" y2="82"/>
+    </g>
+    <circle cx="152" cy="20" r="4" fill="#79A95A"/>
+    <rect x="148" y="38" width="8" height="8" rx="2" fill="#6BA3BC"/>
+    <polygon points="152,56 158,68 146,68" fill="#C99A5D"/>
+  </g>
+</g>
+
+<!-- hidden pinecone near notebook -->
+<g transform="translate(314,220)" class="pinecone-pulse" filter="url(#softShadow)">
+  <ellipse cx="0" cy="0" rx="8" ry="12" fill="#8B6846"/>
+  <path d="M-5,-5 C-1,-8 1,-8 5,-5" stroke="#5F452F" stroke-width="1.4" fill="none"/>
+  <path d="M-6,0 C-2,-3 2,-3 6,0" stroke="#5F452F" stroke-width="1.4" fill="none"/>
+  <path d="M-5,5 C-1,2 1,2 5,5" stroke="#5F452F" stroke-width="1.4" fill="none"/>
+  <path d="M0,-12 L0,-17" stroke="#5F452F" stroke-width="1.5" stroke-linecap="round"/>
+</g>
+
+<!-- binoculars -->
+<g transform="translate(600,188)" filter="url(#softShadow)">
+  <ellipse cx="42" cy="34" rx="58" ry="13" fill="#243127" opacity="0.12"/>
+  <circle cx="26" cy="18" r="22" fill="url(#binocGrad)" stroke="#2E423C" stroke-width="2.4"/>
+  <circle cx="62" cy="18" r="22" fill="url(#binocGrad)" stroke="#2E423C" stroke-width="2.4"/>
+  <rect x="26" y="6" width="36" height="24" rx="7" fill="#4C645C" stroke="#2E423C" stroke-width="2"/>
+  <circle cx="26" cy="18" r="11" fill="#BFE0E7" opacity="0.78"/>
+  <circle cx="62" cy="18" r="11" fill="#BFE0E7" opacity="0.78"/>
+  <g class="lens-glint">
+    <path d="M20,12 Q24,8 30,10" stroke="#FFFFFF" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M56,12 Q60,8 66,10" stroke="#FFFFFF" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  </g>
+  <path d="M12,38 C0,46 -10,46 -20,40" stroke="#394E48" stroke-width="4" fill="none" stroke-linecap="round"/>
+</g>
+
+<!-- organism photo cards -->
+<g transform="translate(672,120)" filter="url(#softShadow)">
+  <g class="card-bob-b">
+    <rect x="0" y="0" width="78" height="64" rx="8" fill="url(#paperGrad)" stroke="#D6C8AB" stroke-width="2"/>
+    <rect x="8" y="8" width="62" height="38" rx="5" fill="#DDEED6"/>
+    <path d="M24,34 C28,24 38,22 46,28 C52,32 56,34 62,34 C58,40 48,42 36,40 C28,40 22,38 24,34 Z" fill="#8B6F4E"/>
+    <path d="M42,28 L44,18 M48,28 L56,20" stroke="#8B6F4E" stroke-width="2" stroke-linecap="round"/>
+    <rect x="16" y="52" width="46" height="4" rx="2" fill="#D8CCB5"/>
+  </g>
+</g>
+
+<g transform="translate(748,136)" filter="url(#softShadow)">
+  <g class="card-bob-c">
+    <rect x="0" y="0" width="78" height="64" rx="8" fill="url(#paperGrad)" stroke="#D6C8AB" stroke-width="2"/>
+    <rect x="8" y="8" width="62" height="38" rx="5" fill="#D9EDF2"/>
+    <path d="M18,28 C30,16 48,18 60,30 C48,36 30,38 18,28 Z" fill="#6F8790"/>
+    <path d="M54,26 L68,22 L56,30 Z" fill="#C99A5D"/>
+    <rect x="16" y="52" width="46" height="4" rx="2" fill="#D8CCB5"/>
+  </g>
+</g>
+
+<!-- weather / conditions card -->
+<g transform="translate(116,108)" filter="url(#softShadow)">
+  <g class="card-bob-a">
+    <rect x="0" y="0" width="86" height="64" rx="10" fill="url(#paperGrad)" stroke="#D6C8AB" stroke-width="2"/>
+    <rect x="10" y="10" width="66" height="12" rx="5" fill="#E7EFD9"/>
+    <g transform="translate(26,40)" class="weather-pulse">
+      <circle cx="0" cy="0" r="10" fill="#F6C95F"/>
+      <g stroke="#F6C95F" stroke-width="2" stroke-linecap="round">
+        <line x1="0" y1="-17" x2="0" y2="-22"/>
+        <line x1="0" y1="17" x2="0" y2="22"/>
+        <line x1="-17" y1="0" x2="-22" y2="0"/>
+        <line x1="17" y1="0" x2="22" y2="0"/>
+      </g>
+    </g>
+    <path d="M50,42 C56,34 68,34 72,44 C76,44 80,48 80,52 C78,58 66,58 54,58 C46,58 42,54 44,50 C44,46 46,44 50,42 Z"
+          fill="#D8E8EC"/>
+  </g>
+</g>
+
+<!-- small detail objects on field desk -->
+<g opacity="0.82">
+  <rect x="586" y="156" width="70" height="8" rx="4" fill="#D4B66F" stroke="#B8963F" stroke-width="1.4" transform="rotate(8 586 156)"/>
+  <g stroke="#8B7431" stroke-width="1.2">
+    <line x1="600" y1="156" x2="600" y2="164"/>
+    <line x1="614" y1="158" x2="614" y2="164"/>
+    <line x1="628" y1="160" x2="628" y2="166"/>
+    <line x1="642" y1="162" x2="642" y2="168"/>
+  </g>
+  <ellipse cx="210" cy="228" rx="18" ry="5" fill="#8AA56B"/>
+  <ellipse cx="226" cy="224" rx="14" ry="4" fill="#78985C"/>
+  <circle cx="846" cy="220" r="4" fill="#C9B170"/>
+  <circle cx="864" cy="228" r="3" fill="#A48A58"/>
+</g>
+
+</svg>
+</div>
+
+<!-- ═══════════ INFO STRIP ═══════════ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q4 &middot; Unit 11</div>
+      <div class="info-detail">Synthesis &amp; Application</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF9E8;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 32</div>
+      <div class="info-detail">Lesson 32.01 &mdash; 3rd Grade Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#F0EDF6;">🏞️</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Ecosystems</div>
+      <div class="info-detail">Habitats, organisms, conservation</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">3-LS4-3 &middot; 3-ESS3-1</div>
+      <div class="info-detail">Ecosystems &amp; Earth &amp; Human Activity</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ INTRO 2-COL CARDS ═══════════ -->
+<div class="intro-2col">
+
+  <div class="card theme-forest">
+    <div class="card-head">
+      <div class="card-head-icon">🌲</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This…</div>
+          <div class="question">"How do scientists figure out which organisms belong in a habitat — and why does protecting that habitat matter?"</div>
+        </div>
+      </div>
+      <p>Hold this question in your mind as you work through the lesson. By the end, you should be able to answer it with evidence.</p>
+    </div>
+  </div>
+
+  <div class="card theme-sky">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#52B788;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> describe an ecosystem by naming its organisms, habitat, and environmental conditions.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2D6A4F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain why some organisms survive well in a habitat while others cannot survive there at all.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2E7D32;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain one reason why protecting a national park ecosystem matters for the organisms that live there.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════ NEED STRIP ═══════════ -->
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Pencil &amp; colored pencils</span>
+  <span class="need-chip"><span>🌳</span>Thinking cap</span>
+</div>
+
+<!-- ═══════════ TAB BAR ═══════════ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 1: VOCABULARY                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <!-- Welcome Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to Today's Lesson!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🎬</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 32-01-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ACTIVITY 1: NOTICE & WONDER ═══ -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#52B788;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Notice &amp; Wonder</div>
+        <div class="act-subtitle">Look carefully before we begin.</div>
+      </div>
+      <div class="act-time" style="background:#52B788;">⏱ 5–8 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- Photorealistic nature image — Notice & Wonder anchor -->
+      <img src="images/32-01-park-ecosystem-photo.jpg"
+           alt="A wide view of a lush national park ecosystem showing tall trees, a winding river, and visible wildlife including birds and deer in a sunlit forest clearing"
+           style="width:100%;border-radius:12px;margin-bottom:16px;display:block;"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+      <div class="image-suggestion" style="display:none;">
+        <div class="image-suggestion-icon">📷</div>
+        <div class="image-suggestion-label">Suggested Image — Notice &amp; Wonder</div>
+        <div class="image-suggestion-desc">
+          <strong>Photorealistic nature photo:</strong> A wide, sunlit view of a national park ecosystem — lush green forest with a clear river or marsh in the foreground, visible wildlife (birds, deer, or similar animals), and a layered landscape showing canopy trees, shrubs, ground plants, and water. The image should feel like a real photograph taken inside a U.S. national park. Natural lighting, no text or overlays.
+        </div>
+        <div class="image-suggestion-file">images/32-01-park-ecosystem-photo.jpg</div>
+      </div>
+
+      <p>Take a good look at the photo above. You're looking at a real national park ecosystem. Before we read or learn anything new, just <strong>notice</strong> what you see.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">👀</span>
+        <div>
+          <div class="label">In Your Science Notebook</div>
+          <div class="question">"Write at least three things you observe in this ecosystem. Then write one question that comes to mind — something you're curious about or don't know the answer to yet."</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>There are no wrong observations here. Scientists always begin by looking carefully and asking questions. Come back to your observations at the end of the lesson — you may be surprised how much your thinking changes.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ VOCABULARY FLIP CARDS ═══ -->
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>These are the words scientists use when they study ecosystems and conservation. <strong>Tap each card to flip it</strong> and read the definition. You'll see these words throughout the lesson.</p>
+
+      <div class="vocab-grid">
+
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌍</div><div class="fc-word">Ecosystem</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Ecosystem</div><div class="fc-def">All the living things and nonliving things in an area that interact with each other.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🏡</div><div class="fc-word">Habitat</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Habitat</div><div class="fc-def">The place where an organism lives and finds everything it needs — food, water, shelter, and space.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌡️</div><div class="fc-word">Environmental Conditions</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Environmental Conditions</div><div class="fc-def">The nonliving features of a place — like temperature, rainfall, and sunlight — that affect which organisms can live there.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🐾</div><div class="fc-word">Organism</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Organism</div><div class="fc-def">Any living thing — including plants, animals, fungi, and bacteria.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">💪</div><div class="fc-word">Survive</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Survive</div><div class="fc-def">To stay alive by getting the food, water, shelter, and other conditions you need to live and grow.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🛡️</div><div class="fc-word">Conservation</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Conservation</div><div class="fc-def">Protecting natural places and living things so that ecosystems can remain healthy over time.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">📓</span>
+        <p>Copy this sentence carefully into your science notebook:<br><strong>"The organisms in an ecosystem depend on their habitat — and protecting that habitat protects all the life within it."</strong></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button>
+  </div>
+
+</div><!-- /tab-vocab -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 2: THE LESSON                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+
+  <!-- Lesson Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">📖</span>
+      <div>
+        <div class="video-wrap-type">Activity 2 · Core Lesson</div>
+        <div class="video-wrap-title">How Scientists Study a National Park Ecosystem</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">📖</div>
+        <div class="video-placeholder-text">Core lesson video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 32-01-lesson-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lesson Figure — Nature fieldwork image -->
+  <div class="lesson-figure">
+    <div class="lesson-figure-label">📷 Photo · Science in the Field</div>
+    <img src="images/32-01-ranger-fieldwork.jpg"
+         alt="A park ranger or field scientist crouching near a wetland habitat, recording observations in a notebook while surrounded by native plants and wildlife"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+    <div class="image-suggestion" style="display:none;">
+      <div class="image-suggestion-icon">📷</div>
+      <div class="image-suggestion-label">Suggested Image — Lesson Figure</div>
+      <div class="image-suggestion-desc">
+        <strong>Photorealistic nature photo:</strong> A park ranger or field scientist (adult, gender-neutral if possible) kneeling or crouching near a wetland or forest area, writing in a field notebook. Native plants clearly visible. Natural daylight, taken outdoors in a real park-like setting. No text overlays. Should convey careful observation and scientific recording.
+      </div>
+      <div class="image-suggestion-file">images/32-01-ranger-fieldwork.jpg</div>
+    </div>
+    <div class="lesson-figure-caption">
+      Scientists called <strong>field researchers</strong> study ecosystems by going to the habitat and recording what they see. They look at which organisms are present, what conditions exist, and whether the ecosystem is healthy.
+    </div>
+  </div>
+
+  <!-- ═══ ACTIVITY 2: CORE LESSON CONTENT ═══ -->
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#F9A825;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📖 The Lesson: What Makes a National Park Ecosystem?</div>
+        <div class="act-subtitle">Read carefully — there's a lot to notice in here.</div>
+      </div>
+      <div class="act-time" style="background:#F9A825;">⏱ 12 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- Section 1 -->
+      <div class="card theme-forest" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌿</div>
+          <div>
+            <div class="card-head-label">Section 1</div>
+            <div class="card-head-title">What Is an Ecosystem?</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Every national park is an <span class="vtip">ecosystem<span class="vtip-box"><span class="vtip-word">Ecosystem</span>All the living things and nonliving things in an area that interact with each other.</span></span>. That means it includes every plant, animal, and other organism that lives there — plus all the nonliving things like water, soil, temperature, and sunlight. These parts don't just share space. They interact constantly.</p>
+          <p>A tree shades the soil and keeps it cool. A frog eats insects and gets eaten by a heron. Rain fills a pond. Everything connects to everything else. When scientists study a national park, they look at the <span class="vtip">habitat<span class="vtip-box"><span class="vtip-word">Habitat</span>The place where an organism lives and finds food, water, shelter, and space.</span></span>, the organisms, and the <span class="vtip">environmental conditions<span class="vtip-box"><span class="vtip-word">Environmental Conditions</span>The nonliving features of a place — temperature, rainfall, sunlight — that shape which organisms can live there.</span></span> all together.</p>
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"Think about your own backyard or neighborhood. What are three living things and three nonliving things that interact there?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="card theme-sky" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🐊</div>
+          <div>
+            <div class="card-head-label">Section 2</div>
+            <div class="card-head-title">Who Can Survive Here?</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Here's something scientists know for certain: not every organism can survive in every place. In any given habitat, some organisms thrive, some barely get by, and some can't survive at all.</p>
+          <p>An alligator can't live in a snowy mountain forest — the temperature is wrong, the food is wrong, and the water isn't there. But in the Florida Everglades, it does just fine. It has the right body, the right food sources, and exactly the <span class="vtip">environmental conditions<span class="vtip-box"><span class="vtip-word">Environmental Conditions</span>The nonliving features of a place — temperature, rainfall, sunlight — that shape which organisms can live there.</span></span> it needs. The match between an organism and its habitat is what makes <span class="vtip">survival<span class="vtip-box"><span class="vtip-word">Survive</span>To stay alive by getting the food, water, shelter, and conditions you need.</span></span> possible.</p>
+        </div>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="card theme-earth" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🛡️</div>
+          <div>
+            <div class="card-head-label">Section 3</div>
+            <div class="card-head-title">Why Ecosystems Need Protection</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Natural hazards — droughts, floods, wildfires, and hurricanes — can change an ecosystem quickly. When that happens, some organisms survive, some move to new places, and some don't make it.</p>
+          <p>Humans change ecosystems too — through pollution, building, and the spread of invasive species. That's exactly why <span class="vtip">conservation<span class="vtip-box"><span class="vtip-word">Conservation</span>Protecting natural places and living things so ecosystems can stay healthy.</span></span> matters. National parks protect ecosystems from many of these changes. Scientists and rangers work together to study the habitat, track the organisms, and make sure the conditions stay right for everything that lives there.</p>
+          <p><strong>Real-World Connection:</strong> The Florida Everglades is one of the most studied and protected ecosystems in the United States — but scientists still track it constantly because even small changes can affect hundreds of species.</p>
+        </div>
+      </div>
+
+      <!-- Interactive Diagram — Three-Park Survival Comparison -->
+      <div class="diagram-wrap scroll-reveal">
+        <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
+          🗺 Tap a park to see who survives there — and who doesn't
+        </div>
+        <div class="diagram-interactive">
+          <svg viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;" role="img" aria-label="Three national park ecosystems side by side — tap each to learn which organisms survive there">
+            <defs>
+              <!-- Everglades sky -->
+              <linearGradient id="evSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#87CEEB"/>
+                <stop offset="100%" stop-color="#B2EBF2"/>
+              </linearGradient>
+              <!-- Everglades water -->
+              <linearGradient id="evWater" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#4FC3F7"/>
+                <stop offset="100%" stop-color="#0288D1"/>
+              </linearGradient>
+              <!-- Yosemite sky -->
+              <linearGradient id="yoSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#90CAF9"/>
+                <stop offset="100%" stop-color="#BBDEFB"/>
+              </linearGradient>
+              <!-- Yellowstone sky -->
+              <linearGradient id="ylSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#B3E5FC"/>
+                <stop offset="100%" stop-color="#E1F5FE"/>
+              </linearGradient>
+              <!-- Panel divider gradient -->
+              <linearGradient id="divGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#D7CCC8"/>
+                <stop offset="100%" stop-color="#BCAAA4"/>
+              </linearGradient>
+            </defs>
+
+            <!-- ═══ PANEL 1: EVERGLADES ═══ (x: 0–276) -->
+            <!-- Sky -->
+            <rect x="0" y="0" width="276" height="300" fill="url(#evSky)"/>
+            <!-- Sun -->
+            <circle cx="248" cy="28" r="18" fill="#FDD835" opacity="0.9"/>
+            <circle cx="248" cy="28" r="26" fill="#FDD835" opacity="0.2"/>
+            <!-- Flat wetland ground -->
+            <rect x="0" y="200" width="276" height="100" fill="#388E3C"/>
+            <!-- Water surface -->
+            <rect x="0" y="215" width="276" height="55" fill="url(#evWater)" opacity="0.7"/>
+            <!-- Sawgrass silhouettes -->
+            <rect x="14" y="170" width="5" height="50" fill="#558B2F"/>
+            <rect x="24" y="162" width="4" height="58" fill="#33691E"/>
+            <rect x="34" y="168" width="5" height="52" fill="#558B2F"/>
+            <rect x="52" y="165" width="4" height="55" fill="#33691E"/>
+            <rect x="62" y="172" width="5" height="48" fill="#558B2F"/>
+            <rect x="72" y="160" width="4" height="60" fill="#2E7D32"/>
+            <rect x="190" y="166" width="4" height="54" fill="#558B2F"/>
+            <rect x="200" y="171" width="5" height="49" fill="#33691E"/>
+            <rect x="210" y="163" width="4" height="57" fill="#558B2F"/>
+            <rect x="222" y="168" width="5" height="52" fill="#2E7D32"/>
+            <rect x="238" y="172" width="4" height="48" fill="#33691E"/>
+            <!-- Alligator silhouette on water -->
+            <ellipse cx="138" cy="240" rx="48" ry="10" fill="#2D4A1E" opacity="0.85"/>
+            <polygon points="186,240 200,236 186,244" fill="#2D4A1E" opacity="0.85"/>
+            <!-- Small bumps for eyes -->
+            <circle cx="176" cy="233" r="4" fill="#1B3A0E" opacity="0.9"/>
+            <circle cx="183" cy="233" r="4" fill="#1B3A0E" opacity="0.9"/>
+            <!-- Heat shimmer / humidity lines -->
+            <line x1="90" y1="195" x2="94" y2="210" stroke="#B2EBF2" stroke-width="1" opacity="0.5"/>
+            <line x1="108" y1="190" x2="112" y2="206" stroke="#B2EBF2" stroke-width="1" opacity="0.45"/>
+            <line x1="126" y1="193" x2="130" y2="208" stroke="#B2EBF2" stroke-width="1" opacity="0.5"/>
+            <!-- Panel label band at bottom -->
+            <rect x="0" y="270" width="276" height="30" fill="#1B5E20" opacity="0.85"/>
+            <text x="138" y="290" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" font-family="Nunito,Arial,sans-serif">🐊 Everglades, FL</text>
+
+            <!-- ═══ DIVIDER 1 ═══ -->
+            <rect x="277" y="0" width="6" height="300" fill="url(#divGrad)"/>
+
+            <!-- ═══ PANEL 2: YOSEMITE ═══ (x: 283–559) -->
+            <!-- Sky -->
+            <rect x="283" y="0" width="276" height="300" fill="url(#yoSky)"/>
+            <!-- Snow-capped mountain -->
+            <polygon points="321,80 390,200 252,200" fill="#9E9E9E"/>
+            <polygon points="321,80 345,130 297,130" fill="#fff" opacity="0.9"/>
+            <!-- Granite cliff right side -->
+            <polygon points="530,60 560,200 500,200" fill="#BDBDBD"/>
+            <polygon points="530,60 548,110 512,110" fill="#fff" opacity="0.75"/>
+            <!-- Ground -->
+            <rect x="283" y="200" width="276" height="100" fill="#558B2F"/>
+            <!-- Giant sequoia trunks -->
+            <rect x="300" y="110" width="12" height="120" fill="#6D4C41"/>
+            <ellipse cx="306" cy="100" rx="22" ry="38" fill="#1B5E20"/>
+            <ellipse cx="306" cy="88" rx="16" ry="28" fill="#2E7D32"/>
+            <rect x="330" y="120" width="10" height="110" fill="#795548"/>
+            <ellipse cx="335" cy="112" rx="18" ry="32" fill="#1B5E20"/>
+            <ellipse cx="335" cy="100" rx="13" ry="24" fill="#2E7D32"/>
+            <rect x="468" y="115" width="11" height="115" fill="#6D4C41"/>
+            <ellipse cx="474" cy="106" rx="20" ry="34" fill="#1B5E20"/>
+            <ellipse cx="474" cy="94" rx="14" ry="26" fill="#33691E"/>
+            <!-- Deer silhouette in meadow -->
+            <ellipse cx="420" cy="214" rx="20" ry="10" fill="#5D4037" opacity="0.8"/>
+            <rect x="417" y="204" width="7" height="15" fill="#5D4037" opacity="0.8"/>
+            <!-- Deer legs -->
+            <line x1="410" y1="224" x2="408" y2="238" stroke="#4E342E" stroke-width="3"/>
+            <line x1="420" y1="224" x2="418" y2="238" stroke="#4E342E" stroke-width="3"/>
+            <line x1="428" y1="224" x2="430" y2="238" stroke="#4E342E" stroke-width="3"/>
+            <line x1="436" y1="224" x2="438" y2="238" stroke="#4E342E" stroke-width="3"/>
+            <!-- Deer head + antlers -->
+            <circle cx="420" cy="197" r="7" fill="#6D4C41" opacity="0.85"/>
+            <line x1="418" y1="191" x2="412" y2="180" stroke="#5D4037" stroke-width="2"/>
+            <line x1="422" y1="191" x2="428" y2="180" stroke="#5D4037" stroke-width="2"/>
+            <line x1="412" y1="180" x2="408" y2="174" stroke="#5D4037" stroke-width="1.5"/>
+            <line x1="412" y1="180" x2="416" y2="174" stroke="#5D4037" stroke-width="1.5"/>
+            <!-- Snow patches on ground -->
+            <ellipse cx="340" cy="202" rx="28" ry="6" fill="#fff" opacity="0.6"/>
+            <ellipse cx="510" cy="204" rx="22" ry="5" fill="#fff" opacity="0.55"/>
+            <!-- Panel label -->
+            <rect x="283" y="270" width="276" height="30" fill="#1A237E" opacity="0.85"/>
+            <text x="421" y="290" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" font-family="Nunito,Arial,sans-serif">🌲 Yosemite, CA</text>
+
+            <!-- ═══ DIVIDER 2 ═══ -->
+            <rect x="560" y="0" width="6" height="300" fill="url(#divGrad)"/>
+
+            <!-- ═══ PANEL 3: YELLOWSTONE ═══ (x: 566–860) -->
+            <!-- Sky (cooler, more overcast feel) -->
+            <rect x="566" y="0" width="294" height="300" fill="url(#ylSky)"/>
+            <!-- Rolling meadow ground -->
+            <rect x="566" y="195" width="294" height="105" fill="#8D6E63"/>
+            <!-- Meadow grass top -->
+            <ellipse cx="710" cy="196" rx="145" ry="14" fill="#AED581"/>
+            <!-- Geyser steam plume -->
+            <ellipse cx="660" cy="175" rx="16" ry="38" fill="#fff" opacity="0.55"/>
+            <ellipse cx="656" cy="155" rx="22" ry="32" fill="#fff" opacity="0.45"/>
+            <ellipse cx="662" cy="135" rx="28" ry="26" fill="#fff" opacity="0.35"/>
+            <ellipse cx="658" cy="118" rx="34" ry="22" fill="#fff" opacity="0.25"/>
+            <!-- Geyser vent -->
+            <ellipse cx="660" cy="198" rx="10" ry="5" fill="#9E9E9E"/>
+            <rect x="654" y="190" width="12" height="12" fill="#757575"/>
+            <!-- Hot spring pool -->
+            <ellipse cx="720" cy="210" rx="28" ry="14" fill="#4DD0E1" opacity="0.7"/>
+            <ellipse cx="720" cy="210" rx="20" ry="10" fill="#00BCD4" opacity="0.5"/>
+            <!-- Bison silhouette -->
+            <ellipse cx="800" cy="218" rx="34" ry="18" fill="#4E342E" opacity="0.9"/>
+            <!-- Bison head (hump) -->
+            <ellipse cx="828" cy="207" rx="16" ry="20" fill="#4E342E" opacity="0.9"/>
+            <!-- Bison legs -->
+            <rect x="776" y="232" width="7" height="20" fill="#3E2723" opacity="0.9"/>
+            <rect x="789" y="232" width="7" height="20" fill="#3E2723" opacity="0.9"/>
+            <rect x="806" y="232" width="7" height="20" fill="#3E2723" opacity="0.9"/>
+            <rect x="818" y="232" width="7" height="20" fill="#3E2723" opacity="0.9"/>
+            <!-- Small pine trees on horizon -->
+            <polygon points="594,170 605,200 583,200" fill="#2E7D32" opacity="0.8"/>
+            <polygon points="612,162 625,200 599,200" fill="#1B5E20" opacity="0.85"/>
+            <polygon points="628,168 638,200 618,200" fill="#2E7D32" opacity="0.8"/>
+            <!-- Snow on distant ridge -->
+            <path d="M566,80 Q610,60 650,90 Q620,90 600,100 Q585,88 566,85 Z" fill="#fff" opacity="0.5"/>
+            <!-- Panel label -->
+            <rect x="566" y="270" width="294" height="30" fill="#4A148C" opacity="0.85"/>
+            <text x="713" y="290" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" font-family="Nunito,Arial,sans-serif">🦬 Yellowstone, WY</text>
+
+            <!-- ═══ HOTSPOT RECTS ═══ -->
+            <rect class="hotspot" x="0" y="0" width="276" height="270"
+                  fill="#4FC3F7"
+                  data-part="everglades"
+                  data-info="Hot, flat, and wet year-round — the Everglades is a subtropical wetland. The alligator survives extremely well here: warm water temperatures, shallow pools, and an abundance of fish match everything its body needs. A polar bear could NOT survive here at all — it needs sea ice and freezing temperatures to hunt. The Everglades proves that environmental conditions determine who belongs."/>
+            <rect class="hotspot" x="283" y="0" width="276" height="270"
+                  fill="#90CAF9"
+                  data-part="yosemite"
+                  data-info="Cool, mountainous, and rocky — Yosemite's environment shapes every organism that lives there. Giant sequoias survive well here: their thick bark resists fire and cold, and their seeds actually need fire to open. An Everglades alligator could NOT survive Yosemite — cold winters, no warm swamp water, no fish-filled wetland. One park's perfect conditions are another organism's impossible challenge."/>
+            <rect class="hotspot" x="566" y="0" width="294" height="270"
+                  fill="#B3E5FC"
+                  data-part="yellowstone"
+                  data-info="Cold, high-altitude, and geothermally active — Yellowstone is unlike anywhere else. Bison survive well here: their massive heads plow through deep snow to reach grass underneath, and they can tolerate brutal winters. A tropical parrot could NOT survive Yellowstone — no fruit trees, freezing temperatures, and no shelter. Even the hot springs here host organisms (heat-loving microbes) that can't survive anywhere else on Earth."/>
+          </svg>
+
+          <div class="diagram-info-panel" id="diagramPanel">
+            <span class="dip-word" id="diagramWord"></span>
+            <span id="diagramInfo"></span>
+          </div>
+        </div>
+        <div class="diagram-tap-hint">Tap any park to see which organisms survive well there — and which ones can't survive at all.</div>
+        <div class="diagram-caption">The same lesson — different places. Each national park has different environmental conditions, which means different organisms survive well, struggle, or can't make it at all.</div>
+      </div>
+
+      <!-- Key Concept -->
+      <div class="key-concept scroll-reveal">
+        <div class="kc-label">⭐ Key Concept</div>
+        <p><strong>In any habitat, some organisms survive well, some survive less well, and some cannot survive at all.</strong> The match between an organism and its environmental conditions is what determines whether it can live there.</p>
+        <p>Protecting a national park ecosystem means protecting those conditions — so the organisms that depend on them can survive.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mind-Blowing Fact -->
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Amazing Nature Fact</div>
+      <div class="mind-blow-text">The Florida Everglades is the <strong>only place on Earth</strong> where both American alligators and American crocodiles live side by side — but even though they look similar, tiny differences in water salinity push them into slightly different zones of the same ecosystem.</div>
+    </div>
+  </div>
+
+  <!-- Go Deeper -->
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper</summary>
+    <div class="gd-body">
+      <p>Scientists who study national park ecosystems are called <strong>ecologists</strong>. One of the hardest parts of their job isn't collecting data — it's figuring out which environmental conditions matter most. Temperature? Water availability? Soil type? All of these interact in complicated ways.</p>
+      <p>In Yellowstone National Park, scientists made a surprising discovery after wolves were reintroduced in 1995. The wolves changed where elk grazed, which allowed riverside plants to grow back, which slowed soil erosion, which changed the course of rivers. One species affected everything else. Scientists call this a <em>trophic cascade</em> — a chain reaction through the whole ecosystem.</p>
+      <p>This is exactly why conservation isn't just about protecting one animal. It's about protecting the whole web of connections in an ecosystem — because every piece affects every other piece.</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+
+</div><!-- /tab-lesson -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 3: EXPLORE — Park Research Activity                   -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+
+  <!-- Explore Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🔬</span>
+      <div>
+        <div class="video-wrap-type">Activity 3 · Park Research</div>
+        <div class="video-wrap-title">Let's Research a National Park Ecosystem</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🔬</div>
+        <div class="video-placeholder-text">Exploration video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 32-01-exploration-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ACTIVITY 3: PARK RESEARCH ═══ -->
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#0288D1;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🔬 Park Research: Choose Your Ecosystem</div>
+        <div class="act-subtitle">Read the park profiles below, then fill in your research chart.</div>
+      </div>
+      <div class="act-time" style="background:#0288D1;">⏱ 18 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>You're going to research one national park ecosystem — using the profiles below. Read all three carefully, then pick the one that interests you most. You'll use the research chart to record what you learn.</p>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>Read each park profile carefully before you pick one. Think about what you already know from earlier in the year — you may recognize some of these places!</p>
+      </div>
+
+      <!-- Park Profiles -->
+      <p style="font-size:17px;font-weight:800;color:#1B4332;margin-bottom:12px;">🏞️ Choose One Park to Research</p>
+
+      <div class="park-profile">
+        <div class="park-profile-name">🐊 Everglades National Park — Florida</div>
+        <div class="park-profile-detail">
+          <strong>Climate &amp; Conditions:</strong> Hot and humid year-round. Wet season (heavy rains) from May–October; dry season from November–April. Low elevation, mostly flat. Lots of standing water and marshes.<br><br>
+          <strong>Three Key Organisms:</strong> American alligator (apex predator that controls prey populations), sawgrass (a sharp wetland plant that grows in dense clusters), roseate spoonbill (a wading bird with a distinctive pink color that feeds in shallow water).<br><br>
+          <strong>How They Survive Here:</strong> Alligators thrive because warm water temperatures and abundant fish match their needs exactly. Sawgrass survives periodic flooding that would kill most plants. Spoonbills use their flat bills to sweep through shallow muddy water for small fish.<br><br>
+          <strong>One Big Challenge:</strong> Burmese pythons — large invasive snakes that were not originally from the Everglades — have multiplied rapidly and eat many native animals, disrupting the food web.<br><br>
+          <strong>One Conservation Effort:</strong> Scientists and rangers run active python removal programs, trapping and removing thousands of pythons each year to protect native species.
+        </div>
+      </div>
+
+      <div class="park-profile">
+        <div class="park-profile-name">🐻 Yosemite National Park — California</div>
+        <div class="park-profile-detail">
+          <strong>Climate &amp; Conditions:</strong> Cool mountain forests with cold winters and mild summers. High elevation, rocky terrain, and granite cliffs. Snowmelt in spring provides water to lower valleys.<br><br>
+          <strong>Three Key Organisms:</strong> Black bear (omnivore that eats berries, insects, and fish), giant sequoia (the world's largest tree by volume, which needs fire to release its seeds), mule deer (grazer that thrives on meadow grasses and shrubs).<br><br>
+          <strong>How They Survive Here:</strong> Black bears can eat many different foods, which helps them survive through changing seasons. Giant sequoias have thick fire-resistant bark. Mule deer migrate to lower elevations in winter when snow covers their food sources.<br><br>
+          <strong>One Big Challenge:</strong> Droughts and increasing wildfires threaten both the forest habitat and the giant sequoias — some ancient trees have been damaged or killed by recent fires that burned hotter than historical fires.<br><br>
+          <strong>One Conservation Effort:</strong> Rangers use controlled burns — intentionally set, carefully managed fires — to clear dead brush before it can fuel a larger, more destructive wildfire.
+        </div>
+      </div>
+
+      <div class="park-profile">
+        <div class="park-profile-name">🦬 Yellowstone National Park — Wyoming</div>
+        <div class="park-profile-detail">
+          <strong>Climate &amp; Conditions:</strong> Cold winters (temperatures below freezing), mild summers. High elevation, geothermal features (geysers, hot springs), volcanic soil, and open meadows mixed with conifer forests.<br><br>
+          <strong>Three Key Organisms:</strong> American bison (the largest land animal in North America, which grazes on grasses), gray wolf (apex predator reintroduced in 1995), elk (large deer species that grazes in meadows and valleys).<br><br>
+          <strong>How They Survive Here:</strong> Bison survive cold winters by using their large heads to push snow aside and reach grasses underneath. Wolves travel in packs, which allows them to hunt large prey like elk. Elk migrate within the park, following the snowmelt uphill as temperatures warm in spring.<br><br>
+          <strong>One Big Challenge:</strong> Managing wolf and elk populations so that neither grows too large — if elk overpopulate, they overgraze river banks, which causes erosion and damages the habitat for fish and other animals.<br><br>
+          <strong>One Conservation Effort:</strong> The wolf reintroduction program brought wolves back in 1995 after they had been absent for 70 years. The return of wolves changed elk behavior and allowed riverside plants to recover.
+        </div>
+      </div>
+
+      <!-- Research Steps -->
+      <p style="font-size:17px;font-weight:800;color:#1B4332;margin:20px 0 12px;">📋 Research Steps</p>
+
+      <div style="position:relative;margin:0 0 16px;">
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">1</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Choose your park.</strong> Read all three profiles carefully, then circle or write down the park you've chosen. Pick the one you find most interesting.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2D6A4F,#52B788);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(45,106,79,0.3);">2</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Set up your chart.</strong> Draw the Park Research Chart from the box below into your science notebook. Copy the headers exactly — you'll fill in the data cells with what you learned.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#52B788,#F9A825);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(82,183,136,0.3);">3</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Fill in your chart</strong> using information from the park profile you chose. Be specific — don't just copy the whole paragraph. Pull out the key details that belong in each row.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F9A825,#FDD835);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(249,168,37,0.3);">4</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Answer the Think Further question</strong> at the bottom of your chart. Write at least two complete sentences.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Student Research Chart -->
+      <div class="student-chart-wrap">
+        <div class="student-chart-label">📋 Park Research Chart — Copy This into Your Notebook</div>
+        <table class="student-chart">
+          <thead>
+            <tr>
+              <th style="width:38%;">Research Category</th>
+              <th>What I Found Out</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="row-label">🏞️ Park Name &amp; Location</td>
+              <td>write it here</td>
+            </tr>
+            <tr>
+              <td class="row-label">🌡️ Climate &amp; Environmental Conditions</td>
+              <td>write it here</td>
+            </tr>
+            <tr>
+              <td class="row-label">🐾 3 Organisms That Live There</td>
+              <td>write it here</td>
+            </tr>
+            <tr>
+              <td class="row-label">💪 How They Survive in This Habitat</td>
+              <td>write it here</td>
+            </tr>
+            <tr>
+              <td class="row-label">⚠️ One Challenge Facing This Ecosystem</td>
+              <td>write it here</td>
+            </tr>
+            <tr>
+              <td class="row-label">🛡️ One Conservation Effort</td>
+              <td>write it here</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🌲</span>
+        <div>
+          <div class="label">Think Further — Answer in Your Notebook</div>
+          <div class="question">"Pick one organism from your park. Would it survive if you moved it to one of the other two parks? Explain why or why not, using what you learned about environmental conditions and habitat."</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ RECORD YOUR THINKING ═══ -->
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#2E7D32;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">📓 Record Your Thinking</div>
+        <div class="act-subtitle">Organize what you discovered.</div>
+      </div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>After filling in your research chart, take a few more minutes to record what you noticed. Use specific details from the park profile you chose.</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">1</span>
+        <span class="pq-text">Which organism from your park do you think is best suited to that habitat? Name it and explain what makes it such a good match.</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">2</span>
+        <span class="pq-text">What environmental condition (temperature, water, sunlight, etc.) do you think matters most in the park you chose? Why?</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">3</span>
+        <span class="pq-text">Draw a quick sketch of one organism from your park and label at least two features that help it survive in that specific habitat.</span>
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">🗣</span>
+        <p>Tell the story of the ecosystem you researched — what it's like there, what lives there, and what scientists are doing to protect it. Try to explain it as if you're describing it to someone who has never heard of this park.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ DISCUSS ═══ -->
+  <div class="card theme-meadow scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">💬</div>
+      <div>
+        <div class="card-head-label">Discussion</div>
+        <div class="card-head-title">Think It Through</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Think through each question on your own. Write your answers in your science notebook before moving on.</p>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Question 1</div>
+          <div class="question">"In the park you researched, what would happen to the other organisms if one key species — like a predator or a major plant — disappeared completely?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">💡</span>
+        <div>
+          <div class="label">Question 2</div>
+          <div class="question">"What evidence from the park profile supports the idea that environmental conditions shape which organisms can survive there?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🌲</span>
+        <div>
+          <div class="label">Question 3 — Connect to Conservation</div>
+          <div class="question">"The conservation effort in your park is one way humans try to help. Can you think of another way humans might be harming a different national park ecosystem right now?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🔁</span>
+        <div>
+          <div class="label">Question 4 — Improve or Extend</div>
+          <div class="question">"If you were a scientist studying your park, what's one question you'd want to investigate further — something the profile didn't tell you?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+
+</div><!-- /tab-explore -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 4: SELF-CHECK QUIZ                                    -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div class="quiz-card scroll-reveal" style="margin-top:0;margin-bottom:18px;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#F9A825;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">🌳</div>
+      <div style="flex:1;">
+        <div style="font-size:19px;color:#1B4332;font-weight:800;line-height:1.2;">🧠 Quick Self-Check</div>
+        <div style="font-size:12px;color:#9A8E82;">Not graded — just for you! See how much you remember before starting the notebook work.</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+
+      <!-- QUESTION 1 — Vocabulary/main concept -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. What does an organism's <em>habitat</em> provide?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Only the other animals it can eat</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Food, water, shelter, and the conditions it needs to survive</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Sunlight and temperature only</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌲 Exactly right! A habitat provides everything an organism needs — not just one thing, but all of it together.</div>
+        <div class="quiz-feedback fb-wrong">Think about it this way: if you moved to a new home, you'd need more than just food. A habitat works the same way — it provides food, water, shelter, and the right living conditions all at once.</div>
+      </div>
+
+      <!-- QUESTION 2 — Cause and effect -->
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">2. A polar bear is built for icy, cold environments. What would happen if a polar bear was placed in a hot, wet rainforest habitat?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>It would thrive, because animals can adapt to any environment</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>It would survive well, because it's a large, strong predator</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>It would struggle or not survive, because the environmental conditions don't match its needs</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌿 Great thinking! The environmental conditions — temperature, food sources, water type — have to match what an organism's body needs. A polar bear's thick fur and cold-water diet make it a poor fit for a hot rainforest.</div>
+        <div class="quiz-feedback fb-wrong">Remember: size and strength don't guarantee survival in the wrong habitat. What matters is whether the temperature, food, water, and other conditions match what the organism needs.</div>
+      </div>
+
+      <!-- QUESTION 3 — Real-world connection -->
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-text">3. Scientists at Yellowstone reintroduced wolves after they had been absent for 70 years. Why did this matter for the whole ecosystem?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>The wolves affected elk behavior, which helped plants grow back, which helped prevent erosion — the whole ecosystem changed</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Wolves are the only endangered species in Yellowstone, so they needed the most protection</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Wolves only affected other wolves — they didn't change anything for other organisms</div>
+        </div>
+        <div class="quiz-feedback fb-correct">⭐ Excellent! This is exactly what ecosystems are about — everything connects. One species can change behavior, vegetation, water flow, and soil. Scientists call this a cascade effect through the whole system.</div>
+        <div class="quiz-feedback fb-wrong">Think about what you learned in the Go Deeper section: wolves changed where elk grazed, plants grew back near rivers, and that changed the rivers themselves. One species affected the whole ecosystem — not just other wolves.</div>
+      </div>
+
+      <!-- Score Display -->
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum">0</div>
+        <div class="quiz-score-label">out of 3</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+
+        <div class="video-feedback" id="quizVideoCorrect" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">✅</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Perfect Score</div>
+                <div class="video-wrap-title">You nailed it — you think like a field scientist!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">⭐</div>
+                <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 32-01-quiz-perfect --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">📚</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Keep Going</div>
+                <div class="video-wrap-title">Almost there — let's look at a few more ideas together.</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">💪</div>
+                <div class="video-placeholder-text">Review and encouragement video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 32-01-quiz-review --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+
+</div><!-- /tab-quiz -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 5: ASSIGNMENT                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <!-- Assignment Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">✍️</span>
+      <div>
+        <div class="video-wrap-type">Activity 5 · Assignment</div>
+        <div class="video-wrap-title">Here's What to Do for Your Assignment</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">✍️</div>
+        <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 32-01-assignment-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ACTIVITY 5: NOTEBOOK WORK ═══ -->
+  <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
+    <div class="act-head">
+      <div class="act-num" style="background:#7B5EA7;">5</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment</div>
+        <div class="act-subtitle">Show what you've learned about national park ecosystems.</div>
+      </div>
+      <div class="act-time" style="background:#7B5EA7;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- PART A -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔍 Part A — Identify and Sort</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Write each item below in the correct column of a two-column chart in your notebook. Label the columns <strong>Living Things</strong> and <strong>Nonliving Things</strong>.</p>
+
+      <div class="callout callout-tip" style="margin-bottom:16px;">
+        <span class="callout-icon">📋</span>
+        <p><strong>Word Bank:</strong> river water, alligator, temperature, sawgrass, sunlight, bison, soil type, gray wolf, rainfall, giant sequoia, air, roseate spoonbill</p>
+      </div>
+
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">Sort all twelve items into the correct column of your chart.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">Look at your "Nonliving Things" column. Write one sentence explaining why these nonliving things matter to the organisms in the same ecosystem.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">Circle one organism from your "Living Things" column. Write the name of the park where it lives and one environmental condition it needs to survive.</span></div>
+
+      <!-- PART B -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🚀 Part B — Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer each question in <strong>complete sentences</strong>. Use your science vocabulary!</p>
+
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">4</span><span class="pq-text">Describe the national park you researched in the Explore activity. Name two organisms that live there and explain how the environmental conditions match their needs.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">5</span><span class="pq-text">What challenge is threatening the ecosystem you studied? Explain how it affects the organisms living there.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">6</span><span class="pq-text">Why do scientists say that protecting one national park habitat helps many different organisms — not just one species?</span></div>
+
+      <!-- WRITE & EXPLAIN -->
+      <div class="key-concept scroll-reveal" style="background:#FFF9E8;border-color:#F0E4C0;margin-top:20px;">
+        <div class="kc-label" style="color:#F9A825;">✍️ Write &amp; Explain</div>
+        <p style="font-size:16px;font-weight:700;color:#1B4332;margin-bottom:14px;">Pick one organism from a national park ecosystem. Can it survive in a completely different habitat? Use what you learned to explain your thinking.</p>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What do you think?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I think that [organism's name] could / could not survive in [different habitat] because…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What did you observe or learn that supports your thinking?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I know this because the lesson showed that…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">Why does that make sense?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="background:#EEF8F0;border-radius:10px;padding:10px 14px;border-left:3px solid #52B788;">
+          <p style="margin:0;font-size:14px;color:#1B4332;">📚 Try to use at least one of these words in your answer: <strong>habitat</strong>, <strong>environmental conditions</strong>, <strong>survive</strong>, <strong>ecosystem</strong></p>
+        </div>
+      </div>
+
+      <!-- PART C -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Label</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Draw a simple ecosystem scene from the national park you researched. Show at least four organisms in their habitat. Label each organism and draw one arrow showing how it connects to something else in the ecosystem (for example: wolf → elk, or tree → bird).</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Reflect</div>
+          <div class="question">"Look back at the observations you wrote in your science notebook at the beginning of this lesson. What do you understand now that you didn't understand then? What changed in your thinking?"</div>
+        </div>
+      </div>
+
+      <!-- WHAT TO TURN IN -->
+      <div class="turn-in-block">
+        <div class="turn-in-header">
+          <div class="turn-in-header-icon">📋</div>
+          <div>
+            <div class="turn-in-header-label">Canvas Submission</div>
+            <div class="turn-in-header-title">What to Turn In</div>
+          </div>
+        </div>
+        <div class="turn-in-body">
+
+          <p class="turn-in-intro">Submit your work on Canvas using <strong>one of these options:</strong></p>
+
+          <div class="turn-in-options">
+            <div class="turn-in-option turn-in-option-type">
+              <div class="turn-in-option-icon">⌨️</div>
+              <div class="turn-in-option-title">Type It</div>
+              <div class="turn-in-option-text">Type your answers directly into the Canvas assignment.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-photo">
+              <div class="turn-in-option-icon">📸</div>
+              <div class="turn-in-option-title">Photo It</div>
+              <div class="turn-in-option-text">Take a clear photo of your handwritten work and upload it.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-video">
+              <div class="turn-in-option-icon">🎥</div>
+              <div class="turn-in-option-title">Record It</div>
+              <div class="turn-in-option-text">Record a short video explaining what you did and learned.</div>
+            </div>
+          </div>
+
+          <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
+
+          <div class="turn-in-checklist">
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Notice &amp; Wonder observations and question from the Vocabulary page.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My completed Park Research Chart and Think Further answer from the Explore activity.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My living/nonliving sort chart and three Part A responses.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My short answer responses to Part B (questions 4, 5, and 6), written in complete sentences.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Write &amp; Explain response using lesson vocabulary.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Part C ecosystem drawing with at least four organisms labeled and one connection arrow.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Closing Video -->
+      <div class="video-wrap" style="margin-top:24px;">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">👋</span>
+          <div>
+            <div class="video-wrap-type">Closing · Wrap-Up</div>
+            <div class="video-wrap-title">Great work, scientist! Here's what's coming in Lesson 32.02…</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">👋</div>
+            <div class="video-placeholder-text">Closing video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 32-01-closing --></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /tab-assignment -->
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <div class="footer-line1">Optima Academy Online · <span>3rd Grade Science</span></div>
+  <div class="footer-line2">Lesson 32.01 · NGSS 3-LS4-3 · 3-ESS3-1</div>
+  <div class="footer-line3">© Optima Academy · All rights reserved</div>
+</div>
+
+</div><!-- /page-wrap -->
+
+
+<script>
+
+var LESSON_EMOJI = '🌳';
+
+// ── Tab System ──
+var tabProgress = { vocab: false, lesson: false, explore: false, quiz: false, assignment: false };
+var tabOrder = ['vocab','lesson','explore','quiz','assignment'];
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelector('[data-tab="' + name + '"]').classList.add('active');
+  tabProgress[name] = true;
+  document.querySelector('[data-tab="' + name + '"]').classList.add('visited');
+  var visited = Object.values(tabProgress).filter(Boolean).length;
+  var pct = Math.round((visited / tabOrder.length) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c){
+    if (name === 'vocab') { c.classList.remove('collapsed'); }
+    else { c.classList.add('collapsed'); }
+  });
+  try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+  var top = document.getElementById('pageTop');
+  if (top && top.scrollIntoView) {
+    try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+  }
+}
+
+// ── Checklist ──
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  var icon = item.querySelector('.check-icon');
+  if (icon) {
+    icon.textContent = item.classList.contains('checked') ? LESSON_EMOJI : '';
+  }
+  var checklist = item.closest('.turn-in-checklist');
+  if (!checklist) return;
+  var items = checklist.querySelectorAll('.turn-in-item');
+  if (items.length === 0) return;
+  var allChecked = Array.prototype.every.call(items, function(it){
+    return it.classList.contains('checked');
+  });
+  if (allChecked) {
+    setTimeout(window.launchConfetti, 200);
+  }
+}
+
+// ── Clickable Diagram ──
+(function() {
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel    = document.getElementById('diagramPanel');
+  var wordEl   = document.getElementById('diagramWord');
+  var infoEl   = document.getElementById('diagramInfo');
+  if (!panel) return;
+  hotspots.forEach(function(hs) {
+    hs.addEventListener('click', function(e) {
+      e.stopPropagation();
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+      hs.classList.add('active');
+      var part = hs.getAttribute('data-part').replace(/-/g, ' ');
+      wordEl.textContent = part.charAt(0).toUpperCase() + part.slice(1);
+      infoEl.innerHTML   = hs.getAttribute('data-info');
+      panel.classList.add('visible');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+    }
+  });
+})();
+
+// ── Self-Check Quiz ──
+var quizAnswered = 0;
+var quizCorrect  = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen  = optEl.getAttribute('data-val');
+  q.querySelectorAll('.quiz-opt').forEach(function(o){
+    if (o.getAttribute('data-val') === correct) { o.classList.add('correct'); }
+    else { o.classList.add('disabled'); }
+  });
+  var fbCorrect = q.querySelector('.fb-correct');
+  var fbWrong   = q.querySelector('.fb-wrong');
+  if (chosen === correct) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+  if (quizAnswered === 3) {
+    var scoreBox  = document.getElementById('quizScore');
+    var scoreNum  = document.getElementById('quizScoreNum');
+    var scoreMsg  = document.getElementById('quizScoreMsg');
+    var vCorrect  = document.getElementById('quizVideoCorrect');
+    var vReview   = document.getElementById('quizVideoReview');
+    scoreNum.textContent = quizCorrect;
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '⭐ Perfect! You got every question right!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌿 Great job! Almost there!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip) {
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function() {
+    var rect = tip.getBoundingClientRect();
+    var bw   = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Back to Top ──
+(function() {
+  var btn = document.getElementById('backToTop');
+  if (!btn) return;
+  var inIframe = (function() {
+    try { return window.self !== window.top; }
+    catch (e) { return true; }
+  })();
+  btn.addEventListener('click', function() {
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    var top = document.getElementById('pageTop');
+    if (top && top.scrollIntoView) {
+      try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+    }
+    try {
+      if (window.frameElement && window.frameElement.scrollIntoView) {
+        window.frameElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (e) {}
+    if (inIframe) {
+      try { window.parent.postMessage({ type: 'optima-lesson:scroll-to-top' }, '*'); } catch (e) {}
+    }
+  });
+  if (inIframe) {
+    setTimeout(function() { btn.classList.add('show'); }, 1500);
+  } else {
+    window.addEventListener('scroll', function() {
+      btn.classList.toggle('show', window.pageYOffset > 400);
+    });
+  }
+})();
+
+// ── Confetti ──
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx    = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#52B788','#F9A825','#FDD835','#4DD0E1','#2E7D32','#7B5EA7','#FF8F00','#0288D1'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── Collapsible Intro Cards ──
+var introCards = document.querySelectorAll('.intro-2col .card');
+introCards.forEach(function(card){
+  var head = card.querySelector('.card-head');
+  if (!head) return;
+  head.addEventListener('click', function(){
+    var willCollapse = !card.classList.contains('collapsed');
+    introCards.forEach(function(c){
+      c.classList.toggle('collapsed', willCollapse);
+    });
+  });
+});
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+tabProgress['vocab'] = true;
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+(function(){
+  var btt = document.getElementById('backToTop');
+  if (btt) { btt.textContent = LESSON_EMOJI + ' Back to Top'; }
+})();
+</script>
+</body>
+</html>

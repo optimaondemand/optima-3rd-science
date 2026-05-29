@@ -1,0 +1,1822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – How Do Humans Affect Ecosystems?</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+  background: #F2F0E8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #2B1D12; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.page-wrap { max-width: 920px; margin: 0 auto; background: #FAF8F4; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+.header {
+  background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%);
+  border-bottom: 6px solid #52B788;
+  padding: 22px 28px 24px; position: relative; overflow: hidden;
+}
+.header::after { content:''; position:absolute; bottom:6px; left:0; right:0; height:3px; background:linear-gradient(90deg,#52B788,#95D5B2,#52B788); }
+.header-brand { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+.header-logo { width:52px; height:52px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 2px 8px rgba(0,0,0,0.15); }
+.header-logo img { width:48px; height:38px; }
+.header-org { font-size:22px; color:#fff; font-weight:800; line-height:1.15; }
+.header-sub { font-size:11px; color:#55C8E8; letter-spacing:0.5px; }
+.header-title { font-size:30px; color:#fff; font-weight:900; line-height:1.15; margin-bottom:10px; text-shadow:0 2px 12px rgba(82,183,136,0.3); }
+.header-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(82,183,136,0.15); border:1.5px solid rgba(82,183,136,0.35); border-radius:28px; padding:6px 16px; }
+.header-badge span:first-child { font-size:22px; }
+.header-badge span:last-child { font-size:18px; color:#fff; font-weight:800; }
+.hero-visual { background:#1B4332; padding:0; position:relative; overflow:hidden; border-bottom:3px solid #52B788; }
+.hero-visual svg { display:block; width:100%; height:auto; }
+@keyframes grassSway { 0%,100%{transform:rotate(0deg);} 33%{transform:rotate(3deg);} 67%{transform:rotate(-3deg);} }
+@keyframes sparkle { 0%,100%{opacity:0.14;} 50%{opacity:0.68;} }
+@keyframes birdFly { 0%,100%{transform:translate(0px,0px);} 20%{transform:translate(14px,-12px);} 40%{transform:translate(32px,-4px);} 60%{transform:translate(50px,-14px);} 80%{transform:translate(64px,-5px);} }
+@keyframes wingFlap { 0%,100%{transform:scaleY(1.0);} 50%{transform:scaleY(0.22);} }
+.sway-r1 { animation:grassSway 4.2s ease-in-out infinite; transform-box:view-box; transform-origin:686px 210px; }
+.sway-r2 { animation:grassSway 4.8s ease-in-out infinite 0.7s; transform-box:view-box; transform-origin:810px 210px; }
+.spk-a { animation:sparkle 3.6s ease-in-out infinite; }
+.spk-b { animation:sparkle 3.6s ease-in-out infinite 1.3s; }
+.spk-c { animation:sparkle 3.6s ease-in-out infinite 2.5s; }
+.bird-fly { animation:birdFly 5.8s ease-in-out infinite; }
+.wing-flap { animation:wingFlap 0.28s ease-in-out infinite; transform-box:fill-box; transform-origin:50% 100%; }
+@keyframes mind-blow-bounce { 0%,100%{transform:scale(1);} 50%{transform:scale(1.12);} }
+.info-strip { display:flex; flex-wrap:wrap; background:#fff; border-bottom:2px solid #E8DDD2; }
+.info-item { flex:1; min-width:150px; padding:12px 16px; border-right:1px solid #E8DDD2; display:flex; align-items:center; gap:10px; }
+.info-item:last-child { border-right:none; }
+.info-icon { width:40px; height:40px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
+.info-label { font-size:10px; color:#9A8E82; text-transform:uppercase; letter-spacing:0.5px; font-weight:700; }
+.info-value { font-size:16px; color:#1B4332; font-weight:800; line-height:1.2; }
+.info-detail { font-size:11px; color:#5A4D3E; line-height:1.3; }
+.content { padding:24px 28px 36px; }
+.card { background:#fff; border:2px solid #E8DDD2; border-radius:18px; margin-bottom:22px; overflow:hidden; box-shadow:0 2px 12px rgba(27,67,50,0.04); }
+.card-head { display:flex; align-items:center; gap:10px; padding:14px 20px; border-bottom:2px solid; }
+.card-head-icon { width:42px; height:42px; border-radius:50%; color:#fff; font-size:22px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.card-head-label { font-size:10px; color:#9A8E82; text-transform:uppercase; letter-spacing:0.8px; font-weight:700; }
+.card-head-title { font-size:20px; color:#1B4332; font-weight:800; line-height:1.2; }
+.card-body { padding:18px 22px; }
+.card-body p { font-size:17px; color:#5A4D3E; line-height:1.75; margin-bottom:12px; }
+.card-body p:last-child { margin-bottom:0; }
+.theme-earth .card-head { background:#FFF0E8; border-color:#E8D0B8; }
+.theme-earth .card-head-icon { background:#A0522D; }
+.theme-sun .card-head { background:#FFF9E8; border-color:#F0E4C0; }
+.theme-sun .card-head-icon { background:#F9A825; }
+.theme-sky .card-head { background:#EAF8FD; border-color:#D6F2FB; }
+.theme-sky .card-head-icon { background:#0288D1; }
+.theme-forest .card-head { background:#EEF8F0; border-color:#C4E5CC; }
+.theme-forest .card-head-icon { background:#2E7D32; }
+.theme-rock .card-head { background:#F0EDF6; border-color:#D8D0E8; }
+.theme-rock .card-head-icon { background:#7B5EA7; }
+.theme-meadow .card-head { background:#F0F8E8; border-color:#C8E0B8; }
+.theme-meadow .card-head-icon { background:#558B2F; }
+.activity-card { background:#fff; border:2px solid #E8DDD2; border-radius:18px; margin-bottom:18px; overflow:hidden; box-shadow:0 2px 10px rgba(27,67,50,0.04); }
+.activity-card.act-warmup { border-left:6px solid #52B788; }
+.activity-card.act-lesson { border-left:6px solid #F9A825; }
+.activity-card.act-explore { border-left:6px solid #0288D1; }
+.activity-card.act-practice { border-left:6px solid #2E7D32; }
+.activity-card.act-check { border-left:6px solid #7B5EA7; }
+.act-head { display:flex; align-items:center; gap:12px; padding:14px 20px 14px 18px; border-bottom:1.5px solid #E8DDD2; }
+.act-num { width:38px; height:38px; border-radius:14px; color:#fff; font-size:18px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.act-title { font-size:19px; color:#1B4332; font-weight:800; line-height:1.2; }
+.act-subtitle { font-size:12px; color:#9A8E82; }
+.act-time { display:inline-flex; align-items:center; gap:4px; padding:4px 12px; border-radius:20px; font-size:13px; font-weight:700; color:#fff; white-space:nowrap; margin-left:auto; flex-shrink:0; }
+.act-body { padding:18px 22px 18px 20px; }
+.act-body p { font-size:17px; color:#5A4D3E; line-height:1.75; margin-bottom:12px; }
+.callout { border-radius:14px; padding:16px 18px; display:flex; align-items:flex-start; gap:12px; margin-bottom:14px; }
+.callout-icon { font-size:28px; flex-shrink:0; margin-top:2px; }
+.callout p { font-size:16px; color:#2B1D12; line-height:1.65; margin:0; }
+.callout-earth { background:#FFF0E8; border:2px solid #E8D0B8; }
+.callout-think { background:#FFF9E8; border:2px solid #F0E4C0; }
+.callout-vocab { background:#F0EDF6; border:2px solid #D8D0E8; }
+.callout-tip { background:#EEF8F0; border:2px solid #C4E5CC; }
+.callout-submit { background:#EAF8FD; border:2px solid #D6F2FB; }
+.socratic-q { background:linear-gradient(135deg,#EEF8F0,#E8F5E9); border:2px solid #A8D5B8; border-radius:16px; padding:16px 20px; margin:16px 0; display:flex; align-items:flex-start; gap:12px; }
+.socratic-q .sq-icon { font-size:26px; flex-shrink:0; line-height:1; }
+.socratic-q .label { font-size:11px; color:#2D6A4F; text-transform:uppercase; letter-spacing:1px; font-weight:800; margin-bottom:4px; }
+.socratic-q .question { font-size:17px; color:#2B1D12; font-weight:700; line-height:1.6; font-style:italic; }
+.diagram-wrap { background:#fff; border:2px solid #E8DDD2; border-radius:16px; padding:16px; margin:16px 0; text-align:center; }
+.diagram-wrap svg { max-width:100%; height:auto; }
+.diagram-caption { font-size:13px; color:#9A8E82; margin-top:10px; font-weight:600; text-align:center; }
+.lesson-figure { background:#fff; border:2px solid #E8DDD2; border-radius:16px; padding:14px 14px 18px; margin:0 0 22px; box-shadow:0 2px 10px rgba(27,67,50,0.04); }
+.lesson-figure-label { font-size:11px; color:#2D6A4F; text-transform:uppercase; letter-spacing:0.8px; font-weight:800; margin-bottom:10px; }
+.lesson-figure img { display:block; max-width:100%; height:auto; border-radius:10px; margin:0 auto; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+.lesson-figure-caption { font-size:14px; color:#5A4D3E; margin-top:12px; line-height:1.55; font-weight:600; text-align:center; }
+.lesson-figure-caption strong { color:#1B4332; }
+.key-concept { background:#F0F8E8; border:2px solid #C8E0B8; border-radius:14px; padding:18px 20px; margin:14px 0; }
+.key-concept .kc-label { font-size:13px; color:#558B2F; text-transform:uppercase; letter-spacing:0.5px; font-weight:800; margin-bottom:8px; }
+.key-concept p { font-size:16px; color:#2B1D12; line-height:1.7; margin-bottom:8px; }
+.key-concept p:last-child { margin-bottom:0; }
+.pq { background:#FAFAF6; border:2px solid #E8DDD2; border-radius:14px; padding:14px 18px; margin-bottom:12px; }
+.pq-num { display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:50%; color:#fff; font-weight:800; font-size:14px; margin-right:8px; vertical-align:middle; }
+.pq-text { font-size:17px; color:#2B1D12; line-height:1.65; margin-bottom:8px; }
+.pq-answer { font-size:15px; color:#9A8E82; font-style:italic; }
+.vocab-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:14px 0; }
+.flip-card { perspective:800px; height:195px; cursor:pointer; }
+.flip-card-inner { position:relative; width:100%; height:100%; transition:transform 0.5s ease; transform-style:preserve-3d; }
+.flip-card.flipped .flip-card-inner { transform:rotateY(180deg); }
+.flip-card-front, .flip-card-back { position:absolute; top:0; left:0; width:100%; height:100%; border-radius:16px; backface-visibility:hidden; -webkit-backface-visibility:hidden; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:14px 18px; text-align:center; border:2px solid #E8DDD2; box-shadow:0 2px 10px rgba(27,67,50,0.06); }
+.flip-card-front { background:#FAFAF6; border-top:5px solid; }
+.flip-card-front .fc-emoji { font-size:32px; margin-bottom:8px; }
+.flip-card-front .fc-word { font-size:18px; font-weight:800; color:#1B4332; margin-bottom:6px; }
+.flip-card-front .fc-tap { font-size:11px; color:#B0A698; font-weight:600; letter-spacing:0.3px; }
+.flip-card-back { background:linear-gradient(145deg,#1B4332,#2D6A4F); border-color:#1B4332; transform:rotateY(180deg); }
+.flip-card-back .fc-def { font-size:14.5px; color:#fff; line-height:1.5; font-weight:600; }
+.flip-card-back .fc-word-back { font-size:11px; color:#95D5B2; text-transform:uppercase; letter-spacing:1px; font-weight:800; margin-bottom:6px; }
+.flip-card-back .fc-tap-back { font-size:11px; color:rgba(255,255,255,0.4); margin-top:8px; font-weight:600; }
+.fc-color-1 .flip-card-front { border-top-color:#52B788; }
+.fc-color-2 .flip-card-front { border-top-color:#2D6A4F; }
+.fc-color-3 .flip-card-front { border-top-color:#F9A825; }
+.fc-color-4 .flip-card-front { border-top-color:#0288D1; }
+.fc-color-5 .flip-card-front { border-top-color:#2E7D32; }
+.fc-color-6 .flip-card-front { border-top-color:#7B5EA7; }
+.vtip { position:relative; color:#7B5EA7; font-weight:700; cursor:help; border-bottom:2px dotted rgba(123,94,167,0.45); transition:color 0.15s; }
+.vtip:hover { color:#5B3EA7; }
+.vtip .vtip-box { position:fixed; background:#1B4332; color:#fff; padding:12px 16px; border-radius:12px; font-size:14px; font-weight:600; font-style:normal; line-height:1.55; width:250px; text-align:center; opacity:0; visibility:hidden; transition:opacity 0.2s ease, transform 0.2s ease, visibility 0.2s; pointer-events:none; z-index:9999; box-shadow:0 6px 24px rgba(27,67,50,0.35); border:1.5px solid rgba(149,213,178,0.3); transform:translateY(6px); }
+.vtip .vtip-box::after { content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%); border:7px solid transparent; border-top-color:#1B4332; }
+.vtip .vtip-word { font-size:11px; color:#95D5B2; text-transform:uppercase; letter-spacing:1px; font-weight:800; margin-bottom:4px; display:block; }
+.vtip:hover .vtip-box { opacity:1; visibility:visible; transform:translateY(0); }
+details { background:#fff; border:2px solid #E8DDD2; border-left:5px solid #7B5EA7; border-radius:14px; margin-bottom:12px; overflow:hidden; }
+details summary { padding:12px 18px; font-size:16px; font-weight:700; color:#1B4332; cursor:pointer; }
+details summary:hover { background:#FAFAF6; }
+details > div { padding:12px 18px 14px; font-size:16px; color:#5A4D3E; line-height:1.65; border-top:1.5px solid #E8DDD2; }
+.need-item { display:flex; align-items:center; gap:12px; padding:12px 16px; border-radius:14px; margin-bottom:8px; }
+.need-item span:first-child { font-size:24px; flex-shrink:0; }
+.need-item span:last-child { font-size:17px; color:#1B4332; font-weight:600; }
+.footer { background:#1B4332; border-top:4px solid #52B788; padding:18px 28px; text-align:center; }
+.footer-line1 { font-size:15px; color:#fff; margin-bottom:4px; }
+.footer-line1 span { color:#95D5B2; font-weight:700; }
+.footer-line2 { font-size:12px; color:rgba(255,255,255,0.5); margin-bottom:2px; }
+.footer-line3 { font-size:12px; color:rgba(255,255,255,0.4); }
+.mind-blow { background:linear-gradient(135deg,#1a3a28,#1B4332); border:2px solid rgba(149,213,178,0.3); border-radius:18px; padding:18px 22px; margin:18px 0; display:flex; align-items:flex-start; gap:14px; position:relative; overflow:hidden; }
+.mind-blow::before { content:''; position:absolute; top:-30px; right:-30px; width:100px; height:100px; border-radius:50%; background:radial-gradient(circle,rgba(82,183,136,0.15),transparent); }
+.mind-blow-icon { font-size:36px; flex-shrink:0; animation:mind-blow-bounce 2s ease-in-out infinite; }
+.mind-blow-content { flex:1; }
+.mind-blow-label { font-size:11px; color:#FDD835; text-transform:uppercase; letter-spacing:1.5px; font-weight:800; margin-bottom:4px; }
+.mind-blow-text { font-size:16px; color:#fff; line-height:1.6; font-weight:600; }
+.mind-blow-text strong { color:#95D5B2; }
+.diagram-interactive { position:relative; }
+.diagram-interactive .hotspot { cursor:pointer; opacity:0; transition:opacity 0.2s; }
+.diagram-interactive .hotspot:hover { opacity:0.2; }
+.diagram-interactive .hotspot.active { opacity:0.28; }
+.diagram-info-panel { background:#1B4332; color:#fff; padding:14px 20px; border-radius:14px; font-size:15px; line-height:1.55; font-weight:600; text-align:center; border:1.5px solid rgba(149,213,178,0.3); box-shadow:0 4px 16px rgba(0,0,0,0.2); margin:10px 0 0; display:none; }
+.diagram-info-panel.visible { display:block; }
+.diagram-info-panel .dip-word { font-size:11px; color:#FDD835; text-transform:uppercase; letter-spacing:1px; font-weight:800; display:block; margin-bottom:3px; }
+.diagram-tap-hint { text-align:center; font-size:13px; color:#9A8E82; font-weight:600; margin-top:8px; }
+.quiz-card { background:#fff; border:2px solid #E8DDD2; border-left:6px solid #F9A825; border-radius:18px; margin-bottom:18px; overflow:hidden; box-shadow:0 2px 10px rgba(27,67,50,0.04); }
+.quiz-q { background:#FAFAF6; border:2px solid #E8DDD2; border-radius:14px; padding:16px 18px; margin-bottom:14px; }
+.quiz-q-text { font-size:17px; color:#2B1D12; font-weight:700; line-height:1.6; margin-bottom:12px; }
+.quiz-options { display:flex; flex-direction:column; gap:8px; }
+.quiz-opt { padding:10px 16px; border-radius:12px; border:2px solid #E8DDD2; background:#fff; font-size:15px; font-weight:700; color:#2B1D12; cursor:pointer; transition:all 0.2s; display:flex; align-items:center; gap:10px; user-select:none; }
+.quiz-opt:hover { background:#EEF8F0; border-color:#52B788; }
+.quiz-opt.correct { background:#EEF8F0 !important; border-color:#2E7D32 !important; color:#1a6b35 !important; }
+.quiz-opt.wrong { background:#FFF0EC !important; border-color:#E8636B !important; color:#a33 !important; }
+.quiz-opt.disabled { pointer-events:none; opacity:0.6; }
+.quiz-opt .opt-letter { width:28px; height:28px; border-radius:50%; background:#E8DDD2; color:#5A4D3E; font-size:14px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:all 0.2s; }
+.quiz-opt.correct .opt-letter { background:#2E7D32; color:#fff; }
+.quiz-opt.wrong .opt-letter { background:#E8636B; color:#fff; }
+.quiz-feedback { font-size:14px; padding:10px 14px; border-radius:10px; margin-top:10px; display:none; font-weight:600; line-height:1.5; }
+.quiz-feedback.show { display:block; }
+.quiz-feedback.fb-correct { background:#EEF8F0; color:#1a6b35; border:1.5px solid #B8E8CF; }
+.quiz-feedback.fb-wrong { background:#FFF0EC; color:#8a3030; border:1.5px solid #F5C4BA; }
+.quiz-score { text-align:center; padding:16px; background:linear-gradient(135deg,#EEF8F0,#E8F5E9); border:2px solid #C4E5CC; border-radius:14px; margin-top:8px; display:none; }
+.quiz-score.show { display:block; }
+.quiz-score-num { font-size:36px; font-weight:900; color:#1B4332; }
+.quiz-score-label { font-size:14px; color:#9A8E82; font-weight:700; }
+.quiz-score-msg { font-size:16px; color:#2B1D12; font-weight:700; margin-top:6px; }
+.go-deeper { background:linear-gradient(135deg,#F0EDF6,#E8E2F2); border:2px solid #D8D0E8; border-radius:16px; margin:16px 0; overflow:hidden; }
+.go-deeper summary { padding:14px 18px; font-size:16px; font-weight:800; color:#1B4332; cursor:pointer; display:flex; align-items:center; gap:10px; list-style:none; }
+.go-deeper summary::-webkit-details-marker { display:none; }
+.go-deeper summary::before { content:'🔭'; font-size:22px; }
+.go-deeper summary::after { content:'▸'; margin-left:auto; font-size:18px; color:#7B5EA7; transition:transform 0.3s; }
+.go-deeper[open] summary::after { transform:rotate(90deg); }
+.go-deeper .gd-body { padding:4px 18px 16px; font-size:15px; color:#5A4D3E; line-height:1.7; border-top:1.5px solid #D8D0E8; }
+.go-deeper .gd-body p { margin-bottom:10px; }
+.scroll-reveal { opacity:1 !important; transform:none !important; transition:none !important; }
+.back-to-top { position:fixed; bottom:24px; right:24px; height:40px; padding:0 18px 0 14px; border-radius:20px; background:linear-gradient(135deg,#2D6A4F,#52B788); color:#fff; border:none; font-size:14px; font-weight:800; font-family:'Nunito',sans-serif; cursor:pointer; box-shadow:0 4px 14px rgba(45,106,79,0.35); display:flex; align-items:center; gap:6px; opacity:0; visibility:hidden; transform:translateY(20px); transition:opacity 0.3s,visibility 0.3s,transform 0.3s,box-shadow 0.2s; z-index:500; letter-spacing:0.2px; white-space:nowrap; }
+.back-to-top.show { opacity:1; visibility:visible; transform:translateY(0); }
+.back-to-top:hover { box-shadow:0 6px 20px rgba(45,106,79,0.5); transform:translateY(-3px); }
+#confettiCanvas { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:10000; }
+.video-wrap { border-radius:18px; overflow:hidden; border:2px solid #E8DDD2; box-shadow:0 4px 20px rgba(27,67,50,0.08); background:#000; margin:0 0 22px; }
+.video-wrap-header { display:flex; align-items:center; gap:12px; padding:12px 18px; background:linear-gradient(135deg,#1B4332,#2D6A4F); border-bottom:2px solid rgba(149,213,178,0.2); }
+.video-wrap-type { font-size:10px; color:#95D5B2; text-transform:uppercase; letter-spacing:1.5px; font-weight:800; margin-bottom:2px; }
+.video-wrap-title { font-size:16px; color:#fff; font-weight:800; line-height:1.2; }
+.video-ratio { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; }
+.video-ratio iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
+.video-placeholder { position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(135deg,#1a3a28,#1B4332); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:24px; }
+.video-placeholder-icon { font-size:44px; margin-bottom:10px; opacity:0.55; }
+.video-placeholder-text { font-size:14px; color:rgba(255,255,255,0.45); font-weight:600; line-height:1.5; }
+.video-placeholder-id { font-size:11px; color:rgba(149,213,178,0.4); font-family:monospace; margin-top:6px; letter-spacing:0.5px; }
+.video-feedback { display:none; }
+.video-feedback.show { display:block; }
+.intro-2col .card .card-head { cursor:pointer; user-select:none; position:relative; }
+.intro-2col .card .card-head::after { content:'▾'; position:absolute; right:16px; top:50%; transform:translateY(-50%); font-size:16px; color:#9A8E82; transition:transform 0.25s ease; }
+.intro-2col .card.collapsed .card-head::after { transform:translateY(-50%) rotate(-90deg); }
+.intro-2col .card.collapsed .card-body { display:none; }
+.tab-bar { position:sticky; top:44px; z-index:100; background:#FAF8F4; border-bottom:3px solid #E8DDD2; display:flex; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+.tab-bar::-webkit-scrollbar { display:none; }
+.tab-btn { flex:1; min-width:130px; padding:12px 8px 11px; background:transparent; border:none; border-bottom:4px solid transparent; font-family:'Nunito',sans-serif; font-size:13px; font-weight:700; color:#9A8E82; cursor:pointer; transition:all 0.2s; white-space:nowrap; line-height:1.3; text-align:center; }
+.tab-btn:hover { color:#1B4332; background:#EEF8F0; }
+.tab-btn.active { color:#1B4332; border-bottom-color:#2D6A4F; background:#fff; }
+.tab-btn .tab-check { display:none; font-size:12px; color:#2E7D32; margin-left:4px; font-weight:800; }
+.tab-btn.visited .tab-check { display:inline; }
+.tab-panel { display:none; padding:24px 28px 36px; }
+.tab-panel.active { display:block; }
+.intro-2col { display:grid; grid-template-columns:1fr 1fr; gap:16px; padding:20px 28px 0; }
+.intro-2col .card { margin-bottom:0; }
+.need-strip { display:flex; align-items:center; flex-wrap:wrap; gap:8px; padding:12px 28px 16px; }
+.need-strip-label { font-size:13px; color:#5A4D3E; font-weight:700; white-space:nowrap; }
+.need-chip { display:inline-flex; align-items:center; gap:5px; background:#EEF8F0; border:1.5px solid #C4E5CC; border-radius:20px; padding:5px 12px; font-size:13px; color:#1B4332; font-weight:700; }
+.tab-next-wrap { text-align:center; padding:24px 0 8px; }
+.tab-next-btn { display:inline-flex; align-items:center; gap:8px; padding:13px 30px; background:linear-gradient(135deg,#2D6A4F,#52B788); color:#fff; border:none; border-radius:28px; font-family:'Nunito',sans-serif; font-size:16px; font-weight:800; cursor:pointer; box-shadow:0 4px 16px rgba(45,106,79,0.3); transition:transform 0.2s,box-shadow 0.2s; }
+.tab-next-btn:hover { transform:translateY(-2px); box-shadow:0 6px 22px rgba(45,106,79,0.4); }
+.progress-wrap { position:sticky; top:0; z-index:200; background:#0E1C42; padding:8px 20px 10px; border-bottom:2px solid rgba(85,200,232,0.3); display:flex; align-items:center; gap:14px; }
+.progress-label { font-size:12px; color:#55C8E8; font-weight:800; text-transform:uppercase; letter-spacing:0.8px; white-space:nowrap; }
+.progress-track { flex:1; height:10px; background:rgba(255,255,255,0.1); border-radius:10px; overflow:hidden; position:relative; }
+.progress-fill { height:100%; width:0%; background:linear-gradient(90deg,#52B788,#95D5B2,#FDD835); border-radius:10px; transition:width 0.4s ease; }
+.progress-pct { font-size:13px; color:#FDD835; font-weight:800; min-width:36px; text-align:right; }
+.student-chart-wrap { background:#fff; border:2px solid #E8DDD2; border-radius:14px; padding:16px; margin:16px 0; box-shadow:0 2px 10px rgba(27,67,50,0.04); }
+.student-chart-label { font-size:13px; color:#2D6A4F; font-weight:800; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:10px; }
+.student-chart { width:100%; border-collapse:collapse; font-size:15px; }
+.student-chart th { background:#1B4332; color:#fff; font-weight:800; padding:10px 14px; text-align:left; font-size:14px; }
+.student-chart th:first-child { border-radius:8px 0 0 0; }
+.student-chart th:last-child { border-radius:0 8px 0 0; }
+.student-chart td { padding:14px; border:1.5px dashed #C4E5CC; background:#FAFAF6; color:#C4C4C4; font-style:italic; font-size:13px; min-height:40px; vertical-align:middle; }
+.student-chart tr:last-child td:first-child { border-radius:0 0 0 8px; }
+.student-chart tr:last-child td:last-child { border-radius:0 0 8px 0; }
+.student-chart .row-label { background:#EEF8F0; color:#1B4332; font-weight:700; font-style:normal; font-size:15px; border:1.5px solid #C4E5CC; }
+.turn-in-block { background:#fff; border:2.5px solid #0288D1; border-radius:18px; margin-top:22px; overflow:hidden; box-shadow:0 4px 16px rgba(2,136,209,0.1); }
+.turn-in-header { display:flex; align-items:center; gap:14px; background:#E8F4FB; padding:18px 22px; border-bottom:2px solid #B3E5FC; }
+.turn-in-header-icon { font-size:36px; line-height:1; flex-shrink:0; }
+.turn-in-header-label { font-size:11px; color:#0288D1; font-weight:800; text-transform:uppercase; letter-spacing:1px; margin-bottom:3px; }
+.turn-in-header-title { font-size:24px; color:#1B4332; font-weight:900; line-height:1.15; }
+.turn-in-body { padding:22px 24px 24px; }
+.turn-in-intro { font-size:16px; color:#5A4D3E; margin-bottom:18px; line-height:1.55; }
+.turn-in-intro strong { color:#1B4332; }
+.turn-in-options { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin-bottom:26px; }
+.turn-in-option { border-radius:16px; padding:20px 14px; text-align:center; border:2px solid; }
+.turn-in-option-type { background:#EEF8F0; border-color:#C4E5CC; }
+.turn-in-option-photo { background:#FFF9E8; border-color:#F0E4C0; }
+.turn-in-option-video { background:#F0EDF6; border-color:#D8D0E8; }
+.turn-in-option-icon { font-size:34px; line-height:1; margin-bottom:12px; }
+.turn-in-option-title { font-size:17px; color:#1B4332; font-weight:800; margin-bottom:8px; }
+.turn-in-option-text { font-size:14px; color:#5A4D3E; line-height:1.5; }
+.turn-in-subhead { font-size:16px; color:#5A4D3E; margin-bottom:14px; line-height:1.55; }
+.turn-in-checklist { display:flex; flex-direction:column; gap:10px; }
+.turn-in-item { display:flex; align-items:center; gap:16px; padding:14px 18px; background:#FAFAF6; border:1.5px solid #E8DDD2; border-radius:14px; cursor:pointer; transition:background 0.2s,border-color 0.2s; }
+.turn-in-item:hover { background:#F4FAF5; border-color:#C4E5CC; }
+.turn-in-item.checked { background:#EEF8F0; border-color:#B8E8CF; }
+.turn-in-item .turn-in-check { width:30px; height:30px; border-radius:8px; border:2px solid #95D5B2; background:#fff; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:18px; line-height:1; transition:background 0.2s,border-color 0.2s; }
+.turn-in-item.checked .turn-in-check { background:#2E7D32; border-color:#2E7D32; }
+.turn-in-item-text { font-size:16px; color:#2B1D12; font-weight:600; line-height:1.55; flex:1; }
+.turn-in-item.checked .turn-in-item-text { color:#5A4D3E; }
+strong { color:#1B4332; }
+em { color:#5A4D3E; }
+.gold { color:#F9A825; font-weight:700; }
+.forest { color:#2D6A4F; font-weight:700; }
+@media (max-width:620px) {
+  .intro-2col { grid-template-columns:1fr; }
+  .vocab-grid { grid-template-columns:1fr; }
+  .flip-card { height:175px; }
+  .header-title { font-size:22px; }
+  .tab-btn { min-width:100px; font-size:11px; padding:10px 6px 9px; }
+  .turn-in-options { grid-template-columns:1fr; }
+  .turn-in-header-title { font-size:20px; }
+}
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin: 18px 0;
+  text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px;
+  text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+</style>
+</head>
+
+<body>
+<canvas id="confettiCanvas"></canvas>
+<button class="back-to-top" id="backToTop" type="button">🌍 Back to Top</button>
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- PROGRESS BAR -->
+<div class="progress-wrap">
+  <span class="progress-label">🌍 Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">How Do Humans Affect Ecosystems?</div>
+  <div class="header-badge">
+    <span>🌍</span>
+    <span>Lesson 22.01</span>
+  </div>
+</div>
+
+<!-- HERO BANNER -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="skyGrad" x1="0" y1="0.5" x2="1" y2="0.5">
+    <stop offset="0%" stop-color="#7E9EAE"/><stop offset="32%" stop-color="#80A8BE"/>
+    <stop offset="62%" stop-color="#5ABCDC"/><stop offset="100%" stop-color="#44C8F4"/>
+  </linearGradient>
+  <linearGradient id="waterGrad" x1="0" y1="0.5" x2="1" y2="0.5">
+    <stop offset="0%" stop-color="#3E6878"/><stop offset="30%" stop-color="#46788C"/>
+    <stop offset="62%" stop-color="#2E9EC0"/><stop offset="100%" stop-color="#20B4E8"/>
+  </linearGradient>
+  <linearGradient id="bankGrad" x1="0" y1="0.5" x2="1" y2="0.5">
+    <stop offset="0%" stop-color="#8A7060"/><stop offset="40%" stop-color="#7A8058"/>
+    <stop offset="70%" stop-color="#5A9038"/><stop offset="100%" stop-color="#4A9828"/>
+  </linearGradient>
+  <linearGradient id="farBankGrad" x1="0" y1="0.5" x2="1" y2="0.5">
+    <stop offset="0%" stop-color="#7A7860"/><stop offset="45%" stop-color="#7A8860"/>
+    <stop offset="100%" stop-color="#4A8028"/>
+  </linearGradient>
+  <radialGradient id="sunGlow" cx="100%" cy="0%" r="75%" gradientUnits="objectBoundingBox">
+    <stop offset="0%" stop-color="#FFE840" stop-opacity="0.22"/>
+    <stop offset="55%" stop-color="#FFE840" stop-opacity="0.06"/>
+    <stop offset="100%" stop-color="#FFE840" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="leftHaze" x1="0" y1="0.5" x2="1" y2="0.5">
+    <stop offset="0%" stop-color="#7A8898" stop-opacity="0.28"/>
+    <stop offset="38%" stop-color="#7A8898" stop-opacity="0.10"/>
+    <stop offset="55%" stop-color="#7A8898" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+<rect width="920" height="144" fill="url(#skyGrad)"/>
+<rect width="920" height="260" fill="url(#sunGlow)"/>
+<rect width="920" height="260" fill="url(#leftHaze)"/>
+<rect y="128" width="920" height="18" fill="url(#farBankGrad)"/>
+<line x1="0" y1="146" x2="920" y2="146" stroke="#3A5A28" stroke-width="1" opacity="0.22"/>
+<rect y="140" width="920" height="72" fill="url(#waterGrad)"/>
+<rect y="210" width="920" height="50" fill="url(#bankGrad)"/>
+<line x1="0" y1="210" x2="920" y2="210" stroke="#4A3010" stroke-width="1.5" opacity="0.40"/>
+<rect x="520" y="208" width="400" height="10" fill="#3A8820" opacity="0.30" rx="2"/>
+<g fill="white" opacity="0.72"><ellipse cx="748" cy="30" rx="38" ry="16"/><ellipse cx="724" cy="36" rx="22" ry="13"/><ellipse cx="772" cy="36" rx="22" ry="12"/></g>
+<g fill="white" opacity="0.55"><ellipse cx="862" cy="22" rx="28" ry="12"/><ellipse cx="845" cy="28" rx="18" ry="10"/><ellipse cx="880" cy="28" rx="16" ry="10"/></g>
+<g stroke="#2E5868" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.55">
+  <path d="M20,160 Q50,157 80,160"/><path d="M30,172 Q68,169 106,172"/>
+  <path d="M10,184 Q55,181 100,184"/><path d="M50,195 Q90,192 130,195"/>
+  <path d="M110,163 Q145,160 180,163"/><path d="M130,175 Q168,172 206,175"/>
+  <path d="M160,187 Q200,184 240,187"/><path d="M200,198 Q238,195 276,198"/>
+</g>
+<g stroke="#3888A8" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.45">
+  <path d="M320,158 Q360,155 400,158"/><path d="M350,170 Q394,167 438,170"/>
+  <path d="M380,182 Q422,179 464,182"/><path d="M420,194 Q460,191 500,194"/>
+  <path d="M460,160 Q502,157 544,160"/><path d="M490,173 Q532,170 574,173"/>
+</g>
+<g stroke="#50C0E8" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.50">
+  <path d="M600,156 Q638,153 676,156"/><path d="M640,168 Q682,165 724,168"/>
+  <path d="M680,180 Q718,177 756,180"/><path d="M720,192 Q760,189 800,192"/>
+  <path d="M760,157 Q798,154 836,157"/><path d="M800,169 Q840,166 880,169"/>
+  <path d="M840,181 Q878,178 916,181"/>
+</g>
+<g class="spk-a" fill="white"><circle cx="650" cy="162" r="2.5"/><circle cx="724" cy="175" r="2"/><circle cx="800" cy="158" r="2.5"/></g>
+<g class="spk-b" fill="white"><circle cx="680" cy="188" r="2"/><circle cx="758" cy="168" r="2.5"/><circle cx="862" cy="182" r="2"/></g>
+<g class="spk-c" fill="white"><circle cx="616" cy="178" r="2.5"/><circle cx="700" cy="195" r="2"/><circle cx="836" cy="165" r="2.5"/></g>
+<g transform="translate(34, 210)"><path d="M-14,-4 L14,-3 L12,5 L-12,5 Z" fill="#C8A840" opacity="0.88" rx="2"/><path d="M-6,-3 L-4,5" stroke="#B09030" stroke-width="1" opacity="0.6"/><path d="M4,-3 L5,5" stroke="#B09030" stroke-width="1" opacity="0.6"/></g>
+<g transform="translate(78, 204)"><rect x="-8" y="-12" width="18" height="26" rx="6" ry="6" fill="#D4C890" opacity="0.86"/><rect x="8" y="-6" width="8" height="12" rx="3" fill="#C03828" opacity="0.90"/><rect x="-7" y="-4" width="14" height="8" rx="1" fill="white" opacity="0.30"/></g>
+<g transform="translate(155, 197)"><rect x="-7" y="-10" width="14" height="20" rx="4" fill="#B06030" opacity="0.90"/><line x1="-7" y1="-6" x2="7" y2="-6" stroke="#8A4020" stroke-width="1.2" opacity="0.7"/><line x1="-3" y1="-10" x2="-4" y2="10" stroke="#8A3010" stroke-width="1.5" opacity="0.40"/></g>
+<g transform="translate(234, 178)" opacity="0.52"><path d="M0,-10 C10,-14 20,-10 22,-2 C24,8 18,16 8,16 C-4,16 -12,10 -12,0 C-12,-8 -6,-8 0,-10 Z" fill="#D8D8C8"/><path d="M-4,-6 C4,-10 14,-6 14,2" stroke="#B8B8A8" stroke-width="1" fill="none"/></g>
+<path d="M52,210 C52,192 54,172 56,155 C58,138 62,126 68,116 C72,108 70,100 64,96" stroke="#7A7850" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+<path d="M62,136 C72,132 86,136 92,146 C86,154 72,152 62,144 Z" fill="#6A7848" opacity="0.85"/>
+<path d="M98,210 C98,194 100,176 102,160 C104,144 108,130 110,118 C112,108 108,100 102,96" stroke="#7E8058" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M104,148 C94,144 80,148 76,158 C82,166 96,164 104,156 Z" fill="#6A7848" opacity="0.80"/>
+<path d="M152,210 C152,190 154,168 156,148 C158,128 164,112 172,100 C178,92 178,82 170,78" stroke="#807A52" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+<path d="M162,130 C172,124 186,128 190,140 C184,148 170,146 162,138 Z" fill="#6A7848" opacity="0.82"/>
+<ellipse cx="170" cy="77" rx="4" ry="9" fill="#9A8460" opacity="0.70"/>
+<path d="M205,210 C205,192 206,172 206,154 C206,136 208,120 210,108 C212,98 210,90 204,86" stroke="#7A7850" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M208,148 C198,142 184,146 180,156 C186,164 200,162 208,154 Z" fill="#6A7848" opacity="0.75"/>
+<ellipse cx="204" cy="85" rx="4" ry="8" fill="#9A8460" opacity="0.65"/>
+<path d="M258,210 C258,192 258,172 258,154 C258,136 260,118 264,102 C266,90 262,82 258,78" stroke="#7C8858" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M260,140 C268,134 282,136 284,146 C278,152 264,152 260,146 Z" fill="#748060" opacity="0.82"/>
+<g transform="translate(308, 210)" opacity="0.65"><rect x="-5" y="-4" width="12" height="8" rx="3" fill="#B06030"/></g>
+<path d="M318,210 C318,192 318,172 318,152 C318,132 320,114 320,98 C320,86 320,80 320,76" stroke="#7A9058" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+<path d="M320,140 C328,134 340,134 344,144 C338,152 326,152 320,146 Z" fill="#6A8848" opacity="0.88"/>
+<path d="M382,210 C382,190 382,168 382,148 C382,128 382,108 382,88 C382,76 382,70 382,66" stroke="#5A9840" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+<path d="M382,138 C390,130 404,130 408,142 C402,150 388,150 382,144 Z" fill="#5A9038" opacity="0.90"/>
+<ellipse cx="382" cy="64" rx="5" ry="13" fill="#8A6030" opacity="0.78"/>
+<path d="M445,210 C445,190 445,168 445,148 C445,128 445,108 445,88" stroke="#4E9C30" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M445,142 C453,134 466,132 470,142 C465,152 452,154 445,148 Z" fill="#52A030" opacity="0.92"/>
+<path d="M490,210 C490,205 490,200 490,196" stroke="#4A9828" stroke-width="3" fill="none" stroke-linecap="round"/>
+<g transform="translate(490, 193)"><ellipse cx="0" cy="-7" rx="5" ry="7" fill="#E8E050" transform="rotate(0)"/><ellipse cx="0" cy="-7" rx="5" ry="7" fill="#E8E050" transform="rotate(72)"/><ellipse cx="0" cy="-7" rx="5" ry="7" fill="#E8E050" transform="rotate(144)"/><ellipse cx="0" cy="-7" rx="5" ry="7" fill="#E8E050" transform="rotate(216)"/><ellipse cx="0" cy="-7" rx="5" ry="7" fill="#E8E050" transform="rotate(288)"/><circle r="5" fill="#F8C820"/></g>
+<path d="M518,210 C518,190 518,170 518,150 C518,130 518,108 518,88" stroke="#4A9828" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M518,145 C526,137 540,137 544,147 C538,157 524,157 518,151 Z" fill="#52A030" opacity="0.92"/>
+<g class="sway-r1">
+  <path d="M582,210 C582,190 582,168 582,148 C582,126 582,104 582,82" stroke="#3A9828" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M582,144 C590,136 604,136 608,148 C602,158 588,158 582,152 Z" fill="#48A830" opacity="0.90"/>
+  <path d="M582,112 C574,106 564,108 562,116 C568,124 580,122 582,116 Z" fill="#48A830" opacity="0.85"/>
+  <ellipse cx="582" cy="79" rx="5" ry="14" fill="#9A7040" opacity="0.85"/>
+  <path d="M630,210 C630,190 630,170 630,150 C630,130 630,108 630,88" stroke="#4AA028" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M630,146 C638,138 650,138 654,150 C648,160 634,160 630,154 Z" fill="#50AA32" opacity="0.92"/>
+  <path d="M666,210 C666,190 666,170 666,150 C666,128 666,106 666,82" stroke="#3A9828" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+  <path d="M666,148 C674,140 688,138 692,150 C686,162 672,162 666,156 Z" fill="#48A830" opacity="0.92"/>
+  <ellipse cx="666" cy="79" rx="6" ry="15" fill="#8A5828" opacity="0.90"/>
+  <path d="M700,210 C700,190 700,168 700,148 C700,126 700,104 700,84" stroke="#4AA028" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M700,142 C708,134 722,134 726,146 C720,156 706,156 700,150 Z" fill="#52AA34" opacity="0.90"/>
+  <ellipse cx="700" cy="81" rx="5" ry="13" fill="#9A7040" opacity="0.82"/>
+</g>
+<g class="sway-r2">
+  <path d="M758,210 C758,190 758,168 758,148 C758,126 758,106 758,86" stroke="#3A9828" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M758,144 C766,136 780,136 784,148 C778,158 764,158 758,152 Z" fill="#48A830" opacity="0.90"/>
+  <path d="M796,210 C796,190 796,168 796,148 C796,126 796,104 796,80" stroke="#4AA028" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+  <path d="M796,148 C804,140 818,138 822,150 C816,162 802,162 796,156 Z" fill="#50AA32" opacity="0.92"/>
+  <ellipse cx="796" cy="77" rx="6" ry="15" fill="#8A5828" opacity="0.88"/>
+  <path d="M836,210 C836,190 836,168 836,148 C836,128 836,106 836,84" stroke="#3A9828" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M836,145 C844,137 856,137 860,149 C854,159 840,159 836,153 Z" fill="#50AA32" opacity="0.90"/>
+  <ellipse cx="836" cy="81" rx="5" ry="13" fill="#9A7040" opacity="0.82"/>
+  <path d="M876,210 C876,192 876,172 876,152 C876,130 876,108 876,88" stroke="#4AA028" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <path d="M876,148 C882,142 892,142 894,152 C890,162 878,162 876,156 Z" fill="#48A830" opacity="0.88"/>
+  <ellipse cx="876" cy="85" rx="4" ry="12" fill="#8A5828" opacity="0.80"/>
+</g>
+<g transform="translate(618, 174)"><path d="M0,0 L0,-16 A16,16 0 1 1 -5,15 Z" fill="#3A8C28" opacity="0.82"/><circle cx="-2" cy="-4" r="4.5" fill="#F8F0C0" opacity="0.70"/><circle cx="-2" cy="-4" r="2" fill="#FFE020" opacity="0.85"/></g>
+<g transform="translate(692, 183)"><path d="M0,0 L0,-15 A15,15 0 1 1 -7,13 Z" fill="#429830" opacity="0.80"/></g>
+<g transform="translate(770, 172)"><path d="M0,0 L0,-17 A17,17 0 1 1 5,16 Z" fill="#3A8C28" opacity="0.78"/><circle cx="4" cy="-2" r="5" fill="#F8F0C8" opacity="0.75"/><circle cx="4" cy="-2" r="2.5" fill="#FFE020" opacity="0.90"/></g>
+<path d="M596,210 C596,206 596,202 596,198" stroke="#3A9020" stroke-width="3" fill="none" stroke-linecap="round"/>
+<g transform="translate(596, 196)"><ellipse cx="0" cy="-8" rx="5" ry="8" fill="#F8E030" transform="rotate(0)"/><ellipse cx="0" cy="-8" rx="5" ry="8" fill="#F8E030" transform="rotate(60)"/><ellipse cx="0" cy="-8" rx="5" ry="8" fill="#F8E030" transform="rotate(120)"/><ellipse cx="0" cy="-8" rx="5" ry="8" fill="#F8E030" transform="rotate(180)"/><ellipse cx="0" cy="-8" rx="5" ry="8" fill="#F8E030" transform="rotate(240)"/><ellipse cx="0" cy="-8" rx="5" ry="8" fill="#F8E030" transform="rotate(300)"/><circle r="6" fill="#E8A020"/></g>
+<path d="M726,210 C726,205 726,200 726,194" stroke="#3A9020" stroke-width="3" fill="none" stroke-linecap="round"/>
+<g transform="translate(726, 192)"><ellipse cx="0" cy="-8" rx="5.5" ry="9" fill="#B068C8" transform="rotate(0)"/><ellipse cx="0" cy="-8" rx="5.5" ry="9" fill="#B068C8" transform="rotate(72)"/><ellipse cx="0" cy="-8" rx="5.5" ry="9" fill="#B068C8" transform="rotate(144)"/><ellipse cx="0" cy="-8" rx="5.5" ry="9" fill="#B068C8" transform="rotate(216)"/><ellipse cx="0" cy="-8" rx="5.5" ry="9" fill="#B068C8" transform="rotate(288)"/><circle r="5.5" fill="#FFE020"/></g>
+<path d="M800,210 C800,206 800,202 800,198" stroke="#3A9020" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<g transform="translate(800, 196)"><ellipse cx="0" cy="-7" rx="4.5" ry="7.5" fill="#F8F8F0" transform="rotate(0)"/><ellipse cx="0" cy="-7" rx="4.5" ry="7.5" fill="#F8F8F0" transform="rotate(60)"/><ellipse cx="0" cy="-7" rx="4.5" ry="7.5" fill="#F8F8F0" transform="rotate(120)"/><ellipse cx="0" cy="-7" rx="4.5" ry="7.5" fill="#F8F8F0" transform="rotate(180)"/><ellipse cx="0" cy="-7" rx="4.5" ry="7.5" fill="#F8F8F0" transform="rotate(240)"/><ellipse cx="0" cy="-7" rx="4.5" ry="7.5" fill="#F8F8F0" transform="rotate(300)"/><circle r="5" fill="#F8C820"/></g>
+<path d="M862,210 C862,207 862,204 862,201" stroke="#3A9020" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<g transform="translate(862, 200)"><ellipse cx="0" cy="-6" rx="4" ry="6.5" fill="#F0D820" transform="rotate(0)"/><ellipse cx="0" cy="-6" rx="4" ry="6.5" fill="#F0D820" transform="rotate(60)"/><ellipse cx="0" cy="-6" rx="4" ry="6.5" fill="#F0D820" transform="rotate(120)"/><ellipse cx="0" cy="-6" rx="4" ry="6.5" fill="#F0D820" transform="rotate(180)"/><ellipse cx="0" cy="-6" rx="4" ry="6.5" fill="#F0D820" transform="rotate(240)"/><ellipse cx="0" cy="-6" rx="4" ry="6.5" fill="#F0D820" transform="rotate(300)"/><circle r="4" fill="#E8A020"/></g>
+<g transform="translate(740, 158)"><path d="M0,-18 C0,-12 0,0 0,18" stroke="#2898A0" stroke-width="3.5" stroke-linecap="round" fill="none"/><circle cx="0" cy="-20" r="4" fill="#2898A0"/><ellipse cx="16" cy="-6" rx="16" ry="6" fill="#A8E8F8" opacity="0.72" transform="rotate(-8, 16, -6)"/><ellipse cx="-16" cy="-6" rx="16" ry="6" fill="#A8E8F8" opacity="0.72" transform="rotate(8, -16, -6)"/><ellipse cx="14" cy="4" rx="13" ry="5" fill="#A8E8F8" opacity="0.60" transform="rotate(-4, 14, 4)"/><ellipse cx="-14" cy="4" rx="13" ry="5" fill="#A8E8F8" opacity="0.60" transform="rotate(4, -14, 4)"/></g>
+<g transform="translate(672, 84)">
+<g class="bird-fly">
+  <g class="wing-flap"><path d="M-10,-4 C-5,-14 6,-14 10,-6 C6,-2 0,0 -10,-2 Z" fill="#1878C8"/></g>
+  <path d="M-13,1 L-22,6 L-22,-3 Z" fill="#1878C8"/>
+  <ellipse cx="0" cy="0" rx="13" ry="7.5" fill="#2C90E0"/>
+  <ellipse cx="5" cy="2.5" rx="6.5" ry="5" fill="#E06828"/>
+  <circle cx="11" cy="-3" r="6.5" fill="#1878C8"/>
+  <circle cx="13.5" cy="-4" r="2" fill="white"/>
+  <circle cx="14" cy="-4" r="1" fill="#222"/>
+  <path d="M17,-3 L23,-2.5 L17,-1 Z" fill="#D4B020"/>
+</g>
+</g>
+<g fill="#3A8020" opacity="0.50"><ellipse cx="640" cy="132" rx="30" ry="14"/><ellipse cx="690" cy="130" rx="36" ry="16"/><ellipse cx="748" cy="132" rx="28" ry="12"/><ellipse cx="796" cy="131" rx="32" ry="14"/><ellipse cx="848" cy="132" rx="26" ry="12"/><ellipse cx="894" cy="131" rx="28" ry="13"/></g>
+<g fill="#4A9828" opacity="0.42"><ellipse cx="658" cy="134" rx="22" ry="10"/><ellipse cx="714" cy="132" rx="28" ry="12"/><ellipse cx="768" cy="133" rx="24" ry="11"/><ellipse cx="820" cy="132" rx="26" ry="12"/><ellipse cx="870" cy="133" rx="22" ry="10"/></g>
+<rect x="0" y="128" width="340" height="20" fill="#7A7860" opacity="0.70"/>
+<g fill="#5A7040" opacity="0.35"><ellipse cx="380" cy="134" rx="18" ry="8"/><ellipse cx="440" cy="133" rx="14" ry="7"/><ellipse cx="510" cy="133" rx="20" ry="9"/><ellipse cx="568" cy="132" rx="16" ry="8"/></g>
+</svg>
+</div>
+
+<!-- INFO STRIP -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q3 &middot; Unit 8</div>
+      <div class="info-detail">Human Impact &amp; Conservation</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF9E8;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 22</div>
+      <div class="info-detail">Lesson 22.01 &mdash; 3rd Grade Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#F0EDF6;">🌿</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Human Impact</div>
+      <div class="info-detail">How people change ecosystems</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">3-LS4-4 &amp; 3-ESS3-1</div>
+      <div class="info-detail">Human impact on ecosystems</div>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO 2-COL -->
+<div class="intro-2col">
+  <div class="card theme-forest">
+    <div class="card-head">
+      <div class="card-head-icon">🌲</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This&hellip;</div>
+          <div class="question">"Can a single person's choice — like picking up one piece of trash — actually change what happens to animals and plants in an ecosystem?"</div>
+        </div>
+      </div>
+      <p>Keep this question in mind as you work through the lesson. By the end, you'll have real evidence to answer it.</p>
+    </div>
+  </div>
+  <div class="card theme-sky">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#52B788;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain ways that human actions harm or help an ecosystem.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2D6A4F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> use evidence from a case study to identify resources that were changed.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2E7D32;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> describe at least one conservation solution that helps organisms meet their needs.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NEED STRIP -->
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Pencil &amp; colored pencils</span>
+  <span class="need-chip"><span>👁</span>Careful observations</span>
+</div>
+
+<!-- TAB BAR -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- TAB 1: VOCABULARY                              -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+  <!-- Welcome Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to Lesson 22.01!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🎬</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 22-01-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 1: NOTICE & WONDER -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#52B788;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Notice &amp; Wonder</div>
+        <div class="act-subtitle">What do you already know about how people affect nature?</div>
+      </div>
+      <div class="act-time" style="background:#52B788;">⏱ 5 min</div>
+    </div>
+    <div class="act-body">
+      <p>Think about a place in nature near where you live — a park, a stream, a field. People visit places like that every day. Some leave things better than they found them. Some don't.</p>
+      <div class="socratic-q">
+        <span class="sq-icon">👀</span>
+        <div>
+          <div class="label">In Your Science Notebook</div>
+          <div class="question">"Write 3 things you think people do that change nature — good or bad. Then write 1 question you're wondering about how humans and ecosystems are connected."</div>
+        </div>
+      </div>
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>There's no wrong answer here. Scientists always start by noticing and asking. Your question might end up being something you can answer by the time you finish today's work.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOCABULARY FLIP CARDS -->
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>These are the words scientists use when they study how living things and people share the same spaces. <strong>Tap each card to flip it</strong> and read the definition.</p>
+      <div class="vocab-grid">
+
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🌿</div><div class="fc-word">ecosystem</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">ecosystem</div><div class="fc-def">All the living and nonliving things in one place that interact with each other — like a pond, a forest, or a meadow.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🏡</div><div class="fc-word">habitat</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">habitat</div><div class="fc-def">The specific place where an organism lives and finds what it needs — food, water, shelter, and space.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">💥</div><div class="fc-word">impact</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">impact</div><div class="fc-def">An effect or change caused by something — like the impact of a new road on animals that lived in that forest.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">💧</div><div class="fc-word">resource</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">resource</div><div class="fc-def">Something living things need to survive — clean water, food, shelter, and space are all resources.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🏭</div><div class="fc-word">pollution</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">pollution</div><div class="fc-def">Harmful materials — like trash, chemicals, or dirty water — added to the environment in ways that damage it.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🛡️</div><div class="fc-word">conservation</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">conservation</div><div class="fc-def">The work of protecting and caring for natural resources and living things so they can survive and thrive.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">📓</span>
+        <p>Copy this sentence carefully into your science notebook:<br><strong>"Small human choices can change the homes of many living things."</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button>
+  </div>
+</div><!-- /tab-vocab -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- TAB 2: THE LESSON                              -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+
+  <!-- Lesson Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">📖</span>
+      <div>
+        <div class="video-wrap-type">Activity 2 · Core Lesson</div>
+        <div class="video-wrap-title">How Do Humans Affect Ecosystems?</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">📖</div>
+        <div class="video-placeholder-text">Core lesson video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 22-01-lesson-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LESSON FIGURE: Uploaded pond impact photo -->
+  <div class="lesson-figure">
+    <div class="lesson-figure-label">📷 Photo · Pond Shoreline — Harm &amp; Help Side by Side</div>
+    <img src="images/sci3_22_01.png"
+         alt="A pond shoreline. Left side shows litter including plastic bottles and wrappers near the water. Right side shows conservation tools — blue gloves, freshly planted wildflowers, and a filled trash bag — on clean, healthy ground."
+         onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+    <div style="display:none;background:#FFF3E0;border:2px dashed #F9A825;border-radius:10px;padding:16px;text-align:center;font-size:14px;color:#5A4D3E;">📷 Save as <code>images/sci3_22_01.png</code> next to this HTML file.</div>
+    <div class="lesson-figure-caption">Look at both sides of this shoreline. <strong>Left side:</strong> plastic bottles and wrappers left behind by people. <strong>Right side:</strong> gloves, a trash bag, and freshly planted flowers — signs of conservation in action. What resources are being harmed on one side and protected on the other?</div>
+  </div>
+
+  <!-- ACTIVITY 2: CORE LESSON CONTENT -->
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#F9A825;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📖 The Lesson: Humans and Ecosystems</div>
+        <div class="act-subtitle">Read carefully — notice the science in every paragraph.</div>
+      </div>
+      <div class="act-time" style="background:#F9A825;">⏱ 12 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- SECTION 1 -->
+      <div class="card theme-forest" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌱</div>
+          <div>
+            <div class="card-head-label">Section 1</div>
+            <div class="card-head-title">Humans Use Ecosystem Resources</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Every day, people use things that come from <span class="vtip">ecosystems<span class="vtip-box"><span class="vtip-word">ecosystem</span>All the living and nonliving things in one place that interact with each other.</span></span> — water, wood, soil, food, and land. We need these things to live, just like other animals do.</p>
+          <p>When people use <span class="vtip">resources<span class="vtip-box"><span class="vtip-word">resource</span>Something living things need to survive — water, food, shelter, or space.</span></span>, they often change the <span class="vtip">habitat<span class="vtip-box"><span class="vtip-word">habitat</span>The place where an organism lives and finds what it needs.</span></span> for plants and animals that already live there. Even a small change — like a new path through the woods — can shift what organisms can find and where they can live.</p>
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"What is one resource you used today — and where do you think it came from?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2 -->
+      <div class="card theme-sky" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">⚠️</div>
+          <div>
+            <div class="card-head-label">Section 2</div>
+            <div class="card-head-title">When Human Actions Harm</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Some human actions make it harder for organisms to survive. Trash and <span class="vtip">pollution<span class="vtip-box"><span class="vtip-word">pollution</span>Harmful materials added to the environment — like litter, chemicals, or dirty water.</span></span> can remove clean water. Cutting down forests takes away shelter. Paving land removes space that animals depend on.</p>
+          <p>When a <span class="vtip">habitat<span class="vtip-box"><span class="vtip-word">habitat</span>The place where an organism gets food, water, shelter, and space.</span></span> changes too much, organisms may struggle to find what they need — and some may leave or die. The <span class="vtip">impact<span class="vtip-box"><span class="vtip-word">impact</span>An effect or change caused by something.</span></span> doesn't have to be huge to matter. Even one pond full of litter can drive away fish, frogs, and the birds that feed on them.</p>
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"If a pond becomes polluted, which organisms do you think would be affected first — and why?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 3 -->
+      <div class="card theme-earth" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">💚</div>
+          <div>
+            <div class="card-head-label">Section 3</div>
+            <div class="card-head-title">When Human Actions Help</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>People can also protect and restore ecosystems. Planting native wildflowers gives bees and butterflies food and shelter. Picking up trash clears harmful materials from water and soil. Saving water keeps streams flowing for fish and the animals that drink from them.</p>
+          <p>Good <span class="vtip">conservation<span class="vtip-box"><span class="vtip-word">conservation</span>Protecting and caring for natural resources and the living things that depend on them.</span></span> reduces harm and gives organisms what they need to survive. A solution that just looks nice but doesn't restore food, water, shelter, or space isn't really working.</p>
+          <p><strong>Real-World Connection:</strong> In the Florida Everglades, scientists are restoring the flow of fresh water that human-built canals once blocked. As the water comes back, wading birds, alligators, and native plants are returning to areas where they had disappeared.</p>
+        </div>
+      </div>
+
+      <!-- Suggested image: Everglades wading birds -->
+      <div class="lesson-figure">
+        <div class="lesson-figure-label">📷 Photo · Everglades Restoration</div>
+        <img src="images/22-01-everglades-wading-birds.jpg"
+             alt="Roseate spoonbills and herons wading in a shallow Florida Everglades wetland, surrounded by sawgrass and open water."
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+        <div class="image-suggestion" style="display:none;">
+          <div class="image-suggestion-icon">🖼️</div>
+          <div class="image-suggestion-label">Suggested Image — Generate This</div>
+          <div class="image-suggestion-desc">
+            A wide, sunlit Florida Everglades wetland scene. Several large wading birds — including at least one bright pink roseate spoonbill and one great blue heron — stand in shallow water among tall green sawgrass. The water reflects the sky. Wide open, expansive feel, warm afternoon light. Real-world nature photography style, no white edges, no text, no borders. Lush, vivid, true-to-life colors.
+          </div>
+          <div class="image-suggestion-file">Save as: images/22-01-everglades-wading-birds.jpg</div>
+        </div>
+        <div class="lesson-figure-caption">Wading birds in the Florida Everglades. <strong>Roseate spoonbills</strong> (pink) and herons rely on shallow fresh water to find fish. When canals blocked the water, these birds disappeared from large areas. As scientists restore the water flow, the birds return.</div>
+      </div>
+
+      <!-- INTERACTIVE DIAGRAM -->
+      <div class="diagram-wrap scroll-reveal">
+        <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
+          🗺 Tap a zone to explore it
+        </div>
+        <div class="diagram-interactive">
+          <svg viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;" role="img" aria-label="Pond ecosystem cross-section showing sky, healthy forest, cleared land, water, and underground soil zones">
+
+            <!-- Sky -->
+            <defs>
+              <linearGradient id="skyDg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#7EC8E8"/><stop offset="100%" stop-color="#B8E4F4"/>
+              </linearGradient>
+              <linearGradient id="waterDg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#3EA0C8"/><stop offset="100%" stop-color="#2878A0"/>
+              </linearGradient>
+              <linearGradient id="soilDg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#8B6340"/><stop offset="100%" stop-color="#6B4820"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Sky zone -->
+            <rect x="0" y="0" width="860" height="70" fill="url(#skyDg)"/>
+            <!-- Sun -->
+            <circle cx="810" cy="32" r="22" fill="#FDD835" opacity="0.90"/>
+            <circle cx="810" cy="32" r="30" fill="#FDD835" opacity="0.18"/>
+            <!-- Bird silhouettes -->
+            <path d="M720,18 Q726,14 732,18 Q738,14 744,18" stroke="#1B4332" stroke-width="2" fill="none" opacity="0.5"/>
+            <path d="M740,28 Q746,24 752,28 Q758,24 764,28" stroke="#1B4332" stroke-width="2" fill="none" opacity="0.4"/>
+            <!-- Clouds -->
+            <g fill="white" opacity="0.75">
+              <ellipse cx="120" cy="22" rx="40" ry="16"/>
+              <ellipse cx="100" cy="26" rx="24" ry="12"/>
+              <ellipse cx="144" cy="26" rx="24" ry="12"/>
+            </g>
+
+            <!-- Healthy forest left half (x=0-430) -->
+            <rect x="0" y="68" width="430" height="130" fill="#2D8040"/>
+            <!-- Tree trunks and canopy left -->
+            <g fill="#1a5228">
+              <rect x="30" y="100" width="18" height="100"/>
+              <rect x="110" y="95" width="22" height="105"/>
+              <rect x="200" y="90" width="20" height="110"/>
+              <rect x="290" y="98" width="18" height="102"/>
+              <rect x="370" y="92" width="20" height="108"/>
+            </g>
+            <g fill="#3A9828">
+              <ellipse cx="39" cy="90" rx="42" ry="38"/>
+              <ellipse cx="121" cy="82" rx="48" ry="42"/>
+              <ellipse cx="210" cy="76" rx="44" ry="40"/>
+              <ellipse cx="299" cy="84" rx="42" ry="38"/>
+              <ellipse cx="380" cy="78" rx="44" ry="40"/>
+            </g>
+            <g fill="#52B788" opacity="0.6">
+              <ellipse cx="39" cy="86" rx="30" ry="26"/>
+              <ellipse cx="121" cy="78" rx="34" ry="30"/>
+              <ellipse cx="210" cy="72" rx="32" ry="28"/>
+              <ellipse cx="299" cy="80" rx="30" ry="26"/>
+              <ellipse cx="380" cy="74" rx="32" ry="28"/>
+            </g>
+            <!-- Forest floor -->
+            <rect x="0" y="190" width="430" height="8" fill="#1a5228" opacity="0.7"/>
+            <!-- Understory plants -->
+            <g fill="#4CAF50" opacity="0.8">
+              <ellipse cx="70" cy="188" rx="22" ry="14"/>
+              <ellipse cx="160" cy="185" rx="26" ry="16"/>
+              <ellipse cx="250" cy="186" rx="22" ry="14"/>
+              <ellipse cx="330" cy="185" rx="24" ry="15"/>
+              <ellipse cx="410" cy="187" rx="20" ry="13"/>
+            </g>
+
+            <!-- Cleared / disturbed land right half (x=430-860) -->
+            <rect x="430" y="68" width="430" height="130" fill="#A0784A"/>
+            <!-- Bare soil texture -->
+            <g stroke="#8B6340" stroke-width="1" opacity="0.4">
+              <path d="M450,90 Q480,85 510,92"/><path d="M530,110 Q560,105 590,112"/>
+              <path d="M610,88 Q640,83 670,90"/><path d="M690,108 Q720,103 750,110"/>
+              <path d="M770,90 Q800,85 830,92"/><path d="M460,140 Q500,135 540,142"/>
+              <path d="M560,160 Q600,155 640,162"/><path d="M660,138 Q700,133 740,140"/>
+              <path d="M760,158 Q800,153 840,160"/>
+            </g>
+            <!-- Litter on cleared land -->
+            <g transform="translate(490,155)"><rect x="-10" y="-5" width="22" height="14" rx="4" fill="#C8A840" opacity="0.85"/></g>
+            <g transform="translate(560,145)"><rect x="-6" y="-12" width="14" height="24" rx="6" fill="#D4C890" opacity="0.85"/><rect x="7" y="-5" width="8" height="10" rx="3" fill="#C03828" opacity="0.9"/></g>
+            <g transform="translate(640,158)" opacity="0.6"><path d="M0,-8 C8,-12 18,-8 20,-2 C22,6 16,14 6,14 C-4,14 -10,8 -10,0 C-10,-6 -4,-6 0,-8 Z" fill="#D8D8C8"/></g>
+            <g transform="translate(720,148)"><rect x="-7" y="-10" width="14" height="22" rx="4" fill="#B06030" opacity="0.88"/></g>
+            <!-- Sad stump -->
+            <rect x="810" y="152" width="28" height="40" fill="#8B6340"/>
+            <ellipse cx="824" cy="152" rx="18" ry="10" fill="#A07858"/>
+
+            <!-- Divider line forest/cleared -->
+            <line x1="430" y1="68" x2="430" y2="198" stroke="#1B4332" stroke-width="3" opacity="0.5"/>
+
+            <!-- Water zone (pond) -->
+            <rect x="0" y="198" width="860" height="60" fill="url(#waterDg)"/>
+            <!-- Left water: murky ripples -->
+            <g stroke="#2E5868" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5">
+              <path d="M30,215 Q70,211 110,215"/><path d="M50,228 Q92,224 134,228"/>
+              <path d="M20,242 Q68,238 116,242"/>
+            </g>
+            <!-- Right water: cleaner ripples -->
+            <g stroke="#50C0E8" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.55">
+              <path d="M540,213 Q590,209 640,213"/><path d="M600,226 Q650,222 700,226"/>
+              <path d="M660,239 Q710,235 760,239"/><path d="M720,213 Q770,209 820,213"/>
+            </g>
+            <!-- Lily pad right side -->
+            <g transform="translate(760,222)"><path d="M0,0 L0,-14 A14,14 0 1 1 -5,12 Z" fill="#3A8C28" opacity="0.82"/></g>
+            <!-- Fish -->
+            <g transform="translate(380,225)"><ellipse cx="0" cy="0" rx="16" ry="8" fill="#5898C8" opacity="0.75"/><path d="M-16,0 L-26,8 L-26,-8 Z" fill="#4878A8" opacity="0.75"/></g>
+            <!-- Sad fish left murky side -->
+            <g transform="translate(120,232)" opacity="0.5"><ellipse cx="0" cy="0" rx="12" ry="6" fill="#7A8888"/><path d="M-12,0 L-20,6 L-20,-6 Z" fill="#6A7878"/></g>
+
+            <!-- Underground / soil zone -->
+            <rect x="0" y="258" width="860" height="42" fill="url(#soilDg)"/>
+            <!-- Roots on healthy side -->
+            <g stroke="#A0744C" stroke-width="1.5" fill="none" opacity="0.6">
+              <path d="M39,258 C39,268 30,278 20,285"/><path d="M39,258 C39,270 48,280 56,287"/>
+              <path d="M121,258 C121,268 112,278 100,286"/><path d="M121,258 C121,270 130,280 142,287"/>
+              <path d="M210,258 C210,268 200,278 190,285"/><path d="M210,258 C210,270 220,282 228,288"/>
+              <path d="M299,258 C299,268 290,276 280,283"/><path d="M299,258 C299,270 308,280 318,286"/>
+            </g>
+            <!-- Bare soil right side — no roots -->
+            <g stroke="#7A5830" stroke-width="1" fill="none" opacity="0.3">
+              <path d="M550,258 C550,265 544,272 538,278"/><path d="M650,258 C650,265 644,272 638,278"/>
+              <path d="M750,258 C750,265 744,272 738,278"/>
+            </g>
+
+            <!-- Zone labels (text) -->
+            <text x="215" y="64" text-anchor="middle" font-size="12" font-weight="800" fill="#1B4332">HEALTHY FOREST</text>
+            <text x="645" y="64" text-anchor="middle" font-size="12" font-weight="800" fill="#6B3810">CLEARED LAND</text>
+            <text x="430" y="234" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">WATER</text>
+            <text x="430" y="278" text-anchor="middle" font-size="12" font-weight="800" fill="#F0C888">SOIL &amp; ROOTS</text>
+
+            <!-- HOTSPOTS (invisible click targets) -->
+            <rect class="hotspot" x="0" y="0" width="860" height="70"
+                  fill="#44C8F4"
+                  data-part="sky-zone"
+                  data-info="The sky is shared by all organisms in an ecosystem. Birds, insects, and weather all pass through. When trees are removed, birds lose nesting sites and the sky above changes too."/>
+            <rect class="hotspot" x="0" y="68" width="430" height="130"
+                  fill="#3A9828"
+                  data-part="healthy-forest"
+                  data-info="Healthy forests give animals food, shelter, and space. The roots hold soil in place. The shade keeps streams cooler. Organisms depend on this habitat to find everything they need to survive."/>
+            <rect class="hotspot" x="430" y="68" width="430" height="130"
+                  fill="#B06030"
+                  data-part="cleared-land"
+                  data-info="When land is cleared or littered, habitat disappears. Soil washes into streams, making water murky. Animals that needed shelter here must move or struggle to find new homes."/>
+            <rect class="hotspot" x="0" y="198" width="860" height="60"
+                  fill="#3EA0C8"
+                  data-part="water-zone"
+                  data-info="Water is a resource shared by many organisms — fish, frogs, birds, and insects all depend on it. Pollution flows into water from the land. Clean water on the right supports more life than the murky water on the left."/>
+            <rect class="hotspot" x="0" y="258" width="860" height="42"
+                  fill="#8B6340"
+                  data-part="soil-and-roots"
+                  data-info="Underground, plant roots hold soil together and store water. When trees are removed, roots disappear too — and soil washes away. Healthy soil is a resource that takes years to build back."/>
+
+          </svg>
+
+          <div class="diagram-info-panel" id="diagramPanel">
+            <span class="dip-word" id="diagramWord"></span>
+            <span id="diagramInfo"></span>
+          </div>
+        </div>
+        <div class="diagram-tap-hint">Tap any zone in the diagram to learn what happens there.</div>
+        <div class="diagram-caption">Cross-section of a pond ecosystem. Left = healthy forest. Right = cleared, littered land. What resources look different on each side?</div>
+      </div>
+
+      <!-- KEY CONCEPT -->
+      <div class="key-concept scroll-reveal">
+        <div class="kc-label">⭐ Key Concept</div>
+        <p><strong>Human actions can harm or help ecosystems by changing the resources organisms need — food, water, shelter, and space.</strong></p>
+        <p>When resources disappear, organisms struggle to survive. When resources are restored, organisms can return and thrive.</p>
+      </div>
+
+    </div>
+  </div><!-- /activity-card -->
+
+  <!-- MIND-BLOWING FACT -->
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Amazing Nature Fact</div>
+      <div class="mind-blow-text">One mature tree can absorb <strong>over 35,000 gallons of stormwater in a single year</strong> — keeping that water clean before it reaches streams. Cut down one tree, and all that filtering disappears.</div>
+    </div>
+  </div>
+
+  <!-- GO DEEPER -->
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper</summary>
+    <div class="gd-body">
+      <p><strong>How fast can an ecosystem change?</strong> Some habitat changes happen slowly — like a forest that takes decades to grow back after logging. But some are fast. When a river is dammed, fish populations can drop within a single season because their migration path is suddenly blocked.</p>
+      <p>Scientists use something called an <em>ecological threshold</em> — a tipping point where an ecosystem can no longer bounce back on its own and needs active human help to recover. That's exactly what happened in the Florida Everglades: decades of drained wetlands pushed the system past the point where it could fix itself. Now scientists are spending billions of dollars to undo what took decades to damage.</p>
+      <p>The lesson? It's almost always cheaper and easier to protect an ecosystem before it's damaged than to restore it after.</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+
+</div><!-- /tab-lesson -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- TAB 3: EXPLORE                                 -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+
+  <!-- Explore Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🔬</span>
+      <div>
+        <div class="video-wrap-type">Activity 3 · Investigation</div>
+        <div class="video-wrap-title">Ecosystem Impact Case Files</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🔬</div>
+        <div class="video-placeholder-text">Exploration video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 22-01-exploration-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 3: INVESTIGATION -->
+  <div class="activity-card act-explore scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#0288D1;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🔬 Investigation: Ecosystem Impact Case Files</div>
+        <div class="act-subtitle">Read each case and decide: does this help, harm, or could it do both?</div>
+      </div>
+      <div class="act-time" style="background:#0288D1;">⏱ 15 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- Quick Reference Strip -->
+      <div class="callout callout-tip" style="margin-bottom:18px;">
+        <span class="callout-icon">📋</span>
+        <p><strong>Quick Reference:</strong> &nbsp;
+          <span style="color:#2E7D32;font-weight:800;">Helpful</span> = makes it easier for organisms to get food, water, shelter, or space. &nbsp;
+          <span style="color:#C62828;font-weight:800;">Harmful</span> = removes or damages a resource organisms need. &nbsp;
+          <span style="color:#F9A825;font-weight:800;">Both</span> = helps some organisms, harms others.</p>
+      </div>
+
+      <!-- Case Files -->
+      <div style="display:grid;gap:14px;margin-bottom:18px;">
+
+        <div style="background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:16px 18px;">
+          <div style="font-size:13px;font-weight:800;color:#2D6A4F;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px;">📁 Case A</div>
+          <p style="font-size:16px;color:#2B1D12;margin:0;line-height:1.6;">A group of neighbors organizes a Saturday cleanup. They remove plastic bottles and wrappers from the banks of a local pond. The water stays clear and frogs return to the area within weeks.</p>
+        </div>
+
+        <div style="background:#FFF0EC;border:2px solid #F5C4BA;border-radius:14px;padding:16px 18px;">
+          <div style="font-size:13px;font-weight:800;color:#C62828;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px;">📁 Case B</div>
+          <p style="font-size:16px;color:#2B1D12;margin:0;line-height:1.6;">A new road is built through a forest to connect two towns. Trees are cleared along a 200-meter strip. Deer trails are cut off and bird nesting sites disappear. Car noise fills an area that was once quiet.</p>
+        </div>
+
+        <div style="background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:16px 18px;">
+          <div style="font-size:13px;font-weight:800;color:#2D6A4F;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px;">📁 Case C</div>
+          <p style="font-size:16px;color:#2B1D12;margin:0 0 12px;line-height:1.6;">A family plants native wildflowers in their backyard where lawn grass used to grow. Bees and butterflies begin visiting within a month. A pair of hummingbirds builds a nest nearby by late summer.</p>
+          <div class="lesson-figure" style="margin:0;">
+            <div class="lesson-figure-label">📷 Photo · Native Wildflowers and Pollinators</div>
+            <img src="images/22-01-native-wildflowers-pollinators.jpg"
+                 alt="A close-up of bright orange and purple native wildflowers growing in a garden, with a honeybee clearly visible on one flower and a monarch butterfly on another."
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                Close-up photograph of native wildflowers in a backyard garden — a mix of orange coneflowers, purple blazing star, and yellow black-eyed Susans. A honeybee is clearly visible on one flower, a monarch butterfly with open wings on another. Late-afternoon warm sunlight, slightly blurred green background. Real-world nature photography style, no white borders, no text overlays. Vivid, detailed, true-to-life.
+              </div>
+              <div class="image-suggestion-file">Save as: images/22-01-native-wildflowers-pollinators.jpg</div>
+            </div>
+            <div class="lesson-figure-caption">Native wildflowers provide food (nectar and pollen) for bees, butterflies, and hummingbirds. Lawn grass provides almost none.</div>
+          </div>
+        </div>
+
+        <div style="background:#FFF0EC;border:2px solid #F5C4BA;border-radius:14px;padding:16px 18px;">
+          <div style="font-size:13px;font-weight:800;color:#C62828;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px;">📁 Case D</div>
+          <p style="font-size:16px;color:#2B1D12;margin:0 0 12px;line-height:1.6;">After heavy rain, dirty water runs off a large parking lot into a nearby stream. The runoff carries motor oil, salt, and trash. Small invertebrates that fish depend on for food begin to disappear.</p>
+          <div class="lesson-figure" style="margin:0;">
+            <div class="lesson-figure-label">📷 Photo · Stormwater Runoff</div>
+            <img src="images/22-01-stormwater-runoff.jpg"
+                 alt="Dark, oily-looking water streaming off the edge of a wet parking lot and flowing toward a storm drain, carrying small pieces of litter and a sheen of oil on the surface."
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'; this.parentElement.querySelector('.lesson-figure-label').style.display='none';" />
+            <div class="image-suggestion" style="display:none;">
+              <div class="image-suggestion-icon">🖼️</div>
+              <div class="image-suggestion-label">Suggested Image — Generate This</div>
+              <div class="image-suggestion-desc">
+                A real-world photograph taken during or just after rainfall. Dark, slightly oily-looking water streams across the surface of a wet asphalt parking lot toward a storm drain in the foreground. The water carries small pieces of litter and has a faint oily rainbow sheen near the drain. A nearby street or curb is visible. No people. Overcast sky light, wet-pavement textures. Gritty and realistic, no white borders, no text.
+              </div>
+              <div class="image-suggestion-file">Save as: images/22-01-stormwater-runoff.jpg</div>
+            </div>
+            <div class="lesson-figure-caption">This is what Case D looks like. Rain hitting a parking lot picks up oil, salt, and small trash as it flows. That water travels to the nearest storm drain — which usually connects to a stream or river.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Investigation Steps -->
+      <p style="font-size:17px;color:#5A4D3E;line-height:1.75;margin-bottom:14px;">Follow these steps in your science notebook. You'll need your chart (below) to organize what you find.</p>
+
+      <div style="position:relative;margin:16px 0;">
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">1</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Sort each case.</strong> Copy the chart below into your notebook. For each case, decide: does this human action mostly help, mostly harm, or could it do both? Write your answer in Column 2.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2D6A4F,#52B788);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(45,106,79,0.3);">2</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Name the resource.</strong> Look at each case again. Which resource — food, water, shelter, or space — is most affected? Write it in Column 3.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#52B788,#F9A825);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(82,183,136,0.3);">3</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Find the evidence.</strong> Write one sentence from the case that helped you decide. That sentence is your evidence — copy it into Column 4.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F9A825,#FDD835);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(249,168,37,0.3);">4</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Design a solution.</strong> Pick one harmful case. In your notebook, draw or describe one thing that could reduce the harm and help organisms get what they need.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Chart Template -->
+      <div class="student-chart-wrap">
+        <div class="student-chart-label">📋 Copy This Chart Into Your Notebook</div>
+        <table class="student-chart">
+          <tr>
+            <th>Case</th>
+            <th>Helpful / Harmful / Both</th>
+            <th>Resource Affected</th>
+            <th>Evidence (one sentence)</th>
+          </tr>
+          <tr>
+            <td class="row-label">A</td>
+            <td>write here</td>
+            <td>write here</td>
+            <td>write here</td>
+          </tr>
+          <tr>
+            <td class="row-label">B</td>
+            <td>write here</td>
+            <td>write here</td>
+            <td>write here</td>
+          </tr>
+          <tr>
+            <td class="row-label">C</td>
+            <td>write here</td>
+            <td>write here</td>
+            <td>write here</td>
+          </tr>
+          <tr>
+            <td class="row-label">D</td>
+            <td>write here</td>
+            <td>write here</td>
+            <td>write here</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🌲</span>
+        <div>
+          <div class="label">Think Like a Scientist</div>
+          <div class="question">"Which case do you think shows the biggest habitat change? What makes that one stand out from the others?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /activity 3 -->
+
+  <!-- RECORD YOUR THINKING -->
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#2E7D32;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">📓 Record Your Thinking</div>
+        <div class="act-subtitle">Put your findings into words.</div>
+      </div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+      <p>In your science notebook, answer each of these questions in a sentence or two. Use your chart and the case details to help you.</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">1</span>
+        <span class="pq-text">Which case from the investigation showed the most direct effect on a resource — and what was that resource?</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">2</span>
+        <span class="pq-text">In the harmful case you chose, which organisms are affected — and what do they need that is now harder to find?</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">3</span>
+        <span class="pq-text">Describe your solution for the harmful case. How does it help organisms get food, water, shelter, or space?</span>
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">🗣</span>
+        <p>Tell the full story of one case from beginning to end: what the human action was, which resource changed, which organism was affected, and what a solution could look like. Use your evidence to back up each part.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DISCUSS -->
+  <div class="card theme-meadow scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">💬</div>
+      <div>
+        <div class="card-head-label">Discussion</div>
+        <div class="card-head-title">Think It Through</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>Think through each question. Write your answer in your notebook — a sentence or two is enough.</p>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Question 1</div>
+          <div class="question">"Looking at your four cases, which human action helped organisms the most — and why did you decide that?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">💡</span>
+        <div>
+          <div class="label">Question 2</div>
+          <div class="question">"Which case could remove both shelter and space at the same time? What's your evidence?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q" style="margin-bottom:10px;">
+        <span class="sq-icon">🌲</span>
+        <div>
+          <div class="label">Question 3 — Connect</div>
+          <div class="question">"If you lived near the stream from Case D, what is one thing your household could do to reduce the runoff that ends up in the water?"</div>
+        </div>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🔁</span>
+        <div>
+          <div class="label">Question 4 — Extend</div>
+          <div class="question">"After studying these four cases, what do you think is the most important thing people need to know before making a change to an ecosystem?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+
+</div><!-- /tab-explore -->
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- TAB 4: SELF-CHECK QUIZ                         -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div class="quiz-card scroll-reveal" style="margin-top:0;margin-bottom:18px;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#F9A825;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">🌍</div>
+      <div style="flex:1;">
+        <div style="font-size:19px;color:#1B4332;font-weight:800;line-height:1.2;">🧠 Quick Self-Check</div>
+        <div style="font-size:12px;color:#9A8E82;">Not graded — just for you! See how much you remember.</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+
+      <!-- QUESTION 1 -->
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-text">1. A family plants native wildflowers to attract bees and butterflies. This is an example of —</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>conservation</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>pollution</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>habitat removal</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌿 That's right! Planting native flowers protects resources for organisms — that's conservation in action.</div>
+        <div class="quiz-feedback fb-wrong">Not quite. Think about what conservation means: protecting and restoring resources for living things. Which option fits that idea?</div>
+      </div>
+
+      <!-- QUESTION 2 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">2. A new road is built through a forest, clearing a 200-meter strip of trees. Which resource is most directly affected for the animals that lived there?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>water</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>shelter and space</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>sunlight</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌲 Exactly! Trees give animals shelter and define the space of their habitat. Clearing them removes both at once.</div>
+        <div class="quiz-feedback fb-wrong">Think about what the forest provides to organisms that live in it. What did the animals lose when the trees were cut down?</div>
+      </div>
+
+      <!-- QUESTION 3 -->
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">3. After a storm, oily runoff from a parking lot flows into a stream. Small invertebrates — the fish's food source — begin to disappear. Which statement best explains why this is a problem?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Parking lots make streams too shallow for fish.</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Fish don't need to eat invertebrates to survive.</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Pollution removed a food resource that fish depend on.</div>
+        </div>
+        <div class="quiz-feedback fb-correct">⭐ Spot on! The pollution changed the water quality, which drove away the invertebrates, which took away the fish's food supply. That's cause and effect through an ecosystem.</div>
+        <div class="quiz-feedback fb-wrong">Reread Case D carefully. What resource did the runoff affect — and what happened to the organisms that depended on it?</div>
+      </div>
+
+      <!-- Score Display -->
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum">0</div>
+        <div class="quiz-score-label">out of 3</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+
+        <div class="video-feedback" id="quizVideoCorrect" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">✅</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Perfect Score</div>
+                <div class="video-wrap-title">Amazing work, scientist!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">⭐</div>
+                <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 22-01-quiz-perfect --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">📚</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Keep Going</div>
+                <div class="video-wrap-title">Good effort — let's review those ideas!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">💪</div>
+                <div class="video-placeholder-text">Review and encouragement video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 22-01-quiz-review --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /quiz-score -->
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+
+</div><!-- /tab-quiz -->
+
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- TAB 5: ASSIGNMENT                              -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <!-- Assignment Video -->
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">✍️</span>
+      <div>
+        <div class="video-wrap-type">Activity 5 · Assignment</div>
+        <div class="video-wrap-title">Assignment Explainer — Lesson 22.01</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">✍️</div>
+        <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 22-01-assignment-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
+    <div class="act-head">
+      <div class="act-num" style="background:#7B5EA7;">5</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment</div>
+        <div class="act-subtitle">Show what you've learned about human impact and ecosystems.</div>
+      </div>
+      <div class="act-time" style="background:#7B5EA7;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- PART A -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔍 Part A — Identify and Sort</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">For each task below, use what you learned in the lesson and the case files. Write your answers in your science notebook.</p>
+
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">Write one human action that harms an ecosystem and one that helps it. Label each as <em>harmful</em> or <em>helpful</em>.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">Circle the resource most affected in each of your two actions: <strong>food &nbsp;|&nbsp; water &nbsp;|&nbsp; shelter &nbsp;|&nbsp; space</strong>.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">Name one organism that would be affected by each action, and explain what that organism now struggles to find.</span></div>
+
+      <!-- PART B -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🚀 Part B — Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer in <strong>complete sentences</strong>. Use vocabulary words when you can.</p>
+
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">4</span><span class="pq-text">How can pollution change an ecosystem? Describe one specific way pollution removes or damages a resource that organisms depend on.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">5</span><span class="pq-text">A neighborhood wants to restore a damaged pond habitat. Describe two things they could do — and for each one, explain which resource it would help restore.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">6</span><span class="pq-text">Why is it important for scientists to study both harmful <em>and</em> helpful human impacts before recommending a conservation plan?</span></div>
+
+      <!-- WRITE & EXPLAIN -->
+      <div class="key-concept scroll-reveal" style="background:#FFF9E8;border-color:#F0E4C0;">
+        <div class="kc-label" style="color:#F9A825;">✍️ Write and Explain</div>
+        <p style="font-size:16px;font-weight:700;color:#1B4332;margin-bottom:14px;">Think about everything you learned today. Which human action — helpful or harmful — do you think has the biggest impact on an ecosystem? Use evidence from the lesson or case files to explain your thinking.</p>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What do you think?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I think the biggest impact is… because…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What did you observe or learn that supports your thinking?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I know this because the lesson showed… / In Case ___, I noticed…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">Why does that make sense?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because organisms need…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="background:#EEF8F0;border-radius:10px;padding:10px 14px;border-left:3px solid #52B788;">
+          <p style="margin:0;font-size:14px;color:#1B4332;">📚 Try to use at least one of these words: <strong>ecosystem</strong>, <strong>habitat</strong>, <strong>resource</strong>, <strong>pollution</strong>, <strong>conservation</strong></p>
+        </div>
+      </div>
+
+      <!-- PART C -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Label</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Draw the same ecosystem <strong>before</strong> and <strong>after</strong> a human action. Label at least 4 parts: an organism, a resource, a habitat change, and one conservation solution you would add.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Reflect</div>
+          <div class="question">"At the start of the lesson, you wrote down things you think people do that change nature. Now that you've studied four real cases — did anything surprise you? Did any of your ideas turn out to be right?"</div>
+        </div>
+      </div>
+
+      <!-- TURN IN BLOCK -->
+      <div class="turn-in-block">
+        <div class="turn-in-header">
+          <div class="turn-in-header-icon">📋</div>
+          <div>
+            <div class="turn-in-header-label">Canvas Submission</div>
+            <div class="turn-in-header-title">What to Turn In</div>
+          </div>
+        </div>
+        <div class="turn-in-body">
+          <p class="turn-in-intro">Submit your work on Canvas using <strong>one of these options:</strong></p>
+          <div class="turn-in-options">
+            <div class="turn-in-option turn-in-option-type">
+              <div class="turn-in-option-icon">⌨️</div>
+              <div class="turn-in-option-title">Type It</div>
+              <div class="turn-in-option-text">Type your answers directly into the Canvas assignment.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-photo">
+              <div class="turn-in-option-icon">📸</div>
+              <div class="turn-in-option-title">Photo It</div>
+              <div class="turn-in-option-text">Take a clear photo of your handwritten work and upload it.</div>
+            </div>
+            <div class="turn-in-option turn-in-option-video">
+              <div class="turn-in-option-icon">🎥</div>
+              <div class="turn-in-option-title">Record It</div>
+              <div class="turn-in-option-text">Record a short video explaining what you did and learned.</div>
+            </div>
+          </div>
+          <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
+          <div class="turn-in-checklist">
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Notice &amp; Wonder — 3 observations and 1 question, written in my science notebook.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">The copywork sentence copied into my science notebook.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My completed Ecosystem Impact Case File chart with all 4 cases sorted and evidence found.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My solution design for one harmful case (drawing or description).</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My short answer responses to Part B questions 4, 5, and 6.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Write &amp; Explain response in complete sentences with at least one vocabulary word.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Part C before-and-after drawing with at least 4 labeled parts.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CLOSING VIDEO -->
+      <div class="video-wrap" style="margin-top:24px;">
+        <div class="video-wrap-header">
+          <span style="font-size:20px;">👋</span>
+          <div>
+            <div class="video-wrap-type">Closing · Wrap-Up</div>
+            <div class="video-wrap-title">Great work today — here's what's coming in Lesson 22.02!</div>
+          </div>
+        </div>
+        <div class="video-ratio">
+          <div class="video-placeholder">
+            <div class="video-placeholder-icon">👋</div>
+            <div class="video-placeholder-text">Closing video coming soon</div>
+            <div class="video-placeholder-id"><!-- slot: 22-01-closing --></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /tab-assignment -->
+
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-line1">Optima Academy Online · <span>3rd Grade Science</span></div>
+  <div class="footer-line2">Lesson 22.01 · NGSS 3-LS4-4, 3-ESS3-1</div>
+  <div class="footer-line3">&copy; Optima Academy &middot; All rights reserved</div>
+</div>
+
+</div><!-- /page-wrap -->
+
+
+<script>
+var LESSON_EMOJI = '🌍';
+
+var tabProgress = { vocab:false, lesson:false, explore:false, quiz:false, assignment:false };
+var tabOrder = ['vocab','lesson','explore','quiz','assignment'];
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelector('[data-tab="' + name + '"]').classList.add('active');
+  tabProgress[name] = true;
+  document.querySelector('[data-tab="' + name + '"]').classList.add('visited');
+  var visited = Object.values(tabProgress).filter(Boolean).length;
+  var pct = Math.round((visited / tabOrder.length) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  introCards.forEach(function(c){
+    if (name === 'vocab') { c.classList.remove('collapsed'); }
+    else { c.classList.add('collapsed'); }
+  });
+  try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+  var top = document.getElementById('pageTop');
+  if (top && top.scrollIntoView) {
+    try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+  }
+}
+
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  var icon = item.querySelector('.check-icon');
+  if (icon) { icon.textContent = item.classList.contains('checked') ? LESSON_EMOJI : ''; }
+  var checklist = item.closest('.turn-in-checklist');
+  if (!checklist) return;
+  var items = checklist.querySelectorAll('.turn-in-item');
+  if (items.length === 0) return;
+  var allChecked = Array.prototype.every.call(items, function(it){ return it.classList.contains('checked'); });
+  if (allChecked) { setTimeout(window.launchConfetti, 200); }
+}
+
+(function() {
+  var hotspots = document.querySelectorAll('.hotspot');
+  var panel    = document.getElementById('diagramPanel');
+  var wordEl   = document.getElementById('diagramWord');
+  var infoEl   = document.getElementById('diagramInfo');
+  if (!panel) return;
+  hotspots.forEach(function(hs) {
+    hs.addEventListener('click', function(e) {
+      e.stopPropagation();
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+      hs.classList.add('active');
+      var part = hs.getAttribute('data-part').replace(/-/g, ' ');
+      wordEl.textContent = part.charAt(0).toUpperCase() + part.slice(1);
+      infoEl.innerHTML   = hs.getAttribute('data-info');
+      panel.classList.add('visible');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.classList.contains('hotspot')) {
+      panel.classList.remove('visible');
+      hotspots.forEach(function(h){ h.classList.remove('active'); });
+    }
+  });
+})();
+
+var quizAnswered = 0;
+var quizCorrect  = 0;
+function checkQuiz(optEl) {
+  var q = optEl.closest('.quiz-q');
+  if (q.classList.contains('answered')) return;
+  q.classList.add('answered');
+  quizAnswered++;
+  var correct = q.getAttribute('data-answer');
+  var chosen  = optEl.getAttribute('data-val');
+  q.querySelectorAll('.quiz-opt').forEach(function(o){
+    if (o.getAttribute('data-val') === correct) { o.classList.add('correct'); }
+    else { o.classList.add('disabled'); }
+  });
+  var fbCorrect = q.querySelector('.fb-correct');
+  var fbWrong   = q.querySelector('.fb-wrong');
+  if (chosen === correct) {
+    quizCorrect++;
+    optEl.classList.add('correct');
+    if (fbCorrect) fbCorrect.classList.add('show');
+  } else {
+    optEl.classList.add('wrong');
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+  if (quizAnswered === 3) {
+    var scoreBox = document.getElementById('quizScore');
+    var scoreNum = document.getElementById('quizScoreNum');
+    var scoreMsg = document.getElementById('quizScoreMsg');
+    var vCorrect = document.getElementById('quizVideoCorrect');
+    var vReview  = document.getElementById('quizVideoReview');
+    scoreNum.textContent = quizCorrect;
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '⭐ Perfect! You got every question right!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌿 Great job! Almost there!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good effort! Review the lesson and try again.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+document.querySelectorAll('.vtip').forEach(function(tip) {
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function() {
+    var rect = tip.getBoundingClientRect();
+    var bw   = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+(function() {
+  var btn = document.getElementById('backToTop');
+  if (!btn) return;
+  var inIframe = (function() {
+    try { return window.self !== window.top; } catch (e) { return true; }
+  })();
+  btn.addEventListener('click', function() {
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    var top = document.getElementById('pageTop');
+    if (top && top.scrollIntoView) {
+      try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+    }
+    try {
+      if (window.frameElement && window.frameElement.scrollIntoView) {
+        window.frameElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (e) {}
+    if (inIframe) {
+      try { window.parent.postMessage({ type: 'optima-lesson:scroll-to-top' }, '*'); } catch (e) {}
+    }
+  });
+  if (inIframe) {
+    setTimeout(function() { btn.classList.add('show'); }, 1500);
+  } else {
+    window.addEventListener('scroll', function() {
+      btn.classList.toggle('show', window.pageYOffset > 400);
+    });
+  }
+})();
+
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx    = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#52B788','#F9A825','#FDD835','#4DD0E1','#2E7D32','#7B5EA7','#FF8F00','#0288D1'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+var introCards = document.querySelectorAll('.intro-2col .card');
+introCards.forEach(function(card){
+  var head = card.querySelector('.card-head');
+  if (!head) return;
+  head.addEventListener('click', function(){
+    var willCollapse = !card.classList.contains('collapsed');
+    introCards.forEach(function(c){ c.classList.toggle('collapsed', willCollapse); });
+  });
+});
+
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+tabProgress['vocab'] = true;
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+(function(){
+  var btt = document.getElementById('backToTop');
+  if (btt) { btt.textContent = LESSON_EMOJI + ' Back to Top'; }
+})();
+</script>
+</body>
+</html>

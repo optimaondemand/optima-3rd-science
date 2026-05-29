@@ -1,0 +1,2341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Optima Academy Online – How Can We Practice Conservation?</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', 'Century Gothic', 'Arial Rounded MT Bold', Verdana, sans-serif;
+  background: #F2F0E8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  color: #2B1D12;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page-wrap { max-width: 920px; margin: 0 auto; background: #FAF8F4; box-shadow: 0 0 40px rgba(0,0,0,0.07); }
+
+/* ── Header ── */
+.header {
+  background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%);
+  border-bottom: 6px solid #2E7D32;
+  padding: 22px 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 6px; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2E7D32, #66BB6A, #2E7D32);
+}
+.header-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.header-logo {
+  width: 52px; height: 52px; border-radius: 50%; background: #fff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title {
+  font-size: 30px; color: #fff; font-weight: 900; line-height: 1.15; margin-bottom: 10px;
+  text-shadow: 0 2px 12px rgba(46,125,50,0.3);
+}
+.header-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(46,125,50,0.15); border: 1.5px solid rgba(46,125,50,0.35);
+  border-radius: 28px; padding: 6px 16px;
+}
+.header-badge span:first-child { font-size: 22px; }
+.header-badge span:last-child { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ── Hero Visual ── */
+.hero-visual {
+  background: linear-gradient(180deg, #A8D5A2 0%, #C8E6C9 50%, #81C784 100%);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #2E7D32;
+}
+.hero-visual svg { display: block; width: 100%; height: auto; }
+
+/* ── Hero Animations ── */
+@keyframes cloud-drift-1 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(40px); }
+}
+@keyframes cloud-drift-2 {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-32px); }
+}
+@keyframes sun-pulse {
+  0%, 100% { opacity: 0.65; transform: scale(1); }
+  50%       { opacity: 1;    transform: scale(1.12); }
+}
+@keyframes bird-drift {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(6px, -8px); }
+}
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes hero-twinkle {
+  0%, 100% { opacity: 0.4; transform: scale(0.85); }
+  50%       { opacity: 1;   transform: scale(1.15); }
+}
+@keyframes hero-shimmer {
+  0%, 100% { opacity: 0.25; }
+  50%       { opacity: 0.7; }
+}
+@keyframes hero-sway {
+  0%, 100% { transform: rotate(-2.5deg); }
+  50%       { transform: rotate(2.5deg); }
+}
+@keyframes recycle-spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes leaf-fall {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%       { transform: translateY(12px) rotate(8deg); }
+}
+@keyframes drop-fall {
+  0%, 100% { transform: translateY(0); opacity: 0.8; }
+  50%       { transform: translateY(16px); opacity: 1; }
+}
+
+.hero-cloud-1   { animation: cloud-drift-1 9s ease-in-out infinite alternate; }
+.hero-cloud-2   { animation: cloud-drift-2 13s ease-in-out infinite alternate; }
+.hero-sun-glow  { animation: sun-pulse 4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-birds     { animation: bird-drift 5s ease-in-out infinite; }
+.hero-float     { animation: hero-float 3.5s ease-in-out infinite; }
+.hero-twinkle   { animation: hero-twinkle 2.2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-twinkle-2 { animation: hero-twinkle 3.1s ease-in-out infinite 0.5s; transform-origin: center; transform-box: fill-box; }
+.hero-shimmer   { animation: hero-shimmer 3s ease-in-out infinite; }
+.hero-sway      { animation: hero-sway 4s ease-in-out infinite; transform-origin: bottom center; transform-box: fill-box; }
+.hero-recycle-spin { animation: recycle-spin 8s linear infinite; transform-origin: center; transform-box: fill-box; }
+.hero-leaf-fall { animation: leaf-fall 3s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.hero-leaf-fall-2 { animation: leaf-fall 4.1s ease-in-out infinite 0.7s; transform-origin: center; transform-box: fill-box; }
+.hero-drop-fall { animation: drop-fall 2.5s ease-in-out infinite; transform-origin: top center; transform-box: fill-box; }
+
+/* ── Nature Diagram Animations ── */
+@keyframes mind-blow-bounce {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.12); }
+}
+
+/* ── Info Strip ── */
+.info-strip {
+  display: flex; flex-wrap: wrap; background: #fff;
+  border-bottom: 2px solid #E8DDD2;
+}
+.info-item {
+  flex: 1; min-width: 150px; padding: 12px 16px;
+  border-right: 1px solid #E8DDD2;
+  display: flex; align-items: center; gap: 10px;
+}
+.info-item:last-child { border-right: none; }
+.info-icon {
+  width: 40px; height: 40px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.info-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+.info-value { font-size: 16px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.info-detail { font-size: 11px; color: #5A4D3E; line-height: 1.3; }
+
+/* ── Content Area ── */
+.content { padding: 24px 28px 36px; }
+
+/* ── Card System ── */
+.card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 22px; overflow: hidden;
+  box-shadow: 0 2px 12px rgba(27,67,50,0.04);
+}
+.card-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 20px; border-bottom: 2px solid;
+}
+.card-head-icon {
+  width: 42px; height: 42px; border-radius: 50%; color: #fff;
+  font-size: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.card-head-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.card-head-title { font-size: 20px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.card-body { padding: 18px 22px; }
+.card-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+.card-body p:last-child { margin-bottom: 0; }
+
+/* ── Card Color Themes ── */
+.theme-earth  .card-head { background: #FFF0E8; border-color: #E8D0B8; }
+.theme-earth  .card-head-icon { background: #A0522D; }
+.theme-sun    .card-head { background: #FFF9E8; border-color: #F0E4C0; }
+.theme-sun    .card-head-icon { background: #F9A825; }
+.theme-sky    .card-head { background: #EAF8FD; border-color: #D6F2FB; }
+.theme-sky    .card-head-icon { background: #0288D1; }
+.theme-forest .card-head { background: #EEF8F0; border-color: #C4E5CC; }
+.theme-forest .card-head-icon { background: #2E7D32; }
+.theme-rock   .card-head { background: #F0EDF6; border-color: #D8D0E8; }
+.theme-rock   .card-head-icon { background: #7B5EA7; }
+.theme-meadow .card-head { background: #F0F8E8; border-color: #C8E0B8; }
+.theme-meadow .card-head-icon { background: #558B2F; }
+
+/* ── Activity Cards ── */
+.activity-card {
+  background: #fff; border: 2px solid #E8DDD2; border-radius: 18px;
+  margin-bottom: 18px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.activity-card.act-warmup  { border-left: 6px solid #52B788; }
+.activity-card.act-lesson  { border-left: 6px solid #F9A825; }
+.activity-card.act-explore { border-left: 6px solid #0288D1; }
+.activity-card.act-practice{ border-left: 6px solid #2E7D32; }
+.activity-card.act-check   { border-left: 6px solid #7B5EA7; }
+
+.act-head {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px 14px 18px;
+  border-bottom: 1.5px solid #E8DDD2;
+}
+.act-num {
+  width: 38px; height: 38px; border-radius: 14px; color: #fff;
+  font-size: 18px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.act-title { font-size: 19px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.act-subtitle { font-size: 12px; color: #9A8E82; }
+.act-time {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap;
+  margin-left: auto; flex-shrink: 0;
+}
+.act-body { padding: 18px 22px 18px 20px; }
+.act-body p { font-size: 17px; color: #5A4D3E; line-height: 1.75; margin-bottom: 12px; }
+
+/* ── Callout Boxes ── */
+.callout {
+  border-radius: 14px; padding: 16px 18px;
+  display: flex; align-items: flex-start; gap: 12px;
+  margin-bottom: 14px;
+}
+.callout-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+.callout p { font-size: 16px; color: #2B1D12; line-height: 1.65; margin: 0; }
+.callout-earth  { background: #FFF0E8; border: 2px solid #E8D0B8; }
+.callout-think  { background: #FFF9E8; border: 2px solid #F0E4C0; }
+.callout-vocab  { background: #F0EDF6; border: 2px solid #D8D0E8; }
+.callout-tip    { background: #EEF8F0; border: 2px solid #C4E5CC; }
+.callout-submit { background: #EAF8FD; border: 2px solid #D6F2FB; }
+
+/* ── Socratic Questions ── */
+.socratic-q {
+  background: linear-gradient(135deg, #EEF8F0, #E8F5E9);
+  border: 2px solid #A8D5B8;
+  border-radius: 16px; padding: 16px 20px;
+  margin: 16px 0;
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.socratic-q .sq-icon { font-size: 26px; flex-shrink: 0; line-height: 1; }
+.socratic-q .label {
+  font-size: 11px; color: #2D6A4F; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px;
+}
+.socratic-q .question {
+  font-size: 17px; color: #2B1D12; font-weight: 700;
+  line-height: 1.6; font-style: italic;
+}
+
+/* ── Diagram Containers ── */
+.diagram-wrap {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 16px; margin: 16px 0;
+  text-align: center;
+}
+.diagram-wrap svg { max-width: 100%; height: auto; }
+.diagram-caption {
+  font-size: 13px; color: #9A8E82; margin-top: 10px;
+  font-weight: 600; text-align: center;
+}
+
+/* ── Lesson Figure ── */
+.lesson-figure {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 16px; padding: 14px 14px 18px; margin: 0 0 22px;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.lesson-figure-label {
+  font-size: 11px; color: #2D6A4F;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  font-weight: 800; margin-bottom: 10px;
+}
+.lesson-figure img {
+  display: block; max-width: 100%; height: auto;
+  border-radius: 10px; margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.lesson-figure-caption {
+  font-size: 14px; color: #5A4D3E;
+  margin-top: 12px; line-height: 1.55; font-weight: 600;
+  text-align: center;
+}
+.lesson-figure-caption strong { color: #1B4332; }
+
+/* ── Key Concept Box ── */
+.key-concept {
+  background: #F0F8E8; border: 2px solid #C8E0B8;
+  border-radius: 14px; padding: 18px 20px; margin: 14px 0;
+}
+.key-concept .kc-label {
+  font-size: 13px; color: #558B2F; text-transform: uppercase;
+  letter-spacing: 0.5px; font-weight: 800; margin-bottom: 8px;
+}
+.key-concept p { font-size: 16px; color: #2B1D12; line-height: 1.7; margin-bottom: 8px; }
+.key-concept p:last-child { margin-bottom: 0; }
+
+/* ── Practice Questions ── */
+.pq {
+  background: #FAFAF6; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 14px 18px; margin-bottom: 12px;
+}
+.pq-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  color: #fff; font-weight: 800; font-size: 14px;
+  margin-right: 8px; vertical-align: middle;
+}
+.pq-text { font-size: 17px; color: #2B1D12; line-height: 1.65; margin-bottom: 8px; }
+
+/* ── Vocab Flashcards ── */
+.vocab-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px; margin: 14px 0;
+}
+.flip-card { perspective: 800px; height: 195px; cursor: pointer; }
+.flip-card-inner {
+  position: relative; width: 100%; height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 14px 18px; text-align: center;
+  border: 2px solid #E8DDD2;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.06);
+}
+.flip-card-front { background: #FAFAF6; border-top: 5px solid; }
+.flip-card-front .fc-emoji { font-size: 32px; margin-bottom: 8px; }
+.flip-card-front .fc-word { font-size: 18px; font-weight: 800; color: #1B4332; margin-bottom: 6px; }
+.flip-card-front .fc-tap { font-size: 11px; color: #B0A698; font-weight: 600; letter-spacing: 0.3px; }
+.flip-card-back {
+  background: linear-gradient(145deg, #1B4332, #2D6A4F);
+  border-color: #1B4332;
+  transform: rotateY(180deg);
+}
+.flip-card-back .fc-def { font-size: 14.5px; color: #fff; line-height: 1.5; font-weight: 600; }
+.flip-card-back .fc-word-back {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 6px;
+}
+.flip-card-back .fc-tap-back { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 8px; font-weight: 600; }
+.fc-color-1 .flip-card-front { border-top-color: #52B788; }
+.fc-color-2 .flip-card-front { border-top-color: #2D6A4F; }
+.fc-color-3 .flip-card-front { border-top-color: #F9A825; }
+.fc-color-4 .flip-card-front { border-top-color: #0288D1; }
+.fc-color-5 .flip-card-front { border-top-color: #2E7D32; }
+.fc-color-6 .flip-card-front { border-top-color: #7B5EA7; }
+
+/* ── Vocab Tooltips ── */
+.vtip {
+  position: relative; color: #7B5EA7; font-weight: 700;
+  cursor: help; border-bottom: 2px dotted rgba(123,94,167,0.45);
+  transition: color 0.15s;
+}
+.vtip:hover { color: #5B3EA7; }
+.vtip .vtip-box {
+  position: fixed; background: #1B4332; color: #fff;
+  padding: 12px 16px; border-radius: 12px;
+  font-size: 14px; font-weight: 600; font-style: normal;
+  line-height: 1.55; width: 250px; text-align: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  pointer-events: none; z-index: 9999;
+  box-shadow: 0 6px 24px rgba(27,67,50,0.35);
+  border: 1.5px solid rgba(149,213,178,0.3);
+  transform: translateY(6px);
+}
+.vtip .vtip-box::after {
+  content: ''; position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent; border-top-color: #1B4332;
+}
+.vtip .vtip-word {
+  font-size: 11px; color: #95D5B2; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; margin-bottom: 4px; display: block;
+}
+.vtip:hover .vtip-box { opacity: 1; visibility: visible; transform: translateY(0); }
+
+/* ── Reveal / Details ── */
+details {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-left: 5px solid #7B5EA7;
+  border-radius: 14px; margin-bottom: 12px; overflow: hidden;
+}
+details summary {
+  padding: 12px 18px; font-size: 16px; font-weight: 700;
+  color: #1B4332; cursor: pointer;
+}
+details summary:hover { background: #FAFAF6; }
+details > div { padding: 12px 18px 14px; font-size: 16px; color: #5A4D3E; line-height: 1.65; border-top: 1.5px solid #E8DDD2; }
+
+/* ── Activities Header ── */
+.activities-header { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.activities-header-icon {
+  width: 44px; height: 44px; border-radius: 50%; background: #1B4332;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0;
+}
+.activities-header-label { font-size: 10px; color: #9A8E82; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 700; }
+.activities-header-title { font-size: 22px; color: #1B4332; font-weight: 800; line-height: 1.2; }
+.activities-header-time { font-size: 14px; color: #9A8E82; font-weight: 600; }
+
+/* ── Footer ── */
+.footer {
+  background: #1B4332; border-top: 4px solid #52B788;
+  padding: 18px 28px; text-align: center;
+}
+.footer-line1 { font-size: 15px; color: #fff; margin-bottom: 4px; }
+.footer-line1 span { color: #95D5B2; font-weight: 700; }
+.footer-line2 { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+.footer-line3 { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+/* ── Mind-Blowing Fact ── */
+.mind-blow {
+  background: linear-gradient(135deg, #1a3a28, #1B4332);
+  border: 2px solid rgba(149,213,178,0.3);
+  border-radius: 18px; padding: 18px 22px;
+  margin: 18px 0; display: flex;
+  align-items: flex-start; gap: 14px;
+  position: relative; overflow: hidden;
+}
+.mind-blow::before {
+  content: ''; position: absolute; top: -30px; right: -30px;
+  width: 100px; height: 100px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(82,183,136,0.15), transparent);
+}
+.mind-blow-icon {
+  font-size: 36px; flex-shrink: 0;
+  animation: mind-blow-bounce 2s ease-in-out infinite;
+}
+.mind-blow-content { flex: 1; }
+.mind-blow-label {
+  font-size: 11px; color: #FDD835; text-transform: uppercase;
+  letter-spacing: 1.5px; font-weight: 800; margin-bottom: 4px;
+}
+.mind-blow-text { font-size: 16px; color: #fff; line-height: 1.6; font-weight: 600; }
+.mind-blow-text strong { color: #95D5B2; }
+
+/* ── Clickable Diagram ── */
+.diagram-interactive { position: relative; }
+.diagram-interactive .hotspot {
+  cursor: pointer; opacity: 0; transition: opacity 0.2s;
+}
+.diagram-interactive .hotspot:hover { opacity: 0.2; }
+.diagram-interactive .hotspot.active { opacity: 0.28; }
+.diagram-info-panel {
+  background: #1B4332; color: #fff;
+  padding: 14px 20px; border-radius: 14px;
+  font-size: 15px; line-height: 1.55; font-weight: 600;
+  text-align: center;
+  border: 1.5px solid rgba(149,213,178,0.3);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  margin: 10px 0 0; display: none;
+}
+.diagram-info-panel.visible { display: block; }
+.diagram-info-panel .dip-word {
+  font-size: 11px; color: #FDD835; text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 800; display: block; margin-bottom: 3px;
+}
+.diagram-tap-hint {
+  text-align: center; font-size: 13px; color: #9A8E82;
+  font-weight: 600; margin-top: 8px;
+}
+
+/* ── Self-Check Quiz ── */
+.quiz-card {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-left: 6px solid #F9A825;
+  border-radius: 18px; margin-bottom: 18px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.quiz-q {
+  background: #FAFAF6; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 16px 18px; margin-bottom: 14px;
+}
+.quiz-q-text { font-size: 17px; color: #2B1D12; font-weight: 700; line-height: 1.6; margin-bottom: 12px; }
+.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz-opt {
+  padding: 10px 16px; border-radius: 12px;
+  border: 2px solid #E8DDD2; background: #fff;
+  font-size: 15px; font-weight: 700; color: #2B1D12;
+  cursor: pointer; transition: all 0.2s;
+  display: flex; align-items: center; gap: 10px;
+  user-select: none;
+}
+.quiz-opt:hover { background: #EEF8F0; border-color: #52B788; }
+.quiz-opt.correct { background: #EEF8F0 !important; border-color: #2E7D32 !important; color: #1a6b35 !important; }
+.quiz-opt.wrong { background: #FFF0EC !important; border-color: #E8636B !important; color: #a33 !important; }
+.quiz-opt.disabled { pointer-events: none; opacity: 0.6; }
+.quiz-opt .opt-letter {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: #E8DDD2; color: #5A4D3E;
+  font-size: 14px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all 0.2s;
+}
+.quiz-opt.correct .opt-letter { background: #2E7D32; color: #fff; }
+.quiz-opt.wrong .opt-letter { background: #E8636B; color: #fff; }
+.quiz-feedback { font-size: 14px; padding: 10px 14px; border-radius: 10px; margin-top: 10px; display: none; font-weight: 600; line-height: 1.5; }
+.quiz-feedback.show { display: block; }
+.quiz-feedback.fb-correct { background: #EEF8F0; color: #1a6b35; border: 1.5px solid #B8E8CF; }
+.quiz-feedback.fb-wrong { background: #FFF0EC; color: #8a3030; border: 1.5px solid #F5C4BA; }
+.quiz-score {
+  text-align: center; padding: 16px; background: linear-gradient(135deg, #EEF8F0, #E8F5E9);
+  border: 2px solid #C4E5CC; border-radius: 14px; margin-top: 8px; display: none;
+}
+.quiz-score.show { display: block; }
+.quiz-score-num { font-size: 36px; font-weight: 900; color: #1B4332; }
+.quiz-score-label { font-size: 14px; color: #9A8E82; font-weight: 700; }
+.quiz-score-msg { font-size: 16px; color: #2B1D12; font-weight: 700; margin-top: 6px; }
+
+/* ── Go Deeper ── */
+.go-deeper {
+  background: linear-gradient(135deg, #F0EDF6, #E8E2F2);
+  border: 2px solid #D8D0E8; border-radius: 16px;
+  margin: 16px 0; overflow: hidden;
+}
+.go-deeper summary {
+  padding: 14px 18px; font-size: 16px; font-weight: 800;
+  color: #1B4332; cursor: pointer;
+  display: flex; align-items: center; gap: 10px;
+  list-style: none;
+}
+.go-deeper summary::-webkit-details-marker { display: none; }
+.go-deeper summary::before { content: '🔭'; font-size: 22px; }
+.go-deeper summary::after {
+  content: '▸'; margin-left: auto; font-size: 18px; color: #7B5EA7;
+  transition: transform 0.3s;
+}
+.go-deeper[open] summary::after { transform: rotate(90deg); }
+.go-deeper .gd-body {
+  padding: 4px 18px 16px; font-size: 15px;
+  color: #5A4D3E; line-height: 1.7;
+  border-top: 1.5px solid #D8D0E8;
+}
+.go-deeper .gd-body p { margin-bottom: 10px; }
+
+/* ── Scroll Animations ── */
+.scroll-reveal { opacity: 1; transform: none; transition: none; }
+
+/* ── Back to Top ── */
+.back-to-top {
+  position: fixed; bottom: 24px; right: 24px;
+  height: 40px; padding: 0 18px 0 14px; border-radius: 20px;
+  background: linear-gradient(135deg, #2D6A4F, #52B788);
+  color: #fff; border: none;
+  font-size: 14px; font-weight: 800;
+  font-family: 'Nunito', sans-serif; cursor: pointer;
+  box-shadow: 0 4px 14px rgba(45,106,79,0.35);
+  display: flex; align-items: center; gap: 6px;
+  opacity: 0; visibility: hidden; transform: translateY(20px);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.2s;
+  z-index: 500; letter-spacing: 0.2px; white-space: nowrap;
+}
+.back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { box-shadow: 0 6px 20px rgba(45,106,79,0.5); transform: translateY(-3px); }
+
+/* ── Confetti Canvas ── */
+#confettiCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000; }
+
+/* ── Video Embed System ── */
+.video-wrap { border-radius: 18px; overflow: hidden; border: 2px solid #E8DDD2; box-shadow: 0 4px 20px rgba(27,67,50,0.08); background: #000; margin: 0 0 22px; }
+.video-wrap-header {
+  display: flex; align-items: center; gap: 12px; padding: 12px 18px;
+  background: linear-gradient(135deg, #1B4332, #2D6A4F);
+  border-bottom: 2px solid rgba(149,213,178,0.2);
+}
+.video-wrap-type { font-size: 10px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
+.video-wrap-title { font-size: 16px; color: #fff; font-weight: 800; line-height: 1.2; }
+.video-ratio { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+.video-ratio iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.video-placeholder {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, #1a3a28, #1B4332);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 24px;
+}
+.video-placeholder-icon { font-size: 44px; margin-bottom: 10px; opacity: 0.55; }
+.video-placeholder-text { font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 600; line-height: 1.5; font-family: 'Nunito', sans-serif; }
+.video-placeholder-id { font-size: 11px; color: rgba(149,213,178,0.4); font-family: monospace; margin-top: 6px; letter-spacing: 0.5px; }
+.video-feedback { display: none; }
+.video-feedback.show { display: block; }
+
+/* ── Collapsible Intro Cards ── */
+.intro-2col .card .card-head { cursor: pointer; user-select: none; position: relative; }
+.intro-2col .card .card-head::after {
+  content: '▾'; position: absolute; right: 16px; top: 50%;
+  transform: translateY(-50%); font-size: 16px; color: #9A8E82; transition: transform 0.25s ease;
+}
+.intro-2col .card.collapsed .card-head::after { transform: translateY(-50%) rotate(-90deg); }
+.intro-2col .card.collapsed .card-body { display: none; }
+
+/* ── Tab Bar ── */
+.tab-bar {
+  position: sticky; top: 44px; z-index: 100;
+  background: #FAF8F4; border-bottom: 3px solid #E8DDD2;
+  display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex: 1; min-width: 130px; padding: 12px 8px 11px;
+  background: transparent; border: none;
+  border-bottom: 4px solid transparent;
+  font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 700;
+  color: #9A8E82; cursor: pointer; transition: all 0.2s;
+  white-space: nowrap; line-height: 1.3; text-align: center;
+}
+.tab-btn:hover { color: #1B4332; background: #EEF8F0; }
+.tab-btn.active { color: #1B4332; border-bottom-color: #2E7D32; background: #fff; }
+.tab-btn .tab-check { display: none; font-size: 12px; color: #2E7D32; margin-left: 4px; font-weight: 800; }
+.tab-btn.visited .tab-check { display: inline; }
+
+/* ── Tab Panels ── */
+.tab-panel { display: none; padding: 24px 28px 36px; }
+.tab-panel.active { display: block; }
+
+/* ── Intro 2-col ── */
+.intro-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px 28px 0; }
+.intro-2col .card { margin-bottom: 0; }
+
+/* ── Need Strip ── */
+.need-strip { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 28px 16px; }
+.need-strip-label { font-size: 13px; color: #5A4D3E; font-weight: 700; white-space: nowrap; }
+.need-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: #EEF8F0; border: 1.5px solid #C4E5CC;
+  border-radius: 20px; padding: 5px 12px;
+  font-size: 13px; color: #1B4332; font-weight: 700;
+}
+
+/* ── Tab Next Button ── */
+.tab-next-wrap { text-align: center; padding: 24px 0 8px; }
+.tab-next-btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px;
+  background: linear-gradient(135deg, #2D6A4F, #52B788);
+  color: #fff; border: none; border-radius: 28px;
+  font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800;
+  cursor: pointer; box-shadow: 0 4px 14px rgba(45,106,79,0.3);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.tab-next-btn:hover { box-shadow: 0 6px 20px rgba(45,106,79,0.45); transform: translateY(-2px); }
+
+/* ── Turn-In Block ── */
+.turn-in-block {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 18px; overflow: hidden;
+  box-shadow: 0 2px 12px rgba(27,67,50,0.04);
+  margin-bottom: 22px;
+}
+.turn-in-header {
+  display: flex; align-items: center; gap: 12px;
+  padding: 16px 22px;
+  background: linear-gradient(135deg, #1B4332, #2D6A4F);
+}
+.turn-in-header-icon { font-size: 28px; }
+.turn-in-header-label { font-size: 10px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; margin-bottom: 2px; }
+.turn-in-header-title { font-size: 22px; color: #fff; font-weight: 900; }
+.turn-in-body { padding: 20px 22px; }
+.turn-in-options {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 12px; margin-bottom: 22px;
+}
+.turn-in-option {
+  border-radius: 16px; padding: 20px 14px;
+  text-align: center; border: 2px solid;
+}
+.turn-in-option-type  { background: #EEF8F0; border-color: #C4E5CC; }
+.turn-in-option-photo { background: #FFF9E8; border-color: #F0E4C0; }
+.turn-in-option-video { background: #F0EDF6; border-color: #D8D0E8; }
+.turn-in-option-icon  { font-size: 34px; line-height: 1; margin-bottom: 12px; }
+.turn-in-option-title { font-size: 17px; color: #1B4332; font-weight: 800; margin-bottom: 8px; }
+.turn-in-option-text  { font-size: 14px; color: #5A4D3E; line-height: 1.5; }
+.turn-in-subhead { font-size: 16px; color: #5A4D3E; margin-bottom: 14px; line-height: 1.55; }
+.turn-in-checklist { display: flex; flex-direction: column; gap: 10px; }
+.turn-in-item {
+  display: flex; align-items: center; gap: 16px;
+  padding: 14px 18px;
+  background: #FAFAF6;
+  border: 1.5px solid #E8DDD2;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item:hover { background: #F4FAF5; border-color: #C4E5CC; }
+.turn-in-item.checked { background: #EEF8F0; border-color: #B8E8CF; }
+.turn-in-item .turn-in-check {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  border: 2px solid #95D5B2;
+  background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px; line-height: 1;
+  transition: background 0.2s, border-color 0.2s;
+}
+.turn-in-item.checked .turn-in-check { background: #2E7D32; border-color: #2E7D32; }
+.turn-in-item-text { font-size: 16px; color: #2B1D12; font-weight: 600; line-height: 1.55; flex: 1; }
+.turn-in-item.checked .turn-in-item-text { color: #5A4D3E; }
+
+/* ── Progress Bar ── */
+.progress-wrap {
+  position: sticky; top: 0; z-index: 200;
+  background: #0E1C42; padding: 8px 20px 10px;
+  border-bottom: 2px solid rgba(85,200,232,0.3);
+  display: flex; align-items: center; gap: 14px;
+}
+.progress-label { font-size: 12px; color: #55C8E8; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+.progress-track { flex: 1; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; position: relative; }
+.progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #52B788, #95D5B2, #FDD835); border-radius: 10px; transition: width 0.4s ease; }
+.progress-pct { font-size: 13px; color: #FDD835; font-weight: 800; min-width: 36px; text-align: right; }
+
+/* ── Image Suggestion ── */
+.image-suggestion {
+  background: linear-gradient(135deg, #FFF3E0, #FFF8E1);
+  border: 2.5px dashed #F9A825;
+  border-radius: 16px; padding: 20px 22px;
+  margin: 18px 0; text-align: center;
+}
+.image-suggestion-icon { font-size: 36px; margin-bottom: 8px; }
+.image-suggestion-label {
+  font-size: 11px; color: #E65100; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;
+}
+.image-suggestion-desc {
+  font-size: 15px; color: #5A4D3E; line-height: 1.65;
+  font-weight: 600; max-width: 680px; margin: 0 auto 12px; text-align: left;
+}
+.image-suggestion-file {
+  font-size: 12px; color: #9A8E82; font-family: monospace;
+  background: rgba(0,0,0,0.05); border-radius: 6px;
+  padding: 4px 10px; display: inline-block; margin-top: 6px;
+}
+
+/* ── Student Chart ── */
+.student-chart-wrap {
+  background: #fff; border: 2px solid #E8DDD2;
+  border-radius: 14px; padding: 16px; margin: 16px 0;
+  box-shadow: 0 2px 10px rgba(27,67,50,0.04);
+}
+.student-chart-label {
+  font-size: 13px; color: #2D6A4F; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px;
+}
+.student-chart { width: 100%; border-collapse: collapse; font-size: 15px; }
+.student-chart th {
+  background: #1B4332; color: #fff; font-weight: 800;
+  padding: 10px 14px; text-align: left; font-size: 14px;
+}
+.student-chart th:first-child { border-radius: 8px 0 0 0; }
+.student-chart th:last-child { border-radius: 0 8px 0 0; }
+.student-chart td {
+  padding: 14px; border: 1.5px dashed #C4E5CC; background: #FAFAF6;
+  color: #C4C4C4; font-style: italic; font-size: 13px;
+  min-height: 40px; vertical-align: middle;
+}
+.student-chart tr:last-child td:first-child { border-radius: 0 0 0 8px; }
+.student-chart tr:last-child td:last-child { border-radius: 0 0 8px 0; }
+.student-chart .row-label {
+  background: #EEF8F0; color: #1B4332; font-weight: 700;
+  font-style: normal; font-size: 15px; border: 1.5px solid #C4E5CC;
+}
+
+/* ── Utility ── */
+strong { color: #1B4332; }
+em { color: #5A4D3E; }
+.gold { color: #F9A825; font-weight: 700; }
+.forest { color: #2D6A4F; font-weight: 700; }
+.earth { color: #A0522D; font-weight: 700; }
+
+/* ── Hero Banner Animations ── */
+.cloud-drift { animation: cloudDrift 9s ease-in-out infinite; }
+@keyframes cloudDrift {
+  0%,100% { transform: translateX(0px); }
+  50%     { transform: translateX(18px); }
+}
+.flower-sway {
+  animation: flowerSway 4.8s ease-in-out infinite;
+  transform-box: view-box;
+  transform-origin: 460px 210px;
+}
+@keyframes flowerSway {
+  0%,100% { transform: rotate(0deg); }
+  34%     { transform: rotate(2deg); }
+  68%     { transform: rotate(-2deg); }
+}
+.droplet-pulse { animation: dropletPulse 3.8s ease-in-out infinite; }
+@keyframes dropletPulse {
+  0%,100% { opacity: 0.35; transform: translateY(0px); }
+  50%     { opacity: 0.82; transform: translateY(4px); }
+}
+.clip-bob { animation: clipBob 5.6s ease-in-out infinite; }
+@keyframes clipBob {
+  0%,100% { transform: translateY(0px); }
+  50%     { transform: translateY(-4px); }
+}
+
+@media (max-width: 620px) {
+  .intro-2col { grid-template-columns: 1fr; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .flip-card { height: 175px; }
+  .header-title { font-size: 22px; }
+  .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 6px 9px; }
+  .turn-in-options { grid-template-columns: 1fr; }
+  .turn-in-header-title { font-size: 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="confettiCanvas"></canvas>
+<button class="back-to-top" id="backToTop" type="button">♻️ Back to Top</button>
+<span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<div class="page-wrap">
+
+<!-- ═══════════ PROGRESS BAR ═══════════ -->
+<div class="progress-wrap">
+  <span class="progress-label">♻️ Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">An Education Experience Company</div>
+    </div>
+  </div>
+  <div class="header-title">How Can We Practice Conservation?</div>
+  <div class="header-badge">
+    <span>♻️</span>
+    <span>Lesson 24.02</span>
+  </div>
+</div>
+
+<!-- ═══════════ HERO BANNER ═══════════ -->
+<div class="hero-visual">
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An outdoor learning station shows simple conservation tools around a small garden.">
+<defs>
+  <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%"   stop-color="#A9D7E5"/>
+    <stop offset="58%"  stop-color="#C7E6D9"/>
+    <stop offset="100%" stop-color="#D7D7AF"/>
+  </linearGradient>
+  <linearGradient id="fieldGrad" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%"   stop-color="#7EAA63"/>
+    <stop offset="52%"  stop-color="#93BA73"/>
+    <stop offset="100%" stop-color="#77A361"/>
+  </linearGradient>
+  <linearGradient id="groundGrad" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%"   stop-color="#7C9A61"/>
+    <stop offset="48%"  stop-color="#93A96A"/>
+    <stop offset="100%" stop-color="#718C57"/>
+  </linearGradient>
+  <linearGradient id="pathGrad" x1="0" y1="0.5" x2="1" y2="0.5">
+    <stop offset="0%"   stop-color="#C7AE84"/>
+    <stop offset="50%"  stop-color="#D4BF96"/>
+    <stop offset="100%" stop-color="#C7A978"/>
+  </linearGradient>
+  <linearGradient id="woodGrad" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%"   stop-color="#B78658"/>
+    <stop offset="100%" stop-color="#8A613A"/>
+  </linearGradient>
+  <linearGradient id="soilGrad" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%"   stop-color="#654B34"/>
+    <stop offset="100%" stop-color="#483424"/>
+  </linearGradient>
+  <linearGradient id="barrelGrad" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%"   stop-color="#6E9E92"/>
+    <stop offset="100%" stop-color="#486D63"/>
+  </linearGradient>
+  <linearGradient id="pailGrad" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%"   stop-color="#8AA66D"/>
+    <stop offset="100%" stop-color="#617E46"/>
+  </linearGradient>
+  <linearGradient id="paperGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#FFFBEF"/>
+    <stop offset="100%" stop-color="#ECE2C7"/>
+  </linearGradient>
+  <linearGradient id="binBlue" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#79AFC8"/>
+    <stop offset="100%" stop-color="#537D99"/>
+  </linearGradient>
+  <linearGradient id="binGreen" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#78B383"/>
+    <stop offset="100%" stop-color="#4D7E57"/>
+  </linearGradient>
+  <filter id="softShadow" x="-20%" y="-20%" width="140%" height="150%">
+    <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#2A392E" flood-opacity="0.18"/>
+  </filter>
+</defs>
+
+<rect width="920" height="260" fill="url(#skyGrad)"/>
+
+<g class="cloud-drift" fill="#F5FAFB" opacity="0.74">
+  <ellipse cx="138" cy="48" rx="34" ry="18"/>
+  <ellipse cx="164" cy="42" rx="26" ry="16"/>
+  <ellipse cx="190" cy="48" rx="30" ry="18"/>
+  <ellipse cx="680" cy="42" rx="30" ry="16"/>
+  <ellipse cx="706" cy="37" rx="22" ry="14"/>
+  <ellipse cx="732" cy="42" rx="28" ry="16"/>
+</g>
+
+<path d="M0,104 C96,74 184,92 272,70 C350,52 448,88 540,70 C632,52 724,94 824,66 C860,56 892,56 920,52 L920,136 L0,136 Z" fill="#8BB078" opacity="0.48"/>
+<path d="M0,126 C80,98 170,116 250,92 C334,66 430,124 518,90 C608,56 690,118 786,90 C834,76 880,78 920,70 L920,146 L0,146 Z" fill="#72A06D" opacity="0.42"/>
+
+<rect y="126" width="920" height="40" fill="url(#fieldGrad)"/>
+
+<g fill="#568346" opacity="0.64">
+  <ellipse cx="72" cy="126" rx="32" ry="16"/>
+  <ellipse cx="136" cy="122" rx="38" ry="18"/>
+  <ellipse cx="780" cy="124" rx="40" ry="19"/>
+  <ellipse cx="852" cy="124" rx="36" ry="18"/>
+</g>
+<g stroke="#43663A" stroke-width="3" stroke-linecap="round" opacity="0.56">
+  <line x1="72" y1="134" x2="72" y2="148"/>
+  <line x1="136" y1="132" x2="136" y2="148"/>
+  <line x1="780" y1="134" x2="780" y2="148"/>
+  <line x1="852" y1="134" x2="852" y2="148"/>
+</g>
+
+<rect y="166" width="920" height="94" fill="url(#groundGrad)"/>
+
+<path d="M0,208 C126,194 252,216 382,202 C506,188 618,214 760,198 C822,192 876,194 920,190 L920,260 L0,260 Z" fill="url(#pathGrad)" opacity="0.92"/>
+<path d="M0,206 C120,194 246,214 376,202 C514,190 642,214 780,198 C842,190 884,192 920,188" stroke="#B29065" stroke-width="3" fill="none" opacity="0.28"/>
+
+<g fill="#4F7F3D" opacity="0.76">
+  <ellipse cx="24" cy="26" rx="28" ry="13" transform="rotate(-18 24 26)"/>
+  <ellipse cx="66" cy="20" rx="32" ry="15" transform="rotate(10 66 20)"/>
+  <ellipse cx="896" cy="24" rx="32" ry="15" transform="rotate(-8 896 24)"/>
+  <ellipse cx="856" cy="18" rx="28" ry="13" transform="rotate(12 856 18)"/>
+</g>
+
+<ellipse cx="462" cy="200" rx="236" ry="28" fill="#243326" opacity="0.14"/>
+
+<rect x="332" y="72" width="260" height="52" rx="10" fill="#E9E6D7" stroke="#9AA88F" stroke-width="2.5" opacity="0.96"/>
+
+<g filter="url(#softShadow)">
+  <rect x="300" y="116" width="324" height="20" rx="4" fill="url(#woodGrad)" stroke="#7A5532" stroke-width="2"/>
+  <rect x="314" y="136" width="296" height="44" rx="8" fill="#D5C298" stroke="#A48B63" stroke-width="2"/>
+  <rect x="316" y="180" width="292" height="10" rx="3" fill="url(#woodGrad)" stroke="#7A5532" stroke-width="2"/>
+  <rect x="324" y="126" width="10" height="66" rx="3" fill="#8C633D"/>
+  <rect x="590" y="126" width="10" height="66" rx="3" fill="#8C633D"/>
+</g>
+
+<ellipse cx="462" cy="156" rx="100" ry="28" fill="url(#soilGrad)" stroke="#4C3927" stroke-width="2"/>
+<ellipse cx="462" cy="150" rx="90" ry="18" fill="#5D452E" opacity="0.72"/>
+
+<g class="flower-sway">
+  <g stroke="#4C8A3A" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.88">
+    <path d="M420,156 C420,146 420,136 418,124"/>
+    <path d="M438,158 C438,146 440,136 444,124"/>
+    <path d="M462,160 C462,148 462,138 462,124"/>
+    <path d="M486,158 C486,146 488,136 492,124"/>
+    <path d="M506,156 C506,144 506,134 504,122"/>
+  </g>
+  <g>
+    <circle cx="418" cy="122" r="7" fill="#F3C94B"/>
+    <circle cx="444" cy="122" r="8" fill="#F0D255"/>
+    <circle cx="462" cy="120" r="8" fill="#E7C45C"/>
+    <circle cx="492" cy="122" r="8" fill="#F3C94B"/>
+    <circle cx="504" cy="120" r="7" fill="#F0D255"/>
+    <g fill="#7E4A85" opacity="0.85">
+      <ellipse cx="430" cy="132" rx="3" ry="8"/>
+      <ellipse cx="476" cy="132" rx="3" ry="8"/>
+      <ellipse cx="518" cy="132" rx="3" ry="8"/>
+    </g>
+    <g fill="#5E432A">
+      <circle cx="418" cy="122" r="2.6"/>
+      <circle cx="444" cy="122" r="3"/>
+      <circle cx="462" cy="120" r="3"/>
+      <circle cx="492" cy="122" r="3"/>
+      <circle cx="504" cy="120" r="2.6"/>
+    </g>
+  </g>
+  <g fill="#76B857" opacity="0.92">
+    <path d="M418,138 C428,132 438,134 442,144 C432,148 422,146 418,140 Z"/>
+    <path d="M486,138 C496,132 506,134 510,144 C500,148 490,146 486,140 Z"/>
+  </g>
+</g>
+
+<g transform="translate(550,164) rotate(-8)">
+  <rect x="0" y="0" width="24" height="20" rx="3" fill="#F4E2AE" stroke="#BDA16A" stroke-width="1.6"/>
+  <path d="M12,5 C8,8 8,13 12,16 C16,13 16,8 12,5 Z" fill="#77B856" opacity="0.88"/>
+  <path d="M12,16 C12,12 12,9 12,6" stroke="#4B7E3A" stroke-width="1" opacity="0.72"/>
+</g>
+
+<g transform="translate(182,88)" filter="url(#softShadow)">
+  <ellipse cx="72" cy="112" rx="56" ry="12" fill="#203129" opacity="0.12"/>
+  <rect x="26" y="20" width="92" height="88" rx="14" fill="url(#barrelGrad)" stroke="#34574E" stroke-width="2.5"/>
+  <ellipse cx="72" cy="20" rx="46" ry="10" fill="#5D8E82" stroke="#34574E" stroke-width="2.2"/>
+  <ellipse cx="72" cy="44" rx="44" ry="5" fill="#547F76" opacity="0.50"/>
+  <ellipse cx="72" cy="68" rx="44" ry="5" fill="#547F76" opacity="0.50"/>
+  <ellipse cx="72" cy="92" rx="44" ry="5" fill="#547F76" opacity="0.50"/>
+  <rect x="108" y="70" width="16" height="8" rx="3" fill="#889B98" stroke="#4E6764" stroke-width="1.5"/>
+  <rect x="120" y="72" width="10" height="4" rx="2" fill="#B5C3C0"/>
+  <g class="droplet-pulse">
+    <path d="M130,82 C136,90 142,95 142,101 C142,107 137,112 130,112 C123,112 118,107 118,101 C118,95 124,90 130,82 Z" fill="#79C8D3" opacity="0.78"/>
+  </g>
+  <rect x="44" y="6" width="56" height="8" rx="4" fill="#34574E"/>
+</g>
+
+<g transform="translate(256,164)" filter="url(#softShadow)">
+  <ellipse cx="34" cy="42" rx="40" ry="10" fill="#233328" opacity="0.12"/>
+  <rect x="8" y="0" width="52" height="36" rx="6" fill="url(#pailGrad)" stroke="#4C6837" stroke-width="2"/>
+  <rect x="14" y="-8" width="40" height="10" rx="4" fill="#58753F"/>
+  <path d="M20,-8 C20,-20 48,-20 48,-8" stroke="#58753F" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M30,10 C24,16 24,24 32,28 C40,24 40,16 34,10 Z" fill="#D5E6B7" opacity="0.78"/>
+  <path d="M32,28 C32,22 33,16 34,11" stroke="#73975C" stroke-width="1.2" opacity="0.78"/>
+</g>
+
+<g transform="translate(650,126)" filter="url(#softShadow)">
+  <ellipse cx="76" cy="82" rx="74" ry="12" fill="#233328" opacity="0.12"/>
+  <g>
+    <rect x="0" y="10" width="58" height="58" rx="8" fill="url(#binBlue)" stroke="#40667E" stroke-width="2.2"/>
+    <rect x="6" y="0" width="46" height="12" rx="4" fill="#40667E"/>
+    <circle cx="18" cy="72" r="4" fill="#3C5561"/>
+    <circle cx="40" cy="72" r="4" fill="#3C5561"/>
+    <circle cx="18" cy="34" r="6" fill="#EAF8FE" opacity="0.92"/>
+    <rect x="28" y="28" width="12" height="12" rx="2" fill="#EAF8FE" opacity="0.92"/>
+  </g>
+  <g transform="translate(68,0)">
+    <rect x="0" y="10" width="58" height="58" rx="8" fill="url(#binGreen)" stroke="#41684A" stroke-width="2.2"/>
+    <rect x="6" y="0" width="46" height="12" rx="4" fill="#41684A"/>
+    <circle cx="18" cy="72" r="4" fill="#3C5541"/>
+    <circle cx="40" cy="72" r="4" fill="#3C5541"/>
+    <polygon points="18,28 25,40 11,40" fill="#EAF6E9" opacity="0.94"/>
+    <rect x="28" y="29" width="12" height="10" rx="1.6" fill="#EAF6E9" opacity="0.92"/>
+  </g>
+</g>
+
+<g transform="translate(740,66) rotate(5)" filter="url(#softShadow)">
+  <g class="clip-bob">
+    <rect x="0" y="0" width="90" height="118" rx="8" fill="url(#paperGrad)" stroke="#BFAE77" stroke-width="2.2"/>
+    <rect x="28" y="-8" width="34" height="16" rx="5" fill="#8A967D"/>
+    <g stroke="#CFC5A6" stroke-width="1.4" opacity="0.80">
+      <line x1="14" y1="34" x2="76" y2="34"/>
+      <line x1="14" y1="58" x2="76" y2="58"/>
+      <line x1="14" y1="82" x2="76" y2="82"/>
+      <line x1="14" y1="106" x2="76" y2="106"/>
+    </g>
+    <g fill="none" stroke="#8DA28B" stroke-width="2">
+      <rect x="14" y="16" width="12" height="12" rx="2"/>
+      <rect x="14" y="40" width="12" height="12" rx="2"/>
+      <rect x="14" y="64" width="12" height="12" rx="2"/>
+      <rect x="14" y="88" width="12" height="12" rx="2"/>
+    </g>
+    <g>
+      <path d="M46,16 C42,22 39,25 39,29 C39,34 43,38 48,38 C53,38 57,34 57,29 C57,25 53,22 48,16 Z" fill="#74C9D5" opacity="0.80" transform="scale(0.70) translate(20,2)"/>
+      <g transform="translate(42,42) scale(0.58)" fill="none" stroke="#56A247" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.85">
+        <path d="M10,0 L18,9 L10,9"/>
+        <path d="M18,9 C25,14 25,22 18,26"/>
+        <path d="M18,26 L6,26 L11,19"/>
+        <path d="M6,26 C-2,24 -4,16 0,9"/>
+        <path d="M0,9 L6,-1 L11,6"/>
+      </g>
+      <g transform="translate(46,70)">
+        <circle cx="0" cy="0" r="5" fill="#F0D255"/>
+        <circle cx="0" cy="0" r="2" fill="#6B4A2B"/>
+        <path d="M0,5 L0,12" stroke="#4A8B39" stroke-width="2" stroke-linecap="round"/>
+      </g>
+      <path d="M45,90 C39,96 39,103 47,107 C55,103 55,96 49,90 Z" fill="#9CC36A" opacity="0.86"/>
+      <path d="M47,107 C47,102 48,97 49,91" stroke="#668A4E" stroke-width="1.2" opacity="0.78"/>
+    </g>
+  </g>
+</g>
+
+<g fill="#95846A" opacity="0.56">
+  <ellipse cx="122" cy="214" rx="8" ry="4"/>
+  <ellipse cx="216" cy="226" rx="7" ry="4"/>
+  <ellipse cx="614" cy="222" rx="9" ry="5"/>
+  <ellipse cx="708" cy="214" rx="8" ry="4"/>
+</g>
+<g stroke="#4E7F3B" stroke-width="2.8" fill="none" stroke-linecap="round" opacity="0.62">
+  <path d="M32,260 C34,246 38,234 46,224"/>
+  <path d="M62,260 C60,248 62,236 70,228"/>
+  <path d="M880,260 C878,246 882,234 892,224"/>
+  <path d="M906,260 C904,248 906,236 914,228"/>
+</g>
+
+</svg>
+</div>
+
+
+<!-- ═══════════ INFO STRIP ═══════════ -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">📅</div>
+    <div>
+      <div class="info-label">Quarter / Unit</div>
+      <div class="info-value">Q3 &middot; Unit 8</div>
+      <div class="info-detail">Human Impact &amp; Conservation</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#FFF9E8;">📖</div>
+    <div>
+      <div class="info-label">Week / Lesson</div>
+      <div class="info-value">Week 24</div>
+      <div class="info-detail">Lesson 24.02 &mdash; 3rd Grade Science</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EEF8F0;">♻️</div>
+    <div>
+      <div class="info-label">Science Focus</div>
+      <div class="info-value">Conservation</div>
+      <div class="info-detail">Recycling, water, habitat protection</div>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon" style="background:#EAF8FD;">🌎</div>
+    <div>
+      <div class="info-label">Standard</div>
+      <div class="info-value">NGSS 3-ESS3-1</div>
+      <div class="info-detail">Earth and Human Activity</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ INTRO 2-COL CARDS ═══════════ -->
+<div class="intro-2col">
+
+  <div class="card theme-forest">
+    <div class="card-head">
+      <div class="card-head-icon">🌲</div>
+      <div>
+        <div class="card-head-label">Essential Question</div>
+        <div class="card-head-title">Our Big Question</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="socratic-q" style="margin-top:0;">
+        <span class="sq-icon">🤔</span>
+        <div>
+          <div class="label">Think About This…</div>
+          <div class="question">"What can people do to take care of the natural world — and why does it matter which actions we choose?"</div>
+        </div>
+      </div>
+      <p>Keep this question in mind as you work. By the end, you should be able to answer it with examples from what you did today.</p>
+    </div>
+  </div>
+
+  <div class="card theme-sky">
+    <div class="card-head">
+      <div class="card-head-icon">🎯</div>
+      <div>
+        <div class="card-head-label">Objectives</div>
+        <div class="card-head-title">I Can Statements</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#52B788;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> name and explain real conservation practices people use to protect the environment.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2D6A4F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> sort conservation actions by category and explain how each one reduces human impact.</div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
+        <div style="width:34px;height:34px;border-radius:50%;background:#2E7D32;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> evaluate a conservation solution and make a claim about why it helps the environment.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════ NEED STRIP ═══════════ -->
+<div class="need-strip">
+  <span class="need-strip-label">🎒 You'll need:</span>
+  <span class="need-chip"><span>📓</span>Science notebook</span>
+  <span class="need-chip"><span>✏️</span>Pencil &amp; colored pencils</span>
+  <span class="need-chip"><span>✂️</span>Scissors (optional)</span>
+  <span class="need-chip"><span>📋</span>Action Sort cards (printed or written)</span>
+</div>
+
+<!-- ═══════════ TAB BAR ═══════════ -->
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="vocab"      onclick="switchTab('vocab')">📚 Vocabulary<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="lesson"     onclick="switchTab('lesson')">📖 The Lesson<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="explore"    onclick="switchTab('explore')">🔬 Explore<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="quiz"       onclick="switchTab('quiz')">🧠 Self-Check<span class="tab-check">✓</span></button>
+  <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 1: VOCABULARY                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-vocab">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🎬</span>
+      <div>
+        <div class="video-wrap-type">Introduction · Welcome Video</div>
+        <div class="video-wrap-title">Welcome to Today's Lesson!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🎬</div>
+        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 24-2-welcome --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 1: NOTICE & WONDER -->
+  <div class="activity-card act-warmup scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#52B788;">1</div>
+      <div style="flex:1;">
+        <div class="act-title">🌅 Notice &amp; Wonder</div>
+        <div class="act-subtitle">What do you already know about taking care of the Earth?</div>
+      </div>
+      <div class="act-time" style="background:#52B788;">⏱ 5–8 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>Think about the last time you saw someone — or something — taking care of the natural world. Maybe a recycling bin. Maybe a nature preserve. Maybe someone turning off a faucet.</p>
+
+      <div class="socratic-q">
+        <span class="sq-icon">👀</span>
+        <div>
+          <div class="label">In Your Science Notebook</div>
+          <div class="question">"Write 3 things people do to take care of the environment. Then write 1 question you have: something you're not sure about or want to know more about."</div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">💡</span>
+        <p>There are no wrong answers here. We're just starting to think. You'll come back to these ideas at the end of today's practice.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- VOCABULARY FLIP CARDS -->
+  <div class="card theme-rock scroll-reveal">
+    <div class="card-head">
+      <div class="card-head-icon">📚</div>
+      <div>
+        <div class="card-head-label">Word Wall</div>
+        <div class="card-head-title">Key Vocabulary</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>These are the words scientists and environmental researchers use when they talk about protecting the Earth. <strong>Tap each card to flip it</strong> and read the definition. You'll need these words in your practice today.</p>
+
+      <div class="vocab-grid">
+
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🛡️</div><div class="fc-word">Conservation</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Conservation</div><div class="fc-def">Protecting natural resources — like water, land, and wildlife — so they aren't used up or destroyed.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">♻️</div><div class="fc-word">Recycling</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Recycling</div><div class="fc-def">Collecting used materials — like paper, plastic, or metal — and turning them into something new instead of throwing them away.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🏡</div><div class="fc-word">Habitat</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Habitat</div><div class="fc-def">The natural home where a plant or animal finds food, water, and shelter. Protecting habitats keeps wildlife alive and healthy.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">💧</div><div class="fc-word">Water Conservation</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Water Conservation</div><div class="fc-def">Using water carefully and reducing waste, so there is enough clean water for people, animals, and plants.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">📉</div><div class="fc-word">Reduce</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Reduce</div><div class="fc-def">Using less of something — like electricity, plastic, or water — so fewer resources are used up or wasted.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front"><div class="fc-emoji">🤝</div><div class="fc-word">Stewardship</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Stewardship</div><div class="fc-def">Taking responsibility for caring for the Earth. A steward is someone who looks after something that belongs to everyone.</div><div class="fc-tap-back">tap to flip back</div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">📓</span>
+        <p>Copy this sentence carefully into your science notebook:<br><strong>"Conservation means protecting natural resources so they last for future generations."</strong></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button>
+  </div>
+
+</div><!-- /tab-vocab -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 2: THE LESSON                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-lesson">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">📖</span>
+      <div>
+        <div class="video-wrap-type">Activity 2 · Core Lesson</div>
+        <div class="video-wrap-title">What Does Conservation Look Like in Real Life?</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">📖</div>
+        <div class="video-placeholder-text">Core lesson video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 24-2-lesson-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMAGE SUGGESTION 1 -->
+  <div class="lesson-figure">
+    <div class="lesson-figure-label">📷 Photo · Conservation in Action</div>
+    <img src="images/24-2-conservation-actions.jpg"
+         alt="A collage or photo showing three conservation practices: a recycling bin, someone turning off a faucet, and a nature preserve or garden habitat"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
+    <div class="image-suggestion" style="display:none;">
+      <div class="image-suggestion-icon">🖼️</div>
+      <div class="image-suggestion-label">Image Suggestion</div>
+      <div class="image-suggestion-desc">A clear, friendly photo or illustration showing 2–3 conservation practices side by side: a recycling bin with sorted materials, a person turning off a dripping faucet, and a green habitat like a community garden or wildlife area. Use a bright, inviting image that feels real — not stock-photo generic.</div>
+      <div class="image-suggestion-file">Save as: images/24-2-conservation-actions.jpg</div>
+    </div>
+    <div class="lesson-figure-caption"><strong>Conservation in action.</strong> People make choices every day that either help or harm the natural world. These are three ways that real communities protect it.</div>
+  </div>
+
+  <!-- ACTIVITY 2: CORE LESSON CONTENT -->
+  <div class="activity-card act-lesson scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#F9A825;">2</div>
+      <div style="flex:1;">
+        <div class="act-title">📖 The Lesson: Conservation in Action</div>
+        <div class="act-subtitle">Read carefully — then you'll put these ideas to work.</div>
+      </div>
+      <div class="act-time" style="background:#F9A825;">⏱ 10 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- SECTION 1 -->
+      <div class="card theme-forest" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">♻️</div>
+          <div>
+            <div class="card-head-label">Section 1</div>
+            <div class="card-head-title">Reducing Waste</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Every day, people throw things away — food packaging, old paper, plastic bottles. But a lot of that waste doesn't have to be waste. <span class="vtip">Recycling<span class="vtip-box"><span class="vtip-word">Recycling</span>Collecting used materials and turning them into something new instead of throwing them away.</span></span> turns old materials into new ones. Paper gets made into more paper. Aluminum cans get melted and shaped into new cans.</p>
+          <p>Even smarter is to <span class="vtip">reduce<span class="vtip-box"><span class="vtip-word">Reduce</span>Using less of something so fewer resources are used up or wasted.</span></span> in the first place — buying less, choosing products with less packaging, and reusing things before throwing them out. Less trash going in means less damage coming out.</p>
+          <div class="socratic-q">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Stop and Think</div>
+              <div class="question">"If your whole school stopped using single-use plastic bags for one year, what do you think would happen to the amount of trash in your community?"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2 -->
+      <div class="card theme-sky" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">💧</div>
+          <div>
+            <div class="card-head-label">Section 2</div>
+            <div class="card-head-title">Water Conservation</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Fresh water is not unlimited. Most of the Earth's water is salty — only a small fraction is fresh water we can drink or use to grow food. When people let faucets drip, water lawns during the hottest part of the day, or run dishwashers half-empty, water gets wasted.</p>
+          <p><span class="vtip">Water conservation<span class="vtip-box"><span class="vtip-word">Water Conservation</span>Using water carefully and reducing waste so there is enough for people, animals, and plants.</span></span> means making thoughtful choices: turning off the tap while brushing your teeth, fixing leaky pipes, or planting drought-resistant plants that need less water. These small choices add up fast — a single dripping faucet wastes over 3,000 gallons of water per year.</p>
+        </div>
+      </div>
+
+      <!-- SECTION 3 -->
+      <div class="card theme-earth" style="margin-bottom:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">🌿</div>
+          <div>
+            <div class="card-head-label">Section 3</div>
+            <div class="card-head-title">Protecting Habitats</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>When land is cleared for buildings or roads, animals lose their homes. When wetlands are drained, birds and fish lose the places where they feed and raise their young. <span class="vtip">Habitat<span class="vtip-box"><span class="vtip-word">Habitat</span>The natural home where a plant or animal finds food, water, and shelter.</span></span> protection means making sure those places still exist.</p>
+          <p>Communities protect habitats by setting aside land as nature preserves, planting native plants, and keeping streams and wetlands clean. National parks in the United States protect millions of acres of habitat — places where wildlife can live without being crowded out. <strong>Real-World Connection:</strong> The Everglades in Florida is one of the most protected wetland habitats on Earth, home to more than 350 species of birds alone.</p>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE DIAGRAM -->
+      <div class="diagram-wrap scroll-reveal">
+        <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
+          🗺 Tap a zone to learn more
+        </div>
+        <div class="diagram-interactive">
+          <svg viewBox="0 0 860 280" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;" role="img" aria-label="Four conservation practice zones: Reduce and Recycle, Water Conservation, Habitat Protection, Clean Energy">
+
+            <!-- Background -->
+            <rect x="0" y="0" width="860" height="280" rx="14" fill="#F4FAF5"/>
+
+            <!-- Zone 1: Reduce & Recycle (top left) -->
+            <rect x="10" y="10" width="410" height="128" rx="12" fill="#C8E6C9" stroke="#66BB6A" stroke-width="2"/>
+            <!-- Recycle arrows symbol -->
+            <g transform="translate(80,42)">
+              <path d="M24,0 L40,28 L8,28 Z" fill="#2E7D32" opacity="0.8"/>
+              <path d="M48,28 L24,56 L0,28 Z" fill="#2E7D32" opacity="0.6"/>
+              <path d="M0,28 L24,0 L48,28 Z" fill="none" stroke="#2E7D32" stroke-width="3" fill-opacity="0" opacity="0"/>
+              <circle cx="24" cy="28" r="18" fill="none" stroke="#2E7D32" stroke-width="3"/>
+              <path d="M16,20 A10,10 0 0,1 32,20" fill="none" stroke="#2E7D32" stroke-width="3" stroke-linecap="round"/>
+              <path d="M32,36 A10,10 0 0,1 16,36" fill="none" stroke="#2E7D32" stroke-width="3" stroke-linecap="round"/>
+            </g>
+            <!-- Trash bin -->
+            <rect x="155" y="50" width="22" height="28" rx="4" fill="#558B2F" opacity="0.8"/>
+            <rect x="152" y="46" width="28" height="8" rx="3" fill="#33691E" opacity="0.8"/>
+            <!-- Paper stack -->
+            <rect x="195" y="52" width="30" height="5" rx="2" fill="#A5D6A7"/>
+            <rect x="195" y="60" width="30" height="5" rx="2" fill="#81C784"/>
+            <rect x="195" y="68" width="30" height="5" rx="2" fill="#A5D6A7"/>
+            <!-- Zone 1 label -->
+
+            <!-- Compost icon -->
+            <ellipse cx="75" cy="118" rx="30" ry="14" fill="#8D6E63" opacity="0.6"/>
+            <path d="M60,118 Q75,105 90,118" fill="#A5D6A7" opacity="0.8"/>
+
+            <!-- Zone 2: Water Conservation (top right) -->
+            <rect x="440" y="10" width="410" height="128" rx="12" fill="#B3E5FC" stroke="#29B6F6" stroke-width="2"/>
+            <!-- Water drop -->
+            <path d="M590,25 Q600,40 610,55 Q615,65 600,72 Q585,65 590,55 Q600,40 590,25Z" fill="#0288D1" opacity="0.7"/>
+            <!-- Faucet -->
+            <rect x="545" y="38" width="24" height="10" rx="3" fill="#1565C0" opacity="0.6"/>
+            <rect x="554" y="48" width="6" height="20" rx="2" fill="#1565C0" opacity="0.6"/>
+            <!-- X mark (no drip) -->
+            <line x1="558" y1="72" x2="564" y2="82" stroke="#E53935" stroke-width="3" stroke-linecap="round"/>
+            <line x1="564" y1="72" x2="558" y2="82" stroke="#E53935" stroke-width="3" stroke-linecap="round"/>
+            <!-- Rain barrel -->
+            <rect x="660" y="45" width="34" height="38" rx="6" fill="#0277BD" opacity="0.5"/>
+            <rect x="657" y="42" width="40" height="8" rx="4" fill="#01579B" opacity="0.5"/>
+            <path d="M670,30 L673,42 M680,28 L683,42" stroke="#29B6F6" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Zone 2 label -->
+
+
+            <!-- Zone 3: Habitat Protection (bottom left) -->
+            <rect x="10" y="148" width="410" height="122" rx="12" fill="#DCEDC8" stroke="#8BC34A" fill-opacity="0.9" stroke-width="2"/>
+            <!-- Tree -->
+            <circle cx="80" cy="185" r="28" fill="#558B2F" opacity="0.8"/>
+            <rect x="74" y="210" width="12" height="28" rx="4" fill="#795548" opacity="0.7"/>
+            <!-- Bird -->
+            <path d="M120,178 Q130,170 140,178 Q130,180 120,178Z" fill="#33691E" opacity="0.8"/>
+            <!-- Fence/preserve marker -->
+            <rect x="155" y="200" width="6" height="36" rx="2" fill="#5D4037" opacity="0.7"/>
+            <rect x="175" y="200" width="6" height="36" rx="2" fill="#5D4037" opacity="0.7"/>
+            <rect x="155" y="206" width="26" height="5" rx="2" fill="#795548" opacity="0.7"/>
+            <rect x="155" y="220" width="26" height="5" rx="2" fill="#795548" opacity="0.7"/>
+            <!-- Sign shape -->
+            <rect x="193" y="195" width="40" height="28" rx="5" fill="#2E7D32" opacity="0.6"/>
+            <rect x="211" y="223" width="4" height="14" rx="2" fill="#2E7D32" opacity="0.6"/>
+            <!-- Zone 3 label -->
+
+
+            <!-- Zone 4: Clean Energy / Stewardship (bottom right) -->
+            <rect x="440" y="148" width="410" height="122" rx="12" fill="#FFF9C4" stroke="#F9A825" stroke-width="2"/>
+            <!-- Sun -->
+            <circle cx="510" cy="200" r="22" fill="#FDD835" opacity="0.8"/>
+            <g stroke="#F9A825" stroke-width="3" stroke-linecap="round">
+              <line x1="510" y1="168" x2="510" y2="158"/>
+              <line x1="510" y1="232" x2="510" y2="242"/>
+              <line x1="478" y1="200" x2="468" y2="200"/>
+              <line x1="542" y1="200" x2="552" y2="200"/>
+              <line x1="488" y1="178" x2="481" y2="171"/>
+              <line x1="532" y1="222" x2="539" y2="229"/>
+              <line x1="532" y1="178" x2="539" y2="171"/>
+              <line x1="488" y1="222" x2="481" y2="229"/>
+            </g>
+            <!-- Solar panel simplified -->
+            <rect x="575" y="178" width="50" height="32" rx="5" fill="#1565C0" opacity="0.4"/>
+            <line x1="600" y1="178" x2="600" y2="210" stroke="#90CAF9" stroke-width="2"/>
+            <line x1="575" y1="194" x2="625" y2="194" stroke="#90CAF9" stroke-width="2"/>
+            <!-- Hands / steward symbol -->
+            <path d="M645,200 Q650,188 660,185 Q668,190 665,200 Q660,210 645,200Z" fill="#FF8F00" opacity="0.5"/>
+            <path d="M670,200 Q668,188 678,185 Q686,190 683,200 Q678,210 670,200Z" fill="#FF8F00" opacity="0.5"/>
+            <!-- Zone 4 label -->
+
+
+            <!-- Invisible hotspots -->
+            <rect class="hotspot" x="10" y="10" width="410" height="128" rx="12" fill="#2E7D32"
+                  data-part="reduce-recycle"
+                  data-info="Reduce &amp; Recycle: Using less and recycling materials keeps trash out of landfills and reduces how many new resources need to be harvested. Composting food scraps also returns nutrients to the soil instead of creating waste."/>
+            <rect class="hotspot" x="440" y="10" width="410" height="128" rx="12" fill="#0288D1"
+                  data-part="water-conservation"
+                  data-info="Water Conservation: Only about 3% of Earth's water is fresh water, and most of that is frozen. Saving water — even small amounts at home — protects rivers, aquifers, and the animals that depend on them."/>
+            <rect class="hotspot" x="10" y="148" width="410" height="122" rx="12" fill="#33691E"
+                  data-part="habitat-protection"
+                  data-info="Habitat Protection: When wild areas are cleared or polluted, animals lose the food, shelter, and space they need to survive. Protected lands — like national parks and nature preserves — give wildlife a safe place to live and reproduce."/>
+            <rect class="hotspot" x="440" y="148" width="410" height="122" rx="12" fill="#E65100"
+                  data-part="stewardship"
+                  data-info="Stewardship: Being a steward means taking responsibility for the Earth — not because someone tells you to, but because you understand that natural resources belong to everyone, including future generations. Clean energy, community cleanups, and thoughtful daily choices are all part of stewardship."/>
+          </svg>
+
+          <div class="diagram-info-panel" id="diagramPanel">
+            <span class="dip-word" id="diagramWord"></span>
+            <span id="diagramInfo"></span>
+          </div>
+        </div>
+        <div class="diagram-tap-hint">Tap any zone in the diagram to learn more about it.</div>
+        <div class="diagram-caption">Four categories of conservation practice — each one reduces human impact on the natural world in a different way.</div>
+      </div>
+
+      <!-- KEY CONCEPT -->
+      <div class="key-concept scroll-reveal">
+        <div class="kc-label">⭐ Key Concept</div>
+        <p><strong>Humans can take steps to reduce their impact on the environment.</strong> Recycling, conserving water, and protecting habitats are all real solutions that make a measurable difference — but only if people actually put them into practice.</p>
+        <p>Every conservation action has a cause-and-effect relationship: when people reduce waste, landfills shrink. When water is conserved, streams stay fuller. When habitats are protected, wildlife populations recover.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MIND-BLOWING FACT -->
+  <div class="mind-blow scroll-reveal">
+    <div class="mind-blow-icon">🤯</div>
+    <div class="mind-blow-content">
+      <div class="mind-blow-label">Amazing Conservation Fact</div>
+      <div class="mind-blow-text">Recycling <strong>one ton of paper</strong> saves 17 trees, 7,000 gallons of water, and enough energy to power a home for six months. That's from one trip to the recycling bin.</div>
+    </div>
+  </div>
+
+  <!-- GO DEEPER -->
+  <details class="go-deeper scroll-reveal">
+    <summary>Curious? Go Deeper</summary>
+    <div class="gd-body">
+      <p><strong>The 3 R's — and why order matters.</strong> You've probably heard "Reduce, Reuse, Recycle." But most people don't realize that order is intentional. Reducing is more powerful than recycling, because using less means fewer resources are needed in the first place. Reusing is in the middle because it keeps a product in use without creating new waste. Recycling, while important, still uses energy and water. The best conservation practice is the one that happens earliest in the process.</p>
+      <p>Some scientists study something called the "circular economy" — the idea that waste from one process becomes the raw material for another. In a circular economy, almost nothing gets thrown "away," because there is no "away." Everything loops back. This is how nature already works — leaves fall, decompose, and become soil. Scientists are designing factories and cities to work the same way.</p>
+    </div>
+  </details>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button>
+  </div>
+
+</div><!-- /tab-lesson -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 3: EXPLORE — PRACTICE / INVESTIGATION                 -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-explore">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🔬</span>
+      <div>
+        <div class="video-wrap-type">Activity 3 · Conservation Practice</div>
+        <div class="video-wrap-title">Conservation in Action: Sort, Rate, and Plan</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">♻️</div>
+        <div class="video-placeholder-text">Exploration walk-through video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 24-2-exploration-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 3: CONSERVATION PRACTICE -->
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#2E7D32;">3</div>
+      <div style="flex:1;">
+        <div class="act-title">🌿 Conservation in Action: Sort, Rate &amp; Plan</div>
+        <div class="act-subtitle">Apply what you know — sort real conservation actions and evaluate their impact.</div>
+      </div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <div class="callout callout-tip" style="margin-bottom:18px;">
+        <span class="callout-icon">🎒</span>
+        <p><strong>You'll need:</strong> Your science notebook, a pencil, and the Conservation Action list below. You may also cut out the action strips on a printed sheet if your teacher has provided one.</p>
+      </div>
+
+      <p>Below is a list of 12 real conservation actions. Your job is to sort them, rate them, and then choose one to plan out. Work through each step carefully.</p>
+
+      <!-- CONSERVATION ACTION LIST BOX -->
+      <div style="background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:16px 20px;margin:16px 0;">
+        <div style="font-size:13px;color:#2D6A4F;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px;">♻️ Conservation Action List</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div style="background:#fff;border:1.5px solid #C4E5CC;border-radius:10px;padding:10px 12px;font-size:15px;color:#2B1D12;font-weight:600;">1. Turn off lights when leaving a room</div>
+          <div style="background:#fff;border:1.5px solid #C4E5CC;border-radius:10px;padding:10px 12px;font-size:15px;color:#2B1D12;font-weight:600;">2. Recycle paper and plastic at home</div>
+          <div style="background:#fff;border:1.5px solid #C4E5CC;border-radius:10px;padding:10px 12px;font-size:15px;color:#2B1D12;font-weight:600;">3. Take shorter showers</div>
+          <div style="background:#fff;border:1.5px solid #C4E5CC;border-radius:10px;padding:10px 12px;font-size:15px;color:#2B1D12;font-weight:600;">4. Plant native flowers in a yard</div>
+          <div style="background:#fff;border:1.5px solid #C4E5CC;border-radius:10px;padding:10px 12px;font-size:15px;color:#2B1D12;font-weight:600;">5. Bring a reusable bag to the store</div>
+          <div style="background:#fff;border:1.5px solid #C4E5CC;border-radius:10px;padding:10px 12px;font-size:15px;color:#2B1D12;font-weight:600;">6. Fix a leaky faucet</div>
+          <div style="background:#fff;border:1.5px solid #C4E5CC;border-radius:10px;padding:10px 12px;font-size:15px;color:#2B1D12;font-weight:600;">7. Leave a wild area of a yard unmowed</div>
+          <div style="background:#fff;border:1.5px solid #C4E5CC;border-radius:10px;padding:10px 12px;font-size:15px;color:#2B1D12;font-weight:600;">8. Compost food scraps instead of trashing them</div>
+          <div style="background:#fff;border:1.5px solid #C4E5CC;border-radius:10px;padding:10px 12px;font-size:15px;color:#2B1D12;font-weight:600;">9. Only run the dishwasher when it's full</div>
+          <div style="background:#fff;border:1.5px solid #C4E5CC;border-radius:10px;padding:10px 12px;font-size:15px;color:#2B1D12;font-weight:600;">10. Volunteer to clean up a stream or trail</div>
+          <div style="background:#fff;border:1.5px solid #C4E5CC;border-radius:10px;padding:10px 12px;font-size:15px;color:#2B1D12;font-weight:600;">11. Choose products with less packaging</div>
+          <div style="background:#fff;border:1.5px solid #C4E5CC;border-radius:10px;padding:10px 12px;font-size:15px;color:#2B1D12;font-weight:600;">12. Install a rain barrel to collect water</div>
+        </div>
+      </div>
+
+      <!-- STEPS -->
+      <div style="position:relative; margin:16px 0;">
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">1</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Sort the Actions.</strong> In your science notebook, draw three columns with these headings: <em>Reduce Waste</em>, <em>Save Water</em>, <em>Protect Habitat</em>. Write each of the 12 actions under the column that fits best. Some actions might fit in more than one place — write it in both and circle your best choice.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2D6A4F,#52B788);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(45,106,79,0.3);">2</div>
+          <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Rate the Impact.</strong> After sorting, go back and rate each action from 1 to 3 stars. One star = helpful for one person. Two stars = helpful for a neighborhood. Three stars = helpful for an ecosystem or whole community. Write your star rating next to each action and be ready to explain why.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#52B788,#F9A825);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(82,183,136,0.3);">3</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Pick Your Best Action.</strong> Choose the one action from the list that you think would make the biggest difference in your community. Circle it. Then write one sentence explaining your choice: why did you pick this one over the others?</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F9A825,#FDD835);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(249,168,37,0.3);">4</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Make a Mini Plan.</strong> Pretend your school has decided to start doing your chosen action. In 3–5 sentences, write a mini plan: What would you do? Who would need to help? What would change because of it? Use at least two vocabulary words from this lesson.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SORT CHART -->
+      <div class="student-chart-wrap">
+        <div class="student-chart-label">📋 Conservation Action Sort — Copy this chart into your notebook</div>
+        <table class="student-chart">
+          <thead>
+            <tr>
+              <th>Conservation Action</th>
+              <th>Category</th>
+              <th>⭐ Impact Rating (1–3)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="row-label">1. Turn off lights</td><td> </td><td> </td></tr>
+            <tr><td class="row-label">2. Recycle paper &amp; plastic</td><td> </td><td> </td></tr>
+            <tr><td class="row-label">3. Take shorter showers</td><td> </td><td> </td></tr>
+            <tr><td class="row-label">4. Plant native flowers</td><td> </td><td> </td></tr>
+            <tr><td class="row-label">5. Use a reusable bag</td><td> </td><td> </td></tr>
+            <tr><td class="row-label">6. Fix a leaky faucet</td><td> </td><td> </td></tr>
+            <tr><td class="row-label">7. Leave wild yard area</td><td> </td><td> </td></tr>
+            <tr><td class="row-label">8. Compost food scraps</td><td> </td><td> </td></tr>
+            <tr><td class="row-label">9. Full dishwasher only</td><td> </td><td> </td></tr>
+            <tr><td class="row-label">10. Volunteer cleanup</td><td> </td><td> </td></tr>
+            <tr><td class="row-label">11. Less-packaging products</td><td> </td><td> </td></tr>
+            <tr><td class="row-label">12. Install rain barrel</td><td> </td><td> </td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="socratic-q">
+        <span class="sq-icon">🌱</span>
+        <div>
+          <div class="label">Think Like a Conservationist</div>
+          <div class="question">"Two actions might both protect water — but one might protect more water, or protect it in a more lasting way. How do you decide which one matters more? What would you need to know?"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RECORD YOUR THINKING -->
+  <div class="activity-card act-practice scroll-reveal">
+    <div class="act-head">
+      <div class="act-num" style="background:#2E7D32;">4</div>
+      <div style="flex:1;">
+        <div class="act-title">📓 Record Your Thinking</div>
+        <div class="act-subtitle">Organize what you discovered and explain your reasoning.</div>
+      </div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
+    </div>
+    <div class="act-body">
+
+      <p>In your science notebook, write your answers to each of these. Try to use complete sentences.</p>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">1</span>
+        <span class="pq-text">Look at your sort chart. Did any of the 12 actions surprise you — either by being harder to categorize than you expected, or by having a bigger (or smaller) impact than you thought? Explain what surprised you and why.</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">2</span>
+        <span class="pq-text">Which category had the most actions: Reduce Waste, Save Water, or Protect Habitat? Why do you think that is? What does that tell you about the kinds of conservation people focus on most?</span>
+      </div>
+
+      <div class="pq">
+        <span class="pq-num" style="background:#2E7D32;">3</span>
+        <span class="pq-text">Draw a simple diagram in your notebook showing one conservation action and its effect on the environment. Label at least 3 parts: the action, the resource it protects, and one animal or plant that benefits.</span>
+      </div>
+
+      <div class="callout callout-think" style="margin-top:16px;">
+        <span class="callout-icon">🗣</span>
+        <p>Tell the story of your investigation from start to finish — what you sorted, what you found, and what you decided to plan. Explain your reasoning as if you were telling a friend who wasn't in class today.</p>
+      </div>
+
+      <!-- DISCUSS -->
+      <div class="card theme-meadow scroll-reveal" style="margin-top:18px;">
+        <div class="card-head">
+          <div class="card-head-icon">💬</div>
+          <div>
+            <div class="card-head-label">Discussion</div>
+            <div class="card-head-title">Think It Through</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p>Think through each question on your own. Write your answers in your science notebook before moving on.</p>
+
+          <div class="socratic-q" style="margin-bottom:10px;">
+            <span class="sq-icon">🤔</span>
+            <div>
+              <div class="label">Question 1</div>
+              <div class="question">"Which action in your top category do you think is the easiest for most families to do right now — and which one would be hardest? What makes some conservation actions more difficult than others?"</div>
+            </div>
+          </div>
+
+          <div class="socratic-q" style="margin-bottom:10px;">
+            <span class="sq-icon">💡</span>
+            <div>
+              <div class="label">Question 2</div>
+              <div class="question">"You gave one action a 3-star rating. What evidence do you have that it really does make a big difference? How would you know if it was actually working?"</div>
+            </div>
+          </div>
+
+          <div class="socratic-q" style="margin-bottom:10px;">
+            <span class="sq-icon">🌲</span>
+            <div>
+              <div class="label">Question 3 — Connect to Nature</div>
+              <div class="question">"If a community stopped all habitat protection efforts for 10 years, what do you think would happen to the animals and plants that live there? What evidence from the lesson supports your thinking?"</div>
+            </div>
+          </div>
+
+          <div class="socratic-q">
+            <span class="sq-icon">🔁</span>
+            <div>
+              <div class="label">Question 4 — Improve or Extend</div>
+              <div class="question">"If you could add a 13th action to the list — one that isn't already there but would make a real difference — what would it be and why?"</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('quiz')">Continue to 🧠 Self-Check →</button>
+  </div>
+
+</div><!-- /tab-explore -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 4: SELF-CHECK QUIZ                                    -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-quiz">
+
+  <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
+    <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
+      <div style="width:38px;height:38px;border-radius:14px;background:#F9A825;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">🌲</div>
+      <div style="flex:1;">
+        <div style="font-size:19px;color:#1B4332;font-weight:800;line-height:1.2;">🧠 Quick Self-Check</div>
+        <div style="font-size:12px;color:#9A8E82;">Not graded — just for you! See what you remember from today's lesson and practice.</div>
+      </div>
+    </div>
+    <div style="padding:18px 22px;">
+
+      <!-- QUESTION 1 -->
+      <div class="quiz-q" data-answer="b">
+        <div class="quiz-q-text">1. What does the word <em>conservation</em> mean?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Throwing old materials into a landfill</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Protecting natural resources so they aren't used up or destroyed</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Burning waste to reduce how much goes to the dump</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌲 Exactly right! Conservation means taking care of resources — land, water, wildlife — so they last for future generations.</div>
+        <div class="quiz-feedback fb-wrong">Think back to the vocab cards. Conservation is about protecting resources, not getting rid of them.</div>
+      </div>
+
+      <!-- QUESTION 2 -->
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">2. A community fixes a leaky pipe in a park fountain. What type of conservation practice is this?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Habitat protection</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Reduce waste</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Water conservation</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌿 Yes! Fixing a leak stops water from being wasted — that's water conservation in action. Small fixes add up to a lot of water saved over time.</div>
+        <div class="quiz-feedback fb-wrong">A leaky pipe is about water being wasted. Which conservation category is about using water carefully?</div>
+      </div>
+
+      <!-- QUESTION 3 -->
+      <div class="quiz-q" data-answer="a">
+        <div class="quiz-q-text">3. A family plants native wildflowers along the edge of their yard and leaves a section unmowed. Which conservation practice does this best represent?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Habitat protection</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Recycling</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Water conservation</div>
+        </div>
+        <div class="quiz-feedback fb-correct">⭐ Great thinking! Native plants and unmowed areas give insects, birds, and small animals food and shelter — that's habitat protection at the neighborhood level.</div>
+        <div class="quiz-feedback fb-wrong">This is about giving animals a place to live. Which conservation category protects the homes of wildlife?</div>
+      </div>
+
+      <!-- Score Display -->
+      <div class="quiz-score" id="quizScore">
+        <div class="quiz-score-num" id="quizScoreNum">0</div>
+        <div class="quiz-score-label">out of 3</div>
+        <div class="quiz-score-msg" id="quizScoreMsg"></div>
+
+        <div class="video-feedback" id="quizVideoCorrect" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">✅</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Perfect Score</div>
+                <div class="video-wrap-title">You've got it — you're a conservation scientist!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">⭐</div>
+                <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 24-2-quiz-perfect --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;">
+          <div class="video-wrap">
+            <div class="video-wrap-header">
+              <span style="font-size:20px;">📚</span>
+              <div>
+                <div class="video-wrap-type">Feedback · Keep Going</div>
+                <div class="video-wrap-title">Almost there — let's review together!</div>
+              </div>
+            </div>
+            <div class="video-ratio">
+              <div class="video-placeholder">
+                <div class="video-placeholder-icon">💪</div>
+                <div class="video-placeholder-text">Review and encouragement video coming soon</div>
+                <div class="video-placeholder-id"><!-- slot: 24-2-quiz-review --></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tab-next-wrap">
+    <button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button>
+  </div>
+
+</div><!-- /tab-quiz -->
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 5: NOTEBOOK / ASSIGNMENT                              -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="tab-panel" id="tab-assignment">
+
+  <div class="video-wrap">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">✍️</span>
+      <div>
+        <div class="video-wrap-type">Activity 5 · Assignment</div>
+        <div class="video-wrap-title">Your Conservation Assignment Explained</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">✍️</div>
+        <div class="video-placeholder-text">Assignment explainer video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 24-2-assignment-explainer --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY 5: NOTEBOOK WORK -->
+  <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
+    <div class="act-head">
+      <div class="act-num" style="background:#7B5EA7;">5</div>
+      <div style="flex:1;">
+        <div class="act-title">✍️ Assignment: Show What You Know</div>
+        <div class="act-subtitle">Use your sort, your notes, and your mini plan to complete this assignment.</div>
+      </div>
+      <div class="act-time" style="background:#7B5EA7;">⏱ 20 min</div>
+    </div>
+    <div class="act-body">
+
+      <!-- PART A -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔍 Part A — Classify and Identify</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use your completed sort chart from the Practice tab to answer each question below in your science notebook.</p>
+
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">Write the name of one action from the <em>Reduce Waste</em> category. Then write one sentence explaining how it reduces human impact on the environment.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">Write the name of one action from the <em>Save Water</em> category. Then write one sentence explaining who or what benefits when people do this.</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">Write the name of one action from the <em>Protect Habitat</em> category. Then name one specific animal or plant that could benefit from this action and explain how.</span></div>
+
+      <!-- PART B -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🚀 Part B — Short Answer</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer each question in <strong>complete sentences</strong>. Use vocabulary from this lesson.</p>
+
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">4</span><span class="pq-text">What is the difference between <em>reducing</em> waste and <em>recycling</em>? Why do scientists say that reducing is actually more powerful than recycling?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">5</span><span class="pq-text">Why is habitat protection important for animals? What happens when a habitat is destroyed or damaged?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">6</span><span class="pq-text">You gave your best conservation action a star rating. Explain your rating: what makes that action have a big impact compared to a smaller action?</span></div>
+
+      <!-- WRITE AND EXPLAIN -->
+      <div class="key-concept scroll-reveal" style="background:#FFF9E8;border-color:#F0E4C0;margin-top:20px;">
+        <div class="kc-label" style="color:#F9A825;">✍️ Write and Explain</div>
+        <p style="font-size:16px;font-weight:700;color:#1B4332;margin-bottom:14px;">Think about the mini plan you wrote in your notebook. Make a claim: does your chosen conservation action really reduce human impact on the environment? Use what you observed and learned today to support your thinking.</p>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What do you think?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I think that [your chosen action] helps the environment because…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What did you observe or learn that supports your thinking?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I know this because during the sort activity, I noticed that…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">Why does that make sense?</p>
+          <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because when humans [action], the result is that…"</em></p>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
+            <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- VIDEO: CLOSING -->
+  <div class="video-wrap" style="margin-top:22px;">
+    <div class="video-wrap-header">
+      <span style="font-size:20px;">🌿</span>
+      <div>
+        <div class="video-wrap-type">Closing · Wrap-Up</div>
+        <div class="video-wrap-title">Great work today — here's what's coming next!</div>
+      </div>
+    </div>
+    <div class="video-ratio">
+      <div class="video-placeholder">
+        <div class="video-placeholder-icon">🌿</div>
+        <div class="video-placeholder-text">Closing video coming soon</div>
+        <div class="video-placeholder-id"><!-- slot: 24-2-closing --></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TURN IN BLOCK -->
+  <div class="turn-in-block scroll-reveal">
+    <div class="turn-in-header">
+      <span class="turn-in-header-icon">📬</span>
+      <div>
+        <div class="turn-in-header-label">Final Step</div>
+        <div class="turn-in-header-title">What to Turn In</div>
+      </div>
+    </div>
+    <div class="turn-in-body">
+
+      <div class="turn-in-options">
+        <div class="turn-in-option turn-in-option-type">
+          <div class="turn-in-option-icon">⌨️</div>
+          <div class="turn-in-option-title">Type It</div>
+          <div class="turn-in-option-text">Type your answers to Parts A, B, and your Write and Explain into the Canvas assignment text box.</div>
+        </div>
+        <div class="turn-in-option turn-in-option-photo">
+          <div class="turn-in-option-icon">📸</div>
+          <div class="turn-in-option-title">Photo It</div>
+          <div class="turn-in-option-text">Take a clear photo of your completed notebook pages — sort chart, diagram, and written answers — and upload it.</div>
+        </div>
+        <div class="turn-in-option turn-in-option-video">
+          <div class="turn-in-option-icon">🎥</div>
+          <div class="turn-in-option-title">Record It</div>
+          <div class="turn-in-option-text">Record yourself explaining your best conservation action and your mini plan. Talk for at least 60 seconds using science vocabulary.</div>
+        </div>
+      </div>
+
+      <p class="turn-in-subhead">Check each item when it's ready. When all boxes are filled, you're done!</p>
+
+      <div class="turn-in-checklist">
+        <div class="turn-in-item" onclick="toggleCheck(this)">
+          <div class="turn-in-check"><span class="check-icon"></span></div>
+          <div class="turn-in-item-text">My sort chart is complete — all 12 actions are placed into a category with an impact rating.</div>
+        </div>
+        <div class="turn-in-item" onclick="toggleCheck(this)">
+          <div class="turn-in-check"><span class="check-icon"></span></div>
+          <div class="turn-in-item-text">Part A is finished — three actions identified with one sentence of explanation each.</div>
+        </div>
+        <div class="turn-in-item" onclick="toggleCheck(this)">
+          <div class="turn-in-check"><span class="check-icon"></span></div>
+          <div class="turn-in-item-text">Part B is finished — three short-answer questions answered in complete sentences.</div>
+        </div>
+        <div class="turn-in-item" onclick="toggleCheck(this)">
+          <div class="turn-in-check"><span class="check-icon"></span></div>
+          <div class="turn-in-item-text">My Write and Explain response is complete — all three prompts answered with science vocabulary.</div>
+        </div>
+        <div class="turn-in-item" onclick="toggleCheck(this)">
+          <div class="turn-in-check"><span class="check-icon"></span></div>
+          <div class="turn-in-item-text">My notebook diagram is drawn and labeled with at least 3 parts.</div>
+        </div>
+        <div class="turn-in-item" onclick="toggleCheck(this)">
+          <div class="turn-in-check"><span class="check-icon"></span></div>
+          <div class="turn-in-item-text">I submitted my assignment in Canvas (typed, photo, or video).</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /tab-assignment -->
+
+</div><!-- /page-wrap -->
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <div class="footer-line1">Optima Academy Online &mdash; <span>3rd Grade Science</span></div>
+  <div class="footer-line2">Unit 8 &middot; Lesson 24.02 &middot; Week 24 &middot; Q3</div>
+  <div class="footer-line3">Standard: 3-ESS3-1 &mdash; Earth and Human Activity</div>
+</div>
+
+<script>
+var LESSON_EMOJI = '♻️';
+
+// ── Tab Switching ──
+var tabProgress = {};
+
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+
+  var panel = document.getElementById('tab-' + name);
+  var btn   = document.querySelector('[data-tab="' + name + '"]');
+  if (panel) panel.classList.add('active');
+  if (btn)   { btn.classList.add('active'); btn.classList.add('visited'); }
+
+  tabProgress[name] = true;
+  var total   = document.querySelectorAll('.tab-btn').length;
+  var visited = Object.keys(tabProgress).length;
+  var pct     = Math.round((visited / total) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+
+  // Collapse intro cards on non-vocab tabs
+  var introCards = document.querySelectorAll('.intro-2col .card');
+  if (name !== 'vocab') {
+    introCards.forEach(function(c){ c.classList.add('collapsed'); });
+  } else {
+    introCards.forEach(function(c){ c.classList.remove('collapsed'); });
+  }
+
+  try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch(e) {}
+  var top = document.getElementById('pageTop');
+  if (top && top.scrollIntoView) {
+    try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch(e) {}
+  }
+}
+
+// ── Interactive Diagram ──
+document.querySelectorAll('.hotspot').forEach(function(hs) {
+  hs.addEventListener('click', function() {
+    var panel = document.getElementById('diagramPanel');
+    var word  = document.getElementById('diagramWord');
+    var info  = document.getElementById('diagramInfo');
+    var isActive = hs.classList.contains('active');
+
+    document.querySelectorAll('.hotspot').forEach(function(h){ h.classList.remove('active'); });
+
+    if (isActive) {
+      panel.classList.remove('visible');
+    } else {
+      hs.classList.add('active');
+      var partName = hs.getAttribute('data-part') || '';
+      word.textContent = partName.replace(/-/g, ' ').toUpperCase();
+      info.textContent = hs.getAttribute('data-info') || '';
+      panel.classList.add('visible');
+    }
+  });
+});
+
+// ── Quiz ──
+var quizCorrect = 0;
+var quizAnswered = 0;
+
+function checkQuiz(opt) {
+  var qBlock = opt.closest('.quiz-q');
+  if (!qBlock || qBlock.dataset.done) return;
+  qBlock.dataset.done = '1';
+
+  var correct = qBlock.getAttribute('data-answer');
+  var chosen  = opt.getAttribute('data-val');
+  var isRight = (chosen === correct);
+
+  qBlock.querySelectorAll('.quiz-opt').forEach(function(o){
+    o.classList.add('disabled');
+    if (o.getAttribute('data-val') === correct) o.classList.add('correct');
+  });
+  if (!isRight) opt.classList.add('wrong');
+
+  var fbCorrect = qBlock.querySelector('.fb-correct');
+  var fbWrong   = qBlock.querySelector('.fb-wrong');
+  if (isRight) {
+    if (fbCorrect) fbCorrect.classList.add('show');
+    quizCorrect++;
+  } else {
+    if (fbWrong) fbWrong.classList.add('show');
+  }
+
+  quizAnswered++;
+  if (quizAnswered === 3) {
+    var scoreBox = document.getElementById('quizScore');
+    var scoreNum = document.getElementById('quizScoreNum');
+    var scoreMsg = document.getElementById('quizScoreMsg');
+    var vCorrect = document.getElementById('quizVideoCorrect');
+    var vReview  = document.getElementById('quizVideoReview');
+    scoreNum.textContent = quizCorrect;
+    if (quizCorrect === 3) {
+      scoreMsg.textContent = '🌲 Perfect! You really know your conservation!';
+      if (vCorrect) vCorrect.classList.add('show');
+      setTimeout(window.launchConfetti, 300);
+    } else if (quizCorrect === 2) {
+      scoreMsg.textContent = '🌿 Almost there — great effort!';
+      if (vReview) vReview.classList.add('show');
+    } else {
+      scoreMsg.textContent = '👍 Good try! Review the lesson and give it another go.';
+      if (vReview) vReview.classList.add('show');
+    }
+    scoreBox.classList.add('show');
+  }
+}
+
+// ── Vocab Tooltips ──
+document.querySelectorAll('.vtip').forEach(function(tip) {
+  var box = tip.querySelector('.vtip-box');
+  if (!box) return;
+  tip.addEventListener('mouseenter', function() {
+    var rect = tip.getBoundingClientRect();
+    var bw   = 250;
+    var left = rect.left + rect.width / 2 - bw / 2;
+    if (left < 8) left = 8;
+    if (left + bw > window.innerWidth - 8) left = window.innerWidth - bw - 8;
+    box.style.left = left + 'px';
+    var topPos = rect.top - 140;
+    if (topPos < 8) topPos = rect.bottom + 10;
+    box.style.top = topPos + 'px';
+  });
+});
+
+// ── Turn-In Checklist ──
+function toggleCheck(item) {
+  item.classList.toggle('checked');
+  var icon = item.querySelector('.check-icon');
+  if (icon) {
+    icon.textContent = item.classList.contains('checked') ? LESSON_EMOJI : '';
+  }
+  var checklist = item.closest('.turn-in-checklist');
+  if (!checklist) return;
+  var items = checklist.querySelectorAll('.turn-in-item');
+  if (items.length === 0) return;
+  var allChecked = Array.prototype.every.call(items, function(it){
+    return it.classList.contains('checked');
+  });
+  if (allChecked) {
+    setTimeout(window.launchConfetti, 200);
+  }
+}
+
+// ── Back to Top ──
+(function() {
+  var btn = document.getElementById('backToTop');
+  if (!btn) return;
+
+  var inIframe = (function() {
+    try { return window.self !== window.top; }
+    catch (e) { return true; }
+  })();
+
+  btn.addEventListener('click', function() {
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    var top = document.getElementById('pageTop');
+    if (top && top.scrollIntoView) {
+      try { top.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
+    }
+    try {
+      if (window.frameElement && window.frameElement.scrollIntoView) {
+        window.frameElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (e) {}
+    if (inIframe) {
+      try { window.parent.postMessage({ type: 'optima-lesson:scroll-to-top' }, '*'); } catch (e) {}
+    }
+  });
+
+  if (inIframe) {
+    setTimeout(function() { btn.classList.add('show'); }, 1500);
+  } else {
+    window.addEventListener('scroll', function() {
+      btn.classList.toggle('show', window.pageYOffset > 400);
+    });
+  }
+})();
+
+// ── Confetti ──
+(function() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx    = canvas.getContext('2d');
+  var particles = [], animating = false;
+  var colors = ['#52B788','#F9A825','#FDD835','#4DD0E1','#2E7D32','#7B5EA7','#FF8F00','#0288D1'];
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
+  function Particle(x, y) {
+    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
+    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
+    this.color=colors[Math.floor(Math.random()*colors.length)];
+    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  }
+  function burst(x,y,count){
+    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    if(!animating){ animating=true; animate(); }
+  }
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(function(p,i){
+      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
+      p.rotation+=p.rotSpeed; p.opacity-=.008;
+      if(p.opacity<=0){ particles.splice(i,1); return; }
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
+      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
+      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+    });
+    if(particles.length>0){ requestAnimationFrame(animate); }
+    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+  }
+  window.launchConfetti = function(){
+    var cx = window.innerWidth/2;
+    burst(cx-100, window.innerHeight*.45, 50);
+    burst(cx,     window.innerHeight*.35, 60);
+    burst(cx+100, window.innerHeight*.45, 50);
+  };
+})();
+
+// ── Collapsible Intro Cards ──
+var introCards = document.querySelectorAll('.intro-2col .card');
+introCards.forEach(function(card){
+  var head = card.querySelector('.card-head');
+  if (!head) return;
+  head.addEventListener('click', function(){
+    var willCollapse = !card.classList.contains('collapsed');
+    introCards.forEach(function(c){
+      c.classList.toggle('collapsed', willCollapse);
+    });
+  });
+});
+
+// ── Init ──
+document.querySelector('[data-tab="vocab"]').classList.add('visited');
+tabProgress['vocab'] = true;
+document.getElementById('progressFill').style.width = '20%';
+document.getElementById('progressPct').textContent = '20%';
+(function(){
+  var btt = document.getElementById('backToTop');
+  if (btt) { btt.textContent = LESSON_EMOJI + ' Back to Top'; }
+})();
+</script>
+</body>
+</html>
