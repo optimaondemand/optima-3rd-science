@@ -852,6 +852,13 @@ em { color: #5A4D3E; }
   padding: 4px 10px; display: inline-block; margin-top: 6px;
 }
 
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
 </style>
 </head>
 
@@ -1128,7 +1135,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
-  <!-- ═══ ACTIVITY 1: NOTICE & WONDER (WARM-UP) ═══ -->
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
+
+    <!-- ═══ ACTIVITY 1: NOTICE & WONDER (WARM-UP) ═══ -->
   <!-- PURPOSE: Activate curiosity. Students observe before they learn. ~5-8 min -->
   <div class="activity-card act-warmup scroll-reveal">
     <div class="act-head">
@@ -1271,7 +1280,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
-  <!-- Fox comparison photo from uploaded image -->
+  <p class="tab-orientation">Now learn the main science idea.</p>
+
+    <!-- Fox comparison photo from uploaded image -->
   <div class="lesson-figure">
     <div class="lesson-figure-label">📷 Photo &middot; Real Animals, Two Environments</div>
     <img src="images/11-02-fox-comparison.png"
@@ -1599,7 +1610,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
-  <!-- ═══ ACTIVITY 3: INVESTIGATION / LAB / ENGINEERING CHALLENGE ═══ -->
+  <p class="tab-orientation">Now test the idea yourself.</p>
+
+    <!-- ═══ ACTIVITY 3: INVESTIGATION / LAB / ENGINEERING CHALLENGE ═══ -->
   <!-- ✏️ CUSTOMIZE: Change act-explore to act-practice for .02 engineering/lab lessons -->
   <!-- PURPOSE: Hands-on investigation. Students observe, collect data, test, or build. ~15-20 min -->
   <div class="activity-card act-explore scroll-reveal">
@@ -1681,13 +1694,13 @@ em { color: #5A4D3E; }
       <div class="act-num" style="background:#2E7D32;">4</div>
       <div style="flex:1;">
         <div class="act-title">📓 Record Your Thinking</div>
-        <div class="act-subtitle">Organize what you observed and discovered.</div>
+        <div class="act-subtitle">Think about what you observed and discovered.</div>
       </div>
       <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
     </div>
     <div class="act-body">
 
-      <p>In your science notebook, record what you found. Being specific matters — a good scientist writes down exactly what they saw, not just "it worked" or "it didn't work."</p>
+      <p>Think about what you found. Being specific matters — a good scientist notices exactly what they saw, not just "it worked" or "it didn't work."</p>
 
       <!-- ✏️ CUSTOMIZE: Adapt these notebook prompts for the specific investigation type. -->
       <!-- Options: data table, labeled sketch, bar graph, comparison chart, before/after drawing -->
@@ -1725,7 +1738,7 @@ em { color: #5A4D3E; }
       </div>
     </div>
     <div class="card-body">
-      <p>Think through each question on your own. Write your answers in your science notebook.</p>
+      <p>Think through each question on your own. Talk it through or think about it in your mind.</p>
 
       <div class="socratic-q" style="margin-bottom:10px;">
         <span class="sq-icon">🤔</span>
@@ -1859,7 +1872,10 @@ em { color: #5A4D3E; }
               </div>
             </div>
           </div>
-        </div>
+
+  <p class="tab-orientation">Check what you understand.</p>
+
+          </div>
 
         <!-- Review / encouragement video (shown when score < 3) -->
         <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;">
@@ -1919,7 +1935,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
-  <!-- ═══ ACTIVITY 5: NOTEBOOK WORK ═══ -->
+  <p class="tab-orientation">Show what you learned.</p>
+
+    <!-- ═══ ACTIVITY 5: NOTEBOOK WORK ═══ -->
   <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
     <div class="act-head">
       <div class="act-num" style="background:#7B5EA7;">5</div>
@@ -2047,14 +2065,7 @@ em { color: #5A4D3E; }
 
           <div class="turn-in-checklist">
             <!-- ✏️ CUSTOMIZE: Each item should describe exactly one piece of work the student is submitting for THIS lesson. Phrase each starting with "My …" or "The …" — first-person, concrete, naming the section it came from (Notice & Wonder, Vocabulary, Explore tab, Part A/B/C, Write & Explain). Aim for 5–7 items. -->
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Notice &amp; Wonder observations (3+ differences) and my wonder question.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div>
-            </div>
+            
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
               <div class="turn-in-item-text">My 4+ fox observations from Explore Step 1, plus my 4-column survival traits chart from Steps 3&ndash;4.</div>
@@ -2067,10 +2078,7 @@ em { color: #5A4D3E; }
               <div class="turn-in-check check-icon"></div>
               <div class="turn-in-item-text">My Write &amp; Explain response (complete sentences, using lesson vocabulary).</div>
             </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Write &amp; Explain response and my Part C labeled organism drawing.</div>
-            </div>
+            
           </div>
 
         </div>
@@ -2282,6 +2290,7 @@ document.querySelectorAll('.vtip').forEach(function(tip) {
 //      so scrollIntoView on a top anchor is what actually moves the user up.
 (function() {
   var btn = document.getElementById('backToTop');
+  if (btn) { btn.textContent = LESSON_EMOJI + ' Back to Top'; }
   if (!btn) return;
 
   var inIframe = (function() {

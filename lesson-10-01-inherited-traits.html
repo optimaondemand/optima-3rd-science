@@ -688,6 +688,13 @@ em { color: #5A4D3E; }
   .turn-in-options { grid-template-columns: 1fr; }
   .turn-in-header-title { font-size: 20px; }
 }
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
 </style>
 </head>
 
@@ -1033,7 +1040,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
-  <!-- Activity 1: Notice & Wonder -->
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
+
+    <!-- Activity 1: Notice & Wonder -->
   <div class="activity-card act-warmup scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#52B788;">1</div>
@@ -1055,7 +1064,7 @@ em { color: #5A4D3E; }
         </div>
       </div>
 
-      <p>In your science notebook, write or draw your answers:</p>
+      <p>Think about it:</p>
       <div style="display:flex;flex-direction:column;gap:10px;margin:14px 0;">
         <div style="display:flex;gap:12px;align-items:flex-start;background:#EEF8F0;border-radius:12px;padding:12px 16px;">
           <span style="font-size:22px;">👀</span>
@@ -1164,7 +1173,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
-  <!-- Uploaded image: golden retriever with puppies -->
+  <p class="tab-orientation">Now learn the main science idea.</p>
+
+    <!-- Uploaded image: golden retriever with puppies -->
   <div class="lesson-figure">
     <div class="lesson-figure-label">📷 Photo · Real Organisms</div>
     <img src="images/10-01-golden-retriever-puppies.png"
@@ -1443,7 +1454,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
-  <div class="activity-card act-explore scroll-reveal">
+  <p class="tab-orientation">Now test the idea yourself.</p>
+
+    <div class="activity-card act-explore scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#0288D1;">3</div>
       <div style="flex:1;">
@@ -1513,7 +1526,7 @@ em { color: #5A4D3E; }
       <div style="background:#F0F8E8;border:2px solid #C8E0B8;border-radius:14px;padding:18px 20px;margin:18px 0;">
         <div style="font-size:13px;color:#558B2F;text-transform:uppercase;letter-spacing:0.5px;font-weight:800;margin-bottom:10px;">📝 Record Your Thinking</div>
 
-        <p style="font-size:16px;color:#1B4332;font-weight:700;margin-bottom:12px;">Answer these questions in your notebook. Write in complete sentences.</p>
+        <p style="font-size:16px;color:#1B4332;font-weight:700;margin-bottom:12px;">Think about it:</p>
 
         <div style="display:flex;flex-direction:column;gap:10px;">
           <div style="background:#fff;border:1.5px solid #C8E0B8;border-radius:10px;padding:12px 16px;">
@@ -1535,7 +1548,7 @@ em { color: #5A4D3E; }
         <div class="socratic-q" style="margin-top:0;margin-bottom:12px;">
           <span class="sq-icon">💭</span>
           <div>
-            <div class="label">Discuss or Write</div>
+            <div class="label">Think About It</div>
             <div class="question">"If two puppies from the same litter have different fur shades, does that mean they didn't inherit their fur color from their parents? Explain your thinking."</div>
           </div>
         </div>
@@ -1632,7 +1645,10 @@ em { color: #5A4D3E; }
           </div>
         </div>
       </div>
-    </div>
+
+  <p class="tab-orientation">Check what you understand.</p>
+
+      </div>
 
     <div class="video-feedback" id="quizVideoReview">
       <div class="video-wrap" style="margin-top:18px;">
@@ -1683,7 +1699,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
-  <div class="activity-card act-check scroll-reveal">
+  <p class="tab-orientation">Show what you learned.</p>
+
+    <div class="activity-card act-check scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#7B5EA7;">5</div>
       <div style="flex:1;">
@@ -1827,14 +1845,7 @@ em { color: #5A4D3E; }
           <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
 
           <div class="turn-in-checklist">
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Notice &amp; Wonder observations and question from the Vocabulary tab.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">The copywork sentence copied carefully into my science notebook.</div>
-            </div>
+            
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
               <div class="turn-in-item-text">My Trait Comparison Chart from the Explore investigation, with shared traits circled.</div>
@@ -1847,10 +1858,7 @@ em { color: #5A4D3E; }
               <div class="turn-in-check check-icon"></div>
               <div class="turn-in-item-text">My Write &amp; Explain response, written in complete sentences using lesson vocabulary.</div>
             </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Part C diagram with a parent, two offspring, and at least three labeled traits.</div>
-            </div>
+            
           </div>
 
         </div>
@@ -2015,6 +2023,7 @@ document.querySelectorAll('.vtip').forEach(function(tip) {
 // ── Back to Top ──
 (function() {
   var btn = document.getElementById('backToTop');
+  if (btn) { btn.textContent = LESSON_EMOJI + ' Back to Top'; }
   if (!btn) return;
   var inIframe = (function() {
     try { return window.self !== window.top; }

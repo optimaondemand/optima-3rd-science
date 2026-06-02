@@ -384,6 +384,13 @@ body {
 .video-placeholder-id { font-size: 11px; color: rgba(149,213,178,0.4); font-family: monospace; margin-top: 6px; letter-spacing: 0.5px; }
 .video-feedback { display: none; }
 .video-feedback.show { display: block; }
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
 </style>
 </head>
 <body>
@@ -813,6 +820,9 @@ body {
     </div>
   </div>
 
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
+
+
   <!-- ACTIVITY 1: NOTICE & WONDER -->
   <div class="activity-card act-warmup">
     <div class="act-head">
@@ -829,7 +839,7 @@ body {
       <div class="socratic-q">
         <span class="sq-icon">👀</span>
         <div>
-          <div class="label">In Your Science Notebook</div>
+          <div class="label">Think About It</div>
           <div class="question">"Write down 3 things you think you'd find in a national park. Then write 1 question: why do you think people protect these places?"</div>
         </div>
       </div>
@@ -935,6 +945,9 @@ body {
       </div>
     </div>
   </div>
+
+  <p class="tab-orientation">Now learn the main science idea.</p>
+
 
   <!-- LESSON FIGURE — image suggestion -->
   <div class="lesson-figure">
@@ -1162,6 +1175,9 @@ body {
     </div>
   </div>
 
+  <p class="tab-orientation">Now test the idea yourself.</p>
+
+
   <!-- ACTIVITY 3: COMPARE PROTECTED VS. UNPROTECTED -->
   <div class="activity-card act-explore">
     <div class="act-head">
@@ -1274,7 +1290,7 @@ body {
       <div class="act-time" style="background:#558B2F;">⏱ 8 min</div>
     </div>
     <div class="act-body">
-      <p>In your science notebook, write down what you found. Be specific — don't just write "it was different." Name the actual differences.</p>
+      <p>Think about what you found. Be specific — don't just think "it was different." Name the actual differences in your mind.</p>
 
       <div class="pq">
         <span class="pq-num" style="background:#558B2F;">1</span>
@@ -1309,7 +1325,7 @@ body {
       </div>
     </div>
     <div class="card-body">
-      <p>Think through each question on your own. Write your answers in your science notebook before moving on.</p>
+      <p>Think through each question on your own. Talk it over in your mind — or with a family member — before moving on.</p>
 
       <div class="socratic-q" style="margin-bottom:10px;">
         <span class="sq-icon">🤔</span>
@@ -1357,6 +1373,9 @@ body {
 <!-- TAB 4: SELF-CHECK QUIZ                                    -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-quiz">
+
+  <p class="tab-orientation">Check what you understand.</p>
+
 
   <div class="quiz-card" style="margin-top:0; margin-bottom:18px;">
     <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
@@ -1481,6 +1500,9 @@ body {
     </div>
   </div>
 
+  <p class="tab-orientation">Show what you learned.</p>
+
+
   <div class="activity-card act-check" style="margin-top:0;">
     <div class="act-head">
       <div class="act-num" style="background:#7B5EA7;">5</div>
@@ -1552,7 +1574,7 @@ body {
       <div class="socratic-q">
         <span class="sq-icon">🤔</span>
         <div>
-          <div class="label">Reflect</div>
+          <div class="label">Think Back</div>
           <div class="question">"Look back at what you wrote in Notice &amp; Wonder at the start of this lesson. Did your question get answered? What do you understand now that you didn't before?"</div>
         </div>
       </div>
@@ -1592,23 +1614,11 @@ body {
           <div class="turn-in-checklist">
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Notice &amp; Wonder observations and question from the start of the lesson.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page, written carefully in my notebook.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
               <div class="turn-in-item-text">My completed comparison chart for Place A and Place B from the Explore activity.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Part A sort: four actions labeled "Helps" or "Harms," with one explanation sentence.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Part B short answers for questions 5, 6, and 7 — in complete sentences.</div>
+              <div class="turn-in-item-text">My Part A sort (four actions labeled "Helps" or "Harms") and Part B short answers — in complete sentences.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
@@ -1616,7 +1626,7 @@ body {
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Part C national park drawing with 3 zones labeled and one human conservation action shown.</div>
+              <div class="turn-in-item-text">My Part C national park drawing with 3 zones labeled and one conservation action shown.</div>
             </div>
           </div>
         </div>

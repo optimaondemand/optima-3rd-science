@@ -766,6 +766,13 @@ em { color: #5A4D3E; }
   .turn-in-options { grid-template-columns: 1fr; }
   .turn-in-header-title { font-size: 20px; }
 }
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
 </style>
 </head>
 
@@ -1193,6 +1200,9 @@ em { color: #5A4D3E; }
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel active" id="tab-vocab">
 
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
+
+
   <!-- Welcome video -->
   <div class="video-wrap">
     <div class="video-wrap-header">
@@ -1359,6 +1369,9 @@ em { color: #5A4D3E; }
 <!-- TAB 2: THE LESSON                                         -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-lesson">
+
+  <p class="tab-orientation">Now learn the main science idea.</p>
+
 
   <!-- Lesson Video -->
   <div class="video-wrap">
@@ -1632,6 +1645,9 @@ em { color: #5A4D3E; }
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-explore">
 
+  <p class="tab-orientation">Now test the idea yourself.</p>
+
+
   <div class="video-wrap">
     <div class="video-wrap-header">
       <span style="font-size:20px;">🔬</span>
@@ -1710,7 +1726,7 @@ em { color: #5A4D3E; }
       <!-- Record Your Thinking -->
       <div style="background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:16px 18px;margin-bottom:14px;">
         <p style="font-size:15px;font-weight:800;color:#1B4332;margin-bottom:10px;">📝 Record Your Thinking</p>
-        <p style="font-size:15px;color:#5A4D3E;margin-bottom:8px;">In your science notebook, answer these questions:</p>
+        <p style="font-size:15px;color:#5A4D3E;margin-bottom:8px;">Think about it: Consider these questions as you look back at your investigation.</p>
         <ul style="font-size:15px;color:#5A4D3E;line-height:1.8;padding-left:18px;margin:0;">
           <li>Which objects were magnetic? What do they have in common?</li>
           <li>Were any of your predictions wrong? What surprised you?</li>
@@ -1749,6 +1765,9 @@ em { color: #5A4D3E; }
 <!-- TAB 4: SELF-CHECK QUIZ                                    -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-quiz">
+
+  <p class="tab-orientation">Check what you understand.</p>
+
 
   <div class="activity-card act-lesson scroll-reveal" style="border-left:6px solid #F9A825;">
     <div class="act-head">
@@ -1861,6 +1880,9 @@ em { color: #5A4D3E; }
 <!-- TAB 5: ASSIGNMENT                                         -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-assignment">
+
+  <p class="tab-orientation">Show what you learned.</p>
+
 
   <div class="video-wrap">
     <div class="video-wrap-header">
@@ -1988,23 +2010,11 @@ em { color: #5A4D3E; }
           <div class="turn-in-checklist">
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Notice &amp; Wonder warm-up observations and question.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
               <div class="turn-in-item-text">My completed data table from the investigation, with predictions and results.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My two notebook sketches showing attraction and repulsion, with poles labeled.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Part A sort-and-classify answers with explanations.</div>
+              <div class="turn-in-item-text">My Part A sort-and-classify answers and attraction/repulsion sketches with labeled poles.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
@@ -2170,12 +2180,19 @@ document.querySelectorAll('.vtip').forEach(function(tip) {
 // ── Turn-in checklist ──
 function toggleCheck(item) {
   item.classList.toggle('checked');
-  var checkEl = item.querySelector('.turn-in-check');
-  if (!checkEl) return;
-  if (item.classList.contains('checked')) {
-    checkEl.textContent = LESSON_EMOJI;
-  } else {
-    checkEl.textContent = '';
+  var icon = item.querySelector('.check-icon');
+  if (icon) {
+    icon.textContent = item.classList.contains('checked') ? LESSON_EMOJI : '';
+  }
+  var checklist = item.closest('.turn-in-checklist');
+  if (!checklist) return;
+  var items = checklist.querySelectorAll('.turn-in-item');
+  if (items.length === 0) return;
+  var allChecked = Array.prototype.every.call(items, function(it){
+    return it.classList.contains('checked');
+  });
+  if (allChecked) {
+    setTimeout(window.launchConfetti, 200);
   }
 }
 
@@ -2270,6 +2287,8 @@ introCards.forEach(function(card){
 
 // ── Init ──
 document.querySelector('[data-tab="vocab"]').classList.add('visited');
+var btt = document.getElementById('backToTop');
+if (btt) { btt.textContent = LESSON_EMOJI + ' Back to Top'; }
 tabProgress['vocab'] = true;
 document.getElementById('progressFill').style.width = '20%';
 document.getElementById('progressPct').textContent = '20%';

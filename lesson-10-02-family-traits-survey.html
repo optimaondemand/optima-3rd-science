@@ -740,6 +740,13 @@ em { color: #5A4D3E; }
   .turn-in-options { grid-template-columns: 1fr; }
   .turn-in-header-title { font-size: 20px; }
 }
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
 </style>
 </head>
 
@@ -1076,7 +1083,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
-  <!-- STUDENT WORK SAMPLE — shown here for Notice & Wonder -->
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
+
+    <!-- STUDENT WORK SAMPLE — shown here for Notice & Wonder -->
   <div class="lesson-figure">
     <div class="lesson-figure-label">📷 Real Investigation · Student Work Sample</div>
     <img src="images/10-02-family-traits-survey.png"
@@ -1214,7 +1223,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
-  <!-- ACTIVITY 2: CORE LESSON CONTENT -->
+  <p class="tab-orientation">Now learn the main science idea.</p>
+
+    <!-- ACTIVITY 2: CORE LESSON CONTENT -->
   <div class="activity-card act-lesson scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#F9A825;">2</div>
@@ -1482,7 +1493,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
-  <!-- INVESTIGATION STEPS -->
+  <p class="tab-orientation">Now test the idea yourself.</p>
+
+    <!-- INVESTIGATION STEPS -->
   <div class="activity-card act-explore scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#0288D1;">3</div>
@@ -1579,7 +1592,7 @@ em { color: #5A4D3E; }
     </div>
     <div class="act-body">
 
-      <p>In your science notebook, answer each question carefully. A good scientist writes exactly what they saw — not just "I found something interesting."</p>
+      <p>Think about it — a good scientist notices exactly what they saw, not just "something interesting."</p>
 
       <div class="pq">
         <span class="pq-num" style="background:#2E7D32;">1</span>
@@ -1614,7 +1627,7 @@ em { color: #5A4D3E; }
       </div>
     </div>
     <div class="card-body">
-      <p>Think through each question on your own. Write your answers in your science notebook before moving on.</p>
+      <p>Think through each question on your own. Talk it through or think about it in your mind.</p>
 
       <div class="socratic-q" style="margin-bottom:10px;">
         <span class="sq-icon">🤔</span>
@@ -1732,7 +1745,10 @@ em { color: #5A4D3E; }
               </div>
             </div>
           </div>
-        </div>
+
+  <p class="tab-orientation">Check what you understand.</p>
+
+          </div>
 
         <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;">
           <div class="video-wrap">
@@ -1786,7 +1802,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
-  <div class="activity-card act-check scroll-reveal">
+  <p class="tab-orientation">Show what you learned.</p>
+
+    <div class="activity-card act-check scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#7B5EA7;">5</div>
       <div style="flex:1;">
@@ -1895,14 +1913,7 @@ em { color: #5A4D3E; }
           <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
 
           <div class="turn-in-checklist">
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Notice &amp; Wonder observations (3 things I noticed + 1 question).</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div>
-            </div>
+            
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
               <div class="turn-in-item-text">My completed tally chart with totals for each trait.</div>
@@ -1919,10 +1930,7 @@ em { color: #5A4D3E; }
               <div class="turn-in-check check-icon"></div>
               <div class="turn-in-item-text">My Write &amp; Explain response using data as evidence.</div>
             </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Part C drawing showing two organisms with a shared trait and a varied trait labeled.</div>
-            </div>
+            
           </div>
 
         </div>
@@ -2103,6 +2111,7 @@ document.querySelectorAll('.vtip').forEach(function(tip) {
 // ── Back to Top ──
 (function() {
   var btn = document.getElementById('backToTop');
+  if (btn) { btn.textContent = LESSON_EMOJI + ' Back to Top'; }
   if (!btn) return;
   var inIframe = (function() {
     try { return window.self !== window.top; }

@@ -763,6 +763,13 @@ em { color: #5A4D3E; }
   .turn-in-options { grid-template-columns: 1fr; }
   .turn-in-header-title { font-size: 20px; }
 }
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
 </style>
 </head>
 
@@ -1115,7 +1122,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
-  <!-- ACTIVITY 1: NOTICE & WONDER -->
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
+
+    <!-- ACTIVITY 1: NOTICE & WONDER -->
   <div class="activity-card act-warmup scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#52B788;">1</div>
@@ -1254,7 +1263,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
-  <!-- LESSON FIGURE: bird photo also shown here for lesson content reference -->
+  <p class="tab-orientation">Now learn the main science idea.</p>
+
+    <!-- LESSON FIGURE: bird photo also shown here for lesson content reference -->
   <div class="lesson-figure">
     <div class="lesson-figure-label">📷 Photo · Four Birds, Four Beaks</div>
     <img src="images/11-01-birds-variation.png"
@@ -1550,7 +1561,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
-  <!-- ACTIVITY 3 -->
+  <p class="tab-orientation">Now test the idea yourself.</p>
+
+    <!-- ACTIVITY 3 -->
   <div class="activity-card act-explore scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#0288D1;">3</div>
@@ -1625,7 +1638,7 @@ em { color: #5A4D3E; }
           </div>
         </div>
         <div class="card-body">
-          <p>Answer each question in your science notebook. Write in complete sentences.</p>
+          <p>Think about each question:</p>
           <div class="pq"><span class="pq-num" style="background:#558B2F;">1</span><span class="pq-text">What is one way the four birds are the same?</span></div>
           <div class="pq"><span class="pq-num" style="background:#558B2F;">2</span><span class="pq-text">What is one way the four birds are different?</span></div>
           <div class="pq"><span class="pq-num" style="background:#558B2F;">3</span><span class="pq-text">Which beak shape do you think would be most useful in a meadow full of seed-producing plants? Explain your thinking.</span></div>
@@ -1638,7 +1651,7 @@ em { color: #5A4D3E; }
           <div class="card-head-icon">💭</div>
           <div>
             <div class="card-head-label">Think It Through</div>
-            <div class="card-head-title">Discuss or Write</div>
+            <div class="card-head-title">Think About It</div>
           </div>
         </div>
         <div class="card-body">
@@ -1737,7 +1750,10 @@ em { color: #5A4D3E; }
               </div>
             </div>
           </div>
-        </div>
+
+  <p class="tab-orientation">Check what you understand.</p>
+
+          </div>
 
         <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;">
           <div class="video-wrap">
@@ -1791,7 +1807,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
-  <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
+  <p class="tab-orientation">Show what you learned.</p>
+
+    <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
     <div class="act-head">
       <div class="act-num" style="background:#7B5EA7;">5</div>
       <div style="flex:1;">
@@ -1900,14 +1918,7 @@ em { color: #5A4D3E; }
           <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
 
           <div class="turn-in-checklist">
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Notice &amp; Wonder observations and my original question from the Vocabulary tab.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page — copied carefully in my own handwriting.</div>
-            </div>
+            
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
               <div class="turn-in-item-text">My bird observation chart and labeled drawing from the observation activity.</div>
@@ -1920,10 +1931,7 @@ em { color: #5A4D3E; }
               <div class="turn-in-check check-icon"></div>
               <div class="turn-in-item-text">My Write &amp; Explain response — in complete sentences, using at least one vocabulary word.</div>
             </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Part C drawing showing two animals of the same kind with labeled differences.</div>
-            </div>
+            
           </div>
 
         </div>
@@ -2107,6 +2115,7 @@ document.querySelectorAll('.vtip').forEach(function(tip) {
 // ── Back to Top ──
 (function() {
   var btn = document.getElementById('backToTop');
+  if (btn) { btn.textContent = LESSON_EMOJI + ' Back to Top'; }
   if (!btn) return;
   var inIframe = (function() {
     try { return window.self !== window.top; }

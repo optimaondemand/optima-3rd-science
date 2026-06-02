@@ -273,6 +273,13 @@ details[open] summary::before{content:'\25BC'}
 #confettiCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999}
 strong{color:#1B4332}em{color:#5A4D3E}
 @media(max-width:620px){.intro-2col,.organism-cards,.variation-row,.turn-in-options{grid-template-columns:1fr}.vocab-grid{grid-template-columns:1fr}.flip-card{height:175px}.header-title{font-size:22px}.tab-btn{min-width:100px;font-size:11px;padding:10px 6px 9px}}
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
 </style>
 </head>
 <body>
@@ -498,6 +505,9 @@ strong{color:#1B4332}em{color:#5A4D3E}
     <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🎬</div><div class="video-placeholder-text">Teacher introduction video coming soon</div><div class="video-placeholder-id"><!-- slot: 30-2-welcome --></div></div></div>
   </div>
 
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
+
+
   <div class="activity-card act-warmup scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#52B788;">1</div>
@@ -516,12 +526,12 @@ strong{color:#1B4332}em{color:#5A4D3E}
     <div class="card-body">
       <p>You already know <em>adaptation</em>, <em>habitat</em>, <em>camouflage</em>, <em>predator</em>, <em>prey</em>, and <em>trait</em> from Lesson 30.01. These six words are brand new — they’ll help you talk about what happens when individuals of the same species differ from each other. <strong>Tap each card</strong> to flip it.</p>
       <div class="vocab-grid">
-        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🔀</div><div class="fc-word">Variation</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Variation</div><div class="fc-def">A difference in a characteristic found between individuals of the same species — like two tortoises of the same kind with different claw widths.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+        <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🔀</div><div class="fc-word">Variation</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Variation</div><div class="fc-def">A difference in a characteristic found between individuals of the same species — like two tortoises of the.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
         <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🏆</div><div class="fc-word">Survival Advantage</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Survival Advantage</div><div class="fc-def">When a variation makes one individual more likely to survive and reproduce than another of the same species.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
-        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🐊</div><div class="fc-word">Population</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Population</div><div class="fc-def">A group of animals of the same kind living in the same area — like all the gopher tortoises living in one stretch of Florida scrub.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
-        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🔍</div><div class="fc-word">Individual</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Individual</div><div class="fc-def">One single organism within a population — not the whole group, just one specific animal with its own set of traits.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
-        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🧬</div><div class="fc-word">Characteristic</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Characteristic</div><div class="fc-def">A feature of a living thing — like bill length, claw width, or coloring. Scientists use this word the same way we use “trait.”</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
-        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🐦</div><div class="fc-word">Behavior</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Behavior</div><div class="fc-def">Something an animal does regularly that helps it survive — not a body part, but an action, like a scrub-jay family posting lookout sentinels.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+        <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🐊</div><div class="fc-word">Population</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Population</div><div class="fc-def">A group of animals of the same kind living in the same area — like all the gopher.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+        <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🔍</div><div class="fc-word">Individual</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Individual</div><div class="fc-def">One single organism within a population — not the whole group, just one specific animal with its own.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+        <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🧬</div><div class="fc-word">Characteristic</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Characteristic</div><div class="fc-def">A feature of a living thing — like bill length, claw width, or coloring. Scientists use this word.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
+        <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🐦</div><div class="fc-word">Behavior</div><div class="fc-tap">tap to flip</div></div><div class="flip-card-back"><div class="fc-word-back">Behavior</div><div class="fc-def">Something an animal does regularly that helps it survive — not a body part, but an action, like.</div><div class="fc-tap-back">tap to flip back</div></div></div></div>
       </div>
       <div class="callout callout-think" style="margin-top:16px;"><span class="callout-icon">📓</span><p>Copy this sentence carefully into your science notebook:<br><strong>“When a variation in a characteristic gives one individual a better chance of surviving, that is called a survival advantage.”</strong></p></div>
     </div>
@@ -536,6 +546,9 @@ strong{color:#1B4332}em{color:#5A4D3E}
     <div class="video-wrap-header"><span style="font-size:20px;">📖</span><div><div class="video-wrap-type">Activity 2 · Background Reading</div><div class="video-wrap-title">Same Species, Different Individuals</div></div></div>
     <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">📖</div><div class="video-placeholder-text">Lesson video coming soon</div><div class="video-placeholder-id"><!-- slot: 30-2-lesson-explainer --></div></div></div>
   </div>
+
+  <p class="tab-orientation">Now learn the main science idea.</p>
+
 
   <div class="activity-card act-lesson scroll-reveal">
     <div class="act-head">
@@ -708,6 +721,9 @@ strong{color:#1B4332}em{color:#5A4D3E}
     <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🔬</div><div class="video-placeholder-text">Exploration video coming soon</div><div class="video-placeholder-id"><!-- slot: 30-2-exploration-explainer --></div></div></div>
   </div>
 
+  <p class="tab-orientation">Now test the idea yourself.</p>
+
+
   <div class="activity-card act-explore scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#0288D1;">3</div>
@@ -859,7 +875,7 @@ strong{color:#1B4332}em{color:#5A4D3E}
       <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
     </div>
     <div class="act-body">
-      <p>In your science notebook, respond to each prompt. Use specific details from your investigation.</p>
+      <p>Think through each prompt. Use specific details from your investigation. You'll write your strongest response in the Assignment tab.</p>
       <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">Choose one variation pair. In your own words: what is the variation, and what survival advantage does it create? Be specific about what changes for the individual that has it.</span></div>
       <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">What do both variation pairs have in common? In your own words, what makes a variation become a survival advantage?</span></div>
       <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">Draw two individuals of the same Florida animal showing one variation between them. Label the variation and write one sentence explaining which has the survival advantage.</span></div>
@@ -870,7 +886,7 @@ strong{color:#1B4332}em{color:#5A4D3E}
   <div class="card theme-meadow scroll-reveal">
     <div class="card-head"><div class="card-head-icon">💬</div><div><div class="card-head-label">Discussion</div><div class="card-head-title">Think It Through</div></div></div>
     <div class="card-body">
-      <p>Write your answers in your science notebook before moving on.</p>
+      <p>Talk these over in your mind — or with a family member — before moving on.</p>
       <div class="socratic-q" style="margin-bottom:10px;"><span class="sq-icon">🤔</span><div><div class="label">Question 1</div><div class="question">"What had to happen — in the environment — to make the bill-length variation matter for the spoonbill? What does that tell you about when a variation becomes a survival advantage?"</div></div></div>
       <div class="socratic-q" style="margin-bottom:10px;"><span class="sq-icon">💡</span><div><div class="label">Question 2 — Connect to Lesson 30.01</div><div class="question">"In Lesson 30.01, you learned that animals whose traits match their habitat tend to survive and pass those traits on. How does today’s investigation add to that idea? What does variation within a species have to do with that pattern?"</div></div></div>
       <div class="socratic-q" style="margin-bottom:10px;"><span class="sq-icon">🌿</span><div><div class="label">Question 3 — Connect to Nature</div><div class="question">"If Spoonbill A (longer bill) survives a drought and reproduces, and Spoonbill B does not — what might happen to bill length in this spoonbill population over many generations? What’s your reasoning?"</div></div></div>
@@ -884,6 +900,9 @@ strong{color:#1B4332}em{color:#5A4D3E}
 <!-- TAB 4: SELF-CHECK QUIZ -->
 <!-- Quiz questions are all about VARIATION and SURVIVAL ADVANTAGE — none repeat 30.01 questions -->
 <div class="tab-panel" id="tab-quiz">
+
+  <p class="tab-orientation">Check what you understand.</p>
+
   <div class="quiz-card scroll-reveal" style="margin-top:0;margin-bottom:18px;">
     <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
       <div style="width:38px;height:38px;border-radius:14px;background:#F9A825;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">🌿</div>
@@ -951,6 +970,9 @@ strong{color:#1B4332}em{color:#5A4D3E}
     <div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">✍️</div><div class="video-placeholder-text">Assignment explainer video coming soon</div><div class="video-placeholder-id"><!-- slot: 30-2-assignment-explainer --></div></div></div>
   </div>
 
+  <p class="tab-orientation">Show what you learned.</p>
+
+
   <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
     <div class="act-head">
       <div class="act-num" style="background:#7B5EA7;">5</div>
@@ -985,7 +1007,7 @@ strong{color:#1B4332}em{color:#5A4D3E}
       <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Label</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Draw two individuals of the same Florida animal side by side. Show one variation between them — in a body part <em>or</em> a behavior. Label the variation on each individual and write one sentence explaining which has the survival advantage and why.</p>
 
-      <div class="socratic-q"><span class="sq-icon">🤔</span><div><div class="label">Reflect</div><div class="question">"Look back at your Notice &amp; Wonder from the Vocabulary tab. You wrote about what differences you might notice between two animals of the same kind. Now that you’ve done the investigation — do those kinds of differences matter? What changed in your thinking?"</div></div></div>
+      <div class="socratic-q"><span class="sq-icon">🤔</span><div><div class="label">Think Back</div><div class="question">"Look back at your Notice &amp; Wonder from the Vocabulary tab. You wrote about what differences you might notice between two animals of the same kind. Now that you’ve done the investigation — do those kinds of differences matter? What changed in your thinking?"</div></div></div>
 
       <div class="turn-in-block">
         <div class="turn-in-header"><div class="turn-in-header-icon">📋</div><div><div class="turn-in-header-label">Canvas Submission</div><div class="turn-in-header-title">What to Turn In</div></div></div>
@@ -998,11 +1020,8 @@ strong{color:#1B4332}em{color:#5A4D3E}
           </div>
           <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
           <div class="turn-in-checklist">
-            <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check check-icon"></div><div class="turn-in-item-text">My Notice &amp; Wonder observations and question from the Vocabulary tab.</div></div>
-            <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check check-icon"></div><div class="turn-in-item-text">The copywork sentence from the Vocabulary tab.</div></div>
             <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check check-icon"></div><div class="turn-in-item-text">My completed comparison chart with all four Florida organisms filled in.</div></div>
-            <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check check-icon"></div><div class="turn-in-item-text">My Variation Pair answers — both pairs, with explanations of which individual has the advantage and why.</div></div>
-            <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check check-icon"></div><div class="turn-in-item-text">My Part B short answer responses to all three questions.</div></div>
+            <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check check-icon"></div><div class="turn-in-item-text">My Variation Pair answers and Part B short answer responses in complete sentences.</div></div>
             <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check check-icon"></div><div class="turn-in-item-text">My Write &amp; Explain response (complete sentences, vocabulary words included).</div></div>
             <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check check-icon"></div><div class="turn-in-item-text">My Part C drawing showing two individuals with a labeled variation and survival advantage explanation.</div></div>
           </div>

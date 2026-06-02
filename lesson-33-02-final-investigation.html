@@ -376,6 +376,13 @@ em { color: #5A4D3E; }
   .turn-in-options { grid-template-columns: 1fr; }
   .turn-in-header-title { font-size: 20px; }
 }
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
 </style>
 </head>
 
@@ -761,6 +768,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
+
+
   <!-- ═══ ACTIVITY 1: NOTICE & WONDER ═══ -->
   <div class="activity-card act-warmup scroll-reveal">
     <div class="act-head">
@@ -899,6 +909,9 @@ em { color: #5A4D3E; }
       </div>
     </div>
   </div>
+
+  <p class="tab-orientation">Now learn the main science idea.</p>
+
 
   <!-- ═══ ACTIVITY 2: CORE CONTEXT (lighter for .02) ═══ -->
   <div class="activity-card act-lesson scroll-reveal">
@@ -1085,6 +1098,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Now test the idea yourself.</p>
+
+
   <!-- Lesson figure for Explore tab -->
   <div class="lesson-figure">
     <div class="lesson-figure-label">📷 Photo · A Scientist's Notebook</div>
@@ -1245,7 +1261,7 @@ em { color: #5A4D3E; }
     </div>
     <div class="act-body">
 
-      <p>Use your table and diagram to answer these questions in your notebook.</p>
+      <p>Use your table and diagram to think through these questions. You'll write your best answers in the Assignment tab.</p>
 
       <div class="pq">
         <span class="pq-num" style="background:#2E7D32;">1</span>
@@ -1280,7 +1296,7 @@ em { color: #5A4D3E; }
       </div>
     </div>
     <div class="card-body">
-      <p>Think through each question. Write your answers in your notebook.</p>
+      <p>Think through each question. Talk it over in your mind — or with a family member — before moving on.</p>
 
       <div class="socratic-q" style="margin-bottom:10px;">
         <span class="sq-icon">🤔</span>
@@ -1320,6 +1336,9 @@ em { color: #5A4D3E; }
 <!-- TAB 4: SELF-CHECK QUIZ                                    -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-quiz">
+
+  <p class="tab-orientation">Check what you understand.</p>
+
 
   <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
     <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
@@ -1444,6 +1463,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Show what you learned.</p>
+
+
   <!-- ═══ ACTIVITY 5: ASSIGNMENT ═══ -->
   <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
     <div class="act-head">
@@ -1558,14 +1580,6 @@ em { color: #5A4D3E; }
           <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
 
           <div class="turn-in-checklist">
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Notice &amp; Wonder observations — 3 things I noticed and 1 question.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div>
-            </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
               <div class="turn-in-item-text">My completed Science Connections table with at least 3 rows filled in.</div>

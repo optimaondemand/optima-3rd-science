@@ -272,6 +272,13 @@ em { color:#5A4D3E; }
   .tab-btn { min-width:100px; font-size:11px; padding:10px 6px 9px; }
   .turn-in-options { grid-template-columns:1fr; }
 }
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
 </style>
 </head>
 <body>
@@ -522,7 +529,9 @@ em { color:#5A4D3E; }
     </div>
   </div>
 
-  <div class="activity-card act-warmup scroll-reveal">
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
+
+    <div class="activity-card act-warmup scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#52B788;">1</div>
       <div style="flex:1;"><div class="act-title">🌅 Notice &amp; Wonder</div><div class="act-subtitle">Look before you learn.</div></div>
@@ -616,7 +625,9 @@ em { color:#5A4D3E; }
     </div>
   </div>
 
-  <!-- UPLOADED LESSON FIGURE -->
+  <p class="tab-orientation">Now learn the main science idea.</p>
+
+    <!-- UPLOADED LESSON FIGURE -->
   <div class="lesson-figure">
     <div class="lesson-figure-label">📷 Photo &middot; From the Field</div>
     <img src="images/9-01-frog-life-stages.png"
@@ -827,7 +838,9 @@ em { color:#5A4D3E; }
     </div>
   </div>
 
-  <div class="activity-card act-explore scroll-reveal">
+  <p class="tab-orientation">Now test the idea yourself.</p>
+
+    <div class="activity-card act-explore scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#0288D1;">3</div>
       <div style="flex:1;"><div class="act-title">🌿 Life Cycle Sketch</div><div class="act-subtitle">Pick an animal and map its life cycle yourself.</div></div>
@@ -880,11 +893,11 @@ em { color:#5A4D3E; }
   <div class="activity-card act-practice scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#2E7D32;">4</div>
-      <div style="flex:1;"><div class="act-title">📓 Record Your Thinking</div><div class="act-subtitle">Write it down while the ideas are fresh.</div></div>
+      <div style="flex:1;"><div class="act-title">📓 Record Your Thinking</div><div class="act-subtitle">Think about it while the ideas are fresh.</div></div>
       <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
     </div>
     <div class="act-body">
-      <p>In your science notebook, answer these prompts. Use the name of your animal and be specific about what you drew or noticed.</p>
+      <p>Think about what you observed. Use the name of your animal and be specific about what you drew or noticed.</p>
       <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">What stages does your animal go through? List them in order from birth to adult.</span></div>
       <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">How does your animal change the most between stages? Describe the biggest change.</span></div>
       <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">Look at your diagram. Which stage looks most different from the adult? What does that tell you?</span></div>
@@ -901,7 +914,7 @@ em { color:#5A4D3E; }
       <div><div class="card-head-label">Discussion</div><div class="card-head-title">Think It Through</div></div>
     </div>
     <div class="card-body">
-      <p>Think through each question carefully. Write your answers in your notebook before moving on.</p>
+      <p>Think through each question carefully. Talk it through with someone or think about it in your mind.</p>
       <div class="socratic-q" style="margin-bottom:10px;">
         <span class="sq-icon">🤔</span>
         <div><div class="label">Question 1</div><div class="question">"Look back at the frog photo. What do you notice about how the egg, the tadpole, and the adult frog are different from each other?"</div></div>
@@ -989,7 +1002,10 @@ em { color:#5A4D3E; }
               </div>
             </div>
           </div>
-        </div>
+
+  <p class="tab-orientation">Check what you understand.</p>
+
+          </div>
         <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;">
           <div class="video-wrap">
             <div class="video-wrap-header">
@@ -1029,7 +1045,9 @@ em { color:#5A4D3E; }
     </div>
   </div>
 
-  <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
+  <p class="tab-orientation">Show what you learned.</p>
+
+    <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
     <div class="act-head">
       <div class="act-num" style="background:#7B5EA7;">5</div>
       <div style="flex:1;"><div class="act-title">✍️ Assignment</div><div class="act-subtitle">Show what you've learned about animal life cycles.</div></div>
@@ -1091,7 +1109,7 @@ em { color:#5A4D3E; }
         <span class="sq-icon">🤔</span>
         <div>
           <div class="label">Reflect</div>
-          <div class="question">"Look back at your Notice &amp; Wonder. Did you figure out what you were wondering? Write one new thing you understand now that you didn't before the lesson."</div>
+          <div class="question">"Look back at your Notice &amp; Wonder. Did you figure out what you were wondering? Think about one new thing you understand now that you didn't at the start."</div>
         </div>
       </div>
 
@@ -1125,18 +1143,8 @@ em { color:#5A4D3E; }
           </div>
           <p class="turn-in-subhead">Check off everything before you submit:</p>
           <div class="turn-in-checklist">
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Notice &amp; Wonder — 3 observations and 1 question from the Vocabulary tab.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My life cycle sketch from the Explore tab — labeled stages with resources at each step.</div>
-            </div>
+            
+            
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
               <div class="turn-in-item-text">Part A — frog life cycle diagram with 4 labeled stages, arrows, and circled dramatic change.</div>
@@ -1149,10 +1157,7 @@ em { color:#5A4D3E; }
               <div class="turn-in-check check-icon"></div>
               <div class="turn-in-item-text">My Write &amp; Explain response using at least one vocabulary word.</div>
             </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">Part C — two labeled life cycle drawings comparing metamorphosis vs. gradual growth.</div>
-            </div>
+            
           </div>
         </div>
       </div>
@@ -1300,6 +1305,7 @@ document.querySelectorAll('.vtip').forEach(function(tip){
 // ── Back to Top ──
 (function(){
   var btn=document.getElementById('backToTop');
+  if(btn){btn.textContent=LESSON_EMOJI+' Back to Top';}
   if(!btn)return;
   var inIframe=(function(){try{return window.self!==window.top;}catch(e){return true;}})();
   btn.addEventListener('click',function(){

@@ -415,6 +415,13 @@ body {
   .turn-in-options { grid-template-columns: 1fr; }
   .turn-in-header-title { font-size: 20px; }
 }
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
 </style>
 </head>
 
@@ -709,7 +716,9 @@ body {
     </div>
   </div>
 
-  <!-- Notice & Wonder -->
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
+
+    <!-- Notice & Wonder -->
   <div class="activity-card act-warmup">
     <div class="act-head">
       <div class="act-num" style="background:#52B788;">1</div>
@@ -874,7 +883,9 @@ body {
     </div>
   </div>
 
-  <!-- Uploaded lesson image — between video and activity cards -->
+  <p class="tab-orientation">Now learn the main science idea.</p>
+
+    <!-- Uploaded lesson image — between video and activity cards -->
   <div class="lesson-figure">
     <div class="lesson-figure-label">📷 Investigation Setup · From the Classroom</div>
     <img src="images/9-02-life-cycle-comparison.png"
@@ -1194,7 +1205,9 @@ body {
     </div>
   </div>
 
-  <!-- Investigation -->
+  <p class="tab-orientation">Now test the idea yourself.</p>
+
+    <!-- Investigation -->
   <div class="activity-card act-explore scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#0288D1;">3</div>
@@ -1256,7 +1269,7 @@ body {
       <!-- Record Your Thinking -->
       <div class="callout callout-think" style="margin-top:18px;">
         <span class="callout-icon">📓</span>
-        <p><strong>Record Your Thinking:</strong> Tell the story of your investigation in your notebook. What did you set out to find? What did you discover? What surprised you most when you compared the two life cycles?</p>
+        <p><strong>Think About It:</strong> Tell the story of your investigation in your mind. What did you set out to find? What did you discover? What surprised you most when you compared the two life cycles?</p>
       </div>
 
       <!-- Think It Through -->
@@ -1366,7 +1379,10 @@ body {
         </div>
       </div>
     </div>
-  </div>
+
+  <p class="tab-orientation">Check what you understand.</p>
+
+    </div>
 
   <div class="video-feedback" id="quizVideoReview">
     <div class="video-wrap" style="margin-top:16px;">
@@ -1416,7 +1432,9 @@ body {
     </div>
   </div>
 
-  <!-- Part A -->
+  <p class="tab-orientation">Show what you learned.</p>
+
+    <!-- Part A -->
   <div class="activity-card act-check scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#7B5EA7;">A</div>
@@ -1534,18 +1552,9 @@ body {
     </div>
     <div class="turn-in-checklist">
       <div class="turn-in-checklist-label">Checklist — tap each item when it's done</div>
-      <div class="turn-in-item" onclick="toggleCheck(this)">
-        <div class="turn-in-check check-icon"></div>
-        <div class="turn-in-item-text">The copywork sentence from the Vocabulary tab.</div>
-      </div>
-      <div class="turn-in-item" onclick="toggleCheck(this)">
-        <div class="turn-in-check check-icon"></div>
-        <div class="turn-in-item-text">My two life cycle diagrams (frog and butterfly) with all stages labeled.</div>
-      </div>
-      <div class="turn-in-item" onclick="toggleCheck(this)">
-        <div class="turn-in-check check-icon"></div>
-        <div class="turn-in-item-text">My comparison chart showing at least two similarities and two differences.</div>
-      </div>
+      
+      
+      
       <div class="turn-in-item" onclick="toggleCheck(this)">
         <div class="turn-in-check check-icon"></div>
         <div class="turn-in-item-text">My Part A labeled frog life cycle diagram with stage descriptions.</div>
@@ -1558,10 +1567,7 @@ body {
         <div class="turn-in-check check-icon"></div>
         <div class="turn-in-item-text">My Write &amp; Explain response using lesson vocabulary.</div>
       </div>
-      <div class="turn-in-item" onclick="toggleCheck(this)">
-        <div class="turn-in-check check-icon"></div>
-        <div class="turn-in-item-text">My Part C drawing with all stages labeled and one comparison sentence.</div>
-      </div>
+      
     </div>
   </div>
 
@@ -1737,6 +1743,7 @@ document.querySelectorAll('.vtip').forEach(function(tip) {
 // ── Back to Top ──
 (function() {
   var btn = document.getElementById('backToTop');
+  if (btn) { btn.textContent = LESSON_EMOJI + ' Back to Top'; }
   if (!btn) return;
   var inIframe = (function() {
     try { return window.self !== window.top; }

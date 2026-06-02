@@ -459,13 +459,22 @@ em { color: #5A4D3E; }
   .turn-in-options { grid-template-columns: 1fr; }
   .turn-in-header-title { font-size: 20px; }
 }
+
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
+
 </style>
 </head>
 
 <body>
 
 <canvas id="confettiCanvas"></canvas>
-<button class="back-to-top" id="backToTop" type="button">✏️ Back to Top</button>
+<button class="back-to-top" id="backToTop" type="button">🌱 Back to Top</button>
 <span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
 
 <div class="page-wrap">
@@ -759,6 +768,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
+
+
   <!-- ACTIVITY 1: NOTICE & WONDER -->
   <div class="activity-card act-warmup scroll-reveal">
     <div class="act-head">
@@ -893,6 +905,9 @@ em { color: #5A4D3E; }
       </div>
     </div>
   </div>
+
+  <p class="tab-orientation">Now learn the main science idea.</p>
+
 
   <!-- ACTIVITY 2: CORE LESSON -->
   <div class="activity-card act-lesson scroll-reveal">
@@ -1175,6 +1190,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Now test the idea yourself.</p>
+
+
   <!-- ACTIVITY 3: INVESTIGATION -->
   <div class="activity-card act-explore scroll-reveal">
     <div class="act-head">
@@ -1249,7 +1267,7 @@ em { color: #5A4D3E; }
     </div>
     <div class="act-body">
 
-      <p>In your science notebook, answer each question. Write in complete sentences — a scientist's notes are specific.</p>
+      <p>Think about each question. Talk through your ideas — a scientist's thinking is specific.</p>
 
       <div class="pq">
         <span class="pq-num" style="background:#2E7D32;">1</span>
@@ -1332,6 +1350,9 @@ em { color: #5A4D3E; }
 <!-- TAB 4: SELF-CHECK QUIZ                                    -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-quiz">
+
+  <p class="tab-orientation">Check what you understand.</p>
+
 
   <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
     <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
@@ -1456,6 +1477,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Show what you learned.</p>
+
+
   <!-- ACTIVITY 5: ASSIGNMENT -->
   <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
     <div class="act-head">
@@ -1527,7 +1551,7 @@ em { color: #5A4D3E; }
       <div class="socratic-q">
         <span class="sq-icon">🤔</span>
         <div>
-          <div class="label">Reflect</div>
+          <div class="label">Think About It</div>
           <div class="question">"Think back to the plant you observed at the start of this lesson. Based on everything you've learned today, what was that plant doing — and how do you know it was healthy?"</div>
         </div>
       </div>
@@ -1568,23 +1592,7 @@ em { color: #5A4D3E; }
           <div class="turn-in-checklist">
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Notice &amp; Wonder observations and question from the beginning.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
               <div class="turn-in-item-text">My photosynthesis model diagram from the Explore tab, with all arrows and labels.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Part A labeled diagram showing sunlight, water, air, and sugar with arrows.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Part B short answer responses to questions 4, 5, and 6.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>

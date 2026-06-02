@@ -412,6 +412,15 @@ em { color: #5A4D3E; }
   .turn-in-options { grid-template-columns: 1fr; }
   .turn-in-header-title { font-size: 20px; }
 }
+
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
+
 </style>
 </head>
 
@@ -681,6 +690,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
+
+
   <!-- ═══ ACTIVITY 1: NOTICE & WONDER ═══ -->
   <div class="activity-card act-warmup scroll-reveal">
     <div class="act-head">
@@ -756,21 +768,21 @@ em { color: #5A4D3E; }
         <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
           <div class="flip-card-inner">
             <div class="flip-card-front"><div class="fc-emoji">💡</div><div class="fc-word">inference</div><div class="fc-tap">tap to flip</div></div>
-            <div class="flip-card-back"><div class="fc-word-back">inference</div><div class="fc-def">A conclusion reached by combining what you observe with what you already know. A strong inference is backed by specific evidence.</div><div class="fc-tap-back">tap to flip back</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">inference</div><div class="fc-def">A conclusion reached by combining what you observe with what you already know.</div><div class="fc-tap-back">tap to flip back</div></div>
           </div>
         </div>
 
         <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
           <div class="flip-card-inner">
             <div class="flip-card-front"><div class="fc-emoji">🪨</div><div class="fc-word">sediment</div><div class="fc-tap">tap to flip</div></div>
-            <div class="flip-card-back"><div class="fc-word-back">sediment</div><div class="fc-def">Tiny pieces of rock, sand, or mud that settle in layers over time. Sediment buries and preserves organisms, eventually forming fossils.</div><div class="fc-tap-back">tap to flip back</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">sediment</div><div class="fc-def">Tiny pieces of rock, sand, or mud that settle in layers over time, eventually forming rock.</div><div class="fc-tap-back">tap to flip back</div></div>
           </div>
         </div>
 
         <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
           <div class="flip-card-inner">
             <div class="flip-card-front"><div class="fc-emoji">⏳</div><div class="fc-word">ancient</div><div class="fc-tap">tap to flip</div></div>
-            <div class="flip-card-back"><div class="fc-word-back">ancient</div><div class="fc-def">From a very long time ago — millions of years before today. Fossils give us our only window into ancient life.</div><div class="fc-tap-back">tap to flip back</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">ancient</div><div class="fc-def">From a very long time ago — millions of years before today.</div><div class="fc-tap-back">tap to flip back</div></div>
           </div>
         </div>
 
@@ -812,6 +824,9 @@ em { color: #5A4D3E; }
       </div>
     </div>
   </div>
+
+  <p class="tab-orientation">Now learn the main science idea.</p>
+
 
   <!-- ═══ ACTIVITY 2: CORE LESSON CONTENT ═══ -->
   <div class="activity-card act-lesson scroll-reveal">
@@ -1044,6 +1059,9 @@ em { color: #5A4D3E; }
       </div>
     </div>
   </div>
+
+  <p class="tab-orientation">Now test the idea yourself.</p>
+
 
   <!-- ═══ ACTIVITY 3: INVESTIGATION ═══ -->
   <div class="activity-card act-explore scroll-reveal">
@@ -1333,6 +1351,9 @@ em { color: #5A4D3E; }
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-quiz">
 
+  <p class="tab-orientation">Check what you understand.</p>
+
+
   <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
     <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
       <div style="width:38px;height:38px;border-radius:14px;background:#F9A825;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">🦴</div>
@@ -1457,6 +1478,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Show what you learned.</p>
+
+
   <!-- ═══ ACTIVITY 5: NOTEBOOK WORK ═══ -->
   <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
     <div class="act-head">
@@ -1527,7 +1551,7 @@ em { color: #5A4D3E; }
       <div class="socratic-q">
         <span class="sq-icon">🤔</span>
         <div>
-          <div class="label">Reflect</div>
+          <div class="label">Think About It</div>
           <div class="question">"Think back to your Notice &amp; Wonder response — you wrote about the difference between observation and evidence before the investigation began. Does your original answer still hold? What would you add or change now that you've worked through the Site 7-B data?"</div>
         </div>
       </div>
@@ -1568,23 +1592,7 @@ em { color: #5A4D3E; }
           <div class="turn-in-checklist">
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Notice &amp; Wonder response about the difference between "what I observe" and "evidence."</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">The copywork sentence from the Vocabulary tab.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
               <div class="turn-in-item-text">My two-column data chart for all five Site 7-B finds (what the data says vs. what I infer).</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My written reasoning resolving the depth puzzle — how Find 2 (fern) and Find 4 (fish) together show how the environment changed over time.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Field Report (4–6 sentences) describing Site 7-B's ancient landscape, with find numbers cited as evidence.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
@@ -1592,7 +1600,7 @@ em { color: #5A4D3E; }
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Write &amp; Explain response using at least one of the new vocabulary words from this lesson.</div>
+              <div class="turn-in-item-text">My Write &amp; Explain response using at least one vocabulary word from this lesson.</div>
             </div>
           </div>
 

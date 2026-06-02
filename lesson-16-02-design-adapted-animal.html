@@ -645,6 +645,15 @@ em { color: #5A4D3E; }
   .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 6px 9px; }
   .turn-in-options { grid-template-columns: 1fr; }
 }
+
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
+
 </style>
 </head>
 <body>
@@ -908,6 +917,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
+
+
   <div class="activity-card act-warmup scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#52B788;">1</div>
@@ -1016,6 +1028,9 @@ em { color: #5A4D3E; }
       </div>
     </div>
   </div>
+
+  <p class="tab-orientation">Now learn the main science idea.</p>
+
 
   <!-- Uploaded lesson image -->
   <div class="lesson-figure">
@@ -1286,6 +1301,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Now test the idea yourself.</p>
+
+
   <div class="activity-card act-practice scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#2E7D32;">3</div>
@@ -1378,7 +1396,7 @@ em { color: #5A4D3E; }
       <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
     </div>
     <div class="act-body">
-      <p>In your science notebook, answer these prompts. Write in complete sentences.</p>
+      <p>Think about these prompts. Talk through your ideas in your mind or with someone nearby.</p>
       <div class="pq">
         <span class="pq-num" style="background:#2E7D32;">1</span>
         <span class="pq-text">Name your animal and describe its habitat. What are the three challenges you identified?</span>
@@ -1450,6 +1468,9 @@ em { color: #5A4D3E; }
      TAB 4: SELF-CHECK QUIZ
 ═══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-quiz">
+
+  <p class="tab-orientation">Check what you understand.</p>
+
 
   <div class="quiz-card scroll-reveal" style="margin-top:0;margin-bottom:18px;">
     <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
@@ -1570,6 +1591,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Show what you learned.</p>
+
+
   <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
     <div class="act-head">
       <div class="act-num" style="background:#7B5EA7;">5</div>
@@ -1631,7 +1655,7 @@ em { color: #5A4D3E; }
       <div class="socratic-q">
         <span class="sq-icon">🤔</span>
         <div>
-          <div class="label">Reflect</div>
+          <div class="label">Think About It</div>
           <div class="question">"Look back at your Notice &amp; Wonder question from the start of the lesson. Can you answer it now? What changed in your thinking after designing your own animal?"</div>
         </div>
       </div>
@@ -1667,23 +1691,11 @@ em { color: #5A4D3E; }
           <div class="turn-in-checklist">
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Notice &amp; Wonder observations and question from the Vocabulary tab.</div>
+              <div class="turn-in-item-text">My labeled adapted animal drawing from the Explore tab.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My labeled adapted animal drawing from the Explore tab (Part A).</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My completed habitat challenge chart — at least 3 rows from the Explore tab.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My short answer responses to Part B questions (4, 5, 6).</div>
+              <div class="turn-in-item-text">My completed habitat challenge chart — at least 3 rows.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
@@ -1952,6 +1964,13 @@ document.querySelector('[data-tab="vocab"]').classList.add('visited');
 tabProgress['vocab'] = true;
 document.getElementById('progressFill').style.width = '20%';
 document.getElementById('progressPct').textContent = '20%';
+
+// ── Back to Top Text ──
+(function() {
+  var btt = document.getElementById('backToTop');
+  if (btt) { btt.textContent = LESSON_EMOJI + ' Back to Top'; }
+})();
+
 </script>
 </body>
 </html>

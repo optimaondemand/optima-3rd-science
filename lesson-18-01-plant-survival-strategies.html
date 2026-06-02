@@ -847,6 +847,15 @@ em { color: #5A4D3E; }
   background: rgba(0,0,0,0.05); border-radius: 6px;
   padding: 4px 10px; display: inline-block; margin-top: 6px;
 }
+
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
+
 </style>
 </head>
 
@@ -858,7 +867,7 @@ em { color: #5A4D3E; }
      button's textContent automatically — you do NOT need to update the emoji
      here in the HTML. Just set LESSON_EMOJI at the top of <script> and the
      button (and the checklist checkmarks, and the progress-label) all follow. -->
-<button class="back-to-top" id="backToTop" type="button">✏️ Back to Top</button>
+<button class="back-to-top" id="backToTop" type="button">🌿 Back to Top</button>
 
 <!-- Anchor used by the Back-to-Top button. Lives at the very top so scrollIntoView
      can scroll both this iframe AND the Canvas parent page when needed. -->
@@ -1139,6 +1148,9 @@ em { color: #5A4D3E; }
 <!-- TAB 1: VOCABULARY                                         -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel active" id="tab-vocab">
+
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
+
   <!-- Inline progress chip — visible whenever student switches to this tab.
        Workaround for Canvas iframes where sticky/fixed CSS can't stay visible. -->
   <!-- Welcome Video -->
@@ -1291,6 +1303,9 @@ em { color: #5A4D3E; }
 <!-- TAB 2: THE LESSON                                         -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-lesson">
+
+  <p class="tab-orientation">Now learn the main science idea.</p>
+
   <!-- Inline progress chip — visible whenever student switches to this tab.
        Workaround for Canvas iframes where sticky/fixed CSS can't stay visible. -->
   <!-- Lesson Video -->
@@ -1645,6 +1660,9 @@ em { color: #5A4D3E; }
 <!-- TAB 3: EXPLORE (Investigation / Lab / Engineering)        -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-explore">
+
+  <p class="tab-orientation">Now test the idea yourself.</p>
+
   <!-- Inline progress chip — visible whenever student switches to this tab.
        Workaround for Canvas iframes where sticky/fixed CSS can't stay visible. -->
   <!-- Explore Video -->
@@ -1775,7 +1793,7 @@ em { color: #5A4D3E; }
     </div>
     <div class="act-body">
 
-      <p>In your science notebook, record what you found. Being specific matters — a good scientist writes down exactly what they saw, not just "it worked" or "it didn't work."</p>
+      <p>Think about what you found. Being specific matters — a good scientist writes down exactly what they saw, not just "it worked" or "it didn't work."</p>
 
       <!-- ✏️ CUSTOMIZE: Adapt these notebook prompts for the specific investigation type. -->
       <!-- Options: data table, labeled sketch, bar graph, comparison chart, before/after drawing -->
@@ -1865,6 +1883,9 @@ em { color: #5A4D3E; }
 <!-- TAB 4: SELF-CHECK QUIZ                                    -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-quiz">
+
+  <p class="tab-orientation">Check what you understand.</p>
+
   <!-- Inline progress chip — visible whenever student switches to this tab.
        Workaround for Canvas iframes where sticky/fixed CSS can't stay visible. -->
   <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
@@ -1989,6 +2010,9 @@ em { color: #5A4D3E; }
 <!-- TAB 5: NOTEBOOK / ASSIGNMENT                              -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-assignment">
+
+  <p class="tab-orientation">Show what you learned.</p>
+
   <!-- Inline progress chip — visible whenever student switches to this tab.
        Workaround for Canvas iframes where sticky/fixed CSS can't stay visible. -->
   <!-- Assignment Video -->
@@ -2100,7 +2124,7 @@ em { color: #5A4D3E; }
       <div class="socratic-q">
         <span class="sq-icon">🤔</span>
         <div>
-          <div class="label">Reflect</div>
+          <div class="label">Think About It</div>
           <!-- ✏️ CUSTOMIZE: A comparison or reflection prompt that brings closure -->
           <div class="question">"Look back at your Notice &amp; Wonder observations. Did any of the things you noticed turn out to be adaptations? What changed in your thinking about why plants look the way they do?"</div>
         </div>
@@ -2140,22 +2164,9 @@ em { color: #5A4D3E; }
           <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
 
           <div class="turn-in-checklist">
-            <!-- ✏️ CUSTOMIZE: Each item should describe exactly one piece of work the student is submitting for THIS lesson. Phrase each starting with "My …" or "The …" — first-person, concrete, naming the section it came from (Notice & Wonder, Vocabulary, Explore tab, Part A/B/C, Write & Explain). Aim for 5–7 items. -->
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Notice &amp; Wonder warm-up observations and question.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div>
-            </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
               <div class="turn-in-item-text">My plant trait comparison chart from the Explore tab (two environments, two traits each).</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Part B short answer responses in complete sentences.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>

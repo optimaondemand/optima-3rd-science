@@ -715,6 +715,15 @@ em { color: #5A4D3E; }
   .tab-btn { min-width: 80px; font-size: 10px; padding: 10px 4px 9px; }
   .turn-in-options { grid-template-columns: 1fr; }
 }
+
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
+
 </style>
 </head>
 
@@ -1002,6 +1011,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
+
+
   <!-- ACTIVITY 1: NOTICE & WONDER -->
   <div class="activity-card act-warmup">
     <div class="act-head">
@@ -1127,6 +1139,9 @@ em { color: #5A4D3E; }
       </div>
     </div>
   </div>
+
+  <p class="tab-orientation">Now learn the main science idea.</p>
+
 
   <!-- ACTIVITY 2: LESSON CONTEXT -->
   <div class="activity-card act-lesson">
@@ -1388,6 +1403,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Now test the idea yourself.</p>
+
+
   <!-- Case File Image -->
   <div class="lesson-figure">
     <div class="lesson-figure-label">🕵️ Investigation · Plant Detective Case File</div>
@@ -1492,7 +1510,7 @@ em { color: #5A4D3E; }
     </div>
     <div class="act-body">
 
-      <p>Go back to your notebook and answer each question. Be specific — write numbers from your data, not just "one plant grew more."</p>
+      <p>Think about each question. Be specific — use numbers from your data, not just "one plant grew more."</p>
 
       <div class="pq">
         <span class="pq-num" style="background:#2E7D32;">1</span>
@@ -1576,6 +1594,9 @@ em { color: #5A4D3E; }
 <!-- TAB 4: SELF-CHECK QUIZ                                    -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-quiz">
+
+  <p class="tab-orientation">Check what you understand.</p>
+
   <div style="padding:20px 22px 0;">
 
   <div class="quiz-card" style="margin-top:0; margin-bottom:18px;">
@@ -1706,6 +1727,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Show what you learned.</p>
+
+
   <!-- PART A -->
   <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">📋 Part A — Read the Data</p>
   <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Use the data table below to answer these questions in your notebook.</p>
@@ -1802,7 +1826,7 @@ em { color: #5A4D3E; }
   <div class="socratic-q">
     <span class="sq-icon">🤔</span>
     <div>
-      <div class="label">Reflect</div>
+      <div class="label">Think About It</div>
       <div class="question">"Think back to your very first observation — before you saw any data. Did things turn out the way you expected? What changed in your thinking after working through the numbers?"</div>
     </div>
   </div>
@@ -1841,35 +1865,19 @@ em { color: #5A4D3E; }
       <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
 
       <div class="turn-in-checklist">
-        <div class="turn-in-item" onclick="toggleCheck(this)">
-          <div class="turn-in-check check-icon"></div>
-          <div class="turn-in-item-text">My Notice &amp; Wonder observations and question.</div>
-        </div>
-        <div class="turn-in-item" onclick="toggleCheck(this)">
-          <div class="turn-in-check check-icon"></div>
-          <div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div>
-        </div>
-        <div class="turn-in-item" onclick="toggleCheck(this)">
-          <div class="turn-in-check check-icon"></div>
-          <div class="turn-in-item-text">My copied data table and completed graph.</div>
-        </div>
-        <div class="turn-in-item" onclick="toggleCheck(this)">
-          <div class="turn-in-check check-icon"></div>
-          <div class="turn-in-item-text">My Record Your Thinking answers (Day 7 heights, pattern description, labeled sketch).</div>
-        </div>
-        <div class="turn-in-item" onclick="toggleCheck(this)">
-          <div class="turn-in-check check-icon"></div>
-          <div class="turn-in-item-text">My Part A data questions and Part B short answer responses.</div>
-        </div>
-        <div class="turn-in-item" onclick="toggleCheck(this)">
-          <div class="turn-in-check check-icon"></div>
-          <div class="turn-in-item-text">My Write &amp; Explain response using evidence, condition, and growth rate.</div>
-        </div>
-        <div class="turn-in-item" onclick="toggleCheck(this)">
-          <div class="turn-in-check check-icon"></div>
-          <div class="turn-in-item-text">My Part C drawing with both plants labeled by height and light condition.</div>
-        </div>
-      </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My copied data table and completed bar graph.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Write &amp; Explain response using evidence, condition, and growth rate.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Part C drawing with both plants labeled by height and light condition.</div>
+            </div>
+          </div>
 
     </div>
   </div>

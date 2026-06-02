@@ -205,6 +205,14 @@ body {
 .tab-btn.active { color:#0E3A5C; border-bottom-color:#0288D1; background:#EAF8FD; }
 .tab-btn.visited::after { content:'✓'; font-size:10px; color:#0288D1; margin-left:4px; }
 .tab-check { display:none; }
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
+
 .tab-panel { display:none; padding:24px 28px 36px; }
 .tab-panel.active { display:block; background:#ffffff; }
 
@@ -573,6 +581,8 @@ details.go-deeper summary::before { content:'🌩️'; font-size:20px; }
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel active" id="tab-vocab">
 
+
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
   <div class="video-wrap">
     <div class="video-wrap-header">
       <span style="font-size:20px;">🎬</span>
@@ -698,6 +708,8 @@ details.go-deeper summary::before { content:'🌩️'; font-size:20px; }
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-lesson">
 
+
+  <p class="tab-orientation">Now learn the main science idea.</p>
   <div class="video-wrap">
     <div class="video-wrap-header">
       <span style="font-size:20px;">📖</span>
@@ -873,7 +885,7 @@ details.go-deeper summary::before { content:'🌩️'; font-size:20px; }
       <!-- INTERACTIVE DIAGRAM: Weather Conditions -->
       <div class="diagram-wrap scroll-reveal">
         <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
-          🗺 Tap a weather condition to learn about it
+          🗺 Tap each weather condition below. Read what it teaches you.
         </div>
         <div class="diagram-interactive">
           <svg viewBox="0 0 860 280" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;" role="img" aria-label="Interactive diagram showing five weather conditions: sunny, partly cloudy, overcast, rainy, and stormy">
@@ -1039,6 +1051,8 @@ details.go-deeper summary::before { content:'🌩️'; font-size:20px; }
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-explore">
 
+
+  <p class="tab-orientation">Now test the idea yourself.</p>
   <div class="video-wrap">
     <div class="video-wrap-header">
       <span style="font-size:20px;">🔬</span>
@@ -1125,38 +1139,28 @@ details.go-deeper summary::before { content:'🌩️'; font-size:20px; }
     </div>
   </div>
 
-  <!-- RECORD YOUR THINKING -->
+  <!-- RECORD YOUR THINKING (softened — not a required submission) -->
   <div class="activity-card act-practice scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#2E7D32;">4</div>
       <div style="flex:1;">
-        <div class="act-title">📓 Record Your Thinking</div>
-        <div class="act-subtitle">Look at what you wrote. What do you actually know — and what are you still not sure about?</div>
+        <div class="act-title">📓 Check Your Work</div>
+        <div class="act-subtitle">Make sure your investigation notes are clear and complete.</div>
       </div>
-      <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 5 min</div>
     </div>
     <div class="act-body">
 
-      <p>Go back to your observation log. Answer these questions in your notebook. Write in complete sentences — a short answer is fine, but use specific details from what you observed.</p>
+      <p>Before moving on, look back at the work you did during the investigation. A good scientist reviews their notes before moving to the next step.</p>
 
-      <div class="pq">
-        <span class="pq-num" style="background:#0288D1;">1</span>
-        <span class="pq-text">What did you observe about today's weather? List the four things you recorded — temperature, clouds, precipitation, and wind — with the specific details for each one.</span>
-      </div>
-
-      <div class="pq">
-        <span class="pq-num" style="background:#0288D1;">2</span>
-        <span class="pq-text">What pattern, if any, do you notice? Think about the connection between what the clouds looked like and the other conditions you recorded.</span>
-      </div>
-
-      <div class="pq">
-        <span class="pq-num" style="background:#0288D1;">3</span>
-        <span class="pq-text">Draw a small table with two columns labeled <em>Weather</em> and <em>Climate</em>. Write today's observation in one column and write one example of climate in the other.</span>
+      <div class="callout callout-think">
+        <span class="callout-icon">💭</span>
+        <p><strong>Ask yourself:</strong> Did I record specific details — not just "it was warm" but actual temperatures and conditions? Does my prediction connect to something I actually observed? Can I explain my thinking using evidence from my notes?</p>
       </div>
 
       <div class="callout callout-think" style="margin-top:16px;">
         <span class="callout-icon">🗣</span>
-        <p>Tell the story of your observation from beginning to end — what you looked at, what you noticed, what you recorded, and what your prediction was. Use your notebook notes to help you.</p>
+        <p><strong>Think about it:</strong> Tell the story of your investigation — what you did, what you noticed, and what you figured out. Use your notebook notes to help you.</p>
       </div>
 
     </div>
@@ -1172,7 +1176,7 @@ details.go-deeper summary::before { content:'🌩️'; font-size:20px; }
       </div>
     </div>
     <div class="card-body">
-      <p>Think through each question on your own. Write your answers in your science notebook before moving on.</p>
+      <p>Think through each question on your own or talk about them with someone nearby. You don't need to write these down — they're for thinking.</p>
 
       <div class="socratic-q" style="margin-bottom:10px;">
         <span class="sq-icon">🤔</span>
@@ -1221,6 +1225,8 @@ details.go-deeper summary::before { content:'🌩️'; font-size:20px; }
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-quiz">
 
+
+  <p class="tab-orientation">Check what you understand.</p>
   <div class="quiz-card scroll-reveal" style="margin-top:0;margin-bottom:18px;">
     <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
       <div style="width:38px;height:38px;border-radius:14px;background:#0288D1;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">⛅</div>
@@ -1328,6 +1334,8 @@ details.go-deeper summary::before { content:'🌩️'; font-size:20px; }
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-assignment">
 
+
+  <p class="tab-orientation">Show what you learned.</p>
   <div class="video-wrap">
     <div class="video-wrap-header">
       <span style="font-size:20px;">✍️</span>
@@ -1360,27 +1368,10 @@ details.go-deeper summary::before { content:'🌩️'; font-size:20px; }
       <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔎 Part A — Identify &amp; Label</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Look at the five weather conditions from the diagram you explored. In your notebook, draw all five weather symbols and label each one. Under each label, write one example of when that type of weather might happen — be specific about the season or time of day.</p>
 
-      <!-- PART B -->
-      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">✏️ Part B — Short Answer</p>
-      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer each question in a complete sentence or two. Use at least one vocabulary word in each answer.</p>
-
-      <div class="pq">
-        <span class="pq-num" style="background:#7B5EA7;">1</span>
-        <span class="pq-text">What four things do scientists measure to describe weather? Pick one and explain what a high reading of it might look like.</span>
-      </div>
-      <div class="pq">
-        <span class="pq-num" style="background:#7B5EA7;">2</span>
-        <span class="pq-text">What is the difference between weather and climate? Use one example of each in your answer.</span>
-      </div>
-      <div class="pq">
-        <span class="pq-num" style="background:#7B5EA7;">3</span>
-        <span class="pq-text">How do weather patterns help meteorologists make predictions? Give one specific example of a pattern a meteorologist might notice.</span>
-      </div>
-
-      <!-- WRITE & EXPLAIN -->
-      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">📝 Write &amp; Explain</p>
+      <!-- PART B: WRITE & EXPLAIN -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">📝 Part B — Write &amp; Explain</p>
       <div class="key-concept" style="margin-bottom:16px;">
-        <div class="kc-label">📝 Write &amp; Explain</div>
+        <div class="kc-label">📝 Part B — Write &amp; Explain</div>
         <p>Think about the weather observation you recorded today.</p>
         <p><strong>What did you observe?</strong> Describe the specific conditions you recorded — temperature, clouds, precipitation, and wind.</p>
         <p><strong>What does that tell you?</strong> Based on those conditions, what type of weather pattern might be forming? What do you predict will come next?</p>
@@ -1391,12 +1382,9 @@ details.go-deeper summary::before { content:'🌩️'; font-size:20px; }
       <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Label</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Draw a labeled sketch of today's sky in your science notebook. Label at least 4 parts — show the clouds (or lack of them), the sun, any precipitation, and write the temperature in a corner of your drawing. At the bottom, write one sentence describing what you see.</p>
 
-      <div class="socratic-q">
-        <span class="sq-icon">🤔</span>
-        <div>
-          <div class="label">Reflect</div>
-          <div class="question">"Look back at the Notice &amp; Wonder you wrote at the start of today's lesson. Did you observe or predict anything correctly? What surprised you? What do you still wonder about?"</div>
-        </div>
+      <div class="callout callout-think">
+        <span class="callout-icon">💭</span>
+        <p><strong>Think about it:</strong> Look back at the Notice &amp; Wonder you wrote at the start of today's lesson. Did you observe or predict anything corre</p>
       </div>
 
       <!-- WHAT TO TURN IN -->
@@ -1430,30 +1418,21 @@ details.go-deeper summary::before { content:'🌩️'; font-size:20px; }
           <p style="font-size:15px;color:#5A4D3E;margin-bottom:12px;">Make sure your submission includes all of these:</p>
           <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
             <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #AED6F1;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EAF8FD;">☐</div>
-            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My Notice &amp; Wonder observations from the start of the lesson.</span>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My completed Weather Observation Log — all four conditions, my drawing, and my prediction.</span>
           </div>
           <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
             <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #AED6F1;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EAF8FD;">☐</div>
-            <span style="font-size:16px;color:#2B1D12;font-weight:600;">The copywork sentence from the vocabulary page.</span>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">Part A — weather symbols drawn, labeled, and with examples.</span>
           </div>
           <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
             <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #AED6F1;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EAF8FD;">☐</div>
-            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My completed Weather Observation Log — with date, all four conditions, my drawing, my prediction, and my weather vs. climate sentence.</span>
-          </div>
-          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
-            <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #AED6F1;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EAF8FD;">☐</div>
-            <span style="font-size:16px;color:#2B1D12;font-weight:600;">Parts A, B, and C completed in my notebook.</span>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My Write &amp; Explain (Part B) response in complete sentences using at least one vocabulary word.</span>
           </div>
           <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;cursor:pointer;">
             <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #AED6F1;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EAF8FD;">☐</div>
-            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My Write &amp; Explain uses at least one vocabulary word and complete sentences.</span>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">Part C — labeled sky sketch with clouds, sun, precipitation, and temperature.</span>
           </div>
         </div>
-      </div>
-
-      <div class="callout callout-submit" style="margin-top:18px;">
-        <span class="callout-icon">✅</span>
-        <p>When your checklist is complete, submit everything on <strong>Canvas</strong>. Type, upload a photo, or record a video — whichever works best for you!</p>
       </div>
 
       <!-- CLOSING VIDEO -->
@@ -1491,6 +1470,9 @@ details.go-deeper summary::before { content:'🌩️'; font-size:20px; }
 
 
 <script>
+// ── Lesson Config ──
+var LESSON_EMOJI = '⛅';
+
 // ── Tab System ──
 var tabProgress = {vocab:false,lesson:false,explore:false,quiz:false,assignment:false};
 var tabOrder = ['vocab','lesson','explore','quiz','assignment'];
@@ -1604,6 +1586,7 @@ document.querySelectorAll('.vtip').forEach(function(tip){
 // ── Back to Top ──
 (function(){
   var btn = document.getElementById('backToTop');
+  if (btn) { btn.textContent = LESSON_EMOJI + ' Back to Top'; }
 
   // Direct style toggle — avoids class specificity conflicts
   function showBtn()  { btn.style.display = 'flex'; }

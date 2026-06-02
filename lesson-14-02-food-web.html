@@ -838,6 +838,14 @@ em { color: #5A4D3E; }
   .turn-in-options { grid-template-columns: 1fr; }
   .turn-in-header-title { font-size: 20px; }
 }
+
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
 </style>
 </head>
 
@@ -1209,6 +1217,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
+
+
   <!-- ═══ ACTIVITY 1: NOTICE & WONDER (WARM-UP) ═══ -->
   <!-- PURPOSE: Activate curiosity. Students observe before they learn. ~5-8 min -->
   <div class="activity-card act-warmup scroll-reveal">
@@ -1341,6 +1352,9 @@ em { color: #5A4D3E; }
       </div>
     </div>
   </div>
+
+  <p class="tab-orientation">Now learn the main science idea.</p>
+
 
   <!-- ══════════════════════════════════════════════════════════════════════ -->
   <!-- UPLOADED LESSON IMAGE — INSERT HERE IF USER UPLOADED A PHOTO/DIAGRAM   -->
@@ -1708,6 +1722,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Now test the idea yourself.</p>
+
+
   <!-- ═══ ACTIVITY 3: INVESTIGATION ═══ -->
   <div class="activity-card act-explore scroll-reveal">
     <div class="act-head">
@@ -1801,13 +1818,13 @@ em { color: #5A4D3E; }
       <div class="act-num" style="background:#2E7D32;">4</div>
       <div style="flex:1;">
         <div class="act-title">📓 Record Your Thinking</div>
-        <div class="act-subtitle">Organize what you observed and discovered.</div>
+        <div class="act-subtitle">Think about what you observed and discovered.</div>
       </div>
       <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
     </div>
     <div class="act-body">
 
-      <p>In your science notebook, record what you found. Be specific — name your habitat, your animals, and what you noticed.</p>
+      <p>Think about what you found. Be specific — name your habitat, your animals, and what you noticed.</p>
 
       <div class="pq">
         <span class="pq-num" style="background:#2E7D32;">1</span>
@@ -1843,7 +1860,7 @@ em { color: #5A4D3E; }
       </div>
     </div>
     <div class="card-body">
-      <p>Think through each question on your own. Write your answers in your science notebook before moving on.</p>
+      <p>Think through each question on your own. Talk it through with someone or think about it in your mind.</p>
 
       <!-- ✏️ CUSTOMIZE: 3-4 Socratic discussion questions. Vary difficulty. -->
       <!-- Good types: What did you notice? / What evidence supports? / Would everyone agree? / What would you try next? -->
@@ -1973,6 +1990,9 @@ em { color: #5A4D3E; }
               </div>
             </div>
           </div>
+
+  <p class="tab-orientation">Check what you understand.</p>
+
         </div>
 
         <!-- Review / encouragement video (shown when score < 3) -->
@@ -2030,6 +2050,9 @@ em { color: #5A4D3E; }
       </div>
     </div>
   </div>
+
+  <p class="tab-orientation">Show what you learned.</p>
+
 
   <!-- ═══ ACTIVITY 5: NOTEBOOK WORK ═══ -->
   <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
@@ -2147,14 +2170,8 @@ em { color: #5A4D3E; }
           <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
 
           <div class="turn-in-checklist">
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Notice &amp; Wonder warm-up — the 3 forest living things I listed and the arrows I drew.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">The copywork sentence about how energy moves from the sun to plants to animals.</div>
-            </div>
+            
+            
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
               <div class="turn-in-item-text">My finished food web from the investigation — habitat named, 6+ organisms, labels, and arrows.</div>
@@ -2167,10 +2184,7 @@ em { color: #5A4D3E; }
               <div class="turn-in-check check-icon"></div>
               <div class="turn-in-item-text">My Write &amp; Explain response — using food web evidence to explain survival in two habitats.</div>
             </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Part C food web drawing with every organism labeled and energy arrows shown.</div>
-            </div>
+            
           </div>
 
         </div>
@@ -2379,6 +2393,7 @@ document.querySelectorAll('.vtip').forEach(function(tip) {
 //      so scrollIntoView on a top anchor is what actually moves the user up.
 (function() {
   var btn = document.getElementById('backToTop');
+  if (btn) { btn.textContent = LESSON_EMOJI + ' Back to Top'; }
   if (!btn) return;
 
   var inIframe = (function() {

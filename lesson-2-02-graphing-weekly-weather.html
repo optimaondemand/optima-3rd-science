@@ -499,6 +499,14 @@ body {
 .tab-check { display: none; }
 
 /* ── Tab Panels ── */
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
+
 .tab-panel { display: none; padding: 20px 24px 32px; background: #ffffff; }
 .tab-panel.active { display: block; }
 
@@ -896,6 +904,8 @@ body {
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel active" id="tab-vocab">
 
+
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
   <!-- Welcome Video -->
   <div class="video-wrap">
     <div class="video-wrap-header">
@@ -1053,6 +1063,8 @@ body {
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-lesson">
 
+
+  <p class="tab-orientation">Now learn the main science idea.</p>
   <!-- Lesson Video -->
   <div class="video-wrap">
     <div class="video-wrap-header">
@@ -1164,7 +1176,7 @@ body {
       <!-- INTERACTIVE DIAGRAM: bar graph with clickable zones -->
       <div class="diagram-wrap scroll-reveal">
         <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
-          📊 Tap a bar to learn what it tells you
+          📊 Tap each bar below. Read what the data tells you about that day.
         </div>
         <div class="diagram-interactive">
           <svg viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;">
@@ -1316,6 +1328,8 @@ body {
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-explore">
 
+
+  <p class="tab-orientation">Now test the idea yourself.</p>
   <!-- Explore Video -->
   <div class="video-wrap">
     <div class="video-wrap-header">
@@ -1452,38 +1466,28 @@ body {
     </div>
   </div>
 
-  <!-- RECORD YOUR THINKING -->
+  <!-- RECORD YOUR THINKING (softened — not a required submission) -->
   <div class="activity-card act-practice scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#2E7D32;">4</div>
       <div style="flex:1;">
-        <div class="act-title">📓 Record Your Thinking</div>
-        <div class="act-subtitle">Organize what you discovered in your notebook.</div>
+        <div class="act-title">📓 Check Your Work</div>
+        <div class="act-subtitle">Make sure your investigation notes are clear and complete.</div>
       </div>
-      <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 5 min</div>
     </div>
     <div class="act-body">
 
-      <p>In your science notebook, write your answers to these questions in complete sentences. Be specific — "it went up and then down" is more useful than "it changed."</p>
+      <p>Before moving on, look back at the work you did during the investigation. A good scientist reviews their notes before moving to the next step.</p>
 
-      <div class="pq">
-        <span class="pq-num" style="background:#0288D1;">1</span>
-        <span class="pq-text">Look at your bar graph. Which day had the highest temperature? Which had the lowest? Write the exact temperatures.</span>
-      </div>
-
-      <div class="pq">
-        <span class="pq-num" style="background:#0288D1;">2</span>
-        <span class="pq-text">Describe the pattern you see in the graph. Did temperatures rise, fall, or do something more complicated across the week? Be specific about when.</span>
-      </div>
-
-      <div class="pq">
-        <span class="pq-num" style="background:#0288D1;">3</span>
-        <span class="pq-text">Write your prediction for Saturday's temperature. Explain what pattern in your graph supports that prediction — not just what you think the weather will be, but why.</span>
+      <div class="callout callout-think">
+        <span class="callout-icon">💭</span>
+        <p><strong>Ask yourself:</strong> Did I record specific details — not just "it was warm" but actual temperatures and conditions? Does my prediction connect to something I actually observed? Can I explain my thinking using evidence from my notes?</p>
       </div>
 
       <div class="callout callout-think" style="margin-top:16px;">
         <span class="callout-icon">🗣</span>
-        <p>Tell the story of your investigation from beginning to end — what you did, what your graph showed, and what you figured out. Use your notebook notes to help you. A good scientist can explain their work to someone else!</p>
+        <p><strong>Think about it:</strong> Tell the story of your investigation — what you did, what you noticed, and what you figured out. Use your notebook notes to help you.</p>
       </div>
 
     </div>
@@ -1499,7 +1503,7 @@ body {
       </div>
     </div>
     <div class="card-body">
-      <p>Think through each question on your own. Write your answers in complete sentences in your science notebook.</p>
+      <p>Think through each question on your own or talk about them with someone nearby. You don't need to write these down — they're for thinking.</p>
 
       <div class="socratic-q" style="margin-bottom:10px;">
         <span class="sq-icon">🤔</span>
@@ -1548,6 +1552,8 @@ body {
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-quiz">
 
+
+  <p class="tab-orientation">Check what you understand.</p>
   <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
     <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
       <div style="width:38px;height:38px;border-radius:14px;background:#0288D1;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">⛅</div>
@@ -1655,6 +1661,8 @@ body {
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-assignment">
 
+
+  <p class="tab-orientation">Show what you learned.</p>
   <!-- Assignment Video -->
   <div class="video-wrap">
     <div class="video-wrap-header">
@@ -1692,17 +1700,10 @@ body {
       <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">Which day had the lowest temperature? What was the difference between the warmest and coolest days?</span></div>
       <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">On which day did it rain? Was that day warmer or cooler than the day before it?</span></div>
 
-      <!-- PART B -->
-      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🚀 Part B — Short Answer</p>
-      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer each question in <strong>complete sentences</strong>. Use your science vocabulary!</p>
-
-      <div class="pq"><span class="pq-num" style="background:#F9A825;">4</span><span class="pq-text">Describe the temperature pattern you see in your graph. What did temperatures do over the course of the week?</span></div>
-      <div class="pq"><span class="pq-num" style="background:#F9A825;">5</span><span class="pq-text">How is a bar graph different from just writing down a list of numbers? Why does that difference matter for a scientist?</span></div>
-      <div class="pq"><span class="pq-num" style="background:#F9A825;">6</span><span class="pq-text">What prediction would you make about next Monday's temperature, based on this week's pattern? Explain your reasoning.</span></div>
-
-      <!-- WRITE & EXPLAIN -->
+      <!-- PART B: WRITE & EXPLAIN -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">✍️ Part B — Write &amp; Explain</p>
       <div class="key-concept scroll-reveal" style="background:#FFF9E8;border-color:#F0E4C0;margin-top:20px;">
-        <div class="kc-label" style="color:#F9A825;">✍️ Write and Explain</div>
+        <div class="kc-label" style="color:#F9A825;">✍️ Part B — Write &amp; Explain</div>
         <p style="font-size:16px;font-weight:700;color:#1B4332;margin-bottom:14px;">Look at your finished bar graph. What weather pattern does it show — and how could a meteorologist use that pattern?</p>
 
         <div style="margin-bottom:14px;">
@@ -1740,12 +1741,9 @@ body {
       <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Label</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Take a photo of the bar graph you made in your science notebook and upload it. Make sure it shows all five days, labeled axes, a title, and your weather symbols. Or, if you prefer, draw a new final version here on paper before photographing it.</p>
 
-      <div class="socratic-q">
-        <span class="sq-icon">🤔</span>
-        <div>
-          <div class="label">Reflect</div>
-          <div class="question">"Go back to your Notice &amp; Wonder warm-up. You wrote down which you thought was easier — the list or the graph. Does your answer feel the same now that you've made a graph yourself? What changed in your thinking?"</div>
-        </div>
+      <div class="callout callout-think">
+        <span class="callout-icon">💭</span>
+        <p><strong>Think about it:</strong> Go back to your Notice &amp; Wonder warm-up. You wrote down which you thought was easier — the list or the graph. Does y</p>
       </div>
 
       <!-- WHAT TO TURN IN -->
@@ -1765,7 +1763,7 @@ body {
             <div style="background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:12px 14px;text-align:center;">
               <div style="font-size:28px;margin-bottom:6px;">⌨️</div>
               <div style="font-size:13px;font-weight:800;color:#1B4332;margin-bottom:4px;">Type It</div>
-              <div style="font-size:12px;color:#5A4D3E;line-height:1.4;">Type your Part A, B, and Write &amp; Explain answers directly into Canvas.</div>
+              <div style="font-size:12px;color:#5A4D3E;line-height:1.4;">Type your Part A and Part B answers directly into Canvas.</div>
             </div>
             <div style="background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:12px 14px;text-align:center;">
               <div style="font-size:28px;margin-bottom:6px;">📸</div>
@@ -1782,31 +1780,21 @@ body {
           <p style="font-size:15px;color:#5A4D3E;margin-bottom:12px;">Make sure your submission includes all of these:</p>
           <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
             <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
-            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My Notice &amp; Wonder observations from the warm-up.</span>
-          </div>
-          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
-            <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
-            <span style="font-size:16px;color:#2B1D12;font-weight:600;">The copywork sentence from the vocabulary page.</span>
-          </div>
-          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
-            <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
             <span style="font-size:16px;color:#2B1D12;font-weight:600;">My completed data table and bar graph (photo of notebook work).</span>
           </div>
           <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
             <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
-            <span style="font-size:16px;color:#2B1D12;font-weight:600;">Parts A, B, and Write &amp; Explain answered in complete sentences.</span>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">Part A — Read the Graph answered in complete sentences.</span>
+          </div>
+          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
+            <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My Write &amp; Explain (Part B) response using at least one vocabulary word.</span>
           </div>
           <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;cursor:pointer;">
             <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
-            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My Write &amp; Explain uses at least one vocabulary word and complete sentences.</span>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">Part C — bar graph photo with labeled axes, title, and weather symbols.</span>
           </div>
-
         </div>
-      </div>
-
-      <div class="callout callout-submit" style="margin-top:18px;">
-        <span class="callout-icon">✅</span>
-        <p>When your checklist is complete, submit everything on <strong>Canvas</strong>. Type, upload a photo, or record a video — whichever works best for you!</p>
       </div>
 
       <!-- CLOSING VIDEO -->
@@ -1844,6 +1832,9 @@ body {
 
 
 <script>
+// ── Lesson Config ──
+var LESSON_EMOJI = '📊';
+
 // ── Tab System ──
 var tabProgress = { vocab: false, lesson: false, explore: false, quiz: false, assignment: false };
 var tabOrder = ['vocab','lesson','explore','quiz','assignment'];
@@ -1977,6 +1968,7 @@ function checkQuiz(optEl) {
 (function() {
   var btn = document.getElementById('backToTop');
   if (!btn) return;
+  btn.textContent = LESSON_EMOJI + ' Back to Top';
   var inIframe = (function(){
     try { return window.self !== window.top; } catch (e) { return true; }
   })();

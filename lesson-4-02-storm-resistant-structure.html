@@ -740,6 +740,13 @@ body {
   .tab-btn { min-width: 100px; font-size: 11px; padding: 10px 6px 9px; }
   .turn-in-options { grid-template-columns: 1fr; }
 }
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
 </style>
 </head>
 
@@ -1046,6 +1053,9 @@ body {
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel active" id="tab-vocab">
 
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
+
+
   <div class="video-wrap">
     <div class="video-wrap-header">
       <span style="font-size:20px;">🎬</span>
@@ -1161,6 +1171,9 @@ body {
 <!-- TAB 2: THE LESSON                                         -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-lesson">
+
+  <p class="tab-orientation">Now learn the main science idea.</p>
+
 
   <div class="video-wrap">
     <div class="video-wrap-header">
@@ -1406,6 +1419,9 @@ body {
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-explore">
 
+  <p class="tab-orientation">Now test the idea yourself.</p>
+
+
   <div class="video-wrap">
     <div class="video-wrap-header">
       <span style="font-size:20px;">🏗️</span>
@@ -1535,13 +1551,13 @@ body {
       <div class="act-num" style="background:#2E7D32;">4</div>
       <div style="flex:1;">
         <div class="act-title">📓 Record Your Thinking</div>
-        <div class="act-subtitle">Document your design, your test results, and your redesign plan.</div>
+        <div class="act-subtitle">Think through your design, your test results, and your next steps.</div>
       </div>
       <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
     </div>
     <div class="act-body">
 
-      <p>In your science notebook, record all three of these. Write clearly — this is your engineering documentation.</p>
+      <p>Think about it: Before you move on, consider these prompts. You'll use your best thinking in the Write &amp; Explain section.</p>
 
       <div class="pq">
         <span class="pq-num" style="background:#6D4C41;">1</span>
@@ -1576,7 +1592,7 @@ body {
       </div>
     </div>
     <div class="card-body">
-      <p>Write your answers in your notebook before moving on. There's no single right answer — explain your thinking with evidence.</p>
+      <p>Talk it through in your mind — or discuss with someone nearby. There's no single right answer, just good thinking.</p>
 
       <div class="socratic-q" style="margin-bottom:10px;">
         <span class="sq-icon">🤔</span>
@@ -1624,6 +1640,9 @@ body {
 <!-- TAB 4: SELF-CHECK QUIZ                                    -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-quiz">
+
+  <p class="tab-orientation">Check what you understand.</p>
+
 
   <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
     <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
@@ -1725,6 +1744,9 @@ body {
 <!-- TAB 5: ASSIGNMENT                                         -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-assignment">
+
+  <p class="tab-orientation">Show what you learned.</p>
+
 
   <div class="video-wrap">
     <div class="video-wrap-header">
@@ -1852,25 +1874,15 @@ body {
           <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
 
           <div class="turn-in-checklist">
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Notice &amp; Wonder warm-up observations and question from my science notebook.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div>
-            </div>
+
+
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
               <div class="turn-in-item-text">My labeled prototype sketch from Step 2 of the engineering challenge.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My test observations from Step 5 — what happened during the wind and water tests.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My redesign plan from Step 6 — what I would change and why.</div>
+              <div class="turn-in-item-text">My test observations and redesign plan — what happened and what I would change.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
@@ -1957,18 +1969,19 @@ function switchTab(name) {
 function toggleCheck(item) {
   item.classList.toggle('checked');
   var icon = item.querySelector('.check-icon');
-  if (!icon) return;
-  if (item.classList.contains('checked')) {
-    icon.textContent = LESSON_EMOJI;
-  } else {
-    icon.textContent = '';
+  if (icon) {
+    icon.textContent = item.classList.contains('checked') ? LESSON_EMOJI : '';
   }
-  var items = document.querySelectorAll('.turn-in-item');
-  setTimeout(function(){
-    if (Array.from(items).every(function(it){ return it.classList.contains('checked'); })) {
-      setTimeout(window.launchConfetti, 200);
-    }
-  }, 50);
+  var checklist = item.closest('.turn-in-checklist');
+  if (!checklist) return;
+  var items = checklist.querySelectorAll('.turn-in-item');
+  if (items.length === 0) return;
+  var allChecked = Array.prototype.every.call(items, function(it){
+    return it.classList.contains('checked');
+  });
+  if (allChecked) {
+    setTimeout(window.launchConfetti, 200);
+  }
 }
 
 // ── Clickable Diagram ──
@@ -2155,6 +2168,8 @@ introCards.forEach(function(card){
 
 // ── Init ──
 document.querySelector('[data-tab="vocab"]').classList.add('visited');
+var btt = document.getElementById('backToTop');
+if (btt) { btt.textContent = LESSON_EMOJI + ' Back to Top'; }
 tabProgress['vocab'] = true;
 document.getElementById('progressFill').style.width = '20%';
 document.getElementById('progressPct').textContent = '20%';

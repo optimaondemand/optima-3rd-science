@@ -410,6 +410,13 @@ em { color: #5A4D3E; }
   .turn-in-options { grid-template-columns: 1fr; }
   .turn-in-header-title { font-size: 20px; }
 }
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
 </style>
 </head>
 
@@ -806,6 +813,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
+
+
   <!-- ACTIVITY 1: NOTICE & WONDER -->
   <div class="activity-card act-warmup scroll-reveal">
     <div class="act-head">
@@ -883,14 +893,14 @@ em { color: #5A4D3E; }
         <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
           <div class="flip-card-inner">
             <div class="flip-card-front"><div class="fc-emoji">🐍</div><div class="fc-word">Invasive Species</div><div class="fc-tap">tap to flip</div></div>
-            <div class="flip-card-back"><div class="fc-word-back">Invasive Species</div><div class="fc-def">A plant or animal that spreads into a new place where it does not naturally live, often crowding out species that belong there.</div><div class="fc-tap-back">tap to flip back</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Invasive Species</div><div class="fc-def">A plant or animal that spreads into a new place where it does not naturally live, often crowding.</div><div class="fc-tap-back">tap to flip back</div></div>
           </div>
         </div>
 
         <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
           <div class="flip-card-inner">
             <div class="flip-card-front"><div class="fc-emoji">🏗️</div><div class="fc-word">Habitat Loss</div><div class="fc-tap">tap to flip</div></div>
-            <div class="flip-card-back"><div class="fc-word-back">Habitat Loss</div><div class="fc-def">When the natural home of a plant or animal is destroyed or changed so much that animals can no longer live there.</div><div class="fc-tap-back">tap to flip back</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Habitat Loss</div><div class="fc-def">When the natural home of a plant or animal is destroyed or changed so much that animals can.</div><div class="fc-tap-back">tap to flip back</div></div>
           </div>
         </div>
 
@@ -947,6 +957,9 @@ em { color: #5A4D3E; }
       </div>
     </div>
   </div>
+
+  <p class="tab-orientation">Now learn the main science idea.</p>
+
 
   <!-- ACTIVITY 2: CORE LESSON CONTENT -->
   <div class="activity-card act-lesson scroll-reveal">
@@ -1283,6 +1296,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Now test the idea yourself.</p>
+
+
   <!-- ACTIVITY 3: INVESTIGATION -->
   <div class="activity-card act-explore scroll-reveal">
     <div class="act-head">
@@ -1382,7 +1398,7 @@ em { color: #5A4D3E; }
     </div>
     <div class="act-body">
 
-      <p>In your science notebook, record your thinking. Be specific — a good scientist writes exactly what they noticed, not just "it was bad."</p>
+      <p>Think through what you noticed. Be specific — a good scientist explains exactly what they saw, not just "it was bad." You'll write your response in the Assignment tab.</p>
 
       <div class="pq">
         <span class="pq-num" style="background:#2E7D32;">1</span>
@@ -1417,7 +1433,7 @@ em { color: #5A4D3E; }
       </div>
     </div>
     <div class="card-body">
-      <p>Think through each question. Write your answers in your science notebook before moving on.</p>
+      <p>Think through each question. Talk it over in your mind — or with a family member — before moving on.</p>
 
       <div class="socratic-q" style="margin-bottom:10px;">
         <span class="sq-icon">🤔</span>
@@ -1465,6 +1481,9 @@ em { color: #5A4D3E; }
 <!-- TAB 4: SELF-CHECK QUIZ                                    -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-quiz">
+
+  <p class="tab-orientation">Check what you understand.</p>
+
 
   <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
     <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
@@ -1592,6 +1611,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Show what you learned.</p>
+
+
   <!-- ACTIVITY 5: ASSIGNMENT -->
   <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
     <div class="act-head">
@@ -1663,7 +1685,7 @@ em { color: #5A4D3E; }
       <div class="socratic-q">
         <span class="sq-icon">🤔</span>
         <div>
-          <div class="label">Reflect</div>
+          <div class="label">Think Back</div>
           <div class="question">"At the start of this lesson, what did you think threatened Florida's wild places? What do you think now — and what changed your thinking?"</div>
         </div>
       </div>
@@ -1704,23 +1726,11 @@ em { color: #5A4D3E; }
           <div class="turn-in-checklist">
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Notice &amp; Wonder observations (3 things I noticed) and 1 question I had about the Florida wetland photo.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page, written carefully in my notebook.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
               <div class="turn-in-item-text">My Threat Identification chart from the Explore tab, with all 4 scenarios filled in.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My written response from the Explore tab — which scenario I chose and what I think could help fix it.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Part A matching responses (1, 2, 3) and my Part B short answer responses (4, 5, 6).</div>
+              <div class="turn-in-item-text">My Part A matching responses and Part B short answer responses in complete sentences.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>

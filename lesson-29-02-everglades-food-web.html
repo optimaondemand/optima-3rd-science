@@ -925,6 +925,13 @@ em { color: #5A4D3E; }
     0%,100% { transform: translateY(0px); }
     50%     { transform: translateY(1px); }
   }
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
 </style>
 </head>
 
@@ -1294,6 +1301,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
+
+
   <!-- ═══ ACTIVITY 1: NOTICE & WONDER (WARM-UP) ═══ -->
   <!-- PURPOSE: Activate curiosity. Students observe before they learn. ~5-8 min -->
   <div class="activity-card act-warmup scroll-reveal">
@@ -1381,14 +1391,14 @@ em { color: #5A4D3E; }
         <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
           <div class="flip-card-inner">
             <div class="flip-card-front"><div class="fc-emoji">🦅</div><div class="fc-word">Predator</div><div class="fc-tap">tap to flip</div></div>
-            <div class="flip-card-back"><div class="fc-word-back">Predator</div><div class="fc-def">An animal that hunts and eats other animals. The anhinga is a predator — it dives underwater to spear fish with its beak.</div><div class="fc-tap-back">tap to flip back</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Predator</div><div class="fc-def">An animal that hunts and eats other animals. The anhinga is a predator — it dives underwater to.</div><div class="fc-tap-back">tap to flip back</div></div>
           </div>
         </div>
 
         <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
           <div class="flip-card-inner">
             <div class="flip-card-front"><div class="fc-emoji">🐟</div><div class="fc-word">Prey</div><div class="fc-tap">tap to flip</div></div>
-            <div class="flip-card-back"><div class="fc-word-back">Prey</div><div class="fc-def">An animal that is hunted and eaten by a predator. An apple snail in the water is prey for a snail kite.</div><div class="fc-tap-back">tap to flip back</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Prey</div><div class="fc-def">An animal that is hunted and eaten by a predator. An apple snail in the water is prey.</div><div class="fc-tap-back">tap to flip back</div></div>
           </div>
         </div>
 
@@ -1441,6 +1451,9 @@ em { color: #5A4D3E; }
       </div>
     </div>
   </div>
+
+  <p class="tab-orientation">Now learn the main science idea.</p>
+
 
   <!-- ══════════════════════════════════════════════════════════════════════ -->
   <!-- UPLOADED LESSON IMAGE — INSERT HERE IF USER UPLOADED A PHOTO/DIAGRAM   -->
@@ -1698,6 +1711,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Now test the idea yourself.</p>
+
+
   <!-- ═══ ACTIVITY 3: INVESTIGATION ═══ -->
   <div class="activity-card act-practice scroll-reveal">
     <div class="act-head">
@@ -1877,7 +1893,7 @@ em { color: #5A4D3E; }
       </div>
     </div>
     <div class="card-body">
-      <p>Think through each question on your own. Write your answers in your science notebook.</p>
+      <p>Think through each question on your own. Talk it over in your mind — or with a family member — before moving on.</p>
 
       <div class="socratic-q" style="margin-bottom:10px;">
         <span class="sq-icon">🤔</span>
@@ -1925,6 +1941,9 @@ em { color: #5A4D3E; }
 <!-- TAB 4: SELF-CHECK QUIZ                                    -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-quiz">
+
+  <p class="tab-orientation">Check what you understand.</p>
+
   <!-- Inline progress chip — visible whenever student switches to this tab.
        Workaround for Canvas iframes where sticky/fixed CSS can't stay visible. -->
   <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
@@ -2064,6 +2083,9 @@ em { color: #5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Show what you learned.</p>
+
+
   <!-- ═══ ACTIVITY 5: NOTEBOOK WORK ═══ -->
   <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
     <div class="act-head">
@@ -2143,7 +2165,7 @@ em { color: #5A4D3E; }
       <div class="socratic-q">
         <span class="sq-icon">🤔</span>
         <div>
-          <div class="label">Reflect</div>
+          <div class="label">Think Back</div>
           <!-- ✏️ CUSTOMIZE: A comparison or reflection prompt that brings closure -->
           <div class="question">"Think back to the question you wrote in your Notice &amp; Wonder warm-up. Can you answer it now? Write 1–2 sentences explaining what you know today that you didn't know before."</div>
         </div>
@@ -2185,19 +2207,7 @@ em { color: #5A4D3E; }
           <div class="turn-in-checklist">
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Notice &amp; Wonder observations (at least 3) and 1 question from the Vocabulary tab.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">The copywork sentence written carefully in my notebook.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My organism sort table from the Explore tab (at least 5 rows completed).</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Explore food web drawing with at least 5 organisms, 6 arrows, and my prediction labeled.</div>
+              <div class="turn-in-item-text">My organism sort table (at least 5 rows) and Explore food web drawing with arrows and prediction.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>

@@ -437,6 +437,15 @@ body {
 }
 .tab-check { display: none; }
 
+/* ── Tab Orientation ── */
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
+
 /* ── Tab Panels ── */
 .tab-panel { display: none; padding: 24px 24px 36px; background: #ffffff; }
 .tab-panel.active { display: block; }
@@ -923,6 +932,8 @@ body {
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel active" id="tab-vocab">
 
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
+
   <div class="video-wrap">
     <div class="video-wrap-header">
       <span style="font-size:20px;">🎬</span>
@@ -1049,6 +1060,8 @@ body {
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-lesson">
 
+  <p class="tab-orientation">Now learn the main science idea.</p>
+
   <div class="video-wrap">
     <div class="video-wrap-header">
       <span style="font-size:20px;">📖</span>
@@ -1157,7 +1170,7 @@ body {
       <!-- Interactive Diagram -->
       <div class="diagram-wrap scroll-reveal">
         <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
-          🗺 Tap a zone to explore it
+          🗺 Tap each zone below. Read what it teaches you about observing.
         </div>
         <div class="diagram-interactive">
           <svg viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;" role="img" aria-label="Diagram showing the scientist's observation toolkit: sight, sound, smell, touch, and making inferences">
@@ -1285,6 +1298,8 @@ body {
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-explore">
 
+  <p class="tab-orientation">Now test the idea yourself.</p>
+
   <div class="video-wrap">
     <div class="video-wrap-header">
       <span style="font-size:20px;">🔬</span>
@@ -1368,38 +1383,28 @@ body {
     </div>
   </div>
 
-  <!-- RECORD YOUR THINKING -->
+  <!-- RECORD YOUR THINKING (softened to self-check, not required submission) -->
   <div class="activity-card act-practice">
     <div class="act-head">
       <div class="act-num" style="background:#2E7D32;">4</div>
       <div style="flex:1;">
-        <div class="act-title">📓 Record Your Thinking</div>
-        <div class="act-subtitle">Organize what you observed and figured out.</div>
+        <div class="act-title">📓 Check Your Work</div>
+        <div class="act-subtitle">Make sure your investigation notes are clear and complete.</div>
       </div>
-      <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
+      <div class="act-time" style="background:#2E7D32;">⏱ 5 min</div>
     </div>
     <div class="act-body">
 
-      <p>Now that your investigation is done, take a few minutes to organize your thinking. Writing it down makes it official — you just completed your first scientific investigation.</p>
+      <p>Before moving on, look back at the work you just did. A good scientist reviews their notes before calling an investigation finished.</p>
 
-      <div class="pq">
-        <span class="pq-num" style="background:#2E7D32;">1</span>
-        <span class="pq-text">Look back at your observation notes. Circle the most specific observation you wrote. What makes it specific?</span>
-      </div>
-
-      <div class="pq">
-        <span class="pq-num" style="background:#2E7D32;">2</span>
-        <span class="pq-text">Read your inference out loud. Does it connect back to something you actually observed? Underline the observation that supports it.</span>
-      </div>
-
-      <div class="pq">
-        <span class="pq-num" style="background:#2E7D32;">3</span>
-        <span class="pq-text">Look at your scientific sketch. Is there anything you noticed while drawing that you didn't write in your observation notes? If so, add it.</span>
+      <div class="callout callout-think">
+        <span class="callout-icon">💭</span>
+        <p><strong>Ask yourself:</strong> Did I circle my most specific observation? Does my inference connect back to something I actually observed? Is my scientific sketch labeled with at least 3 parts?</p>
       </div>
 
       <div class="callout callout-think" style="margin-top:16px;">
         <span class="callout-icon">🗣</span>
-        <p>Tell the story of your investigation from beginning to end — what you chose, what you noticed with each sense, what you sketched, and what you inferred. Use your notes to help you.</p>
+        <p><strong>Think about it:</strong> Tell the story of your investigation from beginning to end — what you chose, what you noticed with each sense, what you sketched, and what you inferred. Use your notes to help you.</p>
       </div>
 
     </div>
@@ -1415,7 +1420,7 @@ body {
       </div>
     </div>
     <div class="card-body">
-      <p>Think through each question on your own. Write your answers in your science notebook before moving on.</p>
+      <p>Think through each question on your own or talk about them with someone nearby. You don't need to write these down — they're for thinking.</p>
 
       <div class="socratic-q" style="margin-bottom:10px;">
         <span class="sq-icon">🤔</span>
@@ -1463,6 +1468,8 @@ body {
 <!-- TAB 4: SELF-CHECK QUIZ                                    -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-quiz">
+
+  <p class="tab-orientation">Check what you understand.</p>
 
   <div class="quiz-card" style="margin-top:0; margin-bottom:18px;">
     <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
@@ -1571,6 +1578,8 @@ body {
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-assignment">
 
+  <p class="tab-orientation">Show what you learned.</p>
+
   <div class="video-wrap">
     <div class="video-wrap-header">
       <span style="font-size:20px;">✍️</span>
@@ -1603,26 +1612,10 @@ body {
       <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">📋 Part A — Match the Sense</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Look at your investigation notes. Next to each observation you wrote, add a label for which sense you used: <strong>Sight · Sound · Smell · Touch</strong>. Then answer this: Which sense gave you the most useful information? Write one sentence explaining why.</p>
 
-      <!-- PART B -->
-      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">✍️ Part B — Short Answer</p>
-      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer these questions in your science notebook. Use complete sentences.</p>
-
-      <div class="pq">
-        <span class="pq-num" style="background:#7B5EA7;">1</span>
-        <span class="pq-text">What natural object or area did you investigate? Describe it in one or two sentences using at least two observation words.</span>
-      </div>
-      <div class="pq">
-        <span class="pq-num" style="background:#7B5EA7;">2</span>
-        <span class="pq-text">Write your inference again here. What observation gave you the evidence for that inference?</span>
-      </div>
-      <div class="pq">
-        <span class="pq-num" style="background:#7B5EA7;">3</span>
-        <span class="pq-text">What is one question you still have about your object? A good scientist always has a next question.</span>
-      </div>
-
-      <!-- WRITE & EXPLAIN -->
+      <!-- PART B: WRITE & EXPLAIN -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">📝 Part B — Write &amp; Explain</p>
       <div class="key-concept" style="margin-top:20px;">
-        <div class="kc-label">📝 Write &amp; Explain</div>
+        <div class="kc-label">📝 Part B — Write &amp; Explain</div>
         <p>Use your investigation notes to answer these three questions in your notebook. Write in complete sentences.</p>
         <p><strong>What did you observe?</strong> Describe the most interesting thing you noticed during your investigation — use specific details from your notes.</p>
         <p><strong>What does that tell you?</strong> What does your most interesting observation suggest about your object, or about what's happening in that place?</p>
@@ -1633,12 +1626,9 @@ body {
       <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Scientific Sketch</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Include your scientific sketch from the investigation. Check that it has at least <strong>3 labeled parts</strong>. If you want to improve it, go back and add more detail or another label before turning it in.</p>
 
-      <div class="socratic-q">
-        <span class="sq-icon">🤔</span>
-        <div>
-          <div class="label">Reflect</div>
-          <div class="question">"Before you started today, what did you think a scientist was like? Did anything change in your thinking after doing this investigation yourself?"</div>
-        </div>
+      <div class="callout callout-think">
+        <span class="callout-icon">💭</span>
+        <p><strong>Think about it:</strong> Before you started today, what did you think a scientist was like? Did anything change in your thinking after doing this investigation yourself?</p>
       </div>
 
       <!-- WHAT TO TURN IN -->
@@ -1675,19 +1665,11 @@ body {
           <p style="font-size:15px;color:#5A4D3E;margin-bottom:12px;">Make sure your submission includes all of these:</p>
           <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
             <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
-            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My Notice &amp; Wonder warm-up from the Vocabulary tab.</span>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My investigation notes — observations labeled by sense, plus my inference.</span>
           </div>
           <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
             <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
-            <span style="font-size:16px;color:#2B1D12;font-weight:600;">The copywork sentence copied into my notebook.</span>
-          </div>
-          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
-            <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
-            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My observation notes with at least 4 observations labeled by sense.</span>
-          </div>
-          <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;margin-bottom:10px;cursor:pointer;">
-            <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
-            <span style="font-size:16px;color:#2B1D12;font-weight:600;">Parts A, B, and C completed, including my Write &amp; Explain.</span>
+            <span style="font-size:16px;color:#2B1D12;font-weight:600;">My Write &amp; Explain (Part B) response in complete sentences.</span>
           </div>
           <div class="checklist-item" onclick="toggleCheck(this)" style="display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFAF6;border:2px solid #E8DDD2;border-radius:14px;cursor:pointer;">
             <div class="check-icon" style="width:32px;height:32px;border-radius:50%;border:2.5px solid #C4E5CC;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#9A8E82;background:#EEF8F0;">☐</div>
@@ -1695,11 +1677,6 @@ body {
           </div>
 
         </div>
-      </div>
-
-      <div class="callout callout-submit" style="margin-top:18px;">
-        <span class="callout-icon">✅</span>
-        <p>When your checklist is complete, submit everything on <strong>Canvas</strong>. Type, upload a photo, or record a video — whichever works best for you!</p>
       </div>
 
       <!-- CLOSING VIDEO -->
@@ -1737,6 +1714,9 @@ body {
 
 
 <script>
+// ── Lesson Config ──
+var LESSON_EMOJI = '🌲';
+
 // ── Tab System ──
 var tabProgress = { vocab: false, lesson: false, explore: false, quiz: false, assignment: false };
 var tabOrder = ['vocab','lesson','explore','quiz','assignment'];
@@ -1854,6 +1834,7 @@ function checkQuiz(optEl) {
 // ── Back to Top ──
 (function() {
   var btn = document.getElementById('backToTop');
+  if (btn) { btn.textContent = LESSON_EMOJI + ' Back to Top'; }
   window.addEventListener('scroll', function(){ btn.classList.toggle('show', window.pageYOffset > 400); });
 })();
 
