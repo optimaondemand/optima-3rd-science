@@ -307,6 +307,15 @@ em { color:#5A4D3E; }
   background: rgba(0,0,0,0.05); border-radius: 6px;
   padding: 4px 10px; display: inline-block; margin-top: 6px;
 }
+
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
+
 </style>
 </head>
 
@@ -611,6 +620,9 @@ em { color:#5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
+
+
   <!-- ACTIVITY 1: NOTICE & WONDER -->
   <div class="activity-card act-warmup scroll-reveal">
     <div class="act-head">
@@ -653,7 +665,7 @@ em { color:#5A4D3E; }
         <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
           <div class="flip-card-inner">
             <div class="flip-card-front"><div class="fc-emoji">🌿</div><div class="fc-word">ecosystem</div><div class="fc-tap">tap to flip</div></div>
-            <div class="flip-card-back"><div class="fc-word-back">ecosystem</div><div class="fc-def">All the living and nonliving things in one place that interact with each other — like a pond, a forest, or a meadow.</div><div class="fc-tap-back">tap to flip back</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">ecosystem</div><div class="fc-def">All the living and nonliving things in one place that interact with each other.</div><div class="fc-tap-back">tap to flip back</div></div>
           </div>
         </div>
 
@@ -667,7 +679,7 @@ em { color:#5A4D3E; }
         <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
           <div class="flip-card-inner">
             <div class="flip-card-front"><div class="fc-emoji">💥</div><div class="fc-word">impact</div><div class="fc-tap">tap to flip</div></div>
-            <div class="flip-card-back"><div class="fc-word-back">impact</div><div class="fc-def">An effect or change caused by something — like the impact of a new road on animals that lived in that forest.</div><div class="fc-tap-back">tap to flip back</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">impact</div><div class="fc-def">An effect or change caused by something — like a new road changing where animals can live.</div><div class="fc-tap-back">tap to flip back</div></div>
           </div>
         </div>
 
@@ -728,6 +740,9 @@ em { color:#5A4D3E; }
       </div>
     </div>
   </div>
+
+  <p class="tab-orientation">Now learn the main science idea.</p>
+
 
   <!-- LESSON FIGURE: Uploaded pond impact photo -->
   <div class="lesson-figure">
@@ -1052,6 +1067,9 @@ em { color:#5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Now test the idea yourself.</p>
+
+
   <!-- ACTIVITY 3: INVESTIGATION -->
   <div class="activity-card act-explore scroll-reveal">
     <div class="act-head">
@@ -1222,7 +1240,7 @@ em { color:#5A4D3E; }
       <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
     </div>
     <div class="act-body">
-      <p>In your science notebook, answer each of these questions in a sentence or two. Use your chart and the case details to help you.</p>
+      <p>Think about each of these questions. Use your chart and the case details to help you.</p>
 
       <div class="pq">
         <span class="pq-num" style="background:#2E7D32;">1</span>
@@ -1303,6 +1321,9 @@ em { color:#5A4D3E; }
 <!-- TAB 4: SELF-CHECK QUIZ                         -->
 <!-- ══════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-quiz">
+
+  <p class="tab-orientation">Check what you understand.</p>
+
 
   <div class="quiz-card scroll-reveal" style="margin-top:0;margin-bottom:18px;">
     <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
@@ -1428,6 +1449,9 @@ em { color:#5A4D3E; }
     </div>
   </div>
 
+  <p class="tab-orientation">Show what you learned.</p>
+
+
   <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
     <div class="act-head">
       <div class="act-num" style="background:#7B5EA7;">5</div>
@@ -1498,7 +1522,7 @@ em { color:#5A4D3E; }
       <div class="socratic-q">
         <span class="sq-icon">🤔</span>
         <div>
-          <div class="label">Reflect</div>
+          <div class="label">Think About It</div>
           <div class="question">"At the start of the lesson, you wrote down things you think people do that change nature. Now that you've studied four real cases — did anything surprise you? Did any of your ideas turn out to be right?"</div>
         </div>
       </div>
@@ -1535,23 +1559,7 @@ em { color:#5A4D3E; }
           <div class="turn-in-checklist">
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Notice &amp; Wonder — 3 observations and 1 question, written in my science notebook.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">The copywork sentence copied into my science notebook.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
               <div class="turn-in-item-text">My completed Ecosystem Impact Case File chart with all 4 cases sorted and evidence found.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My solution design for one harmful case (drawing or description).</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My short answer responses to Part B questions 4, 5, and 6.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>

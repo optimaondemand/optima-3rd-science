@@ -758,6 +758,15 @@ body {
   background: rgba(0,0,0,0.05); border-radius: 6px;
   padding: 4px 10px; display: inline-block; margin-top: 6px;
 }
+
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
+
 </style>
 </head>
 <body>
@@ -1177,6 +1186,9 @@ body {
     </div>
   </div>
 
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
+
+
   <!-- ACTIVITY 1: NOTICE & WONDER -->
   <div class="activity-card act-warmup scroll-reveal">
     <div class="act-head">
@@ -1297,6 +1309,9 @@ body {
       </div>
     </div>
   </div>
+
+  <p class="tab-orientation">Now learn the main science idea.</p>
+
 
   <!-- ACTIVITY 2: LEARN -->
   <div class="activity-card act-lesson scroll-reveal">
@@ -1456,6 +1471,9 @@ body {
     </div>
   </div>
 
+  <p class="tab-orientation">Now test the idea yourself.</p>
+
+
   <!-- Uploaded lesson image — before investigation steps -->
   <div class="lesson-figure">
     <div class="lesson-figure-label">📷 Photo · Sample Case Study Setup</div>
@@ -1588,7 +1606,7 @@ body {
       <div class="act-time" style="background:#2E7D32;">⏱ 8 min</div>
     </div>
     <div class="act-body">
-      <p>Being specific matters. Good scientists don't just write "it changed" — they write <em>what</em> changed and <em>why it matters</em>.</p>
+      <p>Being specific matters. Good scientists don't just think "it changed" — they think about <em>what</em> changed and <em>why it matters</em>.</p>
 
       <div class="pq">
         <span class="pq-num" style="background:#2E7D32;">1</span>
@@ -1669,6 +1687,9 @@ body {
 <!-- TAB 4: SELF-CHECK QUIZ                                    -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-quiz">
+
+  <p class="tab-orientation">Check what you understand.</p>
+
 
   <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
     <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
@@ -1792,6 +1813,9 @@ body {
     </div>
   </div>
 
+  <p class="tab-orientation">Show what you learned.</p>
+
+
   <!-- ACTIVITY 5: ASSIGNMENT -->
   <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
     <div class="act-head">
@@ -1863,7 +1887,7 @@ body {
       <div class="socratic-q">
         <span class="sq-icon">🤔</span>
         <div>
-          <div class="label">Reflect</div>
+          <div class="label">Think About It</div>
           <div class="question">"Look back at what you wrote at the start of class — your Notice &amp; Wonder. Did anything surprise you? What changed in your thinking after working through this case study?"</div>
         </div>
       </div>
@@ -1900,23 +1924,7 @@ body {
           <div class="turn-in-checklist">
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Notice &amp; Wonder observations and question from the warm-up.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page, written carefully.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
               <div class="turn-in-item-text">My completed before-and-after chart from the Explore investigation.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My cause-and-effect diagram with at least four labels.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Part A and Part B short-answer responses in complete sentences.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
@@ -1963,7 +1971,7 @@ body {
 </div><!-- /page-wrap -->
 
 <!-- ═══════════ BACK TO TOP ═══════════ -->
-<button class="back-to-top" id="backToTop" aria-label="Back to top"></button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">🐰 Back to Top</button>
 
 <script>
 var LESSON_EMOJI = '🐰';

@@ -873,6 +873,15 @@ em { color: #5A4D3E; }
   .turn-in-options { grid-template-columns: 1fr; }
   .turn-in-header-title { font-size: 20px; }
 }
+
+.tab-orientation {
+  font-size: 0.92rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0 1.2rem 0;
+  padding: 0;
+}
+
 </style>
 </head>
 
@@ -1101,6 +1110,9 @@ em { color: #5A4D3E; }
 <!-- TAB 1: VOCABULARY                                         -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel active" id="tab-vocab">
+
+  <p class="tab-orientation">Start here. Learn the words you will use today.</p>
+
   <!-- Inline progress chip — visible whenever student switches to this tab.
        Workaround for Canvas iframes where sticky/fixed CSS can't stay visible. -->
   <!-- Welcome Video -->
@@ -1199,7 +1211,7 @@ em { color: #5A4D3E; }
         <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
           <div class="flip-card-inner">
             <div class="flip-card-front"><div class="fc-emoji">💧</div><div class="fc-word">Contamination</div><div class="fc-tap">tap to flip</div></div>
-            <div class="flip-card-back"><div class="fc-word-back">Contamination</div><div class="fc-def">When a harmful substance mixes into something clean — like dirty oil spreading through a lake — and makes it unsafe.</div><div class="fc-tap-back">tap to flip back</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Contamination</div><div class="fc-def">When a harmful substance mixes into something clean — like dirty oil spreading through a lake — and.</div><div class="fc-tap-back">tap to flip back</div></div>
           </div>
         </div>
 
@@ -1213,21 +1225,21 @@ em { color: #5A4D3E; }
         <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
           <div class="flip-card-inner">
             <div class="flip-card-front"><div class="fc-emoji">⭐</div><div class="fc-word">Effectiveness</div><div class="fc-tap">tap to flip</div></div>
-            <div class="flip-card-back"><div class="fc-word-back">Effectiveness</div><div class="fc-def">How well something actually solves the problem it was designed to fix — a very effective method removes a lot of pollution.</div><div class="fc-tap-back">tap to flip back</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Effectiveness</div><div class="fc-def">How well something actually solves the problem it was designed to fix.</div><div class="fc-tap-back">tap to flip back</div></div>
           </div>
         </div>
 
         <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
           <div class="flip-card-inner">
             <div class="flip-card-front"><div class="fc-emoji">🔬</div><div class="fc-word">Simulation</div><div class="fc-tap">tap to flip</div></div>
-            <div class="flip-card-back"><div class="fc-word-back">Simulation</div><div class="fc-def">A pretend or model version of a real situation. Scientists use simulations to test ideas safely before trying them in real life.</div><div class="fc-tap-back">tap to flip back</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Simulation</div><div class="fc-def">A pretend or model version of a real situation, used to test ideas safely.</div><div class="fc-tap-back">tap to flip back</div></div>
           </div>
         </div>
 
         <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
           <div class="flip-card-inner">
             <div class="flip-card-front"><div class="fc-emoji">📊</div><div class="fc-word">Evidence</div><div class="fc-tap">tap to flip</div></div>
-            <div class="flip-card-back"><div class="fc-word-back">Evidence</div><div class="fc-def">Information from observations or tests that supports an idea. In science, a good claim always has evidence to back it up.</div><div class="fc-tap-back">tap to flip back</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Evidence</div><div class="fc-def">Information from observations or tests that supports an idea.</div><div class="fc-tap-back">tap to flip back</div></div>
           </div>
         </div>
 
@@ -1254,6 +1266,9 @@ em { color: #5A4D3E; }
 <!-- TAB 2: THE LESSON                                         -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-lesson">
+
+  <p class="tab-orientation">Now learn the main science idea.</p>
+
   <!-- Inline progress chip — visible whenever student switches to this tab.
        Workaround for Canvas iframes where sticky/fixed CSS can't stay visible. -->
   <!-- Lesson Video -->
@@ -1553,6 +1568,9 @@ em { color: #5A4D3E; }
 <!-- TAB 3: EXPLORE (Investigation / Lab / Engineering)        -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-explore">
+
+  <p class="tab-orientation">Now test the idea yourself.</p>
+
   <!-- Inline progress chip — visible whenever student switches to this tab.
        Workaround for Canvas iframes where sticky/fixed CSS can't stay visible. -->
   <!-- Explore Video -->
@@ -1724,7 +1742,7 @@ em { color: #5A4D3E; }
     </div>
     <div class="act-body">
 
-      <p>In your science notebook, record what you found. Being specific matters — a good scientist writes down exactly what they saw, not just "it worked" or "it didn't work."</p>
+      <p>Think about what you found. Being specific matters — a good scientist thinks carefully about exactly what they saw, not just "it worked" or "it didn't work."</p>
 
       <!-- ✏️ CUSTOMIZE: Adapt these notebook prompts for the specific investigation type. -->
       <!-- Options: data table, labeled sketch, bar graph, comparison chart, before/after drawing -->
@@ -1814,6 +1832,9 @@ em { color: #5A4D3E; }
 <!-- TAB 4: SELF-CHECK QUIZ                                    -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-quiz">
+
+  <p class="tab-orientation">Check what you understand.</p>
+
   <!-- Inline progress chip — visible whenever student switches to this tab.
        Workaround for Canvas iframes where sticky/fixed CSS can't stay visible. -->
   <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
@@ -1938,6 +1959,9 @@ em { color: #5A4D3E; }
 <!-- TAB 5: NOTEBOOK / ASSIGNMENT                              -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-assignment">
+
+  <p class="tab-orientation">Show what you learned.</p>
+
   <!-- Inline progress chip — visible whenever student switches to this tab.
        Workaround for Canvas iframes where sticky/fixed CSS can't stay visible. -->
   <!-- Assignment Video -->
@@ -2048,7 +2072,7 @@ em { color: #5A4D3E; }
       <div class="socratic-q">
         <span class="sq-icon">🤔</span>
         <div>
-          <div class="label">Reflect</div>
+          <div class="label">Think About It</div>
           <!-- ✏️ CUSTOMIZE: A comparison or reflection prompt that brings closure -->
           <div class="question">"Look back at your Notice &amp; Wonder observations from the beginning of today's lesson. Did anything in your simulation change your thinking? What is one new question you have about pollution cleanup?"</div>
         </div>
@@ -2088,22 +2112,9 @@ em { color: #5A4D3E; }
           <p class="turn-in-subhead">Make sure your submission includes all of these:</p>
 
           <div class="turn-in-checklist">
-            <!-- ✏️ CUSTOMIZE: Each item should describe exactly one piece of work the student is submitting for THIS lesson. Phrase each starting with "My …" or "The …" — first-person, concrete, naming the section it came from (Notice & Wonder, Vocabulary, Explore tab, Part A/B/C, Write & Explain). Aim for 5–7 items. -->
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Notice &amp; Wonder warm-up observations and question.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">The copywork sentence from the Vocabulary page.</div>
-            </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
               <div class="turn-in-item-text">My simulation data chart with effectiveness ratings for all three cleanup methods.</div>
-            </div>
-            <div class="turn-in-item" onclick="toggleCheck(this)">
-              <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Part B short answer responses (Questions 4, 5, and 6).</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
