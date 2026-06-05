@@ -1079,6 +1079,7 @@ em { color: #5A4D3E; }
         <div class="video-placeholder-icon">🎬</div>
         <div class="video-placeholder-text">Teacher introduction video coming soon</div>
         <div class="video-placeholder-id"><!-- slot: 10-2-welcome --></div>
+        <!-- TEACHER NOTE: Introduce the trait variation investigation. Students will collect and graph data about traits in a group of similar organisms. -->
       </div>
     </div>
   </div>
@@ -1211,7 +1212,9 @@ em { color: #5A4D3E; }
       <span style="font-size:20px;">📖</span>
       <div>
         <div class="video-wrap-type">Activity 2 · Background Reading</div>
-        <div class="video-wrap-title">How Scientists Study Inherited Traits</div>
+        
+      <div class="callout callout-tip" style="margin:14px 0;"><span class="callout-icon">📊</span><p>Today you will collect and analyze data — just like a real scientist. You will count, tally, and graph traits to find <strong>patterns of variation</strong>. When scientists study traits, they look at data from many organisms and use <strong>evidence</strong> to explain what they find.</p></div>
+      <div class="video-wrap-title">How Scientists Study Inherited Traits</div>
       </div>
     </div>
     <div class="video-ratio">
@@ -1219,6 +1222,7 @@ em { color: #5A4D3E; }
         <div class="video-placeholder-icon">📖</div>
         <div class="video-placeholder-text">Core lesson video coming soon</div>
         <div class="video-placeholder-id"><!-- slot: 10-2-lesson-explainer --></div>
+        <!-- TEACHER NOTE: Teach how scientists collect trait data using tally charts. Explain variation within a species. Use cat coat color or flower petal shape as examples. -->
       </div>
     </div>
   </div>
@@ -1253,7 +1257,7 @@ em { color: #5A4D3E; }
             <span class="sq-icon">🤔</span>
             <div>
               <div class="label">Stop and Think</div>
-              <div class="question">"What traits do you share with a family member? Think of at least two before reading on."</div>
+              <div class="question">"What traits might a kitten share with its parents? Think of at least two before reading on."</div>
             </div>
           </div>
 
@@ -1489,6 +1493,7 @@ em { color: #5A4D3E; }
         <div class="video-placeholder-icon">🔬</div>
         <div class="video-placeholder-text">Exploration video coming soon</div>
         <div class="video-placeholder-id"><!-- slot: 10-2-exploration-explainer --></div>
+        <!-- TEACHER NOTE: Walk through the data collection steps: choosing traits to observe, tallying results, building a bar graph, and identifying patterns of variation. -->
       </div>
     </div>
   </div>
@@ -1742,6 +1747,7 @@ em { color: #5A4D3E; }
                 <div class="video-placeholder-icon">⭐</div>
                 <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
                 <div class="video-placeholder-id"><!-- slot: 10-2-quiz-perfect --></div>
+        <!-- TEACHER NOTE: Congratulate students on completing the investigation. Preview Module 11: Why are organisms different from each other? -->
               </div>
             </div>
           </div>
@@ -1764,6 +1770,7 @@ em { color: #5A4D3E; }
                 <div class="video-placeholder-icon">🌿</div>
                 <div class="video-placeholder-text">Review video coming soon</div>
                 <div class="video-placeholder-id"><!-- slot: 10-2-quiz-review --></div>
+        <!-- TEACHER NOTE: Point students back to the tally chart and bar graph sections. Suggest reviewing the definition of variation. -->
               </div>
             </div>
           </div>
@@ -1798,6 +1805,7 @@ em { color: #5A4D3E; }
         <div class="video-placeholder-icon">✍️</div>
         <div class="video-placeholder-text">Assignment walkthrough video coming soon</div>
         <div class="video-placeholder-id"><!-- slot: 10-2-assignment-explainer --></div>
+        <!-- TEACHER NOTE: Explain the tally chart, bar graph, Part B short answers about variation patterns, and the Write & Explain using data as evidence. -->
       </div>
     </div>
   </div>
@@ -1950,6 +1958,7 @@ em { color: #5A4D3E; }
             <div class="video-placeholder-icon">👋</div>
             <div class="video-placeholder-text">Closing video coming soon</div>
             <div class="video-placeholder-id"><!-- slot: 10-2-closing --></div>
+        <!-- TEACHER NOTE: Wrap up the trait variation investigation. Tease the next lesson on why organisms in the same species can look so different. -->
           </div>
         </div>
       </div>
@@ -1963,7 +1972,7 @@ em { color: #5A4D3E; }
 <!-- ═══════════ FOOTER ═══════════ -->
 <div class="footer">
   <div class="footer-line1">Optima Academy Online · <span>3rd Grade Science</span></div>
-  <div class="footer-line2">Lesson 10.02 · NGSS 3-LS3-1</div>
+  <div class="footer-line2">Lesson 10.02 &middot; NGSS 3-LS3-1 &middot; CPALMS SC.3.N.1.3, SC.3.N.1.7</div>
   <div class="footer-line3">© Optima Academy · All rights reserved</div>
 </div>
 
@@ -2145,43 +2154,55 @@ document.querySelectorAll('.vtip').forEach(function(tip) {
 
 // ── Confetti ──
 (function() {
-  var canvas = document.getElementById('confettiCanvas');
-  var ctx    = canvas.getContext('2d');
-  var particles = [], animating = false;
-  var colors = ['#52B788','#F9A825','#FDD835','#4DD0E1','#2E7D32','#7B5EA7','#FF8F00','#0288D1'];
-  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-  window.addEventListener('resize', resize); resize();
-  function Particle(x, y) {
-    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
-    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
-    this.color=colors[Math.floor(Math.random()*colors.length)];
-    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
-    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+  var canvas=document.getElementById('confettiCanvas');
+  if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  var particles=[],animating=false;
+  var colors=['#52B788','#F9A825','#FDD835','#4DD0E1','#2E7D32','#7B5EA7','#FF8F00','#0288D1'];
+  var scienceEmojis=['🔍','🧪','🔬','🔭','🌱','🚀'];
+  function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
+  window.addEventListener('resize',resize);resize();
+  function Particle(x,y){
+    this.x=x;this.y=y;this.vx=(Math.random()-.5)*16;this.vy=Math.random()*-18-4;
+    this.drag=.98;this.rotation=Math.random()*360;this.rotSpeed=(Math.random()-.5)*12;
+    this.opacity=1;
+    if(Math.random()<.15){
+      this.isEmoji=true;this.emoji=scienceEmojis[Math.floor(Math.random()*scienceEmojis.length)];
+      this.size=Math.random()*8+22;this.gravity=.38;
+    }else{
+      this.isEmoji=false;this.size=Math.random()*8+4;this.gravity=.42;
+      this.color=colors[Math.floor(Math.random()*colors.length)];
+      this.shape=Math.random()>.5?'rect':'circle';
+    }
   }
-  function burst(x,y,count){
-    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
-    if(!animating){ animating=true; animate(); }
-  }
+  function burst(x,y,count){for(var i=0;i<count;i++)particles.push(new Particle(x,y));if(!animating){animating=true;animate();}}
   function animate(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
-    particles.forEach(function(p,i){
-      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
-      p.rotation+=p.rotSpeed; p.opacity-=.008;
-      if(p.opacity<=0){ particles.splice(i,1); return; }
-      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
-      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
-      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
-      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+    for(var i=particles.length-1;i>=0;i--){
+      var p=particles[i];
+      p.vy+=p.gravity;p.vx*=p.drag;p.x+=p.vx;p.y+=p.vy;
+      p.opacity-=.013;
+      if(p.opacity<=0){particles.splice(i,1);continue;}
+      ctx.save();ctx.globalAlpha=p.opacity;
+      if(p.isEmoji){
+        ctx.font=p.size+'px serif';ctx.textAlign='center';ctx.textBaseline='middle';
+        ctx.fillText(p.emoji,p.x,p.y);
+      }else{
+        ctx.translate(p.x,p.y);ctx.rotate(p.rotation*Math.PI/180);
+        p.rotation+=p.rotSpeed;ctx.fillStyle=p.color;
+        if(p.shape==='rect')ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6);
+        else{ctx.beginPath();ctx.arc(0,0,p.size/2,0,Math.PI*2);ctx.fill();}
+      }
       ctx.restore();
-    });
-    if(particles.length>0){ requestAnimationFrame(animate); }
-    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+    }
+    if(particles.length>0)requestAnimationFrame(animate);
+    else{animating=false;ctx.clearRect(0,0,canvas.width,canvas.height);}
   }
-  window.launchConfetti = function(){
-    var cx = window.innerWidth/2;
-    burst(cx-100, window.innerHeight*.45, 50);
-    burst(cx,     window.innerHeight*.35, 60);
-    burst(cx+100, window.innerHeight*.45, 50);
+  window.launchConfetti=function(){
+    var cx=window.innerWidth/2;
+    burst(cx-100,window.innerHeight*.45,40);
+    burst(cx,window.innerHeight*.35,50);
+    burst(cx+100,window.innerHeight*.45,40);
   };
 })();
 
