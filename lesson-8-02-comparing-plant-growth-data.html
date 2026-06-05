@@ -730,6 +730,18 @@ em { color: #5A4D3E; }
   margin: 0.5rem 0 1.2rem 0;
   padding: 0;
 }
+.video-placeholder-desc {
+  font-size: 12.5px;
+  color: #9A8E82;
+  line-height: 1.5;
+  margin-top: 8px;
+  padding: 8px 14px;
+  background: rgba(0,0,0,0.04);
+  border-radius: 8px;
+  max-width: 520px;
+  text-align: left;
+  font-style: italic;
+}
 </style>
 </head>
 
@@ -1038,6 +1050,7 @@ em { color: #5A4D3E; }
         <div class="video-placeholder-icon">🎬</div>
         <div class="video-placeholder-text">Teacher introduction video coming soon</div>
         <div class="video-placeholder-id"><!-- slot: 8-2-welcome --></div>
+        <div class="video-placeholder-desc">🎬 Record this: Introduce the plant growth data investigation. Explain that students will compare how plants grow under different conditions and use data as evidence to explain the differences.</div>
       </div>
     </div>
   </div>
@@ -1166,6 +1179,7 @@ em { color: #5A4D3E; }
         <div class="video-placeholder-icon">📖</div>
         <div class="video-placeholder-text">Core lesson video coming soon</div>
         <div class="video-placeholder-id"><!-- slot: 8-2-lesson-explainer --></div>
+        <div class="video-placeholder-desc">🎬 Record this: Review plant needs from 8.01. Explain how scientists use data tables and graphs to compare growth. Walk through the sample growth data and what each measurement tells us.</div>
       </div>
     </div>
   </div>
@@ -1428,6 +1442,7 @@ em { color: #5A4D3E; }
         <div class="video-placeholder-icon">🔬</div>
         <div class="video-placeholder-text">Exploration video coming soon</div>
         <div class="video-placeholder-id"><!-- slot: 8-2-exploration-explainer --></div>
+        <div class="video-placeholder-desc">🎬 Record this: Demonstrate the investigation: reading the growth data table, creating a bar graph comparing plant heights, identifying patterns, and writing an evidence-based explanation of the differences.</div>
       </div>
     </div>
   </div>
@@ -1659,6 +1674,7 @@ em { color: #5A4D3E; }
                 <div class="video-placeholder-icon">⭐</div>
                 <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
                 <div class="video-placeholder-id"><!-- slot: 8-2-quiz-perfect --></div>
+        <div class="video-placeholder-desc">🎬 Record this: Celebrate the data investigation. Preview Module 9: animal life cycles — how animals grow, change, and develop through different life stages.</div>
               </div>
             </div>
           </div>
@@ -1678,6 +1694,7 @@ em { color: #5A4D3E; }
                 <div class="video-placeholder-icon">🌱</div>
                 <div class="video-placeholder-text">Review video coming soon</div>
                 <div class="video-placeholder-id"><!-- slot: 8-2-quiz-review --></div>
+        <div class="video-placeholder-desc">🎬 Record this: Encourage review of the growth data table and the graph-reading section. Suggest comparing the tallest and shortest bars to find the key pattern.</div>
               </div>
             </div>
           </div>
@@ -1717,6 +1734,7 @@ em { color: #5A4D3E; }
         <div class="video-placeholder-icon">✍️</div>
         <div class="video-placeholder-text">Assignment explainer video coming soon</div>
         <div class="video-placeholder-id"><!-- slot: 8-2-assignment-explainer --></div>
+        <div class="video-placeholder-desc">🎬 Record this: Walk through Parts A, B, and C. Show how to complete the growth comparison, answer questions using data evidence, and write the Write & Explain connecting growing conditions to results.</div>
       </div>
     </div>
   </div>
@@ -1884,6 +1902,7 @@ em { color: #5A4D3E; }
             <div class="video-placeholder-icon">👋</div>
             <div class="video-placeholder-text">Closing video coming soon</div>
             <div class="video-placeholder-id"><!-- slot: 8-2-closing --></div>
+        <div class="video-placeholder-desc">🎬 Record this: Wrap up the plant growth investigation. Tease Module 9: next time, students will explore animal life cycles and compare how different animals grow and change.</div>
           </div>
         </div>
       </div>
@@ -1897,7 +1916,7 @@ em { color: #5A4D3E; }
 <!-- ═══════════ FOOTER ═══════════ -->
 <div class="footer">
   <div class="footer-line1">Optima Academy Online · <span>3rd Grade Science</span></div>
-  <div class="footer-line2">Lesson 8.02 · NGSS 3-LS1-1</div>
+  <div class="footer-line2">Lesson 8.02 · NGSS 3-LS1-1 · CPALMS SC.3.N.1.3, SC.3.L.17.2</div>
   <div class="footer-line3">© Optima Academy · All rights reserved</div>
 </div>
 
@@ -2082,15 +2101,24 @@ document.querySelectorAll('.vtip').forEach(function(tip) {
   var canvas = document.getElementById('confettiCanvas');
   var ctx    = canvas.getContext('2d');
   var particles = [], animating = false;
-  var colors = ['#52B788','#F9A825','#FDD835','#4DD0E1','#2E7D32','#7B5EA7','#FF8F00','#0288D1'];
+  var colors = ['#0288D1','#55C8E8','#FDD835','#52B788','#2E7D32','#7B5EA7','#FF8F00','#4DD0E1'];
+  var scienceEmojis = ['🔍','🧪','🔬','🔭','🌱','🚀'];
   function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
   window.addEventListener('resize', resize); resize();
   function Particle(x, y) {
+    this.isEmoji = Math.random() < 0.15;
     this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
-    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
-    this.color=colors[Math.floor(Math.random()*colors.length)];
-    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
-    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+    this.gravity= this.isEmoji ? 0.38 : 0.42;
+    this.drag=.98; this.opacity=1;
+    if (this.isEmoji) {
+      this.emoji = scienceEmojis[Math.floor(Math.random()*scienceEmojis.length)];
+      this.size = Math.random()*8+22;
+    } else {
+      this.size=Math.random()*8+4;
+      this.color=colors[Math.floor(Math.random()*colors.length)];
+      this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+      this.shape=Math.random()>.5?'rect':'circle';
+    }
   }
   function burst(x,y,count){
     for(var i=0;i<count;i++) particles.push(new Particle(x,y));
@@ -2098,24 +2126,34 @@ document.querySelectorAll('.vtip').forEach(function(tip) {
   }
   function animate(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
-    particles.forEach(function(p,i){
+    for(var i=particles.length-1;i>=0;i--){
+      var p=particles[i];
       p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
-      p.rotation+=p.rotSpeed; p.opacity-=.008;
-      if(p.opacity<=0){ particles.splice(i,1); return; }
-      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
-      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
-      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
-      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      p.opacity-=0.013;
+      if(p.opacity<=0){ particles.splice(i,1); continue; }
+      ctx.save(); ctx.globalAlpha=p.opacity;
+      if(p.isEmoji){
+        ctx.font=p.size+'px serif';
+        ctx.textAlign='center'; ctx.textBaseline='middle';
+        ctx.fillText(p.emoji,p.x,p.y);
+      } else {
+        ctx.translate(p.x,p.y);
+        p.rotation+=p.rotSpeed;
+        ctx.rotate(p.rotation*Math.PI/180);
+        ctx.fillStyle=p.color;
+        if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+        else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      }
       ctx.restore();
-    });
+    }
     if(particles.length>0){ requestAnimationFrame(animate); }
     else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
   }
   window.launchConfetti = function(){
     var cx = window.innerWidth/2;
-    burst(cx-100, window.innerHeight*.45, 50);
-    burst(cx,     window.innerHeight*.35, 60);
-    burst(cx+100, window.innerHeight*.45, 50);
+    burst(cx-100, window.innerHeight*.45, 40);
+    burst(cx,     window.innerHeight*.35, 50);
+    burst(cx+100, window.innerHeight*.45, 40);
   };
 })();
 

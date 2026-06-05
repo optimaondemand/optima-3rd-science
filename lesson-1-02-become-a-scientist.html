@@ -946,7 +946,8 @@ body {
       <div class="video-placeholder">
         <div class="video-placeholder-icon">🎬</div>
         <div class="video-placeholder-text">Teacher introduction video coming soon</div>
-        <div class="video-placeholder-id"><!-- slot: 1-2-welcome --></div>
+        <div class="video-placeholder-id"><!-- slot: 1-2-welcome -->
+  <!-- TEACHER NOTE: Introduce today's investigation. Students will practice being a scientist by making careful observations, recording details, sketching, and making inferences from evidence. --></div>
       </div>
     </div>
   </div>
@@ -1074,7 +1075,8 @@ body {
       <div class="video-placeholder">
         <div class="video-placeholder-icon">📖</div>
         <div class="video-placeholder-text">Core lesson video coming soon</div>
-        <div class="video-placeholder-id"><!-- slot: 1-2-lesson-explainer --></div>
+        <div class="video-placeholder-id"><!-- slot: 1-2-lesson-explainer -->
+  <!-- TEACHER NOTE: Review observation vs. inference. Explain what makes a good observation (specific, sensory, detailed). Demonstrate how to make a labeled scientific sketch with clear labels and annotations. --></div>
       </div>
     </div>
   </div>
@@ -1312,7 +1314,8 @@ body {
       <div class="video-placeholder">
         <div class="video-placeholder-icon">🔬</div>
         <div class="video-placeholder-text">Exploration video coming soon</div>
-        <div class="video-placeholder-id"><!-- slot: 1-2-exploration-explainer --></div>
+        <div class="video-placeholder-id"><!-- slot: 1-2-exploration-explainer -->
+  <!-- TEACHER NOTE: Walk through the investigation: choose an object, observe with multiple senses, record details in a chart, create a labeled sketch, then write one inference supported by your observations. --></div>
       </div>
     </div>
   </div>
@@ -1536,7 +1539,8 @@ body {
               <div class="video-placeholder">
                 <div class="video-placeholder-icon">⭐</div>
                 <div class="video-placeholder-text">Video coming soon</div>
-                <div class="video-placeholder-id"><!-- slot: 1-2-quiz-perfect --></div>
+                <div class="video-placeholder-id"><!-- slot: 1-2-quiz-perfect -->
+  <!-- TEACHER NOTE: Congratulate the student. Preview Lesson 2.01: next they will start observing weather patterns — temperature, clouds, precipitation, and wind — like a real meteorologist. --></div>
               </div>
             </div>
           </div>
@@ -1555,7 +1559,8 @@ body {
               <div class="video-placeholder">
                 <div class="video-placeholder-icon">🔄</div>
                 <div class="video-placeholder-text">Review video coming soon</div>
-                <div class="video-placeholder-id"><!-- slot: 1-2-quiz-review --></div>
+                <div class="video-placeholder-id"><!-- slot: 1-2-quiz-review -->
+  <!-- TEACHER NOTE: Encourage the student. Suggest reviewing the section about what makes observations specific and how inferences connect to evidence before retrying the quiz. --></div>
               </div>
             </div>
           </div>
@@ -1592,7 +1597,8 @@ body {
       <div class="video-placeholder">
         <div class="video-placeholder-icon">✍️</div>
         <div class="video-placeholder-text">Assignment explainer video coming soon</div>
-        <div class="video-placeholder-id"><!-- slot: 1-2-assignment-explainer --></div>
+        <div class="video-placeholder-id"><!-- slot: 1-2-assignment-explainer -->
+  <!-- TEACHER NOTE: Explain Part A (observation chart using 4 senses), Part B (Write and Explain comparing an observation and an inference), and Part C (labeled scientific sketch with inference arrow). --></div>
       </div>
     </div>
   </div>
@@ -1692,7 +1698,8 @@ body {
           <div class="video-placeholder">
             <div class="video-placeholder-icon">👋</div>
             <div class="video-placeholder-text">Closing video coming soon</div>
-            <div class="video-placeholder-id"><!-- slot: 1-2-closing --></div>
+            <div class="video-placeholder-id"><!-- slot: 1-2-closing -->
+  <!-- TEACHER NOTE: Wrap up the park scientist investigation. Tease Lesson 2.01: next time students will observe and record weather patterns and learn how scientists predict the weather. --></div>
           </div>
         </div>
       </div>
@@ -1706,7 +1713,7 @@ body {
 <!-- ═══════════ FOOTER ═══════════ -->
 <div class="footer">
   <div class="footer-line1">Optima Academy Online · <span>3rd Grade Science</span></div>
-  <div class="footer-line2">Lesson 1.02 · NGSS SEP — Science &amp; Engineering Practices</div>
+  <div class="footer-line2">Lesson 1.02 · NGSS SEP · CPALMS SC.3.N.1.1, SC.3.N.1.2, SC.3.N.1.3, SC.3.N.1.4, SC.3.N.1.5, SC.3.N.1.6</div>
   <div class="footer-line3">© Optima Academy · All rights reserved</div>
 </div>
 
@@ -1853,39 +1860,77 @@ function checkQuiz(optEl) {
   var ctx    = canvas.getContext('2d');
   var particles = [], animating = false;
   var colors = ['#52B788','#F9A825','#FDD835','#4DD0E1','#2E7D32','#7B5EA7','#FF8F00','#0288D1'];
+  var scienceEmojis = ['🔍','🧪','🔬','🔭','🌱','🚀'];
   function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
   window.addEventListener('resize', resize); resize();
+
   function Particle(x, y) {
-    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
-    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
-    this.color=colors[Math.floor(Math.random()*colors.length)];
-    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
-    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+    this.x = x; this.y = y;
+    this.vx = (Math.random() - 0.5) * 14;
+    this.vy = Math.random() * -16 - 4;
+    this.gravity = 0.42;
+    this.drag = 0.98;
+    this.rotation = Math.random() * 360;
+    this.rotSpeed = (Math.random() - 0.5) * 10;
+    this.opacity = 1;
+    this.isEmoji = Math.random() < 0.15;
+    if (this.isEmoji) {
+      this.emoji = scienceEmojis[Math.floor(Math.random() * scienceEmojis.length)];
+      this.size = Math.random() * 8 + 22;
+      this.gravity = 0.38;
+    } else {
+      this.size = Math.random() * 7 + 4;
+      this.color = colors[Math.floor(Math.random() * colors.length)];
+      this.shape = Math.random() > 0.5 ? 'rect' : 'circle';
+    }
   }
-  function burst(x,y,count){
-    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
-    if(!animating){ animating=true; animate(); }
+
+  function burst(x, y, count) {
+    for (var i = 0; i < count; i++) particles.push(new Particle(x, y));
+    if (!animating) { animating = true; animate(); }
   }
-  function animate(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    particles.forEach(function(p,i){
-      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
-      p.rotation+=p.rotSpeed; p.opacity-=.008;
-      if(p.opacity<=0){ particles.splice(i,1); return; }
-      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
-      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
-      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
-      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (var i = particles.length - 1; i >= 0; i--) {
+      var p = particles[i];
+      p.vy += p.gravity;
+      p.vx *= p.drag;
+      p.x += p.vx;
+      p.y += p.vy;
+      p.rotation += p.rotSpeed;
+      p.opacity -= 0.013;
+      if (p.opacity <= 0) { particles.splice(i, 1); continue; }
+      ctx.save();
+      ctx.globalAlpha = p.opacity;
+      ctx.translate(p.x, p.y);
+      if (p.isEmoji) {
+        ctx.font = p.size + 'px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(p.emoji, 0, 0);
+      } else {
+        ctx.rotate(p.rotation * Math.PI / 180);
+        ctx.fillStyle = p.color;
+        if (p.shape === 'rect') {
+          ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+        } else {
+          ctx.beginPath();
+          ctx.arc(0, 0, p.size / 2, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
       ctx.restore();
-    });
-    if(particles.length>0){ requestAnimationFrame(animate); }
-    else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
+    }
+    if (particles.length > 0) { requestAnimationFrame(animate); }
+    else { animating = false; ctx.clearRect(0, 0, canvas.width, canvas.height); }
   }
-  window.launchConfetti = function(){
-    var cx = window.innerWidth/2;
-    burst(cx-100, window.innerHeight*.45, 50);
-    burst(cx,     window.innerHeight*.35, 60);
-    burst(cx+100, window.innerHeight*.45, 50);
+
+  window.launchConfetti = function() {
+    var cx = window.innerWidth / 2;
+    burst(cx - 100, window.innerHeight * 0.45, 40);
+    burst(cx,       window.innerHeight * 0.35, 50);
+    burst(cx + 100, window.innerHeight * 0.45, 40);
   };
 })();
 

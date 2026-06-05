@@ -298,6 +298,18 @@ em{color:#5A4D3E;}
   margin: 0.5rem 0 1.2rem 0;
   padding: 0;
 }
+.video-placeholder-desc {
+  font-size: 12.5px;
+  color: #9A8E82;
+  line-height: 1.5;
+  margin-top: 8px;
+  padding: 8px 14px;
+  background: rgba(0,0,0,0.04);
+  border-radius: 8px;
+  max-width: 520px;
+  text-align: left;
+  font-style: italic;
+}
 </style>
 </head>
 <body>
@@ -608,6 +620,7 @@ em{color:#5A4D3E;}
         <div class="video-placeholder-icon">🎬</div>
         <div class="video-placeholder-text">Teacher introduction video coming soon</div>
         <div class="video-placeholder-id"><!-- slot: 5-1-welcome --></div>
+        <div class="video-placeholder-desc">🎬 Record this: Introduce forces and motion. Ask students what happens when they push or pull something. Preview balanced vs. unbalanced forces and the force diagram they will build.</div>
       </div>
     </div>
   </div>
@@ -722,6 +735,7 @@ em{color:#5A4D3E;}
         <div class="video-placeholder-icon">📖</div>
         <div class="video-placeholder-text">Core lesson video coming soon</div>
         <div class="video-placeholder-id"><!-- slot: 5-1-lesson-explainer --></div>
+        <div class="video-placeholder-desc">🎬 Record this: Teach pushes and pulls as forces with strength and direction. Explain balanced forces (no motion change) vs. unbalanced forces (motion changes). Use examples like pushing a box or pulling a wagon.</div>
       </div>
     </div>
   </div>
@@ -1013,6 +1027,7 @@ em{color:#5A4D3E;}
         <div class="video-placeholder-icon">🔬</div>
         <div class="video-placeholder-text">Exploration video coming soon</div>
         <div class="video-placeholder-id"><!-- slot: 5-1-exploration-explainer --></div>
+        <div class="video-placeholder-desc">🎬 Record this: Walk through the force diagram activity. Show how to draw arrows for push and pull forces, label their direction, and determine whether forces are balanced or unbalanced.</div>
       </div>
     </div>
   </div>
@@ -1255,6 +1270,7 @@ em{color:#5A4D3E;}
                 <div class="video-placeholder-icon">⭐</div>
                 <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
                 <div class="video-placeholder-id"><!-- slot: 5-1-quiz-perfect --></div>
+        <div class="video-placeholder-desc">🎬 Record this: Congratulate students. Preview Lesson 5.02 where they will investigate how changing force strength affects a ball rolling down a ramp.</div>
               </div>
             </div>
           </div>
@@ -1274,6 +1290,7 @@ em{color:#5A4D3E;}
                 <div class="video-placeholder-icon">💪</div>
                 <div class="video-placeholder-text">Review and encouragement video coming soon</div>
                 <div class="video-placeholder-id"><!-- slot: 5-1-quiz-review --></div>
+        <div class="video-placeholder-desc">🎬 Record this: Encourage students to revisit the balanced vs. unbalanced forces section and the force diagram. Point to the key concept box for review.</div>
               </div>
             </div>
           </div>
@@ -1309,6 +1326,7 @@ em{color:#5A4D3E;}
         <div class="video-placeholder-icon">✍️</div>
         <div class="video-placeholder-text">Assignment explainer video coming soon</div>
         <div class="video-placeholder-id"><!-- slot: 5-1-assignment-explainer --></div>
+        <div class="video-placeholder-desc">🎬 Record this: Explain Parts A, B, and C. Show how to complete the force diagram labels, answer short-answer questions about balanced/unbalanced forces, and write the Write & Explain response.</div>
       </div>
     </div>
   </div>
@@ -1462,6 +1480,7 @@ em{color:#5A4D3E;}
             <div class="video-placeholder-icon">👋</div>
             <div class="video-placeholder-text">Closing video coming soon</div>
             <div class="video-placeholder-id"><!-- slot: 5-1-closing --></div>
+        <div class="video-placeholder-desc">🎬 Record this: Wrap up forces and motion. Tease Lesson 5.02: next time, students will experiment with ramps and balls to see how force strength changes movement.</div>
           </div>
         </div>
       </div>
@@ -1475,7 +1494,7 @@ em{color:#5A4D3E;}
 <!-- FOOTER -->
 <div class="footer">
   <div class="footer-line1">Optima Academy Online · <span>3rd Grade Science</span></div>
-  <div class="footer-line2">Lesson 5.01 · NGSS 3-PS2-1</div>
+  <div class="footer-line2">Lesson 5.01 · NGSS 3-PS2-1 · CPALMS SC.3.E.5.4, SC.3.P.10.2</div>
   <div class="footer-line3">© Optima Academy · All rights reserved</div>
 </div>
 
@@ -1659,15 +1678,24 @@ document.querySelectorAll('.vtip').forEach(function(tip) {
   var canvas = document.getElementById('confettiCanvas');
   var ctx    = canvas.getContext('2d');
   var particles = [], animating = false;
-  var colors = ['#F57C00','#FFCA28','#FDD835','#52B788','#2E7D32','#7B5EA7','#0288D1','#E65100'];
+  var colors = ['#0288D1','#55C8E8','#FDD835','#52B788','#2E7D32','#7B5EA7','#FF8F00','#4DD0E1'];
+  var scienceEmojis = ['🔍','🧪','🔬','🔭','🌱','🚀'];
   function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
   window.addEventListener('resize', resize); resize();
   function Particle(x, y) {
+    this.isEmoji = Math.random() < 0.15;
     this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
-    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
-    this.color=colors[Math.floor(Math.random()*colors.length)];
-    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
-    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
+    this.gravity= this.isEmoji ? 0.38 : 0.42;
+    this.drag=.98; this.opacity=1;
+    if (this.isEmoji) {
+      this.emoji = scienceEmojis[Math.floor(Math.random()*scienceEmojis.length)];
+      this.size = Math.random()*8+22;
+    } else {
+      this.size=Math.random()*8+4;
+      this.color=colors[Math.floor(Math.random()*colors.length)];
+      this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
+      this.shape=Math.random()>.5?'rect':'circle';
+    }
   }
   function burst(x,y,count){
     for(var i=0;i<count;i++) particles.push(new Particle(x,y));
@@ -1675,24 +1703,34 @@ document.querySelectorAll('.vtip').forEach(function(tip) {
   }
   function animate(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
-    particles.forEach(function(p,i){
+    for(var i=particles.length-1;i>=0;i--){
+      var p=particles[i];
       p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
-      p.rotation+=p.rotSpeed; p.opacity-=.008;
-      if(p.opacity<=0){ particles.splice(i,1); return; }
-      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
-      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
-      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
-      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      p.opacity-=0.013;
+      if(p.opacity<=0){ particles.splice(i,1); continue; }
+      ctx.save(); ctx.globalAlpha=p.opacity;
+      if(p.isEmoji){
+        ctx.font=p.size+'px serif';
+        ctx.textAlign='center'; ctx.textBaseline='middle';
+        ctx.fillText(p.emoji,p.x,p.y);
+      } else {
+        ctx.translate(p.x,p.y);
+        p.rotation+=p.rotSpeed;
+        ctx.rotate(p.rotation*Math.PI/180);
+        ctx.fillStyle=p.color;
+        if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
+        else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
+      }
       ctx.restore();
-    });
+    }
     if(particles.length>0){ requestAnimationFrame(animate); }
     else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
   }
   window.launchConfetti = function(){
     var cx = window.innerWidth/2;
-    burst(cx-100, window.innerHeight*.45, 50);
-    burst(cx,     window.innerHeight*.35, 60);
-    burst(cx+100, window.innerHeight*.45, 50);
+    burst(cx-100, window.innerHeight*.45, 40);
+    burst(cx,     window.innerHeight*.35, 50);
+    burst(cx+100, window.innerHeight*.45, 40);
   };
 })();
 
