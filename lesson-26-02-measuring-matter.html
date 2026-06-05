@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- ✏️ CUSTOMIZE: Update title to match the lesson -->
-<title>Optima Academy Online – 29.02 – Investigation: Everglades Food Web</title>
+<title>Optima Academy Online – Investigation: Measuring and Comparing Matter</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap');
 
@@ -23,7 +23,7 @@ body {
 /* ── Header ── */
 .header {
   background: linear-gradient(135deg, #0E1C42 0%, #1A2D5A 60%, #243868 100%);
-  border-bottom: 6px solid #2A9D8F;
+  border-bottom: 6px solid #5C6BC0;
   padding: 22px 28px 24px;
   position: relative;
   overflow: hidden;
@@ -639,6 +639,7 @@ details > div { padding: 12px 18px 14px; font-size: 16px; color: #5A4D3E; line-h
 /* ── Tab Panels ── */
 .tab-panel { display: none; padding: 24px 28px 36px; }
 .tab-panel.active { display: block; }
+.tab-orientation { font-size: 0.92rem; color: #6b7280; font-style: italic; margin: 0.5rem 0 1.2rem 0; padding: 0; }
 .scroll-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
 
 /* ── Intro 2-col ── */
@@ -872,66 +873,6 @@ em { color: #5A4D3E; }
   .turn-in-options { grid-template-columns: 1fr; }
   .turn-in-header-title { font-size: 20px; }
 }
-
-  /* ── Hero Banner Animations — Lesson 29.02 ── */
-  .water-shimmer { animation: waterShimmer 5.8s ease-in-out infinite; }
-  @keyframes waterShimmer {
-    0%,100% { opacity: 0.18; }
-    50%     { opacity: 0.56; }
-  }
-  .reed-sway {
-    animation: reedSway 5.6s ease-in-out infinite;
-    transform-box: fill-box;
-    transform-origin: center bottom;
-  }
-  @keyframes reedSway {
-    0%,100% { transform: rotate(0deg); }
-    34%     { transform: rotate(1.5deg); }
-    68%     { transform: rotate(-1.5deg); }
-  }
-  .bug-hover {
-    animation: bugHover 4.8s ease-in-out infinite;
-    transform-box: fill-box;
-    transform-origin: center center;
-  }
-  @keyframes bugHover {
-    0%,100% { transform: translateY(0px); }
-    50%     { transform: translateY(-3px); }
-  }
-  .snail-pulse {
-    animation: snailPulse 5.4s ease-in-out infinite;
-    transform-box: fill-box;
-    transform-origin: center center;
-  }
-  @keyframes snailPulse {
-    0%,100% { opacity: 0.72; transform: scale(1); }
-    50%     { opacity: 1; transform: scale(1.04); }
-  }
-  .fish-glide {
-    animation: fishGlide 6.2s ease-in-out infinite;
-    transform-box: fill-box;
-    transform-origin: center center;
-  }
-  @keyframes fishGlide {
-    0%,100% { transform: translateX(0px); }
-    50%     { transform: translateX(5px); }
-  }
-  .gator-rest {
-    animation: gatorRest 6.8s ease-in-out infinite;
-    transform-box: fill-box;
-    transform-origin: center center;
-  }
-  @keyframes gatorRest {
-    0%,100% { transform: translateY(0px); }
-    50%     { transform: translateY(1px); }
-  }
-.tab-orientation {
-  font-size: 0.92rem;
-  color: #6b7280;
-  font-style: italic;
-  margin: 0.5rem 0 1.2rem 0;
-  padding: 0;
-}
 </style>
 </head>
 
@@ -953,7 +894,7 @@ em { color: #5A4D3E; }
 
 <!-- ═══════════ PROGRESS BAR ═══════════ -->
 <div class="progress-wrap">
-  <span class="progress-label">🚣‍♂️ Progress</span>
+  <span class="progress-label">🌲 Progress</span>
   <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
   <span class="progress-pct" id="progressPct">0%</span>
 </div>
@@ -970,11 +911,11 @@ em { color: #5A4D3E; }
     </div>
   </div>
   <!-- ✏️ CUSTOMIZE: Lesson title -->
-  <div class="header-title">Investigation: Everglades Food Web</div>
+  <div class="header-title">Investigation: Measuring and Comparing Matter</div>
   <div class="header-badge">
     <!-- ✏️ CUSTOMIZE: Lesson emoji and number -->
-    <span>🌿</span>
-    <span>Lesson 29.02</span>
+    <span>⚖️</span>
+    <span>Lesson 26.02</span>
   </div>
 </div>
 
@@ -994,177 +935,14 @@ em { color: #5A4D3E; }
 <!-- scene mapping table and animation patterns.                               -->
 <!-- ══════════════════════════════════════════════════════════════════════════ -->
 <div class="hero-visual">
-<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A simplified Everglades food web scene with sawgrass, a mosquito, a fish, and an alligator in a wetland habitat.">
-<defs>
-  <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#94CDEE"/>
-    <stop offset="52%" stop-color="#C6E6ED"/>
-    <stop offset="100%" stop-color="#DCCEA5"/>
-  </linearGradient>
-  <linearGradient id="marshGrad" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#8FB553"/>
-    <stop offset="50%" stop-color="#A5BF59"/>
-    <stop offset="100%" stop-color="#87A84A"/>
-  </linearGradient>
-  <linearGradient id="grassGrad" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%" stop-color="#7DA03F"/>
-    <stop offset="50%" stop-color="#9EBA4C"/>
-    <stop offset="100%" stop-color="#709739"/>
-  </linearGradient>
-  <linearGradient id="waterGrad" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0%" stop-color="#A4E1F3"/>
-    <stop offset="58%" stop-color="#6ABBD4"/>
-    <stop offset="100%" stop-color="#4E8FA1"/>
-  </linearGradient>
-  <linearGradient id="fishGrad" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0%" stop-color="#78B6CC"/>
-    <stop offset="100%" stop-color="#4E7F98"/>
-  </linearGradient>
-  <linearGradient id="gatorGrad" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0%" stop-color="#6E8650"/>
-    <stop offset="100%" stop-color="#3F5A2D"/>
-  </linearGradient>
-  <filter id="softShadow" x="-20%" y="-20%" width="140%" height="150%">
-    <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#223028" flood-opacity="0.16"/>
-  </filter>
-</defs>
-
-<!-- Full background -->
-<rect width="920" height="260" fill="url(#skyGrad)"/>
-
-<!-- Sunlight wash -->
-<path d="M0,0 L188,0 C126,22 72,48 0,92 Z" fill="#FFF2BF" opacity="0.28"/>
-<path d="M0,0 L124,0 C82,14 42,30 0,54 Z" fill="#FFF8DA" opacity="0.28"/>
-
-<!-- Clouds -->
-<g fill="#F7FBFC" opacity="0.72">
-  <ellipse cx="158" cy="44" rx="34" ry="18"/>
-  <ellipse cx="186" cy="38" rx="24" ry="15"/>
-  <ellipse cx="214" cy="44" rx="28" ry="17"/>
-  <ellipse cx="646" cy="40" rx="34" ry="18"/>
-  <ellipse cx="674" cy="34" rx="24" ry="14"/>
-  <ellipse cx="702" cy="40" rx="28" ry="16"/>
-</g>
-
-<!-- Distant marsh -->
-<path d="M0,130 C96,116 194,120 286,108 C384,94 478,122 574,110 C676,96 796,122 920,106 L920,162 L0,162 Z"
-      fill="#95B856" opacity="0.42"/>
-<rect y="140" width="920" height="30" fill="url(#marshGrad)"/>
-<g fill="#6E8E3A" opacity="0.78">
-  <ellipse cx="74" cy="140" rx="34" ry="14"/>
-  <ellipse cx="128" cy="138" rx="40" ry="15"/>
-  <ellipse cx="412" cy="140" rx="20" ry="10"/>
-  <ellipse cx="446" cy="140" rx="18" ry="10"/>
-  <ellipse cx="816" cy="140" rx="36" ry="15"/>
-  <ellipse cx="872" cy="138" rx="30" ry="14"/>
-</g>
-
-<!-- Foreground marsh -->
-<rect y="170" width="920" height="90" fill="url(#grassGrad)"/>
-
-<!-- Water channel -->
-<g filter="url(#softShadow)">
-  <path d="M0,236 C96,220 180,226 256,212 C334,196 404,184 462,182 C530,180 590,188 654,200 C740,216 822,214 920,200 L920,260 L0,260 Z"
-        fill="url(#waterGrad)" opacity="0.96"/>
-</g>
-
-<!-- Water shimmer -->
-<g class="water-shimmer" opacity="0.44">
-  <path d="M42,240 C112,230 180,228 250,214" stroke="#EAFBFF" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-  <path d="M402,196 C468,190 534,190 610,202" stroke="#DDF8FE" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-  <path d="M686,216 C756,222 820,220 884,210" stroke="#EAFBFF" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-</g>
-
-<!-- Sawgrass — sides -->
-<g class="reed-sway" stroke-linecap="round" fill="none">
-  <g stroke="#7E9F3E" stroke-width="3" opacity="0.92">
-    <path d="M24,260 C28,230 32,208 42,176"/>
-    <path d="M48,260 C54,228 58,204 68,174"/>
-    <path d="M74,260 C80,230 86,206 98,176"/>
-    <path d="M100,260 C108,230 114,206 126,176"/>
-    <path d="M136,260 C142,230 148,206 160,178"/>
-    <path d="M760,260 C766,230 772,206 784,176"/>
-    <path d="M794,260 C800,230 808,206 820,176"/>
-    <path d="M824,260 C830,230 838,206 850,176"/>
-    <path d="M850,260 C858,230 864,206 876,176"/>
-    <path d="M878,260 C886,230 892,206 904,176"/>
-  </g>
-</g>
-
-<!-- Main sawgrass clump -->
-<g transform="translate(98,156)" filter="url(#softShadow)">
-  <ellipse cx="34" cy="72" rx="60" ry="12" fill="#243127" opacity="0.10"/>
-  <g class="reed-sway" stroke-linecap="round" fill="none">
-    <path d="M0,78 C8,48 16,24 30,0" stroke="#789A3F" stroke-width="5"/>
-    <path d="M24,80 C30,48 40,22 56,-6" stroke="#91AD47" stroke-width="5"/>
-    <path d="M50,80 C58,50 68,28 84,2" stroke="#73953D" stroke-width="5"/>
-    <path d="M76,80 C82,54 92,34 104,10" stroke="#88A846" stroke-width="4"/>
-  </g>
-  <path d="M-12,80 C24,82 66,82 112,80" stroke="#8C764E" stroke-width="3" fill="none" opacity="0.42"/>
-</g>
-
-<!-- Hidden snail -->
-<g transform="translate(164,178)">
-  <g class="snail-pulse">
-    <circle cx="0" cy="0" r="4.2" fill="#9B7F5E"/>
-    <path d="M-3,-1.2 C-1,-3 2,-3 3,0 C2,2 -1,2 -2,1" fill="none" stroke="#7B6249" stroke-width="1"/>
-    <path d="M4,1 C8,1 10,2 11,4" stroke="#6C7D46" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-    <path d="M10,3.5 L11.6,1.8" stroke="#6C7D46" stroke-width="0.8" stroke-linecap="round"/>
-    <path d="M10,3.5 L11.8,4.8" stroke="#6C7D46" stroke-width="0.8" stroke-linecap="round"/>
-  </g>
-</g>
-
-<!-- Mosquito / small insect -->
-<g transform="translate(250,142)" filter="url(#softShadow)">
-  <g class="bug-hover">
-    <line x1="-12" y1="0" x2="16" y2="0" stroke="#5C6159" stroke-width="2.2" stroke-linecap="round"/>
-    <ellipse cx="0" cy="-7" rx="11" ry="4" fill="#DCEEF3" opacity="0.88" transform="rotate(-18 0 -7)"/>
-    <ellipse cx="0" cy="7" rx="11" ry="4" fill="#DCEEF3" opacity="0.88" transform="rotate(18 0 7)"/>
-    <circle cx="-8" cy="0" r="3" fill="#5C6159"/>
-    <circle cx="7" cy="0" r="2.8" fill="#5C6159"/>
-    <line x1="-4" y1="0" x2="-12" y2="-8" stroke="#5C6159" stroke-width="1.3" stroke-linecap="round"/>
-    <line x1="-4" y1="0" x2="-12" y2="8" stroke="#5C6159" stroke-width="1.3" stroke-linecap="round"/>
-  </g>
-</g>
-
-<!-- Fish in water -->
-<g transform="translate(430,214)" filter="url(#softShadow)">
-  <g class="fish-glide">
-    <ellipse cx="0" cy="0" rx="34" ry="15" fill="url(#fishGrad)"/>
-    <polygon points="28,0 54,-15 54,15" fill="#4A7892"/>
-    <path d="M-8,-14 C4,-24 18,-18 18,-6" fill="#6E9DB4"/>
-    <circle cx="-18" cy="-3" r="2.4" fill="#E7F4FA"/>
-    <path d="M-8,6 C4,12 16,12 26,6" stroke="#426B7F" stroke-width="1.6" fill="none" opacity="0.55"/>
-  </g>
-</g>
-
-<!-- Alligator at water edge -->
-<g transform="translate(608,198)" filter="url(#softShadow)">
-  <g class="gator-rest">
-    <ellipse cx="96" cy="22" rx="96" ry="13" fill="#243127" opacity="0.10"/>
-    <path d="M0,16
-             C30,0 76,-4 124,2
-             C156,6 182,10 210,6
-             L238,14
-             L210,22
-             C172,30 120,28 72,24
-             C36,24 10,22 0,16 Z"
-          fill="url(#gatorGrad)"/>
-    <path d="M222,14 L256,8 L272,14 L256,20 Z" fill="#465F33"/>
-    <circle cx="210" cy="9" r="2.2" fill="#F2F4DC"/>
-    <path d="M46,24 L32,38" stroke="#3E5A2D" stroke-width="4" stroke-linecap="round"/>
-    <path d="M100,26 L86,40" stroke="#3E5A2D" stroke-width="4" stroke-linecap="round"/>
-    <path d="M156,24 L172,38" stroke="#3E5A2D" stroke-width="4" stroke-linecap="round"/>
-  </g>
-</g>
-
-<!-- Foreground water plants -->
-<g fill="#577C3B" opacity="0.42">
-  <path d="M300,250 C306,236 312,228 322,224 C328,232 330,240 332,250 Z"/>
-  <path d="M500,248 C506,236 512,230 520,226 C526,234 528,240 530,248 Z"/>
-  <path d="M548,248 C554,236 560,230 568,226 C574,234 576,240 578,248 Z"/>
-</g>
-
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Measuring Matter Scene">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#C5CAE9"/><stop offset="100%" stop-color="#E8EAF6"/></linearGradient></defs>
+<rect width="920" height="260" fill="url(#sky)"/>
+<rect y="160" width="920" height="100" fill="#BCAAA4"/>
+<g transform="translate(100,100)"><rect width="120" height="60" rx="6" fill="#EFEBE9" stroke="#8D6E63" stroke-width="2"/><circle class="hero-float" cx="30" cy="30" r="15" fill="#FFE082"/><circle class="hero-float" cx="90" cy="30" r="15" fill="#90CAF9" style="animation-delay:0.5s"/><polygon points="55,5 65,5 60,0" fill="#795548"/></g>
+<g transform="translate(320,120)"><rect width="200" height="12" rx="2" fill="#FFF9C4" stroke="#F9A825" stroke-width="1"/></g>
+<g transform="translate(600,90)" class="hero-float"><rect width="60" height="80" rx="4" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/><rect x="15" y="35" width="30" height="30" fill="#42A5F5" opacity="0.6"/></g>
+<g transform="translate(770,100)"><rect width="80" height="70" rx="6" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/><rect x="15" y="20" width="12" height="40" fill="#5C6BC0" opacity="0.7"/><rect x="35" y="35" width="12" height="25" fill="#AB47BC" opacity="0.7"/><rect x="55" y="10" width="12" height="50" fill="#00897B" opacity="0.7"/></g>
 </svg>
 </div>
 
@@ -1175,32 +953,32 @@ em { color: #5A4D3E; }
     <div class="info-icon" style="background:#EEF8F0;">📅</div>
     <div>
       <div class="info-label">Quarter / Unit</div>
-      <div class="info-value">Q4 &middot; Unit 10</div>
-      <div class="info-detail">Florida Ecosystems Focus</div>
+      <div class="info-value">Q4 &middot; Unit 9</div>
+      <div class="info-detail">Properties &amp; Changes of Matter</div>
     </div>
   </div>
   <div class="info-item">
     <div class="info-icon" style="background:#FFF9E8;">📖</div>
     <div>
       <div class="info-label">Week / Lesson</div>
-      <div class="info-value">Week 29</div>
-      <div class="info-detail">Lesson 29.02 &mdash; 3rd Grade Science</div>
+      <div class="info-value">Week 26</div>
+      <div class="info-detail">Lesson 26.02 &mdash; 3rd Grade Science</div>
     </div>
   </div>
   <div class="info-item">
     <div class="info-icon" style="background:#F0EDF6;">🌿</div>
     <div>
       <div class="info-label">Science Focus</div>
-      <div class="info-value">Ecosystems</div>
-      <div class="info-detail">Food webs &amp; organism relationships</div>
+      <div class="info-value">Measuring Matter</div>
+      <div class="info-detail">Mass, volume, temperature comparison</div>
     </div>
   </div>
   <div class="info-item">
     <div class="info-icon" style="background:#EAF8FD;">🌎</div>
     <div>
       <div class="info-label">Standard</div>
-      <div class="info-value">NGSS 3-LS4-3</div>
-      <div class="info-detail">Interdependent Relationships in Ecosystems · CPALMS SC.3.L.17.2, SC.3.N.3.2</div>
+      <div class="info-value">CPALMS SC.3.P.8.1</div>
+      <div class="info-detail">Properties of Matter</div>
     </div>
   </div>
 </div>
@@ -1222,10 +1000,11 @@ em { color: #5A4D3E; }
         <span class="sq-icon">🤔</span>
         <div>
           <div class="label">Think About This…</div>
-          <div class="question">"If one animal disappeared from the Everglades, what would happen to everything else?"</div>
+          <!-- ✏️ CUSTOMIZE: Replace with the lesson's essential/driving question -->
+          <div class="question">"How can you measure and compare the properties of different objects?"</div>
         </div>
       </div>
-      <p>Hold this question in your mind as you work through the lesson. By the end, you should be able to answer it with evidence!</p>
+      <p>Today you will collect data about objects and use it to compare them.</p>
     </div>
   </div>
 
@@ -1242,15 +1021,15 @@ em { color: #5A4D3E; }
       <!-- ✏️ CUSTOMIZE: Write 2–3 clear, student-facing I Can statements for this lesson -->
       <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
         <div style="width:34px;height:34px;border-radius:50%;background:#52B788;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
-        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> sort Everglades organisms into producers, consumers, and decomposers.</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> measure the mass and volume of different objects.</div>
       </div>
       <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;margin-bottom:10px;border:1.5px solid #E8DDD2;">
         <div style="width:34px;height:34px;border-radius:50%;background:#2D6A4F;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
-        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> construct a food web showing how energy moves between organisms in the Everglades.</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> record my measurements in a data table and use them to compare objects.</div>
       </div>
       <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#FAFAF6;border-radius:14px;border:1.5px solid #E8DDD2;">
         <div style="width:34px;height:34px;border-radius:50%;background:#2E7D32;color:#fff;font-size:16px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
-        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> predict what would happen to a food web if one species disappeared.</div>
+        <div style="font-size:17px;color:#1B4332;line-height:1.6;padding-top:4px;"><strong>I can</strong> explain how measurement helps scientists describe matter more exactly than just looking.</div>
       </div>
     </div>
   </div>
@@ -1263,7 +1042,8 @@ em { color: #5A4D3E; }
   <span class="need-strip-label">🎒 You'll need:</span>
   <span class="need-chip"><span>📓</span>Science notebook</span>
   <span class="need-chip"><span>✏️</span>Pencil &amp; colored pencils</span>
-  <span class="need-chip"><span>📏</span>Ruler</span>
+  <!-- ✏️ Add lesson-specific materials here -->
+  
 </div>
 
 <!-- ═══════════ TAB BAR ═══════════ -->
@@ -1296,14 +1076,13 @@ em { color: #5A4D3E; }
       <div class="video-placeholder">
         <div class="video-placeholder-icon">🎬</div>
         <div class="video-placeholder-text">Teacher introduction video coming soon</div>
-        <div class="video-placeholder-id"><!-- slot: 29-2-welcome -->
-        <div style="margin-top:8px;padding:10px 14px;background:#FFF3E0;border:1.5px dashed #FF8F00;border-radius:8px;font-size:13px;color:#E65100;line-height:1.5;"><strong>🎬 Filming Note:</strong> Set up the food web investigation. Ask what students remember about food chains and energy flow.</div></div>
+        <div class="video-placeholder-id"><!-- slot: 26-02-welcome -->
+        <div style="margin-top:8px;padding:10px 14px;background:#FFF3E0;border:1.5px dashed #FF8F00;border-radius:8px;font-size:13px;color:#E65100;line-height:1.5;"><strong>🎬 Filming Note:</strong> Introduce the measuring investigation. Explain that students will collect real data about objects using measurement tools.</div></div>
       </div>
     </div>
   </div>
 
   <p class="tab-orientation">Start here. Learn the words you will use today.</p>
-
 
   <!-- ═══ ACTIVITY 1: NOTICE & WONDER (WARM-UP) ═══ -->
   <!-- PURPOSE: Activate curiosity. Students observe before they learn. ~5-8 min -->
@@ -1313,39 +1092,27 @@ em { color: #5A4D3E; }
       <div style="flex:1;">
         <div class="act-title">🌅 Notice &amp; Wonder</div>
         <!-- ✏️ CUSTOMIZE: Short subtitle describing the warm-up focus -->
-        <div class="act-subtitle">Look carefully — what do you see in this Everglades scene?</div>
+        <div class="act-subtitle">How do scientists measure matter?</div>
       </div>
       <div class="act-time" style="background:#52B788;">⏱ 5–8 min</div>
     </div>
     <div class="act-body">
 
-      <div class="lesson-figure">
-        <div class="lesson-figure-label">📷 Photo · Florida Everglades</div>
-        <img src="images/29-02-mosquitofish-school.png"
-             alt="Extreme close-up of a school of mosquitofish in clear shallow water — dozens of tiny silver fish hovering near the sandy bottom, sawgrass blurring in the background"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-        <div class="image-suggestion" style="display:none;background:#FFF9E8;border:2px dashed #F9A825;border-radius:12px;padding:16px;color:#7A6A30;font-size:14px;">
-          📷 <strong>Image prompt:</strong> Extreme close-up of a school of mosquitofish (Gambusia affinis) in crystal-clear shallow water. Dozens of tiny silver-brown fish hovering just above a sandy bottom, light refracting through the water surface in beams. Submerged sawgrass stalks blur in the background. Eye-level underwater-style shot. Photorealistic nature photography, no text.
-          <br><em>Save as: <code>images/29-02-mosquitofish-school.jpg</code></em>
-        </div>
-        <div class="lesson-figure-caption">
-          These tiny fish — called mosquitofish — are one of the most common animals in the Everglades. Millions of them hide in the shallow water. Look carefully at this close-up view. What do you notice? What questions come to mind?
-        </div>
-      </div>
-
-      <p>Study the Everglades scene above. Before we learn anything new, take a minute to <strong>notice</strong> what you can see, and write down any <strong>questions</strong> that pop into your head.</p>
+      <!-- ✏️ CUSTOMIZE: Describe what students look at, observe, or do in the warm-up -->
+      <p>Imagine you have two boxes. They look the same size, but one is much heavier. Just looking at them would not tell you the difference. You need to measure.</p>
 
       <div class="socratic-q">
         <span class="sq-icon">👀</span>
         <div>
           <div class="label">In Your Science Notebook</div>
-          <div class="question">"Write at least 3 things you notice in this scene. Then write 1 question: something you're wondering about what lives here and how they survive."</div>
+          <!-- ✏️ CUSTOMIZE: Replace with specific observation prompt for this lesson -->
+          <div class="question">"Look at two objects near you. Guess which one is heavier and which takes up more space. Write your predictions. We will test these later!"</div>
         </div>
       </div>
 
       <div class="callout callout-tip">
         <span class="callout-icon">💡</span>
-        <p>There are no wrong observations. Real scientists start exactly like this — looking closely and asking questions. We'll come back to your question at the end of the lesson.</p>
+        <p>There are no wrong observations. Scientists always start by looking carefully and asking questions. We'll come back to your ideas at the end of the lesson.</p>
       </div>
 
     </div>
@@ -1361,7 +1128,8 @@ em { color: #5A4D3E; }
       </div>
     </div>
     <div class="card-body">
-      <p>Before we investigate, learn the words ecologists use when they study food webs. <strong>Tap each card to flip it</strong> and read the definition. You'll use these words in your notebook today!</p>
+      <!-- ✏️ CUSTOMIZE: Update intro sentence to match lesson topic -->
+      <p>Before we begin, let's learn the words scientists use when they study measuring matter. <strong>Tap each card to flip it</strong> and read the definition. You'll see these words throughout the lesson!</p>
 
       <!-- ✏️ CUSTOMIZE: Replace all 6 vocab words + definitions + emojis for this lesson -->
       <!-- For .01 lessons: Use 4-6 key science vocabulary words from the DCI -->
@@ -1370,43 +1138,43 @@ em { color: #5A4D3E; }
 
         <div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')">
           <div class="flip-card-inner">
-            <div class="flip-card-front"><div class="fc-emoji">🕸️</div><div class="fc-word">Food Web</div><div class="fc-tap">tap to flip</div></div>
-            <div class="flip-card-back"><div class="fc-word-back">Food Web</div><div class="fc-def">A diagram showing how energy moves between many connected living things — who eats whom in an ecosystem.</div><div class="fc-tap-back">tap to flip back</div></div>
+            <div class="flip-card-front"><div class="fc-emoji">📏</div><div class="fc-word">Measurement</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Measurement</div><div class="fc-def">A number that tells the size, weight, or amount of something. Scientists measure to be exact.</div><div class="fc-tap-back">tap to flip back</div></div>
           </div>
         </div>
 
         <div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')">
           <div class="flip-card-inner">
-            <div class="flip-card-front"><div class="fc-emoji">🌱</div><div class="fc-word">Producer</div><div class="fc-tap">tap to flip</div></div>
-            <div class="flip-card-back"><div class="fc-word-back">Producer</div><div class="fc-def">A plant or alga that makes its own food using sunlight. Sawgrass and periphyton are producers in the Everglades.</div><div class="fc-tap-back">tap to flip back</div></div>
+            <div class="flip-card-front"><div class="fc-emoji">⚖️</div><div class="fc-word">Mass</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Mass</div><div class="fc-def">How much matter is in an object. Measured using a balance or scale.</div><div class="fc-tap-back">tap to flip back</div></div>
           </div>
         </div>
 
         <div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')">
           <div class="flip-card-inner">
-            <div class="flip-card-front"><div class="fc-emoji">🦎</div><div class="fc-word">Consumer</div><div class="fc-tap">tap to flip</div></div>
-            <div class="flip-card-back"><div class="fc-word-back">Consumer</div><div class="fc-def">An animal that gets energy by eating other organisms. Consumers cannot make their own food.</div><div class="fc-tap-back">tap to flip back</div></div>
+            <div class="flip-card-front"><div class="fc-emoji">📦</div><div class="fc-word">Volume</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Volume</div><div class="fc-def">How much space an object takes up. Measured using a ruler or measuring cup.</div><div class="fc-tap-back">tap to flip back</div></div>
           </div>
         </div>
 
         <div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')">
           <div class="flip-card-inner">
-            <div class="flip-card-front"><div class="fc-emoji">🦅</div><div class="fc-word">Predator</div><div class="fc-tap">tap to flip</div></div>
-            <div class="flip-card-back"><div class="fc-word-back">Predator</div><div class="fc-def">An animal that hunts and eats other animals. The anhinga is a predator — it dives underwater to.</div><div class="fc-tap-back">tap to flip back</div></div>
+            <div class="flip-card-front"><div class="fc-emoji">📊</div><div class="fc-word">Data</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Data</div><div class="fc-def">Information collected during an investigation — like numbers, measurements, or observations.</div><div class="fc-tap-back">tap to flip back</div></div>
           </div>
         </div>
 
         <div class="flip-card fc-color-5" onclick="this.classList.toggle('flipped')">
           <div class="flip-card-inner">
-            <div class="flip-card-front"><div class="fc-emoji">🐟</div><div class="fc-word">Prey</div><div class="fc-tap">tap to flip</div></div>
-            <div class="flip-card-back"><div class="fc-word-back">Prey</div><div class="fc-def">An animal that is hunted and eaten by a predator. An apple snail in the water is prey.</div><div class="fc-tap-back">tap to flip back</div></div>
+            <div class="flip-card-front"><div class="fc-emoji">📈</div><div class="fc-word">Bar Graph</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Bar Graph</div><div class="fc-def">A chart that uses bars to compare amounts. Taller bars mean larger numbers.</div><div class="fc-tap-back">tap to flip back</div></div>
           </div>
         </div>
 
         <div class="flip-card fc-color-6" onclick="this.classList.toggle('flipped')">
           <div class="flip-card-inner">
-            <div class="flip-card-front"><div class="fc-emoji">🍄</div><div class="fc-word">Decomposer</div><div class="fc-tap">tap to flip</div></div>
-            <div class="flip-card-back"><div class="fc-word-back">Decomposer</div><div class="fc-def">A fungus or bacterium that breaks down dead plants and animals, returning nutrients to the soil and water.</div><div class="fc-tap-back">tap to flip back</div></div>
+            <div class="flip-card-front"><div class="fc-emoji">🔄</div><div class="fc-word">Compare</div><div class="fc-tap">tap to flip</div></div>
+            <div class="flip-card-back"><div class="fc-word-back">Compare</div><div class="fc-def">To look at two or more things and find what is the same and what is different.</div><div class="fc-tap-back">tap to flip back</div></div>
           </div>
         </div>
 
@@ -1415,7 +1183,8 @@ em { color: #5A4D3E; }
       <!-- Copywork / Notebook Prompt -->
       <div class="callout callout-think" style="margin-top:16px;">
         <span class="callout-icon">📓</span>
-        <p>Copy this sentence carefully into your science notebook:<br><strong>"In a food web, energy moves from producers to consumers, connecting every living thing in an ecosystem."</strong></p>
+        <!-- ✏️ CUSTOMIZE: Copywork sentence — pick the most important vocabulary sentence from the lesson -->
+        <p>Copy this sentence carefully into your science notebook:<br><strong>"When scientists measure the properties of matter, they can compare objects more exactly than just looking."</strong></p>
       </div>
 
     </div>
@@ -1440,22 +1209,22 @@ em { color: #5A4D3E; }
     <div class="video-wrap-header">
       <span style="font-size:20px;">📖</span>
       <div>
-        <div class="video-wrap-type">Activity 2 · Context Lesson</div>
-        <div class="video-wrap-title">How Does Energy Flow Through the Everglades?</div>
+        <div class="video-wrap-type">Activity 2 · Core Lesson</div>
+        <!-- ✏️ CUSTOMIZE: Video title -->
+        <div class="video-wrap-title">Investigation: Measuring and Comparing Matter</div>
       </div>
     </div>
     <div class="video-ratio">
       <div class="video-placeholder">
         <div class="video-placeholder-icon">📖</div>
         <div class="video-placeholder-text">Core lesson video coming soon</div>
-        <div class="video-placeholder-id"><!-- slot: 29-2-lesson-explainer -->
-        <div style="margin-top:8px;padding:10px 14px;background:#FFF3E0;border:1.5px dashed #FF8F00;border-radius:8px;font-size:13px;color:#E65100;line-height:1.5;"><strong>🎬 Filming Note:</strong> Explain food webs as interconnected food chains. Show how removing one organism affects others.</div></div>
+        <div class="video-placeholder-id"><!-- slot: 26-02-lesson-explainer -->
+        <div style="margin-top:8px;padding:10px 14px;background:#FFF3E0;border:1.5px dashed #FF8F00;border-radius:8px;font-size:13px;color:#E65100;line-height:1.5;"><strong>🎬 Filming Note:</strong> Walk through measurement tools: rulers for length, scales for mass, measuring cups for volume. Show proper technique.</div></div>
       </div>
     </div>
   </div>
 
   <p class="tab-orientation">Now learn the main science idea.</p>
-
 
   <!-- ══════════════════════════════════════════════════════════════════════ -->
   <!-- UPLOADED LESSON IMAGE — INSERT HERE IF USER UPLOADED A PHOTO/DIAGRAM   -->
@@ -1490,7 +1259,8 @@ em { color: #5A4D3E; }
     <div class="act-head">
       <div class="act-num" style="background:#F9A825;">2</div>
       <div style="flex:1;">
-        <div class="act-title">📖 The Lesson: Everglades Food Webs</div>
+        <!-- ✏️ CUSTOMIZE: Activity title matching the lesson topic -->
+        <div class="act-title">📖 The Lesson: Measuring Matter</div>
         <div class="act-subtitle">Read and think carefully — science is all about noticing!</div>
       </div>
       <div class="act-time" style="background:#F9A825;">⏱ 12 min</div>
@@ -1498,22 +1268,28 @@ em { color: #5A4D3E; }
     <div class="act-body">
 
       <!-- ══ SECTION 1 of lesson content ══ -->
+      <!-- ✏️ CUSTOMIZE: First content section. Keep paragraphs short. Use vtip for vocab. -->
       <div class="card theme-forest" style="margin-bottom:18px;">
         <div class="card-head">
           <div class="card-head-icon">🌱</div>
           <div>
             <div class="card-head-label">Section 1</div>
-            <div class="card-head-title">Energy Flows Through a Food Web</div>
+            <!-- ✏️ CUSTOMIZE: Section heading -->
+            <div class="card-head-title">Why Measure?</div>
           </div>
         </div>
         <div class="card-body">
-          <p>Every living thing needs energy to survive. In any ecosystem, energy starts with the sun. <span class="vtip">Producers<span class="vtip-box"><span class="vtip-word">Producer</span>A plant or alga that makes its own food using sunlight.</span></span> — like sawgrass and periphyton — capture that sunlight and turn it into food.</p>
-          <p><span class="vtip">Consumers<span class="vtip-box"><span class="vtip-word">Consumer</span>An animal that gets energy by eating other organisms.</span></span> eat producers or other animals to get that energy. When many organisms eat and get eaten by each other, all those connections together form a <span class="vtip">food web<span class="vtip-box"><span class="vtip-word">Food Web</span>A diagram showing how energy moves between connected living things in an ecosystem.</span></span>.</p>
+          <!-- ✏️ CUSTOMIZE: Write 2-3 short, clear paragraphs for the first concept. -->
+          <!-- Use warm, teacher-like language. Ground the science in concrete, real-world examples. -->
+          <!-- Use <span class="vtip">WORD<span class="vtip-box"><span class="vtip-word">WORD</span>DEFINITION</span></span> for key vocab. -->
+          <p>Your eyes can tell you a lot about an object. But sometimes your eyes can trick you. Two objects might look the same size but have very different <span class="vtip">mass<span class="vtip-box"><span class="vtip-word">Mass</span>How much matter is in an object.</span></span>.</p>
+          <p><span class="vtip">Measurement<span class="vtip-box"><span class="vtip-word">Measurement</span>A number that tells the size, weight, or amount.</span></span> gives scientists exact numbers. Numbers do not change based on who is looking.</p>
           <div class="socratic-q">
             <span class="sq-icon">🤔</span>
             <div>
               <div class="label">Stop and Think</div>
-              <div class="question">"What do you think would happen to the animals in the Everglades if all the plants died? Why?"</div>
+              <!-- ✏️ CUSTOMIZE: A Socratic question that makes students think before reading on -->
+              <div class="question">"Why is it more useful to say a rock weighs 200 grams than to say it is "heavy"?"</div>
             </div>
           </div>
         </div>
@@ -1522,162 +1298,68 @@ em { color: #5A4D3E; }
       <!-- ══ SECTION 2 of lesson content ══ -->
       <div class="card theme-sky" style="margin-bottom:18px;">
         <div class="card-head">
-          <div class="card-head-icon">🌊</div>
+          <div class="card-head-icon">🌤</div>
           <div>
             <div class="card-head-label">Section 2</div>
-            <div class="card-head-title">Who Eats Whom in the Everglades</div>
+            <!-- ✏️ CUSTOMIZE: Second section heading -->
+            <div class="card-head-title">Tools Scientists Use</div>
           </div>
         </div>
         <div class="card-body">
-          <p>In the last lesson, you sorted Everglades animals by whether they fit the habitat. Now we're going to look at those same organisms differently — not just whether they belong, but <strong>how they feed each other</strong>.</p>
-          <p>The alligator you learned about last time? It's the <span class="vtip">apex predator<span class="vtip-box"><span class="vtip-word">Apex Predator</span>A predator at the very top of the food web — nothing in the Everglades regularly hunts adult alligators.</span></span> at the top of the food web, eating fish, turtles, and birds. Below it: the <span class="vtip">anhinga<span class="vtip-box"><span class="vtip-word">Anhinga</span>A diving bird that spears fish underwater with its sharp beak. Sometimes called the "snakebird" because of how it swims.</span></span>, a diving bird that spears <span class="vtip">mosquitofish<span class="vtip-box"><span class="vtip-word">Mosquitofish</span>A tiny fish — one of the most numerous animals in the Everglades, eating periphyton and small insects.</span></span> underwater; and the snail kite, which eats almost nothing but apple snails. At the base, sawgrass and <span class="vtip">periphyton<span class="vtip-box"><span class="vtip-word">Periphyton</span>A thick mat of algae and tiny organisms growing underwater — the energy foundation of the entire Everglades food web.</span></span> capture sunlight. And when anything dies, <span class="vtip">decomposers<span class="vtip-box"><span class="vtip-word">Decomposer</span>Fungi and bacteria that break down dead organisms, returning nutrients to the water and soil.</span></span> return its nutrients to the water.</p>
+          <!-- ✏️ CUSTOMIZE: Second content section. Build on section 1. -->
+          <p>A <strong>balance or scale</strong> measures mass in grams. A <strong>ruler</strong> measures length in centimeters. A <strong>measuring cup</strong> measures the volume of liquids in milliliters.</p>
+          <p>Each tool measures a different property. Using the right tool gives you the right <span class="vtip">data<span class="vtip-box"><span class="vtip-word">Data</span>Information collected during an investigation.</span></span>.</p>
         </div>
       </div>
 
       <!-- ══ SECTION 3 of lesson content ══ -->
       <div class="card theme-earth" style="margin-bottom:18px;">
         <div class="card-head">
-          <div class="card-head-icon">🔗</div>
+          <div class="card-head-icon">🌍</div>
           <div>
             <div class="card-head-label">Section 3</div>
-            <div class="card-head-title">Every Organism Plays a Role</div>
+            <!-- ✏️ CUSTOMIZE: Third section heading -->
+            <div class="card-head-title">Recording and Comparing</div>
           </div>
         </div>
         <div class="card-body">
-          <p>In a food web, every organism matters. If one disappears, the animals that ate it can go hungry — and the animals it used to eat can grow out of control. Scientists call this a <strong>cascade</strong>: one change triggers another, and another, rippling through the whole web.</p>
-          <p><strong>Real-World Connection:</strong> Scientists studying the Everglades found that when alligator holes dry up during droughts, fish crowd into smaller pools and become easy prey. Snail kites, anhingas, and raccoons all shift where they hunt — one weather event can ripple through the entire food web in a single season.</p>
+          <!-- ✏️ CUSTOMIZE: Third content section. Connect to a real-world example. -->
+          <p>Scientists write measurements in a <strong>data table</strong>. Then they look at the numbers to find patterns or differences. A <span class="vtip">bar graph<span class="vtip-box"><span class="vtip-word">Bar Graph</span>A chart that uses bars to compare amounts.</span></span> makes the comparison easy to see.</p>
+          <p><strong>Real-World Connection:</strong> A baker measures flour and sugar by mass to get a recipe exactly right — too much or too little changes the whole cake!</p>
         </div>
       </div>
 
-      <!-- ══════════════════════════════════════════════════════════════════════ -->
-      <!-- INTERACTIVE DIAGRAM — REPLACE THIS ENTIRE <svg>...</svg> BLOCK.        -->
-      <!--                                                                        -->
-      <!-- The SVG below is a PLACEHOLDER ONLY. Do not keep the placeholder.      -->
-      <!-- Build a diagram unique to the lesson topic every time:                 -->
-      <!--   • weather → water cycle, cloud-types, or weather station             -->
-      <!--   • forces / motion → ramp + ball with force arrows, or push/pull      -->
-      <!--   • magnets → field lines with attract/repel zones                     -->
-      <!--   • ecosystems → food web OR habitat cross-section                     -->
-      <!--   • life cycles → labeled stage diagram (egg → larva → pupa → adult)   -->
-      <!--   • engineering → labeled prototype with named parts                   -->
-      <!--                                                                        -->
-      <!-- WHAT TO KEEP (the JS depends on these):                                -->
-      <!--   • the <div class="diagram-interactive"> wrapper                      -->
-      <!--   • exactly 3–6 <rect class="hotspot"> elements with unique            -->
-      <!--     data-part and data-info attributes                                 -->
-      <!--   • the <div id="diagramPanel"> below                                  -->
-      <!--                                                                        -->
-      <!-- WHAT TO REPLACE:                                                       -->
-      <!--   • everything inside <svg>...</svg> (defs, scene art, labels)         -->
-      <!--   • every data-info string with lesson-specific content                -->
-      <!--   • the diagram caption below                                          -->
-      <!-- ══════════════════════════════════════════════════════════════════════ -->
 
-      <div class="diagram-wrap scroll-reveal">
-        <div style="font-size:13px;color:#9A8E82;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">
-          🗺 Tap a zone to explore it
-        </div>
-        <div class="diagram-interactive">
-          <svg viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg" style="font-family:Nunito,Arial,sans-serif;" role="img" aria-label="Everglades food web diagram — five energy levels from producers to decomposers">
-            <defs>
-              <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#0D4F3C"/>
-                <stop offset="100%" stop-color="#1A6B50"/>
-              </linearGradient>
-              <marker id="arrowYellow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-                <path d="M0,0 L0,6 L8,3 z" fill="#FDD835"/>
-              </marker>
-            </defs>
-
-            <!-- Background -->
-            <rect width="860" height="300" fill="url(#bgGrad)"/>
-
-            <!-- Water shimmer strips -->
-            <rect x="0" y="252" width="860" height="48" fill="#0A3D2E" opacity="0.5" rx="0"/>
-
-            <!-- Zone bands (visual only — hotspots are transparent on top) -->
-            <!-- Zone 1: Producers (bottom — energy base) -->
-            <rect x="4" y="232" width="852" height="60" fill="#1B5E20" rx="6" opacity="0.85"/>
-            <!-- Zone 2: Primary Consumers -->
-            <rect x="4" y="168" width="852" height="58" fill="#2E7D32" rx="6" opacity="0.8"/>
-            <!-- Zone 3: Secondary Consumers -->
-            <rect x="4" y="104" width="852" height="58" fill="#388E3C" rx="6" opacity="0.75"/>
-            <!-- Zone 4: Apex Predator -->
-            <rect x="4" y="44" width="852" height="54" fill="#43A047" rx="6" opacity="0.7"/>
-            <!-- Zone 5: Decomposers (label band) -->
-            <rect x="4" y="4" width="852" height="34" fill="#1A237E" rx="6" opacity="0.6"/>
-
-            <!-- Zone labels (no data text = just visual labels using SVG text — these ARE allowed as part of the diagram art) -->
-            <text x="430" y="22" text-anchor="middle" font-size="12" font-weight="800" fill="#90CAF9">🍄 DECOMPOSERS — Fungi &amp; Bacteria</text>
-            <text x="430" y="76" text-anchor="middle" font-size="12" font-weight="800" fill="#CCFF90">🐊 APEX PREDATOR — American Alligator</text>
-            <text x="430" y="138" text-anchor="middle" font-size="12" font-weight="800" fill="#E8F5E9">🦅 SECONDARY CONSUMERS — Anhinga · Snail Kite</text>
-            <text x="430" y="200" text-anchor="middle" font-size="12" font-weight="800" fill="#C8E6C9">🐟 PRIMARY CONSUMERS — Mosquitofish · Apple Snail · Raccoon</text>
-            <text x="430" y="268" text-anchor="middle" font-size="12" font-weight="800" fill="#A5D6A7">🌱 PRODUCERS — Sawgrass · Periphyton</text>
-
-            <!-- Energy flow arrows (upward = energy moving up the web) -->
-            <line x1="215" y1="228" x2="215" y2="174" stroke="#FDD835" stroke-width="2.5" marker-end="url(#arrowYellow)" opacity="0.9"/>
-            <line x1="430" y1="228" x2="430" y2="174" stroke="#FDD835" stroke-width="2.5" marker-end="url(#arrowYellow)" opacity="0.9"/>
-            <line x1="645" y1="228" x2="645" y2="174" stroke="#FDD835" stroke-width="2.5" marker-end="url(#arrowYellow)" opacity="0.9"/>
-            <line x1="300" y1="164" x2="300" y2="110" stroke="#FDD835" stroke-width="2.5" marker-end="url(#arrowYellow)" opacity="0.9"/>
-            <line x1="560" y1="164" x2="560" y2="110" stroke="#FDD835" stroke-width="2.5" marker-end="url(#arrowYellow)" opacity="0.9"/>
-            <line x1="430" y1="100" x2="430" y2="50" stroke="#FDD835" stroke-width="2.5" marker-end="url(#arrowYellow)" opacity="0.9"/>
-            <!-- Decomposer arrows (dashed, sideways from apex down) -->
-            <line x1="760" y1="72" x2="760" y2="28" stroke="#90CAF9" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#arrowYellow)" opacity="0.7"/>
-
-            <!-- HOTSPOT RECTS — transparent, over each zone -->
-            <rect class="hotspot" x="0" y="0" width="860" height="38" fill="transparent"
-                  data-part="Decomposers"
-                  data-info="Fungi and bacteria are decomposers. They break down dead plants and animals, returning nutrients to the water and soil. Without decomposers, the Everglades would fill with dead matter and lose the nutrients producers need to grow."/>
-            <rect class="hotspot" x="0" y="44" width="860" height="58" fill="transparent"
-                  data-part="Apex Predator"
-                  data-info="The American alligator sits at the top. No animal in the Everglades regularly hunts a healthy adult alligator. Alligators eat fish, turtles, birds, and mammals. Their 'gator holes' also create water refuges that other animals depend on during droughts."/>
-            <rect class="hotspot" x="0" y="104" width="860" height="62" fill="transparent"
-                  data-part="Secondary Consumers"
-                  data-info="The anhinga is a diving bird that spears fish underwater with its beak — it's sometimes called the snakebird because of how it swims. The snail kite eats almost nothing but apple snails. Both are predators and prey — eaten by alligators."/>
-            <rect class="hotspot" x="0" y="168" width="860" height="62" fill="transparent"
-                  data-part="Primary Consumers"
-                  data-info="Mosquitofish, apple snails, and raccoons all eat producers. Mosquitofish eat periphyton and tiny invertebrates. Apple snails eat algae. Raccoons eat plants, snails, and fish — they connect several levels of the food web at once."/>
-            <rect class="hotspot" x="0" y="232" width="860" height="68" fill="transparent"
-                  data-part="Producers"
-                  data-info="Sawgrass is the most visible plant in the Everglades — it covers huge stretches of shallow water. Periphyton is a mat of algae and tiny organisms that forms underwater. Both capture sunlight and produce the energy that feeds every other organism in the web."/>
-          </svg>
-
-          <!-- Diagram info panel (appears on hotspot click) -->
-          <div class="diagram-info-panel" id="diagramPanel">
-            <span class="dip-word" id="diagramWord"></span>
-            <span id="diagramInfo"></span>
-          </div>
-        </div>
-        <div class="diagram-tap-hint">Tap any zone in the diagram to learn about it.</div>
-        <div class="diagram-caption">Everglades food web — energy flows upward from producers to apex predator. Tap each level to learn about the organisms there. Yellow arrows show the direction energy travels.</div>
-      </div>
 
       <!-- Key Concept Box -->
+      <!-- ✏️ CUSTOMIZE: Write the most important "take-away" concept from this lesson -->
       <div class="key-concept scroll-reveal">
         <div class="kc-label">⭐ Key Concept</div>
-        <p><strong>In a food web, every organism is connected.</strong> Energy flows from producers up through consumers to apex predators, with decomposers returning nutrients at every level.</p>
-        <p>Because every organism is connected, removing even one species can cause changes — called a cascade — that ripple through the whole system.</p>
+        <p>Measuring properties like mass and volume gives scientists exact data they can record, compare, and use as evidence.</p>
       </div>
 
     </div>
   </div>
 
   <!-- Mind-Blowing Fact -->
+  <!-- ✏️ CUSTOMIZE: Replace with an amazing real fact from the lesson topic -->
   <div class="mind-blow scroll-reveal">
     <div class="mind-blow-icon">🤯</div>
     <div class="mind-blow-content">
-      <div class="mind-blow-label">Amazing Everglades Fact</div>
-      <div class="mind-blow-text">The snail kite eats almost <strong>nothing but apple snails.</strong> When a drought hit parts of the Everglades in 2007, apple snail populations crashed — and snail kite chicks starved in the nest that same season. One drought. One food source. One season. The whole population felt it.</div>
+      <div class="mind-blow-label">Amazing Nature Fact</div>
+      <div class="mind-blow-text">The International Prototype Kilogram — a metal cylinder in France — was the world's official <strong>"one kilogram"</strong> for <strong>130 years</strong>. Every scale on Earth was calibrated to match it!</div>
     </div>
   </div>
 
   <!-- Go Deeper -->
+  <!-- ✏️ CUSTOMIZE: Add an enrichment idea or deeper connection for curious students -->
   <details class="go-deeper scroll-reveal">
-    <summary>Curious? Go Deeper</summary>
+    <summary>Curious? Estimation vs. Measurement</summary>
     <div class="gd-body">
-      <p>Scientists have been working to restore the Everglades for decades. Over a century of drainage canals reduced it to about half its original size — and with less water, the food web changed dramatically. Fewer fish meant fewer anhingas and wading birds. Fewer birds meant fewer alligators nesting near water.</p>
-      <p>The Comprehensive Everglades Restoration Plan, started in 2000, is one of the largest ecosystem restoration projects ever attempted. Engineers are redirecting water to refill the marsh. When water levels rise, periphyton grows back first. Then mosquitofish return. Then the wading birds. The food web rebuilds itself — from the bottom up.</p>
-      <p>Think about that: restoring one thing (water flow) can restart an entire food web. What does that tell you about how connected all these organisms really are?</p>
+      <!-- ✏️ CUSTOMIZE: 2-3 paragraphs for advanced students who want more -->
+      <p>Before scientists measure, they often <strong>estimate</strong> — make a careful guess using what they already know. Estimation is a useful skill because it helps you know if your measurement makes sense.</p>
+          <p>If you estimate that a book weighs about 500 grams and then measure it at 480 grams, your estimate was close. If you measure 48 grams, something went wrong!</p>
+          <p>Try estimating before you measure. It trains your brain to think like a scientist.</p>
     </div>
   </details>
 
@@ -1701,127 +1383,94 @@ em { color: #5A4D3E; }
       <span style="font-size:20px;">🔬</span>
       <div>
         <div class="video-wrap-type">Activity 3 · Investigation</div>
-        <div class="video-wrap-title">Building the Everglades Food Web</div>
+        <!-- ✏️ CUSTOMIZE: Video title -->
+        <div class="video-wrap-title">⚖️ Measuring &amp; Comparing Matter</div>
       </div>
     </div>
     <div class="video-ratio">
       <div class="video-placeholder">
         <div class="video-placeholder-icon">🔬</div>
         <div class="video-placeholder-text">Exploration video coming soon</div>
-        <div class="video-placeholder-id"><!-- slot: 29-2-exploration-explainer -->
-        <div style="margin-top:8px;padding:10px 14px;background:#FFF3E0;border:1.5px dashed #FF8F00;border-radius:8px;font-size:13px;color:#E65100;line-height:1.5;"><strong>🎬 Filming Note:</strong> Guide students through building the Everglades food web model. Emphasize arrows showing energy flow.</div></div>
+        <div class="video-placeholder-id"><!-- slot: 26-02-exploration-explainer -->
+        <div style="margin-top:8px;padding:10px 14px;background:#FFF3E0;border:1.5px dashed #FF8F00;border-radius:8px;font-size:13px;color:#E65100;line-height:1.5;"><strong>🎬 Filming Note:</strong> Demonstrate how to set up the data table, take measurements, and create a bar graph from the data.</div></div>
       </div>
     </div>
   </div>
 
   <p class="tab-orientation">Now test the idea yourself.</p>
 
-
-  <!-- ═══ ACTIVITY 3: INVESTIGATION ═══ -->
-  <div class="activity-card act-practice scroll-reveal">
+  <!-- ═══ ACTIVITY 3: INVESTIGATION / LAB / ENGINEERING CHALLENGE ═══ -->
+  <!-- ✏️ CUSTOMIZE: Change act-explore to act-practice for .02 engineering/lab lessons -->
+  <!-- PURPOSE: Hands-on investigation. Students observe, collect data, test, or build. ~15-20 min -->
+  <div class="activity-card act-explore scroll-reveal">
     <div class="act-head">
       <div class="act-num" style="background:#0288D1;">3</div>
       <div style="flex:1;">
-        <div class="act-title">🔬 Investigation: Map the Everglades Food Web</div>
-        <div class="act-subtitle">Use organism cards to build a real food web in your notebook.</div>
+        <!-- ✏️ CUSTOMIZE: Activity type and title (Investigation / Lab / Engineering Challenge) -->
+        <div class="act-title">⚖️ Measuring &amp; Comparing Matter</div>
+        <!-- ✏️ CUSTOMIZE: Short subtitle -->
+        <div class="act-subtitle">Collect measurements and compare objects using data</div>
       </div>
-      <div class="act-time" style="background:#0288D1;">⏱ 20 min</div>
+      <div class="act-time" style="background:#0288D1;">⏱ 15–20 min</div>
     </div>
     <div class="act-body">
 
+      <!-- Materials needed (for labs/investigations) -->
+      <!-- ✏️ CUSTOMIZE: List materials — or remove this section if not needed for this lesson type -->
       <div class="callout callout-tip" style="margin-bottom:18px;">
         <span class="callout-icon">🎒</span>
-        <p><strong>You'll need:</strong> Science notebook, pencil, colored pencils, ruler. Use the organism reference table below — it has everything you need to build your food web.</p>
+        <p><strong>You'll need:</strong> 4 small objects (coin, eraser, crayon, paperclip), ruler, optional kitchen scale</p>
       </div>
 
-      <!-- Organism Reference Table -->
-      <div style="overflow-x:auto;margin-bottom:18px;">
-        <div class="lesson-figure">
-          <div class="lesson-figure-label">📷 Photo · Everglades Predator</div>
-          <img src="images/29-02-snail-kite-apple-snail.png"
-               alt="A snail kite in flight against a bright blue sky, clutching a round apple snail in its curved beak, wings spread wide, Everglades water visible below"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='block';" />
-          <div class="image-suggestion" style="display:none;background:#FFF9E8;border:2px dashed #F9A825;border-radius:12px;padding:16px;color:#7A6A30;font-size:14px;">
-            📷 <strong>Image prompt:</strong> A snail kite (Rostrhamus sociabilis) in flight against a bright blue Florida sky. The bird has its wings fully extended and is clutching a large round apple snail tightly in its hooked beak. Below it, Everglades water and sawgrass are slightly out of focus. Sharp focus on the bird and snail. Photorealistic wildlife photography, no text.
-            <br><em>Save as: <code>images/29-02-snail-kite-apple-snail.jpg</code></em>
-          </div>
-          <div class="lesson-figure-caption">
-            A snail kite grips an apple snail in its curved beak. This bird eats almost nothing else — its entire survival depends on this one animal. That's the kind of tight connection you'll map in today's investigation.
-          </div>
-        </div>
-      </div>
+      <!-- Step-by-step investigation directions -->
+      <!-- ✏️ CUSTOMIZE: Write 3-5 steps. Each step should have one clear action. -->
+      <!-- Use numbered steps with colored circles as in the lesson tab. -->
 
-      <div class="student-chart-wrap" style="overflow-x:auto;margin-bottom:18px;">
-        <table style="width:100%;border-collapse:collapse;font-size:14px;min-width:520px;">
-          <thead>
-            <tr style="background:#1B5E20;color:#fff;">
-              <th style="padding:8px 12px;text-align:left;border-radius:6px 0 0 0;">Organism</th>
-              <th style="padding:8px 12px;text-align:left;">Role</th>
-              <th style="padding:8px 12px;text-align:left;">Eats</th>
-              <th style="padding:8px 12px;text-align:left;border-radius:0 6px 0 0;">Eaten By</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="background:#E8F5E9;"><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;font-weight:700;">🌾 Sawgrass</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">Producer</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">Sunlight</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">Mosquitofish, Apple Snail</td></tr>
-            <tr style="background:#fff;"><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;font-weight:700;">🟢 Periphyton</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">Producer</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">Sunlight</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">Mosquitofish, Apple Snail</td></tr>
-            <tr style="background:#E8F5E9;"><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;font-weight:700;">🐟 Mosquitofish</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">Primary Consumer</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">Periphyton, insects</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">Anhinga, Raccoon, Alligator</td></tr>
-            <tr style="background:#fff;"><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;font-weight:700;">🐌 Apple Snail</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">Primary Consumer</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">Periphyton, algae</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">Snail Kite, Raccoon</td></tr>
-            <tr style="background:#E8F5E9;"><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;font-weight:700;">🦝 Raccoon</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">Primary Consumer</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">Fish, snails, plants</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">Alligator</td></tr>
-            <tr style="background:#fff;"><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;font-weight:700;">🐦 Anhinga</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">Secondary Consumer</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">Mosquitofish, small fish</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">Alligator</td></tr>
-            <tr style="background:#E8F5E9;"><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;font-weight:700;">🦅 Snail Kite</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">Secondary Consumer</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">Apple Snails (mainly)</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">Alligator</td></tr>
-            <tr style="background:#fff;"><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;font-weight:700;">🐊 American Alligator</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">Apex Predator</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">Fish, turtles, raccoons, birds</td><td style="padding:7px 12px;border-bottom:1px solid #C8E6C9;">None (apex)</td></tr>
-            <tr style="background:#E8F5E9;"><td style="padding:7px 12px;font-weight:700;">🍄 Fungi &amp; Bacteria</td><td style="padding:7px 12px;">Decomposers</td><td style="padding:7px 12px;">Dead organisms</td><td style="padding:7px 12px;">Nothing — they are the end</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="callout callout-think" style="margin-bottom:16px;"><span class="callout-icon">🔗</span><p><strong>Building on Lesson 29.01:</strong> Last lesson you sorted Everglades animals by whether they fit the habitat. Now you're going to map how those animals are <em>connected</em> to each other — who feeds whom, and what happens when one disappears.</p></div>
-      <p>Use the table above to complete all five steps. Record everything in your science notebook as you go.</p>
+      <p>Follow each step carefully. Record your observations in your science notebook as you go.</p>
 
       <div style="position:relative; margin:16px 0;">
 
         <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
           <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#2D6A4F);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(27,67,50,0.3);">1</div>
           <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
-            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Sort the organisms.</strong> Look at the organism table above. In your notebook, write three column headers: <em>Producers</em>, <em>Consumers</em>, <em>Decomposers</em>. Write each organism under its correct column.</p>
+            <!-- ✏️ CUSTOMIZE: Step 1 instruction -->
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>🔎 Step 1: Set Up Your Data Table:</strong> Copy the data table below into your notebook. You will fill it in as you measure.</p>
           </div>
         </div>
 
         <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
           <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2D6A4F,#52B788);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(45,106,79,0.3);">2</div>
           <div style="flex:1;background:#EEF8F0;border:2px solid #C4E5CC;border-radius:14px;padding:14px 16px;">
-            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Draw and connect.</strong> On a fresh notebook page, write each organism's name spread out across the page. Draw an arrow from each organism that gets eaten toward the organism that eats it. The arrow shows which way energy is flowing. Try to include all 9 organisms.</p>
+            <!-- ✏️ CUSTOMIZE: Step 2 instruction -->
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>📏 Step 2: Measure Length:</strong> Use a ruler to measure the length of each object in centimeters. Write the number in your table.</p>
           </div>
         </div>
 
         <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
           <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#52B788,#F9A825);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(82,183,136,0.3);">3</div>
           <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
-            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Count and check.</strong> Count the arrows in your food web. A strong food web has at least 6 arrows. If you have fewer, look back at the table — did you miss any eating relationships?</p>
-          </div>
-        </div>
-
-        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;">
-          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F9A825,#FDD835);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(249,168,37,0.3);">4</div>
-          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
-            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Make a prediction.</strong> Choose one organism and circle it. Write this question beside it: "What would happen if this organism disappeared?" Write your prediction in 1–2 sentences next to your food web.</p>
+            <!-- ✏️ CUSTOMIZE: Step 3 instruction -->
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>⚖️ Step 3: Estimate and Measure Mass:</strong> Hold each object in your hand. Estimate if it is heavy or light. If you have a scale, measure the mass in grams. Record your data.</p>
           </div>
         </div>
 
         <div style="display:flex;gap:14px;align-items:flex-start;">
-          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#0288D1,#26C6DA);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(2,136,209,0.3);">5</div>
-          <div style="flex:1;background:#E1F5FE;border:2px solid #B3E5FC;border-radius:14px;padding:14px 16px;">
-            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>Review your web.</strong> Look at your finished food web. Put a star next to the organism you think is the most important to the whole web. Be ready to explain your thinking.</p>
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#F9A825,#FDD835);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(249,168,37,0.3);">4</div>
+          <div style="flex:1;background:#FFF9E8;border:2px solid #F0E4C0;border-radius:14px;padding:14px 16px;">
+            <!-- ✏️ CUSTOMIZE: Step 4 instruction — Often the "explain or revise" step -->
+            <p style="font-size:16px;color:#2B1D12;line-height:1.6;margin:0;"><strong>📊 Step 4: Make a Bar Graph:</strong> Draw a bar graph comparing the lengths of your four objects. Put object names on the bottom and centimeters on the side.</p>
           </div>
         </div>
 
       </div>
 
+      <!-- Socratic check-in during exploration -->
       <div class="socratic-q">
         <span class="sq-icon">🌲</span>
         <div>
           <div class="label">Think Like a Scientist</div>
-          <div class="question">"Look at your food web. Which organism has the most arrows pointing to it? What does that tell you about how important that organism is to the ecosystem?"</div>
+          <!-- ✏️ CUSTOMIZE: A reasoning question during the investigation -->
+          <div class="question">"Look at your data table. Which object is the longest? Is it also the heaviest? What does that tell you?"</div>
         </div>
       </div>
 
@@ -1840,47 +1489,30 @@ em { color: #5A4D3E; }
     </div>
     <div class="act-body">
 
-      <p>Fill in this chart in your science notebook. Copy the headers exactly and complete at least 5 rows.</p>
+      <p>In your science notebook, record what you found. Being specific matters — a good scientist writes down exactly what they saw, not just "it worked" or "it didn't work."</p>
 
-      <div class="student-chart-wrap" style="overflow-x:auto;margin-bottom:18px;">
-        <table style="width:100%;border-collapse:collapse;font-size:14px;min-width:480px;">
-          <thead>
-            <tr style="background:#2E7D32;color:#fff;">
-              <th style="padding:8px 12px;text-align:left;">Organism</th>
-              <th style="padding:8px 12px;text-align:left;">Role</th>
-              <th style="padding:8px 12px;text-align:left;">Eats</th>
-              <th style="padding:8px 12px;text-align:left;">Eaten By</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="background:#EEF8F0;"><td style="padding:8px 12px;border-bottom:1px solid #C4E5CC;height:36px;"> </td><td style="padding:8px 12px;border-bottom:1px solid #C4E5CC;"> </td><td style="padding:8px 12px;border-bottom:1px solid #C4E5CC;"> </td><td style="padding:8px 12px;border-bottom:1px solid #C4E5CC;"> </td></tr>
-            <tr style="background:#fff;"><td style="padding:8px 12px;border-bottom:1px solid #C4E5CC;height:36px;"> </td><td style="padding:8px 12px;border-bottom:1px solid #C4E5CC;"> </td><td style="padding:8px 12px;border-bottom:1px solid #C4E5CC;"> </td><td style="padding:8px 12px;border-bottom:1px solid #C4E5CC;"> </td></tr>
-            <tr style="background:#EEF8F0;"><td style="padding:8px 12px;border-bottom:1px solid #C4E5CC;height:36px;"> </td><td style="padding:8px 12px;border-bottom:1px solid #C4E5CC;"> </td><td style="padding:8px 12px;border-bottom:1px solid #C4E5CC;"> </td><td style="padding:8px 12px;border-bottom:1px solid #C4E5CC;"> </td></tr>
-            <tr style="background:#fff;"><td style="padding:8px 12px;border-bottom:1px solid #C4E5CC;height:36px;"> </td><td style="padding:8px 12px;border-bottom:1px solid #C4E5CC;"> </td><td style="padding:8px 12px;border-bottom:1px solid #C4E5CC;"> </td><td style="padding:8px 12px;border-bottom:1px solid #C4E5CC;"> </td></tr>
-            <tr style="background:#EEF8F0;"><td style="padding:8px 12px;border-bottom:1px solid #C4E5CC;height:36px;"> </td><td style="padding:8px 12px;border-bottom:1px solid #C4E5CC;"> </td><td style="padding:8px 12px;border-bottom:1px solid #C4E5CC;"> </td><td style="padding:8px 12px;border-bottom:1px solid #C4E5CC;"> </td></tr>
-            <tr style="background:#fff;"><td style="padding:8px 12px;height:36px;"> </td><td style="padding:8px 12px;"> </td><td style="padding:8px 12px;"> </td><td style="padding:8px 12px;"> </td></tr>
-          </tbody>
-        </table>
-      </div>
+      <!-- ✏️ CUSTOMIZE: Adapt these notebook prompts for the specific investigation type. -->
+      <!-- Options: data table, labeled sketch, bar graph, comparison chart, before/after drawing -->
 
       <div class="pq">
         <span class="pq-num" style="background:#2E7D32;">1</span>
-        <span class="pq-text">Which organism in your food web has the most connections (arrows going to and from it)? Write a sentence explaining why you think that organism is so important to the Everglades.</span>
+        <span class="pq-text">What measurements did you collect for each object? Which was longest? Which was heaviest?</span>
       </div>
 
       <div class="pq">
         <span class="pq-num" style="background:#2E7D32;">2</span>
-        <span class="pq-text">Look at the organism you circled in Step 4. Write your prediction: if that organism disappeared, what do you think would happen first? What would happen next?</span>
+        <span class="pq-text">Were any results surprising? Did the longest object also have the most mass?</span>
       </div>
 
       <div class="pq">
         <span class="pq-num" style="background:#2E7D32;">3</span>
-        <span class="pq-text">The decomposers (fungi and bacteria) don't have a predator. Does that mean they're unimportant? Explain your thinking using what you know about food webs.</span>
+        <span class="pq-text">Draw your bar graph comparing the lengths of your four objects.</span>
       </div>
 
+      <!-- Optional: Narration prompt (classical pedagogy — embedded naturally) -->
       <div class="callout callout-think" style="margin-top:16px;">
         <span class="callout-icon">🗣</span>
-        <p>Tell the story of energy moving through the Everglades — starting with sunlight hitting sawgrass and ending with an alligator. Use your food web drawing to help you.</p>
+        <p>Tell the story of your investigation from beginning to end — what you did, what you noticed, and what you figured out. Use your notes to help you.</p>
       </div>
 
     </div>
@@ -1896,13 +1528,16 @@ em { color: #5A4D3E; }
       </div>
     </div>
     <div class="card-body">
-      <p>Think through each question on your own. Talk it over in your mind — or with a family member — before moving on.</p>
+      <p>Think through each question on your own. Write your answers in your science notebook before moving on.</p>
+
+      <!-- ✏️ CUSTOMIZE: 3-4 Socratic discussion questions. Vary difficulty. -->
+      <!-- Good types: What did you notice? / What evidence supports? / Would everyone agree? / What would you try next? -->
 
       <div class="socratic-q" style="margin-bottom:10px;">
         <span class="sq-icon">🤔</span>
         <div>
           <div class="label">Question 1</div>
-          <div class="question">"Look at your food web. What would happen to the anhinga population if mosquitofish completely disappeared from the Everglades?"</div>
+          <div class="question">"What did you notice when you compared your mass estimates to actual measurements?"</div>
         </div>
       </div>
 
@@ -1910,23 +1545,23 @@ em { color: #5A4D3E; }
         <span class="sq-icon">💡</span>
         <div>
           <div class="label">Question 2</div>
-          <div class="question">"The American alligator has no predators. Does that mean it doesn't affect the food web? Use your diagram to explain your thinking."</div>
+          <div class="question">"What in your data shows that length and mass are different properties?"</div>
         </div>
       </div>
 
       <div class="socratic-q" style="margin-bottom:10px;">
-        <span class="sq-icon">🌿</span>
+        <span class="sq-icon">🌲</span>
         <div>
           <div class="label">Question 3 — Connect to Nature</div>
-          <div class="question">"The snail kite eats almost only apple snails. What does that tell you about how risky it is to depend on just one food source?"</div>
+          <div class="question">"Where in everyday life do people need exact measurements instead of estimates?"</div>
         </div>
       </div>
 
       <div class="socratic-q">
         <span class="sq-icon">🔁</span>
         <div>
-          <div class="label">Question 4 — Go Further</div>
-          <div class="question">"How is a food web different from a food chain? Use your notebook drawing to explain — what can a web show that a chain can't?"</div>
+          <div class="label">Question 4 — Improve or Extend</div>
+          <div class="question">"If you measured a fifth object, what would you predict about its length compared to the others?"</div>
         </div>
       </div>
 
@@ -1944,9 +1579,6 @@ em { color: #5A4D3E; }
 <!-- TAB 4: SELF-CHECK QUIZ                                    -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-quiz">
-
-  <p class="tab-orientation">Check what you understand.</p>
-
   <!-- Inline progress chip — visible whenever student switches to this tab.
        Workaround for Canvas iframes where sticky/fixed CSS can't stay visible. -->
   <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
@@ -1962,37 +1594,43 @@ em { color: #5A4D3E; }
       <!-- ✏️ CUSTOMIZE: Replace all 3 questions, options, answers, and feedback for this lesson -->
       <!-- data-answer should be: "a", "b", or "c" (matching one option's data-val) -->
 
-      <div class="quiz-q" data-answer="a">
-        <div class="quiz-q-text">1. In a food web diagram, what does an arrow show?</div>
-        <div class="quiz-options">
-          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>The path energy takes — from the organism being eaten to the organism eating it</div>
-          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Which organism is bigger</div>
-          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>How fast an animal can move</div>
-        </div>
-        <div class="quiz-feedback fb-correct">🌿 Exactly right! The arrow follows the energy — it points from prey to predator, showing which direction energy flows through the web.</div>
-        <div class="quiz-feedback fb-wrong">Think about it this way: in a food web, something is always getting eaten and something is doing the eating. The arrow shows where the energy goes — from the eaten to the eater. Try again!</div>
-      </div>
-
+      <!-- QUESTION 1 -->
+      <!-- ✏️ Recommended type: vocabulary/definition question -->
       <div class="quiz-q" data-answer="b">
-        <div class="quiz-q-text">2. Sawgrass is a producer. What does that mean?</div>
+        <div class="quiz-q-text">1. Why do scientists measure objects instead of just looking at them?</div>
         <div class="quiz-options">
-          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>It eats fish and small animals</div>
-          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>It makes its own food using energy from sunlight</div>
-          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>It breaks down dead organisms in the marsh</div>
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Because measuring is faster than looking</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Because measurements give exact data that anyone can compare</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Because scientists do not trust their eyes</div>
         </div>
-        <div class="quiz-feedback fb-correct">🌱 That's it! Producers are at the base of every food web — they're the only organisms that can capture energy from the sun and turn it into food.</div>
-        <div class="quiz-feedback fb-wrong">Remember: producers don't eat — they make their own food. Think about what plants do with sunlight. Which answer fits that idea?</div>
+        <div class="quiz-feedback fb-correct">🌲 Exactly! Measurements give exact numbers that any scientist can compare, no matter where they are.</div>
+        <div class="quiz-feedback fb-wrong">Think about why numbers are more useful than descriptions like "big" or "heavy." What makes data exact?</div>
       </div>
 
+      <!-- QUESTION 2 -->
+      <!-- ✏️ Recommended type: "what would happen if" or cause-and-effect question -->
       <div class="quiz-q" data-answer="a">
-        <div class="quiz-q-text">3. Apple snails disappeared from part of the Everglades. What would most likely happen to the snail kite population?</div>
+        <div class="quiz-q-text">2. What tool would you use to find the <em>volume</em> of a cup of water?</div>
         <div class="quiz-options">
-          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Snail kites would struggle to survive — apple snails are almost their only food</div>
-          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Snail kites would do fine — they would just eat more sawgrass</div>
-          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Nothing would change — snail kites don't need food</div>
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>A measuring cup</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>A balance</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>A ruler</div>
         </div>
-        <div class="quiz-feedback fb-correct">⭐ Right! The snail kite is a specialist — it depends on almost one food source. When apple snails are gone, snail kites go hungry. That's exactly what happened in 2007 during a drought in the Everglades.</div>
-        <div class="quiz-feedback fb-wrong">Think back to the organism table. What does the snail kite eat? It's very specific — that's a big clue. Which answer matches what you'd expect for an animal with only one food source?</div>
+        <div class="quiz-feedback fb-correct">🌲 Yes! A measuring cup measures the volume of liquids in milliliters.</div>
+        <div class="quiz-feedback fb-wrong">Volume is how much space something takes up. For liquids, you pour them into a special tool. Which one?</div>
+      </div>
+
+      <!-- QUESTION 3 -->
+      <!-- ✏️ Recommended type: real-world connection question -->
+      <div class="quiz-q" data-answer="c">
+        <div class="quiz-q-text">3. A student makes a bar graph comparing the mass of four objects. Object C has the tallest bar. What does that mean?</div>
+        <div class="quiz-options">
+          <div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Object C is the longest</div>
+          <div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Object C is the softest</div>
+          <div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Object C has the most mass</div>
+        </div>
+        <div class="quiz-feedback fb-correct">🌲 Right! In a bar graph comparing mass, the tallest bar shows the object with the most mass.</div>
+        <div class="quiz-feedback fb-wrong">The graph is comparing mass. A taller bar means a larger number. What does a larger mass number mean?</div>
       </div>
 
       <!-- Score Display -->
@@ -2016,15 +1654,15 @@ em { color: #5A4D3E; }
               <div>
                 <div class="video-wrap-type">Feedback · Perfect Score</div>
                 <!-- ✏️ CUSTOMIZE: Short celebration title for a 3/3 score -->
-                <div class="video-wrap-title">Amazing work, ecologist!</div>
+                <div class="video-wrap-title">Amazing work, scientist!</div>
               </div>
             </div>
             <div class="video-ratio">
               <div class="video-placeholder">
                 <div class="video-placeholder-icon">⭐</div>
                 <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
-                <div class="video-placeholder-id"><!-- slot: 29-2-quiz-perfect -->
-        <div style="margin-top:8px;padding:10px 14px;background:#FFF3E0;border:1.5px dashed #FF8F00;border-radius:8px;font-size:13px;color:#E65100;line-height:1.5;"><strong>🎬 Filming Note:</strong> Celebrate understanding. Preview Florida animal adaptations in Module 30.</div></div>
+                <div class="video-placeholder-id"><!-- slot: 26-02-quiz-perfect -->
+        <div style="margin-top:8px;padding:10px 14px;background:#FFF3E0;border:1.5px dashed #FF8F00;border-radius:8px;font-size:13px;color:#E65100;line-height:1.5;"><strong>🎬 Filming Note:</strong> Congratulate students. Preview the next lesson on how matter changes when heated or cooled.</div></div>
               </div>
             </div>
           </div>
@@ -2038,15 +1676,15 @@ em { color: #5A4D3E; }
               <div>
                 <div class="video-wrap-type">Feedback · Keep Going</div>
                 <!-- ✏️ CUSTOMIZE: Short encouragement title for a partial score -->
-                <div class="video-wrap-title">You're getting there — let's review the food web!</div>
+                <div class="video-wrap-title">You're getting there — let's review!</div>
               </div>
             </div>
             <div class="video-ratio">
               <div class="video-placeholder">
                 <div class="video-placeholder-icon">💪</div>
                 <div class="video-placeholder-text">Review and encouragement video coming soon</div>
-                <div class="video-placeholder-id"><!-- slot: 29-2-quiz-review -->
-        <div style="margin-top:8px;padding:10px 14px;background:#FFF3E0;border:1.5px dashed #FF8F00;border-radius:8px;font-size:13px;color:#E65100;line-height:1.5;"><strong>🎬 Filming Note:</strong> Review how organisms in the food web depend on each other. Trace energy from sun to top predator.</div></div>
+                <div class="video-placeholder-id"><!-- slot: 26-02-quiz-review -->
+        <div style="margin-top:8px;padding:10px 14px;background:#FFF3E0;border:1.5px dashed #FF8F00;border-radius:8px;font-size:13px;color:#E65100;line-height:1.5;"><strong>🎬 Filming Note:</strong> Encourage students to revisit the tools section. Focus on which tool measures which property.</div></div>
               </div>
             </div>
           </div>
@@ -2076,21 +1714,21 @@ em { color: #5A4D3E; }
       <span style="font-size:20px;">✍️</span>
       <div>
         <div class="video-wrap-type">Activity 5 · Assignment</div>
-        <div class="video-wrap-title">Your Everglades Food Web Assignment</div>
+        <!-- ✏️ CUSTOMIZE: Video title -->
+        <div class="video-wrap-title">Investigation: Measuring and Comparing Matter — Assignment</div>
       </div>
     </div>
     <div class="video-ratio">
       <div class="video-placeholder">
         <div class="video-placeholder-icon">✍️</div>
         <div class="video-placeholder-text">Assignment explainer video coming soon</div>
-        <div class="video-placeholder-id"><!-- slot: 29-2-assignment-explainer -->
-        <div style="margin-top:8px;padding:10px 14px;background:#FFF3E0;border:1.5px dashed #FF8F00;border-radius:8px;font-size:13px;color:#E65100;line-height:1.5;"><strong>🎬 Filming Note:</strong> Explain the food web model, survival argument, and the what-if scenario.</div></div>
+        <div class="video-placeholder-id"><!-- slot: 26-02-assignment-explainer -->
+        <div style="margin-top:8px;padding:10px 14px;background:#FFF3E0;border:1.5px dashed #FF8F00;border-radius:8px;font-size:13px;color:#E65100;line-height:1.5;"><strong>🎬 Filming Note:</strong> Explain Parts A (read a data table), B (short answers about measurement), and C (draw and label a bar graph).</div></div>
       </div>
     </div>
   </div>
 
   <p class="tab-orientation">Show what you learned.</p>
-
 
   <!-- ═══ ACTIVITY 5: NOTEBOOK WORK ═══ -->
   <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
@@ -2100,64 +1738,73 @@ em { color: #5A4D3E; }
         <div class="act-title">✍️ Assignment</div>
         <div class="act-subtitle">Show what you've learned.</div>
       </div>
-      <div class="act-time" style="background:#7B5EA7;">⏱ 20 min</div>
+      <div class="act-time" style="background:#7B5EA7;">⏱ 15–20 min</div>
     </div>
     <div class="act-body">
 
-      <!-- ══ PART A: SORT & CLASSIFY ══ -->
-      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">🔍 Part A — Sort &amp; Classify</p>
-      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">In your notebook, draw three columns labeled <strong>Producer</strong>, <strong>Consumer</strong>, and <strong>Decomposer</strong>. Write each organism below under the correct column, then answer the three questions.</p>
+      <!-- ══ PART A: LABEL / IDENTIFY ══ -->
+      <!-- ✏️ CUSTOMIZE: Adapt Part A for this lesson. Options: label a diagram, fill a data table, -->
+      <!--   sort/classify cards, identify examples, complete a comparison chart. -->
+      <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;">Part A — Read the Data</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Complete the following:</p>
 
-      <div class="callout callout-tip" style="margin-bottom:14px;">
-        <span class="callout-icon">📋</span>
-        <p><strong>Organisms to sort:</strong> Sawgrass · Anhinga · Fungi &amp; Bacteria · Mosquitofish · Periphyton · American Alligator · Apple Snail · Snail Kite · Raccoon</p>
-      </div>
-
-      <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">Sort all 9 organisms into the correct column. Write at least 2 organisms per column.</span></div>
-      <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">Pick one organism from each column. Explain in one sentence <em>why</em> it belongs there — use the word "energy" in your explanation.</span></div>
-      <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">Which group has the fewest organisms? Why do you think that group is smaller?</span></div>
+      <!-- ✏️ CUSTOMIZE: Write 3-4 specific Part A tasks -->
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">1</span><span class="pq-text">Which object is the longest? _______</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">2</span><span class="pq-text">Which object has the most mass? _______</span></div>
+      <div class="pq"><span class="pq-num" style="background:#2E7D32;">3</span><span class="pq-text">Is the longest object also the heaviest? Why or why not?</span></div>
 
       <!-- ══ PART B: SHORT ANSWER ══ -->
       <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🚀 Part B — Short Answer</p>
       <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Answer each question in <strong>complete sentences</strong>. Use your science vocabulary!</p>
 
-      <div class="pq"><span class="pq-num" style="background:#F9A825;">4</span><span class="pq-text">The mosquitofish eats periphyton, and the anhinga eats mosquitofish. What is the relationship between these three organisms? Use the words <em>predator</em> and <em>prey</em> in your answer.</span></div>
-      <div class="pq"><span class="pq-num" style="background:#F9A825;">5</span><span class="pq-text">Imagine that fish and turtles disappeared from the Everglades. What do you think would happen to the American alligator population? Explain your reasoning.</span></div>
-      <div class="pq"><span class="pq-num" style="background:#F9A825;">6</span><span class="pq-text">How is a food web different from a single food chain? Give one reason why a food web gives scientists a more complete picture of an ecosystem.</span></div>
+      <!-- ✏️ CUSTOMIZE: Write 2-3 short-answer questions that require explanation, not just recall -->
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">4</span><span class="pq-text">Why is a bar graph a good way to compare the mass of different objects?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">5</span><span class="pq-text">What is the difference between estimating mass and measuring mass? Which is more exact?</span></div>
+      <div class="pq"><span class="pq-num" style="background:#F9A825;">6</span><span class="pq-text">If two objects are the same length, can they still have different masses? Explain.</span></div>
 
       <!-- ══ EXPLAIN YOUR THINKING ══ -->
+      <!-- ✏️ CUSTOMIZE: Write one clear question students will answer in writing.        -->
+      <!-- It should be something they can answer using the lesson or investigation.      -->
+      <!-- Avoid yes/no questions. Aim for "how" or "why" or "what do you think about."  -->
       <div class="key-concept scroll-reveal" style="background:#FFF9E8;border-color:#F0E4C0;">
         <div class="kc-label" style="color:#F9A825;">✍️ Write and Explain</div>
-        <p style="font-size:16px;font-weight:700;color:#1B4332;margin-bottom:14px;">Mosquitofish are disappearing from part of the Everglades because of pollution. What do you think will happen to the rest of the food web?</p>
+        <p style="font-size:16px;font-weight:700;color:#1B4332;margin-bottom:14px;">Why is measuring with tools better than just looking and guessing when scientists compare matter?</p>
 
+        <!-- Prompt 1: What do you think? -->
         <div style="margin-bottom:14px;">
-          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What do you think will happen?</p>
+          <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What do you think?</p>
           <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
-            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I think that if mosquitofish disappeared…"</em></p>
+            <!-- ✏️ CUSTOMIZE: Sentence starter matched to the question above -->
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I think measuring with tools is important because..."</em></p>
             <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
           </div>
         </div>
 
+        <!-- Prompt 2: What did you see or learn? -->
         <div style="margin-bottom:14px;">
           <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">What did you observe or learn that supports your thinking?</p>
           <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
-            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I know this because when I built the food web, I noticed that…"</em></p>
+            <!-- ✏️ CUSTOMIZE: Tailor starter to whether it's a .01 lesson (learned) or .02 lab (observed) -->
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"I observed that when I measured my objects..."</em></p>
             <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
             <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
           </div>
         </div>
 
+        <!-- Prompt 3: Why does that make sense? -->
         <div style="margin-bottom:14px;">
           <p style="font-size:15px;color:#2D6A4F;font-weight:700;margin-bottom:6px;">Why does that make sense?</p>
           <div style="background:#fff;border:2px solid #E8DDD2;border-radius:10px;padding:14px;">
-            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because in a food web…"</em></p>
+            <p style="font-size:14px;color:#9A8E82;font-style:italic;margin:0 0 10px;">💡 Start with: <em>"This makes sense because scientists need exact data to..."</em></p>
             <div style="border-bottom:1.5px solid #E8DDD2;height:36px;"></div>
             <div style="border-bottom:1.5px solid #E8DDD2;height:36px;margin-top:10px;"></div>
           </div>
         </div>
 
+        <!-- Vocab reminder -->
+        <!-- ✏️ CUSTOMIZE: List 2-3 vocab words from this lesson students should try to use -->
         <div style="background:#EEF8F0;border-radius:10px;padding:10px 14px;border-left:3px solid #52B788;">
-          <p style="margin:0;font-size:14px;color:#1B4332;">📚 Try to use at least one of these words in your answer: <strong>food web</strong>, <strong>predator</strong>, <strong>consumer</strong></p>
+          <p style="margin:0;font-size:14px;color:#1B4332;">📚 Try to use at least one of these words in your answer: <strong>measurement</strong>, <strong>data</strong>, <strong>mass</strong></p>
         </div>
       </div>
 
@@ -2165,15 +1812,15 @@ em { color: #5A4D3E; }
       <!-- ✏️ CUSTOMIZE: Adapt based on lesson. Options: diagram, comparison sketch, -->
       <!--   before/after drawing, "design your own" sketch, data graph. -->
       <p style="font-size:18px;color:#1B4332;font-weight:800;margin-bottom:6px;margin-top:20px;">🎨 Part C — Draw &amp; Label</p>
-      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Without looking at your Explore notes, draw a food web of the Everglades from memory. Include at least 5 organisms and 6 arrows. Label each organism and mark the direction energy flows. Add a title to your drawing.</p>
+      <p style="font-size:15px;color:#9A8E82;margin-bottom:14px;">Draw the bar graph you made during the investigation. Label the bottom with object names and the side with measurements in centimeters. Give your graph a title.</p>
 
       <!-- Imitation / reflection prompt (classical pedagogy) -->
       <div class="socratic-q">
         <span class="sq-icon">🤔</span>
         <div>
-          <div class="label">Think Back</div>
+          <div class="label">Reflect</div>
           <!-- ✏️ CUSTOMIZE: A comparison or reflection prompt that brings closure -->
-          <div class="question">"Think back to the question you wrote in your Notice &amp; Wonder warm-up. Can you answer it now? Write 1–2 sentences explaining what you know today that you didn't know before."</div>
+          <div class="question">"Look back at your predictions from Notice &amp; Wonder. Were your guesses close to your measurements? What surprised you?"</div>
         </div>
       </div>
 
@@ -2213,19 +1860,23 @@ em { color: #5A4D3E; }
           <div class="turn-in-checklist">
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My organism sort table (at least 5 rows) and Explore food web drawing with arrows and prediction.</div>
+              <div class="turn-in-item-text">My completed data table from the Explore investigation.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Part A sort chart and Part B short answers (questions 4, 5, and 6).</div>
+              <div class="turn-in-item-text">My bar graph comparing object lengths, with labels and a title.</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Write &amp; Explain response about mosquitofish disappearing (complete sentences, lesson vocabulary used).</div>
+              <div class="turn-in-item-text">My short answer responses to Part B questions (complete sentences).</div>
             </div>
             <div class="turn-in-item" onclick="toggleCheck(this)">
               <div class="turn-in-check check-icon"></div>
-              <div class="turn-in-item-text">My Part C food web drawing from memory — at least 5 organisms, 6 arrows, labeled with energy flow directions.</div>
+              <div class="turn-in-item-text">My Write &amp; Explain response using at least one vocabulary word.</div>
+            </div>
+            <div class="turn-in-item" onclick="toggleCheck(this)">
+              <div class="turn-in-check check-icon"></div>
+              <div class="turn-in-item-text">My Part C bar graph drawing with all labels.</div>
             </div>
           </div>
 
@@ -2243,15 +1894,15 @@ em { color: #5A4D3E; }
           <div>
             <div class="video-wrap-type">Closing · Wrap-Up</div>
             <!-- ✏️ CUSTOMIZE: Short closing title — wrap-up + tease the next lesson -->
-            <div class="video-wrap-title">Great work, ecologist! Here's what's coming next…</div>
+            <div class="video-wrap-title">Today you practiced measuring and comparing matter like a real scientist. Exact measurements help us understand the world!</div>
           </div>
         </div>
         <div class="video-ratio">
           <div class="video-placeholder">
             <div class="video-placeholder-icon">👋</div>
             <div class="video-placeholder-text">Closing video coming soon</div>
-            <div class="video-placeholder-id"><!-- slot: 29-2-closing -->
-        <div style="margin-top:8px;padding:10px 14px;background:#FFF3E0;border:1.5px dashed #FF8F00;border-radius:8px;font-size:13px;color:#E65100;line-height:1.5;"><strong>🎬 Filming Note:</strong> Connect food webs to habitat survival. Tease the animal adaptation lessons coming next.</div></div>
+            <div class="video-placeholder-id"><!-- slot: 26-02-closing -->
+        <div style="margin-top:8px;padding:10px 14px;background:#FFF3E0;border:1.5px dashed #FF8F00;border-radius:8px;font-size:13px;color:#E65100;line-height:1.5;"><strong>🎬 Filming Note:</strong> Wrap up by connecting measurement to real science. Tease the next lesson on changes in matter.</div></div>
           </div>
         </div>
       </div>
@@ -2266,7 +1917,7 @@ em { color: #5A4D3E; }
 <div class="footer">
   <div class="footer-line1">Optima Academy Online · <span>3rd Grade Science</span></div>
   <!-- ✏️ CUSTOMIZE: Update module/lesson number and NGSS standard code -->
-  <div class="footer-line2">Lesson 29.02 · NGSS 3-LS4-3 · CPALMS SC.3.L.17.2, SC.3.N.3.2</div>
+  <div class="footer-line2">Lesson 26.02 · CPALMS SC.3.P.8.1, SC.3.P.8.2, SC.3.P.8.3, SC.3.N.1.3</div>
   <div class="footer-line3">© Optima Academy · All rights reserved</div>
 </div>
 
@@ -2288,7 +1939,7 @@ em { color: #5A4D3E; }
 //   life cycles → 🐛       ecosystems → 🌳     fossils → 🦴
 //   plants → 🌱           engineering → 🛠    SEP / observation → 🔬
 // ═══════════════════════════════════════════════════════════════════════════
-var LESSON_EMOJI = '🚣‍♂️';
+var LESSON_EMOJI = '⚖️';
 
 // ── Tab System ──
 var tabProgress = { vocab: false, lesson: false, explore: false, quiz: false, assignment: false };
@@ -2347,32 +1998,6 @@ function toggleCheck(item) {
   }
 }
 
-// ── Clickable Diagram ──
-(function() {
-  var hotspots = document.querySelectorAll('.hotspot');
-  var panel    = document.getElementById('diagramPanel');
-  var wordEl   = document.getElementById('diagramWord');
-  var infoEl   = document.getElementById('diagramInfo');
-  if (!panel) return;
-  hotspots.forEach(function(hs) {
-    hs.addEventListener('click', function(e) {
-      e.stopPropagation();
-      hotspots.forEach(function(h){ h.classList.remove('active'); });
-      hs.classList.add('active');
-      var part = hs.getAttribute('data-part').replace(/-/g, ' ');
-      wordEl.textContent = part.charAt(0).toUpperCase() + part.slice(1);
-      infoEl.innerHTML   = hs.getAttribute('data-info');
-      panel.classList.add('visible');
-      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
-  });
-  document.addEventListener('click', function(e) {
-    if (!e.target.classList.contains('hotspot')) {
-      panel.classList.remove('visible');
-      hotspots.forEach(function(h){ h.classList.remove('active'); });
-    }
-  });
-})();
 
 // ── Self-Check Quiz ──
 var quizAnswered = 0;
@@ -2493,45 +2118,57 @@ document.querySelectorAll('.vtip').forEach(function(tip) {
   }
 })();
 
-// ── Confetti ──
+// ── Confetti (science emoji, reverse iteration) ──
 (function() {
   var canvas = document.getElementById('confettiCanvas');
-  var ctx    = canvas.getContext('2d');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
   var particles = [], animating = false;
-  var colors = ['#52B788','#F9A825','#FDD835','#4DD0E1','#2E7D32','#7B5EA7','#FF8F00','#0288D1'];
-  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  var emojis = ['\u{1F50D}','\u{1F9EA}','\u{1F52C}','\u{1F52D}','\u{1F331}','\u{1F680}'];
+  function resize(){ canvas.width=window.innerWidth; canvas.height=window.innerHeight; }
   window.addEventListener('resize', resize); resize();
-  function Particle(x, y) {
-    this.x=x; this.y=y; this.vx=(Math.random()-.5)*16; this.vy=Math.random()*-18-4;
-    this.gravity=.45; this.drag=.98; this.size=Math.random()*8+4;
-    this.color=colors[Math.floor(Math.random()*colors.length)];
-    this.rotation=Math.random()*360; this.rotSpeed=(Math.random()-.5)*12;
-    this.opacity=1; this.shape=Math.random()>.5?'rect':'circle';
-  }
   function burst(x,y,count){
-    for(var i=0;i<count;i++) particles.push(new Particle(x,y));
+    for(var i=0;i<count;i++){
+      var angle=Math.random()*Math.PI*2;
+      var speed=2+Math.random()*4;
+      var useEmoji=Math.random()<0.15;
+      particles.push({
+        x:x, y:y,
+        vx:Math.cos(angle)*speed*(0.6+Math.random()*0.8),
+        vy:Math.sin(angle)*speed*(0.6+Math.random()*0.8)-2,
+        size:useEmoji?18+Math.random()*10:6+Math.random()*6,
+        color:useEmoji?null:['#52B788','#2D6A4F','#F9A825','#0288D1','#FF6D00','#7B5EA7','#E8F5E9'][Math.floor(Math.random()*7)],
+        emoji:useEmoji?emojis[Math.floor(Math.random()*emojis.length)]:null,
+        alpha:1,
+        gravity:useEmoji?0.38:0.12
+      });
+    }
     if(!animating){ animating=true; animate(); }
   }
   function animate(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
-    particles.forEach(function(p,i){
-      p.vy+=p.gravity; p.vx*=p.drag; p.x+=p.vx; p.y+=p.vy;
-      p.rotation+=p.rotSpeed; p.opacity-=.008;
-      if(p.opacity<=0){ particles.splice(i,1); return; }
-      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180);
-      ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color;
-      if(p.shape==='rect'){ ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6); }
-      else{ ctx.beginPath(); ctx.arc(0,0,p.size/2,0,Math.PI*2); ctx.fill(); }
-      ctx.restore();
-    });
+    for(var i=particles.length-1;i>=0;i--){
+      var p=particles[i];
+      p.x+=p.vx; p.y+=p.vy; p.vy+=p.gravity; p.alpha-=0.013;
+      if(p.alpha<=0){ particles.splice(i,1); continue; }
+      ctx.globalAlpha=p.alpha;
+      if(p.emoji){
+        ctx.font=p.size+'px serif';
+        ctx.fillText(p.emoji,p.x,p.y);
+      } else {
+        ctx.fillStyle=p.color;
+        ctx.fillRect(p.x,p.y,p.size,p.size*0.6);
+      }
+    }
+    ctx.globalAlpha=1;
     if(particles.length>0){ requestAnimationFrame(animate); }
     else{ animating=false; ctx.clearRect(0,0,canvas.width,canvas.height); }
   }
   window.launchConfetti = function(){
-    var cx = window.innerWidth/2;
-    burst(cx-100, window.innerHeight*.45, 50);
-    burst(cx,     window.innerHeight*.35, 60);
-    burst(cx+100, window.innerHeight*.45, 50);
+    var cx=window.innerWidth/2;
+    burst(cx-100,window.innerHeight*.45,40);
+    burst(cx,window.innerHeight*.35,50);
+    burst(cx+100,window.innerHeight*.45,40);
   };
 })();
 
@@ -2563,6 +2200,11 @@ document.getElementById('progressPct').textContent = '20%';
   var btt = document.getElementById('backToTop');
   if (btt) { btt.textContent = LESSON_EMOJI + ' Back to Top'; }
 })();
+
+// Back to Top button
+var btt = document.getElementById('backToTop');
+if (btt) { btt.textContent = LESSON_EMOJI + ' Back to Top'; }
+
 </script>
 </body>
 </html>
