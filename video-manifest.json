@@ -7,8 +7,8 @@
       "file": "lesson-1-01-how-scientists-observe.html",
       "type": "Teacher Welcome",
       "section": "Welcome",
-      "embed": "https://optimaedcom.sharepoint.com/sites/summercrew/_layouts/15/embed.aspx?UniqueId=5f5b256e-7d81-4f08-8cef-c8bc627696d2&embed=%7B%22hvm%22%3Atrue%2C%22ust%22%3Atrue%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="lesson-1-01 welcome.mp4"
-      "status": "ready"
+   "embed": "<iframe src=\"https://optimaedcom.sharepoint.com/sites/summercrew/_layouts/15/embed.aspx?UniqueId=5f5b256e-7d81-4f08-8cef-c8bc627696d2&embed=%7B%22hvm%22%3Atrue%2C%22ust%22%3Atrue%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create\" width=\"640\" height=\"360\" frameborder=\"0\" scrolling=\"no\" allowfullscreen title=\"lesson-1-01 welcome.mp4\"></iframe>",
+"status": "ready"
     },
     "1-01-lesson-explainer": {
       "lesson": "Optima Academy Online \u2013 How Do Scientists Observe the World?",
