@@ -1,6 +1,6 @@
 {
   "_readme": "Video Manifest for 3rd Grade Science. Paste your SharePoint/OneDrive embed URL into the 'embed' field for each slot. Set status to 'ready' when done. The lesson pages will auto-load videos from this file.",
-  "_manifest_url": "UPDATE THIS: raw GitHub URL to this file, e.g. https://raw.githubusercontent.com/YOUR-ORG/YOUR-REPO/main/video-manifest.json",
+  "_manifest_url": "https://raw.githubusercontent.com/bbirchum1/optima-3rd-science/refs/heads/main/video-manifest.json",
   "videos": {
     "1-01-welcome": {
       "lesson": "Optima Academy Online \u2013 How Do Scientists Observe the World?",
