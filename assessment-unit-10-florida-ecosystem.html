@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Optima Academy Online — Unit 10 Assessment: Florida Ecosystem Model</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:system-ui,-apple-system,sans-serif;background:#F0F8EE;color:#0E2A14;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.page-wrap{max-width:920px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(14,42,20,.09);}
+
+/* ═══ HEADER ═══ */
+.header{background:linear-gradient(135deg,#1A4A28 0%,#2D7A47 55%,#1E9D5A 100%);border-bottom:6px solid #F9A825;padding:20px 28px 18px;position:relative;overflow:hidden;}
+.header::after{content:'';position:absolute;bottom:6px;left:0;right:0;height:3px;background:linear-gradient(90deg,#F9A825,#52B788,#F9A825);}
+.header-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.header-logo{width:52px;height:52px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.15);}
+.header-logo svg{width:36px;height:36px;}
+.header-org{font-size:22px;color:#fff;font-weight:800;line-height:1.15;}
+.header-sub{font-size:11px;color:#9AE6B4;letter-spacing:.5px;}
+.header-title{font-family:Georgia,serif;font-size:26px;color:#fff;font-weight:700;line-height:1.2;margin-bottom:10px;}
+.header-title em{color:#F9A825;font-style:normal;}
+.header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(249,168,37,.2);border:1.5px solid rgba(249,168,37,.4);border-radius:28px;padding:6px 16px;}
+.header-badge-icon{font-size:20px;}
+.header-badge-text{font-size:17px;color:#fff;font-weight:800;}
+
+.content{padding:28px;}
+.intro{background:linear-gradient(135deg,#F0FAF4 0%,#E6F7EC 100%);border:2px solid #A8DFB8;border-radius:18px;padding:22px 24px;margin-bottom:28px;}
+.intro p{font-size:17px;color:#1A4A28;line-height:1.75;margin:0;}
+.section{margin-bottom:32px;}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:10px;border-bottom:3px solid #C2E8CE;}
+.section-icon{width:44px;height:44px;border-radius:14px;color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.section-icon.eco{background:#1A4A28;}
+.section-icon.foodweb{background:#2D7A47;}
+.section-icon.protect{background:#1E5E34;}
+.section-icon.reflect{background:#9AE6B4;color:#1A4A28;}
+.section-title{font-size:20px;color:#1A4A28;font-weight:800;}
+.section-pts{font-size:12px;color:#3A7A50;font-weight:700;margin-top:2px;}
+.question{background:#fff;border:2px solid #C2E8CE;border-radius:16px;padding:20px 22px;margin-bottom:14px;box-shadow:0 2px 8px rgba(27,90,50,.04);}
+.question:last-child{margin-bottom:0;}
+.q-label{font-size:11px;color:#3A7A50;text-transform:uppercase;letter-spacing:.8px;font-weight:700;margin-bottom:8px;}
+.q-text{font-size:17px;color:#1A4A28;line-height:1.7;margin-bottom:12px;font-weight:600;}
+.q-number{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#1A4A28;color:#fff;font-size:13px;font-weight:800;margin-right:10px;flex-shrink:0;vertical-align:middle;}
+.options{list-style:none;margin:0;padding:0;}
+.options li{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;margin-bottom:6px;border:2px solid #C2E8CE;border-radius:12px;font-size:16px;color:#1A4A28;line-height:1.6;cursor:pointer;transition:background .15s,border-color .15s;}
+.options li:last-child{margin-bottom:0;}
+.options li:hover{background:#EAF7EE;border-color:#6DCF92;}
+.options li.selected{background:#C8F0D4;border-color:#2D7A47;}
+.options li.selected .opt-letter{background:#1A4A28;color:#fff;}
+.opt-letter{width:26px;height:26px;border-radius:50%;background:#C2E8CE;color:#1A4A28;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.response-box{width:100%;min-height:80px;border:2px solid #C2E8CE;border-radius:12px;padding:14px 16px;font-family:system-ui,sans-serif;font-size:16px;color:#1A4A28;line-height:1.6;resize:vertical;background:#F6FCF7;}
+.response-box:focus{outline:none;border-color:#2D7A47;box-shadow:0 0 0 3px rgba(45,122,71,.15);}
+.response-box.short{min-height:52px;}
+.response-box.medium{min-height:90px;}
+.response-box.tall{min-height:130px;}
+.stem{font-size:14px;color:#3A7A50;font-style:italic;margin-bottom:10px;padding:8px 12px;background:#EAF7EE;border-radius:8px;border-left:3px solid #6DCF92;}
+.pts{display:inline-flex;align-items:center;background:#C8F0D4;border:1.5px solid #A8DFB8;border-radius:20px;padding:3px 10px;font-size:12px;color:#1A4A28;font-weight:800;margin-left:8px;}
+
+/* Sort table */
+.sort-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:14px;}
+.sort-col{background:#F0FAF4;border:2px solid #C2E8CE;border-radius:12px;padding:12px;}
+.sort-col-title{font-size:12px;font-weight:800;color:#1A4A28;text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px;text-align:center;}
+.sort-col textarea{width:100%;border:1.5px solid #C2E8CE;border-radius:8px;padding:8px;font-size:14px;color:#1A4A28;background:#fff;resize:none;min-height:70px;}
+.sort-col textarea:focus{outline:none;border-color:#2D7A47;}
+.organism-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
+.org-chip{display:inline-block;background:#E0F5E6;padding:5px 12px;border-radius:10px;font-size:14px;font-weight:700;color:#1A4A28;border:2px solid #A8DFB8;}
+
+/* Total bar */
+.total-bar{background:linear-gradient(135deg,#1A4A28,#2D7A47);border-radius:18px;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;}
+.total-label{font-size:14px;color:#9AE6B4;text-transform:uppercase;letter-spacing:1px;font-weight:800;}
+.total-value{font-size:24px;color:#F9A825;font-weight:800;}
+.footer{background:#1A4A28;padding:16px 28px;text-align:center;}
+.footer p{font-size:12px;color:rgba(255,255,255,.4);margin:0;}
+.gathered-card{background:#fff;border:2px solid #C2E8CE;border-radius:18px;overflow:hidden;box-shadow:0 2px 10px rgba(27,90,50,.05);margin-top:28px;}
+.gathered-header{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#1A4A28,#0E2A14);padding:16px 22px;border-bottom:2px solid rgba(154,230,180,.3);}
+.gathered-header-icon{font-size:28px;line-height:1;}
+.gathered-header-label{font-size:11px;color:#9AE6B4;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px;}
+.gathered-header-title{font-family:Georgia,serif;font-size:20px;color:#fff;font-weight:700;}
+.gathered-body{padding:18px 22px 20px;}
+.gathered-intro{font-size:15px;color:#1A4A28;margin-bottom:14px;line-height:1.55;}
+.gathered-output{width:100%;min-height:260px;padding:16px 18px;border:2px solid #C2E8CE;border-radius:12px;font-family:system-ui,sans-serif;font-size:14px;color:#1A4A28;line-height:1.65;background:#F6FCF7;resize:vertical;white-space:pre-wrap;}
+.gathered-actions{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap;}
+.gathered-btn{flex:1;min-width:190px;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border:none;border-radius:14px;font-size:15px;font-weight:800;cursor:pointer;transition:transform .2s;}
+.gathered-btn:hover{transform:translateY(-2px);}
+.gathered-btn-copy{background:linear-gradient(135deg,#9AE6B4,#6DCF92);color:#1A4A28;}
+.gathered-btn-pdf{background:linear-gradient(135deg,#1A4A28,#0E2A14);color:#fff;border:2px solid #9AE6B4;}
+.gathered-copied{text-align:center;font-size:14px;font-weight:700;color:#2D7A47;margin-top:8px;display:none;}
+.gathered-copied.show{display:block;}
+
+@media(max-width:600px){.content{padding:20px 16px;}.question{padding:16px;}.sort-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width:48px;height:48px;object-fit:contain;" />
+    </div>
+    <div>
+      <div class="header-org">Optima Academy Online</div>
+      <div class="header-sub">3rd Grade Science</div>
+    </div>
+  </div>
+  <div class="header-title"><em>Unit 10 Assessment</em> — Florida Ecosystem Model &amp; Habitat Protection Plan</div>
+  <div class="header-badge">
+    <span class="header-badge-icon">🐊</span>
+    <span class="header-badge-text">Modules 29–31 · Ecosystem Model</span>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="intro">
+    <p>This assessment shows what you learned about Florida ecosystems — the Everglades, food webs, animal adaptations, and threats. You will sort organisms into a food web, explain adaptations, identify a threat, and plan a way to protect a habitat.</p>
+  </div>
+
+  <div class="total-bar">
+    <div class="total-label">Total Points</div>
+    <div class="total-value">12 points</div>
+  </div>
+
+  <!-- SECTION 1: FLORIDA ECOSYSTEMS -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-icon eco">🌿</div>
+      <div>
+        <div class="section-title">Florida Ecosystems</div>
+        <div class="section-pts">4 points — Choose the best answer for each question.</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="q-label">The Everglades <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">1</span>What makes the Everglades an unusual and special habitat?</div>
+      <ul class="options">
+        <li onclick="selectOption(this,'q1')"><span class="opt-letter">A</span>It is always dry and covered in sand dunes</li>
+        <li onclick="selectOption(this,'q1')"><span class="opt-letter">B</span>It is a slow-moving freshwater marsh — part river, part wetland — that supports enormous biodiversity</li>
+        <li onclick="selectOption(this,'q1')"><span class="opt-letter">C</span>It is a deep ocean trench with no sunlight</li>
+        <li onclick="selectOption(this,'q1')"><span class="opt-letter">D</span>It is a frozen tundra with very few species</li>
+      </ul>
+    </div>
+
+    <div class="question">
+      <div class="q-label">Adaptations <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">2</span>A roseate spoonbill has a wide, flat bill that it swings back and forth through shallow water to scoop up small fish and shrimp. This is an example of —</div>
+      <ul class="options">
+        <li onclick="selectOption(this,'q2')"><span class="opt-letter">A</span>An inherited disease</li>
+        <li onclick="selectOption(this,'q2')"><span class="opt-letter">B</span>A physical adaptation that helps the bird find food in its habitat</li>
+        <li onclick="selectOption(this,'q2')"><span class="opt-letter">C</span>A behavior learned from watching other animals</li>
+        <li onclick="selectOption(this,'q2')"><span class="opt-letter">D</span>A change caused by water pollution</li>
+      </ul>
+    </div>
+
+    <div class="question">
+      <div class="q-label">Food Web <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">3</span>In the Everglades, sawgrass is eaten by apple snails, which are eaten by snail kites. The snail kite can ONLY eat apple snails. What would most likely happen if apple snails disappeared from the Everglades?</div>
+      <ul class="options">
+        <li onclick="selectOption(this,'q3')"><span class="opt-letter">A</span>Snail kites would easily find a different food source</li>
+        <li onclick="selectOption(this,'q3')"><span class="opt-letter">B</span>The sawgrass population would immediately shrink</li>
+        <li onclick="selectOption(this,'q3')"><span class="opt-letter">C</span>Snail kite populations would struggle and likely decline without their food source</li>
+        <li onclick="selectOption(this,'q3')"><span class="opt-letter">D</span>Nothing would change in the Everglades ecosystem</li>
+      </ul>
+    </div>
+
+    <div class="question">
+      <div class="q-label">Ecosystem Threats <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">4</span>Burmese pythons are an invasive species in the Everglades. They eat native animals like rabbits, birds, and deer. Which statement BEST explains why this is a threat to the ecosystem?</div>
+      <ul class="options">
+        <li onclick="selectOption(this,'q4')"><span class="opt-letter">A</span>Pythons are the same size as native animals, so there is no change</li>
+        <li onclick="selectOption(this,'q4')"><span class="opt-letter">B</span>Pythons are helping native animals by eating extra plants</li>
+        <li onclick="selectOption(this,'q4')"><span class="opt-letter">C</span>Pythons compete for resources and reduce native animal populations, disrupting the food web</li>
+        <li onclick="selectOption(this,'q4')"><span class="opt-letter">D</span>Pythons only eat plants, so animals are not affected</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 2: FOOD WEB -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-icon foodweb">🕸️</div>
+      <div>
+        <div class="section-title">Food Web &amp; Adaptations</div>
+        <div class="section-pts">4 points — Use your science knowledge to sort, explain, and connect.</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="q-label">Sort the Organisms <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">5</span>Sort each Everglades organism below into the correct role in the food web. Write each name under the correct heading.</div>
+      <div class="organism-chips">
+        <span class="org-chip">🌾 Sawgrass</span>
+        <span class="org-chip">🐟 Largemouth bass</span>
+        <span class="org-chip">🦎 American alligator</span>
+        <span class="org-chip">🍄 Fungi &amp; bacteria</span>
+        <span class="org-chip">🌺 Water lilies</span>
+        <span class="org-chip">🐦 Great blue heron</span>
+      </div>
+      <div class="sort-grid">
+        <div class="sort-col">
+          <div class="sort-col-title">🌱 Producer</div>
+          <textarea oninput="gatherAnswers()" id="s5a" placeholder="Write producers here..."></textarea>
+        </div>
+        <div class="sort-col">
+          <div class="sort-col-title">🦁 Consumer</div>
+          <textarea oninput="gatherAnswers()" id="s5b" placeholder="Write consumers here..."></textarea>
+        </div>
+        <div class="sort-col">
+          <div class="sort-col-title">🍄 Decomposer</div>
+          <textarea oninput="gatherAnswers()" id="s5c" placeholder="Write decomposers here..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="q-label">Energy Through the Food Web <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">6</span>Describe how energy moves through a Florida food web. Start with the sun and trace the path through at least three organisms. Use the words <em>producer</em> and <em>consumer</em> in your answer.</div>
+      <div class="stem">💡 Sentence stem: "Energy starts with the sun, which gives energy to ___. When ___ eats ___, the energy moves to ___."</div>
+      <textarea oninput="gatherAnswers()" data-label="Q6 – Energy through food web:" id="r6" class="response-box medium" placeholder="Write your answer here..."></textarea>
+    </div>
+
+    <div class="question">
+      <div class="q-label">Adaptations &amp; Survival <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">7</span>Choose ONE Florida animal you studied (alligator, panther, snail kite, roseate spoonbill, or another from the lessons). Describe TWO adaptations it has and explain how each one helps it survive in its Florida habitat.</div>
+      <div class="stem">💡 Sentence stem: "The ___ has ___, which helps it survive by ___. It also has ___, which helps it ___."</div>
+      <textarea oninput="gatherAnswers()" data-label="Q7 – Adaptations and survival:" id="r7" class="response-box medium" placeholder="Write your answer here..."></textarea>
+    </div>
+
+    <div class="question">
+      <div class="q-label">Variation &amp; Survival Advantage <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">8</span>Two Florida white-tailed deer live in the same forest. One has longer legs than the other. The forest floods. Which deer is more likely to survive? Explain why this difference in traits matters.</div>
+      <div class="stem">💡 Sentence stem: "The deer with ___ would survive better because ___. This shows that variation helps a species because ___."</div>
+      <textarea oninput="gatherAnswers()" data-label="Q8 – Variation and survival advantage:" id="r8" class="response-box medium" placeholder="Write your answer here..."></textarea>
+    </div>
+  </div>
+
+  <!-- SECTION 3: THREATS & PROTECTION -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-icon protect">🛡️</div>
+      <div>
+        <div class="section-title">Threats &amp; Protection Plan</div>
+        <div class="section-pts">3 points — Identify a threat and describe a way to help.</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="q-label">Threat Analysis + Protection Plan <span class="pts">3 pts</span></div>
+      <div class="q-text"><span class="q-number">9</span>Choose one threat to Florida ecosystems (invasive species, habitat loss, or water pollution). Describe the threat, explain how it affects living things, and design a solution to protect the habitat. Remember: <strong>criteria</strong> = what your solution needs to do; <strong>constraints</strong> = what limits your solution.</div>
+
+      <div style="background:#EAF7EE;border:2px solid #A8DFB8;border-radius:12px;padding:16px 18px;margin-bottom:12px;">
+        <div style="font-size:12px;font-weight:800;color:#1A4A28;text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px;">Plan Template</div>
+        <div style="font-size:14px;color:#2D5A3A;margin-bottom:6px;font-weight:700;">Threat I chose:</div>
+        <textarea oninput="gatherAnswers()" id="r9a" style="width:100%;border:1.5px solid #C2E8CE;border-radius:8px;padding:8px;font-size:15px;color:#1A4A28;background:#fff;resize:none;min-height:42px;margin-bottom:10px;" placeholder="Name the threat..."></textarea>
+        <div style="font-size:14px;color:#2D5A3A;margin-bottom:6px;font-weight:700;">How it affects organisms:</div>
+        <textarea oninput="gatherAnswers()" id="r9b" style="width:100%;border:1.5px solid #C2E8CE;border-radius:8px;padding:8px;font-size:15px;color:#1A4A28;background:#fff;resize:none;min-height:56px;margin-bottom:10px;" placeholder="Describe the effects..."></textarea>
+        <div style="font-size:14px;color:#2D5A3A;margin-bottom:6px;font-weight:700;">My protection solution:</div>
+        <textarea oninput="gatherAnswers()" id="r9c" style="width:100%;border:1.5px solid #C2E8CE;border-radius:8px;padding:8px;font-size:15px;color:#1A4A28;background:#fff;resize:none;min-height:56px;margin-bottom:10px;" placeholder="Describe your solution..."></textarea>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <div>
+            <div style="font-size:14px;color:#2D5A3A;margin-bottom:6px;font-weight:700;">✅ Criteria (what must it do?):</div>
+            <textarea oninput="gatherAnswers()" id="r9d" style="width:100%;border:1.5px solid #C2E8CE;border-radius:8px;padding:8px;font-size:14px;color:#1A4A28;background:#fff;resize:none;min-height:56px;" placeholder="My solution must..."></textarea>
+          </div>
+          <div>
+            <div style="font-size:14px;color:#2D5A3A;margin-bottom:6px;font-weight:700;">⛔ Constraints (what limits it?):</div>
+            <textarea oninput="gatherAnswers()" id="r9e" style="width:100%;border:1.5px solid #C2E8CE;border-radius:8px;padding:8px;font-size:14px;color:#1A4A28;background:#fff;resize:none;min-height:56px;" placeholder="My solution is limited by..."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: REFLECT -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-icon reflect">🌴</div>
+      <div>
+        <div class="section-title">Reflect: Everything Is Connected</div>
+        <div class="section-pts">1 point — Think and respond in your own words.</div>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="q-label">Big Idea Connection <span class="pts">1 pt</span></div>
+      <div class="q-text"><span class="q-number">10</span>Complete this thought using at least two pieces of evidence from what you learned in Unit 10: <em>"Florida ecosystems are important because..."</em></div>
+      <div class="stem">💡 Sentence stem: "Florida ecosystems are important because ___. For example, ___. This shows that ___."</div>
+      <textarea oninput="gatherAnswers()" data-label="Q10 – Florida ecosystems are important because:" id="r10" class="response-box medium" placeholder="Write your reflection here..."></textarea>
+    </div>
+  </div>
+
+  <!-- GATHERED ANSWERS -->
+  <div class="gathered-card">
+    <div class="gathered-header">
+      <div class="gathered-header-icon">📋</div>
+      <div>
+        <div class="gathered-header-label">Your Responses</div>
+        <div class="gathered-header-title">Unit 10 Assessment — All Answers</div>
+      </div>
+    </div>
+    <div class="gathered-body">
+      <div class="gathered-intro">All your written answers appear below. Copy them to paste into Canvas, or print this page.</div>
+      <textarea id="gathered-output" class="gathered-output" readonly></textarea>
+      <div class="gathered-actions">
+        <button class="gathered-btn gathered-btn-copy" onclick="copyAnswers()">📋 Copy All Answers</button>
+        <button class="gathered-btn gathered-btn-pdf" onclick="window.print()">🖨️ Print / Save PDF</button>
+      </div>
+      <div id="copied-msg" class="gathered-copied">✅ Copied to clipboard!</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>Optima Academy Online · Grade 3 Science · Unit 10 Assessment · Florida Ecosystem Model &amp; Habitat Protection Plan</p>
+</div>
+</div>
+
+<script>
+function selectOption(el, group) {
+  document.querySelectorAll(`[onclick*="${group}"]`).forEach(li => li.classList.remove('selected'));
+  el.classList.add('selected');
+  gatherAnswers();
+}
+function getSelected(group) {
+  const sel = document.querySelector(`[onclick*="${group}"].selected`);
+  return sel ? sel.textContent.trim() : '(not answered)';
+}
+function gatherAnswers() {
+  const lines = [
+    '═══ UNIT 10 ASSESSMENT: FLORIDA ECOSYSTEM MODEL ═══',
+    '',
+    '— SECTION 1: FLORIDA ECOSYSTEMS —',
+    'Q1 (The Everglades): ' + getSelected('q1'),
+    'Q2 (Adaptations): ' + getSelected('q2'),
+    'Q3 (Food web): ' + getSelected('q3'),
+    'Q4 (Ecosystem threats): ' + getSelected('q4'),
+    '',
+    '— SECTION 2: FOOD WEB & ADAPTATIONS —',
+    'Q5 – Sort (Producers): ' + (document.getElementById('s5a').value || '(blank)'),
+    'Q5 – Sort (Consumers): ' + (document.getElementById('s5b').value || '(blank)'),
+    'Q5 – Sort (Decomposers): ' + (document.getElementById('s5c').value || '(blank)'),
+    '',
+    'Q6 (Energy through food web):\n' + (document.getElementById('r6').value || '(blank)'),
+    '',
+    'Q7 (Adaptations & survival):\n' + (document.getElementById('r7').value || '(blank)'),
+    '',
+    'Q8 (Variation & survival advantage):\n' + (document.getElementById('r8').value || '(blank)'),
+    '',
+    '— SECTION 3: THREATS & PROTECTION PLAN —',
+    'Threat chosen: ' + (document.getElementById('r9a').value || '(blank)'),
+    'Effects on organisms: ' + (document.getElementById('r9b').value || '(blank)'),
+    'Protection solution: ' + (document.getElementById('r9c').value || '(blank)'),
+    'Criteria: ' + (document.getElementById('r9d').value || '(blank)'),
+    'Constraints: ' + (document.getElementById('r9e').value || '(blank)'),
+    '',
+    '— SECTION 4: REFLECT —',
+    'Q10 (Florida ecosystems are important because):\n' + (document.getElementById('r10').value || '(blank)'),
+  ];
+  document.getElementById('gathered-output').value = lines.join('\n');
+}
+function copyAnswers() {
+  navigator.clipboard.writeText(document.getElementById('gathered-output').value).then(() => {
+    const msg = document.getElementById('copied-msg');
+    msg.classList.add('show');
+    setTimeout(() => msg.classList.remove('show'), 2500);
+  });
+}
+gatherAnswers();
+</script>
+</body>
+</html>

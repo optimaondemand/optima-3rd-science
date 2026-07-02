@@ -1851,5 +1851,47 @@ document.getElementById('progressPct').textContent = '20%';
   if (btt) { btt.textContent = LESSON_EMOJI + ' Back to Top'; }
 })();
 </script>
+
+<!-- Video Manifest Loader -->
+<script>
+(function() {
+  // Auto-detect manifest URL: same directory as this HTML file
+  const scriptBase = document.currentScript ? document.currentScript.src : '';
+  const pageBase = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
+  const manifestUrl = pageBase + 'video-manifest.json';
+
+  fetch(manifestUrl)
+    .then(r => r.json())
+    .then(manifest => {
+      document.querySelectorAll('.video-placeholder-id').forEach(el => {
+        const comment = el.innerHTML;
+        const match = comment.match(/slot:\s*([a-zA-Z0-9_-]+)/);
+        if (!match) return;
+        const slotId = match[1];
+        const entry = manifest.videos[slotId];
+        if (!entry || !entry.embed || entry.status !== 'ready') return;
+
+        // Replace the entire .video-placeholder container
+        const placeholder = el.closest('.video-placeholder');
+        if (!placeholder) return;
+        
+        const wrapper = document.createElement('div');
+        wrapper.className = 'video-embed-wrapper';
+        wrapper.style.cssText = 'width:100%;border-radius:12px;overflow:hidden;aspect-ratio:16/9;background:#000;';
+        wrapper.innerHTML = entry.embed;
+        
+        // Make sure iframe fills the wrapper
+        const iframe = wrapper.querySelector('iframe');
+        if (iframe) {
+          iframe.style.cssText = 'width:100%;height:100%;border:none;';
+        }
+        
+        placeholder.parentNode.replaceChild(wrapper, placeholder);
+      });
+    })
+    .catch(() => { /* manifest not found or not yet deployed — placeholders stay */ });
+})();
+</script>
+
 </body>
 </html>

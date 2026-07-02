@@ -1,0 +1,3702 @@
+{
+  "_readme": "Video Manifest for 3rd Grade Science. Paste your SharePoint/OneDrive embed URL into the 'embed' field for each slot. Set status to 'ready' when done. The lesson pages will auto-load videos from this file.",
+  "_manifest_url": "UPDATE THIS: raw GitHub URL to this file, e.g. https://raw.githubusercontent.com/YOUR-ORG/YOUR-REPO/main/video-manifest.json",
+  "videos": {
+    "1-01-welcome": {
+      "lesson": "Optima Academy Online \u2013 How Do Scientists Observe the World?",
+      "file": "lesson-1-01-how-scientists-observe.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "1-01-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Scientists Observe the World?",
+      "file": "lesson-1-01-how-scientists-observe.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "1-01-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Scientists Observe the World?",
+      "file": "lesson-1-01-how-scientists-observe.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "1-01-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 How Do Scientists Observe the World?",
+      "file": "lesson-1-01-how-scientists-observe.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "1-01-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 How Do Scientists Observe the World?",
+      "file": "lesson-1-01-how-scientists-observe.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "1-01-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Scientists Observe the World?",
+      "file": "lesson-1-01-how-scientists-observe.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "1-01-closing": {
+      "lesson": "Optima Academy Online \u2013 How Do Scientists Observe the World?",
+      "file": "lesson-1-01-how-scientists-observe.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "1-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Becoming a Scientist",
+      "file": "lesson-1-02-become-a-scientist.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "1-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Becoming a Scientist",
+      "file": "lesson-1-02-become-a-scientist.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "1-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Becoming a Scientist",
+      "file": "lesson-1-02-become-a-scientist.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "1-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Becoming a Scientist",
+      "file": "lesson-1-02-become-a-scientist.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "1-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Becoming a Scientist",
+      "file": "lesson-1-02-become-a-scientist.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "1-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Becoming a Scientist",
+      "file": "lesson-1-02-become-a-scientist.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "1-2-closing": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Becoming a Scientist",
+      "file": "lesson-1-02-become-a-scientist.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "2-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 What Patterns Do We See in Weather?",
+      "file": "lesson-2-01-weather-patterns.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "2-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Patterns Do We See in Weather?",
+      "file": "lesson-2-01-weather-patterns.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "2-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Patterns Do We See in Weather?",
+      "file": "lesson-2-01-weather-patterns.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "2-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 What Patterns Do We See in Weather?",
+      "file": "lesson-2-01-weather-patterns.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "2-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 What Patterns Do We See in Weather?",
+      "file": "lesson-2-01-weather-patterns.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "2-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Patterns Do We See in Weather?",
+      "file": "lesson-2-01-weather-patterns.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "2-1-closing": {
+      "lesson": "Optima Academy Online \u2013 What Patterns Do We See in Weather?",
+      "file": "lesson-2-01-weather-patterns.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "2-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 Lesson 2.02: Investigation: Graphing Weekly Weather",
+      "file": "lesson-2-02-graphing-weekly-weather.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "2-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 2.02: Investigation: Graphing Weekly Weather",
+      "file": "lesson-2-02-graphing-weekly-weather.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "2-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 2.02: Investigation: Graphing Weekly Weather",
+      "file": "lesson-2-02-graphing-weekly-weather.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "2-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Lesson 2.02: Investigation: Graphing Weekly Weather",
+      "file": "lesson-2-02-graphing-weekly-weather.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "2-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Lesson 2.02: Investigation: Graphing Weekly Weather",
+      "file": "lesson-2-02-graphing-weekly-weather.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "2-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 2.02: Investigation: Graphing Weekly Weather",
+      "file": "lesson-2-02-graphing-weekly-weather.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "2-2-closing": {
+      "lesson": "Optima Academy Online \u2013 Lesson 2.02: Investigation: Graphing Weekly Weather",
+      "file": "lesson-2-02-graphing-weekly-weather.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "3-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 Lesson 3.01: Why Are National Parks So Different?",
+      "file": "lesson-3-01-why-national-parks-different.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "3-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 3.01: Why Are National Parks So Different?",
+      "file": "lesson-3-01-why-national-parks-different.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "3-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 3.01: Why Are National Parks So Different?",
+      "file": "lesson-3-01-why-national-parks-different.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "3-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Lesson 3.01: Why Are National Parks So Different?",
+      "file": "lesson-3-01-why-national-parks-different.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "3-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Lesson 3.01: Why Are National Parks So Different?",
+      "file": "lesson-3-01-why-national-parks-different.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "3-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 3.01: Why Are National Parks So Different?",
+      "file": "lesson-3-01-why-national-parks-different.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "3-1-closing": {
+      "lesson": "Optima Academy Online \u2013 Lesson 3.01: Why Are National Parks So Different?",
+      "file": "lesson-3-01-why-national-parks-different.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "3-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 Lesson 3.02: Investigation: Compare Park Climates",
+      "file": "lesson-3-02-compare-park-climates.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "3-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 3.02: Investigation: Compare Park Climates",
+      "file": "lesson-3-02-compare-park-climates.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "3-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 3.02: Investigation: Compare Park Climates",
+      "file": "lesson-3-02-compare-park-climates.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "3-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Lesson 3.02: Investigation: Compare Park Climates",
+      "file": "lesson-3-02-compare-park-climates.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "3-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Lesson 3.02: Investigation: Compare Park Climates",
+      "file": "lesson-3-02-compare-park-climates.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "3-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 3.02: Investigation: Compare Park Climates",
+      "file": "lesson-3-02-compare-park-climates.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "3-2-closing": {
+      "lesson": "Optima Academy Online \u2013 Lesson 3.02: Investigation: Compare Park Climates",
+      "file": "lesson-3-02-compare-park-climates.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "4-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 How Can Weather Become Dangerous?",
+      "file": "lesson-4-01-dangerous-weather.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "4-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Can Weather Become Dangerous?",
+      "file": "lesson-4-01-dangerous-weather.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "4-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Can Weather Become Dangerous?",
+      "file": "lesson-4-01-dangerous-weather.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "4-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 How Can Weather Become Dangerous?",
+      "file": "lesson-4-01-dangerous-weather.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "4-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 How Can Weather Become Dangerous?",
+      "file": "lesson-4-01-dangerous-weather.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "4-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Can Weather Become Dangerous?",
+      "file": "lesson-4-01-dangerous-weather.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "4-1-closing": {
+      "lesson": "Optima Academy Online \u2013 How Can Weather Become Dangerous?",
+      "file": "lesson-4-01-dangerous-weather.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "4-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 Engineering Challenge: Build a Safer Structure",
+      "file": "lesson-4-02-storm-resistant-structure.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "4-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Engineering Challenge: Build a Safer Structure",
+      "file": "lesson-4-02-storm-resistant-structure.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "4-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Engineering Challenge: Build a Safer Structure",
+      "file": "lesson-4-02-storm-resistant-structure.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "4-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Engineering Challenge: Build a Safer Structure",
+      "file": "lesson-4-02-storm-resistant-structure.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "4-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Engineering Challenge: Build a Safer Structure",
+      "file": "lesson-4-02-storm-resistant-structure.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "4-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Engineering Challenge: Build a Safer Structure",
+      "file": "lesson-4-02-storm-resistant-structure.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "4-2-closing": {
+      "lesson": "Optima Academy Online \u2013 Engineering Challenge: Build a Safer Structure",
+      "file": "lesson-4-02-storm-resistant-structure.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "5-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 How Do Forces Change Motion?",
+      "file": "lesson-5-01-forces-motion.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "5-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Forces Change Motion?",
+      "file": "lesson-5-01-forces-motion.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "5-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Forces Change Motion?",
+      "file": "lesson-5-01-forces-motion.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "5-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 How Do Forces Change Motion?",
+      "file": "lesson-5-01-forces-motion.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "5-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 How Do Forces Change Motion?",
+      "file": "lesson-5-01-forces-motion.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "5-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Forces Change Motion?",
+      "file": "lesson-5-01-forces-motion.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "5-1-closing": {
+      "lesson": "Optima Academy Online \u2013 How Do Forces Change Motion?",
+      "file": "lesson-5-01-forces-motion.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "5-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Ramp &amp; Ball Motion",
+      "file": "lesson-5-02-ramp-ball-motion.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "5-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Ramp &amp; Ball Motion",
+      "file": "lesson-5-02-ramp-ball-motion.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "5-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Ramp &amp; Ball Motion",
+      "file": "lesson-5-02-ramp-ball-motion.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "5-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Ramp &amp; Ball Motion",
+      "file": "lesson-5-02-ramp-ball-motion.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "5-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Ramp &amp; Ball Motion",
+      "file": "lesson-5-02-ramp-ball-motion.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "5-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Ramp &amp; Ball Motion",
+      "file": "lesson-5-02-ramp-ball-motion.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "5-2-closing": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Ramp &amp; Ball Motion",
+      "file": "lesson-5-02-ramp-ball-motion.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "6-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 What Motion Patterns Can We Predict?",
+      "file": "lesson-6-01-motion-patterns.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "6-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Motion Patterns Can We Predict?",
+      "file": "lesson-6-01-motion-patterns.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "6-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Motion Patterns Can We Predict?",
+      "file": "lesson-6-01-motion-patterns.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "6-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 What Motion Patterns Can We Predict?",
+      "file": "lesson-6-01-motion-patterns.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "6-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 What Motion Patterns Can We Predict?",
+      "file": "lesson-6-01-motion-patterns.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "6-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Motion Patterns Can We Predict?",
+      "file": "lesson-6-01-motion-patterns.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "6-1-closing": {
+      "lesson": "Optima Academy Online \u2013 What Motion Patterns Can We Predict?",
+      "file": "lesson-6-01-motion-patterns.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "6-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 Lesson 6.02: Investigation \u2014 Predicting Motion",
+      "file": "lesson-6-02-predicting-motion.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "6-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 6.02: Investigation \u2014 Predicting Motion",
+      "file": "lesson-6-02-predicting-motion.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "6-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 6.02: Investigation \u2014 Predicting Motion",
+      "file": "lesson-6-02-predicting-motion.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "6-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Lesson 6.02: Investigation \u2014 Predicting Motion",
+      "file": "lesson-6-02-predicting-motion.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "6-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Lesson 6.02: Investigation \u2014 Predicting Motion",
+      "file": "lesson-6-02-predicting-motion.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "6-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 6.02: Investigation \u2014 Predicting Motion",
+      "file": "lesson-6-02-predicting-motion.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "6-2-closing": {
+      "lesson": "Optima Academy Online \u2013 Lesson 6.02: Investigation \u2014 Predicting Motion",
+      "file": "lesson-6-02-predicting-motion.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "7-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 Lesson 7.01: How Do Magnets Work?",
+      "file": "lesson-7-01-how-magnets-work.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "7-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 7.01: How Do Magnets Work?",
+      "file": "lesson-7-01-how-magnets-work.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "7-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 7.01: How Do Magnets Work?",
+      "file": "lesson-7-01-how-magnets-work.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "7-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Lesson 7.01: How Do Magnets Work?",
+      "file": "lesson-7-01-how-magnets-work.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "7-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Lesson 7.01: How Do Magnets Work?",
+      "file": "lesson-7-01-how-magnets-work.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "7-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 7.01: How Do Magnets Work?",
+      "file": "lesson-7-01-how-magnets-work.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "7-1-closing": {
+      "lesson": "Optima Academy Online \u2013 Lesson 7.01: How Do Magnets Work?",
+      "file": "lesson-7-01-how-magnets-work.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "7-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 Engineering Challenge: Magnetic Rescue Tool",
+      "file": "lesson-7-02-magnetic-rescue-tool.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "7-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Engineering Challenge: Magnetic Rescue Tool",
+      "file": "lesson-7-02-magnetic-rescue-tool.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "7-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Engineering Challenge: Magnetic Rescue Tool",
+      "file": "lesson-7-02-magnetic-rescue-tool.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "7-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Engineering Challenge: Magnetic Rescue Tool",
+      "file": "lesson-7-02-magnetic-rescue-tool.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "7-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Engineering Challenge: Magnetic Rescue Tool",
+      "file": "lesson-7-02-magnetic-rescue-tool.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "7-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Engineering Challenge: Magnetic Rescue Tool",
+      "file": "lesson-7-02-magnetic-rescue-tool.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "7-2-closing": {
+      "lesson": "Optima Academy Online \u2013 Engineering Challenge: Magnetic Rescue Tool",
+      "file": "lesson-7-02-magnetic-rescue-tool.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "8-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Grow and Change?",
+      "file": "lesson-8-01-how-plants-grow-and-change.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "8-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Grow and Change?",
+      "file": "lesson-8-01-how-plants-grow-and-change.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "8-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Grow and Change?",
+      "file": "lesson-8-01-how-plants-grow-and-change.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "8-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Grow and Change?",
+      "file": "lesson-8-01-how-plants-grow-and-change.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "8-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Grow and Change?",
+      "file": "lesson-8-01-how-plants-grow-and-change.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "8-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Grow and Change?",
+      "file": "lesson-8-01-how-plants-grow-and-change.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "8-1-closing": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Grow and Change?",
+      "file": "lesson-8-01-how-plants-grow-and-change.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "8-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 Lesson 8.02: Investigation \u2014 Comparing Plant Growth Data",
+      "file": "lesson-8-02-comparing-plant-growth-data.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "8-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 8.02: Investigation \u2014 Comparing Plant Growth Data",
+      "file": "lesson-8-02-comparing-plant-growth-data.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "8-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 8.02: Investigation \u2014 Comparing Plant Growth Data",
+      "file": "lesson-8-02-comparing-plant-growth-data.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "8-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Lesson 8.02: Investigation \u2014 Comparing Plant Growth Data",
+      "file": "lesson-8-02-comparing-plant-growth-data.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "8-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Lesson 8.02: Investigation \u2014 Comparing Plant Growth Data",
+      "file": "lesson-8-02-comparing-plant-growth-data.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "8-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 8.02: Investigation \u2014 Comparing Plant Growth Data",
+      "file": "lesson-8-02-comparing-plant-growth-data.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "8-2-closing": {
+      "lesson": "Optima Academy Online \u2013 Lesson 8.02: Investigation \u2014 Comparing Plant Growth Data",
+      "file": "lesson-8-02-comparing-plant-growth-data.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "9-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 How Do Animals Grow and Change?",
+      "file": "lesson-9-01-how-do-animals-grow-and-change.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "9-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Animals Grow and Change?",
+      "file": "lesson-9-01-how-do-animals-grow-and-change.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "9-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Animals Grow and Change?",
+      "file": "lesson-9-01-how-do-animals-grow-and-change.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "9-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 How Do Animals Grow and Change?",
+      "file": "lesson-9-01-how-do-animals-grow-and-change.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "9-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 How Do Animals Grow and Change?",
+      "file": "lesson-9-01-how-do-animals-grow-and-change.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "9-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Animals Grow and Change?",
+      "file": "lesson-9-01-how-do-animals-grow-and-change.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "9-1-closing": {
+      "lesson": "Optima Academy Online \u2013 How Do Animals Grow and Change?",
+      "file": "lesson-9-01-how-do-animals-grow-and-change.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "9-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Compare Animal Life Cycles",
+      "file": "lesson-9-02-compare-animal-life-cycles.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "9-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Compare Animal Life Cycles",
+      "file": "lesson-9-02-compare-animal-life-cycles.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "9-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Compare Animal Life Cycles",
+      "file": "lesson-9-02-compare-animal-life-cycles.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "9-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Compare Animal Life Cycles",
+      "file": "lesson-9-02-compare-animal-life-cycles.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "9-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Compare Animal Life Cycles",
+      "file": "lesson-9-02-compare-animal-life-cycles.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "9-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Compare Animal Life Cycles",
+      "file": "lesson-9-02-compare-animal-life-cycles.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "9-2-closing": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Compare Animal Life Cycles",
+      "file": "lesson-9-02-compare-animal-life-cycles.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "10-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 Why Do Offspring Look Like Their Parents?",
+      "file": "lesson-10-01-inherited-traits.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "10-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Why Do Offspring Look Like Their Parents?",
+      "file": "lesson-10-01-inherited-traits.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "10-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Why Do Offspring Look Like Their Parents?",
+      "file": "lesson-10-01-inherited-traits.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "10-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Why Do Offspring Look Like Their Parents?",
+      "file": "lesson-10-01-inherited-traits.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "10-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Why Do Offspring Look Like Their Parents?",
+      "file": "lesson-10-01-inherited-traits.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "10-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Why Do Offspring Look Like Their Parents?",
+      "file": "lesson-10-01-inherited-traits.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "10-1-closing": {
+      "lesson": "Optima Academy Online \u2013 Why Do Offspring Look Like Their Parents?",
+      "file": "lesson-10-01-inherited-traits.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "10-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Family Traits Survey",
+      "file": "lesson-10-02-family-traits-survey.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "10-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Family Traits Survey",
+      "file": "lesson-10-02-family-traits-survey.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "10-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Family Traits Survey",
+      "file": "lesson-10-02-family-traits-survey.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "10-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Family Traits Survey",
+      "file": "lesson-10-02-family-traits-survey.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "10-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Family Traits Survey",
+      "file": "lesson-10-02-family-traits-survey.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "10-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Family Traits Survey",
+      "file": "lesson-10-02-family-traits-survey.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "10-2-closing": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Family Traits Survey",
+      "file": "lesson-10-02-family-traits-survey.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "11-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 Why Are Organisms Different?",
+      "file": "lesson-11-01-why-are-organisms-different.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "11-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Why Are Organisms Different?",
+      "file": "lesson-11-01-why-are-organisms-different.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "11-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Why Are Organisms Different?",
+      "file": "lesson-11-01-why-are-organisms-different.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "11-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Why Are Organisms Different?",
+      "file": "lesson-11-01-why-are-organisms-different.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "11-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Why Are Organisms Different?",
+      "file": "lesson-11-01-why-are-organisms-different.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "11-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Why Are Organisms Different?",
+      "file": "lesson-11-01-why-are-organisms-different.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "11-1-closing": {
+      "lesson": "Optima Academy Online \u2013 Why Are Organisms Different?",
+      "file": "lesson-11-01-why-are-organisms-different.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "11-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Survival Traits Challenge",
+      "file": "lesson-11-02-survival-traits-challenge.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "11-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Survival Traits Challenge",
+      "file": "lesson-11-02-survival-traits-challenge.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "11-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Survival Traits Challenge",
+      "file": "lesson-11-02-survival-traits-challenge.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "11-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Survival Traits Challenge",
+      "file": "lesson-11-02-survival-traits-challenge.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "11-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Survival Traits Challenge",
+      "file": "lesson-11-02-survival-traits-challenge.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "11-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Survival Traits Challenge",
+      "file": "lesson-11-02-survival-traits-challenge.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "11-2-closing": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Survival Traits Challenge",
+      "file": "lesson-11-02-survival-traits-challenge.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "12-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 What Is a Habitat?",
+      "file": "lesson-12-01-what-is-a-habitat.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "12-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Is a Habitat?",
+      "file": "lesson-12-01-what-is-a-habitat.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "12-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Is a Habitat?",
+      "file": "lesson-12-01-what-is-a-habitat.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "12-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 What Is a Habitat?",
+      "file": "lesson-12-01-what-is-a-habitat.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "12-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 What Is a Habitat?",
+      "file": "lesson-12-01-what-is-a-habitat.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "12-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Is a Habitat?",
+      "file": "lesson-12-01-what-is-a-habitat.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "12-1-closing": {
+      "lesson": "Optima Academy Online \u2013 What Is a Habitat?",
+      "file": "lesson-12-01-what-is-a-habitat.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "12-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 Lesson 12.02: Investigation: Build a Habitat Model",
+      "file": "lesson-12-02-habitat-model.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "12-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 12.02: Investigation: Build a Habitat Model",
+      "file": "lesson-12-02-habitat-model.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "12-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 12.02: Investigation: Build a Habitat Model",
+      "file": "lesson-12-02-habitat-model.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "12-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Lesson 12.02: Investigation: Build a Habitat Model",
+      "file": "lesson-12-02-habitat-model.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "12-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Lesson 12.02: Investigation: Build a Habitat Model",
+      "file": "lesson-12-02-habitat-model.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "12-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 12.02: Investigation: Build a Habitat Model",
+      "file": "lesson-12-02-habitat-model.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "12-2-closing": {
+      "lesson": "Optima Academy Online \u2013 Lesson 12.02: Investigation: Build a Habitat Model",
+      "file": "lesson-12-02-habitat-model.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "13-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 What Is an Ecosystem?",
+      "file": "lesson-13-01-what-is-an-ecosystem.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "13-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Is an Ecosystem?",
+      "file": "lesson-13-01-what-is-an-ecosystem.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "13-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Is an Ecosystem?",
+      "file": "lesson-13-01-what-is-an-ecosystem.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "13-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 What Is an Ecosystem?",
+      "file": "lesson-13-01-what-is-an-ecosystem.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "13-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 What Is an Ecosystem?",
+      "file": "lesson-13-01-what-is-an-ecosystem.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "13-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Is an Ecosystem?",
+      "file": "lesson-13-01-what-is-an-ecosystem.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "13-1-closing": {
+      "lesson": "Optima Academy Online \u2013 What Is an Ecosystem?",
+      "file": "lesson-13-01-what-is-an-ecosystem.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "13-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Ecosystem Balance Simulation",
+      "file": "lesson-13-02-ecosystem-balance.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "13-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Ecosystem Balance Simulation",
+      "file": "lesson-13-02-ecosystem-balance.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "13-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Ecosystem Balance Simulation",
+      "file": "lesson-13-02-ecosystem-balance.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "13-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Ecosystem Balance Simulation",
+      "file": "lesson-13-02-ecosystem-balance.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "13-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Ecosystem Balance Simulation",
+      "file": "lesson-13-02-ecosystem-balance.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "13-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Ecosystem Balance Simulation",
+      "file": "lesson-13-02-ecosystem-balance.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "13-2-closing": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Ecosystem Balance Simulation",
+      "file": "lesson-13-02-ecosystem-balance.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "14-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 How Does Energy Move Through Ecosystems?",
+      "file": "lesson-14-01-energy-through-ecosystems.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "14-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Does Energy Move Through Ecosystems?",
+      "file": "lesson-14-01-energy-through-ecosystems.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "14-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Does Energy Move Through Ecosystems?",
+      "file": "lesson-14-01-energy-through-ecosystems.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "14-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 How Does Energy Move Through Ecosystems?",
+      "file": "lesson-14-01-energy-through-ecosystems.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "14-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 How Does Energy Move Through Ecosystems?",
+      "file": "lesson-14-01-energy-through-ecosystems.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "14-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Does Energy Move Through Ecosystems?",
+      "file": "lesson-14-01-energy-through-ecosystems.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "14-1-closing": {
+      "lesson": "Optima Academy Online \u2013 How Does Energy Move Through Ecosystems?",
+      "file": "lesson-14-01-energy-through-ecosystems.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "14-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Create a Food Web",
+      "file": "lesson-14-02-food-web.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "14-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Create a Food Web",
+      "file": "lesson-14-02-food-web.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "14-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Create a Food Web",
+      "file": "lesson-14-02-food-web.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "14-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Create a Food Web",
+      "file": "lesson-14-02-food-web.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "14-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Create a Food Web",
+      "file": "lesson-14-02-food-web.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "14-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Create a Food Web",
+      "file": "lesson-14-02-food-web.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "14-2-closing": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Create a Food Web",
+      "file": "lesson-14-02-food-web.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "15-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 What Limits Survival?",
+      "file": "lesson-15-01-what-limits-survival.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "15-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Limits Survival?",
+      "file": "lesson-15-01-what-limits-survival.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "15-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Limits Survival?",
+      "file": "lesson-15-01-what-limits-survival.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "15-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 What Limits Survival?",
+      "file": "lesson-15-01-what-limits-survival.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "15-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 What Limits Survival?",
+      "file": "lesson-15-01-what-limits-survival.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "15-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Limits Survival?",
+      "file": "lesson-15-01-what-limits-survival.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "15-1-closing": {
+      "lesson": "Optima Academy Online \u2013 What Limits Survival?",
+      "file": "lesson-15-01-what-limits-survival.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "15-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Survival Scenario Challenge",
+      "file": "lesson-15-02-survival-scenario-challenge.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "15-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Survival Scenario Challenge",
+      "file": "lesson-15-02-survival-scenario-challenge.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "15-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Survival Scenario Challenge",
+      "file": "lesson-15-02-survival-scenario-challenge.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "15-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Survival Scenario Challenge",
+      "file": "lesson-15-02-survival-scenario-challenge.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "15-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Survival Scenario Challenge",
+      "file": "lesson-15-02-survival-scenario-challenge.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "15-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Survival Scenario Challenge",
+      "file": "lesson-15-02-survival-scenario-challenge.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "15-2-closing": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Survival Scenario Challenge",
+      "file": "lesson-15-02-survival-scenario-challenge.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "16-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 How Do Traits Help Organisms Survive?",
+      "file": "lesson-16-01-traits-survival.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "16-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Traits Help Organisms Survive?",
+      "file": "lesson-16-01-traits-survival.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "16-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Traits Help Organisms Survive?",
+      "file": "lesson-16-01-traits-survival.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "16-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 How Do Traits Help Organisms Survive?",
+      "file": "lesson-16-01-traits-survival.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "16-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 How Do Traits Help Organisms Survive?",
+      "file": "lesson-16-01-traits-survival.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "16-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Traits Help Organisms Survive?",
+      "file": "lesson-16-01-traits-survival.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "16-1-closing": {
+      "lesson": "Optima Academy Online \u2013 How Do Traits Help Organisms Survive?",
+      "file": "lesson-16-01-traits-survival.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "16-02-welcome": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Design an Adapted Animal",
+      "file": "lesson-16-02-design-adapted-animal.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "16-02-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Design an Adapted Animal",
+      "file": "lesson-16-02-design-adapted-animal.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "16-02-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Design an Adapted Animal",
+      "file": "lesson-16-02-design-adapted-animal.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "16-02-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Design an Adapted Animal",
+      "file": "lesson-16-02-design-adapted-animal.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "16-02-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Design an Adapted Animal",
+      "file": "lesson-16-02-design-adapted-animal.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "16-02-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Design an Adapted Animal",
+      "file": "lesson-16-02-design-adapted-animal.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "16-02-closing": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Design an Adapted Animal",
+      "file": "lesson-16-02-design-adapted-animal.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "17-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 Lesson 17.01: What Can Fossils Tell Us?",
+      "file": "lesson-17-01-what-can-fossils-tell-us.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "17-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 17.01: What Can Fossils Tell Us?",
+      "file": "lesson-17-01-what-can-fossils-tell-us.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "17-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 17.01: What Can Fossils Tell Us?",
+      "file": "lesson-17-01-what-can-fossils-tell-us.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "17-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Lesson 17.01: What Can Fossils Tell Us?",
+      "file": "lesson-17-01-what-can-fossils-tell-us.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "17-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Lesson 17.01: What Can Fossils Tell Us?",
+      "file": "lesson-17-01-what-can-fossils-tell-us.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "17-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 17.01: What Can Fossils Tell Us?",
+      "file": "lesson-17-01-what-can-fossils-tell-us.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "17-1-closing": {
+      "lesson": "Optima Academy Online \u2013 Lesson 17.01: What Can Fossils Tell Us?",
+      "file": "lesson-17-01-what-can-fossils-tell-us.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "17-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 Lesson 17.02: Investigation \u2014 Fossil Dig Simulation",
+      "file": "lesson-17-02-fossil-dig-simulation.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "17-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 17.02: Investigation \u2014 Fossil Dig Simulation",
+      "file": "lesson-17-02-fossil-dig-simulation.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "17-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 17.02: Investigation \u2014 Fossil Dig Simulation",
+      "file": "lesson-17-02-fossil-dig-simulation.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "17-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Lesson 17.02: Investigation \u2014 Fossil Dig Simulation",
+      "file": "lesson-17-02-fossil-dig-simulation.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "17-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Lesson 17.02: Investigation \u2014 Fossil Dig Simulation",
+      "file": "lesson-17-02-fossil-dig-simulation.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "17-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 17.02: Investigation \u2014 Fossil Dig Simulation",
+      "file": "lesson-17-02-fossil-dig-simulation.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "17-2-closing": {
+      "lesson": "Optima Academy Online \u2013 Lesson 17.02: Investigation \u2014 Fossil Dig Simulation",
+      "file": "lesson-17-02-fossil-dig-simulation.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "18-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 Lesson 18.01: How Do Plants Survive in Different Environments?",
+      "file": "lesson-18-01-plant-survival-strategies.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "18-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 18.01: How Do Plants Survive in Different Environments?",
+      "file": "lesson-18-01-plant-survival-strategies.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "18-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 18.01: How Do Plants Survive in Different Environments?",
+      "file": "lesson-18-01-plant-survival-strategies.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "18-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Lesson 18.01: How Do Plants Survive in Different Environments?",
+      "file": "lesson-18-01-plant-survival-strategies.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "18-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Lesson 18.01: How Do Plants Survive in Different Environments?",
+      "file": "lesson-18-01-plant-survival-strategies.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "18-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 18.01: How Do Plants Survive in Different Environments?",
+      "file": "lesson-18-01-plant-survival-strategies.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "18-1-closing": {
+      "lesson": "Optima Academy Online \u2013 Lesson 18.01: How Do Plants Survive in Different Environments?",
+      "file": "lesson-18-01-plant-survival-strategies.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "18-02-welcome": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Compare Plant Adaptations",
+      "file": "lesson-18-02-compare-plant-adaptations.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "18-02-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Compare Plant Adaptations",
+      "file": "lesson-18-02-compare-plant-adaptations.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "18-02-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Compare Plant Adaptations",
+      "file": "lesson-18-02-compare-plant-adaptations.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "18-02-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Compare Plant Adaptations",
+      "file": "lesson-18-02-compare-plant-adaptations.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "18-02-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Compare Plant Adaptations",
+      "file": "lesson-18-02-compare-plant-adaptations.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "18-02-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Compare Plant Adaptations",
+      "file": "lesson-18-02-compare-plant-adaptations.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "18-02-closing": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Compare Plant Adaptations",
+      "file": "lesson-18-02-compare-plant-adaptations.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "19-01-welcome": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Make Food?",
+      "file": "lesson-19-01-how-do-plants-make-food.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "19-01-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Make Food?",
+      "file": "lesson-19-01-how-do-plants-make-food.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "19-01-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Make Food?",
+      "file": "lesson-19-01-how-do-plants-make-food.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "19-01-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Make Food?",
+      "file": "lesson-19-01-how-do-plants-make-food.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "19-01-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Make Food?",
+      "file": "lesson-19-01-how-do-plants-make-food.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "19-01-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Make Food?",
+      "file": "lesson-19-01-how-do-plants-make-food.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "19-01-closing": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Make Food?",
+      "file": "lesson-19-01-how-do-plants-make-food.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "19-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Light &amp; Plant Growth",
+      "file": "lesson-19-02-light-plant-growth.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "19-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Light &amp; Plant Growth",
+      "file": "lesson-19-02-light-plant-growth.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "19-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Light &amp; Plant Growth",
+      "file": "lesson-19-02-light-plant-growth.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "19-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Light &amp; Plant Growth",
+      "file": "lesson-19-02-light-plant-growth.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "19-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Light &amp; Plant Growth",
+      "file": "lesson-19-02-light-plant-growth.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "19-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Light &amp; Plant Growth",
+      "file": "lesson-19-02-light-plant-growth.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "19-2-closing": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Light &amp; Plant Growth",
+      "file": "lesson-19-02-light-plant-growth.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "20-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Respond to Their Environment?",
+      "file": "lesson-20-01-plant-responses.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "20-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Respond to Their Environment?",
+      "file": "lesson-20-01-plant-responses.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "20-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Respond to Their Environment?",
+      "file": "lesson-20-01-plant-responses.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "20-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Respond to Their Environment?",
+      "file": "lesson-20-01-plant-responses.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "20-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Respond to Their Environment?",
+      "file": "lesson-20-01-plant-responses.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "20-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Respond to Their Environment?",
+      "file": "lesson-20-01-plant-responses.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "20-1-closing": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Respond to Their Environment?",
+      "file": "lesson-20-01-plant-responses.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "20-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 Lesson 20.02: Investigation \u2014 Phototropism Experiment",
+      "file": "lesson-20-02-phototropism.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "20-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 20.02: Investigation \u2014 Phototropism Experiment",
+      "file": "lesson-20-02-phototropism.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "20-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 20.02: Investigation \u2014 Phototropism Experiment",
+      "file": "lesson-20-02-phototropism.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "20-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Lesson 20.02: Investigation \u2014 Phototropism Experiment",
+      "file": "lesson-20-02-phototropism.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "20-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Lesson 20.02: Investigation \u2014 Phototropism Experiment",
+      "file": "lesson-20-02-phototropism.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "20-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Lesson 20.02: Investigation \u2014 Phototropism Experiment",
+      "file": "lesson-20-02-phototropism.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "20-2-closing": {
+      "lesson": "Optima Academy Online \u2013 Lesson 20.02: Investigation \u2014 Phototropism Experiment",
+      "file": "lesson-20-02-phototropism.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "21-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Reproduce?",
+      "file": "lesson-21-01-how-plants-reproduce.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "21-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Reproduce?",
+      "file": "lesson-21-01-how-plants-reproduce.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "21-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Reproduce?",
+      "file": "lesson-21-01-how-plants-reproduce.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "21-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Reproduce?",
+      "file": "lesson-21-01-how-plants-reproduce.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "21-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Reproduce?",
+      "file": "lesson-21-01-how-plants-reproduce.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "21-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Reproduce?",
+      "file": "lesson-21-01-how-plants-reproduce.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "21-1-closing": {
+      "lesson": "Optima Academy Online \u2013 How Do Plants Reproduce?",
+      "file": "lesson-21-01-how-plants-reproduce.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "21-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Seed vs. Spore Sorting",
+      "file": "lesson-21-02-seed-vs-spore-sorting.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "21-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Seed vs. Spore Sorting",
+      "file": "lesson-21-02-seed-vs-spore-sorting.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "21-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Seed vs. Spore Sorting",
+      "file": "lesson-21-02-seed-vs-spore-sorting.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "21-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Seed vs. Spore Sorting",
+      "file": "lesson-21-02-seed-vs-spore-sorting.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "21-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Seed vs. Spore Sorting",
+      "file": "lesson-21-02-seed-vs-spore-sorting.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "21-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Seed vs. Spore Sorting",
+      "file": "lesson-21-02-seed-vs-spore-sorting.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "21-2-closing": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Seed vs. Spore Sorting",
+      "file": "lesson-21-02-seed-vs-spore-sorting.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "22-01-welcome": {
+      "lesson": "Optima Academy Online \u2013 How Do Humans Affect Ecosystems?",
+      "file": "lesson-22-01-how-do-humans-affect-ecosystems.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "22-01-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Humans Affect Ecosystems?",
+      "file": "lesson-22-01-how-do-humans-affect-ecosystems.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "22-01-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Humans Affect Ecosystems?",
+      "file": "lesson-22-01-how-do-humans-affect-ecosystems.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "22-01-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 How Do Humans Affect Ecosystems?",
+      "file": "lesson-22-01-how-do-humans-affect-ecosystems.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "22-01-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 How Do Humans Affect Ecosystems?",
+      "file": "lesson-22-01-how-do-humans-affect-ecosystems.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "22-01-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Do Humans Affect Ecosystems?",
+      "file": "lesson-22-01-how-do-humans-affect-ecosystems.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "22-01-closing": {
+      "lesson": "Optima Academy Online \u2013 How Do Humans Affect Ecosystems?",
+      "file": "lesson-22-01-how-do-humans-affect-ecosystems.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "22-02-welcome": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Human Impact Case Study",
+      "file": "lesson-22-02-human-impact-case-study.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "22-02-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Human Impact Case Study",
+      "file": "lesson-22-02-human-impact-case-study.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "22-02-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Human Impact Case Study",
+      "file": "lesson-22-02-human-impact-case-study.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "22-02-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Human Impact Case Study",
+      "file": "lesson-22-02-human-impact-case-study.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "22-02-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Human Impact Case Study",
+      "file": "lesson-22-02-human-impact-case-study.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "22-02-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Human Impact Case Study",
+      "file": "lesson-22-02-human-impact-case-study.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "22-02-closing": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Human Impact Case Study",
+      "file": "lesson-22-02-human-impact-case-study.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "23-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 What Types of Pollution Harm Ecosystems?",
+      "file": "lesson-23-01-pollution-ecosystems.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "23-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Types of Pollution Harm Ecosystems?",
+      "file": "lesson-23-01-pollution-ecosystems.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "23-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Types of Pollution Harm Ecosystems?",
+      "file": "lesson-23-01-pollution-ecosystems.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "23-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 What Types of Pollution Harm Ecosystems?",
+      "file": "lesson-23-01-pollution-ecosystems.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "23-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 What Types of Pollution Harm Ecosystems?",
+      "file": "lesson-23-01-pollution-ecosystems.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "23-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Types of Pollution Harm Ecosystems?",
+      "file": "lesson-23-01-pollution-ecosystems.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "23-1-closing": {
+      "lesson": "Optima Academy Online \u2013 What Types of Pollution Harm Ecosystems?",
+      "file": "lesson-23-01-pollution-ecosystems.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "23-02-welcome": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Pollution Cleanup Simulation",
+      "file": "lesson-23-02-pollution-cleanup.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "23-02-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Pollution Cleanup Simulation",
+      "file": "lesson-23-02-pollution-cleanup.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "23-02-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Pollution Cleanup Simulation",
+      "file": "lesson-23-02-pollution-cleanup.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "23-02-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Pollution Cleanup Simulation",
+      "file": "lesson-23-02-pollution-cleanup.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "23-02-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Pollution Cleanup Simulation",
+      "file": "lesson-23-02-pollution-cleanup.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "23-02-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Pollution Cleanup Simulation",
+      "file": "lesson-23-02-pollution-cleanup.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "23-02-closing": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Pollution Cleanup Simulation",
+      "file": "lesson-23-02-pollution-cleanup.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "24-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 What Is Conservation?",
+      "file": "lesson-24-01-what-is-conservation.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "24-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Is Conservation?",
+      "file": "lesson-24-01-what-is-conservation.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "24-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Is Conservation?",
+      "file": "lesson-24-01-what-is-conservation.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "24-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 What Is Conservation?",
+      "file": "lesson-24-01-what-is-conservation.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "24-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 What Is Conservation?",
+      "file": "lesson-24-01-what-is-conservation.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "24-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Is Conservation?",
+      "file": "lesson-24-01-what-is-conservation.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "24-1-closing": {
+      "lesson": "Optima Academy Online \u2013 What Is Conservation?",
+      "file": "lesson-24-01-what-is-conservation.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "24-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 How Can We Practice Conservation?",
+      "file": "lesson-24-02-how-can-we-practice-conservation.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "24-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Can We Practice Conservation?",
+      "file": "lesson-24-02-how-can-we-practice-conservation.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "24-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Can We Practice Conservation?",
+      "file": "lesson-24-02-how-can-we-practice-conservation.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "24-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 How Can We Practice Conservation?",
+      "file": "lesson-24-02-how-can-we-practice-conservation.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "24-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 How Can We Practice Conservation?",
+      "file": "lesson-24-02-how-can-we-practice-conservation.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "24-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Can We Practice Conservation?",
+      "file": "lesson-24-02-how-can-we-practice-conservation.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "24-2-closing": {
+      "lesson": "Optima Academy Online \u2013 How Can We Practice Conservation?",
+      "file": "lesson-24-02-how-can-we-practice-conservation.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "25-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 Why Do We Protect National Parks?",
+      "file": "lesson-25-01-why-do-we-protect-national-parks.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "25-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Why Do We Protect National Parks?",
+      "file": "lesson-25-01-why-do-we-protect-national-parks.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "25-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Why Do We Protect National Parks?",
+      "file": "lesson-25-01-why-do-we-protect-national-parks.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "25-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Why Do We Protect National Parks?",
+      "file": "lesson-25-01-why-do-we-protect-national-parks.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "25-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Why Do We Protect National Parks?",
+      "file": "lesson-25-01-why-do-we-protect-national-parks.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "25-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Why Do We Protect National Parks?",
+      "file": "lesson-25-01-why-do-we-protect-national-parks.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "25-1-closing": {
+      "lesson": "Optima Academy Online \u2013 Why Do We Protect National Parks?",
+      "file": "lesson-25-01-why-do-we-protect-national-parks.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "25-02-welcome": {
+      "lesson": "Optima Academy Online \u2013 Protect a Park Proposal",
+      "file": "lesson-25-02-protect-a-park-proposal.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "25-02-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Protect a Park Proposal",
+      "file": "lesson-25-02-protect-a-park-proposal.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "25-02-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Protect a Park Proposal",
+      "file": "lesson-25-02-protect-a-park-proposal.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "25-02-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Protect a Park Proposal",
+      "file": "lesson-25-02-protect-a-park-proposal.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "25-02-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Protect a Park Proposal",
+      "file": "lesson-25-02-protect-a-park-proposal.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "25-02-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Protect a Park Proposal",
+      "file": "lesson-25-02-protect-a-park-proposal.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "25-02-closing": {
+      "lesson": "Optima Academy Online \u2013 Protect a Park Proposal",
+      "file": "lesson-25-02-protect-a-park-proposal.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "26-01-welcome": {
+      "lesson": "Optima Academy Online \u2013 What Are the Properties of Matter?",
+      "file": "lesson-26-01-properties-of-matter.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "26-01-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Are the Properties of Matter?",
+      "file": "lesson-26-01-properties-of-matter.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "26-01-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Are the Properties of Matter?",
+      "file": "lesson-26-01-properties-of-matter.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "26-01-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 What Are the Properties of Matter?",
+      "file": "lesson-26-01-properties-of-matter.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "26-01-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 What Are the Properties of Matter?",
+      "file": "lesson-26-01-properties-of-matter.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "26-01-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Are the Properties of Matter?",
+      "file": "lesson-26-01-properties-of-matter.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "26-01-closing": {
+      "lesson": "Optima Academy Online \u2013 What Are the Properties of Matter?",
+      "file": "lesson-26-01-properties-of-matter.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "26-02-welcome": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Measuring and Comparing Matter",
+      "file": "lesson-26-02-measuring-matter.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "26-02-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Measuring and Comparing Matter",
+      "file": "lesson-26-02-measuring-matter.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "26-02-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Measuring and Comparing Matter",
+      "file": "lesson-26-02-measuring-matter.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "26-02-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Measuring and Comparing Matter",
+      "file": "lesson-26-02-measuring-matter.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "26-02-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Measuring and Comparing Matter",
+      "file": "lesson-26-02-measuring-matter.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "26-02-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Measuring and Comparing Matter",
+      "file": "lesson-26-02-measuring-matter.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "26-02-closing": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Measuring and Comparing Matter",
+      "file": "lesson-26-02-measuring-matter.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "27-01-welcome": {
+      "lesson": "Optima Academy Online \u2013 How Does Matter Change When Heated or Cooled?",
+      "file": "lesson-27-01-matter-changes.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "27-01-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Does Matter Change When Heated or Cooled?",
+      "file": "lesson-27-01-matter-changes.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "27-01-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Does Matter Change When Heated or Cooled?",
+      "file": "lesson-27-01-matter-changes.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "27-01-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 How Does Matter Change When Heated or Cooled?",
+      "file": "lesson-27-01-matter-changes.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "27-01-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 How Does Matter Change When Heated or Cooled?",
+      "file": "lesson-27-01-matter-changes.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "27-01-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Does Matter Change When Heated or Cooled?",
+      "file": "lesson-27-01-matter-changes.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "27-01-closing": {
+      "lesson": "Optima Academy Online \u2013 How Does Matter Change When Heated or Cooled?",
+      "file": "lesson-27-01-matter-changes.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "27-02-welcome": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Heating, Cooling, and Water Changes",
+      "file": "lesson-27-02-heating-cooling-water.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "27-02-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Heating, Cooling, and Water Changes",
+      "file": "lesson-27-02-heating-cooling-water.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "27-02-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Heating, Cooling, and Water Changes",
+      "file": "lesson-27-02-heating-cooling-water.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "27-02-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Heating, Cooling, and Water Changes",
+      "file": "lesson-27-02-heating-cooling-water.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "27-02-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Heating, Cooling, and Water Changes",
+      "file": "lesson-27-02-heating-cooling-water.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "27-02-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Heating, Cooling, and Water Changes",
+      "file": "lesson-27-02-heating-cooling-water.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "27-02-closing": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Heating, Cooling, and Water Changes",
+      "file": "lesson-27-02-heating-cooling-water.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "28-01-welcome": {
+      "lesson": "Optima Academy Online \u2013 How Does Energy Cause Change?",
+      "file": "lesson-28-01-energy-causes-change.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "28-01-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Does Energy Cause Change?",
+      "file": "lesson-28-01-energy-causes-change.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "28-01-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Does Energy Cause Change?",
+      "file": "lesson-28-01-energy-causes-change.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "28-01-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 How Does Energy Cause Change?",
+      "file": "lesson-28-01-energy-causes-change.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "28-01-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 How Does Energy Cause Change?",
+      "file": "lesson-28-01-energy-causes-change.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "28-01-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Does Energy Cause Change?",
+      "file": "lesson-28-01-energy-causes-change.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "28-01-closing": {
+      "lesson": "Optima Academy Online \u2013 How Does Energy Cause Change?",
+      "file": "lesson-28-01-energy-causes-change.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "28-02-welcome": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Light, Reflection, Absorption, and Heat",
+      "file": "lesson-28-02-light-reflection-heat.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "28-02-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Light, Reflection, Absorption, and Heat",
+      "file": "lesson-28-02-light-reflection-heat.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "28-02-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Light, Reflection, Absorption, and Heat",
+      "file": "lesson-28-02-light-reflection-heat.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "28-02-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Light, Reflection, Absorption, and Heat",
+      "file": "lesson-28-02-light-reflection-heat.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "28-02-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Light, Reflection, Absorption, and Heat",
+      "file": "lesson-28-02-light-reflection-heat.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "28-02-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Light, Reflection, Absorption, and Heat",
+      "file": "lesson-28-02-light-reflection-heat.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "28-02-closing": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Light, Reflection, Absorption, and Heat",
+      "file": "lesson-28-02-light-reflection-heat.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "29-01-welcome": {
+      "lesson": "Optima Academy Online \u2013 What Makes the Everglades Special?",
+      "file": "lesson-29-01-what-makes-the-everglades-special.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "29-01-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Makes the Everglades Special?",
+      "file": "lesson-29-01-what-makes-the-everglades-special.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "29-01-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Makes the Everglades Special?",
+      "file": "lesson-29-01-what-makes-the-everglades-special.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "29-01-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 What Makes the Everglades Special?",
+      "file": "lesson-29-01-what-makes-the-everglades-special.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "29-01-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 What Makes the Everglades Special?",
+      "file": "lesson-29-01-what-makes-the-everglades-special.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "29-01-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Makes the Everglades Special?",
+      "file": "lesson-29-01-what-makes-the-everglades-special.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "29-01-closing": {
+      "lesson": "Optima Academy Online \u2013 What Makes the Everglades Special?",
+      "file": "lesson-29-01-what-makes-the-everglades-special.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "29-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 29.02 \u2013 Investigation: Everglades Food Web",
+      "file": "lesson-29-02-everglades-food-web.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "29-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 29.02 \u2013 Investigation: Everglades Food Web",
+      "file": "lesson-29-02-everglades-food-web.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "29-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 29.02 \u2013 Investigation: Everglades Food Web",
+      "file": "lesson-29-02-everglades-food-web.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "29-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 29.02 \u2013 Investigation: Everglades Food Web",
+      "file": "lesson-29-02-everglades-food-web.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "29-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 29.02 \u2013 Investigation: Everglades Food Web",
+      "file": "lesson-29-02-everglades-food-web.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "29-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 29.02 \u2013 Investigation: Everglades Food Web",
+      "file": "lesson-29-02-everglades-food-web.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "29-2-closing": {
+      "lesson": "Optima Academy Online \u2013 29.02 \u2013 Investigation: Everglades Food Web",
+      "file": "lesson-29-02-everglades-food-web.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "30-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 How Are Florida Animals Adapted?",
+      "file": "lesson-30-01-florida-animal-adaptations.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "30-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Are Florida Animals Adapted?",
+      "file": "lesson-30-01-florida-animal-adaptations.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "30-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Are Florida Animals Adapted?",
+      "file": "lesson-30-01-florida-animal-adaptations.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "30-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 How Are Florida Animals Adapted?",
+      "file": "lesson-30-01-florida-animal-adaptations.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "30-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 How Are Florida Animals Adapted?",
+      "file": "lesson-30-01-florida-animal-adaptations.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "30-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Are Florida Animals Adapted?",
+      "file": "lesson-30-01-florida-animal-adaptations.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "30-1-closing": {
+      "lesson": "Optima Academy Online \u2013 How Are Florida Animals Adapted?",
+      "file": "lesson-30-01-florida-animal-adaptations.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "30-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Adaptation Comparison",
+      "file": "lesson-30-02-adaptation-comparison.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "30-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Adaptation Comparison",
+      "file": "lesson-30-02-adaptation-comparison.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "30-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Adaptation Comparison",
+      "file": "lesson-30-02-adaptation-comparison.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "30-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Adaptation Comparison",
+      "file": "lesson-30-02-adaptation-comparison.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "30-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Adaptation Comparison",
+      "file": "lesson-30-02-adaptation-comparison.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "30-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Adaptation Comparison",
+      "file": "lesson-30-02-adaptation-comparison.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "30-2-closing": {
+      "lesson": "Optima Academy Online \u2013 Investigation: Adaptation Comparison",
+      "file": "lesson-30-02-adaptation-comparison.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "31-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 What Threatens Florida Ecosystems?",
+      "file": "lesson-31-01-florida-ecosystem-threats.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "31-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Threatens Florida Ecosystems?",
+      "file": "lesson-31-01-florida-ecosystem-threats.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "31-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Threatens Florida Ecosystems?",
+      "file": "lesson-31-01-florida-ecosystem-threats.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "31-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 What Threatens Florida Ecosystems?",
+      "file": "lesson-31-01-florida-ecosystem-threats.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "31-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 What Threatens Florida Ecosystems?",
+      "file": "lesson-31-01-florida-ecosystem-threats.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "31-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 What Threatens Florida Ecosystems?",
+      "file": "lesson-31-01-florida-ecosystem-threats.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "31-1-closing": {
+      "lesson": "Optima Academy Online \u2013 What Threatens Florida Ecosystems?",
+      "file": "lesson-31-01-florida-ecosystem-threats.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "31-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 Engineering Challenge: Protect Florida Habitats",
+      "file": "lesson-31-02-protect-florida-habitats.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "31-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Engineering Challenge: Protect Florida Habitats",
+      "file": "lesson-31-02-protect-florida-habitats.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "31-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Engineering Challenge: Protect Florida Habitats",
+      "file": "lesson-31-02-protect-florida-habitats.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "31-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Engineering Challenge: Protect Florida Habitats",
+      "file": "lesson-31-02-protect-florida-habitats.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "31-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Engineering Challenge: Protect Florida Habitats",
+      "file": "lesson-31-02-protect-florida-habitats.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "31-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Engineering Challenge: Protect Florida Habitats",
+      "file": "lesson-31-02-protect-florida-habitats.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "31-2-closing": {
+      "lesson": "Optima Academy Online \u2013 Engineering Challenge: Protect Florida Habitats",
+      "file": "lesson-31-02-protect-florida-habitats.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "32-01-welcome": {
+      "lesson": "Optima Academy Online \u2013 Researching a National Park Ecosystem",
+      "file": "lesson-32-01-national-park-ecosystem.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "32-01-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Researching a National Park Ecosystem",
+      "file": "lesson-32-01-national-park-ecosystem.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "32-01-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Researching a National Park Ecosystem",
+      "file": "lesson-32-01-national-park-ecosystem.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "32-01-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Researching a National Park Ecosystem",
+      "file": "lesson-32-01-national-park-ecosystem.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "32-01-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Researching a National Park Ecosystem",
+      "file": "lesson-32-01-national-park-ecosystem.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "32-01-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Researching a National Park Ecosystem",
+      "file": "lesson-32-01-national-park-ecosystem.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "32-01-closing": {
+      "lesson": "Optima Academy Online \u2013 Researching a National Park Ecosystem",
+      "file": "lesson-32-01-national-park-ecosystem.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "32-02-welcome": {
+      "lesson": "Optima Academy Online \u2013 Build a Park Ecosystem Presentation",
+      "file": "lesson-32-02-build-park-ecosystem-presentation.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "32-02-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Build a Park Ecosystem Presentation",
+      "file": "lesson-32-02-build-park-ecosystem-presentation.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "32-02-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Build a Park Ecosystem Presentation",
+      "file": "lesson-32-02-build-park-ecosystem-presentation.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "32-02-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Build a Park Ecosystem Presentation",
+      "file": "lesson-32-02-build-park-ecosystem-presentation.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "32-02-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Build a Park Ecosystem Presentation",
+      "file": "lesson-32-02-build-park-ecosystem-presentation.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "32-02-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Build a Park Ecosystem Presentation",
+      "file": "lesson-32-02-build-park-ecosystem-presentation.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "32-02-closing": {
+      "lesson": "Optima Academy Online \u2013 Build a Park Ecosystem Presentation",
+      "file": "lesson-32-02-build-park-ecosystem-presentation.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "33-1-welcome": {
+      "lesson": "Optima Academy Online \u2013 How Is Everything Connected?",
+      "file": "lesson-33-01-how-is-everything-connected.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "33-1-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Is Everything Connected?",
+      "file": "lesson-33-01-how-is-everything-connected.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "33-1-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Is Everything Connected?",
+      "file": "lesson-33-01-how-is-everything-connected.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "33-1-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 How Is Everything Connected?",
+      "file": "lesson-33-01-how-is-everything-connected.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "33-1-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 How Is Everything Connected?",
+      "file": "lesson-33-01-how-is-everything-connected.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "33-1-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 How Is Everything Connected?",
+      "file": "lesson-33-01-how-is-everything-connected.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "33-1-closing": {
+      "lesson": "Optima Academy Online \u2013 How Is Everything Connected?",
+      "file": "lesson-33-01-how-is-everything-connected.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    },
+    "33-2-welcome": {
+      "lesson": "Optima Academy Online \u2013 Your Final Science Investigation",
+      "file": "lesson-33-02-final-investigation.html",
+      "type": "Teacher Welcome",
+      "section": "Welcome",
+      "embed": "",
+      "status": "pending"
+    },
+    "33-2-lesson-explainer": {
+      "lesson": "Optima Academy Online \u2013 Your Final Science Investigation",
+      "file": "lesson-33-02-final-investigation.html",
+      "type": "Core Lesson",
+      "section": "Learn",
+      "embed": "",
+      "status": "pending"
+    },
+    "33-2-exploration-explainer": {
+      "lesson": "Optima Academy Online \u2013 Your Final Science Investigation",
+      "file": "lesson-33-02-final-investigation.html",
+      "type": "Exploration",
+      "section": "Explore",
+      "embed": "",
+      "status": "pending"
+    },
+    "33-2-quiz-perfect": {
+      "lesson": "Optima Academy Online \u2013 Your Final Science Investigation",
+      "file": "lesson-33-02-final-investigation.html",
+      "type": "Perfect Score Celebration",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "33-2-quiz-review": {
+      "lesson": "Optima Academy Online \u2013 Your Final Science Investigation",
+      "file": "lesson-33-02-final-investigation.html",
+      "type": "Review & Encouragement",
+      "section": "Quiz",
+      "embed": "",
+      "status": "pending"
+    },
+    "33-2-assignment-explainer": {
+      "lesson": "Optima Academy Online \u2013 Your Final Science Investigation",
+      "file": "lesson-33-02-final-investigation.html",
+      "type": "Assignment Explainer",
+      "section": "Assignment",
+      "embed": "",
+      "status": "pending"
+    },
+    "33-2-closing": {
+      "lesson": "Optima Academy Online \u2013 Your Final Science Investigation",
+      "file": "lesson-33-02-final-investigation.html",
+      "type": "Closing",
+      "section": "Closing",
+      "embed": "",
+      "status": "pending"
+    }
+  }
+}
