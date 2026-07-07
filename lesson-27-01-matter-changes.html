@@ -2209,7 +2209,7 @@ if (btt) { btt.textContent = LESSON_EMOJI + ' Back to Top'; }
 
 <!-- Video Manifest Loader -->
 <script>
-(function() {
+document.addEventListener('DOMContentLoaded', function() {
   // Auto-detect manifest URL: same directory as this HTML file
   const scriptBase = document.currentScript ? document.currentScript.src : '';
   const pageBase = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
@@ -2245,7 +2245,7 @@ if (btt) { btt.textContent = LESSON_EMOJI + ' Back to Top'; }
       });
     })
     .catch(() => { /* manifest not found or not yet deployed — placeholders stay */ });
-})();
+});
 </script>
 
 </body>
