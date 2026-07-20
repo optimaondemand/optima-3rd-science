@@ -1215,23 +1215,6 @@ em { color: #5A4D3E; }
   <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
 </div>
 <div class="tab-panel active" id="tab-vocab">
-  <div class="video-wrap">
-    <div class="video-wrap-header">
-      <span style="font-size:20px;">🎬</span>
-      <div>
-        <div class="video-wrap-type">Introduction · Welcome Video</div>
-        <div class="video-wrap-title">Welcome to Today's Lesson!</div>
-      </div>
-    </div>
-    <div class="video-ratio">
-      <div class="video-placeholder">
-        <div class="video-placeholder-icon">🎬</div>
-        <div class="video-placeholder-text">Teacher introduction video coming soon</div>
-        <div class="video-placeholder-id"><!-- slot: 13-1-welcome --></div>
-        <!-- TEACHER NOTE: Introduce ecosystems. Preview the big question: What is an ecosystem and how do living and nonliving parts work together? -->
-      </div>
-    </div>
-  </div>
 
   <p class="tab-orientation">Start here. Learn the words you will use today.</p>
 
@@ -1255,23 +1238,6 @@ em { color: #5A4D3E; }
   <div class="tab-next-wrap"><button class="tab-next-btn" onclick="switchTab('lesson')">Continue to 📖 The Lesson →</button></div>
 </div>
 <div class="tab-panel" id="tab-lesson">
-  <div class="video-wrap">
-    <div class="video-wrap-header">
-      <span style="font-size:20px;">📖</span>
-      <div>
-        <div class="video-wrap-type">Activity 2 · Core Lesson</div>
-        <div class="video-wrap-title">What Makes an Ecosystem?</div>
-      </div>
-    </div>
-    <div class="video-ratio">
-      <div class="video-placeholder">
-        <div class="video-placeholder-icon">📖</div>
-        <div class="video-placeholder-text">Core lesson video coming soon</div>
-        <div class="video-placeholder-id"><!-- slot: 13-1-lesson-explainer --></div>
-        <!-- TEACHER NOTE: Explain ecosystems as systems of living and nonliving things interacting. Cover producers, consumers, decomposers, and abiotic factors like sunlight, water, and soil. -->
-      </div>
-    </div>
-  </div>
 
   <p class="tab-orientation">Now learn the main science idea.</p>
 
@@ -1534,23 +1500,6 @@ em { color: #5A4D3E; }
   <div class="tab-next-wrap"><button class="tab-next-btn" onclick="switchTab('explore')">Continue to 🔬 Explore →</button></div>
 </div>
 <div class="tab-panel" id="tab-explore">
-  <div class="video-wrap">
-    <div class="video-wrap-header">
-      <span style="font-size:20px;">🔬</span>
-      <div>
-        <div class="video-wrap-type">Activity 3 · Investigation</div>
-        <div class="video-wrap-title">Build an Ecosystem Model</div>
-      </div>
-    </div>
-    <div class="video-ratio">
-      <div class="video-placeholder">
-        <div class="video-placeholder-icon">🔬</div>
-        <div class="video-placeholder-text">Exploration video coming soon</div>
-        <div class="video-placeholder-id"><!-- slot: 13-1-exploration-explainer --></div>
-        <!-- TEACHER NOTE: Walk through the ecosystem interaction chart activity. Show how to identify living/nonliving parts and draw connections between them. -->
-      </div>
-    </div>
-  </div>
 
   <p class="tab-orientation">Now test the idea yourself.</p>
 
@@ -1586,65 +1535,16 @@ em { color: #5A4D3E; }
     <div class="quiz-q" data-answer="c"><div class="quiz-q-text">2. What might happen if a forest stream dries up?</div><div class="quiz-options"><div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Nothing else would change</div><div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>Only rocks would be affected</div><div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>Some organisms may lose water or food</div></div><div class="quiz-feedback fb-correct">🌿 Correct. A change to water can affect many living things.</div><div class="quiz-feedback fb-wrong">Think about organisms that need water or eat animals that live near water.</div></div>
     <div class="quiz-q" data-answer="a"><div class="quiz-q-text">3. Which is a nonliving part of an ecosystem?</div><div class="quiz-options"><div class="quiz-opt" data-val="a" onclick="checkQuiz(this)"><span class="opt-letter">A</span>Sunlight</div><div class="quiz-opt" data-val="b" onclick="checkQuiz(this)"><span class="opt-letter">B</span>A fern</div><div class="quiz-opt" data-val="c" onclick="checkQuiz(this)"><span class="opt-letter">C</span>A beetle</div></div><div class="quiz-feedback fb-correct">⭐ Right. Sunlight is not alive, but living things need it.</div><div class="quiz-feedback fb-wrong">Choose the part that does not grow, eat, or reproduce.</div></div>
     <div class="quiz-score" id="quizScore"><div class="quiz-score-num" id="quizScoreNum">0</div><div class="quiz-score-label">out of 3</div><div class="quiz-score-msg" id="quizScoreMsg"></div>
-      <div class="video-feedback" id="quizVideoCorrect" style="margin-top:18px;"><div class="video-wrap">
-    <div class="video-wrap-header">
-      <span style="font-size:20px;">✅</span>
-      <div>
-        <div class="video-wrap-type">Feedback · Perfect Score</div>
-        <div class="video-wrap-title">Amazing work, ecosystem scientist!</div>
-      </div>
-    </div>
-    <div class="video-ratio">
-      <div class="video-placeholder">
-        <div class="video-placeholder-icon">✅</div>
-        <div class="video-placeholder-text">Perfect score celebration video coming soon</div>
-        <div class="video-placeholder-id"><!-- slot: 13-1-quiz-perfect --></div>
-        <!-- TEACHER NOTE: Congratulate students. Preview the next lesson on what happens when an ecosystem gets out of balance. -->
-      </div>
-    </div>
-  </div>
+      <div class="video-feedback" id="quizVideoCorrect" style="margin-top:18px;">
 
   <p class="tab-orientation">Check what you understand.</p>
 </div>
-      <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;"><div class="video-wrap">
-    <div class="video-wrap-header">
-      <span style="font-size:20px;">📚</span>
-      <div>
-        <div class="video-wrap-type">Feedback · Keep Going</div>
-        <div class="video-wrap-title">Review the ecosystem parts.</div>
-      </div>
-    </div>
-    <div class="video-ratio">
-      <div class="video-placeholder">
-        <div class="video-placeholder-icon">📚</div>
-        <div class="video-placeholder-text">Review and encouragement video coming soon</div>
-        <div class="video-placeholder-id"><!-- slot: 13-1-quiz-review --></div>
-        <!-- TEACHER NOTE: Point students back to the living/nonliving interactions section. Suggest reviewing the ecosystem diagram. -->
-      </div>
-    </div>
-  </div></div>
+      <div class="video-feedback" id="quizVideoReview" style="margin-top:18px;"></div>
     </div>
   </div></div>
   <div class="tab-next-wrap"><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to ✍️ Assignment →</button></div>
 </div>
 <div class="tab-panel" id="tab-assignment">
-  <div class="video-wrap">
-    <div class="video-wrap-header">
-      <span style="font-size:20px;">✍️</span>
-      <div>
-        <div class="video-wrap-type">Activity 5 · Assignment</div>
-        <div class="video-wrap-title">Ecosystem Assignment</div>
-      </div>
-    </div>
-    <div class="video-ratio">
-      <div class="video-placeholder">
-        <div class="video-placeholder-icon">✍️</div>
-        <div class="video-placeholder-text">Assignment explainer video coming soon</div>
-        <div class="video-placeholder-id"><!-- slot: 13-1-assignment-explainer --></div>
-        <!-- TEACHER NOTE: Explain the ecosystem interaction chart, the short answer questions about changes affecting survival, and the Write & Explain response. -->
-      </div>
-    </div>
-  </div>
 
   <p class="tab-orientation">Show what you learned.</p>
 
@@ -1673,8 +1573,6 @@ em { color: #5A4D3E; }
       <div class="turn-in-item" onclick="toggleCheck(this)"><div class="turn-in-check check-icon"></div><div class="turn-in-item-text">My Write &amp; Explain response.</div></div>
       
     </div></div></div>
-    <div class="video-wrap" style="margin-top:24px;"><div class="video-wrap-header"><span style="font-size:20px;">👋</span><div><div class="video-wrap-type">Closing · Wrap-Up</div><div class="video-wrap-title">Great work today! Next we will keep thinking about survival.</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">👋</div><div class="video-placeholder-text">Closing video coming soon</div><div class="video-placeholder-id"><!-- slot: 13-1-closing --></div>
-        <!-- TEACHER NOTE: Wrap up ecosystems. Tease the next lesson: the Ecosystem Balance Simulation. --></div></div></div>
   </div></div>
 </div>
 <div class="footer"><div class="footer-line1">Optima Academy Online · <span>3rd Grade Science</span></div><div class="footer-line2">Lesson 13.01 &middot; NGSS 3-LS4-4 &middot; CPALMS SC.3.L.17.1</div><div class="footer-line3">© Optima Academy · All rights reserved</div></div>
