@@ -314,13 +314,10 @@ details > div { padding: 12px 18px 14px; font-size: 16px; color: #5A4D3E; line-h
 .video-wrap-type { font-size: 10px; color: #95D5B2; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; margin-bottom: 2px; }
 .video-wrap-title { font-size: 16px; color: #fff; font-weight: 800; line-height: 1.2; }
 
-
 .video-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #1a3a28, #1B4332); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; }
-
 
 .video-feedback { display: none; }
 .video-feedback.show { display: block; }
-
 
 /* ── Collapsible Intro Cards ── */
 .intro-2col .card .card-head { cursor: pointer; user-select: none; position: relative; }
@@ -671,7 +668,6 @@ em { color: #5A4D3E; }
 </script>
 </div>
 <!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
-
 
 <!-- ═══════════ PROGRESS BAR ═══════════ -->
 <div class="progress-wrap">
@@ -1125,7 +1121,6 @@ em { color: #5A4D3E; }
   <span class="need-chip"><span>📏</span>Ruler (optional)</span>
 </div>
 
-
 </div>
 
 <!-- ═══════════ TAB BAR ═══════════ -->
@@ -1137,27 +1132,13 @@ em { color: #5A4D3E; }
   <button class="tab-btn"        data-tab="assignment" onclick="switchTab('assignment')">✍️ Assignment<span class="tab-check">✓</span></button>
 </div>
 
-
 <!-- ══════════════════════════════════════════════════════════ -->
 <!-- TAB 1: VOCABULARY                                         -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel active" id="tab-vocab">
 
-
   <p class="tab-orientation">Start here. Learn the words you will use today.</p>
 
-<!-- ═══ INTRODUCTION VIDEO ═══ -->
-<div class="video-placeholder-wrap">
-<!-- slot: 31-02-intro -->
-<div class="video-placeholder-inner">
-  <span class="vp-icon">🎬</span>
-  <div class="vp-label">Introduction Video</div>
-  <div class="vp-title">Engineering Challenge: Protect Florida Habitats</div>
-  <div class="vp-slot">31-02-intro</div>
-  <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Preview the engineering challenge. Students will design a solution to help protect a Florida habitat from a specific threat. Emphasize the engineering design process and creative problem-solving. ~60 seconds.
-  </div>
-</div>
 </div>
 
   <!-- ACTIVITY 1: NOTICE & WONDER -->
@@ -1278,15 +1259,12 @@ em { color: #5A4D3E; }
 
 </div><!-- /tab-vocab -->
 
-
 <!-- ══════════════════════════════════════════════════════════ -->
 <!-- TAB 2: THE LESSON                                         -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-lesson">
 
-
   <p class="tab-orientation">Now learn the main science idea.</p>
-
 
   <!-- ACTIVITY 2: CORE LESSON CONTENT -->
   <div class="activity-card act-lesson scroll-reveal">
@@ -1566,15 +1544,12 @@ em { color: #5A4D3E; }
 
 </div><!-- /tab-lesson -->
 
-
 <!-- ══════════════════════════════════════════════════════════ -->
 <!-- TAB 3: ENGINEERING CHALLENGE                              -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-explore">
 
-
   <p class="tab-orientation">Now test the idea yourself.</p>
-
 
   <!-- IMAGE 2: Classroom engineering design materials — photorealistic classroom photo -->
   <div class="lesson-figure">
@@ -1766,14 +1741,12 @@ em { color: #5A4D3E; }
 
 </div><!-- /tab-explore -->
 
-
 <!-- ══════════════════════════════════════════════════════════ -->
 <!-- TAB 4: SELF-CHECK QUIZ                                    -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-quiz">
 
   <p class="tab-orientation">Check what you understand.</p>
-
 
   <div class="quiz-card scroll-reveal" style="margin-top:0; margin-bottom:18px;">
     <div style="display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E8DDD2;">
@@ -1843,15 +1816,12 @@ em { color: #5A4D3E; }
 
 </div><!-- /tab-quiz -->
 
-
 <!-- ══════════════════════════════════════════════════════════ -->
 <!-- TAB 5: ASSIGNMENT                                         -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel" id="tab-assignment">
 
-
   <p class="tab-orientation">Show what you learned.</p>
-
 
   <!-- ACTIVITY 5: ASSIGNMENT -->
   <div class="activity-card act-check scroll-reveal" style="margin-top:0;">
@@ -1985,12 +1955,10 @@ em { color: #5A4D3E; }
         </div>
       </div>
 
-
     </div>
   </div>
 
 </div><!-- /tab-assignment -->
-
 
 <!-- ═══════════ FOOTER ═══════════ -->
 <div class="footer">
@@ -2000,7 +1968,6 @@ em { color: #5A4D3E; }
 </div>
 
 </div><!-- /page-wrap -->
-
 
 <script>
 
@@ -2292,7 +2259,6 @@ document.getElementById('progressPct').textContent = '20%';
   if (btt) { btt.textContent = LESSON_EMOJI + ' Back to Top'; }
 })();
 </script>
-
 
 <!-- Video Manifest Loader -->
 <script>
