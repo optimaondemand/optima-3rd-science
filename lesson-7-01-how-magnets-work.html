@@ -777,6 +777,7 @@ em { color: #5A4D3E; }
 }
 /* ═══ VIDEO PLACEHOLDER ═══ */
 .video-placeholder-wrap {
+  display: none;
   border-radius: 14px; overflow: hidden; margin: 0 0 18px;
   border: 2px dashed rgba(82, 183, 136, 0.4);
   background: linear-gradient(135deg, #0E1C42, #1A2D5A);
@@ -1428,6 +1429,22 @@ em { color: #5A4D3E; }
 <!-- TAB 1: VOCABULARY                                         -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div class="tab-panel active" id="tab-vocab">
+
+
+<!-- ═══ INTRODUCTION VIDEO ═══ -->
+<div class="video-placeholder-wrap">
+<!-- slot: 7-01-intro -->
+<div class="video-placeholder-inner">
+  <span class="vp-icon">🎬</span>
+  <div class="vp-label">Introduction Video</div>
+  <div class="vp-title">How Do Magnets Work?</div>
+  <div class="vp-slot">7-01-intro</div>
+  <div class="vp-notes">
+    <strong>Teacher recording notes:</strong> Introduce magnets — they can push and pull without touching. Mention magnetic poles, attract vs. repel. Use real-life examples (fridge magnets, compass). Build curiosity: 'How can something push without touching?' ~60–90 seconds.
+  </div>
+</div>
+</div>
+
 
   <p class="tab-orientation">Start here. Learn the words you will use today.</p>
 
@@ -2434,7 +2451,7 @@ document.addEventListener('DOMContentLoaded', function() {
         iframe.removeAttribute('height');
         iframe.style.cssText = 'display:block;width:100%;aspect-ratio:16/9;border:none;';
         wrap.innerHTML = '';
-        wrap.style.cssText = 'border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
+        wrap.style.cssText = 'display:block;border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
         wrap.appendChild(iframe);
       });
     })
