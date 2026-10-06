@@ -9,7 +9,7 @@
   },
   "10-01-intro": {
     "status": "ready",
-    "embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/s1Q2EftjrTY?si=v9Is87_55k-DjW7S\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+    "embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/s1Q2EftjrTY?si=0cFyUDA2GsDkPb2p\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
   },
   "10-02-intro": {
     "status": "pending",
