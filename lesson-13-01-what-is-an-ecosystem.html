@@ -866,6 +866,7 @@ em { color: #5A4D3E; }
   margin-top: 10px; text-align: left; padding: 10px 12px;
   background: rgba(0,0,0,0.25); border-radius: 6px; border-left: 3px solid #52B788;
 }
+.progress-wrap { box-sizing: border-box; height: 44px; }
 </style>
 </head>
 
@@ -873,6 +874,12 @@ em { color: #5A4D3E; }
 <canvas id="confettiCanvas"></canvas>
 <button class="back-to-top" id="backToTop" type="button">🌳 Back to Top</button>
 <span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+<div class="progress-wrap">
+  <span class="progress-label">🌳 Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
 <div class="page-wrap">
 
 <!-- ═══════════════════════════════════════════════════════════════════════
@@ -1077,11 +1084,7 @@ em { color: #5A4D3E; }
 </div>
 <!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
 
-<div class="progress-wrap">
-  <span class="progress-label">🌳 Progress</span>
-  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-  <span class="progress-pct" id="progressPct">0%</span>
-</div>
+
 <div class="header">
   <div class="header-brand">
     <div class="header-logo"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" /></div>

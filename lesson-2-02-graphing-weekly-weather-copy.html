@@ -642,6 +642,7 @@ body {
   .tab-panel { padding: 14px 14px 24px; }
   .header-title { font-size: 22px; }
 }
+.progress-wrap { box-sizing: border-box; height: 44px; }
 </style>
 </head>
 
@@ -650,6 +651,13 @@ body {
 <canvas id="confettiCanvas"></canvas>
 <button id="backToTop" type="button" aria-label="Back to top">⛅ Back to Top</button>
 <span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<!-- ═══════════ PROGRESS BAR ═══════════ -->
+<div class="progress-wrap">
+  <span class="progress-label">⛅ Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
 
 <div class="page-wrap">
 
@@ -856,12 +864,7 @@ body {
 <!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
 
 
-<!-- ═══════════ PROGRESS BAR ═══════════ -->
-<div class="progress-wrap">
-  <span class="progress-label">⛅ Progress</span>
-  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-  <span class="progress-pct" id="progressPct">0%</span>
-</div>
+
 
 <!-- ═══════════ HEADER ═══════════ -->
 <div class="header">
