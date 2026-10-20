@@ -647,9 +647,18 @@ body {
 .turn-in-item-text { font-size: 16px; color: #2B1D12; font-weight: 600; line-height: 1.55; flex: 1; }
 .turn-in-item.checked .turn-in-item-text { color: #5A4D3E; }
 
+/* ── Footer ── */
+.footer {
+  background: #1B4332; padding: 20px 28px; text-align: center;
+}
+.footer-line1 { font-size: 15px; color: #95D5B2; font-weight: 700; }
+.footer-line1 span { color: #FDD835; }
+.footer-line2 { font-size: 13px; color: rgba(149,213,178,0.6); margin-top: 4px; }
+.footer-line3 { font-size: 11px; color: rgba(149,213,178,0.4); margin-top: 4px; }
+
 /* ── Progress Bar ── */
 .progress-wrap {
-  position: sticky; top: 0; z-index: 200;
+  position: sticky; top: 0; z-index: 200; box-sizing: border-box; height: 44px;
   background: #0E1C42; padding: 8px 20px 10px;
   border-bottom: 2px solid rgba(85,200,232,0.3);
   display: flex; align-items: center; gap: 14px;
@@ -731,6 +740,13 @@ em { color: #5A4D3E; }
 <canvas id="confettiCanvas" style="position:fixed;top:0;left:0;pointer-events:none;z-index:9999;"></canvas>
 <button class="back-to-top" id="backToTop" type="button">🧬 Back to Top</button>
 <span id="pageTop" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px;"></span>
+
+<!-- ═══════════ PROGRESS BAR ═══════════ -->
+<div class="progress-wrap">
+  <span class="progress-label">🧬 Progress</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
 
 <div class="page-wrap">
 
@@ -935,13 +951,6 @@ em { color: #5A4D3E; }
 </script>
 </div>
 <!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
-
-<!-- ═══════════ PROGRESS BAR ═══════════ -->
-<div class="progress-wrap">
-  <span class="progress-label">🧬 Progress</span>
-  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-  <span class="progress-pct" id="progressPct">0%</span>
-</div>
 
 <!-- ═══════════ HEADER ═══════════ -->
 <div class="header">
