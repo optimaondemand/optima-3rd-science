@@ -1,0 +1,256 @@
+{
+ "id": "g3sci-17-01",
+ "mount": "wf-film",
+ "kicker": "Opti's Wonder Films",
+ "lesson": "Lesson 17.01 \u00b7 Fossils",
+ "title": "What Can Fossils Tell Us?",
+ "bigQuestion": "If you found a rock with a fish shape pressed into it, in the middle of dry land, what would that tell you about what that place was like long ago?",
+ "poster": "desert",
+ "endPoster": "priscacara",
+ "startTarget": "#tab-vocab",
+ "music": {
+  "src": "music",
+  "vol": 0.8
+ },
+ "shots": [
+  {
+   "t": 0,
+   "d": 3.6,
+   "type": "leader",
+   "top": "Optima Academy",
+   "name": "Opti's Wonder Films",
+   "bottom": "presents",
+   "fade": 1.0
+  },
+  {
+   "t": 3.6,
+   "d": 7.2,
+   "type": "photo",
+   "img": "desert",
+   "alt": "Sagebrush and a flat-topped butte under a stormy sky",
+   "from": [
+    1.04,
+    0.5,
+    0.62
+   ],
+   "to": [
+    1.22,
+    0.42,
+    0.5
+   ],
+   "fx": [
+    "dust"
+   ],
+   "place": "Fossil Butte, Wyoming \u00b7 Today",
+   "fade": 1.2,
+   "sfx": "whoosh",
+   "sfxArg": 2.2
+  },
+  {
+   "t": 10.8,
+   "d": 7.6,
+   "type": "reveal",
+   "img": "priscacara",
+   "alt": "A fossil fish with spiny fins pressed into pale rock",
+   "from": [
+    1.0,
+    0.5,
+    0.5
+   ],
+   "to": [
+    1.12,
+    0.55,
+    0.48
+   ],
+   "revealAt": 0.9,
+   "revealDur": 5.2,
+   "place": "A rock from Fossil Butte",
+   "fade": 0.7
+  },
+  {
+   "t": 18.4,
+   "d": 3.2,
+   "type": "flash",
+   "lines": [
+    "A fish?",
+    "Out here?"
+   ],
+   "beats": [
+    0.15,
+    1.2
+   ],
+   "fade": 0.15
+  },
+  {
+   "t": 21.6,
+   "d": 8.4,
+   "type": "photo",
+   "img": "school",
+   "alt": "A school of small fish swimming just under the surface of the water",
+   "in": "ripple",
+   "from": [
+    1.16,
+    0.42,
+    0.6
+   ],
+   "to": [
+    1.0,
+    0.58,
+    0.5
+   ],
+   "fx": [
+    "caustics",
+    "bubbles",
+    "rays"
+   ],
+   "count": {
+    "to": 52000000,
+    "label": "years ago",
+    "dur": 2.6
+   },
+   "sfx": "whoosh",
+   "sfxArg": 1.6,
+   "fade": 0.6,
+   "grade": "saturate(1.15) hue-rotate(-6deg)"
+  },
+  {
+   "t": 30.0,
+   "d": 5.4,
+   "type": "photo",
+   "img": "palm",
+   "alt": "A fossil palm leaf with two small fossil fish beside it",
+   "from": [
+    1.0,
+    0.45,
+    0.5
+   ],
+   "to": [
+    1.16,
+    0.4,
+    0.45
+   ],
+   "place": "Fossil palm leaf and fish \u00b7 Fossil Butte area",
+   "fade": 1.0
+  },
+  {
+   "t": 35.4,
+   "d": 7.0,
+   "type": "photo",
+   "img": "layers",
+   "alt": "A tall cliff made of many flat rock layers",
+   "from": [
+    1.18,
+    0.5,
+    0.85
+   ],
+   "to": [
+    1.02,
+    0.5,
+    0.35
+   ],
+   "fx": [
+    "sweep"
+   ],
+   "place": "Fossil Butte \u00b7 Rock layers",
+   "tags": [
+    {
+     "text": "Newer layers \u2191",
+     "x": 60,
+     "y": 22,
+     "at": 2.2
+    },
+    {
+     "text": "Older layers \u2193",
+     "x": 52,
+     "y": 70,
+     "at": 3.6
+    }
+   ],
+   "fade": 1.0
+  },
+  {
+   "t": 42.4,
+   "d": 3.6,
+   "type": "photo",
+   "img": "dig",
+   "alt": "A scientist kneeling on rocky ground holding a fossil she found",
+   "from": [
+    1.04,
+    0.45,
+    0.42
+   ],
+   "to": [
+    1.14,
+    0.4,
+    0.38
+   ],
+   "place": "A scientist at a dig site",
+   "fade": 0.8
+  },
+  {
+   "t": 46.0,
+   "d": 3.8,
+   "type": "archive",
+   "img": "wakulla",
+   "alt": "A diver studies big mastodon bones underwater",
+   "note": "A diver studies mastodon bones at Wakulla Springs, Florida.",
+   "fade": 0.8
+  },
+  {
+   "t": 49.8,
+   "d": 6.4,
+   "type": "title",
+   "fade": 1.2
+  }
+ ],
+ "captions": [
+  {
+   "t": 4.4,
+   "d": 5.6,
+   "text": "This is Wyoming. Dry, dusty land, with hardly any water.",
+   "voice": "opti-1"
+  },
+  {
+   "t": 11.4,
+   "d": 6.4,
+   "text": "But hidden in this rock is something surprising...",
+   "voice": "opti-2"
+  },
+  {
+   "t": 18.5,
+   "d": 2.9,
+   "text": "A fish? Out here?",
+   "voice": "opti-3"
+  },
+  {
+   "t": 22.0,
+   "d": 7.6,
+   "text": "About 52 million years ago, this land was a warm lake. Fish swam everywhere.",
+   "voice": "opti-4"
+  },
+  {
+   "t": 30.4,
+   "d": 4.8,
+   "text": "Palm trees grew along its shore.",
+   "voice": "opti-5"
+  },
+  {
+   "t": 35.8,
+   "d": 6.4,
+   "text": "Layer by layer, mud buried them. Slowly, the mud turned to stone.",
+   "voice": "opti-6"
+  },
+  {
+   "t": 42.6,
+   "d": 7.0,
+   "text": "Today, scientists dig up these clues. Some even dive for them, right here in Florida.",
+   "voice": "opti-7"
+  },
+  {
+   "t": 50.6,
+   "d": 5.2,
+   "text": "Every fossil is a message from long ago. Let's learn to read it.",
+   "voice": "opti-8"
+  }
+ ]
+}

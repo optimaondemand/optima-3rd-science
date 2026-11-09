@@ -1,0 +1,647 @@
+{
+ "id": "g3sci-17-01",
+ "zoom": [
+  {
+   "name": "Whole rock",
+   "s": 1,
+   "x": 0,
+   "y": 0,
+   "prompt": "Look at the whole rock. What shape do you see?"
+  },
+  {
+   "name": "Closer",
+   "s": 1.8,
+   "x": 0.45,
+   "y": 0.1,
+   "prompt": "Closer! Can you see the backbone, the ribs, and a fin?"
+  },
+  {
+   "name": "Super close",
+   "s": 3,
+   "x": 0.0,
+   "y": 0.2,
+   "prompt": "Super close! Look for the head and the jaw."
+  }
+ ],
+ "order": {
+  "mix": [
+   2,
+   0,
+   3,
+   1
+  ],
+  "hint": "Think about what has to happen first.",
+  "scenes": [
+   {
+    "img": "school_s",
+    "alt": "Small fish swimming under the water",
+    "text": "A fish swims in a warm lake.",
+    "play": "A fish swims in a warm lake.",
+    "miss": [
+     "",
+     "This fish is still alive and swimming. That has to happen before anything else.",
+     "This fish is still alive and swimming. That has to happen before anything else.",
+     "This fish is still alive and swimming. That has to happen before anything else."
+    ]
+   },
+   {
+    "img": "layers_close",
+    "alt": "Thin stripes of rock that were once lake mud",
+    "text": "The fish dies and sinks. Mud covers it, layer after layer.",
+    "play": "The fish dies and sinks. Mud covers it, layer after layer. (These stripes were once lake mud.)",
+    "miss": [
+     "The mud can only cover the fish after it dies and sinks. What happens before that?",
+     "",
+     "The mud covers the fish before it turns to stone. Try an earlier frame.",
+     "The mud covers the fish long before anyone finds it. Try an earlier frame."
+    ]
+   },
+   {
+    "img": "phareodus",
+    "alt": "A fossil fish in rock",
+    "text": "Over millions of years, the bones turn to stone.",
+    "play": "Over millions of years, the mud and the bones slowly turn to stone.",
+    "miss": [
+     "Turning to stone takes a very long time, and it happens after the fish is buried.",
+     "Turning to stone takes a very long time, and it happens after the fish is buried.",
+     "",
+     "The fossil has to turn to stone before a scientist can find it. Try an earlier frame."
+    ]
+   },
+   {
+    "img": "dig_s",
+    "alt": "A scientist holding a fossil at a dig site",
+    "text": "Wind and rain wear the rock away. A scientist finds the fossil.",
+    "play": "Wind and rain wear the rock away. A scientist finds the fossil!",
+    "miss": [
+     "A scientist can only find the fossil at the very end, after it has turned to stone.",
+     "A scientist can only find the fossil at the very end, after it has turned to stone.",
+     "A scientist can only find the fossil at the very end, after it has turned to stone.",
+     ""
+    ]
+   }
+  ]
+ },
+ "teeth": [
+  {
+   "words": [
+    {
+     "t": "pointy",
+     "ok": true
+    },
+    {
+     "t": "sharp edges",
+     "ok": true
+    },
+    {
+     "t": "wide and bumpy",
+     "miss": "Look again. Tooth 1 comes to a point, like a triangle."
+    },
+    {
+     "t": "flat on top",
+     "miss": "Look at the tip. Is it flat, or does it come to a point?"
+    }
+   ],
+   "eats": "meat",
+   "okWhy": "Pointy teeth with sharp edges grab and cut meat.",
+   "missWhy": "Look at the shape. Sharp, pointy edges are made for cutting meat, not for grinding plants.",
+   "bts": "This tooth came from megalodon, a giant shark. Megalodon is extinct. Teeth like this one are found in Florida rivers."
+  },
+  {
+   "words": [
+    {
+     "t": "wide",
+     "ok": true
+    },
+    {
+     "t": "bumpy on top",
+     "ok": true
+    },
+    {
+     "t": "thin and pointy",
+     "miss": "Look again. Tooth 2 is wide, not thin."
+    },
+    {
+     "t": "sharp edges",
+     "miss": "Look at the top. Are there sharp edges, or round bumps?"
+    }
+   ],
+   "eats": "plants",
+   "okWhy": "Wide, bumpy teeth crush and grind leaves and twigs.",
+   "missWhy": "Look at the bumps on top. Bumps crush and grind. Which food needs grinding?",
+   "bts": "This is a back tooth from a mastodon, an animal like an elephant. Mastodons are extinct. Their bones have been found in Florida springs."
+  }
+ ],
+ "digChoices": [
+  "🌊 A sea",
+  "🏜️ A desert of sand dunes",
+  "🌿 Land with ferns and streams"
+ ],
+ "dig": [
+  {
+   "name": "Layer 1 · top",
+   "img": "gc_kaibab",
+   "alt": "A fossil shell with ribs in pale rock",
+   "ask": "Look at the fossil from Layer 1. What was this place like when it lived?",
+   "clue": "A shell with ribs, called a brachiopod. Animals with shells like this live in the sea today.",
+   "ans": 0,
+   "ok": "Yes! A sea animal means this place was under the sea.",
+   "tag": "🌊 Sea · 270 million years ago",
+   "miss": {
+    "1": "Look at the clue: shells like this live in the sea, not in sand dunes.",
+    "2": "Ferns don't have shells. Read the clue again."
+   },
+   "env": "env_sea",
+   "envAlt": "A shallow sea with coral and sea fans",
+   "envCap": "Long ago here: a sea · Photo: a shallow sea today, Florida Keys"
+  },
+  {
+   "name": "Layer 2",
+   "img": "gc_coconino",
+   "alt": "Small footprints pressed into tan sandstone",
+   "ask": "Now Layer 2. What was this place like?",
+   "clue": "Tiny footprints in sandstone. Sandstone is made of grains of sand pressed together. Animals walked across these sand hills.",
+   "ans": 1,
+   "ok": "Yes! Footprints across sand hills mean this place was a desert of sand dunes.",
+   "tag": "🏜️ Desert · 275 million years ago",
+   "miss": {
+    "0": "Footprints are made by walking on dry ground. Read the clue again.",
+    "2": "There are no plants here, just sand and footprints. Read the clue again."
+   },
+   "env": "env_dunes",
+   "envAlt": "Tall sand dunes",
+   "envCap": "Long ago here: a desert of sand dunes · Photo: sand dunes today, Colorado"
+  },
+  {
+   "name": "Layer 3",
+   "img": "gc_hermit",
+   "alt": "A fern leaf print in red rock",
+   "ask": "Now Layer 3. What was this place like?",
+   "clue": "A fern leaf pressed into red mud rock. Ferns grow on warm, wet land near streams.",
+   "ans": 2,
+   "ok": "Yes! Ferns mean warm, wet land with streams.",
+   "tag": "🌿 Ferns · 280 million years ago",
+   "miss": {
+    "0": "Ferns don't grow in the sea. Read the clue again.",
+    "1": "Ferns need water, so this was not a dry desert. Read the clue again."
+   },
+   "env": "env_forest",
+   "envAlt": "A green forest floor covered in ferns",
+   "envCap": "Long ago here: warm, wet land with ferns · Photo: ferns today, Virginia"
+  },
+  {
+   "name": "Layer 4 · bottom",
+   "img": "gc_bright",
+   "alt": "A small fossil trilobite on gray-green rock with a museum label",
+   "ask": "Last one: Layer 4, at the very bottom. What was this place like?",
+   "clue": "A trilobite. Trilobite fossils are always found with other sea animals.",
+   "ans": 0,
+   "ok": "Yes! The sea was here too, a very, very long time ago.",
+   "tag": "🌊 Sea · 500 million years ago",
+   "miss": {
+    "1": "Trilobites lived with other sea animals, not in dry sand. Read the clue again.",
+    "2": "Trilobites lived with other sea animals, not on land. Read the clue again."
+   },
+   "env": "env_sea",
+   "envAlt": "A shallow sea with coral and sea fans",
+   "envCap": "Long ago here: a shallow sea · Photo: a shallow sea today, Florida Keys"
+  }
+ ],
+ "det": [
+  {
+   "id": "A",
+   "img": "det_fish",
+   "alt": "A small fossil fish in an oval of pale rock",
+   "clues": [
+    {
+     "t": "Fins and a tail",
+     "ok": true
+    },
+    {
+     "t": "Leaf lines",
+     "miss": "Look again. Do you see leaf lines, or a body with a tail?"
+    },
+    {
+     "t": "Toe prints",
+     "miss": "Look again. Are those toe prints, or fins?"
+    }
+   ],
+   "org": [
+    "Fish",
+    "Leaf",
+    "Coral",
+    "Scallop shell",
+    "Dinosaur"
+   ],
+   "orgAns": 0,
+   "orgShort": "a fish",
+   "orgMiss": "Look at your clue: fins and a tail. Which living thing has those?",
+   "env": "In the water",
+   "envAns": "water",
+   "envMiss": "Fish swim and breathe in water. Try again.",
+   "bts": "This small fish is called Knightia. It lived in a lake in what is now Wyoming, about 50 million years ago.",
+   "envImg": "env_lake",
+   "envAlt": "A calm lake with trees on the shore",
+   "envCap": "A lake today, like the old lake in Wyoming",
+   "reveal": "This fossil is evidence that a lake once covered this place.",
+   "rebuildEnv": "water"
+  },
+  {
+   "id": "B",
+   "img": "det_leaf",
+   "alt": "A fossil leaf with pointed edges pressed into gray rock",
+   "clues": [
+    {
+     "t": "Veins and a stem",
+     "ok": true
+    },
+    {
+     "t": "Fins",
+     "miss": "Look again. Leaves don't have fins. What lines do you see?"
+    },
+    {
+     "t": "Big bones",
+     "miss": "Look again. These thin lines aren't bones. They branch out like a leaf's."
+    }
+   ],
+   "org": [
+    "Fish",
+    "Leaf from a tree",
+    "Coral",
+    "Scallop shell",
+    "Dinosaur"
+   ],
+   "orgAns": 1,
+   "orgShort": "a leaf",
+   "orgMiss": "Look at your clue: veins and a stem. Which living thing has those?",
+   "env": "On land",
+   "envAns": "land",
+   "envMiss": "Trees grow with their roots in the ground. Try again.",
+   "bts": "A leaf from a maple-type tree. It fell into an old lake in Utah about 50 million years ago. The tree grew on land nearby.",
+   "envImg": "env_forest",
+   "envAlt": "A forest floor covered in ferns",
+   "envCap": "A forest today, like the land near the old lake",
+   "reveal": "This fossil is evidence that trees once grew on land here.",
+   "rebuildEnv": "forest"
+  },
+  {
+   "id": "C",
+   "img": "det_coral",
+   "alt": "A gray fossil with many thin ridges in rows",
+   "clues": [
+    {
+     "t": "Rows of thin ridges",
+     "ok": true
+    },
+    {
+     "t": "Fins and a tail",
+     "miss": "Look again. There is no tail here. What pattern do you see?"
+    },
+    {
+     "t": "A stem",
+     "miss": "Look again. There is no stem. What pattern repeats over and over?"
+    }
+   ],
+   "org": [
+    "Fish",
+    "Leaf",
+    "Coral",
+    "Scallop shell",
+    "Dinosaur"
+   ],
+   "orgAns": 2,
+   "orgShort": "coral",
+   "orgMiss": "Rows of tiny ridges are a clue for coral. Try again.",
+   "env": "In the water",
+   "envAns": "water",
+   "envMiss": "Corals only grow in sea water. Try again.",
+   "bts": "Fossil coral from Florida. Corals grow in warm, shallow sea water, so this part of Florida was once under a warm sea.",
+   "envImg": "env_sea",
+   "envAlt": "A shallow sea with coral and sea fans",
+   "envCap": "A shallow sea today, Florida Keys",
+   "reveal": "This fossil is evidence that warm, shallow sea water once covered this place.",
+   "rebuildEnv": "water"
+  },
+  {
+   "id": "D",
+   "img": "det_shell",
+   "alt": "Three fossil scallop shells shaped like fans",
+   "clues": [
+    {
+     "t": "A fan shape with ribs",
+     "ok": true
+    },
+    {
+     "t": "Big bones",
+     "miss": "Look again. These are shells, not bones. What shape are they?"
+    },
+    {
+     "t": "Veins and a stem",
+     "miss": "Look again. Is that a stem, or the bottom of a shell?"
+    }
+   ],
+   "org": [
+    "Fish",
+    "Leaf",
+    "Coral",
+    "Scallop shell",
+    "Dinosaur"
+   ],
+   "orgAns": 3,
+   "orgShort": "a scallop",
+   "orgMiss": "A fan shape with ribs is a clue for a kind of shell. Try again.",
+   "env": "In the water",
+   "envAns": "water",
+   "envMiss": "Scallops live in the sea. Try again.",
+   "bts": "Fossil scallops from Virginia, about 4 million years old. Scallops live in the sea.",
+   "envImg": "env_sea",
+   "envAlt": "A shallow sea with coral and sea fans",
+   "envCap": "A shallow sea today, Florida Keys",
+   "reveal": "This fossil is evidence that the sea once covered this place.",
+   "rebuildEnv": "water"
+  },
+  {
+   "id": "E",
+   "img": "det_bone",
+   "alt": "Large dinosaur bones sticking out of a rock wall",
+   "clues": [
+    {
+     "t": "Big bones in rock",
+     "ok": true
+    },
+    {
+     "t": "Leaf lines",
+     "miss": "Look again. These are thick and heavy. Are they leaves or bones?"
+    },
+    {
+     "t": "A fan shape",
+     "miss": "Look again. What long, thick shapes do you see?"
+    }
+   ],
+   "org": [
+    "Fish",
+    "Leaf",
+    "Coral",
+    "Scallop shell",
+    "Dinosaur"
+   ],
+   "orgAns": 4,
+   "orgShort": "a dinosaur",
+   "orgMiss": "Bones this big came from a giant animal. Try again.",
+   "env": "On land",
+   "envAns": "land",
+   "envMiss": "These giants walked on four strong legs. Try again.",
+   "bts": "Dinosaur bones in a rock wall at Dinosaur National Monument, Utah, about 150 million years old. These giants walked on land. A river buried their bones in sand.",
+   "envImg": "env_forest",
+   "envAlt": "A green forest floor with ferns",
+   "envCap": "Land with plants today, like the land the dinosaurs walked",
+   "reveal": "These fossils are evidence that giant animals once walked on land here.",
+   "rebuildEnv": "forest"
+  }
+ ],
+ "chips": {
+  "part": {
+   "any": [
+    "fin",
+    "bone",
+    "spine",
+    "tail",
+    "head",
+    "eye",
+    "mouth",
+    "jaw",
+    "scale",
+    "rib",
+    "fish",
+    "skelet",
+    "teeth",
+    "tooth",
+    "shape",
+    "line"
+   ]
+  },
+  "ask": {
+   "re": "\\?|\\b(why|how|what|when|where|who|which|does|do|is|are|can|did|will)\\b"
+  },
+  "org": {
+   "any": [
+    "fish",
+    "leaf",
+    "plant",
+    "tree",
+    "coral",
+    "shell",
+    "scallop",
+    "dinosaur",
+    "animal",
+    "bone"
+   ]
+  },
+  "because": {
+   "re": "\\b(because|since|so)\\b"
+  },
+  "env": {
+   "any": [
+    "water",
+    "lake",
+    "sea",
+    "ocean",
+    "land",
+    "forest",
+    "river",
+    "warm",
+    "swamp",
+    "wet"
+   ]
+  },
+  "meat": {
+   "any": [
+    "meat",
+    "animal",
+    "hunt",
+    "bite",
+    "tear",
+    "cut",
+    "grab",
+    "catch",
+    "fish",
+    "prey",
+    " ate",
+    "eat",
+    "kill",
+    "chomp",
+    "food"
+   ]
+  },
+  "def": {
+   "any": [
+    "long ago",
+    "remain",
+    "left",
+    "rock",
+    "stone",
+    "preserved",
+    " old",
+    "past"
+   ]
+  },
+  "two": {
+   "re": "(bone|shell|leaf|leaves|footprint|track|tooth|teeth|plant|egg|print|skeleton|wood|insect)[\\s\\S]*(bone|shell|leaf|leaves|footprint|track|tooth|teeth|plant|egg|print|skeleton|wood|insect)"
+  },
+  "extinct": {
+   "any": [
+    "extinct",
+    "not alive",
+    "died out",
+    "gone",
+    "no longer",
+    "dinosaur",
+    "don't live",
+    "do not live"
+   ]
+  },
+  "lose": {
+   "any": [
+    "lose",
+    "not know",
+    "never know",
+    "wouldn't know",
+    "would not know",
+    "no way",
+    "no idea",
+    "nothing",
+    "forget"
+   ]
+  }
+ },
+ "spec": {
+  "img": "zoomfish",
+  "radius": 0.11,
+  "hotspots": [
+   {
+    "name": "Head and jaw",
+    "x": 0.1,
+    "y": 0.42
+   },
+   {
+    "name": "Backbone",
+    "x": 0.55,
+    "y": 0.4
+   },
+   {
+    "name": "Ribs",
+    "x": 0.42,
+    "y": 0.65
+   },
+   {
+    "name": "Top fin",
+    "x": 0.68,
+    "y": 0.13
+   },
+   {
+    "name": "Bottom fin",
+    "x": 0.78,
+    "y": 0.83
+   },
+   {
+    "name": "Tail",
+    "x": 0.95,
+    "y": 0.5
+   }
+  ]
+ },
+ "bite": {
+  "ask": [
+   {
+    "q": "Which tooth looks better for crushing?",
+    "ans": "B",
+    "ok": "Yes. Specimen B is wide with round bumps, good for crushing.",
+    "miss": "Look at the tops. Which one is wide with bumps for crushing?"
+   },
+   {
+    "q": "Which tooth looks better for slicing?",
+    "ans": "A",
+    "ok": "Yes. Specimen A is pointy with sharp edges, good for slicing.",
+    "miss": "Look at the edges. Which one is pointy and sharp?"
+   }
+  ],
+  "result": {
+   "Bleaf": "The wide, bumpy tooth crushed the leaf flat. Crushing breaks up tough plants.",
+   "Aleaf": "The sharp tooth poked holes and tore the leaf, but it didn't grind it up.",
+   "Aclay": "The sharp edge sliced right through the clay strip.",
+   "Bclay": "The bumpy tooth squashed the clay, but it didn't cut it."
+  },
+  "claim": {
+   "A": {
+    "feat": [
+     "sharp, pointy edges",
+     "a wide, bumpy top"
+    ],
+    "featOk": 0,
+    "eat": [
+     "meat (other animals)",
+     "plants"
+    ],
+    "eatOk": 0
+   },
+   "B": {
+    "feat": [
+     "sharp, pointy edges",
+     "a wide, bumpy top"
+    ],
+    "featOk": 1,
+    "eat": [
+     "meat (other animals)",
+     "plants"
+    ],
+    "eatOk": 1
+   }
+  },
+  "curator": {
+   "A": "<b>Sharp slicing edges → likely a meat eater.</b> Specimen A is a tooth from megalodon, a giant shark. Megalodon is extinct. Teeth like this are found in Florida rivers.",
+   "B": "<b>Wide grinding top → likely a plant eater.</b> Specimen B is a back tooth from a mastodon, an animal like an elephant. Mastodons are extinct. Their bones have been found in Florida springs."
+  }
+ },
+ "rebuild": {
+  "envs": [
+   {
+    "key": "water",
+    "name": "🌊 Shallow water",
+    "img": "env_sea",
+    "cap": "Water rises over the land…"
+   },
+   {
+    "key": "forest",
+    "name": "🌳 Forest land",
+    "img": "env_forest",
+    "cap": "Green plants spread across the land…"
+   },
+   {
+    "key": "dry",
+    "name": "🏜️ Dry land",
+    "img": "env_dunes",
+    "cap": "Dry sand stretches out…"
+   }
+  ],
+  "life": [
+   {
+    "name": "🐟 Fish",
+    "img": "grp_fish",
+    "env": "water",
+    "miss": "Fish need water to live."
+   },
+   {
+    "name": "🐚 Shellfish",
+    "img": "grp_shell",
+    "env": "water",
+    "miss": "Shellfish live in water."
+   },
+   {
+    "name": "🌿 Ferns and trees",
+    "img": "grp_ferns",
+    "env": "forest",
+    "miss": "Ferns and trees grow on land, not under water."
+   }
+  ]
+ }
+}
