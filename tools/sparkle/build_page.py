@@ -84,7 +84,7 @@ body = f'''<div class="page-wrap">
 <div class="wl-paper" id="dig-predict"><div class="wl-step"><div class="n">Predict first</div><p>{W["predict"]["q"]}</p></div><div class="wl-chips">{"".join(f'<button class="wl-chip" data-p="{k}">{t}</button>' for k,t in W["predict"]["options"])}</div></div>
 <div class="wl-digwrap" id="dig-wrap" hidden><div class="wl-elev" id="dig-elev"><div class="wl-elev-track"></div><div class="wl-elev-car">▶</div>{"".join(f'<span style="top:{[2,24,45,66,88][i]}%">{t}</span>' for i,t in enumerate(W["elevator"]))}</div>
 <div class="wl-cliff" id="dig-cliff"><div class="wl-sky"><img class="now" src="{{{{{W["sky"]}}}}}" alt="{E(W["skyAlt"])}"><img class="then" alt=""><div class="wl-sky-cap">{W["skyCap"]}</div></div><div class="wl-soil"></div>
-{"".join(f'<div class="wl-band b{i+1}" data-l="{i}"><img class="frag" src="{{{{{l["img"]}}}}}" alt=""><canvas></canvas><span class="lab">{W["unit"]} {i+1}</span></div>' for i,l in enumerate(W["layers"]))}
+{"".join(f'<div class="wl-band b{i+1}{(' rock-' + l['rock']) if l.get('rock') else ''}" data-l="{i}"><img class="frag" src="{{{{{l["img"]}}}}}" alt=""><canvas></canvas><span class="lab">{W["unit"]} {i+1}</span></div>' for i,l in enumerate(W["layers"]))}
 <div class="wl-olderline" id="dig-line"><span>{W["line"][0]}</span><i></i><span>{W["line"][1]}</span></div></div><div class="wl-digside"><div id="dig-card"></div></div></div>
 <div class="wl-paper" id="dig-after" hidden><p style="margin:0 0 6px">{W["rule"]}</p><p id="dig-pred-res" style="margin:0 0 10px"></p>
 <div class="wl-step"><div class="n">Think like a scientist</div><p>{W["mix"]["q"]}</p></div>{choice_group("mix", W["mix"]["options"])}</div>''', 'how-dig') + f'''
@@ -142,7 +142,7 @@ body += f'''<details class="wl-part wl-drawer" id="partc"><summary><span class="
 </section></main></div>
 <div class="wl-theater" id="theater" hidden><button class="wl-th-x" aria-label="Close">✕</button><div class="wl-th-screen"></div></div>
 <div class="wl-inspect" id="inspect" hidden role="dialog" aria-label="Inspect specimen"><div class="wl-ins-box"><button class="wl-ins-x" aria-label="Close">✕ Close</button>
-<div class="wl-ins-view"><img id="ins-img" alt="Specimen, close up"><div class="wl-lens" hidden></div><div class="wl-ins-marks"></div></div>
+<div class="wl-ins-view" style="--ar:{S.get("aspect","16/9")}"><img id="ins-img" alt="Specimen, close up"><div class="wl-lens" hidden></div><div class="wl-ins-marks"></div></div>
 <div class="wl-ins-ctrl"><button class="wl-pill dark" id="ins-lens" aria-pressed="true">🔍 Magnifying lens: on</button><label>Zoom <input type="range" id="ins-zoom" min="1" max="3" step="0.1" value="1"></label><span id="ins-found">Found 0 of 3</span></div>
 <p class="wl-ins-tip" id="ins-tip">Move the lens over it. When you spot something, tap it.</p></div></div>'''
 
@@ -156,7 +156,7 @@ def uri(p, mime):
     COPY.append((p, dest)); return dest
 keys = set(re.findall(r'\{\{(\w+)\}\}', body)) - {'credits', 'opti', 'optima_logo', 'MODEL_SVG'}
 film = L['film']; film['startTarget'] = '.wl-ican'
-keys |= {s.get('img') for s in film['shots'] if s.get('img')} | {film['poster'], film.get('endPoster', film['poster'])}
+keys |= {s.get(f) for s in film['shots'] for f in ('img', 'img2') if s.get(f)} | {film['poster'], film.get('endPoster', film['poster'])}
 keys |= {x['img'] for x in O['scenes']} | {l['img'] for l in W['layers']} | {l['env'] for l in W['layers']} | {f['img'] for f in D['items']} | {f['envImg'] for f in D['items']}
 keys |= {e['img'] for e in L['rebuild']['envs']} | {x['img'] for x in L['rebuild']['life']} | {f['img'] for f in PR['frames']} | {S['img'], M['real']}
 keys.discard(None)
@@ -169,6 +169,9 @@ if (LDIR / 'music.mp3').exists(): img['music'] = uri(LDIR / 'music.mp3', 'audio/
 for c in film.get('captions', []):
     v = LDIR / 'audio' / f"{c.get('voice')}.mp3"
     if c.get('voice') and v.exists(): img[c['voice']] = uri(v, 'audio/mpeg')
+for nk in ('welcome', 'lesson', 'check', 'assign'):  # Opti's notes: audio/<WW-LL>-<note>.mp3 -> the note's 🔊 button
+    v = LDIR / 'audio' / f"{L['lesson'].replace('.', '-')}-{nk}.mp3"
+    if v.exists(): img[f"say-{L['lesson'].replace('.', '-')}-{nk}"] = uri(v, 'audio/mpeg')
 
 cred = {c['key']: c for c in json.loads((LDIR / 'credits.json').read_text())}
 alias = L.get('creditAlias', {})

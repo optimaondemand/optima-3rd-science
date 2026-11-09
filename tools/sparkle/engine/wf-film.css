@@ -93,3 +93,11 @@ canvas.wf-fx{width:100%;height:100%}
  .wf-count{top:11.5%}
  .wf-archive .print{width:40%;top:40%}
 }
+
+/* black (sound only) + x-ray scan */
+.wf-black{background:#000}
+.wf-xband{position:absolute;left:0;right:0;top:0;opacity:0;pointer-events:none;z-index:3;background:linear-gradient(180deg,rgba(120,230,255,0),rgba(120,230,255,.28) 40%,rgba(160,240,255,.5) 50%,rgba(120,230,255,.28) 60%,rgba(120,230,255,0)),repeating-linear-gradient(0deg,rgba(200,250,255,.18) 0 1px,transparent 1px 5px);border-top:2px solid rgba(170,245,255,.9);border-bottom:2px solid rgba(170,245,255,.9);box-shadow:0 0 24px rgba(120,230,255,.6);mix-blend-mode:screen;transition:opacity .4s}
+.wf-xwin{position:absolute;z-index:4;opacity:0;transform:scale(.92);transition:opacity 1.1s,transform 1.1s;border:2px solid rgba(170,245,255,.95);border-radius:6px;box-shadow:0 0 0 4px rgba(0,0,0,.35),0 0 28px rgba(120,230,255,.75);overflow:hidden;background:#0b1418}
+.wf-xwin.on{opacity:1;transform:scale(1)}
+.wf-xwin img{position:static;display:block;width:100%;height:auto;inset:auto}
+.wf-xwin b{position:absolute;left:6px;top:6px;font:800 clamp(8px,1.1vw,12px)/1 system-ui,Arial;letter-spacing:.12em;text-transform:uppercase;color:#bff6ff;background:rgba(5,25,30,.7);padding:3px 7px;border-radius:999px}

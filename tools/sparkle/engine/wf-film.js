@@ -1,6 +1,6 @@
 /* Opti's Wonder Films — cinematic opener engine (G3 science sparkle layer).
    DATA-driven: window.WF_DATA = {kicker, lesson, title, bigQuestion, poster, music:{src,vol}, shots:[...], captions:[...], credits:[...], startTarget}
-   Shot types: leader | photo | reveal | flash | archive | title.  Holds NO lesson content. */
+   Shot types: leader | black | photo | reveal | xray | flash | archive | title. Any shot may carry sfxAt [{at,name,arg}].  Holds NO lesson content. */
 (function () {
   'use strict';
   var D = window.WF_DATA; if (!D) return;
@@ -36,12 +36,16 @@
       L = el('div', 'wf-layer wf-flash', s.lines.map(function (l) { return '<span>' + l + '</span>'; }).join(''));
     } else if (s.type === 'title') {
       L = el('div', 'wf-layer wf-title', '<div class="k">' + D.kicker + '</div><h2>' + D.title + '</h2><div class="s">' + (D.lesson || '') + '</div>');
+    } else if (s.type === 'black') {
+      L = el('div', 'wf-layer wf-black');
     } else if (s.type === 'archive') {
       L = el('div', 'wf-layer wf-archive', '<div class="print"><img alt="' + (s.alt || '') + '" src="' + src(s.img) + '"><i>' + (s.note || '') + '</i></div>');
     } else {
       L = el('div', 'wf-layer' + (s.contain ? ' wf-contain' : ''), '<img alt="' + (s.alt || '') + '" src="' + src(s.img) + '">');
       if (s.grade) L.querySelector('img').style.filter = s.grade;
       if (s.type === 'reveal') { var c = el('canvas', 'wf-fx'); L.appendChild(c); s._cv = c; }
+      if (s.type === 'xray') { var xb = el('div', 'wf-xband'); var xw = el('div', 'wf-xwin', '<img alt="' + (s.alt2 || '') + '" src="' + src(s.img2) + '">' + (s.xlabel ? '<b>' + s.xlabel + '</b>' : ''));
+        var w = s.win || [30, 60, 40]; xw.style.left = w[0] + '%'; xw.style.top = w[1] + '%'; xw.style.width = w[2] + '%'; xb.style.height = ((s.band || .16) * 100) + '%'; L.appendChild(xb); L.appendChild(xw); s._xb = xb; s._xw = xw; }
       if (s.tags) s._tags = s.tags.map(function (tg) { var t = el('div', 'wf-tag', tg.text); t.style.left = tg.x + '%'; t.style.top = tg.y + '%'; L.appendChild(t); return t; });
       if (s.fx && s.fx.indexOf('caustics') > -1) {
         var cs = document.createElementNS(svgNS, 'svg'); cs.setAttribute('class', 'wf-fx'); cs.setAttribute('preserveAspectRatio', 'none');
@@ -131,6 +135,11 @@
     bubbles: function () { for (var k = 0; k < 6; k++) { var o = AC.createOscillator(), g = AC.createGain(), t = AC.currentTime + k * .13 + Math.random() * .05;
       o.frequency.setValueAtTime(300 + Math.random() * 300, t); o.frequency.exponentialRampToValueAtTime(900 + Math.random() * 600, t + .08);
       g.gain.setValueAtTime(.0, t); g.gain.linearRampToValueAtTime(.08, t + .01); g.gain.exponentialRampToValueAtTime(.001, t + .1); o.connect(g); g.connect(master); o.start(t); o.stop(t + .12); } },
+    step: function () { var n = AC.createBufferSource(); n.buffer = noiseBuf(.28); var f = AC.createBiquadFilter(); f.type = 'lowpass'; f.frequency.value = 520; var g = AC.createGain(), t = AC.currentTime;
+      g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(.7, t + .03); g.gain.exponentialRampToValueAtTime(.001, t + .26); n.connect(f); f.connect(g); g.connect(master); n.start();
+      var o = AC.createOscillator(), g2 = AC.createGain(); o.frequency.setValueAtTime(90, t); o.frequency.exponentialRampToValueAtTime(40, t + .2); g2.gain.setValueAtTime(.35, t); g2.gain.exponentialRampToValueAtTime(.001, t + .25); o.connect(g2); g2.connect(master); o.start(); o.stop(t + .3); },
+    scan: function (dur) { dur = dur || 3; var o = AC.createOscillator(), g = AC.createGain(), t = AC.currentTime; o.type = 'sine'; o.frequency.setValueAtTime(320, t); o.frequency.linearRampToValueAtTime(980, t + dur);
+      g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(.08, t + .3); g.gain.setValueAtTime(.08, t + dur - .3); g.gain.exponentialRampToValueAtTime(.001, t + dur); o.connect(g); g.connect(master); o.start(); o.stop(t + dur + .05); },
     tick: function () { var o = AC.createOscillator(), g = AC.createGain(), t = AC.currentTime; o.type = 'square'; o.frequency.value = 2000;
       g.gain.setValueAtTime(.05, t); g.gain.exponentialRampToValueAtTime(.001, t + .03); o.connect(g); g.connect(master); o.start(t); o.stop(t + .04); }
   };
@@ -200,7 +209,8 @@
     cover.classList.add('wf-hidden'); stage.classList.add('wf-scope'); document.body.classList.add('wf-dim'); ctrl.classList.add('show'); setTimeout(function () { ctrl.classList.remove('show'); }, 2500);
     P.length = 0; fired = {}; capIdx = -1; size();
     D.shots.forEach(function (s) { s._cvReady = false; s._el.style.opacity = 0; if (s._tags) s._tags.forEach(function (t) { t.classList.remove('on'); }); s._el.classList.remove('on');
-      if (s.type === 'flash') s._el.querySelectorAll('span').forEach(function (sp) { sp.classList.remove('on'); }); });
+      if (s.type === 'flash') s._el.querySelectorAll('span').forEach(function (sp) { sp.classList.remove('on'); });
+      if (s._xw) { s._xw.classList.remove('on'); s._xb.style.opacity = 0; } });
     if (D.music) { try { music.currentTime = 0; music.volume = sound ? (D.music.vol || .8) : 0; music.play().catch(function () {}); } catch (e) {} }
     t0 = performance.now(); playing = true; paused = false; bPause.innerHTML = '❚❚ Pause';
     cancelAnimationFrame(raf); raf = requestAnimationFrame(frame);
@@ -241,6 +251,12 @@
           if (rp >= 1) once('rv' + i, function () { sfx('shimmer'); s._cv.style.transition = 'opacity 1s'; s._cv.style.opacity = 0; }); else s._cv.style.opacity = 1; }
         if (s.type === 'flash') s._el.querySelectorAll('span').forEach(function (sp, k) { var at = (s.beats || [.1, .9])[k]; if (local >= at && !sp.classList.contains('on')) { sp.classList.add('on'); sfx('thump'); if (!RM) { stage.classList.remove('wf-shake'); void stage.offsetWidth; stage.classList.add('wf-shake'); } } });
         if (s._tags) s._tags.forEach(function (tg, k) { if (local >= s.tags[k].at) tg.classList.add('on'); });
+        if (s.sfxAt) s.sfxAt.forEach(function (q, k) { if (local >= q.at) once('sa' + i + '_' + k, function () { sfx(q.name, q.arg); }); });
+        if (s.type === 'xray') { var xa = s.xrayAt || 1, xd = s.xrayDur || 3.5, xp = clamp((local - xa) / xd, 0, 1), y0 = s.y0 != null ? s.y0 : 0, y1 = s.y1 != null ? s.y1 : .6;
+          if (RM) { s._xb.style.opacity = 0; s._xw.classList.add('on'); }
+          else { s._xb.style.top = ((y0 + (y1 - y0) * ease(xp)) * 100).toFixed(2) + '%'; s._xb.style.opacity = local >= xa ? (xp >= 1 ? .55 : 1) : 0;
+            if (local >= xa) once('xs' + i, function () { sfx('scan', xd); });
+            if (xp >= 1) once('xr' + i, function () { s._xw.classList.add('on'); sfx('shimmer'); }); } }
         if (s.type === 'title') { once('ti' + i, function () { L.classList.add('on'); sfx('shimmer'); if (!RM) spawn('spark', 70); }); }
         if (s.type === 'leader') once('ld' + i, function () { sfx('rumble', 3); });
       }

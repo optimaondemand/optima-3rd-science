@@ -61,7 +61,7 @@ for c in A['checklist']:
     for k in r.get('choice', []): need('c:' + k in ids, f'checklist "{c["k"]}" points at missing choice {k}')
     for k in r.get('text', {}):
         need(k in ids or k in ('in-det', 'in-w1', 'in-w2', 'in-w3'), f'checklist "{c["k"]}" points at missing box {k}')
-need(len(A['write']['prompts']) == 3 and A['write']['need'] >= 2, 'Write and explain: 3 evidence prompts, >= 2 science words')
+need(len(A['write']['prompts']) == 3 and A['write']['need'] >= 1 and len(A['write']['vocab']) >= 3, 'Write and explain: 3 evidence prompts, a science-word count (need = the lesson\'s own number, >= 1)')
 PR = L['premiere']; need([f['k'] for f in PR['frames']] == ['formation', 'compare', 'wall', 'det'], 'premiere frames must be formation, compare, wall, det')
 need(PR['director'].upper().startswith('JUNIOR '), 'director title "JUNIOR <SCIENTIST>"')
 

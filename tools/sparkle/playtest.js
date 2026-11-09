@@ -23,8 +23,14 @@ const [F, Wd, PRE] = [process.argv[2], +process.argv[3] || 1150, process.argv[4]
     await p.click(`[data-choice="bone"] .wl-choice >> nth=${okIdx(D.order.check.options)}`); await toasts(); });
   await step('compare', async () => { const C = D.compare;
     for (const a of C.ask) { await p.click(`.wl-tray-spec[data-t="${a.ans}"] .wl-lit`); await p.waitForTimeout(1500); }
-    for (const k of C.best) { await p.click(`.wl-mat[data-mat="${k.slice(1)}"]`); await p.click(`.wl-drop[data-drop="${k[0]}"]`); }
-    await p.click('#bite-press'); await p.waitForTimeout(800); await el('#m-bite', '06-compare-test'); await p.waitForTimeout(2600);
+    // one press per round: each round puts a best match on its tray (and, if free, the other material on the other tray) until every best key is tested
+    const done = new Set(), mats = C.materials.map(m => m.key), trays = C.trays.map(t => t.id);
+    for (let r = 0; r < 4 && done.size < C.best.length; r++) { const plan = {}, used = new Set();
+      for (const k of C.best) { if (done.has(k) || plan[k[0]] || used.has(k.slice(1))) continue; plan[k[0]] = k.slice(1); used.add(k.slice(1)); }
+      for (const t of trays) if (!plan[t]) { const m = mats.find(x => !used.has(x)); if (m) { plan[t] = m; used.add(m); } }
+      for (const t of trays) if (plan[t]) { await p.click(`.wl-mat[data-mat="${plan[t]}"]`); await p.click(`.wl-drop[data-drop="${t}"]`); }
+      await p.click('#bite-press'); await p.waitForTimeout(800); if (r === 0) await el('#m-bite', '06-compare-test');
+      for (const t of trays) if (plan[t] && C.best.includes(t + plan[t])) done.add(t + plan[t]); await p.waitForTimeout(done.size < C.best.length ? 900 : 2600); }
     for (const t of C.trays) { const c = C.claim[t.id]; await p.click(`.wl-chips[data-k="${t.id}f"] .wl-chip >> nth=${c.featOk}`); await p.click(`.wl-chips[data-k="${t.id}e"] .wl-chip >> nth=${c.eatOk}`); await p.waitForTimeout(150); }
     await p.waitForTimeout(1500); await toasts(); await el('#m-bite', '07-compare-done'); });
   await step('wall', async () => { const Wl = D.wall; await p.click(`#dig-predict .wl-chip[data-p="${Wl.predict.answer}"]`); await p.waitForTimeout(800);
