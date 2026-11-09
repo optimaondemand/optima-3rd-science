@@ -389,7 +389,7 @@ When a prompt depends on a student's investigation data, the guide says "answers
 - Part A 1: Observation; it describes visible ridges.
 - Part A 2: Inference; it is a reasonable but incomplete inference. It becomes stronger with more evidence such as rock type, other ocean fossils, or sediment clues.
 - Part A 3: Observation. Possible inference: fine dark mudstone may suggest calm water, muddy bottom, swamp, or shallow water environment.
-- Part B 4: Weak as written. Stronger: "This was likely a predator because Card E shows a sharp tooth near bone pieces."
+- Part B 4: Weak as written. Stronger: "This was likely a predator because Find 5 is a curved tooth with saw-like (serrated) edges, found 20 cm from a fish skeleton (Find 4)."
 - Part B 5: Specific data matter because scientists can compare exact details. Example: curved ridges can identify a shell pattern better than saying "it has a pattern."
 - Part B 6: Dark mudstone suggests the environment may have had fine mud and quiet water, supporting an inference such as swampy or wet conditions.
 - Write and Explain: A strong answer lists specific data, makes an inference from the data, and names what extra evidence would strengthen it.
