@@ -20,7 +20,7 @@ python3 build_page.py  lessons/WW-LL/lesson.json out/G3-Science-WW.LL-Wonder-Fil
 node playtest.js out/G3-Science-WW.LL-Wonder-Films-mockup.html 1150 out/pt
 node playtest.js out/G3-Science-WW.LL-Wonder-Films-mockup.html 420 out/pt
 ```
-playtest prints one line: `errors: []`, `ticks: ✓✓✓✓`, `frames: formation,compare,wall,det`, `checklist: n/n`, `sideways: false`.
+playtest prints one line: `errors: []`, `ticks: ✓✓✓✓`, `frames: formation,compare,wall,det`, `checklist: n/n` (5/5 with Part C), `sideways: false`.
 
 ## The fixed page (every lesson, this order)
 | Tab | Slot | lesson.json key |
@@ -32,7 +32,7 @@ playtest prints one line: `errors: []`, `ticks: ✓✓✓✓`, `frames: formatio
 | | Director's cut (wow) · Key idea | `wow`, `keyIdea` |
 | | Part 4 **Evidence cards** (observe → infer → predict → Past Revealed) · chart · Rebuild the scene (optional drawer) · explanation | `parts[3]`, `det`, `rebuild` |
 | Self-Check | the lesson's 3 questions, one at a time | `quiz` |
-| Assignment | Part A · Part B · Write and explain · Part C (optional drawer) · question callback · My answers · clickable checklist · **Premiere** · Coming up | `assign`, `premiere`, `next` |
+| Assignment | Part A · Part B · Write and explain · Part C (REQUIRED: drawing + 2 labels, Save my drawing) · question callback · My answers · clickable checklist · **Premiere** · Coming up | `assign`, `premiere`, `next` |
 
 ## lesson.json keys (17.01 is the worked example — copy it, then replace every value)
 - `id` `g3sci-WW-LL` · `lesson` "WW.LL" · `title` · `emoji` (header badge) · `details` (4 chips) · `icans` (verbatim) · `scientist`
@@ -51,7 +51,7 @@ playtest prints one line: `errors: []`, `ticks: ✓✓✓✓`, `frames: formatio
 - `det` {look, do, noun, need (3), predict{q, options}, kicker, enough, cols[5], write{label, starter, min, chips}, items[≥4 × {id, img, alt, clues[{t, ok | miss}], org[], orgAns, orgShort, orgMiss, env, envAns, envMiss, envImg, envAlt, envCap, reveal, rebuildEnv, bts}]}
 - `rebuild` {title, missPrefix, envs[{key,name,img,cap}], life[{name,img,env,miss}]}
 - `quiz` [3 × {q, options[{t, ok | miss}]}] — the lesson's own questions and answers
-- `assign` {partA, partB {title, do, items[{n, q, type choice|text, options | min, chips}]}, write{title, do, vocab[], need, prompts[3]}, partC{do, labels[2]}, checklist[{k, t, req{det, choice[], text{id: min}, vocab}}]}
+- `assign` {partA, partB {title, do, items[{n, q, type choice|text, options | min, chips}]}, write{title, do, vocab[], need, prompts[3]}, partC{do, labels[2], min (words per label, default 6)}, checklist[{k, t, req{det, choice[], text{id: min}, vocab, sketch}}]} — the checklist MUST have a Part C item: `{"k":"c","t":"Part C: my drawing and both labels.","req":{"sketch":true,"text":{"in-c1":6,"in-c2":6}}}`
 - `premiere` {title, director "JUNIOR <SCIENTIST>", storyKicker, frames[formation, compare, wall, det × {k, label, img, cap}]}
 - `next` {title, text} · `chips` (answer-chip word lists) · `creditAlias` · `creditsExtra`
 

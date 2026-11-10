@@ -18,6 +18,13 @@
 
   function toast(msg) { var t = document.createElement('div'); t.className = 'wl-toast'; t.setAttribute('role', 'status'); t.innerHTML = msg + '<button aria-label="Close">✕</button>';
     $$('.wl-toast').slice(0, -2).forEach(function (o) { o.remove(); }); document.body.appendChild(t); var n = $$('.wl-toast').length; t.style.top = ($('.wl-top').offsetHeight + 10 + (n - 1) * 74) + 'px'; t.querySelector('button').onclick = function () { t.remove(); }; }
+  /* smooth scroll so el's top sits just under the sticky top bar */
+  function pin(el) { if (!el) return; var bar = $('.wl-top'), y = el.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0) - 12; window.scrollTo({ top: Math.max(0, y), behavior: RM ? 'auto' : 'smooth' }); }
+  /* scroll only if el isn't already fully on screen below the top bar */
+  function reveal(el) { if (!el) return; var bar = $('.wl-top'), top = bar ? bar.offsetHeight : 0, r = el.getBoundingClientRect();
+    if (r.top >= top && r.bottom <= window.innerHeight) return;
+    if (r.top < top || r.height > window.innerHeight - top - 24) { pin(el); return; }
+    window.scrollBy({ top: r.bottom - window.innerHeight + 12, behavior: RM ? 'auto' : 'smooth' }); }  /* nudge up just enough */
   function glow(el) { if (!el) return; el.classList.add('wl-glow'); setTimeout(function () { el.classList.remove('wl-glow'); }, 1600); }
 
   /* ---- header ---- */
@@ -33,7 +40,7 @@
     var p = $('#tab-' + tab), sc = p.querySelector('.wl-scene');
     window.scrollTo({ top: p.getBoundingClientRect().top + window.scrollY - $('.wl-top').offsetHeight - 8, behavior: 'instant' });
     if (sc) { sc.classList.remove('snap'); setTimeout(function () { sc.classList.add('snap'); snapClap(); }, 120); }
-    if (tab === 'assign') wonderBack();
+    if (tab === 'assign') { wonderBack(); if (WL4.sketchSize) setTimeout(WL4.sketchSize, 30); }
     S.tab = tab; save();
   }
   $$('.wl-tab').forEach(function (b) { b.onclick = function () { show(b.dataset.tab); }; });
@@ -84,7 +91,7 @@
     var vc = $('#vocab-count'); if (vc) { var need = +vc.dataset.need || 2; vc.textContent = 'Science words used: ' + n + ' of ' + need; vc.classList.toggle('met', n >= need); } return n; }
 
   var WL4 = window.WL4 = {};
-  WL4.ctx = { D: D, IMG: IMG, S: S, save: save, $: $, $$: $$, RM: RM, ding: ding, cheer: cheer, oops: oops, toast: toast, glow: glow, choices: choices, words: words, chipTest: chipTest, gather: function () { return gather(); }, checklist: function () { checklist(); }, markTab: markTab, ac: ac, val: function (id) { return val(id); } };
+  WL4.ctx = { D: D, IMG: IMG, S: S, save: save, $: $, $$: $$, RM: RM, ding: ding, cheer: cheer, oops: oops, toast: toast, glow: glow, pin: pin, reveal: reveal, choices: choices, words: words, chipTest: chipTest, gather: function () { return gather(); }, checklist: function () { checklist(); }, markTab: markTab, ac: ac, val: function (id) { return val(id); } };
   WL4_INIT(WL4);
   /* ---- flip cards ---- */
   $$('.wl-flip').forEach(function (f) { f.onclick = function () { f.classList.toggle('on'); }; });
@@ -126,10 +133,16 @@
       if (n === 4 && !render.played) { render.played = 1; play(); }
     }
     function play() {
-      var k = 0; cheer(); tray.hidden = true;
+      /* No jump: the scene cards fade out but keep their space, the strip slides up under the top bar for the
+         playback, and the movie then takes the cards' place (so nothing below rushes up under the student). */
+      var k = 0; cheer(); tray.classList.add('wl-tray-done'); pin($('#order-strip'));
       (function step() { slots.forEach(function (s, j) { s.classList.toggle('lit', j === k); }); cap.textContent = (k + 1) + '. ' + O.scenes[k].play;
-        if (++k < 4) setTimeout(step, RM ? 400 : 1300); else setTimeout(function () { slots.forEach(function (s) { s.classList.remove('lit'); }); cap.textContent = '🎬 Your order is right. Now watch it as a movie!'; WL4.movie(function () { $('#order-check').hidden = false; $('#fm-replay').hidden = false; }); }, RM ? 400 : 1300); })();
+        var d = WL4.readMs(O.scenes[k].play);   /* each frame's caption stays up long enough to read */
+        if (++k < 4) setTimeout(step, d); else setTimeout(function () { slots.forEach(function (s) { s.classList.remove('lit'); }); cap.textContent = '🎬 Your order is right. Now watch it as a movie!'; var th = tray.offsetHeight; tray.hidden = true; tray.classList.remove('wl-tray-done'); WL4.movie(function () { $('#order-check').hidden = false; $('#fm-replay').hidden = false; }); ease(th); }, d); })();
     }
+    /* if the movie is shorter than the cards it replaced, close the gap slowly instead of snapping */
+    function ease(th) { var mv = $('#fm-movie'), d = th - mv.offsetHeight - 10; if (d <= 0 || RM) return; mv.style.transition = 'none'; mv.style.marginBottom = (10 + d) + 'px'; void mv.offsetWidth;
+      mv.style.transition = 'margin-bottom .9s ease'; setTimeout(function () { mv.style.marginBottom = ''; setTimeout(function () { mv.style.transition = ''; }, 1000); }, 700); }
     render();
     choices($('[data-choice="bone"]'), function () { S.orderDone = 1; save(); WL4.frame('formation'); });
     if (placed.filter(function (x) { return x != null; }).length === 4) { tray.hidden = true; $('#order-check').hidden = false; $('#fm-replay').hidden = false; WL4.movieStatic(); }
@@ -149,17 +162,21 @@
   /* ---- assignment choices ---- */
   ['a1', 'a3'].forEach(function (k) { choices($('[data-choice="' + k + '"]')); });
 
-  /* ---- sketch (bonus) ---- */
+  /* ---- Part C sketch (required) ---- */
   (function () {
     var cv = $('#sketch'), cx = cv.getContext('2d'), col = '#2B1D12', down = false;
-    function size() { var r = cv.getBoundingClientRect(), d = window.devicePixelRatio || 1, img = cv.width ? cx.getImageData(0, 0, cv.width, cv.height) : null; cv.width = r.width * d; cv.height = r.height * d; cx.scale(d, d); cx.lineCap = 'round'; cx.lineJoin = 'round'; cx.lineWidth = 4; if (S.sketch) { var im = new Image(); im.onload = function () { cx.drawImage(im, 0, 0, r.width, r.height); }; im.src = S.sketch; } }
-    var dr = $('#partc'); if (dr) dr.addEventListener('toggle', function () { if (dr.open) size(); }); else setTimeout(size, 50);
+    function size() { var r = cv.getBoundingClientRect(), d = window.devicePixelRatio || 1; if (!r.width || (cv.width === Math.round(r.width * d) && cv.height === Math.round(r.height * d))) return; var img = cv.width ? cx.getImageData(0, 0, cv.width, cv.height) : null; cv.width = Math.round(r.width * d); cv.height = Math.round(r.height * d); cx.setTransform(d, 0, 0, d, 0, 0); cx.lineCap = 'round'; cx.lineJoin = 'round'; cx.lineWidth = 4; if (S.sketch) { var im = new Image(); im.onload = function () { cx.drawImage(im, 0, 0, r.width, r.height); }; im.src = S.sketch; } }
+    WL4.sketchSize = size; setTimeout(size, 50); window.addEventListener('resize', size);
     function pt(e) { var r = cv.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; }
     cv.addEventListener('pointerdown', function (e) { down = true; cv.setPointerCapture(e.pointerId); var p = pt(e); cx.strokeStyle = col; cx.beginPath(); cx.moveTo(p[0], p[1]); });
     cv.addEventListener('pointermove', function (e) { if (!down) return; var p = pt(e); cx.lineTo(p[0], p[1]); cx.stroke(); });
-    cv.addEventListener('pointerup', function () { down = false; try { S.sketch = cv.toDataURL('image/png'); save(); } catch (e) {} });
+    cv.addEventListener('pointerup', function () { if (!down) return; down = false; try { S.sketch = cv.toDataURL('image/png'); save(); } catch (e) {} gather(); checklist(); });
     $$('#sk-tools button[data-c]').forEach(function (b) { b.onclick = function () { col = b.dataset.c; $$('#sk-tools button').forEach(function (x) { x.classList.toggle('on', x === b); }); }; });
-    $('#sk-clear').onclick = function () { cx.clearRect(0, 0, cv.width, cv.height); delete S.sketch; save(); };
+    $('#sk-clear').onclick = function () { cx.clearRect(0, 0, cv.width, cv.height); delete S.sketch; save(); gather(); checklist(); };
+    /* the drawing is turned in as a picture: white background, so it reads in Canvas */
+    function png() { var o = document.createElement('canvas'); o.width = cv.width; o.height = cv.height; var c = o.getContext('2d'); c.fillStyle = '#fff'; c.fillRect(0, 0, o.width, o.height); c.drawImage(cv, 0, 0); return o.toDataURL('image/png'); }
+    WL4.sketchPng = function () { return S.sketch ? png() : ''; };
+    $('#sk-save').onclick = function () { if (!S.sketch) { toast('🎨 Draw your picture first, then save it.'); glow(cv); return; } var a = document.createElement('a'); a.href = png(); a.download = 'lesson-' + D.lesson.replace('.', '-') + '-my-drawing.png'; a.click(); toast('🎨 Saved! Upload this picture to Canvas with your answers.'); };
   })();
 
   /* ---- wonder callback ---- */
@@ -170,6 +187,7 @@
     var out = ['Lesson ' + D.lesson + ' · ' + D.title, ''];
     var det = S.det || {}; var rows = Object.keys(det).filter(function (k) { return det[k].done; });
     if (rows.length) { out.push('EVIDENCE CHART'); rows.forEach(function (k) { var f = D.det.items[k]; out.push(D.det.noun + ' ' + f.id + ': I observe ' + det[k].clue.toLowerCase() + ' · ' + f.org[f.orgAns] + ' · ' + f.env); }); out.push(''); }
+    if (S.sketch) out.push('Part C drawing: done (upload the saved picture too)\n');
     $$('textarea[data-gather], .wl-choices[data-gather]').forEach(function (el) { var v = el.tagName === 'TEXTAREA' ? el.value.trim() : (S['g-' + el.dataset.gather] || ''); if (v) out.push(el.dataset.gather + ':\n' + v + '\n'); });
     var g = $('#gather-out'); if (g) g.textContent = out.length > 2 ? out.join('\n') : '(Your answers show up here as you write.)';
     return out.join('\n');
@@ -181,20 +199,22 @@
       if (r.det && n < r.det) ok = false;
       (r.choice || []).forEach(function (k) { if (S['c-' + k] == null) ok = false; });
       Object.keys(r.text || {}).forEach(function (id) { if (words(val(id)) < r.text[id]) ok = false; });
-      if (r.vocab && vocab() < r.vocab) ok = false; ck[c.k] = ok; });
+      if (r.vocab && vocab() < r.vocab) ok = false;
+      if (r.sketch && !S.sketch) ok = false; ck[c.k] = ok; });
     var man = S.ckMan || {}, all = true;
-    $$('#checklist li').forEach(function (li) { var k = li.dataset.ck, d = k in man ? man[k] : !!ck[k]; li.classList.toggle('done', d); li.setAttribute('aria-checked', d); if (!d) all = false; });
+    $$('#checklist li').forEach(function (li) { var k = li.dataset.ck, d = !!ck[k] || man[k] === true; li.classList.toggle('auto', !!ck[k]); li.classList.toggle('done', d); li.setAttribute('aria-checked', d); if (!d) all = false; });
     if (window.WL4 && WL4.reel) WL4.reel(all); else window.__ck = all;
   }
   $$('#checklist li').forEach(function (li) {
     li.setAttribute('role', 'checkbox'); li.tabIndex = 0;
-    function flip() { var man = S.ckMan = S.ckMan || {}; man[li.dataset.ck] = !li.classList.contains('done'); save(); if (man[li.dataset.ck]) ding(); checklist(); }
+    function flip() { if (li.classList.contains('auto')) { toast('✅ This one checked itself because the work is done.'); return; }
+      var man = S.ckMan = S.ckMan || {}; man[li.dataset.ck] = !li.classList.contains('done'); save(); if (man[li.dataset.ck]) ding(); checklist(); }
     li.addEventListener('click', flip);
     li.addEventListener('keydown', function (e) { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flip(); } });
   });
   $('#g-copy').onclick = function () { var t = gather(); (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () { toast('📋 Copied! Paste it into Canvas.'); }, function () { toast('Select the text in the box and copy it.'); }); };
   $('#g-dl').onclick = function () { var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([gather()], { type: 'text/plain' })); a.download = 'lesson-' + D.lesson.replace('.', '-') + '-my-answers.txt'; a.click(); };
-  $('#g-print').onclick = function () { var w = window.open(''); if (!w) return; w.document.write('<pre style="font:16px/1.5 sans-serif;white-space:pre-wrap">' + gather().replace(/</g, '&lt;') + '</pre>'); w.print(); };
+  $('#g-print').onclick = function () { var w = window.open(''); if (!w) return; var im = WL4.sketchPng ? WL4.sketchPng() : ''; w.document.write('<pre style="font:16px/1.5 sans-serif;white-space:pre-wrap">' + gather().replace(/</g, '&lt;') + '</pre>' + (im ? '<p style="font:bold 16px sans-serif">Part C drawing</p><img src="' + im + '" style="max-width:100%;border:1px solid #999">' : '')); w.document.close(); setTimeout(function () { w.print(); }, 300); };
 
   /* tab ticks */
   function ticks() { if ((S.specFound || []).length >= 3 && words(val('in-notice')) >= 4 && words(val('in-wonder')) >= 4) markTab('warm');

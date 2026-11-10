@@ -12,6 +12,11 @@ function WL4_INIT(W) {
 
   /* ---------- frames + reel ---------- */
   S.frames = S.frames || {};
+  /* time a 3rd grader needs to read a line (≈ 2.4 words/s, never under 2.6 s) */
+  W.readMs = function (t) { var n = ((t || '').replace(/<[^>]+>/g, ' ').match(/[A-Za-z0-9']+/g) || []).length; return Math.max(2600, n * 420 + 600); };   /* reduced motion still needs reading time */
+  /* student-paced step change: feedback stays on screen until they tap Next */
+  W.next = function (host, label, fn) { var w = el('div', 'wl-nextwrap'), b = el('button', 'wl-btn wl-nextstep', label); b.type = 'button'; w.appendChild(b); host.appendChild(w);
+    b.onclick = function () { w.remove(); fn(); }; setTimeout(function () { try { b.focus({ preventScroll: true }); } catch (e) {} C.reveal && C.reveal(w); }, 60); return b; };
   W.frame = function (k) { if (S.frames[k]) return; S.frames[k] = 1; C.save(); C.cheer(); var f = D.premiere.frames.filter(function (x) { return x.k === k; })[0]; C.toast('🎞️ New frame for your film: ' + (f ? f.label : k)); W.reel(); };
   W.reel = function (checkDone) {
     if (checkDone != null) W._ck = checkDone;
@@ -62,7 +67,7 @@ function WL4_INIT(W) {
     function show(state) { $$('svg > g', model).forEach(function (g) { var c = g.getAttribute('class') || ''; if (/^s\d$/.test(c)) g.style.opacity = c === state ? 1 : 0; }); }
     function reset() { timers.forEach(clearTimeout); timers = []; cancelAnimationFrame(raf); P = []; nb = 0; model.style.transition = 'none'; model.style.top = MV.start || '12%'; model.style.transform = 'rotate(-4deg)'; model.style.opacity = 1; show('s1');
       layers.innerHTML = ''; layers.style.height = '0'; real.style.opacity = 0; cnt.textContent = ''; cap.textContent = ''; stamp.classList.remove('on'); rays.style.opacity = 1; mv.classList.remove('cut'); void model.offsetWidth; model.style.transition = ''; }
-    function at(t, f) { timers.push(setTimeout(f, RM ? t / 3 : t)); }
+    function at(t, f) { timers.push(setTimeout(f, t)); }   /* captions need the same reading time with reduced motion */
     function loop() { var r = mv.getBoundingClientRect(); if (cv.width !== (r.width | 0)) { cv.width = r.width | 0; cv.height = r.height | 0; } ctx.clearRect(0, 0, cv.width, cv.height);
       P.forEach(function (p) { p.y += p.v; p.x += Math.sin(p.y / 20) * .3; if (p.v > 0 && p.y > p.stop) p.y = p.stop; if (p.v < 0 && p.y < p.stop) p.y = p.stop; ctx.fillStyle = p.c; ctx.fillRect(p.x, p.y, p.s, p.s); }); raf = requestAnimationFrame(loop); }
     function particles(o) { var r = mv.getBoundingClientRect(), up = o.dir === 'up', cols = o.colors || PCOL; for (var i = 0; i < o.n; i++) P.push({ x: Math.random() * r.width, y: up ? r.height * (1 + Math.random() * .6) : -Math.random() * r.height * .6, v: (up ? -1 : 1) * (.6 + Math.random() * 1.4), s: 1.5 + Math.random() * 2.5, c: cols[i % cols.length], stop: r.height * ((o.stop != null ? o.stop : (up ? .1 : .9)) - Math.random() * .04) }); }
@@ -80,10 +85,14 @@ function WL4_INIT(W) {
       if (bt.stamp) { stamp.classList.add('on'); thud(); cap.textContent = MV.endCap; cancelAnimationFrame(raf); }
     }
     W.movie = function (done) {
-      mv.hidden = false; reset(); loop(); mv.scrollIntoView({ block: 'center', behavior: RM ? 'auto' : 'smooth' });
-      MV.beats.forEach(function (bt, i) { at(bt.at, function () { beat(bt, i === 0); if (bt.stamp && done) done(); }); });
+      mv.hidden = false; mv.classList.remove('wl-fadein'); void mv.offsetWidth; mv.classList.add('wl-fadein'); reset(); loop(); (W.ctx.reveal || function (e) { e.scrollIntoView({ block: 'nearest' }); })(mv);
+      var T = W.movieTimes(); MV.beats.forEach(function (bt, i) { at(T[i], function () { beat(bt, i === 0); if (bt.stamp && done) done(); }); });
       var m0 = MV.beats[0] && MV.beats[0].model; if (m0) at(300, function () { if (m0.top) model.style.top = m0.top; if (m0.rot != null) model.style.transform = 'rotate(' + m0.rot + 'deg)'; if (m0.show) show(m0.show); });
     };
+    /* beat times stretched so every caption stays up long enough to read (lesson.json times are the minimum) */
+    W.movieTimes = function () { var B = MV.beats, T = [], sh = 0, last = null;
+      B.forEach(function (bt, i) { if (last != null && (bt.cap || bt.stamp)) { var need = W.readMs(B[last].cap), have = bt.at - B[last].at; if (need > have) sh += need - have; }
+        T[i] = bt.at + sh; if (bt.cap) last = i; }); return T; };
     W.movieStatic = function () { mv.hidden = false; reset(); MV.beats.forEach(function (bt) { if (bt.layers) for (var i = 0; i < bt.layers.add; i++) addBand(); }); model.style.opacity = 0; real.style.opacity = 1; mv.classList.add('cut'); rays.style.opacity = 0; layers.style.height = '70%'; stamp.classList.add('on'); cap.textContent = MV.endCap; };
     $('#fm-replay').onclick = function () { W.movie(); };
   })();
@@ -111,9 +120,10 @@ function WL4_INIT(W) {
     function finish() { box.innerHTML = '<p class="wl-stampmini">CURATOR\'S NOTES COMPLETE</p><p style="margin:4px 0 0">' + B.done + '</p>'; mats.hidden = true;
       trays.forEach(function (t) { t.querySelector('.wl-curator span').innerHTML = B.curator[t.dataset.t]; t.classList.add('flip'); }); $('#teeth-end').hidden = false; W.frame('compare'); }
     trays.forEach(function (t) { t.addEventListener('click', function (e) { if (e.target.closest('.wl-drop')) return;
+      if (box.querySelector('.wl-nextstep')) return;
       if (st.step === 0 || st.step === 1) { var q = B.ask[st.step], fb = box.querySelector('.wl-fb'); st.pred = st.pred || [];
         if (t.dataset.t !== q.ans) { t.classList.add('no'); setTimeout(function () { t.classList.remove('no'); }, 450); fb.className = 'wl-fb miss'; fb.textContent = q.miss; C.oops(); return; }
-        t.classList.add('pick'); fb.className = 'wl-fb ok'; fb.textContent = q.ok; C.ding(); st.step++; sv(); setTimeout(render, 1300); }
+        t.classList.add('pick'); fb.className = 'wl-fb ok'; fb.textContent = q.ok; C.ding(); st.step++; sv(); W.next(box, st.step === 1 ? 'Next question →' : 'Next: test it →', render); }
       else if (st.step === 2 && selMat) place(selMat, t.dataset.t); }); });
     // materials: drag or tap
     var selMat = null, placed = {};
@@ -140,8 +150,8 @@ function WL4_INIT(W) {
           msgs.push('<b>' + B.trays.filter(function (x) { return x.id === t; })[0].label + ' + ' + md.label.toLowerCase() + ':</b> ' + R.text);
           if (tg && R.fx) { tg.classList.add('fx-' + R.fx); if (R.fx === 'crush') { crumbs(d); noise(350, 900, .2); } if (R.fx === 'slice') noise(200, 4000, .15); }
           st.tests[key] = 1; sv(); fb.className = 'wl-fb'; fb.innerHTML = msgs.join('<br>');
-          if (B.best.every(function (k) { return st.tests[k]; }) && st.step === 2) { st.step = 3; sv(); setTimeout(render, 2600); fb.innerHTML += '<br><b style="color:#2E7D32">You tested the best match for each one.</b>'; }
-          else if (!B.best.every(function (k) { return st.tests[k]; })) fb.innerHTML += '<br>Try swapping the materials to test the other way.'; }, 380); });
+          if (B.best.every(function (k) { return st.tests[k]; })) { fb.innerHTML += '<br><b style="color:#2E7D32">You tested the best match for each one.</b>'; if (st.step === 2) { st.step = 3; sv(); } if (!box.querySelector('.wl-nextstep')) W.next(box, 'Next: explain →', render); }
+          else fb.innerHTML += '<br>Try swapping the materials to test the other way.'; }, 380); });
     }
     function crumbs(d) { for (var i = 0; i < 12; i++) { var c = el('span', 'wl-crumb'); c.style.left = '50%'; c.style.top = '50%'; c.style.setProperty('--dx', (Math.random() * 80 - 40) + 'px'); c.style.setProperty('--dy', (Math.random() * 40 - 10) + 'px'); d.appendChild(c); setTimeout(function (x) { x.remove(); }.bind(null, c), 900); } }
     render();
@@ -185,7 +195,8 @@ function WL4_INIT(W) {
       card.classList.remove('in'); setTimeout(function () {
         card.innerHTML = '<div class="wl-step"><div class="n">' + WL.found.replace('{n}', i + 1) + '</div><p>' + l.ask + '</p></div><img src="' + IMG[l.img] + '" alt="' + l.alt + '"><p style="font-size:15px;margin:6px 0">' + l.clue + '</p><div class="wl-choices" data-choice="digv' + i + '">' + WL.choices.map(function (c, k) { return '<button class="wl-choice" ' + (k === l.ans ? 'data-ok="' + l.ok + '"' : 'data-miss="' + (l.miss[k] || 'Read the clue again.') + '"') + '>' + c + '</button>'; }).join('') + '</div><p class="wl-fb"></p>';
         card.classList.add('in'); delete S['c-digv' + i];
-        C.choices(card.querySelector('.wl-choices'), function () { tagBand(b, i); then(i); setTimeout(function () { st.done = i + 1; sv(); paint(); if (st.done < L.length) { card.innerHTML = '<div class="wl-step"><div class="n">' + WL.unit + ' ' + (st.done + 1) + ' of ' + L.length + '</div><p>' + WL.next.replace('{n}', st.done + 1) + '</p></div>'; } else end(); }, 2200); });
+        C.choices(card.querySelector('.wl-choices'), function () { tagBand(b, i); then(i);
+          W.next(card, i + 1 < L.length ? 'Next ' + WL.unit.toLowerCase() + ' →' : 'See the whole wall →', function () { st.done = i + 1; sv(); paint(); if (st.done < L.length) { card.innerHTML = '<div class="wl-step"><div class="n">' + WL.unit + ' ' + (st.done + 1) + ' of ' + L.length + '</div><p>' + WL.next.replace('{n}', st.done + 1) + '</p></div>'; C.reveal && C.reveal(bands[st.done]); } else end(); }); });
       }, 250);
     }
     function tagBand(b, i) { if (!b.querySelector('.tag')) b.appendChild(el('span', 'tag', L[i].tag)); }
@@ -296,8 +307,9 @@ function WL4_INIT(W) {
       [3, 2, 1].forEach(function (n, i) { at(i * 900, function () { cnt.textContent = n; var a = 0, iv = setInterval(function () { a += 24; cnt.style.setProperty('--a', a + 'deg'); if (a >= 360) clearInterval(iv); }, 55); C.ding(); }); });
       var frames = D.premiere.frames.map(function (f) { return [f.k, IMG[f.k === 'det' ? D.det.items[exPick || 0].img : f.img], f.cap]; });
       at(2800, function () { cnt.remove(); });
-      frames.forEach(function (fr, i) { at(2800 + i * 2300, function () { var d = el('div', 'wl-th-frame', '<img src="' + fr[1] + '" alt=""><p>' + fr[2] + '</p>'); scr.appendChild(d); requestAnimationFrame(function () { d.classList.add('on'); }); noise(120, 2200, .12); at(2000, function () { d.classList.remove('on'); }); }); });
-      at(2800 + frames.length * 2300, function () {
+      var ft = [2800]; frames.forEach(function (fr) { ft.push(ft[ft.length - 1] + Math.max(2300, W.readMs(fr[2]))); });
+      frames.forEach(function (fr, i) { at(ft[i], function () { var d = el('div', 'wl-th-frame', '<img src="' + fr[1] + '" alt=""><p>' + fr[2] + '</p>'); scr.appendChild(d); requestAnimationFrame(function () { d.classList.add('on'); }); noise(120, 2200, .12); at(ft[i + 1] - ft[i] - 300, function () { d.classList.remove('on'); }); }); });
+      at(ft[frames.length], function () {
         var f = D.det.items[exPick || 0], d = el('div', 'wl-th-frame', '<div class="wl-th-final"><img src="' + IMG[f.img] + '" alt=""><div><p style="text-align:left;margin:0 0 8px;color:#e3b04b;font-size:.85em;letter-spacing:.12em;text-transform:uppercase">' + D.premiere.storyKicker + '</p><p style="text-align:left" id="th-type"></p></div></div>');
         scr.appendChild(d); requestAnimationFrame(function () { d.classList.add('on'); });
         var txt = ($('#ex-obs').textContent + ' I think it was ' + (D.det.items[exPick || 0].orgShort || 'a living thing') + '. ' + $('#ex-tells').textContent).trim(), k = 0, tp = $('#th-type');

@@ -19,10 +19,10 @@ const [F, Wd, PRE] = [process.argv[2], +process.argv[3] || 1150, process.argv[4]
     await p.fill('#in-notice', 'I see a shape and some lines in it'); await p.fill('#in-wonder', 'How old is this and where did it come from?'); });
   await p.click('[data-go="lesson"]'); await p.waitForTimeout(300);
   await step('order+movie', async () => { for (const i of [0, 1, 2, 3]) { await p.click(`.wl-scard[data-i="${i}"]`); await p.click(`.wl-slot[data-slot="${i}"]`); }
-    const last = Math.max(...D.movie.beats.map(x => x.at)); await p.waitForTimeout(5300 + last * .45); await el('#fm-movie', '04-movie-mid'); await p.waitForTimeout(last * .55 + 1500); await el('#fm-movie', '05-movie-end');
+    await p.waitForSelector('#fm-movie:not([hidden])', { timeout: 60000 }); const last = await p.evaluate(() => { const T = WL4.movieTimes(); return T[T.length - 1]; }); await p.waitForTimeout(last * .45); await el('#fm-movie', '04-movie-mid'); await p.waitForSelector('#order-check:not([hidden])', { timeout: 60000 }); await p.waitForTimeout(800); await el('#fm-movie', '05-movie-end');
     await p.click(`[data-choice="bone"] .wl-choice >> nth=${okIdx(D.order.check.options)}`); await toasts(); });
   await step('compare', async () => { const C = D.compare;
-    for (const a of C.ask) { await p.click(`.wl-tray-spec[data-t="${a.ans}"] .wl-lit`); await p.waitForTimeout(1500); }
+    for (const a of C.ask) { await p.click(`.wl-tray-spec[data-t="${a.ans}"] .wl-lit`); await p.waitForTimeout(300); await p.click('#bite-step .wl-nextstep'); await p.waitForTimeout(200); }
     // one press per round: each round puts a best match on its tray (and, if free, the other material on the other tray) until every best key is tested
     const done = new Set(), mats = C.materials.map(m => m.key), trays = C.trays.map(t => t.id);
     for (let r = 0; r < 4 && done.size < C.best.length; r++) { const plan = {}, used = new Set();
@@ -30,14 +30,15 @@ const [F, Wd, PRE] = [process.argv[2], +process.argv[3] || 1150, process.argv[4]
       for (const t of trays) if (!plan[t]) { const m = mats.find(x => !used.has(x)); if (m) { plan[t] = m; used.add(m); } }
       for (const t of trays) if (plan[t]) { await p.click(`.wl-mat[data-mat="${plan[t]}"]`); await p.click(`.wl-drop[data-drop="${t}"]`); }
       await p.click('#bite-press'); await p.waitForTimeout(800); if (r === 0) await el('#m-bite', '06-compare-test');
-      for (const t of trays) if (plan[t] && C.best.includes(t + plan[t])) done.add(t + plan[t]); await p.waitForTimeout(done.size < C.best.length ? 900 : 2600); }
+      for (const t of trays) if (plan[t] && C.best.includes(t + plan[t])) done.add(t + plan[t]); await p.waitForTimeout(900); }
+    await p.click('#bite-step .wl-nextstep'); await p.waitForTimeout(300);
     for (const t of C.trays) { const c = C.claim[t.id]; await p.click(`.wl-chips[data-k="${t.id}f"] .wl-chip >> nth=${c.featOk}`); await p.click(`.wl-chips[data-k="${t.id}e"] .wl-chip >> nth=${c.eatOk}`); await p.waitForTimeout(150); }
     await p.waitForTimeout(1500); await toasts(); await el('#m-bite', '07-compare-done'); });
   await step('wall', async () => { const Wl = D.wall; await p.click(`#dig-predict .wl-chip[data-p="${Wl.predict.answer}"]`); await p.waitForTimeout(800);
     for (let i = 0; i < Wl.layers.length; i++) { const band = await p.$(`.wl-band[data-l="${i}"]`); await band.scrollIntoViewIfNeeded(); const bb = await band.boundingBox();
       for (let row = 0; row < 4 && !(await p.$(`.wl-band[data-l="${i}"].open`)); row++) { const y = bb.y + bb.height * (.2 + row * .2); await p.mouse.move(bb.x + 4, y); await p.mouse.down(); await p.mouse.move(bb.x + bb.width - 4, y, { steps: 18 }); await p.mouse.up(); }
       await p.waitForTimeout(500); if (i === 1) await el('#m-dig', '08-wall-card');
-      await p.click(`#dig-card .wl-choice >> nth=${Wl.layers[i].ans}`); await p.waitForTimeout(2500); await toasts(); }
+      await p.click(`#dig-card .wl-choice >> nth=${Wl.layers[i].ans}`); await p.waitForTimeout(400); await p.click('#dig-card .wl-nextstep'); await p.waitForTimeout(600); await toasts(); }
     await p.waitForTimeout(1500); await el('#m-dig', '09-wall-end'); await p.click(`[data-choice="mix"] .wl-choice >> nth=${okIdx(Wl.mix.options)}`); await toasts(); });
   await step('detective', async () => { const T = D.det; for (let i = 0; i < T.need; i++) { const f = T.items[i];
       await p.click(`.wl-dcard[data-i="${i}"]`); await p.click(`#det-work .wl-chip[data-k="${f.clues.findIndex(c => c.ok)}"]`); await p.click(`#det-work .wl-chip[data-k="${f.orgAns}"]`); await p.click(`#det-work .wl-chip[data-k="${f.envAns}"]`);
@@ -53,7 +54,9 @@ const [F, Wd, PRE] = [process.argv[2], +process.argv[3] || 1150, process.argv[4]
   const long = 'I think this because the ' + D.assign.write.vocab.join(' and the ') + ' all show what happened long ago in this place, so that is my answer.';
   await step('assign', async () => { for (const sec of [D.assign.partA, D.assign.partB]) for (const it of sec.items) { const key = (sec === D.assign.partA ? 'a' : 'b') + it.n;
       if (it.type === 'choice') await p.click(`[data-choice="${key}"] .wl-choice >> nth=${okIdx(it.options)}`); else await p.fill('#in-' + key, long); }
-    for (const i of [1, 2, 3]) await p.fill('#in-w' + i, long); await p.fill('#in-director', 'Maya'); await p.waitForTimeout(300); await toasts(); await el('#m-premiere', '12-premiere'); });
+    for (const i of [1, 2, 3]) await p.fill('#in-w' + i, long);
+    { const cv = await p.$('#sketch'); await cv.scrollIntoViewIfNeeded(); const bb = await cv.boundingBox(); await p.mouse.move(bb.x + 40, bb.y + 40); await p.mouse.down(); await p.mouse.move(bb.x + 200, bb.y + 90, { steps: 8 }); await p.mouse.up(); }
+    await p.fill('#in-c1', long); await p.fill('#in-c2', long); await p.fill('#in-director', 'Maya'); await p.waitForTimeout(300); await toasts(); await el('#m-premiere', '12-premiere'); });
   await step('premiere', async () => { await p.click('#premiere-btn'); await p.waitForTimeout(4000); await shot('13-theater-frames'); await p.waitForTimeout(16000); await shot('14-theater-end'); await p.click('.wl-th-x'); });
   const st = await p.evaluate(() => ({ ticks: [...document.querySelectorAll('.wl-tab .ck')].map(e => e.textContent).join(''), frames: Object.keys(WL.state.frames || {}).join(','), checklist: document.querySelectorAll('#checklist li.done').length + '/' + document.querySelectorAll('#checklist li').length, sideways: document.documentElement.scrollWidth > innerWidth, mb: +(document.documentElement.outerHTML.length / 1e6).toFixed(1) }));
   console.log(JSON.stringify({ width: Wd, errors: errs, ...st }));

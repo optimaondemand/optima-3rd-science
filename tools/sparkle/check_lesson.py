@@ -60,7 +60,9 @@ for c in A['checklist']:
     r = c.get('req', {})
     for k in r.get('choice', []): need('c:' + k in ids, f'checklist "{c["k"]}" points at missing choice {k}')
     for k in r.get('text', {}):
-        need(k in ids or k in ('in-det', 'in-w1', 'in-w2', 'in-w3'), f'checklist "{c["k"]}" points at missing box {k}')
+        need(k in ids or k in ('in-det', 'in-w1', 'in-w2', 'in-w3', 'in-c1', 'in-c2'), f'checklist "{c["k"]}" points at missing box {k}')
+need(any(c.get('req', {}).get('sketch') and {'in-c1', 'in-c2'} <= set(c['req'].get('text', {})) for c in A['checklist']), 'Part C is REQUIRED: the checklist needs a Part C item with req {sketch: true, text: {in-c1, in-c2}}')
+need(len(A['partC'].get('labels', [])) == 2, 'Part C needs 2 labels')
 need(len(A['write']['prompts']) == 3 and A['write']['need'] >= 1 and len(A['write']['vocab']) >= 3, 'Write and explain: 3 evidence prompts, a science-word count (need = the lesson\'s own number, >= 1)')
 PR = L['premiere']; need([f['k'] for f in PR['frames']] == ['formation', 'compare', 'wall', 'det'], 'premiere frames must be formation, compare, wall, det')
 need(PR['director'].upper().startswith('JUNIOR '), 'director title "JUNIOR <SCIENTIST>"')

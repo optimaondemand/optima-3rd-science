@@ -1285,6 +1285,17 @@
     }
    },
    {
+    "k": "c",
+    "t": "Part C: my drawing and both labels.",
+    "req": {
+     "sketch": true,
+     "text": {
+      "in-c1": 6,
+      "in-c2": 6
+     }
+    }
+   },
+   {
     "k": "w",
     "t": "Write and explain, with at least two science words.",
     "req": {

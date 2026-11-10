@@ -104,7 +104,7 @@
     cover.querySelector('.again').onclick = function () { play(); };
     cover.querySelector('.go').onclick = function () {
       var t = D.startTarget && document.querySelector(D.startTarget);
-      if (t) { var bar = document.querySelector(D.stickyBar || '.wl-top'), y = t.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight + 12 : 70); window.scrollTo({ top: y, behavior: 'instant' }); }
+      if (t) { var bar = document.querySelector(D.stickyBar || '.wl-top'), y = t.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight + 12 : 70); window.scrollTo({ top: y, behavior: window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' }); }
     };
     try { localStorage.setItem('wf-seen-' + D.id, '1'); } catch (e) {}
   }
