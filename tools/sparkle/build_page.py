@@ -212,10 +212,22 @@ page = f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name
 {tail_js}
 </body></html>'''
 if REPO:
+    # Hand edits to a live page (a standards pass, a typo fix) live in lessons/<key>/fixes.json [{old, new, why}],
+    # applied here in order, each must match once. kit_guard refuses to overwrite a page edited outside the kit:
+    #   --check shows the differences, --absorb moves them into fixes.json, --force overwrites anyway.
     import shutil
+    sys.dont_write_bytecode = True; sys.path.insert(0, str(ROOT)); import kit_guard
+    FX = LP.parent / 'fixes.json'
+    for i, x in enumerate(json.loads(FX.read_text()) if FX.exists() else []):
+        n = page.count(x['old'])
+        if n != 1: sys.exit(f'STOP: fix {i} ({x.get("why", "")}) matched {n} times: {x["old"][:80]!r}')
+        page = page.replace(x['old'], x['new'])
+    FLAGS = {a for a in sys.argv[3:] if a in ('--check', '--absorb', '--force')}
+    if not kit_guard.write(str(OUT), page, str(LP.parent), 'wf-[a-z]+', page, lambda t: t, str(FX), ('old', 'new'), FLAGS): sys.exit(0)
     root = OUT.parent
     for src, dest in COPY:
         d = root / dest; d.parent.mkdir(parents=True, exist_ok=True); shutil.copyfile(src, d)
     print('repo assets:', len(set(d for _, d in COPY)))
-OUT.write_text(page)
+else:
+    OUT.write_text(page)
 print(OUT, round(OUT.stat().st_size / 1e6, 2), 'MB')
