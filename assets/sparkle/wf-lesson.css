@@ -476,3 +476,19 @@ body.wf-dim .wf-wrap{position:relative;z-index:86}
 @keyframes wlSlump{0%{opacity:.8;filter:blur(0)}100%{opacity:.18;filter:blur(3px)}}
 
 .wl-nextwrap{text-align:center;margin:10px 0 2px}.wl-nextwrap .wl-btn{animation:wlMvIn .4s ease-out}
+
+/* click cue: a bouncing hand on the next thing to touch (never position:fixed: Canvas iframes are tall) */
+.wl-cue{position:absolute;z-index:70;font-size:30px;line-height:1;pointer-events:none;filter:drop-shadow(0 2px 2px rgba(0,0,0,.35));animation:wlCue 1s ease-in-out infinite}
+@keyframes wlCue{0%,100%{transform:translateY(6px)}50%{transform:translateY(-4px)}}
+.wl-nomotion .wl-cue{animation:none}
+@media (prefers-reduced-motion: reduce){.wl-cue{animation:none}}
+
+/* Start here: the how-to video drawer at the top of the Warm-Up */
+.wl-start{margin:0 0 16px;border:2px solid var(--wl-film,#221c15);border-radius:12px;background:#fffdf7}
+.wl-start>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;font-weight:700;font-size:16px}
+.wl-start>summary::-webkit-details-marker{display:none}
+.wl-start-k{background:#E3B04B;color:#221c15;border-radius:999px;padding:5px 14px;font-weight:900;font-size:14px}
+.wl-start-t{flex:1 1 200px}.wl-start-m{font-size:13px;color:#6b5d4a}.wl-start-o{font-size:13px;font-weight:800}
+.wl-start[open] .wl-start-o{font-size:0}.wl-start[open] .wl-start-o::after{content:'Close ▴';font-size:13px}
+.wl-start-b{padding:0 16px 14px}.wl-start-b video{display:block;width:100%;aspect-ratio:16/9;border-radius:8px;background:#111}
+.wl-start-n{margin:8px 0 0;font-size:13px;color:#6b5d4a}

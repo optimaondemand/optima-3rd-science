@@ -47,6 +47,20 @@
   $$('[data-go]').forEach(function (b) { b.onclick = function () { show(b.dataset.go); }; });
   function markTab(tab) { var b = $('.wl-tab[data-tab="' + tab + '"] .ck'); if (b) b.textContent = '✓'; }
 
+  /* ---- every Word Wall word is defined where it is read: wrap its first use in each reading (whole word, plurals too) ---- */
+  (function () {
+    (D.words || []).forEach(function (w) {
+      var word = w[1], meaning = w[2]; if (!word || !meaning) return;
+      var re = new RegExp('\\b(' + word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?:s|es)?)\\b', 'i');
+      $$('.wl-read, .wl-card .wl-do, .wl-step p').forEach(function (box) {
+        if ($$('.wl-glos', box).some(function (g) { return re.test(g.textContent); })) return;
+        var tw = document.createTreeWalker(box, NodeFilter.SHOW_TEXT, { acceptNode: function (n) { return n.parentElement.closest('.wl-glos, button, a, .wl-choice, .wl-chip, textarea, label') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT; } }), n;
+        while ((n = tw.nextNode())) { var m = re.exec(n.nodeValue); if (!m) continue;
+          var after = n.splitText(m.index); after.nodeValue = after.nodeValue.slice(m[1].length);
+          var sp = document.createElement('span'); sp.className = 'wl-glos'; sp.dataset.tip = meaning; sp.textContent = m[1]; after.parentNode.insertBefore(sp, after); break; }
+      });
+    });
+  })();
   /* ---- glossary ---- */
   $$('.wl-glos').forEach(function (g) {
     g.tabIndex = 0; var tip;
@@ -179,6 +193,79 @@
     $('#sk-save').onclick = function () { if (!S.sketch) { toast('🎨 Draw your picture first, then save it.'); glow(cv); return; } var a = document.createElement('a'); a.href = png(); a.download = 'lesson-' + D.lesson.replace('.', '-') + '-my-drawing.png'; a.click(); toast('🎨 Saved! Upload this picture to Canvas with your answers.'); };
   })();
 
+  /* ---- Start here: one how-to video (Opti) for every lesson, in a closed drawer at the top of the Warm-Up ---- */
+  (function () {
+    var first = $('#tab-warm'); if (!first || $('.wl-start')) return;
+    var base = D.startHere || 'assets/video/start-here/g3sci-start-here';
+    var d = document.createElement('details'); d.className = 'wl-start';
+    d.innerHTML = '<summary><span class="wl-start-k">▶ Start here</span><span class="wl-start-t">How your Wonder Films lessons work</span><span class="wl-start-m">1-minute video</span><span class="wl-start-o">Open ▾</span></summary><div class="wl-start-b"></div>';
+    var sc = first.querySelector('.wl-scene'); first.insertBefore(d, sc ? sc.nextSibling : first.firstChild);
+    d.addEventListener('toggle', function () {
+      var v = d.querySelector('video'); if (!d.open) { if (v) v.pause(); return; } if (v) return;
+      d.querySelector('.wl-start-b').innerHTML = '<video controls playsinline preload="metadata" poster="' + base + '.jpg"><source src="' + base + '.mp4" type="video/mp4"><track kind="captions" srclang="en" label="English" src="' + base + '.vtt" default></video><p class="wl-start-n">Captions are on. To turn them off, press CC on the video.</p>';
+    });
+  })();
+  /* ---- click cues (pilot feedback, like the other G3 courses): a bouncing 👆 sits on the next thing to touch in each
+         activity and leaves on the first touch. It points at a group of choices, never at one answer. ---- */
+  (function () {
+    if (window.WL_NO_CUES) return;
+    var vis = function (e) { return e && e.offsetParent !== null && !e.closest('[hidden]') && e.getClientRects().length; };
+    var first = function (sel, root) { return $$(sel, root).filter(vis)[0] || null; };
+    function nextIn(m) {
+      var n = first('.wl-nextstep', m); if (n) return [n];
+      var id = m.id, g;
+      if (id === 'm-spec') { return (S.specFound || []).length < 3 ? [first('#spec-open', m)] : null; }
+      if (id === 'm-order') {
+        if (vis($('#order-tray'))) { var sel = first('.wl-scard.sel', m); return sel ? [first('.wl-slot:not(:has(img))', m)] : [first('.wl-scard:not(.used)', m)]; }
+        g = first('#order-check .wl-choices', m); return g && !g.dataset.done ? [g, 1] : null;
+      }
+      if (id === 'm-bite') {
+        var box = $('#bite-step');
+        if (vis($('#bite-mats'))) {
+          var sm = first('.wl-mat.sel', m), empty = $$('.wl-drop', m).filter(function (d) { return !d.querySelector('img,.wl-swatch'); })[0], pb = $('#bite-press');
+          if (sm && empty) return [empty];
+          if (pb && !pb.disabled && !empty) return [pb];
+          if (pb && !pb.disabled && box && /Try swapping/.test(box.textContent)) return [first('.wl-mat', m)];
+          return empty ? [first('.wl-mat', m)] : (pb && !pb.disabled ? [pb] : null);
+        }
+        g = $$('#bite-step .wl-chips[data-k]', m).filter(function (x) { return vis(x) && !x.querySelector('.on'); })[0]; if (g) return [g, 1];
+        if (box && /Tap a tray/.test(box.textContent)) return [first('.wl-trays', m), 1];
+        return null;
+      }
+      if (id === 'm-dig') {
+        var pr = first('#dig-predict', m); if (pr && pr.querySelector('.wl-chip') && !pr.querySelector('.on')) return [pr, 1];
+        g = first('#dig-card .wl-choices', m); if (g && !g.dataset.done) return [g, 1];
+        var b = first('.wl-band.active', m); if (b) return [b];
+        g = first('[data-choice="mix"]', m); return g && !g.dataset.done ? [g, 1] : null;
+      }
+      if (id === 'm-det') {
+        g = first('#det-work .wl-chips', m); if (g) return [g, 1];
+        var solved = Object.keys(S.det || {}).filter(function (k) { return S.det[k].done; }).length;
+        return solved < (D.det.need || 3) ? [first('.wl-dcard:not(.done)', m)] : null;
+      }
+      if (id === 'm-quiz') { g = first('.wl-q.on .wl-choices', m); if (g && !g.dataset.done) return [g, 1]; var qn = $('#quiz-next'); return qn && vis(qn) && !qn.disabled ? [qn] : null; }
+      if (id === 'm-premiere') { var pbn = $('#premiere-btn'); return pbn && !pbn.disabled ? [pbn] : null; }
+      return null;
+    }
+    var hands = {}, quiet = {};
+    function place(key, t, group) {
+      var h = hands[key]; if (!h) { h = hands[key] = document.createElement('div'); h.className = 'wl-cue'; h.textContent = '👆'; h.setAttribute('aria-hidden', 'true'); document.body.appendChild(h); }
+      var r = t.getBoundingClientRect(), x = group ? r.left + Math.min(28, r.width / 2) : r.left + r.width / 2, y = r.bottom;
+      h.style.left = (x + window.scrollX - 14) + 'px'; h.style.top = (y + window.scrollY - 6) + 'px'; h.hidden = false; h._t = t;
+    }
+    function tick() {
+      var panel = $('.wl-panel.on'), seen = {};
+      var film = first('.wf-cover .wf-btn'); if (film && !quiet.film) { place('film', film); seen.film = 1; }
+      if (panel) $$('[id^="m-"]', panel).forEach(function (m) {
+        if (quiet[m.id] || !vis(m)) return; var r = nextIn(m); if (!r || !r[0] || !vis(r[0])) return;
+        place(m.id, r[0], r[1]); seen[m.id] = 1; });
+      Object.keys(hands).forEach(function (k) { if (!seen[k]) hands[k].hidden = true; });
+    }
+    document.addEventListener('pointerdown', function (e) {   /* the hand leaves on the first touch of what it points at */
+      Object.keys(hands).forEach(function (k) { var h = hands[k]; if (!h.hidden && h._t && h._t.contains(e.target)) { h.hidden = true; quiet[k] = 1; setTimeout(function () { quiet[k] = 0; }, 900); } });
+    }, true);
+    setInterval(tick, 400); window.addEventListener('resize', tick); tick();
+  })();
   /* ---- wonder callback ---- */
   function wonderBack() { var w = ($('#in-wonder') || {}).value || ''; var el = $('#wonder-back'); if (w.trim()) el.innerHTML = '<b>Your question:</b> “' + w.trim().replace(/</g, '&lt;') + '”'; }
 
