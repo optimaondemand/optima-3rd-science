@@ -147,16 +147,17 @@
       if (n === 4 && !render.played) { render.played = 1; play(); }
     }
     function play() {
-      /* No jump: the scene cards fade out but keep their space, the strip slides up under the top bar for the
-         playback, and the movie then takes the cards' place (so nothing below rushes up under the student). */
-      var k = 0; cheer(); tray.classList.add('wl-tray-done'); pin($('#order-strip'));
-      (function step() { slots.forEach(function (s, j) { s.classList.toggle('lit', j === k); }); cap.textContent = (k + 1) + '. ' + O.scenes[k].play;
-        var d = WL4.readMs(O.scenes[k].play);   /* each frame's caption stays up long enough to read */
-        if (++k < 4) setTimeout(step, d); else setTimeout(function () { slots.forEach(function (s) { s.classList.remove('lit'); }); cap.textContent = '🎬 Your order is right. Now watch it as a movie!'; var th = tray.offsetHeight; tray.hidden = true; tray.classList.remove('wl-tray-done'); WL4.movie(function () { $('#order-check').hidden = false; $('#fm-replay').hidden = false; }); ease(th); }, d); })();
+      /* The movie starts right away (it used to wait about 20 seconds while the four frames replayed one by one,
+         which looked like the movie never loaded). No jump: the movie takes the scene cards' place. */
+      cheer(); slots.forEach(function (s) { s.classList.remove('lit'); }); cap.textContent = '🎬 Your order is right. Now watch it as a movie!';
+      tray.classList.add('wl-tray-done'); pin($('#order-strip'));
+      setTimeout(function () { var th = tray.offsetHeight; tray.hidden = true; tray.classList.remove('wl-tray-done');
+        WL4.movie(function () { $('#order-check').hidden = false; $('#fm-replay').hidden = false; }); ease(th); }, RM ? 0 : 700);
     }
     /* if the movie is shorter than the cards it replaced, close the gap slowly instead of snapping */
     function ease(th) { var mv = $('#fm-movie'), d = th - mv.offsetHeight - 10; if (d <= 0 || RM) return; mv.style.transition = 'none'; mv.style.marginBottom = (10 + d) + 'px'; void mv.offsetWidth;
       mv.style.transition = 'margin-bottom .9s ease'; setTimeout(function () { mv.style.marginBottom = ''; setTimeout(function () { mv.style.transition = ''; }, 1000); }, 700); }
+    if (placed.filter(function (x) { return x != null; }).length === 4) render.played = 1;   /* already done: show the finished movie, do not replay */
     render();
     choices($('[data-choice="bone"]'), function () { S.orderDone = 1; save(); WL4.frame('formation'); });
     if (placed.filter(function (x) { return x != null; }).length === 4) { tray.hidden = true; $('#order-check').hidden = false; $('#fm-replay').hidden = false; WL4.movieStatic(); }
