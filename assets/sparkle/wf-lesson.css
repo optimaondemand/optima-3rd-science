@@ -492,3 +492,12 @@ body.wf-dim .wf-wrap{position:relative;z-index:86}
 .wl-start[open] .wl-start-o{font-size:0}.wl-start[open] .wl-start-o::after{content:'Close ▴';font-size:13px}
 .wl-start-b{padding:0 16px 14px}.wl-start-b video{display:block;width:100%;aspect-ratio:16/9;border-radius:8px;background:#111}
 .wl-start-n{margin:8px 0 0;font-size:13px;color:#6b5d4a}
+
+/* Assignment map (11 Nov 2026) */
+.wl-amap{background:#fffdf7;border:2px solid #E3B04B;border-radius:12px;padding:12px 16px;margin:0 0 16px}
+.wl-amap>b{display:block;font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#8a6a1c;margin-bottom:8px}
+.wl-amap ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.wl-amap-b{background:#fff;border:2px solid #e6d6b0;border-radius:999px;padding:6px 14px;font:inherit;font-weight:800;font-size:15px;color:#221c15;cursor:pointer;min-height:36px}
+.wl-amap-b:hover,.wl-amap-b:focus-visible{border-color:#221c15}
+.wl-amap-b span{display:inline-block;width:22px;height:22px;border-radius:50%;background:#221c15;color:#fff;text-align:center;line-height:22px;font-size:13px;margin-right:6px}
+.wl-amap-b.done{border-color:#2D6A4F;background:#eef7f1}.wl-amap-b.done span{background:#2D6A4F;font-size:0}.wl-amap-b.done span::after{content:'\2713';font-size:13px}

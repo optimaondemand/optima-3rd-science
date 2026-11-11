@@ -296,8 +296,30 @@
       if (r.sketch && !S.sketch) ok = false; ck[c.k] = ok; });
     var man = S.ckMan || {}, all = true;
     $$('#checklist li').forEach(function (li) { var k = li.dataset.ck, d = !!ck[k] || man[k] === true; li.classList.toggle('auto', !!ck[k]); li.classList.toggle('done', d); li.setAttribute('aria-checked', d); if (!d) all = false; });
+    $$('.wl-amap-b[data-ck]').forEach(function (b) { var k = b.dataset.ck, d = !!ck[k] || man[k] === true; b.classList.toggle('done', d); });
     if (window.WL4 && WL4.reel) WL4.reel(all); else window.__ck = all;
   }
+  /* ---- Assignment map (Bethany, 11 Nov 2026): one line at the top of the Assignment listing its parts.
+     Each chip jumps to its part and gets a check when the checklist says that part is done. ---- */
+  (function () {
+    var tab = $('#tab-assign'); if (!tab || D.assignMap === false || $('.wl-amap', tab)) return;
+    function head(re) { var hs = $$('h3 .k', tab); for (var i = 0; i < hs.length; i++) if (re.test(hs[i].textContent)) return hs[i].parentNode; return null; }
+    var A = D.assign || {}, jobs = [];
+    function q(o) { var n = ((o || {}).items || []).length; return n ? ' \u00B7 ' + n + ' question' + (n === 1 ? '' : 's') : ''; }
+    var hA = head(/Part A/), hB = head(/Part B/), hW = head(/Write and explain/), hC = $('#partc', tab), hP = $('#m-premiere', tab);
+    if (hA) jobs.push(['Part A' + q(A.partA), hA, 'a']);
+    if (hB) jobs.push(['Part B' + q(A.partB), hB, 'b']);
+    if (hW) jobs.push(['Write and explain', hW, 'w']);
+    if (hC) jobs.push(['Part C \u00B7 draw and label', hC, 'c']);
+    if (hP) jobs.push(['Premiere your film', hP, '']);
+    if (jobs.length < 2 || !hA) return;
+    var box = document.createElement('div'); box.className = 'wl-amap';
+    box.innerHTML = '<b>\uD83D\uDDFA In this scene \u00B7 ' + jobs.length + ' things to do</b><ol></ol>';
+    var ol = box.querySelector('ol');
+    jobs.forEach(function (j, i) { var li = document.createElement('li'), b = document.createElement('button'); b.type = 'button'; b.className = 'wl-amap-b'; if (j[2]) b.dataset.ck = j[2];
+      b.innerHTML = '<span>' + (i + 1) + '</span>' + j[0]; b.addEventListener('click', function () { pin(j[1]); }); li.appendChild(b); ol.appendChild(li); });
+    var card = hA.closest('.wl-card') || hA.parentNode; card.parentNode.insertBefore(box, card);
+  })();
   $$('#checklist li').forEach(function (li) {
     li.setAttribute('role', 'checkbox'); li.tabIndex = 0;
     function flip() { if (li.classList.contains('auto')) { toast('✅ This one checked itself because the work is done.'); return; }
