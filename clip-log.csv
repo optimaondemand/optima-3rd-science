@@ -1,0 +1,37 @@
+﻿repo,voice,text,chars,file,kind,script_source,md5
+optima-3rd-science,opti,environment,11,assets/sparkle/g3sci-17-01/audio-word-environment.mp3,speech,file name,531d273306c8310afcc35fd97e1be901
+optima-3rd-science,opti,evidence,8,assets/sparkle/g3sci-17-01/audio-word-evidence.mp3,speech,file name,6ab0f801d09ecd4e779603aa57589c41
+optima-3rd-science,opti,extinct,7,assets/sparkle/g3sci-17-01/audio-word-extinct.mp3,speech,file name,1a2893403585873e33173cdc546c6d12
+optima-3rd-science,opti,fossil,6,assets/sparkle/g3sci-17-01/audio-word-fossil.mp3,speech,file name,481046971bb8a7fee415946be5dde7e4
+optima-3rd-science,opti,infer,5,assets/sparkle/g3sci-17-01/audio-word-infer.mp3,speech,file name,9d3871593f82f274c3c5bd180d30fac0
+optima-3rd-science,opti,organism,8,assets/sparkle/g3sci-17-01/audio-word-organism.mp3,speech,file name,6ab0f801d09ecd4e779603aa57589c41
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-01/music.mp3,speech,,695f40ec3d8bc16002fcd842b862dcc8
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-02/audio-17-02-assign.mp3,speech,,7dfca516b3581901429062758acc6f8b
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-02/audio-17-02-check.mp3,speech,,c5c7ea214ebf7f9d9c54764b479c6a43
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-02/audio-17-02-lesson.mp3,speech,,e20f0fba8a7567768aa40e8ce7fde3d0
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-02/audio-17-02-welcome.mp3,speech,,7a81644910dc170335c1bcc9db0001be
+optima-3rd-science,opti,A spiral with ridges,20,assets/sparkle/g3sci-17-02/audio-opti-1.mp3,speech,lesson-17-02-fossil-dig-simulation.html,ca8e5828fbcdbd0cf45b7d7cb183bb1f
+optima-3rd-science,opti,Rows of leaflets along a stem,29,assets/sparkle/g3sci-17-02/audio-opti-2.mp3,speech,lesson-17-02-fossil-dig-simulation.html,70c306b71ff7c7bfff8053adc0acf790
+optima-3rd-science,opti,"Three narrow toes, in a row of prints",37,assets/sparkle/g3sci-17-02/audio-opti-3.mp3,speech,lesson-17-02-fossil-dig-simulation.html,4832a0ad05886634b17140218d0103d2
+optima-3rd-science,opti,"A spine, fin rays, and a tail",29,assets/sparkle/g3sci-17-02/audio-opti-4.mp3,speech,lesson-17-02-fossil-dig-simulation.html,96f0f728ed52365f6f0e9c9d903445c3
+optima-3rd-science,opti,"Saw-like edges, and found 20 cm from a fish",43,assets/sparkle/g3sci-17-02/audio-opti-5.mp3,speech,lesson-17-02-fossil-dig-simulation.html,0cdbf61fe3beed2330b8c9cc51379935
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-02/audio-opti-6.mp3,speech,,9fd101af9c8b6c03c8444e1b6ea5a5d3
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-02/audio-opti-7.mp3,speech,,79e461c9dc13dd2e943e228d00098682
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-02/audio-opti-8.mp3,speech,,666e7a1793b2aabd6750284909dd553f
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-02/audio-opti-9.mp3,speech,,d4cd96c6203c1e593797e36c1a595ee7
+optima-3rd-science,opti,analyze,7,assets/sparkle/g3sci-17-02/audio-word-analyze.mp3,speech,file name,ed21c7d3821d79061f1b1fc8afc9f550
+optima-3rd-science,opti,ancient,7,assets/sparkle/g3sci-17-02/audio-word-ancient.mp3,speech,file name,4043746486bb2abf9c8d362dcfe84a03
+optima-3rd-science,opti,data,4,assets/sparkle/g3sci-17-02/audio-word-data.mp3,speech,file name,dedf38c7287f9a15c17dc76b0481c853
+optima-3rd-science,opti,inference,9,assets/sparkle/g3sci-17-02/audio-word-inference.mp3,speech,file name,07b1e0c2a49bd2fc47e2079a36454ee9
+optima-3rd-science,opti,paleontologist,14,assets/sparkle/g3sci-17-02/audio-word-paleontologist.mp3,speech,file name,df11b374fc5510a8e1efd9944287cc82
+optima-3rd-science,opti,sediment,8,assets/sparkle/g3sci-17-02/audio-word-sediment.mp3,speech,file name,fe965ce93dd37c254ceaf21d1b3e4228
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-02/music.mp3,speech,,234b58fde1bde77c4d9cb09464042436
+optima-3rd-science,opti,,0,assets/sparkle/vr-17/audio/opti-brief.mp3,speech,,c2e6831e648a6cdd89afc9189cc52da6
+optima-3rd-science,opti,,0,assets/sparkle/vr-17/audio/opti-extra.mp3,speech,,6fefc9fd5ee0824f604e98a98cd72b8e
+optima-3rd-science,opti,,0,assets/sparkle/vr-17/audio/opti-step1.mp3,speech,,9762954011b55c880d3cf730f85222ef
+optima-3rd-science,opti,,0,assets/sparkle/vr-17/audio/opti-step2.mp3,speech,,086d34b68eec3129dc274cb848d6bc74
+optima-3rd-science,opti,,0,assets/sparkle/vr-17/audio/opti-step3.mp3,speech,,7a011fb062a6614a71b5bcc5412fea34
+optima-3rd-science,opti,,0,assets/sparkle/vr-17/audio/opti-step4.mp3,speech,,94f25653e79504de0d04bf75852c3acc
+optima-3rd-science,opti,,0,assets/sparkle/vr-17/audio/opti-step5.mp3,speech,,04af7a9f15ea1aa8282ab704c5157ffe
+optima-3rd-science,opti,,0,assets/sparkle/vr-17/audio/opti-studio.mp3,speech,,e99239ffc85d887c4f40bbc126582a6f
+optima-3rd-science,opti,,0,tools/sparkle/lessons/17-01/music.mp3,speech,,de576b1e74dad94bb770b98755efa676
