@@ -1133,7 +1133,7 @@
      "type": "choice",
      "options": [
       {
-       "t": "In the ocean",
+       "t": "In water, like a lake or ocean",
        "ok": "Yes. Fins and a backbone are clues for swimming, so it lived in water."
       },
       {
@@ -1184,7 +1184,7 @@
    "do": "Answer in complete sentences. Use your science words.",
    "items": [
     {
-     "n": 4,
+     "n": 1,
      "q": "What is a fossil? Name two different kinds of things that can become fossils, with an example of each.",
      "type": "text",
      "min": 15,
@@ -1200,7 +1200,7 @@
      ]
     },
     {
-     "n": 6,
+     "n": 2,
      "q": "Why are fossils useful evidence about living things that are now extinct? What would we lose if there were no fossils?",
      "type": "text",
      "min": 15,
@@ -1276,11 +1276,11 @@
    },
    {
     "k": "b",
-    "t": "Part B: questions 4 and 6.",
+    "t": "Part B: questions 1 and 2.",
     "req": {
      "text": {
-      "in-b4": 15,
-      "in-b6": 15
+      "in-b1": 15,
+      "in-b2": 15
      }
     }
    },

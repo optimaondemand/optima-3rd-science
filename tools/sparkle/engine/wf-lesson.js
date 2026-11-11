@@ -195,11 +195,14 @@
 
   /* ---- Start here: one how-to video (Opti) for every lesson, in a closed drawer at the top of the Warm-Up ---- */
   (function () {
-    var first = $('#tab-warm'); if (!first || $('.wl-start')) return;
+    var first = $('#tab-warm'); if (!first) return;
     var base = D.startHere || 'assets/video/start-here/g3sci-start-here';
-    var d = document.createElement('details'); d.className = 'wl-start';
-    d.innerHTML = '<summary><span class="wl-start-k">▶ Start here</span><span class="wl-start-t">How your Wonder Films lessons work</span><span class="wl-start-m">1-minute video</span><span class="wl-start-o">Open ▾</span></summary><div class="wl-start-b"></div>';
-    var sc = first.querySelector('.wl-scene'); first.insertBefore(d, sc ? sc.nextSibling : first.firstChild);
+    // build_page.py writes the drawer into the page so nothing moves on load; older pages get it here
+    var d = $('.wl-start'), made = !d; if (made) { d = document.createElement('details'); d.className = 'wl-start'; }
+    if (made) {
+      d.innerHTML = '<summary><span class="wl-start-k">▶ Start here</span><span class="wl-start-t">How your Wonder Films lessons work</span><span class="wl-start-m">1-minute video</span><span class="wl-start-o">Open ▾</span></summary><div class="wl-start-b"></div>';
+      var sc = first.querySelector('.wl-scene'); first.insertBefore(d, sc ? sc.nextSibling : first.firstChild);
+    }
     d.addEventListener('toggle', function () {
       var v = d.querySelector('video'); if (!d.open) { if (v) v.pause(); return; } if (v) return;
       d.querySelector('.wl-start-b').innerHTML = '<video controls playsinline preload="metadata" poster="' + base + '.jpg"><source src="' + base + '.mp4" type="video/mp4"><track kind="captions" srclang="en" label="English" src="' + base + '.vtt" default></video><p class="wl-start-n">Captions are on. To turn them off, press CC on the video.</p>';
@@ -267,7 +270,10 @@
     setInterval(tick, 400); window.addEventListener('resize', tick); tick();
   })();
   /* ---- wonder callback ---- */
-  function wonderBack() { var w = ($('#in-wonder') || {}).value || ''; var el = $('#wonder-back'); if (w.trim()) el.innerHTML = '<b>Your question:</b> “' + w.trim().replace(/</g, '&lt;') + '”'; }
+  // the Scene 1 question shows here; if the Warm-Up box was left empty, the student writes it right here (never "go to the Warm-Up")
+  function wonderBack() { var src = $('#in-wonder'), w = (src || {}).value || '', el = $('#wonder-back'), here = $('#wonder-here'), box = $('#in-wonder2'); if (!el) return;
+    if (box && !box.dataset.on) { box.dataset.on = '1'; box.addEventListener('input', function () { if (!src) return; src.value = box.value; src.dispatchEvent(new Event('input', { bubbles: true })); }); }
+    if (w.trim() && !(box && document.activeElement === box)) { el.innerHTML = '<b>Your question:</b> “' + w.trim().replace(/</g, '&lt;') + '”'; if (here) here.hidden = true; } }
 
   /* ---- gather + checklist + reel ---- */
   function gather() {

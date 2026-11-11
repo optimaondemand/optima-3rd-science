@@ -709,7 +709,7 @@
   "endText": "Look at the line on the hillside. The deepest layer formed first, so it is the oldest. The top layer is the newest.",
   "rule": "<b>At Site 7-B, the place changed over time.</b> In each layer, the fossils AND the rock tell what the place was like then.",
   "choices": [
-   "🌊 Calm, shallow water",
+   "🌊 A calm, shallow sea",
    "🌿 A wet, muddy swamp",
    "🐟 A quiet lake with fish"
   ],
@@ -722,15 +722,15 @@
     "ask": "Look at Layer 1. Read the rock AND the fossil. What was this place like?",
     "clue": "Rock: pale gray limestone, smooth and fine. It forms in calm, shallow water. Fossil: a spiral shell (Find 1).",
     "ans": 0,
-    "ok": "Yes! The rock and the shell both point to calm, shallow water.",
-    "tag": "🌊 Calm, shallow water",
+    "ok": "Yes! The rock and the shell both point to a calm, shallow sea.",
+    "tag": "🌊 Calm, shallow sea",
     "miss": {
      "1": "A swamp makes dark mud, but this rock is pale limestone. Read the rock clue again.",
-     "2": "Look at the clue: there's a shell, not a fish, and the rock is limestone from calm, shallow water."
+     "2": "Look at the clue: there's a shell, not a fish, and the rock is limestone from a calm, shallow sea."
     },
     "env": "env_sea",
     "envAlt": "Clear, shallow sea water over sand and sea plants",
-    "envCap": "Long ago here: calm, shallow water · Photo: shallow water today, Florida Keys"
+    "envCap": "Long ago here: a calm, shallow sea · Photo: a shallow sea today, Florida Keys"
    },
    {
     "name": "Layer 2 · 140 cm",
@@ -738,7 +738,7 @@
     "img": "fern2",
     "alt": "A fern print in rock",
     "ask": "Now Layer 2. Read the rock AND the fossils. What was this place like?",
-    "clue": "Rock: dark mudstone, almost black. Dark rock like this forms in a wet, low-oxygen place, like a swamp or a still lake bottom. Fossils: a fern and two footprints (Finds 2 and 3).",
+    "clue": "Rock: dark mudstone, almost black. Dark rock like this forms in a wet place, like a swamp or a still lake bottom. Fossils: a fern and two footprints (Finds 2 and 3).",
     "ans": 1,
     "ok": "Yes! Dark mud, a fern, and footprints point to a wet, muddy swamp.",
     "tag": "🌿 Wet, muddy swamp",
@@ -875,8 +875,8 @@
     "bts": "Find 1: a spiral shell, 4 cm wide, in pale gray limestone, 80 cm deep. Photo: a real ammonite, an extinct sea animal with a spiral shell.",
     "envImg": "env_sea",
     "envAlt": "Clear, shallow sea water over sand and sea plants",
-    "envCap": "Calm, shallow water today, Florida Keys",
-    "reveal": "This find is evidence that calm, shallow water once covered Site 7-B.",
+    "envCap": "A calm, shallow sea today, Florida Keys",
+    "reveal": "This find is evidence that a calm, shallow sea once covered Site 7-B.",
     "rebuildEnv": "water"
    },
    {
@@ -1103,8 +1103,8 @@
      "miss": "The rock around a fossil is data too. What kind of place makes dark, fine mud?"
     },
     {
-     "t": "It is more data. Mudstone forms in wet, low-oxygen places like swamps.",
-     "ok": "🪨 Right! The rock itself is data. Dark mudstone is a clue that the place was wet and low in oxygen, like a swamp."
+     "t": "It is more data. Dark mudstone forms in wet places like swamps.",
+     "ok": "🪨 Right! The rock itself is data. Dark mudstone is a clue that the place was wet, like a swamp."
     },
     {
      "t": "It tells her the fossil is not very old.",
@@ -1116,7 +1116,7 @@
    "q": "Which is the strongest, most scientific inference about a tooth fossil?",
    "options": [
     {
-     "t": "\"The tooth is curved, serrated, and found near bone pieces, so this animal was likely a predator.\"",
+     "t": "\"The tooth is curved, serrated (saw-like), and found near bone pieces, so this animal was likely a predator.\"",
      "ok": "⭐ Excellent! It names three specific observations AND connects them to the inference. That's strong scientific evidence."
     },
     {
@@ -1192,7 +1192,7 @@
    "do": "Answer in complete sentences. Use your science words.",
    "items": [
     {
-     "n": 4,
+     "n": 1,
      "q": "A scientist writes: \"This was a predator.\" Is this a strong or weak scientific inference? Rewrite it as a strong inference using at least two specific observations from Find 5 (a curved tooth with saw-like edges, found 20 cm from a fish skeleton).",
      "type": "text",
      "min": 15,
@@ -1208,7 +1208,7 @@
      ]
     },
     {
-     "n": 6,
+     "n": 2,
      "q": "In the Site 7-B data, Find 2 (the fern fossil) is preserved in dark mudstone. How does that rock type add to what scientists can infer, beyond just the fossil's shape?",
      "type": "text",
      "min": 15,
@@ -1252,7 +1252,7 @@
    ]
   },
   "partC": {
-   "do": "Draw a side view (a cross-section) of Site 7-B. Show the finds at their depths: 80 cm, 138–140 cm, and 205–210 cm. Label the rock in each layer, and draw what the place was like then: water, swamp, or lake.",
+   "do": "Draw the three layers of Site 7-B, one on top of the other. Label the rock in each layer. Then write what the top and bottom layers were like long ago.",
    "labels": [
     "Top layer (80 cm): what rock, and what place?",
     "Bottom layer (210 cm): what rock, and what place?"
@@ -1284,11 +1284,11 @@
    },
    {
     "k": "b",
-    "t": "Part B: questions 4 and 6.",
+    "t": "Part B: questions 1 and 2.",
     "req": {
      "text": {
-      "in-b4": 15,
-      "in-b6": 15
+      "in-b1": 15,
+      "in-b2": 15
      }
     }
    },
