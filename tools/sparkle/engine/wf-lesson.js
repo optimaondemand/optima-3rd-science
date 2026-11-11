@@ -61,10 +61,20 @@
       });
     });
   })();
+  /* ---- key words read aloud (clips: audio/word-<slug>.mp3; a 🔊 shows only when the clip exists) ---- */
+  var wordAudio = null;
+  function wordSlug(w) { return String(w || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+  function wordKey(t) { t = String(t || '').trim().toLowerCase(); var hit = null;
+    (D.words || []).forEach(function (w) { var x = String(w[1] || '').toLowerCase(); if (t === x || t === x + 's' || t === x + 'es') hit = 'word-' + wordSlug(x); });
+    return hit && IMG[hit] ? hit : null; }
+  function sayWord(k) { try { if (wordAudio) wordAudio.pause(); wordAudio = new Audio(IMG[k]); wordAudio.play().catch(function () {}); } catch (e) {} }
+  $$('.wl-wsay[data-word]').forEach(function (b) { var k = 'word-' + b.dataset.word; if (IMG[k]) { b.classList.add('ready'); b.onclick = function () { sayWord(k); }; } });
   /* ---- glossary ---- */
   $$('.wl-glos').forEach(function (g) {
     g.tabIndex = 0; var tip;
-    function open() { if (tip) return; tip = document.createElement('span'); tip.className = 'wl-tip'; tip.textContent = g.dataset.tip; g.appendChild(tip); }
+    function open() { if (tip) return; tip = document.createElement('span'); tip.className = 'wl-tip'; tip.textContent = g.dataset.tip; g.appendChild(tip);
+      var k = wordKey(g.firstChild ? g.firstChild.nodeValue : ''); if (k) { var b = document.createElement('button'); b.type = 'button'; b.className = 'wl-wsay ready in-tip'; b.textContent = '🔊'; b.setAttribute('aria-label', 'Hear the word');
+        b.addEventListener('mousedown', function (e) { e.preventDefault(); }); b.addEventListener('click', function (e) { e.stopPropagation(); sayWord(k); }); tip.insertBefore(b, tip.firstChild); } }
     function close() { if (tip) { tip.remove(); tip = null; } }
     g.addEventListener('mouseenter', open); g.addEventListener('mouseleave', close); g.addEventListener('focus', open); g.addEventListener('blur', close);
     g.addEventListener('click', function (e) { e.stopPropagation(); tip ? close() : open(); });

@@ -11,6 +11,7 @@ LDIR = LP.parent
 E = html.escape
 
 # ---------------- helpers ----------------
+def wslug(w): return re.sub(r'[^a-z0-9]+', '-', w.lower()).strip('-')   # key word -> clip name: audio/word-<slug>.mp3
 def opti(key, say):
     return f'<div class="wl-opti"><img src="{{{{opti}}}}" alt="Opti the owl"><div class="bub"><b class="who">Opti</b>{L["opti"][key]}<button class="wl-say" data-say="{say}" aria-label="Listen to Opti">🔊</button></div></div>'
 def scene(n, name):
@@ -57,8 +58,8 @@ body = f'''<div class="page-wrap">
 <div class="wl-idcard">{"".join(f"<span>{c}</span>" if i else c for i,c in enumerate(S["card"]))}</div></div>
 <div style="text-align:center"><button class="wl-btn gold" id="spec-open">🔍 Inspect specimen</button></div><p class="wl-fb dark" id="spec-fb"></p>
 <div class="wl-paper wl-in" id="spec-boxes" hidden>{textbox("in-notice","Warm-Up · I notice",4,[["part","Names a part you saw"]],S["notice"])}{textbox("in-wonder","Warm-Up · I wonder",4,[["ask","Asks a question"]],S["wonder"])}</div>''', 'how-inspect') + f'''
-<div class="wl-card" id="m-words"><h3><span class="k">📚 Word Wall</span>Words scientists use</h3><p class="wl-do" data-say="how-flip"><b>What to do:</b> Tap or click each card to flip it and read what the word means.</p>
-<div class="wl-words">{"".join(f'<button class="wl-flip" type="button"><div class="in"><div class="f">{e} {w}<small>tap to flip</small></div><div class="bk"><b>{w}</b>{d}</div></div></button>' for e,w,d in L["words"])}</div></div>
+<div class="wl-card" id="m-words"><h3><span class="k">📚 Word Wall</span>Words scientists use</h3><p class="wl-do" data-say="how-flip"><b>What to do:</b> Tap or click each card to flip it and read what the word means.{" Tap 🔊 to hear Opti say the word." if all((LP.parent / "audio" / ("word-" + wslug(w) + ".mp3")).exists() for e,w,d in L["words"]) else ""}</p>
+<div class="wl-words">{"".join(f'<div class="wl-wordcell"><button class="wl-flip" type="button"><div class="in"><div class="f">{e} {w}<small>tap to flip</small></div><div class="bk"><b>{w}</b>{d}</div></div></button><button class="wl-wsay" type="button" data-word="{wslug(w)}" aria-label="Hear the word {E(w)}">🔊</button></div>' for e,w,d in L["words"])}</div></div>
 <div class="wl-next"><button class="wl-btn gold" data-go="lesson">Next: 🎬 Scene 2 · The Lesson →</button></div></section>
 
 <section class="wl-panel" id="tab-lesson" role="tabpanel">{scene(2,"The Lesson")}{opti("lesson", L["lesson"].replace(".","-")+"-lesson")}
@@ -172,6 +173,11 @@ for c in film.get('captions', []):
 for nk in ('welcome', 'lesson', 'check', 'assign'):  # Opti's notes: audio/<WW-LL>-<note>.mp3 -> the note's 🔊 button
     v = LDIR / 'audio' / f"{L['lesson'].replace('.', '-')}-{nk}.mp3"
     if v.exists(): img[f"say-{L['lesson'].replace('.', '-')}-{nk}"] = uri(v, 'audio/mpeg')
+
+for _e, _w, _d in L['words']:  # key words: audio/word-<slug>.mp3 -> 🔊 on the Word Wall card and in the dotted-word pop-up
+    v = LDIR / 'audio' / f"word-{wslug(_w)}.mp3"
+    if v.exists(): img[f"word-{wslug(_w)}"] = uri(v, 'audio/mpeg')
+print('key words voiced:', sum(1 for k in img if k.startswith('word-')), '/', len(L['words']))
 
 cred = {c['key']: c for c in json.loads((LDIR / 'credits.json').read_text())}
 alias = L.get('creditAlias', {})
