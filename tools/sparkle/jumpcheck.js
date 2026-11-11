@@ -13,6 +13,11 @@ const [F, Wd, PRE] = [process.argv[2], +process.argv[3] || 1150, process.argv[4]
     wrap(window, 'scrollTo'); wrap(window, 'scrollBy'); wrap(Element.prototype, 'scrollIntoView');
   });
   const errs = []; p.on('pageerror', e => errs.push('PAGEERR ' + e.message)); p.on('console', m => { if (m.type() === 'error') errs.push(m.text()); });
+  // one step at a time: open the step that holds a thing before the test touches it (the tab's own Next button is replaced by the walker's)
+  for (const m of ['click', 'fill', '$', 'waitForSelector', 'hover']) { const f = p[m].bind(p); p[m] = async (sel, ...a) => {
+    if (typeof sel === 'string') await p.evaluate(s => { try { const e = document.querySelector(s.split(' >> ')[0]); if (e && window.OneStep) window.OneStep.reveal(e); } catch (x) {} }, sel).catch(() => {});
+    if (m === 'click' && /^\[data-go=/.test(sel)) return p.evaluate(s => document.querySelector(s).click(), sel);
+    return f(sel, ...a); }; }
   await p.goto(/^https?:/.test(F) ? F : 'file://' + require('path').resolve(F)); await p.waitForTimeout(800);
   const D = await p.evaluate(() => WL_DATA);
   const el = async (sel, n) => { const e = await p.$(sel); await e.scrollIntoViewIfNeeded(); await p.waitForTimeout(150); await e.screenshot({ path: `${PRE}-${Wd}-${n}.png` }); };

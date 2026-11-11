@@ -19,9 +19,10 @@
   function toast(msg) { var t = document.createElement('div'); t.className = 'wl-toast'; t.setAttribute('role', 'status'); t.innerHTML = msg + '<button aria-label="Close">✕</button>';
     $$('.wl-toast').slice(0, -2).forEach(function (o) { o.remove(); }); document.body.appendChild(t); var n = $$('.wl-toast').length; t.style.top = ($('.wl-top').offsetHeight + 10 + (n - 1) * 74) + 'px'; t.querySelector('button').onclick = function () { t.remove(); }; }
   /* smooth scroll so el's top sits just under the sticky top bar */
-  function pin(el) { if (!el) return; var bar = $('.wl-top'), y = el.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0) - 12; window.scrollTo({ top: Math.max(0, y), behavior: RM ? 'auto' : 'smooth' }); }
+  function pin(el) { if (!el) return; if (window.OneStep) window.OneStep.reveal(el);   /* one step at a time: open the step that holds it first */
+    var bar = $('.wl-top'), y = el.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0) - 12; window.scrollTo({ top: Math.max(0, y), behavior: RM ? 'auto' : 'smooth' }); }
   /* scroll only if el isn't already fully on screen below the top bar */
-  function reveal(el) { if (!el) return; var bar = $('.wl-top'), top = bar ? bar.offsetHeight : 0, r = el.getBoundingClientRect();
+  function reveal(el) { if (!el) return; if (window.OneStep) window.OneStep.reveal(el); var bar = $('.wl-top'), top = bar ? bar.offsetHeight : 0, r = el.getBoundingClientRect();
     if (r.top >= top && r.bottom <= window.innerHeight) return;
     if (r.top < top || r.height > window.innerHeight - top - 24) { pin(el); return; }
     window.scrollBy({ top: r.bottom - window.innerHeight + 12, behavior: RM ? 'auto' : 'smooth' }); }  /* nudge up just enough */

@@ -200,14 +200,14 @@ def fill(m):
     return img[k]
 body = re.sub(r'\{\{(\w+)\}\}', fill, body)
 SRC = ROOT / 'engine'
-css = (SRC / 'wf-film.css').read_text() + '\n' + (SRC / 'wf-lesson.css').read_text()
-js = (SRC / 'wf-film.js').read_text() + '\n' + (SRC / 'wf-modules.js').read_text() + '\n' + (SRC / 'wf-lesson.js').read_text()
+css = (SRC / 'wf-film.css').read_text() + '\n' + (SRC / 'wf-lesson.css').read_text() + '\n' + (SRC / 'onestep.css').read_text()
+js = (SRC / 'wf-film.js').read_text() + '\n' + (SRC / 'wf-modules.js').read_text() + '\n' + (SRC / 'wf-lesson.js').read_text() + '\n' + (SRC / 'onestep.js').read_text()
 data = {k: v for k, v in L.items() if k not in ('film',)}
 if REPO:
-    for f in ('wf-film.css', 'wf-lesson.css', 'wf-film.js', 'wf-modules.js', 'wf-lesson.js'): COPY.append((SRC / f, f'assets/sparkle/{f}'))
+    for f in ('wf-film.css', 'wf-lesson.css', 'onestep.css', 'wf-film.js', 'wf-modules.js', 'wf-lesson.js', 'onestep.js'): COPY.append((SRC / f, f'assets/sparkle/{f}'))
     v = __import__('hashlib').md5((css + js).encode()).hexdigest()[:8]
-    head_css = f'<link rel="stylesheet" href="assets/sparkle/wf-film.css?v={v}"><link rel="stylesheet" href="assets/sparkle/wf-lesson.css?v={v}"><style>.wf-credits{{display:none}}</style>'
-    tail_js = ''.join(f'<script src="assets/sparkle/{f}?v={v}"></script>' for f in ('wf-film.js', 'wf-modules.js', 'wf-lesson.js'))
+    head_css = f'<link rel="stylesheet" href="assets/sparkle/wf-film.css?v={v}"><link rel="stylesheet" href="assets/sparkle/wf-lesson.css?v={v}"><link rel="stylesheet" href="assets/sparkle/onestep.css?v={v}"><style>.wf-credits{{display:none}}</style>'
+    tail_js = ''.join(f'<script src="assets/sparkle/{f}?v={v}"></script>' for f in ('wf-film.js', 'wf-modules.js', 'wf-lesson.js', 'onestep.js'))
 else:
     head_css = f'<style>{css}\n.wf-credits{{display:none}}</style>'; tail_js = f'<script>{js}</script>'
 fix_urls = "for(var k in WF_IMG)if(!/^data:/.test(WF_IMG[k]))WF_IMG[k]=new URL(WF_IMG[k],document.baseURI).href;" if REPO else ''
