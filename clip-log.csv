@@ -1,4 +1,6 @@
 ﻿repo,voice,text,chars,file,kind,script_source,md5
+optima-3rd-science,opti,"Drag the leaf onto one tray and the clay strip onto the other, or tap each one, then tap a tray. Then press Press down.",119,assets/sparkle/g3sci-17-01/audio-how-17-01-compare.mp3,speech,tools/sparkle/lessons/17-01/how-lines.json,6ea6c393347089c43383c07a98633059
+optima-3rd-science,opti,"Draw two rock layers, one on top of the other, with a fossil in each. Then write what each fossil tells about the past.",119,assets/sparkle/g3sci-17-01/audio-how-17-01-partc.mp3,speech,tools/sparkle/lessons/17-01/how-lines.json,661c5cada400e911c55b1d57477a6cb4
 optima-3rd-science,opti,environment,11,assets/sparkle/g3sci-17-01/audio-word-environment.mp3,speech,file name,531d273306c8310afcc35fd97e1be901
 optima-3rd-science,opti,evidence,8,assets/sparkle/g3sci-17-01/audio-word-evidence.mp3,speech,file name,6ab0f801d09ecd4e779603aa57589c41
 optima-3rd-science,opti,extinct,7,assets/sparkle/g3sci-17-01/audio-word-extinct.mp3,speech,file name,1a2893403585873e33173cdc546c6d12
@@ -10,6 +12,8 @@ optima-3rd-science,opti,Time to show your thinking. Say what you saw first. Then
 optima-3rd-science,opti,"A quick check before the big job. It's not graded. It's just for you, so give it your best try.",95,assets/sparkle/g3sci-17-02/audio-17-02-check.mp3,speech,lesson-17-02-fossil-dig-simulation.html,c5c7ea214ebf7f9d9c54764b479c6a43
 optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-02/audio-17-02-lesson.mp3,speech,,e20f0fba8a7567768aa40e8ce7fde3d0
 optima-3rd-science,opti,Welcome back to the film crew! Today we start with a real dinosaur track. Look closely first. Explaining comes later.,117,assets/sparkle/g3sci-17-02/audio-17-02-welcome.mp3,speech,lesson-17-02-fossil-dig-simulation.html,7a81644910dc170335c1bcc9db0001be
+optima-3rd-science,opti,"Drag the wet mud under one tray and the dry sand under the other, or tap each one, then tap a tray. Press Step down. Then swap them and press it again.",151,assets/sparkle/g3sci-17-02/audio-how-17-02-compare.mp3,speech,tools/sparkle/lessons/17-02/how-lines.json,8bb0173d0d2c31ea07adcf81932eaadf
+optima-3rd-science,opti,"Draw the three layers of Site 7-B, one on top of the other. Label the rock in each layer. Then write what the top and bottom layers were like long ago.",151,assets/sparkle/g3sci-17-02/audio-how-17-02-partc.mp3,speech,tools/sparkle/lessons/17-02/how-lines.json,82b7f3e2c6e69d78838d896daef11b95
 optima-3rd-science,opti,Listen. Something is walking through soft mud.,46,assets/sparkle/g3sci-17-02/audio-opti-1.mp3,speech,lesson-17-02-fossil-dig-simulation.html,ca8e5828fbcdbd0cf45b7d7cb183bb1f
 optima-3rd-science,opti,"Three long toes, pressed deep into solid rock.",46,assets/sparkle/g3sci-17-02/audio-opti-2.mp3,speech,lesson-17-02-fossil-dig-simulation.html,70c306b71ff7c7bfff8053adc0acf790
 optima-3rd-science,opti,Footprints? In stone?,21,assets/sparkle/g3sci-17-02/audio-opti-3.mp3,speech,lesson-17-02-fossil-dig-simulation.html,4832a0ad05886634b17140218d0103d2
@@ -26,6 +30,19 @@ optima-3rd-science,opti,inference,9,assets/sparkle/g3sci-17-02/audio-word-infere
 optima-3rd-science,opti,paleontologist,14,assets/sparkle/g3sci-17-02/audio-word-paleontologist.mp3,speech,file name,df11b374fc5510a8e1efd9944287cc82
 optima-3rd-science,opti,sediment,8,assets/sparkle/g3sci-17-02/audio-word-sediment.mp3,speech,file name,fe965ce93dd37c254ceaf21d1b3e4228
 optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-02/music.mp3,not-speech,,234b58fde1bde77c4d9cb09464042436
+optima-3rd-science,opti,,0,assets/sparkle/how/how-checklist.mp3,speech,,83efdd490c46007fb519828c9d4b2e80
+optima-3rd-science,opti,,0,assets/sparkle/how/how-compare.mp3,speech,,e654b4bba816cbb2cb13f9aa35e0f6c0
+optima-3rd-science,opti,,0,assets/sparkle/how/how-detective.mp3,speech,,9377dc4e712737e6feb066737f76541c
+optima-3rd-science,opti,,0,assets/sparkle/how/how-flip.mp3,speech,,4b32b4ab6bb21fdfb42475a7ca07bff1
+optima-3rd-science,opti,,0,assets/sparkle/how/how-order.mp3,speech,,0a91479b858629df237e0e6faa2028c6
+optima-3rd-science,opti,,0,assets/sparkle/how/how-parta.mp3,speech,,cf661635af66a34660eca52405d6ec87
+optima-3rd-science,opti,,0,assets/sparkle/how/how-partb.mp3,speech,,bf907f668543d846838db5379b4e7f66
+optima-3rd-science,opti,,0,assets/sparkle/how/how-premiere.mp3,speech,,1d910531a59293e12ea9e70eb8b48e8a
+optima-3rd-science,opti,,0,assets/sparkle/how/how-rebuild.mp3,speech,,24046e400854675790071a395674ecb6
+optima-3rd-science,opti,,0,assets/sparkle/how/how-specimen.mp3,speech,,aa2fd22161487036a68e9c38f8c6c2b9
+optima-3rd-science,opti,,0,assets/sparkle/how/how-wall.mp3,speech,,d24ab7651034b114c0498e1d77146fe1
+optima-3rd-science,opti,,0,assets/sparkle/how/how-write-1.mp3,speech,,0e7a6436f20744b9a3ed529bd0aedd96
+optima-3rd-science,opti,,0,assets/sparkle/how/how-write-2.mp3,speech,,582577f44dfb1d8f1b29cae6d8c4cfef
 optima-3rd-science,opti,"Welcome to the desert, crew. Today we film Scene 17, The Lost Sea. Build what lived here long ago, then take the shot.",118,assets/sparkle/vr-17/audio/opti-brief.mp3,speech,tools/vr/weeks/17/week.json,c2e6831e648a6cdd89afc9189cc52da6
 optima-3rd-science,opti,Got time? Add a backbone fossil and a fish beside it. That shot is just for VR crews.,85,assets/sparkle/vr-17/audio/opti-extra.mp3,speech,tools/vr/weeks/17/week.json,6fefc9fd5ee0824f604e98a98cd72b8e
 optima-3rd-science,opti,"Before your headset goes on, meet your six models. Learn each gray search word. You will type it in VR.",103,assets/sparkle/vr-17/audio/opti-step1.mp3,speech,tools/vr/weeks/17/week.json,9762954011b55c880d3cf730f85222ef
@@ -34,4 +51,21 @@ optima-3rd-science,opti,Set down the two fossil clues first. Put each living thi
 optima-3rd-science,opti,"Step back so the whole scene fits. Click Library, then Camera, and take the shot. Then send it to Canvas.",105,assets/sparkle/vr-17/audio/opti-step4.mp3,speech,tools/vr/weeks/17/week.json,94f25653e79504de0d04bf75852c3acc
 optima-3rd-science,opti,Press the Meta button and click Quit. Then open Canvas. Your photo should be waiting there.,91,assets/sparkle/vr-17/audio/opti-step5.mp3,speech,tools/vr/weeks/17/week.json,04af7a9f15ea1aa8282ab704c5157ffe
 optima-3rd-science,opti,No headset today? Come to the studio. Match each fossil to its living cousin. Then tell me what you think.,106,assets/sparkle/vr-17/audio/opti-studio.mp3,speech,tools/vr/weeks/17/week.json,e99239ffc85d887c4f40bbc126582a6f
+optima-3rd-science,opti,"Drag the leaf onto one tray and the clay strip onto the other, or tap each one, then tap a tray. Then press Press down.",119,tools/sparkle/lessons/17-01/audio/how-17-01-compare.mp3,speech,tools/sparkle/lessons/17-01/how-lines.json,a66be76c3d3e72b0772f639f03a8a3d5
+optima-3rd-science,opti,"Draw two rock layers, one on top of the other, with a fossil in each. Then write what each fossil tells about the past.",119,tools/sparkle/lessons/17-01/audio/how-17-01-partc.mp3,speech,tools/sparkle/lessons/17-01/how-lines.json,586f56aea4022fce11c887c089476afe
 optima-3rd-science,opti,,0,tools/sparkle/lessons/17-01/music.mp3,not-speech,,de576b1e74dad94bb770b98755efa676
+optima-3rd-science,opti,"Drag the wet mud under one tray and the dry sand under the other, or tap each one, then tap a tray. Press Step down. Then swap them and press it again.",151,tools/sparkle/lessons/17-02/audio/how-17-02-compare.mp3,speech,tools/sparkle/lessons/17-02/how-lines.json,ab7e46e1a7e4407b568e6f6d839a18be
+optima-3rd-science,opti,"Draw the three layers of Site 7-B, one on top of the other. Label the rock in each layer. Then write what the top and bottom layers were like long ago.",151,tools/sparkle/lessons/17-02/audio/how-17-02-partc.mp3,speech,tools/sparkle/lessons/17-02/how-lines.json,dda3e7b8b48bf5803d28377db0d42933
+optima-3rd-science,opti,,0,tools/sparkle/shared/audio/how-checklist.mp3,speech,,d0ee39953888f03af8bda64168b7e149
+optima-3rd-science,opti,,0,tools/sparkle/shared/audio/how-compare.mp3,speech,,55cba6ee2880818159cd28af3062ef0a
+optima-3rd-science,opti,,0,tools/sparkle/shared/audio/how-detective.mp3,speech,,f8fe46d4374f98454a2720a840bccfc5
+optima-3rd-science,opti,,0,tools/sparkle/shared/audio/how-flip.mp3,speech,,5f31f0eb02ed98a018583faed3bf1ae9
+optima-3rd-science,opti,,0,tools/sparkle/shared/audio/how-order.mp3,speech,,51eecee7c847d90f83908190c36c41b4
+optima-3rd-science,opti,,0,tools/sparkle/shared/audio/how-parta.mp3,speech,,4261234dfd7ecc82bc95e7c4ce35365c
+optima-3rd-science,opti,,0,tools/sparkle/shared/audio/how-partb.mp3,speech,,04bd9277cd14411baa84f274d315bd23
+optima-3rd-science,opti,,0,tools/sparkle/shared/audio/how-premiere.mp3,speech,,caeb77b0f435c5c4d6d62fb3e8474b01
+optima-3rd-science,opti,,0,tools/sparkle/shared/audio/how-rebuild.mp3,speech,,36ac6430c09e6b07f2279c00b996a05b
+optima-3rd-science,opti,,0,tools/sparkle/shared/audio/how-specimen.mp3,speech,,61009686a7a169c674422c65737b08ce
+optima-3rd-science,opti,,0,tools/sparkle/shared/audio/how-wall.mp3,speech,,4cd4ef290f5aab455195222be2a5e5a5
+optima-3rd-science,opti,,0,tools/sparkle/shared/audio/how-write-1.mp3,speech,,d89b7fef6bc9667d27bf205f8bdb88fd
+optima-3rd-science,opti,,0,tools/sparkle/shared/audio/how-write-2.mp3,speech,,1218fc9734b6171e5ea15d63fa357af1
