@@ -377,6 +377,10 @@ table.wl-chart{width:100%;border-collapse:collapse;font-size:15px;margin-top:10p
 .wl-band.rock-shale{background:repeating-linear-gradient(0deg,#7d8571 0 3px,#6c7461 3px 5px)}
 .wl-band.rock-sandstone{background:repeating-linear-gradient(-14deg,#e8d6b0 0 7px,#d6c093 7px 10px)}
 .wl-band.rock-redbed{background:repeating-linear-gradient(0deg,#9c4a31 0 8px,#8a3e28 8px 11px)}
+.wl-band.rock-leafsun{background:repeating-linear-gradient(-28deg,#a9c66b 0 8px,#93b456 8px 12px,#c4d98a 12px 15px)}
+.wl-band.rock-leafmid{background:repeating-linear-gradient(-28deg,#6f9a48 0 8px,#5d863b 8px 12px,#7fa955 12px 15px)}
+.wl-band.rock-leafshade{background:repeating-linear-gradient(-28deg,#3f6a35 0 8px,#33592c 8px 12px,#47743c 12px 15px)}
+.wl-band.rock-leafdark{background:repeating-linear-gradient(-28deg,#22392a 0 8px,#1b3022 8px 12px,#2a4431 12px 15px)}
 .wl-band .frag{position:absolute;left:36%;top:4px;height:64px;width:96px;object-fit:cover;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 55%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 55%,transparent 100%);opacity:.25;filter:sepia(.4);transition:opacity .8s,transform .8s}
 .wl-band.open .frag{opacity:1;transform:scale(1.08)}
 .wl-band canvas{position:absolute;inset:0;width:100%;height:100%}
@@ -521,3 +525,30 @@ body.wf-dim .wf-wrap{position:relative;z-index:86}
 .wl-swatch.fx-wet:after{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.55) 45%,transparent 60%) 0 0/250% 100%;animation:wlGlint 1.6s ease 2}
 @keyframes wlGlint{from{background-position:120% 0}to{background-position:-60% 0}}
 .wl-nomotion .wl-swatch.fx-dry{animation:none;filter:saturate(0) brightness(1.75)}
+/* 18.02 additions: paper swatches, wind effects (rip, sway), prairie movie preset */
+.sw-paperwide{--sw:repeating-linear-gradient(90deg,rgba(0,0,0,.04) 0 1px,transparent 1px 9px),linear-gradient(180deg,#fbfaf5,#ece9df)}
+.sw-paperstrip{--sw:linear-gradient(180deg,#fbfaf5,#ece9df)}
+.wl-swatch.sw-paperwide{width:108px;height:58px;border-radius:3px;box-shadow:0 2px 4px rgba(0,0,0,.25)}
+.wl-swatch.sw-paperstrip{width:14px;height:62px;border-radius:3px;box-shadow:0 2px 4px rgba(0,0,0,.25);transform-origin:50% 100%}
+.wl-swatch.fx-rip{animation:wlFlutter .18s linear 9,wlRip .5s 1.6s ease forwards}
+@keyframes wlFlutter{0%,100%{transform:skewX(0) rotate(0)}25%{transform:skewX(-9deg) rotate(-3deg)}75%{transform:skewX(9deg) rotate(3deg)}}
+@keyframes wlRip{to{clip-path:polygon(0 0,46% 0,40% 22%,55% 41%,44% 63%,52% 100%,0 100%);transform:rotate(-6deg) translateX(-4px)}}
+.wl-swatch.fx-sway{animation:wlSway .5s ease-in-out 4}
+@keyframes wlSway{0%,100%{transform:rotate(0)}50%{transform:rotate(22deg)}}
+.wl-nomotion .wl-swatch.fx-rip{animation:none;clip-path:polygon(0 0,46% 0,40% 22%,55% 41%,44% 63%,52% 100%,0 100%)}
+.wl-movie.bg-prairie{background:#8a7444}.bg-prairie .wl-mv-water{background:linear-gradient(#86b4d8,#c9dbe2 50%,#e8d9a8 75%,#b89a5c)}.wl-movie.cut.bg-prairie .wl-mv-water{background:linear-gradient(#5d6f7c,#8b939a 50%,#9c8c6c 75%,#6f5f40)}
+
+/* 19.01: grove movie, towel/dark-paper test, tree wall bands */
+.wl-movie.bg-grove{background:#5b7a3a}
+.bg-grove .wl-mv-water{background:linear-gradient(#8cc0e6,#cfe6f0 50%,#d9e8b8 75%,#7d6a48)}
+.wl-movie.cut.bg-grove .wl-mv-water{background:linear-gradient(#5f7f99,#90a8b4 50%,#a6b48a 75%,#5e4e34)}
+.wl-swatch.sw-towelstrip{--sw:repeating-linear-gradient(0deg,rgba(0,0,0,.05) 0 1px,transparent 1px 5px),repeating-linear-gradient(90deg,rgba(0,0,0,.04) 0 1px,transparent 1px 5px),linear-gradient(180deg,#ffffff,#eef0f2);width:30px;height:68px;border-radius:3px;box-shadow:0 2px 4px rgba(0,0,0,.25)}
+.wl-swatch.sw-darkpaper{--sw:linear-gradient(160deg,#3a3a40,#16161a);width:60px;height:60px;border-radius:3px;box-shadow:0 2px 4px rgba(0,0,0,.3)}
+.wl-swatch.fx-wick:after{content:'';position:absolute;left:0;right:0;bottom:0;height:0;border-radius:inherit;background:linear-gradient(0deg,rgba(28,126,214,.85),rgba(77,171,247,.55));animation:wlWick 2.4s ease forwards}
+@keyframes wlWick{to{height:92%}}
+.wl-swatch.fx-warm{animation:wlWarm 2.4s ease forwards}
+@keyframes wlWarm{0%{box-shadow:0 2px 4px rgba(0,0,0,.3)}100%{box-shadow:0 0 0 3px rgba(255,146,43,.75),0 0 26px 8px rgba(255,190,70,.75);filter:brightness(1.25) sepia(.35)}}
+@media (prefers-reduced-motion:reduce){.wl-swatch.fx-wick:after{animation:none;height:92%}.wl-swatch.fx-warm{animation:none;box-shadow:0 0 0 3px rgba(255,146,43,.75),0 0 26px 8px rgba(255,190,70,.75)}}
+.wl-band.rock-bark{background:repeating-linear-gradient(90deg,#5a4029 0 6px,#6e5034 6px 9px,#4a3422 9px 13px)}
+.wl-band.rock-branch{background:repeating-linear-gradient(-20deg,#7a6a3e 0 7px,#8c7a48 7px 10px,#5f8a3a 10px 14px)}
+.wl-band.rock-soil{background:radial-gradient(circle,rgba(0,0,0,.25) 1px,transparent 1.5px) 0 0/7px 7px,linear-gradient(180deg,#6b5236,#3e2f20)}

@@ -93,3 +93,48 @@ optima-3rd-science,opti,,0,tools/sparkle/shared/audio/how-specimen.mp3,speech,,6
 optima-3rd-science,opti,,0,tools/sparkle/shared/audio/how-wall.mp3,speech,,4cd4ef290f5aab455195222be2a5e5a5
 optima-3rd-science,opti,,0,tools/sparkle/shared/audio/how-write-1.mp3,speech,,d89b7fef6bc9667d27bf205f8bdb88fd
 optima-3rd-science,opti,,0,tools/sparkle/shared/audio/how-write-2.mp3,speech,,1218fc9734b6171e5ea15d63fa357af1
+optima-3rd-science,opti,"Your turn to compare. Name a trait, name its home, then say what problem it solves there.",89,assets/sparkle/g3sci-18-02/audio-18-02-assign.mp3,speech,lesson-18-02-compare-plant-adaptations.html,695ec64753c98361016df92596e7a20e
+optima-3rd-science,opti,"Three quick questions. It's not graded. It's just for you, so give each one your best try.",90,assets/sparkle/g3sci-18-02/audio-18-02-check.mp3,speech,lesson-18-02-compare-plant-adaptations.html,393a3f412624bed1452bd8d3e29a8a3f
+optima-3rd-science,opti,"Today you compare. Watch a prairie come back after a fire, test leaves in the wind, and drop from the treetops to the dim forest floor.",135,assets/sparkle/g3sci-18-02/audio-18-02-lesson.mp3,speech,tools/sparkle/lessons/18-02/scripts.json,4ad1ae5d3dc0db79aa5a7600132a451e
+optima-3rd-science,opti,Two new places today: a sunny prairie and a shady forest. Look closely at our first plant before we explain anything.,117,assets/sparkle/g3sci-18-02/audio-18-02-welcome.mp3,speech,lesson-18-02-compare-plant-adaptations.html,2388a75d475ef92094327fab97b0f5f0
+optima-3rd-science,opti,"Drag the wide sheet under one tray and the thin strip under the other, or tap each one, then tap a tray. Press Turn on the wind. Then swap them and press it again.",163,assets/sparkle/g3sci-18-02/audio-how-18-02-compare.mp3,speech,tools/sparkle/lessons/18-02/how-lines.json,6ce50ac2f4609d378cf61bdeaebd4c1e
+optima-3rd-science,opti,"Draw your forest plant and grassland plant side by side. Under each one, write its biggest survival advantage.",110,assets/sparkle/g3sci-18-02/audio-how-18-02-partc.mp3,speech,tools/sparkle/lessons/18-02/how-lines.json,0122d03db7101771e223ce1333f892f8
+optima-3rd-science,opti,Night on the prairie. Grass as far as you can see.,50,assets/sparkle/g3sci-18-02/audio-opti-1.mp3,speech,tools/sparkle/lessons/18-02/scripts.json,8bcad25ea285cb4b3284100e7a5f90b1
+optima-3rd-science,opti,Let's compare plants from two different places.,47,assets/sparkle/g3sci-18-02/audio-opti-10.mp3,speech,tools/sparkle/lessons/18-02/scripts.json,03a7829e4c953be403d5224c94126fda
+optima-3rd-science,opti,"The sun rises. Every blade gets bright, full light.",51,assets/sparkle/g3sci-18-02/audio-opti-2.mp3,speech,tools/sparkle/lessons/18-02/scripts.json,983a45ff7a2b39794d65c91143bf7167
+optima-3rd-science,opti,"Out here, wind blows, and rain comes and goes.",46,assets/sparkle/g3sci-18-02/audio-opti-3.mp3,speech,tools/sparkle/lessons/18-02/scripts.json,c91f5633dc029c5d20d449a97a88a7b4
+optima-3rd-science,opti,Now a forest. Drop from the treetops…,37,assets/sparkle/g3sci-18-02/audio-opti-4.mp3,speech,tools/sparkle/lessons/18-02/scripts.json,ba011b5e58a56381a664459caaddf599
+optima-3rd-science,opti,"…down, as the leaves block the sun.",35,assets/sparkle/g3sci-18-02/audio-opti-5.mp3,speech,tools/sparkle/lessons/18-02/scripts.json,8c62050e2c6cc9ee6964a3ffc5cdf744
+optima-3rd-science,opti,"On the forest floor, it's dim, cool, and damp.",46,assets/sparkle/g3sci-18-02/audio-opti-6.mp3,speech,tools/sparkle/lessons/18-02/scripts.json,b87750b99d27346e15cea0acc7207c68
+optima-3rd-science,opti,"A fern? Down here, where the sun barely reaches?",48,assets/sparkle/g3sci-18-02/audio-opti-7.mp3,speech,tools/sparkle/lessons/18-02/scripts.json,3fc8bbe08864e4664778bc63ed3f7f0f
+optima-3rd-science,opti,Its fronds spread wide and flat. Why that shape?,48,assets/sparkle/g3sci-18-02/audio-opti-8.mp3,speech,tools/sparkle/lessons/18-02/scripts.json,903653033749d6cdd431470d10ed88ba
+optima-3rd-science,opti,"Two homes, two very different plants. Why?",42,assets/sparkle/g3sci-18-02/audio-opti-9.mp3,speech,tools/sparkle/lessons/18-02/scripts.json,c9c161cea71a83183ebcede2daefd75f
+optima-3rd-science,opti,adaptation,10,assets/sparkle/g3sci-18-02/audio-word-adaptation.mp3,speech,tools/sparkle/lessons/18-02/scripts.json,8c0c1ceb12a2b77fe38ccde98745c9da
+optima-3rd-science,opti,advantage,9,assets/sparkle/g3sci-18-02/audio-word-advantage.mp3,speech,tools/sparkle/lessons/18-02/scripts.json,a65653953b1f9a81514a1ec03e7d4ada
+optima-3rd-science,opti,environment,11,assets/sparkle/g3sci-18-02/audio-word-environment.mp3,speech,tools/sparkle/lessons/18-02/scripts.json,b46cbc7ee176cfcc610aff9654f8fb12
+optima-3rd-science,opti,survive,7,assets/sparkle/g3sci-18-02/audio-word-survive.mp3,speech,file name,b46cbc7ee176cfcc610aff9654f8fb12
+optima-3rd-science,opti,trait,5,assets/sparkle/g3sci-18-02/audio-word-trait.mp3,speech,tools/sparkle/lessons/18-02/scripts.json,2f149b886ffceaffad4de3f1b86f0670
+optima-3rd-science,opti,variation,9,assets/sparkle/g3sci-18-02/audio-word-variation.mp3,speech,file name,2676cc80eb1d339746cb470db7a28626
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-18-02/music.mp3,not-speech,,83ced9b1ad5a35dc91449faf18b3723a
+optima-3rd-science,opti,"Your turn to show how plants make food. Start with the sun, and follow it all the way to the fruit.",99,assets/sparkle/g3sci-19-01/audio-19-01-assign.mp3,speech,lesson-19-01-how-do-plants-make-food.html,0120d49b3fcf99465eff1bf38b927422
+optima-3rd-science,opti,"Three quick questions. It's not graded. It's just for you, so give each one your best try.",90,assets/sparkle/g3sci-19-01/audio-19-01-check.mp3,speech,lesson-19-01-how-do-plants-make-food.html,393a3f412624bed1452bd8d3e29a8a3f
+optima-3rd-science,opti,"Today you're the crew's botanist. Follow water up a tree, test roots and leaves, and find out where a plant's food goes.",120,assets/sparkle/g3sci-19-01/audio-19-01-lesson.mp3,speech,tools/sparkle/lessons/19-01/scripts.json,ed8fcee2208fb266ab45289d61f64c9e
+optima-3rd-science,opti,A sunny new film today! Look closely at the young plant on the slab before we explain anything.,95,assets/sparkle/g3sci-19-01/audio-19-01-welcome.mp3,speech,lesson-19-01-how-do-plants-make-food.html,876ad339551faa78eba7418deaa7691d
+optima-3rd-science,opti,"Drag the paper-towel strip under one tray and the dark paper under the other, or tap each one, then tap a tray. Press Turn on sun and water. Then swap them and press it again.",175,assets/sparkle/g3sci-19-01/audio-how-19-01-compare.mp3,speech,tools/sparkle/lessons/19-01/how-lines.json,fc055084b67a8188ecec2dc4b1db5d85
+optima-3rd-science,opti,"Draw a before and after: one plant in bright sunlight and one plant kept in the dark. Under each one, write what you see. Name at least three differences in all.",161,assets/sparkle/g3sci-19-01/audio-how-19-01-partc.mp3,speech,tools/sparkle/lessons/19-01/how-lines.json,9d0ff6de761308e289f970d21dac30d4
+optima-3rd-science,opti,Sunrise in Florida. Light pours across the land.,48,assets/sparkle/g3sci-19-01/audio-opti-1.mp3,speech,tools/sparkle/lessons/19-01/scripts.json,161245638e62e73c70f5d0e528471f65
+optima-3rd-science,opti,"In the orange grove, every leaf turns to the sun.",49,assets/sparkle/g3sci-19-01/audio-opti-2.mp3,speech,tools/sparkle/lessons/19-01/scripts.json,62182143d706f336f442e58590746934
+optima-3rd-science,opti,"Down below, roots reach through the soil for water.",51,assets/sparkle/g3sci-19-01/audio-opti-3.mp3,speech,tools/sparkle/lessons/19-01/scripts.json,e60cde83a2975c51080949a5efe86457
+optima-3rd-science,opti,Sunlight shines through a leaf. Something is happening in here.,63,assets/sparkle/g3sci-19-01/audio-opti-4.mp3,speech,tools/sparkle/lessons/19-01/scripts.json,0f0e0af6dd54cc8689f4c9461628a0e9
+optima-3rd-science,opti,Zoom in. Tiny openings let air into the leaf.,45,assets/sparkle/g3sci-19-01/audio-opti-5.mp3,speech,tools/sparkle/lessons/19-01/scripts.json,37914bec39e8dbeb2fd52d62b564b7ef
+optima-3rd-science,opti,A sunbeam? Inside an orange?,28,assets/sparkle/g3sci-19-01/audio-opti-6.mp3,speech,tools/sparkle/lessons/19-01/scripts.json,80786c7d7170aa8f526a8c73f331bb3e
+optima-3rd-science,opti,This sweet fruit is full of food the tree made itself.,54,assets/sparkle/g3sci-19-01/audio-opti-7.mp3,speech,tools/sparkle/lessons/19-01/scripts.json,4656315bdae1971a5e9d88fb1f5f3af0
+optima-3rd-science,opti,"From sunlight, water, and air. But how?",39,assets/sparkle/g3sci-19-01/audio-opti-8.mp3,speech,tools/sparkle/lessons/19-01/scripts.json,907ddd429aed5b4a6fdb4cfb2559926c
+optima-3rd-science,opti,Let's find out how plants make their own food.,46,assets/sparkle/g3sci-19-01/audio-opti-9.mp3,speech,tools/sparkle/lessons/19-01/scripts.json,e92b55d957ee4ebef657a18f19e8c000
+optima-3rd-science,opti,energy,6,assets/sparkle/g3sci-19-01/audio-word-energy.mp3,speech,file name,6ef2bb146583fb327d6980b330e83256
+optima-3rd-science,opti,leaf,4,assets/sparkle/g3sci-19-01/audio-word-leaf.mp3,speech,file name,c4350b862d869772478cc4bfaf2a875f
+optima-3rd-science,opti,photosynthesis,14,assets/sparkle/g3sci-19-01/audio-word-photosynthesis.mp3,speech,file name,8ea882483fe60965e4be900671308e7b
+optima-3rd-science,opti,roots,5,assets/sparkle/g3sci-19-01/audio-word-roots.mp3,speech,file name,7381ca8bfb4c24af6421e456d6730721
+optima-3rd-science,opti,sugar,5,assets/sparkle/g3sci-19-01/audio-word-sugar.mp3,speech,file name,7aa49eaf4a3396614f3d9fa336e0e60d
+optima-3rd-science,opti,sunlight,8,assets/sparkle/g3sci-19-01/audio-word-sunlight.mp3,speech,file name,192922dc2a9c3bea7eb6327ec95512a5
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-19-01/music.mp3,not-speech,,0415763046cd3cfa90f757849e7bdffc

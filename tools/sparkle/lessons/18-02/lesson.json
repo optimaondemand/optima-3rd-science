@@ -1,0 +1,1502 @@
+{
+ "id": "g3sci-18-02",
+ "lesson": "18.02",
+ "title": "Investigation: Compare Plant Adaptations",
+ "emoji": "🌿",
+ "details": [
+  "📅 Q3 · Unit 7 · Plants &amp; Environmental Interactions",
+  "📖 Week 18 · Lesson 18.02",
+  "🌎 CPALMS SC.3.L.14.1 · NGSS 3-LS4-2",
+  "⏱ About 35 minutes"
+ ],
+ "icans": [
+  "compare plant traits in two different environments.",
+  "explain how a plant trait helps it survive a specific challenge.",
+  "use evidence to explain why a trait gives a survival advantage."
+ ],
+ "opti": {
+  "warm": "Two new places today: a sunny prairie and a shady forest. Look closely at our first plant before we explain anything.",
+  "lesson": "Today you compare. Watch a prairie come back after a fire, test leaves in the wind, and drop from the treetops to the dim forest floor.",
+  "check": "Three quick questions. It's not graded. It's just for you, so give each one your best try.",
+  "assign": "Your turn to compare. Name a trait, name its home, then say what problem it solves there."
+ },
+ "film": {
+  "id": "g3sci-18-02",
+  "mount": "wf-film",
+  "kicker": "Opti's Wonder Films",
+  "lesson": "Lesson 18.02 · Plants",
+  "title": "Investigation: Compare Plant Adaptations",
+  "bigQuestion": "Why do plants growing in two different places look so different from each other?",
+  "poster": "maiden",
+  "endPoster": "prairie",
+  "startTarget": "#tab-vocab",
+  "music": {
+   "src": "music",
+   "vol": 0.8
+  },
+  "shots": [
+   {
+    "t": 0,
+    "d": 3.4,
+    "type": "leader",
+    "top": "Optima Academy",
+    "name": "Opti's Wonder Films",
+    "bottom": "presents",
+    "fade": 1.0
+   },
+   {
+    "t": 3.4,
+    "d": 6.4,
+    "type": "photo",
+    "img": "night",
+    "alt": "Stars and the Milky Way over tall grass and a fence at night",
+    "from": [
+     1.15,
+     0.5,
+     0.4
+    ],
+    "to": [
+     1.0,
+     0.5,
+     0.55
+    ],
+    "place": "A prairie at night · North Dakota",
+    "fade": 1.4,
+    "sfxAt": [
+     {
+      "at": 1.5,
+      "name": "shimmer"
+     }
+    ]
+   },
+   {
+    "t": 9.8,
+    "d": 6.0,
+    "type": "photo",
+    "img": "sunrise",
+    "alt": "The sun rising through hazy air over a dark, open prairie with one tree",
+    "fx": [
+     "rays"
+    ],
+    "from": [
+     1.2,
+     0.55,
+     0.4
+    ],
+    "to": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "place": "Sunrise · Tallgrass Prairie, Kansas",
+    "fade": 1.6
+   },
+   {
+    "t": 15.8,
+    "d": 5.8,
+    "type": "photo",
+    "img": "prairie",
+    "alt": "A wide, green, open grassland under a blue sky with white clouds",
+    "fx": [
+     "dust"
+    ],
+    "from": [
+     1.0,
+     0.4,
+     0.5
+    ],
+    "to": [
+     1.12,
+     0.6,
+     0.5
+    ],
+    "place": "An open grassland · North Dakota · Today",
+    "fade": 1.0,
+    "sfx": "whoosh",
+    "sfxArg": 2
+   },
+   {
+    "t": 21.6,
+    "d": 8.4,
+    "type": "photo",
+    "img": "canopy",
+    "alt": "Looking straight up tall tree trunks to a ceiling of leaves",
+    "from": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.6,
+     0.5,
+     0.5
+    ],
+    "count": {
+     "to": 100,
+     "dur": 6.5,
+     "label": "feet down"
+    },
+    "place": "Tulip trees · Blue Ridge Mountains",
+    "fade": 1.0
+   },
+   {
+    "t": 30.0,
+    "d": 6.0,
+    "type": "photo",
+    "img": "forest",
+    "alt": "Tall trees and green shade in a quiet forest",
+    "in": "blur",
+    "from": [
+     1.15,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.0,
+     0.5,
+     0.55
+    ],
+    "place": "Great Smoky Mountains · Today",
+    "fade": 1.0
+   },
+   {
+    "t": 36.0,
+    "d": 3.0,
+    "type": "flash",
+    "lines": [
+     "A fern?",
+     "Down here?"
+    ],
+    "beats": [
+     0.15,
+     1.2
+    ],
+    "fade": 0.15
+   },
+   {
+    "t": 39.0,
+    "d": 6.4,
+    "type": "photo",
+    "img": "maiden",
+    "alt": "A green fern with many small, flat leaflets covered in raindrops",
+    "from": [
+     1.3,
+     0.45,
+     0.45
+    ],
+    "to": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "place": "Maidenhair fern · Great Smoky Mountains",
+    "fade": 1.0
+   },
+   {
+    "t": 45.4,
+    "d": 5.6,
+    "type": "photo",
+    "img": "xfern",
+    "alt": "Christmas fern fronds spread flat over brown fallen leaves",
+    "from": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.15,
+     0.55,
+     0.55
+    ],
+    "place": "Christmas fern · a forest floor, Virginia",
+    "tags": [
+     {
+      "text": "Wide, flat fronds",
+      "x": 60,
+      "y": 24,
+      "at": 1.4
+     }
+    ],
+    "fade": 0.8
+   },
+   {
+    "t": 51.0,
+    "d": 6.0,
+    "type": "title",
+    "fade": 1.2
+   }
+  ],
+  "captions": [
+   {
+    "t": 3.8,
+    "d": 5.6,
+    "text": "Night on the prairie. Grass as far as you can see.",
+    "voice": "opti-1"
+   },
+   {
+    "t": 10.2,
+    "d": 5.2,
+    "text": "The sun rises. Every blade gets bright, full light.",
+    "voice": "opti-2"
+   },
+   {
+    "t": 16.2,
+    "d": 5.0,
+    "text": "Out here, wind blows, and rain comes and goes.",
+    "voice": "opti-3"
+   },
+   {
+    "t": 22.0,
+    "d": 4.2,
+    "text": "Now a forest. Drop from the treetops…",
+    "voice": "opti-4"
+   },
+   {
+    "t": 26.4,
+    "d": 3.4,
+    "text": "…down, as the leaves block the sun.",
+    "voice": "opti-5"
+   },
+   {
+    "t": 30.4,
+    "d": 5.2,
+    "text": "On the forest floor, it's dim, cool, and damp.",
+    "voice": "opti-6"
+   },
+   {
+    "t": 36.0,
+    "d": 4.4,
+    "text": "A fern? Down here, where the sun barely reaches?",
+    "voice": "opti-7"
+   },
+   {
+    "t": 40.6,
+    "d": 4.6,
+    "text": "Its fronds spread wide and flat. Why that shape?",
+    "voice": "opti-8"
+   },
+   {
+    "t": 45.8,
+    "d": 4.8,
+    "text": "Two homes, two very different plants. Why?",
+    "voice": "opti-9"
+   },
+   {
+    "t": 51.4,
+    "d": 5.2,
+    "text": "Let's compare plants from two different places.",
+    "voice": "opti-10"
+   }
+  ]
+ },
+ "scientist": "botanist",
+ "specimen": {
+  "img": "spec",
+  "aspect": "3/2",
+  "radius": 0.09,
+  "hotspots": [
+   {
+    "name": "The center stem",
+    "x": 0.19,
+    "y": 0.5
+   },
+   {
+    "name": "A long, flat leaflet",
+    "x": 0.55,
+    "y": 0.66
+   },
+   {
+    "name": "Rows of dark dots",
+    "x": 0.62,
+    "y": 0.56
+   },
+   {
+    "name": "Golden, dusty patches",
+    "x": 0.8,
+    "y": 0.22
+   },
+   {
+    "name": "A thin green edge",
+    "x": 0.9,
+    "y": 0.62
+   }
+  ],
+  "kicker": "🔎 Mystery specimen",
+  "title": "What can one leaf show you?",
+  "alt": "A close look at the underside of green leaflets on a stem, covered with golden, dusty patches and dark dots",
+  "look": "A real plant part, photographed up close and set out like a museum specimen. A specimen is one real thing that scientists study. We are looking at the UNDERSIDE of its leaves. The card tells where it grows. What is it, and what is on it? That's for you to figure out.",
+  "do": "Press Inspect specimen. Move the magnifying lens over the plant, then tap 3 things you notice.",
+  "number": "No. 18.02-A",
+  "card": [
+   "<b>Specimen A</b>",
+   "Grows in: a shady forest",
+   "Seen from: underneath",
+   "What is it? <i>You decide.</i>"
+  ],
+  "notice": "I notice… (one thing you see on the leaf)",
+  "wonder": "I wonder… (one question you want answered by the end of the lesson)"
+ },
+ "words": [
+  [
+   "🌱",
+   "adaptation",
+   "A trait that helps a living thing survive in its environment."
+  ],
+  [
+   "🔍",
+   "trait",
+   "A feature of a plant or animal, like leaf shape, root depth, or stem thickness."
+  ],
+  [
+   "⭐",
+   "advantage",
+   "Something that helps a plant survive or reproduce better than others in its environment."
+  ],
+  [
+   "🌍",
+   "environment",
+   "The place where a living thing lives and gets what it needs to survive."
+  ],
+  [
+   "💪",
+   "survive",
+   "To stay alive through hard conditions, like cold, drought (a long dry time), shade, or other challenges."
+  ],
+  [
+   "🦋",
+   "variation",
+   "A difference in traits between plants or animals of the same type."
+  ]
+ ],
+ "parts": [
+  {
+   "kicker": "🌲 Part 1",
+   "title": "Two Very Different Homes",
+   "html": "<p>A mountain forest and an open grassland are very different places to live. In a forest, tall trees block much of the sunlight. The soil is rocky and stays damp. It can get very cold.</p><p>Out in a grassland, sunlight is everywhere. Wind blows steadily. Rain comes and goes, and the soil can dry out for weeks.</p>"
+  },
+  {
+   "kicker": "🍃 Part 2",
+   "title": "Traits Are Solutions",
+   "html": "<p>A fern on the shady forest floor has wide, flat fronds. Those broad leaves catch every bit of light that filters through the trees. That trait is a solution to the problem of shade.</p><p>A prairie grass has thin, tough leaves and roots that go deep, sometimes deeper than you are tall. That root system is a solution to dry seasons. It can reach water far underground when the surface dries out.</p>"
+  },
+  {
+   "kicker": "⭐ Part 3",
+   "title": "The Right Trait for the Right Place",
+   "html": "<p>A trait gives an advantage when it solves a problem in that specific place. Deep roots are an advantage in a dry grassland. They are far less useful in a wet forest, where water is already near the surface.</p><p>Plants with traits that fit their place survive and make seeds or spores. Plants without them often don't.</p>"
+  },
+  {
+   "kicker": "🗂️ Part 4",
+   "title": "Compare Plant Adaptations"
+  }
+ ],
+ "order": {
+  "mix": [
+   3,
+   0,
+   2,
+   1
+  ],
+  "hint": "Think about what has to happen first.",
+  "kicker": "🎞️ Put the scenes in order",
+  "title": "How does a prairie come back after a fire?",
+  "look": "Four real photos of prairies. Each one shows one scene from a prairie's year, but they are mixed up. Rangers sometimes start a planned fire, called a prescribed burn, to keep a prairie healthy. The dark film strip has four empty frames, from first (1) to last (4).",
+  "done": "🎬 Your order is right. Now watch it as a movie!",
+  "scenes": [
+   {
+    "img": "s_tall",
+    "alt": "Tall, golden prairie grass with trees behind it",
+    "text": "Tall prairie grass, dry and golden after winter.",
+    "play": "Tall prairie grass stands dry and golden after winter.",
+    "miss": [
+     "",
+     "The tall grass has to be there before anything burns. That comes first.",
+     "The tall grass has to be there before anything burns. That comes first.",
+     "The tall grass has to be there before anything burns. That comes first."
+    ]
+   },
+   {
+    "img": "s_fire",
+    "alt": "A line of orange flames moving across short, dry grass, with smoke",
+    "text": "Rangers start a planned fire. Flames race across the top.",
+    "play": "Rangers start a planned fire. Flames race across the top of the grass.",
+    "miss": [
+     "The fire needs grass to burn. What is the prairie like before the fire?",
+     "",
+     "The fire has to come before the ground turns black. Try an earlier frame.",
+     "The fire comes long before the new green grass. Try an earlier frame."
+    ]
+   },
+   {
+    "img": "s_black",
+    "alt": "Black, burned ground stretching to the horizon, with a line of old stones",
+    "text": "The fire is out. The top of the prairie is black.",
+    "play": "The fire is out. The top of the prairie is black and bare.",
+    "miss": [
+     "The ground can only be black after a fire. Try a later frame.",
+     "First the fire burns. Then the ground is black. Try a later frame.",
+     "",
+     "The ground is black before anything grows back. Try an earlier frame."
+    ]
+   },
+   {
+    "img": "s_green",
+    "alt": "A wide prairie covered in fresh green grass and small white flowers",
+    "text": "A few weeks later, the prairie is green again!",
+    "play": "A few weeks later, the prairie is green again!",
+    "miss": [
+     "The prairie turns green again at the very end, after the fire.",
+     "The prairie turns green again at the very end, after the fire.",
+     "The prairie turns green again at the very end, after the fire.",
+     ""
+    ]
+   }
+  ],
+  "check": {
+   "q": "Look at scene 3 again. The prairie is black. Is the grass dead?",
+   "options": [
+    {
+     "t": "Yes. Fire burns everything, top to bottom.",
+     "miss": "Not quite. The fire burns only the top. Deep under the ground, the roots stay safe, and new shoots grow from them."
+    },
+    {
+     "t": "No. The roots are safe underground, and new grass grows from them.",
+     "ok": "Yes! The top burned, but the deep roots lived. That's how the prairie turns green again so fast."
+    },
+    {
+     "t": "Yes. New grass seeds have to blow in from far away.",
+     "miss": "Seeds can help, but the prairie greens up fast because the old roots are still alive underground."
+    }
+   ]
+  }
+ },
+ "movie": {
+  "model": "prairie-model.svg",
+  "modelBox": {
+   "left": "0%",
+   "width": "100%",
+   "rot": 0
+  },
+  "start": "0%",
+  "bg": "prairie",
+  "real": "s_green",
+  "realAlt": "A real prairie covered in fresh green grass after a spring burn",
+  "stamp": "ROOTS SURVIVED",
+  "endCap": "The real thing: a prairie green again after a spring burn, North Dakota.",
+  "beats": [
+   {
+    "at": 0,
+    "cap": "1 · Tall grass on top. Deep roots below.",
+    "model": {
+     "top": "0%",
+     "rot": 0,
+     "show": "s1"
+    }
+   },
+   {
+    "at": 2600,
+    "cap": "2 · A planned fire races across the top.",
+    "model": {
+     "show": "s2"
+    },
+    "particles": {
+     "n": 160,
+     "dir": "up",
+     "stop": 0.05,
+     "colors": [
+      "#ff922b",
+      "#ffd43b",
+      "#e8590c",
+      "#868e96"
+     ]
+    },
+    "sfx": "rumble"
+   },
+   {
+    "at": 5200,
+    "cap": "3 · The top burns black. The roots stay safe.",
+    "cut": true,
+    "clear": true,
+    "model": {
+     "show": "s3"
+    }
+   },
+   {
+    "at": 7800,
+    "cap": "4 · New green shoots grow from the living roots.",
+    "model": {
+     "show": "s4"
+    },
+    "counter": [
+     "1 day",
+     "3 days",
+     "1 week",
+     "2 weeks",
+     "3 weeks"
+    ]
+   },
+   {
+    "at": 10400,
+    "cap": "The real thing: a prairie, green again.",
+    "model": {
+     "hide": true
+    },
+    "real": true
+   },
+   {
+    "at": 12200,
+    "stamp": true
+   }
+  ]
+ },
+ "compare": {
+  "kicker": "💨 The Wind Lab",
+  "title": "Which leaf shape handles the wind?",
+  "look": "Two real plant parts, each on a lit specimen tray. Specimen A is a fern frond from a shady forest floor. Specimen B is prairie grass from an open, windy field. Under the trays are two paper models for a test: a wide sheet of paper and a thin paper strip.",
+  "trays": [
+   {
+    "id": "A",
+    "img": "frond",
+    "alt": "Wide, flat fern fronds lying over brown fallen leaves",
+    "label": "Specimen A"
+   },
+   {
+    "id": "B",
+    "img": "blade",
+    "alt": "Tall, thin grass stems and leaves against a blue sky",
+    "label": "Specimen B"
+   }
+  ],
+  "materials": [
+   {
+    "key": "wide",
+    "label": "Wide sheet of paper",
+    "swatch": "paperwide"
+   },
+   {
+    "key": "strip",
+    "label": "Thin paper strip",
+    "swatch": "paperstrip"
+   }
+  ],
+  "ask": [
+   {
+    "q": "Which one has wide, flat leaves?",
+    "ans": "A",
+    "ok": "Yes. Specimen A is a fern with wide, flat leaflets.",
+    "miss": "Look closely. Which one is spread out wide and flat?"
+   },
+   {
+    "q": "Which one has thin, narrow leaves?",
+    "ans": "B",
+    "ok": "Yes. Specimen B is prairie grass. Its leaves are long and thin.",
+    "miss": "Look again. Which one has long, thin leaves?"
+   }
+  ],
+  "press": "💨 Turn on the wind",
+  "testDo": "Drag the wide sheet under one tray and the thin strip under the other, or tap each one, then tap a tray. Press <b>Turn on the wind</b>. Then swap them and press it again.",
+  "disclaimer": "This is a model. Paper isn't alive, but the idea is the same: a wide, flat shape catches a lot of wind. A thin, narrow shape lets wind slip past.",
+  "results": {
+   "Awide": {
+    "text": "The wide sheet, shaped like this fern frond, flapped hard and ripped. Out in the open, wind is rough on wide leaves.",
+    "fx": "rip"
+   },
+   "Astrip": {
+    "text": "The thin strip bent and sprang back. But this fern frond is wide and flat, not thin. Try the wide sheet here.",
+    "fx": "sway"
+   },
+   "Bstrip": {
+    "text": "The thin strip, shaped like these grass leaves, bent in the wind and sprang right back.",
+    "fx": "sway"
+   },
+   "Bwide": {
+    "text": "The wide sheet flapped and ripped. But these grass leaves are thin, not wide. Try the thin strip here.",
+    "fx": "rip"
+   }
+  },
+  "best": [
+   "Awide",
+   "Bstrip"
+  ],
+  "frame": "This ___ is ___, so in a strong wind it would ___.",
+  "claimLead": "This plant has leaves that are",
+  "claimMid": "so in an open, windy field it would",
+  "claim": {
+   "A": {
+    "feat": [
+     "wide and flat",
+     "thin and narrow"
+    ],
+    "featOk": 0,
+    "eat": [
+     "get torn up",
+     "bend and spring back"
+    ],
+    "eatOk": 0
+   },
+   "B": {
+    "feat": [
+     "wide and flat",
+     "thin and narrow"
+    ],
+    "featOk": 1,
+    "eat": [
+     "get torn up",
+     "bend and spring back"
+    ],
+    "eatOk": 1
+   }
+  },
+  "curator": {
+   "A": "<b>Wide and flat → torn by strong wind.</b> On the forest floor, trees block the wind, and wide fronds catch the little light that gets through. That's an advantage in the shade, not out in the open.",
+   "B": "<b>Thin and narrow → bends and springs back.</b> Prairie grass lives where the wind blows all day. Thin, tough leaves bend instead of tearing, and the sun is bright, so the grass doesn't need wide leaves to catch light."
+  },
+  "missFeat": "Look at {label} again. Are the leaves wide and flat, or thin and narrow?",
+  "missClaim": "Think about your test. What happened to each shape in the wind?",
+  "done": "Bigger leaves aren't always better. A wide leaf is an advantage in the shade, but out in the open wind, thin leaves do better.",
+  "after": {
+   "kicker": "🎬 Behind the scenes · Built for wind",
+   "img": "d_bluestem",
+   "alt": "Tall, thin prairie grass stems and seed heads against a blue sky",
+   "html": "Big bluestem, a prairie grass, can grow taller than a grown-up. Scientists say its long, thin leaves and stems bend in the prairie wind instead of breaking. Its seed head splits into three parts, so people nicknamed it \"turkey foot.\""
+  }
+ },
+ "wall": {
+  "kicker": "🌳 The forest elevator",
+  "title": "Drop from the treetops to the forest floor",
+  "look": "A cutaway (a slice) of a forest, from the treetops down to the ground. It is a model. Each layer is a level of the forest, with its own plants and its own amount of light. The brass dial on the left shows which level you are at.",
+  "do": "First, make a prediction. Then brush the glowing layer: drag across it (or tap it again and again) until the plant shows.",
+  "predict": {
+   "q": "As you go down from the treetops to the forest floor, will there be more light, or less?",
+   "options": [
+    [
+     "more light",
+     "More light"
+    ],
+    [
+     "less light",
+     "Less light"
+    ]
+   ],
+   "answer": "less light",
+   "mine": "Your prediction: <b>{p}</b>. Let's go down and find out.",
+   "confirm": "You predicted less light. The evidence agrees: each layer of leaves blocked more sunlight, and the plants changed too.",
+   "change": "You predicted more light. The evidence changed that idea: each layer of leaves blocked more sunlight, so the floor was the darkest."
+  },
+  "sky": "e_top",
+  "skyAlt": "Green, tree-covered mountains under a blue sky with clouds",
+  "skyCap": "Great Smoky Mountains · Today",
+  "unit": "Level",
+  "found": "Plant found at Level {n}",
+  "elevator": [
+   "Start",
+   "Treetops",
+   "Small trees",
+   "Shrubs",
+   "Forest floor"
+  ],
+  "line": [
+   "BRIGHT",
+   "DIM"
+  ],
+  "lockTag": "🔒 Brush the level above first",
+  "locked": "Brush the level above first. The elevator goes down, one level at a time.",
+  "first": "Brush the glowing top layer. Drag across it (or tap it again and again).",
+  "next": "Going down, where it's darker. Brush Level {n}.",
+  "endTitle": "All 4 levels explored",
+  "endText": "Look at the line. The treetops get full sun. Each layer of leaves below blocks more light, so the forest floor is the dimmest place of all.",
+  "rule": "<b>In a forest, each level gets less light than the one above it.</b> The plants at each level have traits that fit how much light reaches them.",
+  "choices": [
+   "☀️ Full, bright sun",
+   "🌤️ Some sun, through gaps",
+   "🌥️ Little sun, mostly shade",
+   "🌑 Deep shade, very dim"
+  ],
+  "layers": [
+   {
+    "name": "Level 1 · Treetops",
+    "rock": "leafsun",
+    "img": "w_canopy",
+    "alt": "Looking up tall tree trunks to a high ceiling of leaves",
+    "ask": "Look at Level 1. Read the clue AND the plant. How much light is here?",
+    "clue": "Plant: tall tulip trees, taller than a ten-story building. Their leaves spread out at the very top of the forest, above everything else.",
+    "ans": 0,
+    "ok": "Yes! The tallest trees spread their leaves at the top, right in the full sun.",
+    "tag": "☀️ Full sun",
+    "miss": {
+     "1": "Nothing is above these leaves to block the sun. Read the clue again.",
+     "2": "These leaves are at the very top. What could shade them?",
+     "3": "These leaves are above everything else. Read the clue again."
+    },
+    "env": "e_top",
+    "envAlt": "Green, tree-covered mountains under a blue sky with clouds",
+    "envCap": "The treetops: Great Smoky Mountains, today"
+   },
+   {
+    "name": "Level 2 · Small trees",
+    "rock": "leafmid",
+    "img": "w_dogwood",
+    "alt": "A small tree covered in white flowers growing under taller trees",
+    "ask": "Now Level 2. Read the clue AND the plant. How much light is here?",
+    "clue": "Plant: a flowering dogwood, a small tree. It grows under the tall trees and blooms in spring, before the tall trees' leaves fill in.",
+    "ans": 1,
+    "ok": "Yes! Small trees like dogwood get some sun through gaps, and they bloom early, while more light gets through.",
+    "tag": "🌤️ Some sun",
+    "miss": {
+     "0": "Tall trees grow above this one. Is it in full sun?",
+     "2": "Read the clue: it blooms before the tall trees fill in, when sun still gets through gaps.",
+     "3": "It's not on the dark floor yet. Read the clue again."
+    },
+    "env": "e_under",
+    "envAlt": "A forest trail with small trees under tall trees",
+    "envCap": "Small trees under the tall ones: Great Smoky Mountains, today"
+   },
+   {
+    "name": "Level 3 · Shrubs",
+    "rock": "leafshade",
+    "img": "w_rhodo",
+    "alt": "White rhododendron flowers above long, thick, dark green leaves",
+    "ask": "Level 3. Read the clue AND the plant. How much light is here?",
+    "clue": "Plant: rosebay rhododendron, a shrub (a bushy plant). It grows thick under the trees and keeps its long, dark green leaves all year.",
+    "ans": 2,
+    "ok": "Yes! Shrubs grow below the trees, mostly in shade. Big, dark green leaves help them use the little light they get.",
+    "tag": "🌥️ Mostly shade",
+    "miss": {
+     "0": "Trees grow above these shrubs. Is it full sun?",
+     "1": "Two levels of leaves are above this one now. Read the clue again.",
+     "3": "There is still one level below. Read the clue again."
+    },
+    "env": "e_shrub",
+    "envAlt": "A shady trail through thick rhododendron bushes",
+    "envCap": "A rhododendron thicket in the shade, today"
+   },
+   {
+    "name": "Level 4 · Forest floor",
+    "rock": "leafdark",
+    "img": "w_floor",
+    "alt": "A green fern with many small, flat leaflets covered in raindrops",
+    "ask": "Last one: Level 4, the forest floor. Read the clue AND the plant. How much light is here?",
+    "clue": "Plant: maidenhair fern. Its thin, flat leaflets spread out wide, like a table, close to the ground.",
+    "ans": 3,
+    "ok": "Yes! Every layer above blocks sunlight. Wide, flat fern leaflets catch the little light that reaches the floor.",
+    "tag": "🌑 Deep shade",
+    "miss": {
+     "0": "Three layers of leaves are above the floor. Is this full sun?",
+     "1": "Think about everything above the floor. Read the clue again.",
+     "2": "This is the very bottom, below the shrubs. Read the clue again."
+    },
+    "env": "e_floor",
+    "envAlt": "A shady forest floor covered in thick green moss and ferns",
+    "envCap": "The forest floor: Great Smoky Mountains, today"
+   }
+  ],
+  "mix": {
+   "q": "A sunflower loves bright, open sun. Would it grow well on the forest floor, next to the fern?",
+   "options": [
+    {
+     "t": "Yes. Any plant can grow anywhere if it gets water.",
+     "miss": "Water isn't the only thing plants need. The forest floor is deep shade. A sun-loving plant wouldn't get enough light."
+    },
+    {
+     "t": "No. The forest floor is deep shade. A plant built for bright sun wouldn't get enough light there.",
+     "ok": "Yes! A trait only helps in the right place. The fern fits the shade. The sunflower fits the open sun."
+    }
+   ]
+  }
+ },
+ "wow": {
+  "kicker": "🎬 Director's cut",
+  "title": "A prairie's hidden half",
+  "img": "roots",
+  "alt": "An old drawing of prairie plants with their roots reaching far below the ground, next to a ruler in feet",
+  "caption": "Prairie plants and their roots, drawn by scientist John Weaver in 1919. It's a drawing, made from roots he dug up.",
+  "html": "<p style=\"margin:0 0 8px\">Scientist John Weaver spent years digging up prairie plants, root and all. He found that most of a prairie is hidden underground.</p><p style=\"margin:0\">Scientists have measured switchgrass roots, a prairie grass, 8 to 11 feet deep. That's about as deep as a basketball hoop is high!</p>",
+  "inset": "d_bluestem",
+  "insetCap": "Big bluestem, a prairie grass. Its roots can reach 6 to 7 feet."
+ },
+ "keyIdea": "A trait is an adaptation when it gives a plant a survival advantage in its environment. The same trait that helps a plant in one place may be useless, or even harmful, somewhere else.",
+ "det": {
+  "look": "Five plant cards from the film crew's trips: some from shady forests, some from sunny grasslands. Each slab card has a real photo. Under the cards is an evidence chart, a table that holds what you figure out.",
+  "do": "Pick 3 cards, one at a time. Tap a clue you see, then pick what it is. Predict where it grows, and watch its home appear.",
+  "noun": "Plant",
+  "need": 3,
+  "predict": {
+   "q": "Does this plant make you picture a shady place or a sunny place?",
+   "options": [
+    [
+     "shady",
+     "🌳 Shady"
+    ],
+    [
+     "sunny",
+     "☀️ Sunny"
+    ]
+   ]
+  },
+  "kicker": "Home revealed",
+  "enough": "You already solved 3 plants. Nice detective work!",
+  "cols": [
+   "Plant",
+   "What I observe",
+   "The trait",
+   "Its home",
+   "My evidence"
+  ],
+  "write": {
+   "label": "Plant __ has ___. I think it lives in a ___ place because ___.",
+   "starter": "Start with: \"Plant __ has…\"",
+   "min": 15,
+   "chips": [
+    [
+     "trait",
+     "Names the trait"
+    ],
+    [
+     "because",
+     "Gives a reason (because)"
+    ],
+    [
+     "env",
+     "Names the place"
+    ]
+   ]
+  },
+  "items": [
+   {
+    "id": "1",
+    "img": "d_cfern",
+    "alt": "Christmas fern fronds with many leaflets, lying over brown fallen leaves",
+    "clues": [
+     {
+      "t": "Fronds that spread out wide and flat, close to the ground",
+      "ok": true
+     },
+     {
+      "t": "Tall, thin stems pointing at the sky",
+      "miss": "Look again. These fronds lie low and spread out flat."
+     },
+     {
+      "t": "A thick stem full of stored water",
+      "miss": "Look again. These are thin, flat leaflets, not a thick stem."
+     }
+    ],
+    "org": [
+     "Wide, flat fronds",
+     "Soft, tiny leaves",
+     "Wide, arching fronds",
+     "Deep roots",
+     "Thin, tough leaves"
+    ],
+    "orgAns": 0,
+    "orgShort": "wide, flat fronds",
+    "orgMiss": "Fronds spread out wide and flat are the clue. Try again.",
+    "env": "In a shady place",
+    "envAns": "shady",
+    "envMiss": "Wide, flat fronds catch dim light. Where is the light dim? Try again.",
+    "bts": "Plant 1: Christmas fern, Rock Creek Park, Washington, D.C. It stays green all winter, so people named it for Christmas.",
+    "envImg": "forest",
+    "envAlt": "Tall trees and green shade in a quiet forest",
+    "envCap": "Its kind of home: a shady forest, Great Smoky Mountains",
+    "reveal": "These wide, flat fronds are evidence that this plant grows in the shade, where light is dim.",
+    "rebuildEnv": "forest"
+   },
+   {
+    "id": "2",
+    "img": "d_moss",
+    "alt": "A thick carpet of tiny, soft green moss plants",
+    "clues": [
+     {
+      "t": "Tiny, soft leaves packed close together",
+      "ok": true
+     },
+     {
+      "t": "Long, thin grass blades",
+      "miss": "Look again. These leaves are tiny and soft, not long blades."
+     },
+     {
+      "t": "One big, wide leaf",
+      "miss": "Look again. This is a carpet of many tiny leaves."
+     }
+    ],
+    "org": [
+     "Wide, flat fronds",
+     "Soft, tiny leaves",
+     "Wide, arching fronds",
+     "Deep roots",
+     "Thin, tough leaves"
+    ],
+    "orgAns": 1,
+    "orgShort": "soft, tiny leaves",
+    "orgMiss": "Tiny, soft leaves packed together are the clue. Try again.",
+    "env": "In a shady place",
+    "envAns": "shady",
+    "envMiss": "Soft moss dries out fast in hot sun. Where does it stay cool and damp? Try again.",
+    "bts": "Plant 2: haircap moss. Moss has no deep roots and dries out quickly, so it grows best where it is shady and damp.",
+    "envImg": "e_floor",
+    "envAlt": "A shady forest floor covered in thick green moss",
+    "envCap": "Its home: a damp, shady forest floor, Great Smoky Mountains",
+    "reveal": "These tiny, soft leaves are evidence that this plant grows where it is shady and damp.",
+    "rebuildEnv": "forest"
+   },
+   {
+    "id": "3",
+    "img": "d_boston",
+    "alt": "Long, arching fern fronds with many green leaflets",
+    "clues": [
+     {
+      "t": "Long fronds that arch out wide, full of leaflets",
+      "ok": true
+     },
+     {
+      "t": "Spines",
+      "miss": "Look again. These leaflets are soft and flat, with no spines."
+     },
+     {
+      "t": "Thin grass blades",
+      "miss": "Look again. These fronds are wide, with many leaflets."
+     }
+    ],
+    "org": [
+     "Wide, flat fronds",
+     "Soft, tiny leaves",
+     "Wide, arching fronds",
+     "Deep roots",
+     "Thin, tough leaves"
+    ],
+    "orgAns": 2,
+    "orgShort": "wide, arching fronds",
+    "orgMiss": "Long fronds arching out wide are the clue. Try again.",
+    "env": "In a shady place",
+    "envAns": "shady",
+    "envMiss": "Wide fronds catch dim light under trees. Try again.",
+    "bts": "Plant 3: wild Boston fern, Leon County, Florida. It grows in shady Florida hammocks (patches of thick forest).",
+    "envImg": "h_hammock",
+    "envAlt": "A wooden boardwalk through a shady Florida forest with palms and tall trees",
+    "envCap": "Its home: a shady hammock forest, Highlands Hammock State Park, Florida",
+    "reveal": "These wide fronds are evidence that this plant grows in the shade of a Florida forest.",
+    "rebuildEnv": "hammock"
+   },
+   {
+    "id": "4",
+    "img": "d_bluestem",
+    "alt": "Tall, thin prairie grass stems and seed heads against a blue sky",
+    "clues": [
+     {
+      "t": "Tall, thin stems and leaves in open sky",
+      "ok": true
+     },
+     {
+      "t": "Wide, flat fronds",
+      "miss": "Look again. These leaves are long and thin."
+     },
+     {
+      "t": "Tiny, soft leaves packed together",
+      "miss": "Look again. These are tall stems, not a soft carpet."
+     }
+    ],
+    "org": [
+     "Wide, flat fronds",
+     "Soft, tiny leaves",
+     "Wide, arching fronds",
+     "Deep roots",
+     "Thin, tough leaves"
+    ],
+    "orgAns": 3,
+    "orgShort": "deep roots",
+    "orgMiss": "You can't see them in the photo, but this grass grows very deep roots. That trait helps most in a dry season. Try again.",
+    "env": "In a sunny place",
+    "envAns": "sunny",
+    "envMiss": "Tall grass in open sky gets full sun. Try again.",
+    "bts": "Plant 4: big bluestem, a prairie grass. Above ground: thin leaves. Below ground: roots that can reach 6 to 7 feet deep, down to water in a dry season.",
+    "envImg": "prairie",
+    "envAlt": "A wide, green, open grassland under a blue sky",
+    "envCap": "Its home: an open grassland, North Dakota",
+    "reveal": "These thin leaves and deep roots are evidence that this plant grows where it's sunny, windy, and sometimes dry.",
+    "rebuildEnv": "prairie"
+   },
+   {
+    "id": "5",
+    "img": "d_wire",
+    "alt": "Thin, wiry grass leaves and seeds against a dark background",
+    "clues": [
+     {
+      "t": "Very thin, wiry leaves",
+      "ok": true
+     },
+     {
+      "t": "Wide, arching fronds",
+      "miss": "Look again. These leaves are as thin as wire."
+     },
+     {
+      "t": "Tiny, soft leaves packed together",
+      "miss": "Look again. These are long, wiry leaves."
+     }
+    ],
+    "org": [
+     "Wide, flat fronds",
+     "Soft, tiny leaves",
+     "Wide, arching fronds",
+     "Deep roots",
+     "Thin, tough leaves"
+    ],
+    "orgAns": 4,
+    "orgShort": "thin, tough leaves",
+    "orgMiss": "Thin, tough leaves are the clue. Try again.",
+    "env": "In a sunny place",
+    "envAns": "sunny",
+    "envMiss": "Wiregrass grows in open, sunny places. Try again.",
+    "bts": "Plant 5: wiregrass. It grows in Florida's open, sunny prairies and pine woods, and it sprouts again quickly after a fire.",
+    "envImg": "h_kiss",
+    "envAlt": "A wide, flat Florida prairie with water and low grasses under a blue sky",
+    "envCap": "Its home: a sunny Florida prairie, Kissimmee Prairie Preserve State Park",
+    "reveal": "These thin, tough leaves are evidence that this plant grows in an open, sunny place.",
+    "rebuildEnv": "flprairie"
+   }
+  ]
+ },
+ "rebuild": {
+  "title": "Use your evidence to rebuild the plant's home",
+  "missPrefix": "Hmm. Look at your plant again. ",
+  "kicker": "🌍 Rebuild the plant's home",
+  "whyStart": "I chose this because the plant…",
+  "envs": [
+   {
+    "key": "forest",
+    "name": "🌳 Shady forest",
+    "img": "forest",
+    "cap": "Tall trees block the sun…"
+   },
+   {
+    "key": "hammock",
+    "name": "🌴 Florida hammock",
+    "img": "h_hammock",
+    "cap": "A shady patch of thick Florida forest…"
+   },
+   {
+    "key": "prairie",
+    "name": "🌾 Open prairie",
+    "img": "prairie",
+    "cap": "Sunny, windy, and sometimes dry…"
+   },
+   {
+    "key": "flprairie",
+    "name": "☀️ Florida prairie",
+    "img": "h_kiss",
+    "cap": "Flat, open, and sunny…"
+   }
+  ],
+  "life": [
+   {
+    "name": "🌿 Christmas fern",
+    "img": "l_fern",
+    "env": "forest",
+    "miss": "Ferns with wide fronds fit the shade of a forest."
+   },
+   {
+    "name": "🟩 Moss",
+    "img": "l_moss",
+    "env": "forest",
+    "miss": "Moss needs a shady, damp place."
+   },
+   {
+    "name": "🌿 Boston fern",
+    "img": "l_boston",
+    "env": "hammock",
+    "miss": "Wild Boston fern grows in shady Florida hammocks."
+   },
+   {
+    "name": "🌾 Big bluestem",
+    "img": "l_grass",
+    "env": "prairie",
+    "miss": "Big bluestem grows in open, sunny prairies."
+   },
+   {
+    "name": "🌾 Wiregrass",
+    "img": "d_wire",
+    "env": "flprairie",
+    "miss": "Wiregrass grows in Florida's sunny, open prairies."
+   }
+  ]
+ },
+ "quiz": [
+  {
+   "q": "A fern on the forest floor has very wide, flat leaves. Why is this trait a useful adaptation?",
+   "options": [
+    {
+     "t": "Wide leaves help the fern store extra water during dry spells.",
+     "miss": "Think about the fern's environment first. The forest floor is shady. Which leaf shape helps gather light in the shade?"
+    },
+    {
+     "t": "Wide leaves help the fern catch dim, filtered light in the shade.",
+     "ok": "⭐ Exactly right! Shade is the fern's main challenge. Wide leaves catch every bit of dim light that filters through the trees."
+    },
+    {
+     "t": "Wide leaves make the fern harder for animals to eat.",
+     "miss": "Think about the fern's environment first. The forest floor is shady. Which leaf shape helps gather light in the shade?"
+    }
+   ]
+  },
+  {
+   "q": "Grassland grasses often grow very deep roots. What challenge does this help them survive?",
+   "options": [
+    {
+     "t": "Too much shade from tall trees nearby.",
+     "miss": "What's the biggest challenge for plants in an open grassland? Think about water, and what happens to the soil when it hasn't rained in a while."
+    },
+    {
+     "t": "Long dry seasons when the soil near the surface dries out.",
+     "ok": "⭐ Yes! Grasslands don't have much shade, but they do have dry seasons. Deep roots can reach water far underground when the surface dries out."
+    },
+    {
+     "t": "Too much rain that floods the soil.",
+     "miss": "Deep roots don't fix floods. What's the biggest challenge in an open grassland? Think about water when it hasn't rained in a while."
+    }
+   ]
+  },
+  {
+   "q": "Which of these is the best example of a survival advantage?",
+   "options": [
+    {
+     "t": "A plant that has colorful red and purple leaves.",
+     "miss": "An advantage has to actually help a plant survive a challenge. Which option gives the plant a better chance of staying alive?"
+    },
+    {
+     "t": "A plant whose roots can reach deep groundwater during a long dry season.",
+     "ok": "⭐ Good thinking! Deep roots that reach water during a drought give a plant a real advantage. More of those plants survive and reproduce."
+    },
+    {
+     "t": "A plant that grows more slowly than every other plant nearby.",
+     "miss": "An advantage has to actually help a plant survive a challenge. Which option gives the plant a better chance of staying alive?"
+    }
+   ]
+  }
+ ],
+ "assign": {
+  "partA": {
+   "title": "Label and identify",
+   "do": "Read each one. Pick the best answer, or type your answer.",
+   "items": [
+    {
+     "n": 1,
+     "q": "Pick one forest plant from your evidence chart. Name one of its traits and describe what it looks like.",
+     "type": "text",
+     "min": 8,
+     "chips": [
+      [
+       "trait",
+       "Names a trait"
+      ]
+     ]
+    },
+    {
+     "n": 2,
+     "q": "Pick one grassland plant from your evidence chart. Name one of its traits and describe what it looks like.",
+     "type": "text",
+     "min": 8,
+     "chips": [
+      [
+       "trait",
+       "Names a trait"
+      ]
+     ]
+    },
+    {
+     "n": 3,
+     "q": "Which environment has more direct sunlight?",
+     "type": "choice",
+     "options": [
+      {
+       "t": "🌳 The forest",
+       "miss": "In the forest, tall trees block much of the sunlight. Which place is open to the sky?"
+      },
+      {
+       "t": "🌾 The grassland",
+       "ok": "Yes. In an open grassland, sunlight is everywhere."
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "q": "How does a plant trait match that difference in sunlight?",
+     "type": "text",
+     "min": 10,
+     "chips": [
+      [
+       "trait",
+       "Names a trait"
+      ],
+      [
+       "because",
+       "Gives a reason (because)"
+      ]
+     ]
+    }
+   ]
+  },
+  "partB": {
+   "title": "Short answer",
+   "do": "Answer in complete sentences. Use your science words.",
+   "items": [
+    {
+     "n": 1,
+     "q": "How does one trait from your forest plant help it survive the shady, rocky forest? Use the word adaptation in your answer.",
+     "type": "text",
+     "min": 15,
+     "chips": [
+      [
+       "adapt",
+       "Uses the word adaptation"
+      ],
+      [
+       "shade",
+       "Talks about shade"
+      ]
+     ]
+    },
+    {
+     "n": 2,
+     "q": "How does one trait from your grassland plant help it survive dry seasons or open wind? Use the word advantage in your answer.",
+     "type": "text",
+     "min": 15,
+     "chips": [
+      [
+       "adv",
+       "Uses the word advantage"
+      ],
+      [
+       "dry",
+       "Talks about dry seasons or wind"
+      ]
+     ]
+    }
+   ]
+  },
+  "write": {
+   "title": "Walk through your thinking",
+   "do": "Answer the three questions. Use at least one of the science words under the boxes.",
+   "vocab": [
+    "adaptation",
+    "trait",
+    "advantage",
+    "environment"
+   ],
+   "need": 1,
+   "prompts": [
+    [
+     "Why wouldn't a wide-leafed forest fern survive as well if it were moved to an open grassland? What do you think?",
+     "Start with: \"I think the fern would struggle because…\""
+    ],
+    [
+     "What did you observe or learn that supports your thinking?",
+     "Start with: \"In my investigation, I noticed that…\""
+    ],
+    [
+     "Why does that make sense?",
+     "Start with: \"This makes sense because a trait only gives an advantage when…\""
+    ]
+   ]
+  },
+  "partC": {
+   "do": "Draw your forest plant and grassland plant side by side. Under each one, write its biggest survival advantage.",
+   "labels": [
+    "Forest plant: its biggest survival advantage",
+    "Grassland plant: its biggest survival advantage"
+   ]
+  },
+  "checklist": [
+   {
+    "k": "det",
+    "t": "My evidence chart has 3 plants and my explanation.",
+    "req": {
+     "det": 3,
+     "text": {
+      "in-det": 15
+     }
+    }
+   },
+   {
+    "k": "a",
+    "t": "Part A: all four answers.",
+    "req": {
+     "choice": [
+      "a3"
+     ],
+     "text": {
+      "in-a1": 8,
+      "in-a2": 8,
+      "in-a4": 10
+     }
+    }
+   },
+   {
+    "k": "b",
+    "t": "Part B: questions 1 and 2.",
+    "req": {
+     "text": {
+      "in-b1": 15,
+      "in-b2": 15
+     }
+    }
+   },
+   {
+    "k": "c",
+    "t": "Part C: my drawing and both labels.",
+    "req": {
+     "sketch": true,
+     "text": {
+      "in-c1": 6,
+      "in-c2": 6
+     }
+    }
+   },
+   {
+    "k": "w",
+    "t": "Write and explain, with at least one science word.",
+    "req": {
+     "text": {
+      "in-w1": 10,
+      "in-w2": 10,
+      "in-w3": 10
+     },
+     "vocab": 1
+    }
+   }
+  ]
+ },
+ "premiere": {
+  "title": "Premiere my plant story",
+  "director": "JUNIOR BOTANIST",
+  "storyKicker": "My plant story",
+  "frames": [
+   {
+    "k": "formation",
+    "label": "Roots survived",
+    "img": "s_green",
+    "cap": "Roots survived: the fire burned the top, and the prairie grew back."
+   },
+   {
+    "k": "compare",
+    "label": "The Wind Lab",
+    "img": "blade",
+    "cap": "The Wind Lab: thin leaves bend in the wind, wide leaves rip."
+   },
+   {
+    "k": "wall",
+    "label": "The forest elevator",
+    "img": "w_canopy",
+    "cap": "The forest elevator: less light at every level down."
+   },
+   {
+    "k": "det",
+    "label": "Plant detectives",
+    "img": "d_cfern",
+    "cap": "Plant detectives: every trait is a clue to the plant's home."
+   }
+  ]
+ },
+ "next": {
+  "title": "19.01 · How Do Plants Make Food?",
+  "text": "Next time, you'll find out how a plant turns sunlight, water, and air into its own food."
+ },
+ "chips": {
+  "part": {
+   "any": [
+    "stem",
+    "leaf",
+    "leaflet",
+    "dot",
+    "spot",
+    "gold",
+    "orange",
+    "brown",
+    "dust",
+    "edge",
+    "green",
+    "row",
+    "hair",
+    "fern",
+    "spore"
+   ]
+  },
+  "ask": {
+   "re": "\\?|\\b(why|how|what|when|where|who|which|does|do|is|are|can|did|will)\\b"
+  },
+  "trait": {
+   "any": [
+    "root",
+    "leaf",
+    "leaves",
+    "frond",
+    "stem",
+    "thin",
+    "wide",
+    "flat",
+    "deep",
+    "tough",
+    "tiny",
+    "soft",
+    "narrow",
+    "tall",
+    "blade",
+    "moss"
+   ]
+  },
+  "because": {
+   "re": "\\b(because|since|so)\\b"
+  },
+  "env": {
+   "any": [
+    "shade",
+    "shady",
+    "dim",
+    "forest",
+    "floor",
+    "sun",
+    "sunny",
+    "grass",
+    "prairie",
+    "open",
+    "wind",
+    "dry",
+    "damp",
+    "wet",
+    "hammock",
+    "field"
+   ]
+  },
+  "adapt": {
+   "any": [
+    "adaptation",
+    "adapt"
+   ]
+  },
+  "adv": {
+   "any": [
+    "advantage"
+   ]
+  },
+  "shade": {
+   "any": [
+    "shade",
+    "shady",
+    "dim",
+    "light",
+    "dark",
+    "sun"
+   ]
+  },
+  "dry": {
+   "any": [
+    "dry",
+    "drought",
+    "wind",
+    "water",
+    "rain"
+   ]
+  }
+ },
+ "creditAlias": {},
+ "creditsExtra": [
+  "Music: Dvořák, Symphony No. 9 (<i>From the New World</i>), 2nd movement (Largo), Musopen, public domain (Wikimedia Commons).",
+  "Opti the owl: Optima Academy. Sound effects are made by the page. The forest elevator is a model; every plant photo is real. The root drawing is from John E. Weaver's 1919 book, public domain."
+ ]
+}
