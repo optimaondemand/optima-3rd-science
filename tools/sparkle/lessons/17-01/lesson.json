@@ -575,7 +575,7 @@
    }
   ],
   "press": "⬇ Press down",
-  "testDo": "Drag the leaf onto one tray and the clay strip onto the other (or tap a material, then tap a tray). Then press <b>Press down</b>.",
+  "testDo": "Drag the leaf onto one tray and the clay strip onto the other, or tap each one, then tap a tray. Then press <b>Press down</b>.",
   "disclaimer": "This is a model. It shows how a tooth's shape can match its job. It is not proof of exactly what each animal ate.",
   "results": {
    "Bleaf": {
@@ -788,7 +788,7 @@
  "keyIdea": "Fossils are evidence. They show what living things looked like and where they lived, even if those living things are extinct and those places have changed. In undisturbed rock, deeper layers hold older fossils.",
  "det": {
   "look": "Five real fossils, A to E. Each one came from a different place. Under the fossils is an evidence chart, a table that holds what you figure out.",
-  "do": "Pick 3 of the 5 fossils, one at a time. For each one, tap a clue you see and pick what it was. Then predict where it lived and watch the past appear. Your answers fill the chart.",
+  "do": "Pick 3 cards, one at a time. For each one, tap a clue you see and pick what it was. Then predict where it lived and watch the past appear. Your answers fill the chart.",
   "noun": "Specimen",
   "need": 3,
   "predict": {
@@ -1125,7 +1125,7 @@
  "assign": {
   "partA": {
    "title": "Match fossils to evidence",
-   "do": "Read each fossil clue. Pick the best answer, or type your answer.",
+   "do": "Read each one. Pick the best answer, or type your answer.",
    "items": [
     {
      "n": 1,
@@ -1219,7 +1219,7 @@
   },
   "write": {
    "title": "Tell the story of one fossil",
-   "do": "Pick one fossil from your evidence chart. Use at least two of these words: fossil, evidence, infer, environment, extinct.",
+   "do": "Pick one from your evidence chart. Answer the three questions. Use at least two of the science words under the boxes.",
    "vocab": [
     "fossil",
     "evidence",
@@ -1244,7 +1244,7 @@
    ]
   },
   "partC": {
-   "do": "Draw two rock layers, one on top of the other. Draw a fossil in each layer. Then write what each fossil tells about the past.",
+   "do": "Draw two rock layers, one on top of the other, with a fossil in each. Then write what each fossil tells about the past.",
    "labels": [
     "Top layer: what does its fossil tell scientists?",
     "Bottom layer: what does its fossil tell scientists?"

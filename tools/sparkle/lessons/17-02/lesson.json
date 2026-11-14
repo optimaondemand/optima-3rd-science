@@ -598,7 +598,7 @@
    }
   ],
   "press": "⬇ Step down",
-  "testDo": "Drag the wet mud under one tray and the dry sand under the other (or tap a ground, then tap a tray). Press <b>Step down</b>. Then swap them and step down again.",
+  "testDo": "Drag the wet mud under one tray and the dry sand under the other, or tap each one, then tap a tray. Press <b>Step down</b>. Then swap them and press it again.",
   "disclaimer": "This is a model. It shows why footprints last best in soft, wet mud. A real track also needs new mud to cover it before wind and rain wear it away.",
   "results": {
    "Amud": {
@@ -796,7 +796,7 @@
  "keyIdea": "Scientists observe first and record exact data. Then they make an inference that points back to that data. The rock around a fossil is data too, and more clues that agree make a stronger inference.",
  "det": {
   "look": "Dr. Reyes's field data: five finds from Site 7-B, each on a slab card with a real fossil photo. Site 7-B is a practice dataset, built like the ones real scientists collect. Under the cards is an evidence chart, a table that holds what you figure out.",
-  "do": "Pick 3 of the 5 finds, one at a time. For each one, tap a clue you see and pick what it was. Then predict where it lived and watch the past appear. Your answers fill the chart.",
+  "do": "Pick 3 cards, one at a time. For each one, tap a clue you see and pick what it was. Then predict where it lived and watch the past appear. Your answers fill the chart.",
   "noun": "Find",
   "need": 3,
   "predict": {
@@ -1133,7 +1133,7 @@
  "assign": {
   "partA": {
    "title": "Observation or inference?",
-   "do": "Read each statement. Pick the best answer, or type your answer.",
+   "do": "Read each one. Pick the best answer, or type your answer.",
    "items": [
     {
      "n": 1,
@@ -1227,7 +1227,7 @@
   },
   "write": {
    "title": "Walk through your thinking",
-   "do": "Pick one find from your evidence chart. Go from what you saw to what you concluded. Use at least one of these words: data, analyze, inference, sediment, paleontologist.",
+   "do": "Pick one from your evidence chart. Answer the three questions. Use at least one of the science words under the boxes.",
    "vocab": [
     "data",
     "analyze",

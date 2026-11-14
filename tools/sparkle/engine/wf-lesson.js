@@ -80,6 +80,14 @@
     g.addEventListener('mouseenter', open); g.addEventListener('mouseleave', close); g.addEventListener('focus', open); g.addEventListener('blur', close);
     g.addEventListener('click', function (e) { e.stopPropagation(); tip ? close() : open(); });
   });
+  /* "What to do" lines read by Opti: any p[data-say="how-..."] gets a 🔊 when its clip exists (also lines drawn later) */
+  function hookDo(root) {
+    $$('p[data-say^="how-"]', root).forEach(function (p) { var k = p.dataset.say; if (!IMG[k] || p.querySelector('.wl-dosay')) return;
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'wl-say ready wl-dosay'; b.textContent = '🔊'; b.setAttribute('aria-label', 'Listen to Opti read what to do');
+      b.addEventListener('click', function (e) { e.stopPropagation(); sayWord(k); }); p.appendChild(b); });
+  }
+  hookDo(document);
+  try { new MutationObserver(function (ms) { ms.forEach(function (m) { if (m.addedNodes.length && m.target.nodeType === 1) hookDo(m.target); }); }).observe(document.body, { childList: true, subtree: true }); } catch (e) {}
   /* 🔊 buttons show only when the clip exists */
   $$('.wl-say').forEach(function (b) { var k = 'say-' + b.dataset.say; if (IMG[k]) { b.classList.add('ready'); b.onclick = function () { new Audio(IMG[k]).play(); }; } });
 

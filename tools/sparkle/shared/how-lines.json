@@ -1,0 +1,54 @@
+{
+ "how-flip": {
+  "page": "Tap or click each card to flip it and read what the word means. Tap 🔊 to hear the word.",
+  "say": "Tap or click each card to flip it and read what the word means. Tap the speaker to hear the word."
+ },
+ "how-specimen": {
+  "page": "Press Inspect specimen. Move the magnifying lens over the rock, then tap 3 things you notice.",
+  "say": "Press Inspect specimen. Move the magnifying lens over the rock, then tap three things you notice."
+ },
+ "how-order": {
+  "page": "Drag each photo into the film strip, from first to last. You can also tap a photo, then tap a frame. Get the order right and your strip becomes a movie.",
+  "say": "Drag each photo into the film strip, from first to last. You can also tap a photo, then tap a frame. Get the order right and your strip becomes a movie."
+ },
+ "how-compare": {
+  "page": "Follow the steps one at a time. You will pick, test, and then explain.",
+  "say": "Follow the steps one at a time. You will pick, test, and then explain."
+ },
+ "how-wall": {
+  "page": "First, make a prediction. Then brush the glowing layer: drag across it (or tap it again and again) until the fossil shows.",
+  "say": "First, make a prediction. Then brush the glowing layer: drag across it (or tap it again and again) until the fossil shows."
+ },
+ "how-detective": {
+  "page": "Pick 3 cards, one at a time. For each one, tap a clue you see and pick what it was. Then predict where it lived and watch the past appear. Your answers fill the chart.",
+  "say": "Pick three cards, one at a time. For each one, tap a clue you see and pick what it was. Then predict where it lived and watch the past appear. Your answers fill the chart."
+ },
+ "how-rebuild": {
+  "page": "Pick one you solved. Pick the place it points to, then pick the living things that belong there.",
+  "say": "Pick one you solved. Pick the place it points to, then pick the living things that belong there."
+ },
+ "how-parta": {
+  "page": "Read each one. Pick the best answer, or type your answer.",
+  "say": "Read each one. Pick the best answer, or type your answer."
+ },
+ "how-partb": {
+  "page": "Answer in complete sentences. Use your science words.",
+  "say": "Answer in complete sentences. Use your science words."
+ },
+ "how-write-1": {
+  "page": "Pick one from your evidence chart. Answer the three questions. Use at least one of the science words under the boxes.",
+  "say": "Pick one from your evidence chart. Answer the three questions. Use at least one of the science words under the boxes."
+ },
+ "how-write-2": {
+  "page": "Pick one from your evidence chart. Answer the three questions. Use at least two of the science words under the boxes.",
+  "say": "Pick one from your evidence chart. Answer the three questions. Use at least two of the science words under the boxes."
+ },
+ "how-checklist": {
+  "page": "Tap each item when it is done. Items you finish on the page check themselves.",
+  "say": "Tap each item when it is done. Items you finish on the page check themselves."
+ },
+ "how-premiere": {
+  "page": "Check your exhibit. Pick the one you wrote about, add your first name, then press Premiere film.",
+  "say": "Check your exhibit. Pick the one you wrote about, add your first name, then press Premiere film."
+ }
+}

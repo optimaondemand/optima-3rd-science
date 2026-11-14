@@ -58,7 +58,7 @@ body = f'''<div class="page-wrap">
 <div class="wl-idcard">{"".join(f"<span>{c}</span>" if i else c for i,c in enumerate(S["card"]))}</div></div>
 <div style="text-align:center"><button class="wl-btn gold" id="spec-open">🔍 Inspect specimen</button></div><p class="wl-fb dark" id="spec-fb"></p>
 <div class="wl-paper wl-in" id="spec-boxes" hidden>{textbox("in-notice","Warm-Up · I notice",4,[["part","Names a part you saw"]],S["notice"])}{textbox("in-wonder","Warm-Up · I wonder",4,[["ask","Asks a question"]],S["wonder"])}</div>''', 'how-inspect') + f'''
-<div class="wl-card" id="m-words"><h3><span class="k">📚 Word Wall</span>Words scientists use</h3><p class="wl-do" data-say="how-flip"><b>What to do:</b> Tap or click each card to flip it and read what the word means.{" Tap 🔊 to hear Opti say the word." if all((LP.parent / "audio" / ("word-" + wslug(w) + ".mp3")).exists() for e,w,d in L["words"]) else ""}</p>
+<div class="wl-card" id="m-words"><h3><span class="k">📚 Word Wall</span>Words scientists use</h3><p class="wl-do" data-say="how-flip"><b>What to do:</b> Tap or click each card to flip it and read what the word means.{" Tap 🔊 to hear the word." if all((LP.parent / "audio" / ("word-" + wslug(w) + ".mp3")).exists() for e,w,d in L["words"]) else ""}</p>
 <div class="wl-words">{"".join(f'<div class="wl-wordcell"><button class="wl-flip" type="button"><div class="in"><div class="f">{e} {w}<small>tap to flip</small></div><div class="bk"><b>{w}</b>{d}</div></div></button><button class="wl-wsay" type="button" data-word="{wslug(w)}" aria-label="Hear the word {E(w)}">🔊</button></div>' for e,w,d in L["words"])}</div></div>
 <div class="wl-next"><button class="wl-btn gold" data-go="lesson">Next: 🎬 Scene 2 · The Lesson →</button></div></section>
 
@@ -153,7 +153,7 @@ COPY = []                      # (source, repo-relative destination) for repo mo
 SLUG = 'g3sci-' + LDIR.name
 def uri(p, mime):
     if not REPO: return f'data:{mime};base64,' + base64.b64encode(p.read_bytes()).decode()
-    dest = f'assets/sparkle/{p.name}' if p.parent.name == 'shared' else f'assets/sparkle/{SLUG}/{p.parent.name + "-" if p.parent.name == "audio" else ""}{p.name}'
+    dest = f'assets/sparkle/{p.name}' if p.parent.name == 'shared' else f'assets/sparkle/how/{p.name}' if p.parent.parent.name == 'shared' else f'assets/sparkle/{SLUG}/{p.parent.name + "-" if p.parent.name == "audio" else ""}{p.name}'
     COPY.append((p, dest)); return dest
 keys = set(re.findall(r'\{\{(\w+)\}\}', body)) - {'credits', 'opti', 'optima_logo', 'MODEL_SVG'}
 film = L['film']; film['startTarget'] = '.wl-ican'
@@ -178,6 +178,38 @@ for _e, _w, _d in L['words']:  # key words: audio/word-<slug>.mp3 -> 🔊 on the
     v = LDIR / 'audio' / f"word-{wslug(_w)}.mp3"
     if v.exists(): img[f"word-{wslug(_w)}"] = uri(v, 'audio/mpeg')
 print('key words voiced:', sum(1 for k in img if k.startswith('word-')), '/', len(L['words']))
+
+# "What to do" lines read aloud by Opti. Scripts: shared/how-lines.json (same words on every lesson, recorded ONCE,
+# clips in shared/audio/<slug>.mp3) and lessons/<WW-LL>/how-lines.json (this lesson only, clips in audio/<slug>.mp3).
+# Each entry {slug: {"page": the line as printed (no tags), "say": the words sent to ElevenLabs}}. A line is matched by
+# its printed words, so a shared clip is reused only when the words are identical; a clip whose line has changed is
+# NOT attached (the build warns). The 🔊 shows only when the clip exists.
+def _plain(t): return re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', '', t))).strip()
+HOW = {}
+for _src, _dir in ((ROOT / 'shared' / 'how-lines.json', ROOT / 'shared' / 'audio'), (LDIR / 'how-lines.json', LDIR / 'audio')):
+    if _src.exists():
+        for _k, _v in json.loads(_src.read_text(encoding='utf-8')).items(): HOW[_plain(_v['page'])] = (_k, _dir / f'{_k}.mp3')
+_how_n, _how_on, _how_stale = 0, 0, []
+_lesson_how = json.loads((LDIR / 'how-lines.json').read_text(encoding='utf-8')) if (LDIR / 'how-lines.json').exists() else {}
+_used = set()
+def _hook(text):
+    global _how_n, _how_on
+    _how_n += 1; hit = HOW.get(_plain(text))
+    if not hit: return ''
+    _used.add(hit[0])
+    if hit[1].exists(): img[hit[0]] = uri(hit[1], 'audio/mpeg'); _how_on += 1
+    return hit[0]
+def _do(m):
+    dark, attrs, text = m.group(1) or '', m.group(2), m.group(3)
+    say = _hook(text); attrs = re.sub(r'\s*data-say="[^"]*"', '', attrs)
+    return f'<p class="wl-do{dark}"{attrs}' + (f' data-say="{say}"' if say else '') + f'><b>What to do:</b> {text}</p>'
+body = re.sub(r'<p class="wl-do( dark)?"([^>]*)><b>What to do:</b> (.*?)</p>', _do, body)
+_ts = _hook(L['compare'].get('testDo', ''))
+if _ts: L['compare']['testSay'] = _ts
+for _k, _v in _lesson_how.items():
+    if _k not in _used: _how_stale.append(_k)
+print('what to do voiced:', _how_on, '/', _how_n)
+if _how_stale: print('WARNING: lesson how-lines not on the page (line changed? clip NOT used):', ', '.join(_how_stale))
 
 cred = {c['key']: c for c in json.loads((LDIR / 'credits.json').read_text())}
 alias = L.get('creditAlias', {})
