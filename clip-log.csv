@@ -6,7 +6,7 @@ optima-3rd-science,opti,evidence,8,assets/sparkle/g3sci-17-01/audio-word-evidenc
 optima-3rd-science,opti,extinct,7,assets/sparkle/g3sci-17-01/audio-word-extinct.mp3,speech,file name,1a2893403585873e33173cdc546c6d12
 optima-3rd-science,opti,fossil,6,assets/sparkle/g3sci-17-01/audio-word-fossil.mp3,speech,file name,481046971bb8a7fee415946be5dde7e4
 optima-3rd-science,opti,infer,5,assets/sparkle/g3sci-17-01/audio-word-infer.mp3,speech,file name,9d3871593f82f274c3c5bd180d30fac0
-optima-3rd-science,opti,organism,8,assets/sparkle/g3sci-17-01/audio-word-organism.mp3,speech,file name,6ab0f801d09ecd4e779603aa57589c41
+optima-3rd-science,opti,organism,8,assets/sparkle/g3sci-17-01/audio-word-organism.mp3,speech,file name,86777da9ab32f53b701ccdab33a60ff7
 optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-01/music.mp3,not-speech,,695f40ec3d8bc16002fcd842b862dcc8
 optima-3rd-science,opti,Time to show your thinking. Say what you saw first. Then say what it means.,75,assets/sparkle/g3sci-17-02/audio-17-02-assign.mp3,speech,lesson-17-02-fossil-dig-simulation.html,7dfca516b3581901429062758acc6f8b
 optima-3rd-science,opti,"A quick check before the big job. It's not graded. It's just for you, so give it your best try.",95,assets/sparkle/g3sci-17-02/audio-17-02-check.mp3,speech,lesson-17-02-fossil-dig-simulation.html,c5c7ea214ebf7f9d9c54764b479c6a43
@@ -111,8 +111,8 @@ optima-3rd-science,opti,Its fronds spread wide and flat. Why that shape?,48,asse
 optima-3rd-science,opti,"Two homes, two very different plants. Why?",42,assets/sparkle/g3sci-18-02/audio-opti-9.mp3,speech,tools/sparkle/lessons/18-02/scripts.json,c9c161cea71a83183ebcede2daefd75f
 optima-3rd-science,opti,adaptation,10,assets/sparkle/g3sci-18-02/audio-word-adaptation.mp3,speech,tools/sparkle/lessons/18-02/scripts.json,8c0c1ceb12a2b77fe38ccde98745c9da
 optima-3rd-science,opti,advantage,9,assets/sparkle/g3sci-18-02/audio-word-advantage.mp3,speech,tools/sparkle/lessons/18-02/scripts.json,a65653953b1f9a81514a1ec03e7d4ada
-optima-3rd-science,opti,environment,11,assets/sparkle/g3sci-18-02/audio-word-environment.mp3,speech,tools/sparkle/lessons/18-02/scripts.json,b46cbc7ee176cfcc610aff9654f8fb12
-optima-3rd-science,opti,survive,7,assets/sparkle/g3sci-18-02/audio-word-survive.mp3,speech,file name,b46cbc7ee176cfcc610aff9654f8fb12
+optima-3rd-science,opti,environment,11,assets/sparkle/g3sci-18-02/audio-word-environment.mp3,speech,tools/sparkle/lessons/18-02/scripts.json,c1abb21c79a495f7ae29ff673455e906
+optima-3rd-science,opti,survive,7,assets/sparkle/g3sci-18-02/audio-word-survive.mp3,speech,file name,ba8ad56509bd0ef3c2a53eb4127b8e05
 optima-3rd-science,opti,trait,5,assets/sparkle/g3sci-18-02/audio-word-trait.mp3,speech,tools/sparkle/lessons/18-02/scripts.json,2f149b886ffceaffad4de3f1b86f0670
 optima-3rd-science,opti,variation,9,assets/sparkle/g3sci-18-02/audio-word-variation.mp3,speech,file name,2676cc80eb1d339746cb470db7a28626
 optima-3rd-science,opti,,0,assets/sparkle/g3sci-18-02/music.mp3,not-speech,,83ced9b1ad5a35dc91449faf18b3723a
@@ -138,3 +138,27 @@ optima-3rd-science,opti,roots,5,assets/sparkle/g3sci-19-01/audio-word-roots.mp3,
 optima-3rd-science,opti,sugar,5,assets/sparkle/g3sci-19-01/audio-word-sugar.mp3,speech,file name,7aa49eaf4a3396614f3d9fa336e0e60d
 optima-3rd-science,opti,sunlight,8,assets/sparkle/g3sci-19-01/audio-word-sunlight.mp3,speech,file name,192922dc2a9c3bea7eb6327ec95512a5
 optima-3rd-science,opti,,0,assets/sparkle/g3sci-19-01/music.mp3,not-speech,,0415763046cd3cfa90f757849e7bdffc
+optima-3rd-science,opti,"This is Wyoming. Dry, dusty land, with hardly any water.",56,assets/sparkle/g3sci-17-01/audio-opti-1.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,1a4bc4ebfd218d8bc3ded9c71e3f4f26
+optima-3rd-science,opti,"This is Wyoming. Dry, dusty land, with hardly any water.",56,tools/sparkle/lessons/17-01/audio/opti-1.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,1a4bc4ebfd218d8bc3ded9c71e3f4f26
+optima-3rd-science,opti,But hidden in this rock is something surprising...,50,assets/sparkle/g3sci-17-01/audio-opti-2.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,ac7892012817ca56c81a58f9b3584dbd
+optima-3rd-science,opti,But hidden in this rock is something surprising...,50,tools/sparkle/lessons/17-01/audio/opti-2.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,ac7892012817ca56c81a58f9b3584dbd
+optima-3rd-science,opti,A fish? Out here?,17,assets/sparkle/g3sci-17-01/audio-opti-3.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,4f1abfe9b2daf9cccfcfe837f49fdddd
+optima-3rd-science,opti,A fish? Out here?,17,tools/sparkle/lessons/17-01/audio/opti-3.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,4f1abfe9b2daf9cccfcfe837f49fdddd
+optima-3rd-science,opti,"About 52 million years ago, this land was a warm lake. Fish swam everywhere.",76,assets/sparkle/g3sci-17-01/audio-opti-4.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,3d35471b93a7b56b431fc1f50488f28d
+optima-3rd-science,opti,"About 52 million years ago, this land was a warm lake. Fish swam everywhere.",76,tools/sparkle/lessons/17-01/audio/opti-4.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,3d35471b93a7b56b431fc1f50488f28d
+optima-3rd-science,opti,Palm trees grew along its shore.,32,assets/sparkle/g3sci-17-01/audio-opti-5.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,842217e8ea17e40c13d4d176511a3762
+optima-3rd-science,opti,Palm trees grew along its shore.,32,tools/sparkle/lessons/17-01/audio/opti-5.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,842217e8ea17e40c13d4d176511a3762
+optima-3rd-science,opti,"Layer by layer, mud buried them. Slowly, the mud turned to stone.",65,assets/sparkle/g3sci-17-01/audio-opti-6.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,bce980de80f239b7de2bb8c019b070ff
+optima-3rd-science,opti,"Layer by layer, mud buried them. Slowly, the mud turned to stone.",65,tools/sparkle/lessons/17-01/audio/opti-6.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,bce980de80f239b7de2bb8c019b070ff
+optima-3rd-science,opti,"Today, scientists dig up these clues. Some even dive for them, right here in Florida.",85,assets/sparkle/g3sci-17-01/audio-opti-7.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,4659fcba922a50bc23ef5bce5980408d
+optima-3rd-science,opti,"Today, scientists dig up these clues. Some even dive for them, right here in Florida.",85,tools/sparkle/lessons/17-01/audio/opti-7.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,4659fcba922a50bc23ef5bce5980408d
+optima-3rd-science,opti,Every fossil is a message from long ago. Let's learn to read it.,64,assets/sparkle/g3sci-17-01/audio-opti-8.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,dfd8a76ece485653233c33ea960698e9
+optima-3rd-science,opti,Every fossil is a message from long ago. Let's learn to read it.,64,tools/sparkle/lessons/17-01/audio/opti-8.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,dfd8a76ece485653233c33ea960698e9
+optima-3rd-science,opti,Welcome to the film crew! Scientists look first and explain second. Let's hold a magnifying lens over a real fossil and see what you notice.,140,assets/sparkle/g3sci-17-01/audio-17-01-welcome.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,39ffc7a6ffb3e667aaf7c498fe393a77
+optima-3rd-science,opti,Welcome to the film crew! Scientists look first and explain second. Let's hold a magnifying lens over a real fossil and see what you notice.,140,tools/sparkle/lessons/17-01/audio/17-01-welcome.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,39ffc7a6ffb3e667aaf7c498fe393a77
+optima-3rd-science,opti,"Every fossil tells a story. In this scene you will turn a fossil's story into a movie, test teeth in the Bite Lab, and dig down through a canyon wall.",150,assets/sparkle/g3sci-17-01/audio-17-01-lesson.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,8a6ad9c96a4b1e58f49c395389cf790e
+optima-3rd-science,opti,"Every fossil tells a story. In this scene you will turn a fossil's story into a movie, test teeth in the Bite Lab, and dig down through a canyon wall.",150,tools/sparkle/lessons/17-01/audio/17-01-lesson.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,8a6ad9c96a4b1e58f49c395389cf790e
+optima-3rd-science,opti,"A quick check before the big job. It's not graded. It's just for you, so give it your best try.",95,assets/sparkle/g3sci-17-01/audio-17-01-check.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,24f88e2b01c9d5c186be8698904813bb
+optima-3rd-science,opti,"A quick check before the big job. It's not graded. It's just for you, so give it your best try.",95,tools/sparkle/lessons/17-01/audio/17-01-check.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,24f88e2b01c9d5c186be8698904813bb
+optima-3rd-science,opti,"Time to show what you know. Use your clues, just like a real scientist.",71,assets/sparkle/g3sci-17-01/audio-17-01-assign.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,ed5d95f2fb75619c7e1d650d6381d870
+optima-3rd-science,opti,"Time to show what you know. Use your clues, just like a real scientist.",71,tools/sparkle/lessons/17-01/audio/17-01-assign.mp3,speech,tools/sparkle/lessons/17-01/lesson.json,ed5d95f2fb75619c7e1d650d6381d870
