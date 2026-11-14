@@ -1,7 +1,7 @@
 ﻿repo,voice,text,chars,file,kind,script_source,md5
 optima-3rd-science,opti,"Drag the leaf onto one tray and the clay strip onto the other, or tap each one, then tap a tray. Then press Press down.",119,assets/sparkle/g3sci-17-01/audio-how-17-01-compare.mp3,speech,tools/sparkle/lessons/17-01/how-lines.json,6ea6c393347089c43383c07a98633059
 optima-3rd-science,opti,"Draw two rock layers, one on top of the other, with a fossil in each. Then write what each fossil tells about the past.",119,assets/sparkle/g3sci-17-01/audio-how-17-01-partc.mp3,speech,tools/sparkle/lessons/17-01/how-lines.json,661c5cada400e911c55b1d57477a6cb4
-optima-3rd-science,opti,environment,11,assets/sparkle/g3sci-17-01/audio-word-environment.mp3,speech,file name,531d273306c8310afcc35fd97e1be901
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-01/audio-word-environment.mp3,speech,,531d273306c8310afcc35fd97e1be901
 optima-3rd-science,opti,evidence,8,assets/sparkle/g3sci-17-01/audio-word-evidence.mp3,speech,file name,6ab0f801d09ecd4e779603aa57589c41
 optima-3rd-science,opti,extinct,7,assets/sparkle/g3sci-17-01/audio-word-extinct.mp3,speech,file name,1a2893403585873e33173cdc546c6d12
 optima-3rd-science,opti,fossil,6,assets/sparkle/g3sci-17-01/audio-word-fossil.mp3,speech,file name,481046971bb8a7fee415946be5dde7e4
@@ -14,15 +14,15 @@ optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-02/audio-17-02-lesson.mp3,spe
 optima-3rd-science,opti,Welcome back to the film crew! Today we start with a real dinosaur track. Look closely first. Explaining comes later.,117,assets/sparkle/g3sci-17-02/audio-17-02-welcome.mp3,speech,lesson-17-02-fossil-dig-simulation.html,7a81644910dc170335c1bcc9db0001be
 optima-3rd-science,opti,"Drag the wet mud under one tray and the dry sand under the other, or tap each one, then tap a tray. Press Step down. Then swap them and press it again.",151,assets/sparkle/g3sci-17-02/audio-how-17-02-compare.mp3,speech,tools/sparkle/lessons/17-02/how-lines.json,8bb0173d0d2c31ea07adcf81932eaadf
 optima-3rd-science,opti,"Draw the three layers of Site 7-B, one on top of the other. Label the rock in each layer. Then write what the top and bottom layers were like long ago.",151,assets/sparkle/g3sci-17-02/audio-how-17-02-partc.mp3,speech,tools/sparkle/lessons/17-02/how-lines.json,82b7f3e2c6e69d78838d896daef11b95
-optima-3rd-science,opti,Listen. Something is walking through soft mud.,46,assets/sparkle/g3sci-17-02/audio-opti-1.mp3,speech,lesson-17-02-fossil-dig-simulation.html,ca8e5828fbcdbd0cf45b7d7cb183bb1f
-optima-3rd-science,opti,"Three long toes, pressed deep into solid rock.",46,assets/sparkle/g3sci-17-02/audio-opti-2.mp3,speech,lesson-17-02-fossil-dig-simulation.html,70c306b71ff7c7bfff8053adc0acf790
-optima-3rd-science,opti,Footprints? In stone?,21,assets/sparkle/g3sci-17-02/audio-opti-3.mp3,speech,lesson-17-02-fossil-dig-simulation.html,4832a0ad05886634b17140218d0103d2
-optima-3rd-science,opti,"Now look deeper, inside this dry hillside.",42,assets/sparkle/g3sci-17-02/audio-opti-4.mp3,speech,lesson-17-02-fossil-dig-simulation.html,96f0f728ed52365f6f0e9c9d903445c3
-optima-3rd-science,opti,"A fish, deep inside. How did it get there?",42,assets/sparkle/g3sci-17-02/audio-opti-5.mp3,speech,lesson-17-02-fossil-dig-simulation.html,0cdbf61fe3beed2330b8c9cc51379935
-optima-3rd-science,opti,"Long ago, places like this were wet and muddy.",46,assets/sparkle/g3sci-17-02/audio-opti-6.mp3,speech,lesson-17-02-fossil-dig-simulation.html,9fd101af9c8b6c03c8444e1b6ea5a5d3
-optima-3rd-science,opti,"Mud covered plants too, and slowly turned to stone.",51,assets/sparkle/g3sci-17-02/audio-opti-7.mp3,speech,lesson-17-02-fossil-dig-simulation.html,79e461c9dc13dd2e943e228d00098682
-optima-3rd-science,opti,A scientist writes what she sees first. Then she asks what it means.,68,assets/sparkle/g3sci-17-02/audio-opti-8.mp3,speech,lesson-17-02-fossil-dig-simulation.html,666e7a1793b2aabd6750284909dd553f
-optima-3rd-science,opti,Rocks hold clues. Let's learn to read them like scientists.,59,assets/sparkle/g3sci-17-02/audio-opti-9.mp3,speech,lesson-17-02-fossil-dig-simulation.html,d4cd96c6203c1e593797e36c1a595ee7
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-02/audio-opti-1.mp3,speech,,ca8e5828fbcdbd0cf45b7d7cb183bb1f
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-02/audio-opti-2.mp3,speech,,70c306b71ff7c7bfff8053adc0acf790
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-02/audio-opti-3.mp3,speech,,4832a0ad05886634b17140218d0103d2
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-02/audio-opti-4.mp3,speech,,96f0f728ed52365f6f0e9c9d903445c3
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-02/audio-opti-5.mp3,speech,,0cdbf61fe3beed2330b8c9cc51379935
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-02/audio-opti-6.mp3,speech,,9fd101af9c8b6c03c8444e1b6ea5a5d3
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-02/audio-opti-7.mp3,speech,,79e461c9dc13dd2e943e228d00098682
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-02/audio-opti-8.mp3,speech,,666e7a1793b2aabd6750284909dd553f
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-02/audio-opti-9.mp3,speech,,d4cd96c6203c1e593797e36c1a595ee7
 optima-3rd-science,opti,analyze,7,assets/sparkle/g3sci-17-02/audio-word-analyze.mp3,speech,file name,ed21c7d3821d79061f1b1fc8afc9f550
 optima-3rd-science,opti,ancient,7,assets/sparkle/g3sci-17-02/audio-word-ancient.mp3,speech,file name,4043746486bb2abf9c8d362dcfe84a03
 optima-3rd-science,opti,data,4,assets/sparkle/g3sci-17-02/audio-word-data.mp3,speech,file name,dedf38c7287f9a15c17dc76b0481c853
@@ -30,8 +30,30 @@ optima-3rd-science,opti,inference,9,assets/sparkle/g3sci-17-02/audio-word-infere
 optima-3rd-science,opti,paleontologist,14,assets/sparkle/g3sci-17-02/audio-word-paleontologist.mp3,speech,file name,df11b374fc5510a8e1efd9944287cc82
 optima-3rd-science,opti,sediment,8,assets/sparkle/g3sci-17-02/audio-word-sediment.mp3,speech,file name,fe965ce93dd37c254ceaf21d1b3e4228
 optima-3rd-science,opti,,0,assets/sparkle/g3sci-17-02/music.mp3,not-speech,,234b58fde1bde77c4d9cb09464042436
+optima-3rd-science,opti,Your turn to show what you know. Name the trait first. Then say how it helps the plant in its home.,99,assets/sparkle/g3sci-18-01/audio-18-01-assign.mp3,speech,lesson-18-01-plant-survival-strategies.html,27c839d8c0e53323366ac3046bc5a89b
+optima-3rd-science,opti,"Three quick questions. It's not graded. It's just for you, so give each one your best try.",90,assets/sparkle/g3sci-18-01/audio-18-01-check.mp3,speech,lesson-18-01-plant-survival-strategies.html,03c9e06136842d42e3f18d28ec0b148b
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-18-01/audio-18-01-lesson.mp3,speech,,394042285efd5e856680d68bc40ab70d
+optima-3rd-science,opti,A brand-new film! Today our camera visits wild plants. Look closely at the first one before we explain anything.,112,assets/sparkle/g3sci-18-01/audio-18-01-welcome.mp3,speech,lesson-18-01-plant-survival-strategies.html,489f81ecda7bacf4de50d77932cf1d6b
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-18-01/audio-opti-1.mp3,speech,,d7146bd30b12a16902fe3e51bedeaf69
+optima-3rd-science,opti,Let's find out how plants fit their homes.,42,assets/sparkle/g3sci-18-01/audio-opti-10.mp3,speech,lesson-18-01-plant-survival-strategies.html,ac150bddbbc0cede687f9a18a43173e4
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-18-01/audio-opti-2.mp3,speech,,87d4de1a4c57b6fa4a842b7ad505e00b
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-18-01/audio-opti-3.mp3,speech,,007ff7fb6aca9b66dd48092279473419
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-18-01/audio-opti-4.mp3,speech,,1756329911e6fc71b5e7e98e079719e4
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-18-01/audio-opti-5.mp3,speech,,ddbd31032bb7bc1a594ef3ecfecd5bdb
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-18-01/audio-opti-6.mp3,speech,,4847baceafe52d12f9a09eb27ebb1d32
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-18-01/audio-opti-7.mp3,speech,,2e54e8ff3b740dbc5212fcdb64bc5087
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-18-01/audio-opti-8.mp3,speech,,d02e6be38252705f452e1e343ec6fa8c
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-18-01/audio-opti-9.mp3,speech,,cea26b70594519a17f48a9e94ec1939a
+optima-3rd-science,opti,adaptation,10,assets/sparkle/g3sci-18-01/audio-word-adaptation.mp3,speech,file name,494a441ceb457db02f8517fc0a25affc
+optima-3rd-science,opti,advantage,9,assets/sparkle/g3sci-18-01/audio-word-advantage.mp3,speech,file name,968988d80a819e4ec638c100220880d3
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-18-01/audio-word-environment.mp3,speech,,8622ca1292b655ff85a392b83de1f8bd
+optima-3rd-science,opti,reproduce,9,assets/sparkle/g3sci-18-01/audio-word-reproduce.mp3,speech,file name,dff79653d026a9edfbc03021e2f88b58
+optima-3rd-science,opti,root system,11,assets/sparkle/g3sci-18-01/audio-word-root-system.mp3,speech,file name,156651d008318cacf2b9bd636b36955d
+optima-3rd-science,opti,trait,5,assets/sparkle/g3sci-18-01/audio-word-trait.mp3,speech,file name,38977b98881743cffd8b516e7cb313c8
+optima-3rd-science,opti,,0,assets/sparkle/g3sci-18-01/music.mp3,not-speech,,3d19382b2643b3b7182f0a94d4d417f6
 optima-3rd-science,opti,,0,assets/sparkle/how/how-checklist.mp3,speech,,83efdd490c46007fb519828c9d4b2e80
 optima-3rd-science,opti,,0,assets/sparkle/how/how-compare.mp3,speech,,e654b4bba816cbb2cb13f9aa35e0f6c0
+optima-3rd-science,opti,"Pick three cards, one at a time. Tap a clue you see, then pick what it is. Predict where it grows, and watch its home appear.",125,assets/sparkle/how/how-detective-plant.mp3,speech,tools/sparkle/lessons/18-01/scripts.json,0b0b2c4ef86f2a3cda276b44007ba764
 optima-3rd-science,opti,,0,assets/sparkle/how/how-detective.mp3,speech,,9377dc4e712737e6feb066737f76541c
 optima-3rd-science,opti,,0,assets/sparkle/how/how-flip.mp3,speech,,4b32b4ab6bb21fdfb42475a7ca07bff1
 optima-3rd-science,opti,,0,assets/sparkle/how/how-order.mp3,speech,,0a91479b858629df237e0e6faa2028c6
@@ -39,7 +61,9 @@ optima-3rd-science,opti,,0,assets/sparkle/how/how-parta.mp3,speech,,cf661635af66
 optima-3rd-science,opti,,0,assets/sparkle/how/how-partb.mp3,speech,,bf907f668543d846838db5379b4e7f66
 optima-3rd-science,opti,,0,assets/sparkle/how/how-premiere.mp3,speech,,1d910531a59293e12ea9e70eb8b48e8a
 optima-3rd-science,opti,,0,assets/sparkle/how/how-rebuild.mp3,speech,,24046e400854675790071a395674ecb6
+optima-3rd-science,opti,"Press Inspect specimen. Move the magnifying lens over the plant, then tap three things you notice.",98,assets/sparkle/how/how-specimen-plant.mp3,speech,tools/sparkle/lessons/18-01/scripts.json,b52da7217573e3ee8250b6d99677bdc1
 optima-3rd-science,opti,,0,assets/sparkle/how/how-specimen.mp3,speech,,aa2fd22161487036a68e9c38f8c6c2b9
+optima-3rd-science,opti,"First, make a prediction. Then brush the glowing layer: drag across it (or tap it again and again) until the plant shows.",121,assets/sparkle/how/how-wall-plant.mp3,speech,tools/sparkle/lessons/18-01/scripts.json,cada0fc447b0a5ed8cecd4e7e4fb4090
 optima-3rd-science,opti,,0,assets/sparkle/how/how-wall.mp3,speech,,d24ab7651034b114c0498e1d77146fe1
 optima-3rd-science,opti,,0,assets/sparkle/how/how-write-1.mp3,speech,,0e7a6436f20744b9a3ed529bd0aedd96
 optima-3rd-science,opti,,0,assets/sparkle/how/how-write-2.mp3,speech,,582577f44dfb1d8f1b29cae6d8c4cfef
