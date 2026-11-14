@@ -194,7 +194,8 @@
   })();
 
   /* ---- assignment choices ---- */
-  ['a1', 'a3'].forEach(function (k) { choices($('[data-choice="' + k + '"]')); });
+  /* every Part A / Part B choice group, whatever its number (18.01 has four; 17.01/17.02 had a1 and a3) */
+  $$('#tab-assign [data-choice]').forEach(function (g) { if (/^[ab]\d+$/.test(g.dataset.choice)) choices(g); });
 
   /* ---- Part C sketch (required) ---- */
   (function () {

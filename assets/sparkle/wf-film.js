@@ -1,6 +1,6 @@
 /* Opti's Wonder Films — cinematic opener engine (G3 science sparkle layer).
    DATA-driven: window.WF_DATA = {kicker, lesson, title, bigQuestion, poster, music:{src,vol}, shots:[...], captions:[...], credits:[...], startTarget}
-   Shot types: leader | black | photo | reveal | xray | flash | archive | title. Any shot may carry sfxAt [{at,name,arg}].  Holds NO lesson content. */
+   Shot types: leader | black | photo | reveal | xray | split | flash | archive | title. fx: dust | caustics | rays | sweep | bubbles | rain. Any shot may carry sfxAt [{at,name,arg}].  Holds NO lesson content. */
 (function () {
   'use strict';
   var D = window.WF_DATA; if (!D) return;
@@ -46,6 +46,9 @@
       if (s.type === 'reveal') { var c = el('canvas', 'wf-fx'); L.appendChild(c); s._cv = c; }
       if (s.type === 'xray') { var xb = el('div', 'wf-xband'); var xw = el('div', 'wf-xwin', '<img alt="' + (s.alt2 || '') + '" src="' + src(s.img2) + '">' + (s.xlabel ? '<b>' + s.xlabel + '</b>' : ''));
         var w = s.win || [30, 60, 40]; xw.style.left = w[0] + '%'; xw.style.top = w[1] + '%'; xw.style.width = w[2] + '%'; xb.style.height = ((s.band || .16) * 100) + '%'; L.appendChild(xb); L.appendChild(xw); s._xb = xb; s._xw = xw; }
+      if (s.type === 'split') { var sp2 = el('div', 'wf-split2', '<img alt="' + (s.alt2 || '') + '" src="' + src(s.img2) + '">'), sl = el('div', 'wf-splitline');
+        L.appendChild(sp2); L.appendChild(sl); s._sp = sp2; s._sl = sl;
+        s._sl1 = el('div', 'wf-splitlab l', s.lab1 || ''); s._sl2 = el('div', 'wf-splitlab r', s.lab2 || ''); L.appendChild(s._sl1); L.appendChild(s._sl2); }
       if (s.tags) s._tags = s.tags.map(function (tg) { var t = el('div', 'wf-tag', tg.text); t.style.left = tg.x + '%'; t.style.top = tg.y + '%'; L.appendChild(t); return t; });
       if (s.fx && s.fx.indexOf('caustics') > -1) {
         var cs = document.createElementNS(svgNS, 'svg'); cs.setAttribute('class', 'wf-fx'); cs.setAttribute('preserveAspectRatio', 'none');
@@ -157,6 +160,7 @@
       if (kind === 'dust') P.push({ k: kind, x: Math.random() * W, y: Math.random() * H, vx: (Math.random() * .4 + .1) * W / 900, vy: (Math.random() - .5) * H / 1600, r: Math.random() * 2.2 + .6, a: Math.random() * .5 + .2, life: 1e9 });
       if (kind === 'bubble') P.push({ k: kind, x: Math.random() * W, y: H + Math.random() * H * .3, vx: 0, vy: -(Math.random() * 1.4 + .6) * H / 500, r: Math.random() * 5 + 2, a: .55, life: 1e9, ph: Math.random() * 6 });
       if (kind === 'chip') P.push({ k: kind, x: x, y: y, vx: (Math.random() - .3) * W / 160, vy: -(Math.random() * 1.2 + .2) * H / 160, r: Math.random() * 2.5 + 1, a: .9, life: 50 });
+      if (kind === 'rain') P.push({ k: kind, x: Math.random() * W * 1.2 - W * .1, y: Math.random() * H * .15, vx: -W / 2600, vy: (Math.random() * .6 + 1.1) * H / 60, r: Math.random() * .6 + .5, a: Math.random() * .35 + .25, life: 1e9 });
       if (kind === 'spark') P.push({ k: kind, x: W * (.2 + Math.random() * .6), y: H * (.35 + Math.random() * .3), vx: (Math.random() - .5) * W / 900, vy: -(Math.random() * .6 + .1) * H / 600, r: Math.random() * 1.8 + .5, a: 1, life: 120 + Math.random() * 80 });
     }
   }
@@ -169,6 +173,7 @@
       if (p.life <= 0 || p.y < -20 || p.y > H + 60 || p.x > W + 20) { if (p.k === 'dust' && p.life > 0) { p.x = -10; p.y = Math.random() * H; } else { P.splice(i, 1); continue; } }
       var a = p.k === 'chip' ? p.a * p.life / 50 : p.k === 'spark' ? Math.min(1, p.life / 60) : p.a;
       pctx.beginPath(); pctx.arc(p.x, p.y, p.r * (W / 1100), 0, 6.283);
+      if (p.k === 'rain') { pctx.strokeStyle = 'rgba(210,225,240,' + a + ')'; pctx.lineWidth = p.r * W / 1100; pctx.beginPath(); pctx.moveTo(p.x, p.y); pctx.lineTo(p.x + p.vx * 3, p.y - p.vy * 1.6); pctx.stroke(); continue; }
       if (p.k === 'bubble') { pctx.strokeStyle = 'rgba(220,245,255,' + a + ')'; pctx.lineWidth = 1.2; pctx.stroke(); }
       else { pctx.fillStyle = p.k === 'chip' ? 'rgba(214,198,166,' + a + ')' : p.k === 'spark' ? 'rgba(255,224,150,' + a + ')' : 'rgba(255,240,210,' + a + ')'; pctx.fill(); }
     }
@@ -210,7 +215,8 @@
     P.length = 0; fired = {}; capIdx = -1; size();
     D.shots.forEach(function (s) { s._cvReady = false; s._el.style.opacity = 0; if (s._tags) s._tags.forEach(function (t) { t.classList.remove('on'); }); s._el.classList.remove('on');
       if (s.type === 'flash') s._el.querySelectorAll('span').forEach(function (sp) { sp.classList.remove('on'); });
-      if (s._xw) { s._xw.classList.remove('on'); s._xb.style.opacity = 0; } });
+      if (s._xw) { s._xw.classList.remove('on'); s._xb.style.opacity = 0; }
+      if (s._sp) { s._sp.style.clipPath = s._sp.style.webkitClipPath = 'inset(0 0 0 100%)'; s._sl1.classList.remove('on'); s._sl2.classList.remove('on'); } });
     if (D.music) { try { music.currentTime = 0; music.volume = sound ? (D.music.vol || .8) : 0; music.play().catch(function () {}); } catch (e) {} }
     t0 = performance.now(); playing = true; paused = false; bPause.innerHTML = '❚❚ Pause';
     cancelAnimationFrame(raf); raf = requestAnimationFrame(frame);
@@ -244,6 +250,11 @@
           count.querySelector('.lab').textContent = s.count.label || 'years ago'; if (cp < 1 && Math.floor(local * 14) !== s._tk) { s._tk = Math.floor(local * 14); sfx('tick'); } }
         if (s.sfx) once('sfx' + i, function () { sfx(s.sfx, s.sfxArg); });
         if (s.fx && s.fx.indexOf('dust') > -1) once('dust' + i, function () { if (!RM) spawn('dust', 60); });
+        if (s.fx && s.fx.indexOf('rain') > -1 && !RM) spawn('rain', 6);
+        if (s.type === 'split') { var sa = s.splitAt || 1, sd = s.splitDur || 2, spp = RM ? (local >= sa ? 1 : 0) : clamp((local - sa) / sd, 0, 1), X = 100 - 50 * ease(spp);
+          s._sp.style.clipPath = s._sp.style.webkitClipPath = 'inset(0 0 0 ' + X.toFixed(2) + '%)'; s._sl.style.left = X.toFixed(2) + '%'; s._sl.style.opacity = spp > 0 && spp < 1.01 ? 1 : 0;
+          if (spp > 0) once('sp' + i, function () { sfx('whoosh', sd); });
+          if (spp >= 1) once('spl' + i, function () { s._sl1.classList.add('on'); s._sl2.classList.add('on'); sfx('shimmer'); }); }
         if (s.fx && s.fx.indexOf('bubbles') > -1) { once('bub' + i, function () { sfx('bubbles'); }); if (!RM && Math.random() < .25) spawn('bubble', 1); }
         if (s._rays && !RM) s._rays.style.transform = 'translateX(' + (Math.sin(T * .5) * 3).toFixed(2) + '%)';
         if (s._sweep) s._sweep.style.backgroundPosition = '0 ' + (100 - 200 * p).toFixed(1) + '%';

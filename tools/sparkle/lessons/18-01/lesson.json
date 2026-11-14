@@ -1,0 +1,1556 @@
+{
+ "id": "g3sci-18-01",
+ "lesson": "18.01",
+ "title": "How Do Plants Survive in Different Environments?",
+ "emoji": "🌿",
+ "details": [
+  "📅 Q3 · Unit 7 · Plants &amp; Environmental Interactions",
+  "📖 Week 18 · Lesson 18.01",
+  "🌎 CPALMS SC.3.L.14.1 · NGSS 3-LS4-2, 3-LS1-1",
+  "⏱ About 35 minutes"
+ ],
+ "icans": [
+  "explain how a plant's traits help it survive in its environment.",
+  "compare plant traits across different environments and explain which gives an advantage.",
+  "use evidence to explain why a trait helps a plant survive and reproduce in one place but not another."
+ ],
+ "opti": {
+  "warm": "A brand-new film! Today our camera visits wild plants. Look closely at the first one before we explain anything.",
+  "lesson": "Today you're the crew's botanist, a scientist who studies plants. Watch a cactus drink a storm, test leaves in hot sun, and walk across Florida.",
+  "check": "Three quick questions. It's not graded. It's just for you, so give each one your best try.",
+  "assign": "Your turn to show what you know. Name the trait first. Then say how it helps the plant in its home."
+ },
+ "film": {
+  "id": "g3sci-18-01",
+  "mount": "wf-film",
+  "kicker": "Opti's Wonder Films",
+  "lesson": "Lesson 18.01 · Plants",
+  "title": "How Do Plants Survive in Different Environments?",
+  "bigQuestion": "Why do plants look so different from each other, and what does that tell us about where they live?",
+  "poster": "pad",
+  "endPoster": "scrub",
+  "startTarget": "#tab-vocab",
+  "music": {
+   "src": "music",
+   "vol": 0.8
+  },
+  "shots": [
+   {
+    "t": 0,
+    "d": 3.4,
+    "type": "leader",
+    "top": "Optima Academy",
+    "name": "Opti's Wonder Films",
+    "bottom": "presents",
+    "fade": 1.0
+   },
+   {
+    "t": 3.4,
+    "d": 7.0,
+    "type": "photo",
+    "img": "pad",
+    "alt": "Long, sharp cactus spines and a thick green cactus pad",
+    "from": [
+     3.0,
+     0.7,
+     0.17
+    ],
+    "to": [
+     1.05,
+     0.5,
+     0.5
+    ],
+    "place": "A prickly pear cactus · Florida",
+    "fade": 1.2
+   },
+   {
+    "t": 10.4,
+    "d": 6.0,
+    "type": "photo",
+    "img": "scrub",
+    "alt": "Low green shrubs and pine trees on white sand under a blue sky",
+    "fx": [
+     "rays"
+    ],
+    "from": [
+     1.0,
+     0.5,
+     0.55
+    ],
+    "to": [
+     1.12,
+     0.5,
+     0.62
+    ],
+    "place": "Lake Wales Ridge, Florida · Today",
+    "fade": 1.0
+   },
+   {
+    "t": 16.4,
+    "d": 3.0,
+    "type": "flash",
+    "lines": [
+     "A cactus?",
+     "In Florida?"
+    ],
+    "beats": [
+     0.15,
+     1.2
+    ],
+    "fade": 0.15
+   },
+   {
+    "t": 19.4,
+    "d": 6.0,
+    "type": "photo",
+    "img": "swamp",
+    "alt": "Tall cypress trees standing in dark swamp water",
+    "in": "blur",
+    "from": [
+     1.15,
+     0.45,
+     0.55
+    ],
+    "to": [
+     1.0,
+     0.55,
+     0.5
+    ],
+    "place": "Big Cypress Swamp, Florida · Today",
+    "fade": 1.0,
+    "sfx": "whoosh",
+    "sfxArg": 1.6
+   },
+   {
+    "t": 25.4,
+    "d": 6.0,
+    "type": "photo",
+    "img": "storm",
+    "alt": "Dark storm clouds and rain over a flat, grassy marsh with a few trees",
+    "fx": [
+     "rain"
+    ],
+    "from": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.1,
+     0.5,
+     0.45
+    ],
+    "place": "A summer storm · Everglades, Florida",
+    "fade": 0.8,
+    "sfx": "rumble",
+    "sfxArg": 4
+   },
+   {
+    "t": 31.4,
+    "d": 5.6,
+    "type": "photo",
+    "img": "rainleaf",
+    "alt": "Raindrops beading on a big, shiny green leaf",
+    "from": [
+     1.2,
+     0.55,
+     0.5
+    ],
+    "to": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "place": "Rain on a banana leaf · Peru",
+    "fade": 1.0
+   },
+   {
+    "t": 37.0,
+    "d": 9.0,
+    "type": "split",
+    "img": "desert",
+    "alt": "Tall saguaro cactuses on a rocky desert hillside",
+    "img2": "yunque",
+    "alt2": "Huge green palm leaves in a shady rainforest",
+    "splitAt": 1.2,
+    "splitDur": 2.6,
+    "lab1": "DESERT · Arizona",
+    "lab2": "RAINFOREST · Puerto Rico",
+    "from": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.06,
+     0.5,
+     0.5
+    ],
+    "fade": 1.0
+   },
+   {
+    "t": 46.0,
+    "d": 5.0,
+    "type": "photo",
+    "img": "pleats",
+    "alt": "Saguaro stems with deep, straight folds against a blue sky",
+    "from": [
+     1.25,
+     0.45,
+     0.5
+    ],
+    "to": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "place": "Saguaro National Park, Arizona",
+    "tags": [
+     {
+      "text": "PLEATS: folds that can stretch",
+      "x": 58,
+      "y": 20,
+      "at": 1.4
+     }
+    ],
+    "fade": 0.8
+   },
+   {
+    "t": 51.0,
+    "d": 6.0,
+    "type": "title",
+    "fade": 1.2
+   }
+  ],
+  "captions": [
+   {
+    "t": 3.8,
+    "d": 6.2,
+    "text": "A sharp spine. A thick green pad. Where are we?",
+    "voice": "opti-1"
+   },
+   {
+    "t": 10.8,
+    "d": 5.4,
+    "text": "White sand, hot sun. Rain soaks away fast.",
+    "voice": "opti-2"
+   },
+   {
+    "t": 16.4,
+    "d": 3.6,
+    "text": "A cactus? Out here, in rainy Florida?",
+    "voice": "opti-3"
+   },
+   {
+    "t": 20.2,
+    "d": 5.0,
+    "text": "Not far away, cypress trees stand in water.",
+    "voice": "opti-4"
+   },
+   {
+    "t": 25.8,
+    "d": 5.4,
+    "text": "A summer storm rolls in. Every plant gets the same rain.",
+    "voice": "opti-5"
+   },
+   {
+    "t": 31.8,
+    "d": 5.0,
+    "text": "This leaf lets the rain roll right off.",
+    "voice": "opti-6"
+   },
+   {
+    "t": 37.4,
+    "d": 5.2,
+    "text": "A desert and a rainforest. Same roots, stems, and leaves…",
+    "voice": "opti-7"
+   },
+   {
+    "t": 42.7,
+    "d": 3.4,
+    "text": "…but each one is built for a different home.",
+    "voice": "opti-8"
+   },
+   {
+    "t": 46.2,
+    "d": 4.6,
+    "text": "These pleats can stretch. What could that be for?",
+    "voice": "opti-9"
+   },
+   {
+    "t": 51.4,
+    "d": 5.2,
+    "text": "Let's find out how plants fit their homes.",
+    "voice": "opti-10"
+   }
+  ]
+ },
+ "scientist": "botanist",
+ "specimen": {
+  "img": "pad",
+  "aspect": "4/3",
+  "radius": 0.09,
+  "hotspots": [
+   {
+    "name": "Long, sharp spines",
+    "x": 0.7,
+    "y": 0.16
+   },
+   {
+    "name": "A dark bump where spines grow",
+    "x": 0.454,
+    "y": 0.328
+   },
+   {
+    "name": "A thick, flat pad",
+    "x": 0.73,
+    "y": 0.64
+   },
+   {
+    "name": "Pads joined in a chain",
+    "x": 0.533,
+    "y": 0.5
+   },
+   {
+    "name": "Dull, waxy skin",
+    "x": 0.217,
+    "y": 0.578
+   },
+   {
+    "name": "White sand on the ground",
+    "x": 0.86,
+    "y": 0.87
+   }
+  ],
+  "kicker": "🔎 Mystery specimen",
+  "title": "What can one plant show you?",
+  "alt": "A green cactus with flat, oval pads covered in long, sharp spines, growing in white sand",
+  "look": "A real plant, photographed where it grows and set out like a museum specimen. A specimen is one real thing that scientists study. The card tells where it was found. What is it, and how does it live there? That's for you to figure out.",
+  "do": "Press Inspect specimen. Move the magnifying lens over the plant, then tap 3 things you notice.",
+  "number": "No. 18.01-A",
+  "card": [
+   "<b>Specimen A</b>",
+   "Found: Lake June-in-Winter Scrub State Park, Florida",
+   "Growing in: dry, white sand",
+   "What is it? <i>You decide.</i>"
+  ],
+  "notice": "I notice… (one thing you see on the plant)",
+  "wonder": "I wonder… (one question you want answered by the end of the lesson)"
+ },
+ "words": [
+  [
+   "🌵",
+   "adaptation",
+   "A trait that helps a plant or animal survive where it lives."
+  ],
+  [
+   "🔍",
+   "trait",
+   "A feature of a living thing, like leaf shape, root depth, or stem thickness."
+  ],
+  [
+   "⭐",
+   "advantage",
+   "Something that helps a plant survive or reproduce better than other plants nearby."
+  ],
+  [
+   "🌍",
+   "environment",
+   "The place where a living thing grows, including its water, soil, sunlight, and temperature."
+  ],
+  [
+   "🌱",
+   "reproduce",
+   "To make new plants of the same kind, using seeds, spores, or other ways."
+  ],
+  [
+   "🪴",
+   "root system",
+   "All of a plant's roots. They take in water and hold the plant in the soil."
+  ]
+ ],
+ "parts": [
+  {
+   "kicker": "🌱 Part 1",
+   "title": "Traits Help Plants Survive",
+   "html": "<p>Every plant has traits: features like leaf shape, root depth, or stem thickness. Some traits help a plant get water. Others help it catch sunlight, stay safe, or make seeds.</p><p>When a trait helps a plant survive in its environment, scientists call it an adaptation. A plant with a useful adaptation has an advantage over other plants.</p>"
+  },
+  {
+   "kicker": "🌵 Part 2",
+   "title": "Desert Plants vs. Rainforest Plants",
+   "html": "<p>Desert plants live with very little water. A cactus stores water in its thick, waxy stem. Its spines are really leaves with a new shape. They lose almost no water, and they keep animals away.</p><p>In a rainforest, rain falls almost every day. Many leaves are wide, to catch light in the shade. Some end in a pointed drip tip. Scientists think drip tips help leaves dry fast, so moss and mold don't grow on them. A trait that helps in one place may hurt in another.</p>"
+  },
+  {
+   "kicker": "🪴 Part 3",
+   "title": "Root Systems and Reproduction",
+   "html": "<p>The root system is an adaptation too. Desert cactuses have shallow roots that spread wide to catch rain fast. Many grassland plants have deep roots that live through dry weather and fire. Wetland plants have spongy roots that can grow in flooded soil.</p><p>Plants also need to reproduce. A plant that lives long enough to make seeds passes its helpful traits on. Over time, the plants with the best traits for a place are the ones that keep growing there.</p>"
+  },
+  {
+   "kicker": "🗂️ Part 4",
+   "title": "Plant Trait Detective"
+  }
+ ],
+ "order": {
+  "mix": [
+   2,
+   0,
+   3,
+   1
+  ],
+  "hint": "Think about what has to happen first.",
+  "kicker": "🎞️ Put the scenes in order",
+  "title": "How does a saguaro drink a storm?",
+  "look": "Four real photos from Saguaro National Park in Arizona. Each one shows one scene from a saguaro cactus's year, but they are mixed up. The dark film strip has four empty frames, from first (1) to last (4).",
+  "done": "🎬 Your order is right. Now watch it as a movie!",
+  "scenes": [
+   {
+    "img": "dry",
+    "alt": "Saguaro cactuses on a dry, rocky hillside",
+    "text": "Dry months. No rain for weeks. The pleats fold in tight.",
+    "play": "Dry months. No rain for weeks. The saguaro's pleats fold in tight.",
+    "miss": [
+     "",
+     "This is the dry time, before any storm. That has to come first.",
+     "This is the dry time, before any storm. That has to come first.",
+     "This is the dry time, before any storm. That has to come first."
+    ]
+   },
+   {
+    "img": "lightning",
+    "alt": "Lightning over saguaro cactuses at dusk",
+    "text": "A summer storm rolls in, with thunder and lightning.",
+    "play": "A summer storm rolls in, with thunder and lightning.",
+    "miss": [
+     "The storm can't come first. What is the cactus like before the storm?",
+     "",
+     "The storm has to arrive before the rain soaks in. Try an earlier frame.",
+     "The storm comes long before the cactus fills up. Try an earlier frame."
+    ]
+   },
+   {
+    "img": "rain",
+    "alt": "Gray rain falling from dark clouds over a desert with saguaros",
+    "text": "Rain pours down. Shallow roots just under the sand soak it up fast.",
+    "play": "Rain pours down. Shallow roots, just under the sand, soak it up fast.",
+    "miss": [
+     "Rain can only fall after the storm rolls in. Try a later frame.",
+     "First the storm rolls in. Then the rain soaks in. Try a later frame.",
+     "",
+     "The roots drink first. Then the cactus fills up. Try an earlier frame."
+    ]
+   },
+   {
+    "img": "pleats",
+    "alt": "Saguaro stems with deep, straight folds against a blue sky",
+    "text": "The pleats stretch wide. The stored water lasts for months.",
+    "play": "The pleats stretch wide. The stored water lasts through the dry months.",
+    "miss": [
+     "The cactus can only fill up at the end, after its roots drink the rain.",
+     "The cactus can only fill up at the end, after its roots drink the rain.",
+     "The cactus can only fill up at the end, after its roots drink the rain.",
+     ""
+    ]
+   }
+  ],
+  "check": {
+   "q": "Look at scene 4 again. Would a saguaro do well in a flooded swamp?",
+   "options": [
+    {
+     "t": "Yes. If storing water helps in the desert, it helps everywhere.",
+     "miss": "Not quite. Swamp soil stays soaked. A cactus full of stored water could rot there. A trait that helps in one place can hurt in another."
+    },
+    {
+     "t": "No. Storing water helps in a dry place, but a swamp is always wet.",
+     "ok": "Yes! A trait that helps in the desert could hurt in a swamp, where the soil stays soaked."
+    },
+    {
+     "t": "Yes. Its spines would keep swamp animals away.",
+     "miss": "Spines might keep animals away, but the big problem is water. Swamp soil stays soaked. Would storing more water help there?"
+    }
+   ]
+  }
+ },
+ "movie": {
+  "model": "saguaro-model.svg",
+  "modelBox": {
+   "left": "0%",
+   "width": "100%",
+   "rot": 0
+  },
+  "start": "0%",
+  "bg": "desert",
+  "real": "pleats",
+  "realAlt": "Real saguaro stems with deep pleats against a blue sky",
+  "stamp": "WATER STORED",
+  "endCap": "The real thing: saguaro pleats in Saguaro National Park, Arizona.",
+  "beats": [
+   {
+    "at": 0,
+    "cap": "1 · Dry months. The pleats fold in tight.",
+    "model": {
+     "top": "0%",
+     "rot": 0,
+     "show": "s1"
+    }
+   },
+   {
+    "at": 2600,
+    "cap": "2 · A storm! Rain soaks into the sand.",
+    "particles": {
+     "n": 260,
+     "stop": 0.62,
+     "colors": [
+      "#d9ecf7",
+      "#a9cde6",
+      "#ffffff"
+     ]
+    },
+    "sfx": "rumble"
+   },
+   {
+    "at": 5200,
+    "cap": "3 · Shallow roots spread wide and drink fast.",
+    "model": {
+     "show": "s2"
+    }
+   },
+   {
+    "at": 7600,
+    "cap": "4 · The pleats stretch. Water is stored for months.",
+    "cut": true,
+    "clear": true,
+    "model": {
+     "show": "s3"
+    },
+    "counter": [
+     "1 day",
+     "1 week",
+     "1 month",
+     "3 months",
+     "Months later"
+    ]
+   },
+   {
+    "at": 10200,
+    "cap": "The real thing: saguaro pleats.",
+    "model": {
+     "hide": true
+    },
+    "real": true
+   },
+   {
+    "at": 12000,
+    "stamp": true
+   }
+  ]
+ },
+ "compare": {
+  "kicker": "☀️ The Sun Lamp Lab",
+  "title": "Which shape saves water?",
+  "look": "Two real plant parts, each on a lit specimen tray. Specimen A is a wide leaf from a fig tree. Specimen B is a pad from a prickly pear cactus. Under the trays are two wet paper towels for a model test: one spread flat, one rolled up tight.",
+  "trays": [
+   {
+    "id": "A",
+    "img": "leaf",
+    "alt": "A wide, flat green leaf that narrows to a long, pointed tip",
+    "label": "Specimen A"
+   },
+   {
+    "id": "B",
+    "img": "pad2",
+    "alt": "Two thick, oval cactus pads lying on pine needles",
+    "label": "Specimen B"
+   }
+  ],
+  "materials": [
+   {
+    "key": "flat",
+    "label": "Wet towel, spread flat",
+    "swatch": "towelflat"
+   },
+   {
+    "key": "roll",
+    "label": "Wet towel, rolled tight",
+    "swatch": "towelroll"
+   }
+  ],
+  "ask": [
+   {
+    "q": "Which one is wide and thin, spread out in the air?",
+    "ans": "A",
+    "ok": "Yes. Specimen A is a wide, thin leaf. A lot of it touches the air.",
+    "miss": "Look closely. Which one is thin and spread out wide?"
+   },
+   {
+    "q": "Which one is thick and holds water inside?",
+    "ans": "B",
+    "ok": "Yes. Specimen B is a thick cactus pad. It holds water inside a waxy skin.",
+    "miss": "Look again. Which one is thick and plump?"
+   }
+  ],
+  "press": "☀️ Turn on the sun",
+  "testDo": "Drag the flat towel under one tray and the rolled towel under the other, or tap each one, then tap a tray. Press <b>Turn on the sun</b>. Then swap them and press it again.",
+  "disclaimer": "This is a model. A paper towel isn't alive, but the idea is the same: the more of a plant that spreads out in hot, dry air, the more water it loses.",
+  "results": {
+   "Aflat": {
+    "text": "Spread out flat, like this wide leaf, the towel dried out fast under the hot lamp.",
+    "fx": "dry"
+   },
+   "Aroll": {
+    "text": "The rolled towel stayed wet, but this leaf is wide and thin, not rolled up. Try the flat towel here.",
+    "fx": "wet"
+   },
+   "Broll": {
+    "text": "Rolled up tight, like this thick pad, the towel stayed wet inside.",
+    "fx": "wet"
+   },
+   "Bflat": {
+    "text": "The flat towel dried out fast, but this cactus pad is thick, not thin and flat. Try the rolled towel here.",
+    "fx": "dry"
+   }
+  },
+  "best": [
+   "Aflat",
+   "Broll"
+  ],
+  "frame": "This ___ is ___, so in hot sun it would ___.",
+  "claimLead": "This plant part is",
+  "claimMid": "so in hot sun it would",
+  "claim": {
+   "A": {
+    "feat": [
+     "wide and thin",
+     "thick and plump"
+    ],
+    "featOk": 0,
+    "eat": [
+     "lose water fast",
+     "keep its water"
+    ],
+    "eatOk": 0
+   },
+   "B": {
+    "feat": [
+     "wide and thin",
+     "thick and plump"
+    ],
+    "featOk": 1,
+    "eat": [
+     "lose water fast",
+     "keep its water"
+    ],
+    "eatOk": 1
+   }
+  },
+  "curator": {
+   "A": "<b>Wide and thin → loses water fast.</b> A wide leaf catches lots of light, which helps in a shady rainforest. In a hot desert, a leaf like this would dry out.",
+   "B": "<b>Thick and plump → keeps its water.</b> A cactus pad is really a stem. It stores water inside a waxy skin, and its leaves are tiny spines that lose almost none."
+  },
+  "missFeat": "Look at {label} again. Is it thin and flat, or thick and plump?",
+  "missClaim": "Think about your test. Which towel kept its water?",
+  "done": "Not every plant needs lots of water. In a dry place, the plants that do best are the ones that SAVE water: thick stems, waxy skin, and tiny leaves.",
+  "after": {
+   "kicker": "🎬 Behind the scenes · A waxy coat",
+   "img": "drop",
+   "alt": "A round drop of water sitting on top of a green leaf",
+   "html": "See how this drop sits on top of the leaf instead of soaking in? Many leaves have a thin, waxy coat. In a desert, wax helps hold water in. In the rain, it helps water roll off. Photo: a nasturtium leaf, a common garden plant."
+  }
+ },
+ "wall": {
+  "kicker": "🧭 The Florida walk",
+  "title": "Walk down from a dry ridge to the sea",
+  "look": "A cutaway (a slice) of Florida land, from the top of a sandy ridge down to the sea. It is a model. Each layer is one stop on the walk, with its own soil and its own plants. The brass dial on the left shows how high above the sea you are.",
+  "do": "First, make a prediction. Then brush the glowing layer: drag across it (or tap it again and again) until the plant shows.",
+  "predict": {
+   "q": "As the land gets lower and wetter, will the plants' traits stay the same, or change?",
+   "options": [
+    [
+     "stay the same",
+     "Stay the same"
+    ],
+    [
+     "change",
+     "Change"
+    ]
+   ],
+   "answer": "change",
+   "mine": "Your prediction: <b>{p}</b>. Let's walk and find out.",
+   "confirm": "You predicted the traits change. The evidence agrees: every stop had different soil, and plants with different traits.",
+   "change": "You predicted the traits stay the same. The evidence changed that idea: every stop had different soil, and plants with different traits."
+  },
+  "sky": "scrub",
+  "skyAlt": "Low green shrubs and pine trees on white sand under a blue sky",
+  "skyCap": "Lake Wales Ridge, Florida · Today",
+  "unit": "Stop",
+  "found": "Plant found at Stop {n}",
+  "elevator": [
+   "Start",
+   "High, dry ridge",
+   "Lower, damp ground",
+   "Low, flooded ground",
+   "Sea level"
+  ],
+  "line": [
+   "DRY",
+   "WET"
+  ],
+  "locked": "Brush the stop above first. The walk goes downhill, in order.",
+  "first": "Brush the glowing top layer. Drag across it (or tap it again and again).",
+  "next": "Walking downhill to wetter ground. Brush Stop {n}.",
+  "endTitle": "All 4 stops explored",
+  "endText": "Look at the line on the walk. At the top, the sand is dry. At the bottom, salty sea water covers the mud. The plants changed all the way down.",
+  "rule": "<b>On the Florida walk, the environment changed, and so did the plants' traits.</b> Each plant has traits that fit the soil and water where it grows.",
+  "choices": [
+   "🏜️ Dry sand that drains fast",
+   "🌲 Damp, sandy ground",
+   "🌳 Fresh water that floods",
+   "🌊 Salty, muddy water"
+  ],
+  "layers": [
+   {
+    "name": "Stop 1 · The ridge",
+    "rock": "sandstone",
+    "img": "w_pear",
+    "alt": "Prickly pear cactus pads with red fruit growing in gray sand",
+    "ask": "Look at Stop 1. Read the soil AND the plant. What is this place like?",
+    "clue": "Soil: loose white sand. Rain soaks right through it. Plant: a prickly pear cactus with thick pads and spines.",
+    "ans": 0,
+    "ok": "Yes! Thick pads that store water fit dry sand that drains fast.",
+    "tag": "🏜️ Dry sand",
+    "miss": {
+     "1": "Damp ground stays a little wet. Here, rain soaks right through the sand. Read the soil clue again.",
+     "2": "Look at the plant: a cactus stores water. Would it need to in a flooded place?",
+     "3": "There's no salt water up on the ridge. Read the soil clue again."
+    },
+    "env": "scrubenv",
+    "envAlt": "Gray-green shrubs growing on white sand",
+    "envCap": "Florida scrub on the Lake Wales Ridge, today"
+   },
+   {
+    "name": "Stop 2 · The flatwoods",
+    "rock": "limestone",
+    "img": "w_palm",
+    "alt": "Stiff, fan-shaped green leaves of a saw palmetto",
+    "ask": "Now Stop 2. Read the soil AND the plant. What is this place like?",
+    "clue": "Soil: sand that stays damp after rain, under tall pine trees. Plant: a saw palmetto, with stiff, waxy, fan-shaped leaves. It grows back fast after a fire.",
+    "ans": 1,
+    "ok": "Yes! Saw palmetto fits damp, sandy pine woods, where fires come through now and then.",
+    "tag": "🌲 Damp, sandy ground",
+    "miss": {
+     "0": "This sand stays damp, not dry. Read the soil clue again.",
+     "2": "The ground is damp, not flooded. Read the soil clue again.",
+     "3": "There's no salt water here. Read the soil clue again."
+    },
+    "env": "flatwoods",
+    "envAlt": "Tall pine trees with saw palmettos and grass under them",
+    "envCap": "Pine flatwoods in Palm Beach County, Florida, today"
+   },
+   {
+    "name": "Stop 3 · The swamp",
+    "rock": "mudstone",
+    "img": "w_knees",
+    "alt": "Knobby brown bumps called cypress knees poking up out of dark water",
+    "ask": "Stop 3. Read the soil AND the plant. What is this place like?",
+    "clue": "Soil: dark mud under fresh water for much of the year. Plant: a bald cypress tree, with knobby knees poking up from its roots.",
+    "ans": 2,
+    "ok": "Yes! Bald cypress trees grow right in flooded swamps. Scientists are still studying what the knees do. Some think they help hold the tree steady in soft mud.",
+    "tag": "🌳 Flooded, fresh water",
+    "miss": {
+     "0": "Look at the water in the photo. Is this dry sand?",
+     "1": "This ground is under water much of the year, not just damp.",
+     "3": "This is fresh water, not salty sea water. Read the clue again."
+    },
+    "env": "swamp",
+    "envAlt": "Tall cypress trees standing in dark swamp water",
+    "envCap": "Big Cypress Swamp, Florida, today"
+   },
+   {
+    "name": "Stop 4 · The shore",
+    "rock": "shale",
+    "img": "w_mangrove",
+    "alt": "Red mangrove trees with curved roots arching down into the water",
+    "ask": "Last one: Stop 4. Read the soil AND the plant. What is this place like?",
+    "clue": "Soil: soft mud, covered by salty sea water when the tide comes in. Plant: a red mangrove, standing on arching prop roots above the water.",
+    "ans": 3,
+    "ok": "Yes! Prop roots hold the red mangrove up in soft, salty mud, and they help it get air.",
+    "tag": "🌊 Salty, muddy water",
+    "miss": {
+     "0": "Look at the water around the roots. Is this dry sand?",
+     "1": "This ground is covered by water at high tide, not just damp.",
+     "2": "This water comes from the sea, so it's salty. Read the clue again."
+    },
+    "env": "mangshore",
+    "envAlt": "A red mangrove tree standing in calm water at sunset",
+    "envCap": "Red mangroves in Everglades National Park, Florida, today"
+   }
+  ],
+  "mix": {
+   "q": "The prickly pear (Stop 1) and the red mangrove (Stop 4) both grow in Florida. Could they trade places and still do well?",
+   "options": [
+    {
+     "t": "Yes. They both grow in Florida, so they can grow anywhere in Florida.",
+     "miss": "Same state, but very different places. A cactus in salty, flooded mud could rot. A mangrove on dry sand would dry out."
+    },
+    {
+     "t": "No. Each one has traits that fit its own soil and water. In the other place, those traits wouldn't help.",
+     "ok": "Yes! One state can hold very different environments. A trait that helps in dry sand can hurt in salty mud."
+    }
+   ]
+  },
+  "lockTag": "🔒 Brush the stop above first"
+ },
+ "wow": {
+  "kicker": "🎬 Director's cut",
+  "title": "The fern that comes back to life",
+  "img": "resdry",
+  "alt": "Brown, curled-up fern leaves on a tree branch",
+  "caption": "Resurrection fern, dried and curled up · Cumberland Island, Georgia",
+  "html": "<p style=\"margin:0 0 8px\">This fern grows on the branches of live oak trees all over Florida. In a dry spell, it curls up and turns brown. It looks dead!</p><p style=\"margin:0\">Scientists say it can lose almost all of its water and still live. After a good rain, it can turn green again in about a day. It even flew into space on the space shuttle in 1997.</p>",
+  "inset": "resgreen",
+  "insetCap": "The same kind of fern after rain: green and open."
+ },
+ "keyIdea": "Plants have traits that help them survive in their environment. A trait that gives a plant an advantage is called an adaptation, and a trait that helps in one place may not help at all in another.",
+ "det": {
+  "look": "Five plant cards from the film crew's trips. Each slab card has a real photo of a plant. Under the cards is an evidence chart, a table that holds what you figure out.",
+  "do": "Pick 3 cards, one at a time. Tap a clue you see, then pick what it is. Predict where it grows, and watch its home appear.",
+  "noun": "Plant",
+  "need": 3,
+  "predict": {
+   "q": "Does this plant make you picture a wet place or a dry place?",
+   "options": [
+    [
+     "wet",
+     "💧 Wet"
+    ],
+    [
+     "dry",
+     "☀️ Dry"
+    ]
+   ]
+  },
+  "kicker": "Home revealed",
+  "enough": "You already solved 3 plants. Nice detective work!",
+  "cols": [
+   "Plant",
+   "What I observe",
+   "The trait",
+   "Its home",
+   "My evidence"
+  ],
+  "write": {
+   "label": "Plant __ has ___. I think it lives in ___ because ___.",
+   "starter": "Start with: \"Plant __ has…\"",
+   "min": 15,
+   "chips": [
+    [
+     "trait",
+     "Names the trait"
+    ],
+    [
+     "because",
+     "Gives a reason (because)"
+    ],
+    [
+     "env",
+     "Names the place"
+    ]
+   ]
+  },
+  "items": [
+   {
+    "id": "1",
+    "img": "d_mangrove",
+    "alt": "Tall red mangrove roots arching down into shallow water",
+    "clues": [
+     {
+      "t": "Many roots arching down from the trunk, like legs",
+      "ok": true
+     },
+     {
+      "t": "A thick stem covered in spines",
+      "miss": "Look again. Do you see spines, or lots of curved roots?"
+     },
+     {
+      "t": "Leaves floating flat on the water",
+      "miss": "Look again. The leaves are up high. What holds the tree up?"
+     }
+    ],
+    "org": [
+     "Prop roots",
+     "Drip-tip leaf",
+     "Thin grass leaves",
+     "Pleated stem",
+     "Floating leaves"
+    ],
+    "orgAns": 0,
+    "orgShort": "prop roots",
+    "orgMiss": "Many roots that hold a tree up like legs are called prop roots. Try again.",
+    "env": "In a wet place",
+    "envAns": "wet",
+    "envMiss": "Those roots stand in water and mud. Try again.",
+    "bts": "Plant 1: a red mangrove at Fort Pierce, Florida. Its prop roots hold it up in soft, salty mud and help it get air.",
+    "envImg": "mangshore",
+    "envAlt": "A red mangrove tree standing in calm water at sunset",
+    "envCap": "Its home: a salty shore in Everglades National Park, Florida",
+    "reveal": "These prop roots are evidence that this plant grows in soft, wet mud by the sea.",
+    "rebuildEnv": "coast"
+   },
+   {
+    "id": "2",
+    "img": "d_leaf",
+    "alt": "A big green leaf that narrows to a long, pointed tip",
+    "clues": [
+     {
+      "t": "A wide leaf with a long, pointed tip",
+      "ok": true
+     },
+     {
+      "t": "Tiny spines instead of leaves",
+      "miss": "Look again. This is one big, wide leaf."
+     },
+     {
+      "t": "Roots arching into water",
+      "miss": "Look again. There are no roots here, just a leaf with a long tip."
+     }
+    ],
+    "org": [
+     "Prop roots",
+     "Drip-tip leaf",
+     "Thin grass leaves",
+     "Pleated stem",
+     "Floating leaves"
+    ],
+    "orgAns": 1,
+    "orgShort": "a drip-tip leaf",
+    "orgMiss": "A wide leaf with a long, pointed tip is called a drip-tip leaf. Try again.",
+    "env": "In a wet place",
+    "envAns": "wet",
+    "envMiss": "A drip tip helps rain run off. Where does it rain almost every day? Try again.",
+    "bts": "Plant 2: a sacred fig leaf, from a tree of warm, wet forests. Scientists think drip tips help rain run off, so the leaf dries fast.",
+    "envImg": "rfenv",
+    "envAlt": "Huge palm leaves glowing green in a shady rainforest",
+    "envCap": "Its kind of home: El Yunque rainforest, Puerto Rico",
+    "reveal": "This drip tip is evidence that this plant grows where rain falls almost every day.",
+    "rebuildEnv": "rainforest"
+   },
+   {
+    "id": "3",
+    "img": "d_grass",
+    "alt": "Tall grass stems with seed heads split into three parts, like a turkey's foot",
+    "clues": [
+     {
+      "t": "Tall, thin grass leaves in an open, sunny field",
+      "ok": true
+     },
+     {
+      "t": "Wide leaves with drip tips",
+      "miss": "Look again. These leaves are long and thin, like grass."
+     },
+     {
+      "t": "A thick stem full of stored water",
+      "miss": "Look again. These stems are thin. Grass doesn't store water like a cactus."
+     }
+    ],
+    "org": [
+     "Prop roots",
+     "Drip-tip leaf",
+     "Thin grass leaves",
+     "Pleated stem",
+     "Floating leaves"
+    ],
+    "orgAns": 2,
+    "orgShort": "thin grass leaves",
+    "orgMiss": "Long, thin leaves on tall stems are grass leaves. Try again.",
+    "env": "In a dry place",
+    "envAns": "dry",
+    "envMiss": "A prairie can go weeks with no rain. That's why this grass grows deep roots. Try again.",
+    "bts": "Plant 3: big bluestem, a prairie grass. Under the ground, its roots can grow deeper than a grown-up is tall. They live through dry weather and fire.",
+    "envImg": "prairie",
+    "envAlt": "Rolling hills of tall golden grass at sunset",
+    "envCap": "Its home: the tallgrass prairie in the Flint Hills, Kansas",
+    "reveal": "Thin leaves and deep roots are evidence that this plant grows where dry spells and fires come often.",
+    "rebuildEnv": "prairie"
+   },
+   {
+    "id": "4",
+    "img": "d_saguaro",
+    "alt": "A tall, green saguaro cactus with deep folds running up its stem",
+    "clues": [
+     {
+      "t": "A tall stem with deep folds (pleats) and spines",
+      "ok": true
+     },
+     {
+      "t": "Leaves floating on water",
+      "miss": "Look again. This plant stands on dry, rocky ground."
+     },
+     {
+      "t": "Long, thin grass leaves",
+      "miss": "Look again. This is one thick stem, not grass."
+     }
+    ],
+    "org": [
+     "Prop roots",
+     "Drip-tip leaf",
+     "Thin grass leaves",
+     "Pleated stem",
+     "Floating leaves"
+    ],
+    "orgAns": 3,
+    "orgShort": "a pleated stem",
+    "orgMiss": "Folds that let the stem stretch are called pleats. Try again.",
+    "env": "In a dry place",
+    "envAns": "dry",
+    "envMiss": "Pleats store water for long dry months. Try again.",
+    "bts": "Plant 4: a saguaro in Saguaro National Park, Arizona. After a big rain, its pleats stretch as it fills with water.",
+    "envImg": "desert",
+    "envAlt": "Saguaro cactuses on a rocky desert hillside under a blue sky",
+    "envCap": "Its home: the Sonoran Desert, Saguaro National Park, Arizona",
+    "reveal": "This pleated stem is evidence that this plant grows where rain is rare.",
+    "rebuildEnv": "desert"
+   },
+   {
+    "id": "5",
+    "img": "d_lily",
+    "alt": "A white water lily flower among round green leaves on dark water",
+    "clues": [
+     {
+      "t": "Round leaves floating flat on the water",
+      "ok": true
+     },
+     {
+      "t": "Spines",
+      "miss": "Look again. These leaves are smooth and round."
+     },
+     {
+      "t": "Roots arching above the water",
+      "miss": "Look again. The leaves float. The roots are hidden under the water."
+     }
+    ],
+    "org": [
+     "Prop roots",
+     "Drip-tip leaf",
+     "Thin grass leaves",
+     "Pleated stem",
+     "Floating leaves"
+    ],
+    "orgAns": 4,
+    "orgShort": "floating leaves",
+    "orgMiss": "Flat, round leaves resting on the water are floating leaves. Try again.",
+    "env": "In a wet place",
+    "envAns": "wet",
+    "envMiss": "Leaves can only float where there's water. Try again.",
+    "bts": "Plant 5: a fragrant water lily in Everglades National Park, Florida. Its roots grow in the mud at the bottom, and its leaves float up to the sunlight.",
+    "envImg": "glades",
+    "envAlt": "Sawgrass and a winding stream of water under a blue sky",
+    "envCap": "Its home: the Everglades, Florida",
+    "reveal": "These floating leaves are evidence that this plant grows in still, fresh water.",
+    "rebuildEnv": "wetland"
+   }
+  ]
+ },
+ "rebuild": {
+  "title": "Use your evidence to rebuild the plant's home",
+  "missPrefix": "Hmm. Look at your plant again. ",
+  "envs": [
+   {
+    "key": "desert",
+    "name": "🏜️ Desert",
+    "img": "desert",
+    "cap": "Hot sun, and rain only now and then…"
+   },
+   {
+    "key": "rainforest",
+    "name": "🌴 Rainforest",
+    "img": "rfenv",
+    "cap": "Rain almost every day…"
+   },
+   {
+    "key": "prairie",
+    "name": "🌾 Prairie",
+    "img": "prairie",
+    "cap": "Open, sunny, and windy…"
+   },
+   {
+    "key": "wetland",
+    "name": "🪷 Wetland",
+    "img": "glades",
+    "cap": "Still, fresh water…"
+   },
+   {
+    "key": "coast",
+    "name": "🌊 Salty shore",
+    "img": "coast",
+    "cap": "Tides bring in sea water…"
+   }
+  ],
+  "life": [
+   {
+    "name": "🌵 Saguaro",
+    "img": "l_saguaro",
+    "env": "desert",
+    "miss": "A saguaro stores water for dry months. It fits a desert."
+   },
+   {
+    "name": "🍃 Wide drip-tip leaves",
+    "img": "l_leaf",
+    "env": "rainforest",
+    "miss": "Wide leaves with drip tips fit a place where it rains almost every day."
+   },
+   {
+    "name": "🌾 Tall prairie grass",
+    "img": "l_grass",
+    "env": "prairie",
+    "miss": "Tall grasses with deep roots fit an open, sunny prairie."
+   },
+   {
+    "name": "🪷 Water lily",
+    "img": "l_lily",
+    "env": "wetland",
+    "miss": "Water lilies need still, fresh water to float on."
+   },
+   {
+    "name": "🌳 Red mangrove",
+    "img": "l_mangrove",
+    "env": "coast",
+    "miss": "Red mangroves stand in salty mud by the sea."
+   }
+  ],
+  "whyStart": "I chose this because the plant…",
+  "kicker": "🌍 Rebuild the plant's home"
+ },
+ "quiz": [
+  {
+   "q": "What does an adaptation do for a plant?",
+   "options": [
+    {
+     "t": "It helps the plant grow faster than all other plants.",
+     "miss": "Growing fast isn't the point. An adaptation is about surviving in a certain place. Which choice says that?"
+    },
+    {
+     "t": "It helps the plant survive in its environment.",
+     "ok": "🌿 That's it! An adaptation is a trait that helps a plant survive where it lives."
+    },
+    {
+     "t": "It makes the plant change color every day.",
+     "miss": "Plants don't change color every day. An adaptation helps a plant survive where it lives. Which choice says that?"
+    }
+   ]
+  },
+  {
+   "q": "A cactus has spines instead of wide leaves. Why is this an advantage in a desert?",
+   "options": [
+    {
+     "t": "Spines are much smaller than leaves, so the cactus loses less water.",
+     "ok": "🌵 Exactly right! Wide leaves lose water into the air. Tiny spines lose almost none, a huge advantage when rain is rare."
+    },
+    {
+     "t": "Spines catch more sunlight than wide leaves would.",
+     "miss": "Think about what a desert plant needs most. What does a cactus have to hold on to carefully?"
+    },
+    {
+     "t": "Spines help the cactus absorb more rain during storms.",
+     "miss": "The roots soak up the rain, not the spines. What does a cactus have to hold on to carefully?"
+    }
+   ]
+  },
+  {
+   "q": "A plant has spongy roots that can grow in flooded soil. Where would this trait give it the biggest advantage?",
+   "options": [
+    {
+     "t": "A desert, where the soil stays dry for months at a time.",
+     "miss": "Think about which place has water in the soil most of the time."
+    },
+    {
+     "t": "A grassland, where rain is seasonal and soil drains well.",
+     "miss": "Soil that drains well doesn't stay flooded. Which place has water in the soil most of the time?"
+    },
+    {
+     "t": "A wetland, where the soil is often waterlogged (soaked).",
+     "ok": "⭐ Well done! Spongy roots are an adaptation to flooded soil. Most plants would drown there, but wetland plants do well because of that trait."
+    }
+   ]
+  }
+ ],
+ "assign": {
+  "partA": {
+   "title": "Match the trait",
+   "do": "Read each one. Pick the best answer, or type your answer.",
+   "items": [
+    {
+     "n": 1,
+     "q": "Thick, waxy stem that stores water. Which environment does it fit?",
+     "type": "choice",
+     "options": [
+      {
+       "t": "🏜️ Desert",
+       "ok": "Yes. A thick, waxy stem saves water in a dry desert."
+      },
+      {
+       "t": "🌴 Rainforest",
+       "miss": "It rains almost every day there. Would a plant need to store water?"
+      },
+      {
+       "t": "🌾 Grassland",
+       "miss": "Grasses have thin stems. Which place gets the least rain?"
+      },
+      {
+       "t": "🪷 Wetland",
+       "miss": "Wetland soil is soaked. Would storing water help there?"
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "q": "Wide, waxy leaves with pointed drip-tip ends. Which environment does it fit?",
+     "type": "choice",
+     "options": [
+      {
+       "t": "🏜️ Desert",
+       "miss": "Wide leaves lose too much water in a desert. Where does rain fall almost every day?"
+      },
+      {
+       "t": "🌴 Rainforest",
+       "ok": "Yes. Drip tips help rain run off in a rainforest, where it rains almost every day."
+      },
+      {
+       "t": "🌾 Grassland",
+       "miss": "Grassland plants have long, thin leaves. Where does rain fall almost every day?"
+      },
+      {
+       "t": "🪷 Wetland",
+       "miss": "Think about the drip tip. Where does rain fall on the leaves almost every day?"
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "q": "Spongy roots that grow in waterlogged (soaked) soil. Which environment does it fit?",
+     "type": "choice",
+     "options": [
+      {
+       "t": "🏜️ Desert",
+       "miss": "Desert soil is dry for months. Which place has soaked soil?"
+      },
+      {
+       "t": "🌴 Rainforest",
+       "miss": "Rainforest soil gets lots of rain, but which place stays flooded?"
+      },
+      {
+       "t": "🌾 Grassland",
+       "miss": "Grassland soil drains well. Which place stays soaked?"
+      },
+      {
+       "t": "🪷 Wetland",
+       "ok": "Yes. Spongy roots can grow in flooded wetland soil."
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "q": "Shallow roots that spread wide near the soil surface. Which environment does it fit?",
+     "type": "choice",
+     "options": [
+      {
+       "t": "🏜️ Desert",
+       "ok": "Yes. Shallow, wide roots catch rare desert rain fast, before it dries up."
+      },
+      {
+       "t": "🌴 Rainforest",
+       "miss": "Rainforest plants get rain almost every day. Which place needs to catch rare rain fast?"
+      },
+      {
+       "t": "🌾 Grassland",
+       "miss": "Many grassland plants have DEEP roots. These roots are shallow and wide."
+      },
+      {
+       "t": "🪷 Wetland",
+       "miss": "Wetland plants have spongy roots for flooded soil. Which place needs to catch rare rain fast?"
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "q": "Pick one of the four traits above. Tell why it helps the plant in that environment.",
+     "type": "text",
+     "min": 10,
+     "chips": [
+      [
+       "trait",
+       "Names the trait"
+      ],
+      [
+       "because",
+       "Gives a reason (because)"
+      ]
+     ]
+    }
+   ]
+  },
+  "partB": {
+   "title": "Short answer",
+   "do": "Answer in complete sentences. Use your science words.",
+   "items": [
+    {
+     "n": 1,
+     "q": "What is an adaptation? Give one example and explain why it helps that plant survive.",
+     "type": "text",
+     "min": 15,
+     "chips": [
+      [
+       "adapt",
+       "Says what an adaptation is"
+      ],
+      [
+       "because",
+       "Explains why it helps"
+      ]
+     ]
+    },
+    {
+     "n": 2,
+     "q": "A cactus is moved to a rainforest. Predict what might happen there, and explain your reasoning.",
+     "type": "text",
+     "min": 15,
+     "chips": [
+      [
+       "predict",
+       "Makes a prediction"
+      ],
+      [
+       "because",
+       "Gives a reason (because)"
+      ]
+     ]
+    }
+   ]
+  },
+  "write": {
+   "title": "Walk through your thinking",
+   "do": "Pick one from your evidence chart. Answer the three questions. Use at least one of the science words under the boxes.",
+   "vocab": [
+    "adaptation",
+    "trait",
+    "advantage",
+    "environment"
+   ],
+   "need": 1,
+   "prompts": [
+    [
+     "What do you think?",
+     "Start with: \"I think the [plant name] survives in the [environment] because…\""
+    ],
+    [
+     "What did you observe or learn that supports your thinking?",
+     "Start with: \"I know this because the lesson showed that…\""
+    ],
+    [
+     "Why does that make sense? Would those traits work in a different environment?",
+     "Start with: \"This makes sense because…\""
+    ]
+   ]
+  },
+  "partC": {
+   "do": "Draw a plant in its environment. Label 2 of its traits. For each label, tell what the trait does for the plant.",
+   "labels": [
+    "Trait 1: what is it, and what does it do?",
+    "Trait 2: what is it, and what does it do?"
+   ]
+  },
+  "checklist": [
+   {
+    "k": "det",
+    "t": "My evidence chart has 3 plants and my explanation.",
+    "req": {
+     "det": 3,
+     "text": {
+      "in-det": 15
+     }
+    }
+   },
+   {
+    "k": "a",
+    "t": "Part A: all five answers.",
+    "req": {
+     "choice": [
+      "a1",
+      "a2",
+      "a3",
+      "a4"
+     ],
+     "text": {
+      "in-a5": 10
+     }
+    }
+   },
+   {
+    "k": "b",
+    "t": "Part B: questions 1 and 2.",
+    "req": {
+     "text": {
+      "in-b1": 15,
+      "in-b2": 15
+     }
+    }
+   },
+   {
+    "k": "c",
+    "t": "Part C: my drawing and both labels.",
+    "req": {
+     "sketch": true,
+     "text": {
+      "in-c1": 6,
+      "in-c2": 6
+     }
+    }
+   },
+   {
+    "k": "w",
+    "t": "Write and explain, with at least one science word.",
+    "req": {
+     "text": {
+      "in-w1": 10,
+      "in-w2": 10,
+      "in-w3": 10
+     },
+     "vocab": 1
+    }
+   }
+  ]
+ },
+ "premiere": {
+  "title": "Premiere my plant story",
+  "director": "JUNIOR BOTANIST",
+  "storyKicker": "My plant story",
+  "frames": [
+   {
+    "k": "formation",
+    "label": "Water stored",
+    "img": "pleats",
+    "cap": "Water stored: shallow roots drink, and pleats stretch to hold it."
+   },
+   {
+    "k": "compare",
+    "label": "The Sun Lamp Lab",
+    "img": "leaf",
+    "cap": "The Sun Lamp Lab: thick plant parts keep their water."
+   },
+   {
+    "k": "wall",
+    "label": "The Florida walk",
+    "img": "w_mangrove",
+    "cap": "The Florida walk: new soil and water, new plant traits."
+   },
+   {
+    "k": "det",
+    "label": "Plant detectives",
+    "img": "d_mangrove",
+    "cap": "Plant detectives: every trait is a clue to the plant's home."
+   }
+  ]
+ },
+ "next": {
+  "title": "18.02 · Investigation: Compare Plant Adaptations",
+  "text": "Next time, you'll compare plants from a shady forest and an open grassland, and figure out which traits help in each."
+ },
+ "chips": {
+  "part": {
+   "any": [
+    "spine",
+    "pad",
+    "sand",
+    "bump",
+    "dot",
+    "skin",
+    "green",
+    "thick",
+    "flat",
+    "sharp",
+    "point",
+    "yellow",
+    "round",
+    "oval",
+    "wax",
+    "stem",
+    "leaf",
+    "plant",
+    "cactus"
+   ]
+  },
+  "ask": {
+   "re": "\\?|\\b(why|how|what|when|where|who|which|does|do|is|are|can|did|will)\\b"
+  },
+  "trait": {
+   "any": [
+    "root",
+    "leaf",
+    "leaves",
+    "stem",
+    "pleat",
+    "spine",
+    "tip",
+    "float",
+    "prop",
+    "deep",
+    "wide",
+    "thin",
+    "thick",
+    "wax",
+    "pad",
+    "knee"
+   ]
+  },
+  "because": {
+   "re": "\\b(because|since|so)\\b"
+  },
+  "env": {
+   "any": [
+    "wet",
+    "dry",
+    "desert",
+    "rainforest",
+    "prairie",
+    "grassland",
+    "wetland",
+    "swamp",
+    "shore",
+    "sea",
+    "salt",
+    "water",
+    "mud",
+    "sand",
+    "rain",
+    "everglades",
+    "flood"
+   ]
+  },
+  "adapt": {
+   "any": [
+    "adaptation",
+    "adapt",
+    "trait",
+    "helps",
+    "survive"
+   ]
+  },
+  "predict": {
+   "any": [
+    "rot",
+    "die",
+    "wilt",
+    "drown",
+    "would",
+    "might",
+    "will",
+    "mold",
+    "could",
+    "too much"
+   ]
+  }
+ },
+ "creditAlias": {},
+ "creditsExtra": [
+  "Music: Beethoven, Symphony No. 6 (<i>Pastoral</i>), 4th movement (the storm), Musopen, public domain (Wikimedia Commons).",
+  "Opti the owl: Optima Academy. Sound effects are made by the page. The Florida walk is a model; every plant photo is real."
+ ]
+}

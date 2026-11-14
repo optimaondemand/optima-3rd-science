@@ -85,7 +85,7 @@ body = f'''<div class="page-wrap">
 <div class="wl-paper" id="dig-predict"><div class="wl-step"><div class="n">Predict first</div><p>{W["predict"]["q"]}</p></div><div class="wl-chips">{"".join(f'<button class="wl-chip" data-p="{k}">{t}</button>' for k,t in W["predict"]["options"])}</div></div>
 <div class="wl-digwrap" id="dig-wrap" hidden><div class="wl-elev" id="dig-elev"><div class="wl-elev-track"></div><div class="wl-elev-car">▶</div>{"".join(f'<span style="top:{[2,24,45,66,88][i]}%">{t}</span>' for i,t in enumerate(W["elevator"]))}</div>
 <div class="wl-cliff" id="dig-cliff"><div class="wl-sky"><img class="now" src="{{{{{W["sky"]}}}}}" alt="{E(W["skyAlt"])}"><img class="then" alt=""><div class="wl-sky-cap">{W["skyCap"]}</div></div><div class="wl-soil"></div>
-{"".join(f'<div class="wl-band b{i+1}{(' rock-' + l['rock']) if l.get('rock') else ''}" data-l="{i}"><img class="frag" src="{{{{{l["img"]}}}}}" alt=""><canvas></canvas><span class="lab">{W["unit"]} {i+1}</span></div>' for i,l in enumerate(W["layers"]))}
+{"".join(f'<div class="wl-band b{i+1}{(' rock-' + l['rock']) if l.get('rock') else ''}" data-l="{i}" data-lock="{E(W.get('lockTag', '🔒 Clear the layer above first'))}"><img class="frag" src="{{{{{l["img"]}}}}}" alt=""><canvas></canvas><span class="lab">{W["unit"]} {i+1}</span></div>' for i,l in enumerate(W["layers"]))}
 <div class="wl-olderline" id="dig-line"><span>{W["line"][0]}</span><i></i><span>{W["line"][1]}</span></div></div><div class="wl-digside"><div id="dig-card"></div></div></div>
 <div class="wl-paper" id="dig-after" hidden><p style="margin:0 0 6px">{W["rule"]}</p><p id="dig-pred-res" style="margin:0 0 10px"></p>
 <div class="wl-step"><div class="n">Think like a scientist</div><p>{W["mix"]["q"]}</p></div>{choice_group("mix", W["mix"]["options"])}</div>''', 'how-dig') + f'''
@@ -95,7 +95,7 @@ body = f'''<div class="page-wrap">
 <div class="wl-card" id="m-det"><h3><span class="k">{P[3]["kicker"]}</span>{P[3]["title"]}</h3><div class="wl-look"><b>👀 What am I looking at?</b> {D["look"]}</div>
 <p class="wl-do" data-say="how-detective"><b>What to do:</b> {D["do"]}</p><div class="wl-det" id="det-cards"></div><div id="det-work"></div>
 <table class="wl-chart" id="det-chart"><thead><tr>{"".join(f"<th>{c}</th>" for c in D["cols"])}</tr></thead><tbody></tbody></table>
-<details class="wl-drawer" id="rebuild" hidden><summary><span class="k">🌍 Rebuild the ancient scene</span>{L["rebuild"]["title"]} <span class="wl-bonus">OPTIONAL</span><span class="wl-open">Open ▾</span></summary>
+<details class="wl-drawer" id="rebuild" hidden><summary><span class="k">{L["rebuild"].get("kicker", "🌍 Rebuild the ancient scene")}</span>{L["rebuild"]["title"]} <span class="wl-bonus">OPTIONAL</span><span class="wl-open">Open ▾</span></summary>
 <p class="wl-do"><b>What to do:</b> Pick one you solved. Pick the place it points to, then pick the living things that belong there.</p><div class="wl-chips" id="rb-fossils"></div>
 <div class="wl-rb-stage" id="rb-stage"><div class="wl-rb-bg"></div><div class="wl-rb-water"></div><div class="wl-rb-life"></div><div class="wl-rb-fossil"></div><div class="wl-rb-cap">Pick one to start.</div></div><div id="rb-steps"></div></details>
 <div id="det-write" class="wl-in" hidden><div class="wl-step"><div class="n">Last step</div><p>Pick one from your chart and explain it.</p></div>{textbox("in-det","Lesson · My explanation",D["write"]["min"],D["write"]["chips"],D["write"]["label"],D["write"]["starter"])}</div></div>

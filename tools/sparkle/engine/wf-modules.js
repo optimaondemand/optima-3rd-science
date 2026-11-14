@@ -65,7 +65,7 @@ function WL4_INIT(W) {
     var MV = D.movie, mv = $('#fm-movie'), model = $('.wl-mv-fish', mv), layers = $('.wl-mv-layers', mv), real = $('.wl-mv-real', mv), cnt = $('.wl-mv-count', mv), cap = $('.wl-mv-cap', mv), stamp = $('.wl-mv-stamp', mv), rays = $('.wl-mv-rays', mv), cv = $('.wl-mv-part', mv), ctx = cv.getContext('2d'), P = [], raf, timers = [], nb = 0;
     var BANDS = MV.bands || ['#8b7355', '#a08866', '#7d6a50', '#b19a74', '#94795a', '#6f5d45'], PCOL = MV.particleColors || ['#c8b28c', '#a8916c', '#8f7a5a'];
     function show(state) { $$('svg > g', model).forEach(function (g) { var c = g.getAttribute('class') || ''; if (/^s\d$/.test(c)) g.style.opacity = c === state ? 1 : 0; }); }
-    function reset() { timers.forEach(clearTimeout); timers = []; cancelAnimationFrame(raf); P = []; nb = 0; model.style.transition = 'none'; model.style.top = MV.start || '12%'; model.style.transform = 'rotate(-4deg)'; model.style.opacity = 1; show('s1');
+    function reset() { timers.forEach(clearTimeout); timers = []; cancelAnimationFrame(raf); P = []; nb = 0; model.style.transition = 'none'; model.style.top = MV.start || '12%'; model.style.transform = 'rotate(' + (MV.modelBox && MV.modelBox.rot != null ? MV.modelBox.rot : -4) + 'deg)'; if (MV.modelBox) { model.style.left = MV.modelBox.left; model.style.width = MV.modelBox.width; } model.style.opacity = 1; show('s1');
       layers.innerHTML = ''; layers.style.height = '0'; real.style.opacity = 0; cnt.textContent = ''; cap.textContent = ''; stamp.classList.remove('on'); rays.style.opacity = 1; mv.classList.remove('cut'); void model.offsetWidth; model.style.transition = ''; }
     function at(t, f) { timers.push(setTimeout(f, t)); }   /* captions need the same reading time with reduced motion */
     function loop() { var r = mv.getBoundingClientRect(); if (cv.width !== (r.width | 0)) { cv.width = r.width | 0; cv.height = r.height | 0; } ctx.clearRect(0, 0, cv.width, cv.height);
@@ -272,7 +272,7 @@ function WL4_INIT(W) {
         if (l.env !== envSel.key) { b.classList.add('miss'); fb.className = 'wl-fb miss'; fb.textContent = l.miss; C.oops(); return; }
         lifeSel[b.dataset.i] = 1; b.classList.add('on'); C.ding(); var im = el('img'); im.src = IMG[l.img]; im.alt = l.name; stage.querySelector('.wl-rb-life').appendChild(im);
         var need = R.life.filter(function (x) { return x.env === envSel.key; }).length; if (Object.keys(lifeSel).length === need) why(); }; }); }
-    function why() { steps.innerHTML = '<div class="wl-step"><div class="n">Step 3 of 3</div><p>What evidence made you choose this place?</p></div><div class="wl-in"><textarea id="in-rebuild" data-min="6" placeholder="I chose this because the fossil…"></textarea></div>';
+    function why() { steps.innerHTML = '<div class="wl-step"><div class="n">Step 3 of 3</div><p>What evidence made you choose this place?</p></div><div class="wl-in"><textarea id="in-rebuild" data-min="6" placeholder="' + esc(D.rebuild.whyStart || 'I chose this because the fossil…') + '"></textarea></div>';
       var ta = $('#in-rebuild'); ta.value = S['t-in-rebuild'] || ''; ta.oninput = function () { S['t-in-rebuild'] = ta.value; C.save(); }; C.cheer(); stage.querySelector('.wl-rb-cap').textContent = '🌍 Scene rebuilt from your evidence.'; }
     var dr = $('#rebuild'); dr.addEventListener('toggle', function () { if (dr.open) W.rebuildFossils(); });
   })();

@@ -50,5 +50,17 @@
  "how-premiere": {
   "page": "Check your exhibit. Pick the one you wrote about, add your first name, then press Premiere film.",
   "say": "Check your exhibit. Pick the one you wrote about, add your first name, then press Premiere film."
+ },
+ "how-specimen-plant": {
+  "page": "Press Inspect specimen. Move the magnifying lens over the plant, then tap 3 things you notice.",
+  "say": "Press Inspect specimen. Move the magnifying lens over the plant, then tap three things you notice."
+ },
+ "how-wall-plant": {
+  "page": "First, make a prediction. Then brush the glowing layer: drag across it (or tap it again and again) until the plant shows.",
+  "say": "First, make a prediction. Then brush the glowing layer: drag across it (or tap it again and again) until the plant shows."
+ },
+ "how-detective-plant": {
+  "page": "Pick 3 cards, one at a time. Tap a clue you see, then pick what it is. Predict where it grows, and watch its home appear.",
+  "say": "Pick three cards, one at a time. Tap a clue you see, then pick what it is. Predict where it grows, and watch its home appear."
  }
 }
