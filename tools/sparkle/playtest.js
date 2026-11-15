@@ -58,7 +58,10 @@ const [F, Wd, PRE] = [process.argv[2], +process.argv[3] || 1150, process.argv[4]
   await p.click('[data-go="assign"]'); await p.waitForTimeout(300);
   const long = 'I think this because the ' + D.assign.write.vocab.join(' and the ') + ' all show what happened long ago in this place, so that is my answer.';
   await step('assign', async () => { for (const sec of [D.assign.partA, D.assign.partB]) for (const it of sec.items) { const key = (sec === D.assign.partA ? 'a' : 'b') + it.n;
-      if (it.type === 'choice') await p.click(`[data-choice="${key}"] .wl-choice >> nth=${okIdx(it.options)}`); else await p.fill('#in-' + key, long); }
+      if (it.type === 'graph') { await p.evaluate(([k, it]) => { const g = document.querySelector(`.wl-graph[data-choice="${k}"]`); if (window.OneStep) OneStep.reveal(g);
+          it.series.forEach((x, si) => x.values.forEach((n, ci) => { for (let j = 0; j < n; j++) g.querySelector(`[data-gs="${si}"][data-gc="${ci}"][data-gd="1"]`).click(); })); }, [key, it]);
+        await el(`.wl-graph[data-choice="${key}"]`, '11b-graph'); await p.click(`.wl-graph[data-choice="${key}"] [data-gcheck]`); await p.waitForTimeout(200); }
+      else if (it.type === 'choice') await p.click(`[data-choice="${key}"] .wl-choice >> nth=${okIdx(it.options)}`); else await p.fill('#in-' + key, long); }
     for (const i of [1, 2, 3]) await p.fill('#in-w' + i, long);
     { const cv = await p.$('#sketch'); await cv.scrollIntoViewIfNeeded(); const bb = await cv.boundingBox(); await p.mouse.move(bb.x + 40, bb.y + 40); await p.mouse.down(); await p.mouse.move(bb.x + 200, bb.y + 90, { steps: 8 }); await p.mouse.up(); }
     await p.fill('#in-c1', long); await p.fill('#in-c2', long); await p.fill('#in-director', 'Maya'); await p.waitForTimeout(300); await toasts(); await el('#m-premiere', '12-premiere'); });

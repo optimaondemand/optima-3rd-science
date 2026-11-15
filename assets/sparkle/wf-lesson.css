@@ -552,3 +552,40 @@ body.wf-dim .wf-wrap{position:relative;z-index:86}
 .wl-band.rock-bark{background:repeating-linear-gradient(90deg,#5a4029 0 6px,#6e5034 6px 9px,#4a3422 9px 13px)}
 .wl-band.rock-branch{background:repeating-linear-gradient(-20deg,#7a6a3e 0 7px,#8c7a48 7px 10px,#5f8a3a 10px 14px)}
 .wl-band.rock-soil{background:radial-gradient(circle,rgba(0,0,0,.25) 1px,transparent 1.5px) 0 0/7px 7px,linear-gradient(180deg,#6b5236,#3e2f20)}
+
+/* 19.02: lab movie, clear-cup / cardboard-box test (glow, shade), water depth wall bands, Part A bar graph */
+.wl-movie.bg-lab{background:#cfc5ae}
+.bg-lab .wl-mv-water{background:linear-gradient(#efe8d8,#ddd3bd 80%,#8a6440)}
+.wl-movie.cut.bg-lab .wl-mv-water{background:linear-gradient(#b9b2a3,#a49b88 80%,#5f4630)}
+.wl-swatch.sw-cup{--sw:linear-gradient(90deg,rgba(255,255,255,.55),rgba(220,236,245,.25) 40%,rgba(255,255,255,.6) 75%,rgba(200,220,232,.35));width:46px;height:56px;border-radius:4px 4px 12px 12px;border:2px solid rgba(120,150,170,.7);box-shadow:inset 0 0 0 1px rgba(255,255,255,.7),0 2px 4px rgba(0,0,0,.18)}
+.wl-swatch.sw-box{--sw:repeating-linear-gradient(90deg,rgba(0,0,0,.06) 0 2px,transparent 2px 7px),linear-gradient(160deg,#c89a62,#a87a45);width:60px;height:54px;border-radius:3px;box-shadow:inset 0 6px 0 rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.3)}
+.wl-swatch.fx-glow{animation:wlGlow 2.4s ease forwards}
+@keyframes wlGlow{to{box-shadow:0 0 0 3px rgba(255,212,59,.85),0 0 28px 10px rgba(255,230,120,.8);filter:brightness(1.2)}}
+.wl-swatch.fx-shade{animation:wlShade 2.4s ease forwards}
+@keyframes wlShade{to{box-shadow:0 0 0 3px rgba(40,40,52,.75),0 0 26px 12px rgba(20,20,30,.6);filter:brightness(.65)}}
+@media (prefers-reduced-motion:reduce){.wl-swatch.fx-glow{animation:none;box-shadow:0 0 0 3px rgba(255,212,59,.85),0 0 28px 10px rgba(255,230,120,.8)}.wl-swatch.fx-shade{animation:none;box-shadow:0 0 0 3px rgba(40,40,52,.75),0 0 26px 12px rgba(20,20,30,.6);filter:brightness(.65)}}
+.wl-band.rock-water1{background:repeating-linear-gradient(-8deg,#7fd3e6 0 9px,#5fc2da 9px 14px,#98def0 14px 18px)}
+.wl-band.rock-water2{background:repeating-linear-gradient(-8deg,#3f9cc4 0 9px,#2f88b2 9px 14px,#57abd0 14px 18px)}
+.wl-band.rock-water3{background:repeating-linear-gradient(-8deg,#1f5f8c 0 9px,#184f78 9px 14px,#2a6c99 14px 18px)}
+.wl-band.rock-water4{background:repeating-linear-gradient(-8deg,#0c1f36 0 9px,#08172a 9px 14px,#112a46 14px 18px)}
+.wl-graph{background:#fffdf7;border:1px solid #e3d8c3;border-radius:12px;padding:12px;margin:6px 0 4px}
+.wl-graph h4{margin:0 0 8px;font-size:16px}
+.wl-gwrap{display:grid;grid-template-columns:minmax(150px,210px) 1fr;gap:14px;align-items:start}
+.wl-gtable{border-collapse:collapse;font-size:15px;width:100%}.wl-gtable th,.wl-gtable td{border:1px solid #d9ccb3;padding:5px 7px;text-align:center}.wl-gtable th{background:#f3ead6}
+.wl-gplot{position:relative;display:grid;grid-template-columns:30px 1fr;gap:4px}
+.wl-gy{position:relative;height:220px;font-size:11px;color:#6b5a3e}.wl-gy span{position:absolute;right:2px;transform:translateY(50%)}
+.wl-gylab{font-size:12px;color:#6b5a3e;margin:0 0 4px}
+.wl-ggrid{position:relative;height:220px;display:flex;gap:10px;align-items:flex-end;border-left:2px solid #6b5a3e;border-bottom:2px solid #6b5a3e;padding:0 6px;background:repeating-linear-gradient(0deg,transparent 0 calc(100%/12 - 1px),#efe6d3 calc(100%/12 - 1px) calc(100%/12))}
+.wl-ggroup{flex:1;display:flex;gap:4px;align-items:flex-end;height:100%;justify-content:center}
+.wl-gcol{position:relative;flex:1;max-width:38px;height:100%;cursor:pointer;touch-action:none;border-radius:4px 4px 0 0}
+.wl-gcol:hover{background:rgba(242,182,50,.08)}
+.wl-gbar{position:absolute;left:0;right:0;bottom:0;border-radius:4px 4px 0 0;transition:height .15s}
+.wl-gval{position:absolute;left:0;right:0;text-align:center;font:700 12px sans-serif;color:#3b2a14}
+.wl-gcol.bad .wl-gbar{outline:3px solid #d9480f}.wl-gcol.good .wl-gbar{outline:2px solid #2b8a3e}
+.wl-gx{display:flex;gap:10px;padding:4px 6px 0 40px;font-size:12px;color:#6b5a3e}.wl-gx span{flex:1;text-align:center}
+.wl-gstep{display:flex;gap:10px;padding:2px 6px 0 40px}.wl-gstep div{flex:1;display:flex;gap:4px;justify-content:center}
+.wl-gstep button{flex:1;max-width:38px;border:1px solid #cdbf9f;background:#fff;border-radius:6px;font-size:12px;padding:2px 0;cursor:pointer}
+.wl-gkey{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;margin:8px 0 6px}.wl-gkey i{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-right:5px}
+@media (max-width:620px){.wl-gwrap{grid-template-columns:1fr}.wl-ggrid,.wl-gy{height:190px}.wl-ggrid,.wl-gx,.wl-gstep{gap:5px}}
+/* 20.01: desk-lamp swatch for the Stem and Root Lab */
+.wl-swatch.sw-lamp{--sw:radial-gradient(circle at 50% 30%,#fff6c4 0 18%,#ffd43b 19% 24%,transparent 25%),linear-gradient(180deg,#3f4652 0 42%,transparent 42%),linear-gradient(90deg,transparent 46%,#555 46% 54%,transparent 54%);width:54px;height:60px;border-radius:6px 6px 3px 3px;background-color:#e9e2d2;box-shadow:inset 0 -8px 0 #6b5a3e,0 2px 4px rgba(0,0,0,.25)}

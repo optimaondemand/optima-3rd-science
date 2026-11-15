@@ -45,14 +45,15 @@ playtest prints one line: `errors: []`, `ticks: ✓✓✓✓`, `frames: formatio
 - `order` {kicker, title, look, mix[4], scenes[4 × {img, alt, text, play, miss[4]}], check{q, options}} — scene i belongs in frame i
 - `movie` {model (SVG file with `<g class="s1">`, `<g class="s2">`…), bg (water | swamp), bands[] + particleColors[] (optional layer/mud colors), real, realAlt, stamp, endCap, beats[{at ms, cap, particles{n,stop,dir,colors}, model{top,rot,show,hide}, layers{add,height | from,step,stagger}, counter[…], cut, clear, real, stamp, sfx}]} — must end on the real photo + stamp
 - `compare` {kicker, title, look, trays[2 × {id,img,alt,label}], materials[2 × {key,label,img | swatch,note}], ask[2 × {q, ans, ok, miss}], testDo, press, disclaimer, results{<tray><material>: {text, fx}}, best[2], claimLead, claimMid, claim{<tray>: {feat[], featOk, eat[], eatOk}}, curator{<tray>: html}, missFeat, missClaim, done, after{kicker,img,alt,html}}
-  - fx: crush · slice · squash · holes · bend · sink · float · melt · bounce · print · slump · none. swatches: clay wood metal rubber ice sponge water mud sand
+  - fx: crush · slice · squash · holes · bend · sink · float · melt · bounce · print · slump · wick · warm · wet · rip · sway · glow · shade · none. swatches: clay wood metal rubber ice sponge water mud sand towelstrip darkpaper cup box
+  - movie `bg`: water · swamp · grove · prairie · lab. Wall band looks also include water1–water4 (bright shallow → dark deep).
   - `best` may list the same material for both trays (17.02: Amud, Bmud): students press, swap, press again.
 - `wall` {kicker, title, look, do, predict{q, options[[k,label]], answer, mine, confirm, change}, sky, skyAlt, skyCap, unit, found, elevator[n+1], line[2], locked, first, next, endTitle, endText, rule, choices[3], layers[3–4 × {name, rock (optional band look: limestone | mudstone | shale | sandstone | redbed | leafsun | leafmid | leafshade | leafdark | bark | branch | soil), img, alt, ask, clue, ans, ok, miss{}, tag, env, envAlt, envCap}], mix{q, options}}
 - `wow` {kicker, title, img, alt, caption, html, inset, insetCap} · `keyIdea`
 - `det` {look, do, noun, need (3), predict{q, options}, kicker, enough, cols[5], write{label, starter, min, chips}, items[≥4 × {id, img, alt, clues[{t, ok | miss}], org[], orgAns, orgShort, orgMiss, env, envAns, envMiss, envImg, envAlt, envCap, reveal, rebuildEnv, bts}]}
 - `rebuild` {title, missPrefix, envs[{key,name,img,cap}], life[{name,img,env,miss}]}
 - `quiz` [3 × {q, options[{t, ok | miss}]}] — the lesson's own questions and answers
-- `assign` {partA, partB {title, do, items[{n, q, type choice|text, options | min, chips}]}, write{title, do, vocab[], need, prompts[3]}, partC{do, labels[2], min (words per label, default 6)}, checklist[{k, t, req{det, choice[], text{id: min}, vocab, sketch}}]} — the checklist MUST have a Part C item: `{"k":"c","t":"Part C: my drawing and both labels.","req":{"sketch":true,"text":{"in-c1":6,"in-c2":6}}}`
+- `assign` {partA, partB {title, do, items[{n, q, type choice|text|graph, options | min, chips}]}, write{title, do, vocab[], need, prompts[3]}, partC{do, labels[2], min (words per label, default 6)}, checklist[{k, t, req{det, choice[], text{id: min}, vocab, sketch}}]} — the checklist MUST have a Part C item: `{"k":"c","t":"Part C: my drawing and both labels.","req":{"sketch":true,"text":{"in-c1":6,"in-c2":6}}}`
 - `premiere` {title, director "JUNIOR <SCIENTIST>", storyKicker, frames[formation, compare, wall, det × {k, label, img, cap}]}
 - `next` {title, text} · `chips` (answer-chip word lists) · `creditAlias` · `creditsExtra`
 
@@ -83,3 +84,6 @@ The ELA step walker, for science. On each tab the student sees ONE step, with **
 - Test: `node tools/sparkle/stepwalk.js http://localhost:<port>/<page>.html 1150` and again at `420` (serve the repo first). It walks every Next and Back and fails on an empty step, sideways scroll, a count that does not move, a last step that is not "Step N of N", or a page error. Add a third argument to save a picture of every step, and look at them.
 - Target: about 20 to 27 steps a lesson.
 - `playtest.js` and `jumpcheck.js` open the step that holds a thing before they touch it, so they run with the walker on.
+
+## Part A bar graph (19.02, 14 Nov 2026)
+A Part A item may be `{"n":1, "type":"graph", "q", "title", "yLabel", "cats":[…], "series":[{"name","color","values":[…]}], "max", "unit"}`. The page shows the data table and an empty bar graph; students tap or drag in a column, use ＋/－, or arrow keys, then press **Check my graph** (wrong bars get a red outline). A correct graph counts like a right choice: put its key (e.g. `a1`) in the checklist's `choice` list. Its values go into My answers. check_lesson.py checks the data; playtest builds it with the ＋ buttons.

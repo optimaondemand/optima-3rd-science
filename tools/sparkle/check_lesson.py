@@ -55,6 +55,9 @@ A = L['assign']; ids = set()
 for sec, pre in ((A['partA'], 'a'), (A['partB'], 'b')):
     for it in sec['items']:
         if it['type'] == 'choice': one_ok(it['options'], f'Part {pre.upper()} {it["n"]}'); ids.add('c:' + pre + str(it['n']))
+        elif it['type'] == 'graph':
+            need(it.get('cats') and it.get('series') and all(len(x['values']) == len(it['cats']) and all(0 <= v <= it['max'] and v == int(v) for v in x['values']) for x in it['series']), f'Part {pre.upper()} {it["n"]} graph: every series needs one whole-number value per category, 0..max')
+            ids.add('c:' + pre + str(it['n']))
         else: ids.add('in-' + pre + str(it['n']))
 for c in A['checklist']:
     r = c.get('req', {})

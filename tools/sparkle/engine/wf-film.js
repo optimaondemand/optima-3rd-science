@@ -1,6 +1,6 @@
 /* Opti's Wonder Films — cinematic opener engine (G3 science sparkle layer).
    DATA-driven: window.WF_DATA = {kicker, lesson, title, bigQuestion, poster, music:{src,vol}, shots:[...], captions:[...], credits:[...], startTarget}
-   Shot types: leader | black | photo | reveal | xray | split | flash | archive | title. fx: dust | caustics | rays | sweep | bubbles | rain. Any shot may carry sfxAt [{at,name,arg}].  Holds NO lesson content. */
+   Shot types: leader | black | photo | reveal | xray | split | flash | archive | title. Any photo may add tilt {to (deg), at, dur}: the picture turns over (20.01). fx: dust | caustics | rays | sweep | bubbles | rain. Any shot may carry sfxAt [{at,name,arg}].  Holds NO lesson content. */
 (function () {
   'use strict';
   var D = window.WF_DATA; if (!D) return;
@@ -242,6 +242,9 @@
         var a = s.from, b = s.to || s.from, sc = lerp(a[0], b[0], e), x = lerp(a[1], b[1], e), y = lerp(a[2], b[2], e);
         s._img.style.transform = 'scale(' + sc + ') translate(' + ((.5 - x) * 100 / sc * .9).toFixed(2) + '%,' + ((.5 - y) * 100 / sc * .9).toFixed(2) + '%)';
       }
+      if (s.tilt && s._img) { var tA = s.tilt.at == null ? 1 : s.tilt.at, tD = s.tilt.dur || 1.2, tP = RM ? (local >= tA ? 1 : 0) : clamp((local - tA) / tD, 0, 1), tR = (s.tilt.to == null ? 90 : s.tilt.to) * ease(tP);
+        s._img.style.transform = (s.from && !RM ? s._img.style.transform.replace(/ rotate\([^)]*\)/, '') : '') + ' rotate(' + tR.toFixed(1) + 'deg)';
+        if (tP > 0 && local < s.d) once('tl' + i, function () { sfx('thump'); }); }
       if (s.in === 'ripple' && !RM) { var rs = local < 1.6 ? 90 * (1 - local / 1.6) : 0; L.style.filter = rs > 0.5 ? 'url(#wfRipple)' : 'none'; rippleMap.setAttribute('scale', rs.toFixed(1)); }
       if (s.in === 'blur' && !RM) L.style.filter = local < 1.2 ? 'blur(' + (12 * (1 - local / 1.2)).toFixed(1) + 'px)' : 'none';
       if (local >= 0 && local < s.d) {

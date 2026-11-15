@@ -222,7 +222,7 @@ function WL4_INIT(W) {
     function solved() { return Object.keys(res).filter(function (k) { return res[k].done; }); }
     function chart() {
       var rows = solved();
-      body.innerHTML = rows.length ? rows.map(function (k) { var r = res[k], f = F[k]; return '<tr><td><b>' + f.id + '</b></td><td>' + r.clue + '</td><td>' + f.org[f.orgAns] + '</td><td>' + f.env + '</td><td>I saw ' + r.clue.toLowerCase() + ', so it was ' + f.orgShort + '.</td></tr>'; }).join('') : '<tr><td class="empty" colspan="5">Your chart fills in as you solve fossils.</td></tr>';
+      body.innerHTML = rows.length ? rows.map(function (k) { var r = res[k], f = F[k]; return '<tr><td><b>' + f.id + '</b></td><td>' + r.clue + '</td><td>' + f.org[f.orgAns] + '</td><td>' + f.env + '</td><td>I saw ' + r.clue.toLowerCase() + ', so it was ' + f.orgShort + '.</td></tr>'; }).join('') : '<tr><td class="empty" colspan="5">Your chart fills in as you solve ' + (DT.noun ? DT.noun.toLowerCase() + 's' : 'fossils') + '.</td></tr>';
       for (var k = rows.length; k < DT.need; k++) body.insertAdjacentHTML('beforeend', '<tr><td class="empty">?</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>');
       $$('.wl-dcard').forEach(function (c) { c.classList.toggle('done', !!(res[c.dataset.i] && res[c.dataset.i].done)); });
       $('#det-write').hidden = rows.length < DT.need; $('#rebuild').hidden = rows.length < 1; C.save(); C.gather(); C.checklist(); W.rebuildFossils && W.rebuildFossils(); exhibit();

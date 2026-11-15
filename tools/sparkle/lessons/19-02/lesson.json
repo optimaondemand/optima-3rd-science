@@ -1,0 +1,1509 @@
+{
+ "id": "g3sci-19-02",
+ "lesson": "19.02",
+ "title": "Investigation: Light &amp; Plant Growth",
+ "emoji": "🌱",
+ "details": [
+  "📅 Q3 · Unit 7 · Plants &amp; Environmental Interactions",
+  "📖 Week 19 · Lesson 19.02",
+  "🌎 CPALMS SC.3.L.17.2 · NGSS 3-LS1-1",
+  "⏱ About 35 minutes"
+ ],
+ "icans": [
+  "compare plant growth under different light conditions.",
+  "create a graph to display plant growth data.",
+  "use evidence from data to explain how light affects plant growth."
+ ],
+ "opti": {
+  "warm": "Today's film goes all the way to space! First, look closely at some sprouts that grew without any sunlight.",
+  "lesson": "Today you're the crew's plant tester. Run a fair test, cover plants in the Light Lab, and dive down to find where plants stop growing.",
+  "check": "Three quick questions. It's not graded. It's just for you, so give each one your best try.",
+  "assign": "Time to build your graph. Let the numbers tell you what light does to a plant."
+ },
+ "film": {
+  "id": "g3sci-19-02",
+  "mount": "wf-film",
+  "kicker": "Opti's Wonder Films",
+  "lesson": "Lesson 19.02 · Plants",
+  "title": "Light &amp; Plant Growth",
+  "bigQuestion": "Does it matter how much light a plant gets, and how would you prove it?",
+  "poster": "veggie",
+  "endPoster": "vegclose",
+  "startTarget": "#tab-vocab",
+  "music": {
+   "src": "music",
+   "vol": 0.8
+  },
+  "shots": [
+   {
+    "t": 0,
+    "d": 3.4,
+    "type": "leader",
+    "top": "Optima Academy",
+    "name": "Opti's Wonder Films",
+    "bottom": "presents",
+    "fade": 1.0
+   },
+   {
+    "t": 3.4,
+    "d": 6.8,
+    "type": "photo",
+    "img": "launch",
+    "alt": "A rocket climbs into the night sky, leaving a long bright curve of light over the water",
+    "to": [
+     1.15,
+     0.55,
+     0.4
+    ],
+    "place": "Kennedy Space Center, Florida",
+    "fade": 1.2,
+    "sfx": "whoosh",
+    "sfxArg": 2.2,
+    "from": [
+     1.0,
+     0.5,
+     0.55
+    ]
+   },
+   {
+    "t": 10.2,
+    "d": 6.2,
+    "type": "photo",
+    "img": "iss",
+    "alt": "The International Space Station floating high above the blue Earth and white clouds",
+    "to": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "place": "The International Space Station, high above Earth",
+    "fade": 1.0,
+    "from": [
+     1.15,
+     0.5,
+     0.5
+    ]
+   },
+   {
+    "t": 16.4,
+    "d": 6.6,
+    "type": "photo",
+    "img": "veggie",
+    "alt": "Red lettuce plants growing inside a small box lit with bright pink light",
+    "to": [
+     1.05,
+     0.5,
+     0.5
+    ],
+    "fx": [
+     "rays"
+    ],
+    "place": "Inside the space station",
+    "fade": 0.6,
+    "sfxAt": [
+     {
+      "at": 1.2,
+      "name": "shimmer"
+     }
+    ],
+    "from": [
+     1.3,
+     0.45,
+     0.5
+    ],
+    "in": "blur"
+   },
+   {
+    "t": 23.0,
+    "d": 3.4,
+    "type": "flash",
+    "lines": [
+     "Lettuce?",
+     "In space?"
+    ],
+    "beats": [
+     0.15,
+     1.3
+    ],
+    "fade": 0.15
+   },
+   {
+    "t": 26.4,
+    "d": 6.0,
+    "type": "photo",
+    "img": "sprout",
+    "alt": "Rows of tiny lettuce sprouts poking out of a black tray in a metal plant chamber",
+    "to": [
+     1.2,
+     0.5,
+     0.45
+    ],
+    "place": "Lettuce sprouts in a space plant chamber (a test on Earth)",
+    "fade": 0.8,
+    "from": [
+     1.0,
+     0.5,
+     0.5
+    ]
+   },
+   {
+    "t": 32.4,
+    "d": 7.4,
+    "type": "photo",
+    "img": "vegclose",
+    "alt": "Big red lettuce leaves filling a box lit with pink light",
+    "to": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "count": {
+     "to": 28,
+     "label": "days of growing",
+     "dur": 3.4
+    },
+    "place": "Space lettuce · ready to pick",
+    "fade": 0.8,
+    "sfx": "whoosh",
+    "sfxArg": 1.6,
+    "from": [
+     1.2,
+     0.5,
+     0.55
+    ],
+    "in": "ripple"
+   },
+   {
+    "t": 39.8,
+    "d": 6.2,
+    "type": "photo",
+    "img": "lab",
+    "alt": "A scientist in a blue lab coat and gloves gets plant pillows ready at a lab bench",
+    "to": [
+     1.12,
+     0.4,
+     0.45
+    ],
+    "place": "A plant lab at Kennedy Space Center, Florida",
+    "fade": 0.8,
+    "from": [
+     1.0,
+     0.5,
+     0.5
+    ]
+   },
+   {
+    "t": 46.0,
+    "d": 5.0,
+    "type": "photo",
+    "img": "vegwhite",
+    "alt": "Green and red lettuce leaves growing on the space station",
+    "to": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "place": "Space lettuce, up close",
+    "fade": 1.0,
+    "from": [
+     1.15,
+     0.5,
+     0.5
+    ]
+   },
+   {
+    "t": 51.0,
+    "d": 6.0,
+    "type": "title",
+    "fade": 1.2
+   }
+  ],
+  "captions": [
+   {
+    "t": 3.8,
+    "d": 6.0,
+    "text": "Kennedy Space Center, in Florida. A rocket roars into the night.",
+    "voice": "opti-1"
+   },
+   {
+    "t": 10.6,
+    "d": 5.4,
+    "text": "It carries supplies to the space station, high above Earth.",
+    "voice": "opti-2"
+   },
+   {
+    "t": 16.8,
+    "d": 5.8,
+    "text": "Inside, something is growing in a strange pink glow...",
+    "voice": "opti-3"
+   },
+   {
+    "t": 23.1,
+    "d": 3.2,
+    "text": "Lettuce? In space?",
+    "voice": "opti-4"
+   },
+   {
+    "t": 26.8,
+    "d": 5.4,
+    "text": "First, tiny sprouts. And not one ray of sunshine.",
+    "voice": "opti-5"
+   },
+   {
+    "t": 32.8,
+    "d": 6.6,
+    "text": "Bright lamps shine all day. Four weeks later, the lettuce is ready to eat!",
+    "voice": "opti-6"
+   },
+   {
+    "t": 40.2,
+    "d": 5.4,
+    "text": "Back in Florida, scientists test one light at a time.",
+    "voice": "opti-7"
+   },
+   {
+    "t": 46.4,
+    "d": 4.4,
+    "text": "So does light really matter? Let's find out.",
+    "voice": "opti-8"
+   }
+  ]
+ },
+ "scientist": "plant tester",
+ "specimen": {
+  "img": "spec",
+  "aspect": "1/1",
+  "radius": 0.08,
+  "hotspots": [
+   {
+    "name": "Pale yellow leaves",
+    "x": 0.45,
+    "y": 0.3
+   },
+   {
+    "name": "Long, thin shoots",
+    "x": 0.55,
+    "y": 0.48
+   },
+   {
+    "name": "White roots",
+    "x": 0.55,
+    "y": 0.86
+   },
+   {
+    "name": "Bent, floppy tips",
+    "x": 0.82,
+    "y": 0.36
+   },
+   {
+    "name": "Almost no green",
+    "x": 0.3,
+    "y": 0.45
+   }
+  ],
+  "kicker": "🔎 Mystery specimen",
+  "title": "What can a few sprouts show you?",
+  "alt": "A clump of long, thin, pale yellow sprouts with white roots at the bottom, on a dark table",
+  "look": "A real clump of barley sprouts. A specimen is one real thing that scientists study. These sprouts grew inside, away from sunlight, for a festival in Nepal. The card tells where they came from. What do you notice about how they grew? That's for you to figure out.",
+  "do": "Press Inspect specimen. Move the magnifying lens over the plant, then tap 3 things you notice.",
+  "number": "No. 19.02-A",
+  "card": [
+   "<b>Specimen A</b>",
+   "Found in: Kathmandu, Nepal",
+   "Grown: inside, away from sunlight",
+   "What happened? <i>You decide.</i>"
+  ],
+  "notice": "I notice… (one thing you see on the sprouts)",
+  "wonder": "I wonder… (one question you want answered by the end of the lesson)"
+ },
+ "words": [
+  [
+   "📊",
+   "data",
+   "Information you collect in an investigation, like numbers, measurements, or what you observe."
+  ],
+  [
+   "📈",
+   "graph",
+   "A picture that shows data, so patterns are easier to see."
+  ],
+  [
+   "🔁",
+   "pattern",
+   "A change or result that repeats, or that makes sense across your data."
+  ],
+  [
+   "🔍",
+   "evidence",
+   "Information from your data or observations that supports an explanation."
+  ],
+  [
+   "☀️",
+   "condition",
+   "Something around a living thing, like light, water, or temperature, that affects how it grows."
+  ],
+  [
+   "📏",
+   "growth rate",
+   "How fast something grows over a period of time. For plants, we can measure it in centimeters per day."
+  ]
+ ],
+ "parts": [
+  {
+   "kicker": "☀️ Part 1",
+   "title": "Why Plants Need Light",
+   "html": "<p>Plants make their own food using sunlight. This is called photosynthesis. Without enough light, a plant can't make the energy it needs to grow tall and strong.</p><p>When a plant gets plenty of light, it grows faster. When light is weak or blocked, growth slows down, sometimes a lot.</p>"
+  },
+  {
+   "kicker": "🔬 Part 2",
+   "title": "A Fair Test Changes One Thing",
+   "html": "<p>In a fair test, scientists change only one thing at a time. In this investigation, the only difference between the two plants is light. The soil, the water, and the pot all stay the same.</p><p>That way, if the plants grow differently, we know light is the reason. The one thing we change on purpose is called the variable.</p>"
+  },
+  {
+   "kicker": "📏 Part 3",
+   "title": "Reading the Data",
+   "html": "<p>Scientists measure plant height in centimeters and write it in a data table. Then they build a graph, so the pattern is easy to see.</p><p>Light changes things in nature, too. Sunlight gets dimmer as it goes down through water. Let's ride down and find out where plants can still grow.</p>"
+  },
+  {
+   "kicker": "🗂️ Part 4",
+   "title": "Who Blocked the Light?"
+  }
+ ],
+ "order": {
+  "mix": [
+   2,
+   0,
+   3,
+   1
+  ],
+  "hint": "Think about what a scientist does first.",
+  "kicker": "🎞️ Put the scenes in order",
+  "title": "How do you run a fair test with light?",
+  "look": "Four real photos. Each one shows one step of a fair test, but they are mixed up. The dark film strip has four empty frames, from first (1) to last (4).",
+  "done": "🎬 Your order is right. Now watch it as a movie!",
+  "scenes": [
+   {
+    "img": "s1",
+    "alt": "A tray of tiny, matching seedlings, each in its own square of dark soil",
+    "text": "Start with matching young plants: same seeds, same soil, same size.",
+    "play": "Start with matching plants: same seeds, same soil, same size.",
+    "miss": [
+     "",
+     "You need your plants before you can water them. Try frame 1.",
+     "You need your plants before you can light them. Try frame 1.",
+     "Measuring comes at the very end. You need plants first. Try frame 1."
+    ]
+   },
+   {
+    "img": "s2",
+    "alt": "A blue-green metal watering can sitting on a stone patio",
+    "text": "Give both plants the same water.",
+    "play": "Give both plants the same water.",
+    "miss": [
+     "First you need matching plants. Try a later frame.",
+     "",
+     "Water stays the same for both from the start. Try an earlier frame.",
+     "You water long before Day 7. Try an earlier frame."
+    ]
+   },
+   {
+    "img": "vegpink",
+    "alt": "Red lettuce growing in a box under a bright pink lamp",
+    "text": "Change only the light: one gets a bright lamp, one gets dim light.",
+    "play": "Change only the light: bright for one, dim for the other.",
+    "miss": [
+     "First you need matching plants. Try a later frame.",
+     "Set up the same water first, then change the light. Try a later frame.",
+     "",
+     "The light has to shine for days before you measure. Try an earlier frame."
+    ]
+   },
+   {
+    "img": "s4",
+    "alt": "A young green seedling in soil, next to a wooden ruler",
+    "text": "On Day 7, measure each plant with a ruler and graph the data.",
+    "play": "Day 7: measure each plant and graph the data.",
+    "miss": [
+     "Measuring comes last.",
+     "Measuring comes last.",
+     "Measuring comes last.",
+     ""
+    ]
+   }
+  ],
+  "check": {
+   "q": "Look at the movie's Day 7. Both plants got the same seeds, soil, and water. Why is the bright-light plant taller?",
+   "options": [
+    {
+     "t": "It got more water.",
+     "miss": "Not quite. Both pots got the same water. That's what makes it a fair test."
+    },
+    {
+     "t": "It got more light, so it could make more food.",
+     "ok": "Yes! Light was the only thing that was different. More light let that plant make more food, so it grew faster."
+    },
+    {
+     "t": "It was a different kind of plant.",
+     "miss": "Both were the same kind of seed. Only the light was different."
+    }
+   ]
+  }
+ },
+ "movie": {
+  "model": "light-model.svg",
+  "modelBox": {
+   "left": "0%",
+   "width": "100%",
+   "rot": 0
+  },
+  "start": "0%",
+  "bg": "lab",
+  "real": "kohlsun",
+  "realAlt": "Real young green plants growing strong in a tray of soil",
+  "stamp": "LIGHT WAS THE ONLY CHANGE",
+  "endCap": "The real thing: young plants grown in bright light, green and strong.",
+  "beats": [
+   {
+    "at": 0,
+    "cap": "1 · Two matching plants: same seeds, same soil.",
+    "model": {
+     "top": "0%",
+     "rot": 0,
+     "show": "s1"
+    },
+    "counter": [
+     "Day 1"
+    ]
+   },
+   {
+    "at": 2600,
+    "cap": "2 · The same water for both.",
+    "model": {
+     "show": "s2"
+    },
+    "counter": [
+     "Day 3"
+    ]
+   },
+   {
+    "at": 5200,
+    "cap": "3 · Bright lamp on one, dim light on the other.",
+    "model": {
+     "show": "s3"
+    },
+    "counter": [
+     "Day 5"
+    ],
+    "sfx": "shimmer"
+   },
+   {
+    "at": 7800,
+    "cap": "4 · Day 7: measure. 10 cm in bright light, 5 cm in dim light.",
+    "model": {
+     "show": "s4"
+    },
+    "counter": [
+     "Day 7"
+    ]
+   },
+   {
+    "at": 10400,
+    "cap": "The real thing: young plants grown in bright light.",
+    "model": {
+     "hide": true
+    },
+    "real": true
+   },
+   {
+    "at": 12200,
+    "stamp": true
+   }
+  ]
+ },
+ "compare": {
+  "kicker": "🧪 The Light Lab",
+  "title": "Which plant grew in bright light, and which grew in the dark?",
+  "look": "Two real plants, each on a lit specimen tray. Specimen A is a tray of young plants. Specimen B is a pot of sprouts. Under the trays are two covers for a test: a clear plastic cup, which lets light through, and a cardboard box, which blocks the light.",
+  "trays": [
+   {
+    "id": "A",
+    "img": "kohlsun",
+    "alt": "Young green plants with wide leaves and sturdy stems in a tray of soil",
+    "label": "Specimen A"
+   },
+   {
+    "id": "B",
+    "img": "leggy",
+    "alt": "A pot full of long, thin, pale yellow sprouts flopping over the sides",
+    "label": "Specimen B"
+   }
+  ],
+  "materials": [
+   {
+    "key": "cup",
+    "label": "Clear plastic cup",
+    "swatch": "cup"
+   },
+   {
+    "key": "box",
+    "label": "Cardboard box",
+    "swatch": "box"
+   }
+  ],
+  "ask": [
+   {
+    "q": "Which one is green and sturdy?",
+    "ans": "A",
+    "ok": "Yes. Specimen A has wide green leaves and strong stems.",
+    "miss": "Look closely. Which one has green leaves?"
+   },
+   {
+    "q": "Which one is pale and stretched out?",
+    "ans": "B",
+    "ok": "Yes. Specimen B is long, thin, and pale yellow.",
+    "miss": "Look again. Which one is pale and floppy?"
+   }
+  ],
+  "press": "🗓️ Let 7 days pass",
+  "testDo": "Put the clear cup over one tray and the cardboard box over the other: drag them, or tap each one, then tap a tray. Press <b>Let 7 days pass</b>. Then swap them and press it again.",
+  "disclaimer": "This is a model. The page shows what would happen to light under each cover over a week, sped up.",
+  "results": {
+   "Acup": {
+    "text": "Light shone right through the clear cup. After 7 days, Specimen A stayed green and kept growing strong.",
+    "fx": "glow"
+   },
+   "Abox": {
+    "text": "The box blocked the light. In 7 days of dark, A's new leaves would grow pale. That's not how A looks, so try the clear cup here.",
+    "fx": "shade"
+   },
+   "Bbox": {
+    "text": "In the dark under the box, sprouts grow just like Specimen B: long, thin, pale, and floppy.",
+    "fx": "shade"
+   },
+   "Bcup": {
+    "text": "With light coming in, B's sprouts would start to turn green. So B must have grown somewhere dark. Try the box here.",
+    "fx": "glow"
+   }
+  },
+  "best": [
+   "Acup",
+   "Bbox"
+  ],
+  "frame": "This plant ___, so it grew in ___.",
+  "claimLead": "This plant",
+  "claimMid": "so it grew in",
+  "claim": {
+   "A": {
+    "feat": [
+     "is green and sturdy",
+     "is pale and stretched"
+    ],
+    "featOk": 0,
+    "eat": [
+     "bright light",
+     "the dark"
+    ],
+    "eatOk": 0
+   },
+   "B": {
+    "feat": [
+     "is green and sturdy",
+     "is pale and stretched"
+    ],
+    "featOk": 1,
+    "eat": [
+     "bright light",
+     "the dark"
+    ],
+    "eatOk": 1
+   }
+  },
+  "curator": {
+   "A": "<b>Green and sturdy → bright light.</b> Light lets a plant make its own food. With plenty of food, it grows wide green leaves and a strong stem.",
+   "B": "<b>Pale and stretched → the dark.</b> With no light, the sprouts can't make food. They stretch up fast, reaching for light, using food stored in the seed. But they stay pale and weak."
+  },
+  "missFeat": "Look at {label} again. Is it green and sturdy, or pale and stretched?",
+  "missClaim": "Think about your test. What happened under the cup, and under the box?",
+  "done": "Green, sturdy plants grew in light. Pale, stretched sprouts grew in the dark. Light is a growing condition plants need.",
+  "after": {
+   "kicker": "🎬 Behind the scenes · Taller isn't always healthier",
+   "img": "kohldark",
+   "alt": "A tall, thin plant with yellow leaves and a purple stem, growing in a crate in a dark basement",
+   "html": "This plant grew in a dark basement. It stretched up tall, reaching for light. But its leaves are yellow and its stem is thin and weak. A plant in the dark can grow tall for a while, using food stored in its seed. When that food runs out, it stops growing. Taller isn't always healthier!"
+  }
+ },
+ "wall": {
+  "kicker": "🌊 The light elevator",
+  "title": "How deep can plants grow?",
+  "look": "A cutaway (a slice) of the water, from a sunny Florida spring down to the deep sea. It is a model. Each level is deeper and darker than the one above it. The brass dial on the left shows which level you are at.",
+  "do": "First, make a prediction. Then brush the glowing layer: drag across it (or tap it again and again) until the plant shows.",
+  "predict": {
+   "q": "How deep do you think plants can grow?",
+   "options": [
+    [
+     "only where sunlight reaches",
+     "Only where sunlight reaches"
+    ],
+    [
+     "all the way to the bottom",
+     "All the way to the bottom of the sea"
+    ]
+   ],
+   "answer": "only where sunlight reaches",
+   "mine": "Your prediction: <b>{p}</b>. Let's ride down and find out.",
+   "confirm": "You predicted plants grow only where sunlight reaches. The evidence agrees: deep down, where light can't reach, there are no plants.",
+   "change": "You predicted plants grow all the way down. The evidence changed that idea: on the dark deep-sea floor, there are no plants at all."
+  },
+  "sky": "wsky",
+  "skyAlt": "A clear spring surrounded by green trees under a blue sky with white clouds",
+  "skyCap": "Ichetucknee Springs State Park, Florida",
+  "unit": "Level",
+  "found": "Found at Level {n}",
+  "elevator": [
+   "Surface",
+   "Spring",
+   "Meadow",
+   "Reef",
+   "Deep sea"
+  ],
+  "line": [
+   "MORE LIGHT",
+   "NO LIGHT"
+  ],
+  "lockTag": "🔒 Brush the level above first",
+  "locked": "Brush the level above first. The elevator goes down, one level at a time.",
+  "first": "Brush the glowing top layer. Drag across it (or tap it again and again).",
+  "next": "Going deeper. Brush Level {n}.",
+  "endTitle": "All 4 levels explored",
+  "endText": "Look at the line. Near the top, where sunlight is bright, plants grow tall and thick. As the water gets deeper and darker, there are fewer plants. In the deep sea, there are none.",
+  "rule": "<b>Plants grow only where enough light reaches them.</b> Less light means less food, so fewer plants can grow. With no light, plants can't grow at all.",
+  "choices": [
+   "☀️ Bright light: tall green plants",
+   "🌤️ Still light: a wide green meadow",
+   "🌥️ Dim light: low algae on rock",
+   "🌑 No light: no plants at all"
+  ],
+  "layers": [
+   {
+    "name": "Level 1 · Spring",
+    "rock": "water1",
+    "img": "weel",
+    "alt": "Long green eelgrass waving in clear blue spring water",
+    "ask": "Look at Level 1. Read the clue AND the photo. How much light reaches here?",
+    "clue": "A clear Florida spring, just under the surface. Long eelgrass waves in the current.",
+    "ans": 0,
+    "ok": "Yes! Sunlight shines straight through the clear water, and tall eelgrass grows thick.",
+    "tag": "☀️ Bright light",
+    "miss": {
+     "1": "This is the very top. Read the clue: how close to the surface is it?",
+     "2": "Look at all that tall, green grass. Is this dim?",
+     "3": "Look again. There are lots of plants here."
+    },
+    "env": "weel",
+    "envAlt": "Eelgrass under clear water at a Florida spring",
+    "envCap": "Level 1: Ichetucknee Springs, Florida"
+   },
+   {
+    "name": "Level 2 · Meadow",
+    "rock": "water2",
+    "img": "wgrass",
+    "alt": "A scuba diver swimming over a wide, flat meadow of seagrass in blue water",
+    "ask": "Now Level 2. Read the clue AND the photo. How much light reaches here?",
+    "clue": "A seagrass meadow in the Florida Keys. A diver swims above it, in bluer water.",
+    "ans": 1,
+    "ok": "Yes! Light still reaches the bottom, so a wide green meadow can grow.",
+    "tag": "🌤️ Still light",
+    "miss": {
+     "0": "The water is bluer and a little darker here. Is it the brightest level?",
+     "2": "Look at the whole meadow of green. Is this only a few low algae?",
+     "3": "Look again. There is a whole meadow here."
+    },
+    "env": "wgrass",
+    "envAlt": "A diver over a seagrass meadow",
+    "envCap": "Level 2: a seagrass meadow, Florida Keys"
+   },
+   {
+    "name": "Level 3 · Reef",
+    "rock": "water3",
+    "img": "wreef",
+    "alt": "Clumps of green algae growing low on a rocky coral reef",
+    "ask": "Level 3. Read the clue AND the photo. How much light reaches here?",
+    "clue": "A coral reef, deeper down. Green algae grow in low clumps on the rock.",
+    "ans": 2,
+    "ok": "Yes! Less light gets down here, so only low algae grow on the rock.",
+    "tag": "🌥️ Dim light",
+    "miss": {
+     "0": "This is deeper. Do you see tall plants here?",
+     "1": "Do you see a wide meadow here, or just low clumps?",
+     "3": "Look again. Something green is growing here."
+    },
+    "env": "wreef",
+    "envAlt": "Green algae on a reef",
+    "envCap": "Level 3: Pickles Reef, Florida Keys"
+   },
+   {
+    "name": "Level 4 · Deep sea",
+    "rock": "water4",
+    "img": "wdeep",
+    "alt": "A dark, sandy seafloor lit only by a robot's lamps, with no plants anywhere",
+    "ask": "Last one: Level 4. Read the clue AND the photo. How much light reaches here?",
+    "clue": "The deep-sea floor of the Gulf. A robot's lamps light it up for this photo. No sunlight gets this deep.",
+    "ans": 3,
+    "ok": "Yes! No sunlight reaches the deep sea, so no plants can grow here.",
+    "tag": "🌑 No light",
+    "miss": {
+     "0": "Read the clue: does any sunlight get this deep?",
+     "1": "Look for plants. Do you see any?",
+     "2": "Look closely. Is anything green growing here?"
+    },
+    "env": "wdeep",
+    "envAlt": "The dark deep-sea floor",
+    "envCap": "Level 4: the deep Gulf of Mexico (NOAA robot photo)"
+   }
+  ],
+  "mix": {
+   "q": "The deep-sea floor has water and sand, but no plants. Why can't plants grow there?",
+   "options": [
+    {
+     "t": "The water is too salty for plants.",
+     "miss": "Not quite. Seagrass and algae grow in salty water near the top. What is missing deep down?"
+    },
+    {
+     "t": "No sunlight reaches that deep, so plants can't make food.",
+     "ok": "Yes! Without light, plants can't make their food. Light is a growing condition they need."
+    }
+   ]
+  }
+ },
+ "wow": {
+  "kicker": "🎬 Director's cut",
+  "title": "A garden with 180 lamps",
+  "img": "aph",
+  "alt": "Rows of green wheat plants growing inside a metal chamber full of tubes and wires",
+  "caption": "Wheat growing in NASA's Advanced Plant Habitat, a plant chamber on the space station.",
+  "html": "<p style=\"margin:0 0 8px\">There's no sunshine inside the space station, so NASA built plant chambers full of lamps. One of them, the Advanced Plant Habitat, has about 180 small lamps that scientists can change from Earth.</p><p style=\"margin:0\">They turn some colors up and others down, one change at a time, to see which light helps plants grow best. It's a fair test, in space!</p>",
+  "inset": "zinnia",
+  "insetCap": "Zinnia plants growing on the space station. Astronauts later saw them bloom."
+ },
+ "keyIdea": "Light is a growing condition for plants. The more light a plant gets, the more food it can make, and the faster it grows. Comparing plants with only one difference gives us evidence.",
+ "det": {
+  "look": "Five plant cards from the film crew's trips. Some plants got lots of light, and some got very little. Each slab card has a real photo. Under the cards is an evidence chart, a table that holds what you figure out.",
+  "do": "Pick 3 cards, one at a time. Tap a clue you see, then pick what it is. Predict where it grows, and watch its home appear.",
+  "noun": "Plant",
+  "need": 3,
+  "predict": {
+   "q": "Do you think this plant got lots of light, or very little?",
+   "options": [
+    [
+     "light",
+     "☀️ Lots of light"
+    ],
+    [
+     "dark",
+     "🌑 Very little light"
+    ]
+   ]
+  },
+  "kicker": "Home revealed",
+  "enough": "You already solved 3 plants. Nice detective work!",
+  "cols": [
+   "Plant",
+   "What I observe",
+   "The clue",
+   "Its home",
+   "My evidence"
+  ],
+  "write": {
+   "label": "Plant __ has ___. I think it got ___ because ___.",
+   "starter": "Start with: \"Plant __ has…\"",
+   "min": 15,
+   "chips": [
+    [
+     "trait",
+     "Names what you see"
+    ],
+    [
+     "because",
+     "Gives a reason (because)"
+    ],
+    [
+     "env",
+     "Says how much light"
+    ]
+   ]
+  },
+  "items": [
+   {
+    "id": "1",
+    "img": "lid",
+    "alt": "Long, white, stringy plant stems lying on dark dirt",
+    "clues": [
+     {
+      "t": "Pale, stringy stems",
+      "ok": true
+     },
+     {
+      "t": "Bright green leaves",
+      "miss": "Look again. Are these stems green, or pale?"
+     },
+     {
+      "t": "Red flowers",
+      "miss": "Look again. There are no flowers, just pale stems."
+     }
+    ],
+    "org": [
+     "Pale, stringy stems",
+     "Leafy lettuce under lamps",
+     "Green leaves in a sunny row",
+     "Long, pale, floppy shoots",
+     "Wide green fronds"
+    ],
+    "orgAns": 0,
+    "orgShort": "pale, stringy stems",
+    "orgMiss": "Pale, stringy stems is the clue. Try again.",
+    "env": "Very little light",
+    "envAns": "dark",
+    "envMiss": "Green comes from making food in the light. These stems are pale. Try again.",
+    "bts": "Plant 1: weeds under a metal lid. They sprouted inside a water meter box in San Diego, California. The lid kept out the light, so they grew pale and stringy.",
+    "envImg": "lidbox",
+    "envAlt": "An open water meter box in the ground, with pale stringy plants inside",
+    "envCap": "Its home: inside a water meter box, under a metal lid",
+    "reveal": "These pale, stringy stems are evidence that this plant grew with very little light.",
+    "rebuildEnv": "lid"
+   },
+   {
+    "id": "2",
+    "img": "vegwhite",
+    "alt": "Green and red lettuce leaves growing on the space station",
+    "clues": [
+     {
+      "t": "Leafy lettuce under lamps",
+      "ok": true
+     },
+     {
+      "t": "Pale sprouts",
+      "miss": "Look again. These leaves are full and colorful."
+     },
+     {
+      "t": "Ferns on a forest floor",
+      "miss": "Look again. This is lettuce, growing in a box."
+     }
+    ],
+    "org": [
+     "Pale, stringy stems",
+     "Leafy lettuce under lamps",
+     "Green leaves in a sunny row",
+     "Long, pale, floppy shoots",
+     "Wide green fronds"
+    ],
+    "orgAns": 1,
+    "orgShort": "leafy lettuce under lamps",
+    "orgMiss": "Leafy lettuce under lamps is the clue. Try again.",
+    "env": "Lots of light",
+    "envAns": "light",
+    "envMiss": "Full, colorful leaves mean this plant made lots of food. Try again.",
+    "bts": "Plant 2: red romaine lettuce on the space station. No sunlight reaches it, so bright lamps shine on it for many hours a day.",
+    "envImg": "iss",
+    "envAlt": "The space station floating above the blue Earth",
+    "envCap": "Its home: the space station, lit by lamps all day",
+    "reveal": "These full, colorful leaves are evidence that this plant got lots of light, even though it came from lamps.",
+    "rebuildEnv": "iss"
+   },
+   {
+    "id": "3",
+    "img": "straw",
+    "alt": "Young strawberry plants with green leaves growing out of black plastic on a sunny farm row",
+    "clues": [
+     {
+      "t": "Green leaves in a sunny row",
+      "ok": true
+     },
+     {
+      "t": "Pale, stringy stems",
+      "miss": "Look again. These leaves are green."
+     },
+     {
+      "t": "Lamps above",
+      "miss": "Look again. This is outside, in the sun."
+     }
+    ],
+    "org": [
+     "Pale, stringy stems",
+     "Leafy lettuce under lamps",
+     "Green leaves in a sunny row",
+     "Long, pale, floppy shoots",
+     "Wide green fronds"
+    ],
+    "orgAns": 2,
+    "orgShort": "green leaves in a sunny row",
+    "orgMiss": "Green leaves in a sunny row is the clue. Try again.",
+    "env": "Lots of light",
+    "envAns": "light",
+    "envMiss": "These are green plants in an open, sunny field. Try again.",
+    "bts": "Plant 3: strawberries. Farms in Florida plant strawberries in long, open rows, so every plant gets full sun all day.",
+    "envImg": "strawhome",
+    "envAlt": "An old postcard of workers picking strawberries in long rows in an open field",
+    "envCap": "Its kind of home: an open strawberry field in Florida (an old postcard)",
+    "reveal": "These green leaves in an open row are evidence that this plant got lots of sunlight.",
+    "rebuildEnv": "farm"
+   },
+   {
+    "id": "4",
+    "img": "spec",
+    "alt": "A clump of long, thin, pale yellow sprouts with white roots",
+    "clues": [
+     {
+      "t": "Long, pale, floppy shoots",
+      "ok": true
+     },
+     {
+      "t": "Wide green leaves",
+      "miss": "Look again. Are these shoots green, or pale?"
+     },
+     {
+      "t": "Fruit",
+      "miss": "Look again. There is no fruit, just pale shoots."
+     }
+    ],
+    "org": [
+     "Pale, stringy stems",
+     "Leafy lettuce under lamps",
+     "Green leaves in a sunny row",
+     "Long, pale, floppy shoots",
+     "Wide green fronds"
+    ],
+    "orgAns": 3,
+    "orgShort": "long, pale, floppy shoots",
+    "orgMiss": "Long, pale, floppy shoots is the clue. Try again.",
+    "env": "Very little light",
+    "envAns": "dark",
+    "envMiss": "These shoots are pale and stretched. What were they missing? Try again.",
+    "bts": "Plant 4: barley sprouts, like the ones you looked at with the lens. In Nepal, families grow them inside, away from sunlight, for a festival. That keeps them pale yellow.",
+    "envImg": "kohldark",
+    "envAlt": "A tall, thin plant with yellow leaves in a crate in a dark basement",
+    "envCap": "Its kind of home: a dark room with no window",
+    "reveal": "These long, pale shoots are evidence that this plant grew away from light.",
+    "rebuildEnv": "dark"
+   },
+   {
+    "id": "5",
+    "img": "fern",
+    "alt": "Fern leaves with many leaflets growing low on a shady forest floor covered in dead leaves",
+    "clues": [
+     {
+      "t": "Wide green fronds",
+      "ok": true
+     },
+     {
+      "t": "Pale, stringy stems",
+      "miss": "Look again. These fronds are green."
+     },
+     {
+      "t": "Lamps above",
+      "miss": "Look again. This is outside, in a forest."
+     }
+    ],
+    "org": [
+     "Pale, stringy stems",
+     "Leafy lettuce under lamps",
+     "Green leaves in a sunny row",
+     "Long, pale, floppy shoots",
+     "Wide green fronds"
+    ],
+    "orgAns": 4,
+    "orgShort": "wide green fronds",
+    "orgMiss": "Wide green fronds is the clue. Try again.",
+    "env": "Very little light",
+    "envAns": "dark",
+    "envMiss": "Look at the floor around it: lots of shade from the trees above. Try again.",
+    "bts": "Plant 5: netted chain fern, which grows in shady, wet forests, including in Florida. Its wide fronds catch what little light gets through the trees.",
+    "envImg": "hammock",
+    "envAlt": "Tall trees and palms casting deep shade on a forest floor covered in dead leaves",
+    "envCap": "Its kind of home: a shady hammock forest, Myakka River State Park, Florida",
+    "reveal": "These wide green fronds are evidence that this plant gets only a little light, and spreads out to catch it.",
+    "rebuildEnv": "forest"
+   }
+  ]
+ },
+ "rebuild": {
+  "title": "Use your evidence to rebuild the plant's home",
+  "missPrefix": "Hmm. Look at your plant again. ",
+  "kicker": "🌍 Rebuild the plant's home",
+  "whyStart": "I chose this because the plant…",
+  "envs": [
+   {
+    "key": "lid",
+    "name": "🔩 Under a metal lid",
+    "img": "lidbox",
+    "cap": "A box in the ground, with a lid on top…"
+   },
+   {
+    "key": "iss",
+    "name": "🛰️ Space station",
+    "img": "iss",
+    "cap": "No sunshine, but bright lamps…"
+   },
+   {
+    "key": "farm",
+    "name": "🍓 Sunny farm field",
+    "img": "strawhome",
+    "cap": "Open rows in full sun…"
+   },
+   {
+    "key": "dark",
+    "name": "🚪 Dark room",
+    "img": "kohldark",
+    "cap": "No windows, no sunlight…"
+   },
+   {
+    "key": "forest",
+    "name": "🌳 Shady forest",
+    "img": "hammock",
+    "cap": "Tall trees make deep shade…"
+   }
+  ],
+  "life": [
+   {
+    "name": "🌱 Pale weeds",
+    "img": "lid",
+    "env": "lid",
+    "miss": "These pale weeds grew under a metal lid."
+   },
+   {
+    "name": "🥬 Space lettuce",
+    "img": "vegwhite",
+    "env": "iss",
+    "miss": "This lettuce grows under lamps on the space station."
+   },
+   {
+    "name": "🍓 Strawberries",
+    "img": "straw",
+    "env": "farm",
+    "miss": "Strawberries grow in open, sunny rows."
+   },
+   {
+    "name": "🌾 Pale barley sprouts",
+    "img": "spec",
+    "env": "dark",
+    "miss": "These pale sprouts grew away from sunlight."
+   },
+   {
+    "name": "🌿 Chain fern",
+    "img": "fern",
+    "env": "forest",
+    "miss": "This fern grows in shady forests."
+   }
+  ]
+ },
+ "quiz": [
+  {
+   "q": "What does a scientist call the information collected during an investigation?",
+   "options": [
+    {
+     "t": "A pattern",
+     "miss": "Think about the Word Wall card for information collected in an investigation: measurements and observations."
+    },
+    {
+     "t": "Data",
+     "ok": "🌱 That's right! Data is the information scientists collect: measurements, observations, and numbers from an investigation."
+    },
+    {
+     "t": "A graph",
+     "miss": "Think about the Word Wall card for information collected in an investigation: measurements and observations."
+    }
+   ]
+  },
+  {
+   "q": "In this investigation, both plants started at 2 cm but grew differently. What does that tell us?",
+   "options": [
+    {
+     "t": "The light condition affected how fast each plant grew.",
+     "ok": "🌿 Exactly! Since everything except light was the same, any difference in growth must have been caused by the light condition."
+    },
+    {
+     "t": "The soil must have been different in each pot.",
+     "miss": "Remember: in this fair test, only the light was changed. So any growth difference is evidence about light, not soil or the type of plant."
+    },
+    {
+     "t": "The plants were different kinds of plants to begin with.",
+     "miss": "Remember: in this fair test, only the light was changed. So any growth difference is evidence about light, not soil or the type of plant."
+    }
+   ]
+  },
+  {
+   "q": "Why is a graph helpful when comparing plant growth data?",
+   "options": [
+    {
+     "t": "It lets you water the plants automatically.",
+     "miss": "Think about what a graph does with numbers. It turns data into a picture that makes patterns easier to see and compare."
+    },
+    {
+     "t": "It shows you which plant is taller in real life.",
+     "miss": "Think about what a graph does with numbers. It turns data into a picture that makes patterns easier to see and compare."
+    },
+    {
+     "t": "It makes patterns in the data easier to see.",
+     "ok": "🌱 Yes! A graph turns rows of numbers into a picture, so you can spot patterns, like which plant grew faster, at a glance."
+    }
+   ]
+  }
+ ],
+ "assign": {
+  "partA": {
+   "title": "Read the data",
+   "do": "Read each one. Pick the best answer, or type your answer.",
+   "items": [
+    {
+     "n": 1,
+     "q": "Build a bar graph of this sample data from two young bean plants. Make each bar match its number in the table.",
+     "type": "graph",
+     "cats": [
+      "Day 1",
+      "Day 3",
+      "Day 5",
+      "Day 7"
+     ],
+     "series": [
+      {
+       "name": "Bright light",
+       "color": "#f2b632",
+       "values": [
+        2,
+        4,
+        7,
+        10
+       ]
+      },
+      {
+       "name": "Dim light",
+       "color": "#6b7a8f",
+       "values": [
+        2,
+        3,
+        4,
+        5
+       ]
+      }
+     ],
+     "max": 12,
+     "unit": "cm",
+     "yLabel": "Plant height (cm)",
+     "title": "How tall did each plant grow?"
+    },
+    {
+     "n": 2,
+     "q": "On which day did the bright-light plant first grow taller than the dim-light plant?",
+     "type": "choice",
+     "options": [
+      {
+       "t": "Day 3",
+       "ok": "Yes. On Day 1 they were both 2 cm. By Day 3, the bright-light plant was 4 cm and the dim-light plant was 3 cm."
+      },
+      {
+       "t": "Day 5",
+       "miss": "Look at Day 3 in the table. Are the two plants the same height yet?"
+      },
+      {
+       "t": "Day 7",
+       "miss": "Look earlier in the table. When do the two numbers first become different?"
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "q": "How much taller was the bright-light plant than the dim-light plant by Day 7?",
+     "type": "choice",
+     "options": [
+      {
+       "t": "10 cm",
+       "miss": "10 cm is how tall the bright-light plant was. How much taller than 5 cm is that?"
+      },
+      {
+       "t": "5 cm",
+       "ok": "Yes. 10 cm take away 5 cm is 5 cm taller."
+      },
+      {
+       "t": "2 cm",
+       "miss": "2 cm is where both plants started. Compare the Day 7 numbers."
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "q": "Did the difference between the plants grow bigger over time, stay the same, or get smaller?",
+     "type": "choice",
+     "options": [
+      {
+       "t": "It grew bigger.",
+       "ok": "Yes. The difference went from 0 cm to 1 cm, then 3 cm, then 5 cm."
+      },
+      {
+       "t": "It stayed the same.",
+       "miss": "Subtract the two numbers for each day. Do you get the same answer every time?"
+      },
+      {
+       "t": "It got smaller.",
+       "miss": "Look at your graph. Are the two bars getting closer together, or farther apart?"
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "q": "How can you tell? Use numbers from the table or your graph.",
+     "type": "text",
+     "min": 8,
+     "chips": [
+      [
+       "num",
+       "Uses a number"
+      ]
+     ]
+    }
+   ]
+  },
+  "partB": {
+   "title": "Short answer",
+   "do": "Answer in complete sentences. Use your science words.",
+   "items": [
+    {
+     "n": 1,
+     "q": "What was the variable in this investigation, the one thing that was different between the two plants?",
+     "type": "text",
+     "min": 8,
+     "chips": [
+      [
+       "light",
+       "Names the variable"
+      ]
+     ]
+    },
+    {
+     "n": 2,
+     "q": "Why did scientists keep everything the same except for the light? What would happen if both light and water were different?",
+     "type": "text",
+     "min": 15,
+     "chips": [
+      [
+       "same",
+       "Says what stayed the same"
+      ],
+      [
+       "because",
+       "Gives a reason (because)"
+      ]
+     ]
+    }
+   ]
+  },
+  "write": {
+   "title": "What does your investigation tell you?",
+   "do": "What does your investigation tell you about how light affects plant growth? Answer the three questions. Use all three of the science words under the boxes.",
+   "vocab": [
+    "evidence",
+    "condition",
+    "growth rate"
+   ],
+   "need": 3,
+   "prompts": [
+    [
+     "What did you observe?",
+     "Start with: \"In my investigation, I noticed that…\""
+    ],
+    [
+     "What does your data show?",
+     "Start with: \"The evidence in my data shows that…\""
+    ],
+    [
+     "Why does that make sense?",
+     "Start with: \"This makes sense because plants need light to…\""
+    ]
+   ]
+  },
+  "partC": {
+   "do": "Draw both plants as they looked on Day 7. Label the height of each one, and write its light condition next to it.",
+   "labels": [
+    "Bright-light plant: its height and light condition",
+    "Dim-light plant: its height and light condition"
+   ]
+  },
+  "checklist": [
+   {
+    "k": "det",
+    "t": "My evidence chart has 3 plants and my explanation.",
+    "req": {
+     "det": 3,
+     "text": {
+      "in-det": 15
+     }
+    }
+   },
+   {
+    "k": "a",
+    "t": "Part A: my bar graph and all my answers.",
+    "req": {
+     "choice": [
+      "a1",
+      "a2",
+      "a3",
+      "a4"
+     ],
+     "text": {
+      "in-a5": 8
+     }
+    }
+   },
+   {
+    "k": "b",
+    "t": "Part B: questions 1 and 2.",
+    "req": {
+     "text": {
+      "in-b1": 8,
+      "in-b2": 15
+     }
+    }
+   },
+   {
+    "k": "c",
+    "t": "Part C: my drawing and both labels.",
+    "req": {
+     "sketch": true,
+     "text": {
+      "in-c1": 6,
+      "in-c2": 6
+     }
+    }
+   },
+   {
+    "k": "w",
+    "t": "Write and explain, using evidence, condition, and growth rate.",
+    "req": {
+     "text": {
+      "in-w1": 10,
+      "in-w2": 10,
+      "in-w3": 10
+     },
+     "vocab": 3
+    }
+   }
+  ]
+ },
+ "premiere": {
+  "title": "Premiere my light-test story",
+  "director": "JUNIOR PLANT TESTER",
+  "storyKicker": "My plant story",
+  "frames": [
+   {
+    "k": "formation",
+    "label": "The fair test",
+    "img": "s4",
+    "cap": "The fair test: change only the light, then measure."
+   },
+   {
+    "k": "compare",
+    "label": "The Light Lab",
+    "img": "kohlsun",
+    "cap": "The Light Lab: green and sturdy in light, pale and stretched in the dark."
+   },
+   {
+    "k": "wall",
+    "label": "The light elevator",
+    "img": "weel",
+    "cap": "The light elevator: plants grow only where light reaches."
+   },
+   {
+    "k": "det",
+    "label": "Who blocked the light?",
+    "img": "vegwhite",
+    "cap": "Who blocked the light? A plant's look is evidence of its light."
+   }
+  ]
+ },
+ "next": {
+  "title": "20.01 · How Do Plants Respond to Their Environment?",
+  "text": "Next time, you'll find out how plants respond when light, water, and gravity change around them, even though they can't walk away."
+ },
+ "chips": {
+  "part": {
+   "any": [
+    "yellow",
+    "pale",
+    "long",
+    "thin",
+    "root",
+    "leaf",
+    "leaves",
+    "stem",
+    "sprout",
+    "shoot",
+    "white",
+    "green",
+    "tall",
+    "floppy",
+    "seed"
+   ]
+  },
+  "ask": {
+   "re": "\\?|\\b(why|how|what|when|where|who|which|does|do|is|are|can|did|will)\\b"
+  },
+  "trait": {
+   "any": [
+    "pale",
+    "green",
+    "yellow",
+    "white",
+    "stem",
+    "leaf",
+    "leaves",
+    "long",
+    "thin",
+    "stringy",
+    "frond",
+    "lettuce",
+    "floppy",
+    "shoot",
+    "sprout"
+   ]
+  },
+  "because": {
+   "re": "\\b(because|since|so)\\b"
+  },
+  "env": {
+   "any": [
+    "light",
+    "dark",
+    "sun",
+    "sunny",
+    "shade",
+    "shady",
+    "lamp",
+    "lid",
+    "little",
+    "lots"
+   ]
+  },
+  "num": {
+   "re": "\\d|\\b(one|two|three|four|five|six|seven|eight|nine|ten)\\b"
+  },
+  "light": {
+   "any": [
+    "light",
+    "lamp",
+    "sun"
+   ]
+  },
+  "same": {
+   "any": [
+    "same",
+    "soil",
+    "water",
+    "pot",
+    "fair"
+   ]
+  }
+ },
+ "creditAlias": {},
+ "creditsExtra": [
+  "Music: Johann Strauss II, <i>The Blue Danube</i> (An der schönen, blauen Donau), Op. 314, performed by the United States Marine Band, public domain (Wikimedia Commons).",
+  "Opti the owl: Optima Academy. Sound effects are made by the page. The fair-test movie and the light elevator are models; every plant photo is real. The deep-sea photo was lit by a NOAA robot's lamps."
+ ]
+}

@@ -195,7 +195,32 @@
 
   /* ---- assignment choices ---- */
   /* every Part A / Part B choice group, whatever its number (18.01 has four; 17.01/17.02 had a1 and a3) */
-  $$('#tab-assign [data-choice]').forEach(function (g) { if (/^[ab]\d+$/.test(g.dataset.choice)) choices(g); });
+  $$('#tab-assign [data-choice]').forEach(function (g) { if (/^[ab]\d+$/.test(g.dataset.choice) && !g.classList.contains('wl-graph')) choices(g); });
+
+  /* ---- tap-to-build bar graph (19.02): tap or drag in a column, ＋/－, or arrow keys; Check my graph marks each bar ---- */
+  $$('.wl-graph').forEach(function (g) {
+    var C = JSON.parse(g.dataset.graph), k = g.dataset.choice, fb = g.nextElementSibling, mx = C.max;
+    var v = S['gv-' + k] || C.series.map(function (x) { return x.values.map(function () { return 0; }); });
+    function col(si, ci) { return g.querySelector('.wl-gcol[data-s="' + si + '"][data-c="' + ci + '"]'); }
+    function draw() { C.series.forEach(function (x, si) { x.values.forEach(function (_, ci) { var c = col(si, ci), n = v[si][ci], p = n / mx * 100;
+      c.querySelector('.wl-gbar').style.height = p + '%'; var lab = c.querySelector('.wl-gval'); lab.textContent = n; lab.style.bottom = 'calc(' + p + '% + 2px)'; c.setAttribute('aria-valuenow', n); }); }); }
+    function set(si, ci, n) { n = Math.max(0, Math.min(mx, Math.round(n))); if (v[si][ci] === n) return; v[si][ci] = n; S['gv-' + k] = v; save(); var c = col(si, ci); c.classList.remove('bad', 'good'); draw(); }
+    $$('.wl-gcol', g).forEach(function (c) { var si = +c.dataset.s, ci = +c.dataset.c, down = false;
+      function at(e) { var r = c.getBoundingClientRect(); set(si, ci, (1 - (e.clientY - r.top) / r.height) * mx); }
+      c.addEventListener('pointerdown', function (e) { down = true; try { c.setPointerCapture(e.pointerId); } catch (x) {} at(e); });
+      c.addEventListener('pointermove', function (e) { if (down) at(e); });
+      c.addEventListener('pointerup', function () { down = false; });
+      c.addEventListener('keydown', function (e) { if (e.key === 'ArrowUp' || e.key === 'ArrowRight') { set(si, ci, v[si][ci] + 1); e.preventDefault(); } if (e.key === 'ArrowDown' || e.key === 'ArrowLeft') { set(si, ci, v[si][ci] - 1); e.preventDefault(); } }); });
+    $$('[data-gs]', g).forEach(function (b) { b.addEventListener('click', function () { var si = +b.dataset.gs, ci = +b.dataset.gc; set(si, ci, v[si][ci] + (+b.dataset.gd)); }); });
+    function finish(quiet) { g.dataset.done = 1; S['c-' + k] = 1; S['g-' + g.dataset.gather] = C.series.map(function (x, si) { return x.name + ': ' + C.cats.map(function (c, ci) { return c + ' ' + v[si][ci] + ' ' + C.unit; }).join(', '); }).join('\n');
+      $$('.wl-gcol', g).forEach(function (c) { c.classList.remove('bad'); c.classList.add('good'); }); if (fb) { fb.className = 'wl-fb ok'; fb.textContent = 'Yes! Every bar matches the table. Now look: which color keeps getting taller, faster?'; }
+      save(); if (!quiet) ding(); gather(); checklist(); }
+    g.querySelector('[data-gcheck]').addEventListener('click', function () { var wrong = 0;
+      C.series.forEach(function (x, si) { x.values.forEach(function (want, ci) { var c = col(si, ci), ok = v[si][ci] === want; c.classList.toggle('bad', !ok); c.classList.toggle('good', ok); if (!ok) wrong++; }); });
+      if (!wrong) { finish(); return; }
+      if (fb) { fb.className = 'wl-fb miss'; fb.textContent = wrong + (wrong === 1 ? ' bar doesn\'t' : ' bars don\'t') + ' match the table yet. Look for the red outlines, then check the number in the table.'; } oops(); });
+    draw(); if (S['c-' + k] != null) finish(true);
+  });
 
   /* ---- Part C sketch (required) ---- */
   (function () {

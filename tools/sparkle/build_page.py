@@ -108,11 +108,26 @@ body = f'''<div class="page-wrap">
 
 <section class="wl-panel" id="tab-assign" role="tabpanel">{scene(4,"Assignment")}{opti("assign", L["lesson"].replace(".","-")+"-assign")}
 <div class="wl-card">'''
+def graph_item(key, it, gather):
+    """Tap-to-build bar graph (19.02). Data stays in lesson.json; the engine draws the bars and checks them."""
+    cfg = {k: it[k] for k in ('cats', 'series', 'max', 'unit')}
+    mx, ser = it['max'], it['series']
+    tbl = '<table class="wl-gtable"><tr><th></th>' + ''.join(f'<th>{x["name"]}</th>' for x in ser) + '</tr>' + ''.join(f'<tr><th>{c}</th>' + ''.join(f'<td>{x["values"][i]} {it["unit"]}</td>' for x in ser) + '</tr>' for i, c in enumerate(it['cats'])) + '</table>'
+    ticks = ''.join(f'<span style="bottom:{v / mx * 100:.2f}%">{v}</span>' for v in range(0, mx + 1, 2))
+    cols = ''.join('<div class="wl-ggroup">' + ''.join(f'<div class="wl-gcol" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="{mx}" aria-valuenow="0" aria-label="{E(x["name"])}, {E(c)}" data-s="{si}" data-c="{ci}"><div class="wl-gbar" style="background:{x["color"]};height:0"></div><div class="wl-gval">0</div></div>' for si, x in enumerate(ser)) + '</div>' for ci, c in enumerate(it['cats']))
+    steps = ''.join('<div>' + ''.join(f'<span style="flex:1;max-width:38px;display:flex;flex-direction:column;gap:2px"><button type="button" data-gs="{si}" data-gc="{ci}" data-gd="1" aria-label="Taller: {E(x["name"])}, {E(c)}">＋</button><button type="button" data-gs="{si}" data-gc="{ci}" data-gd="-1" aria-label="Shorter: {E(x["name"])}, {E(c)}">－</button></span>' for si, x in enumerate(ser)) + '</div>' for ci, c in enumerate(it['cats']))
+    key_ = ''.join(f'<span><i style="background:{x["color"]}"></i>{x["name"]}</span>' for x in ser)
+    return (f'<div class="wl-graph wl-choices" data-choice="{key}" data-gather="{E(gather)}" data-graph="{E(json.dumps(cfg))}"><h4>{it.get("title", "")}</h4>'
+            f'<div class="wl-gwrap">{tbl}<div><div class="wl-step"><div class="n">Build it</div><p>Tap inside a bar\'s column at the right height, or use ＋ and －, until each bar matches the table. Then press <b>Check my graph</b>.</p></div>'
+            f'<div class="wl-gkey">{key_}</div><div class="wl-gylab">{it.get("yLabel", "")}</div><div class="wl-gplot"><div class="wl-gy">{ticks}</div><div class="wl-ggrid">{cols}</div></div>'
+            f'<div class="wl-gx">{"".join(f"<span>{c}</span>" for c in it["cats"])}</div><div class="wl-gstep">{steps}</div></div></div>'
+            f'<div style="text-align:center;margin-top:8px"><button type="button" class="wl-btn" data-gcheck>✅ Check my graph</button></div></div><p class="wl-fb"></p>')
 def items(sec, prefix):
     h = ''
     for it in sec['items']:
         h += f'<p><b>{it["n"]}.</b> {it["q"]}</p>'
         key = f'{prefix}{it["n"]}'
+        if it['type'] == 'graph': h += graph_item(key, it, f'Part {prefix.upper()} · {it["n"]}'); continue
         h += choice_group(key, it['options'], f'Part {prefix.upper()} · {it["n"]}') if it['type'] == 'choice' else textbox('in-' + key, f'Part {prefix.upper()} · {it["n"]}', it['min'], it.get('chips'))
     return h
 body += f'<h3><span class="k">🔍 Part A</span>{A["partA"]["title"]}</h3><p class="wl-do"><b>What to do:</b> {A["partA"]["do"]}</p><div class="wl-in">{items(A["partA"],"a")}</div>'
