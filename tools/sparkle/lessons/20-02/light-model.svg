@@ -1,0 +1,22 @@
+<svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A model of a seedling in a pot by a window, leaning more toward the light each day">
+<defs>
+<linearGradient id="gWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#efe3c9"/><stop offset="1" stop-color="#d9c8a4"/></linearGradient>
+<linearGradient id="gGlass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9f6ff"/><stop offset=".5" stop-color="#bfe2f7"/><stop offset="1" stop-color="#fff6cf"/></linearGradient>
+<linearGradient id="gBeam" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#fff3b0" stop-opacity=".75"/><stop offset="1" stop-color="#fff3b0" stop-opacity="0"/></linearGradient>
+<linearGradient id="gPot" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9c4f2c"/><stop offset=".45" stop-color="#c97a4a"/><stop offset="1" stop-color="#7d3c20"/></linearGradient>
+<linearGradient id="gTable" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a6440"/><stop offset="1" stop-color="#5e4329"/></linearGradient>
+<linearGradient id="gStem" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#5d8f34"/><stop offset="1" stop-color="#8fc75a"/></linearGradient>
+<radialGradient id="gLeaf" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#9fd874"/><stop offset=".7" stop-color="#4f9a37"/><stop offset="1" stop-color="#2f6a22"/></radialGradient>
+</defs>
+<rect width="320" height="180" fill="url(#gWall)"/>
+<polygon points="252,22 252,128 60,150 60,40" fill="url(#gBeam)"/>
+<rect x="250" y="18" width="62" height="114" rx="3" fill="#7a5b3a"/><rect x="255" y="23" width="52" height="104" fill="url(#gGlass)"/>
+<path d="M281 23 v104 M255 75 h52" stroke="#7a5b3a" stroke-width="3"/>
+<circle cx="296" cy="38" r="9" fill="#ffe27a" opacity=".9"/>
+<text x="281" y="146" text-anchor="middle" font-size="8.5" font-family="sans-serif" font-weight="800" fill="#6b4a1f">☀ light</text>
+<rect y="150" width="320" height="30" fill="url(#gTable)"/>
+<path d="M112 118 h56 l-7 34 h-42 z" fill="url(#gPot)"/><rect x="108" y="112" width="64" height="9" rx="2" fill="#b0633a"/>
+<ellipse cx="140" cy="116" rx="27" ry="3.5" fill="#4a3220"/>
+<g class="s1"><path d="M140 118 C140 96 140 70 140 46" stroke="#5f9a3a" stroke-width="4" fill="none" stroke-linecap="round"/><ellipse cx="131" cy="47" rx="11" ry="5" fill="url(#gLeaf)" transform="rotate(-25 131 47)"/><ellipse cx="149" cy="45" rx="11" ry="5" fill="url(#gLeaf)" transform="rotate(20 149 45)"/></g><g class="s2" style="opacity:0"><path d="M140 118 C140 94 143 66 156 48" stroke="#5f9a3a" stroke-width="4" fill="none" stroke-linecap="round"/><ellipse cx="147" cy="49" rx="11" ry="5" fill="url(#gLeaf)" transform="rotate(-13 147 49)"/><ellipse cx="165" cy="47" rx="11" ry="5" fill="url(#gLeaf)" transform="rotate(32 165 47)"/></g><g class="s3" style="opacity:0"><path d="M140 118 C140 92 150 64 180 56" stroke="#5f9a3a" stroke-width="4" fill="none" stroke-linecap="round"/><ellipse cx="171" cy="57" rx="11" ry="5" fill="url(#gLeaf)" transform="rotate(1 171 57)"/><ellipse cx="189" cy="55" rx="11" ry="5" fill="url(#gLeaf)" transform="rotate(46 189 55)"/></g><g class="s4" style="opacity:0"><path d="M140 118 C140 90 158 66 204 70" stroke="#5f9a3a" stroke-width="4" fill="none" stroke-linecap="round"/><ellipse cx="195" cy="71" rx="11" ry="5" fill="url(#gLeaf)" transform="rotate(15 195 71)"/><ellipse cx="213" cy="69" rx="11" ry="5" fill="url(#gLeaf)" transform="rotate(60 213 69)"/></g>
+
+</svg>

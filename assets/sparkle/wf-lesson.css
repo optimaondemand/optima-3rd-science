@@ -589,3 +589,9 @@ body.wf-dim .wf-wrap{position:relative;z-index:86}
 @media (max-width:620px){.wl-gwrap{grid-template-columns:1fr}.wl-ggrid,.wl-gy{height:190px}.wl-ggrid,.wl-gx,.wl-gstep{gap:5px}}
 /* 20.01: desk-lamp swatch for the Stem and Root Lab */
 .wl-swatch.sw-lamp{--sw:radial-gradient(circle at 50% 30%,#fff6c4 0 18%,#ffd43b 19% 24%,transparent 25%),linear-gradient(180deg,#3f4652 0 42%,transparent 42%),linear-gradient(90deg,transparent 46%,#555 46% 54%,transparent 54%);width:54px;height:60px;border-radius:6px 6px 3px 3px;background-color:#e9e2d2;box-shadow:inset 0 -8px 0 #6b5a3e,0 2px 4px rgba(0,0,0,.25)}
+/* 20.02: flashlight swatch, cardboard maze wall bands (bright near the light hole -> dark at the bottom) */
+.wl-swatch.sw-torch{--sw:radial-gradient(circle at 88% 50%,#fff6c4 0 10%,#ffd43b 11% 16%,transparent 17%),linear-gradient(180deg,transparent 30%,#4a5361 30% 70%,transparent 70%);width:64px;height:40px;border-radius:6px;background-color:#e9e2d2;box-shadow:inset -10px 0 0 #c9b98f,0 2px 4px rgba(0,0,0,.25)}
+.wl-band.rock-maze1{background:repeating-linear-gradient(90deg,rgba(0,0,0,.05) 0 2px,transparent 2px 9px),linear-gradient(180deg,#f3dfb6,#e2c48e)}
+.wl-band.rock-maze2{background:repeating-linear-gradient(90deg,rgba(0,0,0,.06) 0 2px,transparent 2px 9px),linear-gradient(180deg,#cfa86e,#b88f57)}
+.wl-band.rock-maze3{background:repeating-linear-gradient(90deg,rgba(0,0,0,.08) 0 2px,transparent 2px 9px),linear-gradient(180deg,#8f6e44,#6f5333)}
+.wl-band.rock-maze4{background:repeating-linear-gradient(90deg,rgba(0,0,0,.1) 0 2px,transparent 2px 9px),linear-gradient(180deg,#4e3a24,#2e2216)}
