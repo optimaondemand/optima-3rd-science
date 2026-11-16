@@ -53,6 +53,7 @@ body = f'''<div class="page-wrap">
 <div id="wf-film"></div>
 <div class="wl-card wl-ican"><h3><span class="k">🎯 Today</span>I can…</h3><ol>{"".join(f"<li>{i}</li>" for i in L["icans"])}</ol></div>
 {opti("warm", L["lesson"].replace(".","-")+"-welcome")}
+<div class="wl-card wl-tvid" id="tvid" data-slot="{L["lesson"].replace(".","-")}-intro" hidden></div>
 ''' + stage('m-spec', 'wl-wood', S['kicker'], S['title'], S['look'], S['do'], f'''
 <div class="wl-specimen" id="spec-a"><div class="wl-slab"><img src="{{{{{S["img"]}}}}}" alt="{E(S["alt"])}"></div><div class="wl-brass">{S["number"]}</div>
 <div class="wl-idcard">{"".join(f"<span>{c}</span>" if i else c for i,c in enumerate(S["card"]))}</div></div>
@@ -250,6 +251,8 @@ SRC = ROOT / 'engine'
 css = (SRC / 'wf-film.css').read_text() + '\n' + (SRC / 'wf-lesson.css').read_text() + '\n' + (SRC / 'onestep.css').read_text()
 js = (SRC / 'wf-film.js').read_text() + '\n' + (SRC / 'wf-modules.js').read_text() + '\n' + (SRC / 'wf-lesson.js').read_text() + '\n' + (SRC / 'onestep.js').read_text()
 data = {k: v for k, v in L.items() if k not in ('film',)}
+# Teacher intro video (16 Nov 2026): the slot stays hidden until video-manifest.json marks <WW-LL>-intro ready.
+data.setdefault('videoManifest', 'https://raw.githubusercontent.com/bbirchum1/optima-3rd-science/main/video-manifest.json')
 if REPO:
     for f in ('wf-film.css', 'wf-lesson.css', 'onestep.css', 'wf-film.js', 'wf-modules.js', 'wf-lesson.js', 'onestep.js'): COPY.append((SRC / f, f'assets/sparkle/{f}'))
     v = __import__('hashlib').md5((css + js).encode()).hexdigest()[:8]

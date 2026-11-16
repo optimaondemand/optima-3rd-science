@@ -1,0 +1,22 @@
+{
+ "how-22-01-specimen": {
+  "page": "Press Inspect specimen. Move the magnifying lens over the beach finds, then tap 3 things you notice.",
+  "say": "Press Inspect specimen. Move the magnifying lens over the beach finds, then tap three things you notice."
+ },
+ "how-22-01-compare": {
+  "page": "Put the sponge under one tray and the plastic lid under the other: drag them, or tap one, then a tray. Press Pour the rain. Then swap and pour again.",
+  "say": "Put the sponge under one tray and the plastic lid under the other: drag them, or tap one, then a tray. Press Pour the rain. Then swap and pour again."
+ },
+ "how-22-01-wall": {
+  "page": "First, make a prediction. Then brush the glowing stop: drag across it (or tap it again and again) until the place shows.",
+  "say": "First, make a prediction. Then brush the glowing stop: drag across it (or tap it again and again) until the place shows."
+ },
+ "how-22-01-det": {
+  "page": "Pick 3 case files, one at a time. Tap a clue, then pick what it shows. Predict harm or help, and watch the place today appear.",
+  "say": "Pick three case files, one at a time. Tap a clue, then pick what it shows. Predict harm or help, and watch the place today appear."
+ },
+ "how-22-01-partc": {
+  "page": "Draw one place before and after a human action. Label what changed, and one way to help.",
+  "say": "Draw one place before and after a human action. Label what changed, and one way to help."
+ }
+}

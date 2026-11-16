@@ -381,6 +381,17 @@
   function ticks() { if ((S.specFound || []).length >= 3 && words(val('in-notice')) >= 4 && words(val('in-wonder')) >= 4) markTab('warm');
     var F = S.frames || {}; if (D.premiere.frames.every(function (f) { return F[f.k]; }) && words(val('in-det')) >= (D.det.write.min || 15)) markTab('lesson'); if (S.reel) markTab('assign'); }
   document.addEventListener('click', function () { setTimeout(ticks, 50); }); document.addEventListener('input', ticks);
+  (function () { /* teacher intro video: shown only when video-manifest.json marks this lesson's slot ready (16 Nov 2026) */
+    var v = $('#tvid'); if (!v || !D.videoManifest || !window.fetch) return;
+    fetch(D.videoManifest + '?v=' + Date.now()).then(function (r) { return r.text(); }).then(function (t) {
+      var m; try { m = JSON.parse(t); } catch (e) { return; } m = m.videos || m; var e = m[v.getAttribute('data-slot')];
+      if (!e || e.status !== 'ready' || !e.embed) return;
+      var src = (String(e.embed).match(/src=\\?"([^"\\\s]+)/) || [])[1];
+      if (!/^https:\/\/(www\.)?(youtube(-nocookie)?\.com\/embed\/|player\.vimeo\.com\/video\/)/.test(src || '')) return;
+      v.innerHTML = '<h3><span class="k">🎬 Introduction video</span>From your teacher</h3><div class="wl-tvid-box"><iframe src="' + src + '" title="Introduction video" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>';
+      v.hidden = false;
+    }).catch(function () {});
+  })();
   gather(); checklist(); ticks();
   if (S.tab && S.tab !== 'warm') show(S.tab);
   window.WL = { state: S, show: show };

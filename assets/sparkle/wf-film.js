@@ -1,6 +1,6 @@
 /* Opti's Wonder Films — cinematic opener engine (G3 science sparkle layer).
    DATA-driven: window.WF_DATA = {kicker, lesson, title, bigQuestion, poster, music:{src,vol}, shots:[...], captions:[...], credits:[...], startTarget}
-   Shot types: leader | black | photo | reveal | xray | split | flash | archive | title. Any photo may add tilt {to (deg), at, dur}: the picture turns over (20.01). fx: dust | caustics | rays | sweep | bubbles | rain. Any shot may carry sfxAt [{at,name,arg}].  Holds NO lesson content. */
+   Shot types: leader | black | photo | reveal | xray | split | flash | archive | title. Any photo may add tilt {to (deg), at, dur}: the picture turns over (20.01). fx: dust | caustics | rays | sweep | bubbles | rain. Any shot may carry sfxAt [{at,name,arg}], badge {text, dur} (a corner label, e.g. "◀◀ REWIND") and vhs: true (tape-rewind lines; off with reduced motion) (22.01).  Holds NO lesson content. */
 (function () {
   'use strict';
   var D = window.WF_DATA; if (!D) return;
@@ -74,6 +74,8 @@
   var flick = el('div', 'wf-fx wf-flicker'); stage.appendChild(flick);
   stage.appendChild(el('div', 'wf-bar top')); stage.appendChild(el('div', 'wf-bar bot'));
   var place = el('div', 'wf-place'); stage.appendChild(place);
+  var badge = el('div', 'wf-badge'); stage.appendChild(badge);
+  var vhs = el('div', 'wf-fx wf-vhs'); stage.appendChild(vhs);
   var count = el('div', 'wf-count', '<div class="num">0</div><div class="lab">years ago</div>'); stage.appendChild(count);
   var cap = el('div', 'wf-cap'); cap.setAttribute('aria-live', 'off'); stage.appendChild(cap);
 
@@ -223,7 +225,7 @@
   }
   function stop(toEnd) {
     playing = false; cancelAnimationFrame(raf); music.pause(); Object.values(voices).forEach(function (a) { if (a) a.pause(); });
-    stage.classList.remove('wf-scope'); document.body.classList.remove('wf-dim'); place.classList.remove('on'); count.classList.remove('on'); cap.classList.remove('on');
+    stage.classList.remove('wf-scope'); document.body.classList.remove('wf-dim'); place.classList.remove('on'); count.classList.remove('on'); cap.classList.remove('on'); badge.classList.remove('on'); vhs.classList.remove('on');
     if (toEnd) showEnd();
   }
   function once(key, fn) { if (!fired[key]) { fired[key] = 1; fn(); } }
@@ -231,7 +233,7 @@
   function frame() {
     var T = now();
     if (T >= END) { stop(true); return; }
-    var placeText = '', countOn = false;
+    var placeText = '', countOn = false, badgeText = '', vhsOn = false;
     D.shots.forEach(function (s, i) {
       var L = s._el, local = T - s.t, fin = s.fade == null ? .8 : s.fade, next = D.shots[i + 1];
       var visible = local >= -0.001 && local < s.d + (next ? (next.fade == null ? .8 : next.fade) : .6);
@@ -249,6 +251,8 @@
       if (s.in === 'blur' && !RM) L.style.filter = local < 1.2 ? 'blur(' + (12 * (1 - local / 1.2)).toFixed(1) + 'px)' : 'none';
       if (local >= 0 && local < s.d) {
         if (s.place) placeText = s.place;
+        if (s.badge && local < (s.badge.dur || s.d)) badgeText = s.badge.text;
+        if (s.vhs && !RM) vhsOn = true;
         if (s.count) { countOn = true; var cp = clamp(local / (s.count.dur || 2.2), 0, 1); count.querySelector('.num').textContent = Math.round(s.count.to * ease(cp)).toLocaleString('en-US');
           count.querySelector('.lab').textContent = s.count.label || 'years ago'; if (cp < 1 && Math.floor(local * 14) !== s._tk) { s._tk = Math.floor(local * 14); sfx('tick'); } }
         if (s.sfx) once('sfx' + i, function () { sfx(s.sfx, s.sfxArg); });
@@ -277,6 +281,8 @@
     });
     if (placeText) { if (place.dataset.t !== placeText) { place.dataset.t = placeText; place.innerHTML = '<b></b>' + placeText; } place.classList.add('on'); } else place.classList.remove('on');
     count.classList.toggle('on', countOn);
+    if (badgeText) { if (badge.dataset.t !== badgeText) { badge.dataset.t = badgeText; badge.textContent = badgeText; sfx('whoosh', .6); } badge.classList.add('on'); } else { badge.classList.remove('on'); badge.dataset.t = ''; }
+    vhs.classList.toggle('on', vhsOn);
     // captions + optional voice
     var ci = -1; (D.captions || []).forEach(function (c, k) { if (T >= c.t && T < c.t + c.d) ci = k; });
     var flashOn = D.shots.some(function (s) { return s.type === 'flash' && T >= s.t && T < s.t + s.d; });

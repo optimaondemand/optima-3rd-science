@@ -87,3 +87,8 @@ The ELA step walker, for science. On each tab the student sees ONE step, with **
 
 ## Part A bar graph (19.02, 14 Nov 2026)
 A Part A item may be `{"n":1, "type":"graph", "q", "title", "yLabel", "cats":[…], "series":[{"name","color","values":[…]}], "max", "unit"}`. The page shows the data table and an empty bar graph; students tap or drag in a column, use ＋/－, or arrow keys, then press **Check my graph** (wrong bars get a red outline). A correct graph counts like a right choice: put its key (e.g. `a1`) in the checklist's `choice` list. Its values go into My answers. check_lesson.py checks the data; playtest builds it with the ＋ buttons.
+
+## Film badge + rewind lines, lid swatch, teacher intro video (22.01, 16 Nov 2026)
+- Any film shot may add `badge {text, dur}` (a corner label such as "◀◀ REWIND" or "▶ PLAY"; `dur` = seconds it stays, default the whole shot) and `vhs: true` (tape-rewind lines; off with reduced motion).
+- New comparison swatch `lid` (clear plastic lid) and effect `runoff` (water slides off and away).
+- Teacher intro video: every page has a hidden slot under Opti's Warm-Up note (`#tvid`, `data-slot="<WW-LL>-intro"`). On load it reads `video-manifest.json` (default: the repo's raw GitHub copy; override with `videoManifest` in lesson.json). Only when that slot is `"status": "ready"` with a YouTube or Vimeo embed does the card appear; otherwise it stays hidden. Nothing per lesson. A manifest that isn't valid JSON keeps every slot hidden.

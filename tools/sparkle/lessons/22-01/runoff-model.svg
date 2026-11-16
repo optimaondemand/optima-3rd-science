@@ -1,0 +1,44 @@
+<svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A model of rain runoff: rain falls on a parking lot, the water carries a bottle cap into a storm drain, a pipe under the ground empties into a creek, and the creek carries the cap to the bay">
+<defs>
+<linearGradient id="rSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fb0bd"/><stop offset="1" stop-color="#d9e2e6"/></linearGradient>
+<linearGradient id="rLot" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5b6168"/><stop offset="1" stop-color="#3b4046"/></linearGradient>
+<linearGradient id="rDirt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a6a4a"/><stop offset="1" stop-color="#5a4330"/></linearGradient>
+<linearGradient id="rWater" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6fb3d6"/><stop offset="1" stop-color="#2f7aa6"/></linearGradient>
+<linearGradient id="rPipe" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9c0c6"/><stop offset=".5" stop-color="#8a939b"/><stop offset="1" stop-color="#5f676e"/></linearGradient>
+<radialGradient id="rCap" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ff8a80"/><stop offset=".7" stop-color="#d63a2f"/><stop offset="1" stop-color="#8e1f18"/></radialGradient>
+</defs>
+<rect width="320" height="180" fill="url(#rSky)"/>
+<!-- ground: parking lot (left), grass bank, creek, sandy shore and bay (right) -->
+<path d="M0 96 L118 96 L118 180 L0 180 Z" fill="url(#rLot)"/>
+<g stroke="#e9d36a" stroke-width="2" opacity=".85"><path d="M14 99 l14 0 M48 99 l14 0 M82 99 l14 0"/></g>
+<path d="M118 96 C140 96 150 100 170 104 L170 180 L118 180 Z" fill="url(#rDirt)"/>
+<path d="M118 92 C140 92 152 96 172 101 L172 104 C150 100 140 96 118 96 Z" fill="#6f9a4a"/>
+<path d="M170 104 C200 112 214 114 236 116 L236 180 L170 180 Z" fill="url(#rDirt)"/>
+<path d="M176 107 C196 113 206 118 226 120 C206 126 190 124 176 118 Z" fill="url(#rWater)" opacity=".9"/>
+<path d="M236 116 C256 118 270 124 320 126 L320 180 L236 180 Z" fill="#e7d7a8"/>
+<path d="M252 128 C276 128 296 130 320 131 L320 180 L246 180 C250 160 250 140 252 128 Z" fill="url(#rWater)"/>
+<!-- storm drain grate and pipe under the ground -->
+<rect x="104" y="94" width="16" height="5" rx="1" fill="#2a2e33"/><g stroke="#9aa3ab" stroke-width="1"><path d="M107 94 v5 M111 94 v5 M115 94 v5"/></g>
+<path d="M112 99 L112 132 C112 140 118 144 126 144 L176 144 C182 144 184 132 184 120" stroke="url(#rPipe)" stroke-width="9" fill="none" stroke-linecap="round"/>
+<path d="M112 99 L112 132 C112 140 118 144 126 144 L176 144 C182 144 184 132 184 120" stroke="#4d555c" stroke-width="1" fill="none" stroke-dasharray="3 5" opacity=".6"/>
+<text x="150" y="137" text-anchor="middle" font-size="8" font-family="sans-serif" font-weight="700" fill="#f3ead8">pipe under the ground</text>
+<text x="300" y="174" text-anchor="end" font-size="8" font-family="sans-serif" font-weight="700" fill="#0f3550">bay</text>
+<text x="58" y="174" text-anchor="middle" font-size="8" font-family="sans-serif" font-weight="700" fill="#e9eef2">parking lot</text>
+<text x="205" y="135" text-anchor="middle" font-size="8" font-family="sans-serif" font-weight="700" fill="#f3ead8">creek</text>
+<!-- s1: rain falls, a cap lies on the lot -->
+<g class="s1"><g stroke="#e8f2f8" stroke-width="1.4" stroke-linecap="round" opacity=".9"><path d="M20 30 l-4 10 M44 22 l-4 10 M70 34 l-4 10 M96 24 l-4 10 M30 56 l-4 10 M60 60 l-4 10 M88 52 l-4 10 M112 40 l-4 10"/></g>
+<ellipse cx="40" cy="93" rx="5" ry="2.6" fill="url(#rCap)"/><path d="M36 92 h8" stroke="#ffd0cb" stroke-width=".8"/>
+<text x="40" y="84" text-anchor="middle" font-size="8" font-family="sans-serif" font-weight="800" fill="#24323c">a bottle cap</text></g>
+<!-- s2: water flows across the lot and carries the cap into the drain -->
+<g class="s2" style="opacity:0"><path d="M6 95 C40 93 80 94 104 95" stroke="#7fc3e6" stroke-width="3" fill="none" stroke-linecap="round" opacity=".9"/>
+<ellipse cx="102" cy="93" rx="5" ry="2.6" fill="url(#rCap)"/><path d="M84 88 l8 0 l-3 -3 M92 88 l-3 3" stroke="#24323c" stroke-width="1.2" fill="none"/>
+<text x="70" y="80" text-anchor="middle" font-size="8" font-family="sans-serif" font-weight="800" fill="#24323c">runoff carries it to the drain</text></g>
+<!-- s3: the pipe empties into the creek -->
+<g class="s3" style="opacity:0"><path d="M112 104 L112 132 C112 140 118 144 126 144 L176 144 C182 144 184 132 184 122" stroke="#7fc3e6" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+<ellipse cx="188" cy="113" rx="5" ry="2.6" fill="url(#rCap)"/>
+<text x="196" y="96" text-anchor="middle" font-size="8" font-family="sans-serif" font-weight="800" fill="#24323c">out into the creek</text></g>
+<!-- s4: the creek carries the cap to the bay shore -->
+<g class="s4" style="opacity:0"><path d="M186 114 C206 120 226 124 252 130" stroke="#7fc3e6" stroke-width="3" fill="none" stroke-linecap="round"/>
+<ellipse cx="262" cy="129" rx="5" ry="2.6" fill="url(#rCap)"/><g fill="#5b4a2c"><path d="M246 126 q4 -3 8 0 M268 130 q4 -2 7 0"/></g>
+<text x="266" y="112" text-anchor="middle" font-size="8" font-family="sans-serif" font-weight="800" fill="#24323c">washed up at the bay</text></g>
+</svg>
