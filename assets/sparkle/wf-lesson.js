@@ -388,7 +388,7 @@
       if (!e || e.status !== 'ready' || !e.embed) return;
       var src = (String(e.embed).match(/src=\\?"([^"\\\s]+)/) || [])[1];
       if (!/^https:\/\/(www\.)?(youtube(-nocookie)?\.com\/embed\/|player\.vimeo\.com\/video\/)/.test(src || '')) return;
-      v.innerHTML = '<h3><span class="k">🎬 Introduction video</span>From your teacher</h3><div class="wl-tvid-box"><iframe src="' + src + '" title="Introduction video" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>';
+      v.innerHTML = '<h3><span class="k">🎬 Introduction video</span>From your teacher</h3><div class="wl-tvid-box"><iframe src="' + src + '" title="Introduction video" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>';
       v.hidden = false;
     }).catch(function () {});
   })();
