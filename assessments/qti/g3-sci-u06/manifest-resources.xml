@@ -1,0 +1,3 @@
+<!-- Add these to the course imsmanifest.xml <resources> when building the .imscc -->
+<resource identifier="g3sci-u06-quiz" type="imsqti_xmlv1p2/imscc_xmlv1p1/assessment"><file href="g3sci-u06-quiz/assessment_qti.xml"/><dependency identifierref="g3sci-u06-quiz-meta"/></resource>
+<resource identifier="g3sci-u06-quiz-meta" type="associatedcontent/imscc_xmlv1p1/learning-application-resource" href="g3sci-u06-quiz/assessment_meta.xml"><file href="g3sci-u06-quiz/assessment_meta.xml"/><file href="non_cc_assessments/g3sci-u06-quiz.xml.qti"/></resource>

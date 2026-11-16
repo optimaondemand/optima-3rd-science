@@ -1,0 +1,150 @@
+{
+ "unit": 6,
+ "title": "Fossils & Earth History",
+ "lessons": "17.01, 17.02",
+ "q": [
+  {
+   "src": "17.01",
+   "type": "mc",
+   "q": "What is a fossil?",
+   "o": [
+    "What is left of a living thing from long ago, like a bone, shell, leaf, or footprint",
+    "A rock that wind carved into the shape of an animal",
+    "A plant or animal that is still alive today",
+    "A crystal that grows deep underground"
+   ],
+   "a": [
+    0
+   ],
+   "_rot": 0
+  },
+  {
+   "src": "17.01",
+   "type": "mc",
+   "q": "A fish dies and sinks to the bottom of a lake. What has to happen next for it to become a fossil?",
+   "o": [
+    "Wind and rain wear the rock away.",
+    "The fish floats back to the top.",
+    "Mud covers it, layer after layer.",
+    "A scientist digs it up right away."
+   ],
+   "a": [
+    2
+   ],
+   "_rot": 2
+  },
+  {
+   "src": "17.01",
+   "type": "mc",
+   "q": "A scientist finds a fossil coral in a dry desert. What does this evidence most likely tell us?",
+   "o": [
+    "The place has always been a dry desert.",
+    "The wind blew the coral there from far away.",
+    "Coral lives in deserts today.",
+    "The desert was once covered by a warm, shallow ocean."
+   ],
+   "a": [
+    3
+   ],
+   "_rot": 1
+  },
+  {
+   "src": "17.01",
+   "type": "mc",
+   "q": "A fossil tooth is wide and flat with bumps on top. What did the animal most likely eat?",
+   "o": [
+    "Rocks and sand",
+    "Plants",
+    "Other animals",
+    "Nothing at all"
+   ],
+   "a": [
+    1
+   ],
+   "_rot": 3
+  },
+  {
+   "src": "17.01",
+   "type": "tf",
+   "q": "In rock layers that nothing has flipped or mixed, the deeper layers are older than the layers above them.",
+   "a": true
+  },
+  {
+   "src": "17.02",
+   "type": "mc",
+   "q": "Which sentence is an observation, not an inference?",
+   "o": [
+    "The fossil footprint has three toes.",
+    "A dinosaur walked here long ago.",
+    "The animal that made it was a fast runner.",
+    "This place was once a swamp."
+   ],
+   "a": [
+    0
+   ],
+   "_rot": 0
+  },
+  {
+   "src": "17.02",
+   "type": "mc",
+   "q": "Which is the strongest scientific inference about a tooth fossil?",
+   "o": [
+    "I think this animal ate plants.",
+    "This animal likely ate plants because its teeth are flat and wide.",
+    "This animal looked weird.",
+    "This is a really cool fossil."
+   ],
+   "a": [
+    1
+   ],
+   "_rot": 3
+  },
+  {
+   "src": "17.02",
+   "type": "mc",
+   "q": "A scientist finds a fossil in dark, fine-grained mudstone. What does the kind of rock add to her investigation?",
+   "o": [
+    "Nothing. Only the fossil matters.",
+    "It tells her the exact age of the fossil.",
+    "It proves the animal lived in a desert.",
+    "It is more data. Dark mudstone forms in wet places like swamps."
+   ],
+   "a": [
+    3
+   ],
+   "_rot": 1
+  },
+  {
+   "src": "17.02",
+   "type": "mc",
+   "q": "Dinosaur footprints are found in mudstone. What do the footprints tell us about that ground long ago?",
+   "o": [
+    "It was covered in ice.",
+    "It was the bottom of a deep ocean.",
+    "It was soft, wet mud.",
+    "It was hard, dry rock."
+   ],
+   "a": [
+    2
+   ],
+   "_rot": 2
+  },
+  {
+   "src": "17.01",
+   "type": "ma",
+   "q": "Which of these can become fossils? Choose ALL that are correct.",
+   "o": [
+    "Shells",
+    "Footprints",
+    "A pebble that was never alive",
+    "Bones"
+   ],
+   "a": [
+    0,
+    1,
+    3
+   ],
+   "_rot": 1
+  }
+ ]
+}
