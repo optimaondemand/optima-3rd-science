@@ -1,0 +1,1481 @@
+{
+ "id": "g3sci-21-01",
+ "lesson": "21.01",
+ "title": "How Do Plants Reproduce?",
+ "emoji": "🌸",
+ "details": [
+  "📅 Q3 · Unit 7 · Plants &amp; Environmental Interactions",
+  "📖 Week 21 · Lesson 21.01",
+  "🌎 CPALMS SC.3.L.15.2 · NGSS 3-LS1-1",
+  "⏱ About 35 minutes"
+ ],
+ "icans": [
+  "explain that plants reproduce by making new plants of the same kind.",
+  "describe how pollination, seeds, and spores are different ways plants reproduce.",
+  "identify evidence that plants reproduce in more than one way."
+ ],
+ "opti": {
+  "warm": "Our film starts on a Florida beach, with a seed from far away. First, look closely at a dandelion.",
+  "lesson": "Today you're the seed scientist. Watch a blossom become an apple, test seeds, then look inside a lily.",
+  "check": "Three quick questions. It's not graded. It's just for you, so give each one your best try.",
+  "assign": "Time to show what you know. Read each case, then tell how each plant makes new plants."
+ },
+ "film": {
+  "id": "g3sci-21-01",
+  "mount": "wf-film",
+  "kicker": "Opti's Wonder Films",
+  "lesson": "Lesson 21.01 · Plants",
+  "title": "The Sea Heart",
+  "bigQuestion": "How does a plant make more plants?",
+  "poster": "beach",
+  "endPoster": "heart2",
+  "startTarget": "#tab-vocab",
+  "music": {
+   "src": "music",
+   "vol": 0.8
+  },
+  "shots": [
+   {
+    "t": 0,
+    "d": 3.4,
+    "type": "leader",
+    "top": "Optima Academy",
+    "name": "Opti's Wonder Films",
+    "bottom": "presents",
+    "fade": 1.0
+   },
+   {
+    "t": 3.4,
+    "d": 6.6,
+    "type": "archive",
+    "img": "map",
+    "alt": "An old brown map of the Atlantic coast, with a wide dark band of the Gulf Stream curving past Florida and up the coast",
+    "note": "Benjamin Franklin's chart of the Gulf Stream, printed in 1786.",
+    "fade": 0.8,
+    "sfx": "whoosh",
+    "sfxArg": 1
+   },
+   {
+    "t": 10.0,
+    "d": 6.4,
+    "type": "photo",
+    "img": "beach",
+    "alt": "A wide, empty Florida beach with low dunes and waves rolling in",
+    "from": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.15,
+     0.65,
+     0.6
+    ],
+    "fx": [
+     "sweep"
+    ],
+    "place": "Canaveral National Seashore, Florida · Today",
+    "fade": 1.0
+   },
+   {
+    "t": 16.4,
+    "d": 6.0,
+    "type": "reveal",
+    "img": "heart",
+    "alt": "Two shiny, dark brown seeds shaped like hearts",
+    "from": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.1,
+     0.5,
+     0.48
+    ],
+    "revealAt": 0.6,
+    "revealDur": 3.6,
+    "place": "Sea heart seeds",
+    "fade": 0.7
+   },
+   {
+    "t": 22.4,
+    "d": 3.4,
+    "type": "flash",
+    "lines": [
+     "A seed?",
+     "From across the ocean?"
+    ],
+    "beats": [
+     0.15,
+     1.3
+    ],
+    "fade": 0.15
+   },
+   {
+    "t": 25.8,
+    "d": 6.4,
+    "type": "photo",
+    "img": "pod",
+    "alt": "A long, lumpy seed pod hanging from a vine in a green forest",
+    "from": [
+     1.15,
+     0.45,
+     0.4
+    ],
+    "to": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "place": "A sea heart pod on its vine · Veracruz, Mexico",
+    "fade": 0.8
+   },
+   {
+    "t": 32.2,
+    "d": 7.4,
+    "type": "photo",
+    "img": "ocean",
+    "alt": "An old black-and-white photo of the open ocean, with a line where two kinds of water meet",
+    "in": "ripple",
+    "from": [
+     1.12,
+     0.45,
+     0.55
+    ],
+    "to": [
+     1.0,
+     0.55,
+     0.5
+    ],
+    "fx": [
+     "caustics",
+     "rays"
+    ],
+    "count": {
+     "to": 12,
+     "label": "months at sea",
+     "dur": 2.6
+    },
+    "place": "The Gulf Stream · Old photo",
+    "fade": 0.8
+   },
+   {
+    "t": 39.6,
+    "d": 6.4,
+    "type": "photo",
+    "img": "drift",
+    "alt": "A museum tray of many round drift seeds collected from beaches, some heart-shaped and dark brown",
+    "from": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.15,
+     0.5,
+     0.45
+    ],
+    "place": "Drift seeds found on beaches · Western Isles, Scotland",
+    "fade": 0.8
+   },
+   {
+    "t": 46.0,
+    "d": 6.0,
+    "type": "photo",
+    "img": "heart2",
+    "alt": "Five shiny red-brown sea heart seeds on a pale cloth",
+    "from": [
+     1.12,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "place": "Sea hearts",
+    "fade": 0.8
+   },
+   {
+    "t": 52.0,
+    "d": 6.0,
+    "type": "title",
+    "fade": 1.2
+   }
+  ],
+  "captions": [
+   {
+    "t": 3.8,
+    "d": 6.1,
+    "text": "In 1786, Benjamin Franklin printed a map of a river inside the ocean.",
+    "voice": "opti-1"
+   },
+   {
+    "t": 10.4,
+    "d": 5.9,
+    "text": "Today, waves roll onto a Florida beach. Something shiny washes in.",
+    "voice": "opti-2"
+   },
+   {
+    "t": 16.8,
+    "d": 5.2,
+    "text": "It's as wide as a cookie, and shaped like a heart.",
+    "voice": "opti-3"
+   },
+   {
+    "t": 22.5,
+    "d": 3.2,
+    "text": "A seed? From across the ocean?",
+    "voice": "opti-4"
+   },
+   {
+    "t": 26.2,
+    "d": 5.8,
+    "text": "It grew in a giant pod on a rainforest vine, far to the south.",
+    "voice": "opti-5"
+   },
+   {
+    "t": 32.6,
+    "d": 6.6,
+    "text": "It fell into a river, then rode the ocean currents for months.",
+    "voice": "opti-6"
+   },
+   {
+    "t": 40.0,
+    "d": 5.6,
+    "text": "Some sea hearts even sail to the beaches of Scotland.",
+    "voice": "opti-7"
+   },
+   {
+    "t": 46.4,
+    "d": 5.2,
+    "text": "How can one plant start new plants so far away?",
+    "voice": "opti-8"
+   }
+  ]
+ },
+ "scientist": "seed scientist",
+ "specimen": {
+  "img": "spec",
+  "aspect": "1280/893",
+  "radius": 0.07,
+  "hotspots": [
+   {
+    "name": "Fluffy white parachutes",
+    "x": 0.72,
+    "y": 0.3
+   },
+   {
+    "name": "The tan center where the seeds sit",
+    "x": 0.45,
+    "y": 0.47
+   },
+   {
+    "name": "A starburst on top of one parachute",
+    "x": 0.48,
+    "y": 0.62
+   },
+   {
+    "name": "A yellow dandelion flower in the grass",
+    "x": 0.085,
+    "y": 0.55
+   },
+   {
+    "name": "Thin, hairlike threads",
+    "x": 0.21,
+    "y": 0.45
+   }
+  ],
+  "kicker": "🔎 Mystery specimen",
+  "title": "What is this fluffy white ball?",
+  "alt": "A round, fluffy white dandelion seed head against dark green grass",
+  "look": "A real dandelion, seen close up after its yellow flower has finished. A specimen is one real thing that scientists study. One dandelion head can make well over 100 seeds. Where are they, and how will they travel? That's for you to figure out.",
+  "do": "Press Inspect specimen. Move the magnifying lens over the plant, then tap 3 things you notice.",
+  "number": "No. 21.01-A",
+  "card": [
+   "<b>Specimen A</b>",
+   "Found in: a grassy park",
+   "Size: about as wide as a golf ball",
+   "What is it? <i>You decide.</i>"
+  ],
+  "notice": "I notice… (one thing you see on the dandelion)",
+  "wonder": "I wonder… (one question you want answered by the end of the lesson)"
+ },
+ "words": [
+  [
+   "🌱",
+   "reproduce",
+   "To make new living things of the same kind. Plants reproduce to keep their kind going."
+  ],
+  [
+   "🌸",
+   "pollination",
+   "When pollen moves from one flower to another flower of the same kind, so seeds can form."
+  ],
+  [
+   "🟡",
+   "pollen",
+   "A powdery material made by flowers. Pollen must travel to another flower to help make seeds."
+  ],
+  [
+   "🌰",
+   "seed",
+   "A plant part that can grow into a whole new plant. Seeds form after pollination."
+  ],
+  [
+   "🌿",
+   "spore",
+   "A tiny cell that can grow into a new plant. Ferns and mosses use spores instead of seeds."
+  ],
+  [
+   "🐝",
+   "pollinator",
+   "An animal that carries pollen from flower to flower. Bees, butterflies, and hummingbirds are pollinators."
+  ]
+ ],
+ "parts": [
+  {
+   "kicker": "🌱 Part 1",
+   "title": "Plants Need to Make New Plants",
+   "html": "<p>When a plant reproduces, it makes new plants just like itself. Without reproduction, plants would eventually disappear.</p><p>Some plants reproduce using seeds. Others, like ferns and mosses, reproduce using spores. Both are ways of starting a new life.</p>"
+  },
+  {
+   "kicker": "🐝 Part 2",
+   "title": "Flowers, Pollen, and Pollinators",
+   "html": "<p>Many plants grow flowers. Flowers make a powdery material called pollen. For seeds to form, pollen has to travel from one flower to another. That is pollination.</p><p>Wind can carry pollen, but animals do most of the work. Bees, butterflies, and hummingbirds are pollinators. They pick up pollen while they feed, then drop it off at the next flower.</p>"
+  },
+  {
+   "kicker": "🌍 Part 3",
+   "title": "Seeds, Spores, and Getting Around",
+   "html": "<p>After pollination, many plants form seeds. Seeds need to get away from the parent plant to find space to grow. They travel by wind, water, animals, and even gravity.</p><p>Ferns don't make flowers or seeds at all. They release tiny spores from the undersides of their leaves. The spores drift through the air, and some grow into new ferns.</p>"
+  },
+  {
+   "kicker": "🗂️ Part 4",
+   "title": "How Did It Travel?"
+  }
+ ],
+ "order": {
+  "mix": [
+   2,
+   0,
+   3,
+   1
+  ],
+  "hint": "Start with the flower.",
+  "kicker": "🎞️ Put the scenes in order",
+  "title": "How does an apple blossom become an apple full of seeds?",
+  "look": "Four real photos from apple trees. Each one shows one step, from flower to fruit, but they are mixed up. The dark film strip has four empty frames, from first (1) to last (4).",
+  "done": "🎬 Your order is right. Now watch it as a movie!",
+  "scenes": [
+   {
+    "img": "a1",
+    "alt": "Pink and white apple blossoms open on a branch",
+    "text": "Apple blossoms open on the tree.",
+    "play": "Blossoms open.",
+    "miss": [
+     "",
+     "The flower has to open first. Try frame 1.",
+     "The fruit comes after the flower. Try frame 1.",
+     "The seeds come last. The flower comes first. Try frame 1."
+    ]
+   },
+   {
+    "img": "a2",
+    "alt": "A honey bee covered in pollen inside a pink and white apple blossom",
+    "text": "A bee visits and carries pollen to the next blossom.",
+    "play": "A bee carries pollen.",
+    "miss": [
+     "The blossom must open before a bee can visit. Try a later frame.",
+     "",
+     "The bee comes before the fruit grows. Try an earlier frame.",
+     "The bee comes long before the ripe apple. Try an earlier frame."
+    ]
+   },
+   {
+    "img": "a3",
+    "alt": "Small green apples starting to grow on a branch",
+    "text": "The petals fall, and tiny green apples start to grow.",
+    "play": "Tiny apples grow.",
+    "miss": [
+     "The apples grow after the flower. Try a later frame.",
+     "Pollination comes first. Try a later frame.",
+     "",
+     "These apples are still small. Try an earlier frame."
+    ]
+   },
+   {
+    "img": "a4",
+    "alt": "Ripe apples, with one cut open to show a star of seeds in the middle",
+    "text": "The ripe apple has seeds inside.",
+    "play": "Seeds inside!",
+    "miss": [
+     "The seeds come last.",
+     "The seeds come last.",
+     "The seeds come last.",
+     ""
+    ]
+   }
+  ],
+  "check": {
+   "q": "Why does a bee visit an apple blossom?",
+   "options": [
+    {
+     "t": "To help the tree make apples",
+     "miss": "The bee isn't trying to help. Think about what the bee gets from the flower."
+    },
+    {
+     "t": "To get food: sweet nectar and pollen",
+     "ok": "Yes! The bee comes for food. Pollen sticks to its fuzzy body by accident, and that helps the tree make seeds."
+    },
+    {
+     "t": "To build a nest inside it",
+     "miss": "Bees don't nest in blossoms. What does the bee get from the flower?"
+    }
+   ]
+  }
+ },
+ "movie": {
+  "model": "apple-model.svg",
+  "modelBox": {
+   "left": "0%",
+   "width": "100%",
+   "rot": 0
+  },
+  "start": "0%",
+  "bg": "grove",
+  "real": "orchard",
+  "realAlt": "Rows of young apple trees heavy with red apples",
+  "stamp": "A FLOWER BECAME A FRUIT",
+  "endCap": "Real apple trees, full of fruit.",
+  "beats": [
+   {
+    "at": 0,
+    "cap": "1 · A blossom opens.",
+    "model": {
+     "top": "0%",
+     "rot": 0,
+     "show": "s1"
+    },
+    "counter": [
+     "Week 1"
+    ]
+   },
+   {
+    "at": 2600,
+    "cap": "2 · A bee carries pollen.",
+    "model": {
+     "show": "s2"
+    },
+    "counter": [
+     "Week 1"
+    ]
+   },
+   {
+    "at": 5200,
+    "cap": "3 · A tiny apple grows.",
+    "model": {
+     "show": "s3"
+    },
+    "counter": [
+     "Week 3"
+    ]
+   },
+   {
+    "at": 7800,
+    "cap": "4 · A ripe apple, seeds inside.",
+    "model": {
+     "show": "s4"
+    },
+    "counter": [
+     "Week 20"
+    ],
+    "sfx": "shimmer"
+   },
+   {
+    "at": 10400,
+    "cap": "The real thing: apple trees.",
+    "model": {
+     "hide": true
+    },
+    "real": true
+   },
+   {
+    "at": 12200,
+    "stamp": true
+   }
+  ]
+ },
+ "compare": {
+  "kicker": "🌬️ The Wind or Water Lab",
+  "title": "Does a seed's shape match the way it travels?",
+  "look": "Two real seeds, each on a lit specimen tray. Specimen A is a maple seed with a thin, papery wing. Specimen B is a sea heart, the seed from our film. Under the trays are two things for a test: an electric fan and a tub of water.",
+  "trays": [
+   {
+    "id": "A",
+    "img": "ca",
+    "alt": "A pair of young red maple seeds with thin, papery wings",
+    "label": "Specimen A"
+   },
+   {
+    "id": "B",
+    "img": "heart",
+    "alt": "Two shiny brown sea heart seeds",
+    "label": "Specimen B"
+   }
+  ],
+  "materials": [
+   {
+    "key": "fan",
+    "label": "Electric fan",
+    "swatch": "fan"
+   },
+   {
+    "key": "water",
+    "label": "Tub of water",
+    "swatch": "water"
+   }
+  ],
+  "ask": [
+   {
+    "q": "Which seed has a thin, papery wing?",
+    "ans": "A",
+    "ok": "Yes. Specimen A, the maple seed, has a wing.",
+    "miss": "Look closely. Which seed looks like a helicopter blade?"
+   },
+   {
+    "q": "Which seed is hard, round, and shiny?",
+    "ans": "B",
+    "ok": "Yes. Specimen B, the sea heart, is hard and shiny.",
+    "miss": "Look again. Which one is shaped like a heart?"
+   }
+  ],
+  "press": "🧪 Test it",
+  "testDo": "Put the fan by one tray and the tub of water by the other: drag them, or tap each one, then tap a tray. Press <b>Test it</b>. Then swap them and press it again.",
+  "disclaimer": "This is a model. It shows what really happens to these seeds, sped up.",
+  "results": {
+   "Afan": {
+    "text": "The maple seed spun like a helicopter and drifted far across the room.",
+    "fx": "sway"
+   },
+   "Awater": {
+    "text": "The maple seed sat on the water and didn't go anywhere. Its wing is made for wind. Try the fan here.",
+    "fx": "none"
+   },
+   "Bfan": {
+    "text": "The fan couldn't move the heavy sea heart at all. Try the water here.",
+    "fx": "none"
+   },
+   "Bwater": {
+    "text": "The sea heart floated! It has a hollow space inside, so water can carry it far away.",
+    "fx": "float"
+   }
+  },
+  "best": [
+   "Afan",
+   "Bwater"
+  ],
+  "frame": "This seed has ___, so it travels by ___.",
+  "claimLead": "This seed has",
+  "claimMid": "so it travels by",
+  "claim": {
+   "A": {
+    "feat": [
+     "a thin, papery wing",
+     "a hollow space that floats"
+    ],
+    "featOk": 0,
+    "eat": [
+     "wind",
+     "water"
+    ],
+    "eatOk": 0
+   },
+   "B": {
+    "feat": [
+     "a thin, papery wing",
+     "a hollow space that floats"
+    ],
+    "featOk": 1,
+    "eat": [
+     "wind",
+     "water"
+    ],
+    "eatOk": 1
+   }
+  },
+  "curator": {
+   "A": "<b>Wing → wind.</b> A maple seed spins as it falls, so the wind can carry it away from the parent tree.",
+   "B": "<b>Floats → water.</b> A sea heart can float for months, so rivers and ocean currents carry it to faraway beaches."
+  },
+  "missFeat": "Look at {label} again. Does it have a wing, or is it a hard seed that floats?",
+  "missClaim": "Think about your test. Which seed flew, and which one floated?",
+  "done": "A seed's shape helps it travel. Wings ride the wind. Seeds that float ride the water. Either way, the new plant grows far from its parent.",
+  "after": {
+   "kicker": "🎬 Behind the scenes · Seeds don't just drop",
+   "img": "after",
+   "alt": "A coconut that washed up between big rocks, with a new green palm shoot growing out of it",
+   "html": "This coconut floated in the sea, washed up between rocks, and sprouted a new palm. If every seed dropped right under its parent, the young plants would crowd together and fight for light and water. Seeds that travel get room to grow."
+  }
+ },
+ "wall": {
+  "kicker": "🌷 Inside a flower",
+  "title": "Ride down a lily, from its petals to its seed room",
+  "look": "A cutaway (a slice) of a lily flower, from the outside in. It is a model, with a real close-up photo for each level. Each level is one part of the flower, and each part has a job in making seeds. The brass dial on the left shows how deep inside the flower you are.",
+  "do": "First, make a prediction. Then brush the glowing layer: drag across it (or tap it again and again) until the plant shows.",
+  "predict": {
+   "q": "Where in a flower do you think seeds start to grow?",
+   "options": [
+    [
+     "deep",
+     "Deep inside, at the bottom of the flower"
+    ],
+    [
+     "petals",
+     "On the outside of the petals"
+    ]
+   ],
+   "answer": "deep",
+   "mine": "Your prediction: <b>{p}</b>. Let's ride down the flower and find out.",
+   "confirm": "You predicted deep inside. The evidence agrees: seeds start in the seed room at the bottom of the flower.",
+   "change": "You predicted the petals. The evidence changed that idea: seeds start deep inside, in the seed room."
+  },
+  "sky": "sky",
+  "skyAlt": "A white Easter lily in bloom, with a small insect visiting it",
+  "skyCap": "A real lily with a pollinator visiting · Alabama",
+  "unit": "Level",
+  "found": "Flower part found at Level {n}",
+  "elevator": [
+   "Start",
+   "Petals",
+   "Pollen holders",
+   "Sticky tip",
+   "Seed room"
+  ],
+  "line": [
+   "OUTSIDE: INVITE POLLINATORS",
+   "INSIDE: MAKE SEEDS"
+  ],
+  "lockTag": "🔒 Brush the level above first",
+  "locked": "Brush the level above first. The elevator goes down, one level at a time.",
+  "first": "Brush the glowing top layer. Drag across it (or tap it again and again).",
+  "next": "Going deeper into the flower. Brush Level {n}.",
+  "endTitle": "All 4 levels explored",
+  "endText": "Look at the line. The petals on the outside invite pollinators. Pollen holders and the sticky tip pass pollen along. Deep inside, the seed room is where new seeds begin.",
+  "rule": "<b>Every part of a flower helps make seeds.</b> Petals invite pollinators, pollen holders make pollen, the sticky tip catches it, and the seed room grows the seeds.",
+  "choices": [
+   "🌸 Petals that invite pollinators",
+   "🟡 Pollen holders (anthers)",
+   "🍯 The sticky tip (stigma)",
+   "🌰 The seed room (ovary)"
+  ],
+  "layers": [
+   {
+    "name": "Level 1 · Petals",
+    "rock": "leafsun",
+    "img": "l1",
+    "alt": "Big pink lily petals opened wide",
+    "ask": "Look at Level 1. Read the clue AND the photo. What part is this?",
+    "clue": "Big, bright petals that open wide. Their color and smell invite pollinators.",
+    "ans": 0,
+    "ok": "Yes! The petals are the flower's bright welcome sign for bees and butterflies.",
+    "tag": "🌸 Petals",
+    "miss": {
+     "1": "These are wide and flat, not little pollen holders.",
+     "2": "These are big petals, not a sticky tip.",
+     "3": "This is the outside of the flower, not the deep inside."
+    },
+    "env": "l1",
+    "envAlt": "Pink lily petals",
+    "envCap": "Level 1: the petals"
+   },
+   {
+    "name": "Level 2 · Pollen holders",
+    "rock": "leafmid",
+    "img": "l2",
+    "alt": "Dark red lily anthers covered in powdery pollen",
+    "ask": "Now Level 2. Read the clue AND the photo. What part is this?",
+    "clue": "Dark red tips on thin stalks, covered in powdery pollen.",
+    "ans": 1,
+    "ok": "Yes! These pollen holders (anthers) dust pollen onto any bee that brushes past.",
+    "tag": "🟡 Pollen",
+    "miss": {
+     "0": "These are small and dusty, not wide petals.",
+     "2": "These are covered in powder. The sticky tip catches pollen.",
+     "3": "These stick out into the open, not deep inside."
+    },
+    "env": "l2",
+    "envAlt": "Lily anthers with pollen",
+    "envCap": "Level 2: the pollen holders"
+   },
+   {
+    "name": "Level 3 · Sticky tip",
+    "rock": "leafshade",
+    "img": "l3",
+    "alt": "The long, pale green tip in the middle of a lily, with a sticky knob on the end",
+    "ask": "Level 3. Read the clue AND the photo. What part is this?",
+    "clue": "One long stalk in the middle with a sticky knob on the end. It catches pollen.",
+    "ans": 2,
+    "ok": "Yes! The sticky tip (stigma) catches pollen that a pollinator brings from another lily.",
+    "tag": "🍯 Sticky tip",
+    "miss": {
+     "0": "This is a thin stalk, not a petal.",
+     "1": "This knob catches pollen. It doesn't make it.",
+     "3": "This sticks up high. The seed room is at the bottom."
+    },
+    "env": "l3",
+    "envAlt": "A lily stigma",
+    "envCap": "Level 3: the sticky tip"
+   },
+   {
+    "name": "Level 4 · Seed room",
+    "rock": "leafdark",
+    "img": "l4",
+    "alt": "A microscope slice of a lily ovary, with three rooms holding tiny would-be seeds",
+    "ask": "Level 4, the deepest. Read the clue AND the photo. What part is this?",
+    "clue": "A tiny room at the bottom of the flower, seen through a microscope. It holds the parts that can become seeds.",
+    "ans": 3,
+    "ok": "Yes! After pollination, the seed room (ovary) grows the seeds. In an apple, it becomes the fruit.",
+    "tag": "🌰 Seed room",
+    "miss": {
+     "0": "This is deep inside, not the outside of the flower.",
+     "1": "There's no powder here. Look for the rooms.",
+     "2": "This is at the very bottom, not the tip."
+    },
+    "env": "l4",
+    "envAlt": "A lily ovary under a microscope",
+    "envCap": "Level 4: the seed room, under a microscope"
+   }
+  ],
+  "mix": {
+   "q": "Does every plant have flowers and a seed room like this lily?",
+   "options": [
+    {
+     "t": "Yes. Every plant makes seeds.",
+     "miss": "Not every plant! Ferns and mosses have no flowers and no seeds. What do they make instead?"
+    },
+    {
+     "t": "No. Ferns and mosses make spores instead.",
+     "ok": "Yes! Ferns and mosses have no flowers and no seeds. They make spores, tiny cells that drift away and grow into new plants."
+    }
+   ]
+  }
+ },
+ "wow": {
+  "kicker": "🎬 Director's cut",
+  "title": "Seeds that sail the sea",
+  "img": "vine",
+  "alt": "A huge, twisting sea heart vine (monkey ladder) arching over a garden path",
+  "caption": "A sea heart vine, also called monkey ladder, in a garden in Hawaii.",
+  "html": "<p style=\"margin:0 0 8px\">Sea hearts grow on giant vines in tropical forests. Their pods can grow longer than you are tall! Each seed has a hollow space inside, so it floats.</p><p style=\"margin:0\">When the seeds fall into rivers, they wash out to sea. Some ride the Gulf Stream for a year or more and land on beaches in Florida, and even Scotland and Norway. Long ago, people in Scotland found them and called them Molucca beans.</p>",
+  "inset": "heart2",
+  "insetCap": "Sea heart seeds, about as wide as a cookie."
+ },
+ "keyIdea": "Plants reproduce: they make new plants of the same kind. Flowering plants often use pollination and seeds. Ferns and mosses use spores instead. Either way, the goal is the same: new life.",
+ "det": {
+  "look": "Five plant cards from the film crew's trips. Each one shows a seed and the way it gets away from its parent plant. Each slab card has a real photo. Under the cards is an evidence chart, a table that holds what you figure out.",
+  "do": "Pick 3 cards, one at a time. Tap a clue you see, then pick what it is. Predict how it traveled, and watch its home appear.",
+  "noun": "Plant",
+  "need": 3,
+  "predict": {
+   "q": "How do you think this seed traveled?",
+   "options": [
+    [
+     "wind",
+     "🌬️ Wind"
+    ],
+    [
+     "water",
+     "🌊 Water"
+    ],
+    [
+     "animal",
+     "🐦 Animal"
+    ],
+    [
+     "pop",
+     "💥 It popped out"
+    ]
+   ]
+  },
+  "kicker": "Home revealed",
+  "enough": "You already solved 3 plants. Nice detective work!",
+  "cols": [
+   "Plant",
+   "What I observe",
+   "The clue",
+   "How it traveled",
+   "My evidence"
+  ],
+  "write": {
+   "label": "Plant __ has ___. I think its seeds travel by ___ because ___.",
+   "starter": "Start with: \"Plant __ has…\"",
+   "min": 15,
+   "chips": [
+    [
+     "trait",
+     "Names what you see"
+    ],
+    [
+     "because",
+     "Gives a reason (because)"
+    ],
+    [
+     "env",
+     "Names how it travels"
+    ]
+   ]
+  },
+  "items": [
+   {
+    "id": "1",
+    "img": "needles",
+    "alt": "A ball of thin, dark seeds, each with little prongs on its tip",
+    "clues": [
+     {
+      "t": "Tiny hooks on the seed tips",
+      "ok": true
+     },
+     {
+      "t": "Fluffy parachutes",
+      "miss": "Look again. These seeds are stiff and spiky."
+     },
+     {
+      "t": "A floating husk",
+      "miss": "Look again. These seeds are thin as needles."
+     }
+    ],
+    "org": [
+     "Tiny hooks that grab fur and socks",
+     "Papery wings that spin in the wind",
+     "A big, floating husk on a beach",
+     "Berries eaten by a bird",
+     "Pods that burst open"
+    ],
+    "orgAns": 0,
+    "orgShort": "tiny hooks that grab fur and socks",
+    "orgMiss": "Tiny hooks that grab fur and socks is the clue. Try again.",
+    "env": "Animal",
+    "envAns": "animal",
+    "envMiss": "Those hooks grab onto something that walks by. What could that be? Try again.",
+    "bts": "Plant 1: Spanish needles, a common Florida wildflower. Each thin seed ends in 2 to 4 hooked prongs that grab fur, feathers, and socks. Animals and people carry the seeds away without knowing it.",
+    "envImg": "needleshome",
+    "envAlt": "White Spanish needles flowers growing in a sunny Florida field",
+    "envCap": "Its home: a sunny field · Sarasota, Florida",
+    "reveal": "These hooked seeds are evidence that the plant travels by hitching a ride on animals.",
+    "rebuildEnv": "field"
+   },
+   {
+    "id": "2",
+    "img": "maple",
+    "alt": "Bunches of green maple seeds with papery wings hanging from a branch",
+    "clues": [
+     {
+      "t": "Papery wings",
+      "ok": true
+     },
+     {
+      "t": "Hooks",
+      "miss": "Look again. These seeds have smooth wings."
+     },
+     {
+      "t": "A hard, round husk",
+      "miss": "Look again. These seeds are thin and light."
+     }
+    ],
+    "org": [
+     "Tiny hooks that grab fur and socks",
+     "Papery wings that spin in the wind",
+     "A big, floating husk on a beach",
+     "Berries eaten by a bird",
+     "Pods that burst open"
+    ],
+    "orgAns": 1,
+    "orgShort": "papery wings that spin in the wind",
+    "orgMiss": "Papery wings that spin in the wind is the clue. Try again.",
+    "env": "Wind",
+    "envAns": "wind",
+    "envMiss": "Those wings spin like helicopter blades. What pushes them? Try again.",
+    "bts": "Plant 2: silver maple seeds. Each seed has a papery wing. When it falls, it spins like a helicopter, and the wind carries it away from the parent tree.",
+    "envImg": "maplehome",
+    "envAlt": "Tall trees, including maples, leaning over a rocky stream in a forest",
+    "envCap": "Its kind of home: a hardwood forest by a stream · Adirondacks, New York",
+    "reveal": "These winged seeds are evidence that the tree spreads its seeds by wind.",
+    "rebuildEnv": "forest"
+   },
+   {
+    "id": "3",
+    "img": "coco",
+    "alt": "Two brown coconuts lying on wet sand where the waves washed them up",
+    "clues": [
+     {
+      "t": "A big husk on the sand",
+      "ok": true
+     },
+     {
+      "t": "Tiny hooks",
+      "miss": "Look again. These are big and round."
+     },
+     {
+      "t": "Papery wings",
+      "miss": "Look again. These are heavy, not light."
+     }
+    ],
+    "org": [
+     "Tiny hooks that grab fur and socks",
+     "Papery wings that spin in the wind",
+     "A big, floating husk on a beach",
+     "Berries eaten by a bird",
+     "Pods that burst open"
+    ],
+    "orgAns": 2,
+    "orgShort": "a big, floating husk on a beach",
+    "orgMiss": "A big, floating husk on a beach is the clue. Try again.",
+    "env": "Water",
+    "envAns": "water",
+    "envMiss": "These washed up on the sand. What brought them there? Try again.",
+    "bts": "Plant 3: coconuts. A coconut is a giant seed in a thick, airy husk that floats. Ocean waves can carry it to a new beach, where it can sprout a new palm.",
+    "envImg": "cocohome",
+    "envAlt": "Coconut palm trees growing along a sandy Florida beach under a blue sky",
+    "envCap": "Its kind of home: a beach lined with coconut palms · Key Biscayne, Florida",
+    "reveal": "These washed-up coconuts are evidence that the palm's seeds travel by water.",
+    "rebuildEnv": "beach"
+   },
+   {
+    "id": "4",
+    "img": "warbler",
+    "alt": "A small brown-and-yellow bird perched in a shrub full of little gray-blue berries",
+    "clues": [
+     {
+      "t": "A bird eating berries",
+      "ok": true
+     },
+     {
+      "t": "Seeds with wings",
+      "miss": "Look again. These are round berries."
+     },
+     {
+      "t": "Pods bursting open",
+      "miss": "Look again. A bird is eating these."
+     }
+    ],
+    "org": [
+     "Tiny hooks that grab fur and socks",
+     "Papery wings that spin in the wind",
+     "A big, floating husk on a beach",
+     "Berries eaten by a bird",
+     "Pods that burst open"
+    ],
+    "orgAns": 3,
+    "orgShort": "berries eaten by a bird",
+    "orgMiss": "Berries eaten by a bird is the clue. Try again.",
+    "env": "Animal",
+    "envAns": "animal",
+    "envMiss": "The bird eats the berries and flies away. Where do the seeds go? Try again.",
+    "bts": "Plant 4: wax myrtle, a Florida shrub. In winter, myrtle warblers eat its berries. The seeds pass through the birds and drop somewhere new, ready to grow.",
+    "envImg": "warblerhome",
+    "envAlt": "A sandy path through thick green coastal shrubs in Florida",
+    "envCap": "Its kind of home: coastal scrub · Canaveral National Seashore, Florida",
+    "reveal": "This bird eating berries is evidence that the shrub's seeds travel with animals.",
+    "rebuildEnv": "scrub"
+   },
+   {
+    "id": "5",
+    "img": "balsam",
+    "alt": "Many plump green seed pods dangling from reddish stems",
+    "clues": [
+     {
+      "t": "Plump pods on thin stems",
+      "ok": true
+     },
+     {
+      "t": "Fluffy parachutes",
+      "miss": "Look again. These are fat, green pods."
+     },
+     {
+      "t": "A bird eating berries",
+      "miss": "Look again. There's no bird here."
+     }
+    ],
+    "org": [
+     "Tiny hooks that grab fur and socks",
+     "Papery wings that spin in the wind",
+     "A big, floating husk on a beach",
+     "Berries eaten by a bird",
+     "Pods that burst open"
+    ],
+    "orgAns": 4,
+    "orgShort": "pods that burst open",
+    "orgMiss": "Pods that burst open is the clue. Try again.",
+    "env": "It popped out",
+    "envAns": "pop",
+    "envMiss": "When these pods are ripe, a touch makes them snap open. Try again.",
+    "bts": "Plant 5: Himalayan balsam. When a ripe pod is touched, it bursts open and flings its seeds several yards away. Its relative, the touch-me-not, does the same thing.",
+    "envImg": "balsamhome",
+    "envAlt": "Tall pink Himalayan balsam flowers growing along a river path",
+    "envCap": "Its kind of home: a riverbank path · Thames Path, England",
+    "reveal": "These bursting pods are evidence that this plant flings its seeds all by itself.",
+    "rebuildEnv": "river"
+   }
+  ]
+ },
+ "rebuild": {
+  "title": "Use your evidence to rebuild the plant's home",
+  "missPrefix": "Hmm. Look at your plant again. ",
+  "kicker": "🌍 Rebuild the plant's home",
+  "whyStart": "I chose this because the plant…",
+  "envs": [
+   {
+    "key": "field",
+    "name": "🌼 A sunny Florida field",
+    "img": "needleshome",
+    "cap": "Animals walk through…"
+   },
+   {
+    "key": "forest",
+    "name": "🍁 A forest by a stream",
+    "img": "maplehome",
+    "cap": "Wind blows through the trees…"
+   },
+   {
+    "key": "beach",
+    "name": "🏝️ A palm beach",
+    "img": "cocohome",
+    "cap": "Waves roll in…"
+   },
+   {
+    "key": "scrub",
+    "name": "🐦 Coastal scrub",
+    "img": "warblerhome",
+    "cap": "Birds visit in winter…"
+   },
+   {
+    "key": "river",
+    "name": "🏞️ A riverbank path",
+    "img": "balsamhome",
+    "cap": "Pods hang by the water…"
+   }
+  ],
+  "life": [
+   {
+    "name": "🌼 Spanish needles",
+    "img": "needles",
+    "env": "field",
+    "miss": "Spanish needles grow in sunny Florida fields."
+   },
+   {
+    "name": "🍁 Maple seeds",
+    "img": "maple",
+    "env": "forest",
+    "miss": "Maples grow in forests."
+   },
+   {
+    "name": "🥥 Coconuts",
+    "img": "coco",
+    "env": "beach",
+    "miss": "Coconut palms grow on beaches."
+   },
+   {
+    "name": "🐦 Wax myrtle berries",
+    "img": "warbler",
+    "env": "scrub",
+    "miss": "Wax myrtle grows in coastal scrub."
+   },
+   {
+    "name": "💥 Bursting pods",
+    "img": "balsam",
+    "env": "river",
+    "miss": "Himalayan balsam grows along rivers."
+   }
+  ]
+ },
+ "quiz": [
+  {
+   "q": "What does it mean when a plant reproduces?",
+   "options": [
+    {
+     "t": "It makes new plants of the same kind",
+     "ok": "🌱 That's right! Reproduction means making new living things of the same kind. It keeps the plant's kind going."
+    },
+    {
+     "t": "It collects sunlight for energy",
+     "miss": "Think about what the word \"reproduce\" means. What is the plant trying to make?"
+    },
+    {
+     "t": "It grows more roots underground",
+     "miss": "Think about what the word \"reproduce\" means. What is the plant trying to make?"
+    }
+   ]
+  },
+  {
+   "q": "After a bee carries pollen from flower to flower, what can happen next?",
+   "options": [
+    {
+     "t": "The flower closes up forever",
+     "miss": "Think about what happens after pollination. What can the flower make?"
+    },
+    {
+     "t": "The flower can form seeds",
+     "ok": "🌸 Exactly! Pollination, when pollen moves from one flower to another, is what makes seeds possible for many flowering plants."
+    },
+    {
+     "t": "The pollen melts in the rain",
+     "miss": "Think about what happens after pollination. What can the flower make?"
+    }
+   ]
+  },
+  {
+   "q": "Which plant uses spores to reproduce instead of seeds?",
+   "options": [
+    {
+     "t": "Apple tree",
+     "miss": "Apple and maple trees both make seeds. Which plant has no flowers and no seeds?"
+    },
+    {
+     "t": "Maple tree",
+     "miss": "Apple and maple trees both make seeds. Which plant has no flowers and no seeds?"
+    },
+    {
+     "t": "Fern",
+     "ok": "🌿 Yes! Ferns don't make flowers or seeds. They release tiny spores from the undersides of their fronds, and if a spore lands in the right spot, a new fern grows."
+    }
+   ]
+  }
+ ],
+ "assign": {
+  "partA": {
+   "title": "Read the cases",
+   "do": "Read each one. Pick the best answer, or type your answer.",
+   "items": [
+    {
+     "n": 1,
+     "q": "Case A: A bee lands on a flower, picks up yellow pollen, then flies to a second flower of the same kind. What is moving?",
+     "type": "choice",
+     "options": [
+      {
+       "t": "Pollen",
+       "ok": "Yes. The bee carries pollen from flower to flower. That's pollination."
+      },
+      {
+       "t": "A seed",
+       "miss": "The bee is carrying yellow powder. What is it called?"
+      },
+      {
+       "t": "A spore",
+       "miss": "Spores come from ferns and mosses, not flowers. What yellow powder do flowers make?"
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "q": "Case B: A maple tree drops a winged seed. It spins like a helicopter as the wind carries it 30 feet away. What is moving?",
+     "type": "choice",
+     "options": [
+      {
+       "t": "Pollen",
+       "miss": "This part has a wing and can grow into a new tree. What is it?"
+      },
+      {
+       "t": "A seed",
+       "ok": "Yes. The wind carries the maple's winged seed away from the parent tree."
+      },
+      {
+       "t": "A spore",
+       "miss": "Maples are flowering trees. They make seeds, not spores."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "q": "Case C: A fern in a shady corner releases tiny brown dots from the undersides of its fronds. They drift away on the breeze. What is moving?",
+     "type": "choice",
+     "options": [
+      {
+       "t": "Pollen",
+       "miss": "Ferns have no flowers, so they don't make pollen. What do ferns make?"
+      },
+      {
+       "t": "A seed",
+       "miss": "Ferns have no seeds. What tiny cells do they release?"
+      },
+      {
+       "t": "Spores",
+       "ok": "Yes. Ferns release spores, and the wind carries them to new places."
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "q": "Case D: A bird eats a bright berry, flies two miles away, and drops the seeds in its droppings. A new bush sprouts there. What is moving?",
+     "type": "choice",
+     "options": [
+      {
+       "t": "Seeds",
+       "ok": "Yes. The bird carries the berry's seeds inside its body to a new place."
+      },
+      {
+       "t": "Pollen",
+       "miss": "A new bush sprouted. What plant part grows into a new plant?"
+      },
+      {
+       "t": "Spores",
+       "miss": "Berry bushes are flowering plants. What do their berries hold?"
+      }
+     ]
+    }
+   ]
+  },
+  "partB": {
+   "title": "Short answer",
+   "do": "Answer in complete sentences. Use your science words.",
+   "items": [
+    {
+     "n": 1,
+     "q": "How does a pollinator help a plant reproduce? Use the word pollen in your answer.",
+     "type": "text",
+     "min": 15,
+     "chips": [
+      [
+       "pollen",
+       "Uses the word pollen"
+      ],
+      [
+       "seed",
+       "Says what forms (seeds)"
+      ]
+     ]
+    },
+    {
+     "n": 2,
+     "q": "How are seeds and spores alike? How are they different?",
+     "type": "text",
+     "min": 15,
+     "chips": [
+      [
+       "alike",
+       "Says how they're alike"
+      ],
+      [
+       "diff",
+       "Says how they're different"
+      ]
+     ]
+    }
+   ]
+  },
+  "write": {
+   "title": "How does that plant reproduce?",
+   "do": "Pick one of the four cases from Part A. Explain how that plant reproduces and what would happen if something went wrong. Use at least one of the science words under the boxes.",
+   "vocab": [
+    "reproduce",
+    "pollination",
+    "seed"
+   ],
+   "need": 1,
+   "prompts": [
+    [
+     "What do you think?",
+     "Start with: \"I think the most important part of this plant's reproduction is…\""
+    ],
+    [
+     "What did you observe or learn that supports your thinking?",
+     "Start with: \"I know this because in the cases I noticed that…\""
+    ],
+    [
+     "Why does that make sense?",
+     "Start with: \"This makes sense because…\""
+    ]
+   ]
+  },
+  "partC": {
+   "do": "Draw a nature scene that shows two different ways plants make new plants. Add arrows to show what moves.",
+   "labels": [
+    "The first way, and what moves",
+    "The second way, and what moves"
+   ]
+  },
+  "checklist": [
+   {
+    "k": "det",
+    "t": "My evidence chart has 3 plants and my explanation.",
+    "req": {
+     "det": 3,
+     "text": {
+      "in-det": 15
+     }
+    }
+   },
+   {
+    "k": "a",
+    "t": "Part A: all four cases.",
+    "req": {
+     "choice": [
+      "a1",
+      "a2",
+      "a3",
+      "a4"
+     ]
+    }
+   },
+   {
+    "k": "b",
+    "t": "Part B: questions 1 and 2.",
+    "req": {
+     "text": {
+      "in-b1": 15,
+      "in-b2": 15
+     }
+    }
+   },
+   {
+    "k": "c",
+    "t": "Part C: my drawing and both labels.",
+    "req": {
+     "sketch": true,
+     "text": {
+      "in-c1": 6,
+      "in-c2": 6
+     }
+    }
+   },
+   {
+    "k": "w",
+    "t": "Write and explain, with at least one science word.",
+    "req": {
+     "text": {
+      "in-w1": 10,
+      "in-w2": 10,
+      "in-w3": 10
+     },
+     "vocab": 1
+    }
+   }
+  ]
+ },
+ "premiere": {
+  "title": "Premiere my new-plants story",
+  "director": "JUNIOR SEED SCIENTIST",
+  "storyKicker": "My seed story",
+  "frames": [
+   {
+    "k": "formation",
+    "label": "Blossom to apple",
+    "img": "a4",
+    "cap": "Blossom to apple: a flower became a fruit full of seeds."
+   },
+   {
+    "k": "compare",
+    "label": "The Wind or Water Lab",
+    "img": "ca",
+    "cap": "The Wind or Water Lab: wings fly, sea hearts float."
+   },
+   {
+    "k": "wall",
+    "label": "Inside a flower",
+    "img": "l2",
+    "cap": "Inside a flower: every part helps make seeds."
+   },
+   {
+    "k": "det",
+    "label": "How did it travel?",
+    "img": "needles",
+    "cap": "How did it travel? A seed's shape is evidence."
+   }
+  ]
+ },
+ "next": {
+  "title": "21.02 · Seed vs. Spore Sorting",
+  "text": "Next time, sort real plants into the ones that make seeds and the ones that make spores."
+ },
+ "chips": {
+  "part": {
+   "any": [
+    "seed",
+    "fluff",
+    "fluffy",
+    "white",
+    "parachute",
+    "flower",
+    "yellow",
+    "round",
+    "ball",
+    "hair",
+    "thread",
+    "center",
+    "wind"
+   ]
+  },
+  "ask": {
+   "re": "\\?|\\b(why|how|what|when|where|who|which|does|do|is|are|can|did|will)\\b"
+  },
+  "trait": {
+   "any": [
+    "hook",
+    "wing",
+    "husk",
+    "float",
+    "berr",
+    "pod",
+    "seed",
+    "bird",
+    "spin",
+    "burst",
+    "pop"
+   ]
+  },
+  "because": {
+   "re": "\\b(because|since|so)\\b"
+  },
+  "env": {
+   "any": [
+    "wind",
+    "water",
+    "animal",
+    "bird",
+    "fur",
+    "pop",
+    "burst",
+    "float",
+    "ocean",
+    "wave"
+   ]
+  },
+  "pollen": {
+   "any": [
+    "pollen"
+   ]
+  },
+  "seed": {
+   "any": [
+    "seed",
+    "fruit"
+   ]
+  },
+  "alike": {
+   "any": [
+    "both",
+    "alike",
+    "same",
+    "new plant",
+    "grow"
+   ]
+  },
+  "diff": {
+   "any": [
+    "fern",
+    "moss",
+    "flower",
+    "different",
+    "tiny",
+    "spore",
+    "but"
+   ]
+  }
+ },
+ "creditAlias": {},
+ "creditsExtra": [
+  "Music: Felix Mendelssohn, <i>The Hebrides</i> (Fingal's Cave) Overture, Op. 26, Musopen Symphony Orchestra, public domain (Wikimedia Commons).",
+  "Opti the owl: Optima Academy. Sound effects are made by the page. The blossom-to-apple movie, the seed lab and the inside-a-flower ride are models; every plant photo is real, and the four order photos come from different apple trees."
+ ]
+}
