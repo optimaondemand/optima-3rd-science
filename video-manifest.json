@@ -64,24 +64,24 @@
     "embed": ""
   },
   "17-01-intro": {
-    "status": "pending",
-    "embed": ""
+    "status": "ready",
+    "embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/OAYj6jWHcLQ?si=QU73aITEPpvRVck5\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
   },
   "17-02-intro": {
     "status": "pending",
     "embed": ""
   },
   "18-01-intro": {
-    "status": "pending",
-    "embed": ""
+    "status": "ready",
+    "embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/L7JqJUkb2nw?si=28aoa941jP8rXlKe\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
   },
   "18-02-intro": {
     "status": "pending",
     "embed": ""
   },
   "19-01-intro": {
-    "status": "pending",
-    "embed": ""
+    "status": "ready",
+    "embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/E3SgXcxOGiE?si=oaTX7MyFhW0fN7x3\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
   },
   "19-02-intro": {
     "status": "pending",
@@ -96,16 +96,16 @@
     "embed": ""
   },
   "20-01-intro": {
-    "status": "pending",
-    "embed": ""
+    "status": "ready",
+    "embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/mg75vMLP56w?si=xsjuGZLOkSoVIt0H\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
   },
   "20-02-intro": {
     "status": "pending",
     "embed": ""
   },
   "21-01-intro": {
-    "status": "pending",
-    "embed": ""
+    "status": "ready",
+    "embed": "<iframe width="560" height="315" src="https://www.youtube.com/embed/rZkCs7XeNS0?si=4sxlRWeY1FwT-CU5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>"
   },
   "21-02-intro": {
     "status": "pending",
