@@ -299,6 +299,7 @@
   stage.tabIndex = 0;
   stage.addEventListener('keydown', function (e) { if (e.code === 'Space' && playing) { e.preventDefault(); bPause.onclick(); } });
   document.addEventListener('visibilitychange', function () { if (document.hidden && playing && !paused) bPause.onclick(); });
+  document.addEventListener('optima:quiet', function () { if (playing && !paused) bPause.onclick(); });  /* tab change (assets/tab-quiet.js) */
   size(); showPoster();
   window.WF_FILM = { play: play, stop: stop, end: END, at: function () { return now(); } };
 })();

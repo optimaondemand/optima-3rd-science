@@ -254,6 +254,8 @@ if REPO:
     for f in ('wf-film.css', 'wf-lesson.css', 'onestep.css', 'wf-film.js', 'wf-modules.js', 'wf-lesson.js', 'onestep.js'): COPY.append((SRC / f, f'assets/sparkle/{f}'))
     v = __import__('hashlib').md5((css + js).encode()).hexdigest()[:8]
     head_css = f'<link rel="stylesheet" href="assets/sparkle/wf-film.css?v={v}"><link rel="stylesheet" href="assets/sparkle/wf-lesson.css?v={v}"><link rel="stylesheet" href="assets/sparkle/onestep.css?v={v}"><style>.wf-credits{{display:none}}</style>'
+    tq = OUT.parent / 'assets/tab-quiet.js'  # stops sound when the tab changes (shared G3-5)
+    if tq.exists(): head_css += '<script src="assets/tab-quiet.js?v=' + __import__('hashlib').sha1(tq.read_bytes()).hexdigest()[:8] + '"></script>\n'
     tail_js = ''.join(f'<script src="assets/sparkle/{f}?v={v}"></script>' for f in ('wf-film.js', 'wf-modules.js', 'wf-lesson.js', 'onestep.js'))
 else:
     head_css = f'<style>{css}\n.wf-credits{{display:none}}</style>'; tail_js = f'<script>{js}</script>'
