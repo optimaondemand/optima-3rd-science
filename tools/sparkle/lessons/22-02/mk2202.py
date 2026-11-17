@@ -1,0 +1,409 @@
+#!/usr/bin/env python3
+"""Writes tools/sparkle/lessons/22-02/lesson.json, how-lines.json, credits.json, scripts.json."""
+import json, os
+D = '/home/claude/optima-3rd-science/tools/sparkle/lessons/22-02'
+
+def ph(t, d, img, alt, place, frm=(1.0, .5, .5), to=(1.1, .5, .5), fade=.8, **kw):
+    s = {"t": t, "d": d, "type": "photo", "img": img, "alt": alt, "from": list(frm), "to": list(to), "place": place, "fade": fade}
+    s.update(kw); return s
+
+film = {
+  "id": "g3sci-22-02", "mount": "wf-film", "kicker": "Opti's Wonder Films", "lesson": "Lesson 22.02 · Human Impact Case Study",
+  "title": "The Shrinking Meadow",
+  "bigQuestion": "When people change a place, what happens to the plants and animals that live there?",
+  "poster": "meadow", "endPoster": "field", "startTarget": "#tab-vocab", "music": {"src": "music", "vol": 0.55},
+  "shots": [
+    {"t": 0, "d": 3.4, "type": "leader", "top": "Optima Academy", "name": "Opti's Wonder Films", "bottom": "presents", "fade": 1.0},
+    ph(3.4, 4.8, "bloom", "A honey bee on a red and yellow blanket-flower, with more blanket-flowers around it", "A honey bee on a blanket-flower · extreme close-up",
+       frm=(1.45, .62, .5), to=(1.05, .55, .5), fade=1.0, sfx="whoosh", sfxArg=.6),
+    ph(8.2, 4.4, "meadow", "A wide field full of yellow and orange wildflowers", "A wildflower meadow · Texas Hill Country", frm=(1.15, .5, .5), to=(1.0, .5, .5), fx=["rays"]),
+    ph(12.6, 3.6, "rab2", "A small brown rabbit sitting in shady green grass", "An eastern cottontail in the grass", frm=(1.0, .5, .5), to=(1.14, .5, .55)),
+    ph(16.2, 3.4, "bird", "A meadowlark with a bright yellow chest perched on a low plant", "An eastern meadowlark · Kissimmee Prairie, Florida", frm=(1.0, .5, .4), to=(1.12, .4, .38)),
+    {"t": 19.6, "d": 7.0, "type": "split", "img": "meadow2", "alt": "Yellow and orange wildflowers along a wire fence",
+     "img2": "lot", "alt2": "An empty, cracked parking lot with weeds in the cracks and a tall light pole",
+     "splitAt": 0.8, "splitDur": 2.4, "lab1": "A meadow · Texas", "lab2": "A parking lot · Massachusetts", "from": [1.0, .5, .5], "to": [1.06, .5, .5], "fade": 0.6,
+     "sfxAt": [{"at": 0.8, "name": "rumble"}]},
+    {"t": 26.6, "d": 3.2, "type": "flash", "lines": ["No flowers?", "No bees?"], "beats": [0.15, 1.4], "fade": 0.15},
+    ph(29.8, 5.0, "rab", "A small rabbit sitting on short, mowed grass with no tall plants around it", "A cottontail on a mowed lawn", frm=(1.15, .5, .6), to=(1.0, .5, .5), fade=0.6),
+    ph(34.8, 6.6, "field", "A field packed with black-eyed Susans, yellow flowers with dark centers", "Black-eyed Susans · Litchfield, Minnesota (USFWS)", frm=(1.12, .5, .5), to=(1.0, .5, .5), fade=0.9, sfx="shimmer"),
+    {"t": 41.4, "d": 6.0, "type": "title", "fade": 1.2}
+  ],
+  "captions": [
+    {"t": 3.8, "d": 4.2, "text": "Up close, a honey bee drinks from a flower.", "voice": "opti-1"},
+    {"t": 8.5, "d": 4.2, "text": "Pull back. A whole meadow hums with life.", "voice": "opti-2"},
+    {"t": 12.8, "d": 3.2, "text": "A rabbit hides in the grass.", "voice": "opti-3"},
+    {"t": 16.3, "d": 3.1, "text": "A meadowlark sings its song.", "voice": "opti-4"},
+    {"t": 21.0, "d": 4.8, "text": "Then, one day, part of the meadow is gone.", "voice": "opti-5"},
+    {"t": 26.7, "d": 3.0, "text": "Where did the flowers go? And the bees?", "voice": "opti-6"},
+    {"t": 30.1, "d": 4.4, "text": "Now the rabbit sits on short grass, out in the open.", "voice": "opti-7"},
+    {"t": 35.2, "d": 5.9, "text": "When people change a place, what happens to the living things there?", "voice": "opti-8"}
+  ]
+}
+
+specimen = {
+  "img": "spec", "aspect": "1600/1067", "radius": 0.07,
+  "hotspots": [
+    {"name": "Its head at the flower's opening", "x": 0.29, "y": 0.42},
+    {"name": "Clear wings with thin dark veins", "x": 0.73, "y": 0.36},
+    {"name": "A striped body", "x": 0.6, "y": 0.72},
+    {"name": "Fuzzy hairs on its back", "x": 0.44, "y": 0.24},
+    {"name": "Legs gripping the flower", "x": 0.42, "y": 0.6},
+    {"name": "A bright red, tube-shaped flower", "x": 0.2, "y": 0.8}
+  ],
+  "kicker": "🔎 Mystery specimen", "title": "Who is visiting, and what does it need?",
+  "alt": "A honey bee with clear wings and a striped, fuzzy body gripping a red tube-shaped flower, its head at the flower's opening",
+  "look": "A real photo of a small visitor on a flower, seen very close up. A specimen is one real thing that scientists study. This visitor came to the flower for something it needs to live. What is it, and what does it need? That's for you to figure out.",
+  "do": "Press Inspect specimen. Move the magnifying lens over the bee and the flower, then tap 3 things you notice.",
+  "number": "No. 22.02-A",
+  "card": ["<b>Specimen A</b>", "Found: Crocodile Lake National Wildlife Refuge, Key Largo, Florida", "Size: about as long as a paper clip is wide", "What is it doing? <i>You decide.</i>"],
+  "notice": "I notice… (one thing you see on the bee or the flower)",
+  "wonder": "I wonder… (one question you want answered by the end of the lesson)"
+}
+
+words = [
+  ["🔍", "case study", "A close look at one real situation to learn from it."],
+  ["💥", "impact", "A change caused by an action. Paving a field has an impact on the animals there."],
+  ["🏠", "habitat", "The place where an organism lives and finds what it needs to survive."],
+  ["🌱", "resource", "Something an organism needs to survive, like food, water, shelter, or space."],
+  ["🔬", "evidence", "Information that supports or explains an idea. Scientists use evidence before drawing conclusions."],
+  ["💡", "solution", "A way to reduce or fix a problem. A good solution is based on evidence."]
+]
+
+case_box = ('<div style="background:#fff8e8;border:2px solid #c9a24a;border-radius:10px;padding:10px 12px;margin:10px 0">'
+  '<b>📁 Our case: The Shrinking Meadow</b>'
+  '<p style="margin:6px 0 0"><b>Before:</b> Tall grass and wildflowers. Bees drank nectar from the flowers. Rabbits hid in the tall grass. Birds nested nearby.</p>'
+  '<p style="margin:6px 0 0"><b>What changed:</b> Half the meadow was paved for a parking lot.</p>'
+  '<p style="margin:6px 0 0"><b>After:</b> Fewer flowers grew near the edge. Bees had less food. Rabbits had fewer places to hide. Some birds stopped nesting there.</p>'
+  '<p style="margin:6px 0 0"><b>Proposed solution:</b> Plant a border of native wildflowers and grasses along the edge of the lot.</p>'
+  '<p style="margin:6px 0 0;font-size:.9em;color:#6b5a3a">This meadow is an example, built from what scientists see in many real places.</p></div>')
+
+parts = [
+  {"kicker": "🔍 Part 1", "title": "What Is a Case Study?",
+   "html": "<p>A case study is a close look at one real situation. Scientists pick one place, one event, or one ecosystem. They study it carefully to understand what changed and why. A case study asks: <b>What happened here? What caused it? What might help?</b></p>" + case_box},
+  {"kicker": "🏗️ Part 2", "title": "When Humans Change a Place",
+   "html": "<p>People change ecosystems when they build, farm, travel, or throw things away. When a habitat changes, organisms may lose food, water, shelter, or space.</p><p>Then the population in that place can change. Some animals leave, some struggle, and some can't survive there at all.</p>"},
+  {"kicker": "💡 Part 3", "title": "Solutions Need Evidence",
+   "html": "<p>People can also design solutions that help an ecosystem recover. A good solution is based on evidence, not just guessing. It should reduce harm and help organisms find what they need again.</p>"},
+  {"kicker": "📁 Part 4", "title": "Real Florida Cases: Which Fix Works?"}
+]
+
+order = {
+  "mix": [2, 0, 3, 1], "hint": "Start with the meadow before anything changed.",
+  "kicker": "🎞️ Put the scenes in order", "title": "How did the meadow change?",
+  "look": "Four real photos, from different places. Each one shows one step of a case study, but they are mixed up. The steps are: the place before, the human action, the habitat change, and a possible fix. The dark film strip has four empty frames, from first (1) to last (4).",
+  "done": "🎬 Your order is right. Now watch it as a movie!",
+  "scenes": [
+    {"img": "o1", "alt": "A meadow full of yellow black-eyed Susans and tall green grass", "text": "Before: a meadow full of flowers and tall grass.", "play": "The meadow before.",
+     "miss": ["", "The meadow comes before anything changes. Try frame 1.", "Start with the place before people changed it. Try frame 1.", "The meadow comes first. Try frame 1."]},
+    {"img": "o2", "alt": "A big digging machine clearing trees and plants from the ground", "text": "The human action: machines clear the land.", "play": "Machines clear the land.",
+     "miss": ["The meadow has to be there first. Try a later frame.", "", "The land is cleared before it is paved. Try an earlier frame.", "Clearing comes before the fix. Try an earlier frame."]},
+    {"img": "o3", "alt": "An empty parking lot with cracks and a few weeds", "text": "The habitat change: pavement, and few flowers left.", "play": "Now it's pavement.",
+     "miss": ["The meadow and the clearing come first. Try a later frame.", "The land has to be cleared before it is paved. Try a later frame.", "", "The pavement comes before the fix. Try an earlier frame."]},
+    {"img": "o4", "alt": "Leafy green plants growing in a planted strip beside a parking lot", "text": "A possible fix: plants along the edge of the lot.", "play": "A border is planted.",
+     "miss": ["The fix comes last, after the change. Try frame 4.", "The fix comes last. Try frame 4.", "The fix comes after the pavement. Try frame 4.", ""]}
+  ],
+  "check": {
+    "q": "The rabbits lost their tall grass. Can't they just hop over and live somewhere else, so no harm done?",
+    "options": [
+      {"t": "Yes. Animals can always move, so changing a place doesn't hurt them.", "miss": "Think about the movie. Is there always another meadow nearby with room, food, and hiding places?"},
+      {"t": "Not always. Other places may be too far away or already full, so some rabbits struggle or don't survive.",
+       "ok": "Yes! Moving is hard. The next good place may be far away, across roads, or already full. That's why changing a habitat changes the population."}
+    ]
+  }
+}
+
+movie = {
+  "model": "meadow-model.svg", "modelBox": {"left": "0%", "width": "100%", "rot": 0}, "start": "0%", "bg": "prairie",
+  "real": "real", "realAlt": "A thick border of colorful wildflowers in pink, blue, red, white and yellow, growing along a road",
+  "stamp": "ONE CHANGE, MANY EFFECTS", "endCap": "Real wildflowers planted by a road in England.",
+  "beats": [
+    {"at": 0, "cap": "1 · Before: flowers, bees, and rabbits.", "model": {"top": "0%", "rot": 0, "show": "s1"}, "counter": ["Spring"]},
+    {"at": 2600, "cap": "2 · Machines clear half the meadow.", "model": {"show": "s2"}, "counter": ["Summer"]},
+    {"at": 5200, "cap": "3 · Pavement. Fewer flowers, fewer bees.", "model": {"show": "s3"}, "counter": ["Fall"]},
+    {"at": 7800, "cap": "4 · People plant a border of native flowers.", "model": {"show": "s4"}, "counter": ["Next spring"], "sfx": "shimmer"},
+    {"at": 10400, "cap": "The real thing: a flower border by a road.", "model": {"hide": True}, "real": True},
+    {"at": 12200, "stamp": True}
+  ]
+}
+
+compare = {
+  "kicker": "🧪 The Hide Test", "title": "Can a rabbit hide here?",
+  "look": "Two real kinds of ground, each on a lit specimen tray. Specimen A is a meadow with tall, thick grass. Specimen B is a mowed lawn: short grass, cut low. Under the trays are two things for a test: a cardboard box, which makes a dark, covered spot, and a desk lamp, which lights everything up so nothing can hide.",
+  "trays": [
+    {"id": "A", "img": "ta", "alt": "A field of tall, thick green grass with trees far behind", "label": "Specimen A"},
+    {"id": "B", "img": "tb", "alt": "Short, freshly mowed green lawn grass", "label": "Specimen B"}
+  ],
+  "materials": [{"key": "box", "label": "Cardboard box", "swatch": "box"}, {"key": "lamp", "label": "Desk lamp", "swatch": "lamp"}],
+  "ask": [
+    {"q": "Which ground has tall, thick grass a rabbit could crouch in?", "ans": "A", "ok": "Yes. Specimen A, the meadow, has tall, thick grass.", "miss": "Look closely. Which grass is taller than a rabbit?"},
+    {"q": "Which ground is cut short, so everything on it can be seen?", "ans": "B", "ok": "Yes. Specimen B, the lawn, is mowed short.", "miss": "Look again. Which grass has been cut low?"}
+  ],
+  "press": "🔦 Run the test",
+  "testDo": "Put the box under one tray and the lamp under the other: drag them, or tap one, then a tray. Press <b>Run the test</b>. Then swap and test again.",
+  "disclaimer": "This is a model. A box and a lamp stand in for cover and open ground.",
+  "results": {
+    "Abox": {"text": "Under the box it's dark and covered, just like tall grass. A rabbit there is hard to see.", "fx": "shade"},
+    "Alamp": {"text": "The lamp lit everything up. But tall grass gives cover. Try the box here.", "fx": "glow"},
+    "Bbox": {"text": "The box made a hiding spot. But a mowed lawn has no cover. Try the lamp here.", "fx": "shade"},
+    "Blamp": {"text": "The lamp lit everything up, just like a short lawn in the open. A hawk overhead could spot a rabbit right away.", "fx": "glow"}
+  },
+  "best": ["Abox", "Blamp"],
+  "frame": "This one has ___, so it ___.", "claimLead": "This one has", "claimMid": "so it",
+  "claim": {
+    "A": {"feat": ["tall, thick grass", "short, mowed grass"], "featOk": 0, "eat": ["gives rabbits a place to hide", "leaves rabbits out in the open"], "eatOk": 0},
+    "B": {"feat": ["tall, thick grass", "short, mowed grass"], "featOk": 1, "eat": ["gives rabbits a place to hide", "leaves rabbits out in the open"], "eatOk": 1}
+  },
+  "curator": {
+    "A": "<b>Tall grass → shelter.</b> Rabbits crouch in tall grass to hide from hawks, foxes, and owls.",
+    "B": "<b>Short lawn → no shelter.</b> On short grass, a rabbit is easy to see, so it can't stay long."
+  },
+  "missFeat": "Look at {label} again. Is the grass tall, or cut short?",
+  "missClaim": "Think about your test. Which one hid things, and which one lit everything up?",
+  "done": "When tall grass is cut down or paved, rabbits lose shelter. Shelter is a resource, just like food.",
+  "after": {"kicker": "🎬 Behind the scenes · Who is watching?", "img": "hawk", "alt": "A young red-tailed hawk standing in tall golden grass",
+            "html": "This young red-tailed hawk was hunting in a grassland in Wyoming. Hawks have sharp eyes and watch open ground from above. That's why tall grass matters so much to rabbits and mice: it is their shelter."}
+}
+
+wall = {
+  "kicker": "🚶 The edge walk", "title": "Walk from the parking lot into the meadow",
+  "look": "A model of a walk, like a path turned on its side. You start on the parking lot and walk deeper into the meadow, one stop at a time. Each stop has a real photo of what lives there. The brass dial on the left shows how far you have walked.",
+  "do": "First, make a prediction. Then brush the glowing stop: drag across it (or tap it again and again) until the place shows.",
+  "predict": {"q": "As you walk from the parking lot into the meadow, what do you think happens to the number of living things?",
+              "options": [["more", "There are more the deeper I go"], ["same", "It stays about the same"]], "answer": "more",
+              "mine": "Your prediction: <b>{p}</b>. Let's walk in and find out.",
+              "confirm": "You predicted more living things deeper in. The evidence agrees: the lot had almost none, and the deep meadow had the most.",
+              "change": "You predicted it stays the same. The evidence changed that idea: the lot had almost none, and the deep meadow had the most."},
+  "sky": "sky", "skyAlt": "A field packed with yellow black-eyed Susans", "skyCap": "A meadow in full bloom · Litchfield Wetland Management District, Minnesota (USFWS)",
+  "unit": "Stop", "found": "Clue found at Stop {n}",
+  "elevator": ["Start", "The<br>lot", "The<br>mowed edge", "The meadow<br>edge", "Deep in the<br>meadow"],
+  "line": ["THE PARKING LOT", "DEEP IN THE MEADOW"],
+  "lockTag": "🔒 Brush the stop above first", "locked": "Brush the stop above first. We walk in one stop at a time.",
+  "first": "Brush the glowing top stop. Drag across it (or tap it again and again).", "next": "Walking in. Brush Stop {n}.",
+  "endTitle": "All 4 stops explored",
+  "endText": "Look at the line. The lot had almost no living things. The deeper we walked into the meadow, the more flowers and animals we found.",
+  "rule": "<b>The edge loses the most.</b> When a meadow is paved, the part next to the lot gets fewer flowers, so bees and other animals find less food and shelter there.",
+  "choices": ["🅿️ Almost nothing lives here", "✂️ Short grass, few flowers", "🦋 Some flowers and insects", "🌼 Lots of flowers and animals"],
+  "layers": [
+    {"name": "Stop 1 · The parking lot", "rock": "shale", "img": "l1", "alt": "Cracked pavement with a few thin weeds growing in the cracks",
+     "ask": "Look at Stop 1. Read the clue AND the photo. What did you find here?",
+     "clue": "Hard pavement. A few weeds poke up through the cracks. No flowers for bees, and no place for a rabbit to hide.",
+     "ans": 0, "ok": "Yes! Almost nothing can live on pavement.", "tag": "🅿️ Almost nothing",
+     "miss": {"1": "There's no lawn here. Look at the ground.", "2": "Do you see flowers or insects? Look again.", "3": "Look again. This is pavement."},
+     "env": "e1", "envAlt": "An empty, cracked parking lot under a blue sky", "envCap": "A parking lot with weeds in the cracks · East Longmeadow, Massachusetts"},
+    {"name": "Stop 2 · The mowed edge", "rock": "leafsun", "img": "l2", "alt": "Short, freshly mowed lawn grass beside a sidewalk",
+     "ask": "Look at Stop 2. Read the clue AND the photo. What did you find here?",
+     "clue": "Short grass, mowed often. It's green, but there are almost no flowers, and nowhere tall to hide.",
+     "ans": 1, "ok": "Yes! A mowed edge is green, but it has few flowers and no cover.", "tag": "✂️ Short grass",
+     "miss": {"0": "Something grows here. Look at the grass.", "2": "Look for flowers. Do you see any?", "3": "Look again. Is the grass tall and full of flowers?"},
+     "env": "e2", "envAlt": "A big, freshly mowed green lawn in front of a house", "envCap": "A mowed lawn · Ewing Township, New Jersey"},
+    {"name": "Stop 3 · The meadow edge", "rock": "leafmid", "img": "l3", "alt": "An orange Gulf fritillary butterfly drinking from a small white wildflower",
+     "ask": "Look at Stop 3. Read the clue AND the photo. What did you find here?",
+     "clue": "Some wildflowers grow here, and a butterfly is drinking nectar. But there are fewer flowers than deeper in.",
+     "ans": 2, "ok": "Yes! The edge has some flowers and insects, but not as many as deeper in.", "tag": "🦋 Some life",
+     "miss": {"0": "Look again. There's a butterfly here.", "1": "There's more than short grass. Look at the butterfly.", "3": "Close! But the clue says fewer flowers than deeper in."},
+     "env": "e3", "envAlt": "A green meadow edge with yellow flowers and trees behind", "envCap": "A meadow edge · Peninsula State Park, Wisconsin"},
+    {"name": "Stop 4 · Deep in the meadow", "rock": "leafshade", "img": "l4", "alt": "Many red and yellow blanket-flowers with a honey bee on one",
+     "ask": "Look at Stop 4. Read the clue AND the photo. What did you find here?",
+     "clue": "Flowers everywhere, bees on the blossoms, and tall grass where rabbits and birds can hide and nest.",
+     "ans": 3, "ok": "Yes! Deep in the meadow there are the most flowers and animals.", "tag": "🌼 Full of life",
+     "miss": {"0": "Look again. This place is full of flowers.", "1": "The grass here is tall, not mowed.", "2": "There's more than some. Count the flowers."},
+     "env": "e4", "envAlt": "Rolling hills covered in yellow wildflowers under a blue sky", "envCap": "Spring wildflowers · Wichita Mountains Wildlife Refuge, Oklahoma (USFWS)"}
+  ],
+  "mix": {
+    "q": "The town plants a border of native wildflowers along the parking lot. Does that fix everything the meadow lost?",
+    "options": [
+      {"t": "Yes. The flowers are back, so the meadow is just like before.", "miss": "Look at the evidence. The bees get flowers back, but did the rabbits get their tall grass and space back?"},
+      {"t": "Not everything. Bees get some food back, but the paved land is still gone, so there is less space and shelter.",
+       "ok": "Yes! It's a partial solution. It helps the bees with food, but it can't bring back all the space under the parking lot."}
+    ]
+  }
+}
+
+wow = {"kicker": "🎬 Director's cut", "title": "Roads that grow wildflowers",
+  "img": "wow", "alt": "A wire fence and a wooden post beside a field of yellow and red wildflowers",
+  "caption": "Wildflowers along a fence in the Texas Hill Country, 2009 (USDA photo)",
+  "html": "<p style=\"margin:0 0 8px\">Some states use the land along highways as a giant flower border. Texas plants wildflowers beside its roads, and the state says it buys and sows about 30,000 pounds of wildflower seed every year.</p><p style=\"margin:0\">Way back in 1934, Texas road crews were told to wait to mow until spring wildflowers were done blooming. Bees and butterflies use those roadside flowers for food.</p>",
+  "inset": "inset", "insetCap": "A honey bee on a blanket-flower, one of the flowers that grows along roadsides."}
+
+keyIdea = "Human actions can change ecosystems in ways that make survival harder. When a habitat changes, organisms can lose food, water, shelter, or space. Scientists study one case at a time, and use evidence to decide which solutions might help."
+
+def card(id_, img, alt, clues, org, orgAns, orgShort, orgMiss, env, envAns, envMiss, pq, popts, envImg, envAlt, envCap, reveal, rb, bts):
+    return {"id": id_, "img": img, "alt": alt, "clues": clues, "org": org, "orgAns": orgAns, "orgShort": orgShort, "orgMiss": orgMiss,
+            "env": env, "envAns": envAns, "envMiss": envMiss, "predict": {"q": pq, "options": popts},
+            "envImg": envImg, "envAlt": envAlt, "envCap": envCap, "reveal": reveal, "rebuildEnv": rb, "bts": bts}
+
+RES = ["Food", "Water", "Shelter and space", "A safe path"]
+det = {
+  "look": "Five real Florida case files. Each one shows a living thing whose home was changed by people, and two fixes people could try. Under the cards is an evidence chart, a table that holds what you figure out.",
+  "do": "Pick 3 case files, one at a time. Tap a clue, then pick what it lost. Predict which fix works, and watch the place today appear.",
+  "noun": "Case", "need": 3, "inferQ": "What did it lose when people changed its home?", "inferDone": "It lost", "chartSo": "so it lost",
+  "predict": {"q": "Which fix do you think works?", "options": [["a", "Fix A"], ["b", "Fix B"]]},
+  "kicker": "The place today", "enough": "You already solved 3 cases. Nice work, ecologist!",
+  "cols": ["Case", "My observation", "What it lost", "The fix that works", "My evidence"],
+  "write": {"label": "Case __ shows ___. The fix ___ works because ___.", "starter": "Start with: \"Case __ shows…\"", "min": 15,
+            "chips": [["trait", "Names what you see"], ["because", "Gives a reason (because)"], ["need", "Names food, water, shelter, or space"]]},
+  "items": [
+    card("A", "d1", "A blue and gray Florida scrub-jay perched on a low, leafy branch",
+         [{"t": "A bird in short, low bushes", "ok": True}, {"t": "A bird in deep water", "miss": "Look again. Is there water here?"}, {"t": "A bird on a tall building", "miss": "Look again. What is the bird sitting in?"}],
+         RES, 2, "shelter and space", "Florida scrub-jays nest in low oak scrub. When houses and farms replaced the scrub, what did they lose? Try again.",
+         "Protect scrub, burn it on purpose", "b", "Scrub-jays need low, open scrub, and planned fires keep it that way. Try again.",
+         "Florida scrub-jays live ONLY in Florida, in low oak scrub. Houses and farms took most of it. Which fix do you think works?",
+         [["a", "🌲 Letting the scrub grow tall and thick"], ["b", "🔥 Protecting scrub and burning it on purpose, a little at a time"]],
+         "d1h", "Low green scrub and white sand under a blue sky, with pine trees in the distance",
+         "Today: protected scrub on the Lake Wales Ridge, Florida",
+         "This protected scrub is evidence that keeping the right habitat helps scrub-jays.", "scrub",
+         "The Florida scrub-jay lives nowhere else on Earth. Its numbers dropped by about 90 percent over the last 100 years, mostly because scrub was cleared for houses and farms. In preserves like the Lake Wales Ridge, crews set small, careful fires so the oak scrub stays low, the way scrub-jays need it. (Bird photo: Jonathan Dickinson State Park.)"),
+    card("B", "d2", "A small brown burrowing owl with yellow eyes standing at its burrow in sandy ground",
+         [{"t": "An owl by a hole in the ground", "ok": True}, {"t": "An owl in a tall tree", "miss": "Look again. Where is the owl standing?"}, {"t": "An owl in the water", "miss": "Look again. Is there water here?"}],
+         RES, 2, "shelter and space", "Burrowing owls live in burrows in open, sandy ground. When empty lots get built on, what do they lose? Try again.",
+         "Mark burrows, dig starter burrows", "a", "Owls need burrows in open ground. Marking and digging burrows gives them shelter. Try again.",
+         "In Cape Coral, burrowing owls nest in empty sandy lots. New houses are filling the lots. Which fix do you think works?",
+         [["a", "🕳️ Marking owl burrows and digging new starter burrows"], ["b", "🌳 Planting big trees on every empty lot"]],
+         "d2h", "A burrowing owl standing on a short wooden perch next to a white marker pole",
+         "Today: an owl on a perch by a marked burrow · Marco Island, Florida",
+         "This marked burrow is evidence that protecting burrows helps owls.", "owllot",
+         "Cape Coral has the largest burrowing owl population in Florida. As houses fill the empty lots, volunteers mark burrows with stakes and signs so mowers and builders stay away, add perches, and help dig starter burrows in yards. (Owl photo: Cape Coral.)"),
+    card("C", "d3", "A gopher tortoise resting at the sandy mouth of its burrow among dry grasses",
+         [{"t": "A tortoise by a sandy burrow", "ok": True}, {"t": "A tortoise in a pond", "miss": "Look again. Is there a pond?"}, {"t": "A tortoise on a road", "miss": "Look again. What is next to the tortoise?"}],
+         RES, 2, "shelter and space", "Gopher tortoises dig deep burrows to live in. When the land is cleared to build, what do they lose? Try again.",
+         "Move tortoises to protected land", "b", "Moving tortoises to safe, protected land before clearing gives them a new home. Try again.",
+         "Gopher tortoises dig burrows that more than 350 other kinds of animals share. A field is about to be cleared for building. Which fix do you think works?",
+         [["a", "🚜 Clearing the land and letting the tortoises dig out by themselves"], ["b", "🐢 Moving the tortoises to protected land before clearing"]],
+         "d3h", "An open pine woodland with grasses and a sandy tortoise burrow in front",
+         "Today: protected pine woods with a tortoise burrow · Florida (USFWS)",
+         "This protected woodland is evidence that a safe new home helps tortoises.", "pine",
+         "In Florida, both the gopher tortoise and its burrow are protected by law. Before land is cleared, the owner must get a permit from the Florida Fish and Wildlife Conservation Commission (FWC) and move the tortoises to protected land. (Tortoise photo: Bell Creek Nature Preserve.)"),
+    card("D", "d4", "A tiny loggerhead sea turtle hatchling crawling across gray beach sand",
+         [{"t": "A baby turtle on the sand", "ok": True}, {"t": "A turtle in a forest", "miss": "Look again. What is the turtle crawling on?"}, {"t": "A turtle in a parking lot", "miss": "Look again. Is that pavement or sand?"}],
+         RES, 3, "a safe path to the sea", "Hatchlings must crawl to the sea. Bright lights from buildings pull them the wrong way. What do they lose? Try again.",
+         "Dim, shielded, amber lights", "a", "Hatchlings head for the brightest horizon, so bright lights pull them away from the sea. Try again.",
+         "Baby sea turtles hatch at night and crawl toward the brightest light. Bright lights on buildings by the beach pull them away from the sea. Which fix do you think works?",
+         [["a", "🌙 Dim, shielded, amber lights, and lights off after 9 p.m."], ["b", "💡 Brighter beach lights so the babies can see better"]],
+         "d4h", "A loggerhead hatchling crawling across smooth sand toward the water",
+         "Today: a hatchling heading to the sea · Sanibel Island, Florida",
+         "This hatchling heading to the water is evidence that darker beaches help baby turtles.", "beach",
+         "On Florida beaches, nesting season runs from May 1 to October 31. Many towns ask people to keep lights low, shielded, and amber or red, and to turn off lights the beach can see after 9 p.m. Then hatchlings head for the sea. (Both photos: Sanibel Island.)"),
+    card("E", "d5", "A large gray manatee swimming underwater with long pale scars across its back",
+         [{"t": "Long scars on its back", "ok": True}, {"t": "A fishing net", "miss": "Look again. Do you see a net?"}, {"t": "Spots of oil", "miss": "Look again. What marks are on its back?"}],
+         RES, 3, "a safe path to swim", "Manatees swim slowly near the surface. Fast boats hit them. What do they lose? Try again.",
+         "Slow-speed boat zones", "b", "Slower boats give manatees and boaters time to get out of the way. Try again.",
+         "Manatees are slow swimmers that stay near the surface. Many have scars from boats. Which fix do you think works?",
+         [["a", "🚤 Letting boats go faster so they pass by quickly"], ["b", "🐢 Slow-speed zones where manatees swim"]],
+         "d5h", "A Manatee Zone sign that says Slow Speed, Minimum Wake, with four pelicans perched on top",
+         "Today: a manatee slow-speed zone · Merritt Island, Florida",
+         "This sign is evidence that slow zones help manatees stay safe.", "river",
+         "Most Florida manatees have boat scars. Slow-speed zones give boaters more time to see a manatee, and give the manatee time to move away. If a hit does happen, a slower boat does less harm. (Manatee photo: U.S. Fish and Wildlife Service.)")
+  ]
+}
+
+rebuild = {"title": "Use your evidence to rebuild the place", "missPrefix": "Hmm. Look at your case again. ", "kicker": "🌍 Rebuild the place", "whyStart": "I chose this because the case…",
+  "envs": [
+    {"key": "scrub", "name": "🌵 Florida oak scrub", "img": "d1h", "cap": "Low bushes, white sand…"},
+    {"key": "owllot", "name": "🏡 Open sandy lots in town", "img": "d2h", "cap": "Short grass, sandy burrows…"},
+    {"key": "pine", "name": "🌲 Pine woods with sandy soil", "img": "d3h", "cap": "Tall pines, sandy burrows…"},
+    {"key": "beach", "name": "🌊 A dark sandy beach", "img": "d4h", "cap": "Sand, waves, and dark nights…"},
+    {"key": "river", "name": "🚤 A slow, warm river", "img": "d5h", "cap": "Calm water, slow boats…"}
+  ],
+  "life": [
+    {"name": "🐦 Florida scrub-jay", "img": "d1", "env": "scrub", "miss": "Scrub-jays live in low oak scrub."},
+    {"name": "🦉 Burrowing owl", "img": "d2", "env": "owllot", "miss": "Burrowing owls live in open, sandy ground."},
+    {"name": "🐢 Gopher tortoise", "img": "d3", "env": "pine", "miss": "Gopher tortoises dig in sandy pine woods."},
+    {"name": "🐢 Sea turtle hatchling", "img": "d4", "env": "beach", "miss": "Hatchlings crawl across the beach to the sea."},
+    {"name": "🌊 Manatee", "img": "d5", "env": "river", "miss": "Manatees swim in calm, warm rivers and bays."}
+  ]}
+
+quiz = [
+  {"q": "What is a case study?", "options": [
+    {"t": "A close look at one real situation to learn from it", "ok": "🌿 Exactly right! A case study helps scientists study one situation carefully, so they can understand what changed and why."},
+    {"t": "A list of every organism in a habitat", "miss": "Think about what scientists do when they study one place very closely. What would you call that kind of careful, focused investigation?"},
+    {"t": "A type of natural disaster", "miss": "Think about what scientists do when they study one place very closely. What would you call that kind of careful, focused investigation?"}]},
+  {"q": "In the meadow case study, what resource did bees lose when part of the meadow was paved?", "options": [
+    {"t": "A place to hibernate underground", "miss": "Read the case again: after the parking lot was built, what happened to the flowers that bees needed?"},
+    {"t": "Flower food sources (nectar)", "ok": "🌸 Yes! Fewer flowers meant less nectar for bees to eat. That's the food resource they lost."},
+    {"t": "A nearby river to drink from", "miss": "Read the case again: after the parking lot was built, what happened to the flowers that bees needed?"}]},
+  {"q": "What makes a solution to an ecosystem problem stronger?", "options": [
+    {"t": "It costs the most money", "miss": "Think about the fixes you tested: why did some work and others not? What should a solution be based on?"},
+    {"t": "It is the fastest option available", "miss": "Think about the fixes you tested: why did some work and others not? What should a solution be based on?"},
+    {"t": "It is based on evidence about what organisms actually need", "ok": "⭐ That's the key idea! A solution based on evidence is much more likely to actually help. Guessing doesn't cut it in science."}]}
+]
+
+assign = {
+  "partA": {"title": "Identify and label", "do": "Read each one. Pick the best answer, or type your answer.", "items": [
+    {"n": 1, "q": "What human action changed the meadow?", "type": "choice", "options": [
+      {"t": "A storm knocked down the flowers.", "miss": "Read the case again. What did people build?"},
+      {"t": "Part of the meadow was paved to build a parking lot.", "ok": "Yes. People paved half the meadow for a parking lot."},
+      {"t": "Rabbits ate all the grass.", "miss": "The rabbits didn't change the meadow. What did people do?"},
+      {"t": "Bees moved to a new meadow.", "miss": "That happened after. What did people do first?"}]},
+    {"n": 2, "q": "Name one habitat change that happened after the parking lot was built.", "type": "text", "min": 6, "chips": [["chg", "Names a change (fewer flowers, less grass, pavement)"]]},
+    {"n": 3, "q": "Name two organisms that were affected and write what resource each one lost.", "type": "text", "min": 12, "chips": [["two", "Names a second one (and, also)"], ["need", "Names food, water, shelter, or space"]]}
+  ]},
+  "partB": {"title": "Short answer", "do": "Answer in complete sentences. Use your science words.", "items": [
+    {"n": 1, "q": "How did the parking lot change the meadow ecosystem? Describe at least two things that were different after.", "type": "text", "min": 12, "chips": [["chg", "Names a change"], ["two", "Names a second one (and, also)"]]},
+    {"n": 2, "q": "How were bees and rabbits affected in different ways? What does that tell you about how one human action can create more than one impact?", "type": "text", "min": 15, "chips": [["need", "Names food, water, shelter, or space"], ["because", "Gives a reason (because, so)"]]}
+  ]},
+  "write": {"title": "Is planting native plants a good solution for the meadow?", "do": "Pick one from your evidence chart. Answer the three questions. Use at least one of the science words under the boxes.",
+    "vocab": ["habitat", "evidence", "solution", "resource"], "need": 1,
+    "prompts": [["Do you think planting native plants is a good solution for the meadow?", "Start with: \"I think planting native plants is a good solution because…\""],
+                ["What evidence from the case study supports your thinking?", "Start with: \"I know this because in the case study, I observed that…\""],
+                ["Why does your explanation make sense?", "Start with: \"This makes sense because…\""]]},
+  "partC": {"do": "Draw the meadow before and after the parking lot. Label what changed, and one living thing that was affected.",
+            "labels": ["What changed in the meadow", "One living thing and the resource it lost"]},
+  "checklist": [
+    {"k": "det", "t": "My evidence chart has 3 cases and my explanation.", "req": {"det": 3, "text": {"in-det": 15}}},
+    {"k": "a", "t": "Part A: all three questions.", "req": {"choice": ["a1"], "text": {"in-a2": 6, "in-a3": 12}}},
+    {"k": "b", "t": "Part B: questions 1 and 2.", "req": {"text": {"in-b1": 12, "in-b2": 15}}},
+    {"k": "c", "t": "Part C: my drawing and both labels.", "req": {"sketch": True, "text": {"in-c1": 6, "in-c2": 6}}},
+    {"k": "w", "t": "Write and explain, with at least one science word.", "req": {"text": {"in-w1": 10, "in-w2": 10, "in-w3": 10}, "vocab": 1}}
+  ]
+}
+
+premiere = {"title": "Premiere my case study", "thinkLabel": "It lost", "director": "JUNIOR ECOLOGIST", "storyKicker": "My case study",
+  "frames": [
+    {"k": "formation", "label": "The case, step by step", "img": "o4", "cap": "Action, change, effect, fix: one meadow, step by step."},
+    {"k": "compare", "label": "The Hide Test", "img": "ta", "cap": "The Hide Test: tall grass hides a rabbit; a short lawn doesn't."},
+    {"k": "wall", "label": "The edge walk", "img": "l3", "cap": "The edge walk: more life the deeper we went."},
+    {"k": "det", "label": "Which fix works?", "img": "d1", "cap": "Which fix works? The one that gives back what living things need."}]}
+
+nxt = {"title": "23.01 · What Types of Pollution Harm Ecosystems?", "text": "Next time, find out how trash, dirty water, and dirty air harm the living things in an ecosystem."}
+
+chips = {
+  "part": {"any": ["bee", "wing", "wings", "leg", "legs", "flower", "red", "stripe", "stripes", "fuzzy", "hair", "head", "body", "tube", "petal", "yellow", "orange", "green", "leaf"]},
+  "ask": {"re": "\\?|\\b(why|how|what|when|where|who|which|does|do|is|are|can|did|will)\\b"},
+  "trait": {"any": ["bird", "owl", "tortoise", "turtle", "manatee", "scar", "scars", "burrow", "hole", "sand", "bush", "bushes", "scrub", "baby", "hatchling", "beach"]},
+  "because": {"re": "\\b(because|since|so)\\b"},
+  "need": {"any": ["food", "water", "shelter", "space", "home", "hide", "path", "nectar"]},
+  "chg": {"any": ["flower", "flowers", "grass", "pavement", "paved", "parking", "lot", "fewer", "less", "gone", "nest", "nests", "hide"]},
+  "two": {"re": "\\b(and|also|another|second|too)\\b"}
+}
+
+L = {"id": "g3sci-22-02", "lesson": "22.02", "title": "Investigation: Human Impact Case Study", "emoji": "🔍",
+  "details": ["📅 Q3 · Unit 8 · Human Impact &amp; Conservation", "📖 Week 22 · Lesson 22.02", "🌎 CPALMS SC.3.N.1.7 · NGSS 3-LS4-4", "⏱ About 35 minutes"],
+  "icans": ["explain what a case study is and why scientists use them.", "identify how a human action changed an ecosystem and affected organisms.", "describe a solution and explain why it might reduce harm to an ecosystem."],
+  "opti": {"warm": "Our film starts in a meadow. First, look closely at a tiny visitor and what it came for.",
+           "lesson": "Today you're the case study scientist. Order the scenes, test for hiding places, walk the edge, then open real Florida cases.",
+           "check": "Three quick questions. It's not graded. It's just for you, so give each one your best try.",
+           "assign": "Time to show what you found. Explain what the parking lot changed, and whether the flower border really helps."},
+  "film": film, "scientist": "ecologist", "specimen": specimen, "words": words, "parts": parts, "order": order, "movie": movie,
+  "compare": compare, "wall": wall, "wow": wow, "keyIdea": keyIdea, "det": det, "rebuild": rebuild, "quiz": quiz, "assign": assign,
+  "premiere": premiere, "next": nxt, "chips": chips, "creditAlias": {},
+  "creditsExtra": ["Music: Nikolai Rimsky-Korsakov, <i>Flight of the Bumblebee</i>, played by the Strolling Strings of the United States Air Force Band, public domain (via Wikimedia Commons).",
+                   "Opti the owl: Optima Academy. Sound effects are made by the page. The film's meadow-to-parking-lot change is a story told with real photos from different places. The meadow movie, the Hide Test and the edge walk are models; every place photo is real. The four order photos come from different places. The Shrinking Meadow is an example case."]}
+
+json.dump(L, open(f'{D}/lesson.json', 'w'), indent=1, ensure_ascii=False)
+
+how = {
+  "how-22-02-specimen": {"page": specimen["do"], "say": "Press Inspect specimen. Move the magnifying lens over the bee and the flower, then tap three things you notice."},
+  "how-22-02-compare": {"page": "Put the box under one tray and the lamp under the other: drag them, or tap one, then a tray. Press Run the test. Then swap and test again.",
+                        "say": "Put the box under one tray and the lamp under the other: drag them, or tap one, then a tray. Press Run the test. Then swap and test again."},
+  "how-22-02-wall": {"page": wall["do"], "say": wall["do"]},
+  "how-22-02-det": {"page": det["do"], "say": "Pick three case files, one at a time. Tap a clue, then pick what it lost. Predict which fix works, and watch the place today appear."},
+  "how-22-02-partc": {"page": assign["partC"]["do"], "say": assign["partC"]["do"]}
+}
+json.dump(how, open(f'{D}/how-lines.json', 'w'), indent=1, ensure_ascii=False)
+
+scripts = {c["voice"]: c["text"] for c in film["captions"]}
+scripts.update({"22-02-welcome": L["opti"]["warm"], "22-02-lesson": L["opti"]["lesson"], "22-02-check": L["opti"]["check"], "22-02-assign": L["opti"]["assign"]})
+for k, v in how.items(): scripts[k] = v["say"]
+for w in words: scripts["word-" + w[1].replace(" ", "-")] = w[1]
+json.dump(scripts, open(f'{D}/scripts.json', 'w'), indent=1, ensure_ascii=False)
+print('ok')

@@ -218,11 +218,12 @@ function WL4_INIT(W) {
   (function () {
     var DT = D.det, F = DT.items, wrap = $('#det-cards'), work = $('#det-work'), body = $('#det-chart tbody'), res = S.det = S.det || {};
     F.forEach(function (f, i) { var c = el('button', 'wl-dcard'); c.type = 'button'; c.dataset.i = i; c.innerHTML = '<img src="' + IMG[f.img] + '" alt="' + f.alt + '">' + DT.noun + ' ' + f.id; c.onclick = function () { pick(i); }; wrap.appendChild(c); });
-    function predLabel(k) { var o = DT.predict.options.filter(function (x) { return x[0] === k; })[0]; return o ? o[1].replace(/^[^A-Za-z]+/, '').toLowerCase() : k; }
+    function predOf(f) { return (f && f.predict) || DT.predict; }
+    function predLabel(k, f) { var o = predOf(f).options.filter(function (x) { return x[0] === k; })[0]; return o ? o[1].replace(/^[^A-Za-z]+/, '').toLowerCase() : k; }
     function solved() { return Object.keys(res).filter(function (k) { return res[k].done; }); }
     function chart() {
       var rows = solved();
-      body.innerHTML = rows.length ? rows.map(function (k) { var r = res[k], f = F[k]; return '<tr><td><b>' + f.id + '</b></td><td>' + r.clue + '</td><td>' + f.org[f.orgAns] + '</td><td>' + f.env + '</td><td>I saw ' + r.clue.toLowerCase() + ', so it was ' + f.orgShort + '.</td></tr>'; }).join('') : '<tr><td class="empty" colspan="5">Your chart fills in as you solve ' + (DT.noun ? DT.noun.toLowerCase() + 's' : 'fossils') + '.</td></tr>';
+      body.innerHTML = rows.length ? rows.map(function (k) { var r = res[k], f = F[k]; return '<tr><td><b>' + f.id + '</b></td><td>' + r.clue + '</td><td>' + f.org[f.orgAns] + '</td><td>' + f.env + '</td><td>I saw ' + r.clue.toLowerCase() + ', ' + (DT.chartSo || 'so it was') + ' ' + f.orgShort + '.</td></tr>'; }).join('') : '<tr><td class="empty" colspan="5">Your chart fills in as you solve ' + (DT.noun ? DT.noun.toLowerCase() + 's' : 'fossils') + '.</td></tr>';
       for (var k = rows.length; k < DT.need; k++) body.insertAdjacentHTML('beforeend', '<tr><td class="empty">?</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>');
       $$('.wl-dcard').forEach(function (c) { c.classList.toggle('done', !!(res[c.dataset.i] && res[c.dataset.i].done)); });
       $('#det-write').hidden = rows.length < DT.need; $('#rebuild').hidden = rows.length < 1; C.save(); C.gather(); C.checklist(); W.rebuildFossils && W.rebuildFossils(); exhibit();
@@ -236,13 +237,13 @@ function WL4_INIT(W) {
         var h = '';
         if (st < 3) { h = '<div class="wl-dwork"><figure class="wl-fig" style="margin:0"><div class="wl-slab sm"><img src="' + IMG[f.img] + '" alt="' + f.alt + '"></div><figcaption>' + DT.noun + ' ' + f.id + '</figcaption></figure><div>';
           if (st === 0) h += '<div class="wl-step"><div class="n">Step 1 of 3 · Observe</div><p>What clue do you see? Tap one.</p></div><div class="wl-chips">' + f.clues.map(function (c, k) { return '<button class="wl-chip" data-k="' + k + '">' + c.t + '</button>'; }).join('') + '</div>';
-          if (st === 1) h += '<div class="wl-done-row">✓ I observe: ' + r.clue + '</div><div class="wl-step"><div class="n">Step 2 of 3 · Infer</div><p>What was it?</p></div><div class="wl-chips">' + f.org.map(function (c, k) { return '<button class="wl-chip" data-k="' + k + '">' + c + '</button>'; }).join('') + '</div>';
-          if (st === 2) h += '<div class="wl-done-row">✓ I observe: ' + r.clue + '</div><div class="wl-done-row">✓ It was: ' + f.org[f.orgAns] + '</div><div class="wl-step"><div class="n">Step 3 of 3 · Predict</div><p>' + DT.predict.q + '</p></div><div class="wl-chips">' + DT.predict.options.map(function (o) { return '<button class="wl-chip" data-k="' + o[0] + '">' + o[1] + '</button>'; }).join('') + '</div>';
+          if (st === 1) h += '<div class="wl-done-row">✓ I observe: ' + r.clue + '</div><div class="wl-step"><div class="n">Step 2 of 3 · Infer</div><p>' + (DT.inferQ || 'What was it?') + '</p></div><div class="wl-chips">' + f.org.map(function (c, k) { return '<button class="wl-chip" data-k="' + k + '">' + c + '</button>'; }).join('') + '</div>';
+          if (st === 2) h += '<div class="wl-done-row">✓ I observe: ' + r.clue + '</div><div class="wl-done-row">✓ ' + (DT.inferDone || 'It was') + ': ' + f.org[f.orgAns] + '</div><div class="wl-step"><div class="n">Step 3 of 3 · Predict</div><p>' + predOf(f).q + '</p></div><div class="wl-chips">' + predOf(f).options.map(function (o) { return '<button class="wl-chip" data-k="' + o[0] + '">' + o[1] + '</button>'; }).join('') + '</div>';
           h += '<p class="wl-fb"></p></div></div>'; }
         else {
           var ok = r.pred === f.envAns;
           h = '<div class="wl-past" id="past"><div class="now"></div><img class="then" src="' + IMG[f.envImg] + '" alt="' + esc(f.envAlt) + '"><div class="ring"></div><div class="fos"><img src="' + IMG[f.img] + '" alt=""></div><div class="kicker">' + DT.kicker + '</div><div class="sub">' + f.envCap + '</div><div class="cap">' + f.reveal + '</div></div>' +
-            '<p style="margin:6px 0">' + (ok ? '<span class="wl-stampmini">PREDICTION CONFIRMED</span> You pictured ' + predLabel(r.pred) + '. The evidence agrees.' : '<span class="wl-stampmini" style="border-color:#B5532A;color:#B5532A">EVIDENCE CHANGED MY IDEA</span> You pictured ' + predLabel(r.pred) + '. ' + f.envMiss.replace(/\s*Try again\.$/, '')) + '</p><div class="wl-bts"><b>🎬 Behind the scenes</b>' + f.bts + '</div>';
+            '<p style="margin:6px 0">' + (ok ? '<span class="wl-stampmini">PREDICTION CONFIRMED</span> You pictured ' + predLabel(r.pred, f) + '. The evidence agrees.' : '<span class="wl-stampmini" style="border-color:#B5532A;color:#B5532A">EVIDENCE CHANGED MY IDEA</span> You pictured ' + predLabel(r.pred, f) + '. ' + f.envMiss.replace(/\s*Try again\.$/, '')) + '</p><div class="wl-bts"><b>🎬 Behind the scenes</b>' + f.bts + '</div>';
         }
         work.innerHTML = h; var fb = work.querySelector('.wl-fb');
         if (st === 3) { setTimeout(function () { var p = $('#past'); p && p.classList.add('on'); noise(900, 600, .12); }, 120); r.done = 1; chart(); return; }
@@ -312,7 +313,7 @@ function WL4_INIT(W) {
       at(ft[frames.length], function () {
         var f = D.det.items[exPick || 0], d = el('div', 'wl-th-frame', '<div class="wl-th-final"><img src="' + IMG[f.img] + '" alt=""><div><p style="text-align:left;margin:0 0 8px;color:#e3b04b;font-size:.85em;letter-spacing:.12em;text-transform:uppercase">' + D.premiere.storyKicker + '</p><p style="text-align:left" id="th-type"></p></div></div>');
         scr.appendChild(d); requestAnimationFrame(function () { d.classList.add('on'); });
-        var txt = ($('#ex-obs').textContent + ' I think it was ' + (D.det.items[exPick || 0].orgShort || 'a living thing') + '. ' + $('#ex-tells').textContent).trim(), k = 0, tp = $('#th-type');
+        var txt = ($('#ex-obs').textContent + ' ' + (D.premiere.thinkLabel || 'I think it was') + ' ' + (D.det.items[exPick || 0].orgShort || 'a living thing') + '. ' + $('#ex-tells').textContent).trim(), k = 0, tp = $('#th-type');
         var iv = setInterval(function () { tp.textContent = txt.slice(0, ++k); if (k >= txt.length) clearInterval(iv); }, RM ? 1 : 28); timers.push(iv);
         at(RM ? 300 : Math.min(5200, txt.length * 28 + 800), function () { var dir = el('div', 'wl-th-dir', 'DIRECTED BY: ' + D.premiere.director + (S.director ? '<br>' + esc(S.director).toUpperCase() : '')); scr.appendChild(dir); requestAnimationFrame(function () { dir.classList.add('on'); }); C.cheer(); });
       });

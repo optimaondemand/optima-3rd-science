@@ -92,3 +92,9 @@ A Part A item may be `{"n":1, "type":"graph", "q", "title", "yLabel", "cats":[�
 - Any film shot may add `badge {text, dur}` (a corner label such as "◀◀ REWIND" or "▶ PLAY"; `dur` = seconds it stays, default the whole shot) and `vhs: true` (tape-rewind lines; off with reduced motion).
 - New comparison swatch `lid` (clear plastic lid) and effect `runoff` (water slides off and away).
 - Teacher intro video: every page has a hidden slot under Opti's Warm-Up note (`#tvid`, `data-slot="<WW-LL>-intro"`). On load it reads `video-manifest.json` (default: the repo's raw GitHub copy; override with `videoManifest` in lesson.json). Only when that slot is `"status": "ready"` with a YouTube or Vimeo embed does the card appear; otherwise it stays hidden. Nothing per lesson. A manifest that isn't valid JSON keeps every slot hidden.
+
+## Evidence cards: per-card "which fix works?" prediction (22.02, 16 Nov 2026)
+- Any `det.items[i]` may carry its own `predict {q, options[[k,label]]}`; it replaces `det.predict` for that card (its keys must still be in `det.predict.options`, and `envAns` must be one of them). Write the labels as phrases that read after "You pictured …" (e.g. "Moving the tortoises to protected land").
+- `det.inferQ` (Step 2 question, default "What was it?"), `det.inferDone` (the done line, default "It was"), `det.chartSo` (chart evidence, default "so it was").
+- `premiere.thinkLabel` (exhibit line, default "I think it was").
+All optional; lessons without them are unchanged (all 12 built lessons re-checked: 0 FAIL, playtest 1150 pass).
