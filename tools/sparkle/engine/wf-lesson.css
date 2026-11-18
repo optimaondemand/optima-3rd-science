@@ -606,3 +606,11 @@ body.wf-dim .wf-wrap{position:relative;z-index:86}
 /* 16 Nov 2026: teacher intro video card (hidden until the manifest marks it ready) */
 .wl-tvid-box{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#000}
 .wl-tvid-box iframe{position:absolute;left:0;top:0;width:100%;height:100%;border:0}
+/* 23.02: absorbent pad swatch; soak (oil wicks into the pad) and scoop (the net lifts out with bits caught) */
+.wl-swatch.sw-pad{--sw:repeating-linear-gradient(45deg,rgba(150,150,140,.35) 0 1px,transparent 1px 5px),repeating-linear-gradient(-45deg,rgba(150,150,140,.35) 0 1px,transparent 1px 5px),linear-gradient(180deg,#ffffff,#eceae3 60%,#d9d6cc);width:92px;height:34px;border-radius:6px;box-shadow:inset 0 0 0 2px #cfcabd,0 2px 4px rgba(0,0,0,.2)}
+.wl-swatch.fx-soak:after{content:'';position:absolute;left:0;right:0;bottom:0;height:0;border-radius:inherit;background:linear-gradient(0deg,rgba(58,40,22,.92),rgba(110,80,42,.6));animation:wlWick 2.4s ease forwards}
+.wl-swatch.fx-scoop{animation:wlScoop 1.6s ease forwards}
+.wl-swatch.fx-scoop:after{content:'';position:absolute;left:22%;top:30%;width:56%;height:40%;border-radius:40%;background:radial-gradient(circle at 30% 40%,#e14b4b 0 3px,transparent 4px),radial-gradient(circle at 60% 60%,#3b7ddd 0 3px,transparent 4px),radial-gradient(circle at 75% 30%,#f2c94c 0 3px,transparent 4px),radial-gradient(circle at 45% 70%,#ffffff 0 3px,transparent 4px);opacity:0;animation:wlScoopIn .6s ease 1s forwards}
+@keyframes wlScoop{40%{transform:translateY(-10px)}100%{transform:translateY(-6px)}}
+@keyframes wlScoopIn{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.wl-swatch.fx-soak:after{animation:none;height:92%}.wl-swatch.fx-scoop{animation:none}.wl-swatch.fx-scoop:after{animation:none;opacity:1}}

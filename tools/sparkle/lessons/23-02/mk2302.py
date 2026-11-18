@@ -1,0 +1,403 @@
+#!/usr/bin/env python3
+"""Writes tools/sparkle/lessons/23-02/lesson.json, how-lines.json, scripts.json."""
+import json
+D = '/home/claude/optima-3rd-science/tools/sparkle/lessons/23-02'
+
+def ph(t, d, img, alt, place, frm=(1.0, .5, .5), to=(1.1, .5, .5), fade=.8, **kw):
+    s = {"t": t, "d": d, "type": "photo", "img": img, "alt": alt, "from": list(frm), "to": list(to), "place": place, "fade": fade}
+    s.update(kw); return s
+
+ticks = [{"at": round(0.2 + 0.5 * i, 1), "name": "tick"} for i in range(12)]
+film = {
+  "id": "g3sci-23-02", "mount": "wf-film", "kicker": "Opti's Wonder Films", "lesson": "Lesson 23.02 · Pollution Cleanup",
+  "title": "The Cleanup Crew",
+  "bigQuestion": "Once pollution gets into the water, can we actually clean it up, and does the method we choose matter?",
+  "poster": "f_slick", "endPoster": "f_today", "startTarget": "#tab-vocab", "music": {"src": "music", "vol": 0.55},
+  "shots": [
+    {"t": 0, "d": 3.4, "type": "leader", "top": "Optima Academy", "name": "Opti's Wonder Films", "bottom": "presents", "fade": 1.0},
+    {"t": 3.4, "d": 6.2, "type": "black", "sfxAt": ticks, "fade": 0.4},
+    ph(9.6, 5.0, "f_slick", "Dark brown patches of oil floating on green-blue sea water, seen from above", "Oil on the Gulf of Mexico · June 2010",
+       frm=(1.0, .5, .5), to=(1.14, .45, .55), sfx="whoosh", sfxArg=1.2),
+    ph(14.6, 6.8, "f_boom", "Long red and yellow floating booms trail behind a boat toward two shrimp boats on gray water", "Crews pull out a floating boom · Louisiana, May 2010",
+       frm=(1.12, .5, .6), to=(1.0, .5, .5), count={"to": 87, "label": "days the oil leaked", "dur": 3.2}),
+    {"t": 21.4, "d": 3.2, "type": "flash", "lines": ["Oil?", "On a Florida beach?"], "beats": [0.15, 1.2], "fade": 0.15},
+    ph(24.6, 5.4, "f_beach", "Three workers in yellow vests bend down to pick up small tar balls from white sand", "Crews pick up tar balls · Pensacola, Florida, July 2010",
+       frm=(1.0, .5, .5), to=(1.1, .4, .5)),
+    ph(30.0, 5.2, "f_wash", "Two people in yellow gloves rinse a wet brown pelican standing on a plastic rack", "A pelican gets a bath · Theodore, Alabama, 2010",
+       frm=(1.1, .55, .5), to=(1.0, .5, .5)),
+    ph(35.2, 6.4, "f_free", "A clean brown pelican flying over calm water with green trees behind it", "A cleaned pelican is let go · Pelican Island, Florida, May 2010",
+       frm=(1.0, .55, .45), to=(1.05, .55, .45), badge={"text": "▶ SLOW MOTION", "dur": 5.0}, sfx="shimmer", fade=1.0),
+    ph(41.6, 7.0, "f_today", "White sand dunes with sea oats under a clear blue sky", "Pensacola Beach today · Florida",
+       frm=(1.0, .5, .5), to=(1.08, .5, .55), fade=0.9, fx=["rays"]),
+    {"t": 48.6, "d": 6.0, "type": "title", "fade": 1.2}
+  ],
+  "captions": [
+    {"t": 3.6, "d": 6.0, "text": "April 2010. Deep in the Gulf of Mexico, an oil well breaks open.", "voice": "opti-1"},
+    {"t": 9.9, "d": 3.6, "text": "Oil rises and spreads across the sea.", "voice": "opti-2"},
+    {"t": 15.0, "d": 4.6, "text": "Crews race out with long floating walls called booms.", "voice": "opti-3"},
+    {"t": 21.5, "d": 2.8, "text": "Oil? On a Florida beach?", "voice": "opti-4"},
+    {"t": 25.0, "d": 4.4, "text": "Crews pick up sticky tar, one handful at a time.", "voice": "opti-5"},
+    {"t": 30.4, "d": 3.6, "text": "Rescuers wash oiled pelicans clean.", "voice": "opti-6"},
+    {"t": 35.8, "d": 3.0, "text": "And then, they let them go.", "voice": "opti-7"},
+    {"t": 42.0, "d": 6.0, "text": "So can we really clean polluted water? And does the way we do it matter?", "voice": "opti-8"}
+  ]
+}
+
+specimen = {
+  "img": "spec", "aspect": "1920/2885", "radius": 0.07,
+  "hotspots": [
+    {"name": "A big tangle of white tubes", "x": 0.40, "y": 0.72},
+    {"name": "A tube that snakes along the sand", "x": 0.70, "y": 0.42},
+    {"name": "A metal clip at the end of a tube", "x": 0.68, "y": 0.79},
+    {"name": "Orange floating walls out in the water", "x": 0.30, "y": 0.085},
+    {"name": "Old wooden posts in the waves", "x": 0.76, "y": 0.055},
+    {"name": "Dry seaweed and sticks on the sand", "x": 0.88, "y": 0.52}
+  ],
+  "kicker": "🔎 Mystery specimen", "title": "What are these white tubes on the beach?",
+  "alt": "Long white tubes coiled in a tangle and snaking along a wet sandy beach, with waves, orange floating barriers and old wooden posts out in the water",
+  "look": "A real photo of a beach on the Gulf of Mexico. Long white tubes lie in the waves and along the sand. A specimen is one real thing that scientists study. Is it trash? A rope? Something people put there on purpose? That's for you to figure out.",
+  "do": "Press Inspect specimen. Move the magnifying lens over the beach, then tap 3 things you notice.",
+  "number": "No. 23.02-A",
+  "card": ["<b>Specimen A</b>", "Found: on a beach at Grand Isle, Louisiana, May 2010", "Size: each tube is about 5 to 8 inches thick", "What is it? <i>You decide.</i>"],
+  "notice": "I notice… (one thing you see on the beach)",
+  "wonder": "I wonder… (one question you want answered by the end of the lesson)"
+}
+
+words = [
+  ["🛢️", "pollution", "Something harmful added to air, water, or land that doesn't belong there, like oil or trash in a river."],
+  ["💧", "contamination", "When a harmful substance mixes into something clean and makes it unsafe, like oil spreading through a lake."],
+  ["🧹", "cleanup method", "A specific way of removing or reducing pollution, like absorbing, filtering, or skimming it."],
+  ["⭐", "effectiveness", "How well something actually solves the problem it was designed to fix."],
+  ["🔬", "simulation", "A pretend or model version of a real situation, used to test ideas safely."],
+  ["📊", "evidence", "Information from observations or tests that supports an idea."]
+]
+
+home = ('<details class="wl-bts" style="margin-top:10px"><summary><b>🧪 Try the real cup test (with an adult)</b></summary>'
+        '<p style="margin:8px 0 0">Fill 3 clear cups halfway with water and stir 1 teaspoon of cooking oil into each. '
+        'Cup 1: lay a paper towel on top for 30 seconds (absorb). Cup 2: pour it through a coffee filter (filter). '
+        'Cup 3: scoop with a spoon for 60 seconds (skim). Rate each one 1, 2, or 3.</p></details>')
+
+parts = [
+  {"kicker": "💧 Part 1", "title": "What Does Pollution Do to Water?",
+   "html": "<p>Pollution gets into rivers, lakes, and the ocean from oil spills, trash, and chemicals that wash off farms. Once it mixes in, the water is contaminated. Animals that live in it or drink it can get sick, and plants can die.</p><p>Most oil is lighter than water, so it floats on top and spreads out in a thin, shiny layer.</p>"},
+  {"kicker": "🧹 Part 2", "title": "Three Ways to Clean Up Pollution",
+   "html": "<p>Engineers test different cleanup methods to find out which works best.</p><p><b>🧻 Absorb:</b> a pad or sponge soaks up floating oil. <b>🔽 Filter:</b> water passes through something that traps the pollution. <b>🥄 Skim:</b> a net, spoon, or boat scoops floating stuff off the top.</p>" + home},
+  {"kicker": "⭐ Part 3", "title": "Why Choosing the Right Method Matters",
+   "html": "<p>Not every method works the same way. A net can't catch a thin film of oil, and a pad can't pick up a floating bottle. Some pollution, like fertilizer, dissolves (mixes in so you can't see it), so it has to be filtered out.</p><p>After the 2010 Gulf oil spill, crews used booms, skimmers, and absorbent pads side by side, picking the right tool for each place.</p>"},
+  {"kicker": "🕵️ Part 4", "title": "Did the Cleanup Work?"}
+]
+
+order = {
+  "mix": [2, 0, 3, 1], "hint": "Start where the oil first spills.",
+  "kicker": "🎞️ Put the scenes in order", "title": "How do crews clean up an oil spill?",
+  "look": "Four real photos from the 2010 Gulf oil spill. Each one shows one step of a cleanup, but they are mixed up. A boom is a long floating wall that holds oil in. A skimmer is a machine that scoops oil off the top of the water. The dark film strip has four empty frames, from first (1) to last (4).",
+  "done": "🎬 Your order is right. Now watch it as a movie!",
+  "scenes": [
+    {"img": "o1", "alt": "A boat far out on calm sea water streaked with a thin film of oil", "text": "Oil spreads across the water.", "play": "Oil spreads.",
+     "miss": ["", "The oil has to spill first. Try frame 1.", "Nothing is there to clean yet. Try frame 1.", "The spill comes first. Try frame 1."]},
+    {"img": "o2", "alt": "Two shrimp boats pulling a long white floating boom in a curve across gray water", "text": "Boats pull a boom around the oil to hold it in.", "play": "A boom holds it in.",
+     "miss": ["The oil has to be there before a boom can hold it. Try a later frame.", "", "The boom holds the oil before the skimmer scoops it. Try an earlier frame.", "The boom comes before the beach cleanup. Try an earlier frame."]},
+    {"img": "o3", "alt": "Crew members on a ship lower an orange skimmer into the water at the point of a floating boom", "text": "A skimmer scoops the oil off the top.", "play": "A skimmer scoops it up.",
+     "miss": ["The oil has to spread and be held first. Try a later frame.", "The boom holds the oil in first. Try a later frame.", "", "Skimming happens out on the water, before the last oil reaches shore. Try an earlier frame."]},
+    {"img": "o4", "alt": "A white absorbent boom, brown with soaked-up oil, floating next to a yellow boom on dark water", "text": "Absorbent booms soak up the last oil near the shore.", "play": "Pads soak up the rest.",
+     "miss": ["This is the last step. Try frame 4.", "This is the last step. Try frame 4.", "This is the last step. Try frame 4.", ""]}
+  ],
+  "check": {
+    "q": "Oil spills into the sea. Where does most of it go?",
+    "options": [
+      {"t": "It sinks to the bottom and mixes into the water.", "miss": "Think about the movie. Where did the boom and the skimmer find the oil?"},
+      {"t": "It floats on top and spreads out.", "ok": "Yes! Most oil is lighter than water, so it floats. That's why booms and skimmers can catch it at the surface."}
+    ]
+  }
+}
+
+movie = {
+  "model": "spill-model.svg", "modelBox": {"left": "0%", "width": "100%", "rot": 0}, "start": "0%", "bg": "water",
+  "real": "real", "realAlt": "Two shrimp boats pull a floating boom across gray water while brown pelicans fly low over the waves",
+  "stamp": "MATCH THE TOOL", "endCap": "Real boats pulling a boom · Louisiana, 2010.",
+  "beats": [
+    {"at": 0, "cap": "1 · Oil floats and spreads.", "model": {"top": "0%", "rot": 0, "show": "s1"}, "counter": ["Day 1"]},
+    {"at": 2600, "cap": "2 · A floating boom holds it in.", "model": {"show": "s2"}, "counter": ["Day 2"]},
+    {"at": 5200, "cap": "3 · A skimmer scoops it off the top.", "model": {"show": "s3"}, "counter": ["Day 5"]},
+    {"at": 7800, "cap": "4 · Pads soak up the rest.", "model": {"show": "s4"}, "counter": ["Day 30"], "sfx": "bubbles"},
+    {"at": 10400, "cap": "The real thing: boats pulling a boom.", "model": {"hide": True}, "real": True},
+    {"at": 12200, "stamp": True}
+  ]
+}
+
+compare = {
+  "kicker": "🧪 The Spill Test", "title": "Which tool cleans up which mess?",
+  "look": "Two real kinds of water pollution, each on a lit specimen tray. Specimen A is a thin, shiny film of oil on a pond. Specimen B is floating trash: bottles, wrappers, and bits of plastic. Under the trays are two cleanup tools to test: an absorbent pad, a soft pad that soaks up oil, and a net that scoops things out.",
+  "trays": [
+    {"id": "A", "img": "ta", "alt": "A thin rainbow-colored film of oil on shallow pond water by the grassy shore", "label": "Specimen A"},
+    {"id": "B", "img": "tb", "alt": "Plastic bottles, wrappers and other trash floating in water under a wooden wharf", "label": "Specimen B"}
+  ],
+  "materials": [{"key": "pad", "label": "Absorbent pad", "swatch": "pad"}, {"key": "net", "label": "Net", "swatch": "sieve"}],
+  "ask": [
+    {"q": "Which water has a thin, shiny film of oil?", "ans": "A", "ok": "Yes. Specimen A has a rainbow-colored film of oil.", "miss": "Look closely. Which one has a shiny, rainbow-colored layer?"},
+    {"q": "Which water has bottles and wrappers floating in it?", "ans": "B", "ok": "Yes. Specimen B is full of floating trash.", "miss": "Look again. In which one can you see bottles?"}
+  ],
+  "press": "🧪 Try the cleanup",
+  "testDo": "Put the pad under one tray and the net under the other: drag them, or tap one, then a tray. Press <b>Try the cleanup</b>. Then swap and try again.",
+  "disclaimer": "This is a model. Real cleanups use giant pads, booms, and nets.",
+  "results": {
+    "Apad": {"text": "The pad soaks up the oil and turns brown. The water underneath looks clearer.", "fx": "soak"},
+    "Anet": {"text": "The oil slips right through the holes in the net. Try the pad on this one.", "fx": "holes"},
+    "Bpad": {"text": "The pad gets wet, but the bottles and wrappers just float around it. Try the net on this one.", "fx": "wet"},
+    "Bnet": {"text": "The net scoops out the bottles and wrappers. The trash is out of the water.", "fx": "scoop"}
+  },
+  "best": ["Apad", "Bnet"],
+  "frame": "This one has ___, so the best tool is ___.", "claimLead": "This one has", "claimMid": "so the best tool is",
+  "claim": {
+    "A": {"feat": ["a thin film of oil", "floating trash"], "featOk": 0, "eat": ["the absorbent pad", "the net"], "eatOk": 0},
+    "B": {"feat": ["a thin film of oil", "floating trash"], "featOk": 1, "eat": ["the absorbent pad", "the net"], "eatOk": 1}
+  },
+  "curator": {
+    "A": "<b>Thin oil → absorb it.</b> A pad soaks up oil that's too thin to scoop.",
+    "B": "<b>Floating trash → skim it.</b> A net scoops out pieces a pad can't hold."
+  },
+  "missFeat": "Look at {label} again. Is it a shiny film, or pieces of trash?",
+  "missClaim": "Think about your test. Which tool worked on which water?",
+  "done": "Different pollution needs a different cleanup method. Matching the tool to the mess is what makes a cleanup effective.",
+  "after": {"kicker": "🎬 Behind the scenes · Miles of boom", "img": "aft", "alt": "Workers in hard hats and life vests load bundles of orange boom onto a small work boat at a dock",
+            "html": "In April 2010, workers loaded floating booms onto boats at Pensacola, Florida. By the day the leak was stopped, crews had laid out more than 600 miles of boom to hold oil back, plus even more absorbent boom to soak it up. Rescuers also washed hundreds of oiled birds and let them go."}
+}
+
+wall = {
+  "kicker": "🌾 Nature's filter", "title": "Follow the water through a filter marsh",
+  "look": "A model of one real trip that water takes in south Florida, from farms to the Everglades. Each stop has a real photo. The Everglades needs clean water with very little fertilizer in it. A filter marsh is a huge wetland that people built to clean the water on its way. The brass dial on the left shows how far the water has gone.",
+  "do": "First, make a prediction. Then brush the glowing stop: drag across it (or tap it again and again) until the place shows.",
+  "predict": {"q": "Can plants in a marsh really clean dirty water?",
+              "options": [["yes", "Yes, plants can trap pollution"], ["no", "No, only machines can clean water"]], "answer": "yes",
+              "mine": "Your prediction: <b>{p}</b>. Let's follow the water and find out.",
+              "confirm": "You predicted plants can trap pollution. The evidence agrees: the filter marshes take out about 4 of every 5 pounds of the fertilizer.",
+              "change": "You predicted only machines can clean water. The evidence changed that idea: the filter marshes take out about 4 of every 5 pounds of the fertilizer."},
+  "sky": "sky", "skyAlt": "A wide, flat sawgrass prairie under a blue sky with white clouds", "skyCap": "Sawgrass prairie · Everglades National Park, Florida",
+  "unit": "Stop", "found": "Clue found at Stop {n}",
+  "elevator": ["Start", "Farms", "Filter<br>marsh", "Marsh<br>plants", "The<br>Everglades"],
+  "line": ["FARM WATER IN", "CLEANER WATER OUT"],
+  "lockTag": "🔒 Brush the stop above first", "locked": "Brush the stop above first. The water travels one stop at a time.",
+  "first": "Brush the glowing top stop. Drag across it (or tap it again and again).", "next": "The water moves on. Brush Stop {n}.",
+  "endTitle": "All 4 stops explored",
+  "endText": "Look at the line. Water picks up fertilizer on the farms. The filter marsh and its plants trap most of it, and cleaner water flows on to the Everglades.",
+  "rule": "<b>Plants can be a filter.</b> A filter marsh traps pollution that a net or a pad could never catch, because fertilizer dissolves in the water. People still have to keep the marshes working.",
+  "choices": ["🌱 Fertilizer washes off farm fields", "🗺️ Huge marshes built to clean water", "🌾 Plants that soak up fertilizer", "🐊 Cleaner water reaches the Everglades"],
+  "layers": [
+    {"name": "Stop 1 · The farms", "rock": "soil", "img": "l1", "alt": "Tall sugarcane plants with feathery flower tops against a deep blue sky",
+     "ask": "Look at Stop 1. Read the clue AND the photo. What do you find?",
+     "clue": "South of Lake Okeechobee, farmers grow sugarcane and other crops. Rain washes extra fertilizer off the fields and into canals.",
+     "ans": 0, "ok": "Yes! Fertilizer washes off the farm fields.", "tag": "🌱 Farms",
+     "miss": {"1": "Not yet. This is where the water starts.", "2": "Look again. Are these marsh plants, or a farm crop?", "3": "Not yet. The water has a long way to go."},
+     "env": "e1", "envAlt": "Long, straight green sugarcane fields seen from an airplane", "envCap": "Sugarcane fields from the air · Canal Point, Florida, about 1968"},
+    {"name": "Stop 2 · The filter marsh", "rock": "water1", "img": "l2", "alt": "Rows of huge square ponds full of dark water and green plants, seen from an airplane",
+     "ask": "Look at Stop 2. Read the clue AND the photo. What do you find?",
+     "clue": "Before the canal water reaches the Everglades, it flows into giant marshes that people built, called stormwater treatment areas. Together they cover about 100 square miles.",
+     "ans": 1, "ok": "Yes! Huge marshes built to clean the water.", "tag": "🗺️ Filter marsh",
+     "miss": {"0": "Look at the photo. Is this a farm, or rows of ponds?", "2": "Close! But read the clue: who built these marshes, and how big are they?", "3": "Not yet. This water hasn't reached the Everglades."},
+     "env": "e2", "envAlt": "A large green marsh with straight canals around it, between farm fields, seen from the air", "envCap": "A filter marsh between sugarcane fields · northern Everglades, 2008"},
+    {"name": "Stop 3 · The plants at work", "rock": "leafmid", "img": "l3", "alt": "A thick stand of tall cattails, some green and some dry and tan, in a marsh",
+     "ask": "Look at Stop 3. Read the clue AND the photo. What do you find?",
+     "clue": "Cattails and other marsh plants take in the fertilizer to help them grow. A slimy golden mat of tiny living things called periphyton traps it too. When the plants die, they sink and lock the fertilizer into the mud.",
+     "ans": 2, "ok": "Yes! Marsh plants soak up the fertilizer.", "tag": "🌾 Plants at work",
+     "miss": {"0": "These aren't crops. Read the clue: what do these plants take in?", "1": "Close! Now look closely at the plants themselves.", "3": "Not yet. The water is still in the marsh."},
+     "env": "e3", "envAlt": "A golden-brown mat of periphyton floating among thin grass stems in shallow water", "envCap": "Periphyton, a mat of tiny living things · Everglades National Park (cattails above, also in the park)"},
+    {"name": "Stop 4 · The Everglades", "rock": "leafsun", "img": "l4", "alt": "Green sawgrass and a narrow stream of water under a sunrise sky",
+     "ask": "Look at Stop 4. Read the clue AND the photo. What do you find?",
+     "clue": "The water that leaves the filter marshes has about 4 of every 5 pounds of that fertilizer taken out. Cleaner water helps sawgrass, wading birds, and the animals that eat them.",
+     "ans": 3, "ok": "Yes! Cleaner water reaches the Everglades.", "tag": "🐊 Everglades",
+     "miss": {"0": "Look again. Is this a farm?", "1": "This is past the filter marsh. Where has the water reached?", "2": "Close! But read the clue: where does the cleaner water go?"},
+     "env": "e4", "envAlt": "A bright orange sunset under dark clouds over tall green marsh grass", "envCap": "Sunset over the sawgrass · Shark Valley, Everglades National Park, 2024"}
+  ],
+  "mix": {
+    "q": "A town wants ONE cleanup tool for every kind of water pollution. Will that work?",
+    "options": [
+      {"t": "Yes. One good tool can clean up anything.", "miss": "Think about your Spill Test and the filter marsh. Did the net catch the oil? Could a pad catch fertilizer?"},
+      {"t": "No. Oil, trash, and fertilizer each need a different method.",
+       "ok": "Yes! A pad soaks up oil, a net scoops trash, and a marsh filters out fertilizer. Engineers match the method to the mess."}
+    ]
+  }
+}
+
+wow = {"kicker": "🎬 Director's cut", "title": "Oysters: living filters",
+  "img": "wow", "alt": "A long reef of gray oyster shells poking out of brown water at mid-tide",
+  "caption": "An oyster reef at mid-tide · Hunting Island State Park, South Carolina",
+  "html": "<p style=\"margin:0 0 8px\">One grown-up oyster can filter up to about 50 gallons of water a day as it pulls in water to eat tiny bits of food. A whole reef of oysters cleans a lot of water.</p><p style=\"margin:0\">That's why people in Florida, from Tampa Bay to the Indian River Lagoon, are building new oyster reefs. It's a cleanup method that is alive.</p>",
+  "inset": "inset", "insetCap": "One eastern oyster, the kind that builds reefs · Cayo Costa Island, Florida."}
+
+keyIdea = "Pollution in water can often be cleaned up, but no single method works for everything. Absorbing works on thin oil, skimming works on floating trash and oil held by a boom, and filtering works on pollution mixed into the water. Engineers test and compare methods to find the most effective one, and even then some pollution can stay behind."
+
+M = ["🧻 Absorb: a pad or sponge soaks it up", "🔽 Filter: water passes through something that traps it", "🥄 Skim: a net or machine scoops it off the top"]
+SHORT = ["absorbing", "filtering", "skimming"]
+RES = {"clean": "Much cleaner now", "work": "Cleaner, but the work goes on", "hidden": "Some pollution is still hidden there"}
+def card(id_, img, alt, clues, orgAns, orgMiss, envAns, envMiss, envImg, envAlt, envCap, reveal, rb, bts):
+    return {"id": id_, "img": img, "alt": alt, "clues": clues, "org": M, "orgAns": orgAns, "orgShort": SHORT[orgAns], "orgMiss": orgMiss,
+            "env": RES[envAns], "envAns": envAns, "envMiss": envMiss, "envImg": envImg, "envAlt": envAlt, "envCap": envCap, "reveal": reveal, "rebuildEnv": rb, "bts": bts}
+
+det = {
+  "look": "Five real cleanups. Each card shows a crew, a machine, or the pollution they had to fix. Under the cards is an evidence chart, a table that holds what you figure out.",
+  "do": "Pick 3 cases, one at a time. Tap a clue, then pick the cleanup method. Predict whether it worked, and watch the place today appear.",
+  "noun": "Case", "need": 3, "inferQ": "Which cleanup method helps here?", "inferDone": "Method", "chartSo": "so the crew used",
+  "predict": {"q": "Did the cleanup work? What do you predict this place is like today?", "options": [["clean", "✅ Much cleaner now"], ["work", "🔧 Cleaner, but the work goes on"], ["hidden", "⏳ Some pollution is still hidden there"]]},
+  "kicker": "The place today", "enough": "You already solved 3 cases. Nice work, cleanup engineer!",
+  "cols": ["Case", "My observation", "Cleanup method", "Did it work?", "My evidence"],
+  "write": {"label": "Case __ shows ___. The crew used ___, and today ___.", "starter": "Start with: \"Case __ shows…\"", "min": 15,
+            "chips": [["trait", "Names what you see"], ["method", "Names the method (absorb, filter, skim)"], ["because", "Gives a reason (because, so)"]]},
+  "items": [
+    card("A", "d1", "Three workers in yellow vests bend down to pick up small tar balls from white sand",
+         [{"t": "Workers picking tar off the sand", "ok": True}, {"t": "A machine with big eyes", "miss": "Look again. These are people, not a machine."}, {"t": "Pelicans on a boom", "miss": "Look again. What are the people picking up?"}],
+         2, "They pick the tar up off the top of the sand by hand. Which method scoops things up? Try again.",
+         "clean", "Look at the beach today. The sand is white and open for swimming. Try again.",
+         "d1h", "A wide white-sand beach with a line of seaweed and calm blue-green water", "Today: a clean beach · Pensacola Beach, Florida, 2023 (cleanup photo 2010)",
+         "This clean beach is evidence that careful cleanup worked here.", "beach",
+         "In 2010, oil from the Gulf spill washed onto Pensacola's beaches as tar balls. Crews raked and picked them up. Storms kept uncovering a little buried tar for a few years, so crews kept checking."),
+    card("B", "d2", "Brown, murky water pours out of a dark tunnel under an old stone wall into a river, in an old faded photo",
+         [{"t": "Dirty water pouring into a river", "ok": True}, {"t": "White sand dunes", "miss": "Look again. Is this a beach?"}, {"t": "A kayak on clear water", "miss": "Look again. What color is the water coming out of the tunnel?"}],
+         1, "Dirty water like this gets cleaned at treatment plants, where it passes through tanks and filters before it reaches the river. Try again.",
+         "work", "Fish and kayakers are back, but scientists say the river still needs help. Try again.",
+         "d2h", "Orange and red kayaks pointed at a stretch of rushing river with green trees on both banks", "Today: kayaks on the Cuyahoga River · Cuyahoga Valley National Park, Ohio, 2017 (photo above 1973)",
+         "These kayakers are evidence that cleaning dirty water before it reaches the river helped it come back to life.", "river",
+         "In 1969, oily trash floating on the Cuyahoga River in Cleveland, Ohio, caught fire. Cities built plants that filter and clean dirty water, and factories had to stop dumping. Fish like northern pike came back, but scientists say the work isn't finished."),
+    card("C", "d3", "A floating machine with a water wheel and a big pair of googly eyes, with a curved boom guiding floating trash toward it",
+         [{"t": "A boom guiding floating trash into a machine", "ok": True}, {"t": "Oil on a white beach", "miss": "Look again. Is this a beach?"}, {"t": "Dirty water in a tunnel", "miss": "Look again. What is the machine collecting?"}],
+         2, "The machine scoops floating trash off the top of the water. Which method is that? Try again.",
+         "work", "The wheel catches tons of trash, but new trash floats down the river every time it rains. Try again.",
+         "d3h", "Baltimore's harbor and city towers seen from a grassy hill with green trees", "Today: Baltimore's Inner Harbor, Maryland, 2023 (trash wheel photo 2016)",
+         "This harbor is evidence that skimming trash at the river's mouth keeps tons of it out of the bay, but new trash keeps coming.", "harbor",
+         "Mr. Trash Wheel sits where the Jones Falls river empties into Baltimore's harbor. The river turns its water wheel, and solar panels help on slow days. A rake lifts trash onto a moving belt. Baltimore's trash wheels have pulled out more than 2,000 tons of trash."),
+    card("D", "d4", "Workers spray hoses on a rocky, oil-black shore while floating booms and boats wait in the water",
+         [{"t": "Booms and boats waiting to catch oil on the water", "ok": True}, {"t": "Pelicans flying", "miss": "Look again. What is floating in the water by the boats?"}, {"t": "A sugarcane field", "miss": "Look again. This is a rocky shore."}],
+         2, "Workers washed oil off the rocks and into the water, where booms held it and skimmers scooped it up. Which method is that? Try again.",
+         "hidden", "Most of the oil is gone, but scientists still find small amounts buried under some beaches. Try again.",
+         "d4h", "A small round island with green trees, ringed by brown rocks, in bright turquoise water", "Today: an island in Prince William Sound, Alaska, 2018 (cleanup photo 1989)",
+         "This island is evidence that most of the oil is gone, but scientists still find small amounts buried under some beaches.", "sound",
+         "In 1989, the tanker Exxon Valdez spilled at least 10.8 million gallons of oil in Alaska. Workers washed rocks with hoses and skimmed the oil off the water. Most of it is gone. Small patches stay buried under some beaches, and NOAA scientists say they aren't a danger to wildlife now."),
+    card("E", "d5", "Workers on a small boat lay out long white absorbent booms in the water beside an orange floating boom",
+         [{"t": "White absorbent booms in the water", "ok": True}, {"t": "Trash on a moving belt", "miss": "Look again. What are the workers putting in the water?"}, {"t": "Tall sugarcane", "miss": "Look again. These are boats on the water."}],
+         0, "The white booms soak up oil, like a pad. Which method is that? Try again.",
+         "clean", "Look at the pelican. In 2020, the island was rebuilt, and pelicans nest there again. Try again.",
+         "d5h", "A brown pelican flying with its wings spread against a clear blue sky", "Today: a brown pelican flying free · Everglades, Florida, 2024 (island photo 2010)",
+         "Healthy pelicans are evidence that cleanup and rescue helped. In 2020, Louisiana rebuilt Queen Bess Island so pelicans could nest there again.", "island",
+         "Queen Bess Island in Louisiana is an important nesting island for brown pelicans. In 2010, crews ringed it with absorbent booms and rescuers caught oiled birds. In 2020, the island was rebuilt with money from the spill settlement.")
+  ]
+}
+
+rebuild = {"title": "Use your evidence to rebuild the place", "missPrefix": "Hmm. Look at your case again. ", "kicker": "🌍 Rebuild the place", "whyStart": "I chose this because the case…",
+  "envs": [
+    {"key": "beach", "name": "🏖️ A white-sand beach", "img": "d1h", "cap": "White sand, gentle waves…"},
+    {"key": "river", "name": "🛶 A rushing river", "img": "d2h", "cap": "Trees on both banks…"},
+    {"key": "harbor", "name": "🏙️ A city harbor", "img": "d3h", "cap": "Boats and city towers…"},
+    {"key": "sound", "name": "🏝️ A cold northern sound", "img": "d4h", "cap": "Rocky islands, deep water…"},
+    {"key": "island", "name": "🐦 A pelican nesting island", "img": "d5h", "cap": "Pelicans and salt water…"}
+  ],
+  "life": [
+    {"name": "🦀 Ghost crabs", "img": "d1h", "env": "beach", "miss": "Ghost crabs dig burrows in beach sand."},
+    {"name": "🐟 Northern pike", "img": "d2h", "env": "river", "miss": "Northern pike swim in rivers."},
+    {"name": "🦆 Ducks in the harbor", "img": "d3h", "env": "harbor", "miss": "These ducks paddle in the city harbor."},
+    {"name": "🦦 Sea otters", "img": "d4h", "env": "sound", "miss": "Sea otters swim in the cold northern sound."},
+    {"name": "🐦 Brown pelicans", "img": "d5h", "env": "island", "miss": "Brown pelicans nest on the island."}
+  ]}
+
+quiz = [
+  {"q": "What does it mean for a cleanup method to be effective?", "options": [
+    {"t": "It looks the nicest", "miss": "Think about what \"effective\" means in everyday life. Does it mean looking good, or getting the job done?"},
+    {"t": "It works well at solving the problem", "ok": "🌲 Exactly! Effectiveness means how well a method actually removes pollution, not how it looks or how long it takes."},
+    {"t": "It takes the most time", "miss": "Think about what \"effective\" means in everyday life. Does it mean taking a long time, or getting the job done?"}]},
+  {"q": "Why do scientists test more than one cleanup method before choosing one?", "options": [
+    {"t": "Because they can't agree on anything", "miss": "Think about the Spill Test. Why did you try both tools on both kinds of water?"},
+    {"t": "To see which one takes the least time", "miss": "Think about the Spill Test. Was the goal speed, or finding what works?"},
+    {"t": "To compare results and find the best solution", "ok": "🌿 Right! By comparing results, engineers can pick the method that removes the most pollution."}]},
+  {"q": "A team is cleaning oil off the surface of a lake in a national park. Which tool would most likely remove the floating oil?", "options": [
+    {"t": "Absorbent pads laid on the water's surface", "ok": "⭐ Yes! Absorbent pads soak up floating oil, just like the pad in the Spill Test."},
+    {"t": "A rain gauge", "miss": "A rain gauge measures rain. Which tool soaks up oil?"},
+    {"t": "A thermometer", "miss": "A thermometer measures temperature. Which tool soaks up oil?"}]}
+]
+
+partA = {"title": "Review and rate", "do": "Read each one. Pick the best answer, or type your answer.", "items": [
+  {"n": 1, "q": "A student did the real cup test and rated each method from 1 (low) to 3 (high). Build a bar graph of the ratings. Make each bar match its number in the table.",
+   "type": "graph", "cats": ["Absorb", "Filter", "Skim"],
+   "series": [{"name": "Effectiveness rating", "color": "#2f7d6d", "values": [3, 2, 1]}],
+   "max": 4, "unit": "", "yLabel": "Rating (1 = low, 3 = high)", "title": "How well did each method remove the oil?"},
+  {"n": 2, "q": "Which method got the highest rating?", "type": "choice", "options": [
+    {"t": "Absorb", "ok": "Yes. Absorb got a 3, the highest rating."},
+    {"t": "Filter", "miss": "Look at the table. Filter got a 2. Which one got a 3?"},
+    {"t": "Skim", "miss": "Look at the table. Skim got a 1, the lowest. Which one got a 3?"}]},
+  {"n": 3, "q": "Using this data, which method would you NOT pick first for a thin oil spill?", "type": "choice", "options": [
+    {"t": "Absorb", "miss": "Absorb got the highest rating. Look for the lowest bar."},
+    {"t": "Filter", "miss": "Filter was in the middle. Look for the lowest bar."},
+    {"t": "Skim", "ok": "Yes. Skim got the lowest rating, so it removed the least oil in this test."}]},
+  {"n": 4, "q": "What happened to the absorbent pad in the Spill Test when you put it under the oil? Describe what you saw.", "type": "text", "min": 8, "chips": [["pad", "Says what the pad did"]]}
+]}
+
+assign = {
+  "partA": partA,
+  "partB": {"title": "Short answer", "do": "Answer in complete sentences. Use your science words.", "items": [
+    {"n": 1, "q": "Why does oil float on top of the water instead of mixing in? How does that change which cleanup method works best?", "type": "text", "min": 12, "chips": [["float", "Says oil floats (lighter, on top)"], ["method", "Names a cleanup method"]]},
+    {"n": 2, "q": "How is a cup test different from a real oil spill in a national park waterway? Name one thing that would be harder in real life.", "type": "text", "min": 12, "chips": [["harder", "Names something harder in real life"], ["because", "Gives a reason (because, so)"]]}
+  ]},
+  "write": {"title": "Which cleanup method would you recommend, and why?", "do": "Pick one from your evidence chart. Answer the three questions. Use at least two of the science words under the boxes.",
+    "vocab": ["effectiveness", "simulation", "evidence", "cleanup method", "pollution", "contamination"], "need": 2,
+    "prompts": [["What do you think?", "Start with: \"If I were an engineer cleaning up a lake, I would recommend… because…\""],
+                ["What did you observe that supports your thinking?", "Start with: \"In the Spill Test, I noticed that…\""],
+                ["Why does that make sense?", "Start with: \"This makes sense because…\""]]},
+  "partC": {"do": "Draw a polluted lake before and after a cleanup with your best method. Label the pollution and the tool, and one living thing that is helped.",
+            "labels": ["The pollution, and the cleanup tool you chose", "One living thing that is helped, and how"]},
+  "checklist": [
+    {"k": "det", "t": "My evidence chart has 3 cases and my explanation.", "req": {"det": 3, "text": {"in-det": 15}}},
+    {"k": "a", "t": "Part A: my bar graph and all my answers.", "req": {"choice": ["a1", "a2", "a3"], "text": {"in-a4": 8}}},
+    {"k": "b", "t": "Part B: questions 1 and 2.", "req": {"text": {"in-b1": 12, "in-b2": 12}}},
+    {"k": "c", "t": "Part C: my drawing and both labels.", "req": {"sketch": True, "text": {"in-c1": 6, "in-c2": 6}}},
+    {"k": "w", "t": "Write and explain, with at least two science words.", "req": {"text": {"in-w1": 10, "in-w2": 10, "in-w3": 10}, "vocab": 2}}
+  ]
+}
+
+premiere = {"title": "Premiere my cleanup story", "thinkLabel": "The crew used", "director": "JUNIOR ENGINEER", "storyKicker": "My cleanup story",
+  "frames": [
+    {"k": "formation", "label": "The spill cleanup", "img": "o3", "cap": "The spill cleanup: a boom holds the oil, a skimmer scoops it, pads soak up the rest."},
+    {"k": "compare", "label": "The Spill Test", "img": "ta", "cap": "The Spill Test: a pad soaks up oil, a net scoops out trash."},
+    {"k": "wall", "label": "Nature's filter", "img": "l2", "cap": "Nature's filter: marsh plants trap fertilizer before it reaches the Everglades."},
+    {"k": "det", "label": "Did it work?", "img": "d3", "cap": "Did it work? Real cleanups, and what the places look like today."}]}
+
+nxt = {"title": "24.01 · What Is Conservation?", "text": "Next time, find out what conservation means and how people protect wild places before they need a cleanup."}
+
+chips = {
+  "part": {"any": ["white", "tube", "tubes", "tangle", "boom", "booms", "orange", "post", "posts", "wood", "wooden", "seaweed", "sticks", "sand", "wave", "waves", "foam", "clip", "rope", "net", "beach", "water"]},
+  "ask": {"re": "\\?|\\b(why|how|what|when|where|who|which|does|do|is|are|can|did|will)\\b"},
+  "trait": {"any": ["tar", "workers", "sand", "beach", "pipe", "tunnel", "dirty", "brown", "wheel", "eyes", "trash", "boom", "booms", "hoses", "rocks", "oil", "pelican", "pelicans", "boat", "boats", "machine"]},
+  "because": {"re": "\\b(because|since|so)\\b"},
+  "method": {"any": ["absorb", "absorbs", "absorbing", "absorbed", "filter", "filters", "filtering", "filtered", "skim", "skims", "skimming", "skimmed", "scoop", "scoops", "soak", "soaks", "pad", "pads", "net", "skimmer"]},
+  "pad": {"any": ["soak", "soaked", "soaks", "brown", "oil", "dark", "absorb", "absorbed", "clearer", "turned"]},
+  "float": {"any": ["float", "floats", "floating", "lighter", "top", "surface"]},
+  "harder": {"any": ["harder", "bigger", "waves", "wind", "miles", "huge", "animals", "storm", "deep", "far", "lots", "more", "rocks", "marsh"]}
+}
+
+L = {"id": "g3sci-23-02", "lesson": "23.02", "title": "Investigation: Pollution Cleanup Simulation", "emoji": "🧪",
+  "details": ["📅 Q3 · Unit 8 · Human Impact &amp; Conservation", "📖 Week 23 · Lesson 23.02", "🌎 CPALMS SC.3.N.1.1, SC.3.N.1.3 · NGSS 3-LS4-4, 3-5-ETS1-2", "⏱ About 35 minutes"],
+  "icans": ["test three different methods to clean up simulated water pollution.", "compare my results and describe which cleanup method worked best and why.", "make a claim about which solution would be most useful in a real cleanup situation."],
+  "opti": {"warm": "Our film starts with a ticking clock and a giant oil spill. First, inspect some strange tubes on a beach.",
+           "lesson": "Today you're a cleanup engineer. Watch a spill get cleaned up, test two tools, then follow water through a marsh that cleans it.",
+           "check": "Three quick questions. It's not graded. It's just for you, so give each one your best try.",
+           "assign": "Time to show what you found. Rate the three methods, then tell us which one you'd choose and why."},
+  "film": film, "scientist": "engineer", "specimen": specimen, "words": words, "parts": parts, "order": order, "movie": movie,
+  "compare": compare, "wall": wall, "wow": wow, "keyIdea": keyIdea, "det": det, "rebuild": rebuild, "quiz": quiz, "assign": assign,
+  "premiere": premiere, "next": nxt, "chips": chips, "creditAlias": {},
+  "creditsExtra": ["Music: Gioachino Rossini, <i>William Tell</i> Overture (finale), played by \"The President's Own\" United States Marine Band (2000), public domain (via Wikimedia Commons).",
+                   "Opti the owl: Optima Academy. Sound effects are made by the page. The film tells the story of the 2010 Gulf oil spill with real photos from different places along the Gulf. The spill movie, the Spill Test, and the filter-marsh trip are models; every place photo is real. The bar graph uses sample ratings from a cup test."]}
+
+json.dump(L, open(f'{D}/lesson.json', 'w'), indent=1, ensure_ascii=False)
+
+how = {
+  "how-23-02-specimen": {"page": specimen["do"], "say": "Press Inspect specimen. Move the magnifying lens over the beach, then tap three things you notice."},
+  "how-23-02-compare": {"page": "Put the pad under one tray and the net under the other: drag them, or tap one, then a tray. Press Try the cleanup. Then swap and try again.",
+                        "say": "Put the pad under one tray and the net under the other: drag them, or tap one, then a tray. Press Try the cleanup. Then swap and try again."},
+  "how-23-02-wall": {"page": wall["do"], "say": wall["do"]},
+  "how-23-02-det": {"page": det["do"], "say": "Pick three cases, one at a time. Tap a clue, then pick the cleanup method. Predict whether it worked, and watch the place today appear."},
+  "how-23-02-partc": {"page": assign["partC"]["do"], "say": assign["partC"]["do"]}
+}
+json.dump(how, open(f'{D}/how-lines.json', 'w'), indent=1, ensure_ascii=False)
+
+scripts = {c["voice"]: c["text"] for c in film["captions"]}
+scripts.update({"23-02-welcome": L["opti"]["warm"], "23-02-lesson": L["opti"]["lesson"], "23-02-check": L["opti"]["check"], "23-02-assign": L["opti"]["assign"]})
+for k, v in how.items(): scripts[k] = v["say"]
+for w in words: scripts["word-" + w[1].replace(" ", "-")] = w[1]
+json.dump(scripts, open(f'{D}/scripts.json', 'w'), indent=1, ensure_ascii=False)
+print('ok')
