@@ -1,0 +1,48 @@
+<svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A model: tiny shells pile up on a beach; over time they are pressed into shell rock; workers cut soft blocks at a quarry; the dried blocks stack up into a thick fort wall">
+<defs>
+<linearGradient id="fm-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fc6de"/><stop offset="1" stop-color="#eef2ea"/></linearGradient>
+<linearGradient id="fm-sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5f9fbd"/><stop offset="1" stop-color="#2f6d8a"/></linearGradient>
+<linearGradient id="fm-sand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ecd9ae"/><stop offset="1" stop-color="#cdb37f"/></linearGradient>
+<linearGradient id="fm-rock" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8c193"/><stop offset="1" stop-color="#a88d5c"/></linearGradient>
+<linearGradient id="fm-wet" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6d3a6"/><stop offset="1" stop-color="#c6aa76"/></linearGradient>
+<linearGradient id="fm-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9b2a2"/><stop offset="1" stop-color="#8a8373"/></linearGradient>
+<pattern id="fm-shells" width="14" height="10" patternUnits="userSpaceOnUse"><path d="M2 7 q3 -5 6 0 z" fill="#f6ead2" stroke="#b49a6c" stroke-width=".6"/><path d="M9 4 q2 -3 4 0 z" fill="#efe0c4" stroke="#b49a6c" stroke-width=".5"/></pattern>
+</defs>
+<rect width="320" height="180" fill="url(#fm-sky)"/>
+<g class="s1">
+<rect y="70" width="320" height="40" fill="url(#fm-sea)"/>
+<path d="M0 108 Q80 100 160 106 T320 104 L320 180 L0 180 Z" fill="url(#fm-sand)"/>
+<path d="M40 128 q40 -14 80 0 q30 10 70 -2 q40 -10 90 4 L280 150 Q160 160 40 150 Z" fill="url(#fm-shells)" opacity=".95"/>
+<g fill="#f3e3c6" stroke="#a88a5a" stroke-width=".8"><path d="M70 140 q6 -9 12 0 z"/><path d="M150 136 q7 -10 14 0 z"/><path d="M220 142 q6 -9 12 0 z"/><path d="M110 148 q5 -7 10 0 z"/></g>
+<path d="M0 104 Q60 98 120 104" stroke="#fff" stroke-width="1.4" fill="none" opacity=".7"/>
+</g>
+<g class="s2">
+<rect y="0" width="320" height="180" fill="url(#fm-sky)"/>
+<rect y="60" width="320" height="120" fill="url(#fm-rock)"/>
+<rect y="60" width="320" height="120" fill="url(#fm-shells)" opacity=".55"/>
+<path d="M0 92 H320 M0 126 H320 M0 156 H320" stroke="#8f7449" stroke-width="1.2" opacity=".6"/>
+<path d="M0 60 Q80 52 160 58 T320 56" stroke="#7a6038" stroke-width="2" fill="none"/>
+<g fill="#6d5634"><path d="M150 30 l0 22 l-5 -5 M150 52 l5 -5" stroke="#6d5634" stroke-width="2.4" fill="none"/></g>
+</g>
+<g class="s3">
+<rect y="0" width="320" height="180" fill="url(#fm-sky)"/>
+<path d="M0 70 H120 V180 H0 Z" fill="url(#fm-rock)"/>
+<path d="M200 70 H320 V180 H200 Z" fill="url(#fm-rock)"/>
+<rect y="70" width="120" height="110" fill="url(#fm-shells)" opacity=".35"/><rect x="200" y="70" width="120" height="110" fill="url(#fm-shells)" opacity=".35"/><rect x="120" y="70" width="80" height="50" fill="#9c8457" opacity=".55"/>
+<rect x="120" y="120" width="80" height="60" fill="#b39a6a"/>
+<g stroke="#7a6038" stroke-width="1.2"><rect x="130" y="98" width="34" height="22" fill="url(#fm-wet)"/><rect x="168" y="102" width="28" height="18" fill="url(#fm-wet)"/></g>
+<g transform="translate(70 62)"><circle cx="0" cy="-10" r="5" fill="#a7774f"/><rect x="-5" y="-5" width="10" height="16" rx="3" fill="#6f7d4a"/><path d="M-3 11 l-2 12 M3 11 l2 12" stroke="#3b3022" stroke-width="2"/><path d="M5 0 l16 -10" stroke="#5a4a36" stroke-width="2.4"/><path d="M19 -12 l6 -2 l-2 6 z" fill="#8f9aa3"/></g>
+</g>
+<g class="s4">
+<rect y="0" width="320" height="180" fill="url(#fm-sky)"/>
+<rect y="150" width="320" height="30" fill="#7c9a5a"/>
+<path d="M20 150 V50 H300 V150 Z" fill="url(#fm-wall)"/>
+<g stroke="#6f6858" stroke-width="1" fill="none">
+<path d="M20 70 H300 M20 90 H300 M20 110 H300 M20 130 H300"/>
+<path d="M60 50 V70 M110 50 V70 M160 50 V70 M210 50 V70 M260 50 V70 M85 70 V90 M135 70 V90 M185 70 V90 M235 70 V90 M285 70 V90 M60 90 V110 M110 90 V110 M160 90 V110 M210 90 V110 M260 90 V110 M85 110 V130 M135 110 V130 M185 110 V130 M235 110 V130 M285 110 V130 M60 130 V150 M110 130 V150 M160 130 V150 M210 130 V150 M260 130 V150"/>
+</g>
+<rect x="20" y="50" width="280" height="100" fill="url(#fm-shells)" opacity=".2"/>
+<path d="M20 50 V40 H40 V50 M70 50 V40 H90 V50 M120 50 V40 H140 V50 M170 50 V40 H190 V50 M220 50 V40 H240 V50 M270 50 V40 H290 V50" fill="url(#fm-wall)" stroke="#6f6858"/>
+<g transform="translate(150 100)"><circle r="5" fill="#2f2f33"/><circle r="9" fill="none" stroke="#5d5545" stroke-width="1.5" stroke-dasharray="2 2"/></g>
+</g>
+</svg>

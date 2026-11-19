@@ -1,0 +1,381 @@
+#!/usr/bin/env python3
+"""Writes tools/sparkle/lessons/26-01/lesson.json, how-lines.json, scripts.json (26.01: no voices recorded; scripts only)."""
+import json, os
+D = os.path.dirname(os.path.abspath(__file__))
+HS = json.load(open(f'{D}/hotspots.json'))
+
+def ph(t, d, img, alt, place, frm=(1.0, .5, .5), to=(1.1, .5, .5), fade=.8, **kw):
+    s = {"t": t, "d": d, "type": "photo", "img": img, "alt": alt, "from": list(frm), "to": list(to), "place": place, "fade": fade}
+    s.update(kw); return s
+
+film = {
+  "id": "g3sci-26-01", "mount": "wf-film", "kicker": "Opti's Wonder Films", "lesson": "Lesson 26.01 · What Are the Properties of Matter?",
+  "title": "The Soft Fort",
+  "bigQuestion": "How do scientists describe and compare different kinds of matter?",
+  "poster": "f_fort", "endPoster": "f_today", "startTarget": "#tab-vocab", "music": {"src": "music", "vol": 0.55},
+  "shots": [
+    {"t": 0, "d": 3.4, "type": "leader", "top": "Optima Academy", "name": "Opti's Wonder Films", "bottom": "presents", "fade": 1.0},
+    {"t": 3.4, "d": 6.4, "type": "archive", "img": "f_map", "alt": "An old hand-colored map of a small town by the sea, with many sailing ships in the harbor",
+     "note": "A map of St. Augustine, Florida, printed in 1589.", "fade": 0.8, "sfxAt": [{"at": 0.6, "name": "whoosh"}]},
+    ph(9.8, 6.0, "f_fort", "A stone fort shaped like a star with pointed corners, next to the water, seen from above", "Castillo de San Marcos · St. Augustine, Florida",
+       frm=(1.0, .5, .5), to=(1.12, .5, .45), fade=1.0),
+    ph(15.8, 5.6, "f_wall", "A close-up of a gray stone wall full of tiny pieces of broken seashells", "The fort's wall, up close",
+       frm=(1.0, .5, .5), to=(1.5, .55, .5), sfx="shimmer"),
+    {"t": 21.4, "d": 3.2, "type": "flash", "lines": ["Cannonballs?", "Sank in?"], "beats": [0.15, 1.2], "fade": 0.15},
+    ph(24.6, 6.6, "f_cannon", "An old green cannon on wooden wheels beside a stack of black cannonballs", "On the fort's top deck",
+       frm=(1.12, .5, .55), to=(1.0, .5, .5), count={"to": 27, "label": "days of cannon fire · 1740", "dur": 3.6}, sfxAt=[{"at": 0.4, "name": "thump"}, {"at": 2.0, "name": "thump"}]),
+    ph(31.2, 6.2, "f_sally", "Visitors walk across a wooden bridge through a gate in a very thick stone wall", "Walls about 12 feet thick · Castillo de San Marcos",
+       frm=(1.0, .5, .5), to=(1.1, .5, .55)),
+    ph(37.4, 11.2, "f_today", "The corner of the fort's gray stone wall glows golden under lights at night", "Castillo de San Marcos · Today",
+       frm=(1.0, .5, .5), to=(1.1, .5, .5), fade=0.9, fx=["rays"]),
+    {"t": 48.6, "d": 6.0, "type": "title", "fade": 1.2}
+  ],
+  "captions": [
+    {"t": 3.8, "d": 5.6, "text": "Long ago, ships and armies fought over this little Florida town.", "voice": "opti-1"},
+    {"t": 10.2, "d": 5.2, "text": "Spain built a stone fort to guard it.", "voice": "opti-2"},
+    {"t": 16.2, "d": 4.8, "text": "Look closer. The walls are made of shells.", "voice": "opti-3"},
+    {"t": 21.5, "d": 2.8, "text": "Cannonballs? Sank in?", "voice": "opti-4"},
+    {"t": 25.0, "d": 5.8, "text": "In 1740, enemy cannons fired at the fort for 27 days.", "voice": "opti-5"},
+    {"t": 31.6, "d": 5.6, "text": "The cannonballs bounced off, or sank into the soft shell rock.", "voice": "opti-6"},
+    {"t": 37.8, "d": 4.6, "text": "More than 300 years later, the walls still stand.", "voice": "opti-7"},
+    {"t": 42.8, "d": 5.4, "text": "How do scientists describe and compare different kinds of matter?", "voice": "opti-8"}
+  ]
+}
+
+specimen = {
+  "img": "spec", "aspect": "1600/1335", "radius": 0.07, "hotspots": HS,
+  "kicker": "🔎 Mystery specimen", "title": "What is this rock made of?",
+  "alt": "A rough, cream-colored rock packed with whole and broken seashells",
+  "look": "A real rock from Florida, sitting on a gray table. Look at its color, its shape, and how its surface might feel. A specimen is one real thing that scientists study. What is it made of? That's for you to figure out.",
+  "do": "Press Inspect specimen. Move the magnifying lens over the rock, then tap 3 things you notice.",
+  "number": "No. 26.01-A",
+  "card": ["<b>Specimen A</b>", "Found: on the east coast of Florida", "Size: about as big as your hand", "What is it made of? <i>You decide.</i>"],
+  "notice": "I notice… (one thing you see on the specimen)",
+  "wonder": "I wonder… (one question you want answered by the end of the lesson)"
+}
+
+words = [
+  ["🧱", "matter", "Anything that takes up space and has mass. Solids, liquids, and gases are all matter."],
+  ["🎨", "property", "A feature of an object you can observe or measure, like color, shape, or size."],
+  ["⚖️", "mass", "How much matter is in an object. You measure mass with a balance or scale."],
+  ["📦", "volume", "How much space an object takes up. A basketball has more volume than a tennis ball."],
+  ["🪨", "texture", "How the surface of an object feels: smooth, rough, bumpy, or soft."],
+  ["💎", "hardness", "How easily an object can be scratched. A diamond is very hard. Chalk is soft."]
+]
+
+parts = [
+  {"kicker": "🌱 Part 1", "title": "What Is Matter?",
+   "html": "<p>Everything around you is made of matter: your desk, the water you drink, even the air you breathe. Matter is anything that takes up space and has mass.</p><p>Air is matter too. Blow up a balloon, and the air inside takes up space and pushes the sides out.</p>"},
+  {"kicker": "🌤 Part 2", "title": "Properties You Can Observe",
+   "html": "<p>A property is a feature you can observe or measure. You can see color, shape, and size. You can feel texture: smooth, rough, or bumpy.</p><p>Hardness tells how easily something can be scratched. A rock is hard. Clay and chalk are soft.</p>"},
+  {"kicker": "🌍 Part 3", "title": "Properties You Measure with Tools",
+   "html": "<p>Some properties need tools. A balance measures mass. A ruler measures length, and a measuring cup measures the volume of a liquid.</p><p>A thermometer measures temperature: how hot or cold something is, in degrees. Sand in the sun has a higher temperature than sand in the shade. Tools give exact numbers, so two scientists can compare what they found.</p>"},
+  {"kicker": "🕵️ Part 4", "title": "Matter Files"}
+]
+
+order = {
+  "mix": [2, 0, 3, 1], "hint": "Start with the shells on the beach.",
+  "kicker": "🎞️ Put the scenes in order", "title": "How did seashells become a fort?",
+  "look": "Four real photos follow one Florida rock called coquina (say: ko-KEE-nuh), from the beach to the fort. They are mixed up. The dark film strip has four empty frames, from first (1) to last (4).",
+  "done": "🎬 Your order is right. Now watch it as a movie!",
+  "scenes": [
+    {"img": "o1", "alt": "Three small, smooth clam shells, two orange and one white", "text": "Tiny coquina clam shells pile up on the beach.", "play": "Shells pile up.",
+     "miss": ["", "The shells come first. Try frame 1.", "The shells come first. Try frame 1.", "The shells come first. Try frame 1."]},
+    {"img": "o2", "alt": "Lumpy tan rock made of shells sticking out of a sandy beach", "text": "Over thousands of years, the shells are pressed and glued into rock.", "play": "Shells become rock.",
+     "miss": ["The shells have to pile up first. Try a later frame.", "", "The rock has to form before anyone can cut it. Try an earlier frame.", "The rock forms long before the fort. Try an earlier frame."]},
+    {"img": "o3", "alt": "A grassy hollow surrounded by trees, where workers once cut coquina", "text": "Starting in 1671, workers cut soft, wet blocks at a quarry.", "play": "Workers cut blocks.",
+     "miss": ["The shells and rock come first. Try a later frame.", "The rock has to form before it can be cut. Try a later frame.", "", "The blocks are cut before the wall is built. Try an earlier frame."]},
+    {"img": "o4", "alt": "A tall gray stone wall of the fort beside a grassy ditch", "text": "The blocks dry and harden in the fort's thick walls.", "play": "Blocks harden in the wall.",
+     "miss": ["This is the last step. Try frame 4.", "This is the last step. Try frame 4.", "This is the last step. Try frame 4.", ""]}
+  ],
+  "check": {
+    "q": "A friend says, \"Air isn't matter. You can't even see it.\" What do you think?",
+    "options": [
+      {"t": "Right. If you can't see it, it isn't matter.", "miss": "Think about a balloon. What fills it up and pushes its sides out?"},
+      {"t": "Air is matter. It takes up space, like the air that fills a balloon, and it has mass.", "ok": "Yes! You can't see air, but it takes up space and has mass. That makes it matter."}
+    ]
+  }
+}
+
+movie = {
+  "model": "fort-model.svg", "modelBox": {"left": "0%", "width": "100%", "rot": 0}, "start": "0%", "bg": "desert",
+  "real": "real", "realAlt": "A close-up of the fort's tan coquina wall, rough and full of tiny holes",
+  "stamp": "SHELLS TO STONE", "endCap": "The real wall · Castillo de San Marcos.",
+  "beats": [
+    {"at": 0, "cap": "1 · Shells pile up on the beach.", "model": {"top": "0%", "rot": 0, "show": "s1"}, "counter": ["Long ago"]},
+    {"at": 2600, "cap": "2 · Shells are pressed into rock.", "model": {"show": "s2"}, "counter": ["Thousands of years"]},
+    {"at": 5200, "cap": "3 · Workers cut soft blocks.", "model": {"show": "s3"}, "counter": ["1671"]},
+    {"at": 7800, "cap": "4 · Dry blocks harden in the wall.", "model": {"show": "s4"}, "counter": ["1695"], "sfx": "thump"},
+    {"at": 10400, "cap": "The real thing.", "model": {"hide": True}, "real": True},
+    {"at": 12200, "stamp": True}
+  ]
+}
+
+compare = {
+  "kicker": "🧪 The Cannonball Test", "title": "Which rock takes a hit?",
+  "look": "Two real rocks, each on a lit specimen tray. Specimen A is coquina, the Florida shell rock. Specimen B is granite, a hard rock made of tightly packed crystals. Under the trays are two model tests: a marble for a cannonball, and a cup of water.",
+  "trays": [
+    {"id": "A", "img": "ta", "alt": "Rough, cream-colored coquina packed with broken shells and tiny holes", "label": "Specimen A"},
+    {"id": "B", "img": "tb", "alt": "Smooth, speckled granite with pink, white, and black crystals", "label": "Specimen B"}
+  ],
+  "materials": [{"key": "marble", "label": "Marble (a model cannonball)", "swatch": "marble"}, {"key": "water", "label": "Cup of water", "swatch": "water"}],
+  "ask": [
+    {"q": "Which rock has shells you can see and tiny holes?", "ans": "A", "ok": "Yes. Specimen A is coquina, full of shells and holes.", "miss": "Look closely. Which one is packed with broken shells?"},
+    {"q": "Which rock is hard and made of tightly packed, speckled crystals?", "ans": "B", "ok": "Yes. Specimen B is granite.", "miss": "Look again. Which one has pink, white, and black specks?"}
+  ],
+  "press": "🎯 Run the test",
+  "testDo": "Put the marble under one tray and the water under the other: drag them, or tap one, then a tray. Press <b>Run the test</b>. Then swap.",
+  "disclaimer": "This is a model. Real cannonballs are much bigger and faster.",
+  "results": {
+    "Amarble": {"text": "The marble sinks in a little and stops. The soft, holey rock gives way and holds it.", "fx": "sink"},
+    "Awater": {"text": "The water soaks into the tiny holes between the shells.", "fx": "wet"},
+    "Bmarble": {"text": "The marble bounces off the hard granite with a crack.", "fx": "bounce"},
+    "Bwater": {"text": "The water runs off the hard, tight surface.", "fx": "runoff"}
+  },
+  "best": ["Amarble", "Bmarble"],
+  "frame": "This rock is ___, so the cannonball ___.", "claimLead": "This rock is", "claimMid": "so the cannonball",
+  "claim": {
+    "A": {"feat": ["soft and full of holes", "hard and tightly packed"], "featOk": 0, "eat": ["sinks in and stops", "bounces off"], "eatOk": 0},
+    "B": {"feat": ["soft and full of holes", "hard and tightly packed"], "featOk": 1, "eat": ["sinks in and stops", "bounces off"], "eatOk": 1}
+  },
+  "curator": {
+    "A": "<b>Soft, holey rock → the cannonball sinks in.</b> The wall soaks up the hit instead of cracking.",
+    "B": "<b>Hard, tight rock → the cannonball bounces off.</b> A big enough hit can crack hard, brittle rock."
+  },
+  "missFeat": "Look at {label} again. Shells and holes, or tightly packed crystals?",
+  "missClaim": "Think about your test. Where did the marble sink in?",
+  "done": "Hardness and texture are properties. The fort's builders chose a rock whose properties fit the job.",
+  "after": {"kicker": "🎬 Behind the scenes · How thick?", "img": "aft", "alt": "The fort's long gray stone walls behind a wooden bridge, with a flag flying above",
+            "html": "No one knew how well shell rock would hold up against cannons, so the builders made the walls about 12 feet thick, and up to 19 feet on the ocean side. In 1740, the cannonballs bounced off or sank in a few inches."}
+}
+
+wall = {
+  "kicker": "💎 The Hardness Ladder", "title": "Climb from the softest mineral to the hardest",
+  "look": "A model ladder of four real minerals, from soft at the top to hard at the bottom. A mineral is a natural solid, like the crystals in rocks. Each step has a real photo. The brass dial on the left shows each mineral's hardness number, from 1 (softest) to 10 (hardest).",
+  "do": "First, make a prediction. Then brush the glowing step: drag across it (or tap it again and again) until the mineral shows.",
+  "predict": {"q": "Can your fingernail scratch every mineral?",
+              "options": [["yes", "Yes, a fingernail can scratch any mineral"], ["no", "No, some minerals are too hard"]], "answer": "no",
+              "mine": "Your prediction: <b>{p}</b>. Let's climb the ladder and find out.",
+              "confirm": "You predicted some minerals are too hard. The evidence agrees: a fingernail only scratches the softest ones, like talc.",
+              "change": "You predicted a fingernail could scratch anything. The evidence changed that idea: it only scratches the softest minerals, like talc."},
+  "sky": "sky", "skyAlt": "People with buckets and shovels dig in a wide, plowed field, looking for diamonds", "skyCap": "Crater of Diamonds State Park, Arkansas",
+  "unit": "Step", "found": "Clue found at Step {n}",
+  "elevator": ["Soft", "1", "3", "7", "10"],
+  "line": ["SOFTEST", "HARDEST"],
+  "lockTag": "🔒 Brush the step above first", "locked": "Brush the step above first. We climb the ladder one step at a time.",
+  "first": "Brush the glowing top step. Drag across it (or tap it again and again).", "next": "Keep climbing. Brush Step {n}.",
+  "endTitle": "All 4 steps explored",
+  "endText": "Look at the ladder. Each mineral can scratch the ones above it, but not the ones below.",
+  "rule": "<b>Hardness is a property you can test.</b> A harder material scratches a softer one. Scientists compare minerals by trying to scratch them, from talc (1) to diamond (10).",
+  "choices": ["🧼 The softest mineral: a fingernail scratches it", "🐚 Made of the same stuff as many seashells", "🏖️ A hard mineral in beach sand", "💎 The hardest natural mineral"],
+  "layers": [
+    {"name": "Step 1 · Talc", "img": "l1", "alt": "A pale, shiny gray-green piece of talc held in someone's fingers",
+     "ask": "Look at Step 1. Read the clue AND the photo. What do you find?",
+     "clue": "Talc is the softest mineral. Your fingernail can scratch it, and it feels soapy. Hardness: 1.",
+     "ans": 0, "ok": "Yes! Talc is the softest mineral.", "tag": "🧼 Talc · 1",
+     "miss": {"1": "Not yet. Read the clue: what can scratch it?", "2": "Not yet. This one is soft.", "3": "Not yet. This one is the softest."},
+     "env": "e1", "envAlt": "Big piles of pale gray rock at a talc mine, with mountains behind", "envCap": "A talc mine in Montana"},
+    {"name": "Step 2 · Calcite", "img": "l2", "alt": "A large, pale yellow calcite crystal with smooth, flat sides",
+     "ask": "Look at Step 2. Read the clue AND the photo. What do you find?",
+     "clue": "Calcite is harder. A fingernail can't scratch it, but a copper coin can. Many seashells are made of the same material as calcite. Hardness: 3.",
+     "ans": 1, "ok": "Yes! Many seashells are made of the same stuff as calcite.", "tag": "🐚 Calcite · 3",
+     "miss": {"0": "Your fingernail can't scratch this one. Read the clue again.", "2": "Not yet. Read the clue: what is it made of?", "3": "Not yet. Keep climbing."},
+     "env": "e2", "envAlt": "A dark rocky cave opening with light shining in", "envCap": "Florida Caverns State Park: its cave rock is mostly calcite"},
+    {"name": "Step 3 · Quartz", "img": "l3", "alt": "A clear quartz crystal with thin golden threads inside",
+     "ask": "Look at Step 3. Read the clue AND the photo. What do you find?",
+     "clue": "Quartz is hard enough to scratch glass. Most of Florida's white beach sand is tiny grains of quartz. Hardness: 7.",
+     "ans": 2, "ok": "Yes! Quartz is a hard mineral in beach sand.", "tag": "🏖️ Quartz · 7",
+     "miss": {"0": "Too hard for a fingernail. Read the clue again.", "1": "Close! But read the clue: where do you find it?", "3": "Not yet. There's one harder."},
+     "env": "e3", "envAlt": "Big white sand sculptures on a wide, bright beach", "envCap": "Siesta Key, Florida: sand made almost all of quartz"},
+    {"name": "Step 4 · Diamond", "img": "l4", "alt": "A small, rough, light brown diamond crystal shaped like a pyramid",
+     "ask": "Look at Step 4. Read the clue AND the photo. What do you find?",
+     "clue": "Diamond is the hardest natural mineral. Only another diamond can scratch it. Hardness: 10.",
+     "ans": 3, "ok": "Yes! Diamond is the hardest natural mineral.", "tag": "💎 Diamond · 10",
+     "miss": {"0": "This is the opposite end of the ladder. Read the clue.", "1": "Not this one. Read the clue again.", "2": "Close! But this one is even harder."},
+     "env": "e4", "envAlt": "A wide, flat field of plowed dirt under a cloudy sky", "envCap": "Crater of Diamonds State Park, Arkansas"}
+  ],
+  "mix": {
+    "q": "A big, puffy pillow and a small rock sit side by side. A student says, \"The pillow is bigger, so it has more mass.\" Is that right?",
+    "options": [
+      {"t": "Yes. Bigger things always have more mass.", "miss": "Think about lifting each one. Size and mass are different properties."},
+      {"t": "No. The pillow has more volume, but the small rock has more mass.", "ok": "Yes! Volume is how much space something takes up. Mass is how much matter is in it. They are different properties."}
+    ]
+  }
+}
+
+wow = {"kicker": "🎬 Director's cut", "title": "27 days of cannon fire",
+  "img": "wow", "alt": "The star-shaped stone fort beside the bay, with green lawns around it, seen from the air",
+  "caption": "Castillo de San Marcos from the air",
+  "html": "<p style=\"margin:0 0 8px\">In 1740, a British army fired cannons at the fort for 27 days. The coquina walls held.</p><p style=\"margin:0\">The fort was finished in 1695 and was never captured in battle. Park rangers still fire its cannons today, as a show for visitors.</p>",
+  "inset": "inset", "insetCap": "Rangers in old uniforms fire a cannon for visitors."}
+
+keyIdea = "Every object is made of matter and has properties that scientists can observe and measure, like mass, volume, color, texture, hardness, and temperature. Scientists use properties to describe objects, compare them, and choose the right material for a job."
+
+M = ["🤸 Bends and stretches", "🪟 You can see through it", "⚡ Carries electricity", "🧶 Soft, and keeps you warm", "🧽 Full of holes, soaks up a hit"]
+SHORT = ["bends and stretches", "you can see through it", "it carries electricity", "it is soft and keeps you warm", "it is full of holes and soaks up a hit"]
+SOL = [["tire", "🚲 A bike tire"], ["window", "🪟 A window"], ["wire", "🔌 A wire for electricity"], ["sweater", "🧥 A warm sweater"], ["fort", "🏰 A fort wall"]]
+def card(id_, img, alt, clues, orgAns, orgMiss, envAns, envMiss, envImg, envAlt, envCap, reveal, rb, bts):
+    return {"id": id_, "img": img, "alt": alt, "clues": clues, "org": M, "orgAns": orgAns, "orgShort": SHORT[orgAns], "orgMiss": orgMiss,
+            "env": dict(SOL)[envAns].split(" ", 1)[1], "envAns": envAns, "envMiss": envMiss, "envImg": envImg, "envAlt": envAlt, "envCap": envCap, "reveal": reveal, "rebuildEnv": rb, "bts": bts}
+
+det = {
+  "look": "Five real materials. Each card shows one. Under the cards is an evidence chart, a table that holds what you figure out.",
+  "do": "Pick 3 materials, one at a time. Tap a clue, then name its key property. Predict a job that fits, and watch it at work.",
+  "noun": "Material", "need": 3, "inferQ": "What is its key property?", "inferDone": "Property", "chartSo": "so a good job for it is",
+  "predict": {"q": "Which job do you predict fits this material?", "options": SOL},
+  "kicker": "The material at work", "enough": "You already solved 3 matter files. Nice work, materials scientist!",
+  "cols": ["Matter file", "My observation", "Property", "Job", "My evidence"],
+  "write": {"label": "Material __ is ___. Its key property is ___, so a good job for it is ___.", "starter": "Start with: \"Material __ is…\"", "min": 15,
+            "chips": [["trait", "Names what you see"], ["prop", "Names a property"], ["because", "Gives a reason (because, so)"]]},
+  "items": [
+    card("A", "d1", "A tangle of thin, colorful rubber bands",
+         [{"t": "It stretches long, then snaps back", "ok": True}, {"t": "It glows", "miss": "Look again. What happens when you pull a rubber band?"}, {"t": "It is see-through", "miss": "Look again. Can you see through a rubber band?"}],
+         0, "Rubber stretches and snaps back. Which property is that? Try again.",
+         "tire", "A job that needs bending and bouncing back. Which one? Try again.",
+         "d1h", "A black rubber bicycle tire with a bumpy tread", "A rubber bike tire",
+         "This tire is evidence that rubber fits the job: it bends over bumps and springs back.", "road",
+         "Most tires are made of rubber mixed with other materials to make them tough."),
+    card("B", "d2", "Clear glass chess pieces you can see right through",
+         [{"t": "Light passes right through it", "ok": True}, {"t": "It stretches like a rubber band", "miss": "Look again. Glass doesn't stretch."}, {"t": "It is soft and fuzzy", "miss": "Look again. Is glass soft?"}],
+         1, "You can see through glass. Which property is that? Try again.",
+         "window", "A job where you need to see through something. Which one? Try again.",
+         "d2h", "An old window made of many small panes of glass", "Glass windows let light in",
+         "This window is evidence that glass fits the job: light comes in, and rain stays out.", "house",
+         "Glass is made by melting sand, which is mostly quartz, at a very high temperature."),
+    card("C", "d3", "A shiny, orange-brown lump of natural copper",
+         [{"t": "A shiny metal that electricity can flow through", "ok": True}, {"t": "It is clear like glass", "miss": "Look again. Can you see through copper?"}, {"t": "It is soft and fluffy", "miss": "Look again. Copper is a hard metal."}],
+         2, "Copper is a metal that carries electricity. Which property is that? Try again.",
+         "wire", "A job that carries electricity. Which one? Try again.",
+         "d3h", "The cut end of an electric cord, showing copper wires inside colored plastic", "Copper wires inside an electric cord",
+         "This cord is evidence that copper fits the job: electricity flows through the copper wires inside.", "lamp",
+         "Copper bends easily without breaking, so it can be pulled into long, thin wires."),
+    card("D", "d4", "A sheep's thick, curly wool being clipped off by a shearer",
+         [{"t": "Thick, soft, and fluffy fibers", "ok": True}, {"t": "Shiny metal", "miss": "Look again. Is wool metal?"}, {"t": "Hard like a rock", "miss": "Look again. Is wool hard?"}],
+         3, "Wool is soft and traps warm air. Which property is that? Try again.",
+         "sweater", "A job that keeps you warm. Which one? Try again.",
+         "d4h", "A gray knitted wool sweater lying on a rock", "A knitted wool sweater",
+         "This sweater is evidence that wool fits the job: its fluffy fibers trap warm air.", "winter",
+         "Shearing doesn't hurt the sheep. Its wool grows back, like a haircut."),
+    card("E", "d5", "Lumpy tan coquina rock on a Florida beach",
+         [{"t": "Rock made of shells, with tiny holes", "ok": True}, {"t": "It stretches", "miss": "Look again. Rock doesn't stretch."}, {"t": "It carries electricity", "miss": "Look again. Is this a metal?"}],
+         4, "Coquina is full of holes and gives a little when hit. Which property is that? Try again.",
+         "fort", "A job that has to take a hit. Which one? Try again.",
+         "d5h", "A small square stone fort beside a river and marsh, with a flag on top", "Fort Matanzas, Florida: also built of coquina",
+         "This fort is evidence that coquina fits the job: its shell-rock walls stood up to cannons.", "fort",
+         "Fort Matanzas guarded the back door to St. Augustine, 15 miles south of the Castillo.")
+  ]
+}
+
+rebuild = {"title": "Use your evidence to rebuild the scene", "missPrefix": "Hmm. Look at your matter file again. ", "kicker": "🌍 Rebuild the scene", "whyStart": "I chose this because the material…",
+  "envs": [
+    {"key": "road", "name": "🚲 A bike path", "img": "d1h", "cap": "Bumps and turns…"},
+    {"key": "house", "name": "🏠 A house", "img": "d2h", "cap": "Light comes in…"},
+    {"key": "lamp", "name": "💡 A reading lamp", "img": "d3h", "cap": "Electricity flows…"},
+    {"key": "winter", "name": "❄️ A cold winter day", "img": "d4h", "cap": "Brrr…"},
+    {"key": "fort", "name": "🏰 A seaside fort", "img": "d5h", "cap": "Ready for cannonballs…"}
+  ],
+  "life": [
+    {"name": "🛞 Rubber tires", "img": "d1h", "env": "road", "miss": "Rubber tires roll on the bike path."},
+    {"name": "🪟 Glass windows", "img": "d2h", "env": "house", "miss": "Glass windows let light into the house."},
+    {"name": "🔌 Copper wires", "img": "d3h", "env": "lamp", "miss": "Copper wires carry electricity to the lamp."},
+    {"name": "🧶 A wool sweater", "img": "d4h", "env": "winter", "miss": "A wool sweater keeps you warm on a cold day."},
+    {"name": "🧱 Coquina walls", "img": "d5h", "env": "fort", "miss": "Coquina walls protect the seaside fort."}
+  ]}
+
+quiz = [
+  {"q": "What is a property of matter?", "options": [
+    {"t": "A feature you can observe or measure, like color, texture, or mass", "ok": "🌲 That is right! A property is something you can observe or measure about an object."},
+    {"t": "The place where an object is found", "miss": "Not quite. Think about what you can see, feel, or measure about an object. That is a property."},
+    {"t": "How fast an object moves", "miss": "Not quite. Think about what you can see, feel, or measure about an object. That is a property."}]},
+  {"q": "Two students pick up a rock and a sponge. The rock feels much heavier. What property is different?", "options": [
+    {"t": "Color", "miss": "Think again. When something feels heavier, it has more of which property? Hint: it starts with M."},
+    {"t": "Mass", "ok": "🌲 Yes! The rock has more mass than the sponge. That is why it feels heavier."},
+    {"t": "Shape", "miss": "Think again. When something feels heavier, it has more of which property? Hint: it starts with M."}]},
+  {"q": "Which tool would a scientist use to measure the mass of an object?", "options": [
+    {"t": "A ruler", "miss": "A ruler measures length and a thermometer measures temperature. Which tool measures how heavy something is?"},
+    {"t": "A thermometer", "miss": "A ruler measures length and a thermometer measures temperature. Which tool measures how heavy something is?"},
+    {"t": "A balance or scale", "ok": "🌲 Exactly! A balance or scale measures mass: how much matter is in an object."}]}
+]
+
+def prop_item(n, obj, right, wrongs, why):
+    opts = [{"t": right, "ok": why}] + [{"t": w, "miss": f"Think about a real {obj}. Would you describe it that way?"} for w in wrongs]
+    return {"n": n, "q": f"Which two properties describe a {obj}?", "type": "choice", "options": opts}
+
+partA = {"title": "Properties chart", "do": "Read each one. Pick the best answer, or type your answer.", "items": [
+  prop_item(1, "metal coin", "Hard and shiny", ["Soft and fluffy", "Clear and stretchy"], "Yes. A coin is hard and shiny."),
+  prop_item(2, "cotton ball", "Soft and light", ["Hard and heavy", "Shiny and see-through"], "Yes. A cotton ball is soft and light."),
+  prop_item(3, "brick", "Hard and rough", ["Soft and stretchy", "Clear and smooth"], "Yes. A brick is hard and rough.")
+]}
+
+assign = {
+  "partA": partA,
+  "partB": {"title": "Short answer", "do": "Answer in complete sentences. Use your science words.", "items": [
+    {"n": 1, "q": "What is the difference between mass and volume? Explain in your own words.", "type": "text", "min": 12, "chips": [["mass", "Uses the word mass"], ["volume", "Uses the word volume"]]},
+    {"n": 2, "q": "Give one example of a property you can see and one property you need a tool to measure.", "type": "text", "min": 10, "chips": [["prop", "Names a property"], ["tool", "Names a tool"]]}
+  ]},
+  "write": {"title": "How can you use properties to tell two objects apart, even if they look similar?", "do": "Pick one from your evidence chart. Answer the three questions. Use at least one of the science words under the boxes.",
+    "vocab": ["property", "mass", "volume", "texture", "hardness", "matter"], "need": 1,
+    "prompts": [["What do you think?", "Start with: \"I think the most useful property for comparing objects is…\""],
+                ["What did you observe or learn that supports your thinking?", "Start with: \"I know this because when I observed…\""],
+                ["Why does that make sense?", "Start with: \"This makes sense because scientists need to measure properties to…\""]]},
+  "partC": {"do": "Draw two objects side by side. Label one property they share and one property that is different.",
+            "labels": ["A property they share", "A property that is different"]},
+  "checklist": [
+    {"k": "det", "t": "My evidence chart has 3 matter files and my explanation.", "req": {"det": 3, "text": {"in-det": 15}}},
+    {"k": "a", "t": "Part A: all three properties.", "req": {"choice": ["a1", "a2", "a3"]}},
+    {"k": "b", "t": "Part B: questions 1 and 2.", "req": {"text": {"in-b1": 12, "in-b2": 10}}},
+    {"k": "c", "t": "Part C: my drawing and both labels.", "req": {"sketch": True, "text": {"in-c1": 6, "in-c2": 6}}},
+    {"k": "w", "t": "Write and explain, with at least one science word.", "req": {"text": {"in-w1": 10, "in-w2": 10, "in-w3": 10}, "vocab": 1}}
+  ]
+}
+
+premiere = {"title": "Premiere my matter story", "thinkLabel": "The key property is", "director": "JUNIOR MATERIALS SCIENTIST", "storyKicker": "My matter story",
+  "frames": [
+    {"k": "formation", "label": "Shells to stone", "img": "o2", "cap": "Shells to stone: coquina forms, then becomes a fort."},
+    {"k": "compare", "label": "The Cannonball Test", "img": "ta", "cap": "The Cannonball Test: soft, holey rock soaks up a hit."},
+    {"k": "wall", "label": "The Hardness Ladder", "img": "l4", "cap": "The Hardness Ladder: from talc to diamond."},
+    {"k": "det", "label": "Matter files", "img": "d3", "cap": "Matter files: each material's property fits a job."}]}
+
+nxt = {"title": "Coming up next: 26.02", "text": "Investigation: Measuring and Comparing Matter. You'll measure mass and volume and compare objects with real numbers."}
+
+chips = {
+  "part": {"any": ["shell", "shells", "holes", "hole", "rough", "bumpy", "broken", "pieces", "ridges", "white", "cream", "tan", "brown", "rock", "edge", "gaps", "cup", "clam"]},
+  "ask": {"re": "\\?|\\b(why|how|what|when|where|who|which|does|do|is|are|can|did|will)\\b"},
+  "trait": {"any": ["stretch", "stretches", "clear", "see", "shiny", "metal", "orange", "soft", "fluffy", "wool", "holes", "shells", "rock", "rubber", "glass", "copper", "bands"]},
+  "because": {"re": "\\b(because|since|so)\\b"},
+  "prop": {"any": ["color", "shape", "size", "texture", "hardness", "hard", "soft", "mass", "volume", "temperature", "smooth", "rough", "shiny", "heavy", "light", "length", "stretchy", "clear"]},
+  "tool": {"any": ["balance", "scale", "ruler", "thermometer", "measuring cup", "cup", "tool"]},
+  "mass": {"any": ["mass"]},
+  "volume": {"any": ["volume"]}
+}
+
+L = {"id": "g3sci-26-01", "lesson": "26.01", "title": "What Are the Properties of Matter?", "emoji": "🧊",
+  "details": ["📅 Q4 · Unit 9 · Properties &amp; Changes of Matter", "📖 Week 26 · Lesson 26.01", "🌎 CPALMS SC.3.P.8.1, SC.3.P.8.2, SC.3.P.8.3", "⏱ About 35 minutes"],
+  "icans": ["describe matter by its properties like color, shape, texture, and hardness.", "use tools to measure properties like mass, volume, and temperature.", "compare two objects by their properties and explain how they are different."],
+  "opti": {"warm": "Our film starts at an old Florida fort with a secret in its walls. First, inspect a strange rock from the coast.",
+           "lesson": "Today you're a materials scientist. Turn shells into stone, test two rocks, then climb a hardness ladder.",
+           "check": "Three quick questions. It's not graded. It's just for you, so give each one your best try.",
+           "assign": "Time to show what you learned. Pick some properties, then tell us how you'd tell two objects apart."},
+  "film": film, "scientist": "materials scientist", "specimen": specimen, "words": words, "parts": parts, "order": order, "movie": movie,
+  "compare": compare, "wall": wall, "wow": wow, "keyIdea": keyIdea, "det": det, "rebuild": rebuild, "quiz": quiz, "assign": assign,
+  "premiere": premiere, "next": nxt, "chips": chips, "creditAlias": {},
+  "creditsExtra": ["Music: \"Little\" Fugue in G minor, BWV 578 (Johann Sebastian Bach), played by the saxophone quartet of the United States Army Field Band, public domain (via Wikimedia Commons).",
+                   "Opti the owl: Optima Academy. Sound effects are made by the page. The shells-to-stone movie, the Cannonball Test, and the Hardness Ladder are models; every place photo is real."]}
+
+json.dump(L, open(f'{D}/lesson.json', 'w'), indent=1, ensure_ascii=False)
+
+how = {
+  "how-26-01-compare": {"page": "Put the marble under one tray and the water under the other: drag them, or tap one, then a tray. Press Run the test. Then swap.",
+                        "say": "Put the marble under one tray and the water under the other: drag them, or tap one, then a tray. Press Run the test. Then swap."},
+  "how-26-01-wall": {"page": wall["do"], "say": wall["do"]},
+  "how-26-01-det": {"page": det["do"], "say": "Pick three materials, one at a time. Tap a clue, then name its key property. Predict a job that fits, and watch it at work."},
+  "how-26-01-partc": {"page": assign["partC"]["do"], "say": assign["partC"]["do"]}
+}
+json.dump(how, open(f'{D}/how-lines.json', 'w'), indent=1, ensure_ascii=False)
+
+scripts = {c["voice"]: c["text"] for c in film["captions"]}
+scripts.update({"26-01-welcome": L["opti"]["warm"], "26-01-lesson": L["opti"]["lesson"], "26-01-check": L["opti"]["check"], "26-01-assign": L["opti"]["assign"]})
+for k, v in how.items(): scripts[k] = v["say"]
+for w in words: scripts["word-" + w[1].replace(" ", "-")] = w[1]
+json.dump(scripts, open(f'{D}/scripts.json', 'w'), indent=1, ensure_ascii=False)
+print('ok')
