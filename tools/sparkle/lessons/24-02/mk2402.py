@@ -34,7 +34,7 @@ film = {
     {"t": 10.1, "d": 5.2, "text": "Every day, those homes throw things away. Where does it all go?", "voice": "opti-2"},
     {"t": 15.7, "d": 2.8, "text": "A mountain? Made of trash?", "voice": "opti-3"},
     {"t": 19.1, "d": 4.8, "text": "Much of it is buried in a landfill, layer after layer.", "voice": "opti-4"},
-    {"t": 24.6, "d": 6.6, "text": "This grassy hill in Virginia is trash under soil. It opened as a park in 1974.", "voice": "opti-5"},
+    {"t": 24.6, "d": 7.2, "text": "This grassy hill in Virginia is trash under soil. It opened as a park in 1974.", "voice": "opti-5"},
     {"t": 31.9, "d": 5.4, "text": "But some trash never has to be buried. These cans become new cans.", "voice": "opti-6"},
     {"t": 38.0, "d": 7.8, "text": "So what can we do to care for nature? And which actions matter most?", "voice": "opti-7"}
   ]

@@ -16,29 +16,29 @@ film = {
     {"t": 0, "d": 3.4, "type": "leader", "top": "Optima Academy", "name": "Opti's Wonder Films", "bottom": "presents", "fade": 1.0},
     ph(3.4, 6.6, "f_dawn", "Two bald eagles fly as dark shapes across a pink dawn sky above a line of bare trees", "Westmoreland State Park, Virginia · Dawn",
        frm=(1.0, .5, .55), to=(1.45, .47, .47), fade=1.2, sfx="whoosh", sfxArg=2.0),
-    {"t": 10.0, "d": 5.6, "type": "archive", "img": "f_spray", "alt": "An old black-and-white photo of a small airplane spraying a long white cloud over a dark forest",
+    {"t": 10.0, "d": 6.2, "type": "archive", "img": "f_spray", "alt": "An old black-and-white photo of a small airplane spraying a long white cloud over a dark forest",
      "note": "An airplane sprays DDT over a forest in Oregon, 1955.", "fade": 0.8},
-    ph(15.6, 6.4, "f_egg", "Two adult bald eagles in a big stick nest look down at one white egg", "An eagle nest with one egg · Big Bear Lake, California, 2019",
+    ph(16.2, 6.8, "f_egg", "Two adult bald eagles in a big stick nest look down at one white egg", "An eagle nest with one egg · Big Bear Lake, California, 2019",
        frm=(1.12, .55, .6), to=(1.0, .5, .5)),
-    {"t": 22.0, "d": 3.2, "type": "flash", "lines": ["Our national bird?", "Almost gone?"], "beats": [0.15, 1.2], "fade": 0.15},
-    ph(25.2, 8.0, "f_chicks", "A mother bald eagle stands in a huge nest of sticks with two fuzzy gray chicks beside her", "A mother eagle and two chicks · Philadelphia, Pennsylvania",
+    {"t": 23.0, "d": 3.4, "type": "flash", "lines": ["Our national bird?", "Almost gone?"], "beats": [0.15, 1.2], "fade": 0.15},
+    ph(26.4, 10.6, "f_chicks", "A mother bald eagle stands in a huge nest of sticks with two fuzzy gray chicks beside her", "A mother eagle and two chicks · Philadelphia, Pennsylvania",
        frm=(1.16, .45, .55), to=(1.0, .5, .5), fade=1.0, **{"in": "ripple"}, fx=["rays"], sfx="shimmer",
-       tags=[{"text": "1963: 417 nesting pairs", "x": 6, "y": 40, "at": 0.8}, {"text": "2007: 9,789 nesting pairs", "x": 6, "y": 52, "at": 4.4}]),
-    ph(33.2, 6.0, "f_soar", "A bald eagle with wide brown wings and a white head soars low over green bushes", "A bald eagle soars · Seedskadee National Wildlife Refuge, Wyoming",
+       tags=[{"text": "1963: 417 nesting pairs", "x": 6, "y": 40, "at": 0.8}, {"text": "2007: 9,789 nesting pairs", "x": 6, "y": 52, "at": 6.8}]),
+    ph(37.0, 6.0, "f_soar", "A bald eagle with wide brown wings and a white head soars low over green bushes", "A bald eagle soars · Seedskadee National Wildlife Refuge, Wyoming",
        frm=(1.0, .4, .5), to=(1.12, .5, .45)),
-    ph(39.2, 7.6, "f_today", "A bald eagle stands in its big stick nest high in a pine tree under a blue sky", "Kennedy Space Center, Florida · Today",
+    ph(43.0, 7.6, "f_today", "A bald eagle stands in its big stick nest high in a pine tree under a blue sky", "Kennedy Space Center, Florida · Today",
        frm=(1.0, .5, .5), to=(1.1, .55, .4), fade=0.9),
-    {"t": 46.8, "d": 6.0, "type": "title", "fade": 1.2}
+    {"t": 50.6, "d": 6.0, "type": "title", "fade": 1.2}
   ],
   "captions": [
     {"t": 3.8, "d": 5.8, "text": "Dawn over a quiet lake. Two bald eagles ride the morning air.", "voice": "opti-1"},
-    {"t": 10.3, "d": 5.0, "text": "Long ago, people sprayed a bug poison called DDT almost everywhere.", "voice": "opti-2"},
-    {"t": 15.9, "d": 5.8, "text": "It washed into lakes and fish. Eagles ate the fish, and their eggshells grew thin.", "voice": "opti-3"},
-    {"t": 22.1, "d": 2.8, "text": "Our national bird? Almost gone?", "voice": "opti-4"},
-    {"t": 25.6, "d": 4.4, "text": "Then people chose to act. They banned DDT and protected eagle nests.", "voice": "opti-5"},
-    {"t": 30.4, "d": 2.6, "text": "Year by year, the eagles came back.", "voice": "opti-6"},
-    {"t": 33.5, "d": 5.4, "text": "Today, bald eagles nest in every state except Hawaii.", "voice": "opti-7"},
-    {"t": 39.6, "d": 6.8, "text": "So how do people protect the natural world? And why does it matter?", "voice": "opti-8"}
+    {"t": 10.3, "d": 5.8, "text": "Long ago, people sprayed a bug poison called DDT almost everywhere.", "voice": "opti-2"},
+    {"t": 16.5, "d": 6.4, "text": "It washed into lakes and fish. Eagles ate the fish, and their eggshells grew thin.", "voice": "opti-3"},
+    {"t": 23.1, "d": 3.2, "text": "Our national bird? Almost gone?", "voice": "opti-4"},
+    {"t": 26.8, "d": 6.3, "text": "Then people chose to act. They banned DDT and protected eagle nests.", "voice": "opti-5"},
+    {"t": 33.4, "d": 3.3, "text": "Year by year, the eagles came back.", "voice": "opti-6"},
+    {"t": 37.4, "d": 5.2, "text": "Today, bald eagles nest in every state except Hawaii.", "voice": "opti-7"},
+    {"t": 43.4, "d": 6.8, "text": "So how do people protect the natural world? And why does it matter?", "voice": "opti-8"}
   ]
 }
 
