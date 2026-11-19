@@ -1,0 +1,50 @@
+<svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A model: an empty can goes into a blue recycling bin; a belt and a magnet sort the cans; a press squashes them into a bale; the metal melts in a hot pot and becomes a shiny new can">
+<defs>
+<linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9dde0"/><stop offset="1" stop-color="#b9c0c6"/></linearGradient>
+<linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8c8f91"/><stop offset="1" stop-color="#6b6e70"/></linearGradient>
+<linearGradient id="bin" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1f5fa8"/><stop offset=".5" stop-color="#3a7fd0"/><stop offset="1" stop-color="#1b4f8c"/></linearGradient>
+<linearGradient id="can" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9aa3aa"/><stop offset=".45" stop-color="#eef2f4"/><stop offset="1" stop-color="#7d868d"/></linearGradient>
+<linearGradient id="red" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8e1d1d"/><stop offset=".45" stop-color="#d94a3d"/><stop offset="1" stop-color="#7a1919"/></linearGradient>
+<linearGradient id="belt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4b4f53"/><stop offset="1" stop-color="#2c2f32"/></linearGradient>
+<radialGradient id="melt" cx=".5" cy=".4" r=".6"><stop offset="0" stop-color="#fff3b0"/><stop offset=".5" stop-color="#ffb347"/><stop offset="1" stop-color="#d9531e"/></radialGradient>
+<linearGradient id="pot" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3b3b3b"/><stop offset=".5" stop-color="#6a6a6a"/><stop offset="1" stop-color="#2e2e2e"/></linearGradient>
+</defs>
+<rect width="320" height="180" fill="url(#wall)"/>
+<rect y="132" width="320" height="48" fill="url(#floor)"/>
+<path d="M0 132 H320" stroke="#5a5d60" stroke-width="1.5"/>
+<g class="s1">
+<path d="M110 76 L210 76 L202 142 L118 142 Z" fill="url(#bin)"/><rect x="104" y="68" width="112" height="10" rx="3" fill="#174a85"/>
+<path d="M150 100 l10 -10 l10 10 M160 90 v26" stroke="#e8f1fb" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+<g transform="translate(176 30) rotate(25)"><rect x="-9" y="-16" width="18" height="32" rx="3" fill="url(#red)"/><rect x="-9" y="-16" width="18" height="4" rx="2" fill="url(#can)"/></g>
+<path d="M170 52 q-6 8 -8 16" stroke="#5f6a73" stroke-width="1.2" stroke-dasharray="2 3" fill="none"/>
+</g>
+<g class="s2">
+<rect x="20" y="104" width="280" height="14" rx="7" fill="url(#belt)"/><circle cx="30" cy="111" r="6" fill="#777"/><circle cx="290" cy="111" r="6" fill="#777"/>
+<g transform="translate(70 92)"><rect x="-7" y="-12" width="14" height="24" rx="2" fill="url(#red)"/></g>
+<g transform="translate(110 96)"><rect x="-10" y="-8" width="20" height="16" fill="#c9b48a"/><path d="M-10 -8 L10 8" stroke="#a8946c"/></g>
+<g transform="translate(150 92)"><rect x="-7" y="-12" width="14" height="24" rx="2" fill="url(#can)"/></g>
+<g transform="translate(190 94)"><path d="M-6 -14 h12 v4 l3 4 v20 h-18 v-20 l3 -4 Z" fill="#7cc4d8" opacity=".85"/></g>
+<path d="M210 40 v26" stroke="#555" stroke-width="3"/><path d="M196 66 h28 v14 a14 14 0 0 1 -28 0 Z" fill="#c0392b"/><rect x="196" y="66" width="8" height="10" fill="#ddd"/><rect x="216" y="66" width="8" height="10" fill="#ddd"/>
+<g transform="translate(250 112)"><rect x="-22" y="0" width="44" height="20" fill="url(#bin)"/></g>
+</g>
+<g class="s3">
+<rect x="120" y="22" width="80" height="12" fill="#555"/><rect x="152" y="34" width="16" height="22" fill="#777"/><rect x="118" y="56" width="84" height="10" fill="#444"/>
+<g transform="translate(160 104)">
+<rect x="-40" y="-36" width="80" height="64" fill="#b9c0c6"/>
+<path d="M-40 -24 h80 M-40 -10 h80 M-40 4 h80 M-40 18 h80" stroke="#8a9299" stroke-width="1"/>
+<rect x="-34" y="-32" width="16" height="10" fill="url(#red)"/><rect x="-10" y="-30" width="20" height="9" fill="url(#can)"/><rect x="16" y="-33" width="18" height="10" fill="#2e7bc4"/>
+<rect x="-30" y="-16" width="22" height="9" fill="url(#can)"/><rect x="0" y="-18" width="16" height="10" fill="url(#red)"/><rect x="20" y="-15" width="14" height="9" fill="#e0b43a"/>
+<rect x="-36" y="-2" width="18" height="9" fill="#2e7bc4"/><rect x="-12" y="-3" width="22" height="10" fill="url(#can)"/><rect x="14" y="-1" width="20" height="9" fill="url(#red)"/>
+<rect x="-32" y="12" width="20" height="10" fill="url(#can)"/><rect x="-6" y="12" width="16" height="9" fill="#e0b43a"/><rect x="16" y="11" width="18" height="10" fill="url(#can)"/>
+<path d="M-40 -36 v64 M40 -36 v64" stroke="#2b2b2b" stroke-width="2"/><path d="M-40 -8 h80 M-40 16 h80" stroke="#222" stroke-width="2"/>
+</g>
+</g>
+<g class="s4">
+<path d="M70 92 L130 92 L124 140 L76 140 Z" fill="url(#pot)"/><ellipse cx="100" cy="93" rx="30" ry="7" fill="url(#melt)"/>
+<path d="M88 80 q4 -8 0 -16 M104 78 q4 -8 0 -16 M118 82 q4 -8 0 -16" stroke="#e8b48a" stroke-width="1.5" fill="none" opacity=".7"/>
+<path d="M140 110 h40" stroke="#6b6e70" stroke-width="2" stroke-dasharray="4 4"/><path d="M180 104 l8 6 l-8 6" fill="#6b6e70"/>
+<g transform="translate(232 98)"><rect x="-18" y="-34" width="36" height="68" rx="6" fill="url(#can)"/><rect x="-18" y="-34" width="36" height="8" rx="4" fill="#c8d0d6"/><rect x="-18" y="-12" width="36" height="22" fill="url(#red)" opacity=".9"/>
+<path d="M-10 -28 l4 0" stroke="#fff" stroke-width="2"/></g>
+<path d="M258 64 l4 -8 l4 8 l8 4 l-8 4 l-4 8 l-4 -8 l-8 -4 Z" fill="#fff8d0"/>
+</g>
+</svg>

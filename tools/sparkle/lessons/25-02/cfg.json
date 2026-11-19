@@ -1,0 +1,70 @@
+{
+ "specAspect": "1600/1071",
+ "specTitle": "What animal is this?",
+ "specAlt": "A close-up of a coiled snake with brown blotches and gold, net-like lines",
+ "specLook": "A real photo from the Everglades. Look at the head, the scales, and the dark blotches. A specimen is one real thing that scientists study. What animal is this? Does it belong in Florida? That's for you to figure out.",
+ "specFound": "Found: in the Everglades, Florida",
+ "specSize": "Size: can grow longer than a grown-up is tall",
+ "o1alt": "A Burmese python wrapped around a tree branch, its head pointing down",
+ "o2alt": "A trail camera photo of a bobcat finding a python curled on its nest",
+ "o3alt": "A python hiding high in a tree, where search crews look for them",
+ "o4alt": "A small brown marsh rabbit sitting in green grass",
+ "realAlt": "A real Burmese python stretched out and hiding in Everglades grass",
+ "taAlt": "A wooden boardwalk raised above a Florida wetland, with a visitor walking on it",
+ "tbAlt": "Bare dirt paths worn through low plants by walkers",
+ "aftAlt": "Leaders and park rangers shovel dirt to start building a Tamiami Trail bridge",
+ "skyAlt": "A blue river winding through green marsh, seen from the air",
+ "skyCap": "The Kissimmee River, Florida · Today",
+ "l1alt": "A river making big loops through wide wetlands, seen from the air",
+ "l2alt": "A wide, straight canal cutting across flat land",
+ "l3alt": "A filled-in canal, now a long strip of bare dirt, beside the curving river",
+ "l4alt": "Flocks of white wading birds on blue water among marsh grass",
+ "e1alt": "A great egret wading in an Everglades marsh",
+ "e1cap": "A great egret in a Florida wetland",
+ "e2alt": "Dry grassy pasture where a wetland was drained",
+ "e2cap": "A drained wetland turned into dry pasture",
+ "e3alt": "The Kissimmee River curving again during restoration, seen from the air",
+ "e3cap": "Restoration on the Kissimmee River",
+ "e4alt": "A belted kingfisher perched on a branch",
+ "e4cap": "A belted kingfisher on the Kissimmee River",
+ "wowAlt": "A striped lionfish with long, feathery fins under a reef ledge",
+ "insetCap": "Lionfish hide under reef ledges.",
+ "musicCredit": "Music: \"Till Eulenspiegel's Merry Pranks\" (Richard Strauss, 1895), played by the United States Navy Band, public domain (via Wikimedia Commons).",
+ "cards": {
+  "d1": {
+   "alt": "Lake Okeechobee seen from space, its water streaked green with algae"
+  },
+  "d1h": {
+   "alt": "Long rows of man-made marsh that clean water, seen from the air",
+   "cap": "A filter marsh that traps fertilizer · South Florida"
+  },
+  "d2": {
+   "alt": "A striped lionfish with long, feathery fins over a reef"
+  },
+  "d2h": {
+   "alt": "A diver using a pole spear to catch a lionfish on a reef",
+   "cap": "A diver removing lionfish from a reef"
+  },
+  "d3": {
+   "alt": "New streets and houses cleared from wild land next to the Everglades, seen from the air in the 1970s"
+  },
+  "d3h": {
+   "alt": "Cypress trees standing in dark swamp water",
+   "cap": "Protected land · Big Cypress National Preserve, Florida"
+  },
+  "d4": {
+   "alt": "A beach packed with hundreds of visitors and umbrellas"
+  },
+  "d4h": {
+   "alt": "Wooden walkovers crossing the dunes to the beach",
+   "cap": "Dune walkovers · Flagler County, Florida"
+  },
+  "d5": {
+   "alt": "Dead gray trees standing near the Florida coast after Hurricane Michael"
+  },
+  "d5h": {
+   "alt": "Volunteers planting young mangroves on a muddy shore",
+   "cap": "Planting young mangroves on a muddy shore"
+  }
+ }
+}

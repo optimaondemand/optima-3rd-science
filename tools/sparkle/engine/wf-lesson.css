@@ -614,3 +614,8 @@ body.wf-dim .wf-wrap{position:relative;z-index:86}
 @keyframes wlScoop{40%{transform:translateY(-10px)}100%{transform:translateY(-6px)}}
 @keyframes wlScoopIn{to{opacity:1}}
 @media (prefers-reduced-motion:reduce){.wl-swatch.fx-soak:after{animation:none;height:92%}.wl-swatch.fx-scoop{animation:none}.wl-swatch.fx-scoop:after{animation:none;opacity:1}}
+/* 25.01: scissors (snip one species out) and fence (protect the place) */
+.wl-swatch.sw-scissors{--sw:radial-gradient(circle at 26% 70%,transparent 0 16%,#d0453a 17% 27%,transparent 28%),radial-gradient(circle at 26% 30%,transparent 0 16%,#d0453a 17% 27%,transparent 28%),linear-gradient(160deg,transparent 46%,#9aa3ab 46% 52%,transparent 52%),linear-gradient(20deg,transparent 46%,#c3cad0 46% 52%,transparent 52%);width:66px;height:46px;border-radius:8px;background-color:#f2ede2;box-shadow:inset 0 -4px 0 #d8cfbd,0 2px 4px rgba(0,0,0,.25)}
+.wl-swatch.sw-fence{--sw:repeating-linear-gradient(90deg,#b98a55 0 9px,transparent 9px 14px),linear-gradient(180deg,transparent 28%,#8c6438 28% 36%,transparent 36% 64%,#8c6438 64% 72%,transparent 72%);width:76px;height:44px;border-radius:4px;background-color:#e9e2d2;box-shadow:inset 0 -5px 0 #7d9a52,0 2px 4px rgba(0,0,0,.25)}
+/* 25.02: hiking boots (visitors walking) */
+.wl-swatch.sw-boots{--sw:radial-gradient(ellipse at 30% 78%,#4a3220 0 22%,transparent 23%),radial-gradient(ellipse at 72% 78%,#4a3220 0 22%,transparent 23%),linear-gradient(90deg,transparent 18%,#7a5232 18% 42%,transparent 42% 58%,#7a5232 58% 82%,transparent 82%),linear-gradient(180deg,transparent 70%,#2b1d12 70% 84%,transparent 84%);width:64px;height:52px;border-radius:8px;background-color:#efe7d6;box-shadow:inset 0 -4px 0 #d6c9ad,0 2px 4px rgba(0,0,0,.25)}
