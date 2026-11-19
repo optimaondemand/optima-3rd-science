@@ -1,6 +1,6 @@
 /* Opti's Wonder Films — cinematic opener engine (G3 science sparkle layer).
    DATA-driven: window.WF_DATA = {kicker, lesson, title, bigQuestion, poster, music:{src,vol}, shots:[...], captions:[...], credits:[...], startTarget}
-   Shot types: leader | black | photo | reveal | xray | split | flash | archive | title. Any photo may add tilt {to (deg), at, dur}: the picture turns over (20.01). fx: dust | caustics | rays | sweep | bubbles | rain. Any shot may carry sfxAt [{at,name,arg}], badge {text, dur} (a corner label, e.g. "◀◀ REWIND") and vhs: true (tape-rewind lines; off with reduced motion) (22.01).  Holds NO lesson content. */
+   Shot types: leader | black | photo | reveal | xray | split | flash | archive | title. Any photo may add tilt {to (deg), at, dur}: the picture turns over (20.01). fx: dust | caustics | rays | sweep | bubbles | rain. A reveal may set cover [c1, c2] (the layer brushed away; default sand dust) and chip 'r,g,b' (the flecks) (27.01). Any shot may carry sfxAt [{at,name,arg}], badge {text, dur} (a corner label, e.g. "◀◀ REWIND") and vhs: true (tape-rewind lines; off with reduced motion) (22.01).  Holds NO lesson content. */
 (function () {
   'use strict';
   var D = window.WF_DATA; if (!D) return;
@@ -156,12 +156,12 @@
     part.width = r.width * dpr; part.height = r.height * dpr; grain.width = Math.max(1, r.width / 3 | 0); grain.height = Math.max(1, r.height / 3 | 0);
     D.shots.forEach(function (s) { if (s._cv) { s._cv.width = r.width * dpr; s._cv.height = r.height * dpr; s._cvReady = false; } }); }
   window.addEventListener('resize', size);
-  function spawn(kind, n, x, y) {
+  function spawn(kind, n, x, y, col) {
     var W = part.width, H = part.height;
     for (var i = 0; i < n; i++) {
       if (kind === 'dust') P.push({ k: kind, x: Math.random() * W, y: Math.random() * H, vx: (Math.random() * .4 + .1) * W / 900, vy: (Math.random() - .5) * H / 1600, r: Math.random() * 2.2 + .6, a: Math.random() * .5 + .2, life: 1e9 });
       if (kind === 'bubble') P.push({ k: kind, x: Math.random() * W, y: H + Math.random() * H * .3, vx: 0, vy: -(Math.random() * 1.4 + .6) * H / 500, r: Math.random() * 5 + 2, a: .55, life: 1e9, ph: Math.random() * 6 });
-      if (kind === 'chip') P.push({ k: kind, x: x, y: y, vx: (Math.random() - .3) * W / 160, vy: -(Math.random() * 1.2 + .2) * H / 160, r: Math.random() * 2.5 + 1, a: .9, life: 50 });
+      if (kind === 'chip') P.push({ k: kind, c: col, x: x, y: y, vx: (Math.random() - .3) * W / 160, vy: -(Math.random() * 1.2 + .2) * H / 160, r: Math.random() * 2.5 + 1, a: .9, life: 50 });
       if (kind === 'rain') P.push({ k: kind, x: Math.random() * W * 1.2 - W * .1, y: Math.random() * H * .15, vx: -W / 2600, vy: (Math.random() * .6 + 1.1) * H / 60, r: Math.random() * .6 + .5, a: Math.random() * .35 + .25, life: 1e9 });
       if (kind === 'spark') P.push({ k: kind, x: W * (.2 + Math.random() * .6), y: H * (.35 + Math.random() * .3), vx: (Math.random() - .5) * W / 900, vy: -(Math.random() * .6 + .1) * H / 600, r: Math.random() * 1.8 + .5, a: 1, life: 120 + Math.random() * 80 });
     }
@@ -177,7 +177,7 @@
       pctx.beginPath(); pctx.arc(p.x, p.y, p.r * (W / 1100), 0, 6.283);
       if (p.k === 'rain') { pctx.strokeStyle = 'rgba(210,225,240,' + a + ')'; pctx.lineWidth = p.r * W / 1100; pctx.beginPath(); pctx.moveTo(p.x, p.y); pctx.lineTo(p.x + p.vx * 3, p.y - p.vy * 1.6); pctx.stroke(); continue; }
       if (p.k === 'bubble') { pctx.strokeStyle = 'rgba(220,245,255,' + a + ')'; pctx.lineWidth = 1.2; pctx.stroke(); }
-      else { pctx.fillStyle = p.k === 'chip' ? 'rgba(214,198,166,' + a + ')' : p.k === 'spark' ? 'rgba(255,224,150,' + a + ')' : 'rgba(255,240,210,' + a + ')'; pctx.fill(); }
+      else { pctx.fillStyle = p.k === 'chip' ? 'rgba(' + (p.c || '214,198,166') + ',' + a + ')' : p.k === 'spark' ? 'rgba(255,224,150,' + a + ')' : 'rgba(255,240,210,' + a + ')'; pctx.fill(); }
     }
   }
   var gimg = null, gtick = 0;
@@ -189,7 +189,7 @@
   function prepReveal(s) {
     var c = s._cv, x = c.getContext('2d'), W = c.width, H = c.height;
     x.globalCompositeOperation = 'source-over';
-    var g = x.createLinearGradient(0, 0, W, H); g.addColorStop(0, '#d9ccb0'); g.addColorStop(1, '#c4b38f'); x.fillStyle = g; x.fillRect(0, 0, W, H);
+    var cv = s.cover || ['#d9ccb0', '#c4b38f'], g = x.createLinearGradient(0, 0, W, H); g.addColorStop(0, cv[0]); g.addColorStop(1, cv[1]); x.fillStyle = g; x.fillRect(0, 0, W, H);
     for (var i = 0; i < 2600; i++) { x.fillStyle = 'rgba(' + (Math.random() < .5 ? '90,74,50' : '250,240,220') + ',' + (Math.random() * .18) + ')';
       x.fillRect(Math.random() * W, Math.random() * H, Math.random() * 3 + 1, Math.random() * 3 + 1); }
     s._cvReady = true; s._stroke = 0;
@@ -203,7 +203,7 @@
       var bx = W * (dir > 0 ? lerp(.04, .96, f) : lerp(.96, .04, f)), by = H * (.12 + row * .125) + Math.sin(f * 9) * H * .03;
       var rr = W * .075; var gr = x.createRadialGradient(bx, by, rr * .2, bx, by, rr);
       gr.addColorStop(0, 'rgba(0,0,0,.95)'); gr.addColorStop(1, 'rgba(0,0,0,0)'); x.fillStyle = gr; x.beginPath(); x.arc(bx, by, rr, 0, 6.283); x.fill();
-      if (k % 3 === 0) spawn('chip', RM ? 0 : 5, bx, by);
+      if (k % 3 === 0) spawn('chip', RM ? 0 : 5, bx, by, s.chip);
       if (k % 10 === 0) sfx('brush');
     }
   }

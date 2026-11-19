@@ -164,7 +164,7 @@ function WL4_INIT(W) {
     if (st.pred) start(true);
     $$('#dig-predict .wl-chip').forEach(function (b) { b.onclick = function () { st.pred = b.dataset.p; sv(); $$('#dig-predict .wl-chip').forEach(function (x) { x.classList.toggle('on', x === b); }); C.ding(); setTimeout(function () { start(); }, 500); }; });
     function start(restore) {
-      $('#dig-predict').innerHTML = '<p style="margin:0">' + WL.predict.mine.replace('{p}', st.pred) + '</p>'; $('#dig-wrap').hidden = false;
+      $('#dig-predict').innerHTML = '<p style="margin:0">' + WL.predict.mine.replace('{p}', (WL.predict.options.filter(function (o) { return o[0] === st.pred; })[0] || [0, st.pred])[1]) + '</p>'; $('#dig-wrap').hidden = false;
       bands.forEach(function (b, i) { prep(b, i); }); paint(); if (st.done >= L.length) end(true);
     }
     function paint() {

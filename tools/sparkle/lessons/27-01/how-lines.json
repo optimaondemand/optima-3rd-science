@@ -1,0 +1,22 @@
+{
+ "how-27-01-specimen": {
+  "page": "Press Inspect specimen. Move the magnifying lens over the star, then tap 3 things you notice.",
+  "say": "Press Inspect specimen. Move the magnifying lens over the star, then tap 3 things you notice."
+ },
+ "how-27-01-compare": {
+  "page": "Put the sun lamp under one tray and the freezer pack under the other: drag them, or tap one, then a tray. Press Run the test. Then swap.",
+  "say": "Put the sun lamp under one tray and the freezer pack under the other: drag them, or tap one, then a tray. Press Run the test. Then swap."
+ },
+ "how-27-01-wall": {
+  "page": "First, make a prediction. Then brush the glowing step: drag across it (or tap it again and again) until the photo shows.",
+  "say": "First, make a prediction. Then brush the glowing step: drag across it (or tap it again and again) until the photo shows."
+ },
+ "how-27-01-det": {
+  "page": "Pick 3 files, one at a time. Tap a clue, then name the change. Predict if heat was added or taken away, and watch the place appear.",
+  "say": "Pick three files, one at a time. Tap a clue, then name the change. Predict if heat was added or taken away, and watch the place appear."
+ },
+ "how-27-01-partc": {
+  "page": "Draw the full state-change cycle for water. Show solid, liquid, and gas with arrows between them. Label each arrow: melting, freezing, evaporation, or condensation. Use color to show hot and cold.",
+  "say": "Draw the full state-change cycle for water. Show solid, liquid, and gas with arrows between them. Label each arrow: melting, freezing, evaporation, or condensation. Use color to show hot and cold."
+ }
+}

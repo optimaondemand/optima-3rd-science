@@ -1,0 +1,395 @@
+#!/usr/bin/env python3
+"""Writes tools/sparkle/lessons/27-01/lesson.json, how-lines.json, scripts.json (27.01: no voices recorded; scripts only)."""
+import json, os
+D = os.path.dirname(os.path.abspath(__file__))
+HS = json.load(open(f'{D}/hotspots.json'))
+
+def ph(t, d, img, alt, place, frm=(1.0, .5, .5), to=(1.1, .5, .5), fade=.8, **kw):
+    s = {"t": t, "d": d, "type": "photo", "img": img, "alt": alt, "from": list(frm), "to": list(to), "place": place, "fade": fade}
+    s.update(kw); return s
+
+
+film = {
+  "id": "g3sci-27-01", "mount": "wf-film", "kicker": "Opti's Wonder Films", "lesson": "Lesson 27.01 · How Does Matter Change When Heated or Cooled?",
+  "title": "Snow in Florida",
+  "bigQuestion": "What happens to matter when it gets hotter or colder?",
+  "poster": "f_snow", "endPoster": "f_gulf", "startTarget": "#tab-vocab", "music": {"src": "music", "vol": 0.55},
+  "shots": [
+    {"t": 0, "d": 3.4, "type": "leader", "top": "Optima Academy", "name": "Opti's Wonder Films", "bottom": "presents", "fade": 1.0},
+    ph(3.4, 6.6, "f_sand", "Soft white sand dunes with sea oats under a clear blue sky", "Pensacola Beach, Florida",
+       frm=(1.0, .5, .55), to=(1.12, .5, .6), fade=1.0, sfxAt=[{"at": 0.6, "name": "whoosh"}]),
+    ph(10.0, 6.4, "f_snow", "Snow covers the ground and a frozen pond by a row of houses under a blue sky", "Milton, Florida · January 21, 2025",
+       frm=(1.12, .5, .5), to=(1.0, .5, .55), sfx="shimmer"),
+    {"t": 16.4, "d": 3.0, "type": "flash", "lines": ["Snow?", "In Florida?"], "beats": [0.15, 1.2], "fade": 0.15},
+    ph(19.4, 6.2, "f_air", "Fields and forests seen from high in the air, with white snow on the open fields", "Madison County, Florida · January 22, 2025",
+       frm=(1.0, .5, .5), to=(1.15, .5, .62)),
+    ph(25.6, 5.4, "f_sunset", "An orange sunset over a pond, with snow along the path beside it", "Milton, Florida · Sunset, January 21, 2025",
+       frm=(1.0, .5, .5), to=(1.1, .45, .5)),
+    ph(31.0, 4.6, "f_ellasnow", "Snow on the ground beside a blue lake with a park bench and a lamp post", "Lake Ella, Tallahassee · January 22, 2025",
+       frm=(1.0, .5, .5), to=(1.06, .5, .5), fx=["rays"]),
+    {"t": 35.6, "d": 6.6, "type": "reveal", "img": "f_ella", "alt": "Green trees and a sunny path beside the same blue lake on a warm day",
+     "from": [1.0, .5, .5], "to": [1.08, .5, .5], "revealAt": 0.6, "revealDur": 4.6, "place": "Lake Ella, Tallahassee · on a warm, sunny day", "fade": 0.6,
+     "cover": ["#f7fbff", "#dfe9f2"], "chip": "245,250,255"},
+    ph(42.2, 5.0, "f_melt", "Melting snow around the edge of a dark puddle of water", "Melting snow makes a puddle",
+       frm=(1.1, .5, .5), to=(1.0, .5, .5)),
+    ph(47.2, 5.4, "f_gulf", "Palm trees in silhouette as the sun sets over the Gulf of Mexico", "The Gulf coast of Florida · Sunset",
+       frm=(1.0, .5, .5), to=(1.08, .5, .5), fade=0.9),
+    {"t": 52.6, "d": 6.0, "type": "title", "fade": 1.2}
+  ],
+  "captions": [
+    {"t": 3.8, "d": 5.8, "text": "Pensacola Beach, Florida. It looks like snow, but it's soft white sand.", "voice": "opti-1"},
+    {"t": 10.4, "d": 5.6, "text": "Then, on January 21, 2025, real snow fell in Florida!", "voice": "opti-2"},
+    {"t": 16.5, "d": 2.8, "text": "Snow? In Florida?", "voice": "opti-3"},
+    {"t": 19.8, "d": 5.6, "text": "High in freezing clouds, water turned into snow. Fields turned white.", "voice": "opti-4"},
+    {"t": 26.0, "d": 4.8, "text": "That night, the air stayed below freezing.", "voice": "opti-5"},
+    {"t": 31.4, "d": 3.8, "text": "Then the Sun came out.", "voice": "opti-6"},
+    {"t": 36.2, "d": 5.6, "text": "Sunlight warmed the snow, and it melted into water.", "voice": "opti-7"},
+    {"t": 42.6, "d": 4.4, "text": "Soon even the puddles were gone. Where did the water go?", "voice": "opti-8"},
+    {"t": 47.6, "d": 4.8, "text": "What happens to matter when it gets hotter or colder?", "voice": "opti-9"}
+  ]
+}
+
+specimen = {
+  "img": "spec", "aspect": "1/1", "radius": 0.07, "hotspots": HS,
+  "kicker": "🔎 Mystery specimen", "title": "What is this tiny star?",
+  "alt": "A very old black-and-white photo of a six-armed, star-shaped crystal with feathery branches, on a round black card",
+  "look": "A very old photo of one tiny, real thing, taken through a microscope. It sits on a black card. Look at its parts: the middle, the arms, the branches, and the tips. A specimen is one real thing that scientists study. What is it made of? That's for you to figure out.",
+  "do": "Press Inspect specimen. Move the magnifying lens over the star, then tap 3 things you notice.",
+  "number": "No. 27.01-A",
+  "card": ["<b>Specimen A</b>", "Photographed: about 1905, in Vermont", "Real size: smaller than your fingernail", "What is it? <i>You decide.</i>"],
+  "notice": "I notice… (one thing you see on the specimen)",
+  "wonder": "I wonder… (one question you want answered by the end of the lesson)"
+}
+
+words = [
+  ["🧊", "solid", "Matter with a fixed shape. Solids keep their shape unless a force changes them."],
+  ["💧", "liquid", "Matter that flows and takes the shape of its container. Water and juice are liquids."],
+  ["💨", "gas", "Matter that spreads out to fill all the space available. Air is a gas."],
+  ["🔥", "melting", "When a solid gets warm enough to turn into a liquid. Ice melts into water."],
+  ["❄️", "freezing", "When a liquid gets cold enough to turn into a solid. Water freezes into ice."],
+  ["☁️", "evaporation", "When a liquid turns into a gas. Warmth makes it happen faster. Puddles evaporate on sunny days."],
+  ["🌫️", "condensation", "When a gas cools and turns back into a liquid. Water drops on a cold glass are condensation."]
+]
+
+parts = [
+  {"kicker": "🌱 Part 1", "title": "Three States of Matter",
+   "html": "<p>All matter is a solid, a liquid, or a gas. A rock is a solid. Juice is a liquid. The air around you is a gas.</p><p>Water is special. You can find it in all three states. Ice is solid water. Water vapor is water as a gas, and you can't see it.</p>"},
+  {"kicker": "🌤 Part 2", "title": "Heating Changes Matter",
+   "html": "<p>When you add heat, matter can change state. If ice gets warm enough, it melts into liquid water.</p><p>Liquid water can also evaporate. It turns into water vapor and mixes into the air. Warmth makes evaporation faster, so puddles dry quickly on hot days. Water doesn't have to boil to evaporate.</p>"},
+  {"kicker": "🌍 Part 3", "title": "Cooling Changes It Back",
+   "html": "<p>The Sun's light heats land, water, and air. At night or in the shade, the Sun's heat is missing, so things lose heat and cool down.</p><p>Cooling works the opposite way from heating. When water vapor cools, it turns back into tiny drops of liquid. That is condensation. When liquid water gets cold enough, it freezes into ice.</p>"},
+  {"kicker": "🕵️ Part 4", "title": "State Change Files"}
+]
+
+order = {
+  "mix": [2, 0, 3, 1], "hint": "Start with the ice in the freezer.",
+  "kicker": "🎞️ Put the scenes in order", "title": "What happens to an ice cube on a warm day?",
+  "look": "Four real photos show what happens to frozen water on a warm day, from the freezer to a dry spot. They are mixed up. The dark film strip has four empty frames, from first (1) to last (4).",
+  "done": "🎬 Your order is right. Now watch it as a movie!",
+  "scenes": [
+    {"img": "o1", "alt": "A white plastic tray of ice cubes and frosty water bottles inside a freezer", "text": "Ice cubes sit in a cold freezer. They are solid.", "play": "Frozen solid.",
+     "miss": ["", "The ice starts in the freezer. Try frame 1.", "The ice starts in the freezer. Try frame 1.", "The ice starts in the freezer. Try frame 1."]},
+    {"img": "o2", "alt": "A clear ice cube, partly melted, sitting in a little pool of water on a wooden table in the sun", "text": "Out on a warm table, the ice cube melts.", "play": "It melts.",
+     "miss": ["It has to be frozen first. Try a later frame.", "", "It melts before it is a puddle. Try an earlier frame.", "It melts before the puddle dries. Try an earlier frame."]},
+    {"img": "o3", "alt": "A wide puddle of water on a dirt path between green trees", "text": "Now the water is a liquid puddle.", "play": "A puddle.",
+     "miss": ["The ice must melt first. Try a later frame.", "The puddle comes after the ice melts. Try a later frame.", "", "The puddle comes before it dries up. Try an earlier frame."]},
+    {"img": "o4", "alt": "A dry, faded patch in green grass where a puddle used to be", "text": "Later, the puddle is gone. The water evaporated into the air.", "play": "It evaporates.",
+     "miss": ["This is the last step. Try frame 4.", "This is the last step. Try frame 4.", "This is the last step. Try frame 4.", ""]}
+  ],
+  "check": {
+    "q": "A puddle dries up on a sunny afternoon. Mia says, \"The water is gone forever.\" What do you think?",
+    "options": [
+      {"t": "Right. The water disappeared.", "miss": "Look at the last frame of the movie again. Where did the water go?"},
+      {"t": "The water evaporated. It turned into water vapor, a gas in the air.", "ok": "Yes! The water is still there. It's water vapor now, a gas you can't see."}
+    ]
+  }
+}
+
+movie = {
+  "model": "ice-model.svg", "modelBox": {"left": "0%", "width": "100%", "rot": 0}, "start": "0%", "bg": "lab",
+  "real": "real", "realAlt": "Real snow melting around the edge of a dark puddle of water",
+  "stamp": "STILL WATER!", "endCap": "Real melting snow.",
+  "beats": [
+    {"at": 0, "cap": "1 · Solid ice.", "model": {"top": "0%", "rot": 0, "show": "s1"}, "counter": ["0 minutes"]},
+    {"at": 2600, "cap": "2 · It melts.", "model": {"show": "s2"}, "counter": ["10 minutes"]},
+    {"at": 5200, "cap": "3 · A liquid puddle.", "model": {"show": "s3"}, "counter": ["1 hour"]},
+    {"at": 7800, "cap": "4 · It evaporates.", "model": {"show": "s4"}, "counter": ["A few hours"], "sfx": "shimmer"},
+    {"at": 10400, "cap": "The real thing.", "model": {"hide": True}, "real": True},
+    {"at": 12200, "stamp": True}
+  ]
+}
+
+compare = {
+  "kicker": "🧪 The Hot-Cold Test", "title": "Add heat, or take heat away?",
+  "look": "Two real specimens, each on a lit tray. Specimen A is ice. Specimen B is a glass of water. Under the trays are two tools: a sun lamp that adds heat, and a freezer pack that takes heat away.",
+  "trays": [
+    {"id": "A", "img": "ta", "alt": "Clear ice cubes stacked up in a pile", "label": "Specimen A"},
+    {"id": "B", "img": "tb", "alt": "Water pouring into a clear glass", "label": "Specimen B"}
+  ],
+  "materials": [{"key": "lamp", "label": "Sun lamp (adds heat)", "swatch": "lamp"}, {"key": "pack", "label": "Freezer pack (takes heat away)", "swatch": "ice"}],
+  "ask": [
+    {"q": "Which specimen is a solid that keeps its own shape?", "ans": "A", "ok": "Yes. Specimen A is ice. Each cube keeps its shape.", "miss": "Look closely. Which one has hard corners and edges?"},
+    {"q": "Which specimen is a liquid that takes the shape of its container?", "ans": "B", "ok": "Yes. Specimen B is water. It flows and fills the glass.", "miss": "Look again. Which one is pouring and filling the glass?"}
+  ],
+  "press": "🎯 Run the test",
+  "testDo": "Put the sun lamp under one tray and the freezer pack under the other: drag them, or tap one, then a tray. Press <b>Run the test</b>. Then swap.",
+  "disclaimer": "This is a model. Real ice takes minutes to melt, and water takes hours to freeze.",
+  "results": {
+    "Alamp": {"text": "The ice melts into a puddle of liquid water.", "fx": "glow"},
+    "Apack": {"text": "The ice stays frozen. It is already a solid.", "fx": "frost"},
+    "Blamp": {"text": "The water gets warmer. Slowly, a little of it evaporates into the air.", "fx": "glow"},
+    "Bpack": {"text": "The water freezes into solid ice.", "fx": "frost"}
+  },
+  "best": ["Alamp", "Bpack"],
+  "frame": "When I ___, it ___.", "claimLead": "When I", "claimMid": "it",
+  "claim": {
+    "A": {"feat": ["added heat", "took heat away"], "featOk": 0, "eat": ["melted into a liquid", "froze into a solid"], "eatOk": 0},
+    "B": {"feat": ["added heat", "took heat away"], "featOk": 1, "eat": ["melted into a liquid", "froze into a solid"], "eatOk": 1}
+  },
+  "curator": {
+    "A": "<b>Heat in, ice melts.</b> Adding heat turns solid ice into liquid water.",
+    "B": "<b>Heat out, water freezes.</b> Taking heat away turns liquid water into solid ice."
+  },
+  "missFeat": "Look at your test for {label} again. Which tool changed it?",
+  "missClaim": "Think about your test. Did it melt, or did it freeze?",
+  "done": "Heating and cooling change the state of water. Add heat, and ice melts. Take heat away, and water freezes.",
+  "after": {"kicker": "🎬 Behind the scenes · Ice from a lake", "img": "aft", "alt": "Men in heavy coats saw big blocks of ice from a frozen lake, with horses in the background",
+            "html": "Before electric freezers, people sawed big blocks of ice from frozen lakes in winter. They packed the blocks in sawdust inside icehouses, and the ice could stay frozen into summer."}
+}
+
+wall = {
+  "kicker": "🌤️ The Sky Ladder", "title": "From a snowy mountaintop down to the warm Gulf",
+  "look": "A model ladder of four real places with water, from high and cold at the top to the warm Gulf at the bottom. Each step has a real photo. The brass dial on the left shows where each place is.",
+  "do": "First, make a prediction. Then brush the glowing step: drag across it (or tap it again and again) until the photo shows.",
+  "predict": {"q": "Where do you predict water stays frozen solid: high on a mountain, or down at the Gulf?",
+              "options": [["mtn", "High on a mountain"], ["gulf", "Down at the Gulf"]], "answer": "mtn",
+              "mine": "Your prediction: <b>{p}</b>. Let's climb down and find out.",
+              "confirm": "You predicted the mountain. You were right: up high the air is freezing cold, so the water stays snow and ice.",
+              "change": "You predicted the Gulf. The ladder changed that idea: the Gulf stays liquid, but up high the air is freezing cold, so the water stays snow and ice."},
+  "sky": "sky", "skyAlt": "Tall white clouds piled up in a blue sky", "skyCap": "Clouds over Pine Island Sound, Florida",
+  "unit": "Step", "found": "Clue found at Step {n}",
+  "elevator": ["High", "Mountain", "Clouds", "Low air", "Sea level"],
+  "line": ["HIGH AND COLD", "LOW AND WARM"],
+  "lockTag": "🔒 Brush the step above first", "locked": "Brush the step above first. We go one step at a time.",
+  "first": "Brush the glowing top step. Drag across it (or tap it again and again).", "next": "Keep going. Brush Step {n}.",
+  "endTitle": "All 4 steps explored",
+  "endText": "Look at the ladder. The same water can be a solid, a liquid, or a gas. Up high, cold air freezes it. Down low, the Sun warms it.",
+  "rule": "<b>Heating and cooling change the state of water.</b> The Sun's heat makes water evaporate. Cooling turns water vapor back into drops, and freezing cold turns water into ice.",
+  "choices": ["❄️ Solid: frozen snow and ice", "☁️ Liquid: tiny drops made by cooling", "💨 Gas: water vapor you can't see", "🌊 Liquid: water warmed by the Sun"],
+  "layers": [
+    {"name": "Step 1 · A mountaintop", "rock": "snowcap", "img": "l1", "alt": "A tall mountain covered in thick white snow under a deep blue sky",
+     "ask": "Look at Step 1. Read the clue AND the photo. What do you find?",
+     "clue": "Mount Rainier is 4,392 meters high. The air at the top is freezing cold, so water stays frozen as snow and ice.",
+     "ans": 0, "ok": "Yes! Freezing air keeps the water solid.", "tag": "❄️ Mountaintop · solid",
+     "miss": {"1": "Not yet. Read the clue: is this water frozen or in drops?", "2": "Not yet. You can see this water. Look at the photo.", "3": "Not yet. Is this water warm or freezing?"},
+     "env": "e1", "envAlt": "The snowy top of Mount Rainier with a flat cloud above it", "envCap": "Mount Rainier National Park, Washington"},
+    {"name": "Step 2 · A cloud", "rock": "cloud", "img": "l2", "alt": "Puffy white clouds piled high in a blue sky",
+     "ask": "Look at Step 2. Read the clue AND the photo. What do you find?",
+     "clue": "A cloud is made of billions of tiny drops of liquid water. They form when water vapor rises, cools, and condenses.",
+     "ans": 1, "ok": "Yes! Cooling turned water vapor back into tiny drops.", "tag": "☁️ Cloud · liquid drops",
+     "miss": {"0": "Not quite. Read the clue: are the drops frozen?", "2": "Close! The vapor was a gas, but the clue says it became drops.", "3": "Not yet. This water is up in the sky."},
+     "env": "e2", "envAlt": "Tall white clouds over green water and a low shoreline", "envCap": "Clouds over Pine Island Sound, Florida"},
+    {"name": "Step 3 · Air over a marsh", "rock": "haze", "img": "l3", "alt": "A green salt marsh with winding blue water under big clouds",
+     "ask": "Look at Step 3. Read the clue AND the photo. What do you find?",
+     "clue": "The Sun warms the marsh water. Some of it evaporates into water vapor. You can't see it, but it is in the air!",
+     "ans": 2, "ok": "Yes! Evaporation puts water vapor, a gas, into the air.", "tag": "💨 Marsh air · gas",
+     "miss": {"0": "Not yet. Is anything frozen here?", "1": "Not quite. Read the clue: what is in the air that you can't see?", "3": "Close! But the clue is about the air above the water."},
+     "env": "e3", "envAlt": "A wide salt marsh with tall pine trees on the far shore", "envCap": "St. Marks National Wildlife Refuge, Florida"},
+    {"name": "Step 4 · The Gulf", "rock": "gulf", "img": "l4", "alt": "Clear blue-green water over white sand at a Florida beach",
+     "ask": "Look at Step 4. Read the clue AND the photo. What do you find?",
+     "clue": "The Sun warms the Gulf of Mexico. Its water stays liquid, and every day some of it evaporates.",
+     "ans": 3, "ok": "Yes! The Sun keeps the Gulf water warm and liquid.", "tag": "🌊 The Gulf · liquid",
+     "miss": {"0": "This is the opposite end of the ladder. Read the clue.", "1": "Not this one. These drops are not up in the sky.", "2": "Close! But this step is about the water itself."},
+     "env": "e4", "envAlt": "The sun sets over calm Gulf water and a sandy beach", "envCap": "Sunset over the Gulf · Sanibel, Florida"}
+  ],
+  "mix": {
+    "q": "Kai says, \"Water can't evaporate unless it boils. The Gulf never boils, so it can't evaporate.\" Is Kai right?",
+    "options": [
+      {"t": "Yes. Only boiling water turns into a gas.", "miss": "Think about the marsh on Step 3. Was that water boiling?"},
+      {"t": "No. Water evaporates at everyday temperatures. The Sun's warmth makes it faster.", "ok": "Yes! Puddles, marshes, and oceans all evaporate without boiling. Warmth just speeds it up."}
+    ]
+  }
+}
+
+wow = {"kicker": "🎬 Director's cut", "title": "The Snowflake Man",
+  "img": "wow", "alt": "A man in a hat and coat bends over a big old camera on a wooden stand outside a farmhouse",
+  "caption": "Wilson Bentley with his snowflake camera, Vermont",
+  "html": "<p style=\"margin:0 0 8px\">In 1885, a Vermont farmer named Wilson Bentley became the first person to photograph a single snowflake. He hooked a microscope to his camera and worked out in the cold, so the flakes would not melt.</p><p style=\"margin:0\">He photographed more than 5,000 snowflakes. The mystery specimen at the start of this lesson is one of his photos!</p>",
+  "inset": "inset", "insetCap": "Some of Bentley's snowflake photos."}
+
+keyIdea = "Matter can be a solid, a liquid, or a gas. Adding heat can melt a solid into a liquid and evaporate a liquid into a gas. Taking heat away can condense a gas back into a liquid and freeze a liquid into a solid. The Sun heats water, land, and air; when the Sun is gone, they cool."
+
+M = ["🔥 Melting (solid → liquid)", "❄️ Freezing (liquid → solid)", "☁️ Evaporation (liquid → gas)", "💧 Condensation (gas → liquid)"]
+SHORT = ["melting", "freezing", "evaporation", "condensation"]
+SOL = [["add", "🔥 Heat was added"], ["away", "❄️ Heat was taken away"]]
+def card(id_, img, alt, clues, orgAns, orgMiss, envAns, envMiss, envImg, envAlt, envCap, reveal, rb, bts):
+    return {"id": id_, "img": img, "alt": alt, "clues": clues, "org": M, "orgAns": orgAns, "orgShort": SHORT[orgAns], "orgMiss": orgMiss,
+            "env": dict(SOL)[envAns].split(" ", 1)[1], "envAns": envAns, "envMiss": envMiss, "envImg": envImg, "envAlt": envAlt, "envCap": envCap, "reveal": reveal, "rebuildEnv": rb, "bts": bts}
+
+det = {
+  "look": "Five real places where water (or rock!) changed state. Each card shows what scientists saw. Under the cards is an evidence chart, a table that holds what you figure out.",
+  "do": "Pick 3 files, one at a time. Tap a clue, then name the change. Predict if heat was added or taken away, and watch the place appear.",
+  "noun": "File", "need": 3, "inferQ": "Which change happened?", "inferDone": "Change", "chartSo": "so the change is",
+  "predict": {"q": "Do you predict heat was added or taken away?", "options": SOL},
+  "kicker": "The place today", "enough": "You already solved 3 state change files. Nice work, scientist!",
+  "cols": ["File", "My observation", "Change", "Heat", "My evidence"],
+  "write": {"label": "File __ shows ___. It is ___, because ___.", "starter": "Start with: \"File __ shows…\"", "min": 15,
+            "chips": [["trait", "Names what you see"], ["chg", "Names a change"], ["because", "Gives a reason (because, so)"]]},
+  "items": [
+    card("A", "d1", "Fruit tree branches coated in clear ice, with icicles hanging down",
+         [{"t": "Branches coated in clear ice and icicles", "ok": True}, {"t": "Steam rising into the air", "miss": "Look again. Is anything steaming?"}, {"t": "A puddle drying in the sun", "miss": "Look again. Is the water on the branches liquid or solid?"}],
+         1, "The water on the branches was liquid, and now it is solid ice. Which change is that? Try again.",
+         "away", "Ice forms when water gets cold. Was heat added or taken away? Try again.",
+         "d1h", "Rows of green orange trees on a sunny day in Florida", "A Florida orange grove · Sebring, Florida",
+         "On freezing nights, farmers spray water on their fruit trees. The water freezes into a coat of ice that helps protect the buds. Florida orange growers use this trick too.", "grove",
+         "These icy trees are apple trees in Italy. The ice keeps the buds near 0 °C, warmer than the freezing air around them."),
+    card("B", "d2", "Wrinkled gray lava rock with a glowing red-orange hole of liquid lava inside",
+         [{"t": "Hard gray crust around glowing liquid rock", "ok": True}, {"t": "Tiny drops of dew", "miss": "Look again. What is glowing?"}, {"t": "Snow on the ground", "miss": "Look again. Is this cold or very hot?"}],
+         1, "The glowing lava is liquid rock. The gray crust is liquid rock that turned solid. Which change turns a liquid into a solid? Try again.",
+         "away", "The lava is cooling in the air. Was heat added or taken away? Try again.",
+         "d2h", "Young ferns growing out of old black lava rock", "Hawaiʻi Volcanoes National Park, Hawaiʻi",
+         "Kīlauea lava erupts at about 1,170 °C. When it cools in the air, it freezes into solid black rock. That's brand-new land! Later, ferns grow on it.", "lava",
+         "Scientists use the word freezing for any liquid that turns solid, even melted rock."),
+    card("C", "d3", "A glacier above a turquoise lake dotted with floating chunks of ice",
+         [{"t": "Chunks of ice floating in a lake below a glacier", "ok": True}, {"t": "Water drops on a spider web", "miss": "Look again. What is floating in the lake?"}, {"t": "Glowing liquid rock", "miss": "Look again. Is anything glowing?"}],
+         0, "Solid ice from the glacier is turning into lake water. Which change is that? Try again.",
+         "add", "Summer sun warms the glacier. Was heat added or taken away? Try again.",
+         "d3h", "A gray-green lake with floating ice, seen from high above", "Grinnell Glacier · Glacier National Park, Montana, 2023",
+         "In summer, the Sun warms Grinnell Glacier. Its ice melts into water that fills the lake below. The glacier is much smaller today than it was 100 years ago.", "glacier",
+         "Scientists take photos from the same spot year after year to see how much ice has melted."),
+    card("D", "d4", "Dry, cracked mud where water used to be, with dry grass at the edge",
+         [{"t": "Dry mud with deep cracks", "ok": True}, {"t": "Ice on tree branches", "miss": "Look again. Is there any ice?"}, {"t": "A deep, full pond", "miss": "Look again. Is there any water left?"}],
+         2, "The liquid water in this mud turned into a gas and went into the air. Which change is that? Try again.",
+         "add", "Day after day, the Sun heated this mud. Was heat added or taken away? Try again.",
+         "d4h", "A wide, grassy marsh under a blue sky with puffy clouds", "Sawgrass prairie · Everglades National Park, Florida",
+         "In Florida's dry season, the Sun heats shallow ponds day after day. The water evaporates, and the mud dries and cracks. When the rains come back, the ponds fill again.", "marsh",
+         "From about November to April, the Everglades get much less rain. Scientists call it the dry season."),
+    card("E", "d5", "A spider web covered in tiny, shiny drops of water",
+         [{"t": "Tiny drops of water on a spider web in the morning", "ok": True}, {"t": "Dry, cracked mud", "miss": "Look again. Is it dry?"}, {"t": "Chunks of floating ice", "miss": "Look again. Are the drops liquid or solid?"}],
+         3, "The drops came from water vapor in the air. A gas turned into a liquid. Which change is that? Try again.",
+         "away", "The night air cooled the web. Was heat added or taken away? Try again.",
+         "d5h", "Drops of morning dew on a green blade of grass", "Morning dew on grass",
+         "On a cool night, water vapor in the air touches cold things and condenses into drops of dew. When the Sun rises, the dew evaporates again.", "meadow",
+         "Dew is not rain. It forms right on the spot, from water vapor in the air.")
+  ]
+}
+
+rebuild = {"title": "Use your evidence to rebuild the scene", "missPrefix": "Hmm. Look at your state change file again. ", "kicker": "🌍 Rebuild the scene", "whyStart": "I chose this because the water…",
+  "envs": [
+    {"key": "grove", "name": "🍊 A fruit farm on a freezing night", "img": "d1h", "cap": "Icy branches…"},
+    {"key": "lava", "name": "🌋 A volcano in Hawaiʻi", "img": "d2h", "cap": "Hot rock cooling…"},
+    {"key": "glacier", "name": "🏔️ A mountain glacier in summer", "img": "d3h", "cap": "Ice turning to water…"},
+    {"key": "marsh", "name": "🌾 The Everglades in the dry season", "img": "d4h", "cap": "Ponds drying up…"},
+    {"key": "meadow", "name": "🌿 A grassy field at dawn", "img": "d5h", "cap": "Cool morning drops…"}
+  ],
+  "life": [
+    {"name": "❄️ Ice coating fruit trees", "img": "d1h", "env": "grove", "miss": "Fruit trees get an ice coat on the farm."},
+    {"name": "🌋 Lava hardening into rock", "img": "d2h", "env": "lava", "miss": "Lava cools into rock at the volcano."},
+    {"name": "🧊 Ice melting into a lake", "img": "d3h", "env": "glacier", "miss": "The melting ice belongs at the glacier."},
+    {"name": "☁️ A pond drying into cracked mud", "img": "d4h", "env": "marsh", "miss": "Ponds dry up in the Everglades dry season."},
+    {"name": "💧 Dew drops on a web", "img": "d5h", "env": "meadow", "miss": "Dew forms in the field at dawn."}
+  ]}
+
+quiz = [
+  {"q": "What happens to ice when it is heated?", "options": [
+    {"t": "It melts and becomes liquid water", "ok": "🌲 Correct! When ice is heated, it melts. It changes from a solid to a liquid."},
+    {"t": "It gets harder and stronger", "miss": "Think about what happens to an ice cube left on a warm plate. Does it stay solid?"},
+    {"t": "It turns directly into a gas", "miss": "Think about what happens to an ice cube left on a warm plate. Does it stay solid?"}]},
+  {"q": "What is evaporation?", "options": [
+    {"t": "When a gas turns into a liquid", "miss": "Evaporation is about a liquid changing. Think about what happens to puddles on a hot sidewalk."},
+    {"t": "When a liquid heats up and turns into a gas", "ok": "🌲 Yes! Evaporation is when a liquid turns into a gas, like puddles drying on a sunny day."},
+    {"t": "When a solid breaks into smaller pieces", "miss": "Evaporation is about a liquid changing. Think about what happens to puddles on a hot sidewalk."}]},
+  {"q": "A student leaves a glass of water in the freezer overnight. In the morning, the water is ice. What change happened?", "options": [
+    {"t": "Melting", "miss": "The water was liquid, and now it is solid ice. What is the name for a liquid turning into a solid?"},
+    {"t": "Evaporation", "miss": "The water was liquid, and now it is solid ice. What is the name for a liquid turning into a solid?"},
+    {"t": "Freezing", "ok": "🌲 Exactly! The liquid water froze. It changed from a liquid to a solid because it was cooled."}]}
+]
+
+partA = {"title": "Label the state changes", "do": "Read each one. Pick the best answer, or type your answer.", "items": [
+  {"n": 1, "q": "Solid → Liquid: what is this change called?", "type": "choice", "options": [
+    {"t": "Melting", "ok": "Yes. A solid that warms up melts into a liquid."},
+    {"t": "Freezing", "miss": "Freezing goes the other way, liquid to solid. Which change turns a solid into a liquid?"},
+    {"t": "Condensation", "miss": "Condensation turns a gas into a liquid. Here a solid becomes a liquid."}]},
+  {"n": 2, "q": "Liquid → Gas: what is this change called?", "type": "choice", "options": [
+    {"t": "Melting", "miss": "Melting turns a solid into a liquid. Here a liquid becomes a gas."},
+    {"t": "Evaporation", "ok": "Yes. A liquid that evaporates turns into a gas."},
+    {"t": "Freezing", "miss": "Freezing turns a liquid into a solid. Here a liquid becomes a gas."}]},
+  {"n": 3, "q": "Gas → Liquid: what is this change called?", "type": "choice", "options": [
+    {"t": "Evaporation", "miss": "Evaporation goes the other way, liquid to gas. Which change turns a gas back into a liquid?"},
+    {"t": "Freezing", "miss": "Freezing turns a liquid into a solid. Here a gas becomes a liquid."},
+    {"t": "Condensation", "ok": "Yes. When water vapor cools, it condenses into liquid drops."}]}
+]}
+
+assign = {
+  "partA": partA,
+  "partB": {"title": "Short answer", "do": "Answer in complete sentences. Use your science words.", "items": [
+    {"n": 1, "q": "What causes matter to change from one state to another? Use the word \"temperature\" or \"heat\" in your answer.", "type": "text", "min": 12, "chips": [["heat", "Uses temperature or heat"], ["chg", "Names a change (melting, freezing…)"]]},
+    {"n": 2, "q": "How is evaporation different from melting? They both involve heating, so what is different?", "type": "text", "min": 12, "chips": [["evap", "Tells what evaporation does"], ["melt", "Tells what melting does"]]}
+  ]},
+  "write": {"title": "How does heating and cooling cause water to change from one state to another?", "do": "Pick one from your evidence chart. Answer the three questions. Use at least one of the science words under the boxes.",
+    "vocab": ["melting", "evaporation", "freezing"], "need": 1,
+    "prompts": [["What do you think?", "Start with: \"I think heating and cooling change water because…\""],
+                ["What did you observe or learn that supports your thinking?", "Start with: \"I know this because I learned that when heat is added…\""],
+                ["Why does that make sense?", "Start with: \"This makes sense because the Sun heats water and…\""]]},
+  "partC": {"do": "Draw the full state-change cycle for water. Show solid, liquid, and gas with arrows between them. Label each arrow: melting, freezing, evaporation, or condensation. Use color to show hot and cold.",
+            "labels": ["Which changes need heat added", "Which changes need heat taken away"]},
+  "checklist": [
+    {"k": "det", "t": "My evidence chart has 3 state change files and my explanation.", "req": {"det": 3, "text": {"in-det": 15}}},
+    {"k": "a", "t": "Part A: all three state changes labeled.", "req": {"choice": ["a1", "a2", "a3"]}},
+    {"k": "b", "t": "Part B: questions 1 and 2.", "req": {"text": {"in-b1": 12, "in-b2": 12}}},
+    {"k": "c", "t": "Part C: my drawing and both labels.", "req": {"sketch": True, "text": {"in-c1": 6, "in-c2": 6}}},
+    {"k": "w", "t": "Write and explain, with at least one science word.", "req": {"text": {"in-w1": 10, "in-w2": 10, "in-w3": 10}, "vocab": 1}}
+  ]
+}
+
+premiere = {"title": "Premiere my state-change story", "thinkLabel": "The change I'll watch for at home is", "director": "JUNIOR MATTER SCIENTIST", "storyKicker": "My state-change story",
+  "frames": [
+    {"k": "formation", "label": "The ice cube's day", "img": "o2", "cap": "The ice cube's day: frozen, melted, puddle, gone."},
+    {"k": "compare", "label": "The Hot-Cold Test", "img": "ta", "cap": "The Hot-Cold Test: heat in melts, heat out freezes."},
+    {"k": "wall", "label": "The Sky Ladder", "img": "l2", "cap": "The Sky Ladder: snow, cloud, vapor, and the warm Gulf."},
+    {"k": "det", "label": "State change files", "img": "d2", "cap": "State change files: was heat added or taken away?"}]}
+
+nxt = {"title": "Coming up next: 27.02", "text": "Investigation: Heating, Cooling, and Water Changes. Next time, watch water heat up and cool down, and record what you observe."}
+
+chips = {
+  "part": {"any": ["star", "arm", "arms", "six", "6", "branch", "branches", "feather", "feathery", "tip", "tips", "point", "points", "pointy", "middle", "center", "black", "dark", "card", "circle", "white", "clear", "crystal", "ice", "snow", "snowflake", "shiny", "lines", "pattern", "same"]},
+  "ask": {"re": "\\?|\\b(why|how|what|when|where|who|which|does|do|is|are|can|did|will)\\b"},
+  "trait": {"any": ["ice", "icy", "icicle", "icicles", "branch", "branches", "tree", "trees", "lava", "glow", "glowing", "red", "orange", "crust", "rock", "gray", "glacier", "lake", "chunks", "floating", "mud", "cracks", "cracked", "dry", "web", "spider", "drops", "dew", "shiny"]},
+  "chg": {"any": ["melt", "melts", "melted", "melting", "freeze", "freezes", "froze", "frozen", "freezing", "evaporate", "evaporates", "evaporated", "evaporating", "evaporation", "condense", "condenses", "condensed", "condensation"]},
+  "because": {"re": "\\b(because|since|so)\\b"},
+  "heat": {"any": ["heat", "heated", "heating", "temperature", "temperatures", "hot", "hotter", "warm", "warmer", "cold", "colder", "cool", "cooler", "cooled"]},
+  "evap": {"any": ["evaporate", "evaporates", "evaporation", "gas", "vapor", "air"]},
+  "melt": {"any": ["melt", "melts", "melting", "solid"]}
+}
+
+L = {"id": "g3sci-27-01", "lesson": "27.01", "title": "How Does Matter Change When Heated or Cooled?", "emoji": "🌡️",
+  "details": ["📅 Q4 · Unit 9 · Properties &amp; Changes of Matter", "📖 Week 27 · Lesson 27.01", "🌎 CPALMS SC.3.P.9.1, SC.3.E.6.1", "⏱ About 35 minutes"],
+  "icans": ["explain what happens to water when it is heated or cooled.", "name the three states of matter and describe how they change.", "give examples of melting, freezing, and evaporation from everyday life."],
+  "opti": {"warm": "Our film starts on a snowy day in Florida. First, inspect a tiny frozen mystery from long ago.",
+           "lesson": "Today you're a matter scientist. Follow an ice cube, test heat and cold, then climb down a sky ladder.",
+           "check": "Three quick questions. It's not graded. It's just for you, so give each one your best try.",
+           "assign": "Time to show what you learned. Name each change, then draw water's whole cycle."},
+  "film": film, "scientist": "matter scientist", "specimen": specimen, "words": words, "parts": parts, "order": order, "movie": movie,
+  "compare": compare, "wall": wall, "wow": wow, "keyIdea": keyIdea, "det": det, "rebuild": rebuild, "quiz": quiz, "assign": assign,
+  "premiere": premiere, "next": nxt, "chips": chips, "creditAlias": {},
+  "creditsExtra": ["Music: \"Winter\" (RV 297) I. Allegro non molto (Antonio Vivaldi), played by the Modena Chamber Orchestra, public domain (Musopen, via Wikimedia Commons).",
+                   "Opti the owl: Optima Academy. Sound effects are made by the page. The ice cube movie, the Hot-Cold Test, and the Sky Ladder are models; every place photo is real."]}
+
+json.dump(L, open(f'{D}/lesson.json', 'w'), indent=1, ensure_ascii=False)
+
+how = {
+  "how-27-01-specimen": {"page": specimen["do"], "say": specimen["do"]},
+  "how-27-01-compare": {"page": "Put the sun lamp under one tray and the freezer pack under the other: drag them, or tap one, then a tray. Press Run the test. Then swap.",
+                        "say": "Put the sun lamp under one tray and the freezer pack under the other: drag them, or tap one, then a tray. Press Run the test. Then swap."},
+  "how-27-01-wall": {"page": wall["do"], "say": wall["do"]},
+  "how-27-01-det": {"page": det["do"], "say": "Pick three files, one at a time. Tap a clue, then name the change. Predict if heat was added or taken away, and watch the place appear."},
+  "how-27-01-partc": {"page": assign["partC"]["do"], "say": assign["partC"]["do"]}
+}
+json.dump(how, open(f'{D}/how-lines.json', 'w'), indent=1, ensure_ascii=False)
+
+scripts = {c["voice"]: c["text"] for c in film["captions"]}
+scripts.update({"27-01-welcome": L["opti"]["warm"], "27-01-lesson": L["opti"]["lesson"], "27-01-check": L["opti"]["check"], "27-01-assign": L["opti"]["assign"]})
+for k, v in how.items(): scripts[k] = v["say"]
+for w in words: scripts["word-" + w[1].replace(" ", "-")] = w[1]
+json.dump(scripts, open(f'{D}/scripts.json', 'w'), indent=1, ensure_ascii=False)
+print('ok')
