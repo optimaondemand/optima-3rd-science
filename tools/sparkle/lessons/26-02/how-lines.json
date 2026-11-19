@@ -1,0 +1,22 @@
+{
+ "how-26-02-specimen": {
+  "page": "Press Inspect specimen. Move the magnifying lens over the machine, then tap 3 things you notice.",
+  "say": "Press Inspect specimen. Move the magnifying lens over the machine, then tap 3 things you notice."
+ },
+ "how-26-02-compare": {
+  "page": "Put the ruler under one tray and the balance under the other: drag them, or tap one, then a tray. Press Run the test. Then swap.",
+  "say": "Put the ruler under one tray and the balance under the other: drag them, or tap one, then a tray. Press Run the test. Then swap."
+ },
+ "how-26-02-wall": {
+  "page": "First, make a prediction. Then brush the glowing step: drag across it (or tap it again and again) until the photo shows.",
+  "say": "First, make a prediction. Then brush the glowing step: drag across it (or tap it again and again) until the photo shows."
+ },
+ "how-26-02-det": {
+  "page": "Pick 3 files, one at a time. Tap a clue, then name the property being measured. Predict the tool, and watch it at work.",
+  "say": "Pick three files, one at a time. Tap a clue, then name the property being measured. Predict the tool, and watch it at work."
+ },
+ "how-26-02-partc": {
+  "page": "Draw a bar graph of the four hatchling masses from Part A. Label the bottom with A, B, C, and D, and the side with grams. Give your graph a title.",
+  "say": "Draw a bar graph of the four hatchling masses from Part A. Label the bottom with A, B, C, and D, and the side with grams. Give your graph a title."
+ }
+}

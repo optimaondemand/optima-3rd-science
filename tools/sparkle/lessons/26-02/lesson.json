@@ -1,0 +1,1474 @@
+{
+ "id": "g3sci-26-02",
+ "lesson": "26.02",
+ "title": "Investigation: Measuring and Comparing Matter",
+ "emoji": "⚖️",
+ "details": [
+  "📅 Q4 · Unit 9 · Properties &amp; Changes of Matter",
+  "📖 Week 26 · Lesson 26.02",
+  "🌎 CPALMS SC.3.N.1.3, SC.3.P.8.1, SC.3.P.8.2, SC.3.P.8.3",
+  "⏱ About 35 minutes"
+ ],
+ "icans": [
+  "measure the mass and volume of different objects.",
+  "record my measurements in a data table and use them to compare objects.",
+  "explain how measurement helps scientists describe matter more exactly than just looking."
+ ],
+ "opti": {
+  "warm": "Our film starts on a Florida beach at night, where scientists guard a nest. First, inspect an old machine with two bowls.",
+  "lesson": "Today you're a field scientist. Follow a turtle nest, test two balls, then climb a temperature ladder.",
+  "check": "Three quick questions. It's not graded. It's just for you, so give each one your best try.",
+  "assign": "Time to show what you learned. Build a bar graph, then tell us why tools beat guessing."
+ },
+ "film": {
+  "id": "g3sci-26-02",
+  "mount": "wf-film",
+  "kicker": "Opti's Wonder Films",
+  "lesson": "Lesson 26.02 · Investigation: Measuring and Comparing Matter",
+  "title": "The Turtle Nursery",
+  "bigQuestion": "How can you measure and compare the properties of different objects?",
+  "poster": "f_hatch",
+  "endPoster": "f_sunrise",
+  "startTarget": "#tab-vocab",
+  "music": {
+   "src": "music",
+   "vol": 0.55
+  },
+  "shots": [
+   {
+    "t": 0,
+    "d": 3.4,
+    "type": "leader",
+    "top": "Optima Academy",
+    "name": "Opti's Wonder Films",
+    "bottom": "presents",
+    "fade": 1.0
+   },
+   {
+    "t": 3.4,
+    "d": 6.4,
+    "type": "photo",
+    "img": "f_night",
+    "alt": "The moon shines over dark ocean waves on a Florida beach at night",
+    "from": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.1,
+     0.5,
+     0.45
+    ],
+    "place": "A Florida beach · Night",
+    "fade": 1.0,
+    "sfxAt": [
+     {
+      "at": 0.6,
+      "name": "whoosh"
+     }
+    ]
+   },
+   {
+    "t": 9.8,
+    "d": 11.6,
+    "type": "photo",
+    "img": "f_nest",
+    "alt": "A big loggerhead sea turtle crawls across the sand at night, back toward the sea",
+    "from": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.18,
+     0.55,
+     0.5
+    ],
+    "place": "A loggerhead sea turtle · Florida",
+    "fade": 0.8,
+    "count": {
+     "to": 55,
+     "label": "days in the warm sand",
+     "dur": 4.0
+    }
+   },
+   {
+    "t": 21.4,
+    "d": 3.2,
+    "type": "flash",
+    "lines": [
+     "Too hot?",
+     "All girls?"
+    ],
+    "beats": [
+     0.15,
+     1.2
+    ],
+    "fade": 0.15
+   },
+   {
+    "t": 24.6,
+    "d": 6.6,
+    "type": "photo",
+    "img": "f_hatch",
+    "alt": "A tiny gray loggerhead hatchling crawls across the sand",
+    "from": [
+     1.12,
+     0.5,
+     0.55
+    ],
+    "to": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "place": "A loggerhead hatchling · Sanibel Island, Florida",
+    "fade": 0.8,
+    "sfx": "shimmer"
+   },
+   {
+    "t": 31.2,
+    "d": 6.2,
+    "type": "photo",
+    "img": "f_hand",
+    "alt": "A scientist holds a small green sea turtle hatchling in one hand",
+    "from": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.12,
+     0.5,
+     0.5
+    ],
+    "place": "Archie Carr National Wildlife Refuge · Florida",
+    "fade": 0.8
+   },
+   {
+    "t": 37.4,
+    "d": 11.2,
+    "type": "photo",
+    "img": "f_sunrise",
+    "alt": "An orange and red sunrise glows over the waves at a Florida beach",
+    "from": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.1,
+     0.5,
+     0.5
+    ],
+    "place": "Satellite Beach, Florida · Sunrise",
+    "fade": 0.9,
+    "fx": [
+     "rays"
+    ]
+   },
+   {
+    "t": 48.6,
+    "d": 6.0,
+    "type": "title",
+    "fade": 1.2
+   }
+  ],
+  "captions": [
+   {
+    "t": 3.8,
+    "d": 5.6,
+    "text": "Night on a Florida beach. Something big crawls out of the sea.",
+    "voice": "opti-1"
+   },
+   {
+    "t": 10.2,
+    "d": 5.2,
+    "text": "A loggerhead sea turtle lays about 100 eggs, then heads back to sea.",
+    "voice": "opti-2"
+   },
+   {
+    "t": 15.8,
+    "d": 5.2,
+    "text": "For about two months, the warm sand keeps the eggs cozy.",
+    "voice": "opti-3"
+   },
+   {
+    "t": 21.5,
+    "d": 2.8,
+    "text": "Too hot? All girls?",
+    "voice": "opti-4"
+   },
+   {
+    "t": 25.0,
+    "d": 5.8,
+    "text": "The sand's temperature decides if the hatchlings are boys or girls.",
+    "voice": "opti-5"
+   },
+   {
+    "t": 31.6,
+    "d": 5.6,
+    "text": "So scientists measure. They take temperatures and weigh hatchlings.",
+    "voice": "opti-6"
+   },
+   {
+    "t": 37.8,
+    "d": 4.6,
+    "text": "Measuring tells us what our eyes can't.",
+    "voice": "opti-7"
+   },
+   {
+    "t": 42.8,
+    "d": 5.4,
+    "text": "How can you measure and compare the properties of different objects?",
+    "voice": "opti-8"
+   }
+  ]
+ },
+ "scientist": "field scientist",
+ "specimen": {
+  "img": "spec",
+  "aspect": "1600/1067",
+  "radius": 0.07,
+  "hotspots": [
+   {
+    "name": "A shiny metal bowl",
+    "x": 0.25,
+    "y": 0.2
+   },
+   {
+    "name": "A second bowl",
+    "x": 0.78,
+    "y": 0.22
+   },
+   {
+    "name": "A nameplate with words",
+    "x": 0.5,
+    "y": 0.4
+   },
+   {
+    "name": "A crossbar that tips",
+    "x": 0.4,
+    "y": 0.58
+   },
+   {
+    "name": "A heavy, worn base",
+    "x": 0.55,
+    "y": 0.86
+   }
+  ],
+  "kicker": "🔎 Mystery specimen",
+  "title": "What is this old machine for?",
+  "alt": "An old metal machine with two shiny bowls on a crossbar, a small red pointer, and a heavy base",
+  "look": "A real object from long ago, sitting in a glass case. Look at its parts: the two bowls, the bar, the nameplate, and the base. A specimen is one real thing that scientists study. What job does it do? That's for you to figure out.",
+  "do": "Press Inspect specimen. Move the magnifying lens over the machine, then tap 3 things you notice.",
+  "number": "No. 26.02-A",
+  "card": [
+   "<b>Specimen A</b>",
+   "Made: long ago, in England",
+   "Made of: metal",
+   "What is it for? <i>You decide.</i>"
+  ],
+  "notice": "I notice… (one thing you see on the specimen)",
+  "wonder": "I wonder… (one question you want answered by the end of the lesson)"
+ },
+ "words": [
+  [
+   "📏",
+   "measurement",
+   "A number with a unit that tells the size or amount of something, like 20 grams or 4 centimeters."
+  ],
+  [
+   "⚖️",
+   "mass",
+   "How much matter is in an object. You measure mass with a balance or scale, in grams (g)."
+  ],
+  [
+   "🧪",
+   "volume",
+   "How much space something takes up. You measure the volume of a liquid with a measuring cup, in milliliters (mL)."
+  ],
+  [
+   "🌡️",
+   "temperature",
+   "How hot or cold something is. You measure it with a thermometer, in degrees (°C or °F)."
+  ],
+  [
+   "📋",
+   "data",
+   "Facts and measurements that scientists collect and write down, often in a table."
+  ],
+  [
+   "📊",
+   "bar graph",
+   "A graph that uses bars to compare numbers. A taller bar means a bigger number."
+  ]
+ ],
+ "parts": [
+  {
+   "kicker": "🌱 Part 1",
+   "title": "Why Measure?",
+   "html": "<p>Your eyes can trick you. A golf ball and a ping-pong ball are about the same size, but one has much more mass. Just looking can't tell you how much more.</p><p>A measurement is a number with a unit. A scientist doesn't say, \"This rock is heavy.\" She says, \"This rock has a mass of 200 grams.\" Anyone can check a number.</p>"
+  },
+  {
+   "kicker": "🌤 Part 2",
+   "title": "A Tool for Each Property",
+   "html": "<p>Each property has its own tool. A balance or scale measures mass in grams (g). A ruler measures length in centimeters (cm). A measuring cup measures the volume of a liquid in milliliters (mL).</p><p>A thermometer measures temperature: how hot or cold something is, in degrees Celsius (°C) or degrees Fahrenheit (°F). Water freezes at 0 °C (32 °F) and boils at 100 °C (212 °F).</p>"
+  },
+  {
+   "kicker": "🌍 Part 3",
+   "title": "Recording and Comparing",
+   "html": "<p>Scientists write every measurement in a data table, so nothing gets lost. Then they can draw a bar graph. The taller the bar, the bigger the number.</p><p>Sea turtle scientists put thermometers in nests and record the temperatures. Their data show that warmer nests hatch more girls, and cooler nests hatch more boys.</p>"
+  },
+  {
+   "kicker": "🕵️ Part 4",
+   "title": "Measurement Files"
+  }
+ ],
+ "order": {
+  "mix": [
+   2,
+   0,
+   3,
+   1
+  ],
+  "hint": "Start with the night the eggs are laid.",
+  "kicker": "🎞️ Put the scenes in order",
+  "title": "How do scientists study a turtle nest?",
+  "look": "Four real photos show how scientists look after a sea turtle nest, from the night the eggs are laid to the day the hatchlings leave. They are mixed up. The dark film strip has four empty frames, from first (1) to last (4).",
+  "done": "🎬 Your order is right. Now watch it as a movie!",
+  "scenes": [
+   {
+    "img": "o1",
+    "alt": "Two volunteers kneel in the sand and put a wooden stake beside a sea turtle nest",
+    "text": "Volunteers mark the new nest with stakes.",
+    "play": "Mark the nest.",
+    "miss": [
+     "",
+     "Marking the nest comes first. Try frame 1.",
+     "Marking the nest comes first. Try frame 1.",
+     "Marking the nest comes first. Try frame 1."
+    ]
+   },
+   {
+    "img": "o2",
+    "alt": "A hand holds a small digital thermometer",
+    "text": "For weeks, scientists check the temperature with a thermometer.",
+    "play": "Check the temperature.",
+    "miss": [
+     "The nest has to be marked first. Try a later frame.",
+     "",
+     "They check the temperature while the eggs are still in the sand. Try an earlier frame.",
+     "They check the temperature before the eggs hatch. Try an earlier frame."
+    ]
+   },
+   {
+    "img": "o3",
+    "alt": "A tiny hatchling crawls across the sand",
+    "text": "About two months later, the hatchlings dig out and crawl to the sea.",
+    "play": "Hatchlings come out.",
+    "miss": [
+     "The eggs need weeks in the sand first. Try a later frame.",
+     "The temperature is checked while the eggs grow. Try a later frame.",
+     "",
+     "The hatchlings leave before scientists count the nest. Try an earlier frame."
+    ]
+   },
+   {
+    "img": "o4",
+    "alt": "A scientist kneels by an opened nest and counts the empty eggshells",
+    "text": "Scientists dig up the nest, count the shells, and record the data.",
+    "play": "Count and record.",
+    "miss": [
+     "This is the last step. Try frame 4.",
+     "This is the last step. Try frame 4.",
+     "This is the last step. Try frame 4.",
+     ""
+    ]
+   }
+  ],
+  "check": {
+   "q": "Two hatchlings feel the same in your hand. A friend says, \"They must have the same mass.\" What do you think?",
+   "options": [
+    {
+     "t": "Right. If they feel the same, their mass is the same.",
+     "miss": "Your hand can't feel a difference of a few grams. What tool would tell you for sure?"
+    },
+    {
+     "t": "We can't tell by feel. Put each one on a scale and compare the numbers.",
+     "ok": "Yes! A scale gives an exact number in grams. Then you can really compare."
+    }
+   ]
+  }
+ },
+ "movie": {
+  "model": "nest-model.svg",
+  "modelBox": {
+   "left": "0%",
+   "width": "100%",
+   "rot": 0
+  },
+  "start": "0%",
+  "bg": "desert",
+  "real": "real",
+  "realAlt": "Two real loggerhead hatchlings side by side on the sand",
+  "stamp": "MEASURE IT",
+  "endCap": "Real loggerhead hatchlings · Back Bay, Virginia.",
+  "beats": [
+   {
+    "at": 0,
+    "cap": "1 · Mark the nest.",
+    "model": {
+     "top": "0%",
+     "rot": 0,
+     "show": "s1"
+    },
+    "counter": [
+     "Day 1"
+    ]
+   },
+   {
+    "at": 2600,
+    "cap": "2 · Check the temperature: 30 °C.",
+    "model": {
+     "show": "s2"
+    },
+    "counter": [
+     "Day 30"
+    ]
+   },
+   {
+    "at": 5200,
+    "cap": "3 · Hatchlings dig out.",
+    "model": {
+     "show": "s3"
+    },
+    "counter": [
+     "Day 55"
+    ]
+   },
+   {
+    "at": 7800,
+    "cap": "4 · Weigh, measure, record.",
+    "model": {
+     "show": "s4"
+    },
+    "counter": [
+     "Day 58"
+    ],
+    "sfx": "thump"
+   },
+   {
+    "at": 10400,
+    "cap": "The real thing.",
+    "model": {
+     "hide": true
+    },
+    "real": true
+   },
+   {
+    "at": 12200,
+    "stamp": true
+   }
+  ]
+ },
+ "compare": {
+  "kicker": "🧪 The Same-Size Test",
+  "title": "Same size, same mass?",
+  "look": "Two real balls, each on a lit specimen tray. Specimen A is a golf ball. Specimen B is a ping-pong ball. They are almost the same size. Under the trays are two tools: a ruler and a balance.",
+  "trays": [
+   {
+    "id": "A",
+    "img": "ta",
+    "alt": "A white golf ball covered in small round dimples",
+    "label": "Specimen A"
+   },
+   {
+    "id": "B",
+    "img": "tb",
+    "alt": "A smooth white ping-pong ball with three stars printed on it",
+    "label": "Specimen B"
+   }
+  ],
+  "materials": [
+   {
+    "key": "ruler",
+    "label": "Ruler (measures length)",
+    "swatch": "ruler"
+   },
+   {
+    "key": "balance",
+    "label": "Balance (measures mass)",
+    "swatch": "balance"
+   }
+  ],
+  "ask": [
+   {
+    "q": "Which ball is covered in little dimples?",
+    "ans": "A",
+    "ok": "Yes. Specimen A is the golf ball, with dimples all over.",
+    "miss": "Look closely. Which one has little round dents?"
+   },
+   {
+    "q": "Which ball is smooth, with stars printed on it?",
+    "ans": "B",
+    "ok": "Yes. Specimen B is the ping-pong ball.",
+    "miss": "Look again. Which one has three stars?"
+   }
+  ],
+  "press": "🎯 Run the test",
+  "testDo": "Put the ruler under one tray and the balance under the other: drag them, or tap one, then a tray. Press <b>Run the test</b>. Then swap.",
+  "disclaimer": "This is a model. The numbers are real measurements for these kinds of balls.",
+  "results": {
+   "Aruler": {
+    "text": "The ruler shows about 4 centimeters across.",
+    "fx": "none"
+   },
+   "Bruler": {
+    "text": "The ruler shows about 4 centimeters across, the same as the golf ball!",
+    "fx": "none"
+   },
+   "Abalance": {
+    "text": "The balance shows about 46 grams. The pan sinks low.",
+    "fx": "sink"
+   },
+   "Bbalance": {
+    "text": "The balance shows only about 3 grams. The pan hardly moves.",
+    "fx": "float"
+   }
+  },
+  "best": [
+   "Abalance",
+   "Bbalance"
+  ],
+  "frame": "This ball has a mass of about ___, so it is ___.",
+  "claimLead": "This ball has a mass of about",
+  "claimMid": "so it is",
+  "claim": {
+   "A": {
+    "feat": [
+     "46 grams",
+     "3 grams"
+    ],
+    "featOk": 0,
+    "eat": [
+     "heavy for its size",
+     "light for its size"
+    ],
+    "eatOk": 0
+   },
+   "B": {
+    "feat": [
+     "46 grams",
+     "3 grams"
+    ],
+    "featOk": 1,
+    "eat": [
+     "heavy for its size",
+     "light for its size"
+    ],
+    "eatOk": 1
+   }
+  },
+  "curator": {
+   "A": "<b>Same size, more mass.</b> A golf ball is solid inside, packed with rubber and plastic.",
+   "B": "<b>Same size, less mass.</b> A ping-pong ball is hollow. It is mostly air inside."
+  },
+  "missFeat": "Look at your balance test for {label} again. What number did it show?",
+  "missClaim": "Think about your test. Did the pan sink low or hardly move?",
+  "done": "Same size doesn't mean same mass. Only a tool can tell you how much matter is inside.",
+  "after": {
+   "kicker": "🎬 Behind the scenes · Golf ball rules",
+   "img": "aft",
+   "alt": "A white golf ball sitting on a wooden tee in green grass",
+   "html": "Golf rules say a golf ball can have a mass of no more than 45.93 grams. It must be at least 42.67 millimeters across. A ping-pong ball is 40 millimeters across, but its mass is only about 2.7 grams."
+  }
+ },
+ "wall": {
+  "kicker": "🌡️ The Temperature Climb",
+  "title": "Climb from the coldest water to the hottest",
+  "look": "A model ladder of four real places with water, from cold at the top to hot at the bottom. Each step has a real photo. The brass dial on the left shows each step's temperature in degrees Celsius (°C).",
+  "do": "First, make a prediction. Then brush the glowing step: drag across it (or tap it again and again) until the photo shows.",
+  "predict": {
+   "q": "Which is warmer: a sea turtle nest or a cool Florida spring?",
+   "options": [
+    [
+     "nest",
+     "The sea turtle nest"
+    ],
+    [
+     "spring",
+     "The Florida spring"
+    ]
+   ],
+   "answer": "nest",
+   "mine": "Your prediction: <b>{p}</b>. Let's climb and find out.",
+   "confirm": "You predicted the nest is warmer. The thermometer agrees: about 30 °C in the nest, and about 22 °C in the spring.",
+   "change": "You predicted the spring is warmer. The thermometer changed that idea: the spring is about 22 °C, and the nest is about 30 °C."
+  },
+  "sky": "sky",
+  "skyAlt": "A tiny hatchling crawls across wet sand toward the waves at sunrise",
+  "skyCap": "A loggerhead hatchling heads for the sea",
+  "unit": "Step",
+  "found": "Clue found at Step {n}",
+  "elevator": [
+   "Cold",
+   "0 °C",
+   "22 °C",
+   "30 °C",
+   "100 °C"
+  ],
+  "line": [
+   "COLDEST",
+   "HOTTEST"
+  ],
+  "lockTag": "🔒 Brush the step above first",
+  "locked": "Brush the step above first. We climb one step at a time.",
+  "first": "Brush the glowing top step. Drag across it (or tap it again and again).",
+  "next": "Keep climbing. Brush Step {n}.",
+  "endTitle": "All 4 steps explored",
+  "endText": "Look at the ladder. Each step is warmer than the one above it. The thermometer gave every step a number.",
+  "rule": "<b>Temperature is a property you can measure.</b> A thermometer gives an exact number, so you can compare: 0 °C is freezing, and 100 °C is boiling.",
+  "choices": [
+   "🧊 Coldest: water starts to freeze",
+   "🏞️ A cool, clear Florida spring",
+   "🐢 Warm sand around turtle eggs",
+   "♨️ Hottest: water boils"
+  ],
+  "layers": [
+   {
+    "name": "Step 1 · Ice water",
+    "img": "l1",
+    "alt": "A clear glass of cold water with ice, sitting on a table",
+    "ask": "Look at Step 1. Read the clue AND the photo. What do you find?",
+    "clue": "Ice water is about 0 °C (32 °F). That's the temperature where water freezes into ice.",
+    "ans": 0,
+    "ok": "Yes! At 0 °C, water starts to freeze.",
+    "tag": "🧊 Ice water · 0 °C",
+    "miss": {
+     "1": "Not yet. Read the clue: what happens to water at 0 °C?",
+     "2": "Not yet. This one is very cold.",
+     "3": "Not yet. This is the coldest step."
+    },
+    "env": "e1",
+    "envAlt": "Frost covers a running track and a field on a cold morning",
+    "envCap": "A Florida freeze, 2014: frost on the ground"
+   },
+   {
+    "name": "Step 2 · A spring",
+    "img": "l2",
+    "alt": "Clear blue water over a sandy bottom with green grass waving underwater",
+    "ask": "Look at Step 2. Read the clue AND the photo. What do you find?",
+    "clue": "Ichetucknee Springs stays about 22 °C (72 °F) all year. It feels cool on a hot summer day.",
+    "ans": 1,
+    "ok": "Yes! The spring stays cool all year.",
+    "tag": "🏞️ Spring · 22 °C",
+    "miss": {
+     "0": "It's cool, but not freezing. Read the clue again.",
+     "2": "Not yet. Read the clue: where is this water?",
+     "3": "Not yet. Keep climbing."
+    },
+    "env": "e2",
+    "envAlt": "A calm, green river lined with trees under a blue sky",
+    "envCap": "Ichetucknee Springs State Park, Florida"
+   },
+   {
+    "name": "Step 3 · A turtle nest",
+    "img": "l3",
+    "alt": "A mother loggerhead turtle lays eggs in a hole she dug in the sand",
+    "ask": "Look at Step 3. Read the clue AND the photo. What do you find?",
+    "clue": "The sand around sea turtle eggs is often about 29 to 32 °C (84 to 90 °F). Warmer nests hatch more girls.",
+    "ans": 2,
+    "ok": "Yes! Warm sand keeps the turtle eggs growing.",
+    "tag": "🐢 Turtle nest · 30 °C",
+    "miss": {
+     "0": "Much warmer than ice. Read the clue again.",
+     "1": "Close! But this one is warmer. Read the clue.",
+     "3": "Not yet. There's one hotter."
+    },
+    "env": "e3",
+    "envAlt": "A tiny hatchling swims in the green-blue sea",
+    "envCap": "A hatchling swims out to sea"
+   },
+   {
+    "name": "Step 4 · Boiling water",
+    "img": "l4",
+    "alt": "Water bubbling hard in a pot on a stove",
+    "ask": "Look at Step 4. Read the clue AND the photo. What do you find?",
+    "clue": "Water boils at 100 °C (212 °F) at sea level. Bubbles of steam rise up fast.",
+    "ans": 3,
+    "ok": "Yes! At 100 °C, water boils.",
+    "tag": "♨️ Boiling · 100 °C",
+    "miss": {
+     "0": "This is the opposite end of the ladder. Read the clue.",
+     "1": "Not this one. Read the clue again.",
+     "2": "Close! But this one is even hotter."
+    },
+    "env": "e4",
+    "envAlt": "A glass kettle full of boiling, bubbling water",
+    "envCap": "A kettle boils water at 100 °C"
+   }
+  ],
+  "mix": {
+   "q": "Max dips his hand in a pool and says, \"It feels like about 25 degrees.\" Is that a good way to measure temperature?",
+   "options": [
+    {
+     "t": "Yes. Your hand can tell the exact temperature.",
+     "miss": "Your hand can tell warm from cold, but can it give an exact number?"
+    },
+    {
+     "t": "No. Use a thermometer. A hand feels warm or cold, but it can't give an exact number.",
+     "ok": "Yes! A thermometer gives an exact number that anyone can check and compare."
+    }
+   ]
+  }
+ },
+ "wow": {
+  "kicker": "🎬 Director's cut",
+  "title": "The kilogram in a jar",
+  "img": "wow",
+  "alt": "Shiny metal cylinders, each about the size of a plum, sitting in a metal holder",
+  "caption": "Kilogram copies at NIST, the U.S. measurement lab",
+  "html": "<p style=\"margin:0 0 8px\">From 1889 to 2019, one small metal cylinder near Paris, France, was the official kilogram. Countries kept exact copies under glass jars. The United States' copy was called K20.</p><p style=\"margin:0\">Since 2019, the kilogram is set by a rule from science instead. Machines called Kibble balances can measure it very exactly.</p>",
+  "inset": "inset",
+  "insetCap": "NIST-4, a Kibble balance in Maryland."
+ },
+ "keyIdea": "Scientists measure properties with tools: a balance for mass, a ruler for length, a measuring cup for volume, and a thermometer for temperature. Measurements are numbers that anyone can check. Scientists record them in data tables and bar graphs, so they can compare objects exactly.",
+ "det": {
+  "look": "Five real scientists at work. Each card shows what they are studying. Under the cards is an evidence chart, a table that holds what you figure out.",
+  "do": "Pick 3 files, one at a time. Tap a clue, then name the property being measured. Predict the tool, and watch it at work.",
+  "noun": "File",
+  "need": 3,
+  "inferQ": "What property are they measuring?",
+  "inferDone": "Property",
+  "chartSo": "so the tool is",
+  "predict": {
+   "q": "Which tool do you predict they use?",
+   "options": [
+    [
+     "scale",
+     "⚖️ A balance or scale"
+    ],
+    [
+     "tape",
+     "📏 A ruler or tape measure"
+    ],
+    [
+     "thermo",
+     "🌡️ A thermometer"
+    ],
+    [
+     "cup",
+     "🧪 A measuring cup or rain gauge"
+    ]
+   ]
+  },
+  "kicker": "The tool at work",
+  "enough": "You already solved 3 measurement files. Nice work, scientist!",
+  "cols": [
+   "File",
+   "My observation",
+   "Property",
+   "Tool",
+   "My evidence"
+  ],
+  "write": {
+   "label": "File __ shows ___. They measure ___, so the tool is ___.",
+   "starter": "Start with: \"File __ shows…\"",
+   "min": 15,
+   "chips": [
+    [
+     "trait",
+     "Names what you see"
+    ],
+    [
+     "prop",
+     "Names a property"
+    ],
+    [
+     "because",
+     "Gives a reason (because, so)"
+    ]
+   ]
+  },
+  "items": [
+   {
+    "id": "A",
+    "img": "d1",
+    "alt": "A hand holds a tiny green sea turtle hatchling",
+    "clues": [
+     {
+      "t": "A tiny animal that fits in one hand",
+      "ok": true
+     },
+     {
+      "t": "It is very hot",
+      "miss": "Look again. Is anything hot in this photo?"
+     },
+     {
+      "t": "A big pool of water",
+      "miss": "Look again. What is in the hand?"
+     }
+    ],
+    "org": [
+     "⚖️ Mass (how much matter)",
+     "📏 Length (how long)",
+     "🌡️ Temperature (how hot or cold)",
+     "🧪 Volume (how much liquid)"
+    ],
+    "orgAns": 0,
+    "orgShort": "mass",
+    "orgMiss": "Scientists want to know how much matter is in this little turtle. Which property is that? Try again.",
+    "env": "A balance or scale",
+    "envAns": "scale",
+    "envMiss": "You need a tool that measures mass in grams. Which one? Try again.",
+    "envImg": "d1h",
+    "envAlt": "A small gray loggerhead hatchling on the sand",
+    "envCap": "A loggerhead hatchling",
+    "reveal": "Scientists weigh hatchlings to check that they are healthy. A loggerhead hatchling has a mass of about 20 grams.",
+    "rebuildEnv": "beach",
+    "bts": "20 grams is about the mass of four nickels."
+   },
+   {
+    "id": "B",
+    "img": "d2",
+    "alt": "A scientist kneels beside a long alligator stretched out on the grass",
+    "clues": [
+     {
+      "t": "A very long animal stretched out on the grass",
+      "ok": true
+     },
+     {
+      "t": "A thermometer in the water",
+      "miss": "Look again. Is there water in this photo?"
+     },
+     {
+      "t": "A tiny animal in a hand",
+      "miss": "Look again. Is this animal tiny?"
+     }
+    ],
+    "org": [
+     "⚖️ Mass (how much matter)",
+     "📏 Length (how long)",
+     "🌡️ Temperature (how hot or cold)",
+     "🧪 Volume (how much liquid)"
+    ],
+    "orgAns": 1,
+    "orgShort": "length",
+    "orgMiss": "They want to know how long the alligator is, from nose to tail. Which property is that? Try again.",
+    "env": "A ruler or tape measure",
+    "envAns": "tape",
+    "envMiss": "You need a tool that measures how long something is. Which one? Try again.",
+    "envImg": "d2h",
+    "envAlt": "An alligator resting on sandy ground with its mouth open",
+    "envCap": "An American alligator in Florida",
+    "reveal": "Biologists measure alligators from nose to tail. The one in the file was about 10½ feet long.",
+    "rebuildEnv": "swamp",
+    "bts": "Florida has more than a million wild alligators."
+   },
+   {
+    "id": "C",
+    "img": "d3",
+    "alt": "A scuba diver works near the ocean floor with a small instrument",
+    "clues": [
+     {
+      "t": "A diver puts a small instrument on the reef",
+      "ok": true
+     },
+     {
+      "t": "A rain cloud",
+      "miss": "Look again. Where is the diver?"
+     },
+     {
+      "t": "An animal on the grass",
+      "miss": "Look again. Is this on land?"
+     }
+    ],
+    "org": [
+     "⚖️ Mass (how much matter)",
+     "📏 Length (how long)",
+     "🌡️ Temperature (how hot or cold)",
+     "🧪 Volume (how much liquid)"
+    ],
+    "orgAns": 2,
+    "orgShort": "temperature",
+    "orgMiss": "The instrument records how warm or cool the ocean water is. Which property is that? Try again.",
+    "env": "A thermometer",
+    "envAns": "thermo",
+    "envMiss": "You need a tool that measures how hot or cold something is. Which one? Try again.",
+    "envImg": "d3h",
+    "envAlt": "Corals on a reef, many of them turned white",
+    "envCap": "Bleached corals at Sombrero Key, Florida, 2023",
+    "reveal": "When ocean water stays too warm for too long, corals turn white. Temperature data warns scientists early.",
+    "rebuildEnv": "reef",
+    "bts": "In the summer of 2023, the ocean near the Florida Keys got hotter than scientists had ever measured there."
+   },
+   {
+    "id": "D",
+    "img": "d4",
+    "alt": "A clear tube with lines and numbers on the side, holding a little water",
+    "clues": [
+     {
+      "t": "A clear tube with lines and numbers on the side",
+      "ok": true
+     },
+     {
+      "t": "A shiny metal bowl",
+      "miss": "Look again. Is it metal?"
+     },
+     {
+      "t": "An animal",
+      "miss": "Look again. Is there an animal?"
+     }
+    ],
+    "org": [
+     "⚖️ Mass (how much matter)",
+     "📏 Length (how long)",
+     "🌡️ Temperature (how hot or cold)",
+     "🧪 Volume (how much liquid)"
+    ],
+    "orgAns": 3,
+    "orgShort": "volume",
+    "orgMiss": "The tube holds rainwater, and the lines show how much is in it. Which property is that? Try again.",
+    "env": "A measuring cup or rain gauge",
+    "envAns": "cup",
+    "envMiss": "You need a tool with lines that shows how much liquid there is. Which one? Try again.",
+    "envImg": "d4h",
+    "envAlt": "Dark storm clouds over a river and green grass",
+    "envCap": "A storm over the Little Manatee River, Florida",
+    "reveal": "A rain gauge catches rain in a tube with lines, like a measuring cup. Scientists read how much rain fell.",
+    "rebuildEnv": "storm",
+    "bts": "Weather watchers all over the country check rain gauges and share their data every day."
+   },
+   {
+    "id": "E",
+    "img": "d5",
+    "alt": "Three rescuers in a small boat sit beside a huge, gray manatee",
+    "clues": [
+     {
+      "t": "A huge, heavy animal lying in a boat",
+      "ok": true
+     },
+     {
+      "t": "Lines and numbers on a tube",
+      "miss": "Look again. What is in the boat?"
+     },
+     {
+      "t": "A tiny animal in a hand",
+      "miss": "Look again. Is this animal tiny?"
+     }
+    ],
+    "org": [
+     "⚖️ Mass (how much matter)",
+     "📏 Length (how long)",
+     "🌡️ Temperature (how hot or cold)",
+     "🧪 Volume (how much liquid)"
+    ],
+    "orgAns": 0,
+    "orgShort": "mass",
+    "orgMiss": "Rescuers need to know how much matter is in this big animal. Which property is that? Try again.",
+    "env": "A balance or scale",
+    "envAns": "scale",
+    "envMiss": "You need a tool that measures mass. Which one? Try again.",
+    "envImg": "d5h",
+    "envAlt": "Clear blue-green water in a spring surrounded by trees",
+    "envCap": "Manatee Springs State Park, Florida",
+    "reveal": "Rescuers and vets weigh manatees to check that they are healthy before they return to the wild.",
+    "rebuildEnv": "spring",
+    "bts": "A grown manatee often has a mass of about 400 to 550 kilograms."
+   }
+  ]
+ },
+ "rebuild": {
+  "title": "Use your evidence to rebuild the scene",
+  "missPrefix": "Hmm. Look at your measurement file again. ",
+  "kicker": "🌍 Rebuild the scene",
+  "whyStart": "I chose this because they measure…",
+  "envs": [
+   {
+    "key": "beach",
+    "name": "🏖️ A nesting beach",
+    "img": "d1h",
+    "cap": "Tiny hatchlings…"
+   },
+   {
+    "key": "swamp",
+    "name": "🐊 A Florida swamp",
+    "img": "d2h",
+    "cap": "Long, scaly animals…"
+   },
+   {
+    "key": "reef",
+    "name": "🪸 A coral reef",
+    "img": "d3h",
+    "cap": "Warm ocean water…"
+   },
+   {
+    "key": "storm",
+    "name": "🌧️ A stormy day",
+    "img": "d4h",
+    "cap": "Rain is coming…"
+   },
+   {
+    "key": "spring",
+    "name": "🏞️ A warm-water spring",
+    "img": "d5h",
+    "cap": "Manatees rest here…"
+   }
+  ],
+  "life": [
+   {
+    "name": "⚖️ Weighing a hatchling",
+    "img": "d1h",
+    "env": "beach",
+    "miss": "Hatchlings are weighed at the nesting beach."
+   },
+   {
+    "name": "📏 Measuring an alligator",
+    "img": "d2h",
+    "env": "swamp",
+    "miss": "Alligators live in the swamp."
+   },
+   {
+    "name": "🌡️ Checking water temperature",
+    "img": "d3h",
+    "env": "reef",
+    "miss": "The temperature recorder sits on the coral reef."
+   },
+   {
+    "name": "🧪 Reading a rain gauge",
+    "img": "d4h",
+    "env": "storm",
+    "miss": "A rain gauge measures rain from a storm."
+   },
+   {
+    "name": "⚖️ Weighing a manatee",
+    "img": "d5h",
+    "env": "spring",
+    "miss": "Rescued manatees return to the warm springs."
+   }
+  ]
+ },
+ "quiz": [
+  {
+   "q": "Why do scientists measure objects instead of just looking at them?",
+   "options": [
+    {
+     "t": "Because measuring is faster than looking",
+     "miss": "Think about why numbers are more useful than words like \"big\" or \"heavy.\" What makes data exact?"
+    },
+    {
+     "t": "Because measurements give exact data that anyone can compare",
+     "ok": "🌲 Exactly! Measurements give exact numbers that any scientist can compare, no matter where they are."
+    },
+    {
+     "t": "Because scientists do not trust their eyes",
+     "miss": "Think about why numbers are more useful than words like \"big\" or \"heavy.\" What makes data exact?"
+    }
+   ]
+  },
+  {
+   "q": "What tool would you use to find the volume of a cup of water?",
+   "options": [
+    {
+     "t": "A measuring cup",
+     "ok": "🌲 Yes! A measuring cup measures the volume of liquids in milliliters."
+    },
+    {
+     "t": "A balance",
+     "miss": "Volume is how much space something takes up. For liquids, you pour them into a special tool. Which one?"
+    },
+    {
+     "t": "A ruler",
+     "miss": "Volume is how much space something takes up. For liquids, you pour them into a special tool. Which one?"
+    }
+   ]
+  },
+  {
+   "q": "A student makes a bar graph comparing the mass of four objects. Object C has the tallest bar. What does that mean?",
+   "options": [
+    {
+     "t": "Object C is the longest",
+     "miss": "The graph is comparing mass. A taller bar means a bigger number. What does a bigger mass number mean?"
+    },
+    {
+     "t": "Object C is the softest",
+     "miss": "The graph is comparing mass. A taller bar means a bigger number. What does a bigger mass number mean?"
+    },
+    {
+     "t": "Object C has the most mass",
+     "ok": "🌲 Right! In a bar graph comparing mass, the tallest bar shows the object with the most mass."
+    }
+   ]
+  }
+ ],
+ "assign": {
+  "partA": {
+   "title": "Read the data",
+   "do": "Read each one. Build the graph, then pick the best answer.",
+   "items": [
+    {
+     "n": 1,
+     "q": "Scientists weighed four loggerhead hatchlings from one nest. Build a bar graph of their masses. Make each bar match its number in the table.",
+     "type": "graph",
+     "cats": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "series": [
+      {
+       "name": "Mass",
+       "color": "#2f7d6d",
+       "values": [
+        18,
+        21,
+        19,
+        23
+       ]
+      }
+     ],
+     "max": 25,
+     "unit": "g",
+     "yLabel": "Mass (grams)",
+     "title": "Hatchling masses"
+    },
+    {
+     "n": 2,
+     "q": "Which hatchling has the most mass?",
+     "type": "choice",
+     "options": [
+      {
+       "t": "Hatchling A",
+       "miss": "A has 18 grams, the shortest bar. Look for the tallest bar."
+      },
+      {
+       "t": "Hatchling B",
+       "miss": "B has 21 grams. Is there a taller bar?"
+      },
+      {
+       "t": "Hatchling C",
+       "miss": "C has 19 grams. Look for the tallest bar."
+      },
+      {
+       "t": "Hatchling D",
+       "ok": "Yes. Hatchling D has 23 grams, the tallest bar."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "q": "The scientists also measured shells. Hatchling C has the longest shell (4.6 cm). Does it also have the most mass?",
+     "type": "choice",
+     "options": [
+      {
+       "t": "Yes. The longest one always has the most mass.",
+       "miss": "Check your graph. Is C's bar the tallest?"
+      },
+      {
+       "t": "No. C is the longest, but D has the most mass (23 g).",
+       "ok": "Yes. Length and mass are different properties. You have to measure each one."
+      }
+     ]
+    }
+   ]
+  },
+  "partB": {
+   "title": "Short answer",
+   "do": "Answer in complete sentences. Use your science words.",
+   "items": [
+    {
+     "n": 1,
+     "q": "What is the difference between estimating mass and measuring mass? Which is more exact?",
+     "type": "text",
+     "min": 12,
+     "chips": [
+      [
+       "est",
+       "Talks about estimating (guessing)"
+      ],
+      [
+       "exact",
+       "Says which is more exact"
+      ]
+     ]
+    },
+    {
+     "n": 2,
+     "q": "If two objects are the same length, can they still have different masses? Explain.",
+     "type": "text",
+     "min": 12,
+     "chips": [
+      [
+       "mass",
+       "Uses the word mass"
+      ],
+      [
+       "ex",
+       "Gives an example"
+      ]
+     ]
+    }
+   ]
+  },
+  "write": {
+   "title": "Why is measuring with tools better than just looking and guessing when scientists compare matter?",
+   "do": "Pick one from your evidence chart. Answer the three questions. Use at least one of the science words under the boxes.",
+   "vocab": [
+    "measurement",
+    "data",
+    "mass",
+    "volume",
+    "temperature",
+    "bar graph"
+   ],
+   "need": 1,
+   "prompts": [
+    [
+     "What do you think?",
+     "Start with: \"I think measuring with tools is important because…\""
+    ],
+    [
+     "What did you observe or learn that supports your thinking?",
+     "Start with: \"In the Same-Size Test, I noticed that…\""
+    ],
+    [
+     "Why does that make sense?",
+     "Start with: \"This makes sense because scientists need exact data to…\""
+    ]
+   ]
+  },
+  "partC": {
+   "do": "Draw a bar graph of the four hatchling masses from Part A. Label the bottom with A, B, C, and D, and the side with grams. Give your graph a title.",
+   "labels": [
+    "My graph's title",
+    "What the tallest bar shows"
+   ]
+  },
+  "checklist": [
+   {
+    "k": "det",
+    "t": "My evidence chart has 3 measurement files and my explanation.",
+    "req": {
+     "det": 3,
+     "text": {
+      "in-det": 15
+     }
+    }
+   },
+   {
+    "k": "a",
+    "t": "Part A: my bar graph and both answers.",
+    "req": {
+     "choice": [
+      "a1",
+      "a2",
+      "a3"
+     ]
+    }
+   },
+   {
+    "k": "b",
+    "t": "Part B: questions 1 and 2.",
+    "req": {
+     "text": {
+      "in-b1": 12,
+      "in-b2": 12
+     }
+    }
+   },
+   {
+    "k": "c",
+    "t": "Part C: my drawing and both labels.",
+    "req": {
+     "sketch": true,
+     "text": {
+      "in-c1": 6,
+      "in-c2": 6
+     }
+    }
+   },
+   {
+    "k": "w",
+    "t": "Write and explain, with at least one science word.",
+    "req": {
+     "text": {
+      "in-w1": 10,
+      "in-w2": 10,
+      "in-w3": 10
+     },
+     "vocab": 1
+    }
+   }
+  ]
+ },
+ "premiere": {
+  "title": "Premiere my measurement story",
+  "thinkLabel": "The tool I trust is",
+  "director": "JUNIOR FIELD SCIENTIST",
+  "storyKicker": "My measurement story",
+  "frames": [
+   {
+    "k": "formation",
+    "label": "The turtle nursery",
+    "img": "o4",
+    "cap": "The turtle nursery: mark, check, hatch, record."
+   },
+   {
+    "k": "compare",
+    "label": "The Same-Size Test",
+    "img": "ta",
+    "cap": "The Same-Size Test: same size, very different mass."
+   },
+   {
+    "k": "wall",
+    "label": "The Temperature Climb",
+    "img": "l3",
+    "cap": "The Temperature Climb: from ice water to boiling."
+   },
+   {
+    "k": "det",
+    "label": "Measurement files",
+    "img": "d2",
+    "cap": "Measurement files: the right tool for each property."
+   }
+  ]
+ },
+ "next": {
+  "title": "Coming up next: 27.01",
+  "text": "How Does Matter Change When Heated or Cooled? Next time, watch what happens to matter when its temperature goes up or down."
+ },
+ "chips": {
+  "part": {
+   "any": [
+    "bowl",
+    "bowls",
+    "pan",
+    "pans",
+    "metal",
+    "shiny",
+    "silver",
+    "pointer",
+    "red",
+    "arrow",
+    "bar",
+    "arm",
+    "base",
+    "gold",
+    "brass",
+    "old",
+    "label",
+    "words",
+    "writing",
+    "two",
+    "seesaw",
+    "heavy",
+    "tip",
+    "tips",
+    "middle"
+   ]
+  },
+  "ask": {
+   "re": "\\?|\\b(why|how|what|when|where|who|which|does|do|is|are|can|did|will)\\b"
+  },
+  "trait": {
+   "any": [
+    "turtle",
+    "hatchling",
+    "baby",
+    "hand",
+    "tiny",
+    "small",
+    "alligator",
+    "gator",
+    "long",
+    "diver",
+    "reef",
+    "ocean",
+    "water",
+    "tube",
+    "lines",
+    "numbers",
+    "rain",
+    "manatee",
+    "boat",
+    "big",
+    "huge",
+    "heavy"
+   ]
+  },
+  "because": {
+   "re": "\\b(because|since|so)\\b"
+  },
+  "prop": {
+   "any": [
+    "mass",
+    "length",
+    "long",
+    "temperature",
+    "hot",
+    "cold",
+    "warm",
+    "volume",
+    "grams",
+    "centimeters",
+    "degrees",
+    "heavy",
+    "liquid",
+    "size"
+   ]
+  },
+  "est": {
+   "any": [
+    "estimate",
+    "estimating",
+    "estimated",
+    "guess",
+    "guessing",
+    "guessed"
+   ]
+  },
+  "exact": {
+   "any": [
+    "exact",
+    "exactly",
+    "more exact",
+    "measuring",
+    "measure",
+    "tool",
+    "scale",
+    "balance"
+   ]
+  },
+  "mass": {
+   "any": [
+    "mass"
+   ]
+  },
+  "ex": {
+   "any": [
+    "golf",
+    "ping",
+    "pong",
+    "ball",
+    "rock",
+    "pillow",
+    "sponge",
+    "feather",
+    "turtle",
+    "hatchling",
+    "box",
+    "brick",
+    "for example",
+    "like"
+   ]
+  }
+ },
+ "creditAlias": {},
+ "creditsExtra": [
+  "Music: \"La mer\" I. \"De l'aube à midi sur la mer\" (Claude Debussy), played by the Concert Band of the United States Air Force Band, public domain (via Wikimedia Commons).",
+  "Opti the owl: Optima Academy. Sound effects are made by the page. The nest movie, the Same-Size Test, and the Temperature Climb are models; every place photo is real."
+ ]
+}
