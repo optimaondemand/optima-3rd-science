@@ -1,0 +1,141 @@
+{
+ "unit": 8,
+ "title": "Human Impact & Conservation",
+ "lessons": "22.01 to 25.02",
+ "q": [
+  {
+   "src": "22.01",
+   "type": "mc",
+   "q": "Rain washes trash and oil off a parking lot and into a storm drain. Where does that water usually go next?",
+   "o": [
+    "Into creeks, rivers, lakes, and the ocean",
+    "Straight back up into the clouds",
+    "Into a cleaning plant every single time",
+    "Nowhere. It disappears into the ground right away."
+   ],
+   "a": [
+    0
+   ]
+  },
+  {
+   "src": "22.02",
+   "type": "mc",
+   "q": "A meadow full of wildflowers is paved over to make a parking lot. What most likely happens to the bees and rabbits that lived there?",
+   "o": [
+    "They find more food on the warm pavement.",
+    "Nothing changes for them.",
+    "They lose food and shelter, so many must move or may not survive.",
+    "They turn into new kinds of animals."
+   ],
+   "a": [
+    2
+   ]
+  },
+  {
+   "src": "23.01",
+   "type": "tf",
+   "q": "Pollution can only harm water. It cannot get into the air or the land.",
+   "a": false
+  },
+  {
+   "src": "23.02",
+   "type": "mc",
+   "q": "A thin, shiny film of oil is floating on a pond. Which cleanup tool would work best?",
+   "o": [
+    "A fishing net",
+    "An absorbent pad that soaks up oil",
+    "A magnet",
+    "A garden rake"
+   ],
+   "a": [
+    1
+   ]
+  },
+  {
+   "src": "24.01",
+   "type": "mc",
+   "q": "What does conservation mean?",
+   "o": [
+    "Using up natural resources as fast as possible",
+    "Studying the weather every day",
+    "Moving every wild animal into a zoo",
+    "Taking care of natural resources and habitats so they stay healthy and last"
+   ],
+   "a": [
+    3
+   ]
+  },
+  {
+   "src": "24.01",
+   "type": "mc",
+   "q": "Bald eagles almost disappeared because a bug poison called DDT made their eggshells thin. What helped the eagles come back?",
+   "o": [
+    "People banned DDT and protected eagle nests.",
+    "Eagles learned to lay eggs on the ground.",
+    "People fed the eagles bread.",
+    "The eagles moved to other countries."
+   ],
+   "a": [
+    0
+   ]
+  },
+  {
+   "src": "24.02",
+   "type": "ma",
+   "q": "Which of these are ways to save water? Choose ALL that are correct.",
+   "o": [
+    "Fix a leaky faucet",
+    "Cover garden soil with mulch",
+    "Leave the sprinkler on while it rains",
+    "Catch rain in a rain barrel for the garden"
+   ],
+   "a": [
+    0,
+    1,
+    3
+   ]
+  },
+  {
+   "src": "24.02",
+   "type": "mc",
+   "q": "Why do scientists say that reducing waste is even better than recycling?",
+   "o": [
+    "Recycling makes more trash.",
+    "Reducing is only for grown-ups.",
+    "Reducing means less is used and thrown away in the first place.",
+    "Recycling never works."
+   ],
+   "a": [
+    2
+   ]
+  },
+  {
+   "src": "25.01",
+   "type": "mc",
+   "q": "A wetland has many different kinds of living things. One kind of bird disappears from it. What is most likely to happen?",
+   "o": [
+    "The whole wetland falls apart right away.",
+    "Other living things fill in, and the wetland stays steadier than a place with only a few kinds.",
+    "Every other animal leaves too.",
+    "The wetland turns into a desert."
+   ],
+   "a": [
+    1
+   ]
+  },
+  {
+   "src": "25.02",
+   "type": "mc",
+   "q": "A student writes a plan to protect a park's birds. Which is the best criterion for success, something you can check?",
+   "o": [
+    "\"We want the park to be nice.\"",
+    "\"Birds are important.\"",
+    "\"Everyone should care about nature.\"",
+    "\"The number of nesting birds goes up within two years.\""
+   ],
+   "a": [
+    3
+   ]
+  }
+ ]
+}
