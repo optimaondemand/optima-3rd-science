@@ -363,7 +363,7 @@ chips = {
 }
 
 L = {"id": "g3sci-27-01", "lesson": "27.01", "title": "How Does Matter Change When Heated or Cooled?", "emoji": "🌡️",
-  "details": ["📅 Q4 · Unit 9 · Properties &amp; Changes of Matter", "📖 Week 27 · Lesson 27.01", "🌎 CPALMS SC.3.P.9.1, SC.3.E.6.1", "⏱ About 35 minutes"],
+  "details": ["📅 Q4 · Unit 9 · Matter &amp; Energy", "📖 Week 27 · Lesson 27.01", "🌎 CPALMS SC.3.P.9.1, SC.3.E.6.1", "⏱ About 35 minutes"],
   "icans": ["explain what happens to water when it is heated or cooled.", "name the three states of matter and describe how they change.", "give examples of melting, freezing, and evaporation from everyday life."],
   "opti": {"warm": "Our film starts on a snowy day in Florida. First, inspect a tiny frozen mystery from long ago.",
            "lesson": "Today you're a matter scientist. Follow an ice cube, test heat and cold, then climb down a sky ladder.",

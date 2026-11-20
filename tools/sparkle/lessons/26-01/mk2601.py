@@ -350,7 +350,7 @@ chips = {
 }
 
 L = {"id": "g3sci-26-01", "lesson": "26.01", "title": "What Are the Properties of Matter?", "emoji": "🧊",
-  "details": ["📅 Q4 · Unit 9 · Properties &amp; Changes of Matter", "📖 Week 26 · Lesson 26.01", "🌎 CPALMS SC.3.P.8.1, SC.3.P.8.2, SC.3.P.8.3", "⏱ About 35 minutes"],
+  "details": ["📅 Q4 · Unit 9 · Matter &amp; Energy", "📖 Week 26 · Lesson 26.01", "🌎 CPALMS SC.3.P.8.1, SC.3.P.8.2, SC.3.P.8.3", "⏱ About 35 minutes"],
   "icans": ["describe matter by its properties like color, shape, texture, and hardness.", "use tools to measure properties like mass, volume, and temperature.", "compare two objects by their properties and explain how they are different."],
   "opti": {"warm": "Our film starts at an old Florida fort with a secret in its walls. First, inspect a strange rock from the coast.",
            "lesson": "Today you're a materials scientist. Turn shells into stone, test two rocks, then climb a hardness ladder.",

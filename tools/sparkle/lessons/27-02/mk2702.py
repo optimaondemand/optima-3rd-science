@@ -370,7 +370,7 @@ chips = {
 }
 
 L = {"id": "g3sci-27-02", "lesson": "27.02", "title": "Investigation: Heating, Cooling, and Water Changes", "emoji": "💧",
-  "details": ["📅 Q4 · Unit 9 · Properties &amp; Changes of Matter", "📖 Week 27 · Lesson 27.02", "🌎 CPALMS SC.3.P.9.1, SC.3.E.6.1, SC.3.N.1.3", "⏱ About 35 minutes"],
+  "details": ["📅 Q4 · Unit 9 · Matter &amp; Energy", "📖 Week 27 · Lesson 27.02", "🌎 CPALMS SC.3.P.9.1, SC.3.E.6.1, SC.3.N.1.3", "⏱ About 35 minutes"],
   "icans": ["describe what happens to water when it is heated and when it is cooled.", "record observations of water changing from one state to another.", "explain how temperature causes water to change state using evidence from my investigation."],
   "opti": {"warm": "Our film starts on a misty Florida morning. First, inspect a cold cup with a secret on the outside.",
            "lesson": "Today you're a water scientist. Heat a pot, test two drinks, then climb down a steam tower.",

@@ -355,7 +355,7 @@ chips = {
 }
 
 L = {"id": "g3sci-26-02", "lesson": "26.02", "title": "Investigation: Measuring and Comparing Matter", "emoji": "⚖️",
-  "details": ["📅 Q4 · Unit 9 · Properties &amp; Changes of Matter", "📖 Week 26 · Lesson 26.02", "🌎 CPALMS SC.3.N.1.3, SC.3.P.8.1, SC.3.P.8.2, SC.3.P.8.3", "⏱ About 35 minutes"],
+  "details": ["📅 Q4 · Unit 9 · Matter &amp; Energy", "📖 Week 26 · Lesson 26.02", "🌎 CPALMS SC.3.N.1.3, SC.3.P.8.1, SC.3.P.8.2, SC.3.P.8.3", "⏱ About 35 minutes"],
   "icans": ["measure the mass and volume of different objects.", "record my measurements in a data table and use them to compare objects.", "explain how measurement helps scientists describe matter more exactly than just looking."],
   "opti": {"warm": "Our film starts on a Florida beach at night, where scientists guard a nest. First, inspect an old machine with two bowls.",
            "lesson": "Today you're a field scientist. Follow a turtle nest, test two balls, then climb a temperature ladder.",
