@@ -1,0 +1,1446 @@
+{
+ "id": "g3sci-28-02",
+ "lesson": "28.02",
+ "title": "Investigation: Light, Reflection, Absorption, and Heat",
+ "emoji": "💡",
+ "details": [
+  "📅 Q4 · Unit 9 · Matter &amp; Energy",
+  "📖 Week 28 · Lesson 28.02",
+  "🌎 CPALMS SC.3.P.10.3, SC.3.P.10.4, SC.3.P.11.1, SC.3.P.11.2",
+  "⏱ About 35 minutes"
+ ],
+ "icans": [
+  "explain that light travels in a straight line and can be reflected or absorbed.",
+  "describe what happens when light hits different surfaces.",
+  "demonstrate how rubbing (friction) produces heat energy."
+ ],
+ "opti": {
+  "warm": "Our film starts with sunbeams over the Gulf. First, inspect a giant glass object from a Florida museum.",
+  "lesson": "Today you're a light scientist. Follow a sunbeam, test two shirts, then trace one beam through four materials.",
+  "check": "Three quick questions. It's not graded. It's just for you, so give each one your best try.",
+  "assign": "Time to show what you learned. Fill in the light chart, then draw where the light goes."
+ },
+ "film": {
+  "id": "g3sci-28-02",
+  "mount": "wf-film",
+  "kicker": "Opti's Wonder Films",
+  "lesson": "Lesson 28.02 · Investigation: Light, Reflection, Absorption, and Heat",
+  "title": "Mirror Lake",
+  "bigQuestion": "How do light and heat energy interact with different materials?",
+  "poster": "f_rays",
+  "endPoster": "f_keywest",
+  "startTarget": "#tab-vocab",
+  "music": {
+   "src": "music",
+   "vol": 0.6
+  },
+  "shots": [
+   {
+    "t": 0,
+    "d": 3.4,
+    "type": "leader",
+    "top": "Optima Academy",
+    "name": "Opti's Wonder Films",
+    "bottom": "presents",
+    "fade": 1.0
+   },
+   {
+    "t": 3.4,
+    "d": 6.6,
+    "type": "photo",
+    "img": "f_rays",
+    "alt": "Beams of sunlight shine down through gray clouds onto the sea",
+    "from": [
+     1.12,
+     0.5,
+     0.4
+    ],
+    "to": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "place": "Indian Shores, Florida · Sunbeams over the Gulf",
+    "fade": 1.0,
+    "fx": [
+     "rays"
+    ],
+    "sfx": "shimmer"
+   },
+   {
+    "t": 10.0,
+    "d": 9.0,
+    "type": "photo",
+    "img": "f_mirror",
+    "alt": "Bald cypress trees and blue sky, seen in the still water of a lake",
+    "from": [
+     1.05,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.1,
+     0.5,
+     0.5
+    ],
+    "place": "John Chesnut Sr. Park, Florida · the shore of Lake Tarpon",
+    "fade": 0.8,
+    "tilt": {
+     "to": 180,
+     "at": 3.6,
+     "dur": 2.2
+    },
+    "sfxAt": [
+     {
+      "at": 3.6,
+      "name": "whoosh"
+     }
+    ]
+   },
+   {
+    "t": 19.0,
+    "d": 6.0,
+    "type": "photo",
+    "img": "f_road",
+    "alt": "A long highway on a hot day, with a shiny patch on the road far ahead",
+    "from": [
+     1.0,
+     0.5,
+     0.55
+    ],
+    "to": [
+     1.14,
+     0.5,
+     0.6
+    ],
+    "place": "A highway on a hot summer day",
+    "fade": 0.8
+   },
+   {
+    "t": 25.0,
+    "d": 6.0,
+    "type": "photo",
+    "img": "f_brakes",
+    "alt": "A race car speeding through the night, its front brakes glowing orange",
+    "from": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.1,
+     0.3,
+     0.55
+    ],
+    "place": "Sebring International Raceway, Florida · at night",
+    "fade": 0.8,
+    "sfxAt": [
+     {
+      "at": 0.4,
+      "name": "whoosh"
+     }
+    ]
+   },
+   {
+    "t": 31.0,
+    "d": 8.6,
+    "type": "photo",
+    "img": "f_keywest",
+    "alt": "A row of white wooden houses with porches under a bright blue sky",
+    "from": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.08,
+     0.5,
+     0.5
+    ],
+    "place": "Key West, Florida · white houses on Caroline Street",
+    "fade": 0.9
+   },
+   {
+    "t": 39.6,
+    "d": 6.0,
+    "type": "title",
+    "fade": 1.2
+   }
+  ],
+  "captions": [
+   {
+    "t": 3.8,
+    "d": 3.0,
+    "text": "Sunbeams shine down over the Gulf.",
+    "voice": "opti-1"
+   },
+   {
+    "t": 7.0,
+    "d": 2.8,
+    "text": "Every beam is a straight line.",
+    "voice": "opti-2"
+   },
+   {
+    "t": 10.4,
+    "d": 3.4,
+    "text": "Something looks strange at this Florida lake…",
+    "voice": "opti-3"
+   },
+   {
+    "t": 14.2,
+    "d": 4.4,
+    "text": "Flip it over! It was the trees' reflection in still water.",
+    "voice": "opti-4"
+   },
+   {
+    "t": 19.4,
+    "d": 5.2,
+    "text": "A dark road soaks up sunlight and gets hot.",
+    "voice": "opti-5"
+   },
+   {
+    "t": 25.4,
+    "d": 5.2,
+    "text": "Rubbing makes heat too. These race car brakes glow!",
+    "voice": "opti-6"
+   },
+   {
+    "t": 31.4,
+    "d": 3.6,
+    "text": "White walls bounce sunlight away.",
+    "voice": "opti-7"
+   },
+   {
+    "t": 35.2,
+    "d": 3.4,
+    "text": "How do light and heat energy interact with different materials?",
+    "voice": "opti-8"
+   }
+  ]
+ },
+ "scientist": "light scientist",
+ "specimen": {
+  "img": "spec",
+  "aspect": "3/4",
+  "radius": 0.07,
+  "hotspots": [
+   {
+    "name": "Rings of glass prisms",
+    "x": 0.62,
+    "y": 0.18
+   },
+   {
+    "name": "A big round glass middle",
+    "x": 0.4,
+    "y": 0.42
+   },
+   {
+    "name": "Thin brass bars",
+    "x": 0.47,
+    "y": 0.6
+   },
+   {
+    "name": "Rainbow colors in the glass",
+    "x": 0.26,
+    "y": 0.72
+   },
+   {
+    "name": "A green stand",
+    "x": 0.58,
+    "y": 0.9
+   }
+  ],
+  "kicker": "🔎 Mystery specimen",
+  "title": "What is this giant glass beehive?",
+  "alt": "A huge glass object taller than a person, made of rings of glass held by brass bars, on a green stand",
+  "look": "A real object in a museum, taller than a grown-up. Look at its parts: the rings of glass, the round middle, the brass bars, and the stand. A specimen is one real thing that scientists study. Its job has to do with light. What is it? That's for you to figure out.",
+  "do": "Press Inspect specimen. Move the magnifying lens over the glass, then tap 3 things you notice.",
+  "number": "No. 28.02-A",
+  "card": [
+   "<b>Specimen A</b>",
+   "Found: in a museum in Key West, Florida",
+   "Made of: glass and brass",
+   "What is it for? <i>You decide.</i>"
+  ],
+  "notice": "I notice… (one thing you see on the specimen)",
+  "wonder": "I wonder… (one question you want answered by the end of the lesson)"
+ },
+ "words": [
+  [
+   "🔦",
+   "light travels straight",
+   "Light moves in straight lines until it hits something or passes into something new. That is why shadows have sharp edges."
+  ],
+  [
+   "🪞",
+   "reflection",
+   "When light bounces off a surface. Mirrors, calm water, and shiny metal reflect light."
+  ],
+  [
+   "⬛",
+   "absorption",
+   "When a material soaks up light energy instead of bouncing it back. Dark colors absorb more light and turn it into heat."
+  ],
+  [
+   "💧",
+   "refraction",
+   "When light bends as it passes from one material into another, like from water into air."
+  ],
+  [
+   "🤲",
+   "friction",
+   "The rubbing of two surfaces against each other. Friction changes motion energy into heat energy."
+  ],
+  [
+   "🌡️",
+   "heat transfer",
+   "When heat energy moves from a warmer thing to a cooler thing, like a hot pan warming your soup."
+  ],
+  [
+   "🧱",
+   "surface",
+   "The outside of an object. Smooth, shiny surfaces reflect more light. Dark surfaces absorb more."
+  ]
+ ],
+ "parts": [
+  {
+   "kicker": "🌱 Part 1",
+   "title": "How Light Travels",
+   "html": "<p>Light travels in a straight line until it hits something or passes into something new, like water. That is why a flashlight makes a straight beam, and why your hand in the beam makes a shadow.</p><p>When light hits a surface, it can pass through, bounce off, bend, or be soaked up. What happens depends on the material.</p>"
+  },
+  {
+   "kicker": "🌤 Part 2",
+   "title": "Reflection, Refraction, and Absorption",
+   "html": "<p>Reflection is when light bounces off a surface. Mirrors, calm water, and shiny metal reflect light well. Refraction is when light bends as it passes from water into air. It makes a straw in water look broken.</p><p>Absorption is when a material soaks up light. Dark colors absorb more light and turn it into heat, so a black shirt gets hotter in the sun than a white one.</p>"
+  },
+  {
+   "kicker": "🌍 Part 3",
+   "title": "Friction Makes Heat",
+   "html": "<p>Heat doesn't only come from light. When two things rub together, friction changes motion energy into heat energy. Rub your hands together fast, and they warm up.</p><p>Bike and car brakes press against moving wheels to slow them down. All that rubbing makes the brakes hot.</p>"
+  },
+  {
+   "kicker": "🕵️ Part 4",
+   "title": "Light & Heat Files"
+  }
+ ],
+ "order": {
+  "mix": [
+   2,
+   0,
+   3,
+   1
+  ],
+  "hint": "Start with the Sun.",
+  "kicker": "🎞️ Put the scenes in order",
+  "title": "Where does a sunbeam go?",
+  "look": "Four real photos show a sunbeam's trip, from the Sun to the ground. They are mixed up. The dark film strip has four empty frames, from first (1) to last (4).",
+  "done": "🎬 Your order is right. Now watch it as a movie!",
+  "scenes": [
+   {
+    "img": "o1",
+    "alt": "The Sun as a glowing orange ball, photographed by a space telescope",
+    "text": "The Sun gives off light energy.",
+    "play": "Light leaves the Sun.",
+    "miss": [
+     "",
+     "The light starts at the Sun. Try frame 1.",
+     "The light starts at the Sun. Try frame 1.",
+     "The light starts at the Sun. Try frame 1."
+    ]
+   },
+   {
+    "img": "o2",
+    "alt": "Beams of sunlight shining in straight lines out from behind a tall cloud",
+    "text": "Sunlight travels in straight lines, all the way to Earth.",
+    "play": "Straight beams.",
+    "miss": [
+     "The light has to leave the Sun first. Try a later frame.",
+     "",
+     "The light travels to Earth before it hits anything. Try an earlier frame.",
+     "The light travels to Earth before it hits anything. Try an earlier frame."
+    ]
+   },
+   {
+    "img": "o3",
+    "alt": "A calm lake reflecting white clouds and blue sky like a mirror",
+    "text": "A calm lake bounces the light back. That's reflection.",
+    "play": "It reflects.",
+    "miss": [
+     "The light has to reach Earth first. Try a later frame.",
+     "The light has to reach Earth first. Try a later frame.",
+     "",
+     "The lake reflects before the road soaks it up. Try an earlier frame."
+    ]
+   },
+   {
+    "img": "o4",
+    "alt": "A long, dark, newly paved road under a blue sky",
+    "text": "A dark road soaks up the light and gets hot. That's absorption.",
+    "play": "It's absorbed.",
+    "miss": [
+     "This is the last step. Try frame 4.",
+     "This is the last step. Try frame 4.",
+     "This is the last step. Try frame 4.",
+     ""
+    ]
+   }
+  ],
+  "check": {
+   "q": "Ana says, \"Dark roads get hot because dark colors pull heat out of the air.\" What do you think?",
+   "options": [
+    {
+     "t": "Ana is right. Dark colors pull heat from the air.",
+     "miss": "Look at the last frame of the movie again. What did the road soak up?"
+    },
+    {
+     "t": "The road soaks up sunlight, and the light turns into heat.",
+     "ok": "Yes! Dark surfaces absorb light energy. The light changes into heat, so the road gets hot."
+    }
+   ]
+  }
+ },
+ "movie": {
+  "model": "beam-model.svg",
+  "modelBox": {
+   "left": "0%",
+   "width": "100%",
+   "rot": 0
+  },
+  "start": "0%",
+  "bg": "lab",
+  "counterIcon": "⏱️",
+  "real": "real",
+  "realAlt": "A black, freshly paved road shining in the sun",
+  "stamp": "SOAKED UP!",
+  "endCap": "A real road in the sun.",
+  "beats": [
+   {
+    "at": 0,
+    "cap": "1 · Light leaves the Sun.",
+    "model": {
+     "top": "0%",
+     "rot": 0,
+     "show": "s1"
+    },
+    "counter": [
+     "0 minutes"
+    ],
+    "sfx": "shimmer"
+   },
+   {
+    "at": 2600,
+    "cap": "2 · Straight rays.",
+    "model": {
+     "show": "s2"
+    },
+    "counter": [
+     "4 minutes"
+    ]
+   },
+   {
+    "at": 5200,
+    "cap": "3 · A lake reflects it.",
+    "model": {
+     "show": "s3"
+    },
+    "counter": [
+     "About 8 minutes"
+    ]
+   },
+   {
+    "at": 7800,
+    "cap": "4 · A road absorbs it.",
+    "model": {
+     "show": "s4"
+    },
+    "counter": [
+     "About 8 minutes"
+    ]
+   },
+   {
+    "at": 10400,
+    "cap": "The real thing.",
+    "model": {
+     "hide": true
+    },
+    "real": true
+   },
+   {
+    "at": 12200,
+    "stamp": true
+   }
+  ]
+ },
+ "compare": {
+  "kicker": "🧪 The Shirt Test",
+  "title": "Black shirt or white shirt?",
+  "look": "Two real specimens, each on a lit tray. Specimen A is a black T-shirt. Specimen B is a white T-shirt. Under the trays are two tools: a flashlight that checks how much light bounces back, and an hour of sunshine that checks for heat.",
+  "trays": [
+   {
+    "id": "A",
+    "img": "ta",
+    "alt": "A black T-shirt hanging on a wall",
+    "label": "Specimen A"
+   },
+   {
+    "id": "B",
+    "img": "tb",
+    "alt": "A white T-shirt on a hanger",
+    "label": "Specimen B"
+   }
+  ],
+  "materials": [
+   {
+    "key": "torch",
+    "label": "Flashlight (checks for bounce)",
+    "swatch": "torch"
+   },
+   {
+    "key": "sun",
+    "label": "An hour of sunshine (checks for heat)",
+    "swatch": "sun"
+   }
+  ],
+  "ask": [
+   {
+    "q": "Which shirt is dark, almost black?",
+    "ans": "A",
+    "ok": "Yes. Specimen A is the black shirt.",
+    "miss": "Look closely. Which one is dark?"
+   },
+   {
+    "q": "Which shirt is bright white?",
+    "ans": "B",
+    "ok": "Yes. Specimen B is the white shirt.",
+    "miss": "Look again. Which one is white?"
+   }
+  ],
+  "press": "🎯 Run the test",
+  "testDo": "Put the flashlight under one tray and the sunshine under the other: drag them, or tap one, then a tray. Press <b>Run the test</b>. Then swap.",
+  "disclaimer": "This is a model. Real shirts take a while to warm up in the sun.",
+  "results": {
+   "Atorch": {
+    "text": "Only a dim spot of light bounces back. The black shirt soaks up most of the light.",
+    "fx": "shade"
+   },
+   "Btorch": {
+    "text": "A bright spot of light bounces back onto the wall. The white shirt reflects most of the light.",
+    "fx": "glow"
+   },
+   "Asun": {
+    "text": "After an hour, the black shirt feels hot! It absorbed the sunlight, and the light turned into heat.",
+    "fx": "warm"
+   },
+   "Bsun": {
+    "text": "After an hour, the white shirt is only a little warm. It reflected most of the sunlight.",
+    "fx": "none"
+   }
+  },
+  "best": [
+   "Asun",
+   "Btorch"
+  ],
+  "frame": "This shirt ___, so in the sun it ___.",
+  "claimLead": "This shirt",
+  "claimMid": "so in the sun it",
+  "claim": {
+   "A": {
+    "feat": [
+     "soaked up most of the light",
+     "bounced most of the light back"
+    ],
+    "featOk": 0,
+    "eat": [
+     "got hot",
+     "stayed cooler"
+    ],
+    "eatOk": 0
+   },
+   "B": {
+    "feat": [
+     "soaked up most of the light",
+     "bounced most of the light back"
+    ],
+    "featOk": 1,
+    "eat": [
+     "got hot",
+     "stayed cooler"
+    ],
+    "eatOk": 1
+   }
+  },
+  "curator": {
+   "A": "<b>Absorbs light.</b> The black shirt doesn't pull heat out of the air. It soaks up sunlight, and the light turns into heat.",
+   "B": "<b>Reflects light.</b> The white shirt bounces most of the light away, so it stays cooler."
+  },
+  "missFeat": "Look at your tests for {label} again. Did the light bounce back or get soaked up?",
+  "missClaim": "Think about your sunshine test. Did it get hot, or stay cooler?",
+  "done": "Dark colors absorb more light and turn it into heat. Light colors reflect more light and stay cooler.",
+  "after": {
+   "kicker": "🎬 Behind the scenes · Cool roofs",
+   "img": "f_keywest",
+   "alt": "A row of white wooden houses with porches in Key West",
+   "html": "In hot places like Key West, people have painted houses white for a long time. Today, some cities paint roofs white too. White roofs reflect sunlight, so the rooms below stay cooler."
+  }
+ },
+ "wall": {
+  "kicker": "🔦 The Light Path Lab",
+  "title": "Follow one beam of light through four materials",
+  "look": "A model lab with four stops along one beam of light: glass, water, a mirror, and black sand. Each stop has a real photo. The brass dial on the left shows where the beam is.",
+  "do": "First, make a prediction. Then brush the glowing step: drag across it (or tap it again and again) until the photo shows.",
+  "predict": {
+   "q": "A straw in a glass of water looks broken. Is the straw really broken?",
+   "options": [
+    [
+     "no",
+     "No, it only looks broken"
+    ],
+    [
+     "yes",
+     "Yes, the water bends the straw"
+    ]
+   ],
+   "answer": "no",
+   "mine": "Your prediction: <b>{p}</b>. Let's follow the beam and find out.",
+   "confirm": "You predicted it only looks broken. You were right: the light bends, not the straw.",
+   "change": "You predicted the water bends the straw. The lab changed that idea: the straw is fine; the light bends as it leaves the water."
+  },
+  "sky": "e3",
+  "skyAlt": "A calm lake reflecting mountains and blue sky",
+  "skyCap": "A calm lake reflects like a mirror · Mirror Lakes, New Zealand",
+  "unit": "Stop",
+  "found": "Clue found at Stop {n}",
+  "elevator": [
+   "Beam",
+   "Glass",
+   "Water",
+   "Mirror",
+   "Black sand"
+  ],
+  "line": [
+   "LIGHT GOES THROUGH",
+   "LIGHT IS SOAKED UP"
+  ],
+  "lockTag": "🔒 Brush the stop above first",
+  "locked": "Brush the stop above first. We go one stop at a time.",
+  "first": "Brush the glowing top stop. Drag across it (or tap it again and again).",
+  "next": "Keep going. Brush Stop {n}.",
+  "endTitle": "All 4 stops explored",
+  "endText": "Look at the lab. The same light can pass through, bend, bounce off, or be soaked up. It all depends on the material it hits.",
+  "rule": "<b>Light travels in a straight line until it hits something.</b> Then it can pass through (glass), bend (water), bounce off (a mirror), or be soaked up and turn into heat (black sand).",
+  "choices": [
+   "🪟 Passes straight through",
+   "💧 Bends (refraction)",
+   "🪞 Bounces off (reflection)",
+   "⬛ Soaked up (absorption)"
+  ],
+  "layers": [
+   {
+    "name": "Stop 1 · Clear glass",
+    "rock": "haze",
+    "img": "l1",
+    "alt": "An old photo of bright beams of sunlight shining in straight lines through tall windows into a huge hall",
+    "ask": "Look at Stop 1. Read the clue AND the photo. What do you find?",
+    "clue": "Sunlight passes straight through clear window glass. In this dusty hall, you can see the beams: each one is a perfectly straight line.",
+    "ans": 0,
+    "ok": "Yes! Light passes straight through clear glass.",
+    "tag": "🪟 Glass · passes through",
+    "miss": {
+     "1": "Not quite. Do the beams bend here?",
+     "2": "Not yet. Does the light bounce back off the windows?",
+     "3": "Not yet. Is the light soaked up, or does it shine through?"
+    },
+    "env": "e1",
+    "envAlt": "A giant dome made of glass panes, full of plants",
+    "envCap": "The Climatron, a glass greenhouse · St. Louis, Missouri"
+   },
+   {
+    "name": "Stop 2 · Water",
+    "rock": "water1",
+    "img": "l2",
+    "alt": "A straw in a glass of blue water that looks bent where it enters the water",
+    "ask": "Look at Stop 2. Read the clue AND the photo. What do you find?",
+    "clue": "Light bends when it passes from water into air. That bending is called refraction. It makes the straw look broken, but the straw is fine!",
+    "ans": 1,
+    "ok": "Yes! The light bends, so the straw only looks broken.",
+    "tag": "💧 Water · bends",
+    "miss": {
+     "0": "Close! Light does pass into the water. But read the clue: what happens to it?",
+     "2": "Not quite. Is the light bouncing back?",
+     "3": "Not yet. Is the light soaked up here?"
+    },
+    "env": "e2",
+    "envAlt": "Clear blue-green spring water flowing between trees",
+    "envCap": "Look into a clear spring: the bottom looks closer than it is · Blue Spring State Park, Florida"
+   },
+   {
+    "name": "Stop 3 · Mirror",
+    "rock": "snowcap",
+    "img": "l3",
+    "alt": "A long golden hall with a whole wall of tall mirrors",
+    "ask": "Look at Stop 3. Read the clue AND the photo. What do you find?",
+    "clue": "A mirror is smooth and shiny. Light bounces off it in a new straight line. That's reflection. This hall has 357 mirrors!",
+    "ans": 2,
+    "ok": "Yes! A mirror bounces light back. That's reflection.",
+    "tag": "🪞 Mirror · bounces off",
+    "miss": {
+     "0": "Not quite. Can you see through a mirror?",
+     "1": "Not yet. Read the clue: does the light bend or bounce?",
+     "3": "Not yet. A mirror sends light back, not into itself."
+    },
+    "env": "e3",
+    "envAlt": "A calm lake reflecting mountains and blue sky",
+    "envCap": "A calm lake reflects like a mirror · Mirror Lakes, New Zealand"
+   },
+   {
+    "name": "Stop 4 · Black sand",
+    "rock": "space",
+    "img": "l4",
+    "alt": "A hand holding a pile of tiny black grains of sand",
+    "ask": "Look at Stop 4. Read the clue AND the photo. What do you find?",
+    "clue": "Black sand soaks up almost all the light that hits it. The light turns into heat, so black sand beaches get very hot in the sun.",
+    "ans": 3,
+    "ok": "Yes! Black sand absorbs the light and gets hot.",
+    "tag": "⬛ Black sand · soaked up",
+    "miss": {
+     "0": "Not this one. Can light shine through sand?",
+     "1": "Not quite. Read the clue: does the light bend here?",
+     "2": "Not yet. Does black sand bounce light back like a mirror?"
+    },
+    "env": "e4",
+    "envAlt": "A sea turtle resting on a black sand beach by the ocean",
+    "envCap": "A green sea turtle on Punaluʻu Black Sand Beach · Hawaiʻi"
+   }
+  ],
+  "mix": {
+   "q": "Leo says, \"The straw in the water really snapped in half.\" Is Leo right?",
+   "options": [
+    {
+     "t": "Yes. The water broke the straw.",
+     "miss": "Think about Stop 2. What did the clue say bends?"
+    },
+    {
+     "t": "No. The light bends as it leaves the water, so the straw only looks broken.",
+     "ok": "Yes! Pull the straw out and it's still in one piece. Refraction only changes how it looks."
+    }
+   ]
+  }
+ },
+ "wow": {
+  "kicker": "🎬 Director's cut",
+  "title": "A Mirror on the Moon",
+  "img": "wow",
+  "alt": "A flat box of small round mirrors sitting on the gray dust of the Moon, with the lunar lander behind it",
+  "caption": "The laser mirror left on the Moon by Apollo 11, 1969",
+  "html": "<p style=\"margin:0 0 8px\">In 1969, Apollo 11 astronauts left a special mirror on the Moon. Scientists on Earth still shine laser light at it.</p><p style=\"margin:0\">The light travels in a straight line to the Moon, bounces off the mirror, and comes back, in about 2½ seconds round trip!</p>",
+  "inset": "inset",
+  "insetCap": "A green laser beam aimed at the Moon from NASA Goddard, Maryland."
+ },
+ "keyIdea": "Light travels in a straight line until it hits something or passes into something new. Then it can pass through, bend (refraction), bounce off (reflection), or be soaked up (absorption). Dark surfaces absorb more light and turn it into heat; light, shiny surfaces reflect more. Friction, when things rub together, changes motion energy into heat energy.",
+ "det": {
+  "look": "Five real places where light or rubbing does something. Each card shows what scientists saw. Under the cards is an evidence chart, a table that holds what you figure out.",
+  "do": "Pick 3 files, one at a time. Tap a clue, then name what is happening. Predict if it gets hotter or stays cooler, and watch the place appear.",
+  "noun": "File",
+  "need": 3,
+  "inferQ": "What is happening?",
+  "inferDone": "It's",
+  "chartSo": "so it's",
+  "predict": {
+   "q": "Do you predict it gets hotter or stays cooler?",
+   "options": [
+    [
+     "hot",
+     "🔥 It gets hotter"
+    ],
+    [
+     "cool",
+     "❄️ It stays cooler"
+    ]
+   ]
+  },
+  "kicker": "The place today",
+  "enough": "You already solved 3 light and heat files. Nice work, scientist!",
+  "cols": [
+   "File",
+   "My observation",
+   "What happens",
+   "Hotter or cooler",
+   "My evidence"
+  ],
+  "write": {
+   "label": "File __ shows ___. It is ___, because ___.",
+   "starter": "Start with: \"File __ shows…\"",
+   "min": 15,
+   "chips": [
+    [
+     "trait",
+     "Names what you see"
+    ],
+    [
+     "lh",
+     "Names reflection, absorption, or friction"
+    ],
+    [
+     "because",
+     "Gives a reason (because, so)"
+    ]
+   ]
+  },
+  "items": [
+   {
+    "id": "A",
+    "img": "d1",
+    "alt": "A white wooden house with a porch and a white picket fence under shady trees",
+    "clues": [
+     {
+      "t": "A house painted bright white in the sunshine",
+      "ok": true
+     },
+     {
+      "t": "Brakes glowing orange",
+      "miss": "Look again. Is anything glowing?"
+     },
+     {
+      "t": "Smoke from a spinning stick",
+      "miss": "Look again. Is anything smoking?"
+     }
+    ],
+    "org": [
+     "🪞 Light bounces off (reflection)",
+     "⬛ Light is soaked up (absorption)",
+     "🤲 Rubbing makes heat (friction)"
+    ],
+    "orgAns": 0,
+    "orgShort": "reflection",
+    "orgMiss": "White paint sends most of the sunlight back. Which choice means bouncing off? Try again.",
+    "env": "It stays cooler",
+    "envAns": "cool",
+    "envMiss": "White paint bounces sunlight away. Does the house get hotter or stay cooler? Try again.",
+    "envImg": "d1h",
+    "envAlt": "Key West seen from the air, with blue-green water all around",
+    "envCap": "Key West, Florida, from the air",
+    "reveal": "White paint reflects most of the sunlight that hits it. Houses like this stay cooler inside, which helps on hot Key West days.",
+    "rebuildEnv": "keywest",
+    "bts": "Long before air conditioning, Key West builders used white paint, big porches, and tall windows to keep houses cool."
+   },
+   {
+    "id": "B",
+    "img": "d2",
+    "alt": "A close-up of a dark asphalt road stretching toward the desert",
+    "clues": [
+     {
+      "t": "Dark black road in bright sunshine",
+      "ok": true
+     },
+     {
+      "t": "White snow",
+      "miss": "Look again. Is anything white?"
+     },
+     {
+      "t": "A white house",
+      "miss": "Look again. What color is the road?"
+     }
+    ],
+    "org": [
+     "🪞 Light bounces off (reflection)",
+     "⬛ Light is soaked up (absorption)",
+     "🤲 Rubbing makes heat (friction)"
+    ],
+    "orgAns": 1,
+    "orgShort": "absorption",
+    "orgMiss": "The dark road soaks up most of the sunlight. Which choice means soaking up? Try again.",
+    "env": "It gets hotter",
+    "envAns": "hot",
+    "envMiss": "The road soaks up light, and light turns into heat. Does it get hotter or stay cooler? Try again.",
+    "envImg": "d2h",
+    "envAlt": "A huge, empty parking lot under a bright blue sky",
+    "envCap": "A big parking lot on a sunny day",
+    "reveal": "Dark asphalt absorbs most of the sunlight that hits it. On a summer afternoon, it can get hot enough to burn bare feet.",
+    "rebuildEnv": "lot",
+    "bts": "That's why dog owners touch the pavement with a hand before a summer walk."
+   },
+   {
+    "id": "C",
+    "img": "d3",
+    "alt": "Bright white snow on a sunny mountainside under a blue sky",
+    "clues": [
+     {
+      "t": "Bright white snow in strong sunshine",
+      "ok": true
+     },
+     {
+      "t": "A black road",
+      "miss": "Look again. What color is the ground?"
+     },
+     {
+      "t": "A spinning wooden stick",
+      "miss": "Look again. Is anyone rubbing anything?"
+     }
+    ],
+    "org": [
+     "🪞 Light bounces off (reflection)",
+     "⬛ Light is soaked up (absorption)",
+     "🤲 Rubbing makes heat (friction)"
+    ],
+    "orgAns": 0,
+    "orgShort": "reflection",
+    "orgMiss": "Snow sends most of the sunlight back. Which choice means bouncing off? Try again.",
+    "env": "It stays cooler",
+    "envAns": "cool",
+    "envMiss": "Snow bounces most sunlight away. Does it get hotter or stay cooler? Try again.",
+    "envImg": "d3h",
+    "envAlt": "Snowy mountains shining white, seen from space",
+    "envCap": "The snowy Alps, seen from space · April 2016",
+    "reveal": "Fresh snow reflects most of the sunlight that hits it. That's why it can stay frozen on a bright, sunny day, and why skiers wear dark goggles.",
+    "rebuildEnv": "alps",
+    "bts": "From space, snowy mountains shine bright white because snow reflects so much light."
+   },
+   {
+    "id": "D",
+    "img": "d4",
+    "alt": "A race car speeding at night with its front brakes glowing orange",
+    "clues": [
+     {
+      "t": "Brakes glowing orange-hot on a fast race car",
+      "ok": true
+     },
+     {
+      "t": "Bright white snow",
+      "miss": "Look again. Is anything white?"
+     },
+     {
+      "t": "A white house",
+      "miss": "Look again. What is glowing?"
+     }
+    ],
+    "org": [
+     "🪞 Light bounces off (reflection)",
+     "⬛ Light is soaked up (absorption)",
+     "🤲 Rubbing makes heat (friction)"
+    ],
+    "orgAns": 2,
+    "orgShort": "friction",
+    "orgMiss": "The brakes rub against the spinning wheels. Which choice is about rubbing? Try again.",
+    "env": "It gets hotter",
+    "envAns": "hot",
+    "envMiss": "The brakes are glowing. Do they get hotter or stay cooler? Try again.",
+    "envImg": "d4h",
+    "envAlt": "An old photo of a white race car speeding past a crowd",
+    "envCap": "Sebring, Florida · a race in 1960",
+    "reveal": "To slow down, brake pads rub against a spinning disc. That friction changes motion energy into heat. In a long race, brakes can glow red-hot!",
+    "rebuildEnv": "sebring",
+    "bts": "Sebring, Florida, has held a famous 12-hour car race since 1952."
+   },
+   {
+    "id": "E",
+    "img": "d5",
+    "alt": "A man blowing on a small bundle of smoking grass, held in his hands",
+    "clues": [
+     {
+      "t": "Smoke rising from wood that was spun and rubbed",
+      "ok": true
+     },
+     {
+      "t": "A shiny mirror",
+      "miss": "Look again. Do you see a mirror?"
+     },
+     {
+      "t": "Bright snow",
+      "miss": "Look again. Is there any snow?"
+     }
+    ],
+    "org": [
+     "🪞 Light bounces off (reflection)",
+     "⬛ Light is soaked up (absorption)",
+     "🤲 Rubbing makes heat (friction)"
+    ],
+    "orgAns": 2,
+    "orgShort": "friction",
+    "orgMiss": "He spun a wooden stick fast against a board. Which choice is about rubbing? Try again.",
+    "env": "It gets hotter",
+    "envAns": "hot",
+    "envMiss": "The wood got hot enough to smoke. Did it get hotter or stay cooler? Try again.",
+    "envImg": "d5h",
+    "envAlt": "A man kneeling on the grass, pressing a wooden bow drill against a board",
+    "envCap": "A fire-making demonstration · Black Moshannon State Park, Pennsylvania",
+    "reveal": "Spinning a wooden stick fast against a board makes friction. The wood gets hot enough to smoke and start a tiny ember. People made fire this way for thousands of years.",
+    "rebuildEnv": "park",
+    "bts": "This was a demonstration at a state park. Only try making fire with an adult."
+   }
+  ]
+ },
+ "rebuild": {
+  "title": "Use your evidence to rebuild the scene",
+  "missPrefix": "Hmm. Look at your light and heat file again. ",
+  "kicker": "🌍 Rebuild the scene",
+  "whyStart": "I chose this because the light…",
+  "envs": [
+   {
+    "key": "keywest",
+    "name": "🏝️ Key West, Florida",
+    "img": "d1h",
+    "cap": "Bright white houses…"
+   },
+   {
+    "key": "lot",
+    "name": "🅿️ A big parking lot",
+    "img": "d2h",
+    "cap": "Dark, hot pavement…"
+   },
+   {
+    "key": "alps",
+    "name": "🏔️ Snowy mountains",
+    "img": "d3h",
+    "cap": "Snow in the sunshine…"
+   },
+   {
+    "key": "sebring",
+    "name": "🏁 A race track",
+    "img": "d4h",
+    "cap": "Brakes at work…"
+   },
+   {
+    "key": "park",
+    "name": "🔥 A state park",
+    "img": "d5h",
+    "cap": "Making fire…"
+   }
+  ],
+  "life": [
+   {
+    "name": "🏠 A cool white house",
+    "img": "d1",
+    "env": "keywest",
+    "miss": "The white house belongs in Key West."
+   },
+   {
+    "name": "🛣️ A hot black road",
+    "img": "d2",
+    "env": "lot",
+    "miss": "Hot pavement belongs at the parking lot."
+   },
+   {
+    "name": "❄️ Bright snow",
+    "img": "d3",
+    "env": "alps",
+    "miss": "Snow belongs on the mountains."
+   },
+   {
+    "name": "🏎️ Glowing brakes",
+    "img": "d4",
+    "env": "sebring",
+    "miss": "Glowing brakes belong at the race track."
+   },
+   {
+    "name": "🪵 A smoking bow drill",
+    "img": "d5",
+    "env": "park",
+    "miss": "The bow drill belongs at the park demonstration."
+   }
+  ]
+ },
+ "quiz": [
+  {
+   "q": "What happens when light hits a mirror?",
+   "options": [
+    {
+     "t": "The light is reflected: it bounces off the surface",
+     "ok": "🌲 Correct! Mirrors are smooth and shiny, so they reflect light. The light bounces off the surface."
+    },
+    {
+     "t": "The light is absorbed: it is taken in by the mirror",
+     "miss": "Think about what you see in a mirror. If the light were absorbed, could you see your reflection?"
+    },
+    {
+     "t": "The light passes through the mirror",
+     "miss": "Think about what you see in a mirror. If the light went through, could you see your reflection?"
+    }
+   ]
+  },
+  {
+   "q": "Why does a dark-colored surface feel warmer in the sun than a light-colored surface?",
+   "options": [
+    {
+     "t": "Dark surfaces reflect more light energy",
+     "miss": "Think about what absorption means. When light is absorbed, where does the energy go?"
+    },
+    {
+     "t": "Dark surfaces absorb more light energy and change it into heat",
+     "ok": "🌲 Yes! Dark surfaces absorb more light energy. That absorbed energy turns into heat, making the surface feel warmer."
+    },
+    {
+     "t": "Dark surfaces create more friction",
+     "miss": "Think about what absorption means. When light is absorbed, where does the energy go?"
+    }
+   ]
+  },
+  {
+   "q": "A student rubs two sticks together quickly and they start to feel warm. What is causing the heat?",
+   "options": [
+    {
+     "t": "Reflection of light",
+     "miss": "The sticks are being rubbed together. What happens when two surfaces rub against each other?"
+    },
+    {
+     "t": "Absorption of sound energy",
+     "miss": "The sticks are being rubbed together. What happens when two surfaces rub against each other?"
+    },
+    {
+     "t": "Friction between the two surfaces",
+     "ok": "🌲 Exactly! Rubbing two surfaces together makes friction, and friction changes motion energy into heat."
+    }
+   ]
+  }
+ ],
+ "assign": {
+  "partA": {
+   "title": "Light interaction chart",
+   "do": "Read each one. Pick the best answer, or type your answer.",
+   "items": [
+    {
+     "n": 1,
+     "q": "Mirror: does light mostly reflect or absorb? How do you know?",
+     "type": "choice",
+     "options": [
+      {
+       "t": "It reflects. You can see yourself in it.",
+       "ok": "Yes. A mirror bounces light back to your eyes, so you see your reflection."
+      },
+      {
+       "t": "It absorbs. The light disappears into it.",
+       "miss": "If a mirror soaked up light, could you see yourself in it?"
+      },
+      {
+       "t": "Light goes straight through it, like a window.",
+       "miss": "Can you see through a mirror to the wall behind it?"
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "q": "White paper in the sun: does light mostly reflect or absorb? What happens to its temperature?",
+     "type": "choice",
+     "options": [
+      {
+       "t": "It mostly absorbs light, so it gets very hot.",
+       "miss": "Light colors bounce back most of the light. Think about the white shirt."
+      },
+      {
+       "t": "It bends the light, like water.",
+       "miss": "Bending happens when light goes from water into air. What does white paper do?"
+      },
+      {
+       "t": "It mostly reflects light, so it stays cooler.",
+       "ok": "Yes. White paper bounces back most of the light, so it stays cooler."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "q": "Black paper in the sun: does light mostly reflect or absorb? What happens to its temperature?",
+     "type": "choice",
+     "options": [
+      {
+       "t": "It mostly reflects light, so it stays cool.",
+       "miss": "Dark colors soak up most of the light. Think about the black shirt."
+      },
+      {
+       "t": "It mostly absorbs light, so it gets warmer.",
+       "ok": "Yes. Black paper soaks up most of the light, and the light turns into heat."
+      },
+      {
+       "t": "It makes its own light.",
+       "miss": "Paper doesn't glow. What does it do with sunlight?"
+      }
+     ]
+    }
+   ]
+  },
+  "partB": {
+   "title": "Short answer",
+   "do": "Answer in complete sentences. Use your science words.",
+   "items": [
+    {
+     "n": 1,
+     "q": "Explain the difference between reflection and absorption. Use an example for each.",
+     "type": "text",
+     "min": 12,
+     "chips": [
+      [
+       "refl",
+       "Tells what reflection does"
+      ],
+      [
+       "abs",
+       "Tells what absorption does"
+      ]
+     ]
+    },
+    {
+     "n": 2,
+     "q": "How does friction make heat? Describe what happens when you rub your hands together.",
+     "type": "text",
+     "min": 12,
+     "chips": [
+      [
+       "rub",
+       "Talks about rubbing"
+      ],
+      [
+       "warm",
+       "Says it gets warm or hot"
+      ]
+     ]
+    }
+   ]
+  },
+  "write": {
+   "title": "How do light and heat energy interact with different materials? Use evidence from your investigation.",
+   "do": "Pick one from your evidence chart. Answer the three questions. Use at least one of the science words under the boxes.",
+   "vocab": [
+    "reflection",
+    "absorption",
+    "friction"
+   ],
+   "need": 1,
+   "prompts": [
+    [
+     "What do you think?",
+     "Start with: \"I learned that light can be reflected or absorbed because…\""
+    ],
+    [
+     "What did you observe or learn that supports your thinking?",
+     "Start with: \"My investigation showed that dark surfaces…\""
+    ],
+    [
+     "Why does that make sense?",
+     "Start with: \"Friction also makes heat energy, which I know because…\""
+    ]
+   ]
+  },
+  "partC": {
+   "do": "Draw a diagram showing a flashlight shining on three different surfaces: a mirror, white paper, and black paper. Use arrows to show where the light goes for each surface. Label whether each surface mainly reflects or absorbs the light.",
+   "labels": [
+    "Where the light goes when it hits the mirror",
+    "Where the light goes when it hits the black paper"
+   ]
+  },
+  "checklist": [
+   {
+    "k": "det",
+    "t": "My evidence chart has 3 light and heat files and my explanation.",
+    "req": {
+     "det": 3,
+     "text": {
+      "in-det": 15
+     }
+    }
+   },
+   {
+    "k": "a",
+    "t": "Part A: my light interaction chart.",
+    "req": {
+     "choice": [
+      "a1",
+      "a2",
+      "a3"
+     ]
+    }
+   },
+   {
+    "k": "b",
+    "t": "Part B: questions 1 and 2.",
+    "req": {
+     "text": {
+      "in-b1": 12,
+      "in-b2": 12
+     }
+    }
+   },
+   {
+    "k": "c",
+    "t": "Part C: my drawing and both labels.",
+    "req": {
+     "sketch": true,
+     "text": {
+      "in-c1": 6,
+      "in-c2": 6
+     }
+    }
+   },
+   {
+    "k": "w",
+    "t": "Write and explain, with at least one science word.",
+    "req": {
+     "text": {
+      "in-w1": 10,
+      "in-w2": 10,
+      "in-w3": 10
+     },
+     "vocab": 1
+    }
+   }
+  ]
+ },
+ "premiere": {
+  "title": "Premiere my light story",
+  "thinkLabel": "What the light (or rubbing) did",
+  "director": "JUNIOR LIGHT SCIENTIST",
+  "storyKicker": "My light story",
+  "frames": [
+   {
+    "k": "formation",
+    "label": "A sunbeam's trip",
+    "img": "o2",
+    "cap": "A sunbeam's trip: Sun, straight rays, reflect, absorb."
+   },
+   {
+    "k": "compare",
+    "label": "The Shirt Test",
+    "img": "ta",
+    "cap": "The Shirt Test: dark soaks up light, white bounces it."
+   },
+   {
+    "k": "wall",
+    "label": "The Light Path Lab",
+    "img": "l2",
+    "cap": "The Light Path Lab: through, bend, bounce, soak up."
+   },
+   {
+    "k": "det",
+    "label": "Light and heat files",
+    "img": "d4",
+    "cap": "Light and heat files: hotter or cooler?"
+   }
+  ]
+ },
+ "next": {
+  "title": "Coming up next: 29.01",
+  "text": "What Makes the Everglades Special? Next time, a new unit begins: explore Florida's river of grass and the living things that make it home."
+ },
+ "chips": {
+  "part": {
+   "any": [
+    "glass",
+    "rings",
+    "ring",
+    "prism",
+    "prisms",
+    "round",
+    "middle",
+    "brass",
+    "bars",
+    "bar",
+    "metal",
+    "rainbow",
+    "colors",
+    "colours",
+    "green",
+    "stand",
+    "base",
+    "big",
+    "tall",
+    "shiny",
+    "clear",
+    "light",
+    "lens",
+    "lighthouse"
+   ]
+  },
+  "ask": {
+   "re": "\\?|\\b(why|how|what|when|where|who|which|does|do|is|are|can|did|will)\\b"
+  },
+  "trait": {
+   "any": [
+    "white",
+    "house",
+    "paint",
+    "black",
+    "dark",
+    "road",
+    "asphalt",
+    "snow",
+    "bright",
+    "brakes",
+    "glowing",
+    "glow",
+    "orange",
+    "car",
+    "smoke",
+    "stick",
+    "wood",
+    "spinning",
+    "sun",
+    "sunshine",
+    "hot",
+    "cool"
+   ]
+  },
+  "lh": {
+   "any": [
+    "reflect",
+    "reflects",
+    "reflected",
+    "reflection",
+    "absorb",
+    "absorbs",
+    "absorbed",
+    "absorption",
+    "friction",
+    "rub",
+    "rubbing",
+    "bounce",
+    "bounces",
+    "soak",
+    "soaks"
+   ]
+  },
+  "because": {
+   "re": "\\b(because|since|so)\\b"
+  },
+  "refl": {
+   "any": [
+    "reflect",
+    "reflects",
+    "reflection",
+    "bounce",
+    "bounces",
+    "mirror"
+   ]
+  },
+  "abs": {
+   "any": [
+    "absorb",
+    "absorbs",
+    "absorption",
+    "soak",
+    "soaks",
+    "dark",
+    "black"
+   ]
+  },
+  "rub": {
+   "any": [
+    "rub",
+    "rubs",
+    "rubbing",
+    "friction",
+    "together"
+   ]
+  },
+  "warm": {
+   "any": [
+    "warm",
+    "warmer",
+    "hot",
+    "hotter",
+    "heat"
+   ]
+  }
+ },
+ "creditAlias": {},
+ "creditsExtra": [
+  "Music: Clair de lune, from Suite bergamasque (Claude Debussy), public domain recording (via Wikimedia Commons).",
+  "Opti the owl: Optima Academy. Sound effects are made by the page. The sunbeam movie, the Shirt Test, and the Light Path Lab are models; every place photo is real. The cypress reflection photo has a color filter added by its photographer."
+ ]
+}

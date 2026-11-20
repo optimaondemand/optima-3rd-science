@@ -1,0 +1,22 @@
+{
+ "how-28-02-specimen": {
+  "page": "Press Inspect specimen. Move the magnifying lens over the glass, then tap 3 things you notice.",
+  "say": "Press Inspect specimen. Move the magnifying lens over the glass, then tap three things you notice."
+ },
+ "how-28-02-compare": {
+  "page": "Put the flashlight under one tray and the sunshine under the other: drag them, or tap one, then a tray. Press Run the test. Then swap.",
+  "say": "Put the flashlight under one tray and the sunshine under the other: drag them, or tap one, then a tray. Press Run the test. Then swap."
+ },
+ "how-28-02-wall": {
+  "page": "First, make a prediction. Then brush the glowing step: drag across it (or tap it again and again) until the photo shows.",
+  "say": "First, make a prediction. Then brush the glowing step: drag across it (or tap it again and again) until the photo shows."
+ },
+ "how-28-02-det": {
+  "page": "Pick 3 files, one at a time. Tap a clue, then name what is happening. Predict if it gets hotter or stays cooler, and watch the place appear.",
+  "say": "Pick three files, one at a time. Tap a clue, then name what is happening. Predict if it gets hotter or stays cooler, and watch the place appear."
+ },
+ "how-28-02-partc": {
+  "page": "Draw a diagram showing a flashlight shining on three different surfaces: a mirror, white paper, and black paper. Use arrows to show where the light goes for each surface. Label whether each surface mainly reflects or absorbs the light.",
+  "say": "Draw a diagram showing a flashlight shining on three different surfaces: a mirror, white paper, and black paper. Use arrows to show where the light goes for each surface. Label whether each surface mainly reflects or absorbs the light."
+ }
+}

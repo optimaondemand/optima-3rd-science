@@ -1,0 +1,42 @@
+<svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A model of a sunbeam's trip: the Sun gives off light; straight rays travel across space to Earth; on a calm lake the light bounces off; on a dark road the light is soaked up and the road heats up">
+<defs>
+<radialGradient id="sm-sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff7c9"/><stop offset=".55" stop-color="#ffc43d"/><stop offset="1" stop-color="#ff8a1e"/></radialGradient>
+<radialGradient id="sm-glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd76a" stop-opacity=".7"/><stop offset="1" stop-color="#ffd76a" stop-opacity="0"/></radialGradient>
+<linearGradient id="sm-space" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#121a33"/><stop offset="1" stop-color="#0a0f20"/></linearGradient>
+<linearGradient id="sm-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fb8e6"/><stop offset="1" stop-color="#cfe6f6"/></linearGradient>
+<linearGradient id="sm-lake" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5d9fcf"/><stop offset="1" stop-color="#2f6f9f"/></linearGradient>
+<linearGradient id="sm-road" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3a3c"/><stop offset="1" stop-color="#1f1f21"/></linearGradient>
+<linearGradient id="sm-grass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6aa04e"/><stop offset="1" stop-color="#3e6e2d"/></linearGradient>
+</defs>
+<g class="s1">
+<rect width="320" height="180" fill="url(#sm-space)"/>
+<g fill="#ffffff" opacity=".7"><circle cx="250" cy="30" r="1.2"/><circle cx="290" cy="120" r="1"/><circle cx="210" cy="150" r="1.3"/><circle cx="270" cy="70" r="1"/></g>
+<circle cx="110" cy="90" r="80" fill="url(#sm-glow)"/>
+<circle cx="110" cy="90" r="46" fill="url(#sm-sun)"/>
+</g>
+<g class="s2">
+<rect width="320" height="180" fill="url(#sm-space)"/>
+<circle cx="20" cy="90" r="60" fill="url(#sm-glow)"/>
+<circle cx="20" cy="90" r="34" fill="url(#sm-sun)"/>
+<g stroke="#ffe08a" stroke-width="2.5" stroke-linecap="round"><path d="M58 70 H262"/><path d="M58 90 H262"/><path d="M58 110 H262"/></g>
+<g fill="#ffe08a"><path d="M262 64 l12 6 -12 6 z"/><path d="M262 84 l12 6 -12 6 z"/><path d="M262 104 l12 6 -12 6 z"/></g>
+<circle cx="296" cy="90" r="14" fill="#3f86c9"/><path d="M286 84 q6 -6 14 -2 q4 6 -2 10 q-6 2 -12 -8 z" fill="#5fa64a"/>
+</g>
+<g class="s3">
+<rect width="320" height="180" fill="url(#sm-sky)"/>
+<circle cx="40" cy="26" r="18" fill="url(#sm-sun)"/>
+<rect x="0" y="110" width="320" height="70" fill="url(#sm-lake)"/>
+<path d="M0 110 Q40 104 80 110 L80 112 L0 112 Z" fill="url(#sm-grass)"/>
+<g stroke="#fff3b0" stroke-width="3" stroke-linecap="round" fill="none"><path d="M60 40 L150 112 L240 40"/></g>
+<path d="M240 40 l-2 12 -10 -8 z" fill="#fff3b0"/>
+<g stroke="#ffffff" stroke-width="1.5" opacity=".7"><path d="M120 128 h40 M170 140 h30 M90 150 h40"/></g>
+</g>
+<g class="s4">
+<rect width="320" height="180" fill="url(#sm-sky)"/>
+<circle cx="40" cy="26" r="18" fill="url(#sm-sun)"/>
+<rect x="0" y="118" width="320" height="62" fill="url(#sm-grass)"/>
+<path d="M90 180 L140 118 H180 L230 180 Z" fill="url(#sm-road)"/>
+<g stroke="#fff3b0" stroke-width="3" stroke-linecap="round"><path d="M70 40 L150 136"/><path d="M100 40 L170 136"/></g>
+<g fill="none" stroke="#ff8a3d" stroke-width="2.5" stroke-linecap="round" opacity=".85"><path d="M140 112 q6 -8 0 -16 q-6 -8 0 -16"/><path d="M160 112 q6 -8 0 -16 q-6 -8 0 -16"/><path d="M180 112 q6 -8 0 -16 q-6 -8 0 -16"/></g>
+</g>
+</svg>
