@@ -1,0 +1,22 @@
+{
+ "how-27-02-specimen": {
+  "page": "Press Inspect specimen. Move the magnifying lens over the cup, then tap 3 things you notice.",
+  "say": "Press Inspect specimen. Move the magnifying lens over the cup, then tap three things you notice."
+ },
+ "how-27-02-compare": {
+  "page": "Put the lid on one specimen and the paper towel on the other: drag them, or tap one, then a specimen. Press Run the test. Then swap.",
+  "say": "Put the lid on one specimen and the paper towel on the other: drag them, or tap one, then a specimen. Press Run the test. Then swap."
+ },
+ "how-27-02-wall": {
+  "page": "First, make a prediction. Then brush the glowing step: drag across it (or tap it again and again) until the photo shows.",
+  "say": "First, make a prediction. Then brush the glowing step: drag across it (or tap it again and again) until the photo shows."
+ },
+ "how-27-02-det": {
+  "page": "Pick 3 files, one at a time. Tap a clue, then name the change. Predict if it was warming up or cooling down, and watch the place appear.",
+  "say": "Pick three files, one at a time. Tap a clue, then name the change. Predict if it was warming up or cooling down, and watch the place appear."
+ },
+ "how-27-02-partc": {
+  "page": "Draw a comic strip with four panels showing the Pot Lab: ice, melted water, boiling water with steam, and drops on a cool lid. In each panel, draw the water and label its state: solid, liquid, gas, liquid again.",
+  "say": "Draw a comic strip with four panels showing the Pot Lab: ice, melted water, boiling water with steam, and drops on a cool lid. In each panel, draw the water and label its state: solid, liquid, gas, liquid again."
+ }
+}

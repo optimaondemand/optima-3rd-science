@@ -1,0 +1,62 @@
+<svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A model of the Pot Lab: ice cubes in a pot on a stove; the ice melted into water as the burner heats it; the water boiling with bubbles and steam; a cold lid over the pot catching drops that drip back down">
+<defs>
+<linearGradient id="pm-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3e6cc"/><stop offset="1" stop-color="#e2cfa8"/></linearGradient>
+<linearGradient id="pm-stove" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a4f55"/><stop offset="1" stop-color="#2b2f33"/></linearGradient>
+<linearGradient id="pm-pot" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8d969e"/><stop offset=".35" stop-color="#e3e8ec"/><stop offset=".6" stop-color="#b9c2c9"/><stop offset="1" stop-color="#7c858d"/></linearGradient>
+<linearGradient id="pm-water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b8def2"/><stop offset="1" stop-color="#6fb0d4"/></linearGradient>
+<linearGradient id="pm-hot" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6ecf7"/><stop offset="1" stop-color="#8cc2de"/></linearGradient>
+<linearGradient id="pm-ice" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#d9eff9"/><stop offset="1" stop-color="#9fcbe2"/></linearGradient>
+<radialGradient id="pm-flame" cx=".5" cy=".8" r=".7"><stop offset="0" stop-color="#bfe3ff"/><stop offset=".5" stop-color="#3d8bff"/><stop offset="1" stop-color="#1f4fc0" stop-opacity="0"/></radialGradient>
+<radialGradient id="pm-steam" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffffff" stop-opacity=".95"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+<linearGradient id="pm-lid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9eef2"/><stop offset="1" stop-color="#9aa6af"/></linearGradient>
+<linearGradient id="pm-therm" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#d63a2f"/><stop offset="1" stop-color="#f06a5c"/></linearGradient>
+</defs>
+<g class="s1">
+<rect width="320" height="180" fill="url(#pm-wall)"/>
+<rect x="0" y="142" width="320" height="38" fill="url(#pm-stove)"/>
+<ellipse cx="150" cy="146" rx="54" ry="6" fill="#1d2023"/>
+<path d="M98 76 H202 L196 140 Q150 150 104 140 Z" fill="url(#pm-pot)" stroke="#6b737a" stroke-width="2"/>
+<ellipse cx="150" cy="76" rx="52" ry="9" fill="#d5dde3" stroke="#6b737a" stroke-width="2"/>
+<path d="M202 82 h34 a5 5 0 0 1 0 10 h-34" fill="#3a3f44"/>
+<g fill="url(#pm-ice)" stroke="#86b5cd" stroke-width="1"><rect x="112" y="64" width="24" height="20" rx="3" transform="rotate(-8 124 74)"/><rect x="138" y="62" width="24" height="20" rx="3"/><rect x="164" y="65" width="24" height="20" rx="3" transform="rotate(9 176 75)"/></g>
+<g fill="#ffffff" opacity=".85"><path d="M116 66 h8 l-5 5 z M142 65 h8 l-5 5 z M168 68 h8 l-5 5 z"/></g>
+<rect x="262" y="40" width="12" height="86" rx="6" fill="#ffffff" stroke="#8a8f94" stroke-width="2"/><circle cx="268" cy="130" r="10" fill="url(#pm-therm)" stroke="#8a8f94" stroke-width="2"/><rect x="265" y="108" width="6" height="20" fill="#e04a3c"/>
+</g>
+<g class="s2">
+<rect width="320" height="180" fill="url(#pm-wall)"/>
+<rect x="0" y="142" width="320" height="38" fill="url(#pm-stove)"/>
+<ellipse cx="150" cy="146" rx="50" ry="9" fill="url(#pm-flame)"/>
+<path d="M98 76 H202 L196 140 Q150 150 104 140 Z" fill="url(#pm-pot)" stroke="#6b737a" stroke-width="2"/>
+<ellipse cx="150" cy="84" rx="50" ry="7" fill="url(#pm-water)"/>
+<ellipse cx="150" cy="76" rx="52" ry="9" fill="none" stroke="#6b737a" stroke-width="2"/>
+<path d="M202 82 h34 a5 5 0 0 1 0 10 h-34" fill="#3a3f44"/>
+<g fill="#ffffff" opacity=".7"><ellipse cx="132" cy="83" rx="10" ry="2"/><ellipse cx="168" cy="85" rx="8" ry="1.6"/></g>
+<rect x="262" y="40" width="12" height="86" rx="6" fill="#ffffff" stroke="#8a8f94" stroke-width="2"/><circle cx="268" cy="130" r="10" fill="url(#pm-therm)" stroke="#8a8f94" stroke-width="2"/><rect x="265" y="86" width="6" height="42" fill="#e04a3c"/>
+</g>
+<g class="s3">
+<rect width="320" height="180" fill="url(#pm-wall)"/>
+<rect x="0" y="142" width="320" height="38" fill="url(#pm-stove)"/>
+<ellipse cx="150" cy="146" rx="54" ry="11" fill="url(#pm-flame)"/>
+<g fill="url(#pm-steam)"><circle cx="128" cy="44" r="18"/><circle cx="156" cy="30" r="22"/><circle cx="182" cy="46" r="16"/><circle cx="146" cy="12" r="16" opacity=".6"/></g>
+<path d="M98 76 H202 L196 140 Q150 150 104 140 Z" fill="url(#pm-pot)" stroke="#6b737a" stroke-width="2"/>
+<ellipse cx="150" cy="82" rx="50" ry="7" fill="url(#pm-hot)"/>
+<g fill="#ffffff" stroke="#9fcbe2" stroke-width=".8"><circle cx="118" cy="80" r="4"/><circle cx="134" cy="83" r="3"/><circle cx="150" cy="79" r="5"/><circle cx="166" cy="83" r="3.5"/><circle cx="182" cy="80" r="4"/><circle cx="142" cy="85" r="2.5"/><circle cx="174" cy="78" r="2.5"/></g>
+<ellipse cx="150" cy="76" rx="52" ry="9" fill="none" stroke="#6b737a" stroke-width="2"/>
+<path d="M202 82 h34 a5 5 0 0 1 0 10 h-34" fill="#3a3f44"/>
+<rect x="262" y="40" width="12" height="86" rx="6" fill="#ffffff" stroke="#8a8f94" stroke-width="2"/><circle cx="268" cy="130" r="10" fill="url(#pm-therm)" stroke="#8a8f94" stroke-width="2"/><rect x="265" y="46" width="6" height="82" fill="#e04a3c"/>
+</g>
+<g class="s4">
+<rect width="320" height="180" fill="url(#pm-wall)"/>
+<rect x="0" y="142" width="320" height="38" fill="url(#pm-stove)"/>
+<ellipse cx="150" cy="146" rx="54" ry="11" fill="url(#pm-flame)"/>
+<path d="M98 76 H202 L196 140 Q150 150 104 140 Z" fill="url(#pm-pot)" stroke="#6b737a" stroke-width="2"/>
+<ellipse cx="150" cy="82" rx="50" ry="7" fill="url(#pm-hot)"/>
+<g fill="#ffffff" stroke="#9fcbe2" stroke-width=".8"><circle cx="124" cy="81" r="3.5"/><circle cx="150" cy="79" r="4"/><circle cx="176" cy="81" r="3.5"/></g>
+<g fill="url(#pm-steam)" opacity=".7"><circle cx="140" cy="62" r="10"/><circle cx="162" cy="60" r="9"/></g>
+<path d="M92 50 Q150 30 208 50 L204 56 Q150 38 96 56 Z" fill="url(#pm-lid)" stroke="#6b737a" stroke-width="1.5"/>
+<rect x="144" y="28" width="12" height="9" rx="3" fill="#4a4f55"/>
+<g fill="#cfe9f7" stroke="#6fa9c9" stroke-width=".8"><ellipse cx="112" cy="57" rx="2.2" ry="3"/><ellipse cx="128" cy="54" rx="2" ry="2.8"/><ellipse cx="146" cy="52" rx="2.2" ry="3"/><ellipse cx="164" cy="52" rx="2" ry="2.8"/><ellipse cx="182" cy="55" rx="2.2" ry="3"/><ellipse cx="196" cy="58" rx="1.8" ry="2.6"/><path d="M136 66 q2 4 0 6 q-2 -2 0 -6 z"/><path d="M172 68 q2 4 0 6 q-2 -2 0 -6 z"/></g>
+<path d="M202 82 h34 a5 5 0 0 1 0 10 h-34" fill="#3a3f44"/>
+<rect x="262" y="40" width="12" height="86" rx="6" fill="#ffffff" stroke="#8a8f94" stroke-width="2"/><circle cx="268" cy="130" r="10" fill="url(#pm-therm)" stroke="#8a8f94" stroke-width="2"/><rect x="265" y="46" width="6" height="82" fill="#e04a3c"/>
+</g>
+</svg>

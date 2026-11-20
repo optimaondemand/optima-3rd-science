@@ -79,7 +79,7 @@ function WL4_INIT(W) {
       if (bt.cut) { mv.classList.add('cut'); rays.style.opacity = 0; }
       if (bt.model && !skipModel) { if (bt.model.top) model.style.top = bt.model.top; if (bt.model.rot != null) model.style.transform = 'rotate(' + bt.model.rot + 'deg)'; if (bt.model.show) show(bt.model.show); if (bt.model.hide) model.style.opacity = 0; }
       if (bt.layers) { var Ly = bt.layers; if (Ly.stagger) { for (var i = 0; i < Ly.add; i++) (function (i) { at(i * Ly.stagger, function () { addBand(); layers.style.height = (Ly.from + (i + 1) * Ly.step) + '%'; }); })(i); } else { for (var j = 0; j < Ly.add; j++) addBand(); layers.style.height = Ly.height + '%'; } }
-      if (bt.counter) bt.counter.forEach(function (t, i) { at(i * 380, function () { cnt.textContent = '⏳ ' + t; noise(40, 5000, .05); }); });
+      if (bt.counter) bt.counter.forEach(function (t, i) { at(i * 380, function () { cnt.textContent = (MV.counterIcon != null ? MV.counterIcon : '⏳') + ' ' + t; noise(40, 5000, .05); }); });
       if (bt.sfx === 'rumble') noise(600, 400, .1);
       if (bt.real) real.style.opacity = 1;
       if (bt.stamp) { stamp.classList.add('on'); thud(); cap.textContent = MV.endCap; cancelAnimationFrame(raf); }
