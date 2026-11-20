@@ -1,0 +1,49 @@
+<svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A model of manatees through one Florida winter: cold weather chills the river; manatees swim upriver to a warm spring; they crowd into the warm spring water; when warm weather returns, they spread out into the river again">
+<defs>
+<linearGradient id="mm-cold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fb1c2"/><stop offset="1" stop-color="#d9e2ea"/></linearGradient>
+<linearGradient id="mm-warm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8cc4e8"/><stop offset="1" stop-color="#e6f2fa"/></linearGradient>
+<linearGradient id="mm-river" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f7b8f"/><stop offset="1" stop-color="#2d4f60"/></linearGradient>
+<linearGradient id="mm-riverw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3e8fa6"/><stop offset="1" stop-color="#21627a"/></linearGradient>
+<radialGradient id="mm-spring" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#7fe3d6"/><stop offset=".7" stop-color="#38b3b0"/><stop offset="1" stop-color="#2a8f93"/></radialGradient>
+<linearGradient id="mm-bank" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6f9a4c"/><stop offset="1" stop-color="#46703a"/></linearGradient>
+<radialGradient id="mm-body" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#9aa3a6"/><stop offset="1" stop-color="#5d686d"/></radialGradient>
+<g id="mm-m"><ellipse cx="0" cy="0" rx="14" ry="6.5" fill="url(#mm-body)"/><path d="M13 0 q8 -6 10 0 q-2 6 -10 0 z" fill="#5d686d"/><ellipse cx="-13" cy="0" rx="4" ry="3.6" fill="#7d878b"/><path d="M-6 4 l-3 5 l5 -2 z" fill="#5d686d"/></g>
+<g id="mm-land">
+<path d="M0 60 L320 60 L320 75 Q250 68 200 78 Q140 90 90 80 Q40 72 0 82 Z" fill="url(#mm-bank)"/>
+<path d="M0 150 Q60 140 120 148 Q190 158 250 146 Q290 140 320 144 L320 180 L0 180 Z" fill="url(#mm-bank)"/>
+<g fill="#3f6b33"><circle cx="30" cy="62" r="9"/><circle cx="48" cy="58" r="11"/><circle cx="210" cy="60" r="10"/><circle cx="290" cy="58" r="12"/></g>
+</g>
+</defs>
+<g class="s1">
+<rect width="320" height="180" fill="url(#mm-cold)"/>
+<rect y="60" width="320" height="100" fill="url(#mm-river)"/>
+<use href="#mm-land"/>
+<ellipse cx="44" cy="112" rx="26" ry="16" fill="url(#mm-spring)" opacity=".85"/>
+<g stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity=".8" fill="none"><path d="M150 22 h60 q10 0 8 -8"/><path d="M170 36 h70 q10 0 8 -8"/><path d="M140 48 h50"/></g>
+<use href="#mm-m" transform="translate(250 112)"/><use href="#mm-m" transform="translate(212 124) scale(.85)"/>
+</g>
+<g class="s2">
+<rect width="320" height="180" fill="url(#mm-cold)"/>
+<rect y="60" width="320" height="100" fill="url(#mm-river)"/>
+<use href="#mm-land"/>
+<ellipse cx="44" cy="112" rx="26" ry="16" fill="url(#mm-spring)"/>
+<use href="#mm-m" transform="translate(150 110)"/><use href="#mm-m" transform="translate(118 122) scale(.85)"/><use href="#mm-m" transform="translate(186 120) scale(.9)"/>
+<path d="M230 104 L90 104" stroke="#f2b632" stroke-width="3" stroke-dasharray="6 5" fill="none"/><path d="M90 98 l-10 6 l10 6 z" fill="#f2b632"/>
+</g>
+<g class="s3">
+<rect width="320" height="180" fill="url(#mm-cold)"/>
+<rect y="60" width="320" height="100" fill="url(#mm-river)"/>
+<use href="#mm-land"/>
+<ellipse cx="60" cy="112" rx="50" ry="26" fill="url(#mm-spring)"/>
+<ellipse cx="60" cy="112" rx="56" ry="30" fill="none" stroke="#ffd27a" stroke-width="2" opacity=".6"/>
+<use href="#mm-m" transform="translate(40 100) scale(.8)"/><use href="#mm-m" transform="translate(72 104) scale(.8)"/><use href="#mm-m" transform="translate(50 120) scale(.8)"/><use href="#mm-m" transform="translate(84 122) scale(.8)"/><use href="#mm-m" transform="translate(28 116) scale(.7)"/>
+</g>
+<g class="s4">
+<rect width="320" height="180" fill="url(#mm-warm)"/>
+<circle cx="160" cy="30" r="15" fill="#ffd45e"/>
+<rect y="60" width="320" height="100" fill="url(#mm-riverw)"/>
+<use href="#mm-land"/>
+<ellipse cx="44" cy="112" rx="26" ry="16" fill="url(#mm-spring)"/>
+<use href="#mm-m" transform="translate(120 104) scale(.85)"/><use href="#mm-m" transform="translate(190 118)"/><use href="#mm-m" transform="translate(260 106) scale(.9)"/><use href="#mm-m" transform="translate(230 128) scale(.8)"/>
+</g>
+</svg>

@@ -1,0 +1,22 @@
+{
+ "how-30-01-specimen": {
+  "page": "Press Inspect specimen. Move the magnifying lens over the skull, then tap 3 things you notice.",
+  "say": "Press Inspect specimen. Move the magnifying lens over the skull, then tap three things you notice."
+ },
+ "how-30-01-compare": {
+  "page": "Put the green leaf under one tray and the pale sand under the other: drag them, or tap one, then a tray. Press Run the test. Then swap.",
+  "say": "Put the green leaf under one tray and the pale sand under the other: drag them, or tap one, then a tray. Press Run the test. Then swap."
+ },
+ "how-30-01-wall": {
+  "page": "First, make a prediction. Then brush the glowing step: drag across it (or tap it again and again) until the photo shows.",
+  "say": "First, make a prediction. Then brush the glowing step: drag across it (or tap it again and again) until the photo shows."
+ },
+ "how-30-01-det": {
+  "page": "Pick 3 cards, one at a time. Tap an adaptation you see, then name its animal group. Predict where it lives, and watch its habitat appear.",
+  "say": "Pick three cards, one at a time. Tap an adaptation you see, then name its animal group. Predict where it lives, and watch its habitat appear."
+ },
+ "how-30-01-partc": {
+  "page": "Pick any Florida animal from this lesson. Draw it in its habitat and label two adaptations. For each label, name the feature and how it helps.",
+  "say": "Pick any Florida animal from this lesson. Draw it in its habitat and label two adaptations. For each label, name the feature and how it helps."
+ }
+}
