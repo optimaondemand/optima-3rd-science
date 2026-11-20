@@ -1,0 +1,12 @@
+{"unit": 9, "title": "Matter & Energy", "lessons": "26.01 to 28.02", "q": [
+{"src": "26.01", "type": "mc", "q": "You blow into a balloon and it gets bigger. What does this show about air?", "o": ["Air has no mass.", "Air takes up space, so it is matter.", "Air is a liquid.", "Air is a kind of energy."], "a": [1]},
+{"src": "26.01", "type": "mc", "q": "Which word describes the texture of an object?", "o": ["Heavy", "Blue", "Rough", "Round"], "a": [2]},
+{"src": "26.02", "type": "mc", "q": "A data table shows the mass of four objects: shell 12 g, rock 85 g, pinecone 30 g, sponge 6 g. Which object has the least mass?", "o": ["The shell", "The rock", "The pinecone", "The sponge"], "a": [3]},
+{"src": "27.01", "type": "tf", "q": "When a puddle dries up in the sun, the water is gone forever.", "a": false},
+{"src": "27.01", "type": "mc", "q": "An ice cube is heated more and more. Which order shows how it changes?", "o": ["Solid, then liquid, then gas", "Liquid, then solid, then gas", "Gas, then liquid, then solid", "Solid, then gas, then liquid"], "a": [0]},
+{"src": "27.02", "type": "mc", "q": "On a hot day, drops form on the outside of a cold glass of lemonade. Where did the water come from?", "o": ["The lemonade leaked through the glass.", "Water vapor in the air cooled on the glass and condensed.", "The glass melted a little.", "The ice inside turned straight into drops on the outside."], "a": [1]},
+{"src": "28.01", "type": "mc", "q": "Which is an example of motion energy changing into sound energy?", "o": ["The Sun warming a sidewalk", "A lamp glowing", "A stick hitting a drum", "Ice melting in a cup"], "a": [2]},
+{"src": "28.01", "type": "ma", "q": "Which of these are forms of energy? Choose ALL that are correct.", "o": ["Light", "Sound", "Heat", "Mass", "Color"], "a": [0, 1, 2]},
+{"src": "28.02", "type": "mc", "q": "Four shirts sit in the same sunny spot for an hour. Which one gets the warmest?", "o": ["A white shirt", "A silver shirt", "A pale yellow shirt", "A black shirt"], "a": [3]},
+{"src": "28.02", "type": "mc", "q": "You look at a still lake and see the trees upside down in the water. What is the light doing?", "o": ["Bouncing off the water: reflection", "Being soaked up by the water: absorption", "Making the water hot", "Stopping at the trees"], "a": [0]}
+]}
