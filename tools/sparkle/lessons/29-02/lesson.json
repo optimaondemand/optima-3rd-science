@@ -1,0 +1,1434 @@
+{
+ "id": "g3sci-29-02",
+ "lesson": "29.02",
+ "title": "Investigation: Everglades Food Web",
+ "emoji": "🕸️",
+ "details": [
+  "📅 Q4 · Unit 10 · Florida Ecosystems",
+  "📖 Week 29 · Lesson 29.02",
+  "🌎 CPALMS SC.3.L.17.2, SC.3.N.3.2",
+  "⏱ About 35 minutes"
+ ],
+ "icans": [
+  "sort Everglades organisms into producers, consumers, and decomposers.",
+  "construct a food web showing how energy moves between organisms in the Everglades.",
+  "predict what would happen to a food web if one species disappeared."
+ ],
+ "opti": {
+  "warm": "Our film starts with a rare Florida bird and its favorite food. First, inspect a strange brown mat from the marsh.",
+  "lesson": "Today you're an ecologist. Follow the Sun's energy to a snail kite, test which one makes its own food, then climb down the Energy Tower.",
+  "check": "Three quick questions. It's not graded. It's just for you, so give each one your best try.",
+  "assign": "Time to show what you learned. Sort the living things, then draw your own Everglades food web."
+ },
+ "film": {
+  "id": "g3sci-29-02",
+  "mount": "wf-film",
+  "kicker": "Opti's Wonder Films",
+  "lesson": "Lesson 29.02 · Investigation: Everglades Food Web",
+  "title": "One Bird, One Snail",
+  "bigQuestion": "If one animal disappeared from the Everglades, what would happen to everything else?",
+  "poster": "f_kite",
+  "endPoster": "f_wading",
+  "startTarget": "#tab-vocab",
+  "music": {
+   "src": "music",
+   "vol": 0.6
+  },
+  "shots": [
+   {
+    "t": 0,
+    "d": 3.4,
+    "type": "leader",
+    "top": "Optima Academy",
+    "name": "Opti's Wonder Films",
+    "bottom": "presents",
+    "fade": 1.0
+   },
+   {
+    "t": 3.4,
+    "d": 6.4,
+    "type": "archive",
+    "img": "f_sign",
+    "alt": "An old roadside sign that says: Don't shoot or molest this bird. The Everglade kite.",
+    "note": "A sign near the Everglades, 1972.",
+    "fade": 0.8,
+    "sfxAt": [
+     {
+      "at": 0.6,
+      "name": "whoosh"
+     }
+    ]
+   },
+   {
+    "t": 9.8,
+    "d": 6.0,
+    "type": "photo",
+    "img": "f_kite",
+    "alt": "A dark snail kite on a branch, holding a round apple snail in its hooked beak",
+    "from": [
+     1.12,
+     0.55,
+     0.3
+    ],
+    "to": [
+     1.0,
+     0.5,
+     0.4
+    ],
+    "place": "A snail kite · Tosohatchee Wildlife Management Area, Florida",
+    "fade": 0.8
+   },
+   {
+    "t": 15.8,
+    "d": 8.4,
+    "type": "xray",
+    "img": "f_marsh",
+    "alt": "A shallow Everglades marsh with sawgrass and pale mats floating in the water",
+    "img2": "f_peri",
+    "alt2": "Close-up of a spongy, tan mat of periphyton under the water",
+    "xlabel": "Under the water",
+    "from": [
+     1.04,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.1,
+     0.5,
+     0.6
+    ],
+    "win": [
+     30,
+     24,
+     40
+    ],
+    "band": 0.18,
+    "y0": 0.1,
+    "y1": 0.6,
+    "xrayAt": 1.6,
+    "xrayDur": 5.4,
+    "place": "Everglades National Park, Florida",
+    "fade": 0.8
+   },
+   {
+    "t": 24.2,
+    "d": 5.6,
+    "type": "photo",
+    "img": "f_anhinga",
+    "alt": "An anhinga among lily pads with a small fish speared on its sharp bill",
+    "from": [
+     1.0,
+     0.5,
+     0.4
+    ],
+    "to": [
+     1.1,
+     0.55,
+     0.35
+    ],
+    "place": "An anhinga · Everglades National Park",
+    "fade": 0.8
+   },
+   {
+    "t": 29.8,
+    "d": 5.4,
+    "type": "photo",
+    "img": "f_gator",
+    "alt": "An alligator swimming across dark water, seen from above",
+    "from": [
+     1.1,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "place": "An American alligator · Everglades National Park",
+    "fade": 0.8,
+    "sfxAt": [
+     {
+      "at": 0.4,
+      "name": "bubbles"
+     }
+    ]
+   },
+   {
+    "t": 35.2,
+    "d": 6.8,
+    "type": "photo",
+    "img": "f_wading",
+    "alt": "White egrets and dark wading birds feeding together in a shallow marsh",
+    "from": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.08,
+     0.5,
+     0.55
+    ],
+    "place": "Wading birds feeding · Shark Valley, Everglades National Park",
+    "fade": 0.9
+   },
+   {
+    "t": 42.0,
+    "d": 6.0,
+    "type": "title",
+    "fade": 1.2
+   }
+  ],
+  "captions": [
+   {
+    "t": 3.8,
+    "d": 5.6,
+    "text": "Long ago, signs asked people to protect one rare Florida bird.",
+    "voice": "opti-1"
+   },
+   {
+    "t": 10.2,
+    "d": 5.2,
+    "text": "The snail kite eats almost nothing but apple snails.",
+    "voice": "opti-2"
+   },
+   {
+    "t": 16.2,
+    "d": 3.4,
+    "text": "And the snails? Look under the water.",
+    "voice": "opti-3"
+   },
+   {
+    "t": 20.2,
+    "d": 3.8,
+    "text": "They eat this brown mat, called periphyton.",
+    "voice": "opti-4"
+   },
+   {
+    "t": 24.6,
+    "d": 5.0,
+    "text": "Anhingas spear fish. Alligators eat fish, turtles, and birds.",
+    "voice": "opti-5"
+   },
+   {
+    "t": 30.2,
+    "d": 4.6,
+    "text": "Every living thing here is connected.",
+    "voice": "opti-6"
+   },
+   {
+    "t": 35.6,
+    "d": 6.2,
+    "text": "If one animal disappeared from the Everglades, what would happen to everything else?",
+    "voice": "opti-7"
+   }
+  ]
+ },
+ "scientist": "ecologist",
+ "specimen": {
+  "img": "spec",
+  "aspect": "3/2",
+  "radius": 0.07,
+  "hotspots": [
+   {
+    "name": "Brown, spongy tubes",
+    "x": 0.68,
+    "y": 0.4
+   },
+   {
+    "name": "Fuzzy, hairy edges",
+    "x": 0.47,
+    "y": 0.6
+   },
+   {
+    "name": "A broken, crumbly end",
+    "x": 0.19,
+    "y": 0.77
+   },
+   {
+    "name": "Thin green grass",
+    "x": 0.46,
+    "y": 0.09
+   },
+   {
+    "name": "A tiny water plant",
+    "x": 0.19,
+    "y": 0.46
+   }
+  ],
+  "kicker": "🔎 Mystery specimen",
+  "title": "What is this brown mat?",
+  "alt": "Close-up of many tan, spongy, tube-shaped clumps lying in shallow water, with thin green grass between them",
+  "look": "A close-up photo of something real in shallow Everglades water. Look at its parts: the tubes, their fuzzy edges, the broken ends, and the grass around them. A specimen is one real thing that scientists study. It is alive, and it feeds the whole marsh. What is it? That's for you to figure out.",
+  "do": "Press Inspect specimen. Move the magnifying lens over the mat, then tap 3 things you notice.",
+  "number": "No. 29.02-A",
+  "card": [
+   "<b>Specimen A</b>",
+   "Found: in shallow water, Everglades National Park",
+   "Feels like: a soft, wet sponge",
+   "What is it? <i>You decide.</i>"
+  ],
+  "notice": "I notice… (one thing you see on the specimen)",
+  "wonder": "I wonder… (one question you want answered by the end of the lesson)"
+ },
+ "words": [
+  [
+   "🕸️",
+   "food web",
+   "A diagram showing how energy moves between many connected living things: who eats whom in an ecosystem."
+  ],
+  [
+   "🌱",
+   "producer",
+   "A plant or alga that makes its own food using sunlight, water, and air. Sawgrass and periphyton are producers in the Everglades."
+  ],
+  [
+   "🐌",
+   "consumer",
+   "An animal that gets energy by eating other living things. Consumers cannot make their own food."
+  ],
+  [
+   "🦅",
+   "predator",
+   "An animal that hunts and eats other animals. The anhinga is a predator: it dives underwater to spear fish."
+  ],
+  [
+   "🐟",
+   "prey",
+   "An animal that is hunted and eaten by a predator. An apple snail in the water is prey."
+  ],
+  [
+   "🍄",
+   "decomposer",
+   "A fungus or bacterium that breaks down dead plants and animals, returning nutrients to the soil and water."
+  ],
+  [
+   "🟤",
+   "periphyton",
+   "A spongy mat of algae and tiny living things that grows in Everglades water. It is a producer."
+  ]
+ ],
+ "parts": [
+  {
+   "kicker": "🌱 Part 1",
+   "title": "Energy Flows Through a Food Web",
+   "html": "<p>Every living thing needs energy. In the Everglades, energy starts with the Sun. Producers, like sawgrass and periphyton, use sunlight, water, and air to make their own food.</p><p>Consumers can't make food. They get energy by eating producers or other animals. All the eating links together make a food web.</p>"
+  },
+  {
+   "kicker": "🌤 Part 2",
+   "title": "Who Eats Whom in the Everglades",
+   "html": "<p>Apple snails graze on periphyton, and tiny mosquitofish eat algae and tiny bugs. Snail kites eat apple snails, and anhingas spear small fish. At the top, the alligator eats fish, turtles, and birds.</p><p>When anything dies, decomposers like fungi and bacteria break it down and return nutrients to the water.</p>"
+  },
+  {
+   "kicker": "🌍 Part 3",
+   "title": "A Model of the Web",
+   "html": "<p>Scientists use a food web as a model. It helps them understand how energy moves and predict what happens when something changes.</p><p>If one animal disappears, the animals that eat it can go hungry, and the living things it ate can grow out of control.</p>"
+  },
+  {
+   "kicker": "🕵️ Part 4",
+   "title": "Cascade Files"
+  }
+ ],
+ "order": {
+  "mix": [
+   2,
+   0,
+   3,
+   1
+  ],
+  "hint": "Start with the Sun.",
+  "kicker": "🎞️ Put the scenes in order",
+  "title": "How does the Sun's energy reach a snail kite?",
+  "look": "Four real photos show energy moving through part of the Everglades food web, from the Sun to a bird. They are mixed up. The dark film strip has four empty frames, from first (1) to last (4).",
+  "done": "🎬 Your order is right. Now watch it as a movie!",
+  "scenes": [
+   {
+    "img": "o1",
+    "alt": "Sawgrass and small cypress trees under a bright, sunny sky with white clouds",
+    "text": "The Sun shines on the marsh.",
+    "play": "Sunlight.",
+    "miss": [
+     "",
+     "The energy starts with the Sun. Try frame 1.",
+     "The energy starts with the Sun. Try frame 1.",
+     "The energy starts with the Sun. Try frame 1."
+    ]
+   },
+   {
+    "img": "o2",
+    "alt": "Tan mats of periphyton floating among thin grass in shallow water",
+    "text": "Periphyton uses sunlight, water, and air to make food.",
+    "play": "Periphyton makes food.",
+    "miss": [
+     "The Sun has to shine first. Try a later frame.",
+     "",
+     "Periphyton makes food before anything eats it. Try an earlier frame.",
+     "Periphyton makes food before anything eats it. Try an earlier frame."
+    ]
+   },
+   {
+    "img": "o3",
+    "alt": "A brown apple snail on green leaves at the edge of the water",
+    "text": "An apple snail eats the periphyton.",
+    "play": "A snail eats it.",
+    "miss": [
+     "The snail needs food to eat first. Try a later frame.",
+     "The snail needs food to eat first. Try a later frame.",
+     "",
+     "The snail eats before the kite eats the snail. Try an earlier frame."
+    ]
+   },
+   {
+    "img": "o4",
+    "alt": "A snail kite on a branch, holding an apple snail in its foot",
+    "text": "A snail kite eats the apple snail.",
+    "play": "A kite eats the snail.",
+    "miss": [
+     "This is the last step. Try frame 4.",
+     "This is the last step. Try frame 4.",
+     "This is the last step. Try frame 4.",
+     ""
+    ]
+   }
+  ],
+  "check": {
+   "q": "Leo draws an arrow from the snail kite to the apple snail, because the kite eats the snail. What do you think?",
+   "options": [
+    {
+     "t": "Leo is right. The arrow points to what gets eaten.",
+     "miss": "Look at the movie again. Which way did the energy move?"
+    },
+    {
+     "t": "The arrow should point from the snail to the kite, because arrows follow the energy.",
+     "ok": "Yes! In a food web, the arrow points from the one that gets eaten to the one that eats it, the way the energy goes."
+    }
+   ]
+  }
+ },
+ "movie": {
+  "model": "energy-model.svg",
+  "modelBox": {
+   "left": "0%",
+   "width": "100%",
+   "rot": 0
+  },
+  "start": "0%",
+  "bg": "lab",
+  "counterIcon": "⚡",
+  "real": "real",
+  "realAlt": "A snail kite on a branch with an apple snail in its beak",
+  "stamp": "ENERGY DELIVERED!",
+  "endCap": "A real snail kite and its snail.",
+  "beats": [
+   {
+    "at": 0,
+    "cap": "1 · Sunlight.",
+    "model": {
+     "top": "0%",
+     "rot": 0,
+     "show": "s1"
+    },
+    "counter": [
+     "Energy step 1"
+    ],
+    "sfx": "shimmer"
+   },
+   {
+    "at": 2600,
+    "cap": "2 · Periphyton makes food.",
+    "model": {
+     "show": "s2"
+    },
+    "counter": [
+     "Energy step 2"
+    ]
+   },
+   {
+    "at": 5200,
+    "cap": "3 · A snail eats it.",
+    "model": {
+     "show": "s3"
+    },
+    "counter": [
+     "Energy step 3"
+    ]
+   },
+   {
+    "at": 7800,
+    "cap": "4 · A kite eats the snail.",
+    "model": {
+     "show": "s4"
+    },
+    "counter": [
+     "Energy step 4"
+    ]
+   },
+   {
+    "at": 10400,
+    "cap": "The real thing.",
+    "model": {
+     "hide": true
+    },
+    "real": true
+   },
+   {
+    "at": 12200,
+    "stamp": true
+   }
+  ]
+ },
+ "compare": {
+  "kicker": "🧪 The Producer Test",
+  "title": "Which one makes its own food?",
+  "look": "Two real living things, each on a lit tray. Specimen A is periphyton, the spongy mat from the marsh. Specimen B is an apple snail. Under the trays are two tools: a sun lamp that gives light, and a dish of algae that is food to eat.",
+  "trays": [
+   {
+    "id": "A",
+    "img": "ta",
+    "alt": "Tan, spongy periphyton in shallow water",
+    "label": "Specimen A"
+   },
+   {
+    "id": "B",
+    "img": "tb",
+    "alt": "A brown apple snail on green leaves",
+    "label": "Specimen B"
+   }
+  ],
+  "materials": [
+   {
+    "key": "lamp",
+    "label": "Sun lamp (gives light)",
+    "swatch": "lamp"
+   },
+   {
+    "key": "algae",
+    "label": "Dish of algae (food to eat)",
+    "swatch": "cup"
+   }
+  ],
+  "ask": [
+   {
+    "q": "Which one has a hard, curly shell?",
+    "ans": "B",
+    "ok": "Yes. Specimen B is the apple snail.",
+    "miss": "Look closely. Which one has a shell?"
+   },
+   {
+    "q": "Which one is soft and spongy, with no shell?",
+    "ans": "A",
+    "ok": "Yes. Specimen A is the periphyton mat.",
+    "miss": "Look again. Which one looks like a sponge?"
+   }
+  ],
+  "press": "🎯 Run the test",
+  "testDo": "Put the sun lamp under one tray and the dish of algae under the other: drag them, or tap one, then a tray. Press <b>Run the test</b>. Then swap.",
+  "disclaimer": "This is a model. Real periphyton grows over days, not seconds.",
+  "results": {
+   "Alamp": {
+    "text": "The periphyton grows thicker and greener. It uses the light to make its own food!",
+    "fx": "glow"
+   },
+   "Aalgae": {
+    "text": "Nothing changes. Periphyton doesn't eat. It makes its own food.",
+    "fx": "none"
+   },
+   "Blamp": {
+    "text": "The snail just sits there. Light can't feed it, because it can't make its own food.",
+    "fx": "none"
+   },
+   "Balgae": {
+    "text": "The snail crawls over and starts eating. It gets its energy from food.",
+    "fx": "scoop"
+   }
+  },
+  "best": [
+   "Alamp",
+   "Balgae"
+  ],
+  "frame": "This one ___, so it is a ___.",
+  "claimLead": "This one",
+  "claimMid": "so it is a",
+  "claim": {
+   "A": {
+    "feat": [
+     "makes its own food from light",
+     "has to eat food"
+    ],
+    "featOk": 0,
+    "eat": [
+     "producer",
+     "consumer"
+    ],
+    "eatOk": 0
+   },
+   "B": {
+    "feat": [
+     "makes its own food from light",
+     "has to eat food"
+    ],
+    "featOk": 1,
+    "eat": [
+     "producer",
+     "consumer"
+    ],
+    "eatOk": 1
+   }
+  },
+  "curator": {
+   "A": "<b>A producer.</b> Periphyton is a mat of algae and tiny living things. It uses sunlight, water, and air to make its own food.",
+   "B": "<b>A consumer.</b> An apple snail scrapes periphyton off plants and rocks with its mouth. It must eat to get energy."
+  },
+  "missFeat": "Look at your tests for {label} again. Did light feed it, or did it need to eat?",
+  "missClaim": "Think about your tests. Which word means it makes its own food?",
+  "done": "Producers make their own food from sunlight, water, and air. Consumers have to eat to get energy.",
+  "after": {
+   "kicker": "🎬 Behind the scenes · Eggs above the water",
+   "img": "after",
+   "alt": "A cluster of small white apple snail eggs on a plant stem above the water",
+   "html": "A Florida apple snail climbs up a plant stem to lay its eggs above the water. The eggs need air, so they would drown underwater."
+  }
+ },
+ "wall": {
+  "kicker": "🗼 The Energy Tower",
+  "title": "From the top predator down to where the energy starts",
+  "look": "A model tower with four levels of the Everglades food web, from the top predator down to the producers. Each level has a real photo. The brass dial on the left shows which level you are on.",
+  "do": "First, make a prediction. Then brush the glowing step: drag across it (or tap it again and again) until the photo shows.",
+  "predict": {
+   "q": "Where does all the energy in this food web start?",
+   "options": [
+    [
+     "bottom",
+     "With the producers at the bottom"
+    ],
+    [
+     "top",
+     "With the alligator at the top"
+    ]
+   ],
+   "answer": "bottom",
+   "mine": "Your prediction: <b>{p}</b>. Let's climb down and find out.",
+   "confirm": "You predicted the producers. You were right: all the energy starts with the producers and the Sun.",
+   "change": "You predicted the alligator. The tower changed that idea: the energy starts with the producers and the Sun, at the bottom."
+  },
+  "sky": "sky",
+  "skyAlt": "Wading birds feeding in a shallow marsh",
+  "skyCap": "Wading birds feeding · Shark Valley, Everglades National Park",
+  "unit": "Level",
+  "found": "Clue found at Level {n}",
+  "elevator": [
+   "Tower",
+   "Top predator",
+   "Hunters",
+   "Grazers",
+   "Producers"
+  ],
+  "line": [
+   "TOP PREDATOR",
+   "ENERGY STARTS HERE"
+  ],
+  "lockTag": "🔒 Brush the level above first",
+  "locked": "Brush the level above first. We go one level at a time.",
+  "first": "Brush the glowing top level. Drag across it (or tap it again and again).",
+  "next": "Keep going. Brush Level {n}.",
+  "endTitle": "All 4 levels explored",
+  "endText": "Look at the tower. Energy moves up from the producers at the bottom to the top predator. Every level depends on the one below it.",
+  "rule": "<b>Energy flows up the tower.</b> It starts with producers and moves up to the top predator. Decomposers break down living things from every level when they die and return nutrients to the water.",
+  "choices": [
+   "🐊 Top predator",
+   "🦅 Hunts other animals",
+   "🐌 Eats producers and tiny things",
+   "🌱 Makes its own food"
+  ],
+  "layers": [
+   {
+    "name": "Level 1 · Top predator",
+    "rock": "water1",
+    "img": "l1",
+    "alt": "An American alligator walking on green grass",
+    "ask": "Look at Level 1. Read the clue AND the photo. What do you find?",
+    "clue": "Nothing in the Everglades regularly hunts a healthy grown alligator. It eats fish, turtles, birds, and small mammals.",
+    "ans": 0,
+    "ok": "Yes! The alligator is the top predator.",
+    "tag": "🐊 Alligator · top predator",
+    "miss": {
+     "1": "Close! It does hunt. But read the clue: does anything hunt it?",
+     "2": "Not yet. Does an alligator graze on periphyton?",
+     "3": "Not yet. Can an alligator make its own food?"
+    },
+    "env": "e1",
+    "envAlt": "A wooden boardwalk crossing a green marsh under a bright sun",
+    "envCap": "Alligators rest beside the Anhinga Trail · Everglades National Park"
+   },
+   {
+    "name": "Level 2 · Hunters",
+    "rock": "water2",
+    "img": "l2",
+    "alt": "An anhinga among lily pads swallowing a fish",
+    "ask": "Look at Level 2. Read the clue AND the photo. What do you find?",
+    "clue": "An anhinga swims underwater and spears fish with its sharp bill. Snail kites hunt here too: they catch apple snails.",
+    "ans": 1,
+    "ok": "Yes! Anhingas and snail kites hunt other animals.",
+    "tag": "🦅 Anhinga · hunter",
+    "miss": {
+     "0": "Not quite. Do alligators eat anhingas?",
+     "2": "Close! Read the clue: what does it eat?",
+     "3": "Not yet. Can a bird make its own food?"
+    },
+    "env": "e2",
+    "envAlt": "A dark snail kite with spread wings landing among reeds by the water",
+    "envCap": "A snail kite lands at Lake Kissimmee, Florida"
+   },
+   {
+    "name": "Level 3 · Grazers",
+    "rock": "water3",
+    "img": "l3",
+    "alt": "A small silver-gold mosquitofish",
+    "ask": "Look at Level 3. Read the clue AND the photo. What do you find?",
+    "clue": "Apple snails graze on periphyton. Tiny mosquitofish eat algae and tiny bugs. There are so many of them that they feed the hunters above.",
+    "ans": 2,
+    "ok": "Yes! Grazers eat producers and tiny things.",
+    "tag": "🐌 Snails and small fish · grazers",
+    "miss": {
+     "0": "Not this one. Is a tiny fish a top predator?",
+     "1": "Close! Read the clue: what do they eat?",
+     "3": "Not yet. Can a fish make its own food?"
+    },
+    "env": "e3",
+    "envAlt": "Shallow water winding through a marsh of grass and small trees",
+    "envCap": "Shallow slough water full of small fish · Everglades National Park"
+   },
+   {
+    "name": "Level 4 · Producers",
+    "rock": "water4",
+    "img": "l4",
+    "alt": "Pale periphyton mats spread across shallow water among thin grass",
+    "ask": "Look at Level 4. Read the clue AND the photo. What do you find?",
+    "clue": "Periphyton and sawgrass use sunlight, water, and air to make their own food. All the energy in this web starts here.",
+    "ans": 3,
+    "ok": "Yes! Producers make their own food. The energy starts here.",
+    "tag": "🌱 Periphyton and sawgrass · producers",
+    "miss": {
+     "0": "Not this one. Does periphyton hunt?",
+     "1": "Not quite. Do these hunt anything?",
+     "2": "Close! Read the clue: do they eat, or make their own food?"
+    },
+    "env": "e4",
+    "envAlt": "A flat, golden prairie of sawgrass under a sky full of clouds",
+    "envCap": "Sawgrass prairie · Everglades National Park"
+   }
+  ],
+  "mix": {
+   "q": "Sam says, \"Alligators are at the top, so they don't matter to the rest of the food web.\" What do you think?",
+   "options": [
+    {
+     "t": "Sam is right. Top predators don't change anything.",
+     "miss": "Think about what alligators eat, and about their ponds in the dry season."
+    },
+    {
+     "t": "They do matter. Alligators eat other animals, and their ponds hold water and fish in the dry season.",
+     "ok": "Yes! A top predator changes how many animals live below it, and alligator ponds help many animals survive."
+    }
+   ]
+  }
+ },
+ "wow": {
+  "kicker": "🎬 Director's cut",
+  "title": "The Snail Kite Comeback",
+  "img": "wow",
+  "alt": "A dark snail kite flying low over green marsh grass",
+  "caption": "A male snail kite at Lake Okeechobee, Florida",
+  "html": "<p style=\"margin:0 0 8px\">By the 1960s, only a few dozen snail kites were left in Florida. Many marshes had been drained, so there were few apple snails to eat.</p><p style=\"margin:0\">People protected the birds and their marshes, and today Florida has many more snail kites. They still need apple snails to survive.</p>",
+  "inset": "inset",
+  "insetCap": "A male snail kite perched in Florida."
+ },
+ "keyIdea": "In a food web, every living thing is connected. Energy starts with the Sun. Producers use sunlight, water, and air to make their own food, and energy flows up through consumers to the top predator. Decomposers return nutrients at every level. A food web is a model that scientists use to predict what happens when one species disappears.",
+ "det": {
+  "look": "Five real living things from the Everglades food web. Each card shows what scientists saw. Under the cards is an evidence chart, a table that holds what you figure out.",
+  "do": "Pick 3 cards, one at a time. Tap a clue, then name its role. Predict what happens if it disappears, and watch the real place appear.",
+  "noun": "Card",
+  "need": 3,
+  "inferQ": "What is its role?",
+  "inferDone": "It's a",
+  "chartSo": "so if it disappears,",
+  "predict": {
+   "q": "If it disappeared, what do you predict would happen?",
+   "options": [
+    [
+     "hungry",
+     "📉 Other living things struggle"
+    ],
+    [
+     "pile",
+     "🍂 Dead stuff piles up"
+    ]
+   ]
+  },
+  "kicker": "The real place",
+  "enough": "You already solved 3 cascade cards. Nice work, ecologist!",
+  "cols": [
+   "Card",
+   "My observation",
+   "Its role",
+   "If it disappears",
+   "My evidence"
+  ],
+  "write": {
+   "label": "Card __ shows ___. If it disappeared, ___, because ___.",
+   "starter": "Start with: \"Card __ shows…\"",
+   "min": 15,
+   "chips": [
+    [
+     "trait",
+     "Names what you see"
+    ],
+    [
+     "role",
+     "Names its role"
+    ],
+    [
+     "because",
+     "Gives a reason (because, so)"
+    ]
+   ]
+  },
+  "items": [
+   {
+    "id": "A",
+    "img": "d1",
+    "alt": "A shiny, striped brown apple snail shell",
+    "clues": [
+     {
+      "t": "A round snail shell with a big opening",
+      "ok": true
+     },
+     {
+      "t": "Fuzzy brown fungus on a log",
+      "miss": "Look again. Is it on a log?"
+     },
+     {
+      "t": "Silver fish scales",
+      "miss": "Look again. Is it a fish?"
+     }
+    ],
+    "org": [
+     "🌱 Producer",
+     "🐌 Consumer",
+     "🍄 Decomposer"
+    ],
+    "orgAns": 1,
+    "orgShort": "consumer",
+    "orgMiss": "An apple snail eats periphyton. Does it make its own food, eat food, or break down dead things? Try again.",
+    "env": "Other living things struggle",
+    "envAns": "hungry",
+    "envMiss": "Snail kites eat almost nothing but apple snails. What would happen to them? Try again.",
+    "envImg": "d1h",
+    "envAlt": "A snail kite on a branch, holding an apple snail in its foot",
+    "envCap": "A snail kite with its apple snail · Harns Marsh, Florida",
+    "reveal": "Snail kites eat almost nothing but apple snails. In 2007, a drought dried up parts of the Everglades, apple snails were hard to find, and few snail kite chicks survived that year.",
+    "rebuildEnv": "kite",
+    "bts": "An animal that eats only one kind of food is in trouble when that food disappears."
+   },
+   {
+    "id": "B",
+    "img": "d2",
+    "alt": "A small silver-gold mosquitofish with a black spot",
+    "clues": [
+     {
+      "t": "A tiny fish with shiny scales",
+      "ok": true
+     },
+     {
+      "t": "A hard, curly shell",
+      "miss": "Look again. Does it have a shell?"
+     },
+     {
+      "t": "Spongy brown tubes",
+      "miss": "Look again. Is it a mat?"
+     }
+    ],
+    "org": [
+     "🌱 Producer",
+     "🐌 Consumer",
+     "🍄 Decomposer"
+    ],
+    "orgAns": 1,
+    "orgShort": "consumer",
+    "orgMiss": "Mosquitofish eat algae and tiny bugs. Which role is that? Try again.",
+    "env": "Other living things struggle",
+    "envAns": "hungry",
+    "envMiss": "Wading birds and anhingas eat huge numbers of small fish. What would happen to them? Try again.",
+    "envImg": "d2h",
+    "envAlt": "White egrets and dark wading birds feeding together in a shallow marsh",
+    "envCap": "Wading birds feeding · Shark Valley, Everglades National Park",
+    "reveal": "Wading birds and anhingas eat huge numbers of small fish. With fewer small fish, these birds would have less food for their chicks.",
+    "rebuildEnv": "birds",
+    "bts": "Tiny fish are a big part of the food that wading birds bring to their chicks."
+   },
+   {
+    "id": "C",
+    "img": "d3",
+    "alt": "Dried, pale gray periphyton clinging to the bottoms of grass stems",
+    "clues": [
+     {
+      "t": "A dried, pale crust around grass stems",
+      "ok": true
+     },
+     {
+      "t": "A shiny snail shell",
+      "miss": "Look again. Is there a shell?"
+     },
+     {
+      "t": "Scaly skin",
+      "miss": "Look again. Is it an animal?"
+     }
+    ],
+    "org": [
+     "🌱 Producer",
+     "🐌 Consumer",
+     "🍄 Decomposer"
+    ],
+    "orgAns": 0,
+    "orgShort": "producer",
+    "orgMiss": "Periphyton uses sunlight, water, and air to make its own food. Which role is that? Try again.",
+    "env": "Other living things struggle",
+    "envAns": "hungry",
+    "envMiss": "Snails and small fish eat periphyton. What would happen to them, and to the birds that eat them? Try again.",
+    "envImg": "d3h",
+    "envAlt": "Workers and machines building a bridge beside a canal at the edge of the Everglades",
+    "envCap": "A canal beside the Everglades, where a road is being raised into a bridge",
+    "reveal": "Where canals drained the water, periphyton dried out. With less periphyton, there were fewer snails and small fish, and fewer birds too. Bridges like this let water flow back.",
+    "rebuildEnv": "canal",
+    "bts": "Bringing the water back helps the whole food web grow back, from the bottom up."
+   },
+   {
+    "id": "D",
+    "img": "d4",
+    "alt": "An alligator swimming across dark water, seen from above",
+    "clues": [
+     {
+      "t": "A big reptile with a long, scaly tail",
+      "ok": true
+     },
+     {
+      "t": "Fuzzy brown fungus",
+      "miss": "Look again. Is it fuzzy?"
+     },
+     {
+      "t": "Tan, spongy tubes",
+      "miss": "Look again. Is it a mat?"
+     }
+    ],
+    "org": [
+     "🌱 Producer",
+     "🐌 Consumer",
+     "🍄 Decomposer"
+    ],
+    "orgAns": 1,
+    "orgShort": "consumer",
+    "orgMiss": "An alligator eats fish, turtles, and birds. Which role is that? Try again.",
+    "env": "Other living things struggle",
+    "envAns": "hungry",
+    "envMiss": "In the dry season, fish and birds crowd into alligator ponds. What would happen to them without alligators? Try again.",
+    "envImg": "d4h",
+    "envAlt": "An aerial view of a small pond with a trail leading to it through the marsh",
+    "envCap": "An alligator pond seen from the air · Everglades National Park",
+    "reveal": "In the dry season, alligator ponds hold water. Fish, turtles, and birds crowd in to survive. Without alligators, many of those ponds would dry up.",
+    "rebuildEnv": "gatorhole",
+    "bts": "The trail in this photo is the path the alligator uses to get in and out of its pond."
+   },
+   {
+    "id": "E",
+    "img": "d5",
+    "alt": "Many small, fan-shaped tan and brown fungi growing on a fallen log",
+    "clues": [
+     {
+      "t": "Fan-shaped fungi growing on a dead log",
+      "ok": true
+     },
+     {
+      "t": "A swimming fish",
+      "miss": "Look again. Is anything swimming?"
+     },
+     {
+      "t": "A snail shell",
+      "miss": "Look again. Is there a shell?"
+     }
+    ],
+    "org": [
+     "🌱 Producer",
+     "🐌 Consumer",
+     "🍄 Decomposer"
+    ],
+    "orgAns": 2,
+    "orgShort": "decomposer",
+    "orgMiss": "These fungi break down the dead log. Which role is that? Try again.",
+    "env": "Dead stuff piles up",
+    "envAns": "pile",
+    "envMiss": "If nothing broke down dead logs and leaves, what would happen to them? Try again.",
+    "envImg": "d5h",
+    "envAlt": "A boardwalk winding under palms and tall trees in a shady forest",
+    "envCap": "A tree island forest floor · Mahogany Hammock, Everglades National Park",
+    "reveal": "Fungi and bacteria break down dead leaves and logs. Without them, dead plants would pile up, and producers would lose the nutrients they need.",
+    "rebuildEnv": "hammock",
+    "bts": "This turkey tail fungus was photographed at Wakulla Springs State Park, Florida."
+   }
+  ]
+ },
+ "rebuild": {
+  "title": "Use your evidence to rebuild the scene",
+  "missPrefix": "Hmm. Look at your cascade card again. ",
+  "kicker": "🌍 Rebuild the scene",
+  "whyStart": "I chose this because…",
+  "envs": [
+   {
+    "key": "kite",
+    "name": "🦅 A snail kite marsh",
+    "img": "d1h",
+    "cap": "Kites and snails…"
+   },
+   {
+    "key": "birds",
+    "name": "🐦 A wading bird marsh",
+    "img": "d2h",
+    "cap": "Birds and small fish…"
+   },
+   {
+    "key": "canal",
+    "name": "🚧 A drained canal",
+    "img": "d3h",
+    "cap": "Water and periphyton…"
+   },
+   {
+    "key": "gatorhole",
+    "name": "🐊 An alligator pond",
+    "img": "d4h",
+    "cap": "A dry-season pond…"
+   },
+   {
+    "key": "hammock",
+    "name": "🌳 A forest floor",
+    "img": "d5h",
+    "cap": "Dead leaves and logs…"
+   }
+  ],
+  "life": [
+   {
+    "name": "🐌 An apple snail",
+    "img": "d1",
+    "env": "kite",
+    "miss": "The apple snail belongs with the snail kites."
+   },
+   {
+    "name": "🐟 A mosquitofish",
+    "img": "d2",
+    "env": "birds",
+    "miss": "The mosquitofish belongs with the wading birds."
+   },
+   {
+    "name": "🟤 Periphyton",
+    "img": "d3",
+    "env": "canal",
+    "miss": "The periphyton card goes with the drained canal."
+   },
+   {
+    "name": "🐊 An alligator",
+    "img": "d4",
+    "env": "gatorhole",
+    "miss": "The alligator belongs at its pond."
+   },
+   {
+    "name": "🍄 Fungi",
+    "img": "d5",
+    "env": "hammock",
+    "miss": "The fungi belong on the forest floor."
+   }
+  ]
+ },
+ "quiz": [
+  {
+   "q": "In a food web diagram, what does an arrow show?",
+   "options": [
+    {
+     "t": "The path energy takes, from the organism being eaten to the organism eating it",
+     "ok": "🌿 Exactly right! The arrow follows the energy: it points from prey to predator, showing which way energy flows through the web."
+    },
+    {
+     "t": "Which organism is bigger",
+     "miss": "Think about it this way: in a food web, something is always getting eaten and something is doing the eating. The arrow shows where the energy goes, from the eaten to the eater. Try again!"
+    },
+    {
+     "t": "How fast an animal can move",
+     "miss": "Think about it this way: in a food web, something is always getting eaten and something is doing the eating. The arrow shows where the energy goes, from the eaten to the eater. Try again!"
+    }
+   ]
+  },
+  {
+   "q": "Sawgrass is a producer. What does that mean?",
+   "options": [
+    {
+     "t": "It eats fish and small animals",
+     "miss": "Remember: producers don't eat. They make their own food. Think about what plants do with sunlight. Which answer fits that idea?"
+    },
+    {
+     "t": "It makes its own food using energy from sunlight",
+     "ok": "🌱 That's it! Producers are at the base of every food web. They are the only living things that can capture energy from the Sun and turn it into food."
+    },
+    {
+     "t": "It breaks down dead organisms in the marsh",
+     "miss": "Remember: producers don't eat. They make their own food. Think about what plants do with sunlight. Which answer fits that idea?"
+    }
+   ]
+  },
+  {
+   "q": "Apple snails disappeared from part of the Everglades. What would most likely happen to the snail kite population?",
+   "options": [
+    {
+     "t": "Snail kites would struggle to survive, because apple snails are almost their only food",
+     "ok": "⭐ Right! The snail kite depends on almost one food source. When apple snails are gone, snail kites go hungry. Scientists saw this during a drought in 2007."
+    },
+    {
+     "t": "Snail kites would do fine. They would just eat more sawgrass.",
+     "miss": "Think about what the snail kite eats. It's very specific, and that's a big clue. Which answer matches an animal with only one food source?"
+    },
+    {
+     "t": "Nothing would change. Snail kites don't need food.",
+     "miss": "Think about what the snail kite eats. It's very specific, and that's a big clue. Which answer matches an animal with only one food source?"
+    }
+   ]
+  }
+ ],
+ "assign": {
+  "partA": {
+   "title": "Sort and classify",
+   "do": "Read each one. Pick the best answer, or type your answer.",
+   "items": [
+    {
+     "n": 1,
+     "q": "Sawgrass grows in shallow water and uses sunlight to make its own food.",
+     "type": "choice",
+     "options": [
+      {
+       "t": "Producer",
+       "ok": "Yes. Sawgrass makes its own food, so it is a producer."
+      },
+      {
+       "t": "Consumer",
+       "miss": "Does sawgrass eat, or make its own food? Which role is that?"
+      },
+      {
+       "t": "Decomposer",
+       "miss": "Does sawgrass eat, or make its own food? Which role is that?"
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "q": "An anhinga dives underwater and spears fish to eat.",
+     "type": "choice",
+     "options": [
+      {
+       "t": "Producer",
+       "miss": "Does an anhinga make its own food? Which role eats other living things?"
+      },
+      {
+       "t": "Consumer",
+       "ok": "Yes. It gets energy by eating fish, so it is a consumer."
+      },
+      {
+       "t": "Decomposer",
+       "miss": "Does an anhinga make its own food? Which role eats other living things?"
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "q": "Fungi and bacteria break down a dead fish on the bottom of the marsh.",
+     "type": "choice",
+     "options": [
+      {
+       "t": "Producer",
+       "miss": "Which role breaks down dead plants and animals?"
+      },
+      {
+       "t": "Consumer",
+       "miss": "Which role breaks down dead plants and animals?"
+      },
+      {
+       "t": "Decomposer",
+       "ok": "Yes. They break down dead things, so they are decomposers."
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "q": "Periphyton is a spongy mat that uses sunlight, water, and air to make food.",
+     "type": "choice",
+     "options": [
+      {
+       "t": "Producer",
+       "ok": "Yes. Periphyton makes its own food, so it is a producer."
+      },
+      {
+       "t": "Consumer",
+       "miss": "Does periphyton eat, or make its own food? Which role is that?"
+      },
+      {
+       "t": "Decomposer",
+       "miss": "Does periphyton eat, or make its own food? Which role is that?"
+      }
+     ]
+    }
+   ]
+  },
+  "partB": {
+   "title": "Short answer",
+   "do": "Answer in complete sentences. Use your science words.",
+   "items": [
+    {
+     "n": 1,
+     "q": "The mosquitofish eats periphyton, and the anhinga eats mosquitofish. What is the relationship between these three organisms? Use the words predator and prey in your answer.",
+     "type": "text",
+     "min": 12,
+     "chips": [
+      [
+       "pred",
+       "Uses the word predator"
+      ],
+      [
+       "prey",
+       "Uses the word prey"
+      ]
+     ]
+    },
+    {
+     "n": 2,
+     "q": "Imagine that fish and turtles disappeared from the Everglades. What do you think would happen to the American alligator population? Explain your reasoning.",
+     "type": "text",
+     "min": 12,
+     "chips": [
+      [
+       "gator",
+       "Says what happens to alligators"
+      ],
+      [
+       "because",
+       "Gives a reason (because, so)"
+      ]
+     ]
+    }
+   ]
+  },
+  "write": {
+   "title": "Mosquitofish are disappearing from part of the Everglades because of pollution. What do you think will happen to the rest of the food web?",
+   "do": "Pick one from your evidence chart. Answer the three questions. Use at least one of the science words under the boxes.",
+   "vocab": [
+    "food web",
+    "predator",
+    "consumer"
+   ],
+   "need": 1,
+   "prompts": [
+    [
+     "What do you think will happen?",
+     "Start with: \"I think that if mosquitofish disappeared…\""
+    ],
+    [
+     "What did you observe or learn that supports your thinking?",
+     "Start with: \"I know this because the food web showed that…\""
+    ],
+    [
+     "Why does that make sense?",
+     "Start with: \"This makes sense because in a food web…\""
+    ]
+   ]
+  },
+  "partC": {
+   "do": "Draw a food web of the Everglades. Include at least 5 organisms and 6 arrows. Label each organism, and point each arrow the way the energy flows. Add a title.",
+   "labels": [
+    "The producer at the bottom of my web, and what it uses to make food",
+    "One arrow in my web: who eats whom"
+   ]
+  },
+  "checklist": [
+   {
+    "k": "det",
+    "t": "My evidence chart has 3 cascade cards and my explanation.",
+    "req": {
+     "det": 3,
+     "text": {
+      "in-det": 15
+     }
+    }
+   },
+   {
+    "k": "a",
+    "t": "Part A: all four sorted.",
+    "req": {
+     "choice": [
+      "a1",
+      "a2",
+      "a3",
+      "a4"
+     ]
+    }
+   },
+   {
+    "k": "b",
+    "t": "Part B: questions 1 and 2.",
+    "req": {
+     "text": {
+      "in-b1": 12,
+      "in-b2": 12
+     }
+    }
+   },
+   {
+    "k": "c",
+    "t": "Part C: my drawing and both labels.",
+    "req": {
+     "sketch": true,
+     "text": {
+      "in-c1": 6,
+      "in-c2": 6
+     }
+    }
+   },
+   {
+    "k": "w",
+    "t": "Write and explain, with at least one science word.",
+    "req": {
+     "text": {
+      "in-w1": 10,
+      "in-w2": 10,
+      "in-w3": 10
+     },
+     "vocab": 1
+    }
+   }
+  ]
+ },
+ "premiere": {
+  "title": "Premiere my food web story",
+  "thinkLabel": "Its role in the web",
+  "director": "JUNIOR ECOLOGIST",
+  "storyKicker": "My food web story",
+  "frames": [
+   {
+    "k": "formation",
+    "label": "Sun to snail kite",
+    "img": "o2",
+    "cap": "Sun to snail kite: the energy moves up, step by step."
+   },
+   {
+    "k": "compare",
+    "label": "The Producer Test",
+    "img": "ta",
+    "cap": "The Producer Test: one makes food, one has to eat."
+   },
+   {
+    "k": "wall",
+    "label": "The Energy Tower",
+    "img": "l1",
+    "cap": "The Energy Tower: energy starts with the producers."
+   },
+   {
+    "k": "det",
+    "label": "Cascade files",
+    "img": "d1",
+    "cap": "Cascade files: what if one disappeared?"
+   }
+  ]
+ },
+ "next": {
+  "title": "Coming up next: 30.01",
+  "text": "How Are Florida Animals Adapted? Next time, discover the body parts and behaviors that help Florida animals survive."
+ },
+ "chips": {
+  "part": {
+   "any": [
+    "brown",
+    "tan",
+    "spongy",
+    "sponge",
+    "tube",
+    "tubes",
+    "fuzzy",
+    "hairy",
+    "soft",
+    "broken",
+    "crumbly",
+    "end",
+    "grass",
+    "green",
+    "plant",
+    "water",
+    "mat",
+    "wet",
+    "holes"
+   ]
+  },
+  "ask": {
+   "re": "\\?|\\b(why|how|what|when|where|who|which|does|do|is|are|can|did|will)\\b"
+  },
+  "trait": {
+   "any": [
+    "shell",
+    "snail",
+    "fish",
+    "scales",
+    "silver",
+    "tiny",
+    "mat",
+    "dried",
+    "crust",
+    "alligator",
+    "tail",
+    "fungi",
+    "fungus",
+    "log",
+    "spongy",
+    "brown"
+   ]
+  },
+  "role": {
+   "any": [
+    "producer",
+    "consumer",
+    "decomposer",
+    "eats",
+    "makes",
+    "breaks",
+    "food"
+   ]
+  },
+  "because": {
+   "re": "\\b(because|since|so)\\b"
+  },
+  "pred": {
+   "any": [
+    "predator",
+    "predators"
+   ]
+  },
+  "prey": {
+   "any": [
+    "prey"
+   ]
+  },
+  "gator": {
+   "any": [
+    "alligator",
+    "alligators",
+    "gator",
+    "gators"
+   ]
+  }
+ },
+ "creditAlias": {},
+ "creditsExtra": [
+  "Music: Symphony No. 6 \"Pastoral\", II. Scene by the Brook (Ludwig van Beethoven), Musopen, public domain recording (via Wikimedia Commons).",
+  "Opti the owl: Optima Academy. Sound effects are made by the page. The energy movie, the Producer Test, and the Energy Tower are models; every place photo is real. The X-ray view in the film is a model."
+ ]
+}

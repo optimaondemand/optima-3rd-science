@@ -1,0 +1,22 @@
+{
+ "how-29-02-specimen": {
+  "page": "Press Inspect specimen. Move the magnifying lens over the mat, then tap 3 things you notice.",
+  "say": "Press Inspect specimen. Move the magnifying lens over the mat, then tap three things you notice."
+ },
+ "how-29-02-compare": {
+  "page": "Put the sun lamp under one tray and the dish of algae under the other: drag them, or tap one, then a tray. Press Run the test. Then swap.",
+  "say": "Put the sun lamp under one tray and the dish of algae under the other: drag them, or tap one, then a tray. Press Run the test. Then swap."
+ },
+ "how-29-02-wall": {
+  "page": "First, make a prediction. Then brush the glowing step: drag across it (or tap it again and again) until the photo shows.",
+  "say": "First, make a prediction. Then brush the glowing step: drag across it (or tap it again and again) until the photo shows."
+ },
+ "how-29-02-det": {
+  "page": "Pick 3 cards, one at a time. Tap a clue, then name its role. Predict what happens if it disappears, and watch the real place appear.",
+  "say": "Pick three cards, one at a time. Tap a clue, then name its role. Predict what happens if it disappears, and watch the real place appear."
+ },
+ "how-29-02-partc": {
+  "page": "Draw a food web of the Everglades. Include at least 5 organisms and 6 arrows. Label each organism, and point each arrow the way the energy flows. Add a title.",
+  "say": "Draw a food web of the Everglades. Include at least 5 organisms and 6 arrows. Label each organism, and point each arrow the way the energy flows. Add a title."
+ }
+}

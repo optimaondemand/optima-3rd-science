@@ -1,0 +1,43 @@
+<svg viewBox="0 14 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A model of energy moving through part of the Everglades food web: sunlight shines on the marsh; the periphyton mat uses sunlight, water, and air to make food; an apple snail eats the periphyton; a snail kite eats the apple snail. Arrows follow the energy.">
+<defs>
+<linearGradient id="em-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fc0e4"/><stop offset="1" stop-color="#e3f0f8"/></linearGradient>
+<linearGradient id="em-water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fb2cc" stop-opacity=".95"/><stop offset="1" stop-color="#3b7390"/></linearGradient>
+<radialGradient id="em-sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff6c4"/><stop offset=".6" stop-color="#ffc83d"/><stop offset="1" stop-color="#ff9a2a"/></radialGradient>
+<linearGradient id="em-mat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9c48e"/><stop offset="1" stop-color="#9c8452"/></linearGradient>
+<radialGradient id="em-shell" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#d9a35a"/><stop offset=".6" stop-color="#8a5a2b"/><stop offset="1" stop-color="#4f3216"/></radialGradient>
+<linearGradient id="em-kite" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4c535c"/><stop offset="1" stop-color="#262a30"/></linearGradient>
+<g id="em-base">
+<rect width="320" height="200" fill="url(#em-sky)"/>
+<rect y="92" width="320" height="110" fill="url(#em-water)"/>
+<g stroke="#7d8f3b" stroke-width="1.6" stroke-linecap="round"><path d="M14 120 l-3 -46 M22 120 l3 -50 M30 120 l-2 -42 M290 120 l-3 -46 M298 120 l3 -50 M306 120 l-2 -42"/></g>
+<path d="M70 140 q20 -9 45 -2 q25 -7 50 1 q25 -8 50 0 q20 -5 35 3 q-10 9 -40 7 q-30 6 -60 1 q-30 6 -55 0 q-20 3 -25 -10 z" fill="url(#em-mat)"/>
+<g fill="#b49a62" opacity=".8"><circle cx="100" cy="140" r="2"/><circle cx="140" cy="142" r="1.6"/><circle cx="185" cy="139" r="2"/><circle cx="222" cy="142" r="1.5"/></g>
+</g>
+<marker id="em-ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#f2b632"/></marker>
+</defs>
+<g class="s1">
+<use href="#em-base"/>
+<circle cx="160" cy="46" r="30" fill="#ffe08a" opacity=".35"/><circle cx="160" cy="46" r="20" fill="url(#em-sun)"/>
+<g stroke="#ffd45e" stroke-width="2.4" stroke-linecap="round" opacity=".9"><path d="M150 64 L120 128"/><path d="M165 66 L185 128"/><path d="M140 58 L90 128"/></g>
+</g>
+<g class="s2">
+<use href="#em-base"/>
+<circle cx="160" cy="46" r="20" fill="url(#em-sun)"/>
+<g stroke="#ffd45e" stroke-width="2.4" stroke-linecap="round"><path d="M150 64 L120 128"/><path d="M140 58 L90 128"/></g>
+<ellipse cx="160" cy="141" rx="98" ry="16" fill="#9fd36a" opacity=".45"/>
+<g fill="#ffffff" stroke="#3b7390" stroke-width="1"><circle cx="96" cy="118" r="4"/><circle cx="108" cy="110" r="3"/><circle cx="118" cy="120" r="2.5"/></g>
+<path d="M60 108 q-6 10 0 14 q6 -4 0 -14 z" fill="#5aa7d6"/>
+</g>
+<g class="s3">
+<use href="#em-base"/>
+<circle cx="160" cy="46" r="20" fill="url(#em-sun)"/>
+<g transform="translate(150 118)"><path d="M-22 18 q22 -6 44 0 q-6 6 -22 6 q-16 0 -22 -6 z" fill="#8a7a62"/><ellipse cx="0" cy="4" rx="18" ry="15" fill="url(#em-shell)"/><path d="M-4 -6 q10 4 6 14 q-8 4 -12 -4" fill="none" stroke="#3f2810" stroke-width="1.6"/><path d="M-24 16 l-8 -8 M-20 14 l-6 -11" stroke="#6c5e48" stroke-width="2" stroke-linecap="round"/></g>
+<path d="M116 138 Q120 126 132 128" fill="none" stroke="#f2b632" stroke-width="3" marker-end="url(#em-ar)"/>
+</g>
+<g class="s4">
+<use href="#em-base"/>
+<circle cx="160" cy="46" r="20" fill="url(#em-sun)"/>
+<g transform="translate(210 72)"><path d="M0 0 C-30 -18 -60 -20 -84 -6 C-60 -8 -34 0 -14 10 Z" fill="url(#em-kite)"/><path d="M0 0 C30 -18 60 -20 84 -6 C60 -8 34 0 14 10 Z" fill="url(#em-kite)"/><ellipse cx="0" cy="8" rx="10" ry="16" fill="url(#em-kite)"/><path d="M-5 -6 q5 -8 10 0 q-2 6 -5 6 q-3 0 -5 -6 z" fill="#3a3f46"/><path d="M3 -4 q6 1 4 7 q-3 -2 -4 -2" fill="#e05c2c"/><path d="M-6 22 l6 6 l6 -6 z" fill="#ffffff"/><ellipse cx="0" cy="34" rx="9" ry="8" fill="url(#em-shell)"/><path d="M-3 24 v6 M3 24 v6" stroke="#e05c2c" stroke-width="2"/></g>
+<path d="M175 128 Q195 120 205 112" fill="none" stroke="#f2b632" stroke-width="3" marker-end="url(#em-ar)"/>
+</g>
+</svg>
