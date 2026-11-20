@@ -1,0 +1,61 @@
+<svg viewBox="0 30 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A model of an Everglades marsh through one year: in the wet season, rain falls and water covers the sawgrass; in the dry season, the water shrinks until only the alligator's pond holds water and fish crowd into it; then wood storks feed there and nest on the tree island">
+<defs>
+<linearGradient id="gm-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fbfe2"/><stop offset="1" stop-color="#dcecf6"/></linearGradient>
+<linearGradient id="gm-storm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a5868"/><stop offset="1" stop-color="#9aa9b5"/></linearGradient>
+<linearGradient id="gm-dry" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9d6ea"/><stop offset="1" stop-color="#f3e8cf"/></linearGradient>
+<linearGradient id="gm-water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6fa8c8" stop-opacity=".9"/><stop offset="1" stop-color="#2f6b8c" stop-opacity=".95"/></linearGradient>
+<linearGradient id="gm-rock" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9a582"/><stop offset="1" stop-color="#7d6a4c"/></linearGradient>
+<linearGradient id="gm-mud" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9c8357"/><stop offset="1" stop-color="#6e5a3a"/></linearGradient>
+<linearGradient id="gm-tree" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f8a3c"/><stop offset="1" stop-color="#2c5a24"/></linearGradient>
+<g id="gm-ground">
+<path d="M0 150 L40 148 L70 120 L110 118 L130 148 L190 150 L205 168 L245 168 L258 150 L320 150 L320 230 L0 230 Z" fill="url(#gm-rock)"/>
+<path d="M0 150 L40 148 L70 120 L110 118 L130 148 L190 150 L205 168 L245 168 L258 150 L320 150" fill="none" stroke="#5c4b33" stroke-width="1.5"/>
+</g>
+<g id="gm-island">
+<rect x="78" y="96" width="5" height="24" fill="#5b4430"/><rect x="98" y="100" width="5" height="20" fill="#5b4430"/>
+<ellipse cx="80" cy="92" rx="18" ry="14" fill="url(#gm-tree)"/><ellipse cx="101" cy="96" rx="15" ry="12" fill="url(#gm-tree)"/><ellipse cx="91" cy="84" rx="14" ry="11" fill="#5c9a47"/>
+</g>
+<g id="gm-grass" stroke="#8a9a3c" stroke-width="1.6" stroke-linecap="round">
+<path d="M10 150 l-3 -26 M16 150 l2 -28 M22 149 l-1 -24 M30 149 l3 -27 M138 150 l-2 -26 M146 150 l2 -28 M154 150 l-3 -24 M162 150 l2 -27 M170 150 l-2 -25 M178 150 l3 -28 M268 150 l-2 -26 M276 150 l2 -28 M284 150 l-3 -24 M292 150 l2 -27 M300 150 l-2 -25 M308 150 l3 -28"/>
+</g>
+</defs>
+<g class="s1">
+<rect width="320" height="240" fill="url(#gm-storm)"/>
+<ellipse cx="80" cy="44" rx="70" ry="18" fill="#59687a"/><ellipse cx="220" cy="42" rx="90" ry="20" fill="#5f6f80"/>
+<g stroke="#dde8f2" stroke-width="1.4" opacity=".75" stroke-linecap="round"><path d="M40 44 l-6 18 M70 46 l-6 18 M100 44 l-6 18 M150 40 l-6 18 M190 44 l-6 18 M230 40 l-6 18 M270 44 l-6 18 M300 40 l-6 18 M55 74 l-6 18 M125 70 l-6 18 M210 72 l-6 18 M285 74 l-6 18"/></g>
+<use href="#gm-ground"/><use href="#gm-island"/>
+<path d="M0 136 L320 136 L320 230 L0 230 Z" fill="url(#gm-water)" opacity=".75"/>
+<use href="#gm-grass"/>
+</g>
+<g class="s2">
+<rect width="320" height="240" fill="url(#gm-sky)"/>
+<circle cx="280" cy="56" r="15" fill="#ffd45e"/>
+<use href="#gm-ground"/><use href="#gm-island"/>
+<path d="M0 132 L320 132 L320 230 L0 230 Z" fill="url(#gm-water)" opacity=".78"/>
+<use href="#gm-grass"/>
+<g fill="#d9c27a"><path d="M20 160 l8 -3 v6 z M24 157 a5 3 0 1 1 0 6"/><path d="M150 158 l8 -3 v6 z"/><path d="M286 160 l8 -3 v6 z"/><path d="M215 160 l8 -3 v6 z"/></g>
+<g fill="#d9c27a"><ellipse cx="18" cy="160" rx="6" ry="3"/><ellipse cx="148" cy="158" rx="6" ry="3"/><ellipse cx="284" cy="160" rx="6" ry="3"/><ellipse cx="213" cy="160" rx="6" ry="3"/></g>
+</g>
+<g class="s3">
+<rect width="320" height="240" fill="url(#gm-dry)"/>
+<circle cx="175" cy="64" r="17" fill="#ffc94a"/>
+<use href="#gm-ground"/><use href="#gm-island"/>
+<path d="M0 150 L190 150 L205 168 L245 168 L258 150 L320 150" fill="none" stroke="#7a6440" stroke-width="2"/>
+<path d="M200 160 L250 160 L245 168 L205 168 Z" fill="url(#gm-water)"/>
+<g stroke="#a9a165" stroke-width="1.6" stroke-linecap="round"><path d="M10 150 l-3 -24 M16 150 l2 -26 M30 149 l3 -25 M138 150 l-2 -24 M154 150 l-3 -22 M170 150 l-2 -23 M276 150 l2 -26 M292 150 l2 -25 M308 150 l3 -26"/></g>
+<g fill="#d9c27a"><ellipse cx="212" cy="164" rx="5" ry="2.4"/><ellipse cx="222" cy="163" rx="5" ry="2.4"/><ellipse cx="232" cy="165" rx="5" ry="2.4"/><ellipse cx="241" cy="163" rx="5" ry="2.4"/></g>
+<path d="M196 158 q10 -6 22 -2 l10 0 q6 1 0 3 l-30 2 z" fill="#3d4a33"/><circle cx="200" cy="157" r="1" fill="#e8e8a0"/>
+<g stroke="#8b6f45" stroke-width="1" opacity=".7"><path d="M20 156 l6 4 M40 158 l-5 5 M150 157 l7 3 M290 157 l-6 4"/></g>
+</g>
+<g class="s4">
+<rect width="320" height="240" fill="url(#gm-dry)"/>
+<circle cx="175" cy="64" r="17" fill="#ffc94a"/>
+<use href="#gm-ground"/><use href="#gm-island"/>
+<path d="M200 160 L250 160 L245 168 L205 168 Z" fill="url(#gm-water)"/>
+<g stroke="#a9a165" stroke-width="1.6" stroke-linecap="round"><path d="M10 150 l-3 -24 M16 150 l2 -26 M30 149 l3 -25 M138 150 l-2 -24 M154 150 l-3 -22 M170 150 l-2 -23 M276 150 l2 -26 M292 150 l2 -25 M308 150 l3 -26"/></g>
+<g><ellipse cx="216" cy="148" rx="8" ry="5" fill="#f4f4f0"/><path d="M222 146 l6 -8 l2 1 l-5 9 z" fill="#3a3a3a"/><path d="M228 138 l3 10" stroke="#5a5240" stroke-width="1.6"/><path d="M213 153 v10 M218 153 v10" stroke="#3a3a3a" stroke-width="1.2"/><path d="M208 148 q4 4 10 3" fill="#2b2b2b"/></g>
+<g><ellipse cx="238" cy="150" rx="8" ry="5" fill="#f4f4f0"/><path d="M232 148 l-6 -8 l-2 1 l5 9 z" fill="#3a3a3a"/><path d="M226 140 l-2 10" stroke="#5a5240" stroke-width="1.6"/><path d="M236 155 v9 M241 155 v9" stroke="#3a3a3a" stroke-width="1.2"/></g>
+<path d="M82 78 q9 -5 18 0 q-9 4 -18 0 z" fill="#7a5a36"/><ellipse cx="88" cy="74" rx="4" ry="3" fill="#f0f0ea"/><ellipse cx="95" cy="74" rx="4" ry="3" fill="#f0f0ea"/>
+<g fill="#f4f4f0"><path d="M140 40 l10 4 l10 -4 l-10 2 z"/><path d="M175 52 l8 3 l8 -3 l-8 2 z"/></g>
+</g>
+</svg>
