@@ -317,8 +317,8 @@ assign = {
     {"n": 3, "q": "Name one constraint on your presentation. How will it change what you include?", "type": "text", "min": 8, "chips": [["con", "Names a limit (time, words, space)"]]}
   ]},
   "partB": {"title": "Short answer", "do": "Answer in complete sentences.", "items": [
-    {"n": 4, "q": "What is the difference between a criterion and a constraint? Give one example of each from your own presentation.", "type": "text", "min": 15, "chips": [["crit2", "Uses the word criterion or criteria"], ["con", "Names a limit (time, words, space)"]]},
-    {"n": 5, "q": "How does including a conservation effort make your presentation stronger? Why does that information matter to the audience?", "type": "text", "min": 12, "chips": [["cons", "Names a way people protect the park"], ["because", "Gives a reason (because, so)"]]}
+    {"n": 1, "q": "What is the difference between a criterion and a constraint? Give one example of each from your own presentation.", "type": "text", "min": 15, "chips": [["crit2", "Uses the word criterion or criteria"], ["con", "Names a limit (time, words, space)"]]},
+    {"n": 2, "q": "How does including a conservation effort make your presentation stronger? Why does that information matter to the audience?", "type": "text", "min": 12, "chips": [["cons", "Names a way people protect the park"], ["because", "Gives a reason (because, so)"]]}
   ]},
   "partC": {"kicker": "🎤 Part C", "title": "Build your slides in the Park Slide Studio", "map": "Part C · build your slides",
             "do": "Pick your park. Build 6 slides, one for each criterion. Practice with the 2-minute timer. Then make your video (or download your slides) and upload the file to Canvas.", "labels": []},
@@ -326,7 +326,7 @@ assign = {
   "checklist": [
     {"k": "det", "t": "My evidence chart has 3 cards and my explanation.", "req": {"det": 3, "text": {"in-det": 15}}},
     {"k": "a", "t": "Part A: my plan, all three answered.", "req": {"text": {"in-a1": 5, "in-a2": 8, "in-a3": 8}}},
-    {"k": "b", "t": "Part B: questions 4 and 5.", "req": {"text": {"in-b4": 15, "in-b5": 12}}},
+    {"k": "b", "t": "Part B: questions 1 and 2.", "req": {"text": {"in-b1": 15, "in-b2": 12}}},
     {"k": "c", "t": "Part C: all 6 slides meet the criteria, and I made my video or downloaded my slides.", "req": {"studio": True}}
   ]
 }
@@ -387,7 +387,7 @@ studio = {
     {"k": "cons", "icon": "🛡️", "name": "Conservation effort", "short": "Protecting it", "ask": "What are people doing to protect it?", "hint": "Tell what people do and why it helps.", "starter": "To protect the park, people "}
   ],
   "teacher": [{"id": "in-a1", "label": "Part A 1 · My park and where it is"}, {"id": "in-a2", "label": "Part A 2 · My strongest evidence"}, {"id": "in-a3", "label": "Part A 3 · A constraint and how it changed my plan"},
-              {"id": "in-b4", "label": "Part B 4 · Criterion vs. constraint"}, {"id": "in-b5", "label": "Part B 5 · Why a conservation effort makes it stronger"}],
+              {"id": "in-b1", "label": "Part B 1 · Criterion vs. constraint"}, {"id": "in-b2", "label": "Part B 2 · Why a conservation effort makes it stronger"}],
   "parks": [
     {"k": "ever", "name": "Everglades National Park", "short": "the Everglades", "state": "Florida", "color": "#2D6A4F", "cover": "pb_g_river", "coverAlt": "A wide river of grass and water under a big sky",
      "names": ["alligator", "crocodile", "spoonbill", "wood stork", "heron", "egret", "anhinga", "snail kite", "kite", "apple snail", "snail", "panther", "deer", "raccoon", "rabbit", "python", "sawgrass", "algae", "periphyton", "mangrove", "manatee", "fish", "turtle", "frog", "bobcat", "otter", "ibis", "opossum", "plants"],

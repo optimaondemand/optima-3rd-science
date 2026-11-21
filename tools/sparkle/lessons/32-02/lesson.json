@@ -1164,7 +1164,7 @@
    "do": "Answer in complete sentences.",
    "items": [
     {
-     "n": 4,
+     "n": 1,
      "q": "What is the difference between a criterion and a constraint? Give one example of each from your own presentation.",
      "type": "text",
      "min": 15,
@@ -1180,7 +1180,7 @@
      ]
     },
     {
-     "n": 5,
+     "n": 2,
      "q": "How does including a conservation effort make your presentation stronger? Why does that information matter to the audience?",
      "type": "text",
      "min": 12,
@@ -1229,11 +1229,11 @@
    },
    {
     "k": "b",
-    "t": "Part B: questions 4 and 5.",
+    "t": "Part B: questions 1 and 2.",
     "req": {
      "text": {
-      "in-b4": 15,
-      "in-b5": 12
+      "in-b1": 15,
+      "in-b2": 12
      }
     }
    },
@@ -1380,12 +1380,12 @@
     "label": "Part A 3 · A constraint and how it changed my plan"
    },
    {
-    "id": "in-b4",
-    "label": "Part B 4 · Criterion vs. constraint"
+    "id": "in-b1",
+    "label": "Part B 1 · Criterion vs. constraint"
    },
    {
-    "id": "in-b5",
-    "label": "Part B 5 · Why a conservation effort makes it stronger"
+    "id": "in-b2",
+    "label": "Part B 2 · Why a conservation effort makes it stronger"
    }
   ],
   "parks": [
