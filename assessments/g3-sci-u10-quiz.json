@@ -1,0 +1,142 @@
+{
+ "unit": 10,
+ "title": "Florida Ecosystems",
+ "lessons": "29.01 to 31.02",
+ "q": [
+  {
+   "src": "29.01",
+   "type": "mc",
+   "q": "During the dry season in the Everglades, the water shrinks into small pools. What do many wading birds do?",
+   "o": [
+    "They fly to the shrinking pools, where fish are crowded together.",
+    "They stop eating until the rain comes back.",
+    "They dig burrows to stay cool.",
+    "They change color to hide."
+   ],
+   "a": [
+    0
+   ]
+  },
+  {
+   "src": "29.01",
+   "type": "tf",
+   "q": "An animal that needs dry ground and freezing cold would survive well in the Everglades.",
+   "a": false
+  },
+  {
+   "src": "29.02",
+   "type": "mc",
+   "q": "In an Everglades food web, where does the energy start?",
+   "o": [
+    "With the alligator, the top predator",
+    "With the Sun",
+    "With the decomposers",
+    "With the fish"
+   ],
+   "a": [
+    1
+   ]
+  },
+  {
+   "src": "29.02",
+   "type": "mc",
+   "q": "Sawgrass uses sunlight, water, and air to make its own food. What is sawgrass in a food web?",
+   "o": [
+    "A consumer",
+    "A predator",
+    "A producer",
+    "A decomposer"
+   ],
+   "a": [
+    2
+   ]
+  },
+  {
+   "src": "30.01",
+   "type": "mc",
+   "q": "An alligator's eyes and nostrils sit on top of its head. How does this help it survive?",
+   "o": [
+    "It helps the alligator hear better.",
+    "It lets the alligator see and breathe while it hides underwater.",
+    "It keeps the alligator warm in winter.",
+    "It helps the alligator climb trees."
+   ],
+   "a": [
+    1
+   ]
+  },
+  {
+   "src": "30.01",
+   "type": "ma",
+   "q": "Which of these animals are vertebrates (animals with a backbone)? Choose ALL that are correct.",
+   "o": [
+    "Florida panther",
+    "Anhinga",
+    "Green tree frog",
+    "Spider",
+    "Beetle"
+   ],
+   "a": [
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "src": "30.02",
+   "type": "mc",
+   "q": "On white beach sand, a pale beach mouse is harder for an owl to see than a darker mouse of the same kind. What is the pale fur?",
+   "o": [
+    "A new species",
+    "A variation that gives a survival advantage",
+    "A habitat",
+    "A food web"
+   ],
+   "a": [
+    1
+   ]
+  },
+  {
+   "src": "31.01",
+   "type": "mc",
+   "q": "Burmese pythons came from far away and now spread in the Everglades, eating native animals. What kind of threat is this?",
+   "o": [
+    "Pollution",
+    "Habitat loss",
+    "An invasive species",
+    "A drought"
+   ],
+   "a": [
+    2
+   ]
+  },
+  {
+   "src": "31.01",
+   "type": "mc",
+   "q": "Rain washes fertilizer from farms into a lake. What most likely happens next?",
+   "o": [
+    "The water gets cleaner.",
+    "Algae grows out of control and blocks sunlight.",
+    "Fish grow bigger.",
+    "The lake dries up."
+   ],
+   "a": [
+    1
+   ]
+  },
+  {
+   "src": "31.02",
+   "type": "mc",
+   "q": "Engineers are designing a crossing under a highway for Florida panthers. Which one is a constraint?",
+   "o": [
+    "Panthers must be able to walk through it.",
+    "Panthers must be able to see the other side.",
+    "The highway has to stay open while they build it.",
+    "Panthers must reach it safely."
+   ],
+   "a": [
+    2
+   ]
+  }
+ ]
+}
