@@ -1,0 +1,45 @@
+<svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A model of engineers designing a panther crossing: panthers are hit crossing a highway; engineers sketch a tunnel under the road; a test shows a panther will not enter a small, dark pipe; the improved design is a wide, bright underpass with fences and plants, and the panther walks through">
+<defs>
+<linearGradient id="um-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8cc4e8"/><stop offset="1" stop-color="#e6f2fa"/></linearGradient>
+<linearGradient id="um-dusk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3d4a6b"/><stop offset="1" stop-color="#c99a6b"/></linearGradient>
+<g id="um-cat"><path d="M-16 0 Q-14 -10 0 -10 Q12 -10 14 -4 L20 -8 Q24 -6 22 -2 L16 0 Z" fill="#c49a62"/><path d="M-16 -4 Q-26 -6 -30 -14" stroke="#c49a62" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="-12" y="-2" width="3" height="8" fill="#a77f4c"/><rect x="-6" y="-2" width="3" height="8" fill="#a77f4c"/><rect x="6" y="-2" width="3" height="8" fill="#a77f4c"/><rect x="11" y="-2" width="3" height="8" fill="#a77f4c"/><circle cx="20" cy="-5" r="1" fill="#222"/></g>
+<g id="um-car"><rect x="-16" y="-9" width="32" height="9" rx="3" fill="#d2433a"/><path d="M-9 -9 L-5 -15 H6 L10 -9 Z" fill="#d2433a"/><circle cx="-9" cy="1" r="3" fill="#222"/><circle cx="9" cy="1" r="3" fill="#222"/></g>
+<g id="um-ground"><rect y="128" width="320" height="52" fill="#6f9a4c"/><path d="M80 128 L118 72 H202 L240 128 Z" fill="#9b8462"/><rect x="112" y="66" width="96" height="7" fill="#4a4a4a"/><path d="M118 69.5 H202" stroke="#f2d24a" stroke-width="1" stroke-dasharray="6 5"/></g>
+<g id="um-tag"><rect x="0" y="0" width="1" height="1" fill="none"/></g>
+</defs>
+<g class="s1">
+<rect width="320" height="180" fill="url(#um-dusk)"/>
+<use href="#um-ground"/>
+<use href="#um-car" transform="translate(176 66)"/>
+<use href="#um-cat" transform="translate(130 62) scale(1.1)"/>
+<g stroke="#e0402e" stroke-width="4" stroke-linecap="round"><path d="M140 34 l16 16 M156 34 l-16 16"/></g>
+<rect x="84" y="88" width="152" height="16" rx="4" fill="#fff" opacity=".9"/><text x="160" y="100" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#8a2a12">PROBLEM: CARS HIT PANTHERS</text>
+</g>
+<g class="s2">
+<rect width="320" height="180" fill="#1f4f8a"/>
+<g stroke="#ffffff" stroke-opacity=".12" stroke-width="1"><path d="M0 20 H320 M0 40 H320 M0 60 H320 M0 80 H320 M0 100 H320 M0 120 H320 M0 140 H320 M0 160 H320 M40 0 V180 M80 0 V180 M120 0 V180 M160 0 V180 M200 0 V180 M240 0 V180 M280 0 V180"/></g>
+<g fill="none" stroke="#fff" stroke-width="1.6"><path d="M40 128 H280"/><path d="M80 128 L118 72 H202 L240 128"/><path d="M128 128 V100 Q160 86 192 100 V128" stroke-dasharray="5 3"/></g>
+<g stroke="#fff" stroke-width="1"><path d="M128 136 H192"/><path d="M128 132 v8 M192 132 v8"/></g>
+<text x="160" y="148" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" fill="#fff">WIDTH?</text>
+<rect x="76" y="38" width="168" height="16" rx="4" fill="#fff" opacity=".92"/><text x="160" y="50" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#1f4f8a">PLAN: A TUNNEL UNDER THE ROAD</text>
+</g>
+<g class="s3">
+<rect width="320" height="180" fill="url(#um-sky)"/>
+<use href="#um-ground"/>
+<circle cx="160" cy="118" r="10" fill="#2b2620"/><circle cx="160" cy="118" r="10" fill="none" stroke="#777" stroke-width="2"/>
+<use href="#um-cat" transform="translate(60 126) scale(1.4)"/>
+<text x="96" y="100" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#8a2a12">?</text>
+<rect x="84" y="38" width="152" height="16" rx="4" fill="#fff" opacity=".92"/><text x="160" y="50" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#8a2a12">TEST: TOO SMALL AND DARK</text>
+</g>
+<g class="s4">
+<rect width="320" height="180" fill="url(#um-sky)"/>
+<use href="#um-ground"/>
+<path d="M124 128 V100 Q160 88 196 100 V128 Z" fill="#cfd8c6"/>
+<path d="M124 128 V100 Q160 88 196 100 V128" fill="none" stroke="#7d7d7d" stroke-width="2.5"/>
+<g stroke="#555" stroke-width="1"><path d="M112 60 V66 M126 60 V66 M140 60 V66 M154 60 V66 M168 60 V66 M182 60 V66 M196 60 V66 M208 60 V66"/><path d="M112 60 H208"/></g>
+<g fill="#3f7a2a"><circle cx="110" cy="124" r="7"/><circle cx="100" cy="126" r="5"/><circle cx="212" cy="124" r="7"/><circle cx="222" cy="126" r="5"/></g>
+<use href="#um-cat" transform="translate(160 124) scale(1.25)"/>
+<use href="#um-car" transform="translate(186 66) scale(.8)"/>
+<rect x="70" y="34" width="180" height="16" rx="4" fill="#fff" opacity=".92"/><text x="160" y="46" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#2e6b1f">IMPROVED: WIDE, BRIGHT, FENCED</text>
+</g>
+</svg>

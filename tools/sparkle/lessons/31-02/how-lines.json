@@ -1,0 +1,22 @@
+{
+ "how-31-02-specimen": {
+  "page": "Press Inspect specimen. Move the magnifying lens over the branch, then tap 3 things you notice.",
+  "say": "Press Inspect specimen. Move the magnifying lens over the branch, then tap three things you notice."
+ },
+ "how-31-02-compare": {
+  "page": "Put the panther at one crossing and the turtle at the other: drag them, or tap one, then a tray. Press Send them through. Then swap.",
+  "say": "Put the panther at one crossing and the turtle at the other: drag them, or tap one, then a tray. Press Send them through. Then swap."
+ },
+ "how-31-02-wall": {
+  "page": "First, make a prediction. Then brush the glowing stop: drag across it (or tap it again and again) until the photo shows.",
+  "say": "First, make a prediction. Then brush the glowing stop: drag across it (or tap it again and again) until the photo shows."
+ },
+ "how-31-02-det": {
+  "page": "Pick 3 cards, one at a time. Tap the fact that is a constraint (a limit), then name what the design must do. Predict how it turned out, and see the evidence.",
+  "say": "Pick three cards, one at a time. Tap the fact that is a constraint, a limit, then name what the design must do. Predict how it turned out, and see the evidence."
+ },
+ "how-31-02-partc": {
+  "page": "Draw your design for the challenge you picked in Part B. Label at least 5 parts: the threat, your solution, at least one native plant or animal that benefits, and two more parts of your design.",
+  "say": "Draw your design for the challenge you picked in Part B. Label at least 5 parts: the threat, your solution, at least one native plant or animal that benefits, and two more parts of your design."
+ }
+}
