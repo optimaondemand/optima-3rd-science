@@ -1,0 +1,61 @@
+<svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A model of runoff: rain falls on a farm field with fertilizer; runoff washes the fertilizer into the lake; green algae spreads over the water; thick algae blocks sunlight and fish run short of oxygen">
+<defs>
+<linearGradient id="rm-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8cc4e8"/><stop offset="1" stop-color="#e6f2fa"/></linearGradient>
+<linearGradient id="rm-storm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6f7c89"/><stop offset="1" stop-color="#c3ccd4"/></linearGradient>
+<linearGradient id="rm-lake" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3e8fa6"/><stop offset="1" stop-color="#1f5f75"/></linearGradient>
+<linearGradient id="rm-murk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f7a4a"/><stop offset="1" stop-color="#243b2a"/></linearGradient>
+<g id="rm-fish"><path d="M0 0 q8 -6 16 0 q-8 6 -16 0 z" fill="#f2b33d"/><path d="M15 0 l6 -4 v8 z" fill="#e39a22"/><circle cx="4" cy="-1" r="1" fill="#222"/></g>
+<g id="rm-cloud"><circle cx="0" cy="0" r="11"/><circle cx="14" cy="-5" r="13"/><circle cx="29" cy="0" r="11"/><rect x="0" y="0" width="29" height="10"/></g>
+<g id="rm-land">
+<path d="M0 66 L130 80 Q150 84 160 96 L160 180 L0 180 Z" fill="#8a6a43"/>
+<path d="M0 66 L130 80 Q150 84 160 96 L156 100 Q146 88 128 85 L0 72 Z" fill="#5f9a3c"/>
+<g stroke="#3f7a2a" stroke-width="2" stroke-linecap="round"><path d="M14 66 v-7 M28 67 v-7 M42 69 v-7 M56 70 v-7 M70 72 v-7 M84 73 v-7 M98 75 v-7 M112 77 v-7"/></g>
+<path d="M300 92 Q310 90 320 92 L320 180 L292 180 Q296 130 300 92 Z" fill="#8a6a43"/>
+</g>
+<g id="rm-dots" fill="#f4f1e6"><circle cx="20" cy="70" r="1.5"/><circle cx="36" cy="71" r="1.5"/><circle cx="50" cy="73" r="1.5"/><circle cx="64" cy="74" r="1.5"/><circle cx="80" cy="76" r="1.5"/><circle cx="94" cy="78" r="1.5"/><circle cx="108" cy="80" r="1.5"/></g>
+</defs>
+<g class="s1">
+<rect width="320" height="180" fill="url(#rm-storm)"/>
+<rect x="160" y="96" width="140" height="84" fill="url(#rm-lake)"/>
+<use href="#rm-land"/><use href="#rm-dots"/>
+<g fill="#8e99a3"><use href="#rm-cloud" transform="translate(70 28)"/><use href="#rm-cloud" transform="translate(140 22)"/></g>
+<g stroke="#e8f1f8" stroke-width="1.6" stroke-linecap="round"><path d="M74 46 l-3 8 M88 48 l-3 8 M102 46 l-3 8 M144 40 l-3 8 M158 42 l-3 8 M172 40 l-3 8 M60 52 l-3 8 M116 52 l-3 8"/></g>
+<use href="#rm-fish" transform="translate(196 132)"/><use href="#rm-fish" transform="translate(240 112)"/><use href="#rm-fish" transform="translate(262 132) scale(.8)"/>
+<rect x="172" y="70" width="70" height="15" rx="4" fill="#fff" opacity=".85"/><text x="207" y="81" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#1f5f75">CLEAR WATER</text>
+</g>
+<g class="s2">
+<rect width="320" height="180" fill="url(#rm-storm)"/>
+<rect x="160" y="96" width="140" height="84" fill="url(#rm-lake)"/>
+<path d="M160 96 Q200 100 230 110 Q200 112 160 106 Z" fill="#7a8f4a" opacity=".75"/>
+<use href="#rm-land"/>
+<g fill="#8e99a3"><use href="#rm-cloud" transform="translate(70 28)"/><use href="#rm-cloud" transform="translate(140 22)"/></g>
+<g stroke="#e8f1f8" stroke-width="1.6" stroke-linecap="round"><path d="M74 46 l-3 8 M88 48 l-3 8 M102 46 l-3 8 M144 40 l-3 8 M158 42 l-3 8 M172 40 l-3 8"/></g>
+<g stroke="#b8925a" stroke-width="3" stroke-linecap="round" fill="none"><path d="M30 76 Q80 84 130 88 Q150 92 166 100"/><path d="M60 80 Q110 88 140 92 Q156 96 172 104"/></g>
+<g fill="#f4f1e6"><circle cx="100" cy="87" r="1.6"/><circle cx="128" cy="90" r="1.6"/><circle cx="150" cy="96" r="1.6"/><circle cx="168" cy="103" r="1.6"/></g>
+<path d="M150 66 l18 14" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><path d="M168 80 l-8 -1 l5 -6 z" fill="#fff"/>
+<rect x="170" y="62" width="112" height="15" rx="4" fill="#fff" opacity=".85"/><text x="226" y="73" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#7a5a2a">FERTILIZER WASHES IN</text>
+<use href="#rm-fish" transform="translate(220 124)"/><use href="#rm-fish" transform="translate(258 136) scale(.8)"/>
+</g>
+<g class="s3">
+<rect width="320" height="180" fill="url(#rm-sky)"/>
+<circle cx="160" cy="32" r="11" fill="#ffd34d"/>
+<rect x="160" y="96" width="140" height="84" fill="url(#rm-murk)"/>
+<path d="M160 96 H300 V104 Q230 108 160 103 Z" fill="#6fbf3a"/>
+<g fill="#8fd64e"><circle cx="180" cy="99" r="3"/><circle cx="210" cy="100" r="3.5"/><circle cx="244" cy="99" r="3"/><circle cx="276" cy="100" r="3.5"/></g>
+<use href="#rm-land"/>
+<use href="#rm-fish" transform="translate(214 126)"/><use href="#rm-fish" transform="translate(250 134) scale(.8)"/>
+<rect x="170" y="70" width="100" height="15" rx="4" fill="#fff" opacity=".85"/><text x="220" y="81" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#3f7a2a">ALGAE GROWS FAST</text>
+</g>
+<g class="s4">
+<rect width="320" height="180" fill="url(#rm-sky)"/>
+<circle cx="160" cy="32" r="11" fill="#ffd34d"/>
+<g stroke="#ffd34d" stroke-width="1.6" stroke-dasharray="3 3"><path d="M176 44 L200 92 M190 40 L236 92"/></g>
+<rect x="160" y="96" width="140" height="84" fill="#1d2e22"/>
+<path d="M160 94 H300 V110 Q230 114 160 110 Z" fill="#5aa82e"/>
+<g fill="#7cc843"><circle cx="176" cy="96" r="4"/><circle cx="200" cy="95" r="4.5"/><circle cx="226" cy="96" r="4"/><circle cx="252" cy="95" r="4.5"/><circle cx="280" cy="96" r="4"/></g>
+<use href="#rm-land"/>
+<use href="#rm-fish" transform="translate(228 120)"/>
+<g fill="none" stroke="#cfe6f0" stroke-width="1"><circle cx="230" cy="114" r="1.6"/></g>
+<rect x="166" y="68" width="116" height="15" rx="4" fill="#fff" opacity=".88"/><text x="224" y="79" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" font-weight="700" fill="#8a2a12">NO SUN, LOW OXYGEN</text>
+</g>
+</svg>
