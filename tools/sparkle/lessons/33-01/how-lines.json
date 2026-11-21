@@ -1,0 +1,26 @@
+{
+ "how-33-01-specimen": {
+  "page": "Press Inspect specimen. Move the magnifying lens over the lump, then tap 3 things you notice.",
+  "say": "Press Inspect specimen. Move the magnifying lens over the lump, then tap three things you notice."
+ },
+ "how-33-01-compare": {
+  "page": "Put the sun under one marsh and the rain under the other: drag them, or tap one, then a marsh. Press Start the dry season. Then swap.",
+  "say": "Put the sun under one marsh and the rain under the other: drag them, or tap one, then a marsh. Press Start the dry season. Then swap."
+ },
+ "how-33-01-wall": {
+  "page": "First, make a prediction. Then brush the glowing thread: drag across it (or tap it again and again) until the photo shows.",
+  "say": "First, make a prediction. Then brush the glowing thread: drag across it (or tap it again and again) until the photo shows."
+ },
+ "how-33-01-det": {
+  "page": "Pick 3 cards, one at a time. Tap something you see, then name what it connects to. Predict what happens if it changes, and see the evidence.",
+  "say": "Pick three cards, one at a time. Tap something you see, then name what it connects to. Predict what happens if it changes, and see the evidence."
+ },
+ "how-33-01-parta": {
+  "page": "For each topic, write one real-world example. Use your science words.",
+  "say": "For each topic, write one real-world example. Use your science words."
+ },
+ "how-33-01-partc": {
+  "page": "Draw a Connection Web for any real ecosystem you choose. Show at least 5 living or nonliving things. Connect them with arrows, and write on each arrow what the connection is (like sun → sawgrass: gives light).",
+  "say": "Draw a Connection Web for any real ecosystem you choose. Show at least five living or nonliving things. Connect them with arrows, and write on each arrow what the connection is, like sun to sawgrass: gives light."
+ }
+}

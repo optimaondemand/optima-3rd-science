@@ -98,3 +98,6 @@ A Part A item may be `{"n":1, "type":"graph", "q", "title", "yLabel", "cats":[�
 - `det.inferQ` (Step 2 question, default "What was it?"), `det.inferDone` (the done line, default "It was"), `det.chartSo` (chart evidence, default "so it was").
 - `premiere.thinkLabel` (exhibit line, default "I think it was").
 All optional; lessons without them are unchanged (all 12 built lessons re-checked: 0 FAIL, playtest 1150 pass).
+
+## Film threads (33.01, 21 Nov 2026)
+Any photo shot may add `threads {pts: [[x%, y%], …], at, dur}`: glowing gold threads draw themselves from point to point across the photo and a dot lights at each point (tick, then a shimmer on the last). Points are percent of a 16:9 frame, so crop the photo to 16:9 and keep the zoom gentle (≤ 1.05) so the dots stay on their subjects. Keep points out of the caption box (bottom middle). Reduced motion: the whole web appears at `at`. All built lessons re-checked (check + playtest 1150).

@@ -123,3 +123,10 @@ canvas.wf-fx{width:100%;height:100%}
 .wf-vhs.on{opacity:1}
 @keyframes wfVhs{from{background-position:0 0,0 0}to{background-position:0 0,0 300%}}
 @media (prefers-reduced-motion:reduce){.wf-vhs{animation:none}}
+
+/* threads fx (33.01): glowing lines that link the living and nonliving parts of one photo */
+.wf-threads{z-index:3;transform-origin:50% 50%;overflow:visible}
+.wf-threads line{stroke:#ffe3a3;stroke-width:.42;stroke-linecap:round;fill:none;stroke-dasharray:1;stroke-dashoffset:1;filter:drop-shadow(0 0 .6px #ffcf6a) drop-shadow(0 0 1.6px rgba(255,190,80,.8))}
+.wf-threads circle{fill:#fff6dc;stroke:#ffcf6a;stroke-width:.35;opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.2);transition:opacity .5s,transform .6s cubic-bezier(.3,1.6,.5,1);filter:drop-shadow(0 0 1.4px #ffcf6a)}
+.wf-threads circle.on{opacity:1;transform:scale(1)}
+@media (prefers-reduced-motion: reduce){.wf-threads circle{transition:none}}

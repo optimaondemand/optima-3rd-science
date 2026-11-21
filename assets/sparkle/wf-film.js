@@ -1,6 +1,6 @@
 /* Opti's Wonder Films — cinematic opener engine (G3 science sparkle layer).
    DATA-driven: window.WF_DATA = {kicker, lesson, title, bigQuestion, poster, music:{src,vol}, shots:[...], captions:[...], credits:[...], startTarget}
-   Shot types: leader | black | photo | reveal | xray | split | flash | archive | title. Any photo may add tilt {to (deg), at, dur}: the picture turns over (20.01). fx: dust | caustics | rays | sweep | bubbles | rain. A reveal may set cover [c1, c2] (the layer brushed away; default sand dust) and chip 'r,g,b' (the flecks) (27.01). Any shot may carry sfxAt [{at,name,arg}], badge {text, dur} (a corner label, e.g. "◀◀ REWIND") and vhs: true (tape-rewind lines; off with reduced motion) (22.01).  Holds NO lesson content. */
+   Shot types: leader | black | photo | reveal | xray | split | flash | archive | title. Any photo may add tilt {to (deg), at, dur}: the picture turns over (20.01). fx: dust | caustics | rays | sweep | bubbles | rain. A reveal may set cover [c1, c2] (the layer brushed away; default sand dust) and chip 'r,g,b' (the flecks) (27.01). Any shot may carry sfxAt [{at,name,arg}], badge {text, dur} (a corner label, e.g. "◀◀ REWIND") and vhs: true (tape-rewind lines; off with reduced motion) (22.01). A photo may add threads {pts: [[x%, y%], ...], at, dur}: glowing threads draw themselves from point to point across the picture, a dot lighting at each point (33.01; use a 16:9 image and a gentle zoom so the points stay on their subjects).  Holds NO lesson content. */
 (function () {
   'use strict';
   var D = window.WF_DATA; if (!D) return;
@@ -49,6 +49,13 @@
       if (s.type === 'split') { var sp2 = el('div', 'wf-split2', '<img alt="' + (s.alt2 || '') + '" src="' + src(s.img2) + '">'), sl = el('div', 'wf-splitline');
         L.appendChild(sp2); L.appendChild(sl); s._sp = sp2; s._sl = sl;
         s._sl1 = el('div', 'wf-splitlab l', s.lab1 || ''); s._sl2 = el('div', 'wf-splitlab r', s.lab2 || ''); L.appendChild(s._sl1); L.appendChild(s._sl2); }
+      if (s.threads && s.threads.pts && s.threads.pts.length > 1) {
+        var th = document.createElementNS(svgNS, 'svg'); th.setAttribute('class', 'wf-fx wf-threads'); th.setAttribute('viewBox', '0 0 100 56.25'); th.setAttribute('preserveAspectRatio', 'none');
+        var P = s.threads.pts, hs = '';
+        for (var q = 1; q < P.length; q++) hs += '<line pathLength="1" x1="' + P[q - 1][0] + '" y1="' + (P[q - 1][1] * .5625) + '" x2="' + P[q][0] + '" y2="' + (P[q][1] * .5625) + '"/>';
+        P.forEach(function (pt) { hs += '<circle r="1.05" cx="' + pt[0] + '" cy="' + (pt[1] * .5625) + '"/>'; });
+        th.innerHTML = hs; L.appendChild(th); s._th = { svg: th, segs: th.querySelectorAll('line'), dots: th.querySelectorAll('circle') };
+      }
       if (s.tags) s._tags = s.tags.map(function (tg) { var t = el('div', 'wf-tag', tg.text); t.style.left = tg.x + '%'; t.style.top = tg.y + '%'; L.appendChild(t); return t; });
       if (s.fx && s.fx.indexOf('caustics') > -1) {
         var cs = document.createElementNS(svgNS, 'svg'); cs.setAttribute('class', 'wf-fx'); cs.setAttribute('preserveAspectRatio', 'none');
@@ -268,6 +275,11 @@
         if (s.type === 'reveal') { if (!s._cvReady) prepReveal(s); var rp = clamp((local - (s.revealAt || .8)) / (s.revealDur || 5), 0, 1); brushTo(s, rp);
           if (rp >= 1) once('rv' + i, function () { sfx('shimmer'); s._cv.style.transition = 'opacity 1s'; s._cv.style.opacity = 0; }); else s._cv.style.opacity = 1; }
         if (s.type === 'flash') s._el.querySelectorAll('span').forEach(function (sp, k) { var at = (s.beats || [.1, .9])[k]; if (local >= at && !sp.classList.contains('on')) { sp.classList.add('on'); sfx('thump'); if (!RM) { stage.classList.remove('wf-shake'); void stage.offsetWidth; stage.classList.add('wf-shake'); } } });
+        if (s._th) { var tha = s.threads.at == null ? 1 : s.threads.at, thd = s.threads.dur || 4, thn = s._th.segs.length,
+            thp = RM ? (local >= tha ? 1 : 0) : clamp((local - tha) / thd, 0, 1);
+          if (s._img && !RM) s._th.svg.style.transform = s._img.style.transform.replace(/ rotate\([^)]*\)/, '');
+          s._th.segs.forEach(function (ln, k) { var sp = clamp(thp * thn - k, 0, 1); ln.style.strokeDashoffset = (1 - sp).toFixed(3); });
+          s._th.dots.forEach(function (dt, k) { var on = local >= tha && thp * thn >= k - .001; if (on && !dt.classList.contains('on')) { dt.classList.add('on'); sfx(k === thn ? 'shimmer' : 'tick'); } }); }
         if (s._tags) s._tags.forEach(function (tg, k) { if (local >= s.tags[k].at) tg.classList.add('on'); });
         if (s.sfxAt) s.sfxAt.forEach(function (q, k) { if (local >= q.at) once('sa' + i + '_' + k, function () { sfx(q.name, q.arg); }); });
         if (s.type === 'xray') { var xa = s.xrayAt || 1, xd = s.xrayDur || 3.5, xp = clamp((local - xa) / xd, 0, 1), y0 = s.y0 != null ? s.y0 : 0, y1 = s.y1 != null ? s.y1 : .6;

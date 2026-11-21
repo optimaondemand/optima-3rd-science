@@ -1,0 +1,1613 @@
+{
+ "id": "g3sci-33-01",
+ "lesson": "33.01",
+ "title": "How Is Everything Connected?",
+ "emoji": "🌠",
+ "details": [
+  "📅 Q4 · Unit 11 · National Park Capstone",
+  "📖 Week 33 · Lesson 33.01",
+  "🌎 CPALMS Integrated Review · NGSS Integrated Review",
+  "⏱ About 35 minutes"
+ ],
+ "icans": [
+  "explain how weather, ecosystems, organisms, and human actions are all connected.",
+  "describe how a change in one part of nature can cause changes in other parts.",
+  "use evidence to explain why protecting ecosystems matters for all living things."
+ ],
+ "opti": {
+  "warm": "Our film follows the threads that tie a marsh together. First, inspect a lumpy, furry mystery specimen.",
+  "lesson": "Today you're an ecologist. Follow a river to the oysters, run the Flow Test, then trace a drought step by step.",
+  "check": "Three quick questions. It's not graded. It's just for you, so give each one your best try.",
+  "assign": "Time to show what you learned. Answer with real examples, then draw your own Connection Web."
+ },
+ "film": {
+  "id": "g3sci-33-01",
+  "mount": "wf-film",
+  "kicker": "Opti's Wonder Films",
+  "lesson": "Lesson 33.01 · How Is Everything Connected?",
+  "title": "Pull One Thread",
+  "bigQuestion": "How are all the parts of nature, weather, plants, animals, and people, connected to each other?",
+  "poster": "f_web",
+  "endPoster": "f_end",
+  "startTarget": "#tab-vocab",
+  "music": {
+   "src": "music",
+   "vol": 0.5
+  },
+  "shots": [
+   {
+    "t": 0,
+    "d": 3.4,
+    "type": "leader",
+    "top": "Optima Academy",
+    "name": "Opti's Wonder Films",
+    "bottom": "presents",
+    "fade": 1.0
+   },
+   {
+    "t": 3.4,
+    "d": 6.2,
+    "type": "photo",
+    "img": "f_web",
+    "alt": "Tiny drops of dew strung along the threads of a spider web",
+    "from": [
+     1.55,
+     0.6,
+     0.45
+    ],
+    "to": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "place": "Morning dew on a spider web",
+    "fade": 1.0,
+    "sfxAt": [
+     {
+      "at": 0.4,
+      "name": "shimmer"
+     }
+    ]
+   },
+   {
+    "t": 9.6,
+    "d": 6.2,
+    "type": "photo",
+    "img": "f_spring",
+    "alt": "A manatee drifting through clear blue water, seen from below, with sunbeams around it",
+    "from": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.12,
+     0.5,
+     0.45
+    ],
+    "place": "A Florida manatee · Crystal River, Florida",
+    "fade": 0.8,
+    "fx": [
+     "rays",
+     "bubbles"
+    ]
+   },
+   {
+    "t": 15.8,
+    "d": 9.0,
+    "type": "photo",
+    "img": "f_thread",
+    "alt": "A great blue heron standing in shallow water by floating leaves, with an alligator swimming in front of it",
+    "from": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.04,
+     0.5,
+     0.5
+    ],
+    "place": "A heron and an alligator · Everglades National Park",
+    "fade": 0.9,
+    "threads": {
+     "pts": [
+      [
+       62,
+       24
+      ],
+      [
+       80,
+       62
+      ],
+      [
+       44,
+       32
+      ],
+      [
+       20,
+       76
+      ],
+      [
+       18,
+       49
+      ]
+     ],
+     "at": 1.4,
+     "dur": 5.6
+    }
+   },
+   {
+    "t": 24.8,
+    "d": 2.6,
+    "type": "flash",
+    "lines": [
+     "Less rain?",
+     "Fewer birds?"
+    ],
+    "beats": [
+     0.15,
+     1.2
+    ],
+    "fade": 0.3
+   },
+   {
+    "t": 27.4,
+    "d": 5.6,
+    "type": "photo",
+    "img": "f_dry",
+    "alt": "A dry marsh with a pale, cracked crust where water used to be, and one bare tree",
+    "from": [
+     1.12,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "place": "The dry season · Taylor Slough, Everglades National Park",
+    "fade": 0.8,
+    "fx": [
+     "dust"
+    ]
+   },
+   {
+    "t": 33.0,
+    "d": 5.4,
+    "type": "photo",
+    "img": "f_storks",
+    "alt": "A white wood stork wading in shallow green water, feeling for fish with its long bill",
+    "from": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.1,
+     0.55,
+     0.5
+    ],
+    "place": "A wood stork feeling for fish",
+    "fade": 0.8
+   },
+   {
+    "t": 38.4,
+    "d": 5.6,
+    "type": "photo",
+    "img": "f_people",
+    "alt": "Scientists wading in a shallow lagoon, carrying buckets of seagrass to plant",
+    "from": [
+     1.08,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "place": "Planting seagrass · Indian River Lagoon, Florida",
+    "fade": 0.8
+   },
+   {
+    "t": 44.0,
+    "d": 7.0,
+    "type": "photo",
+    "img": "f_end",
+    "alt": "The sun setting over a flat sawgrass marsh, with an orange sky",
+    "from": [
+     1.0,
+     0.5,
+     0.5
+    ],
+    "to": [
+     1.08,
+     0.5,
+     0.55
+    ],
+    "place": "Sunset · Everglades National Park",
+    "fade": 0.9
+   },
+   {
+    "t": 51.0,
+    "d": 5.4,
+    "type": "title",
+    "fade": 1.2
+   }
+  ],
+  "captions": [
+   {
+    "t": 3.8,
+    "d": 5.6,
+    "text": "At dawn, every thread of a spider web holds up the others.",
+    "voice": "opti-1"
+   },
+   {
+    "t": 10.0,
+    "d": 5.6,
+    "text": "In a Florida spring, a manatee drifts toward the water plants it eats.",
+    "voice": "opti-2"
+   },
+   {
+    "t": 16.2,
+    "d": 8.2,
+    "text": "Sun, plants, water, fish, birds, gators. Out here, they're all tied together.",
+    "voice": "opti-3"
+   },
+   {
+    "t": 27.8,
+    "d": 5.0,
+    "text": "When the rain stops, the marsh begins to dry.",
+    "voice": "opti-4"
+   },
+   {
+    "t": 33.4,
+    "d": 4.8,
+    "text": "Fish crowd into the last pools, and the birds follow.",
+    "voice": "opti-5"
+   },
+   {
+    "t": 38.8,
+    "d": 5.0,
+    "text": "People can cut a thread, or help tie it back.",
+    "voice": "opti-6"
+   },
+   {
+    "t": 44.4,
+    "d": 6.4,
+    "text": "How are all the parts of nature, weather, plants, animals, and people, connected to each other?",
+    "voice": "opti-7"
+   }
+  ]
+ },
+ "scientist": "ecologist",
+ "specimen": {
+  "img": "spec",
+  "aspect": "3/2",
+  "radius": 0.07,
+  "hotspots": [
+   {
+    "name": "Gray fur, packed tight",
+    "x": 0.44,
+    "y": 0.31
+   },
+   {
+    "name": "A shiny black beetle shell",
+    "x": 0.56,
+    "y": 0.19
+   },
+   {
+    "name": "A long, thin white bone",
+    "x": 0.71,
+    "y": 0.56
+   },
+   {
+    "name": "Brown, curved shell pieces",
+    "x": 0.31,
+    "y": 0.43
+   },
+   {
+    "name": "Tiny bones and beetle legs",
+    "x": 0.33,
+    "y": 0.78
+   }
+  ],
+  "kicker": "🔎 Mystery specimen",
+  "title": "Furry, lumpy, and full of clues?",
+  "alt": "A gray, furry lump on the ground with small bones and shiny black beetle shells poking out of it",
+  "look": "A real specimen found on a path. It is a gray lump, packed with fur, with hard bits poking out. A specimen is one real thing that scientists study. Which animal left it here, and what was it eating? That's for you to figure out.",
+  "do": "Press Inspect specimen. Move the magnifying lens over the lump, then tap 3 things you notice.",
+  "number": "No. 33.01-A",
+  "card": [
+   "<b>Specimen A</b>",
+   "Found: on a path in England",
+   "Made of: fur, bones, and shells",
+   "Who left it? <i>You decide.</i>"
+  ],
+  "notice": "I notice… (one thing you see on the specimen)",
+  "wonder": "I wonder… (one question you want answered by the end of the lesson)"
+ },
+ "words": [
+  [
+   "🌳",
+   "ecosystem",
+   "All the living and nonliving things in a place, and the ways they affect each other."
+  ],
+  [
+   "🔗",
+   "interdependence",
+   "When living things depend on each other to survive. What happens to one affects the others."
+  ],
+  [
+   "🦎",
+   "adaptation",
+   "A trait that helps a living thing survive in its environment, like webbed feet for swimming."
+  ],
+  [
+   "🌦",
+   "climate",
+   "The usual weather of a place over many years: the long-term pattern, not just one day."
+  ],
+  [
+   "🕸",
+   "food web",
+   "A diagram that shows how energy moves through an ecosystem as living things eat other living things."
+  ],
+  [
+   "🏗",
+   "human impact",
+   "The ways people change the natural world. It can be harmful (pollution, habitat loss) or helpful (conservation)."
+  ]
+ ],
+ "parts": [
+  {
+   "kicker": "🕸 Part 1",
+   "title": "Every Living Thing Has Neighbors",
+   "html": "<p>Remember the mystery specimen? It's an owl pellet: the fur, bones, and beetle shells an owl couldn't digest. One small lump holds pieces of a food web.</p><p>Think about a Florida wetland. Fish eat tiny water plants. A heron eats the fish. An alligator may eat the heron. If the pond dries up, the fish disappear, and so does the heron. That's interdependence. Scientists call the whole connected community, living and nonliving, an ecosystem.</p>"
+  },
+  {
+   "kicker": "🌦 Part 2",
+   "title": "Weather Writes the Rules",
+   "html": "<p>Climate decides which plants can grow in a place, and plants decide which animals can live there. Florida's wet summers flood the sawgrass, and the water brings food and shelter for many birds. In the Everglades, rain sets the water level, and so do canals that people built.</p>"
+  },
+  {
+   "kicker": "🌍 Part 3",
+   "title": "Traits, Change, and Human Hands",
+   "html": "<p>Living things have adaptations that fit their home. A spoonbill sweeps its flat bill through shallow water to catch small fish. Mangrove roots hold tight in soft, flooded mud. But places can change faster than living things can adapt. People drain wetlands and cut forests. People can also choose to protect places, like Everglades National Park.</p>"
+  },
+  {
+   "kicker": "🕵️ Part 4",
+   "title": "Connection Files"
+  }
+ ],
+ "order": {
+  "mix": [
+   2,
+   3,
+   0,
+   1
+  ],
+  "hint": "Start with the weather.",
+  "kicker": "🎞️ Put the scenes in order",
+  "title": "What happened to the oysters of Apalachicola Bay?",
+  "look": "Four real photos tell the story of a chain reaction in Apalachicola Bay, Florida, where a river meets the sea. They are mixed up. The dark film strip has four empty frames, from first (1) to last (4).",
+  "done": "🎬 Your order is right. Now watch it as a movie!",
+  "scenes": [
+   {
+    "img": "o1",
+    "alt": "A Florida lake with only small pools of water left in a wide, grassy bed",
+    "text": "Dry years: little rain falls, and lakes and rivers get low.",
+    "play": "Dry years.",
+    "miss": [
+     "",
+     "The story starts with the weather. Try frame 1.",
+     "The story starts with the weather. Try frame 1.",
+     "The story starts with the weather. Try frame 1."
+    ]
+   },
+   {
+    "img": "o2",
+    "alt": "From the air: a blue river winding through a pale green marsh",
+    "text": "Less fresh river water reaches the bay, so the bay gets saltier.",
+    "play": "The bay gets saltier.",
+    "miss": [
+     "The dry years come first. Try a later frame.",
+     "",
+     "The water changes before the snails move in. Try an earlier frame.",
+     "The water changes before the snails move in. Try an earlier frame."
+    ]
+   },
+   {
+    "img": "o3",
+    "alt": "A rock snail with a bright orange mouth on rocks crusted with small oysters",
+    "text": "Oyster-eating snails like salty water. More of them move in and drill into oysters.",
+    "play": "Snails move in.",
+    "miss": [
+     "The bay has to get saltier first. Try a later frame.",
+     "The bay has to get saltier first. Try a later frame.",
+     "",
+     "The snails come before the reefs shrink. Try an earlier frame."
+    ]
+   },
+   {
+    "img": "o4",
+    "alt": "Fishing boats tied up at wooden posts on a calm gray bay, with a gull and pelicans resting",
+    "text": "Oyster reefs shrink. In 2020, Florida stops oyster harvesting in the bay.",
+    "play": "The harvest stops.",
+    "miss": [
+     "This is the last step. Try frame 4.",
+     "This is the last step. Try frame 4.",
+     "This is the last step. Try frame 4.",
+     ""
+    ]
+   }
+  ],
+  "check": {
+   "q": "Sam says, \"Only the oysters were hurt when the bay got saltier.\" What do you think?",
+   "options": [
+    {
+     "t": "Sam is right. The change only touched the oysters.",
+     "miss": "Think about the movie. Who else needed those oysters?"
+    },
+    {
+     "t": "The change spread: snails, oysters, and the people who harvest oysters all felt it.",
+     "ok": "Yes! One change moved through the bay and reached people too. In 2026, part of the bay opened again for a short season as the reefs slowly recover."
+    }
+   ]
+  }
+ },
+ "movie": {
+  "model": "oyster-model.svg",
+  "modelBox": {
+   "left": "0%",
+   "width": "100%",
+   "rot": 0
+  },
+  "start": "0%",
+  "bg": "lab",
+  "counterIcon": "🦪",
+  "real": "real",
+  "realAlt": "A long, rough oyster reef poking out of gray bay water at mid-tide",
+  "stamp": "ONE CHANGE, MANY EFFECTS!",
+  "endCap": "A real oyster reef.",
+  "beats": [
+   {
+    "at": 0,
+    "cap": "1 · Dry years.",
+    "model": {
+     "top": "0%",
+     "rot": 0,
+     "show": "s1"
+    },
+    "counter": [
+     "2011"
+    ],
+    "sfx": "whoosh"
+   },
+   {
+    "at": 2600,
+    "cap": "2 · Saltier bay.",
+    "model": {
+     "show": "s2"
+    },
+    "counter": [
+     "2012"
+    ]
+   },
+   {
+    "at": 5200,
+    "cap": "3 · Snails move in.",
+    "model": {
+     "show": "s3"
+    },
+    "counter": [
+     "2012–2013"
+    ]
+   },
+   {
+    "at": 7800,
+    "cap": "4 · Harvest stops.",
+    "model": {
+     "show": "s4"
+    },
+    "counter": [
+     "2020"
+    ]
+   },
+   {
+    "at": 10400,
+    "cap": "The real thing.",
+    "model": {
+     "hide": true
+    },
+    "real": true
+   },
+   {
+    "at": 12200,
+    "stamp": true
+   }
+  ]
+ },
+ "compare": {
+  "kicker": "🧪 The Flow Test",
+  "title": "Which marsh keeps its water in the dry season?",
+  "look": "Two real Everglades marshes, each on a lit tray. Specimen A is a marsh where water flows in slowly from upstream. Specimen B is a marsh cut off by a canal, a long ditch people dug to move water away. Under the trays are two model weather moves: a dry-season sun lamp and a cup of rain.",
+  "trays": [
+   {
+    "id": "A",
+    "img": "ta",
+    "alt": "A grassy marsh with shallow water spread wide between the plants",
+    "label": "Specimen A"
+   },
+   {
+    "id": "B",
+    "img": "tb",
+    "alt": "From the air: a long, straight canal with a levee road beside it, cutting through marsh",
+    "label": "Specimen B"
+   }
+  ],
+  "materials": [
+   {
+    "key": "lamp",
+    "label": "Dry-season sun",
+    "swatch": "lamp"
+   },
+   {
+    "key": "cup",
+    "label": "A cup of rain",
+    "swatch": "cup"
+   }
+  ],
+  "ask": [
+   {
+    "q": "Which marsh has water spread wide across the grass?",
+    "ans": "A",
+    "ok": "Yes. Specimen A has water spread through the grass.",
+    "miss": "Look closely. Where do you see water between the plants?"
+   },
+   {
+    "q": "Which marsh has a long, straight canal beside it?",
+    "ans": "B",
+    "ok": "Yes. Specimen B has a canal people dug.",
+    "miss": "Look again. Which one has a straight ditch of water?"
+   }
+  ],
+  "press": "☀️ Start the dry season",
+  "testDo": "Put the sun under one marsh and the rain under the other: drag them, or tap one, then a marsh. Press <b>Start the dry season</b>. Then swap.",
+  "disclaimer": "This is a model. Real marshes are much bigger.",
+  "results": {
+   "Alamp": {
+    "text": "The sun dries the top water, but fresh water keeps flowing in from upstream. Marsh A stays wet!",
+    "fx": "wet"
+   },
+   "Acup": {
+    "text": "The rain soaks in and joins the slow-flowing water. Marsh A gets even wetter.",
+    "fx": "wet"
+   },
+   "Blamp": {
+    "text": "The sun dries it, and the canal keeps carrying water away. Marsh B dries out and cracks.",
+    "fx": "warm"
+   },
+   "Bcup": {
+    "text": "The rain falls, but the canal drains much of it away fast.",
+    "fx": "runoff"
+   }
+  },
+  "best": [
+   "Alamp",
+   "Blamp"
+  ],
+  "frame": "In the dry season, this marsh ___, because ___.",
+  "claimLead": "In the dry season, this marsh",
+  "claimMid": "because",
+  "claim": {
+   "A": {
+    "feat": [
+     "stays wet",
+     "dries out"
+    ],
+    "featOk": 0,
+    "eat": [
+     "water keeps flowing in",
+     "the canal drains its water away"
+    ],
+    "eatOk": 0
+   },
+   "B": {
+    "feat": [
+     "stays wet",
+     "dries out"
+    ],
+    "featOk": 1,
+    "eat": [
+     "water keeps flowing in",
+     "the canal drains its water away"
+    ],
+    "eatOk": 1
+   }
+  },
+  "curator": {
+   "A": "<b>A river of grass.</b> In a healthy Everglades, water moves south in a slow, wide sheet, like a very shallow river flowing through the sawgrass.",
+   "B": "<b>Cut off.</b> Canals and levees built long ago carry water away or block it, so some marshes dry out too early in the year."
+  },
+  "missFeat": "Look at your sun test for {label} again. Did it stay wet or dry out?",
+  "missClaim": "Think about your tests. What made the difference between the two marshes?",
+  "done": "Same sun, two different marshes. The one cut off from its water dried out first, and people dug that canal.",
+  "after": {
+   "kicker": "🎬 Behind the scenes · Measuring the marsh",
+   "img": "after",
+   "alt": "A scientist in a hat and purple gloves standing in tall marsh grass, marking a sampling spot",
+   "html": "Scientists visit many spots across the Everglades to measure and test the water. They share what they find, so the people who manage the water can decide where it should flow."
+  }
+ },
+ "wall": {
+  "kicker": "🧵 Follow the Thread",
+  "title": "Trace a drought, one step at a time",
+  "look": "A model of a Florida marsh in the dry season, cut into four threads from top to bottom. Each thread holds a clue and a real photo. The dial on the left shows which step of the chain you're on.",
+  "do": "First, make a prediction. Then brush the glowing thread: drag across it (or tap it again and again) until the photo shows.",
+  "predict": {
+   "q": "Leo says, \"A long dry spell only changes the water.\" What do you predict?",
+   "options": [
+    [
+     "more",
+     "It will change plants, fish, and birds too"
+    ],
+    [
+     "water",
+     "It only changes the water"
+    ]
+   ],
+   "answer": "more",
+   "mine": "Your prediction: <b>{p}</b>. Let's follow the thread and find out.",
+   "confirm": "You predicted it changes more than the water. You were right: the dry season reached plants, fish, and birds.",
+   "change": "You predicted it only changes the water. The thread changed that idea: the dry season reached plants, fish, and birds."
+  },
+  "sky": "sky",
+  "skyAlt": "A wide, flat marsh of tall grass under a pale blue sky",
+  "skyCap": "Shark River Slough · Everglades National Park",
+  "unit": "Step",
+  "found": "Step {n} traced",
+  "elevator": [
+   "Start",
+   "Weather",
+   "Plants",
+   "Fish",
+   "Birds"
+  ],
+  "line": [
+   "THE CHANGE STARTS",
+   "IT SPREADS"
+  ],
+  "lockTag": "🔒 Open the thread above first",
+  "locked": "Open the thread above first. We follow the chain one step at a time.",
+  "first": "Brush the glowing first thread. Drag across it (or tap it again and again).",
+  "next": "Keep going. Brush Step {n}.",
+  "endTitle": "All 4 steps traced",
+  "endText": "One change in the weather moved down the whole chain: water and plants, then fish, then birds.",
+  "rule": "<b>A change in one part of nature causes changes in other parts.</b> A long dry season starts with the weather, then moves through the water, plants, and animals that depend on each other.",
+  "choices": [
+   "☀️ Weeks pass with almost no rain",
+   "🌱 Water plants dry up and die back",
+   "🐟 Fish crowd into the last deep pools",
+   "🐦 Wading birds must fly farther to find food"
+  ],
+  "layers": [
+   {
+    "name": "Step 1 · The weather",
+    "rock": "haze",
+    "img": "l1",
+    "alt": "A boardwalk through a green marsh under a bright, cloudless sky",
+    "ask": "Look at Step 1. Read the clue AND the photo. What happens first?",
+    "clue": "It's the dry season. Day after day, the sky stays clear and the sun beats down.",
+    "ans": 0,
+    "ok": "Yes! The chain starts with the weather: weeks with almost no rain.",
+    "tag": "☀️ Weather · no rain",
+    "miss": {
+     "1": "Close! Plants will feel it, but what has to happen first?",
+     "2": "Not yet. Something has to happen before the fish crowd together. Read the clue.",
+     "3": "Not yet. Read the clue: what is the sky doing?"
+    },
+    "env": "e1",
+    "envAlt": "Dry, cracked mud where water used to be",
+    "envCap": "Cracked mud in the dry season · Everglades National Park"
+   },
+   {
+    "name": "Step 2 · Water and plants",
+    "rock": "leafsun",
+    "img": "l2",
+    "alt": "Low, shallow water along a marsh trail, with dry banks showing",
+    "ask": "Look at Step 2. Read the clue AND the photo. What happens next?",
+    "clue": "The water level drops. Shallow parts of the marsh dry up, and the water plants there die back.",
+    "ans": 1,
+    "ok": "Yes! When the water drops, the water plants dry up.",
+    "tag": "🌱 Plants · drying up",
+    "miss": {
+     "0": "That already happened in Step 1. Read the clue: what is happening to the plants?",
+     "2": "Close! The fish come next. Read the clue: what dries up first?",
+     "3": "Not yet. Read the clue: what is happening to the plants?"
+    },
+    "env": "e2",
+    "envAlt": "A dry marsh with a pale, cracked crust and one bare tree",
+    "envCap": "Dry Taylor Slough · Everglades National Park"
+   },
+   {
+    "name": "Step 3 · Fish",
+    "rock": "water2",
+    "img": "l3",
+    "alt": "A long, spotted Florida gar fish swimming among floating leaves in dark water",
+    "ask": "Look at Step 3. Read the clue AND the photo. What happens next?",
+    "clue": "Fish can't live on dry land. They swim to the last deep pools, and lots of them pack in together.",
+    "ans": 2,
+    "ok": "Yes! The fish crowd into the last deep water.",
+    "tag": "🐟 Fish · crowded",
+    "miss": {
+     "0": "That already happened. Read the clue: where do the fish go?",
+     "1": "That already happened. Read the clue: where do the fish go?",
+     "3": "Close! The birds come next. Read the clue: what are the fish doing?"
+    },
+    "env": "e3",
+    "envAlt": "A great blue heron hunting at the edge of a deep pool where an alligator swims",
+    "envCap": "A deep pool in the dry season · Everglades National Park"
+   },
+   {
+    "name": "Step 4 · Wading birds",
+    "rock": "leafmid",
+    "img": "l4",
+    "alt": "Two white wood storks with dark heads wading in shallow water",
+    "ask": "Look at Step 4. Read the clue AND the photo. What happens last?",
+    "clue": "Wood storks and other wading birds eat fish. When the last pools dry up too, the fish are gone, and the birds must fly far to find food.",
+    "ans": 3,
+    "ok": "Yes! The birds feel it too: they fly farther to find fish.",
+    "tag": "🐦 Birds · flying farther",
+    "miss": {
+     "0": "That happened at the start. Read the clue: what do the birds have to do?",
+     "1": "That already happened. Read the clue: what do the birds have to do?",
+     "2": "That already happened. Read the clue: what do the birds have to do?"
+    },
+    "env": "e4",
+    "envAlt": "A flock of white wading birds flying across a cloudy sky",
+    "envCap": "Wood storks in flight · Everglades National Park"
+   }
+  ],
+  "mix": {
+   "q": "Ava says, \"Who cares if one kind of bird disappears from the Everglades? There are thousands of others.\" What do you think?",
+   "options": [
+    {
+     "t": "Ava is right. One kind of bird doesn't matter.",
+     "miss": "Think about the thread. What does that bird eat, and what eats it?"
+    },
+    {
+     "t": "Each kind of bird is part of the food web, so losing one can change what it eats and what eats it.",
+     "ok": "Yes! Every living thing is a thread in the web. Pull one, and others feel it."
+    }
+   ]
+  }
+ },
+ "wow": {
+  "kicker": "🎬 Director's cut",
+  "title": "The Gator's Water Hole",
+  "img": "wow",
+  "alt": "An old black-and-white photo of a gator hole: a small, dark pool surrounded by tall plants",
+  "caption": "A gator hole in Florida, photographed about 1910",
+  "html": "<p style=\"margin:0 0 8px\">Alligators use their snouts, feet, and tails to clear mud and plants out of low spots. The cleared hole fills with water. In the dry season, it can be some of the only water around.</p><p style=\"margin:0\">Fish, turtles, snails, and birds crowd in. The alligator eats some of them, but many more survive until the rain comes back.</p>",
+  "inset": "inset",
+  "insetCap": "An alligator and its baby in the Everglades."
+ },
+ "keyIdea": "Everything in nature is connected. Weather shapes which plants grow. Plants shape which animals survive. Animals shape the soil and water. A change in one part causes a chain of changes through the rest. This is a system: a set of parts that depend on each other. People can harm any part of the system, and people can choose to protect it.",
+ "det": {
+  "look": "Five real Florida places where living things depend on each other. Each card shows one. Under the cards is an evidence chart, a table that holds what you figure out.",
+  "do": "Pick 3 cards, one at a time. Tap something you see, then name what it connects to. Predict what happens if it changes, and see the evidence.",
+  "noun": "Card",
+  "need": 3,
+  "inferQ": "What does it connect to?",
+  "inferDone": "It connects to",
+  "chartSo": "and if it changed,",
+  "predict": {
+   "q": "What would happen if it changed?",
+   "options": [
+    [
+     "harm",
+     "❌ Many living things would be harmed"
+    ],
+    [
+     "same",
+     "➖ Nothing much would change"
+    ],
+    [
+     "help",
+     "✅ Living things would do better"
+    ]
+   ]
+  },
+  "kicker": "What really happened",
+  "enough": "You already solved 3 connection files. Nice work, ecologist!",
+  "cols": [
+   "Card",
+   "What I saw",
+   "Connects to",
+   "If it changed",
+   "My evidence"
+  ],
+  "write": {
+   "label": "Card __ shows ___. It connects to ___. If it changed, ___, because ___.",
+   "starter": "Start with: \"Card __ shows…\"",
+   "min": 15,
+   "chips": [
+    [
+     "thing",
+     "Names what you saw"
+    ],
+    [
+     "conn",
+     "Names a connection (fish, birds, manatees, water…)"
+    ],
+    [
+     "because",
+     "Gives a reason (because, so)"
+    ]
+   ]
+  },
+  "items": [
+   {
+    "id": "A",
+    "img": "d1",
+    "alt": "From the air: a small, round pool of water in a dry, grassy marsh, with a trail leading to it",
+    "clues": [
+     {
+      "t": "A deep pool of water in a dry marsh",
+      "ok": true
+     },
+     {
+      "t": "Snow on the ground",
+      "miss": "Look again. Is this a cold place?"
+     },
+     {
+      "t": "Tall city buildings",
+      "miss": "Look again. Do you see buildings?"
+     }
+    ],
+    "org": [
+     "🐟 Fish, turtles, and wading birds that need water",
+     "🌵 Desert cactus",
+     "🐻‍❄️ Polar bears"
+    ],
+    "orgAns": 0,
+    "orgShort": "fish, turtles, and birds",
+    "orgMiss": "Which living things need water in the dry season? Try again.",
+    "predict": {
+     "q": "This pool is a gator hole. If there were no alligators to dig these holes, what would happen in the next drought?",
+     "options": [
+      [
+       "harm",
+       "❌ Many living things would be harmed"
+      ],
+      [
+       "same",
+       "➖ Nothing much would change"
+      ],
+      [
+       "help",
+       "✅ Living things would do better"
+      ]
+     ]
+    },
+    "env": "Many living things would be harmed",
+    "envAns": "harm",
+    "envMiss": "Where would the fish and turtles find water? Try again.",
+    "envImg": "d1h",
+    "envAlt": "A great blue heron standing at the edge of the water near an alligator",
+    "envCap": "A heron and an alligator share the water · Everglades National Park",
+    "reveal": "Alligators dig and clear these holes. In the dry season, they hold some of the last water, so fish, turtles, and birds crowd in to survive. Without them, many would die before the rain returns.",
+    "rebuildEnv": "harm",
+    "bts": "Animals like the alligator are sometimes called ecosystem engineers, because they change their habitat for many others."
+   },
+   {
+    "id": "B",
+    "img": "d2",
+    "alt": "From the air: a long, straight road and canal cutting across a wide, wet marsh",
+    "clues": [
+     {
+      "t": "A long road built straight across the marsh",
+      "ok": true
+     },
+     {
+      "t": "A sandy beach",
+      "miss": "Look again. Is there an ocean here?"
+     },
+     {
+      "t": "A thick forest",
+      "miss": "Look again. Do you see many trees?"
+     }
+    ],
+    "org": [
+     "💧 The water flowing south into Everglades National Park",
+     "❄️ Snow melting in the mountains",
+     "🌋 A volcano"
+    ],
+    "orgAns": 0,
+    "orgShort": "the water flowing south",
+    "orgMiss": "Look at what the road crosses. What does it block? Try again.",
+    "predict": {
+     "q": "If parts of this road were raised up into bridges, what would happen to the marsh south of it?",
+     "options": [
+      [
+       "harm",
+       "❌ Many living things would be harmed"
+      ],
+      [
+       "same",
+       "➖ Nothing much would change"
+      ],
+      [
+       "help",
+       "✅ Living things would do better"
+      ]
+     ]
+    },
+    "env": "Living things would do better",
+    "envAns": "help",
+    "envMiss": "Bridges let water pass underneath. Would the marsh get more water or less? Try again.",
+    "envImg": "d2h",
+    "envAlt": "A digger removing the old road under a new, tall bridge while workers watch",
+    "envCap": "Workers remove the old road under the new bridge, 2013 · Tamiami Trail, Florida",
+    "reveal": "The Tamiami Trail road was built across the marsh in 1928, and it blocked the water's flow. A one-mile bridge was finished in 2013, and 2.3 more miles of bridges in 2019. Now much more water flows under them into the park.",
+    "rebuildEnv": "help",
+    "bts": "Park scientists say plants and animals south of the bridges are responding well to the extra water."
+   },
+   {
+    "id": "C",
+    "img": "d3",
+    "alt": "Under the water: two gray snapper fish swimming among tangled mangrove roots",
+    "clues": [
+     {
+      "t": "Tangled roots under the water",
+      "ok": true
+     },
+     {
+      "t": "Feathers",
+      "miss": "Look again. Is this a bird?"
+     },
+     {
+      "t": "Thick fur",
+      "miss": "Look again. Is this a mammal?"
+     }
+    ],
+    "org": [
+     "🐠 Young fish that hide and grow there",
+     "🦬 Bison in the snow",
+     "🌲 Pine cones"
+    ],
+    "orgAns": 0,
+    "orgShort": "young fish",
+    "orgMiss": "Who could hide in all those roots? Try again.",
+    "predict": {
+     "q": "If people cut down the mangroves along the shore, what would happen to the fish?",
+     "options": [
+      [
+       "harm",
+       "❌ Many living things would be harmed"
+      ],
+      [
+       "same",
+       "➖ Nothing much would change"
+      ],
+      [
+       "help",
+       "✅ Living things would do better"
+      ]
+     ]
+    },
+    "env": "Many living things would be harmed",
+    "envAns": "harm",
+    "envMiss": "Where would the young fish hide and grow? Try again.",
+    "envImg": "d3h",
+    "envAlt": "Green mangrove trees standing on their roots along the water's edge",
+    "envCap": "Mangroves along the water · Everglades National Park",
+    "reveal": "Mangrove roots are a nursery. Young snook, snapper, and many other fish hide there until they grow. Fewer mangroves means fewer places for young fish to grow up.",
+    "rebuildEnv": "harm",
+    "bts": "Florida has laws that protect mangroves along its coasts."
+   },
+   {
+    "id": "D",
+    "img": "d4",
+    "alt": "Under clear blue spring water: long green grass growing on the sandy bottom",
+    "clues": [
+     {
+      "t": "Long green grass growing under the water",
+      "ok": true
+     },
+     {
+      "t": "Fur",
+      "miss": "Look again. Is this an animal?"
+     },
+     {
+      "t": "Tall cliffs",
+      "miss": "Look again. Do you see rocks or cliffs?"
+     }
+    ],
+    "org": [
+     "🐄 Manatees that graze on it",
+     "🦅 Eagles high in the mountains",
+     "🐍 Desert snakes"
+    ],
+    "orgAns": 0,
+    "orgShort": "manatees",
+    "orgMiss": "Which animal eats underwater plants? Try again.",
+    "predict": {
+     "q": "If this seagrass died, what would happen to the manatees?",
+     "options": [
+      [
+       "harm",
+       "❌ Many living things would be harmed"
+      ],
+      [
+       "same",
+       "➖ Nothing much would change"
+      ],
+      [
+       "help",
+       "✅ Living things would do better"
+      ]
+     ]
+    },
+    "env": "Many living things would be harmed",
+    "envAns": "harm",
+    "envMiss": "What would the manatees eat? Try again.",
+    "envImg": "d4h",
+    "envAlt": "Scientists wading in a shallow lagoon, carrying buckets of seagrass to plant",
+    "envCap": "Planting seagrass, 2023 · Indian River Lagoon, Kennedy Space Center, Florida",
+    "reveal": "In 2021, so much seagrass died in Florida's Indian River Lagoon that hundreds of manatees starved. Now people are planting seagrass to help it come back.",
+    "rebuildEnv": "harm",
+    "bts": "The underwater grass in the card photo grows in Ichetucknee Springs, Florida."
+   },
+   {
+    "id": "E",
+    "img": "d5",
+    "alt": "A gopher tortoise walking into its burrow in sandy ground",
+    "clues": [
+     {
+      "t": "A wide, sandy burrow dug into the ground",
+      "ok": true
+     },
+     {
+      "t": "Wings",
+      "miss": "Look again. Can a tortoise fly?"
+     },
+     {
+      "t": "Gills",
+      "miss": "Look again. Does this animal live underwater?"
+     }
+    ],
+    "org": [
+     "🐸 Snakes, frogs, mice, and insects that use its burrow",
+     "🐋 Whales",
+     "🪸 Coral reefs"
+    ],
+    "orgAns": 0,
+    "orgShort": "burrow guests",
+    "orgMiss": "Who else could use a hole in the ground? Try again.",
+    "predict": {
+     "q": "If the gopher tortoises disappeared, what would happen to the burrow guests?",
+     "options": [
+      [
+       "harm",
+       "❌ Many living things would be harmed"
+      ],
+      [
+       "same",
+       "➖ Nothing much would change"
+      ],
+      [
+       "help",
+       "✅ Living things would do better"
+      ]
+     ]
+    },
+    "env": "Many living things would be harmed",
+    "envAns": "harm",
+    "envMiss": "Where would the snakes, frogs, and mice hide? Try again.",
+    "envImg": "d5h",
+    "envAlt": "The dark opening of a tortoise burrow in sand, with a black snake resting just inside",
+    "envCap": "A black racer snake at a tortoise burrow · Florida",
+    "reveal": "More than 350 other kinds of animals use gopher tortoise burrows to hide from heat, cold, and fire. Without tortoises digging, many of them would have nowhere to go.",
+    "rebuildEnv": "harm",
+    "bts": "A gopher tortoise burrow can be as long as a school bus."
+   }
+  ]
+ },
+ "rebuild": {
+  "title": "Use your evidence to sort the actions",
+  "missPrefix": "Hmm. Look at your connection files again. ",
+  "kicker": "🗂️ Sort the actions",
+  "whyStart": "I chose this because the connection…",
+  "envs": [
+   {
+    "key": "harm",
+    "name": "❌ Harms the web",
+    "img": "e1",
+    "cap": "Threads get cut…"
+   },
+   {
+    "key": "help",
+    "name": "✅ Helps the web",
+    "img": "d4h",
+    "cap": "Threads get tied back…"
+   }
+  ],
+  "life": [
+   {
+    "name": "🌿 Plant seagrass",
+    "img": "d4",
+    "env": "help",
+    "miss": "Manatees eat seagrass, so planting it helps them."
+   },
+   {
+    "name": "🪓 Cut down mangroves",
+    "img": "d3",
+    "env": "harm",
+    "miss": "Young fish need mangrove roots to hide and grow."
+   },
+   {
+    "name": "🌉 Raise a road into a bridge",
+    "img": "d2",
+    "env": "help",
+    "miss": "Bridges let water flow into the marsh."
+   },
+   {
+    "name": "🚜 Drain a marsh",
+    "img": "e2",
+    "env": "harm",
+    "miss": "Fish, plants, and birds need the marsh's water."
+   },
+   {
+    "name": "🐊 Protect alligators",
+    "img": "d1",
+    "env": "help",
+    "miss": "Gator holes keep water for many animals in the dry season."
+   }
+  ]
+ },
+ "quiz": [
+  {
+   "q": "What does it mean when scientists say living things in an ecosystem are \"interdependent\"?",
+   "options": [
+    {
+     "t": "They live in the same climate but don't interact with each other.",
+     "miss": "Think about a food web. When the plants in a pond die, what happens to the fish that eat them? Their lives are linked."
+    },
+    {
+     "t": "They depend on each other to survive. What happens to one affects the others.",
+     "ok": "🌎 Exactly! Interdependence means living things are connected. Pull on one thread and the whole web moves."
+    },
+    {
+     "t": "They compete for food but never work together.",
+     "miss": "Think about a food web. When the plants in a pond die, what happens to the fish that eat them? Their lives are linked."
+    }
+   ]
+  },
+  {
+   "q": "A long drought hits a Florida wetland, and water levels drop too low for fish to survive. What would most likely happen to the wading birds that eat those fish?",
+   "options": [
+    {
+     "t": "Nothing. Birds always find other food easily.",
+     "miss": "If the fish that birds eat disappear, what would the birds have to do? Think about what you would do if your food ran out."
+    },
+    {
+     "t": "The birds would grow larger with less competition.",
+     "miss": "If the fish that birds eat disappear, what would the birds have to do? Think about what you would do if your food ran out."
+    },
+    {
+     "t": "The birds would struggle to find food and might leave the area or decline.",
+     "ok": "🌿 Yes! When one part of a food web collapses, the living things that depend on it feel the effect. That's a chain reaction."
+    }
+   ]
+  },
+  {
+   "q": "Which is the best example of humans having a positive impact on an ecosystem?",
+   "options": [
+    {
+     "t": "A conservation team restores water flow to a wetland cut off by a canal.",
+     "ok": "⭐ That's it! Restoring water flow gives the ecosystem what it needs to recover. That's human impact in a helpful direction."
+    },
+    {
+     "t": "A city builds a road through a forest to connect two neighborhoods.",
+     "miss": "Think about what a healthy wetland needs: water, native plants, natural patterns. Which answer gives it those things back?"
+    },
+    {
+     "t": "A factory dumps oily waste into a river.",
+     "miss": "Think about what a healthy wetland needs: water, native plants, natural patterns. Which answer gives it those things back?"
+    }
+   ]
+  }
+ ],
+ "assign": {
+  "partA": {
+   "title": "Identify the connections",
+   "do": "For each topic, write one real-world example. Use your science words.",
+   "items": [
+    {
+     "n": 1,
+     "q": "Climate and organisms: name one plant or animal and explain how its habitat's climate helps it survive.",
+     "type": "text",
+     "min": 10,
+     "chips": [
+      [
+       "org",
+       "Names a plant or animal"
+      ],
+      [
+       "climw",
+       "Names a climate (warm, wet, cold, dry…)"
+      ]
+     ]
+    },
+    {
+     "n": 2,
+     "q": "Traits and survival: describe one adaptation and explain what problem it solves for that organism.",
+     "type": "text",
+     "min": 10,
+     "chips": [
+      [
+       "trait",
+       "Names a trait"
+      ],
+      [
+       "because",
+       "Gives a reason (because, so)"
+      ]
+     ]
+    },
+    {
+     "n": 3,
+     "q": "Food webs and change: describe one change that could disrupt a food web you know. What would be the first effect?",
+     "type": "text",
+     "min": 10,
+     "chips": [
+      [
+       "change",
+       "Names a change"
+      ],
+      [
+       "org",
+       "Names a living thing that feels it"
+      ]
+     ]
+    }
+   ]
+  },
+  "partB": {
+   "title": "Short answer",
+   "do": "Answer in complete sentences. Use your science words.",
+   "items": [
+    {
+     "n": 1,
+     "q": "Why can a single weather change, like a drought, affect so many different species? Explain using the idea of a food web.",
+     "type": "text",
+     "min": 12,
+     "chips": [
+      [
+       "fw",
+       "Uses the words food web"
+      ],
+      [
+       "because",
+       "Gives a reason (because, so)"
+      ]
+     ]
+    },
+    {
+     "n": 2,
+     "q": "How is human impact different from other kinds of change? Give one example of harmful human impact and one example of helpful human impact.",
+     "type": "text",
+     "min": 12,
+     "chips": [
+      [
+       "harm",
+       "Names a harmful example"
+      ],
+      [
+       "help",
+       "Names a helpful example"
+      ]
+     ]
+    }
+   ]
+  },
+  "write": {
+   "title": "The Everglades is one of the most connected ecosystems in the world, but also one of the most threatened. What do you think would happen if water levels kept dropping year after year?",
+   "do": "Pick one from your evidence chart. Answer the three questions. Use at least two of the science words under the boxes.",
+   "vocab": [
+    "interdependence",
+    "ecosystem",
+    "food web",
+    "adaptation",
+    "human impact"
+   ],
+   "need": 2,
+   "prompts": [
+    [
+     "What do you think?",
+     "Start with: \"I think that if water levels kept dropping, the Everglades would…\""
+    ],
+    [
+     "What did you learn that supports your thinking?",
+     "Start with: \"I know this because the lesson showed that…\""
+    ],
+    [
+     "Why does that make sense?",
+     "Start with: \"This makes sense because when one part of an ecosystem changes…\""
+    ]
+   ]
+  },
+  "partC": {
+   "do": "Draw a Connection Web for any real ecosystem you choose. Show at least 5 living or nonliving things. Connect them with arrows, and write on each arrow what the connection is (like sun → sawgrass: gives light).",
+   "labels": [
+    "My 5 things, and what one of my arrows means",
+    "Where people fit: does their arrow point toward the ecosystem, away from it, or both?"
+   ]
+  },
+  "checklist": [
+   {
+    "k": "det",
+    "t": "My evidence chart has 3 connection files and my explanation.",
+    "req": {
+     "det": 3,
+     "text": {
+      "in-det": 15
+     }
+    }
+   },
+   {
+    "k": "a",
+    "t": "Part A: all three examples.",
+    "req": {
+     "text": {
+      "in-a1": 10,
+      "in-a2": 10,
+      "in-a3": 10
+     }
+    }
+   },
+   {
+    "k": "b",
+    "t": "Part B: questions 1 and 2.",
+    "req": {
+     "text": {
+      "in-b1": 12,
+      "in-b2": 12
+     }
+    }
+   },
+   {
+    "k": "c",
+    "t": "Part C: my drawing and both labels.",
+    "req": {
+     "sketch": true,
+     "text": {
+      "in-c1": 6,
+      "in-c2": 6
+     }
+    }
+   },
+   {
+    "k": "w",
+    "t": "Write and explain, with at least two science words.",
+    "req": {
+     "text": {
+      "in-w1": 10,
+      "in-w2": 10,
+      "in-w3": 10
+     },
+     "vocab": 2
+    }
+   }
+  ]
+ },
+ "premiere": {
+  "title": "Premiere my connection film",
+  "thinkLabel": "It connects to",
+  "director": "JUNIOR ECOLOGIST",
+  "storyKicker": "My connection report",
+  "frames": [
+   {
+    "k": "formation",
+    "label": "River to Oyster",
+    "img": "o3",
+    "cap": "River to Oyster: one change, many effects."
+   },
+   {
+    "k": "compare",
+    "label": "The Flow Test",
+    "img": "tb",
+    "cap": "The Flow Test: a canal dried out the marsh."
+   },
+   {
+    "k": "wall",
+    "label": "Follow the Thread",
+    "img": "l3",
+    "cap": "Follow the Thread: a drought moved down the chain."
+   },
+   {
+    "k": "det",
+    "label": "Connection files",
+    "img": "d1",
+    "cap": "Connection files: every living thing has neighbors."
+   }
+  ]
+ },
+ "next": {
+  "title": "Coming up next: 33.02",
+  "text": "Your Final Science Investigation. Next time, you'll ask your own science question and use evidence to answer it, just like a real scientist."
+ },
+ "chips": {
+  "part": {
+   "any": [
+    "fur",
+    "furry",
+    "bone",
+    "bones",
+    "beetle",
+    "shell",
+    "shells",
+    "gray",
+    "grey",
+    "lump",
+    "hair",
+    "black",
+    "shiny",
+    "legs",
+    "skull",
+    "teeth"
+   ]
+  },
+  "ask": {
+   "re": "\\?|\\b(why|how|what|when|where|who|which|does|do|is|are|can|did|will)\\b"
+  },
+  "thing": {
+   "any": [
+    "pool",
+    "hole",
+    "road",
+    "bridge",
+    "roots",
+    "mangrove",
+    "mangroves",
+    "grass",
+    "seagrass",
+    "burrow",
+    "tortoise",
+    "alligator",
+    "gator",
+    "canal"
+   ]
+  },
+  "conn": {
+   "any": [
+    "fish",
+    "birds",
+    "bird",
+    "turtles",
+    "manatee",
+    "manatees",
+    "water",
+    "snakes",
+    "frogs",
+    "mice",
+    "animals",
+    "park",
+    "marsh"
+   ]
+  },
+  "because": {
+   "re": "\\b(because|since|so)\\b"
+  },
+  "org": {
+   "re": "\\b(alligators?|gators?|manatees?|fish|birds?|herons?|storks?|cactus|bears?|tortoises?|owls?|frogs?|snakes?|trees?|plants?|grass|sawgrass|mangroves?|oysters?|deer|wolves|wolf|bison|spoonbills?|panthers?|[a-z]+s)\\b"
+  },
+  "climw": {
+   "any": [
+    "warm",
+    "hot",
+    "wet",
+    "cold",
+    "dry",
+    "rain",
+    "rainy",
+    "snow",
+    "freezing",
+    "climate",
+    "sunny",
+    "humid"
+   ]
+  },
+  "trait": {
+   "any": [
+    "fur",
+    "feathers",
+    "bill",
+    "beak",
+    "roots",
+    "tail",
+    "claws",
+    "teeth",
+    "shell",
+    "fins",
+    "webbed",
+    "feet",
+    "camouflage",
+    "thick",
+    "long",
+    "spines",
+    "scales",
+    "trait",
+    "adaptation"
+   ]
+  },
+  "change": {
+   "any": [
+    "drought",
+    "pollution",
+    "fire",
+    "flood",
+    "storm",
+    "hurricane",
+    "cut",
+    "drain",
+    "build",
+    "road",
+    "dry",
+    "dies",
+    "die",
+    "gone",
+    "disappear",
+    "disappears",
+    "less",
+    "fewer",
+    "more"
+   ]
+  },
+  "fw": {
+   "re": "food ?webs?"
+  },
+  "harm": {
+   "any": [
+    "pollution",
+    "trash",
+    "drain",
+    "draining",
+    "cut",
+    "cutting",
+    "road",
+    "canal",
+    "oil",
+    "litter",
+    "harmful",
+    "destroy",
+    "hunting"
+   ]
+  },
+  "help": {
+   "any": [
+    "protect",
+    "planting",
+    "plant",
+    "restore",
+    "clean",
+    "cleanup",
+    "bridge",
+    "park",
+    "conservation",
+    "recycle",
+    "helpful",
+    "save"
+   ]
+  }
+ },
+ "creditAlias": {},
+ "creditsExtra": [
+  "Music: Ode to Joy (Ludwig van Beethoven), Concert Band of the United States Air Force Band of the Rockies (1993), public domain recording (via Wikimedia Commons).",
+  "Opti the owl: Optima Academy. Sound effects are made by the page. The oyster movie, the Flow Test, and the drought thread are models; every place photo is real. The owl pellet was found in England. The oyster-drill snail was photographed in Italy (the same kind lives in the Gulf of Mexico), and the oyster reef in South Carolina; the dry lake in scene 1 is Crews Lake, Florida, in 2010."
+ ]
+}
