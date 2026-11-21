@@ -1,0 +1,22 @@
+{
+ "how-32-01-specimen": {
+  "page": "Press Inspect specimen. Move the magnifying lens over the cone, then tap 3 things you notice.",
+  "say": "Press Inspect specimen. Move the magnifying lens over the cone, then tap three things you notice."
+ },
+ "how-32-01-compare": {
+  "page": "Put the deep snow under one tray and the lower valley under the other: drag them, or tap one, then a tray. Press Start winter. Then swap.",
+  "say": "Put the deep snow under one tray and the lower valley under the other: drag them, or tap one, then a tray. Press Start winter. Then swap."
+ },
+ "how-32-01-wall": {
+  "page": "First, make a prediction. Then brush the glowing stamp: drag across it (or tap it again and again) until the photo shows.",
+  "say": "First, make a prediction. Then brush the glowing stamp: drag across it (or tap it again and again) until the photo shows."
+ },
+ "how-32-01-det": {
+  "page": "Pick 3 cards, one at a time. Tap a feature that helps it survive, then name its home park. Predict if it could survive in a different park, and see the evidence.",
+  "say": "Pick three cards, one at a time. Tap a feature that helps it survive, then name its home park. Predict if it could survive in a different park, and see the evidence."
+ },
+ "how-32-01-partc": {
+  "page": "Draw a simple ecosystem scene from the park you picked. Show at least four organisms in their habitat. Label each organism, and draw one arrow showing how one thing connects to another (like wolf → elk).",
+  "say": "Draw a simple ecosystem scene from the park you picked. Show at least four organisms in their habitat. Label each organism, and draw one arrow showing how one thing connects to another (like wolf → elk)."
+ }
+}
