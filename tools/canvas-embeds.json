@@ -1,0 +1,12 @@
+{
+ "_note": "Read by whatever builds the Canvas course (.imscc) or embed codes. Every lesson page is embedded as an iframe; pages listed here need extra iframe attributes. A page that needs them also carries <meta name=\"canvas-iframe-allow\" content=\"...\"> in its <head>, so a builder can scan the pages instead of this list. Bethany, 21 Nov 2026: 32.02 must get the mic attribute in the .imscc.",
+ "default": {"width": "100%", "height": "900", "allowfullscreen": true},
+ "pages": {
+  "lesson-32-02-build-park-ecosystem-presentation.html": {
+   "allow": "microphone; fullscreen",
+   "allowfullscreen": true,
+   "why": "Park Slide Studio: students record their voice per slide and present full screen. Without allow=\"microphone\" the browser blocks the mic inside Canvas (the studio then points students to Canvas Record media). Tested in Bethany's Canvas sandbox 21 Nov 2026: Canvas keeps the attribute and the mic works."
+  }
+ },
+ "embed": "<iframe src=\"https://optimaondemand.github.io/optima-3rd-science/{page}\" width=\"{width}\" height=\"{height}\" allow=\"{allow}\" allowfullscreen=\"allowfullscreen\" title=\"{title}\"></iframe>"
+}

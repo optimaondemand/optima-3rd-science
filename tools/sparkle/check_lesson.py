@@ -64,9 +64,22 @@ for c in A['checklist']:
     for k in r.get('choice', []): need('c:' + k in ids, f'checklist "{c["k"]}" points at missing choice {k}')
     for k in r.get('text', {}):
         need(k in ids or k in ('in-det', 'in-w1', 'in-w2', 'in-w3', 'in-c1', 'in-c2'), f'checklist "{c["k"]}" points at missing box {k}')
-need(any(c.get('req', {}).get('sketch') and {'in-c1', 'in-c2'} <= set(c['req'].get('text', {})) for c in A['checklist']), 'Part C is REQUIRED: the checklist needs a Part C item with req {sketch: true, text: {in-c1, in-c2}}')
-need(len(A['partC'].get('labels', [])) == 2, 'Part C needs 2 labels')
-need(len(A['write']['prompts']) == 3 and A['write']['need'] >= 1 and len(A['write']['vocab']) >= 3, 'Write and explain: 3 evidence prompts, a science-word count (need = the lesson\'s own number, >= 1)')
+if L.get('studio'):   # Part C is the Park Slide Studio (32.02): the checklist item uses req {studio: true}; Write and explain may be left out
+    ST = L['studio']; need(any(c.get('req', {}).get('studio') for c in A['checklist']), 'Slide Studio: the checklist needs a Part C item with req {studio: true}')
+    need(len(ST['criteria']) >= 4 and all(k in c for c in ST['criteria'] for k in ('k', 'icon', 'name', 'short', 'ask', 'hint')), 'Slide Studio: criteria need k, icon, name, short, ask, hint')
+    for pk in ST['parks']:
+        need(len(pk['photos']) >= 8 and all((D / 'img' / f"{x['img']}.jpg").exists() and x.get('cap') for x in pk['photos']), f'Slide Studio {pk["k"]}: 8+ photos, each with a file and a caption')
+        W_ = pk['web']; names = {o['n'] for o in W_['orgs']}
+        need(all(a in names and b in names for a, b in W_['edges']), f'Slide Studio {pk["k"]}: every food web edge names a listed organism')
+        need({o['role'] for o in W_['orgs']} >= {'p', 'h', 'c'}, f'Slide Studio {pk["k"]}: food web needs plants (p), plant-eaters (h), meat-eaters (c)')
+        prod = {o['n'] for o in W_['orgs'] if o['role'] == 'p'}; herb = {o['n'] for o in W_['orgs'] if o['role'] == 'h'}
+        need(any(a in prod and b in herb and any(x == b for x, _ in W_['edges']) for a, b in W_['edges']), f'Slide Studio {pk["k"]}: at least one full plant → plant-eater → meat-eater chain')
+        for x in pk['photos']: cred_need = x['img']
+    if A.get('write'): need(len(A['write']['prompts']) == 3, 'Write and explain: 3 prompts')
+else:
+    need(any(c.get('req', {}).get('sketch') and {'in-c1', 'in-c2'} <= set(c['req'].get('text', {})) for c in A['checklist']), 'Part C is REQUIRED: the checklist needs a Part C item with req {sketch: true, text: {in-c1, in-c2}}')
+    need(len(A['partC'].get('labels', [])) == 2, 'Part C needs 2 labels')
+    need(len(A['write']['prompts']) == 3 and A['write']['need'] >= 1 and len(A['write']['vocab']) >= 3, 'Write and explain: 3 evidence prompts, a science-word count (need = the lesson\'s own number, >= 1)')
 PR = L['premiere']; need([f['k'] for f in PR['frames']] == ['formation', 'compare', 'wall', 'det'], 'premiere frames must be formation, compare, wall, det')
 need(PR['director'].upper().startswith('JUNIOR '), 'director title "JUNIOR <SCIENTIST>"')
 

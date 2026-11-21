@@ -1,0 +1,43 @@
+<svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A model of how park science gets shared: a scientist's notepad of observations, a data sheet of measurements, a food web model, and a slide shown to visitors">
+<defs>
+<linearGradient id="sm-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe3d6"/><stop offset="1" stop-color="#eef4ea"/></linearGradient>
+<marker id="sm-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#7a5520"/></marker>
+</defs>
+<rect width="320" height="180" fill="url(#sm-bg)"/>
+<rect y="150" width="320" height="30" fill="#b48a5a"/><rect y="150" width="320" height="4" fill="#8a6640"/>
+<g class="s1">
+ <path d="M0 120 Q60 95 120 118 T240 112 T320 116 L320 150 L0 150 Z" fill="#8fb98f"/>
+ <g transform="translate(225 70)"><path d="M0 0 q8 -10 18 -4 q-6 2 -8 8 l2 22 h-6 l-2 -16 q-6 -2 -4 -10 z" fill="#5d7f9e"/><path d="M14 -6 l10 -2 l-9 5 z" fill="#d9a441"/><line x1="4" y1="26" x2="2" y2="48" stroke="#5d7f9e" stroke-width="1.6"/><line x1="8" y1="26" x2="10" y2="48" stroke="#5d7f9e" stroke-width="1.6"/></g>
+ <g transform="translate(40 58) rotate(-6)"><rect width="92" height="80" rx="4" fill="#fffdf4" stroke="#9c8a62"/><rect width="92" height="12" rx="3" fill="#2d6a4f"/>
+  <circle cx="22" cy="34" r="9" fill="none" stroke="#2b1d12" stroke-width="2"/><circle cx="22" cy="34" r="3.5" fill="#2b1d12"/>
+  <path d="M38 30 h44 M38 40 h38 M12 54 h70 M12 64 h56" stroke="#7a6a50" stroke-width="2" stroke-linecap="round"/></g>
+ <text x="160" y="26" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#1b3a2a">1 · Observe</text>
+</g>
+<g class="s2" style="opacity:0">
+ <g transform="translate(70 40)"><rect width="180" height="104" rx="6" fill="#fffdf4" stroke="#9c8a62"/><rect x="74" y="-8" width="32" height="14" rx="3" fill="#8a6640"/>
+  <g font-family="Arial,sans-serif" font-size="10" fill="#2b1d12"><text x="12" y="26" font-weight="700">Day</text><text x="62" y="26" font-weight="700">Birds seen</text><text x="132" y="26" font-weight="700">Water</text>
+  <text x="12" y="46">1</text><text x="62" y="46">14</text><text x="132" y="46">30 cm</text>
+  <text x="12" y="64">2</text><text x="62" y="64">22</text><text x="132" y="64">24 cm</text>
+  <text x="12" y="82">3</text><text x="62" y="82">31</text><text x="132" y="82">18 cm</text></g>
+  <path d="M8 32 h164 M54 16 v76 M124 16 v76" stroke="#c9b98f"/></g>
+ <g transform="translate(36 150) rotate(-90)"><rect width="100" height="12" fill="#e3b04b" stroke="#9c7a2a"/><path d="M10 0 v5 M20 0 v7 M30 0 v5 M40 0 v7 M50 0 v5 M60 0 v7 M70 0 v5 M80 0 v7 M90 0 v5" stroke="#5a3a1f"/></g>
+ <text x="160" y="26" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#1b3a2a">2 · Collect evidence</text>
+</g>
+<g class="s3" style="opacity:0">
+ <g font-family="Arial,sans-serif" font-size="9" font-weight="700" text-anchor="middle" fill="#1b3a2a">
+  <circle cx="44" cy="96" r="20" fill="#e3b04b"/><text x="44" y="100">Sun</text>
+  <circle cx="118" cy="96" r="20" fill="#7fbf6a"/><text x="118" y="100">grass</text>
+  <circle cx="192" cy="96" r="20" fill="#c9a27a"/><text x="192" y="100">elk</text>
+  <circle cx="266" cy="96" r="20" fill="#9a9aa2"/><text x="266" y="100">wolf</text></g>
+ <path d="M66 96 h26" stroke="#7a5520" stroke-width="3" marker-end="url(#sm-ar)"/><path d="M140 96 h26" stroke="#7a5520" stroke-width="3" marker-end="url(#sm-ar)"/><path d="M214 96 h26" stroke="#7a5520" stroke-width="3" marker-end="url(#sm-ar)"/>
+ <text x="160" y="140" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-style="italic" fill="#3a4a3e">Arrows show where the energy goes.</text>
+ <text x="160" y="26" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#1b3a2a">3 · Make a model</text>
+</g>
+<g class="s4" style="opacity:0">
+ <path d="M126 150 l14 -32 M194 150 l-14 -32" stroke="#5a3a1f" stroke-width="4"/>
+ <g transform="translate(86 38)"><rect width="148" height="86" rx="4" fill="#15231b" stroke="#5a3a1f" stroke-width="3"/><rect x="8" y="8" width="66" height="70" fill="#7fae8f"/><path d="M8 66 l20 -22 l14 12 l12 -16 l20 26 v12 h-66 z" fill="#3f7a55"/><circle cx="60" cy="22" r="6" fill="#e3b04b"/>
+  <rect x="82" y="12" width="56" height="6" rx="2" fill="#e3b04b"/><path d="M82 30 h54 M82 40 h48 M82 50 h52 M82 60 h40" stroke="#fff" stroke-width="3" stroke-linecap="round"/></g>
+ <g fill="#2d4a3a"><circle cx="40" cy="146" r="11"/><circle cx="72" cy="150" r="12"/><circle cx="248" cy="150" r="12"/><circle cx="280" cy="146" r="11"/></g>
+ <text x="160" y="26" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#1b3a2a">4 · Share it with visitors</text>
+</g>
+</svg>

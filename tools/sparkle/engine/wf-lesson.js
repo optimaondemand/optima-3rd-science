@@ -124,6 +124,7 @@
     var vc = $('#vocab-count'); if (vc) { var need = +vc.dataset.need || 2; vc.textContent = 'Science words used: ' + n + ' of ' + need; vc.classList.toggle('met', n >= need); } return n; }
 
   var WL4 = window.WL4 = {};
+  WL4.refresh = function () { gather(); checklist(); };   /* lesson add-ons (the Slide Studio) call this after a change */
   WL4.ctx = { D: D, IMG: IMG, S: S, save: save, $: $, $$: $$, RM: RM, ding: ding, cheer: cheer, oops: oops, toast: toast, glow: glow, pin: pin, reveal: reveal, choices: choices, words: words, chipTest: chipTest, gather: function () { return gather(); }, checklist: function () { checklist(); }, markTab: markTab, ac: ac, val: function (id) { return val(id); } };
   WL4_INIT(WL4);
   /* ---- flip cards ---- */
@@ -224,7 +225,8 @@
 
   /* ---- Part C sketch (required) ---- */
   (function () {
-    var cv = $('#sketch'), cx = cv.getContext('2d'), col = '#2B1D12', down = false;
+    var cv = $('#sketch'); if (!cv) return;   /* a lesson whose Part C is the Slide Studio has no drawing */
+    var cx = cv.getContext('2d'), col = '#2B1D12', down = false;
     function size() { var r = cv.getBoundingClientRect(), d = window.devicePixelRatio || 1; if (!r.width || (cv.width === Math.round(r.width * d) && cv.height === Math.round(r.height * d))) return; var img = cv.width ? cx.getImageData(0, 0, cv.width, cv.height) : null; cv.width = Math.round(r.width * d); cv.height = Math.round(r.height * d); cx.setTransform(d, 0, 0, d, 0, 0); cx.lineCap = 'round'; cx.lineJoin = 'round'; cx.lineWidth = 4; if (S.sketch) { var im = new Image(); im.onload = function () { cx.drawImage(im, 0, 0, r.width, r.height); }; im.src = S.sketch; } }
     WL4.sketchSize = size; setTimeout(size, 50); window.addEventListener('resize', size);
     function pt(e) { var r = cv.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; }
@@ -327,6 +329,7 @@
     var det = S.det || {}; var rows = Object.keys(det).filter(function (k) { return det[k].done; });
     if (rows.length) { out.push('EVIDENCE CHART'); rows.forEach(function (k) { var f = D.det.items[k]; out.push(D.det.noun + ' ' + f.id + ': I observe ' + det[k].clue.toLowerCase() + ' · ' + f.org[f.orgAns] + ' · ' + f.env); }); out.push(''); }
     if (S.sketch) out.push('Part C drawing: done (upload the saved picture too)\n');
+    if (window.WLStudio && WLStudio.summary) { var ss = WLStudio.summary(); if (ss) out.push(ss); }
     $$('textarea[data-gather], .wl-choices[data-gather]').forEach(function (el) { var v = el.tagName === 'TEXTAREA' ? el.value.trim() : (S['g-' + el.dataset.gather] || ''); if (v) out.push(el.dataset.gather + ':\n' + v + '\n'); });
     var g = $('#gather-out'); if (g) g.textContent = out.length > 2 ? out.join('\n') : '(Your answers show up here as you write.)';
     return out.join('\n');
@@ -339,7 +342,8 @@
       (r.choice || []).forEach(function (k) { if (S['c-' + k] == null) ok = false; });
       Object.keys(r.text || {}).forEach(function (id) { if (words(val(id)) < r.text[id]) ok = false; });
       if (r.vocab && vocab() < r.vocab) ok = false;
-      if (r.sketch && !S.sketch) ok = false; ck[c.k] = ok; });
+      if (r.sketch && !S.sketch) ok = false;
+      if (r.studio && !(window.WLStudio && WLStudio.done())) ok = false; ck[c.k] = ok; });
     var man = S.ckMan || {}, all = true;
     $$('#checklist li').forEach(function (li) { var k = li.dataset.ck, d = !!ck[k] || man[k] === true; li.classList.toggle('auto', !!ck[k]); li.classList.toggle('done', d); li.setAttribute('aria-checked', d); if (!d) all = false; });
     $$('.wl-amap-b[data-ck]').forEach(function (b) { var k = b.dataset.ck, d = !!ck[k] || man[k] === true; b.classList.toggle('done', d); });
@@ -356,7 +360,7 @@
     if (hA) jobs.push(['Part A' + q(A.partA), hA, 'a']);
     if (hB) jobs.push(['Part B' + q(A.partB), hB, 'b']);
     if (hW) jobs.push(['Write and explain', hW, 'w']);
-    if (hC) jobs.push(['Part C \u00B7 draw and label', hC, 'c']);
+    if (hC) jobs.push([hC.getAttribute('data-map') || 'Part C \u00B7 draw and label', hC, 'c']);
     if (hP) jobs.push(['Premiere your film', hP, '']);
     if (jobs.length < 2 || !hA) return;
     var box = document.createElement('div'); box.className = 'wl-amap';

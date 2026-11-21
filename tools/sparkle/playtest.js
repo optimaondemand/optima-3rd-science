@@ -56,15 +56,30 @@ const [F, Wd, PRE] = [process.argv[2], +process.argv[3] || 1150, process.argv[4]
   await toasts(); await p.click('[data-go="check"]'); await p.waitForTimeout(300);
   await step('quiz', async () => { for (const q of D.quiz) { await p.click(`#m-quiz .wl-q.on .wl-choice >> nth=${okIdx(q.options)}`); await p.click('#quiz-next'); await p.waitForTimeout(120); } });
   await p.click('[data-go="assign"]'); await p.waitForTimeout(300);
-  const long = 'I think this because the ' + D.assign.write.vocab.join(' and the ') + ' all show what happened long ago in this place, so that is my answer.';
+  const long = 'I think this because the ' + (D.assign.write ? D.assign.write.vocab : ['criteria', 'evidence', 'model']).join(' and the ') + ' all show what happened long ago in this place, so that is my answer.';
   await step('assign', async () => { for (const sec of [D.assign.partA, D.assign.partB]) for (const it of sec.items) { const key = (sec === D.assign.partA ? 'a' : 'b') + it.n;
       if (it.type === 'graph') { await p.evaluate(([k, it]) => { const g = document.querySelector(`.wl-graph[data-choice="${k}"]`); if (window.OneStep) OneStep.reveal(g);
           it.series.forEach((x, si) => x.values.forEach((n, ci) => { for (let j = 0; j < n; j++) g.querySelector(`[data-gs="${si}"][data-gc="${ci}"][data-gd="1"]`).click(); })); }, [key, it]);
         await el(`.wl-graph[data-choice="${key}"]`, '11b-graph'); await p.click(`.wl-graph[data-choice="${key}"] [data-gcheck]`); await p.waitForTimeout(200); }
       else if (it.type === 'choice') await p.click(`[data-choice="${key}"] .wl-choice >> nth=${okIdx(it.options)}`); else await p.fill('#in-' + key, long); }
-    for (const i of [1, 2, 3]) await p.fill('#in-w' + i, long);
-    { const cv = await p.$('#sketch'); await cv.scrollIntoViewIfNeeded(); const bb = await cv.boundingBox(); await p.mouse.move(bb.x + 40, bb.y + 40); await p.mouse.down(); await p.mouse.move(bb.x + 200, bb.y + 90, { steps: 8 }); await p.mouse.up(); }
-    await p.fill('#in-c1', long); await p.fill('#in-c2', long); await p.fill('#in-director', 'Maya'); await p.waitForTimeout(300); await toasts(); await el('#m-premiere', '12-premiere'); });
+    if (D.assign.write) for (const i of [1, 2, 3]) await p.fill('#in-w' + i, long);
+    if (D.studio) {   // Part C = the Park Slide Studio (32.02): intro, park, 6 slides, food web, present, download
+      await p.evaluate(() => window.OneStep && OneStep.reveal(document.getElementById('m-studio')));
+      if (await p.$('#st-go')) { await el('#m-studio', '12a-studio-intro'); await p.click('#st-go'); }
+      await el('#m-studio', '12b-studio-pick'); await p.click('.st-park >> nth=0'); await p.waitForTimeout(200);
+      const txt = ['Everglades National Park is in southern Florida. It protects a river of grass.', 'Most rain falls from May to October, so shallow water covers the sawgrass.', 'Alligators, spoonbills, and snail kites live here because the water is warm and shallow.', 'Energy goes from algae to apple snails to snail kites.', 'Burmese pythons spread in the park, so scientists counted far fewer raccoons.', 'People built a bridge so water can flow into the park again.'];
+      for (let i = 0; i < 6; i++) { await p.click(`.st-th[data-i="${i}"]`); await p.waitForTimeout(150);
+        if (i === 3) { for (const [j, n] of [[0, 'Algae'], [1, 'Apple snail'], [2, 'Snail kite']]) { await p.click(`.st-chip[data-j="${j}"][data-n="${n}"]`); await p.waitForTimeout(120); } }
+        else { await p.click('.st-ph >> nth=0'); await p.waitForTimeout(150); }
+        await p.fill('#st-text', txt[i]); await p.waitForTimeout(900);
+        if (i === 0 || i === 3) await el('#m-studio', '12c-studio-slide' + (i + 1)); }
+      await p.click('#st-show'); await p.waitForTimeout(300); await shot('12d-tips'); await p.click('.st-tips [data-go]'); await p.waitForTimeout(600); await shot('12e-present');
+      await p.keyboard.press('ArrowRight'); await p.keyboard.press('ArrowRight'); await p.keyboard.press('ArrowRight'); await p.waitForTimeout(300); await shot('12f-present-web'); await p.click('.st-show [data-a="x"]');
+      const [dl] = await Promise.all([p.waitForEvent('download', { timeout: 30000 }), p.click('#st-dl')]); await dl.saveAs(PRE + '-slides.pptx'); await p.waitForTimeout(500);
+      await el('#m-studio', '12g-studio-done'); }
+    else { const cv = await p.$('#sketch'); await cv.scrollIntoViewIfNeeded(); const bb = await cv.boundingBox(); await p.mouse.move(bb.x + 40, bb.y + 40); await p.mouse.down(); await p.mouse.move(bb.x + 200, bb.y + 90, { steps: 8 }); await p.mouse.up();
+      await p.fill('#in-c1', long); await p.fill('#in-c2', long); }
+    await p.fill('#in-director', 'Maya'); await p.waitForTimeout(300); await toasts(); await el('#m-premiere', '12-premiere'); });
   await step('premiere', async () => { await p.click('#premiere-btn'); await p.waitForTimeout(4000); await shot('13-theater-frames'); await p.waitForTimeout(16000); await shot('14-theater-end'); await p.click('.wl-th-x'); });
   const st = await p.evaluate(() => ({ ticks: [...document.querySelectorAll('.wl-tab .ck')].map(e => e.textContent).join(''), frames: Object.keys(WL.state.frames || {}).join(','), checklist: document.querySelectorAll('#checklist li.done').length + '/' + document.querySelectorAll('#checklist li').length, sideways: document.documentElement.scrollWidth > innerWidth, mb: +(document.documentElement.outerHTML.length / 1e6).toFixed(1) }));
   console.log(JSON.stringify({ width: Wd, errors: errs, ...st }));

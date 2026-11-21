@@ -133,18 +133,23 @@ def items(sec, prefix):
     return h
 body += f'<h3><span class="k">🔍 Part A</span>{A["partA"]["title"]}</h3><p class="wl-do"><b>What to do:</b> {A["partA"]["do"]}</p><div class="wl-in">{items(A["partA"],"a")}</div>'
 body += f'<div class="wl-part wl-in"><h3><span class="k">🚀 Part B</span>{A["partB"]["title"]}</h3><p class="wl-do"><b>What to do:</b> {A["partB"]["do"]}</p>{items(A["partB"],"b")}</div>'
-Wr = A['write']
-body += f'<div class="wl-part wl-in"><h3><span class="k">✍️ Write and explain</span>{Wr["title"]}</h3><p class="wl-do"><b>What to do:</b> {Wr["do"]}</p>'
-body += ''.join(textbox(f'in-w{i+1}', ['Write · I noticed', 'Write · I can infer', 'Write · Why it makes sense'][i], 10, None, lab, st) for i, (lab, st) in enumerate(Wr['prompts']))
-body += '<div class="wl-hint-chips" id="vocab-chips">' + ''.join(f'<span data-v="{v}">{v}</span>' for v in Wr['vocab']) + f'</div><div class="wl-count" id="vocab-count" data-need="{Wr["need"]}">Science words used: 0 of {Wr["need"]}</div></div>'
-PC = A['partC']
-body += f'''<div class="wl-part wl-in" id="partc"><h3><span class="k">🎨 Part C</span>Draw and label</h3>
+Wr = A.get('write')   # a Slide Studio lesson (32.02) can leave Write and explain out: the presentation is the writing
+if Wr:
+    body += f'<div class="wl-part wl-in"><h3><span class="k">✍️ Write and explain</span>{Wr["title"]}</h3><p class="wl-do"><b>What to do:</b> {Wr["do"]}</p>'
+    body += ''.join(textbox(f'in-w{i+1}', ['Write · I noticed', 'Write · I can infer', 'Write · Why it makes sense'][i], 10, None, lab, st) for i, (lab, st) in enumerate(Wr['prompts']))
+    body += '<div class="wl-hint-chips" id="vocab-chips">' + ''.join(f'<span data-v="{v}">{v}</span>' for v in Wr['vocab']) + f'</div><div class="wl-count" id="vocab-count" data-need="{Wr["need"]}">Science words used: 0 of {Wr["need"]}</div></div>'
+PC = A['partC']; ST = L.get('studio')
+if ST:   # Part C is the Park Slide Studio (engine/wf-studio.js): one whole step, the checklist item uses req {studio: true}
+    body += f'''<div class="wl-part wl-in" id="partc" data-map="{E(PC.get("map", "Part C · build your slides"))}"><h3><span class="k">{PC.get("kicker", "🎤 Part C")}</span>{PC["title"]}</h3>
+<p class="wl-do"><b>What to do:</b> {PC["do"]}</p>{('<details class="wl-start st-vid" id="st-vid"><summary><span class="wl-start-k">▶ Watch first</span><span class="wl-start-t">' + E(ST.get("videoTitle", "How to build your slides")) + '</span><span class="wl-start-m">' + E(ST.get("videoLen", "1-minute video")) + '</span><span class="wl-start-o">Open ▾</span></summary><div class="wl-start-b"></div></details>') if ST.get("video") else ""}<div class="wl-stage wl-studio-stage" id="m-studio"><div id="wl-studio"><p class="wl-do dark">Loading the studio…</p></div></div></div>'''
+else:
+    body += f'''<div class="wl-part wl-in" id="partc"><h3><span class="k">🎨 Part C</span>Draw and label</h3>
 <p class="wl-do"><b>What to do:</b> {PC["do"]}</p><div class="wl-tools" id="sk-tools"><button style="background:#2B1D12" data-c="#2B1D12" class="on" aria-label="Black"></button><button style="background:#9c4a31" data-c="#9c4a31" aria-label="Red-brown"></button><button style="background:#d6c093" data-c="#d6c093" aria-label="Sand"></button><button style="background:#2D6A4F" data-c="#2D6A4F" aria-label="Green"></button><button style="background:#0288D1" data-c="#0288D1" aria-label="Blue"></button><button class="txt" id="sk-clear">Clear</button></div>
-<canvas class="wl-sketch" id="sketch"></canvas><div style="text-align:right"><button class="wl-btn ghost" id="sk-save">⬇️ Save my drawing</button></div><div class="wl-in">{textbox("in-c1","Part C · 1",PC.get("min",6),None,PC["labels"][0],None,"min-height:52px")}{textbox("in-c2","Part C · 2",PC.get("min",6),None,PC["labels"][1],None,"min-height:52px")}</div></div>
-<div class="wl-part"><h3><span class="k">🎬 Your question from Scene 1</span>Can you answer it now?</h3><p id="wonder-back" class="wl-look">What do you still wonder about? Write your question here. Then answer it.</p><div class="wl-in" id="wonder-here"><textarea id="in-wonder2" style="min-height:52px" placeholder="I wonder…" aria-label="My question"></textarea></div><div class="wl-in"><textarea id="in-answer" data-gather="My question, answered" data-min="0" style="min-height:60px" placeholder="My answer is…"></textarea></div></div></div>
+<canvas class="wl-sketch" id="sketch"></canvas><div style="text-align:right"><button class="wl-btn ghost" id="sk-save">⬇️ Save my drawing</button></div><div class="wl-in">{textbox("in-c1","Part C · 1",PC.get("min",6),None,PC["labels"][0],None,"min-height:52px")}{textbox("in-c2","Part C · 2",PC.get("min",6),None,PC["labels"][1],None,"min-height:52px")}</div></div>'''
+body += f'''<div class="wl-part"><h3><span class="k">🎬 Your question from Scene 1</span>Can you answer it now?</h3><p id="wonder-back" class="wl-look">What do you still wonder about? Write your question here. Then answer it.</p><div class="wl-in" id="wonder-here"><textarea id="in-wonder2" style="min-height:52px" placeholder="I wonder…" aria-label="My question"></textarea></div><div class="wl-in"><textarea id="in-answer" data-gather="My question, answered" data-min="0" style="min-height:60px" placeholder="My answer is…"></textarea></div></div></div>
 <div class="wl-card wl-gather"><h3><span class="k">📋 My answers</span>Everything you wrote, in one place</h3><pre id="gather-out">(Your answers show up here as you write.)</pre>
 <button class="wl-btn" id="g-copy">📋 Copy my answers</button><button class="wl-btn ghost" id="g-dl">⬇️ Download</button><button class="wl-btn ghost" id="g-print">🖨️ Print</button>
-<p class="wl-do" style="margin-top:10px"><b>How to turn in:</b> Copy your answers and paste them into the Canvas assignment. Or download the file and upload it. Then press <b>Save my drawing</b> in Part C and upload your drawing too.</p>
+<p class="wl-do" style="margin-top:10px"><b>How to turn in:</b> {A.get("turnIn", "Copy your answers and paste them into the Canvas assignment. Or download the file and upload it. Then press <b>Save my drawing</b> in Part C and upload your drawing too.")}</p>
 <h3 style="margin-top:14px">✅ Checklist</h3><p class="wl-do"><b>What to do:</b> Tap each item when it is done. Items you finish on the page check themselves.</p>
 <ul class="wl-check" id="checklist">{"".join(f'<li data-ck="{c["k"]}">{c["t"]}</li>' for c in A["checklist"])}</ul></div>
 <div class="wl-stage wl-film" id="m-premiere"><h3 class="wl-stage-h"><span class="k">🎬 {PR["title"]}</span>Your exhibit</h3>
@@ -176,6 +181,8 @@ film = L['film']; film['startTarget'] = '.wl-ican'
 keys |= {s.get(f) for s in film['shots'] for f in ('img', 'img2') if s.get(f)} | {film['poster'], film.get('endPoster', film['poster'])}
 keys |= {x['img'] for x in O['scenes']} | {l['img'] for l in W['layers']} | {l['env'] for l in W['layers']} | {f['img'] for f in D['items']} | {f['envImg'] for f in D['items']}
 keys |= {e['img'] for e in L['rebuild']['envs']} | {x['img'] for x in L['rebuild']['life']} | {f['img'] for f in PR['frames']} | {S['img'], M['real']}
+ST_ = L.get('studio')
+if ST_: keys |= {p['img'] for pk in ST_['parks'] for p in pk['photos']} | {p['thumb'] for pk in ST_['parks'] for p in pk['photos'] if p.get('thumb')} | {pk['cover'] for pk in ST_['parks']} | ({ST_['intro']['img']} if ST_.get('intro') else set())
 keys.discard(None)
 IMGD, SH = LDIR / 'img', ROOT / 'shared'
 missing_img = [k for k in sorted(keys) if not (IMGD / f'{k}.jpg').exists()]
@@ -262,9 +269,18 @@ if REPO:
     tail_js = ''.join(f'<script src="assets/sparkle/{f}?v={v}"></script>' for f in ('wf-film.js', 'wf-modules.js', 'wf-lesson.js', 'onestep.js'))
 else:
     head_css = f'<style>{css}\n.wf-credits{{display:none}}</style>'; tail_js = f'<script>{js}</script>'
+if ST_:   # Park Slide Studio (32.02): its own engine file, plus pptxgenjs (MIT) loaded only when a student downloads
+    _scss, _sjs = (SRC / 'wf-studio.css').read_text(), (SRC / 'wf-studio.js').read_text(); _lib = SRC / 'lib' / 'pptxgen.bundle.js'
+    if REPO:
+        COPY.extend([(SRC / 'wf-studio.css', 'assets/sparkle/wf-studio.css'), (SRC / 'wf-studio.js', 'assets/sparkle/wf-studio.js'), (_lib, 'assets/sparkle/lib/pptxgen.bundle.js')])
+        _sv = __import__('hashlib').md5((_scss + _sjs).encode()).hexdigest()[:8]
+        head_css += f'<link rel="stylesheet" href="assets/sparkle/wf-studio.css?v={_sv}">'; tail_js += f'<script src="assets/sparkle/wf-studio.js?v={_sv}"></script>'
+        data['studio']['lib'] = 'assets/sparkle/lib/pptxgen.bundle.js'
+    else:
+        head_css += f'<style>{_scss}</style>'; tail_js += f'<script>{_lib.read_text()}</script><script>{_sjs}</script>'; data['studio']['lib'] = ''
 fix_urls = "for(var k in WF_IMG)if(!/^data:/.test(WF_IMG[k]))WF_IMG[k]=new URL(WF_IMG[k],document.baseURI).href;" if REPO else ''
 page = f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Lesson {L["lesson"]}: {E(L["title"])} · Wonder Films</title>{head_css}</head><body>
+<title>Lesson {L["lesson"]}: {E(L["title"])} · Wonder Films</title>{('<meta name="canvas-iframe-allow" content="' + E(L["studio"].get("canvasAllow", "microphone; fullscreen")) + '">') if L.get("studio") else ""}{head_css}</head><body>
 {body}
 <script>window.WF_IMG={json.dumps(img)};window.WF_DATA={json.dumps(film)};window.WL_DATA={json.dumps(data)};{fix_urls}</script>
 {tail_js}

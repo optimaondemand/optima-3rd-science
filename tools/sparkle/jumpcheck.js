@@ -64,15 +64,18 @@ const [F, Wd, PRE] = [process.argv[2], +process.argv[3] || 1150, process.argv[4]
   await toasts(); await p.click('[data-go="check"]'); await p.waitForTimeout(300);
   await step('quiz', async () => { for (const q of D.quiz) { await p.click(`#m-quiz .wl-q.on .wl-choice >> nth=${okIdx(q.options)}`); await p.click('#quiz-next'); await p.waitForTimeout(120); } });
   await p.click('[data-go="assign"]'); await p.waitForTimeout(300);
-  const long = 'I think this because the ' + D.assign.write.vocab.join(' and the ') + ' all show what happened long ago in this place, so that is my answer.';
+  const long = 'I think this because the ' + (D.assign.write ? D.assign.write.vocab : ['criteria', 'evidence', 'model']).join(' and the ') + ' all show what happened long ago in this place, so that is my answer.';
   await step('assign', async () => { for (const sec of [D.assign.partA, D.assign.partB]) for (const it of sec.items) { const key = (sec === D.assign.partA ? 'a' : 'b') + it.n;
       if (it.type === 'graph') { await p.evaluate(([k, it]) => { const g = document.querySelector(`.wl-graph[data-choice="${k}"]`); if (window.OneStep) OneStep.reveal(g);
           it.series.forEach((x, si) => x.values.forEach((n, ci) => { for (let j = 0; j < n; j++) g.querySelector(`[data-gs="${si}"][data-gc="${ci}"][data-gd="1"]`).click(); })); }, [key, it]);
         await p.click(`.wl-graph[data-choice="${key}"] [data-gcheck]`); await p.waitForTimeout(200); }
       else if (it.type === 'choice') await p.click(`[data-choice="${key}"] .wl-choice >> nth=${okIdx(it.options)}`); else await p.fill('#in-' + key, long); }
-    for (const i of [1, 2, 3]) await p.fill('#in-w' + i, long);
-    { const cv = await p.$('#sketch'); await cv.scrollIntoViewIfNeeded(); const bb = await cv.boundingBox(); await p.mouse.move(bb.x + 40, bb.y + 40); await p.mouse.down(); await p.mouse.move(bb.x + 200, bb.y + 90, { steps: 8 }); await p.mouse.up(); }
-    await p.fill('#in-c1', long); await p.fill('#in-c2', long); await p.fill('#in-director', 'Maya'); await p.waitForTimeout(300); await toasts(); await el('#m-premiere', '12-premiere'); });
+    if (D.assign.write) for (const i of [1, 2, 3]) await p.fill('#in-w' + i, long);
+    if (D.studio) { await p.evaluate(() => window.OneStep && OneStep.reveal(document.getElementById('m-studio'))); if (await p.$('#st-go')) await p.click('#st-go'); await p.click('.st-park >> nth=0'); await p.waitForTimeout(300);
+      await p.click('.st-ph >> nth=0'); await p.fill('#st-text', 'Everglades National Park is in southern Florida. It protects a river of grass.'); await p.waitForTimeout(1200); await p.click('.st-th[data-i="3"]'); await p.click('.st-chip[data-n="Algae"]'); await p.waitForTimeout(400); }
+    else { const cv = await p.$('#sketch'); await cv.scrollIntoViewIfNeeded(); const bb = await cv.boundingBox(); await p.mouse.move(bb.x + 40, bb.y + 40); await p.mouse.down(); await p.mouse.move(bb.x + 200, bb.y + 90, { steps: 8 }); await p.mouse.up();
+      await p.fill('#in-c1', long); await p.fill('#in-c2', long); }
+    await p.fill('#in-director', 'Maya'); await p.waitForTimeout(300); await toasts(); await el('#m-premiere', '12-premiere'); });
   await step('premiere', async () => { await p.click('#premiere-btn'); await p.waitForTimeout(4000); await shot('13-theater-frames'); await p.waitForTimeout(16000); await shot('14-theater-end'); await p.click('.wl-th-x'); });
   const st = await p.evaluate(() => ({ ticks: [...document.querySelectorAll('.wl-tab .ck')].map(e => e.textContent).join(''), frames: Object.keys(WL.state.frames || {}).join(','), checklist: document.querySelectorAll('#checklist li.done').length + '/' + document.querySelectorAll('#checklist li').length, sideways: document.documentElement.scrollWidth > innerWidth, mb: +(document.documentElement.outerHTML.length / 1e6).toFixed(1) }));
   console.log(JSON.stringify({ width: Wd, errors: errs, ...st })); console.log(JSON.stringify(await p.evaluate(() => window.__log), null, 0).replace(/},{/g, '},\n{'));

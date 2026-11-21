@@ -1,0 +1,329 @@
+{
+ "title": "How to build your slides",
+ "note": "Silent screen tour with captions now; Opti voices these lines later (one take each), then the tour is re-timed to the real clip lengths.",
+ "seed": {
+  "slides": {
+   "yell": [
+    {
+     "text": "",
+     "img": null,
+     "up": null
+    },
+    {
+     "text": "Winters are long and cold. Snow can stay for months, so bison dig through it to find grass.",
+     "img": "pb_lfalls",
+     "up": null
+    },
+    {
+     "text": "Bison, elk, and gray wolves live here. Bison have thick fur, and wolves hunt in packs.",
+     "img": "pb_wolfsnow",
+     "up": null
+    },
+    {
+     "text": "Energy goes from grasses to elk to gray wolves.",
+     "img": null,
+     "up": null
+    },
+    {
+     "text": "Lake trout don't belong in Yellowstone Lake. They eat the cutthroat trout that bears and eagles need.",
+     "img": "pb_ltrout",
+     "up": null
+    },
+    {
+     "text": "In 1995, people brought gray wolves back to Yellowstone, so the food web is more complete.",
+     "img": "pb_g_wolfrel",
+     "up": null
+    }
+   ]
+  }
+ },
+ "lines": [
+  {
+   "say": "Have you ever made a presentation? Here's how to build yours in the Park Slide Studio.",
+   "act": [
+    [
+     0,
+     "GO:#m-studio:90"
+    ],
+    [
+     0.6,
+     "RING:.st-intro h4"
+    ]
+   ]
+  },
+  {
+   "say": "A presentation is a few slides you show while you talk. Each slide has one big idea, one picture, and a few words.",
+   "act": [
+    [
+     0,
+     "RING:.st-intro ul"
+    ]
+   ]
+  },
+  {
+   "say": "Look at these two slides. The first one is short, with a real photo and a fact. The second one has too many words for a visitor.",
+   "act": [
+    [
+     0,
+     "GO:.st-exs:110"
+    ],
+    [
+     0.5,
+     "RING:.st-ex:nth-child(1)"
+    ],
+    [
+     3.4,
+     "RING:.st-ex:nth-child(2)"
+    ]
+   ]
+  },
+  {
+   "say": "Press Got it, then pick your park.",
+   "act": [
+    [
+     0,
+     "RING:#st-go"
+    ],
+    [
+     0.9,
+     "CLICK:#st-go"
+    ],
+    [
+     1.4,
+     "GO:#m-studio:90"
+    ],
+    [
+     1.8,
+     "RING:.st-parks"
+    ],
+    [
+     2.6,
+     "CLICK:.st-park[data-p=yell]"
+    ]
+   ]
+  },
+  {
+   "say": "Your six slides are up here, one for each criterion.",
+   "act": [
+    [
+     0.2,
+     "GO:#m-studio:90"
+    ],
+    [
+     0.4,
+     "RING:.st-rail"
+    ]
+   ]
+  },
+  {
+   "say": "Need facts? Each slide has Field Notes with true facts about your park. Pick one, and write it in your own words.",
+   "act": [
+    [
+     0,
+     "GO:.st-notes:200"
+    ],
+    [
+     0.4,
+     "RING:.st-notes"
+    ]
+   ]
+  },
+  {
+   "say": "Start with slide one. Not sure how to begin? Press Use a sentence starter, then finish the sentence.",
+   "act": [
+    [
+     0,
+     "RING:.st-th[data-i='0']"
+    ],
+    [
+     1.6,
+     "GO:#st-text:260"
+    ],
+    [
+     2.2,
+     "RING:#st-start"
+    ],
+    [
+     3.6,
+     "CLICK:#st-start"
+    ],
+    [
+     4.4,
+     "TYPE:#st-text:geysers, hot springs, and wild animals."
+    ]
+   ]
+  },
+  {
+   "say": "Watch the word counter. Keep each slide between five and thirty words.",
+   "act": [
+    [
+     0.4,
+     "RING:.st-count"
+    ]
+   ]
+  },
+  {
+   "say": "Now pick a real photo. Tap one, and it jumps onto your slide.",
+   "act": [
+    [
+     0,
+     "GO:.st-bank:330"
+    ],
+    [
+     0.4,
+     "RING:.st-bank"
+    ],
+    [
+     1.8,
+     "CLICK:.st-ph[data-k=pb_prism]"
+    ],
+    [
+     2.6,
+     "GO:#m-studio:90"
+    ],
+    [
+     3.0,
+     "RING:.st-view"
+    ]
+   ]
+  },
+  {
+   "say": "These three checks turn green when your slide is strong: the right number of words, a picture, and a specific detail.",
+   "act": [
+    [
+     0,
+     "GO:.st-checks:420"
+    ],
+    [
+     0.3,
+     "RING:.st-checks"
+    ]
+   ]
+  },
+  {
+   "say": "Want your visitor to hear you? Press Record my voice, talk, then press Stop. Your voice goes inside your slides.",
+   "act": [
+    [
+     0,
+     "GO:.st-rec:330"
+    ],
+    [
+     0.3,
+     "RING:.st-rec"
+    ],
+    [
+     2.0,
+     "CLICK:#st-recgo"
+    ],
+    [
+     5.2,
+     "CLICK:#st-recstop"
+    ],
+    [
+     5.8,
+     "RING:.st-rec"
+    ]
+   ]
+  },
+  {
+   "say": "On the food web slide, pick a plant, an animal that eats it, and an animal that eats that one.",
+   "act": [
+    [
+     0,
+     "GO:#m-studio:90"
+    ],
+    [
+     0.3,
+     "CLICK:.st-th[data-i='3']"
+    ],
+    [
+     1.0,
+     "RING:.st-chain"
+    ],
+    [
+     2.2,
+     "CLICK:.st-chip[data-n='Grasses']"
+    ],
+    [
+     3.4,
+     "CLICK:.st-chip[data-n='Elk']"
+    ],
+    [
+     4.6,
+     "CLICK:.st-chip[data-n='Gray wolf']"
+    ],
+    [
+     5.4,
+     "RING:.st-view"
+    ]
+   ]
+  },
+  {
+   "say": "When every circle at the top is lit, your slides meet all six criteria.",
+   "act": [
+    [
+     0,
+     "GO:#m-studio:90"
+    ],
+    [
+     0.3,
+     "RING:.st-meter"
+    ]
+   ]
+  },
+  {
+   "say": "Press Present to practice out loud. You have two minutes, so talk about each slide for about twenty seconds.",
+   "act": [
+    [
+     0,
+     "GO:.st-acts:420"
+    ],
+    [
+     0.3,
+     "RING:#st-show"
+    ],
+    [
+     1.4,
+     "CLICK:#st-show"
+    ],
+    [
+     1.9,
+     "RING:.st-tips"
+    ],
+    [
+     4.6,
+     "CLICK:.st-tips [data-go]"
+    ],
+    [
+     5.2,
+     "RING:null"
+    ],
+    [
+     6.4,
+     "KEY:ArrowRight"
+    ],
+    [
+     7.6,
+     "KEY:ArrowRight"
+    ]
+   ]
+  },
+  {
+   "say": "Last, press Make my video. Your slides and your voice turn into a video. Upload it to Canvas. You did it, presenter!",
+   "act": [
+    [
+     0,
+     "CLICK:.st-show [data-a=x]"
+    ],
+    [
+     0.6,
+     "GO:.st-acts:420"
+    ],
+    [
+     1.0,
+     "RING:#st-vidmake"
+    ]
+   ]
+  }
+ ]
+}
