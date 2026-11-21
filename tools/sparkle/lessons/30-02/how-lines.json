@@ -1,0 +1,22 @@
+{
+ "how-30-02-specimen": {
+  "page": "Press Inspect specimen. Move the magnifying lens over the animal, then tap 3 things you notice.",
+  "say": "Press Inspect specimen. Move the magnifying lens over the animal, then tap three things you notice."
+ },
+ "how-30-02-compare": {
+  "page": "Put the white sand under one tray and the dark soil under the other: drag them, or tap one, then a tray. Press Run the test. Then swap.",
+  "say": "Put the white sand under one tray and the dark soil under the other: drag them, or tap one, then a tray. Press Run the test. Then swap."
+ },
+ "how-30-02-wall": {
+  "page": "First, make a prediction. Then brush the glowing stop: drag across it (or tap it again and again) until the photo shows.",
+  "say": "First, make a prediction. Then brush the glowing stop: drag across it (or tap it again and again) until the photo shows."
+ },
+ "how-30-02-det": {
+  "page": "Pick 3 cards, one at a time. Tap the variation you see, then name its animal group. Predict if the variation helps, hurts, or makes no real difference, and see the real place.",
+  "say": "Pick three cards, one at a time. Tap the variation you see, then name its animal group. Predict if the variation helps, hurts, or makes no real difference, and see the real place."
+ },
+ "how-30-02-partc": {
+  "page": "Draw two individuals of the same Florida animal side by side. Show one variation between them, in a body part or a behavior. Label the variation on each one, and say which has the survival advantage.",
+  "say": "Draw two individuals of the same Florida animal side by side. Show one variation between them, in a body part or a behavior. Label the variation on each one, and say which has the survival advantage."
+ }
+}

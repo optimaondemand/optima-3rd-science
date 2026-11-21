@@ -1,0 +1,61 @@
+<svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A model of a gopher tortoise burrow during a scrub fire: fire comes toward the burrow; the tortoise and a gopher frog go to the deep end of the burrow; the fire passes over the ground while the deep burrow stays cool; afterward the tortoise and the frog come out and new green sprouts grow">
+<defs>
+<linearGradient id="bm-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8cc4e8"/><stop offset="1" stop-color="#e6f2fa"/></linearGradient>
+<linearGradient id="bm-haze" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9a08a"/><stop offset="1" stop-color="#f1d6b0"/></linearGradient>
+<linearGradient id="bm-smoke" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6d6461"/><stop offset="1" stop-color="#b3a497"/></linearGradient>
+<linearGradient id="bm-sand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9d4a6"/><stop offset=".55" stop-color="#cdae78"/><stop offset="1" stop-color="#a98657"/></linearGradient>
+<g id="bm-tort"><path d="M-12 0 Q-11 -11 0 -11 Q11 -11 12 0 Z" fill="#7a5a33" stroke="#4a361d" stroke-width="1"/><path d="M-6 -9 L-3 -2 M3 -10 L2 -2 M8 -6 L6 -1" stroke="#4a361d" stroke-width=".8"/><ellipse cx="14" cy="-2" rx="4" ry="3" fill="#6b5b45"/><rect x="-10" y="-1" width="5" height="4" rx="1.5" fill="#6b5b45"/><rect x="5" y="-1" width="6" height="4" rx="1.5" fill="#6b5b45"/></g>
+<g id="bm-frog"><ellipse cx="0" cy="0" rx="6" ry="4" fill="#9a7b4f"/><circle cx="3" cy="-3" r="1.6" fill="#3b2a1c"/><circle cx="-1" cy="-3.2" r="1.4" fill="#3b2a1c"/><path d="M-5 2 l-4 3 M4 3 l4 2" stroke="#7a5d36" stroke-width="1.6" stroke-linecap="round"/></g>
+<g id="bm-flame"><path d="M0 0 Q-9 -10 -3 -20 Q-2 -13 2 -12 Q0 -24 8 -32 Q7 -20 12 -14 Q15 -8 10 0 Z" fill="#f08a24"/><path d="M2 0 Q-2 -7 2 -13 Q4 -8 7 -7 Q9 -3 7 0 Z" fill="#ffd34d"/></g>
+<g id="bm-grass" stroke="#5d8a3a" stroke-width="1.6" stroke-linecap="round" fill="none"><path d="M0 0 l-3 -9 M0 0 l1 -11 M0 0 l4 -8"/></g>
+<g id="bm-burnt" stroke="#2b2420" stroke-width="1.6" stroke-linecap="round" fill="none"><path d="M0 0 l-2 -6 M0 0 l1 -7"/></g>
+<g id="bm-ground">
+<rect y="50" width="320" height="130" fill="url(#bm-sand)"/>
+<path d="M62 50 Q66 44 82 46 Q92 48 96 52 Z" fill="#e9d4a6"/>
+<path d="M78 54 C120 70 170 96 210 112 S250 128 268 128" stroke="#3b2a1c" stroke-width="18" stroke-linecap="round" fill="none"/>
+<path d="M78 54 C120 70 170 96 210 112 S250 128 268 128" stroke="#5a412a" stroke-width="12" stroke-linecap="round" fill="none"/>
+</g>
+</defs>
+<g class="s1">
+<rect width="320" height="50" fill="url(#bm-haze)"/>
+<use href="#bm-ground"/>
+<g fill="#8d8079" opacity=".55"><circle cx="270" cy="18" r="14"/><circle cx="292" cy="10" r="12"/><circle cx="250" cy="26" r="10"/></g>
+<use href="#bm-grass" transform="translate(30 50)"/><use href="#bm-grass" transform="translate(120 50)"/><use href="#bm-grass" transform="translate(160 50)"/><use href="#bm-grass" transform="translate(200 50)"/>
+<use href="#bm-flame" transform="translate(250 50)"/><use href="#bm-flame" transform="translate(272 50) scale(1.2)"/><use href="#bm-flame" transform="translate(298 50) scale(.9)"/>
+<use href="#bm-tort" transform="translate(36 50) scale(1.7)"/>
+<use href="#bm-frog" transform="translate(150 84) scale(1.5)"/>
+</g>
+<g class="s2">
+<rect width="320" height="50" fill="url(#bm-haze)"/>
+<use href="#bm-ground"/>
+<g fill="#8d8079" opacity=".6"><circle cx="200" cy="18" r="16"/><circle cx="226" cy="10" r="13"/><circle cx="250" cy="22" r="12"/></g>
+<use href="#bm-grass" transform="translate(30 50)"/><use href="#bm-grass" transform="translate(120 50)"/>
+<use href="#bm-burnt" transform="translate(260 50)"/><use href="#bm-burnt" transform="translate(290 50)"/>
+<use href="#bm-flame" transform="translate(170 50)"/><use href="#bm-flame" transform="translate(194 50) scale(1.25)"/><use href="#bm-flame" transform="translate(222 50) scale(1.05)"/>
+<use href="#bm-tort" transform="translate(246 132) scale(-1.6 1.6)"/>
+<use href="#bm-frog" transform="translate(214 117) scale(1.5)"/>
+</g>
+<g class="s3">
+<rect width="320" height="50" fill="url(#bm-smoke)"/>
+<use href="#bm-ground"/>
+<rect y="50" width="320" height="5" fill="#3a2f28"/>
+<g fill="#5f5752" opacity=".7"><circle cx="140" cy="20" r="18"/><circle cx="170" cy="12" r="14"/><circle cx="110" cy="28" r="12"/></g>
+<use href="#bm-burnt" transform="translate(130 50)"/><use href="#bm-burnt" transform="translate(170 50)"/><use href="#bm-burnt" transform="translate(220 50)"/><use href="#bm-burnt" transform="translate(270 50)"/>
+<g fill="#ff7a2a"><circle cx="30" cy="51" r="1.6"/><circle cx="60" cy="52" r="1.3"/><circle cx="96" cy="51" r="1.5"/><circle cx="150" cy="52" r="1.2"/><circle cx="230" cy="51" r="1.6"/></g>
+<g stroke="#e0522a" stroke-width="1.4" fill="none" opacity=".75"><path d="M200 62 q4 -4 8 0 t8 0"/><path d="M262 62 q4 -4 8 0 t8 0"/></g>
+<text x="246" y="74" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#b23a12">HOT</text>
+<text x="212" y="104" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#1d5b8c">COOL AND SAFE</text>
+<use href="#bm-tort" transform="translate(246 132) scale(-1.6 1.6)"/>
+<use href="#bm-frog" transform="translate(214 117) scale(1.5)"/>
+</g>
+<g class="s4">
+<rect width="320" height="50" fill="url(#bm-sky)"/>
+<use href="#bm-ground"/>
+<rect y="50" width="320" height="4" fill="#3a2f28"/>
+<circle cx="160" cy="24" r="10" fill="#ffd34d"/>
+<use href="#bm-burnt" transform="translate(150 50)"/><use href="#bm-burnt" transform="translate(240 50)"/>
+<g stroke="#4fae3a" stroke-width="1.8" stroke-linecap="round" fill="none"><path d="M120 50 l-2 -7 M120 50 l2 -8"/><path d="M180 50 l-2 -6 M180 50 l3 -7"/><path d="M210 50 l-1 -8 M210 50 l3 -6"/><path d="M280 50 l-2 -7 M280 50 l2 -8"/><path d="M30 50 l-2 -6 M30 50 l2 -7"/></g>
+<use href="#bm-tort" transform="translate(44 50) scale(-1.7 1.7)"/>
+<use href="#bm-frog" transform="translate(104 47) scale(1.5)"/>
+</g>
+</svg>
