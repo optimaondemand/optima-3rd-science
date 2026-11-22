@@ -93,7 +93,7 @@
       var f = $('.vr-frame[data-f="' + i + '"]'); if (!f) return;
       var lit = st.m[i] && st.p[i];
       f.classList.toggle('lit', !!lit);
-      $('.pl', f).textContent = lit ? (G.framePl === 'cousin' ? cz(p.cousin).name : G.places[p.place]) : '';
+      $('.pl', f).textContent = lit ? (G.framePl === 'bin' ? G.bins[p.bin] : G.framePl === 'cousin' ? cz(p.cousin).name : G.places[p.place]) : '';
     });
   }
   function cur() { for (var i = 0; i < P.length; i++) if (!(st.m[i] && st.p[i])) return i; return -1; }
@@ -105,6 +105,7 @@
       $('#vr-write').hidden = false; checkStamp(); return;
     }
     $('#vr-write').hidden = true;
+    if (G.type === 'sort') { renderSort(i, P[i]); return; }
     var p = P[i], h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
       '<div class="vr-fossil"' + (G.dragOpts ? '' : ' draggable="true"') + ' id="vr-fos"><img src="' + p.img + '" alt="' + esc(p.alt) + '">' + esc(p.name) + (p.facts ? '<small>' + esc(p.facts) + '</small>' : '') + '</div><div>';
     if (!st.m[i]) {
@@ -146,6 +147,46 @@
           b.classList.add('ok'); st.p[i] = true; save();
           setTimeout(render, 650); frames();
         } else { b.classList.add('no'); fb.className = 'vr-fb no'; fb.textContent = p.placeMiss; }
+      });
+    });
+  }
+
+  /* sort game (week 19): one card at a time goes into one of two bins; an IN card then asks which part takes it in */
+  function renderSort(i, p) {
+    var h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
+      '<div class="vr-fossil"' + (st.m[i] ? '' : ' draggable="true"') + ' id="vr-fos"><img src="' + p.img + '" alt="' + esc(p.alt) + '">' + esc(p.name) + '</div><div>';
+    if (!st.m[i]) {
+      h += '<div class="vr-gstep">' + esc(L.q1) + '</div><div class="vr-bins">' + Object.keys(G.bins).map(function (k) {
+        return '<button type="button" class="vr-bin" data-b="' + k + '">' + esc(G.bins[k]) + '</button>';
+      }).join('') + '</div>';
+    } else {
+      h += '<div class="vr-fb ok">' + esc(p.ok) + '</div>';
+      if (p.place) h += '<div class="vr-gstep">' + esc(L.q2) + '</div><div class="vr-place">' + Object.keys(G.places).map(function (k) {
+        return '<button type="button" data-pl="' + k + '">' + esc(G.places[k]) + '</button>';
+      }).join('') + '</div>';
+      else h += '<button type="button" class="vr-next" id="vr-next">' + esc(L.next) + '</button>';
+    }
+    h += '<div class="vr-fb" id="vr-fb" aria-live="polite"></div></div></div>';
+    game.innerHTML = h;
+    var fb = $('#vr-fb');
+    function pick(k, el) {
+      if (k === p.bin) { st.m[i] = true; save(); render(); }
+      else { fb.className = 'vr-fb no'; fb.textContent = p.miss || G.miss; if (el) { el.classList.remove('no'); void el.offsetWidth; el.classList.add('no'); } }
+    }
+    $$('.vr-bin', game).forEach(function (b) {
+      b.addEventListener('click', function () { pick(b.getAttribute('data-b'), b); });
+      b.addEventListener('dragover', function (e) { e.preventDefault(); b.classList.add('drop'); });
+      b.addEventListener('dragleave', function () { b.classList.remove('drop'); });
+      b.addEventListener('drop', function (e) { e.preventDefault(); b.classList.remove('drop'); pick(b.getAttribute('data-b'), b); });
+    });
+    var fos = $('#vr-fos');
+    if (fos && !st.m[i]) fos.addEventListener('dragstart', function (e) { try { e.dataTransfer.setData('text/plain', 'c'); } catch (x) {} });
+    var nx = $('#vr-next');
+    if (nx) nx.addEventListener('click', function () { st.p[i] = true; save(); render(); });
+    $$('.vr-place button', game).forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (b.getAttribute('data-pl') === p.place) { b.classList.add('ok'); st.p[i] = true; save(); setTimeout(render, 650); frames(); }
+        else { b.classList.add('no'); fb.className = 'vr-fb no'; fb.textContent = p.placeMiss; }
       });
     });
   }
@@ -193,8 +234,9 @@
     var name = (st.name || '').trim();
     if (!name) { nmMsg.textContent = 'Type your first name first.'; nm.focus(); return; }
     var rows = P.map(function (p, i) {
-      var c = C.filter(function (x) { return x.key === p.cousin; })[0];
-      return '<tr><td>' + esc(p.name) + '</td><td>' + (st.m[i] ? esc(c.name) : '<i>not matched yet</i>') + '</td><td>' + (st.p[i] ? esc(G.places[p.place]) : '<i>not picked yet</i>') + '</td></tr>';
+      var two = G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
+      var three = p.place ? (st.p[i] ? esc(G.places[p.place]) : '<i>not picked yet</i>') : '';
+      return '<tr><td>' + esc(p.name) + '</td><td>' + (st.m[i] ? esc(two) : '<i>not matched yet</i>') + '</td><td>' + three + '</td></tr>';
     }).join('');
     var sents = tas.map(function (t, i) { return '<p><b>' + esc(G.frames[i]) + '</b><br>' + (t.value ? esc(t.value) : '<i>(not written yet)</i>') + '</p>'; }).join('');
     var h = '<!doctype html><html><head><meta charset="utf-8"><title>' + esc(V.canvas) + ' · ' + esc(name) + '</title><style>body{font:16px/1.5 Arial,sans-serif;max-width:720px;margin:24px auto;padding:0 16px;color:#222}h1{font-size:22px;margin:4px 0}.k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7A5F2C}table{border-collapse:collapse;width:100%}th{background:#14110D;color:#fff;text-align:left;padding:5px 8px;font-size:13px}td{border:1px solid #ddd;padding:6px 8px}.st{display:inline-block;border:3px solid #1B4332;color:#1B4332;font-weight:900;letter-spacing:2px;padding:3px 12px;border-radius:8px;transform:rotate(-3deg);text-transform:uppercase}@media print{button{display:none}}</style></head><body>' +
