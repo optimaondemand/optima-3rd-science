@@ -82,15 +82,18 @@
     var f = $('iframe[data-src]', help); if (f && !f.src) f.src = f.getAttribute('data-src');
   });
 
-  /* ---------- Studio Day: cousins match ---------- */
-  var game = $('#vr-game'), P = G.pairs || [], C = G.cousins || [];
+  /* ---------- Studio Day: match game. Two looks, both from DATA:
+     default  = drag the card onto a picture (week 17, cousins match)
+     dragOpts = drag a picture onto the card (week 18, casting call) ---------- */
+  var game = $('#vr-game'), P = G.pairs || [], C = G.cousins || [], L = G.labels || {};
+  function cz(k) { return C.filter(function (x) { return x.key === k; })[0]; }
   var drag = null;
   function frames() {
     P.forEach(function (p, i) {
       var f = $('.vr-frame[data-f="' + i + '"]'); if (!f) return;
       var lit = st.m[i] && st.p[i];
       f.classList.toggle('lit', !!lit);
-      $('.pl', f).textContent = lit ? G.places[p.place] : '';
+      $('.pl', f).textContent = lit ? (G.framePl === 'cousin' ? cz(p.cousin).name : G.places[p.place]) : '';
     });
   }
   function cur() { for (var i = 0; i < P.length; i++) if (!(st.m[i] && st.p[i])) return i; return -1; }
@@ -98,20 +101,20 @@
     frames();
     var i = cur();
     if (i < 0) {
-      game.innerHTML = '<div class="vr-fb ok">All 4 frames are on the storyboard. Nice work, crew!</div>';
+      game.innerHTML = '<div class="vr-fb ok">' + esc(L.done) + '</div>';
       $('#vr-write').hidden = false; checkStamp(); return;
     }
     $('#vr-write').hidden = true;
     var p = P[i], h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
-      '<div class="vr-fossil" draggable="true" id="vr-fos"><img src="' + p.img + '" alt="' + esc(p.alt) + '">' + esc(p.name) + '</div><div>';
+      '<div class="vr-fossil"' + (G.dragOpts ? '' : ' draggable="true"') + ' id="vr-fos"><img src="' + p.img + '" alt="' + esc(p.alt) + '">' + esc(p.name) + (p.facts ? '<small>' + esc(p.facts) + '</small>' : '') + '</div><div>';
     if (!st.m[i]) {
       h += '<div class="vr-opts">' + C.map(function (c) {
-        return '<button class="vr-opt" type="button" data-k="' + c.key + '"><img src="' + c.img + '" alt="' + esc(c.alt) + '">' + esc(c.name) + '</button>';
+        return '<button class="vr-opt" type="button" data-k="' + c.key + '"' + (G.dragOpts ? ' draggable="true"' : '') + '><img src="' + c.img + '" alt="' + esc(c.alt) + '">' + esc(c.name) + '</button>';
       }).join('') + '</div>';
     } else {
       var c = C.filter(function (x) { return x.key === p.cousin; })[0];
       h += '<div class="vr-opts" style="grid-template-columns:1fr"><div class="vr-opt ok"><img src="' + c.img + '" alt="' + esc(c.alt) + '">' + esc(c.name) + '</div></div>' +
-        '<div class="vr-fb ok">' + esc(p.ok) + '</div><div class="vr-gstep">Where did this living thing live?</div><div class="vr-place">' +
+        '<div class="vr-fb ok">' + esc(p.ok) + '</div><div class="vr-gstep">' + esc(L.q2) + '</div><div class="vr-place">' +
         Object.keys(G.places).map(function (k) { return '<button type="button" data-pl="' + k + '">' + esc(G.places[k]) + '</button>'; }).join('') + '</div>';
     }
     h += '<div class="vr-fb" id="vr-fb" aria-live="polite"></div></div></div>';
@@ -123,12 +126,20 @@
     }
     $$('.vr-opt[data-k]', game).forEach(function (b) {
       b.addEventListener('click', function () { pick(b.getAttribute('data-k'), b); });
-      b.addEventListener('dragover', function (e) { e.preventDefault(); b.classList.add('drop'); });
+      b.addEventListener('dragover', function (e) { if (G.dragOpts) return; e.preventDefault(); b.classList.add('drop'); });
       b.addEventListener('dragleave', function () { b.classList.remove('drop'); });
-      b.addEventListener('drop', function (e) { e.preventDefault(); b.classList.remove('drop'); pick(b.getAttribute('data-k'), b); });
+      b.addEventListener('drop', function (e) { e.preventDefault(); b.classList.remove('drop'); if (!G.dragOpts) pick(b.getAttribute('data-k'), b); });
     });
     var fos = $('#vr-fos');
-    if (fos) fos.addEventListener('dragstart', function (e) { try { e.dataTransfer.setData('text/plain', 'f'); } catch (x) {} });
+    if (fos && !G.dragOpts) fos.addEventListener('dragstart', function (e) { try { e.dataTransfer.setData('text/plain', 'f'); } catch (x) {} });
+    if (fos && G.dragOpts && !st.m[i]) {
+      $$('.vr-opt[data-k]', game).forEach(function (b) {
+        b.addEventListener('dragstart', function (e) { drag = b; try { e.dataTransfer.setData('text/plain', b.getAttribute('data-k')); } catch (x) {} });
+      });
+      fos.addEventListener('dragover', function (e) { e.preventDefault(); fos.classList.add('drop'); });
+      fos.addEventListener('dragleave', function () { fos.classList.remove('drop'); });
+      fos.addEventListener('drop', function (e) { e.preventDefault(); fos.classList.remove('drop'); if (drag) pick(drag.getAttribute('data-k'), drag); drag = null; });
+    }
     $$('.vr-place button', game).forEach(function (b) {
       b.addEventListener('click', function () {
         if (b.getAttribute('data-pl') === p.place) {
@@ -189,7 +200,7 @@
     var h = '<!doctype html><html><head><meta charset="utf-8"><title>' + esc(V.canvas) + ' · ' + esc(name) + '</title><style>body{font:16px/1.5 Arial,sans-serif;max-width:720px;margin:24px auto;padding:0 16px;color:#222}h1{font-size:22px;margin:4px 0}.k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7A5F2C}table{border-collapse:collapse;width:100%}th{background:#14110D;color:#fff;text-align:left;padding:5px 8px;font-size:13px}td{border:1px solid #ddd;padding:6px 8px}.st{display:inline-block;border:3px solid #1B4332;color:#1B4332;font-weight:900;letter-spacing:2px;padding:3px 12px;border-radius:8px;transform:rotate(-3deg);text-transform:uppercase}@media print{button{display:none}}</style></head><body>' +
       '<div class="k">Optima Academy Online · 3rd Grade Science · Week ' + V.week + '</div><h1>' + esc(V.canvas) + ' (Studio Day)</h1>' +
       '<p><b>Name:</b> ' + esc(name) + ' &nbsp; <b>Date:</b> ' + new Date().toLocaleDateString() + '</p>' +
-      '<h2>Fossil cousins</h2><table><tr><th>Fossil</th><th>Living cousin</th><th>Where it lived</th></tr>' + rows + '</table>' +
+      '<h2>' + esc(L.pdfTitle) + '</h2><table><tr><th>' + L.cols.map(esc).join('</th><th>') + '</th></tr>' + rows + '</table>' +
       '<h2>What I think (' + total() + ' words)</h2>' + sents + (studioDone() ? '<div class="st">' + esc(V.stamp) + '</div>' : '') +
       '<p style="margin-top:24px"><button onclick="print()">🖨 Print or save as PDF</button></p></body></html>';
     var w = null; try { w = window.open('', '_blank'); } catch (e) {}
