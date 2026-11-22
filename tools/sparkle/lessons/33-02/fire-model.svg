@@ -1,0 +1,52 @@
+<svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A model of a lodgepole pine forest: tall green pines with closed cones, then a fire burns through, then black trunks stand on gray ash while the heat-opened cones drop seeds, then many small green pines grow up between the old trunks">
+<defs>
+<linearGradient id="fm-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fb0d8"/><stop offset="1" stop-color="#e6f0f7"/></linearGradient>
+<linearGradient id="fm-smoke" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b5a52"/><stop offset=".55" stop-color="#c8743e"/><stop offset="1" stop-color="#f2b25c"/></linearGradient>
+<linearGradient id="fm-haze" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9b4bd"/><stop offset="1" stop-color="#e3e1dc"/></linearGradient>
+<linearGradient id="fm-mtn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8d9bab"/><stop offset="1" stop-color="#6f7f8f"/></linearGradient>
+<linearGradient id="fm-grass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fb36a"/><stop offset="1" stop-color="#6f8743"/></linearGradient>
+<linearGradient id="fm-ash" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c7570"/><stop offset="1" stop-color="#3f3a37"/></linearGradient>
+<linearGradient id="fm-trunk" x1="0" x2="1"><stop offset="0" stop-color="#6e4a2e"/><stop offset=".5" stop-color="#9a6d46"/><stop offset="1" stop-color="#5a3b24"/></linearGradient>
+<linearGradient id="fm-char" x1="0" x2="1"><stop offset="0" stop-color="#1c1714"/><stop offset=".5" stop-color="#3b322c"/><stop offset="1" stop-color="#151110"/></linearGradient>
+<linearGradient id="fm-flame" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ffe27a"/><stop offset=".45" stop-color="#ff9a2e"/><stop offset="1" stop-color="#d9371b" stop-opacity=".85"/></linearGradient>
+<linearGradient id="fm-needle" x1="0" x2="1"><stop offset="0" stop-color="#2f5a33"/><stop offset=".5" stop-color="#4f8a4a"/><stop offset="1" stop-color="#28492b"/></linearGradient>
+<g id="fm-pine"><rect x="-2" y="-62" width="4" height="62" fill="url(#fm-trunk)"/><path d="M0 -70 L-9 -50 L-5 -50 L-12 -32 L-6 -32 L-14 -14 L14 -14 L6 -32 L12 -32 L5 -50 L9 -50 Z" fill="url(#fm-needle)"/><ellipse cx="5" cy="-40" rx="2" ry="3" fill="#7a5532"/><ellipse cx="-5" cy="-26" rx="2" ry="3" fill="#7a5532"/></g>
+<g id="fm-snag"><path d="M-2.2 0 L-1.6 -60 L0 -66 L1.6 -58 L2.2 0 Z" fill="url(#fm-char)"/><path d="M-1 -40 L-7 -46 M1 -30 L6 -35" stroke="#241d19" stroke-width="1.4" stroke-linecap="round"/></g>
+<g id="fm-cone"><ellipse rx="3" ry="4.2" fill="#8a5d34" stroke="#4d321b" stroke-width=".6"/><path d="M-3 -1 l-2.6 -1.4 M3 -1 l2.6 -1.4 M-3 1.5 l-2.6 .6 M3 1.5 l2.6 .6" stroke="#5b3b20" stroke-width="1"/></g>
+<g id="fm-seed"><ellipse rx="1.3" ry="1" fill="#4d321b"/><path d="M1 0 q5 -3 8 -1 q-3 2 -8 1" fill="#c9a676" opacity=".9"/></g>
+<g id="fm-sprout"><path d="M0 0 V-7" stroke="#4e7f3c" stroke-width="1.2"/><path d="M0 -7 l-3 -3 M0 -7 l3 -3 M0 -6 l-3 -1 M0 -6 l3 -1 M0 -7 v-3" stroke="#6faa4f" stroke-width="1" stroke-linecap="round"/></g>
+<g id="fm-young"><rect x="-1" y="-20" width="2" height="20" fill="#7a5532"/><path d="M0 -26 L-6 -14 L-3 -14 L-8 -4 L8 -4 L3 -14 L6 -14 Z" fill="url(#fm-needle)"/></g>
+<g id="fm-hills"><path d="M0 92 L40 60 L78 84 L122 46 L170 82 L214 54 L262 86 L300 64 L320 74 V120 H0 Z" fill="url(#fm-mtn)"/><path d="M122 46 l-8 7 l6 -1 l4 4 l4 -5 l6 2 Z M214 54 l-7 6 l6 0 l4 3 l3 -5 Z" fill="#eef3f7"/></g>
+</defs>
+<g class="s1">
+<rect width="320" height="180" fill="url(#fm-sky)"/>
+<use href="#fm-hills"/>
+<path d="M0 118 Q160 108 320 118 V180 H0 Z" fill="url(#fm-grass)"/>
+<g><use href="#fm-pine" transform="translate(24 150)"/><use href="#fm-pine" transform="translate(52 156) scale(1.1)"/><use href="#fm-pine" transform="translate(84 148)"/><use href="#fm-pine" transform="translate(114 158) scale(1.15)"/><use href="#fm-pine" transform="translate(146 150)"/><use href="#fm-pine" transform="translate(176 157) scale(1.08)"/><use href="#fm-pine" transform="translate(206 149)"/><use href="#fm-pine" transform="translate(236 158) scale(1.12)"/><use href="#fm-pine" transform="translate(266 150)"/><use href="#fm-pine" transform="translate(296 156) scale(1.06)"/></g>
+</g>
+<g class="s2">
+<rect width="320" height="180" fill="url(#fm-smoke)"/>
+<path d="M0 46 q20 -16 40 -8 q30 -30 70 -6 q40 -26 80 2 q40 -30 90 0 q20 -8 40 4 V0 H0 Z" fill="#4e4440" opacity=".55"/>
+<path d="M0 118 Q160 108 320 118 V180 H0 Z" fill="#5a4a3c"/>
+<g opacity=".95"><use href="#fm-pine" transform="translate(24 150)"/><use href="#fm-pine" transform="translate(84 148)"/><use href="#fm-pine" transform="translate(146 150)"/><use href="#fm-pine" transform="translate(206 149)"/><use href="#fm-pine" transform="translate(266 150)"/></g>
+<g><use href="#fm-snag" transform="translate(52 156)"/><use href="#fm-snag" transform="translate(114 158)"/><use href="#fm-snag" transform="translate(176 157)"/><use href="#fm-snag" transform="translate(236 158)"/><use href="#fm-snag" transform="translate(296 156)"/></g>
+<g fill="url(#fm-flame)"><path d="M10 160 q8 -40 18 -60 q2 30 10 34 q4 -26 14 -44 q6 34 12 40 q6 -20 14 -30 q4 26 10 30 q8 -36 18 -56 q4 40 12 48 q6 -22 14 -34 q4 30 10 34 q8 -30 16 -44 q4 32 12 40 q8 -26 16 -38 q4 30 10 34 q6 -24 14 -34 q4 28 10 34 q8 -30 18 -46 q4 34 12 46 L310 160 Z"/></g>
+<g fill="#ffd36b" opacity=".9"><circle cx="70" cy="70" r="1.4"/><circle cx="140" cy="54" r="1.2"/><circle cx="210" cy="62" r="1.5"/><circle cx="250" cy="44" r="1.1"/><circle cx="100" cy="40" r="1"/></g>
+</g>
+<g class="s3">
+<rect width="320" height="180" fill="url(#fm-haze)"/>
+<use href="#fm-hills" opacity=".7"/>
+<path d="M0 118 Q160 108 320 118 V180 H0 Z" fill="url(#fm-ash)"/>
+<g><use href="#fm-snag" transform="translate(24 150)"/><use href="#fm-snag" transform="translate(52 156) scale(1.1)"/><use href="#fm-snag" transform="translate(84 148)"/><use href="#fm-snag" transform="translate(114 158) scale(1.15)"/><use href="#fm-snag" transform="translate(146 150)"/><use href="#fm-snag" transform="translate(176 157) scale(1.08)"/><use href="#fm-snag" transform="translate(206 149)"/><use href="#fm-snag" transform="translate(236 158) scale(1.12)"/><use href="#fm-snag" transform="translate(266 150)"/><use href="#fm-snag" transform="translate(296 156) scale(1.06)"/></g>
+<g><use href="#fm-cone" transform="translate(48 112)"/><use href="#fm-cone" transform="translate(118 108)"/><use href="#fm-cone" transform="translate(180 114)"/><use href="#fm-cone" transform="translate(240 110)"/></g>
+<g><use href="#fm-seed" transform="translate(56 126) rotate(20)"/><use href="#fm-seed" transform="translate(70 140) rotate(-15)"/><use href="#fm-seed" transform="translate(126 128)"/><use href="#fm-seed" transform="translate(110 146) rotate(30)"/><use href="#fm-seed" transform="translate(190 132) rotate(-20)"/><use href="#fm-seed" transform="translate(172 150)"/><use href="#fm-seed" transform="translate(248 130) rotate(15)"/><use href="#fm-seed" transform="translate(262 148) rotate(-30)"/><use href="#fm-seed" transform="translate(90 160)"/><use href="#fm-seed" transform="translate(220 164) rotate(25)"/></g>
+</g>
+<g class="s4">
+<rect width="320" height="180" fill="url(#fm-sky)"/>
+<use href="#fm-hills"/>
+<path d="M0 118 Q160 108 320 118 V180 H0 Z" fill="url(#fm-grass)"/>
+<g opacity=".85"><use href="#fm-snag" transform="translate(24 150)"/><use href="#fm-snag" transform="translate(84 148)"/><use href="#fm-snag" transform="translate(146 150)"/><use href="#fm-snag" transform="translate(206 149)"/><use href="#fm-snag" transform="translate(266 150)"/></g>
+<g><use href="#fm-young" transform="translate(14 150)"/><use href="#fm-young" transform="translate(38 162) scale(1.2)"/><use href="#fm-young" transform="translate(62 152)"/><use href="#fm-young" transform="translate(100 164) scale(1.25)"/><use href="#fm-young" transform="translate(126 154)"/><use href="#fm-young" transform="translate(164 166) scale(1.2)"/><use href="#fm-young" transform="translate(188 152)"/><use href="#fm-young" transform="translate(226 164) scale(1.25)"/><use href="#fm-young" transform="translate(250 152)"/><use href="#fm-young" transform="translate(286 164) scale(1.2)"/><use href="#fm-young" transform="translate(308 152)"/></g>
+<g><use href="#fm-sprout" transform="translate(50 172)"/><use href="#fm-sprout" transform="translate(80 170)"/><use href="#fm-sprout" transform="translate(142 174)"/><use href="#fm-sprout" transform="translate(206 172)"/><use href="#fm-sprout" transform="translate(268 174)"/></g>
+</g>
+</svg>

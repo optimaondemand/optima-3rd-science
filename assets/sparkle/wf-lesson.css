@@ -633,3 +633,16 @@ body.wf-dim .wf-wrap{position:relative;z-index:86}
 .wl-swatch.fx-frost{animation:wlFrost 2.4s ease forwards}
 @keyframes wlFrost{to{box-shadow:0 0 0 3px rgba(190,228,250,.95),0 0 26px 12px rgba(170,215,245,.8);filter:brightness(1.15) saturate(.8)}}
 @media (prefers-reduced-motion:reduce){.wl-swatch.fx-frost{animation:none;box-shadow:0 0 0 3px rgba(190,228,250,.95),0 0 26px 12px rgba(170,215,245,.8)}}
+/* Finale certificate (premiere.finale, 33.02) */
+.wl-th-cert{position:absolute;left:50%;top:5%;transform:translateX(-50%);z-index:3;animation:wfCertIn .6s ease-out}
+@keyframes wfCertIn{from{opacity:0;margin-top:-10px}to{opacity:1;margin-top:0}}
+.wl-cert{position:fixed;inset:0;z-index:600;background:rgba(12,10,8,.88);display:flex;align-items:center;justify-content:center;padding:14px;overflow:auto}
+.wl-cert-box{width:min(920px,100%);text-align:center}
+.wl-cert-box img{width:100%;height:auto;border-radius:6px;box-shadow:0 0 0 6px #3b2f1e,0 20px 60px rgba(0,0,0,.6);background:#fffaf0}
+.wl-cert-tip{color:#f6e7c1;font:600 15px/1.4 Georgia,serif;margin:10px 0 0}
+.wl-cert-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.wl-cert-btns .wl-btn{text-decoration:none}
+.wl-confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.wl-confetti i{position:absolute;top:-20px;width:10px;height:16px;border-radius:2px;opacity:.95;animation:wfConfetti 3s linear 1 forwards}
+@keyframes wfConfetti{0%{transform:translateY(0) rotate(0)}100%{transform:translateY(110vh) rotate(720deg)}}
+@media (prefers-reduced-motion:reduce){.wl-confetti{display:none}.wl-th-cert{animation:none}}

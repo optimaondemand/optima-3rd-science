@@ -1,0 +1,22 @@
+{
+ "how-33-02-specimen": {
+  "page": "Press Inspect specimen. Move the magnifying lens over the page, then tap 3 things you notice.",
+  "say": "Press Inspect specimen. Move the magnifying lens over the page, then tap three things you notice."
+ },
+ "how-33-02-compare": {
+  "page": "Put the hatchling under one beach and the low lights under the other: drag them, or tap one, then a beach. Press Let the hatchlings go. Then swap.",
+  "say": "Put the hatchling under one beach and the low lights under the other: drag them, or tap one, then a beach. Press Let the hatchlings go. Then swap."
+ },
+ "how-33-02-wall": {
+  "page": "First, make a prediction. Then brush the glowing stop: drag across it (or tap it again and again) until the photo shows.",
+  "say": "First, make a prediction. Then brush the glowing stop: drag across it (or tap it again and again) until the photo shows."
+ },
+ "how-33-02-det": {
+  "page": "Pick 3 cards, one at a time. Tap something you see, then name the science topic. Predict what scientists figured out, and see the evidence.",
+  "say": "Pick three cards, one at a time. Tap something you see, then name the science topic. Predict what scientists figured out, and see the evidence."
+ },
+ "how-33-02-partc": {
+  "page": "Make your \"My Year as a Scientist\" page. Draw a model of your scenario with at least 3 labels and arrows that show cause and effect.",
+  "say": "Make your My Year as a Scientist page. Draw a model of your scenario with at least three labels and arrows that show cause and effect."
+ }
+}

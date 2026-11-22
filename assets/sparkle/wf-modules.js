@@ -315,12 +315,52 @@ function WL4_INIT(W) {
         scr.appendChild(d); requestAnimationFrame(function () { d.classList.add('on'); });
         var txt = ($('#ex-obs').textContent + ' ' + (D.premiere.thinkLabel || 'I think it was') + ' ' + (D.det.items[exPick || 0].orgShort || 'a living thing') + '. ' + $('#ex-tells').textContent).trim(), k = 0, tp = $('#th-type');
         var iv = setInterval(function () { tp.textContent = txt.slice(0, ++k); if (k >= txt.length) clearInterval(iv); }, RM ? 1 : 28); timers.push(iv);
-        at(RM ? 300 : Math.min(5200, txt.length * 28 + 800), function () { var dir = el('div', 'wl-th-dir', 'DIRECTED BY: ' + D.premiere.director + (S.director ? '<br>' + esc(S.director).toUpperCase() : '')); scr.appendChild(dir); requestAnimationFrame(function () { dir.classList.add('on'); }); C.cheer(); });
+        at(RM ? 300 : Math.min(5200, txt.length * 28 + 800), function () { var dir = el('div', 'wl-th-dir', 'DIRECTED BY: ' + D.premiere.director + (S.director ? '<br>' + esc(S.director).toUpperCase() : '')); scr.appendChild(dir); requestAnimationFrame(function () { dir.classList.add('on'); }); C.cheer();
+          if (D.premiere.finale) { S.premiered = 1; C.save(); var cb = $('#cert-btn'); if (cb) cb.hidden = false;
+            at(RM ? 400 : 2600, function () { var b = el('button', 'wl-btn gold wl-th-cert', '🎓 ' + (D.premiere.finale.button || 'Open my certificate')); b.onclick = function () { close(); W.certificate(); }; scr.appendChild(b); }); } });
       });
     };
     function close() { th.hidden = true; timers.forEach(function (t) { clearTimeout(t); clearInterval(t); }); scr.innerHTML = ''; }
-    $('.wl-th-x').onclick = close; document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !th.hidden) close(); });
+    $('.wl-th-x').onclick = close;
+    var cbt = $('#cert-btn'); if (cbt && D.premiere.finale) { cbt.hidden = !S.premiered; cbt.onclick = function () { W.certificate(); }; } document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !th.hidden) close(); });
   })();
+
+  /* ---------- 7b. Finale certificate (optional: premiere.finale) ---------- */
+  var certOpti = null; if (IMG.opti) { certOpti = new Image(); certOpti.src = IMG.opti; }
+  W.certDraw = function () {
+    var F = D.premiere.finale, cv = document.createElement('canvas'), x = cv.getContext('2d'), Wd = 1600, Ht = 1130; cv.width = Wd; cv.height = Ht;
+    var g = x.createRadialGradient(Wd / 2, Ht / 2, 100, Wd / 2, Ht / 2, 900); g.addColorStop(0, '#fffaf0'); g.addColorStop(1, '#f1e2c2'); x.fillStyle = g; x.fillRect(0, 0, Wd, Ht);
+    x.strokeStyle = '#b8892f'; x.lineWidth = 14; x.strokeRect(34, 34, Wd - 68, Ht - 68); x.strokeStyle = '#d9b45a'; x.lineWidth = 3; x.strokeRect(62, 62, Wd - 124, Ht - 124);
+    x.fillStyle = '#b8892f'; [[62, 62], [Wd - 62, 62], [62, Ht - 62], [Wd - 62, Ht - 62]].forEach(function (c) { x.beginPath(); x.arc(c[0], c[1], 12, 0, 7); x.fill(); });
+    x.textAlign = 'center'; x.fillStyle = '#6b4a1a'; x.font = '700 30px Georgia, serif'; x.fillText((F.kicker || '').toUpperCase(), Wd / 2, 150);
+    x.fillStyle = '#2c2416'; x.font = '900 82px Georgia, serif'; x.fillText(F.title || 'Certificate', Wd / 2, 260);
+    x.font = 'italic 36px Georgia, serif'; x.fillStyle = '#5a4a32'; x.fillText(F.certifies || 'This certifies that', Wd / 2, 340);
+    var nm = S.director ? S.director : (F.noName || 'A Young Scientist'); x.font = '900 96px Georgia, serif'; var ng = x.createLinearGradient(Wd / 2 - 400, 0, Wd / 2 + 400, 0); ng.addColorStop(0, '#8a6420'); ng.addColorStop(.5, '#c99a3b'); ng.addColorStop(1, '#8a6420'); x.fillStyle = ng; x.fillText(nm, Wd / 2, 450);
+    x.strokeStyle = '#c99a3b'; x.lineWidth = 3; x.beginPath(); x.moveTo(Wd / 2 - 420, 478); x.lineTo(Wd / 2 + 420, 478); x.stroke();
+    x.fillStyle = '#3a3122'; x.font = '600 36px Georgia, serif'; x.fillText(F.sub || '', Wd / 2, 550);
+    x.textAlign = 'left'; x.font = '600 34px Georgia, serif'; (F.skills || []).forEach(function (t, i) { var y = 625 + i * 62; x.fillStyle = '#2f7a3a'; x.fillText('✔', 400, y); x.fillStyle = '#2c2416'; x.fillText(t, 450, y); });
+    x.textAlign = 'center'; var d = new Date(); var ds = d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+    x.font = '600 30px Georgia, serif'; x.fillStyle = '#5a4a32'; x.fillText(ds, 420, 960); x.fillRect(260, 975, 320, 2); x.font = '700 22px Georgia, serif'; x.fillText((F.dateLabel || 'Date').toUpperCase(), 420, 1008);
+    x.font = 'italic 700 46px Georgia, serif'; x.fillStyle = '#3d5a80'; x.fillText(F.signName || '', Wd - 420, 958); x.fillStyle = '#5a4a32'; x.fillRect(Wd - 580, 975, 320, 2); x.font = '700 22px Georgia, serif'; x.fillText((F.signed || '').toUpperCase(), Wd - 420, 1008);
+    var sx = Wd / 2, sy = 930; x.save(); x.translate(sx, sy); for (var k = 0; k < 24; k++) { x.rotate(Math.PI / 12); x.fillStyle = k % 2 ? '#b8892f' : '#d9b45a'; x.beginPath(); x.moveTo(0, -112); x.lineTo(14, -92); x.lineTo(-14, -92); x.fill(); }
+    var sg = x.createRadialGradient(-20, -20, 10, 0, 0, 96); sg.addColorStop(0, '#f6dd8e'); sg.addColorStop(1, '#b8892f'); x.fillStyle = sg; x.beginPath(); x.arc(0, 0, 94, 0, 7); x.fill();
+    x.strokeStyle = '#8a6420'; x.lineWidth = 3; x.beginPath(); x.arc(0, 0, 78, 0, 7); x.stroke(); x.restore();
+    if (certOpti && certOpti.complete) { try { x.drawImage(certOpti, sx - 52, sy - 62, 104, 104); } catch (e) {} }
+    x.fillStyle = '#4a3410'; x.font = '900 17px Georgia, serif'; x.fillText((F.seal || '').toUpperCase(), sx, sy + 64);
+    return cv;
+  };
+  W.certificate = function () {
+    var F = D.premiere.finale; if (!F) return; var old = $('#cert'); if (old) old.remove();
+    var ov = el('div', 'wl-cert'); ov.id = 'cert'; ov.setAttribute('role', 'dialog'); ov.setAttribute('aria-label', F.title || 'Certificate');
+    var url = W.certDraw().toDataURL('image/png');
+    ov.innerHTML = '<div class="wl-cert-box"><img alt="' + esc((F.title || '') + ': ' + (S.director || F.noName || '')) + '" src="' + url + '">' +
+      (S.director ? '' : '<p class="wl-cert-tip">' + (F.nameTip || '') + '</p>') +
+      '<div class="wl-cert-btns"><a class="wl-btn gold" download="' + (F.file || 'certificate.png') + '" href="' + url + '">⬇️ ' + (F.saveLabel || 'Save my certificate') + '</a><button class="wl-btn ghost wl-cert-x">Close</button></div></div>';
+    if (!RM) { var cf = el('div', 'wl-confetti'); for (var i = 0; i < 60; i++) { var c = document.createElement('i'); c.style.left = (Math.random() * 100) + '%'; c.style.background = ['#e3b04b', '#2f7a3a', '#3d5a80', '#c0392b', '#fff6d8', '#8fb9d6'][i % 6]; c.style.animationDelay = (Math.random() * 1.2) + 's'; c.style.animationDuration = (2.4 + Math.random() * 1.8) + 's'; cf.appendChild(c); } ov.appendChild(cf); setTimeout(function () { cf.remove(); }, 5200); }
+    document.body.appendChild(ov); C.cheer(); setTimeout(C.cheer, 450);
+    function shut() { ov.remove(); document.removeEventListener('keydown', key); } function key(e) { if (e.key === 'Escape') shut(); }
+    $('.wl-cert-x', ov).onclick = shut; document.addEventListener('keydown', key); $('.wl-cert-x', ov).focus();
+  };
 
   W.after = function () { W.reel(window.__ck); exhibit(); };
 }
