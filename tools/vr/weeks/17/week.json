@@ -1,0 +1,256 @@
+{
+ "id": "g3sci-vr-17",
+ "week": 17,
+ "lesson": "17.01",
+ "lessonTitle": "What Can Fossils Tell Us?",
+ "title": "The Lost Sea",
+ "emoji": "🎬",
+ "canvasName": "17.01 VR · The Lost Sea",
+ "details": [
+  "📅 Q3 · Unit 6 · Fossils & Earth History",
+  "📖 Week 17 · goes with Lesson 17.01",
+  "🌎 NGSS 3-LS4-1",
+  "⏱ About 15 minutes"
+ ],
+ "map": "Desert Sanctum",
+ "mapWord": "Desert",
+ "badge": {
+  "emoji": "🎬",
+  "name": "Golden Clapboard",
+  "line": "Only VR crews earn this one. Your shot goes in Opti's film."
+ },
+ "stamp": "Studio Day · Wonder Films",
+ "hook": {
+  "look": "A <b>call sheet</b> tells a film crew where to go and what to bring.",
+  "head": "Scene 17 · The Lost Sea",
+  "sub": "Wonder Films",
+  "rows": [
+   [
+    "Location",
+    "A desert"
+   ],
+   [
+    "Director",
+    "Opti"
+   ],
+   [
+    "Crew",
+    "You"
+   ]
+  ],
+  "img": "hook",
+  "alt": "Tall rocky mountain cliff rising above a dry, grassy desert",
+  "cap": "Guadalupe Mountains, Texas, today. This mountain is an old sea reef turned to rock.",
+  "note": "Sea fossils in a desert? Show me what lived here long ago!"
+ },
+ "opti": {
+  "brief": "Welcome to the desert, crew. Today we film Scene 17, The Lost Sea. Build what lived here long ago, then take the shot.",
+  "studio": "No headset today? Come to the studio. Match each fossil to its living cousin. Then tell me what you think."
+ },
+ "vr": {
+  "look": "A <b>model</b> is a small copy of something real.",
+  "groups": [
+   {
+    "title": "🪨 The clues: 2 fossils",
+    "models": [
+     {
+      "name": "Coral Fossil",
+      "word": "Coral Fossil",
+      "img": "coralfossil",
+      "alt": "Brown horn-shaped coral fossil in gray rock"
+     },
+     {
+      "name": "Sea Urchin Fossil",
+      "word": "Urchin",
+      "img": "urchinfossil",
+      "alt": "Round, smooth, cream-colored sea urchin fossil"
+     }
+    ]
+   },
+   {
+    "title": "🌊 The sea long ago: 4 living things",
+    "models": [
+     {
+      "name": "Red Coral",
+      "word": "Red Coral",
+      "img": "redcoral",
+      "alt": "Living red coral with white feathery parts"
+     },
+     {
+      "name": "Eucidaris (a sea urchin)",
+      "word": "Eucidaris",
+      "img": "urchin",
+      "alt": "Living sea urchin with thick spines on a coral"
+     },
+     {
+      "name": "Star Fish",
+      "word": "Star Fish",
+      "img": "starfish",
+      "alt": "Pale starfish on wet sand"
+     },
+     {
+      "name": "Conch Shell",
+      "word": "Conch",
+      "img": "conch",
+      "alt": "Living conch snail in its spiky shell on the sea floor"
+     }
+    ]
+   }
+  ],
+  "steps": [
+   {
+    "where": "🖥️ Before your headset",
+    "title": "Know your models",
+    "clip": "step1",
+    "html": "<p>Type each gray word in the <b>Filter models</b> box.</p>@MODELS@<p>This list is also on the <b>Canvas</b> tab in VR.</p>"
+   },
+   {
+    "where": "🥽 In VR",
+    "title": "Go on location",
+    "clip": "step2",
+    "html": "<div class=\"vr-how\">🔗 <b>First time only:</b> connect Canvas at <a href=\"https://xr.optimaed.com\" target=\"_blank\" rel=\"noopener\">xr.optimaed.com</a>. See <b>Having trouble in VR?</b> below.</div><p>Open the <b>On-Demand</b> app. Click <b>Explore</b>. Type <b>Desert</b> in <b>Filter environments</b>. Click <b>Desert Sanctum</b>, then <b>Begin Solo</b>.</p>"
+   },
+   {
+    "title": "Build the scene",
+    "clip": "step3",
+    "html": "<p>Press the <b>top button on your right controller</b>, then click <b>Models</b>. Set the 2 fossils on the sand. Put Red Coral by the Coral Fossil and Eucidaris by the Sea Urchin Fossil. Add the Star Fish and Conch Shell nearby.</p><div class=\"vr-how\">✋ Grab a model with the <b>palm trigger</b>. Use <b>both</b> palm triggers to make it bigger or smaller.</div><div class=\"vr-say\">🗣 <b>Say it out loud:</b> “The coral fossil is evidence that this desert was once ___.”</div>"
+   },
+   {
+    "title": "Take the shot and send it",
+    "clip": "step4",
+    "html": "<p>Stand back so the whole scene fits. Open your menu, click <b>Library</b>, then <b>Camera</b>. Click <b>Take photo</b>.</p><p>Click the <b>Canvas</b> tab and pick <b>@CANVAS@</b>. Click <b>Choose from My Files</b>, pick your photo, click <b>Use this file</b>, then <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.</p><div class=\"vr-how\">🔁 Want to fix it? Move the models, take a new photo and send it again.</div>"
+   },
+   {
+    "where": "✅ After",
+    "title": "Check and leave",
+    "clip": "step5",
+    "html": "<p>Press the <b>Meta button</b>, then click <b>Quit</b>. Check that your photo is in the Canvas assignment. Not there? Open <b>Having trouble in VR?</b></p>"
+   }
+  ],
+  "extra": {
+   "after": 3,
+   "clip": "extra",
+   "html": "Add a <b>Vertebrae Fossil</b> (a backbone) and a fish beside it: <span class=\"vr-word\">Vertebrae</span> <span class=\"vr-word\">Reef Fish</span>"
+  },
+  "full": "Your photo shows both fossils, each with its living thing, plus the Star Fish and Conch Shell."
+ },
+ "studio": {
+  "kicker": "Studio Day · no headset",
+  "title": "Fossil cousins",
+  "look": "Each card shows a <b>fossil</b>. Below it are 4 living things from today. A <b>cousin</b> is a living thing from the same family as the fossil.",
+  "do": "Tap the living cousin, or drag the fossil onto it. Then tap where it lived.",
+  "places": {
+   "sea": "🌊 In the sea",
+   "land": "🌳 On land"
+  },
+  "pairs": [
+   {
+    "fossil": {
+     "img": "coralfossil",
+     "name": "Coral fossil",
+     "alt": "Brown horn-shaped coral fossil in gray rock"
+    },
+    "cousin": "coral",
+    "place": "sea",
+    "ok": "Match! Coral grows in warm, shallow sea water.",
+    "placeMiss": "Look at the cousin. Where does coral grow today?"
+   },
+   {
+    "fossil": {
+     "img": "fernfossil",
+     "name": "Fern fossil",
+     "alt": "Fern leaf pressed into dark gray rock"
+    },
+    "cousin": "fern",
+    "place": "land",
+    "ok": "Match! Ferns grow on land, in shady, wet places.",
+    "placeMiss": "Look at the cousin. Where do ferns grow today?"
+   },
+   {
+    "fossil": {
+     "img": "urchinfossil",
+     "name": "Sea urchin fossil",
+     "alt": "Round, smooth, cream-colored sea urchin fossil"
+    },
+    "cousin": "urchin",
+    "place": "sea",
+    "ok": "Match! Sea urchins live on the sea floor.",
+    "placeMiss": "Look at the cousin. Where do sea urchins live today?"
+   },
+   {
+    "fossil": {
+     "img": "sharktooth",
+     "name": "Shark tooth fossil",
+     "alt": "Long, pointed fossil shark tooth beside a ruler"
+    },
+    "cousin": "shark",
+    "place": "sea",
+    "ok": "Match! Sharks swim in the sea.",
+    "placeMiss": "Look at the cousin. Where do sharks swim today?"
+   }
+  ],
+  "cousins": [
+   {
+    "key": "coral",
+    "name": "Red coral",
+    "img": "redcoral",
+    "alt": "Living red coral with white feathery parts"
+   },
+   {
+    "key": "fern",
+    "name": "Fern",
+    "img": "fern",
+    "alt": "Green fern frond uncurling"
+   },
+   {
+    "key": "urchin",
+    "name": "Sea urchin",
+    "img": "urchin",
+    "alt": "Living sea urchin with thick spines on a coral"
+   },
+   {
+    "key": "shark",
+    "name": "Sand tiger shark",
+    "img": "shark",
+    "alt": "Sand tiger shark swimming over a reef"
+   }
+  ],
+  "miss": "Not this one. Look at the shape of the fossil again.",
+  "write": {
+   "min": 20,
+   "frames": [
+    {
+     "lead": "1. What was the Texas desert long ago?",
+     "starter": "I think this desert was once ___ because ___."
+    },
+    {
+     "lead": "2. Pick one fossil you matched.",
+     "starter": "The ___ fossil is evidence that ___."
+    }
+   ],
+   "chips": [
+    "sea",
+    "land",
+    "fossil",
+    "evidence",
+    "coral",
+    "sea urchin",
+    "shark tooth",
+    "fern",
+    "long ago",
+    "because"
+   ]
+  },
+  "full": "You matched all 4 fossils and picked where each lived. Your 2 sentences have at least 20 words."
+ },
+ "voice": {
+  "brief": "Welcome to the desert, crew. Today we film Scene 17, The Lost Sea. Build what lived here long ago, then take the shot.",
+  "step1": "Before your headset goes on, meet your six models. Learn each gray search word. You will type it in VR.",
+  "step2": "Put on your headset. Click Explore, type Desert, and pick Desert Sanctum. Then click Begin Solo.",
+  "step3": "Set down the two fossil clues first. Put each living thing next to its fossil. Then tell me what the fossils show.",
+  "extra": "Got time? Add a backbone fossil and a fish beside it. That shot is just for VR crews.",
+  "step4": "Step back so the whole scene fits. Click Library, then Camera, and take the shot. Then send it to Canvas.",
+  "step5": "Press the Meta button and click Quit. Then open Canvas. Your photo should be waiting there.",
+  "studio": "No headset today? Come to the studio. Match each fossil to its living cousin. Then tell me what you think."
+ }
+}

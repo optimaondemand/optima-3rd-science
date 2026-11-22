@@ -1,0 +1,74 @@
+{
+ "hook": {
+  "title": "File:Guadalupe Mountains El Capitan 2006.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Guadalupe_Mountains_El_Capitan_2006.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "Leaflet"
+ },
+ "reeffossil": {
+  "title": "File:Coral Reef from c. 300 million years ago Curiosity About the Past (6043476924).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Coral_Reef_from_c._300_million_years_ago_Curiosity_About_the_Past_(6043476924).jpg",
+  "license": "CC BY-SA 2.0",
+  "artist": "garlandcannon from El Paso, Texas, USA"
+ },
+ "coralfossil": {
+  "title": "File:11019 Grand Canyon Fossil Horn Coral in Redwall Limestone (4749616472).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:11019_Grand_Canyon_Fossil_Horn_Coral_in_Redwall_Limestone_(4749616472).jpg",
+  "license": "CC BY 2.0",
+  "artist": "Grand Canyon National Park"
+ },
+ "urchinfossil": {
+  "title": "File:Fossil Echinoid Folklore Fairy Loaf.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Fossil_Echinoid_Folklore_Fairy_Loaf.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "Malcolm Lidbury (aka Pink pasty)"
+ },
+ "redcoral": {
+  "title": "File:Corallium rubrum (Linnaeus, 1758) 6.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Corallium_rubrum_(Linnaeus,_1758)_6.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "G\u00e9ry PARENT"
+ },
+ "urchin": {
+  "title": "File:Eucidaris tribuloides (Slate-pencil Urchin).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Eucidaris_tribuloides_(Slate-pencil_Urchin).jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "Nhobgood (talk) Nick Hobgood"
+ },
+ "starfish": {
+  "title": "File:Oreaster reticulatus201905mx.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Oreaster_reticulatus201905mx.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "Carlos Valenzuela Montuy"
+ },
+ "conch": {
+  "title": "File:Lobatus gigas 2.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Lobatus_gigas_2.jpg",
+  "license": "Public domain",
+  "artist": "NOAA"
+ },
+ "fernfossil": {
+  "title": "File:Pecopteris arborescens.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Pecopteris_arborescens.jpg",
+  "license": "Public domain",
+  "artist": "Woudloper"
+ },
+ "fern": {
+  "title": "File:Osmunda japonica 002.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Osmunda_japonica_002.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "Kropsoq"
+ },
+ "sharktooth": {
+  "title": "File:Odontaspis 01.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Odontaspis_01.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "Kevmin"
+ },
+ "shark": {
+  "title": "File:Sand tiger shark (Carcharias taurus) in Florida Aquarium on 25 June 2026.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Sand_tiger_shark_(Carcharias_taurus)_in_Florida_Aquarium_on_25_June_2026.jpg",
+  "license": "CC0",
+  "artist": "MatthewHoobin"
+ }
+}

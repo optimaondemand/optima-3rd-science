@@ -1,0 +1,262 @@
+{
+ "id": "g3sci-vr-18",
+ "week": 18,
+ "lesson": "18.01",
+ "lessonTitle": "How Do Plants Survive in Different Environments?",
+ "title": "The Rainforest Cast",
+ "emoji": "🎬",
+ "canvasName": "18.01 VR · The Rainforest Cast",
+ "details": [
+  "📅 Q3 · Unit 7 · Plants & Environmental Interactions",
+  "📖 Week 18 · goes with Lesson 18.01",
+  "🌎 CPALMS SC.3.L.14.1 · NGSS 3-LS4-2",
+  "⏱ About 15 minutes"
+ ],
+ "map": "Tropical Rainforest",
+ "mapWord": "Rainforest",
+ "badge": {
+  "emoji": "📷",
+  "name": "Green Lens",
+  "line": "Only VR crews earn this one. Your shot goes in Opti's film."
+ },
+ "stamp": "Studio Day · Wonder Films",
+ "hook": {
+  "look": "This is a <b>scout photo</b> of the place for our film. The <b>cast</b> is everyone who stars in it.",
+  "head": "Scene 18 · The Rainforest Cast",
+  "sub": "Wonder Films · Scout report",
+  "rows": [
+   [
+    "Location",
+    "A rainforest"
+   ],
+   [
+    "Weather",
+    "Rain almost every day"
+   ],
+   [
+    "Cast",
+    "4 plants"
+   ]
+  ],
+  "img": "hook",
+  "alt": "Thick green rainforest treetops with mist on the hills behind",
+  "cap": "Daintree Rainforest, Australia, today. The treetops block much of the sunlight.",
+  "note": "So much rain, so little light! Which plants fit here?"
+ },
+ "opti": {
+  "brief": "Welcome to the rainforest, crew. Today we film Scene 18, The Rainforest Cast. Build four plants that fit here, then take the shot.",
+  "studio": "No headset today? Come to the studio. Cast one plant for each place. Then tell me what you think."
+ },
+ "vr": {
+  "look": "A <b>model</b> is a copy of something real. A <b>trait</b> is a feature of a plant, like its leaf shape.",
+  "groups": [
+   {
+    "title": "🌿 Your cast: 4 rainforest plants",
+    "models": [
+     {
+      "name": "Fern",
+      "word": "Fern",
+      "img": "fern",
+      "alt": "Bright green ferns with wide, feathery leaves",
+      "trait": "Wide leaves catch dim light."
+     },
+     {
+      "name": "Bromeliad Plant",
+      "word": "Bromeliad",
+      "img": "bromeliad",
+      "alt": "Red bromeliad seen from above, with water held in the cup of its leaves",
+      "trait": "Leaves make a cup for rain."
+     },
+     {
+      "name": "Liana Vine",
+      "word": "Liana",
+      "img": "liana",
+      "alt": "Thick, woody vine looping up from the forest floor into the trees",
+      "trait": "Climbs trees to reach sunlight."
+     },
+     {
+      "name": "Passion Flower",
+      "word": "Passion",
+      "img": "passion",
+      "alt": "Blue and white passion flower on a leafy vine with curly stems",
+      "trait": "Curly stems grab and climb."
+     }
+    ]
+   }
+  ],
+  "steps": [
+   {
+    "where": "🖥️ Before your headset",
+    "title": "Know your models",
+    "clip": "step1",
+    "html": "<p>Type each gray word in the <b>Filter models</b> box.</p>@MODELS@<p>This list is also on the <b>Canvas</b> tab in VR.</p>"
+   },
+   {
+    "where": "🥽 In VR",
+    "title": "Go on location",
+    "clip": "step2",
+    "html": "<div class=\"vr-how\">🔗 <b>First time only:</b> connect Canvas at <a href=\"https://xr.optimaed.com\" target=\"_blank\" rel=\"noopener\">xr.optimaed.com</a>. See <b>Having trouble in VR?</b> below.</div><p>Open the <b>On-Demand</b> app. Click <b>Explore</b>. Type <b>Rainforest</b> in <b>Filter environments</b>. Click <b>Tropical Rainforest</b>, then <b>Begin Solo</b>.</p>"
+   },
+   {
+    "title": "Build the scene",
+    "clip": "step3",
+    "html": "<p>Press the <b>top button on your right controller</b>, then click <b>Models</b>. Set the Fern down low. Lift the Bromeliad Plant up high. Stand the Liana Vine tall, with the Passion Flower beside it.</p><div class=\"vr-how\">✋ Grab a model with the <b>palm trigger</b>. Use <b>both</b> palm triggers to make it bigger or smaller.</div><div class=\"vr-say\">🗣 <b>Say it out loud:</b> “The ___ has ___. That helps it in the rainforest because ___.”</div>"
+   },
+   {
+    "title": "Take the shot and send it",
+    "clip": "step4",
+    "html": "<p>Stand back so the whole scene fits. Open your menu, click <b>Library</b>, then <b>Camera</b>. Click <b>Take photo</b>.</p><p>Click the <b>Canvas</b> tab and pick <b>@CANVAS@</b>. Click <b>Choose from My Files</b>, pick your photo, click <b>Use this file</b>, then <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.</p><div class=\"vr-how\">🔁 Want to fix it? Move the models, take a new photo and send it again.</div>"
+   },
+   {
+    "where": "✅ After",
+    "title": "Check and leave",
+    "clip": "step5",
+    "html": "<p>Press the <b>Meta button</b>, then click <b>Quit</b>. Check that your photo is in the Canvas assignment. Not there? Open <b>Having trouble in VR?</b></p>"
+   }
+  ],
+  "extra": {
+   "after": 3,
+   "clip": "extra",
+   "html": "Make it rain on your cast: <span class=\"vr-word\">Rain Effect</span>"
+  },
+  "full": "Your photo shows all 4 plants: Fern down low, Bromeliad Plant up high, Liana Vine and Passion Flower."
+ },
+ "studio": {
+  "kicker": "Studio Day · no headset",
+  "title": "Casting call",
+  "type": "cast",
+  "frameImg": "cousin",
+  "labels": {
+   "done": "All 4 parts are cast. Nice work, crew!",
+   "q2": "Which trait helps it there?",
+   "pdfTitle": "Casting call",
+   "cols": [
+    "Place",
+    "Plant I cast",
+    "Trait that helps"
+   ]
+  },
+  "look": "A <b>casting call</b> is how a director picks who gets each part. Each <b>place card</b> shows a real place. Below it are 4 plants. A <b>trait</b> is a feature of a plant, like thick leaves or deep roots.",
+  "do": "Read the place card. Tap the plant that fits, or drag it onto the card. Then tap the trait that helps it there.",
+  "places": {
+   "store": "💧 Thick leaves that store water",
+   "cup": "🥤 Leaves that hold rain like a cup",
+   "deep": "⬇️ Deep roots that reach water far down",
+   "spongy": "🧽 Spongy roots that grow in soaked soil"
+  },
+  "pairs": [
+   {
+    "card": {
+     "img": "desert",
+     "name": "Desert",
+     "alt": "Dry, rocky desert with a few small bushes",
+     "facts": "Dry sand and rock. Very little rain falls here."
+    },
+    "cousin": "agave",
+    "place": "store",
+    "ok": "Cast! Agave grows in dry deserts.",
+    "placeMiss": "Look at the place again. It is very dry. Which trait helps there?"
+   },
+   {
+    "card": {
+     "img": "rainforest",
+     "name": "Rainforest",
+     "alt": "Thick green rainforest plants growing close together",
+     "facts": "Rain falls almost every day. Tall trees make deep shade."
+    },
+    "cousin": "bromeliad",
+    "place": "cup",
+    "ok": "Cast! Bromeliads grow in rainy forests, often up on tree branches.",
+    "placeMiss": "Look at the place again. Rain falls almost every day. Which trait uses that rain?"
+   },
+   {
+    "card": {
+     "img": "prairie",
+     "name": "Prairie",
+     "alt": "Wide, grassy prairie with yellow flowers under a big sky",
+     "facts": "A wide, grassy land. The soil can dry out for weeks."
+    },
+    "cousin": "compass",
+    "place": "deep",
+    "ok": "Cast! The compass plant grows on sunny prairies.",
+    "placeMiss": "Look at the place again. The top of the soil dries out. Where is the water?"
+   },
+   {
+    "card": {
+     "img": "marsh",
+     "name": "Marsh",
+     "alt": "Flat, wet marsh with reeds standing in shallow water",
+     "facts": "A wetland. The soil is soaked with water."
+    },
+    "cousin": "cattail",
+    "place": "spongy",
+    "ok": "Cast! Cattails grow in marshes, with their roots under water.",
+    "placeMiss": "Look at the place again. The soil is soaked. Which roots can grow there?"
+   }
+  ],
+  "cousins": [
+   {
+    "key": "cattail",
+    "name": "Cattail",
+    "img": "cattail",
+    "alt": "Tall green cattails with brown tops at the edge of a pond"
+   },
+   {
+    "key": "agave",
+    "name": "Agave",
+    "img": "agave",
+    "alt": "Agave with thick, gray-green, pointed leaves on dry gravel"
+   },
+   {
+    "key": "compass",
+    "name": "Compass plant",
+    "img": "compass",
+    "alt": "Tall compass plant stems with yellow flowers against the sky"
+   },
+   {
+    "key": "bromeliad",
+    "name": "Bromeliad",
+    "img": "bromeliad",
+    "alt": "Red bromeliad seen from above, with water held in the cup of its leaves"
+   }
+  ],
+  "miss": "Not this one. Read the place card again.",
+  "write": {
+   "min": 20,
+   "frames": [
+    {
+     "lead": "1. Pick one plant you cast.",
+     "starter": "I think the ___ fits the ___ because ___."
+    },
+    {
+     "lead": "2. Could it live in a different place?",
+     "starter": "I saw that it has ___, so in a ___ it would ___."
+    }
+   ],
+   "chips": [
+    "trait",
+    "adaptation",
+    "advantage",
+    "environment",
+    "desert",
+    "rainforest",
+    "prairie",
+    "marsh",
+    "store water",
+    "deep roots",
+    "because"
+   ]
+  },
+  "full": "You cast all 4 plants and picked each trait. Your 2 sentences have at least 20 words."
+ },
+ "voice": {
+  "brief": "Welcome to the rainforest, crew. Today we film Scene 18, The Rainforest Cast. Build four plants that fit here, then take the shot.",
+  "step1": "Before your headset goes on, meet your four plants. Learn each gray search word. You will type it in VR.",
+  "step2": "Put on your headset. Click Explore, type Rainforest, and pick Tropical Rainforest. Then click Begin Solo.",
+  "step3": "Set the fern down low. Lift the bromeliad up high. Add the vine and the flower. Then tell me about one trait.",
+  "extra": "Got time? Make it rain on your plants. That shot is just for VR crews.",
+  "step4": "Step back so the whole scene fits. Click Library, then Camera, and take the shot. Then send it to Canvas.",
+  "step5": "Press the Meta button and click Quit. Then open Canvas. Your photo should be waiting there.",
+  "studio": "No headset today? Come to the studio. Cast one plant for each place. Then tell me what you think."
+ }
+}

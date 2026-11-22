@@ -1,0 +1,74 @@
+{
+ "desert": {
+  "title": "File:Desert Chihuahuan Big Bend.JPG",
+  "url": "https://commons.wikimedia.org/wiki/File:Desert_Chihuahuan_Big_Bend.JPG",
+  "license": "CC BY-SA 2.5",
+  "artist": "Cqui"
+ },
+ "liana": {
+  "title": "File:Bauhinia guianensis, mature liana (9340889588).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Bauhinia_guianensis,_mature_liana_(9340889588).jpg",
+  "license": "CC BY 2.0",
+  "artist": "Dick Culbert from Gibsons, B.C., Canada"
+ },
+ "rainforest": {
+  "title": "File:Rainforest (Dominica).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Rainforest_(Dominica).jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "Hans Hillewaert"
+ },
+ "fern": {
+  "title": "File:Rainforest ferns (Dominica).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Rainforest_ferns_(Dominica).jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "Hans Hillewaert"
+ },
+ "compass": {
+  "title": "File:Silphium laciniatum 2.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Silphium_laciniatum_2.jpg",
+  "license": "CC BY-SA 2.0",
+  "artist": "Frank Mayfield"
+ },
+ "marsh": {
+  "title": "File:Cattails in the Marsh (8456025517).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Cattails_in_the_Marsh_(8456025517).jpg",
+  "license": "CC BY 2.0",
+  "artist": "USFWS Mountain-Prairie"
+ },
+ "hook": {
+  "title": "File:Daintree Rainforest, Queensland (483850) (9443590252).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Daintree_Rainforest,_Queensland_(483850)_(9443590252).jpg",
+  "license": "CC BY 2.0",
+  "artist": "Robert Linsdell from St. Andrews, Canada"
+ },
+ "passion": {
+  "title": "File:Passiflora-caerulea 2019-06-23 (DSC2447-1).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Passiflora-caerulea_2019-06-23_(DSC2447-1).jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "Franz van Duns"
+ },
+ "agave": {
+  "title": "File:Agave havardiana .jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Agave_havardiana_.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "Richtr Jan"
+ },
+ "bromeliad": {
+  "title": "File:Neoregelia carolinae kz11.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Neoregelia_carolinae_kz11.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "Krzysztof Ziarnek, Kenraiz"
+ },
+ "prairie": {
+  "title": "File:Konza Prairie, part of the Flint Hills in Kansas (19130964193).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Konza_Prairie,_part_of_the_Flint_Hills_in_Kansas_(19130964193).jpg",
+  "license": "Public domain",
+  "artist": "U.S. Fish and Wildlife Service - Midwest Region"
+ },
+ "cattail": {
+  "title": "File:Cattail 4497.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Cattail_4497.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "Chris Light"
+ }
+}
