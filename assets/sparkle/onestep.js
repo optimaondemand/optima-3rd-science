@@ -117,7 +117,7 @@
     if (pend.length) { if (cur) [].push.apply(cur, pend); else stops.push(pend); }
     return stops.filter(function (s) { return s.length; });
   }
-  function clean(t) { return (t || '').replace(/\s+/g, ' ').trim().replace(/^[^A-Za-z0-9]+/, '').slice(0, 44); }
+  function clean(t) { t = (t || '').replace(/\s+/g, ' ').trim().replace(/^[^A-Za-z0-9]+/, ''); return t.length <= 44 ? t : t.slice(0, 44).replace(/\s+\S*$/, '').replace(/[,:;·\s-]+$/, '') + '…'; }
   function titleOf(stop) {
     var i, k, t;
     for (i = 0; i < stop.length; i++) { k = stop[i].el; if (is(k, 'h2, h3, h4') && pageShown(k) && clean(k.textContent)) return clean(k.textContent); }

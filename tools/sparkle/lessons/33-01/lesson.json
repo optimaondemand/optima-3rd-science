@@ -1167,7 +1167,15 @@
     "env": "help",
     "miss": "Gator holes keep water for many animals in the dry season."
    }
-  ]
+  ],
+  "words": {
+   "do": "Pick one you solved. Pick the group it belongs in, then tap the other ones that belong in the same group.",
+   "cap": "{card}: {org}. Which group does it belong in?",
+   "pickPlace": "Pick the group it belongs in.",
+   "pickItems": "Tap each one that belongs in this group too.",
+   "why": "What evidence made you choose this group?",
+   "done": "🗂️ Sorted with your evidence."
+  }
  },
  "quiz": [
   {

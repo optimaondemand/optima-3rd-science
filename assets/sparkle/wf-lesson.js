@@ -35,10 +35,12 @@
   $('#wl-motion').onclick = function () { var on = this.getAttribute('aria-pressed') !== 'true'; this.setAttribute('aria-pressed', on); document.documentElement.classList.toggle('wl-nomotion', !on); };
 
   /* ---- tabs (land at the top of the new section) ---- */
-  function show(tab) {
+  function show(tab, keepStep) {
     $$('.wl-tab').forEach(function (b) { b.setAttribute('aria-selected', b.dataset.tab === tab); });
     $$('.wl-panel').forEach(function (p) { p.classList.toggle('on', p.id === 'tab-' + tab); });
     var p = $('#tab-' + tab), sc = p.querySelector('.wl-scene');
+    /* a tab always opens at its first step (Bethany, 22 Nov 2026); only a page reload keeps the saved step */
+    if (!keepStep && window.OneStep && window.OneStep.ready) { var f0 = p.firstElementChild; while (f0 && /os-bar/.test(f0.className)) f0 = f0.nextElementSibling; if (f0) window.OneStep.reveal(f0); }
     window.scrollTo({ top: p.getBoundingClientRect().top + window.scrollY - $('.wl-top').offsetHeight - 8, behavior: 'instant' });
     if (sc) { sc.classList.remove('snap'); setTimeout(function () { sc.classList.add('snap'); snapClap(); }, 120); }
     if (tab === 'assign') { wonderBack(); if (WL4.sketchSize) setTimeout(WL4.sketchSize, 30); }
@@ -397,7 +399,7 @@
     }).catch(function () {});
   })();
   gather(); checklist(); ticks();
-  if (S.tab && S.tab !== 'warm') show(S.tab);
+  if (S.tab && S.tab !== 'warm') show(S.tab, true);
   window.WL = { state: S, show: show };
   WL4.after && WL4.after();
 })();

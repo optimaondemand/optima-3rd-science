@@ -104,3 +104,8 @@ Any photo shot may add `threads {pts: [[x%, y%], …], at, dur}`: glowing gold t
 
 ## Finale certificate (33.02, 21 Nov 2026)
 `premiere.finale` (optional) turns on a certificate after the premiere: when the "DIRECTED BY" line shows, a **🎓 Open my certificate** button appears in the theater, and a matching button (`#cert-btn`) appears under Premiere film from then on. The certificate is drawn on a canvas (1600×1130 PNG): `kicker`, `title`, `certifies`, the director's first name (or `noName`), `sub`, three `skills` with ✔, today's date over `dateLabel`, a gold seal with Opti and `seal`, `signName` over `signed`. A confetti burst (off with reduced motion) and **⬇️ `saveLabel`** downloads it as `file`. If no first name was typed, `nameTip` shows under it. Use it for a course's last lesson only. All built lessons re-checked (check + playtest 1150).
+
+## Audit fixes (22 Nov 2026)
+- **Tabs always open at Step 1.** A tab button or the last step's Next now resets that tab to its first step and lands at its top (`show(tab)` in wf-lesson.js calls `OneStep.reveal` on the tab's first block). Only a page reload keeps the saved step.
+- **Step labels** ("Next: …") longer than 44 characters are cut at a word and end with "…" (onestep.js `clean`). onestep.js is shared with the G4 and G5 science repos: copy it there on their next push.
+- **`rebuild.words`** (optional): `do`, `cap` (with `{card}` and `{org}`), `pickPlace`, `pickItems`, `why`, `done` replace the drawer's place/living-things wording. Set for the scene drawers (26.01–28.02) and the sort drawers (30.02–33.02).

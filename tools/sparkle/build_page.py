@@ -97,7 +97,7 @@ body = f'''<div class="page-wrap">
 <p class="wl-do" data-say="how-detective"><b>What to do:</b> {D["do"]}</p><div class="wl-det" id="det-cards"></div><div id="det-work"></div>
 <table class="wl-chart" id="det-chart"><thead><tr>{"".join(f"<th>{c}</th>" for c in D["cols"])}</tr></thead><tbody></tbody></table>
 <details class="wl-drawer" id="rebuild" hidden><summary><span class="k">{L["rebuild"].get("kicker", "🌍 Rebuild the ancient scene")}</span>{L["rebuild"]["title"]} <span class="wl-bonus">OPTIONAL</span><span class="wl-open">Open ▾</span></summary>
-<p class="wl-do"><b>What to do:</b> Pick one you solved. Pick the place it points to, then pick the living things that belong there.</p><div class="wl-chips" id="rb-fossils"></div>
+<p class="wl-do"><b>What to do:</b> {L["rebuild"].get("words", {}).get("do", "Pick one you solved. Pick the place it points to, then pick the living things that belong there.")}</p><div class="wl-chips" id="rb-fossils"></div>
 <div class="wl-rb-stage" id="rb-stage"><div class="wl-rb-bg"></div><div class="wl-rb-water"></div><div class="wl-rb-life"></div><div class="wl-rb-fossil"></div><div class="wl-rb-cap">Pick one to start.</div></div><div id="rb-steps"></div></details>
 <div id="det-write" class="wl-in" hidden><div class="wl-step"><div class="n">Last step</div><p>Pick one from your chart and explain it.</p></div>{textbox("in-det","Lesson · My explanation",D["write"]["min"],D["write"]["chips"],D["write"]["label"],D["write"]["starter"])}</div></div>
 <div class="wl-next"><button class="wl-btn gold" data-go="check">Next: 🎬 Scene 3 · Self-Check →</button></div></section>

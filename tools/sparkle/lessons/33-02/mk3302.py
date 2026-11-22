@@ -290,6 +290,8 @@ det = {
 }
 
 rebuild = {"title": "Use your evidence to sort the discoveries", "missPrefix": "Hmm. Look at your Year in Review files again. ", "kicker": "🗂️ Sort the discoveries", "whyStart": "I chose this because…",
+  "words": {"do": "Pick one you solved. Pick the group it belongs in, then tap the other ones that belong in the same group.", "cap": "{card}: {org}. Which group does it belong in?",
+            "pickPlace": "Pick the group it belongs in.", "pickItems": "Tap each one that belongs in this group too.", "why": "What evidence made you choose this group?", "done": "🗂️ Sorted with your evidence."},
   "envs": [
     {"key": "past", "name": "🕰️ Long ago", "img": "d1h", "cap": "Clues about the past…"},
     {"key": "pattern", "name": "🔁 A pattern", "img": "d2", "cap": "Things that happen again and again…"},

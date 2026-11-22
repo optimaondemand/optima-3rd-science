@@ -259,22 +259,22 @@ function WL4_INIT(W) {
 
   /* ---------- 6. Rebuild the ancient scene (optional) ---------- */
   (function () {
-    var R = D.rebuild, stage = $('#rb-stage'), steps = $('#rb-steps'), cur = null, envSel = null, lifeSel = {};
+    var R = D.rebuild, RW = R.words || {}, stage = $('#rb-stage'), steps = $('#rb-steps'), cur = null, envSel = null, lifeSel = {};
     W.rebuildFossils = function () { var box = $('#rb-fossils'); box.innerHTML = W.detSolved().map(function (k) { return '<button class="wl-chip" data-k="' + k + '">' + D.det.noun + ' ' + D.det.items[k].id + '</button>'; }).join('');
       $$('.wl-chip', box).forEach(function (b) { b.onclick = function () { $$('.wl-chip', box).forEach(function (x) { x.classList.toggle('on', x === b); }); begin(+b.dataset.k); }; }); };
     function begin(k) { cur = D.det.items[k]; envSel = null; lifeSel = {}; stage.querySelector('.wl-rb-fossil').innerHTML = '<img src="' + IMG[cur.img] + '" alt="">'; stage.querySelector('.wl-rb-bg').style.backgroundImage = ''; stage.querySelector('.wl-rb-water').style.height = '0'; stage.querySelector('.wl-rb-life').innerHTML = '';
-      stage.querySelector('.wl-rb-cap').textContent = D.det.noun + ' ' + cur.id + ': ' + cur.org[cur.orgAns] + '. What place does it point to?';
-      steps.innerHTML = '<div class="wl-step"><div class="n">Step 1 of 3</div><p>Pick the place.</p></div><div class="wl-chips">' + R.envs.map(function (e, i) { return '<button class="wl-chip" data-i="' + i + '">' + e.name + '</button>'; }).join('') + '</div><p class="wl-fb"></p>';
+      stage.querySelector('.wl-rb-cap').textContent = (RW.cap || '{card}: {org}. What place does it point to?').replace('{card}', D.det.noun + ' ' + cur.id).replace('{org}', cur.org[cur.orgAns]);
+      steps.innerHTML = '<div class="wl-step"><div class="n">Step 1 of 3</div><p>' + (RW.pickPlace || 'Pick the place.') + '</p></div><div class="wl-chips">' + R.envs.map(function (e, i) { return '<button class="wl-chip" data-i="' + i + '">' + e.name + '</button>'; }).join('') + '</div><p class="wl-fb"></p>';
       $$('.wl-chip', steps).forEach(function (b) { b.onclick = function () { var e = R.envs[+b.dataset.i], fb = steps.querySelector('.wl-fb');
         if (e.key !== cur.rebuildEnv) { b.classList.add('miss'); fb.className = 'wl-fb miss'; fb.textContent = R.missPrefix + cur.envMiss.replace(/\s*Try again\.$/, ''); C.oops(); return; }
         envSel = e; C.ding(); stage.querySelector('.wl-rb-bg').style.backgroundImage = 'url("' + IMG[e.key === 'water' ? cur.envImg : e.img] + '")'; if (e.key === 'water') setTimeout(function () { stage.querySelector('.wl-rb-water').style.height = '100%'; }, 300); stage.querySelector('.wl-rb-cap').textContent = e.cap; life(); }; }); }
-    function life() { steps.innerHTML = '<div class="wl-step"><div class="n">Step 2 of 3</div><p>Pick the living things that belong in this place. Tap each one.</p></div><div class="wl-chips">' + R.life.map(function (l, i) { return '<button class="wl-chip" data-i="' + i + '">' + l.name + '</button>'; }).join('') + '</div><p class="wl-fb"></p>';
+    function life() { steps.innerHTML = '<div class="wl-step"><div class="n">Step 2 of 3</div><p>' + (RW.pickItems || 'Pick the living things that belong in this place. Tap each one.') + '</p></div><div class="wl-chips">' + R.life.map(function (l, i) { return '<button class="wl-chip" data-i="' + i + '">' + l.name + '</button>'; }).join('') + '</div><p class="wl-fb"></p>';
       $$('.wl-chip', steps).forEach(function (b) { b.onclick = function () { var l = R.life[+b.dataset.i], fb = steps.querySelector('.wl-fb'); if (lifeSel[b.dataset.i]) return;
         if (l.env !== envSel.key) { b.classList.add('miss'); fb.className = 'wl-fb miss'; fb.textContent = l.miss; C.oops(); return; }
         lifeSel[b.dataset.i] = 1; b.classList.add('on'); C.ding(); var im = el('img'); im.src = IMG[l.img]; im.alt = l.name; stage.querySelector('.wl-rb-life').appendChild(im);
         var need = R.life.filter(function (x) { return x.env === envSel.key; }).length; if (Object.keys(lifeSel).length === need) why(); }; }); }
-    function why() { steps.innerHTML = '<div class="wl-step"><div class="n">Step 3 of 3</div><p>What evidence made you choose this place?</p></div><div class="wl-in"><textarea id="in-rebuild" data-min="6" placeholder="' + esc(D.rebuild.whyStart || 'I chose this because the fossil…') + '"></textarea></div>';
-      var ta = $('#in-rebuild'); ta.value = S['t-in-rebuild'] || ''; ta.oninput = function () { S['t-in-rebuild'] = ta.value; C.save(); }; C.cheer(); stage.querySelector('.wl-rb-cap').textContent = '🌍 Scene rebuilt from your evidence.'; }
+    function why() { steps.innerHTML = '<div class="wl-step"><div class="n">Step 3 of 3</div><p>' + (RW.why || 'What evidence made you choose this place?') + '</p></div><div class="wl-in"><textarea id="in-rebuild" data-min="6" placeholder="' + esc(D.rebuild.whyStart || 'I chose this because the fossil…') + '"></textarea></div>';
+      var ta = $('#in-rebuild'); ta.value = S['t-in-rebuild'] || ''; ta.oninput = function () { S['t-in-rebuild'] = ta.value; C.save(); }; C.cheer(); stage.querySelector('.wl-rb-cap').textContent = RW.done || '🌍 Scene rebuilt from your evidence.'; }
     var dr = $('#rebuild'); dr.addEventListener('toggle', function () { if (dr.open) W.rebuildFossils(); });
   })();
 

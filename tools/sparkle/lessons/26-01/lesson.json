@@ -1076,7 +1076,15 @@
     "env": "fort",
     "miss": "Coquina walls protect the seaside fort."
    }
-  ]
+  ],
+  "words": {
+   "do": "Pick one you solved. Pick the scene it points to, then pick the things that belong there.",
+   "cap": "{card}: {org}. Which scene does it point to?",
+   "pickPlace": "Pick the scene.",
+   "pickItems": "Pick the things that belong in this scene. Tap each one.",
+   "why": "What evidence made you choose this scene?",
+   "done": "🌍 Scene rebuilt from your evidence."
+  }
  },
  "quiz": [
   {
