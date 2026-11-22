@@ -1,0 +1,17 @@
+{
+ "unit": 11,
+ "title": "National Park Capstone",
+ "lessons": "32.01 to 33.02",
+ "q": [
+  {"src": "32.01", "type": "mc", "q": "A national park ecosystem has living parts and nonliving parts. Which of these is a nonliving part?", "o": ["A frog", "Sunlight", "A cypress tree", "A heron"], "a": [1]},
+  {"src": "32.01", "type": "tf", "q": "An alligator would survive well in a snowy mountain forest.", "a": false},
+  {"src": "32.01", "type": "mc", "q": "Wolves came back to Yellowstone in 1995. What happened next?", "o": ["The wolves ate all the plants.", "Nothing else in the park changed.", "The wolves changed how elk behaved, and that affected plants like willows.", "The elk all moved to Florida."], "a": [2]},
+  {"src": "32.02", "type": "mc", "q": "Maria's park presentation must show a food web and a conservation effort. What do scientists call requirements like these?", "o": ["Criteria", "Constraints", "Opinions", "Habitats"], "a": [0]},
+  {"src": "32.02", "type": "mc", "q": "Which one is the strongest scientific evidence for a presentation about Yellowstone?", "o": ["Yellowstone is a cool park.", "Wolves are my favorite animal.", "I think wolves look scary.", "Gray wolves hunt in packs, which lets them catch elk much bigger than one wolf could."], "a": [3]},
+  {"src": "33.01", "type": "ma", "q": "A long dry season hits the Everglades. Which of these living things there could be affected? Choose ALL that are correct.", "o": ["Water plants", "Fish", "Wading birds", "Polar bears in the Arctic", "Cactus in a desert"], "a": [0, 1, 2]},
+  {"src": "33.01", "type": "mc", "q": "What does interdependence mean?", "o": ["Living things never affect each other.", "Living things depend on each other, so a change to one can affect the others.", "Every animal lives all alone.", "Plants do not need water."], "a": [1]},
+  {"src": "33.01", "type": "mc", "q": "Which one is an example of people helping an ecosystem?", "o": ["Draining a marsh to build a parking lot", "Cutting down mangroves along the shore", "Raising a road onto bridges so water can flow into the Everglades", "Dumping trash in a river"], "a": [2]},
+  {"src": "33.02", "type": "mc", "q": "Fires burned much of Yellowstone in 1988. What did scientists find growing in the burned forest the next spring?", "o": ["Tiny pine seedlings, from seeds that fell when the heat opened the pine cones", "Nothing. The forest could never grow back.", "Only snow and ice", "Palm trees from Florida"], "a": [0]},
+  {"src": "33.02", "type": "mc", "q": "What is the difference between a guess and a conclusion?", "o": ["There is no difference.", "A guess uses more evidence than a conclusion.", "A conclusion is just your favorite answer.", "A conclusion is based on evidence you collected, and a guess is not."], "a": [3]}
+ ]
+}
