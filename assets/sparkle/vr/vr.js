@@ -154,13 +154,14 @@
   /* sort game (week 19): one card at a time goes into one of two bins; an IN card then asks which part takes it in */
   function renderSort(i, p) {
     var h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
-      '<div class="vr-fossil"' + (st.m[i] ? '' : ' draggable="true"') + ' id="vr-fos"><img src="' + p.img + '" alt="' + esc(p.alt) + '">' + esc(p.name) + '</div><div>';
+      '<div class="vr-fossil"' + (st.m[i] ? '' : ' draggable="true"') + ' id="vr-fos"><img src="' + p.img + '" alt="' + esc(p.alt) + '">' + esc(p.name) + (p.facts ? '<small>' + esc(p.facts) + '</small>' : '') + '</div><div>';
     if (!st.m[i]) {
-      h += '<div class="vr-gstep">' + esc(L.q1) + '</div><div class="vr-bins">' + Object.keys(G.bins).map(function (k) {
+      h += '<div class="vr-gstep">' + esc(p.q || L.q1) + '</div><div class="vr-bins' + (Object.keys(G.bins).length > 2 ? ' n4' : '') + '">' + Object.keys(G.bins).map(function (k) {
         return '<button type="button" class="vr-bin" data-b="' + k + '">' + esc(G.bins[k]) + '</button>';
       }).join('') + '</div>';
     } else {
       h += '<div class="vr-fb ok">' + esc(p.ok) + '</div>';
+      if (p.proof) h += '<figure class="vr-proof"><img src="' + p.proof.img + '" alt="' + esc(p.proof.alt) + '"><figcaption>' + esc(p.proof.cap) + '</figcaption></figure>';
       if (p.place) h += '<div class="vr-gstep">' + esc(L.q2) + '</div><div class="vr-place">' + Object.keys(G.places).map(function (k) {
         return '<button type="button" data-pl="' + k + '">' + esc(G.places[k]) + '</button>';
       }).join('') + '</div>';

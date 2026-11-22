@@ -150,3 +150,19 @@ main.vr{padding:18px 22px 30px}
 .vr-bin:hover,.vr-bin.drop{border-color:#E3B04B;background:#FFF9EA}
 .vr-bin.no{border-color:#B5532A;animation:vrshake .35s}
 .vr-next{border:0;background:#2E7D32;color:#fff;border-radius:12px;padding:10px 22px;font:800 17px Nunito,Arial,sans-serif;cursor:pointer;margin:6px 0}
+
+/* week 20+: 4 arrow bins, real-photo proof, storyboard hook */
+.vr-bins.n4{grid-template-columns:repeat(4,1fr)}
+.vr-bins.n4 .vr-bin{padding:18px 4px}
+.vr-proof{margin:6px 0;max-width:300px}
+.vr-proof img{width:100%;border-radius:10px;display:block}
+.vr-proof figcaption{font-size:14.5px;line-height:1.35;color:#5b5140;margin-top:3px}
+.vr-sheet .ph.strip{grid-template-columns:1fr}
+.vr-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;background:#14110D;padding:10px;border-radius:10px}
+.vr-strip figure{margin:0;background:#fffdf6;border-radius:6px;padding:5px;transform:none;box-shadow:none}
+.vr-strip img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px;display:block}
+.vr-strip figcaption{font:700 13.5px/1.25 Nunito,Arial,sans-serif;padding:4px 2px 1px;color:#2a241d}
+.vr-strip .blank div{aspect-ratio:4/3;border:3px dashed #b9a67c;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:900;color:#b9a67c}
+.vr-stripcap{font-size:14.5px;margin:6px 2px 0;color:#5b5140}
+@media (max-width:560px){.vr-bins.n4,.vr-strip{grid-template-columns:repeat(2,1fr)}}
+.vr-fossil img[src*="svg"]{aspect-ratio:4/3}
