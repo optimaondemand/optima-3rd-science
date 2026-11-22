@@ -143,3 +143,10 @@ main.vr{padding:18px 22px 30px}
 .vr-fossil.drop{outline:4px solid #E3B04B}
 .vr-opt[draggable=true]{cursor:grab}
 .vr-trait{display:block;font-size:14.5px;line-height:1.3;font-weight:600;margin:2px 0 4px}
+
+/* week 19+: sort game bins and Next button */
+.vr-bins{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:6px 0}
+.vr-bin{border:3px dashed var(--wl-line);background:#fff;border-radius:14px;padding:26px 8px;font:800 17px/1.3 Nunito,Arial,sans-serif;cursor:pointer;color:var(--wl-ink)}
+.vr-bin:hover,.vr-bin.drop{border-color:#E3B04B;background:#FFF9EA}
+.vr-bin.no{border-color:#B5532A;animation:vrshake .35s}
+.vr-next{border:0;background:#2E7D32;color:#fff;border-radius:12px;padding:10px 22px;font:800 17px Nunito,Arial,sans-serif;cursor:pointer;margin:6px 0}

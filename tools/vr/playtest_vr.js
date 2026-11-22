@@ -45,11 +45,21 @@ const path = require('path'), fs = require('fs');
   const placeKeys = await page.evaluate(() => Object.keys(window.VR.game.places));
   const pdfTitle = await page.evaluate(() => window.VR.game.labels.pdfTitle);
   let g = 0;
+  const gtype = await page.evaluate(() => window.VR.game.type);
+  const bins = await page.evaluate(() => window.VR.game.pairs.map(p => p.bin));
+  const binKeys = await page.evaluate(() => Object.keys(window.VR.game.bins || {}));
   for (const [cousin, place] of pairs) {
-    const wrong = keys.find(k => k !== cousin);
-    await page.click(`.vr-opt[data-k="${wrong}"]`);
-    if (g === 0) await shot('08-miss', '#vr-game');
-    await page.click(`.vr-opt[data-k="${cousin}"]`);
+    if (gtype === 'sort') {
+      await page.click(`.vr-bin[data-b="${binKeys.find(k => k !== bins[g])}"]`);
+      if (g === 0) await shot('08-miss', '#vr-game');
+      await page.click(`.vr-bin[data-b="${bins[g]}"]`);
+      if (!place) { if (g === 1) await shot('09b-next', '#vr-game'); await page.click('#vr-next'); g++; continue; }
+    } else {
+      const wrong = keys.find(k => k !== cousin);
+      await page.click(`.vr-opt[data-k="${wrong}"]`);
+      if (g === 0) await shot('08-miss', '#vr-game');
+      await page.click(`.vr-opt[data-k="${cousin}"]`);
+    }
     const otherPlace = placeKeys.find(k => k !== place);
     await page.click(`.vr-place button[data-pl="${otherPlace}"]`);
     if (g === 0) await shot('09-place-miss', '#vr-game');

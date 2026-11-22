@@ -47,8 +47,12 @@ for c, t in W['voice'].items():
 S = W['studio']
 if S['write']['min'] < 20: F('Studio writing minimum is 20 words')
 if len(S['write']['frames']) != 2: F('Studio needs exactly 2 sentence frames')
-keys = {c['key'] for c in S['cousins']}
+keys = {c['key'] for c in S.get('cousins', [])}
 for p in S['pairs']:
+    if S.get('type') == 'sort':
+        if p.get('bin') not in S.get('bins', {}): F('pair bin missing: ' + str(p.get('bin')))
+        if p.get('place') and p['place'] not in S['places']: F('pair place missing: ' + p['place'])
+        continue
     if p['cousin'] not in keys: F('pair cousin missing: ' + p['cousin'])
     if p['place'] not in S['places']: F('pair place missing: ' + p['place'])
 

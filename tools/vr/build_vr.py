@@ -128,13 +128,13 @@ def build(week_path, out_path, repo=False):
     for p in S['pairs']:
         p['fossil'] = p.get('card') or p['fossil']
     cast = S.get('type') == 'cast'   # casting call: drag a picture onto the card; the board shows the picked picture
-    cousin_src = {c['key']: c['img'] for c in S['cousins']}
+    cousin_src = {c['key']: c['img'] for c in S.get('cousins', [])}
     frames = ''.join('<div class="vr-frame" data-f="%d">Frame %d<img src="%s" alt=""><span class="pl"></span></div>'
                      % (i, i + 1, img(cousin_src[p['cousin']] if S.get('frameImg') == 'cousin' else p['fossil']['img'])) for i, p in enumerate(S['pairs']))
-    cousin_imgs = {c['key']: img(c['img']) for c in S['cousins']}
+    cousin_imgs = {c['key']: img(c['img']) for c in S.get('cousins', [])}
     fossil_imgs = [img(p['fossil']['img']) for p in S['pairs']]
     labels = {'done': 'All 4 frames are on the storyboard. Nice work, crew!', 'q2': 'Where did this living thing live?',
-              'pdfTitle': 'Fossil cousins', 'cols': ['Fossil', 'Living cousin', 'Where it lived']}
+              'q1': 'Where does it go?', 'next': 'Next ▶', 'pdfTitle': 'Fossil cousins', 'cols': ['Fossil', 'Living cousin', 'Where it lived']}
     labels.update(S.get('labels', {}))
     wr = S['write']
     wframes = ''.join('<div class="vr-lead">%s</div><textarea data-w="%d" aria-label="%s" placeholder="%s"></textarea>'
@@ -159,11 +159,11 @@ def build(week_path, out_path, repo=False):
               % (E(S['kicker']), E(S['title']), opti(W['opti']['studio'], 'studio'), S['look'], E(S['do']), frames, chips, wframes, wr['min'], E(W['stamp']), E(S['full'])))
 
     game = {
-        'pairs': [{'name': p['fossil']['name'], 'alt': p['fossil']['alt'], 'img': fossil_imgs[i], 'cousin': p['cousin'], 'place': p['place'],
-                   'ok': p['ok'], 'placeMiss': p['placeMiss'], 'facts': p['fossil'].get('facts', '')} for i, p in enumerate(S['pairs'])],
-        'labels': labels, 'dragOpts': cast, 'framePl': S.get('frameImg', ''),
-        'cousins': [{'key': c['key'], 'name': c['name'], 'alt': c['alt'], 'img': cousin_imgs[c['key']]} for c in S['cousins']],
-        'places': S['places'], 'miss': S['miss'], 'min': wr['min'], 'frames': [f['lead'] for f in wr['frames']],
+        'pairs': [{'name': p['fossil']['name'], 'alt': p['fossil']['alt'], 'img': fossil_imgs[i], 'cousin': p.get('cousin', ''), 'place': p.get('place', ''), 'bin': p.get('bin', ''), 'miss': p.get('miss', ''),
+                   'ok': p['ok'], 'placeMiss': p.get('placeMiss', ''), 'facts': p['fossil'].get('facts', '')} for i, p in enumerate(S['pairs'])],
+        'labels': labels, 'dragOpts': cast, 'framePl': S.get('framePl', S.get('frameImg', '')), 'type': S.get('type', ''), 'bins': S.get('bins', {}),
+        'cousins': [{'key': c['key'], 'name': c['name'], 'alt': c['alt'], 'img': cousin_imgs[c['key']]} for c in S.get('cousins', [])],
+        'places': S.get('places', {}), 'miss': S['miss'], 'min': wr['min'], 'frames': [f['lead'] for f in wr['frames']],
     }
     cfg = {'pre': W['id'], 'clips': clips, 'game': game, 'canvas': W['canvasName'], 'title': W['title'], 'week': wk,
            'lesson': W['lesson'], 'stamp': W['stamp'], 'video': 'assets/video/teacher/g3sci-vr-%s.mp4' % wk if repo else ''}

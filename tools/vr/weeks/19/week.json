@@ -1,0 +1,270 @@
+{
+ "id": "g3sci-vr-19",
+ "week": 19,
+ "lesson": "19.01",
+ "lessonTitle": "How Do Plants Make Food?",
+ "title": "The Food Factory",
+ "emoji": "🎬",
+ "canvasName": "19.01 VR · The Food Factory",
+ "details": [
+  "📅 Q3 · Unit 7 · Plants & Environmental Interactions",
+  "📖 Week 19 · goes with Lesson 19.01",
+  "🌎 CPALMS SC.3.L.14.1, SC.3.L.17.2 · NGSS 3-LS1-1",
+  "⏱ About 15 minutes"
+ ],
+ "map": "The Countryside",
+ "mapWord": "Countryside",
+ "badge": {
+  "emoji": "☀️",
+  "name": "Sun Reel",
+  "line": "Only VR crews earn this one. Your shot goes in Opti's film."
+ },
+ "stamp": "Studio Day · Wonder Films",
+ "hook": {
+  "look": "This is a <b>clapperboard</b>. A film crew snaps it shut to start a scene.",
+  "head": "Scene 19 · The Food Factory",
+  "sub": "Wonder Films · Take 1",
+  "rows": [
+   [
+    "Location",
+    "A sunny field"
+   ],
+   [
+    "Star",
+    "One sunflower"
+   ],
+   [
+    "Mystery",
+    "Where is its food?"
+   ]
+  ],
+  "img": "hook",
+  "alt": "Sunlight shining through bright green tree leaves",
+  "cap": "Tree leaves in the sun. Green leaves make food for their plant.",
+  "note": "A plant never eats lunch. So where does its food come from?"
+ },
+ "opti": {
+  "brief": "Welcome to the field, crew. We film Scene 19, The Food Factory. Show me what a plant uses to make food, then take the shot.",
+  "studio": "No headset today? Come to the studio. Sort each card in or out. Then tell me what you think."
+ },
+ "vr": {
+  "look": "A <b>model</b> is a copy of something real. <b>Photosynthesis</b> is how a plant makes its own food.",
+  "groups": [
+   {
+    "title": "🌻 The factory: 1 plant",
+    "models": [
+     {
+      "name": "Sunflower Stage 4",
+      "word": "Sunflower",
+      "img": "sunflower",
+      "alt": "Big yellow sunflower with green leaves",
+      "trait": "Its leaves make the food."
+     }
+    ]
+   },
+   {
+    "title": "🧺 What goes in, and what comes out",
+    "models": [
+     {
+      "name": "Sun (Large)",
+      "word": "Sun",
+      "img": "sun",
+      "alt": "Bright sun shining through clouds in a blue sky",
+      "trait": "Goes in: sunlight."
+     },
+     {
+      "name": "Water Jug",
+      "word": "Water Jug",
+      "img": "jug",
+      "alt": "Glass jug full of water",
+      "trait": "Goes in: water."
+     },
+     {
+      "name": "C02 Molecule",
+      "word": "C02",
+      "img": "stomata",
+      "alt": "Leaf skin under a microscope, with tiny openings that let air in",
+      "trait": "Air goes in. Type C, zero, 2."
+     },
+     {
+      "name": "Glucose Model",
+      "word": "Glucose",
+      "img": "sugar",
+      "alt": "Clear white sugar crystals up close",
+      "trait": "Comes out: sugar."
+     }
+    ]
+   }
+  ],
+  "steps": [
+   {
+    "where": "🖥️ Before your headset",
+    "title": "Know your models",
+    "clip": "step1",
+    "html": "<p>Type each gray word in the <b>Filter models</b> box.</p>@MODELS@<p>This list is also on the <b>Canvas</b> tab in VR.</p>"
+   },
+   {
+    "where": "🥽 In VR",
+    "title": "Go on location",
+    "clip": "step2",
+    "html": "<div class=\"vr-how\">🔗 <b>First time only:</b> connect Canvas at <a href=\"https://xr.optimaed.com\" target=\"_blank\" rel=\"noopener\">xr.optimaed.com</a>. See <b>Having trouble in VR?</b> below.</div><p>Open the <b>On-Demand</b> app. Click <b>Explore</b>. Type <b>Countryside</b> in <b>Filter environments</b>. Click <b>The Countryside</b>, then <b>Begin Solo</b>.</p>"
+   },
+   {
+    "title": "Build the scene",
+    "clip": "step3",
+    "html": "<p>Press the <b>top button on your right controller</b>, then click <b>Models</b>. Stand the Sunflower up. Put the Sun above it and the Water Jug by its stem. Put the C02 Molecule and the Glucose Model by a leaf.</p><div class=\"vr-how\">✋ Grab a model with the <b>palm trigger</b>. Use <b>both</b> palm triggers to make it bigger or smaller.</div><div class=\"vr-say\">🗣 <b>Say it out loud:</b> “The plant uses ___, ___ and ___ to make ___.”</div>"
+   },
+   {
+    "title": "Take the shot and send it",
+    "clip": "step4",
+    "html": "<p>Stand back so the whole scene fits. Open your menu, click <b>Library</b>, then <b>Camera</b>. Click <b>Take photo</b>.</p><p>Click the <b>Canvas</b> tab and pick <b>@CANVAS@</b>. Click <b>Choose from My Files</b>, pick your photo, click <b>Use this file</b>, then <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.</p><div class=\"vr-how\">🔁 Want to fix it? Move the models, take a new photo and send it again.</div>"
+   },
+   {
+    "where": "✅ After",
+    "title": "Check and leave",
+    "clip": "step5",
+    "html": "<p>Press the <b>Meta button</b>, then click <b>Quit</b>. Check that your photo is in the Canvas assignment. Not there? Open <b>Having trouble in VR?</b></p>"
+   }
+  ],
+  "extra": {
+   "after": 3,
+   "clip": "extra",
+   "html": "Add oxygen, the gas a leaf gives off. Type zero, 2: <span class=\"vr-word\">02 Molecule</span>"
+  },
+  "full": "Your photo shows the Sunflower with all 4 models around it."
+ },
+ "studio": {
+  "kicker": "Studio Day · no headset",
+  "title": "Stock the factory",
+  "type": "sort",
+  "framePl": "bin",
+  "labels": {
+   "done": "Sunlight, water and air are in. Now the leaves can make sugar!",
+   "q1": "Does the plant use it to make food?",
+   "q2": "Which part takes it in?",
+   "next": "Next card ▶",
+   "pdfTitle": "Stock the factory",
+   "cols": [
+    "Card",
+    "My sort",
+    "Part that takes it in"
+   ]
+  },
+  "look": "A <b>factory</b> is a place where things get made. A plant is a food factory. An <b>ingredient</b> is something you need to make something. One card comes up at a time.",
+  "do": "Tap where the card goes, or drag the card there. For each ingredient, tap the part that takes it in.",
+  "bins": {
+   "in": "✅ Goes in",
+   "out": "🚫 Not an ingredient"
+  },
+  "places": {
+   "leaves": "🍃 The leaves",
+   "roots": "🌱 The roots"
+  },
+  "pairs": [
+   {
+    "card": {
+     "img": "sun",
+     "name": "Sunlight",
+     "alt": "Bright sun shining through clouds in a blue sky"
+    },
+    "bin": "in",
+    "place": "leaves",
+    "ok": "In! A plant needs sunlight to make food.",
+    "miss": "Try again. Think about a plant kept in the dark.",
+    "placeMiss": "Think about which part faces the sun."
+   },
+   {
+    "card": {
+     "img": "sandwich",
+     "name": "A sandwich",
+     "alt": "Toast sandwich on a white plate"
+    },
+    "bin": "out",
+    "ok": "Right! Animals eat food. A plant makes its own.",
+    "miss": "Not this time. A plant never eats. It makes its own food."
+   },
+   {
+    "card": {
+     "img": "watering",
+     "name": "Water",
+     "alt": "Water pouring from an orange watering can onto garden plants"
+    },
+    "bin": "in",
+    "place": "roots",
+    "ok": "In! A plant needs water to make food.",
+    "miss": "Try again. Think about a plant nobody waters.",
+    "placeMiss": "Think about which part is down in the wet soil."
+   },
+   {
+    "card": {
+     "img": "soil",
+     "name": "Soil",
+     "alt": "Two hands holding dark garden soil"
+    },
+    "bin": "out",
+    "ok": "Right! Soil holds the plant and its water. The food is not made of soil.",
+    "miss": "Not this time. Roots take water from the soil. They do not eat the soil."
+   },
+   {
+    "card": {
+     "img": "sky",
+     "name": "Air",
+     "alt": "Blue sky with small white clouds"
+    },
+    "bin": "in",
+    "place": "leaves",
+    "ok": "In! A plant uses a gas from the air called carbon dioxide.",
+    "miss": "Try again. Leaves have tiny openings. What comes in through them?",
+    "placeMiss": "Think about which part has tiny openings."
+   },
+   {
+    "card": {
+     "img": "sugar",
+     "name": "Sugar",
+     "alt": "Clear white sugar crystals up close"
+    },
+    "bin": "out",
+    "ok": "Right! Sugar is what the plant makes. It comes out at the end.",
+    "miss": "Not this time. Sugar is the food the leaves make. It is not an ingredient."
+   }
+  ],
+  "miss": "Try again.",
+  "write": {
+   "min": 20,
+   "frames": [
+    {
+     "lead": "1. What does a plant need to make food?",
+     "starter": "I think a plant needs ___, ___ and ___ because ___."
+    },
+    {
+     "lead": "2. Pick one card that is not an ingredient.",
+     "starter": "I saw that ___ is not an ingredient because ___."
+    }
+   ],
+   "chips": [
+    "photosynthesis",
+    "sunlight",
+    "water",
+    "air",
+    "carbon dioxide",
+    "sugar",
+    "leaves",
+    "roots",
+    "soil",
+    "energy",
+    "because"
+   ]
+  },
+  "full": "You sorted all 6 cards and picked the part for each ingredient. Your 2 sentences have at least 20 words."
+ },
+ "voice": {
+  "brief": "Welcome to the field, crew. We film Scene 19, The Food Factory. Show me what a plant uses to make food, then take the shot.",
+  "step1": "Before your headset goes on, meet your five models. Learn each gray search word. You will type it in VR.",
+  "step2": "Put on your headset. Click Explore, type Countryside, and pick The Countryside. Then click Begin Solo.",
+  "step3": "Stand the sunflower up first. Put what goes in around it. Hold the sugar by a leaf. Then tell me the recipe.",
+  "extra": "Got time? Add the gas a leaf gives off. That shot is just for VR crews.",
+  "step4": "Step back so the whole scene fits. Click Library, then Camera, and take the shot. Then send it to Canvas.",
+  "step5": "Press the Meta button and click Quit. Then open Canvas. Your photo should be waiting there.",
+  "studio": "No headset today? Come to the studio. Sort each card in or out. Then tell me what you think."
+ }
+}

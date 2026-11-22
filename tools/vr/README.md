@@ -20,3 +20,4 @@ playtest prints one line: errors [], steps 5, badge true, help 14/14, game n/n, 
 - **Casting call** (week 18): add `"type": "cast"`, `"frameImg": "cousin"`, `studio.labels` (done, q2, pdfTitle, cols) and give each round a `card` (img, name, alt, facts). Drag a picture onto the place card, then tap the trait. `studio.places` holds the trait buttons.
 - A model card can carry one `trait` line (week 18).
 - playtest_vr.js reads the place keys and the PDF title from the page, so it plays either game.
+- **Sort** (week 19): `"type": "sort"`, `"framePl": "bin"`, `studio.bins` (two bins), each round a `card` + `bin` + `ok` + `miss`; a round with a `place` then asks the follow-up from `studio.places`, a round without one shows a Next button. Labels add `q1` and `next`. No `cousins` needed.
