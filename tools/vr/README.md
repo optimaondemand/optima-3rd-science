@@ -21,3 +21,4 @@ playtest prints one line: errors [], steps 5, badge true, help 14/14, game n/n, 
 - A model card can carry one `trait` line (week 18).
 - playtest_vr.js reads the place keys and the PDF title from the page, so it plays either game.
 - **Sort** (week 19): `"type": "sort"`, `"framePl": "bin"`, `studio.bins` (two bins), each round a `card` + `bin` + `ok` + `miss`; a round with a `place` then asks the follow-up from `studio.places`, a round without one shows a Next button. Labels add `q1` and `next`. No `cousins` needed.
+- Week 20 additions (all optional, DATA only): a sort round can carry its own question `q`, a drawn card (`card.art` = `img/<key>.svg`, a model with no words on it; say "A model" in `facts`) and a real-photo `proof` shown after the right answer; more than 2 bins lay out as 4 arrows. The hook can be a storyboard: `hook.strip` (photos with captions) + `hook.blank` instead of `hook.img`.

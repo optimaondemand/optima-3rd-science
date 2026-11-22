@@ -1,0 +1,274 @@
+{
+ "id": "g3sci-vr-20",
+ "week": 20,
+ "lesson": "20.01",
+ "lessonTitle": "How Do Plants Respond to Their Environment?",
+ "title": "The Leaning Plant",
+ "emoji": "🎬",
+ "canvasName": "20.01 VR · The Leaning Plant",
+ "details": [
+  "📅 Q3 · Unit 7 · Plants & Environmental Interactions",
+  "📖 Week 20 · goes with Lesson 20.01",
+  "🌎 CPALMS SC.3.L.14.2 · NGSS 3-LS1-1",
+  "⏱ About 15 minutes"
+ ],
+ "map": "Tranquil Forest",
+ "mapWord": "Tranquil",
+ "badge": {
+  "emoji": "🎥",
+  "name": "Tilted Tripod",
+  "line": "Only VR crews earn this one. Your shot goes in Opti's film."
+ },
+ "stamp": "Studio Day · Wonder Films",
+ "hook": {
+  "look": "This is a <b>storyboard</b>. It shows a film's shots in order. The last frame is blank. That one is yours.",
+  "head": "Scene 20 · The Leaning Plant",
+  "sub": "Wonder Films · Storyboard",
+  "rows": [],
+  "strip": [
+   {
+    "img": "straight",
+    "alt": "Young sunflower plants standing straight up in red pots",
+    "cap": "Standing straight"
+   },
+   {
+    "img": "window",
+    "alt": "Orchid on a windowsill with its leaves and flowers leaning toward the window",
+    "cap": "Leaning to the window"
+   },
+   {
+    "img": "tipped",
+    "alt": "Potted plant whose stems hang over the pot, with the tips curving back up",
+    "cap": "Fell over, growing up again"
+   }
+  ],
+  "blank": "Your shot",
+  "cap": "Three real plants. None of them can walk.",
+  "note": "A plant has no muscles. So how does it lean?"
+ },
+ "opti": {
+  "brief": "Welcome to the forest, crew. We film Scene 20, The Leaning Plant. Show me how a plant responds, then take the shot.",
+  "studio": "No headset today? Come to the studio. Point which way each plant will grow. Then tell me what you think."
+ },
+ "vr": {
+  "look": "A <b>model</b> is a copy of something real. A <b>stimulus</b> is something a plant responds to, like light.",
+  "groups": [
+   {
+    "title": "🌻 The plant",
+    "models": [
+     {
+      "name": "Sunflower Stage 3",
+      "word": "Sunflower",
+      "img": "sunflower",
+      "alt": "Big yellow sunflower with green leaves",
+      "trait": "Its stem grows toward light."
+     },
+     {
+      "name": "Plant Seeds",
+      "word": "Plant Seeds",
+      "img": "seeds",
+      "alt": "Pile of black sunflower seeds",
+      "trait": "Their roots will grow down."
+     }
+    ]
+   },
+   {
+    "title": "💡 What it responds to",
+    "models": [
+     {
+      "name": "Sun (Large)",
+      "word": "Sun",
+      "img": "sun",
+      "alt": "Bright sun shining through clouds in a blue sky",
+      "trait": "A stimulus: light."
+     },
+     {
+      "name": "Water Jug",
+      "word": "Water Jug",
+      "img": "jug",
+      "alt": "Glass jug full of water",
+      "trait": "A stimulus: water."
+     }
+    ]
+   }
+  ],
+  "steps": [
+   {
+    "where": "🖥️ Before your headset",
+    "title": "Know your models",
+    "clip": "step1",
+    "html": "<p>Type each gray word in the <b>Filter models</b> box.</p>@MODELS@<p>This list is also on the <b>Canvas</b> tab in VR.</p>"
+   },
+   {
+    "where": "🥽 In VR",
+    "title": "Go on location",
+    "clip": "step2",
+    "html": "<div class=\"vr-how\">🔗 <b>First time only:</b> connect Canvas at <a href=\"https://xr.optimaed.com\" target=\"_blank\" rel=\"noopener\">xr.optimaed.com</a>. See <b>Having trouble in VR?</b> below.</div><p>Open the <b>On-Demand</b> app. Click <b>Explore</b>. Type <b>Tranquil</b> in <b>Filter environments</b>. Click <b>Tranquil Forest</b>, then <b>Begin Solo</b>.</p>"
+   },
+   {
+    "title": "Build the scene",
+    "clip": "step3",
+    "html": "<p>Press the <b>top button on your right controller</b>, then click <b>Models</b>. Put the Sun low on one side. Lean the Sunflower toward it. Set the Water Jug on the other side and the Plant Seeds on the ground.</p><div class=\"vr-how\">✋ Grab a model with the <b>palm trigger</b>. Turn your hand to lean it. Use <b>both</b> palm triggers to make it bigger or smaller.</div><div class=\"vr-say\">🗣 <b>Say it out loud:</b> “The stem grows toward ___. The roots grow toward ___.”</div>"
+   },
+   {
+    "title": "Take the shot and send it",
+    "clip": "step4",
+    "html": "<p>Stand back so the whole scene fits. Open your menu, click <b>Library</b>, then <b>Camera</b>. Click <b>Take photo</b>.</p><p>Click the <b>Canvas</b> tab and pick <b>@CANVAS@</b>. Click <b>Choose from My Files</b>, pick your photo, click <b>Use this file</b>, then <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.</p><div class=\"vr-how\">🔁 Want to fix it? Move the models, take a new photo and send it again.</div>"
+   },
+   {
+    "where": "✅ After",
+    "title": "Check and leave",
+    "clip": "step5",
+    "html": "<p>Press the <b>Meta button</b>, then click <b>Quit</b>. Check that your photo is in the Canvas assignment. Not there? Open <b>Having trouble in VR?</b></p>"
+   }
+  ],
+  "extra": {
+   "after": 3,
+   "clip": "extra",
+   "html": "Add a sprout standing straight up: <span class=\"vr-word\">Sunflower Stage 1</span>"
+  },
+  "full": "Your photo shows the Sunflower leaning toward the Sun, with the Water Jug and Plant Seeds."
+ },
+ "studio": {
+  "kicker": "Studio Day · no headset",
+  "title": "Point the plant",
+  "type": "sort",
+  "framePl": "bin",
+  "labels": {
+   "done": "All 4 plants are pointed the right way. Nice work, crew!",
+   "q1": "Which way will it grow?",
+   "q2": "What is it responding to?",
+   "next": "Next ▶",
+   "pdfTitle": "Point the plant",
+   "cols": [
+    "Picture",
+    "It grows",
+    "It responds to"
+   ]
+  },
+  "look": "Each picture is a <b>model</b>, a simple drawing of a plant. A <b>stimulus</b> is something a plant responds to. A <b>response</b> is the change in how it grows.",
+  "do": "Tap the arrow that shows which way it will grow, or drag the picture onto the arrow. Then tap the stimulus.",
+  "bins": {
+   "up": "⬆️ Up",
+   "down": "⬇️ Down",
+   "left": "⬅️ Left",
+   "right": "➡️ Right"
+  },
+  "places": {
+   "light": "💡 Light",
+   "water": "💧 Water",
+   "gravity": "🌎 Gravity"
+  },
+  "pairs": [
+   {
+    "card": {
+     "art": "a-lamp",
+     "name": "A lamp on one side",
+     "alt": "Drawing of a sprout standing straight in a pot, with a lamp shining on its right",
+     "facts": "A model. The lamp is on the right."
+    },
+    "q": "Which way will the stem grow?",
+    "bin": "right",
+    "place": "light",
+    "ok": "Yes! The stem grows toward the lamp.",
+    "miss": "Try again. Where is the lamp?",
+    "placeMiss": "Think about what the lamp gives off.",
+    "proof": {
+     "img": "window",
+     "alt": "Orchid on a windowsill with its leaves and flowers leaning toward the window",
+     "cap": "A real plant leaning toward a window."
+    }
+   },
+   {
+    "card": {
+     "art": "a-seed",
+     "name": "A seed planted upside down",
+     "alt": "Drawing of a seed under the ground, with its tiny root pointing up",
+     "facts": "A model. The white tip is the root."
+    },
+    "q": "Which way will the root grow?",
+    "bin": "down",
+    "place": "gravity",
+    "ok": "Yes! The root turns and grows down.",
+    "miss": "Try again. Roots do not stay pointing at the sky.",
+    "placeMiss": "Think about what pulls everything down.",
+    "proof": {
+     "img": "radicle",
+     "alt": "Two dark seeds, each with a white root growing down",
+     "cap": "Real seeds. Each root grows down."
+    }
+   },
+   {
+    "card": {
+     "art": "a-water",
+     "name": "Wet soil on one side",
+     "alt": "Drawing of a small plant with short roots, and wet soil under the ground on the left",
+     "facts": "A model. The blue patch is wet soil."
+    },
+    "q": "Which way will the roots grow?",
+    "bin": "left",
+    "place": "water",
+    "ok": "Yes! The roots grow toward the wet soil.",
+    "miss": "Try again. Where is the wet soil?",
+    "placeMiss": "Think about what the roots are reaching for."
+   },
+   {
+    "card": {
+     "art": "a-tipped",
+     "name": "A pot tipped on its side",
+     "alt": "Drawing of a potted plant lying on its side, with the stem pointing right",
+     "facts": "A model. Light comes from all sides."
+    },
+    "q": "Which way will the stem grow?",
+    "bin": "up",
+    "place": "gravity",
+    "ok": "Yes! The stem turns and grows up again.",
+    "miss": "Try again. Stems grow the opposite way from roots.",
+    "placeMiss": "Think about how a plant knows up from down.",
+    "proof": {
+     "img": "tipped",
+     "alt": "Potted plant whose stems hang over the pot, with the tips curving back up",
+     "cap": "A real plant. Its stems fell over, and the tips grew up again."
+    }
+   }
+  ],
+  "miss": "Try again.",
+  "write": {
+   "min": 20,
+   "frames": [
+    {
+     "lead": "1. Why does a plant by a window lean?",
+     "starter": "I think the stem leans because ___."
+    },
+    {
+     "lead": "2. Pick one picture. What did the plant respond to?",
+     "starter": "I saw the ___ grow ___ because of ___."
+    }
+   ],
+   "chips": [
+    "stimulus",
+    "response",
+    "light",
+    "water",
+    "gravity",
+    "stem",
+    "roots",
+    "toward",
+    "up",
+    "down",
+    "because"
+   ]
+  },
+  "full": "You pointed all 4 plants and picked each stimulus. Your 2 sentences have at least 20 words."
+ },
+ "voice": {
+  "brief": "Welcome to the forest, crew. We film Scene 20, The Leaning Plant. Show me how a plant responds, then take the shot.",
+  "step1": "Before your headset goes on, meet your four models. Learn each gray search word. You will type it in VR.",
+  "step2": "Put on your headset. Click Explore, type Tranquil, and pick Tranquil Forest. Then click Begin Solo.",
+  "step3": "Put the sun on one side. Lean the sunflower toward it. Put the water across from it. Then tell me why.",
+  "extra": "Got time? Add a sprout that stands straight up. That shot is just for VR crews.",
+  "step4": "Step back so the whole scene fits. Click Library, then Camera, and take the shot. Then send it to Canvas.",
+  "step5": "Press the Meta button and click Quit. Then open Canvas. Your photo should be waiting there.",
+  "studio": "No headset today? Come to the studio. Point which way each plant will grow. Then tell me what you think."
+ }
+}

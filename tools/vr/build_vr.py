@@ -45,6 +45,15 @@ def build(week_path, out_path, repo=False):
             return 'assets/sparkle/vr-%s/img/%s.jpg' % (wk, key)
         return b64(os.path.join(wdir, 'img', key + '.jpg'), 'image/jpeg')
 
+    def art(key):
+        # a drawn model (weeks/WW/img/<key>.svg), used where a real photo would give the answer away
+        if repo:
+            return 'assets/sparkle/vr-%s/img/%s.svg' % (wk, key)
+        return b64(os.path.join(wdir, 'img', key + '.svg'), 'image/svg+xml')
+
+    def pic(card):
+        return art(card['art']) if card.get('art') else img(card['img'])
+
     def shared(name):
         if repo:
             return 'assets/sparkle/' + name
@@ -96,11 +105,17 @@ def build(week_path, out_path, repo=False):
     # ---------- hook ----------
     h = W['hook']
     rows = ''.join('<tr><td>%s</td><td>%s</td></tr>' % (E(a), E(b)) for a, b in h['rows'])
+    if h.get('strip'):
+        # storyboard hook: a strip of real photos and one blank frame for the student's shot
+        fig = ('<div><div class="vr-strip">' + ''.join('<figure><img src="%s" alt="%s"><figcaption>%s</figcaption></figure>' % (img(f['img']), E(f['alt']), E(f['cap'])) for f in h['strip'])
+               + '<figure class="blank"><div>?</div><figcaption>%s</figcaption></figure></div><p class="vr-stripcap">%s</p></div>' % (E(h['blank']), E(h['cap'])))
+    else:
+        fig = '<figure><img src="%s" alt="%s"><figcaption>%s</figcaption></figure>' % (img(h['img']), E(h['alt']), E(h['cap']))
     hook = ('<div class="wl-card"><div class="wl-look"><b>👀 What am I looking at?</b> %s</div>'
             '<div class="vr-sheet"><div class="hd"><b>%s</b><span>%s</span></div><table>%s</table>'
-            '<div class="ph"><figure><img src="%s" alt="%s"><figcaption>%s</figcaption></figure>'
+            '<div class="ph%s">%s'
             '<div class="vr-note"><small>Note from Opti</small>%s</div></div></div></div>'
-            % (h['look'], E(h['head']), E(h['sub']), rows, img(h['img']), E(h['alt']), E(h['cap']), E(h['note'])))
+            % (h['look'], E(h['head']), E(h['sub']), rows, ' strip' if h.get('strip') else '', fig, E(h['note'])))
 
     opti_img = shared('opti.png')
 
@@ -130,9 +145,9 @@ def build(week_path, out_path, repo=False):
     cast = S.get('type') == 'cast'   # casting call: drag a picture onto the card; the board shows the picked picture
     cousin_src = {c['key']: c['img'] for c in S.get('cousins', [])}
     frames = ''.join('<div class="vr-frame" data-f="%d">Frame %d<img src="%s" alt=""><span class="pl"></span></div>'
-                     % (i, i + 1, img(cousin_src[p['cousin']] if S.get('frameImg') == 'cousin' else p['fossil']['img'])) for i, p in enumerate(S['pairs']))
+                     % (i, i + 1, (img(cousin_src[p['cousin']]) if S.get('frameImg') == 'cousin' else pic(p['fossil']))) for i, p in enumerate(S['pairs']))
     cousin_imgs = {c['key']: img(c['img']) for c in S.get('cousins', [])}
-    fossil_imgs = [img(p['fossil']['img']) for p in S['pairs']]
+    fossil_imgs = [pic(p['fossil']) for p in S['pairs']]
     labels = {'done': 'All 4 frames are on the storyboard. Nice work, crew!', 'q2': 'Where did this living thing live?',
               'q1': 'Where does it go?', 'next': 'Next ▶', 'pdfTitle': 'Fossil cousins', 'cols': ['Fossil', 'Living cousin', 'Where it lived']}
     labels.update(S.get('labels', {}))
@@ -159,7 +174,7 @@ def build(week_path, out_path, repo=False):
               % (E(S['kicker']), E(S['title']), opti(W['opti']['studio'], 'studio'), S['look'], E(S['do']), frames, chips, wframes, wr['min'], E(W['stamp']), E(S['full'])))
 
     game = {
-        'pairs': [{'name': p['fossil']['name'], 'alt': p['fossil']['alt'], 'img': fossil_imgs[i], 'cousin': p.get('cousin', ''), 'place': p.get('place', ''), 'bin': p.get('bin', ''), 'miss': p.get('miss', ''),
+        'pairs': [{'name': p['fossil']['name'], 'alt': p['fossil']['alt'], 'img': fossil_imgs[i], 'cousin': p.get('cousin', ''), 'place': p.get('place', ''), 'bin': p.get('bin', ''), 'q': p.get('q', ''), 'proof': ({'img': img(p['proof']['img']), 'alt': p['proof']['alt'], 'cap': p['proof']['cap']} if p.get('proof') else None), 'miss': p.get('miss', ''),
                    'ok': p['ok'], 'placeMiss': p.get('placeMiss', ''), 'facts': p['fossil'].get('facts', '')} for i, p in enumerate(S['pairs'])],
         'labels': labels, 'dragOpts': cast, 'framePl': S.get('framePl', S.get('frameImg', '')), 'type': S.get('type', ''), 'bins': S.get('bins', {}),
         'cousins': [{'key': c['key'], 'name': c['name'], 'alt': c['alt'], 'img': cousin_imgs[c['key']]} for c in S.get('cousins', [])],
