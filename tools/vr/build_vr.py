@@ -141,6 +141,10 @@ def build(week_path, out_path, repo=False):
     S = W['studio']
     if S.get('type') == 'fly':   # week 21: each kind of flower is one round; the flower cards come from studio.flowers
         S['pairs'] = [{'card': {'img': k['img'], 'name': k['plural'], 'alt': k['alt']}, 'ok': k['ok'], 'key': k['key'], 'kind': k['name']} for k in S['kinds']]
+    if S.get('type') == 'clean':   # week 22: one round per piece of litter, plus the last round (the action that helps)
+        A = S['action']
+        S['pairs'] = [{'card': {'img': x['img'], 'name': x['name'], 'alt': x['alt']}, 'ok': x['why']} for x in S['items'] if x.get('trash')]
+        S['pairs'].append({'card': {'img': A['img'], 'name': A['name'], 'alt': A['alt']}, 'ok': A['options'][A['right']]})
     # each round's card: a fossil (week 17) or a place card (week 18, key "card")
     for p in S['pairs']:
         p['fossil'] = p.get('card') or p['fossil']
@@ -178,7 +182,7 @@ def build(week_path, out_path, repo=False):
     game = {
         'pairs': [{'name': p['fossil']['name'], 'alt': p['fossil']['alt'], 'img': fossil_imgs[i], 'cousin': p.get('cousin', ''), 'place': p.get('place', ''), 'bin': p.get('bin', ''), 'key': p.get('key', ''), 'kind': p.get('kind', ''), 'q': p.get('q', ''), 'proof': ({'img': img(p['proof']['img']), 'alt': p['proof']['alt'], 'cap': p['proof']['cap']} if p.get('proof') else None), 'miss': p.get('miss', ''),
                    'ok': p.get('ok', ''), 'placeMiss': p.get('placeMiss', ''), 'facts': p['fossil'].get('facts', '')} for i, p in enumerate(S['pairs'])],
-        'labels': labels, 'dragOpts': cast, 'framePl': S.get('framePl', S.get('frameImg', '')), 'type': S.get('type', ''), 'flowers': [{'id': f['id'], 'kind': f['kind'], 'name': f['name'], 'alt': f['alt'], 'img': img(f['img'])} for f in S.get('flowers', [])], 'bins': S.get('bins', {}),
+        'labels': labels, 'dragOpts': cast, 'framePl': S.get('framePl', S.get('frameImg', '')), 'type': S.get('type', ''), 'items': [{'id': x['id'], 'name': x['name'], 'alt': x['alt'], 'img': img(x['img']), 'trash': bool(x.get('trash')), 'msg': x['msg']} for x in S.get('items', [])], 'action': ({k: S['action'][k] for k in ('q', 'options', 'right', 'miss')} if S.get('action') else None), 'flowers': [{'id': f['id'], 'kind': f['kind'], 'name': f['name'], 'alt': f['alt'], 'img': img(f['img'])} for f in S.get('flowers', [])], 'bins': S.get('bins', {}),
         'cousins': [{'key': c['key'], 'name': c['name'], 'alt': c['alt'], 'img': cousin_imgs[c['key']]} for c in S.get('cousins', [])],
         'places': S.get('places', {}), 'miss': S.get('miss', ''), 'min': wr['min'], 'frames': [f['lead'] for f in wr['frames']],
     }

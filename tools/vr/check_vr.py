@@ -48,6 +48,9 @@ S = W['studio']
 if S['write']['min'] < 20: F('Studio writing minimum is 20 words')
 if len(S['write']['frames']) != 2: F('Studio needs exactly 2 sentence frames')
 keys = {c['key'] for c in S.get('cousins', [])}
+if S.get('type') == 'clean':
+    if len([x for x in S['items'] if x.get('trash')]) < 3: F('clean game: at least 3 pieces of litter')
+    if S['action']['right'] not in S['action']['options']: F('clean game: action.right is not one of the options')
 if S.get('type') == 'fly':
     for k in S['kinds']:
         if len([f for f in S['flowers'] if f['kind'] == k['key']]) != 2: F('fly game: each kind needs exactly 2 flowers: ' + k['key'])

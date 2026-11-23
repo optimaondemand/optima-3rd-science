@@ -1,0 +1,273 @@
+{
+ "id": "g3sci-vr-22",
+ "week": 22,
+ "lesson": "22.01",
+ "lessonTitle": "How Do Humans Affect Ecosystems?",
+ "title": "What Washed In",
+ "emoji": "🎬",
+ "canvasName": "22.01 VR · What Washed In",
+ "details": [
+  "📅 Q3 · Unit 8 · Human Impact & Conservation",
+  "📖 Week 22 · goes with Lesson 22.01",
+  "🌎 CPALMS SC.3.N.1.7 · NGSS 3-LS4-4",
+  "⏱ About 15 minutes"
+ ],
+ "map": "Under The Ocean",
+ "mapWord": "Ocean",
+ "badge": {
+  "emoji": "🌊",
+  "name": "Tide Turner",
+  "line": "Only VR crews earn this one. Your shot goes in Opti's film."
+ },
+ "stamp": "Studio Day · Wonder Films",
+ "hook": {
+  "look": "This is a <b>lost and found tag</b>. It tells where a thing was lost and where it turned up.",
+  "head": "Lost and found",
+  "sub": "Wonder Films · Set office",
+  "rows": [
+   [
+    "Item",
+    "One bottle cap"
+   ],
+   [
+    "Lost",
+    "A parking lot"
+   ],
+   [
+    "Found",
+    "The sea"
+   ]
+  ],
+  "img": "hook",
+  "alt": "Big pile of plastic trash and old fishing gear in front of two metal containers",
+  "cap": "Plastic and old fishing gear picked up from the beaches of Midway Atoll, far out in the Pacific Ocean.",
+  "note": "This island is far from any city. So whose trash is it?"
+ },
+ "opti": {
+  "brief": "Welcome under the sea, crew. We film Scene 22, What Washed In. Show me how trash harms a reef, then take the shot.",
+  "studio": "No headset today? Come to the studio. Clean the creek, but leave what lives there. Then tell me what you think."
+ },
+ "vr": {
+  "look": "A <b>model</b> is a copy of something real. A <b>reef</b> is a rocky sea home built by tiny animals called corals.",
+  "groups": [
+   {
+    "title": "🐢 The reef home",
+    "models": [
+     {
+      "name": "Red Coral",
+      "word": "Red Coral",
+      "img": "redcoral",
+      "alt": "Living red coral with white feathery parts",
+      "trait": "Fish shelter here."
+     },
+     {
+      "name": "Reef Fish 1",
+      "word": "Reef Fish 1",
+      "img": "reeffish",
+      "alt": "Bright yellow reef fish swimming over coral",
+      "trait": "Needs clean water."
+     },
+     {
+      "name": "Green Sea Turtle",
+      "word": "Turtle",
+      "img": "turtle",
+      "alt": "Green sea turtle swimming over a sandy sea floor",
+      "trait": "Can get tangled in nets."
+     }
+    ]
+   },
+   {
+    "title": "🧴 What does not belong",
+    "models": [
+     {
+      "name": "Fishing Net",
+      "word": "Fishing Net",
+      "img": "net",
+      "alt": "Old fishing net caught on a coral reef",
+      "trait": "Keeps trapping animals."
+     },
+     {
+      "name": "School Supplies: Water Bottle",
+      "word": "Water Bottle",
+      "img": "bottle",
+      "alt": "Empty plastic water bottle left in a bush",
+      "trait": "Plastic lasts for many years."
+     }
+    ]
+   }
+  ],
+  "steps": [
+   {
+    "where": "🖥️ Before your headset",
+    "title": "Know your models",
+    "clip": "step1",
+    "html": "<p>Type each gray word in the <b>Filter models</b> box.</p>@MODELS@<p>This list is also on the <b>Canvas</b> tab in VR.</p>"
+   },
+   {
+    "where": "🥽 In VR",
+    "title": "Go on location",
+    "clip": "step2",
+    "html": "<div class=\"vr-how\">🔗 <b>First time only:</b> connect Canvas at <a href=\"https://xr.optimaed.com\" target=\"_blank\" rel=\"noopener\">xr.optimaed.com</a>. See <b>Having trouble in VR?</b> below.</div><p>Open the <b>On-Demand</b> app. Click <b>Explore</b>. Type <b>Ocean</b> in <b>Filter environments</b>. Click <b>Under The Ocean</b>, then <b>Begin Solo</b>.</p>"
+   },
+   {
+    "title": "Build the scene",
+    "clip": "step3",
+    "html": "<p>Press the <b>top button on your right controller</b>, then click <b>Models</b>. Set the Red Coral down, with the Reef Fish and Green Sea Turtle near it. Then add the trash: the Fishing Net and the Water Bottle.</p><div class=\"vr-how\">✋ Grab a model with the <b>palm trigger</b>. Use <b>both</b> palm triggers to make it bigger or smaller.</div><div class=\"vr-say\">🗣 <b>Say it out loud:</b> “The ___ harms the ___ because ___. People can help by ___.”</div>"
+   },
+   {
+    "title": "Take the shot and send it",
+    "clip": "step4",
+    "html": "<p>Stand back so the whole scene fits. Open your menu, click <b>Library</b>, then <b>Camera</b>. Click <b>Take photo</b>.</p><p>Click the <b>Canvas</b> tab and pick <b>@CANVAS@</b>. Click <b>Choose from My Files</b>, pick your photo, click <b>Use this file</b>, then <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.</p><div class=\"vr-how\">🔁 Want to fix it? Move the models, take a new photo and send it again.</div>"
+   },
+   {
+    "where": "✅ After",
+    "title": "Check and leave",
+    "clip": "step5",
+    "html": "<p>Press the <b>Meta button</b>, then click <b>Quit</b>. Check that your photo is in the Canvas assignment. Not there? Open <b>Having trouble in VR?</b></p>"
+   }
+  ],
+  "extra": {
+   "after": 3,
+   "clip": "extra",
+   "html": "Make the reef busier: <span class=\"vr-word\">Clown Fish</span> <span class=\"vr-word\">Star Fish</span>"
+  },
+  "full": "Your photo shows the 3 reef animals, plus the Fishing Net and the Water Bottle."
+ },
+ "studio": {
+  "kicker": "Studio Day · no headset",
+  "title": "Clean the creek",
+  "type": "clean",
+  "framePl": "tag",
+  "labels": {
+   "done": "The creek is clean, and you know how to keep it that way. Nice work, crew!",
+   "step1": "Clean the creek",
+   "step2": "Keep it clean",
+   "start": "Tap one piece of litter, or drag it to the bin.",
+   "bin": "🗑️ Litter bin",
+   "tag": "In the bin",
+   "cleared": "All 4 pieces of litter are in the bin. The living things are still here.",
+   "pdfTitle": "Clean the creek",
+   "cols": [
+    "What I did",
+    "Why it matters"
+   ]
+  },
+  "look": "A <b>creek</b> is a small stream. <b>Litter</b> is trash left on the ground or in the water. Eight things are in this creek. Four live here. Four are litter.",
+  "do": "Tap each piece of litter, or drag it to the bin. Leave the living things where they are.",
+  "items": [
+   {
+    "id": "i1",
+    "name": "Green frog",
+    "img": "frog",
+    "alt": "Green frog sitting on moss",
+    "msg": "Leave the frog. It lives here and eats insects."
+   },
+   {
+    "id": "i2",
+    "name": "Plastic bottle",
+    "img": "bottle",
+    "alt": "Empty plastic water bottle left in a bush",
+    "trash": true,
+    "msg": "In the bin! A plastic bottle lasts for many years and breaks into tiny bits.",
+    "why": "A plastic bottle lasts for many years and breaks into tiny bits."
+   },
+   {
+    "id": "i3",
+    "name": "Water lily",
+    "img": "lily",
+    "alt": "White water lily flower floating among green lily pads",
+    "msg": "Leave the water lily. It gives shade and shelter."
+   },
+   {
+    "id": "i4",
+    "name": "Plastic bag",
+    "img": "bag",
+    "alt": "White plastic bag of trash caught in dry brush",
+    "trash": true,
+    "msg": "In the bin! An animal can swallow a plastic bag or get stuck in it.",
+    "why": "An animal can swallow a plastic bag or get stuck in it."
+   },
+   {
+    "id": "i5",
+    "name": "Old can",
+    "img": "can",
+    "alt": "Rusty old drink can lying on sand",
+    "trash": true,
+    "msg": "In the bin! A can has sharp edges, and small animals can get stuck inside.",
+    "why": "A can has sharp edges, and small animals can get stuck inside."
+   },
+   {
+    "id": "i6",
+    "name": "Sunfish",
+    "img": "fish",
+    "alt": "Small sunfish swimming near rocks under water",
+    "msg": "Leave the fish. This creek is its home."
+   },
+   {
+    "id": "i7",
+    "name": "Cup and straw",
+    "img": "cup",
+    "alt": "Clear plastic cup with a straw lying on wet sand",
+    "trash": true,
+    "msg": "In the bin! Rain can carry a cup and straw down the creek, all the way to the sea.",
+    "why": "Rain can carry a cup and straw down the creek, all the way to the sea."
+   },
+   {
+    "id": "i8",
+    "name": "Dragonfly",
+    "img": "dragonfly",
+    "alt": "Dragonfly resting on a twig",
+    "msg": "Leave the dragonfly. It hunts insects over the water."
+   }
+  ],
+  "action": {
+   "name": "One way to help",
+   "img": "bin",
+   "alt": "Black litter bin with a covered top beside a path",
+   "q": "Which action keeps litter out of the creek?",
+   "options": {
+    "lid": "🚮 Put trash in a bin with a lid",
+    "rain": "🌧️ Leave it for the rain to wash away",
+    "hide": "🍂 Hide it under the leaves"
+   },
+   "right": "lid",
+   "miss": "Try again. Rain can still carry that litter to the creek."
+  },
+  "write": {
+   "min": 20,
+   "frames": [
+    {
+     "lead": "1. How does litter harm a creek?",
+     "starter": "I think litter harms the creek because ___."
+    },
+    {
+     "lead": "2. What is one way people can help?",
+     "starter": "I saw that ___, so people can help by ___."
+    }
+   ],
+   "chips": [
+    "litter",
+    "ecosystem",
+    "habitat",
+    "harm",
+    "help",
+    "plastic",
+    "rain",
+    "animals",
+    "conservation",
+    "because"
+   ]
+  },
+  "full": "You put all 4 pieces of litter in the bin and picked the action that helps. Your 2 sentences have at least 20 words."
+ },
+ "voice": {
+  "brief": "Welcome under the sea, crew. We film Scene 22, What Washed In. Show me how trash harms a reef, then take the shot.",
+  "step1": "Before your headset goes on, meet your five models. Learn each gray search word. You will type it in VR.",
+  "step2": "Put on your headset. Click Explore, type Ocean, and pick Under The Ocean. Then click Begin Solo.",
+  "step3": "Build the reef home first: coral, fish and turtle. Then add the net and the bottle. Tell me what the trash harms.",
+  "extra": "Got time? Make the reef busier with two more animals. That shot is just for VR crews.",
+  "step4": "Step back so the whole scene fits. Click Library, then Camera, and take the shot. Then send it to Canvas.",
+  "step5": "Press the Meta button and click Quit. Then open Canvas. Your photo should be waiting there.",
+  "studio": "No headset today? Come to the studio. Clean the creek, but leave what lives there. Then tell me what you think."
+ }
+}

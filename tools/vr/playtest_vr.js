@@ -48,7 +48,14 @@ const path = require('path'), fs = require('fs');
   const gtype = await page.evaluate(() => window.VR.game.type);
   const bins = await page.evaluate(() => window.VR.game.pairs.map(p => p.bin));
   const binKeys = await page.evaluate(() => Object.keys(window.VR.game.bins || {}));
-  if (gtype === 'fly') {
+  if (gtype === 'clean') {
+    const it = await page.evaluate(() => window.VR.game.items.map(x => [x.id, x.trash]));
+    const act = await page.evaluate(() => [Object.keys(window.VR.game.action.options), window.VR.game.action.right]);
+    await page.click(`.vr-flower[data-id="${it.find(x => !x[1])[0]}"]`); await shot('08-miss', '#vr-game');
+    for (const [id, trash] of it) if (trash) { await page.click(`.vr-flower[data-id="${id}"]`); g++; }
+    await page.click(`.vr-place button[data-a="${act[0].find(k => k !== act[1])}"]`); await shot('09-place-miss', '#vr-game');
+    await page.click(`.vr-place button[data-a="${act[1]}"]`); await page.waitForTimeout(800); g++;
+  } else if (gtype === 'fly') {
     const fl = await page.evaluate(() => window.VR.game.flowers.map(f => [f.id, f.kind]));
     for (const k of [...new Set(fl.map(f => f[1]))]) {
       const mine = fl.filter(f => f[1] === k), other = fl.filter(f => f[1] !== k).pop();

@@ -106,6 +106,7 @@
     }
     $('#vr-write').hidden = true;
     if (G.type === 'fly') { renderFly(); return; }
+    if (G.type === 'clean') { renderClean(); return; }
     if (G.type === 'sort') { renderSort(i, P[i]); return; }
     var p = P[i], h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
       '<div class="vr-fossil"' + (G.dragOpts ? '' : ' draggable="true"') + ' id="vr-fos"><img src="' + p.img + '" alt="' + esc(p.alt) + '">' + esc(p.name) + (p.facts ? '<small>' + esc(p.facts) + '</small>' : '') + '</div><div>';
@@ -185,6 +186,46 @@
       b.addEventListener('dragleave', function () { b.classList.remove('drop'); });
       b.addEventListener('drop', function (e) { e.preventDefault(); if (dragId && dragId !== id) { flyCarry = dragId; act(id); } dragId = null; });
     });
+  }
+
+  /* clean game (week 22): tap or drag only the litter into the bin, then pick the action that helps */
+  function renderClean() {
+    var I = G.items || [], T = I.filter(function (x) { return x.trash; }), A = G.action, last = P.length - 1;
+    function tIdx(id) { for (var i = 0; i < T.length; i++) if (T[i].id === id) return i; return -1; }
+    var n = T.filter(function (x, i) { return st.m[i]; }).length, h;
+    if (n < T.length) {
+      h = '<div class="vr-gstep">Step 1 of 2 · ' + esc(L.step1) + '</div><div class="vr-fb ' + flyCls + '" id="vr-fb" aria-live="polite">' + esc(flyMsg || L.start) + '</div><div class="vr-fly n4">' +
+        I.map(function (x) {
+          var gone = x.trash && st.m[tIdx(x.id)];
+          return '<button type="button" class="vr-flower' + (gone ? ' gone' : '') + '" data-id="' + x.id + '"' + (gone ? ' disabled' : ' draggable="true"') + '><img src="' + x.img + '" alt="' + esc(x.alt) + '">' + esc(x.name) + (gone ? '<em>' + esc(L.tag) + '</em>' : '') + '</button>';
+        }).join('') + '</div><div class="vr-bin vr-litter" id="vr-litter">' + esc(L.bin) + ' · ' + n + ' of ' + T.length + '</div>';
+      game.innerHTML = h;
+      var act = function (id) {
+        var x = I.filter(function (y) { return y.id === id; })[0], i = tIdx(id);
+        if (x.trash) { st.m[i] = true; st.p[i] = true; save(); flyCls = 'ok'; } else { flyCls = ''; }
+        flyMsg = x.msg; render();
+      };
+      var dragId = null, bin = $('#vr-litter');
+      $$('.vr-flower', game).forEach(function (b) {
+        var id = b.getAttribute('data-id');
+        b.addEventListener('click', function () { act(id); });
+        b.addEventListener('dragstart', function (e) { dragId = id; try { e.dataTransfer.setData('text/plain', id); } catch (x) {} });
+      });
+      bin.addEventListener('dragover', function (e) { e.preventDefault(); bin.classList.add('drop'); });
+      bin.addEventListener('dragleave', function () { bin.classList.remove('drop'); });
+      bin.addEventListener('drop', function (e) { e.preventDefault(); bin.classList.remove('drop'); if (dragId) act(dragId); dragId = null; });
+    } else {
+      h = '<div class="vr-gstep">Step 2 of 2 · ' + esc(L.step2) + '</div><div class="vr-fb ok">' + esc(L.cleared) + '</div><div class="vr-gstep">' + esc(A.q) + '</div><div class="vr-place vr-col">' +
+        Object.keys(A.options).map(function (k) { return '<button type="button" data-a="' + k + '">' + esc(A.options[k]) + '</button>'; }).join('') + '</div><div class="vr-fb" id="vr-fb" aria-live="polite"></div>';
+      game.innerHTML = h;
+      var fb = $('#vr-fb');
+      $$('.vr-place button', game).forEach(function (b) {
+        b.addEventListener('click', function () {
+          if (b.getAttribute('data-a') === A.right) { b.classList.add('ok'); st.m[last] = true; st.p[last] = true; save(); setTimeout(render, 650); frames(); }
+          else { b.classList.add('no'); fb.className = 'vr-fb no'; fb.textContent = A.miss; }
+        });
+      });
+    }
   }
 
   /* sort game (week 19): one card at a time goes into one of two bins; an IN card then asks which part takes it in */
@@ -271,7 +312,7 @@
     var name = (st.name || '').trim();
     if (!name) { nmMsg.textContent = 'Type your first name first.'; nm.focus(); return; }
     var rows = P.map(function (p, i) {
-      var two = G.type === 'fly' ? L.tag : G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
+      var two = G.type === 'clean' ? p.ok : G.type === 'fly' ? L.tag : G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
       var three = p.place ? (st.p[i] ? esc(G.places[p.place]) : '<i>not picked yet</i>') : '';
       return '<tr><td>' + esc(p.name) + '</td><td>' + (st.m[i] ? esc(two) : '<i>not matched yet</i>') + '</td>' + (L.cols.length > 2 ? '<td>' + three + '</td>' : '') + '</tr>';
     }).join('');
