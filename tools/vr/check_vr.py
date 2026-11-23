@@ -78,6 +78,12 @@ if S.get('type') == 'dial':
         if not D['min'] <= r['start'] <= D['max'] or r['min'] > r['max']: F('dial game: bad range in ' + r['name'])
         if r['min'] <= r['start'] <= r['max']: F('dial game: a round starts already done: ' + r['name'])
         if [x['upTo'] for x in r['states']] != sorted(x['upTo'] for x in r['states']): F('dial game: states must go up in order')
+if S.get('type') == 'meter':
+    keys = [m['key'] for m in S['meters']]
+    for t in S['things']:
+        if not t['gives'] or any(k not in keys for k in t['gives']): F('meter game: bad gives for ' + t['name'])
+        for k in keys:
+            if (t['read'].get(k, 0) >= 10) != (k in t['gives']): F('meter game: reading and gives disagree for %s (%s)' % (t['name'], k))
 if S.get('type') == 'spot':
     for s in S['spots']:
         if s.get('pollute') and s.get('kind') not in S['places']: F('spot game: kind missing for ' + s['id'])

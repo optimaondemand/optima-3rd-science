@@ -1,0 +1,294 @@
+{
+ "id": "g3sci-vr-28",
+ "week": 28,
+ "lesson": "28.01",
+ "lessonTitle": "How Does Energy Cause Change?",
+ "title": "Lights, Sound, Action",
+ "emoji": "🎬",
+ "canvasName": "28.01 VR · Lights, Sound, Action",
+ "details": [
+  "📅 Q4 · Unit 9 · Matter & Energy",
+  "📖 Week 28 · goes with Lesson 28.01",
+  "🌎 CPALMS SC.3.P.10.1, SC.3.P.10.2",
+  "⏱ About 15 minutes"
+ ],
+ "map": "Playground",
+ "mapWord": "Playground",
+ "badge": {
+  "emoji": "⚡",
+  "name": "Lightning Bolt",
+  "line": "Only VR crews earn this one. Your shot goes in Opti's film."
+ },
+ "stamp": "Studio Day · Wonder Films",
+ "hook": {
+  "look": "This is a <b>stunt sheet</b>. It lists the special effects for one scene in a film.",
+  "head": "Scene 28 · Lights, Sound, Action",
+  "sub": "Wonder Films · Stunt sheet",
+  "rows": [
+   [
+    "Effect 1",
+    "A bright flash"
+   ],
+   [
+    "Effect 2",
+    "A loud boom"
+   ],
+   [
+    "Effect 3",
+    "A rush of wind"
+   ]
+  ],
+  "img": "hook",
+  "alt": "Many bolts of lightning flash down from storm clouds at night",
+  "cap": "Lightning strikes during a thunderstorm at night. NOAA photo.",
+  "note": "Real lightning makes a flash and a boom. What kinds of energy is that?"
+ },
+ "opti": {
+  "brief": "Welcome to the playground, crew. We film Scene 28, Lights, Sound, Action. Show me five kinds of energy, then take the shot.",
+  "studio": "No headset today? Come to the studio. Test each prop with three meters. Then tell me what you think."
+ },
+ "vr": {
+  "look": "A <b>model</b> is a copy of something real. <b>Energy</b> makes things move, light up, warm up or make sound.",
+  "groups": [
+   {
+    "title": "💡 Light and heat",
+    "models": [
+     {
+      "name": "Lantern On",
+      "word": "Lantern",
+      "img": "lantern",
+      "alt": "A lit lantern glowing in the dark",
+      "trait": "Gives off light and heat."
+     },
+     {
+      "name": "Firefly",
+      "word": "Firefly",
+      "img": "firefly",
+      "alt": "A firefly flying with its tail glowing green",
+      "trait": "Makes light, almost no heat."
+     }
+    ]
+   },
+   {
+    "title": "🔊 Sound, motion, electricity",
+    "models": [
+     {
+      "name": "Radio",
+      "word": "Radio",
+      "img": "radio",
+      "alt": "Front of an old radio with knobs and buttons",
+      "trait": "Makes sound."
+     },
+     {
+      "name": "Bicycle (Moving)",
+      "word": "Bicycle",
+      "img": "bike",
+      "alt": "A child rides a bicycle past a playground slide",
+      "trait": "Motion energy."
+     },
+     {
+      "name": "Solar Panel",
+      "word": "Solar Panel",
+      "img": "solar",
+      "alt": "Dark blue solar panels on a house roof",
+      "trait": "Turns light into electrical energy."
+     }
+    ]
+   }
+  ],
+  "steps": [
+   {
+    "where": "🖥️ Before your headset",
+    "title": "Know your models",
+    "clip": "step1",
+    "html": "<p>Type each gray word in the <b>Filter models</b> box.</p>@MODELS@<p>This list is also on the <b>Canvas</b> tab in VR.</p>"
+   },
+   {
+    "where": "🥽 In VR",
+    "title": "Go on location",
+    "clip": "step2",
+    "html": "<div class=\"vr-how\">🔗 <b>First time only:</b> connect Canvas at <a href=\"https://xr.optimaed.com\" target=\"_blank\" rel=\"noopener\">xr.optimaed.com</a>. See <b>Having trouble in VR?</b> below.</div><p>Open the <b>On-Demand</b> app. Click <b>Explore</b>. Type <b>Playground</b> in <b>Filter environments</b>. Click <b>Playground</b>, then <b>Begin Solo</b>.</p>"
+   },
+   {
+    "title": "Build the scene",
+    "clip": "step3",
+    "html": "<p>Press the <b>top button on your right controller</b>, then click <b>Models</b>. Put the Lantern, Firefly, Radio, Bicycle and Solar Panel around the playground.</p><div class=\"vr-how\">✋ Grab a model with the <b>palm trigger</b>. Use <b>both</b> palm triggers to make it bigger or smaller.</div><div class=\"vr-say\">🗣 <b>Say it out loud:</b> “The ___ shows ___ energy because it ___.”</div>"
+   },
+   {
+    "title": "Take the shot and send it",
+    "clip": "step4",
+    "html": "<p>Stand back so the whole scene fits. Open your menu, click <b>Library</b>, then <b>Camera</b>. Click <b>Take photo</b>.</p><p>Click the <b>Canvas</b> tab and pick <b>@CANVAS@</b>. Click <b>Choose from My Files</b>, pick your photo, click <b>Use this file</b>, then <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.</p><div class=\"vr-how\">🔁 Want to fix it? Move the models, take a new photo and send it again.</div>"
+   },
+   {
+    "where": "✅ After",
+    "title": "Check and leave",
+    "clip": "step5",
+    "html": "<p>Press the <b>Meta button</b>, then click <b>Quit</b>. Check that your photo is in the Canvas assignment. Not there? Open <b>Having trouble in VR?</b></p>"
+   }
+  ],
+  "extra": {
+   "after": 3,
+   "clip": "extra",
+   "html": "Add a lamp that lights up a room: <span class=\"vr-word\">Table Lamp</span>"
+  },
+  "full": "Your photo shows the Lantern, Firefly, Radio, Bicycle and Solar Panel on the playground."
+ },
+ "studio": {
+  "kicker": "Studio Day · no headset",
+  "title": "Energy detector",
+  "type": "meter",
+  "framePl": "ptag",
+  "labels": {
+   "start": "Test this prop with all three meters.",
+   "lots": "Lots",
+   "little": "A little",
+   "none": "None",
+   "reading": "{from} meter: {to}.",
+   "allDone": "All three meters done!",
+   "q2": "What energy does it give off? Tap every one that fits.",
+   "check": "Check ✓",
+   "done": "You tested every prop. Some give off one kind of energy, and some give off more than one. Nice work, crew!",
+   "pdfTitle": "Energy detector",
+   "cols": [
+    "Prop",
+    "Energy it gives off"
+   ]
+  },
+  "look": "Five real props and three meters. A <b>meter</b> is a tool that measures something. The light meter finds light. The heat meter finds heat. The sound meter finds sound.",
+  "do": "Drag each meter onto the photo, or tap it. Read the gauges. Then tap every kind of energy the prop gives off and tap Check.",
+  "write": {
+   "min": 20,
+   "frames": [
+    {
+     "lead": "1. Which prop surprised you?",
+     "starter": "The ___ surprised me because ___."
+    },
+    {
+     "lead": "2. How are a candle and a glow stick different?",
+     "starter": "A candle gives off ___, but a glow stick ___."
+    }
+   ],
+   "chips": [
+    "energy",
+    "light",
+    "heat",
+    "sound",
+    "motion",
+    "gives off",
+    "glow",
+    "meter",
+    "because",
+    "different"
+   ]
+  },
+  "full": "You tested all 5 props with the meters and tagged their energy. Your 2 sentences have at least 20 words.",
+  "meters": [
+   {
+    "key": "light",
+    "name": "Light meter",
+    "short": "Light",
+    "icon": "💡"
+   },
+   {
+    "key": "heat",
+    "name": "Heat meter",
+    "short": "Heat",
+    "icon": "🌡️"
+   },
+   {
+    "key": "sound",
+    "name": "Sound meter",
+    "short": "Sound",
+    "icon": "🔊"
+   }
+  ],
+  "things": [
+   {
+    "name": "Candle",
+    "img": "candle",
+    "alt": "A lit candle with a bright yellow flame",
+    "read": {
+     "light": 80,
+     "heat": 85,
+     "sound": 0
+    },
+    "gives": [
+     "light",
+     "heat"
+    ],
+    "ok": "Right! A candle flame gives off light and heat.",
+    "miss": "Look at the gauges again. Which meters read lots?"
+   },
+   {
+    "name": "Glow sticks",
+    "img": "glow",
+    "alt": "Glowing glow sticks stuck in the sand at night",
+    "read": {
+     "light": 60,
+     "heat": 0,
+     "sound": 0
+    },
+    "gives": [
+     "light"
+    ],
+    "ok": "Right! Glow sticks give off light but almost no heat.",
+    "miss": "Look at the gauges again. Did the heat meter find anything?"
+   },
+   {
+    "name": "Drum",
+    "img": "drum",
+    "alt": "Old photo of a man playing a drum with two sticks",
+    "read": {
+     "light": 0,
+     "heat": 0,
+     "sound": 90
+    },
+    "gives": [
+     "sound"
+    ],
+    "ok": "Right! A drum being played gives off sound.",
+    "miss": "Look at the gauges again. Which meter read lots?"
+   },
+   {
+    "name": "Hot cocoa",
+    "img": "mug",
+    "alt": "A cup of hot cocoa on a saucer",
+    "read": {
+     "light": 0,
+     "heat": 70,
+     "sound": 0
+    },
+    "gives": [
+     "heat"
+    ],
+    "ok": "Right! Hot cocoa gives off heat, but no light.",
+    "miss": "Look at the gauges again. Does a cup glow?"
+   },
+   {
+    "name": "Firefly",
+    "img": "firefly",
+    "alt": "A firefly flying with its tail glowing green",
+    "read": {
+     "light": 55,
+     "heat": 2,
+     "sound": 0
+    },
+    "gives": [
+     "light"
+    ],
+    "ok": "Right! A firefly makes light with almost no heat.",
+    "miss": "Look at the gauges again. Did the heat meter find much?"
+   }
+  ]
+ },
+ "voice": {
+  "brief": "Welcome to the playground, crew. We film Scene 28, Lights, Sound, Action. Show me five kinds of energy, then take the shot.",
+  "step1": "Before your headset goes on, meet your five models. Learn each gray search word. You will type it in VR.",
+  "step2": "Put on your headset. Click Explore, type Playground, and pick Playground. Then click Begin Solo.",
+  "step3": "Place the lantern, the firefly, the radio, the bicycle and the solar panel. Then tell me what energy each one shows.",
+  "extra": "Got time? Add a lamp that lights up a room. That shot is just for VR crews.",
+  "step4": "Step back so the whole scene fits. Click Library, then Camera, and take the shot. Then send it to Canvas.",
+  "step5": "Press the Meta button and click Quit. Then open Canvas. Your photo should be waiting there.",
+  "studio": "No headset today? Come to the studio. Test each prop with three meters. Then tell me what you think."
+ }
+}

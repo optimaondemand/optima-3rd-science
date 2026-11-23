@@ -1,0 +1,62 @@
+{
+ "hook": {
+  "title": "File:Lightning NOAA.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Lightning_NOAA.jpg",
+  "license": "Public domain",
+  "artist": "C. Clark"
+ },
+ "lantern": {
+  "title": "File:Lanterns in Ira 2.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Lanterns_in_Ira_2.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "Mehdi at Persian Wikipedia"
+ },
+ "firefly": {
+  "title": "File:Photinus pyralis Firefly glowing.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Photinus_pyralis_Firefly_glowing.jpg",
+  "license": "CC BY-SA 2.0",
+  "artist": "art farmer from evansville indiana, usa"
+ },
+ "radio": {
+  "title": "File:Old vintage radio - Offenburg.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Old_vintage_radio_-_Offenburg.jpg",
+  "license": "CC BY 4.0",
+  "artist": "th_norge"
+ },
+ "bike": {
+  "title": "File:Dali-Slides-And-Bicycle-20241229.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Dali-Slides-And-Bicycle-20241229.jpg",
+  "license": "CC0",
+  "artist": "Saimmx"
+ },
+ "solar": {
+  "title": "File:Solar panels on a roof.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Solar_panels_on_a_roof.jpg",
+  "license": "Public domain",
+  "artist": "Pujanak"
+ },
+ "candle": {
+  "title": "File:Candle flame closeup.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Candle_flame_closeup.jpg",
+  "license": "CC BY 4.0",
+  "artist": "domdomegg"
+ },
+ "glow": {
+  "title": "File:Glow sticks on Baga beach at night.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Glow_sticks_on_Baga_beach_at_night.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "Slyronit"
+ },
+ "drum": {
+  "title": "File:Snare Drum (IMSO pp53).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Snare_Drum_(IMSO_pp53).jpg",
+  "license": "Public domain",
+  "artist": "Not listed ; Book published by Carl Fischer"
+ },
+ "mug": {
+  "title": "File:Hot Chocolate.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Hot_Chocolate.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "KR Chrutti"
+ }
+}

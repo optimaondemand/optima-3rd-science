@@ -48,7 +48,21 @@ const path = require('path'), fs = require('fs');
   const gtype = await page.evaluate(() => window.VR.game.type);
   const bins = await page.evaluate(() => window.VR.game.pairs.map(p => p.bin));
   const binKeys = await page.evaluate(() => Object.keys(window.VR.game.bins || {}));
-  if (gtype === 'dial') {
+  if (gtype === 'meter') {
+    const T = await page.evaluate(() => ({ things: window.VR.game.things.map(t => t.gives), meters: window.VR.game.meters.map(m => m.key) }));
+    for (const [n, gives] of T.things.entries()) {
+      for (const [j, m] of T.meters.entries()) {
+        if (n === 1 && j === 0) await page.dragAndDrop(`.vr-mtool[data-m="${m}"]`, '#vr-mtarget');
+        else await page.click(`.vr-mtool[data-m="${m}"]`);
+      }
+      if (n === 0) { await page.click(`.vr-place button[data-t="${T.meters.find(k => !gives.includes(k))}"]`); await page.click('#vr-check'); await shot('08-miss', '#vr-game');
+        await page.click(`.vr-place button[data-t="${T.meters.find(k => !gives.includes(k))}"]`); }
+      for (const k of gives) await page.click(`.vr-place button[data-t="${k}"]`);
+      if (n === 1) await shot('09b-next', '#vr-game');
+      await page.click('#vr-check'); await page.waitForTimeout(300); g++;
+      if (n === 0) await shot('09-place-miss', '#vr-game');
+    }
+  } else if (gtype === 'dial') {
     const R = await page.evaluate(() => window.VR.game.rounds.map(r => [r.start, r.min, r.max, r.right]));
     const keys = await page.evaluate(() => Object.keys(window.VR.game.changes));
     for (const [n, [start, mn, mx, right]] of R.entries()) {

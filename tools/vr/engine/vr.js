@@ -112,6 +112,7 @@
     if (G.type === 'web') { renderWeb(); return; }
     if (G.type === 'clue') { renderClue(); return; }
     if (G.type === 'dial') { renderDial(); return; }
+    if (G.type === 'meter') { renderMeter(i, P[i]); return; }
     if (G.type === 'sort') { renderSort(i, P[i]); return; }
     var p = P[i], h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
       '<div class="vr-fossil"' + (G.dragOpts ? '' : ' draggable="true"') + ' id="vr-fos"><img src="' + p.img + '" alt="' + esc(p.alt) + '">' + esc(p.name) + (p.facts ? '<small>' + esc(p.facts) + '</small>' : '') + '</div><div>';
@@ -496,6 +497,56 @@
     });
   }
 
+  /* meter game (week 28): test each object with every meter, then tag the energy it gives off */
+  function renderMeter(i, p) {
+    st.c = st.c || {}; st.c.r = st.c.r || {}; st.c.s = st.c.s || {};
+    var T = G.things[i], M = G.meters, got = st.c.r[i] = st.c.r[i] || {}, sel = st.c.s[i] = st.c.s[i] || [];
+    var all = M.every(function (m) { return got[m.key]; });
+    function lvl(v) { return v >= 50 ? L.lots : v >= 10 ? L.little : L.none; }
+    var h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(T.name) + '</div>' +
+      '<div class="vr-fb ' + flyCls + '" id="vr-fb" aria-live="polite">' + esc(flyMsg || L.start) + '</div>' +
+      '<div class="vr-meter"><figure class="vr-meter-pic" id="vr-mtarget"><img src="' + T.img + '" alt="' + esc(T.alt) + '"><figcaption>' + esc(T.name) + '</figcaption></figure>' +
+      '<div><div class="vr-meter-tools">' + M.map(function (m) {
+        return '<button type="button" class="vr-mtool' + (got[m.key] ? ' used' : '') + '" draggable="true" data-m="' + m.key + '">' + m.icon + ' ' + esc(m.name) + '</button>'; }).join('') + '</div>' +
+      M.map(function (m) {
+        var v = T.read[m.key] || 0, on = got[m.key];
+        return '<div class="vr-gauge"><span>' + m.icon + ' ' + esc(m.short) + '</span><div class="vr-gbar"><i style="width:' + (on ? Math.max(v, 3) : 0) + '%"></i></div><b>' + (on ? esc(lvl(v)) : '?') + '</b></div>'; }).join('') +
+      '</div></div>';
+    if (all) h += '<div class="vr-gstep">' + esc(L.q2) + '</div><div class="vr-place">' + M.map(function (m) {
+        return '<button type="button" class="' + (sel.indexOf(m.key) >= 0 ? 'on' : '') + '" data-t="' + m.key + '" aria-pressed="' + (sel.indexOf(m.key) >= 0) + '">' + m.icon + ' ' + esc(m.short) + '</button>'; }).join('') +
+      '<button type="button" class="vr-next" id="vr-check">' + esc(L.check) + '</button></div>';
+    game.innerHTML = h;
+    function test(k) {
+      if (!k) return;
+      got[k] = 1; save();
+      var m = M.filter(function (x) { return x.key === k; })[0], v = T.read[k] || 0;
+      flyCls = ''; flyMsg = fill(L.reading, m.short, lvl(v).toLowerCase());
+      if (M.every(function (x) { return got[x.key]; })) flyMsg += ' ' + L.allDone;
+      render();
+    }
+    var dragM = null, tgt = $('#vr-mtarget');
+    $$('.vr-mtool', game).forEach(function (b) {
+      b.addEventListener('click', function () { test(b.getAttribute('data-m')); });
+      b.addEventListener('dragstart', function (e) { dragM = b.getAttribute('data-m'); try { e.dataTransfer.setData('text/plain', dragM); } catch (x) {} });
+    });
+    tgt.addEventListener('dragover', function (e) { e.preventDefault(); tgt.classList.add('drop'); });
+    tgt.addEventListener('dragleave', function () { tgt.classList.remove('drop'); });
+    tgt.addEventListener('drop', function (e) { e.preventDefault(); tgt.classList.remove('drop'); test(dragM); dragM = null; });
+    $$('.vr-place button[data-t]', game).forEach(function (b) {
+      b.addEventListener('click', function () {
+        var k = b.getAttribute('data-t'), at = sel.indexOf(k);
+        if (at >= 0) sel.splice(at, 1); else sel.push(k);
+        save(); flyMsg = null; render();
+      });
+    });
+    var ck = $('#vr-check');
+    if (ck) ck.addEventListener('click', function () {
+      var ok = sel.length === T.gives.length && T.gives.every(function (k) { return sel.indexOf(k) >= 0; });
+      if (ok) { st.m[i] = true; st.p[i] = true; save(); flyMsg = T.ok; flyCls = 'ok'; frames(); render(); }
+      else { flyMsg = T.miss; flyCls = 'no'; render(); }
+    });
+  }
+
   /* sort game (week 19): one card at a time goes into one of two bins; an IN card then asks which part takes it in */
   function renderSort(i, p) {
     var h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
@@ -580,7 +631,7 @@
     var name = (st.name || '').trim();
     if (!name) { nmMsg.textContent = 'Type your first name first.'; nm.focus(); return; }
     var rows = P.map(function (p, i) {
-      var two = (G.type === 'count' || G.type === 'web' || G.type === 'clue' || G.type === 'dial') ? p.tag : G.type === 'spot' ? G.places[p.place] : G.type === 'clean' ? p.ok : G.type === 'fly' ? L.tag : G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
+      var two = (G.type === 'count' || G.type === 'web' || G.type === 'clue' || G.type === 'dial' || G.type === 'meter') ? p.tag : G.type === 'spot' ? G.places[p.place] : G.type === 'clean' ? p.ok : G.type === 'fly' ? L.tag : G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
       var three = p.place ? (st.p[i] ? esc(G.places[p.place]) : '<i>not picked yet</i>') : '';
       return '<tr><td>' + esc(p.name) + '</td><td>' + (st.m[i] ? esc(two) : '<i>not matched yet</i>') + '</td>' + (L.cols.length > 2 ? '<td>' + three + '</td>' : '') + '</tr>';
     }).join('');
