@@ -284,3 +284,21 @@ main.vr{padding:18px 22px 30px}
 .vr-bcat .vr-place{margin:0}
 .vr-bcat button[disabled]{opacity:.45}
 @media (max-width:600px){.vr-build{grid-template-columns:1fr}}
+
+/* path game (week 31): a tile grid; tap open tiles and road tiles to build a crossing */
+.vr-grid{display:grid;gap:3px;margin:6px 0;padding:6px;border-radius:12px;background:#14110D}
+.vr-tile{aspect-ratio:1;border:0;border-radius:5px;font-size:22px;line-height:1;padding:0;cursor:pointer}
+.vr-tile.forest{background:#2F6B2F;cursor:default}
+.vr-tile.open{background:#C9B48A}
+.vr-tile.road{background:#55524C;background-image:linear-gradient(90deg,transparent 46%,#E3C14B 46%,#E3C14B 54%,transparent 54%)}
+.vr-tile.house{background:#C9B48A;cursor:default}
+.vr-tile.water{background:#5C93B8;cursor:default}
+.vr-tile.on.open{background:#8FBF5A;outline:3px solid #fff;outline-offset:-3px}
+.vr-tile.on.road{background:#2A241C;outline:3px solid #E3B04B;outline-offset:-3px}
+.vr-tile:not([disabled]):hover{filter:brightness(1.12)}
+.vr-crit{list-style:none;padding:0;margin:6px 0;font:800 16px Nunito,Arial,sans-serif}
+.vr-crit li.ok{color:#2E7D32}.vr-crit li.no{color:#B3261E}
+.vr-dial-btns .vr-clear{background:#fff;color:var(--wl-ink);border:3px solid var(--wl-line)}
+@media (max-width:600px){.vr-tile{font-size:15px;border-radius:3px}.vr-grid{gap:2px;padding:4px}}
+.vr-tile[disabled]{opacity:1;color:inherit}
+.vr-grid{max-width:620px}

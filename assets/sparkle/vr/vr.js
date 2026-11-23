@@ -115,6 +115,7 @@
     if (G.type === 'meter') { renderMeter(i, P[i]); return; }
     if (G.type === 'season') { renderSeason(); return; }
     if (G.type === 'build') { renderBuild(i, P[i]); return; }
+    if (G.type === 'path') { if (i >= G.maps.length) renderClaim(P.length, G.allBuilt); else renderPath(i); return; }
     if (G.type === 'sort') { renderSort(i, P[i]); return; }
     var p = P[i], h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
       '<div class="vr-fossil"' + (G.dragOpts ? '' : ' draggable="true"') + ' id="vr-fos"><img src="' + p.img + '" alt="' + esc(p.alt) + '">' + esc(p.name) + (p.facts ? '<small>' + esc(p.facts) + '</small>' : '') + '</div><div>';
@@ -619,6 +620,59 @@
     if (nx) nx.addEventListener('click', function () { st.p[i] = true; save(); flyMsg = null; flyCls = ''; render(); });
   }
 
+  /* path game (week 31): tap tiles on a drawn grid to build a wildlife crossing, then test it against the criteria */
+  function renderPath(i) {
+    st.c = st.c || {}; st.c.t = st.c.t || {};
+    var M = G.maps[i], on = st.c.t[i] = st.c.t[i] || [], rows = M.grid, nc = rows[0].length, res = st.c.res && st.c.res[i];
+    function ch(r, c) { return rows[r] && rows[r][c]; }
+    var h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(M.name) + '</div>' +
+      '<div class="vr-clue">🛠️ ' + esc(fill(M.q, String(M.max))) + '</div>' +
+      '<div class="vr-fb ' + flyCls + '" id="vr-fb" aria-live="polite">' + esc(flyMsg || L.start) + '</div>' +
+      '<div class="vr-grid" style="grid-template-columns:repeat(' + nc + ',1fr)" role="group" aria-label="' + esc(M.name) + '">';
+    rows.forEach(function (row, r) {
+      row.split('').forEach(function (t, c) {
+        var id = r + '-' + c, picked = on.indexOf(id) >= 0, cls = { L: 'forest', G: 'forest', R: 'road', X: 'house', W: 'water', '.': 'open' }[t];
+        var can = t === '.' || t === 'R';
+        h += '<button type="button" class="vr-tile ' + cls + (picked ? ' on' : '') + '" data-id="' + id + '"' + (can && !st.m[i] ? '' : ' disabled') + ' aria-label="' + esc(L.tiles[cls]) + (picked ? ', ' + esc(L.picked) : '') + '">' +
+          (t === 'L' && r === 0 && c === 0 ? '🐆' : t === 'G' && r === rows.length - 1 && c === nc - 1 ? '🌳' : t === 'X' ? '🏠' : t === 'W' ? '💧' : picked ? (t === 'R' ? '🕳️' : '🐾') : '') + '</button>';
+      });
+    });
+    h += '</div><div class="vr-tally">' + esc(L.count) + ': ' + on.length + ' / ' + M.max + '</div>';
+    if (res) h += '<ul class="vr-crit">' + res.map(function (x) { return '<li class="' + (x[1] ? 'ok' : 'no') + '">' + (x[1] ? '✓ ' : '✗ ') + esc(x[0]) + '</li>'; }).join('') + '</ul>';
+    if (!st.m[i]) h += '<div class="vr-dial-btns"><button type="button" class="vr-next" id="vr-test">' + esc(L.test) + '</button><button type="button" class="vr-next vr-clear" id="vr-clear">' + esc(L.clear) + '</button></div>';
+    else h += '<button type="button" class="vr-next" id="vr-next">' + esc(L.next) + '</button>';
+    game.innerHTML = h;
+    $$('.vr-tile', game).forEach(function (b) {
+      b.addEventListener('click', function () {
+        var id = b.getAttribute('data-id'), k = on.indexOf(id);
+        if (k >= 0) on.splice(k, 1); else on.push(id);
+        if (st.c.res) st.c.res[i] = null;
+        flyMsg = null; flyCls = ''; save(); render();
+      });
+    });
+    function test() {
+      var seen = {}, q = [], ok = false, road = false;
+      rows.forEach(function (row, r) { if (row[0] === 'L') { q.push([r, 0]); seen[r + '-0'] = 1; } });
+      while (q.length) {
+        var p = q.shift(), r = p[0], c = p[1];
+        [[1, 0], [-1, 0], [0, 1], [0, -1]].forEach(function (d) {
+          var rr = r + d[0], cc = c + d[1], id = rr + '-' + cc, t = ch(rr, cc);
+          if (!t || seen[id]) return;
+          if (t === 'G') { ok = true; return; }
+          if (t === 'L' || on.indexOf(id) >= 0) { seen[id] = 1; if (t === 'R') road = true; q.push([rr, cc]); }
+        });
+      }
+      var list = [[L.c1, ok], [L.c2, ok && road], [fill(L.c3, String(M.max)), on.length > 0 && on.length <= M.max]];
+      st.c.res = st.c.res || {}; st.c.res[i] = list;
+      if (list.every(function (x) { return x[1]; })) { st.m[i] = true; flyMsg = M.ok; flyCls = 'ok'; frames(); }
+      else { flyMsg = !ok ? L.noPath : L.tooMany; flyCls = 'no'; }
+      save(); render();
+    }
+    var tb = $('#vr-test'); if (tb) tb.addEventListener('click', test);
+    var cb = $('#vr-clear'); if (cb) cb.addEventListener('click', function () { st.c.t[i] = []; if (st.c.res) st.c.res[i] = null; flyMsg = null; flyCls = ''; save(); render(); });
+    var nx = $('#vr-next'); if (nx) nx.addEventListener('click', function () { st.p[i] = true; flyMsg = null; flyCls = ''; save(); render(); });
+  }
+
   /* sort game (week 19): one card at a time goes into one of two bins; an IN card then asks which part takes it in */
   function renderSort(i, p) {
     var h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
@@ -703,7 +757,7 @@
     var name = (st.name || '').trim();
     if (!name) { nmMsg.textContent = 'Type your first name first.'; nm.focus(); return; }
     var rows = P.map(function (p, i) {
-      var two = (G.type === 'count' || G.type === 'web' || G.type === 'clue' || G.type === 'dial' || G.type === 'meter' || G.type === 'season' || G.type === 'build') ? p.tag : G.type === 'spot' ? G.places[p.place] : G.type === 'clean' ? p.ok : G.type === 'fly' ? L.tag : G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
+      var two = (G.type === 'count' || G.type === 'web' || G.type === 'clue' || G.type === 'dial' || G.type === 'meter' || G.type === 'season' || G.type === 'build' || G.type === 'path') ? p.tag : G.type === 'spot' ? G.places[p.place] : G.type === 'clean' ? p.ok : G.type === 'fly' ? L.tag : G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
       var three = p.place ? (st.p[i] ? esc(G.places[p.place]) : '<i>not picked yet</i>') : '';
       return '<tr><td>' + esc(p.name) + '</td><td>' + (st.m[i] ? esc(two) : '<i>not matched yet</i>') + '</td>' + (L.cols.length > 2 ? '<td>' + three + '</td>' : '') + '</tr>';
     }).join('');
