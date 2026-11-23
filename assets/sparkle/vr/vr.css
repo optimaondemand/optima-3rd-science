@@ -316,3 +316,10 @@ main.vr{padding:18px 22px 30px}
 @media (max-width:600px){.vr-casc{grid-template-columns:1fr}.vr-bars{height:130px}}
 .vr-bcol{flex:1;width:100%;position:relative}
 .vr-bcol i{position:absolute;bottom:0;left:15%;width:70%!important}
+
+/* reel game (week 33): when every frame is lit, the storyboard plays one frame after another */
+.vr-board.play .vr-frame{animation:vrreel 6s ease-in-out infinite}
+.vr-board.play .vr-frame:nth-child(2){animation-delay:1s}.vr-board.play .vr-frame:nth-child(3){animation-delay:2s}
+.vr-board.play .vr-frame:nth-child(4){animation-delay:3s}.vr-board.play .vr-frame:nth-child(5){animation-delay:4s}.vr-board.play .vr-frame:nth-child(6){animation-delay:5s}
+@keyframes vrreel{0%,20%{box-shadow:0 0 0 4px #E3B04B;transform:scale(1.04)}30%,100%{box-shadow:none;transform:none}}
+@media (prefers-reduced-motion:reduce){.vr-board.play .vr-frame{animation:none}}
