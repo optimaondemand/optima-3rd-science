@@ -1,0 +1,273 @@
+{
+ "id": "g3sci-vr-29",
+ "week": 29,
+ "lesson": "29.01",
+ "lessonTitle": "What Makes the Everglades Special?",
+ "title": "Who Fits Here?",
+ "emoji": "🎬",
+ "canvasName": "29.01 VR · Who Fits Here?",
+ "details": [
+  "📅 Q4 · Unit 10 · Florida Ecosystems",
+  "📖 Week 29 · goes with Lesson 29.01",
+  "🌎 CPALMS SC.3.L.17.1",
+  "⏱ About 15 minutes"
+ ],
+ "map": "Tranquil Forest MEGA",
+ "mapWord": "Tranquil",
+ "badge": {
+  "emoji": "🐊",
+  "name": "Golden Gator",
+  "line": "Only VR crews earn this one. Your shot goes in Opti's film."
+ },
+ "stamp": "Studio Day · Wonder Films",
+ "hook": {
+  "look": "This is a <b>note from an animal</b>. An alligator left it on our set.",
+  "head": "Scene 29 · Who Fits Here?",
+  "sub": "Wonder Films · Note from the set",
+  "rows": [
+   [
+    "From",
+    "An alligator"
+   ],
+   [
+    "Home",
+    "The Everglades"
+   ],
+   [
+    "Note",
+    "In the dry season, my pond saves lives."
+   ]
+  ],
+  "img": "hook",
+  "alt": "An alligator swimming in shallow green water near grass",
+  "cap": "An alligator in shallow water in Everglades National Park. NPS photo.",
+  "note": "The Everglades is a wetland: land that is wet most of the year. Who fits here?"
+ },
+ "opti": {
+  "brief": "Welcome back to the forest, crew. We film Scene 29, Who Fits Here? Show me who belongs in the Everglades, and who does not.",
+  "studio": "No headset today? Come to the studio. Turn the wet season into the dry season. Then help each animal find water."
+ },
+ "vr": {
+  "look": "A <b>model</b> is a copy of something real. An animal is <b>adapted</b> to a place when its body fits how it lives there.",
+  "groups": [
+   {
+    "title": "🐊 They fit here",
+    "models": [
+     {
+      "name": "Animated Alligator",
+      "word": "Alligator",
+      "img": "gator",
+      "alt": "Close look at an alligator's face and teeth in the grass",
+      "trait": "Lives in warm, shallow water."
+     },
+     {
+      "name": "Snake",
+      "word": "Snake",
+      "img": "snake",
+      "alt": "Brown water snake resting on a wooden boardwalk",
+      "trait": "Swims and hunts in the marsh."
+     },
+     {
+      "name": "White Peacock Butterfly",
+      "word": "Peacock",
+      "img": "butterfly",
+      "alt": "White and orange butterfly with spots, wings open on a leaf",
+      "trait": "Drinks from marsh flowers."
+     },
+     {
+      "name": "Regal Darner",
+      "word": "Darner",
+      "img": "darner",
+      "alt": "Big dragonfly with clear wings resting on sand",
+      "trait": "A dragonfly."
+     }
+    ]
+   },
+   {
+    "title": "🧊 Does it fit?",
+    "models": [
+     {
+      "name": "Ice Berg",
+      "word": "Ice Berg",
+      "img": "iceberg",
+      "alt": "Big flat iceberg floating in a gray sea",
+      "trait": "Frozen. Does it fit?"
+     }
+    ]
+   }
+  ],
+  "steps": [
+   {
+    "where": "🖥️ Before your headset",
+    "title": "Know your models",
+    "clip": "step1",
+    "html": "<p>Type each gray word in the <b>Filter models</b> box.</p>@MODELS@<p>This list is also on the <b>Canvas</b> tab in VR.</p>"
+   },
+   {
+    "where": "🥽 In VR",
+    "title": "Go on location",
+    "clip": "step2",
+    "html": "<div class=\"vr-how\">🔗 <b>First time only:</b> connect Canvas at <a href=\"https://xr.optimaed.com\" target=\"_blank\" rel=\"noopener\">xr.optimaed.com</a>. See <b>Having trouble in VR?</b> below.</div><p>Open the <b>On-Demand</b> app. Click <b>Explore</b>. Type <b>Playground</b> in <b>Filter environments</b>. Click <b>Playground</b>, then <b>Begin Solo</b>.</p>"
+   },
+   {
+    "title": "Build the scene",
+    "clip": "step3",
+    "html": "<p>Press the <b>top button on your right controller</b>, then click <b>Models</b>. Put the Alligator, Snake, Butterfly and Darner on the ground. Then add the Ice Berg.</p><div class=\"vr-how\">✋ Grab a model with the <b>palm trigger</b>. Use <b>both</b> palm triggers to make it bigger or smaller.</div><div class=\"vr-say\">🗣 <b>Say it out loud:</b> “The ___ fits here because ___. The ice berg does not fit because ___.”</div>"
+   },
+   {
+    "title": "Take the shot and send it",
+    "clip": "step4",
+    "html": "<p>Stand back so the whole scene fits. Open your menu, click <b>Library</b>, then <b>Camera</b>. Click <b>Take photo</b>.</p><p>Click the <b>Canvas</b> tab and pick <b>@CANVAS@</b>. Click <b>Choose from My Files</b>, pick your photo, click <b>Use this file</b>, then <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.</p><div class=\"vr-how\">🔁 Want to fix it? Move the models, take a new photo and send it again.</div>"
+   },
+   {
+    "where": "✅ After",
+    "title": "Check and leave",
+    "clip": "step5",
+    "html": "<p>Press the <b>Meta button</b>, then click <b>Quit</b>. Check that your photo is in the Canvas assignment. Not there? Open <b>Having trouble in VR?</b></p>"
+   }
+  ],
+  "extra": {
+   "after": 3,
+   "clip": "extra",
+   "html": "Add a plant that holds rain water for frogs: <span class=\"vr-word\">Bromeliad Plant</span>"
+  },
+  "full": "Your photo shows the Alligator, Snake, Butterfly and Darner, plus the Ice Berg that does not fit."
+ },
+ "studio": {
+  "kicker": "Studio Day · no headset",
+  "title": "Wet or dry?",
+  "type": "season",
+  "framePl": "ptag",
+  "labels": {
+   "flip": "Wet or dry?",
+   "start": "It is the wet season. Water covers the marsh. Flip the switch to the dry season.",
+   "wet": "Wet season",
+   "dry": "Dry season",
+   "flipped": "The dry season! The water shrank to one gator hole. Where does each animal go?",
+   "peek": "This is the wet season. Flip back to the dry season to keep going.",
+   "q": "Where does the {from} go in the dry season?",
+   "step3": "Pick why",
+   "done": "Every animal found its place in the dry season. Nice work, crew!",
+   "pdfTitle": "Wet or dry?",
+   "cols": [
+    "Animal",
+    "Where it goes in the dry season"
+   ]
+  },
+  "look": "Two drawn <b>models</b> of the same Everglades marsh. In the <b>wet season</b>, rain covers the marsh with water. In the <b>dry season</b>, the water shrinks to a gator hole. A <b>gator hole</b> is a pond an alligator digs and keeps open.",
+  "do": "Flip the switch to the dry season. Then drag each animal onto the place it goes, or tap the place. Then pick why.",
+  "write": {
+   "min": 20,
+   "frames": [
+    {
+     "lead": "1. How does the dry season change the marsh?",
+     "starter": "In the dry season, the water ___, so ___."
+    },
+    {
+     "lead": "2. Why do some animals fit the Everglades?",
+     "starter": "The ___ fits the Everglades because ___."
+    }
+   ],
+   "chips": [
+    "wetland",
+    "wet season",
+    "dry season",
+    "gator hole",
+    "adapted",
+    "habitat",
+    "water",
+    "survive",
+    "because",
+    "fish"
+   ]
+  },
+  "full": "You flipped the season, placed all 4 animals and picked why. Your 2 sentences have at least 20 words.",
+  "wet": {
+   "art": "everglades-wet",
+   "alt": "Drawing of a marsh covered with water, grass poking up, and an island of trees"
+  },
+  "dry": {
+   "art": "everglades-dry",
+   "alt": "Drawing of the same marsh in the dry season: cracked mud, one small pond and the island of trees"
+  },
+  "zones": {
+   "hole": {
+    "name": "Gator hole",
+    "icon": "💧",
+    "x": 30,
+    "y": 71
+   },
+   "mud": {
+    "name": "Dry mud",
+    "icon": "🟫",
+    "x": 60,
+    "y": 82
+   },
+   "island": {
+    "name": "Tree island",
+    "icon": "🌳",
+    "x": 82,
+    "y": 42
+   }
+  },
+  "animals": [
+   {
+    "name": "Alligator",
+    "img": "gator",
+    "alt": "Close look at an alligator's face and teeth in the grass",
+    "zone": "hole",
+    "ok": "Yes! The alligator stays in its gator hole and keeps it open and wet.",
+    "miss": "Think about who dug the pond. Try again."
+   },
+   {
+    "name": "Mosquitofish",
+    "img": "fish",
+    "alt": "A tiny gray fish lying in a person's hand",
+    "zone": "hole",
+    "ok": "Yes! Small fish crowd into the last water.",
+    "miss": "A fish needs water to live. Where is the water now?"
+   },
+   {
+    "name": "Wood stork",
+    "img": "stork",
+    "alt": "A wood stork, a big white bird with a bare gray head",
+    "zone": "hole",
+    "ok": "Yes! Wood storks come to catch the crowded fish.",
+    "miss": "This bird eats fish. Where are the fish now?"
+   },
+   {
+    "name": "Apple snail",
+    "img": "snail",
+    "alt": "The round brown shell of a Florida apple snail",
+    "zone": "mud",
+    "ok": "Yes! Apple snails dig into the mud and wait for the rain to come back.",
+    "miss": "The snail has a trick. It hides and waits for rain. Where could it dig?"
+   }
+  ],
+  "allPlaced": "Three animals went to the gator hole, and the snail dug into the mud.",
+  "claim": {
+   "name": "My claim",
+   "img": "hook",
+   "alt": "An alligator swimming in shallow green water near grass",
+   "tag": "The last water",
+   "q": "Why is the gator hole so important in the dry season?",
+   "options": {
+    "water": "💧 It holds the last water, so many animals can live.",
+    "sleep": "😴 It is the best place to sleep.",
+    "away": "🚫 It keeps other animals away."
+   },
+   "right": "water",
+   "miss": "Look where the fish and the stork went. What did they need?"
+  }
+ },
+ "voice": {
+  "brief": "Welcome back to the forest, crew. We film Scene 29, Who Fits Here? Show me who belongs in the Everglades, and who does not.",
+  "step1": "Before your headset goes on, meet your five models. Learn each gray search word. You will type it in VR.",
+  "step2": "Put on your headset. Click Explore, type Tranquil, and pick Tranquil Forest MEGA. Then click Begin Solo.",
+  "step3": "Put the alligator, the snake, the butterfly and the dragonfly on the ground. Add the ice berg. Then tell me what does not fit.",
+  "extra": "Got time? Add a plant that holds rain water for frogs. That shot is just for VR crews.",
+  "step4": "Step back so the whole scene fits. Click Library, then Camera, and take the shot. Then send it to Canvas.",
+  "step5": "Press the Meta button and click Quit. Then open Canvas. Your photo should be waiting there.",
+  "studio": "No headset today? Come to the studio. Turn the wet season into the dry season. Then help each animal find water."
+ }
+}

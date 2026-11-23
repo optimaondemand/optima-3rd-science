@@ -162,6 +162,10 @@ def build(week_path, out_path, repo=False):
     if S.get('type') == 'meter':   # week 28: one round per object
         sh = {m['key']: m['short'] for m in S['meters']}
         S['pairs'] = [{'card': {'img': t['img'], 'name': t['name'], 'alt': t['alt']}, 'ok': t['ok'], 'tag': ' and '.join(sh[k] for k in t['gives'])} for t in S['things']]
+    if S.get('type') == 'season':   # week 29: one round per animal, then the claim
+        C2 = S['claim']
+        S['pairs'] = [{'card': {'img': x['img'], 'name': x['name'], 'alt': x['alt']}, 'ok': x['ok'], 'tag': S['zones'][x['zone']]['name']} for x in S['animals']]
+        S['pairs'].append({'card': {'img': C2['img'], 'name': C2['name'], 'alt': C2['alt']}, 'ok': C2['options'][C2['right']], 'tag': C2['tag']})
     # each round's card: a fossil (week 17) or a place card (week 18, key "card")
     for p in S['pairs']:
         p['fossil'] = p.get('card') or p['fossil']
@@ -209,6 +213,9 @@ def build(week_path, out_path, repo=False):
         'dial': S.get('dial'), 'changes': S.get('changes', {}),
         'things': [{'name': t['name'], 'alt': t['alt'], 'img': img(t['img']), 'read': t['read'], 'gives': t['gives'], 'ok': t['ok'], 'miss': t['miss']} for t in S.get('things', [])],
         'meters': S.get('meters', []),
+        'animals': [{'name': x['name'], 'alt': x['alt'], 'img': img(x['img']), 'zone': x['zone'], 'ok': x['ok'], 'miss': x['miss']} for x in S.get('animals', [])],
+        'zones': S.get('zones', {}), 'allPlaced': S.get('allPlaced', ''),
+        'wet': ({'img': art(S['wet']['art']), 'alt': S['wet']['alt']} if S.get('wet') else None), 'dry': ({'img': art(S['dry']['art']), 'alt': S['dry']['alt']} if S.get('dry') else None),
         'cousins': [{'key': c['key'], 'name': c['name'], 'alt': c['alt'], 'img': cousin_imgs[c['key']]} for c in S.get('cousins', [])],
         'places': S.get('places', {}), 'miss': S.get('miss', ''), 'min': wr['min'], 'frames': [f['lead'] for f in wr['frames']],
     }

@@ -48,7 +48,21 @@ const path = require('path'), fs = require('fs');
   const gtype = await page.evaluate(() => window.VR.game.type);
   const bins = await page.evaluate(() => window.VR.game.pairs.map(p => p.bin));
   const binKeys = await page.evaluate(() => Object.keys(window.VR.game.bins || {}));
-  if (gtype === 'meter') {
+  if (gtype === 'season') {
+    const A = await page.evaluate(() => ({ an: window.VR.game.animals.map(a => a.zone), zones: Object.keys(window.VR.game.zones), cl: [Object.keys(window.VR.game.claim.options), window.VR.game.claim.right] }));
+    await shot('08-wet', '#vr-game');
+    await page.click('.vr-switch button[data-v="dry"]');
+    for (const [n, z] of A.an.entries()) {
+      if (n === 0) { await page.click(`.vr-zone[data-z="${A.zones.find(k => k !== z)}"]`); await shot('08-miss', '#vr-game'); }
+      if (n === 1) await page.dragAndDrop('#vr-fos', `.vr-zone[data-z="${z}"]`);
+      else if (n === 2) await page.click(`.vr-zkey button[data-z="${z}"]`);
+      else await page.click(`.vr-zone[data-z="${z}"]`);
+      if (n === 2) await shot('09b-next', '#vr-game');
+      g++;
+    }
+    await page.click(`.vr-place button[data-a="${A.cl[0].find(k => k !== A.cl[1])}"]`); await shot('09-place-miss', '#vr-game');
+    await page.click(`.vr-place button[data-a="${A.cl[1]}"]`); await page.waitForTimeout(800); g++;
+  } else if (gtype === 'meter') {
     const T = await page.evaluate(() => ({ things: window.VR.game.things.map(t => t.gives), meters: window.VR.game.meters.map(m => m.key) }));
     for (const [n, gives] of T.things.entries()) {
       for (const [j, m] of T.meters.entries()) {

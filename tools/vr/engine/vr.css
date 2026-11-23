@@ -261,3 +261,17 @@ main.vr{padding:18px 22px 30px}
 .vr-place button.on{border-color:#2E7D32;background:#E8F2EA}
 @media (max-width:600px){.vr-meter{grid-template-columns:1fr}.vr-gauge{grid-template-columns:6.5em 1fr 5em;font-size:13.5px}}
 .vr-place #vr-check{background:#2E7D32;color:#fff;border-color:#2E7D32}
+
+/* season game (week 29): a wet / dry switch over a drawn wetland; drop each animal on a place pin */
+.vr-switch{display:flex;gap:8px;margin:6px 0}
+.vr-switch button{flex:1;border:3px solid var(--wl-line);background:#fff;border-radius:12px;padding:9px;font:800 16px Nunito,Arial,sans-serif;cursor:pointer}
+.vr-switch button[aria-pressed="true"]{background:#14110D;color:#F6E7C1;border-color:#14110D}
+.vr-zone{position:absolute;transform:translate(-50%,-50%);min-width:56px;height:56px;border-radius:28px;border:3px solid #fff;background:rgba(20,17,13,.72);color:#fff;font-size:26px;cursor:pointer;display:flex;align-items:center;gap:2px;padding:0 8px;box-shadow:0 2px 6px rgba(0,0,0,.4)}
+.vr-zone.drop,.vr-zone:hover{border-color:#E3B04B}
+.vr-zpic{width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid #fff}
+.vr-zkey{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0}
+.vr-zkey .vr-next{background:#fff;color:var(--wl-ink);border:3px solid var(--wl-line)}
+.vr-zkey .vr-next.drop{border-color:#E3B04B}
+@media (max-width:600px){.vr-zone{min-width:42px;height:42px;font-size:20px}.vr-zpic{width:24px;height:24px}}
+.vr-acard{display:flex;align-items:center;gap:8px;border:3px solid #E3B04B;background:#14110D;color:#F6E7C1;border-radius:12px;padding:5px 12px 5px 5px;font:800 16px Nunito,Arial,sans-serif;cursor:grab}
+.vr-acard img{width:84px;height:63px;object-fit:cover;border-radius:8px}

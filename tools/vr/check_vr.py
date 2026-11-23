@@ -84,6 +84,12 @@ if S.get('type') == 'meter':
         if not t['gives'] or any(k not in keys for k in t['gives']): F('meter game: bad gives for ' + t['name'])
         for k in keys:
             if (t['read'].get(k, 0) >= 10) != (k in t['gives']): F('meter game: reading and gives disagree for %s (%s)' % (t['name'], k))
+if S.get('type') == 'season':
+    for x in S['animals']:
+        if x['zone'] not in S['zones']: F('season game: zone missing for ' + x['name'])
+    for k in ('wet', 'dry'):
+        if not os.path.exists(os.path.join(wdir, 'img', S[k]['art'] + '.svg')): F('season game: drawing missing: ' + S[k]['art'])
+    if S['claim']['right'] not in S['claim']['options']: F('season game: claim.right is not one of the options')
 if S.get('type') == 'spot':
     for s in S['spots']:
         if s.get('pollute') and s.get('kind') not in S['places']: F('spot game: kind missing for ' + s['id'])

@@ -1,0 +1,56 @@
+{
+ "hook": {
+  "title": "File:Gator in green water, NPSPhoto, D.Harris (9099197909).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Gator_in_green_water,_NPSPhoto,_D.Harris_(9099197909).jpg",
+  "license": "Public domain",
+  "artist": "Everglades NPS from Homestead, Florida, United States"
+ },
+ "gator": {
+  "title": "File:American Alligator, NPSPhoto, R. Cammauf (9101427560).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:American_Alligator,_NPSPhoto,_R._Cammauf_(9101427560).jpg",
+  "license": "Public domain",
+  "artist": "Everglades NPS from Homestead, Florida, United States"
+ },
+ "snake": {
+  "title": "File:A brown water snake was found basking on the Mahogany Hammock Trail. (08796661-5cd4-461d-bf0a-1e6415b9b1ef).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:A_brown_water_snake_was_found_basking_on_the_Mahogany_Hammock_Trail._(08796661-5cd4-461d-bf0a-1e6415b9b1ef).jpg",
+  "license": "Public domain",
+  "artist": "NPS photo"
+ },
+ "butterfly": {
+  "title": "File:Anartia jatrophae (white peacock).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Anartia_jatrophae_(white_peacock).jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "Cary Bass"
+ },
+ "darner": {
+  "title": "File:Regal Darner - Coryphaeschna ingens, Kissimmee Prairie Preserve State Park, Okeechobee, Florida, Arril 22, 2021 (52861741080).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Regal_Darner_-_Coryphaeschna_ingens,_Kissimmee_Prairie_Preserve_State_Park,_Okeechobee,_Florida,_Arril_22,_2021_(52861741080).jpg",
+  "license": "CC BY 2.0",
+  "artist": "Judy Gallagher"
+ },
+ "fish": {
+  "title": "File:Gambusia affinis Tyson.JPG",
+  "url": "https://commons.wikimedia.org/wiki/File:Gambusia_affinis_Tyson.JPG",
+  "license": "CC BY-SA 3.0",
+  "artist": "Fredlyfish4"
+ },
+ "stork": {
+  "title": "File:Wood Stork - Everglades National Park (52499833253).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Wood_Stork_-_Everglades_National_Park_(52499833253).jpg",
+  "license": "CC BY 2.0",
+  "artist": "Andrew Parlette from Elkridge,MD, US"
+ },
+ "snail": {
+  "title": "File:Pomacea paludosa (Say, 1829) (4520568613).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Pomacea_paludosa_(Say,_1829)_(4520568613).jpg",
+  "license": "CC BY-SA 2.0",
+  "artist": "Udo Schmidt from Deutschland"
+ },
+ "iceberg": {
+  "title": "File:Iceberg. Southern Ocean - Flickr - NOAA Photo Library.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Iceberg._Southern_Ocean_-_Flickr_-_NOAA_Photo_Library.jpg",
+  "license": "Public domain",
+  "artist": "Lieutenant Elizabeth Crapo, NOAA Corps."
+ }
+}
