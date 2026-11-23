@@ -64,6 +64,13 @@ if S.get('type') == 'web':
     for i in ids - set(N['hit']) - {N['gone']}:
         if i not in N['safe']: F('web game: snip.safe missing for ' + i)
     if S['claim']['right'] not in S['claim']['options']: F('web game: claim.right is not one of the options')
+if S.get('type') == 'clue':
+    ids = [x['id'] for x in S['props']]
+    outs = [i for c in S['clues'] for i in c['out']]
+    if not 6 <= len(ids) <= 9: F('clue game: 6 to 9 props')
+    if any(i not in ids for i in outs): F('clue game: a clue removes a missing prop')
+    if len(set(outs)) != len(outs): F('clue game: a prop is removed by two clues')
+    if len(set(ids) - set(outs)) != 1: F('clue game: exactly one prop must be left')
 if S.get('type') == 'spot':
     for s in S['spots']:
         if s.get('pollute') and s.get('kind') not in S['places']: F('spot game: kind missing for ' + s['id'])

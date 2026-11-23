@@ -110,6 +110,7 @@
     if (G.type === 'spot') { renderSpot(); return; }
     if (G.type === 'count') { renderCount(); return; }
     if (G.type === 'web') { renderWeb(); return; }
+    if (G.type === 'clue') { renderClue(); return; }
     if (G.type === 'sort') { renderSort(i, P[i]); return; }
     var p = P[i], h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
       '<div class="vr-fossil"' + (G.dragOpts ? '' : ' draggable="true"') + ' id="vr-fos"><img src="' + p.img + '" alt="' + esc(p.alt) + '">' + esc(p.name) + (p.facts ? '<small>' + esc(p.facts) + '</small>' : '') + '</div><div>';
@@ -422,6 +423,40 @@
     });
   }
 
+  /* clue game (week 26): read one property clue at a time and clear every prop that does not fit; one prop is left */
+  function renderClue() {
+    st.c = st.c || {}; st.c.out = st.c.out || [];
+    var i = cur(), CL = G.clues[i], PR = G.props, h;
+    function pr(id) { return PR.filter(function (x) { return x.id === id; })[0]; }
+    function low(id) { return pr(id).name.toLowerCase(); }
+    h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + G.clues.length + ' · ' + esc(L.clue) + ' ' + (i + 1) + '</div>' +
+      '<div class="vr-clue">🔎 ' + esc(CL.text) + '</div>' +
+      '<div class="vr-fb ' + flyCls + '" id="vr-fb" aria-live="polite">' + esc(flyMsg || L.start) + '</div>' +
+      '<div class="vr-table">' + PR.map(function (p) {
+        var gone = st.c.out.indexOf(p.id) >= 0;
+        return '<button type="button" class="vr-prop' + (gone ? ' gone' : '') + '" data-id="' + p.id + '"' + (gone ? ' disabled' : ' draggable="true"') + '><img src="' + p.img + '" alt="' + esc(p.alt) + '"><span>' + esc(p.name) + '</span>' + (gone ? '<em>' + esc(L.offTag) + '</em>' : '') + '</button>';
+      }).join('') + '</div><div class="vr-off" id="vr-off">⬇ ' + esc(L.off) + '</div>';
+    game.innerHTML = h;
+    function act(id) {
+      if (st.c.out.indexOf(id) >= 0) return;
+      if (CL.out.indexOf(id) >= 0) {
+        st.c.out.push(id); flyCls = 'ok'; flyMsg = fill(CL.gone, low(id));
+        if (CL.out.every(function (x) { return st.c.out.indexOf(x) >= 0; })) { st.m[i] = true; st.p[i] = true; flyMsg = CL.done; }
+        save();
+      } else { flyCls = 'no'; flyMsg = fill(CL.keep, low(id)); }
+      render();
+    }
+    var dragId = null, off = $('#vr-off');
+    $$('.vr-prop', game).forEach(function (b) {
+      var id = b.getAttribute('data-id');
+      b.addEventListener('click', function () { act(id); });
+      b.addEventListener('dragstart', function (e) { dragId = id; try { e.dataTransfer.setData('text/plain', id); } catch (x) {} });
+    });
+    off.addEventListener('dragover', function (e) { e.preventDefault(); off.classList.add('drop'); });
+    off.addEventListener('dragleave', function () { off.classList.remove('drop'); });
+    off.addEventListener('drop', function (e) { e.preventDefault(); off.classList.remove('drop'); if (dragId) act(dragId); dragId = null; });
+  }
+
   /* sort game (week 19): one card at a time goes into one of two bins; an IN card then asks which part takes it in */
   function renderSort(i, p) {
     var h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
@@ -506,7 +541,7 @@
     var name = (st.name || '').trim();
     if (!name) { nmMsg.textContent = 'Type your first name first.'; nm.focus(); return; }
     var rows = P.map(function (p, i) {
-      var two = (G.type === 'count' || G.type === 'web') ? p.tag : G.type === 'spot' ? G.places[p.place] : G.type === 'clean' ? p.ok : G.type === 'fly' ? L.tag : G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
+      var two = (G.type === 'count' || G.type === 'web' || G.type === 'clue') ? p.tag : G.type === 'spot' ? G.places[p.place] : G.type === 'clean' ? p.ok : G.type === 'fly' ? L.tag : G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
       var three = p.place ? (st.p[i] ? esc(G.places[p.place]) : '<i>not picked yet</i>') : '';
       return '<tr><td>' + esc(p.name) + '</td><td>' + (st.m[i] ? esc(two) : '<i>not matched yet</i>') + '</td>' + (L.cols.length > 2 ? '<td>' + three + '</td>' : '') + '</tr>';
     }).join('');

@@ -1,6 +1,6 @@
 # G3 Science VR · Week 25 · 25.01 VR · Full of Life
 
-Status (23 Nov 2026): preview built and tested, waiting for Bethany's approval. Q4 week: scripts + placeholders only, NO recording. Clip slots for brief, step2, step3, extra and studio stay hidden until their mp3s exist. step1, step4, step5 copied from week 24 (same voice, same words).
+Status (23 Nov 2026): approved and committed locally (not pushed). Repo build tested from an http mirror (all clips and images 200). Q4 week: scripts + placeholders only, NO recording. Clip slots for brief, step2, step3, extra and studio stay hidden until their mp3s exist. step1, step4, step5 copied from week 24 (same voice, same words).
 
 ## Budget sheet (650 credits; writing target 95% = 617)
 | Clip | Job | Allot | Chars |

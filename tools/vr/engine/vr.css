@@ -218,3 +218,16 @@ main.vr{padding:18px 22px 30px}
 .vr-sp em{display:block;font-style:normal;font-size:12.5px;color:#B3261E}
 .vr-snip{font-size:17px}
 @media (max-width:600px){.vr-web{aspect-ratio:9/11}.vr-sp{width:27%;font-size:12px;padding:3px}.vr-sp em{font-size:10.5px}}
+
+/* clue game (week 26): a prop table; props that do not fit the clue go off the table */
+.vr-clue{background:#14110D;color:#F6E7C1;border-radius:10px;padding:10px 14px;font:800 19px/1.35 Nunito,Arial,sans-serif;margin:6px 0}
+.vr-table{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:6px 0;padding:10px;border-radius:12px;background:#5A3E25}
+.vr-prop{position:relative;border:3px solid #fff;background:#fff;border-radius:10px;padding:4px;cursor:pointer;font:800 15px/1.2 Nunito,Arial,sans-serif;color:var(--wl-ink);text-align:center}
+.vr-prop img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;margin-bottom:3px;pointer-events:none}
+.vr-prop span{display:block}
+.vr-prop:hover{border-color:#E3B04B}
+.vr-prop.gone{opacity:.35;cursor:default;border-style:dashed}
+.vr-prop em{display:block;font-style:normal;font-size:12.5px;color:#B3261E}
+.vr-off{margin:6px 0;padding:10px;border:3px dashed var(--wl-line);border-radius:12px;text-align:center;font:800 16px Nunito,Arial,sans-serif;color:#7A6A55}
+.vr-off.drop{background:#FFF3D6;border-color:#E3B04B}
+@media (max-width:600px){.vr-table{gap:6px;padding:6px}.vr-prop{font-size:12px;padding:3px}.vr-clue{font-size:17px}}

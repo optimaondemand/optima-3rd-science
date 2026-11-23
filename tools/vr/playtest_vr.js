@@ -48,7 +48,20 @@ const path = require('path'), fs = require('fs');
   const gtype = await page.evaluate(() => window.VR.game.type);
   const bins = await page.evaluate(() => window.VR.game.pairs.map(p => p.bin));
   const binKeys = await page.evaluate(() => Object.keys(window.VR.game.bins || {}));
-  if (gtype === 'web') {
+  if (gtype === 'clue') {
+    const C = await page.evaluate(() => ({ clues: window.VR.game.clues, props: window.VR.game.props.map(p => p.id) }));
+    const out = C.clues.flatMap(c => c.out), keep = C.props.find(p => !out.includes(p));
+    for (const [n, c] of C.clues.entries()) {
+      if (n === 0) { await page.click(`.vr-prop[data-id="${keep}"]`); await shot('08-miss', '#vr-game'); }
+      for (const [j, id] of c.out.entries()) {
+        if (n === 1 && j === 0) await page.dragAndDrop(`.vr-prop[data-id="${id}"]`, '#vr-off');
+        else await page.click(`.vr-prop[data-id="${id}"]`);
+        if (n === 0 && j === 0) await shot('09-place-miss', '#vr-game');
+      }
+      if (n === 1) await shot('09b-next', '#vr-game');
+      g++;
+    }
+  } else if (gtype === 'web') {
     const G = await page.evaluate(() => ({ links: window.VR.game.links, snip: window.VR.game.snip, sp: window.VR.game.species.map(x => [x.id, x.plant]), cl: [Object.keys(window.VR.game.claim.options), window.VR.game.claim.right] }));
     const card = id => `.vr-sp[data-id="${id}"]`;
     await page.click(card(G.sp.find(x => x[1])[0]));                      // a plant first: says tap an animal

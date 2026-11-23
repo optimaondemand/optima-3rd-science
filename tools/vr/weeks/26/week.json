@@ -1,0 +1,299 @@
+{
+ "id": "g3sci-vr-26",
+ "week": 26,
+ "lesson": "26.01",
+ "lessonTitle": "What Are the Properties of Matter?",
+ "title": "Prop Check",
+ "emoji": "🎬",
+ "canvasName": "26.01 VR · Prop Check",
+ "details": [
+  "📅 Q4 · Unit 9 · Matter & Energy",
+  "📖 Week 26 · goes with Lesson 26.01",
+  "🌎 CPALMS SC.3.P.8.1, SC.3.P.8.3",
+  "⏱ About 15 minutes"
+ ],
+ "map": "OptimaED Science Lab",
+ "mapWord": "Science",
+ "badge": {
+  "emoji": "🧰",
+  "name": "Prop Master",
+  "line": "Only VR crews earn this one. Your shot goes in Opti's film."
+ },
+ "stamp": "Studio Day · Wonder Films",
+ "hook": {
+  "look": "This is a <b>prop list</b>. <b>Props</b> are the things actors use in a film.",
+  "head": "Scene 26 · Prop Check",
+  "sub": "Wonder Films · Prop list",
+  "rows": [
+   [
+    "Granite",
+    "Hardness"
+   ],
+   [
+    "Snowball",
+    "Temperature"
+   ],
+   [
+    "Soccer ball",
+    "Shape"
+   ],
+   [
+    "Golf ball",
+    "Mass"
+   ]
+  ],
+  "img": "hook",
+  "alt": "Old black and white photo of students looking at rocks and minerals in museum cases",
+  "cap": "Students visit the Hall of Gems and Minerals at the Smithsonian's National Museum of Natural History.",
+  "note": "Every rock in those cases has properties you can see and test. What can you find out about our props?"
+ },
+ "opti": {
+  "brief": "Welcome to the lab, crew. We film Scene 26, Prop Check. Show me how our props are different, then take the shot.",
+  "studio": "No headset today? Come to the studio. Read each clue and clear the prop table. Then tell me what you think."
+ },
+ "vr": {
+  "look": "A <b>model</b> is a copy of something real. A <b>property</b> is something you can see, feel or measure, like color, shape or hardness.",
+  "groups": [
+   {
+    "title": "🎬 Props to line up",
+    "models": [
+     {
+      "name": "Granite Block",
+      "word": "Granite",
+      "img": "granite",
+      "alt": "Large pink and gray granite rock on the ground",
+      "trait": "Hard and rough."
+     },
+     {
+      "name": "Golf Ball",
+      "word": "Golf",
+      "img": "golf",
+      "alt": "White golf ball on a tee in the grass",
+      "trait": "Hard, round and white."
+     },
+     {
+      "name": "Soccer Ball",
+      "word": "Soccer",
+      "img": "soccer",
+      "alt": "Soccer ball sitting on a green field",
+      "trait": "Round and bouncy."
+     },
+     {
+      "name": "Snowball",
+      "word": "Snowball",
+      "img": "snowball",
+      "alt": "A gloved hand holding a round snowball",
+      "trait": "Cold and white."
+     }
+    ]
+   },
+   {
+    "title": "⚖️ A tool",
+    "models": [
+     {
+      "name": "Scale",
+      "word": "Scale",
+      "img": "scale",
+      "alt": "Kitchen scale with two metal weights on top",
+      "trait": "Measures mass."
+     }
+    ]
+   }
+  ],
+  "steps": [
+   {
+    "where": "🖥️ Before your headset",
+    "title": "Know your models",
+    "clip": "step1",
+    "html": "<p>Type each gray word in the <b>Filter models</b> box.</p>@MODELS@<p>This list is also on the <b>Canvas</b> tab in VR.</p>"
+   },
+   {
+    "where": "🥽 In VR",
+    "title": "Go on location",
+    "clip": "step2",
+    "html": "<div class=\"vr-how\">🔗 <b>First time only:</b> connect Canvas at <a href=\"https://xr.optimaed.com\" target=\"_blank\" rel=\"noopener\">xr.optimaed.com</a>. See <b>Having trouble in VR?</b> below.</div><p>Open the <b>On-Demand</b> app. Click <b>Explore</b>. Type <b>Science</b> in <b>Filter environments</b>. Click <b>OptimaED Science Lab</b>, then <b>Begin Solo</b>.</p>"
+   },
+   {
+    "title": "Build the scene",
+    "clip": "step3",
+    "html": "<p>Press the <b>top button on your right controller</b>, then click <b>Models</b>. Pick one property, like hardness or size. Line up the Granite Block, Golf Ball, Soccer Ball and Snowball by that property. Set the Scale at the end.</p><div class=\"vr-how\">✋ Grab a model with the <b>palm trigger</b>. Use <b>both</b> palm triggers to make it bigger or smaller.</div><div class=\"vr-say\">🗣 <b>Say it out loud:</b> “I lined them up by ___. The ___ is ___, but the ___ is ___.”</div>"
+   },
+   {
+    "title": "Take the shot and send it",
+    "clip": "step4",
+    "html": "<p>Stand back so the whole scene fits. Open your menu, click <b>Library</b>, then <b>Camera</b>. Click <b>Take photo</b>.</p><p>Click the <b>Canvas</b> tab and pick <b>@CANVAS@</b>. Click <b>Choose from My Files</b>, pick your photo, click <b>Use this file</b>, then <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.</p><div class=\"vr-how\">🔁 Want to fix it? Move the models, take a new photo and send it again.</div>"
+   },
+   {
+    "where": "✅ After",
+    "title": "Check and leave",
+    "clip": "step5",
+    "html": "<p>Press the <b>Meta button</b>, then click <b>Quit</b>. Check that your photo is in the Canvas assignment. Not there? Open <b>Having trouble in VR?</b></p>"
+   }
+  ],
+  "extra": {
+   "after": 3,
+   "clip": "extra",
+   "html": "Add a tool that measures length: <span class=\"vr-word\">Ruler</span>"
+  },
+  "full": "Your photo shows the Granite Block, Golf Ball, Soccer Ball and Snowball in a line, with the Scale at the end."
+ },
+ "studio": {
+  "kicker": "Studio Day · no headset",
+  "title": "Find the mystery prop",
+  "type": "clue",
+  "framePl": "ptag",
+  "labels": {
+   "clue": "Clue",
+   "start": "Read the clue. Which props do not fit?",
+   "off": "Off the table",
+   "offTag": "Off",
+   "done": "Only the golf ball is left. It is hard, round and white, and it has more mass than a ping-pong ball. You found the mystery prop!",
+   "pdfTitle": "Find the mystery prop",
+   "cols": [
+    "Clue",
+    "Property it checks"
+   ]
+  },
+  "look": "A <b>property</b> is something you can see, feel or measure, like color, shape or hardness. Eight real props sit on the prop table. One of them is the mystery prop.",
+  "do": "Read the clue. Tap every prop that does not fit, or drag it to Off the table. Keep going until one prop is left.",
+  "write": {
+   "min": 20,
+   "frames": [
+    {
+     "lead": "1. How did you find the mystery prop?",
+     "starter": "I found it because it is ___, ___ and ___."
+    },
+    {
+     "lead": "2. How are two props different?",
+     "starter": "The ___ is ___, but the ___ is ___."
+    }
+   ],
+   "chips": [
+    "property",
+    "hard",
+    "soft",
+    "round",
+    "white",
+    "mass",
+    "color",
+    "shape",
+    "texture",
+    "because"
+   ]
+  },
+  "full": "You used all 4 clues to find the mystery prop. Your 2 sentences have at least 20 words.",
+  "props": [
+   {
+    "id": "granite",
+    "name": "Granite",
+    "img": "granite",
+    "alt": "Large pink and gray granite rock on the ground"
+   },
+   {
+    "id": "sponge",
+    "name": "Sponge",
+    "img": "sponge",
+    "alt": "Yellow kitchen sponge with a green scrub side"
+   },
+   {
+    "id": "golf",
+    "name": "Golf ball",
+    "img": "golf",
+    "alt": "White golf ball on a tee in the grass"
+   },
+   {
+    "id": "feather",
+    "name": "Feather",
+    "img": "feather",
+    "alt": "One white feather on a dark background"
+   },
+   {
+    "id": "marble",
+    "name": "Marble",
+    "img": "marble",
+    "alt": "Many glass marbles in many colors"
+   },
+   {
+    "id": "conch",
+    "name": "Seashell",
+    "img": "conch",
+    "alt": "Big conch shell lying on the sea floor"
+   },
+   {
+    "id": "cotton",
+    "name": "Cotton pad",
+    "img": "cotton",
+    "alt": "Round white cotton pad"
+   },
+   {
+    "id": "pingpong",
+    "name": "Ping-pong ball",
+    "img": "pingpong",
+    "alt": "White ping-pong ball on a gray table"
+   }
+  ],
+  "clues": [
+   {
+    "text": "It is hard.",
+    "tag": "Hardness",
+    "img": "feather",
+    "alt": "One white feather on a dark background",
+    "out": [
+     "sponge",
+     "feather",
+     "cotton"
+    ],
+    "gone": "The {from} is soft, so it goes off the table.",
+    "keep": "The {from} is hard, so it stays.",
+    "done": "Only hard props are left. Next clue!"
+   },
+   {
+    "text": "It is round, like a ball.",
+    "tag": "Shape",
+    "img": "conch",
+    "alt": "Big conch shell lying on the sea floor",
+    "out": [
+     "granite",
+     "conch"
+    ],
+    "gone": "The {from} is not round, so it goes off the table.",
+    "keep": "The {from} is round, so it stays.",
+    "done": "Only round props are left. Next clue!"
+   },
+   {
+    "text": "It is white.",
+    "tag": "Color",
+    "img": "marble",
+    "alt": "Many glass marbles in many colors",
+    "out": [
+     "marble"
+    ],
+    "gone": "The {from} has many colors, so it goes off the table.",
+    "keep": "The {from} is white, so it stays.",
+    "done": "Only white props are left. One more clue!"
+   },
+   {
+    "text": "It has more mass than a ping-pong ball.",
+    "tag": "Mass",
+    "img": "pingpong",
+    "alt": "White ping-pong ball on a gray table",
+    "out": [
+     "pingpong"
+    ],
+    "gone": "The ping-pong ball has very little mass, so it goes off the table.",
+    "keep": "The {from} has more mass, so it stays.",
+    "done": "One prop is left!"
+   }
+  ]
+ },
+ "voice": {
+  "brief": "Welcome to the lab, crew. We film Scene 26, Prop Check. Show me how our props are different, then take the shot.",
+  "step1": "Before your headset goes on, meet your five models. Learn each gray search word. You will type it in VR.",
+  "step2": "Put on your headset. Click Explore, type Science, and pick OptimaED Science Lab. Then click Begin Solo.",
+  "step3": "Line up the granite, the golf ball, the soccer ball and the snowball. Pick one property. Then tell me how they differ.",
+  "extra": "Got time? Add a tool that measures length. That shot is just for VR crews.",
+  "step4": "Step back so the whole scene fits. Click Library, then Camera, and take the shot. Then send it to Canvas.",
+  "step5": "Press the Meta button and click Quit. Then open Canvas. Your photo should be waiting there.",
+  "studio": "No headset today? Come to the studio. Read each clue and clear the prop table. Then tell me what you think."
+ }
+}
