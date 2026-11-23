@@ -48,6 +48,9 @@ S = W['studio']
 if S['write']['min'] < 20: F('Studio writing minimum is 20 words')
 if len(S['write']['frames']) != 2: F('Studio needs exactly 2 sentence frames')
 keys = {c['key'] for c in S.get('cousins', [])}
+if S.get('type') == 'spot':
+    for s in S['spots']:
+        if s.get('pollute') and s.get('kind') not in S['places']: F('spot game: kind missing for ' + s['id'])
 if S.get('type') == 'clean':
     if len([x for x in S['items'] if x.get('trash')]) < 3: F('clean game: at least 3 pieces of litter')
     if S['action']['right'] not in S['action']['options']: F('clean game: action.right is not one of the options')

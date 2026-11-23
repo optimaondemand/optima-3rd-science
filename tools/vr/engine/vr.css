@@ -184,3 +184,13 @@ main.vr{padding:18px 22px 30px}
 .vr-litter{display:block;text-align:center;margin:8px 0;padding:18px 8px}
 .vr-place.vr-col{flex-direction:column;align-items:flex-start}
 @media (max-width:560px){.vr-fly.n4{grid-template-columns:repeat(2,1fr)}}
+
+/* week 23+: spot game */
+.vr-scene{position:relative;border-radius:12px;overflow:hidden;border:3px solid var(--wl-line);margin:6px 0}
+.vr-scene img{display:block;width:100%}
+.vr-pin{position:absolute;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;border:3px solid #fff;background:rgba(20,17,13,.82);color:#E3B04B;font:900 21px Nunito,Arial,sans-serif;cursor:pointer;box-shadow:0 0 0 3px rgba(227,176,75,.65);padding:0}
+.vr-pin.on{background:#E3B04B;color:#14110D}
+.vr-pin.ok{background:#2E7D32;color:#fff;box-shadow:none;cursor:default}
+.vr-pin.drop{box-shadow:0 0 0 7px rgba(227,176,75,.9)}
+.vr-lens{display:inline-block;margin:6px 0;padding:8px 14px;border:3px dashed var(--wl-line);border-radius:12px;font:800 15px Nunito,Arial,sans-serif;cursor:grab;background:#fff}
+@media (max-width:560px){.vr-pin{width:34px;height:34px;font-size:16px}}

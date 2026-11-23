@@ -48,7 +48,15 @@ const path = require('path'), fs = require('fs');
   const gtype = await page.evaluate(() => window.VR.game.type);
   const bins = await page.evaluate(() => window.VR.game.pairs.map(p => p.bin));
   const binKeys = await page.evaluate(() => Object.keys(window.VR.game.bins || {}));
-  if (gtype === 'clean') {
+  if (gtype === 'spot') {
+    const sp = await page.evaluate(() => window.VR.game.spots.map(x => [x.id, x.pollute, x.kind]));
+    await page.click(`.vr-pin[data-id="${sp.find(x => !x[1])[0]}"]`); await shot('08-miss', '#vr-game');
+    for (const [id, pol, kind] of sp) if (pol) {
+      await page.click(`.vr-pin[data-id="${id}"]`);
+      if (g === 0) { await page.click(`.vr-place button[data-pl="${placeKeys.find(k => k !== kind)}"]`); await shot('09-place-miss', '#vr-game'); }
+      await page.click(`.vr-place button[data-pl="${kind}"]`); await page.waitForTimeout(800); g++;
+    }
+  } else if (gtype === 'clean') {
     const it = await page.evaluate(() => window.VR.game.items.map(x => [x.id, x.trash]));
     const act = await page.evaluate(() => [Object.keys(window.VR.game.action.options), window.VR.game.action.right]);
     await page.click(`.vr-flower[data-id="${it.find(x => !x[1])[0]}"]`); await shot('08-miss', '#vr-game');

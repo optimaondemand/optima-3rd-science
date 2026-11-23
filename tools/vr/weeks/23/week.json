@@ -1,0 +1,282 @@
+{
+ "id": "g3sci-vr-23",
+ "week": 23,
+ "lesson": "23.01",
+ "lessonTitle": "How Does Pollution Affect Ecosystems?",
+ "title": "Three Kinds of Trouble",
+ "emoji": "🎬",
+ "canvasName": "23.01 VR · Three Kinds of Trouble",
+ "details": [
+  "📅 Q3 · Unit 8 · Human Impact & Conservation",
+  "📖 Week 23 · goes with Lesson 23.01",
+  "🌎 CPALMS SC.3.N.1.7 · NGSS 3-LS4-4",
+  "⏱ About 15 minutes"
+ ],
+ "map": "Island Town",
+ "mapWord": "Island",
+ "badge": {
+  "emoji": "🌤️",
+  "name": "Clear Sky",
+  "line": "Only VR crews earn this one. Your shot goes in Opti's film."
+ },
+ "stamp": "Studio Day · Wonder Films",
+ "hook": {
+  "look": "This is a <b>weather report</b> for a film set. It tells the crew what the day is like.",
+  "head": "Set weather report",
+  "sub": "Wonder Films · Scene 23",
+  "rows": [
+   [
+    "Air",
+    "Smoky"
+   ],
+   [
+    "Water",
+    "Green"
+   ],
+   [
+    "Ground",
+    "Littered"
+   ],
+   [
+    "Filming",
+    "On hold"
+   ]
+  ],
+  "img": "hook",
+  "alt": "Tall chimneys sending a long trail of smoke across the sky above a calm lake at sunset",
+  "cap": "Smoke from a power plant drifts over a lake in Russia.",
+  "note": "Three things are wrong with my set. Can you spot all three?"
+ },
+ "opti": {
+  "brief": "Welcome to town, crew. We film Scene 23, Three Kinds of Trouble. Show me land, water and air pollution, then take the shot.",
+  "studio": "No headset today? Come to the studio. Find four spots that pollute the town. Then tell me what you think."
+ },
+ "vr": {
+  "look": "A <b>model</b> is a copy of something real. <b>Pollution</b> is harmful stuff that ends up where it does not belong.",
+  "groups": [
+   {
+    "title": "⚠️ The pollution",
+    "models": [
+     {
+      "name": "White Smoke Effect",
+      "word": "Smoke",
+      "img": "smoke",
+      "alt": "Thick smoke pouring from three tall factory chimneys",
+      "trait": "Air pollution."
+     },
+     {
+      "name": "Pipe - Grey 2m",
+      "word": "Pipe - Grey 2m",
+      "img": "pipe",
+      "alt": "Old waste pipe running across a beach into the sea",
+      "trait": "Water pollution, when waste pours out."
+     },
+     {
+      "name": "School Supplies: Water Bottle",
+      "word": "Water Bottle",
+      "img": "bottle",
+      "alt": "Empty plastic water bottle left in a bush",
+      "trait": "Land pollution."
+     }
+    ]
+   },
+   {
+    "title": "🐸 Who lives here",
+    "models": [
+     {
+      "name": "Seagull",
+      "word": "Seagull",
+      "img": "gull",
+      "alt": "White and gray gull standing on grass",
+      "trait": "Breathes the air."
+     },
+     {
+      "name": "Frog",
+      "word": "Frog",
+      "img": "frog",
+      "alt": "Green frog sitting on moss",
+      "trait": "Lives in the water."
+     }
+    ]
+   }
+  ],
+  "steps": [
+   {
+    "where": "🖥️ Before your headset",
+    "title": "Know your models",
+    "clip": "step1",
+    "html": "<p>Type each gray word in the <b>Filter models</b> box.</p>@MODELS@<p>This list is also on the <b>Canvas</b> tab in VR.</p>"
+   },
+   {
+    "where": "🥽 In VR",
+    "title": "Go on location",
+    "clip": "step2",
+    "html": "<div class=\"vr-how\">🔗 <b>First time only:</b> connect Canvas at <a href=\"https://xr.optimaed.com\" target=\"_blank\" rel=\"noopener\">xr.optimaed.com</a>. See <b>Having trouble in VR?</b> below.</div><p>Open the <b>On-Demand</b> app. Click <b>Explore</b>. Type <b>Island</b> in <b>Filter environments</b>. Click <b>Island Town</b>, then <b>Begin Solo</b>.</p>"
+   },
+   {
+    "title": "Build the scene",
+    "clip": "step3",
+    "html": "<p>Press the <b>top button on your right controller</b>, then click <b>Models</b>. Put the White Smoke Effect up in the air. Aim the Pipe at the water. Drop the Water Bottle on the ground. Then add the Seagull and the Frog.</p><div class=\"vr-how\">✋ Grab a model with the <b>palm trigger</b>. Use <b>both</b> palm triggers to make it bigger or smaller.</div><div class=\"vr-say\">🗣 <b>Say it out loud:</b> “This is ___ pollution. It harms the ___ because ___.”</div>"
+   },
+   {
+    "title": "Take the shot and send it",
+    "clip": "step4",
+    "html": "<p>Stand back so the whole scene fits. Open your menu, click <b>Library</b>, then <b>Camera</b>. Click <b>Take photo</b>.</p><p>Click the <b>Canvas</b> tab and pick <b>@CANVAS@</b>. Click <b>Choose from My Files</b>, pick your photo, click <b>Use this file</b>, then <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.</p><div class=\"vr-how\">🔁 Want to fix it? Move the models, take a new photo and send it again.</div>"
+   },
+   {
+    "where": "✅ After",
+    "title": "Check and leave",
+    "clip": "step5",
+    "html": "<p>Press the <b>Meta button</b>, then click <b>Quit</b>. Check that your photo is in the Canvas assignment. Not there? Open <b>Having trouble in VR?</b></p>"
+   }
+  ],
+  "extra": {
+   "after": 3,
+   "clip": "extra",
+   "html": "Add one more piece of water pollution: <span class=\"vr-word\">Fishing Net</span>"
+  },
+  "full": "Your photo shows the smoke, the pipe and the bottle, plus the Seagull and the Frog."
+ },
+ "studio": {
+  "kicker": "Studio Day · no headset",
+  "title": "Spot the pollution",
+  "type": "spot",
+  "labels": {
+   "done": "You found all 4. Land, water and air pollution were all in one town. Nice work, crew!",
+   "find": "Find",
+   "start": "Tap a question mark.",
+   "lens": "Drag me onto a question mark, or just tap one.",
+   "q2": "What kind of pollution is it?",
+   "next": "Filed! Look for the next spot.",
+   "pdfTitle": "Spot the pollution",
+   "cols": [
+    "What I found",
+    "Kind of pollution"
+   ]
+  },
+  "look": "This picture is a <b>model</b>, a simple drawing of a town. <b>Pollution</b> is harmful stuff that ends up where it does not belong. Six things have a question mark beside them. Four of them pollute.",
+  "do": "Tap a question mark, or drag the magnifying glass onto it. When you find pollution, tap what kind it is.",
+  "scene": {
+   "art": "scene",
+   "alt": "Drawing of a small town: a factory with a smoking chimney, a red car on a road, a pipe pouring brown water into a stream, a pile of trash, a tree and a duck"
+  },
+  "places": {
+   "land": "🟫 Land",
+   "water": "💧 Water",
+   "air": "💨 Air"
+  },
+  "spots": [
+   {
+    "id": "stack",
+    "x": 11,
+    "y": 10,
+    "name": "Factory chimney",
+    "pollute": true,
+    "kind": "air",
+    "msg": "You found one! Smoke from the tall chimney goes up into the sky.",
+    "miss": "Look where the smoke goes. Try again.",
+    "proof": {
+     "img": "smoke",
+     "alt": "Thick smoke pouring from three tall factory chimneys",
+     "cap": "Real smoke from factory chimneys, in 1942."
+    }
+   },
+   {
+    "id": "tree",
+    "x": 90,
+    "y": 24,
+    "name": "Tree",
+    "msg": "The tree is fine. Its leaves help clean the air."
+   },
+   {
+    "id": "car",
+    "x": 62,
+    "y": 51,
+    "name": "Car",
+    "pollute": true,
+    "kind": "air",
+    "msg": "You found one! The car's tailpipe puffs out gases.",
+    "miss": "Look where the puffs go. Try again.",
+    "proof": {
+     "img": "exhaust",
+     "alt": "Car on a road with a cloud of smoke coming from its tailpipe",
+     "cap": "Real smoke from a car's tailpipe."
+    }
+   },
+   {
+    "id": "pipe",
+    "x": 31,
+    "y": 77,
+    "name": "Drain pipe",
+    "pollute": true,
+    "kind": "water",
+    "msg": "You found one! Dirty water pours from the pipe into the stream.",
+    "miss": "Look where the dirty water goes. Try again.",
+    "proof": {
+     "img": "pipe",
+     "alt": "Old waste pipe running across a beach into the sea",
+     "cap": "A real pipe built to carry waste water into the sea."
+    }
+   },
+   {
+    "id": "duck",
+    "x": 10,
+    "y": 88,
+    "name": "Duck",
+    "msg": "The duck is fine. It lives here, and it needs clean water."
+   },
+   {
+    "id": "litter",
+    "x": 92,
+    "y": 74,
+    "name": "Trash pile",
+    "pollute": true,
+    "kind": "land",
+    "msg": "You found one! Someone left trash on the ground.",
+    "miss": "Look where the trash is lying. Try again.",
+    "proof": {
+     "img": "litter",
+     "alt": "Pile of dumped trash beside a building",
+     "cap": "Real trash dumped on the ground."
+    }
+   }
+  ],
+  "write": {
+   "min": 20,
+   "frames": [
+    {
+     "lead": "1. Pick one kind of pollution you found.",
+     "starter": "I think ___ pollution harms living things because ___."
+    },
+    {
+     "lead": "2. What could the town do about it?",
+     "starter": "I saw ___, so the town could ___."
+    }
+   ],
+   "chips": [
+    "pollution",
+    "land",
+    "water",
+    "air",
+    "smoke",
+    "litter",
+    "pipe",
+    "stream",
+    "animals",
+    "clean",
+    "because"
+   ]
+  },
+  "full": "You found all 4 spots and named each kind of pollution. Your 2 sentences have at least 20 words."
+ },
+ "voice": {
+  "brief": "Welcome to town, crew. We film Scene 23, Three Kinds of Trouble. Show me land, water and air pollution, then take the shot.",
+  "step1": "Before your headset goes on, meet your five models. Learn each gray search word. You will type it in VR.",
+  "step2": "Put on your headset. Click Explore, type Island, and pick Island Town. Then click Begin Solo.",
+  "step3": "Put smoke in the air, the pipe by the water and the bottle on the ground. Add the gull and frog. Name each kind.",
+  "extra": "Got time? Add one more piece of water pollution. That shot is just for VR crews.",
+  "step4": "Step back so the whole scene fits. Click Library, then Camera, and take the shot. Then send it to Canvas.",
+  "step5": "Press the Meta button and click Quit. Then open Canvas. Your photo should be waiting there.",
+  "studio": "No headset today? Come to the studio. Find four spots that pollute the town. Then tell me what you think."
+ }
+}
