@@ -194,3 +194,10 @@ main.vr{padding:18px 22px 30px}
 .vr-pin.drop{box-shadow:0 0 0 7px rgba(227,176,75,.9)}
 .vr-lens{display:inline-block;margin:6px 0;padding:8px 14px;border:3px dashed var(--wl-line);border-radius:12px;font:800 15px Nunito,Arial,sans-serif;cursor:grab;background:#fff}
 @media (max-width:560px){.vr-pin{width:34px;height:34px;font-size:16px}}
+
+/* week 24+: count game */
+.vr-nest{position:absolute;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;border:3px dashed rgba(20,17,13,.7);background:rgba(255,255,255,.16);cursor:pointer;font:900 15px Nunito,Arial,sans-serif;color:#14110D;padding:0}
+.vr-nest:hover,.vr-nest.drop{background:rgba(227,176,75,.4)}
+.vr-nest.ok{border:3px solid #2E7D32;background:rgba(255,255,255,.88);cursor:default}
+.vr-tally{font-weight:900;font-size:17px;margin:4px 0}
+@media (max-width:560px){.vr-nest{width:40px;height:40px;font-size:11px}}

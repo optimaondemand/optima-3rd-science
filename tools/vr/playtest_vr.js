@@ -48,7 +48,17 @@ const path = require('path'), fs = require('fs');
   const gtype = await page.evaluate(() => window.VR.game.type);
   const bins = await page.evaluate(() => window.VR.game.pairs.map(p => p.bin));
   const binKeys = await page.evaluate(() => Object.keys(window.VR.game.bins || {}));
-  if (gtype === 'spot') {
+  if (gtype === 'count') {
+    const sc = await page.evaluate(() => window.VR.game.scenes.map(s => s.spots.map(x => [x.id, x.nest])));
+    const cl = await page.evaluate(() => [Object.keys(window.VR.game.claim.options), window.VR.game.claim.right]);
+    for (const spots of sc) {
+      await page.click(`.vr-nest[data-id="${spots.find(x => !x[1])[0]}"]`); if (g === 0) await shot('08-miss', '#vr-game');
+      for (const [id, nest] of spots) if (nest) await page.click(`.vr-nest[data-id="${id}"]`);
+      g++; if (g === 1) await shot('09b-next', '#vr-game');
+    }
+    await page.click(`.vr-place button[data-a="${cl[0].find(k => k !== cl[1])}"]`); await shot('09-place-miss', '#vr-game');
+    await page.click(`.vr-place button[data-a="${cl[1]}"]`); await page.waitForTimeout(800); g++;
+  } else if (gtype === 'spot') {
     const sp = await page.evaluate(() => window.VR.game.spots.map(x => [x.id, x.pollute, x.kind]));
     await page.click(`.vr-pin[data-id="${sp.find(x => !x[1])[0]}"]`); await shot('08-miss', '#vr-game');
     for (const [id, pol, kind] of sp) if (pol) {

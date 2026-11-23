@@ -93,7 +93,7 @@
       var f = $('.vr-frame[data-f="' + i + '"]'); if (!f) return;
       var lit = st.m[i] && st.p[i];
       f.classList.toggle('lit', !!lit);
-      $('.pl', f).textContent = lit ? (G.framePl === 'tag' ? L.tag : G.framePl === 'bin' ? G.bins[p.bin] : G.framePl === 'cousin' ? cz(p.cousin).name : G.places[p.place]) : '';
+      $('.pl', f).textContent = lit ? (G.framePl === 'ptag' ? p.tag : G.framePl === 'tag' ? L.tag : G.framePl === 'bin' ? G.bins[p.bin] : G.framePl === 'cousin' ? cz(p.cousin).name : G.places[p.place]) : '';
     });
   }
   function cur() { for (var i = 0; i < P.length; i++) if (!(st.m[i] && st.p[i])) return i; return -1; }
@@ -108,6 +108,7 @@
     if (G.type === 'fly') { renderFly(); return; }
     if (G.type === 'clean') { renderClean(); return; }
     if (G.type === 'spot') { renderSpot(); return; }
+    if (G.type === 'count') { renderCount(); return; }
     if (G.type === 'sort') { renderSort(i, P[i]); return; }
     var p = P[i], h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
       '<div class="vr-fossil"' + (G.dragOpts ? '' : ' draggable="true"') + ' id="vr-fos"><img src="' + p.img + '" alt="' + esc(p.alt) + '">' + esc(p.name) + (p.facts ? '<small>' + esc(p.facts) + '</small>' : '') + '</div><div>';
@@ -271,6 +272,52 @@
     });
   }
 
+  /* count game (week 24): tag and count the nests in two drawn scenes, then pick the claim the numbers support */
+  function renderCount() {
+    st.c = st.c || {};
+    var SC = G.scenes, stage = !st.m[0] ? 0 : !st.m[1] ? 1 : 2, h;
+    if (stage < 2) {
+      var sc = SC[stage], got = st.c[sc.key] || [], total = sc.spots.filter(function (s) { return s.nest; }).length;
+      h = '<div class="vr-gstep">Step ' + (stage + 1) + ' of 3 · ' + esc(sc.title) + '</div><div class="vr-fb ' + flyCls + '" id="vr-fb" aria-live="polite">' + esc(flyMsg || L.start) + '</div>' +
+        '<div class="vr-scene"><img src="' + sc.img + '" alt="' + esc(sc.alt) + '">' + sc.spots.map(function (s) {
+          var k = got.indexOf(s.id);
+          return '<button type="button" class="vr-nest' + (k >= 0 ? ' ok' : '') + '" style="left:' + s.x + '%;top:' + s.y + '%" data-id="' + s.id + '" aria-label="' + esc(L.spot) + '"' + (k >= 0 ? ' disabled' : '') + '>' + (k >= 0 ? '🚩' + (k + 1) : '') + '</button>';
+        }).join('') + '</div><div class="vr-tally">' + esc(L.count) + ': ' + got.length + '</div><div class="vr-lens" id="vr-lens" draggable="true">🚩 ' + esc(L.flag) + '</div>';
+      game.innerHTML = h;
+      var act = function (id) {
+        var s = sc.spots.filter(function (x) { return x.id === id; })[0];
+        if (got.indexOf(id) >= 0) return;
+        if (s.nest) {
+          got.push(id); st.c[sc.key] = got; flyCls = 'ok'; flyMsg = fill(L.tagged, String(got.length));
+          if (got.length === total) { st.m[stage] = true; st.p[stage] = true; flyMsg = sc.done; }
+          save();
+        } else { flyCls = ''; flyMsg = s.msg; }
+        render();
+      };
+      $$('.vr-nest', game).forEach(function (b) {
+        var id = b.getAttribute('data-id');
+        b.addEventListener('click', function () { act(id); });
+        b.addEventListener('dragover', function (e) { e.preventDefault(); b.classList.add('drop'); });
+        b.addEventListener('dragleave', function () { b.classList.remove('drop'); });
+        b.addEventListener('drop', function (e) { e.preventDefault(); b.classList.remove('drop'); act(id); });
+      });
+      var lens = $('#vr-lens');
+      if (lens) lens.addEventListener('dragstart', function (e) { try { e.dataTransfer.setData('text/plain', 'flag'); } catch (x) {} });
+    } else {
+      var A = G.claim;
+      h = '<div class="vr-gstep">Step 3 of 3 · ' + esc(L.step3) + '</div><div class="vr-fb ok">' + esc(P[0].name + ': ' + P[0].tag + '. ' + P[1].name + ': ' + P[1].tag + '.') + '</div><div class="vr-gstep">' + esc(A.q) + '</div><div class="vr-place vr-col">' +
+        Object.keys(A.options).map(function (k) { return '<button type="button" data-a="' + k + '">' + esc(A.options[k]) + '</button>'; }).join('') + '</div><div class="vr-fb" id="vr-fb" aria-live="polite"></div>';
+      game.innerHTML = h;
+      var fb = $('#vr-fb');
+      $$('.vr-place button', game).forEach(function (b) {
+        b.addEventListener('click', function () {
+          if (b.getAttribute('data-a') === A.right) { b.classList.add('ok'); st.m[2] = true; st.p[2] = true; save(); setTimeout(render, 650); frames(); }
+          else { b.classList.add('no'); fb.className = 'vr-fb no'; fb.textContent = A.miss; }
+        });
+      });
+    }
+  }
+
   /* sort game (week 19): one card at a time goes into one of two bins; an IN card then asks which part takes it in */
   function renderSort(i, p) {
     var h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
@@ -355,7 +402,7 @@
     var name = (st.name || '').trim();
     if (!name) { nmMsg.textContent = 'Type your first name first.'; nm.focus(); return; }
     var rows = P.map(function (p, i) {
-      var two = G.type === 'spot' ? G.places[p.place] : G.type === 'clean' ? p.ok : G.type === 'fly' ? L.tag : G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
+      var two = G.type === 'count' ? p.tag : G.type === 'spot' ? G.places[p.place] : G.type === 'clean' ? p.ok : G.type === 'fly' ? L.tag : G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
       var three = p.place ? (st.p[i] ? esc(G.places[p.place]) : '<i>not picked yet</i>') : '';
       return '<tr><td>' + esc(p.name) + '</td><td>' + (st.m[i] ? esc(two) : '<i>not matched yet</i>') + '</td>' + (L.cols.length > 2 ? '<td>' + three + '</td>' : '') + '</tr>';
     }).join('');

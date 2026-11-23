@@ -1,0 +1,301 @@
+{
+ "id": "g3sci-vr-24",
+ "week": 24,
+ "lesson": "24.01",
+ "lessonTitle": "What Is Conservation?",
+ "title": "The Comeback",
+ "emoji": "🎬",
+ "canvasName": "24.01 VR · The Comeback",
+ "details": [
+  "📅 Q3 · Unit 8 · Human Impact & Conservation",
+  "📖 Week 24 · goes with Lesson 24.01",
+  "🌎 CPALMS SC.3.N.1.7 · NGSS 3-LS4-4",
+  "⏱ About 15 minutes"
+ ],
+ "map": "Deserted Isles",
+ "mapWord": "Deserted",
+ "badge": {
+  "emoji": "🦅",
+  "name": "Golden Eagle",
+  "line": "Only VR crews earn this one. Your shot goes in Opti's film."
+ },
+ "stamp": "Studio Day · Wonder Films",
+ "hook": {
+  "look": "This is a <b>film can label</b>. A film can is a round tin that holds a reel of film.",
+  "head": "Scene 24 · The Comeback",
+  "sub": "Wonder Films · Film can",
+  "rows": [
+   [
+    "Reel",
+    "1 of 1"
+   ],
+   [
+    "Stars",
+    "Sea turtles"
+   ],
+   [
+    "Ending",
+    "Up to us"
+   ]
+  ],
+  "img": "hook",
+  "alt": "Sea turtle nest on a sandy beach, marked off with wooden stakes and bright tape",
+  "cap": "A marked sea turtle nest at Port St. Joe, Florida. Volunteers find and mark the nests.",
+  "note": "Someone marked off this patch of sand. Why protect a spot on a beach?"
+ },
+ "opti": {
+  "brief": "Welcome to the beach, crew. We film Scene 24, The Comeback. Show me how people protect a place for wildlife, then take the shot.",
+  "studio": "No headset today? Come to the studio. Count the nests before and after. Then tell me what you think."
+ },
+ "vr": {
+  "look": "A <b>model</b> is a copy of something real. A <b>refuge</b> is a safe place set aside for wildlife.",
+  "groups": [
+   {
+    "title": "🐢 Who the refuge protects",
+    "models": [
+     {
+      "name": "Green Sea Turtle",
+      "word": "Turtle",
+      "img": "turtle",
+      "alt": "Green sea turtle swimming over a sandy sea floor",
+      "trait": "Lays its eggs on quiet beaches."
+     },
+     {
+      "name": "Seagull",
+      "word": "Seagull",
+      "img": "gull",
+      "alt": "White and gray gull standing on grass",
+      "trait": "Rests and feeds here."
+     }
+    ]
+   },
+   {
+    "title": "🌿 How people help",
+    "models": [
+     {
+      "name": "Fern",
+      "word": "Fern",
+      "img": "fern",
+      "alt": "Bright green ferns with wide, feathery leaves",
+      "trait": "Stands in for beach plants."
+     },
+     {
+      "name": "Shovel",
+      "word": "Shovel",
+      "img": "shovel",
+      "alt": "Small garden shovel lying on fresh soil",
+      "trait": "People plant what was lost."
+     },
+     {
+      "name": "Binoculars",
+      "word": "Binoculars",
+      "img": "binoc",
+      "alt": "Pair of black binoculars",
+      "trait": "Scientists watch and count."
+     }
+    ]
+   }
+  ],
+  "steps": [
+   {
+    "where": "🖥️ Before your headset",
+    "title": "Know your models",
+    "clip": "step1",
+    "html": "<p>Type each gray word in the <b>Filter models</b> box.</p>@MODELS@<p>This list is also on the <b>Canvas</b> tab in VR.</p>"
+   },
+   {
+    "where": "🥽 In VR",
+    "title": "Go on location",
+    "clip": "step2",
+    "html": "<div class=\"vr-how\">🔗 <b>First time only:</b> connect Canvas at <a href=\"https://xr.optimaed.com\" target=\"_blank\" rel=\"noopener\">xr.optimaed.com</a>. See <b>Having trouble in VR?</b> below.</div><p>Open the <b>On-Demand</b> app. Click <b>Explore</b>. Type <b>Deserted</b> in <b>Filter environments</b>. Click <b>Deserted Isles</b>, then <b>Begin Solo</b>.</p>"
+   },
+   {
+    "title": "Build the scene",
+    "clip": "step3",
+    "html": "<p>Press the <b>top button on your right controller</b>, then click <b>Models</b>. Put the Green Sea Turtle and the Seagull on the sand. Plant the Fern behind them. Set the Shovel and the Binoculars nearby.</p><div class=\"vr-how\">✋ Grab a model with the <b>palm trigger</b>. Use <b>both</b> palm triggers to make it bigger or smaller.</div><div class=\"vr-say\">🗣 <b>Say it out loud:</b> “We protect this beach so the ___ can ___. Scientists check by ___.”</div>"
+   },
+   {
+    "title": "Take the shot and send it",
+    "clip": "step4",
+    "html": "<p>Stand back so the whole scene fits. Open your menu, click <b>Library</b>, then <b>Camera</b>. Click <b>Take photo</b>.</p><p>Click the <b>Canvas</b> tab and pick <b>@CANVAS@</b>. Click <b>Choose from My Files</b>, pick your photo, click <b>Use this file</b>, then <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.</p><div class=\"vr-how\">🔁 Want to fix it? Move the models, take a new photo and send it again.</div>"
+   },
+   {
+    "where": "✅ After",
+    "title": "Check and leave",
+    "clip": "step5",
+    "html": "<p>Press the <b>Meta button</b>, then click <b>Quit</b>. Check that your photo is in the Canvas assignment. Not there? Open <b>Having trouble in VR?</b></p>"
+   }
+  ],
+  "extra": {
+   "after": 3,
+   "clip": "extra",
+   "html": "Add one more animal the refuge protects: <span class=\"vr-word\">Star Fish</span>"
+  },
+  "full": "Your photo shows the turtle and the gull, plus the Fern, the Shovel and the Binoculars."
+ },
+ "studio": {
+  "kicker": "Studio Day · no headset",
+  "title": "Count the evidence",
+  "type": "count",
+  "framePl": "ptag",
+  "unit": "%d nests",
+  "labels": {
+   "done": "More nests after the beach was protected. That is evidence. Nice work, crew!",
+   "start": "Tap a circle. Is it a nest?",
+   "spot": "A circle on the beach",
+   "count": "Nests tagged",
+   "flag": "Drag a flag onto a nest, or just tap the nest.",
+   "tagged": "Nest {from} tagged!",
+   "step3": "What do the numbers show?",
+   "pdfTitle": "Count the evidence",
+   "cols": [
+    "What I counted",
+    "My result"
+   ]
+  },
+  "look": "Two pictures of one beach. They are <b>models</b>, simple drawings with made-up numbers. A sea turtle <b>nest</b> is a sandy mound with two lines of tracks from the sea. <b>Evidence</b> is what you can see and count.",
+  "do": "Tap each nest to tag it, or drag a flag onto it. Count the nests in both pictures. Then pick what the numbers show.",
+  "scenes": [
+   {
+    "key": "before",
+    "title": "Before the refuge",
+    "art": "beach-before",
+    "alt": "Drawing of a beach with a hotel, a bright lamp, a beach chair, a sandcastle, footprints and two turtle nests",
+    "done": "Before the refuge: 2 nests. Now count the beach after people protected it.",
+    "spots": [
+     {
+      "id": "b1",
+      "x": 17.5,
+      "y": 55.6,
+      "nest": true
+     },
+     {
+      "id": "bx1",
+      "x": 29.5,
+      "y": 65,
+      "msg": "That is a beach chair. A nest is a mound with tracks from the sea."
+     },
+     {
+      "id": "b2",
+      "x": 50.0,
+      "y": 51.6,
+      "nest": true
+     },
+     {
+      "id": "bx2",
+      "x": 65,
+      "y": 79,
+      "msg": "That is a sandcastle. A nest is a mound with tracks from the sea."
+     }
+    ]
+   },
+   {
+    "key": "after",
+    "title": "After the refuge",
+    "art": "beach-after",
+    "alt": "Drawing of the same beach with dune grass, a sign, a crab, driftwood and six turtle nests, and no hotel",
+    "done": "After the refuge: 6 nests.",
+    "spots": [
+     {
+      "id": "a1",
+      "x": 15.0,
+      "y": 55.6,
+      "nest": true
+     },
+     {
+      "id": "a2",
+      "x": 32.5,
+      "y": 71.6,
+      "nest": true
+     },
+     {
+      "id": "a3",
+      "x": 48.8,
+      "y": 52.4,
+      "nest": true
+     },
+     {
+      "id": "a4",
+      "x": 60.0,
+      "y": 76.7,
+      "nest": true
+     },
+     {
+      "id": "a5",
+      "x": 76.5,
+      "y": 66.7,
+      "nest": true
+     },
+     {
+      "id": "a6",
+      "x": 88.1,
+      "y": 85.6,
+      "nest": true
+     },
+     {
+      "id": "ax1",
+      "x": 41.3,
+      "y": 89.3,
+      "msg": "That is a crab. A nest is a mound with tracks from the sea."
+     },
+     {
+      "id": "ax2",
+      "x": 70.2,
+      "y": 91.5,
+      "msg": "That is driftwood. A nest is a mound with tracks from the sea."
+     }
+    ]
+   }
+  ],
+  "claim": {
+   "name": "My claim",
+   "img": "hook",
+   "alt": "Sea turtle nest on a sandy beach, marked off with wooden stakes and bright tape",
+   "tag": "It helped",
+   "q": "Which claim do your numbers support?",
+   "options": {
+    "helped": "🐢 Protecting the beach helped. More turtles nested.",
+    "same": "➖ Protecting the beach changed nothing.",
+    "hurt": "⬇️ Protecting the beach hurt. Fewer turtles nested."
+   },
+   "right": "helped",
+   "miss": "Look at your two counts again. Which number is bigger?"
+  },
+  "write": {
+   "min": 20,
+   "frames": [
+    {
+     "lead": "1. Did protecting the beach work?",
+     "starter": "I think protecting the beach ___ because ___."
+    },
+    {
+     "lead": "2. What is your evidence?",
+     "starter": "I saw ___ nests before and ___ nests after, so ___."
+    }
+   ],
+   "chips": [
+    "conservation",
+    "refuge",
+    "protect",
+    "evidence",
+    "nests",
+    "sea turtles",
+    "before",
+    "after",
+    "more",
+    "because"
+   ]
+  },
+  "full": "You counted the nests in both pictures and picked the claim. Your 2 sentences have at least 20 words."
+ },
+ "voice": {
+  "brief": "Welcome to the beach, crew. We film Scene 24, The Comeback. Show me how people protect a place for wildlife, then take the shot.",
+  "step1": "Before your headset goes on, meet your five models. Learn each gray search word. You will type it in VR.",
+  "step2": "Put on your headset. Click Explore, type Deserted, and pick Deserted Isles. Then click Begin Solo.",
+  "step3": "Set the turtle and the gull on the sand. Plant the fern behind them. Add the shovel and the binoculars. Then tell me why.",
+  "extra": "Got time? Add one more animal the refuge protects. That shot is just for VR crews.",
+  "step4": "Step back so the whole scene fits. Click Library, then Camera, and take the shot. Then send it to Canvas.",
+  "step5": "Press the Meta button and click Quit. Then open Canvas. Your photo should be waiting there.",
+  "studio": "No headset today? Come to the studio. Count the nests before and after. Then tell me what you think."
+ }
+}
