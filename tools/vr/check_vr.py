@@ -122,6 +122,10 @@ if S.get('type') == 'cascade':
         up = x['vals'][-1] > x['vals'][0]
         if (x['dir'] == 'up') != up: F('cascade game: bars do not match dir for ' + x['name'])
     if S['claim']['right'] not in S['claim']['options']: F('cascade game: claim.right is not one of the options')
+if S.get('type') == 'reel':
+    if not 4 <= len(S['reel']) <= 6: F('reel game: 4 to 6 frames')
+    for x in S['reel']:
+        if x['right'] not in x['options']: F('reel game: right answer missing for ' + x['name'])
 if S.get('type') == 'spot':
     for s in S['spots']:
         if s.get('pollute') and s.get('kind') not in S['places']: F('spot game: kind missing for ' + s['id'])

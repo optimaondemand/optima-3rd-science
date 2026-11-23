@@ -176,6 +176,8 @@ def build(week_path, out_path, repo=False):
         C2 = S['claim']
         S['pairs'] = [{'card': {'img': x['img'], 'name': x['name'], 'alt': x['alt']}, 'ok': x['why'], 'tag': x['tag']} for x in S['chain']]
         S['pairs'].append({'card': {'img': C2['img'], 'name': C2['name'], 'alt': C2['alt']}, 'ok': C2['options'][C2['right']], 'tag': C2['tag']})
+    if S.get('type') == 'reel':   # week 33: one round per frame of the season reel
+        S['pairs'] = [{'card': {'img': x['img'], 'name': x['name'], 'alt': x['alt']}, 'ok': x['ok'], 'tag': x['tag']} for x in S['reel']]
     # each round's card: a fossil (week 17) or a place card (week 18, key "card")
     for p in S['pairs']:
         p['fossil'] = p.get('card') or p['fossil']
@@ -231,6 +233,7 @@ def build(week_path, out_path, repo=False):
         'maps': [{k: x[k] for k in ('name', 'q', 'grid', 'max', 'ok')} for x in S.get('maps', [])], 'allBuilt': S.get('allBuilt', ''),
         'chain': [{'name': x['name'], 'alt': x['alt'], 'img': img(x['img']), 'q': x['q'], 'dir': x['dir'], 'vals': x['vals'], 'why': x['why']} for x in S.get('chain', [])],
         'years': S.get('years', []), 'allRun': S.get('allRun', ''), 'wolves': ({'img': img(S['wolves']['img']), 'alt': S['wolves']['alt'], 'line': S['wolves']['line']} if S.get('wolves') else None),
+        'reel': [{'name': x['name'], 'alt': x['alt'], 'img': img(x['img']), 'q': x['q'], 'options': x['options'], 'right': x['right'], 'ok': x['ok'], 'miss': x['miss']} for x in S.get('reel', [])],
         'cousins': [{'key': c['key'], 'name': c['name'], 'alt': c['alt'], 'img': cousin_imgs[c['key']]} for c in S.get('cousins', [])],
         'places': S.get('places', {}), 'miss': S.get('miss', ''), 'min': wr['min'], 'frames': [f['lead'] for f in wr['frames']],
     }

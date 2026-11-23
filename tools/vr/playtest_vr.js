@@ -48,7 +48,16 @@ const path = require('path'), fs = require('fs');
   const gtype = await page.evaluate(() => window.VR.game.type);
   const bins = await page.evaluate(() => window.VR.game.pairs.map(p => p.bin));
   const binKeys = await page.evaluate(() => Object.keys(window.VR.game.bins || {}));
-  if (gtype === 'cascade') {
+  if (gtype === 'reel') {
+    const R = await page.evaluate(() => window.VR.game.reel.map(x => [Object.keys(x.options), x.right]));
+    for (const [n, [keys, right]] of R.entries()) {
+      if (n === 0) { await page.click(`.vr-place button[data-a="${keys.find(k => k !== right)}"]`); await shot('08-miss', '#vr-game'); }
+      await page.click(`.vr-place button[data-a="${right}"]`);
+      if (n === 0) await shot('09-place-miss', '#vr-game');
+      if (n === 2) await shot('09b-next', '#vr-game');
+      g++;
+    }
+  } else if (gtype === 'cascade') {
     const C = await page.evaluate(() => window.VR.game.chain.map(x => x.dir));
     const cl = await page.evaluate(() => [Object.keys(window.VR.game.claim.options), window.VR.game.claim.right]);
     for (const [n, dir] of C.entries()) {

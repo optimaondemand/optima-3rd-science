@@ -1,0 +1,281 @@
+{
+ "id": "g3sci-vr-33",
+ "week": 33,
+ "lesson": "33.01",
+ "lessonTitle": "How Is Everything Connected?",
+ "title": "Premiere Night",
+ "emoji": "🎬",
+ "canvasName": "33.01 VR · Premiere Night",
+ "details": [
+  "📅 Q4 · Unit 11 · National Park Capstone",
+  "📖 Week 33 · goes with Lesson 33.01",
+  "🌎 CPALMS Integrated Review",
+  "⏱ About 15 minutes"
+ ],
+ "map": "Optima Gallery",
+ "mapWord": "Gallery",
+ "badge": {
+  "emoji": "🎬",
+  "name": "Director's Chair",
+  "line": "The last badge of the year. Only VR crews earn this one."
+ },
+ "stamp": "Studio Day · Wonder Films",
+ "hook": {
+  "look": "This is a <b>premiere ticket</b>. A premiere is the very first showing of a new film.",
+  "head": "Scene 33 · Premiere Night",
+  "sub": "Wonder Films · Premiere ticket",
+  "rows": [
+   [
+    "Film",
+    "Everything Connects"
+   ],
+   [
+    "Starring",
+    "Our whole crew"
+   ],
+   [
+    "Seat",
+    "Front row"
+   ]
+  ],
+  "img": "hook",
+  "alt": "The sun setting behind thin cypress trees in a dark marsh",
+  "cap": "Sunset at Pa-hay-okee in Everglades National Park. NPS photo.",
+  "note": "Weather, plants, animals and people are all tied together. Tonight we show how."
+ },
+ "opti": {
+  "brief": "Welcome to the premiere, crew. We film Scene 33, Premiere Night. Show me how everything is connected, then take the shot.",
+  "studio": "No headset today? Come to the studio. Light up every frame of our season reel. Then tell me what you think."
+ },
+ "vr": {
+  "look": "A <b>model</b> is a copy of something real. <b>Interdependence</b> means living things need each other and the world around them.",
+  "groups": [
+   {
+    "title": "🌦️ Weather",
+    "models": [
+     {
+      "name": "Sun",
+      "word": "Sun",
+      "img": "sun",
+      "alt": "Bright sun shining in a blue sky",
+      "trait": "Gives light and heat."
+     },
+     {
+      "name": "Water Cycle",
+      "word": "Water Cycle",
+      "img": "sky",
+      "alt": "White clouds in a blue sky",
+      "trait": "Brings rain."
+     }
+    ]
+   },
+   {
+    "title": "🐸 Living things and people",
+    "models": [
+     {
+      "name": "Frog",
+      "word": "Frog",
+      "img": "frog",
+      "alt": "Green frog sitting in shallow water",
+      "trait": "Eats bugs."
+     },
+     {
+      "name": "Eagle",
+      "word": "Eagle",
+      "img": "eagle",
+      "alt": "Bald eagle with a white head perched on a dead branch",
+      "trait": "Hunts animals."
+     },
+     {
+      "name": "Shovel",
+      "word": "Shovel",
+      "img": "shovel",
+      "alt": "Small garden shovel lying on fresh soil",
+      "trait": "People plant and protect."
+     }
+    ]
+   }
+  ],
+  "steps": [
+   {
+    "where": "🖥️ Before your headset",
+    "title": "Know your models",
+    "clip": "step1",
+    "html": "<p>Type each gray word in the <b>Filter models</b> box.</p>@MODELS@<p>This list is also on the <b>Canvas</b> tab in VR.</p>"
+   },
+   {
+    "where": "🥽 In VR",
+    "title": "Go on location",
+    "clip": "step2",
+    "html": "<div class=\"vr-how\">🔗 <b>First time only:</b> connect Canvas at <a href=\"https://xr.optimaed.com\" target=\"_blank\" rel=\"noopener\">xr.optimaed.com</a>. See <b>Having trouble in VR?</b> below.</div><p>Open the <b>On-Demand</b> app. Click <b>Explore</b>. Type <b>Playground</b> in <b>Filter environments</b>. Click <b>Playground</b>, then <b>Begin Solo</b>.</p>"
+   },
+   {
+    "title": "Build the scene",
+    "clip": "step3",
+    "html": "<p>Press the <b>top button on your right controller</b>, then click <b>Models</b>. Set up the Sun, Water Cycle, Frog, Eagle and Shovel as one exhibit, in a line or a circle.</p><div class=\"vr-how\">✋ Grab a model with the <b>palm trigger</b>. Use <b>both</b> palm triggers to make it bigger or smaller.</div><div class=\"vr-say\">🗣 <b>Say it out loud:</b> “The ___ connects to the ___ because ___.”</div>"
+   },
+   {
+    "title": "Take the shot and send it",
+    "clip": "step4",
+    "html": "<p>Stand back so the whole scene fits. Open your menu, click <b>Library</b>, then <b>Camera</b>. Click <b>Take photo</b>.</p><p>Click the <b>Canvas</b> tab and pick <b>@CANVAS@</b>. Click <b>Choose from My Files</b>, pick your photo, click <b>Use this file</b>, then <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.</p><div class=\"vr-how\">🔁 Want to fix it? Move the models, take a new photo and send it again.</div>"
+   },
+   {
+    "where": "✅ After",
+    "title": "Check and leave",
+    "clip": "step5",
+    "html": "<p>Press the <b>Meta button</b>, then click <b>Quit</b>. Check that your photo is in the Canvas assignment. Not there? Open <b>Having trouble in VR?</b></p>"
+   }
+  ],
+  "extra": {
+   "after": 3,
+   "clip": "extra",
+   "html": "Add a special guest to the premiere: <span class=\"vr-word\">Opti The Owl</span>"
+  },
+  "full": "Your photo shows the Sun, Water Cycle, Frog, Eagle and Shovel set up as one exhibit."
+ },
+ "studio": {
+  "kicker": "Studio Day · no headset",
+  "title": "Season highlight reel",
+  "type": "reel",
+  "framePl": "ptag",
+  "labels": {
+   "start": "Read the question. How is it connected?",
+   "done": "That's a wrap! Every frame shows a connection. Thank you for a great season, crew!",
+   "pdfTitle": "Season highlight reel",
+   "cols": [
+    "Frame",
+    "The connection"
+   ]
+  },
+  "look": "Our season reel has six frames, one for each big idea from this spring. Each frame is a real photo. <b>Connected</b> means one thing changes or helps another.",
+  "do": "Read the question for each frame and tap the best answer. Each right answer lights a frame. Light all six to play the reel.",
+  "write": {
+   "min": 20,
+   "frames": [
+    {
+     "lead": "1. What was your favorite connection this spring?",
+     "starter": "My favorite connection is ___ because ___."
+    },
+    {
+     "lead": "2. How can people help nature?",
+     "starter": "People can help nature by ___, because ___."
+    }
+   ],
+   "chips": [
+    "connected",
+    "ecosystem",
+    "interdependence",
+    "weather",
+    "energy",
+    "adaptation",
+    "food web",
+    "people",
+    "protect",
+    "because"
+   ]
+  },
+  "full": "You lit all 6 frames of the season reel. Your 2 sentences have at least 20 words.",
+  "reel": [
+   {
+    "name": "Plants",
+    "img": "sunflower",
+    "alt": "A big yellow sunflower",
+    "q": "A sunflower soaks up sunlight. What does the plant use it for?",
+    "options": {
+     "food": "☀️ To make its own food",
+     "warm": "🧥 To stay warm at night",
+     "drink": "💧 To drink"
+    },
+    "right": "food",
+    "ok": "Yes! Plants use sunlight to make food, and animals eat the plants.",
+    "miss": "Think about leaves. What do they make with sunlight?",
+    "tag": "Sun → plants → animals"
+   },
+   {
+    "name": "Matter",
+    "img": "ice",
+    "alt": "Ice cubes in a glass",
+    "q": "The Sun warms a frozen puddle. What happens to the ice?",
+    "options": {
+     "melt": "💧 It melts into water",
+     "grow": "🧊 It grows bigger",
+     "same": "➖ Nothing happens"
+    },
+    "right": "melt",
+    "ok": "Yes! Heat melts the ice into water, and animals can drink it.",
+    "miss": "What does heat do to ice?",
+    "tag": "Heat → water"
+   },
+   {
+    "name": "Energy",
+    "img": "solar",
+    "alt": "Dark blue solar panels on a house roof",
+    "q": "A solar panel takes in sunlight. What does it make?",
+    "options": {
+     "elec": "⚡ Electrical energy",
+     "water": "💧 Water",
+     "sound": "🔊 Sound"
+    },
+    "right": "elec",
+    "ok": "Yes! It turns light energy into electrical energy for people.",
+    "miss": "Think about what lights and fans need to run.",
+    "tag": "Light → electricity"
+   },
+   {
+    "name": "Everglades",
+    "img": "gator",
+    "alt": "An alligator swimming in shallow green water near grass",
+    "q": "In the dry season, the gator hole holds the last water. Who does it help?",
+    "options": {
+     "many": "🐟 Many animals",
+     "gator": "🐊 Only the alligator",
+     "none": "🚫 Nobody"
+    },
+    "right": "many",
+    "ok": "Yes! Fish, birds and the alligator all need that water.",
+    "miss": "In the dry season, who needs water to live?",
+    "tag": "Water → many animals"
+   },
+   {
+    "name": "Adaptations",
+    "img": "treefrog",
+    "alt": "A bright green tree frog resting on a gray board",
+    "q": "A green tree frog is green like leaves. How does that help it?",
+    "options": {
+     "hide": "🍃 It hides from animals that hunt it",
+     "swim": "🏊 It swims faster",
+     "warm": "🔥 It stays warm"
+    },
+    "right": "hide",
+    "ok": "Yes! Its color helps it hide from predators.",
+    "miss": "Think about camouflage. What does blending in do?",
+    "tag": "Body → survival"
+   },
+   {
+    "name": "Threats",
+    "img": "lion",
+    "alt": "A lionfish with long striped fins swimming over a reef",
+    "q": "Lionfish eat the little fish that keep algae off coral. What happens to the reef?",
+    "options": {
+     "algae": "🟢 Algae can cover the coral",
+     "clean": "✨ The reef gets cleaner",
+     "none": "➖ Nothing changes"
+    },
+    "right": "algae",
+    "ok": "Yes! When one kind of fish is gone, the coral has a harder time too.",
+    "miss": "Who keeps the algae off the coral? What if they were eaten?",
+    "tag": "One change → many effects"
+   }
+  ]
+ },
+ "voice": {
+  "brief": "Welcome to the premiere, crew. We film Scene 33, Premiere Night. Show me how everything is connected, then take the shot.",
+  "step1": "Before your headset goes on, meet your five models. Learn each gray search word. You will type it in VR.",
+  "step2": "Put on your headset. Click Explore, type Gallery, and pick Optima Gallery. Then click Begin Solo.",
+  "step3": "Set up the sun, the water cycle, the frog, the eagle and the shovel. Then tell me how each one connects to the next.",
+  "extra": "Got time? Add a special guest to the premiere. That shot is just for VR crews.",
+  "step4": "Step back so the whole scene fits. Click Library, then Camera, and take the shot. Then send it to Canvas.",
+  "step5": "Press the Meta button and click Quit. Then open Canvas. Your photo should be waiting there.",
+  "studio": "No headset today? Come to the studio. Light up every frame of our season reel. Then tell me what you think."
+ }
+}

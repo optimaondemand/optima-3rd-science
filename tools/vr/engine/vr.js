@@ -101,7 +101,8 @@
     frames();
     var i = cur();
     if (i < 0) {
-      game.innerHTML = '<div class="vr-fb ok">' + esc(L.done) + '</div>';
+      game.innerHTML = (G.type === 'reel' && flyMsg ? '<div class="vr-fb ok">' + esc(flyMsg) + '</div>' : '') + '<div class="vr-fb ok">' + esc(L.done) + '</div>';
+      var bd = $('.vr-board'); if (bd && G.type === 'reel') bd.classList.add('play');
       $('#vr-write').hidden = false; checkStamp(); return;
     }
     $('#vr-write').hidden = true;
@@ -116,6 +117,7 @@
     if (G.type === 'season') { renderSeason(); return; }
     if (G.type === 'build') { renderBuild(i, P[i]); return; }
     if (G.type === 'cascade') { renderCascade(i); return; }
+    if (G.type === 'reel') { renderReel(i); return; }
     if (G.type === 'path') { if (i >= G.maps.length) renderClaim(P.length, G.allBuilt); else renderPath(i); return; }
     if (G.type === 'sort') { renderSort(i, P[i]); return; }
     var p = P[i], h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
@@ -702,6 +704,23 @@
     var nx = $('#vr-next'); if (nx) nx.addEventListener('click', function () { st.p[i] = true; save(); flyMsg = null; flyCls = ''; render(); });
   }
 
+  /* reel game (week 33): one "how is it connected?" question per frame of the season reel; the full reel plays at the end */
+  function renderReel(i) {
+    var R = G.reel[i];
+    var h = '<div class="vr-gstep">Frame ' + (i + 1) + ' of ' + G.reel.length + ' · ' + esc(R.name) + '</div>' +
+      '<div class="vr-fb ' + flyCls + '" id="vr-fb" aria-live="polite">' + esc(flyMsg || L.start) + '</div>' +
+      '<div class="vr-casc"><figure class="vr-dial-pic"><img src="' + R.img + '" alt="' + esc(R.alt) + '"><figcaption>' + esc(R.name) + '</figcaption></figure><div>' +
+      '<div class="vr-gstep">' + esc(R.q) + '</div><div class="vr-place vr-col">' + Object.keys(R.options).map(function (k) {
+        return '<button type="button" data-a="' + k + '">' + esc(R.options[k]) + '</button>'; }).join('') + '</div></div></div>';
+    game.innerHTML = h;
+    $$('.vr-place button', game).forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (b.getAttribute('data-a') === R.right) { st.m[i] = true; st.p[i] = true; save(); flyMsg = R.ok; flyCls = 'ok'; frames(); render(); }
+        else { b.classList.add('no'); var f = $('#vr-fb'); f.className = 'vr-fb no'; f.textContent = R.miss; }
+      });
+    });
+  }
+
   /* sort game (week 19): one card at a time goes into one of two bins; an IN card then asks which part takes it in */
   function renderSort(i, p) {
     var h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
@@ -786,7 +805,7 @@
     var name = (st.name || '').trim();
     if (!name) { nmMsg.textContent = 'Type your first name first.'; nm.focus(); return; }
     var rows = P.map(function (p, i) {
-      var two = (G.type === 'count' || G.type === 'web' || G.type === 'clue' || G.type === 'dial' || G.type === 'meter' || G.type === 'season' || G.type === 'build' || G.type === 'path' || G.type === 'cascade') ? p.tag : G.type === 'spot' ? G.places[p.place] : G.type === 'clean' ? p.ok : G.type === 'fly' ? L.tag : G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
+      var two = (G.type === 'count' || G.type === 'web' || G.type === 'clue' || G.type === 'dial' || G.type === 'meter' || G.type === 'season' || G.type === 'build' || G.type === 'path' || G.type === 'cascade' || G.type === 'reel') ? p.tag : G.type === 'spot' ? G.places[p.place] : G.type === 'clean' ? p.ok : G.type === 'fly' ? L.tag : G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
       var three = p.place ? (st.p[i] ? esc(G.places[p.place]) : '<i>not picked yet</i>') : '';
       return '<tr><td>' + esc(p.name) + '</td><td>' + (st.m[i] ? esc(two) : '<i>not matched yet</i>') + '</td>' + (L.cols.length > 2 ? '<td>' + three + '</td>' : '') + '</tr>';
     }).join('');
