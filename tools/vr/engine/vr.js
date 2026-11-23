@@ -109,6 +109,7 @@
     if (G.type === 'clean') { renderClean(); return; }
     if (G.type === 'spot') { renderSpot(); return; }
     if (G.type === 'count') { renderCount(); return; }
+    if (G.type === 'web') { renderWeb(); return; }
     if (G.type === 'sort') { renderSort(i, P[i]); return; }
     var p = P[i], h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
       '<div class="vr-fossil"' + (G.dragOpts ? '' : ' draggable="true"') + ' id="vr-fos"><img src="' + p.img + '" alt="' + esc(p.alt) + '">' + esc(p.name) + (p.facts ? '<small>' + esc(p.facts) + '</small>' : '') + '</div><div>';
@@ -318,6 +319,109 @@
     }
   }
 
+  /* web game (week 25): pin strings from each eater to its food, snip one species, then pick the claim */
+  var webResize = false;
+  function renderWeb() {
+    st.c = st.c || {}; st.c.links = st.c.links || []; st.c.hit = st.c.hit || [];
+    var SP = G.species, LK = G.links, SN = G.snip, stage = !st.m[0] ? 0 : !st.m[1] ? 1 : 2, h;
+    function sp(id) { return SP.filter(function (x) { return x.id === id; })[0]; }
+    if (stage === 2) { renderClaim(3, G.snipDone); return; }
+    var snipped = stage === 1 && st.c.snipped;
+    h = '<div class="vr-gstep">Step ' + (stage + 1) + ' of 3 · ' + esc(stage === 0 ? L.step1 : L.step2) + '</div>' +
+      '<div class="vr-fb ' + flyCls + '" id="vr-fb" aria-live="polite">' + esc(flyMsg || (stage === 0 ? L.start : snipped ? SN.q : L.snipStart)) + '</div>' +
+      '<div class="vr-web" id="vr-web"><svg class="vr-strings" aria-hidden="true"></svg>' + SP.map(function (s) {
+        var gone = snipped && s.id === SN.gone, hit = stage === 1 && st.c.hit.indexOf(s.id) >= 0;
+        return '<button type="button" class="vr-sp' + (flyCarry === s.id ? ' on' : '') + (gone ? ' gone' : '') + (hit ? ' hit' : '') + '" style="left:' + s.x + '%;top:' + s.y + '%" data-id="' + s.id + '"' + (gone || hit ? ' disabled' : ' draggable="true"') + '>' +
+          '<img src="' + s.img + '" alt="' + esc(s.alt) + '"><span>' + esc(s.name) + '</span>' + (gone ? '<i aria-hidden="true">✂️</i>' : '') + (hit ? '<em>' + esc(L.hitTag) + '</em>' : '') + '</button>';
+      }).join('') + '</div>';
+    if (stage === 0) h += '<div class="vr-tally">' + esc(L.count) + ': ' + st.c.links.length + ' of ' + LK.length + '</div>';
+    else if (!snipped) h += '<button type="button" class="vr-lens vr-snip" id="vr-snip" draggable="true">✂️ ' + esc(L.snipBtn) + '</button>';
+    else h += '<div class="vr-tally">' + esc(L.hitCount) + ': ' + st.c.hit.length + ' of ' + SN.hit.length + '</div>';
+    game.innerHTML = h;
+    var web = $('#vr-web');
+    function draw() {
+      var svg = $('svg', web); if (!svg) return;
+      var r = web.getBoundingClientRect(), out = '';
+      svg.setAttribute('viewBox', '0 0 ' + r.width + ' ' + r.height);
+      st.c.links.forEach(function (k) {
+        var ab = k.split('>'), a = $('.vr-sp[data-id="' + ab[0] + '"]', web), b = $('.vr-sp[data-id="' + ab[1] + '"]', web);
+        if (!a || !b) return;
+        var ra = a.getBoundingClientRect(), rb = b.getBoundingClientRect();
+        var x1 = ra.left + ra.width / 2 - r.left, y1 = ra.top + ra.height / 2 - r.top, x2 = rb.left + rb.width / 2 - r.left, y2 = rb.top + rb.height / 2 - r.top;
+        var cut = snipped && (ab[0] === SN.gone || ab[1] === SN.gone);
+        out += '<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '" class="' + (cut ? 'cut' : '') + '"/>';
+      });
+      svg.innerHTML = out;
+    }
+    draw(); setTimeout(draw, 60);
+    if (!webResize) { webResize = true; window.addEventListener('resize', function () { if (G.type === 'web' && cur() >= 0 && !st.m[1]) render(); }); }
+    $$('img', web).forEach(function (im) { if (!im.complete) im.addEventListener('load', draw); });
+    function link(from, to) {
+      var a = sp(from), k = from + '>' + to, l = LK.filter(function (x) { return x.from === from && x.to === to; })[0];
+      flyCarry = null;
+      if (a.plant) { flyMsg = a.food; flyCls = 'no'; }
+      else if (st.c.links.indexOf(k) >= 0) { flyMsg = L.already; flyCls = ''; }
+      else if (l) {
+        st.c.links.push(k); flyMsg = l.msg; flyCls = 'ok';
+        if (st.c.links.length === LK.length) { st.m[0] = true; st.p[0] = true; flyMsg = G.web.done; }
+        save();
+      } else { flyMsg = a.food; flyCls = 'no'; }
+      render();
+    }
+    function tapCard(id) {
+      if (stage === 0) {
+        if (!flyCarry) {
+          if (sp(id).plant) { flyMsg = sp(id).food; flyCls = 'no'; }
+          else { flyCarry = id; flyMsg = fill(L.pick, sp(id).name); flyCls = ''; }
+          render();
+        } else if (flyCarry === id) { flyCarry = null; flyMsg = L.start; flyCls = ''; render(); }
+        else link(flyCarry, id);
+      } else if (!snipped) { flyMsg = L.snipFirst; flyCls = ''; render(); }
+      else {
+        if (SN.hit.indexOf(id) >= 0) {
+          if (st.c.hit.indexOf(id) < 0) st.c.hit.push(id);
+          flyMsg = SN.ok[id]; flyCls = 'ok';
+          if (st.c.hit.length === SN.hit.length) { st.m[1] = true; st.p[1] = true; flyMsg = G.snipDone; }
+          save();
+        } else { flyMsg = SN.safe[id]; flyCls = ''; }
+        render();
+      }
+    }
+    function doSnip() { st.c.snipped = true; save(); flyMsg = SN.q; flyCls = ''; render(); }
+    var dragId = null;
+    $$('.vr-sp', web).forEach(function (b) {
+      var id = b.getAttribute('data-id');
+      b.addEventListener('click', function () { tapCard(id); });
+      b.addEventListener('dragstart', function (e) { dragId = id; try { e.dataTransfer.setData('text/plain', id); } catch (x) {} });
+      b.addEventListener('dragover', function (e) { e.preventDefault(); b.classList.add('drop'); });
+      b.addEventListener('dragleave', function () { b.classList.remove('drop'); });
+      b.addEventListener('drop', function (e) {
+        e.preventDefault(); b.classList.remove('drop');
+        if (dragId === 'snip') { if (id === SN.gone) doSnip(); else { flyMsg = L.snipFirst; flyCls = ''; render(); } }
+        else if (stage === 0 && dragId && dragId !== id) link(dragId, id);
+        dragId = null;
+      });
+    });
+    var sn = $('#vr-snip');
+    if (sn) {
+      sn.addEventListener('click', doSnip);
+      sn.addEventListener('dragstart', function (e) { dragId = 'snip'; try { e.dataTransfer.setData('text/plain', 'snip'); } catch (x) {} });
+    }
+  }
+  /* last step shared by the web game: pick the claim (same look as the count game's step 3) */
+  function renderClaim(n, lead) {
+    var A = G.claim;
+    game.innerHTML = '<div class="vr-gstep">Step ' + n + ' of ' + n + ' · ' + esc(L.step3) + '</div>' + (lead ? '<div class="vr-fb ok">' + esc(lead) + '</div>' : '') + '<div class="vr-gstep">' + esc(A.q) + '</div><div class="vr-place vr-col">' +
+      Object.keys(A.options).map(function (k) { return '<button type="button" data-a="' + k + '">' + esc(A.options[k]) + '</button>'; }).join('') + '</div><div class="vr-fb" id="vr-fb" aria-live="polite"></div>';
+    var fb = $('#vr-fb');
+    $$('.vr-place button', game).forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (b.getAttribute('data-a') === A.right) { b.classList.add('ok'); st.m[n - 1] = true; st.p[n - 1] = true; save(); setTimeout(render, 650); frames(); }
+        else { b.classList.add('no'); fb.className = 'vr-fb no'; fb.textContent = A.miss; }
+      });
+    });
+  }
+
   /* sort game (week 19): one card at a time goes into one of two bins; an IN card then asks which part takes it in */
   function renderSort(i, p) {
     var h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
@@ -402,7 +506,7 @@
     var name = (st.name || '').trim();
     if (!name) { nmMsg.textContent = 'Type your first name first.'; nm.focus(); return; }
     var rows = P.map(function (p, i) {
-      var two = G.type === 'count' ? p.tag : G.type === 'spot' ? G.places[p.place] : G.type === 'clean' ? p.ok : G.type === 'fly' ? L.tag : G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
+      var two = (G.type === 'count' || G.type === 'web') ? p.tag : G.type === 'spot' ? G.places[p.place] : G.type === 'clean' ? p.ok : G.type === 'fly' ? L.tag : G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
       var three = p.place ? (st.p[i] ? esc(G.places[p.place]) : '<i>not picked yet</i>') : '';
       return '<tr><td>' + esc(p.name) + '</td><td>' + (st.m[i] ? esc(two) : '<i>not matched yet</i>') + '</td>' + (L.cols.length > 2 ? '<td>' + three + '</td>' : '') + '</tr>';
     }).join('');

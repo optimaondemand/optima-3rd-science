@@ -1,0 +1,332 @@
+{
+ "id": "g3sci-vr-25",
+ "week": 25,
+ "lesson": "25.01",
+ "lessonTitle": "Why Do We Protect National Parks?",
+ "title": "Full of Life",
+ "emoji": "🎬",
+ "canvasName": "25.01 VR · Full of Life",
+ "details": [
+  "📅 Q3 · Unit 8 · Human Impact & Conservation",
+  "📖 Week 25 · goes with Lesson 25.01",
+  "🌎 CPALMS SC.3.N.1.7 · NGSS 3-LS4-4",
+  "⏱ About 15 minutes"
+ ],
+ "map": "Medieval Forest",
+ "mapWord": "Medieval",
+ "badge": {
+  "emoji": "⭐",
+  "name": "Ranger Star",
+  "line": "Only VR crews earn this one. Your shot goes in Opti's film."
+ },
+ "stamp": "Studio Day · Wonder Films",
+ "hook": {
+  "look": "This is a <b>filming permit</b>. A permit says you are allowed to do something.",
+  "head": "Scene 25 · Full of Life",
+  "sub": "Wonder Films · Filming permit",
+  "rows": [
+   [
+    "Park",
+    "Everglades National Park"
+   ],
+   [
+    "Crew",
+    "Wonder Films"
+   ],
+   [
+    "Rule",
+    "Take only pictures"
+   ]
+  ],
+  "img": "hook",
+  "alt": "Many white wading birds feeding together in shallow water and tall grass",
+  "cap": "Wading birds feed together at Shark Valley in Everglades National Park, Florida.",
+  "note": "This park was set aside in 1947 to keep its wildlife safe. Why does it need so many kinds of life?"
+ },
+ "opti": {
+  "brief": "Welcome to the park, crew. We film Scene 25, Full of Life. Show me why a park needs many kinds of life, then take the shot.",
+  "studio": "No headset today? Come to the studio. Pin up the food web, then snip one species. Tell me what you think."
+ },
+ "vr": {
+  "look": "A <b>model</b> is a copy of something real. <b>Biodiversity</b> means many kinds of living things in one place.",
+  "groups": [
+   {
+    "title": "🐆 Big animals",
+    "models": [
+     {
+      "name": "Panther",
+      "word": "Panther",
+      "img": "panther",
+      "alt": "Florida panther walking through a green forest",
+      "trait": "Hunts deer."
+     },
+     {
+      "name": "Animated Deer",
+      "word": "Deer",
+      "img": "deer",
+      "alt": "White-tailed deer standing in tall grass",
+      "trait": "Eats plants."
+     }
+    ]
+   },
+   {
+    "title": "🦉 Smaller life",
+    "models": [
+     {
+      "name": "Barn Owl",
+      "word": "Owl",
+      "img": "owl",
+      "alt": "Barn owl with a white heart-shaped face sitting on a perch",
+      "trait": "Hunts mice at night."
+     },
+     {
+      "name": "Frog",
+      "word": "Frog",
+      "img": "frog",
+      "alt": "Green frog sitting in shallow water",
+      "trait": "Eats bugs."
+     },
+     {
+      "name": "Bromeliad Plant",
+      "word": "Bromeliad",
+      "img": "bromeliad",
+      "alt": "Bromeliad plant with a red center and long green leaves",
+      "trait": "Holds water for frogs."
+     }
+    ]
+   }
+  ],
+  "steps": [
+   {
+    "where": "🖥️ Before your headset",
+    "title": "Know your models",
+    "clip": "step1",
+    "html": "<p>Type each gray word in the <b>Filter models</b> box.</p>@MODELS@<p>This list is also on the <b>Canvas</b> tab in VR.</p>"
+   },
+   {
+    "where": "🥽 In VR",
+    "title": "Go on location",
+    "clip": "step2",
+    "html": "<div class=\"vr-how\">🔗 <b>First time only:</b> connect Canvas at <a href=\"https://xr.optimaed.com\" target=\"_blank\" rel=\"noopener\">xr.optimaed.com</a>. See <b>Having trouble in VR?</b> below.</div><p>Open the <b>On-Demand</b> app. Click <b>Explore</b>. Type <b>Medieval</b> in <b>Filter environments</b>. Click <b>Medieval Forest</b>, then <b>Begin Solo</b>.</p>"
+   },
+   {
+    "title": "Build the scene",
+    "clip": "step3",
+    "html": "<p>Press the <b>top button on your right controller</b>, then click <b>Models</b>. Put the Panther and the Deer under the trees. Set the Owl, the Frog and the Bromeliad near them.</p><div class=\"vr-how\">✋ Grab a model with the <b>palm trigger</b>. Use <b>both</b> palm triggers to make it bigger or smaller.</div><div class=\"vr-say\">🗣 <b>Say it out loud:</b> “This park protects many kinds of life. The ___ needs the ___ because ___.”</div>"
+   },
+   {
+    "title": "Take the shot and send it",
+    "clip": "step4",
+    "html": "<p>Stand back so the whole scene fits. Open your menu, click <b>Library</b>, then <b>Camera</b>. Click <b>Take photo</b>.</p><p>Click the <b>Canvas</b> tab and pick <b>@CANVAS@</b>. Click <b>Choose from My Files</b>, pick your photo, click <b>Use this file</b>, then <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.</p><div class=\"vr-how\">🔁 Want to fix it? Move the models, take a new photo and send it again.</div>"
+   },
+   {
+    "where": "✅ After",
+    "title": "Check and leave",
+    "clip": "step5",
+    "html": "<p>Press the <b>Meta button</b>, then click <b>Quit</b>. Check that your photo is in the Canvas assignment. Not there? Open <b>Having trouble in VR?</b></p>"
+   }
+  ],
+  "extra": {
+   "after": 3,
+   "clip": "extra",
+   "html": "Add one more living thing the park protects: <span class=\"vr-word\">Monarch Butterfly</span>"
+  },
+  "full": "Your photo shows the Panther, the Deer, the Owl, the Frog and the Bromeliad together in the forest."
+ },
+ "studio": {
+  "kicker": "Studio Day · no headset",
+  "title": "Wire the food web",
+  "type": "web",
+  "framePl": "ptag",
+  "labels": {
+   "start": "Tap an animal. Then tap what it eats.",
+   "step1": "Pin the strings",
+   "step2": "Snip one species",
+   "step3": "Pick your claim",
+   "pick": "{from} is picked. Now tap what it eats.",
+   "already": "That string is already pinned.",
+   "count": "Strings pinned",
+   "snipStart": "Now tap the scissors to snip the grasshoppers.",
+   "snipBtn": "Snip the grasshoppers",
+   "snipFirst": "Tap the scissors first, or drag them onto the grasshopper.",
+   "hitTag": "Harder time",
+   "hitCount": "Animals found",
+   "done": "You pinned the web, snipped it and made your claim. Nice work, crew!",
+   "pdfTitle": "Wire the food web",
+   "cols": [
+    "What I did",
+    "My result"
+   ]
+  },
+  "look": "A <b>food web</b> is a map of who eats whom. Here it is a string board, like a film crew uses. Each card is a real photo from Florida. A <b>species</b> is one kind of living thing.",
+  "do": "Tap an animal, then tap what it eats. A red string joins them. You can also drag one card onto the other. Then snip one species and see who has a harder time.",
+  "claim": {
+   "name": "My claim",
+   "img": "hook",
+   "alt": "Many white wading birds feeding together in shallow water and tall grass",
+   "tag": "Many kinds",
+   "q": "Which place can lose one species and stay healthy?",
+   "options": {
+    "many": "🌿 A park with many kinds of living things.",
+    "one": "🌾 A field with only one kind of plant.",
+    "same": "➖ They are both the same."
+   },
+   "right": "many",
+   "miss": "Think about the web. More kinds of food means more ways to find a meal."
+  },
+  "write": {
+   "min": 20,
+   "frames": [
+    {
+     "lead": "1. Why does a park need many kinds of life?",
+     "starter": "I think a park needs many kinds of living things because ___."
+    },
+    {
+     "lead": "2. What did the snip show you?",
+     "starter": "When the grasshoppers were gone, ___, so ___."
+    }
+   ],
+   "chips": [
+    "biodiversity",
+    "food web",
+    "species",
+    "ecosystem",
+    "protected land",
+    "frog",
+    "egret",
+    "food",
+    "depends",
+    "because"
+   ]
+  },
+  "full": "You pinned all 6 strings, found who lost food and picked the claim. Your 2 sentences have at least 20 words.",
+  "species": [
+   {
+    "id": "egret",
+    "name": "Egret",
+    "img": "egret",
+    "alt": "Great egret, a tall white bird, wading among cypress trees",
+    "x": 40,
+    "y": 14,
+    "food": "An egret eats frogs, fish and big bugs. Try again."
+   },
+   {
+    "id": "panther",
+    "name": "Panther",
+    "img": "panther",
+    "alt": "Florida panther walking through a green forest",
+    "x": 80,
+    "y": 14,
+    "food": "A panther hunts big animals, like deer. Try again."
+   },
+   {
+    "id": "frog",
+    "name": "Frog",
+    "img": "frog",
+    "alt": "Green frog sitting in shallow water",
+    "x": 14,
+    "y": 47,
+    "food": "A frog eats bugs. Try again."
+   },
+   {
+    "id": "deer",
+    "name": "Deer",
+    "img": "deer",
+    "alt": "White-tailed deer standing in tall grass",
+    "x": 80,
+    "y": 47,
+    "food": "A deer eats plants. Try again."
+   },
+   {
+    "id": "hopper",
+    "name": "Grasshopper",
+    "img": "hopper",
+    "alt": "Yellow and black lubber grasshopper on a gray stone",
+    "x": 34,
+    "y": 82,
+    "food": "A grasshopper eats plants. Try again."
+   },
+   {
+    "id": "grass",
+    "name": "Sawgrass",
+    "img": "grass",
+    "alt": "Tall sawgrass with brown flower heads under a blue sky",
+    "x": 68,
+    "y": 82,
+    "plant": true,
+    "food": "Sawgrass is a plant. It makes its own food from sunlight. Tap an animal first."
+   }
+  ],
+  "links": [
+   {
+    "from": "hopper",
+    "to": "grass",
+    "msg": "String pinned! A grasshopper eats grass."
+   },
+   {
+    "from": "deer",
+    "to": "grass",
+    "msg": "String pinned! A deer eats grass and other plants."
+   },
+   {
+    "from": "frog",
+    "to": "hopper",
+    "msg": "String pinned! A frog eats grasshoppers."
+   },
+   {
+    "from": "egret",
+    "to": "frog",
+    "msg": "String pinned! An egret eats frogs."
+   },
+   {
+    "from": "egret",
+    "to": "hopper",
+    "msg": "String pinned! An egret eats grasshoppers too."
+   },
+   {
+    "from": "panther",
+    "to": "deer",
+    "msg": "String pinned! A panther hunts deer."
+   }
+  ],
+  "web": {
+   "name": "The food web",
+   "img": "grass",
+   "alt": "Tall sawgrass with brown flower heads under a blue sky",
+   "tag": "6 strings",
+   "done": "All 6 strings are pinned. That is a food web! Now snip one species."
+  },
+  "snip": {
+   "name": "The snip",
+   "img": "hopper",
+   "alt": "Yellow and black lubber grasshopper on a gray stone",
+   "tag": "Frog and egret",
+   "gone": "hopper",
+   "q": "The grasshoppers are gone. Tap every animal that has a harder time finding food.",
+   "hit": [
+    "frog",
+    "egret"
+   ],
+   "ok": {
+    "frog": "Yes. The frog lost a food. Frogs eat other bugs too, so it can still find some.",
+    "egret": "Yes. The egret lost grasshoppers. It still has frogs and fish to eat."
+   },
+   "safe": {
+    "deer": "The deer eats plants, not grasshoppers. The deer is OK.",
+    "panther": "The panther eats deer. The deer are OK, so the panther is OK.",
+    "grass": "Sawgrass is a plant. With no grasshoppers, less of it gets eaten."
+   },
+   "done": "Two animals lost a food, but they have other foods. Many kinds of life keep a park going."
+  }
+ },
+ "voice": {
+  "brief": "Welcome to the park, crew. We film Scene 25, Full of Life. Show me why a park needs many kinds of life, then take the shot.",
+  "step1": "Before your headset goes on, meet your five models. Learn each gray search word. You will type it in VR.",
+  "step2": "Put on your headset. Click Explore, type Medieval, and pick Medieval Forest. Then click Begin Solo.",
+  "step3": "Set the panther and the deer under the trees. Add the owl, the frog and the bromeliad. Then tell me who needs whom.",
+  "extra": "Got time? Add one more living thing the park protects. That shot is just for VR crews.",
+  "step4": "Step back so the whole scene fits. Click Library, then Camera, and take the shot. Then send it to Canvas.",
+  "step5": "Press the Meta button and click Quit. Then open Canvas. Your photo should be waiting there.",
+  "studio": "No headset today? Come to the studio. Pin up the food web, then snip one species. Tell me what you think."
+ }
+}

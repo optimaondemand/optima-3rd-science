@@ -51,6 +51,19 @@ keys = {c['key'] for c in S.get('cousins', [])}
 if S.get('type') == 'count':
     if len(S['scenes']) != 2: F('count game: exactly 2 scenes')
     if S['claim']['right'] not in S['claim']['options']: F('count game: claim.right is not one of the options')
+if S.get('type') == 'web':
+    ids = {x['id'] for x in S['species']}
+    if not 4 <= len(ids) <= 7: F('web game: 4 to 7 species')
+    for l in S['links']:
+        if l['from'] not in ids or l['to'] not in ids: F('web game: link to a missing species ' + str(l))
+        if [x for x in S['species'] if x['id'] == l['from'] and x.get('plant')]: F('web game: a plant cannot eat: ' + l['from'])
+    N = S['snip']
+    if N['gone'] not in ids: F('web game: snip.gone missing')
+    for i in N['hit']:
+        if i not in N['ok']: F('web game: snip.ok missing for ' + i)
+    for i in ids - set(N['hit']) - {N['gone']}:
+        if i not in N['safe']: F('web game: snip.safe missing for ' + i)
+    if S['claim']['right'] not in S['claim']['options']: F('web game: claim.right is not one of the options')
 if S.get('type') == 'spot':
     for s in S['spots']:
         if s.get('pollute') and s.get('kind') not in S['places']: F('spot game: kind missing for ' + s['id'])

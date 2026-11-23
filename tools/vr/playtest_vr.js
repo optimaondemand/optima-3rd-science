@@ -48,7 +48,27 @@ const path = require('path'), fs = require('fs');
   const gtype = await page.evaluate(() => window.VR.game.type);
   const bins = await page.evaluate(() => window.VR.game.pairs.map(p => p.bin));
   const binKeys = await page.evaluate(() => Object.keys(window.VR.game.bins || {}));
-  if (gtype === 'count') {
+  if (gtype === 'web') {
+    const G = await page.evaluate(() => ({ links: window.VR.game.links, snip: window.VR.game.snip, sp: window.VR.game.species.map(x => [x.id, x.plant]), cl: [Object.keys(window.VR.game.claim.options), window.VR.game.claim.right] }));
+    const card = id => `.vr-sp[data-id="${id}"]`;
+    await page.click(card(G.sp.find(x => x[1])[0]));                      // a plant first: says tap an animal
+    const L0 = G.links[0], wrong = G.sp.find(x => !x[1] && x[0] !== L0.from && !G.links.some(l => l.from === L0.from && l.to === x[0]))[0];
+    await page.click(card(L0.from)); await page.click(card(wrong)); await shot('08-miss', '#vr-game');
+    for (const [i, l] of G.links.entries()) {
+      if (i === 1) {   // one string by drag
+        await page.dragAndDrop(card(l.from), card(l.to));
+      } else { await page.click(card(l.from)); await page.click(card(l.to)); }
+      if (i === 2) await shot('09b-next', '#vr-game');
+    }
+    g++; await shot('09c-web', '#vr-game');
+    await page.click(card(G.snip.hit[0]));                                   // before the snip: asks for scissors
+    await page.dragAndDrop('#vr-snip', card(G.snip.gone));
+    const safe = Object.keys(G.snip.safe)[0]; await page.click(card(safe)); await shot('09d-snip', '#vr-game');
+    for (const h of G.snip.hit) await page.click(card(h));
+    g++; await shot('09e-snipdone', '#vr-game');
+    await page.click(`.vr-place button[data-a="${G.cl[0].find(k => k !== G.cl[1])}"]`); await shot('09-place-miss', '#vr-game');
+    await page.click(`.vr-place button[data-a="${G.cl[1]}"]`); await page.waitForTimeout(800); g++;
+  } else if (gtype === 'count') {
     const sc = await page.evaluate(() => window.VR.game.scenes.map(s => s.spots.map(x => [x.id, x.nest])));
     const cl = await page.evaluate(() => [Object.keys(window.VR.game.claim.options), window.VR.game.claim.right]);
     for (const spots of sc) {

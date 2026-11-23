@@ -151,6 +151,10 @@ def build(week_path, out_path, repo=False):
         C2 = S['claim']
         S['pairs'] = [{'card': {'art': sc['art'], 'name': sc['title'], 'alt': sc['alt']}, 'ok': sc['done'], 'tag': S['unit'] % len([x for x in sc['spots'] if x.get('nest')])} for sc in S['scenes']]
         S['pairs'].append({'card': {'img': C2['img'], 'name': C2['name'], 'alt': C2['alt']}, 'ok': C2['options'][C2['right']], 'tag': C2['tag']})
+    if S.get('type') == 'web':   # week 25: pin the strings, snip one species, then the claim
+        C2 = S['claim']
+        S['pairs'] = [{'card': {'img': r['img'], 'name': r['name'], 'alt': r['alt']}, 'ok': r['done'], 'tag': r['tag']} for r in (S['web'], S['snip'])]
+        S['pairs'].append({'card': {'img': C2['img'], 'name': C2['name'], 'alt': C2['alt']}, 'ok': C2['options'][C2['right']], 'tag': C2['tag']})
     # each round's card: a fossil (week 17) or a place card (week 18, key "card")
     for p in S['pairs']:
         p['fossil'] = p.get('card') or p['fossil']
@@ -189,6 +193,9 @@ def build(week_path, out_path, repo=False):
         'pairs': [{'name': p['fossil']['name'], 'alt': p['fossil']['alt'], 'img': fossil_imgs[i], 'cousin': p.get('cousin', ''), 'place': p.get('place', ''), 'bin': p.get('bin', ''), 'tag': p.get('tag', ''), 'key': p.get('key', ''), 'kind': p.get('kind', ''), 'q': p.get('q', ''), 'proof': ({'img': img(p['proof']['img']), 'alt': p['proof']['alt'], 'cap': p['proof']['cap']} if p.get('proof') else None), 'miss': p.get('miss', ''),
                    'ok': p.get('ok', ''), 'placeMiss': p.get('placeMiss', ''), 'facts': p['fossil'].get('facts', '')} for i, p in enumerate(S['pairs'])],
         'labels': labels, 'dragOpts': cast, 'framePl': S.get('framePl', S.get('frameImg', '')), 'type': S.get('type', ''), 'scenes': [{'key': sc['key'], 'title': sc['title'], 'alt': sc['alt'], 'done': sc['done'], 'img': art(sc['art']), 'spots': [{'id': x['id'], 'x': x['x'], 'y': x['y'], 'nest': bool(x.get('nest')), 'msg': x.get('msg', '')} for x in sc['spots']]} for sc in S.get('scenes', [])], 'claim': ({k: S['claim'][k] for k in ('q', 'options', 'right', 'miss')} if S.get('claim') else None), 'scene': ({'img': art(S['scene']['art']), 'alt': S['scene']['alt']} if S.get('scene') else None), 'spots': [dict({k: s.get(k) for k in ('id', 'x', 'y', 'name', 'kind', 'msg', 'miss')}, pollute=bool(s.get('pollute')), proof=({'img': img(s['proof']['img']), 'alt': s['proof']['alt'], 'cap': s['proof']['cap']} if s.get('proof') else None)) for s in S.get('spots', [])], 'items': [{'id': x['id'], 'name': x['name'], 'alt': x['alt'], 'img': img(x['img']), 'trash': bool(x.get('trash')), 'msg': x['msg']} for x in S.get('items', [])], 'action': ({k: S['action'][k] for k in ('q', 'options', 'right', 'miss')} if S.get('action') else None), 'flowers': [{'id': f['id'], 'kind': f['kind'], 'name': f['name'], 'alt': f['alt'], 'img': img(f['img'])} for f in S.get('flowers', [])], 'bins': S.get('bins', {}),
+        'species': [{'id': x['id'], 'name': x['name'], 'alt': x['alt'], 'img': img(x['img']), 'x': x['x'], 'y': x['y'], 'plant': bool(x.get('plant')), 'food': x['food']} for x in S.get('species', [])],
+        'links': S.get('links', []), 'web': ({'done': S['web']['done']} if S.get('web') else None), 'snipDone': S.get('snip', {}).get('done', ''),
+        'snip': ({k: S['snip'][k] for k in ('gone', 'q', 'hit', 'ok', 'safe')} if S.get('snip') else None),
         'cousins': [{'key': c['key'], 'name': c['name'], 'alt': c['alt'], 'img': cousin_imgs[c['key']]} for c in S.get('cousins', [])],
         'places': S.get('places', {}), 'miss': S.get('miss', ''), 'min': wr['min'], 'frames': [f['lead'] for f in wr['frames']],
     }

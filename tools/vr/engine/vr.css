@@ -201,3 +201,20 @@ main.vr{padding:18px 22px 30px}
 .vr-nest.ok{border:3px solid #2E7D32;background:rgba(255,255,255,.88);cursor:default}
 .vr-tally{font-weight:900;font-size:17px;margin:4px 0}
 @media (max-width:560px){.vr-nest{width:40px;height:40px;font-size:11px}}
+
+/* web game (week 25): a cork string board; red strings join each eater to its food */
+.vr-web{position:relative;aspect-ratio:86/58;margin:6px 0;border:3px solid var(--wl-line);border-radius:12px;background:#C9A26B radial-gradient(circle at 20% 30%,#D6B27C 0 2px,transparent 3px) 0 0/22px 22px}
+.vr-strings{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.vr-strings line{stroke:#B3261E;stroke-width:4;stroke-linecap:round}
+.vr-strings line.cut{stroke:#7A6A55;stroke-dasharray:6 7;stroke-width:3}
+.vr-sp{position:absolute;transform:translate(-50%,-50%);width:19%;border:3px solid #fff;background:#fff;border-radius:10px;padding:4px;cursor:pointer;font:800 15px/1.2 Nunito,Arial,sans-serif;color:var(--wl-ink);text-align:center;box-shadow:0 3px 8px rgba(0,0,0,.35)}
+.vr-sp img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;margin-bottom:3px;pointer-events:none}
+.vr-sp span{display:block}
+.vr-sp:hover,.vr-sp.drop{border-color:#E3B04B}
+.vr-sp.on{border-color:#E3B04B;box-shadow:0 0 0 4px #E3B04B}
+.vr-sp.gone{opacity:.45;cursor:default}
+.vr-sp.gone i{position:absolute;top:2px;right:4px;font-size:26px;font-style:normal}
+.vr-sp.hit{border-color:#B3261E;cursor:default}
+.vr-sp em{display:block;font-style:normal;font-size:12.5px;color:#B3261E}
+.vr-snip{font-size:17px}
+@media (max-width:600px){.vr-web{aspect-ratio:9/11}.vr-sp{width:27%;font-size:12px;padding:3px}.vr-sp em{font-size:10.5px}}
