@@ -90,6 +90,12 @@ if S.get('type') == 'season':
     for k in ('wet', 'dry'):
         if not os.path.exists(os.path.join(wdir, 'img', S[k]['art'] + '.svg')): F('season game: drawing missing: ' + S[k]['art'])
     if S['claim']['right'] not in S['claim']['options']: F('season game: claim.right is not one of the options')
+if S.get('type') == 'build':
+    for x in S['habitats']:
+        for c in S['cats']:
+            k = c['key']
+            if x['right'].get(k) not in S['choices'][k]: F('build game: right %s missing for %s' % (k, x['name']))
+            if k not in x['ok'] or k not in x['miss']: F('build game: ok/miss %s missing for %s' % (k, x['name']))
 if S.get('type') == 'spot':
     for s in S['spots']:
         if s.get('pollute') and s.get('kind') not in S['places']: F('spot game: kind missing for ' + s['id'])

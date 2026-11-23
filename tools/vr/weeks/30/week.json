@@ -1,0 +1,304 @@
+{
+ "id": "g3sci-vr-30",
+ "week": 30,
+ "lesson": "30.01",
+ "lessonTitle": "How Are Florida Animals Adapted?",
+ "title": "Hide and Seek",
+ "emoji": "🎬",
+ "canvasName": "30.01 VR · Hide and Seek",
+ "details": [
+  "📅 Q4 · Unit 10 · Florida Ecosystems",
+  "📖 Week 30 · goes with Lesson 30.01",
+  "🌎 CPALMS SC.3.L.15.1, SC.3.L.17.1",
+  "⏱ About 15 minutes"
+ ],
+ "map": "Tropical Rainforest",
+ "mapWord": "Tropical",
+ "badge": {
+  "emoji": "🍃",
+  "name": "Leaf Cloak",
+  "line": "Only VR crews earn this one. Your shot goes in Opti's film."
+ },
+ "stamp": "Studio Day · Wonder Films",
+ "hook": {
+  "look": "This is a <b>postcard</b>. People mail one to tell a friend what they saw on a trip.",
+  "head": "Scene 30 · Hide and Seek",
+  "sub": "Wonder Films · Postcard",
+  "rows": [
+   [
+    "From",
+    "The Florida scrub"
+   ],
+   [
+    "To",
+    "The Wonder Films crew"
+   ],
+   [
+    "Note",
+    "Can you find the bird?"
+   ]
+  ],
+  "img": "hook",
+  "alt": "A blue and gray scrub jay sitting among tangled branches and leaves",
+  "cap": "A Florida scrub jay in the brush at Merritt Island National Wildlife Refuge. NASA photo.",
+  "note": "Some animals blend in to hide or hunt. Some stand out on purpose."
+ },
+ "opti": {
+  "brief": "Welcome to the rainforest, crew. We film Scene 30, Hide and Seek. Hide the animals where they blend in, then take the shot.",
+  "studio": "No headset today? Come to the studio. Build an animal for each Florida home. Then tell me what you think."
+ },
+ "vr": {
+  "look": "A <b>model</b> is a copy of something real. <b>Camouflage</b> is a color or pattern that helps an animal blend in with its home.",
+  "groups": [
+   {
+    "title": "🍃 Hiders",
+    "models": [
+     {
+      "name": "Frog",
+      "word": "Frog",
+      "img": "frog",
+      "alt": "Green frog sitting in shallow water",
+      "trait": "Green like leaves."
+     },
+     {
+      "name": "Snake",
+      "word": "Snake",
+      "img": "snake",
+      "alt": "Brown water snake resting on a wooden boardwalk",
+      "trait": "Brown like logs and mud."
+     }
+    ]
+   },
+   {
+    "title": "🦋 Show-off, hunter, spotter",
+    "models": [
+     {
+      "name": "Monarch Butterfly",
+      "word": "Monarch",
+      "img": "monarch",
+      "alt": "Orange and black monarch butterfly on orange flowers",
+      "trait": "Bright colors tell birds: I taste bad!"
+     },
+     {
+      "name": "Eagle",
+      "word": "Eagle",
+      "img": "eagle",
+      "alt": "Bald eagle with a white head perched on a dead branch",
+      "trait": "Sharp eyes spot prey."
+     },
+     {
+      "name": "Binoculars",
+      "word": "Binoculars",
+      "img": "binoc",
+      "alt": "Pair of black binoculars",
+      "trait": "Help you spot hiders."
+     }
+    ]
+   }
+  ],
+  "steps": [
+   {
+    "where": "🖥️ Before your headset",
+    "title": "Know your models",
+    "clip": "step1",
+    "html": "<p>Type each gray word in the <b>Filter models</b> box.</p>@MODELS@<p>This list is also on the <b>Canvas</b> tab in VR.</p>"
+   },
+   {
+    "where": "🥽 In VR",
+    "title": "Go on location",
+    "clip": "step2",
+    "html": "<div class=\"vr-how\">🔗 <b>First time only:</b> connect Canvas at <a href=\"https://xr.optimaed.com\" target=\"_blank\" rel=\"noopener\">xr.optimaed.com</a>. See <b>Having trouble in VR?</b> below.</div><p>Open the <b>On-Demand</b> app. Click <b>Explore</b>. Type <b>Playground</b> in <b>Filter environments</b>. Click <b>Playground</b>, then <b>Begin Solo</b>.</p>"
+   },
+   {
+    "title": "Build the scene",
+    "clip": "step3",
+    "html": "<p>Press the <b>top button on your right controller</b>, then click <b>Models</b>. Hide the Frog and Snake where they blend in. Put the Monarch where birds can see it. Perch the Eagle up high. Set the Binoculars where you stand.</p><div class=\"vr-how\">✋ Grab a model with the <b>palm trigger</b>. Use <b>both</b> palm triggers to make it bigger or smaller.</div><div class=\"vr-say\">🗣 <b>Say it out loud:</b> “The ___ hides here because its ___ matches the ___.”</div>"
+   },
+   {
+    "title": "Take the shot and send it",
+    "clip": "step4",
+    "html": "<p>Stand back so the whole scene fits. Open your menu, click <b>Library</b>, then <b>Camera</b>. Click <b>Take photo</b>.</p><p>Click the <b>Canvas</b> tab and pick <b>@CANVAS@</b>. Click <b>Choose from My Files</b>, pick your photo, click <b>Use this file</b>, then <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.</p><div class=\"vr-how\">🔁 Want to fix it? Move the models, take a new photo and send it again.</div>"
+   },
+   {
+    "where": "✅ After",
+    "title": "Check and leave",
+    "clip": "step5",
+    "html": "<p>Press the <b>Meta button</b>, then click <b>Quit</b>. Check that your photo is in the Canvas assignment. Not there? Open <b>Having trouble in VR?</b></p>"
+   }
+  ],
+  "extra": {
+   "after": 3,
+   "clip": "extra",
+   "html": "Add a plant where a little frog could hide: <span class=\"vr-word\">Bromeliad Plant</span>"
+  },
+  "full": "Your photo shows all five models, with the Frog and Snake hidden."
+ },
+ "studio": {
+  "kicker": "Studio Day · no headset",
+  "title": "Build a critter",
+  "type": "build",
+  "framePl": "ptag",
+  "labels": {
+   "start": "Look at the habitat. Pick one of each.",
+   "next": "Next habitat ▶",
+   "done": "Three habitats, three animals, all adapted to their homes. Nice work, crew!",
+   "pdfTitle": "Build a critter",
+   "cols": [
+    "Habitat",
+    "Real animal that fits"
+   ]
+  },
+  "look": "Three real Florida homes. A <b>habitat</b> is the home where an animal lives. An <b>adaptation</b> is a body part or behavior that helps an animal survive there.",
+  "do": "Look at the habitat photo. Pick a color, a body part and a trick that would help an animal survive there. Then meet the real animal.",
+  "write": {
+   "min": 20,
+   "frames": [
+    {
+     "lead": "1. Which critter did you like best?",
+     "starter": "My ___ animal would survive because ___."
+    },
+    {
+     "lead": "2. What is one Florida adaptation?",
+     "starter": "The ___ has ___, which helps it ___."
+    }
+   ],
+   "chips": [
+    "adaptation",
+    "habitat",
+    "camouflage",
+    "survive",
+    "predator",
+    "prey",
+    "blend in",
+    "trait",
+    "because",
+    "hide"
+   ]
+  },
+  "full": "You built an animal for all 3 habitats and met the real ones. Your 2 sentences have at least 20 words.",
+  "cats": [
+   {
+    "key": "color",
+    "name": "🎨 Color"
+   },
+   {
+    "key": "part",
+    "name": "🦶 Body part"
+   },
+   {
+    "key": "trick",
+    "name": "🎬 Trick"
+   }
+  ],
+  "choices": {
+   "color": {
+    "pale": "Pale like sand",
+    "green": "Bright green",
+    "brown": "Brown and blotchy"
+   },
+   "part": {
+    "claws": "Claws for digging",
+    "pads": "Sticky toe pads",
+    "shell": "A hard shell"
+   },
+   "trick": {
+    "burrow": "Digs a burrow to stay cool",
+    "still": "Sits still on a stem",
+    "hide": "Pulls into its shell"
+   }
+  },
+  "habitats": [
+   {
+    "name": "White sand dunes",
+    "img": "dunes",
+    "alt": "White sand dunes with clumps of grass by the sea",
+    "right": {
+     "color": "pale",
+     "part": "claws",
+     "trick": "burrow"
+    },
+    "ok": {
+     "color": "Yes! A pale animal is hard to see on white sand.",
+     "part": "Yes! Claws help dig into soft sand.",
+     "trick": "Yes! A burrow is cool and safe from owls."
+    },
+    "miss": {
+     "color": "Look at the sand. Which color would an owl miss?",
+     "part": "The sand is soft and deep. What helps an animal dig?",
+     "trick": "The sun is hot and owls hunt here. Where could an animal hide?"
+    },
+    "done": "You built a dune animal! Here is a real one.",
+    "real": {
+     "name": "Beach mouse",
+     "img": "mouse",
+     "alt": "A small pale beach mouse sitting on white sand",
+     "cap": "A Perdido Key beach mouse. It is pale like the sand and digs burrows in the dunes. USFWS photo."
+    }
+   },
+   {
+    "name": "Green marsh",
+    "img": "marsh",
+    "alt": "A green marsh with tall grass and cattails by the water",
+    "right": {
+     "color": "green",
+     "part": "pads",
+     "trick": "still"
+    },
+    "ok": {
+     "color": "Yes! Green blends in with the grass and cattails.",
+     "part": "Yes! Sticky toe pads help it climb tall stems.",
+     "trick": "Yes! Sitting still keeps it hidden from birds."
+    },
+    "miss": {
+     "color": "Look at the plants. Which color blends in?",
+     "part": "The plants are tall and thin. What helps an animal climb?",
+     "trick": "Moving gets you seen. What would help it hide?"
+    },
+    "done": "You built a marsh animal! Here is a real one.",
+    "real": {
+     "name": "Green tree frog",
+     "img": "treefrog",
+     "alt": "A bright green tree frog resting on a gray board",
+     "cap": "A green tree frog. Its sticky toe pads hold on to stems, and its green skin blends in."
+    }
+   },
+   {
+    "name": "Forest floor",
+    "img": "leaves",
+    "alt": "Brown dead leaves and twigs covering the ground in a forest",
+    "right": {
+     "color": "brown",
+     "part": "shell",
+     "trick": "hide"
+    },
+    "ok": {
+     "color": "Yes! Brown and blotchy looks like old leaves.",
+     "part": "Yes! A hard shell keeps it safe.",
+     "trick": "Yes! It closes up tight inside its shell."
+    },
+    "miss": {
+     "color": "Look at the leaves. Which color blends in?",
+     "part": "This animal moves slowly. What could protect its body?",
+     "trick": "It has a hard shell. How could it use it?"
+    },
+    "done": "You built a forest floor animal! Here is a real one.",
+    "real": {
+     "name": "Box turtle",
+     "img": "turtle",
+     "alt": "A Florida box turtle with a dark shell and yellow lines",
+     "cap": "A Florida box turtle near Flamingo, Florida. It can close its shell tight like a box."
+    }
+   }
+  ]
+ },
+ "voice": {
+  "brief": "Welcome to the rainforest, crew. We film Scene 30, Hide and Seek. Hide the animals where they blend in, then take the shot.",
+  "step1": "Before your headset goes on, meet your five models. Learn each gray search word. You will type it in VR.",
+  "step2": "Put on your headset. Click Explore, type Tropical, and pick Tropical Rainforest. Then click Begin Solo.",
+  "step3": "Hide the frog and the snake where they blend in. Show off the butterfly. Perch the eagle up high. Then tell me how they hide.",
+  "extra": "Got time? Add a plant where a little frog could hide. That shot is just for VR crews.",
+  "step4": "Step back so the whole scene fits. Click Library, then Camera, and take the shot. Then send it to Canvas.",
+  "step5": "Press the Meta button and click Quit. Then open Canvas. Your photo should be waiting there.",
+  "studio": "No headset today? Come to the studio. Build an animal for each Florida home. Then tell me what you think."
+ }
+}
