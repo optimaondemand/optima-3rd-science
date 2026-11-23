@@ -245,3 +245,19 @@ main.vr{padding:18px 22px 30px}
 .vr-dial-btns{display:flex;gap:8px;margin:8px 0 4px}
 .vr-dial-key{font-size:13px;opacity:.85}
 @media (max-width:600px){.vr-dial{grid-template-columns:1fr}.vr-therm{height:120px}}
+
+/* meter game (week 28): a photo to test, three meters to drag or tap, a gauge for each */
+.vr-meter{display:grid;grid-template-columns:1fr 1.2fr;gap:14px;align-items:start;margin:6px 0;padding:10px;border-radius:12px;background:#14110D;color:#F6E7C1}
+.vr-meter-pic{margin:0;border:3px dashed transparent;border-radius:10px}
+.vr-meter-pic.drop{border-color:#E3B04B}
+.vr-meter-pic img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px}
+.vr-meter-pic figcaption{font:800 16px Nunito,Arial,sans-serif;margin-top:4px}
+.vr-meter-tools{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.vr-mtool{border:2px solid #E3B04B;background:#2A241C;color:#F6E7C1;border-radius:20px;padding:7px 12px;font:800 15px Nunito,Arial,sans-serif;cursor:grab}
+.vr-mtool.used{background:#E3B04B;color:#14110D}
+.vr-gauge{display:grid;grid-template-columns:7.5em 1fr 5.5em;gap:8px;align-items:center;margin:6px 0;font:700 15px Nunito,Arial,sans-serif}
+.vr-gbar{height:14px;border-radius:7px;background:#2A241C;border:1px solid #7A6A55;overflow:hidden}
+.vr-gbar i{display:block;height:100%;background:#E3B04B}
+.vr-place button.on{border-color:#2E7D32;background:#E8F2EA}
+@media (max-width:600px){.vr-meter{grid-template-columns:1fr}.vr-gauge{grid-template-columns:6.5em 1fr 5em;font-size:13.5px}}
+.vr-place #vr-check{background:#2E7D32;color:#fff;border-color:#2E7D32}
