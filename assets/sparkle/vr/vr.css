@@ -275,3 +275,12 @@ main.vr{padding:18px 22px 30px}
 @media (max-width:600px){.vr-zone{min-width:42px;height:42px;font-size:20px}.vr-zpic{width:24px;height:24px}}
 .vr-acard{display:flex;align-items:center;gap:8px;border:3px solid #E3B04B;background:#14110D;color:#F6E7C1;border-radius:12px;padding:5px 12px 5px 5px;font:800 16px Nunito,Arial,sans-serif;cursor:grab}
 .vr-acard img{width:84px;height:63px;object-fit:cover;border-radius:8px}
+
+/* build game (week 30): a habitat photo and three rows of choices */
+.vr-build{display:grid;grid-template-columns:1fr 1.25fr;gap:14px;align-items:start;margin:6px 0}
+.vr-build .vr-dial-pic figcaption{color:var(--wl-ink)}
+.vr-bcat{margin-bottom:8px}
+.vr-bcat b{display:block;font:900 15px Nunito,Arial,sans-serif;margin-bottom:2px}
+.vr-bcat .vr-place{margin:0}
+.vr-bcat button[disabled]{opacity:.45}
+@media (max-width:600px){.vr-build{grid-template-columns:1fr}}

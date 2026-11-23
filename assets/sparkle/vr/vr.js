@@ -114,6 +114,7 @@
     if (G.type === 'dial') { renderDial(); return; }
     if (G.type === 'meter') { renderMeter(i, P[i]); return; }
     if (G.type === 'season') { renderSeason(); return; }
+    if (G.type === 'build') { renderBuild(i, P[i]); return; }
     if (G.type === 'sort') { renderSort(i, P[i]); return; }
     var p = P[i], h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
       '<div class="vr-fossil"' + (G.dragOpts ? '' : ' draggable="true"') + ' id="vr-fos"><img src="' + p.img + '" alt="' + esc(p.alt) + '">' + esc(p.name) + (p.facts ? '<small>' + esc(p.facts) + '</small>' : '') + '</div><div>';
@@ -588,6 +589,36 @@
     var fos = $('#vr-fos'); if (fos) fos.addEventListener('dragstart', function (e) { try { e.dataTransfer.setData('text/plain', 'a'); } catch (x) {} });
   }
 
+  /* build game (week 30): for each habitat photo pick a color, a body part and a trick, then meet the real animal */
+  function renderBuild(i, p) {
+    st.c = st.c || {}; st.c.b = st.c.b || {};
+    var Hb = G.habitats[i], picks = st.c.b[i] = st.c.b[i] || {}, done = st.m[i];
+    var h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(Hb.name) + '</div>' +
+      '<div class="vr-fb ' + flyCls + '" id="vr-fb" aria-live="polite">' + esc(flyMsg || L.start) + '</div>' +
+      '<div class="vr-build"><figure class="vr-dial-pic"><img src="' + Hb.img + '" alt="' + esc(Hb.alt) + '"><figcaption>' + esc(Hb.name) + '</figcaption></figure><div>' +
+      G.cats.map(function (c) {
+        return '<div class="vr-bcat"><b>' + esc(c.name) + '</b><div class="vr-place">' + Object.keys(G.choices[c.key]).map(function (k) {
+          var on = picks[c.key] === k;
+          return '<button type="button" class="' + (on ? 'ok' : '') + '" data-c="' + c.key + '" data-k="' + k + '"' + (picks[c.key] && !on ? ' disabled' : '') + '>' + esc(G.choices[c.key][k]) + '</button>'; }).join('') + '</div></div>'; }).join('') +
+      '</div></div>';
+    if (done) h += '<figure class="vr-proof"><img src="' + Hb.real.img + '" alt="' + esc(Hb.real.alt) + '"><figcaption>' + esc(Hb.real.cap) + '</figcaption></figure><button type="button" class="vr-next" id="vr-next">' + esc(L.next) + '</button>';
+    game.innerHTML = h;
+    $$('.vr-bcat button', game).forEach(function (b) {
+      b.addEventListener('click', function () {
+        var c = b.getAttribute('data-c'), k = b.getAttribute('data-k');
+        if (picks[c]) return;
+        if (Hb.right[c] === k) {
+          picks[c] = k; flyCls = 'ok'; flyMsg = Hb.ok[c];
+          if (G.cats.every(function (x) { return picks[x.key]; })) { st.m[i] = true; flyMsg = Hb.done; frames(); }
+          save();
+        } else { flyCls = 'no'; flyMsg = Hb.miss[c]; }
+        render();
+      });
+    });
+    var nx = $('#vr-next');
+    if (nx) nx.addEventListener('click', function () { st.p[i] = true; save(); flyMsg = null; flyCls = ''; render(); });
+  }
+
   /* sort game (week 19): one card at a time goes into one of two bins; an IN card then asks which part takes it in */
   function renderSort(i, p) {
     var h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
@@ -672,7 +703,7 @@
     var name = (st.name || '').trim();
     if (!name) { nmMsg.textContent = 'Type your first name first.'; nm.focus(); return; }
     var rows = P.map(function (p, i) {
-      var two = (G.type === 'count' || G.type === 'web' || G.type === 'clue' || G.type === 'dial' || G.type === 'meter' || G.type === 'season') ? p.tag : G.type === 'spot' ? G.places[p.place] : G.type === 'clean' ? p.ok : G.type === 'fly' ? L.tag : G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
+      var two = (G.type === 'count' || G.type === 'web' || G.type === 'clue' || G.type === 'dial' || G.type === 'meter' || G.type === 'season' || G.type === 'build') ? p.tag : G.type === 'spot' ? G.places[p.place] : G.type === 'clean' ? p.ok : G.type === 'fly' ? L.tag : G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
       var three = p.place ? (st.p[i] ? esc(G.places[p.place]) : '<i>not picked yet</i>') : '';
       return '<tr><td>' + esc(p.name) + '</td><td>' + (st.m[i] ? esc(two) : '<i>not matched yet</i>') + '</td>' + (L.cols.length > 2 ? '<td>' + three + '</td>' : '') + '</tr>';
     }).join('');
