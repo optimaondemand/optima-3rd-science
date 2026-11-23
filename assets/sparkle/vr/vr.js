@@ -113,6 +113,7 @@
     if (G.type === 'clue') { renderClue(); return; }
     if (G.type === 'dial') { renderDial(); return; }
     if (G.type === 'meter') { renderMeter(i, P[i]); return; }
+    if (G.type === 'season') { renderSeason(); return; }
     if (G.type === 'sort') { renderSort(i, P[i]); return; }
     var p = P[i], h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
       '<div class="vr-fossil"' + (G.dragOpts ? '' : ' draggable="true"') + ' id="vr-fos"><img src="' + p.img + '" alt="' + esc(p.alt) + '">' + esc(p.name) + (p.facts ? '<small>' + esc(p.facts) + '</small>' : '') + '</div><div>';
@@ -547,6 +548,46 @@
     });
   }
 
+  /* season game (week 29): flip a drawn wetland to the dry season, put each animal where it goes, then pick why */
+  function renderSeason() {
+    st.c = st.c || {}; st.c.at = st.c.at || {};
+    var A = G.animals, Z = G.zones, i = cur(), dry = !!st.c.dry, view = st.c.view || (dry ? 'dry' : 'wet');
+    if (dry && i >= A.length) { renderClaim(P.length, G.allPlaced); return; }
+    var a = A[i], h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(dry ? a.name : L.flip) + '</div>' +
+      '<div class="vr-fb ' + flyCls + '" id="vr-fb" aria-live="polite">' + esc(flyMsg || (!dry ? L.start : view === 'wet' ? L.peek : fill(L.q, a.name.toLowerCase()))) + '</div>' +
+      '<div class="vr-switch" role="group"><button type="button" data-v="wet" aria-pressed="' + (view === 'wet') + '">🌧️ ' + esc(L.wet) + '</button><button type="button" data-v="dry" aria-pressed="' + (view === 'dry') + '">☀️ ' + esc(L.dry) + '</button></div>' +
+      '<div class="vr-scene vr-season"><img src="' + (view === 'wet' ? G.wet.img : G.dry.img) + '" alt="' + esc(view === 'wet' ? G.wet.alt : G.dry.alt) + '">';
+    if (view === 'dry') {
+      h += Object.keys(Z).map(function (k) {
+        var here = A.filter(function (x, j) { return st.m[j] && x.zone === k; });
+        return '<button type="button" class="vr-zone" data-z="' + k + '" style="left:' + Z[k].x + '%;top:' + Z[k].y + '%" aria-label="' + esc(Z[k].name) + '">' + Z[k].icon +
+          here.map(function (x) { return '<img class="vr-zpic" src="' + x.img + '" alt="">'; }).join('') + '</button>'; }).join('');
+    }
+    h += '</div>';
+    if (view === 'dry') h += '<div class="vr-zkey"><div class="vr-acard" draggable="true" id="vr-fos"><img src="' + a.img + '" alt="' + esc(a.alt) + '"><span>' + esc(a.name) + '</span></div>' +
+      Object.keys(Z).map(function (k) { return '<button type="button" class="vr-next" data-z="' + k + '">' + Z[k].icon + ' ' + esc(Z[k].name) + '</button>'; }).join('') + '</div>';
+    game.innerHTML = h;
+    $$('.vr-switch button', game).forEach(function (b) {
+      b.addEventListener('click', function () {
+        var v = b.getAttribute('data-v');
+        if (v === 'dry' && !st.c.dry) { st.c.dry = 1; flyMsg = L.flipped; flyCls = 'ok'; } else { flyMsg = null; flyCls = ''; }
+        st.c.view = v; save(); render();
+      });
+    });
+    function put(z) {
+      if (z === a.zone) { st.m[i] = true; st.p[i] = true; save(); flyMsg = a.ok; flyCls = 'ok'; frames(); }
+      else { flyMsg = a.miss; flyCls = 'no'; }
+      render();
+    }
+    $$('[data-z]', game).forEach(function (b) {
+      b.addEventListener('click', function () { put(b.getAttribute('data-z')); });
+      b.addEventListener('dragover', function (e) { e.preventDefault(); b.classList.add('drop'); });
+      b.addEventListener('dragleave', function () { b.classList.remove('drop'); });
+      b.addEventListener('drop', function (e) { e.preventDefault(); b.classList.remove('drop'); put(b.getAttribute('data-z')); });
+    });
+    var fos = $('#vr-fos'); if (fos) fos.addEventListener('dragstart', function (e) { try { e.dataTransfer.setData('text/plain', 'a'); } catch (x) {} });
+  }
+
   /* sort game (week 19): one card at a time goes into one of two bins; an IN card then asks which part takes it in */
   function renderSort(i, p) {
     var h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
@@ -631,7 +672,7 @@
     var name = (st.name || '').trim();
     if (!name) { nmMsg.textContent = 'Type your first name first.'; nm.focus(); return; }
     var rows = P.map(function (p, i) {
-      var two = (G.type === 'count' || G.type === 'web' || G.type === 'clue' || G.type === 'dial' || G.type === 'meter') ? p.tag : G.type === 'spot' ? G.places[p.place] : G.type === 'clean' ? p.ok : G.type === 'fly' ? L.tag : G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
+      var two = (G.type === 'count' || G.type === 'web' || G.type === 'clue' || G.type === 'dial' || G.type === 'meter' || G.type === 'season') ? p.tag : G.type === 'spot' ? G.places[p.place] : G.type === 'clean' ? p.ok : G.type === 'fly' ? L.tag : G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
       var three = p.place ? (st.p[i] ? esc(G.places[p.place]) : '<i>not picked yet</i>') : '';
       return '<tr><td>' + esc(p.name) + '</td><td>' + (st.m[i] ? esc(two) : '<i>not matched yet</i>') + '</td>' + (L.cols.length > 2 ? '<td>' + three + '</td>' : '') + '</tr>';
     }).join('');
