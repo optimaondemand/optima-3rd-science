@@ -1,0 +1,256 @@
+{
+ "id": "g3sci-vr-31",
+ "week": 31,
+ "lesson": "31.01",
+ "lessonTitle": "What Threatens Florida Ecosystems?",
+ "title": "Threat and Fix",
+ "emoji": "🎬",
+ "canvasName": "31.01 VR · Threat and Fix",
+ "details": [
+  "📅 Q4 · Unit 10 · Florida Ecosystems",
+  "📖 Week 31 · goes with Lesson 31.01",
+  "🌎 CPALMS SC.3.N.1.7",
+  "⏱ About 15 minutes"
+ ],
+ "map": "The Countryside",
+ "mapWord": "Countryside",
+ "badge": {
+  "emoji": "🛡️",
+  "name": "Guardian Shield",
+  "line": "Only VR crews earn this one. Your shot goes in Opti's film."
+ },
+ "stamp": "Studio Day · Wonder Films",
+ "hook": {
+  "look": "This is a <b>wanted poster</b>. It asks people to watch out for something.",
+  "head": "Scene 31 · Threat and Fix",
+  "sub": "Wonder Films · Wanted poster",
+  "rows": [
+   [
+    "Wanted",
+    "Burmese python"
+   ],
+   [
+    "Last seen",
+    "The Everglades"
+   ],
+   [
+    "Why",
+    "It eats native animals"
+   ]
+  ],
+  "img": "hook",
+  "alt": "A big python with a dark brown pattern coiled in a tree",
+  "cap": "A Burmese python in Everglades National Park. NPS photo.",
+  "note": "Pythons came to Florida as pets, and some got loose. Some threats are animals. Some come from people."
+ },
+ "opti": {
+  "brief": "Welcome to the countryside, crew. We film Scene 31, Threat and Fix. Pair each threat with a fix, then take the shot.",
+  "studio": "No headset today? Come to the studio. Design a safe crossing for a panther. Then test it and make it better."
+ },
+ "vr": {
+  "look": "A <b>model</b> is a copy of something real. A <b>threat</b> is something that harms a habitat. An <b>invasive species</b> is a living thing from far away that harms the living things here.",
+  "groups": [
+   {
+    "title": "⚠️ Threats",
+    "models": [
+     {
+      "name": "Lion Fish",
+      "word": "Lion Fish",
+      "img": "lion",
+      "alt": "A lionfish with long striped fins swimming over a reef",
+      "trait": "Invasive. Eats reef fish."
+     },
+     {
+      "name": "Cargo Truck",
+      "word": "Truck",
+      "img": "road",
+      "alt": "A highway and a canal cutting straight across the Everglades",
+      "trait": "Roads cut habitats apart."
+     }
+    ]
+   },
+   {
+    "title": "🛡️ Who we protect, and how",
+    "models": [
+     {
+      "name": "Panther",
+      "word": "Panther",
+      "img": "panther",
+      "alt": "Florida panther walking through a green forest",
+      "trait": "Needs room to roam."
+     },
+     {
+      "name": "Fishing Net",
+      "word": "Net",
+      "img": "net",
+      "alt": "A diver uses a net and a spear to catch a lionfish",
+      "trait": "Divers catch lionfish."
+     },
+     {
+      "name": "Shovel",
+      "word": "Shovel",
+      "img": "shovel",
+      "alt": "Small garden shovel lying on fresh soil",
+      "trait": "Plants native plants."
+     }
+    ]
+   }
+  ],
+  "steps": [
+   {
+    "where": "🖥️ Before your headset",
+    "title": "Know your models",
+    "clip": "step1",
+    "html": "<p>Type each gray word in the <b>Filter models</b> box.</p>@MODELS@<p>This list is also on the <b>Canvas</b> tab in VR.</p>"
+   },
+   {
+    "where": "🥽 In VR",
+    "title": "Go on location",
+    "clip": "step2",
+    "html": "<div class=\"vr-how\">🔗 <b>First time only:</b> connect Canvas at <a href=\"https://xr.optimaed.com\" target=\"_blank\" rel=\"noopener\">xr.optimaed.com</a>. See <b>Having trouble in VR?</b> below.</div><p>Open the <b>On-Demand</b> app. Click <b>Explore</b>. Type <b>Playground</b> in <b>Filter environments</b>. Click <b>Playground</b>, then <b>Begin Solo</b>.</p>"
+   },
+   {
+    "title": "Build the scene",
+    "clip": "step3",
+    "html": "<p>Press the <b>top button on your right controller</b>, then click <b>Models</b>. Make two pairs: the Lion Fish with the Fishing Net, and the Cargo Truck with the Shovel. Set the Panther between them.</p><div class=\"vr-how\">✋ Grab a model with the <b>palm trigger</b>. Use <b>both</b> palm triggers to make it bigger or smaller.</div><div class=\"vr-say\">🗣 <b>Say it out loud:</b> “The ___ is a threat because ___. The ___ helps because ___.”</div>"
+   },
+   {
+    "title": "Take the shot and send it",
+    "clip": "step4",
+    "html": "<p>Stand back so the whole scene fits. Open your menu, click <b>Library</b>, then <b>Camera</b>. Click <b>Take photo</b>.</p><p>Click the <b>Canvas</b> tab and pick <b>@CANVAS@</b>. Click <b>Choose from My Files</b>, pick your photo, click <b>Use this file</b>, then <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.</p><div class=\"vr-how\">🔁 Want to fix it? Move the models, take a new photo and send it again.</div>"
+   },
+   {
+    "where": "✅ After",
+    "title": "Check and leave",
+    "clip": "step5",
+    "html": "<p>Press the <b>Meta button</b>, then click <b>Quit</b>. Check that your photo is in the Canvas assignment. Not there? Open <b>Having trouble in VR?</b></p>"
+   }
+  ],
+  "extra": {
+   "after": 3,
+   "clip": "extra",
+   "html": "Add a clean way to make power: <span class=\"vr-word\">Solar Panel</span>"
+  },
+  "full": "Your photo shows two pairs, each threat with its fix, and the Panther between them."
+ },
+ "studio": {
+  "kicker": "Studio Day · no headset",
+  "title": "Design a crossing",
+  "type": "path",
+  "framePl": "ptag",
+  "labels": {
+   "start": "Tap tiles to build your path. Tap a tile again to remove it.",
+   "count": "Tiles used",
+   "test": "🧪 Test it",
+   "clear": "↺ Start over",
+   "next": "Next ▶",
+   "picked": "part of the path",
+   "c1": "It connects the two forests.",
+   "c2": "It goes under the road in a tunnel.",
+   "c3": "It uses {from} tiles or fewer.",
+   "noPath": "The panther can't get across yet. Look for a gap in your path.",
+   "tooMany": "It works, but it uses too many tiles. Can you make it shorter?",
+   "tiles": {
+    "forest": "forest",
+    "open": "open ground",
+    "road": "highway",
+    "house": "house",
+    "water": "lake"
+   },
+   "step3": "Pick why",
+   "done": "You designed, tested and improved your crossings. Nice work, engineer!",
+   "pdfTitle": "Design a crossing",
+   "cols": [
+    "Design",
+    "Result"
+   ]
+  },
+  "look": "A drawn <b>model</b> map seen from above. A highway cuts a panther's forest in two. A <b>wildlife crossing</b> is a safe path that lets animals get across. <b>Criteria</b> are what the design must do. A <b>constraint</b> is a limit, like how many tiles you can use.",
+  "do": "Tap tiles to build a path from forest to forest. Road tiles turn into a tunnel. Tap Test it. If a check is red, fix your path and test again.",
+  "write": {
+   "min": 20,
+   "frames": [
+    {
+     "lead": "1. Which threat worries you most?",
+     "starter": "The biggest threat is ___ because ___."
+    },
+    {
+     "lead": "2. How does your crossing help?",
+     "starter": "My crossing helps the panther because ___."
+    }
+   ],
+   "chips": [
+    "pollution",
+    "invasive species",
+    "habitat loss",
+    "runoff",
+    "crossing",
+    "criteria",
+    "constraint",
+    "panther",
+    "habitat",
+    "because"
+   ]
+  },
+  "full": "You built and tested 2 crossings and picked why. Your 2 sentences have at least 20 words.",
+  "maps": [
+   {
+    "name": "Design it",
+    "q": "Build a crossing for the panther. Use {from} tiles or fewer.",
+    "max": 6,
+    "tag": "Works, 6 tiles or fewer",
+    "img": "panther",
+    "alt": "Florida panther walking through a green forest",
+    "ok": "It works! The panther can cross under the highway.",
+    "grid": [
+     "LL..RR.GG",
+     "LL.XRR.GG",
+     "LL..RRXGG",
+     "LLX.RR.GG",
+     "LL..RR.GG"
+    ]
+   },
+   {
+    "name": "Improve it",
+    "q": "A new spot has a lake and houses. Build a crossing with {from} tiles or fewer.",
+    "max": 7,
+    "tag": "Works, 7 tiles or fewer",
+    "img": "road",
+    "alt": "A highway and a canal cutting straight across the Everglades",
+    "ok": "It works! You found a way around the lake and the houses.",
+    "grid": [
+     "LLWW.RR.XGG",
+     "LL.W.RRX.GG",
+     "LL...RR..GG",
+     "LLX.WRRW.GG",
+     "LL..WRR..GG"
+    ]
+   }
+  ],
+  "allBuilt": "Both crossings work. Real engineers built crossings like these under highways in Florida.",
+  "claim": {
+   "name": "My claim",
+   "img": "panther",
+   "alt": "Florida panther walking through a green forest",
+   "tag": "Safe passage",
+   "q": "Why do engineers build wildlife crossings?",
+   "options": {
+    "safe": "🐆 So animals can reach the rest of their habitat safely.",
+    "cars": "🚗 So cars can drive faster.",
+    "look": "🎨 Because they look nice."
+   },
+   "right": "safe",
+   "miss": "Think about the panther. What did your crossing help it do?"
+  }
+ },
+ "voice": {
+  "brief": "Welcome to the countryside, crew. We film Scene 31, Threat and Fix. Pair each threat with a fix, then take the shot.",
+  "step1": "Before your headset goes on, meet your five models. Learn each gray search word. You will type it in VR.",
+  "step2": "Put on your headset. Click Explore, type Countryside, and pick The Countryside. Then click Begin Solo.",
+  "step3": "Put the lionfish by the net, and the truck by the shovel. Set the panther between them. Then tell me each threat and fix.",
+  "extra": "Got time? Add a clean way to make power. That shot is just for VR crews.",
+  "step4": "Step back so the whole scene fits. Click Library, then Camera, and take the shot. Then send it to Canvas.",
+  "step5": "Press the Meta button and click Quit. Then open Canvas. Your photo should be waiting there.",
+  "studio": "No headset today? Come to the studio. Design a safe crossing for a panther. Then test it and make it better."
+ }
+}

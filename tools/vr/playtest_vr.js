@@ -48,7 +48,30 @@ const path = require('path'), fs = require('fs');
   const gtype = await page.evaluate(() => window.VR.game.type);
   const bins = await page.evaluate(() => window.VR.game.pairs.map(p => p.bin));
   const binKeys = await page.evaluate(() => Object.keys(window.VR.game.bins || {}));
-  if (gtype === 'build') {
+  if (gtype === 'path') {
+    const M = await page.evaluate(() => window.VR.game.maps.map(m => m.grid));
+    const cl = await page.evaluate(() => [Object.keys(window.VR.game.claim.options), window.VR.game.claim.right]);
+    const solve = g => { // shortest crossing by BFS (0-cost through forest)
+      const R = g.length, C = g[0].length, dist = {}, prev = {}, dq = [];
+      for (let r = 0; r < R; r++) if (g[r][0] === 'L') { dist[r + '-0'] = 0; dq.push([r, 0]); }
+      let end = null, best = 1e9;
+      while (dq.length) { dq.sort((a, b) => dist[a[0] + '-' + a[1]] - dist[b[0] + '-' + b[1]]); const [r, c] = dq.shift();
+        for (const [dr, dc] of [[1,0],[-1,0],[0,1],[0,-1]]) { const rr = r + dr, cc = c + dc, id = rr + '-' + cc; if (rr < 0 || cc < 0 || rr >= R || cc >= C) continue; const t = g[rr][cc];
+          const cost = dist[r + '-' + c] + ('.R'.includes(t) ? 1 : 0);
+          if (t === 'G') { if (cost < best) { best = cost; end = r + '-' + c; } continue; }
+          if (!'L.R'.includes(t) || (id in dist && dist[id] <= cost)) continue; dist[id] = cost; prev[id] = r + '-' + c; dq.push([rr, cc]); } }
+      const out = []; let k = end; while (k && k in prev) { const [r, c] = k.split('-').map(Number); if ('.R'.includes(g[r][c])) out.push(k); k = prev[k]; } return out; };
+    for (const [n, grid] of M.entries()) {
+      const tiles = solve(grid);
+      if (n === 0) { await page.click(`.vr-tile[data-id="${tiles[0]}"]`); await page.click('#vr-test'); await shot('08-miss', '#vr-game'); await page.click('#vr-clear'); }
+      for (const t of tiles) await page.click(`.vr-tile[data-id="${t}"]`);
+      await page.click('#vr-test');
+      if (n === 1) await shot('09b-next', '#vr-game');
+      await page.click('#vr-next'); g++;
+    }
+    await page.click(`.vr-place button[data-a="${cl[0].find(k => k !== cl[1])}"]`); await shot('09-place-miss', '#vr-game');
+    await page.click(`.vr-place button[data-a="${cl[1]}"]`); await page.waitForTimeout(800); g++;
+  } else if (gtype === 'build') {
     const B = await page.evaluate(() => ({ hab: window.VR.game.habitats.map(h => h.right), cats: window.VR.game.cats.map(c => c.key), ch: window.VR.game.choices }));
     for (const [n, right] of B.hab.entries()) {
       for (const c of B.cats) {

@@ -96,6 +96,26 @@ if S.get('type') == 'build':
             k = c['key']
             if x['right'].get(k) not in S['choices'][k]: F('build game: right %s missing for %s' % (k, x['name']))
             if k not in x['ok'] or k not in x['miss']: F('build game: ok/miss %s missing for %s' % (k, x['name']))
+if S.get('type') == 'path':
+    from collections import deque
+    for m in S['maps']:
+        g = m['grid']
+        if len(set(len(r) for r in g)) != 1: F('path game: rows differ in length in ' + m['name'])
+        dist = {}; q = deque()
+        for r, row in enumerate(g):
+            if row[0] == 'L': dist[(r, 0)] = 0; q.append((r, 0))
+        best = None
+        while q:
+            r, c = q.popleft()
+            for dr, dc in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                rr, cc = r + dr, c + dc
+                if not (0 <= rr < len(g) and 0 <= cc < len(g[0])) or (rr, cc) in dist: continue
+                t = g[rr][cc]; cost = dist[(r, c)] + (1 if t in '.R' else 0)
+                if t == 'G': best = cost if best is None else min(best, cost); continue
+                if t in 'L.R': dist[(rr, cc)] = cost; q.append((rr, cc))
+        if best is None: F('path game: no crossing possible in ' + m['name'])
+        elif best > m['max']: F('path game: shortest crossing %d > max %d in %s' % (best, m['max'], m['name']))
+    if S['claim']['right'] not in S['claim']['options']: F('path game: claim.right is not one of the options')
 if S.get('type') == 'spot':
     for s in S['spots']:
         if s.get('pollute') and s.get('kind') not in S['places']: F('spot game: kind missing for ' + s['id'])
