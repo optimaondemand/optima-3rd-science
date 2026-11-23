@@ -231,3 +231,17 @@ main.vr{padding:18px 22px 30px}
 .vr-off{margin:6px 0;padding:10px;border:3px dashed var(--wl-line);border-radius:12px;text-align:center;font:800 16px Nunito,Arial,sans-serif;color:#7A6A55}
 .vr-off.drop{background:#FFF3D6;border-color:#E3B04B}
 @media (max-width:600px){.vr-table{gap:6px;padding:6px}.vr-prop{font-size:12px;padding:3px}.vr-clue{font-size:17px}}
+
+/* dial game (week 27): a photo of the water + a thermometer, a slider and Warmer / Cooler buttons */
+.vr-dial{display:grid;grid-template-columns:1.4fr 1fr;gap:14px;align-items:center;margin:6px 0;padding:10px;border-radius:12px;background:#14110D}
+.vr-dial-pic{margin:0}
+.vr-dial-pic img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px}
+.vr-dial-pic figcaption{color:#F6E7C1;font:800 16px Nunito,Arial,sans-serif;margin-top:4px}
+.vr-dial-ctl{display:flex;gap:12px;align-items:center;color:#F6E7C1}
+.vr-therm{position:relative;width:22px;height:180px;border:3px solid #F6E7C1;border-radius:12px;background:#2A241C;overflow:hidden;flex:none}
+.vr-therm i{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(0deg,#4FA3D9,#B3261E)}
+.vr-temp{font:900 30px Nunito,Arial,sans-serif;margin-bottom:6px}
+.vr-dial-ctl input[type=range]{width:100%;accent-color:#E3B04B}
+.vr-dial-btns{display:flex;gap:8px;margin:8px 0 4px}
+.vr-dial-key{font-size:13px;opacity:.85}
+@media (max-width:600px){.vr-dial{grid-template-columns:1fr}.vr-therm{height:120px}}

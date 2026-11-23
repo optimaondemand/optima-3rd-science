@@ -111,6 +111,7 @@
     if (G.type === 'count') { renderCount(); return; }
     if (G.type === 'web') { renderWeb(); return; }
     if (G.type === 'clue') { renderClue(); return; }
+    if (G.type === 'dial') { renderDial(); return; }
     if (G.type === 'sort') { renderSort(i, P[i]); return; }
     var p = P[i], h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
       '<div class="vr-fossil"' + (G.dragOpts ? '' : ' draggable="true"') + ' id="vr-fos"><img src="' + p.img + '" alt="' + esc(p.alt) + '">' + esc(p.name) + (p.facts ? '<small>' + esc(p.facts) + '</small>' : '') + '</div><div>';
@@ -457,6 +458,44 @@
     off.addEventListener('drop', function (e) { e.preventDefault(); off.classList.remove('drop'); if (dragId) act(dragId); dragId = null; });
   }
 
+  /* dial game (week 27): turn the temperature dial until the water changes state, then name the change */
+  function renderDial() {
+    st.c = st.c || {}; st.c.t = st.c.t || [];
+    var i = cur(), R = G.rounds[i], lo = G.dial.min, hi = G.dial.max;
+    if (st.c.t[i] == null) st.c.t[i] = R.start;
+    var t = st.c.t[i], s = R.states.filter(function (x) { return t <= x.upTo; })[0] || R.states[R.states.length - 1];
+    var hit = t >= R.min && t <= R.max, pct = Math.round(100 * (t - lo) / (hi - lo));
+    var h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + G.rounds.length + ' · ' + esc(R.name) + '</div>' +
+      '<div class="vr-clue">🎬 ' + esc(R.q) + '</div>' +
+      '<div class="vr-dial"><figure class="vr-dial-pic"><img src="' + s.img + '" alt="' + esc(s.alt) + '"><figcaption>' + esc(s.label) + '</figcaption></figure>' +
+      '<div class="vr-dial-ctl"><div class="vr-therm" aria-hidden="true"><i style="height:' + pct + '%"></i></div>' +
+      '<div><div class="vr-temp" id="vr-temp">' + t + ' °C</div>' +
+      '<input type="range" id="vr-slide" min="' + lo + '" max="' + hi + '" step="1" value="' + t + '" aria-label="' + esc(L.dial) + '">' +
+      '<div class="vr-dial-btns"><button type="button" class="vr-next" data-d="-5">' + esc(L.down) + '</button><button type="button" class="vr-next" data-d="5">' + esc(L.up) + '</button></div>' +
+      '<div class="vr-dial-key">' + esc(L.key) + '</div></div></div></div>' +
+      '<div class="vr-fb ' + (hit ? 'ok' : flyCls) + '" id="vr-fb" aria-live="polite">' + esc(hit ? R.ok : (flyMsg || L.start)) + '</div>';
+    if (hit) h += '<div class="vr-gstep">' + esc(L.q2) + '</div><div class="vr-place">' + Object.keys(G.changes).map(function (k) {
+      return '<button type="button" data-ch="' + k + '">' + esc(G.changes[k]) + '</button>'; }).join('') + '</div><div class="vr-fb" id="vr-fb2" aria-live="polite"></div>';
+    game.innerHTML = h;
+    function set(v, keepFocus) {
+      v = Math.max(lo, Math.min(hi, Math.round(v)));
+      st.c.t[i] = v; save();
+      flyCls = ''; flyMsg = v > R.max ? L.tooHot : v < R.min ? L.tooCold : '';
+      render();
+      if (keepFocus) { var sl = $('#vr-slide'); if (sl) sl.focus(); }
+    }
+    var sl = $('#vr-slide');
+    sl.addEventListener('change', function () { set(+sl.value, true); });
+    sl.addEventListener('input', function () { $('#vr-temp').textContent = sl.value + ' °C'; });
+    $$('.vr-dial-btns button', game).forEach(function (b) { b.addEventListener('click', function () { set(t + (+b.getAttribute('data-d'))); }); });
+    $$('.vr-place button', game).forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (b.getAttribute('data-ch') === R.right) { b.classList.add('ok'); st.m[i] = true; st.p[i] = true; save(); flyMsg = null; flyCls = ''; setTimeout(render, 650); frames(); }
+        else { b.classList.add('no'); var f2 = $('#vr-fb2'); f2.className = 'vr-fb no'; f2.textContent = R.miss; }
+      });
+    });
+  }
+
   /* sort game (week 19): one card at a time goes into one of two bins; an IN card then asks which part takes it in */
   function renderSort(i, p) {
     var h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
@@ -541,7 +580,7 @@
     var name = (st.name || '').trim();
     if (!name) { nmMsg.textContent = 'Type your first name first.'; nm.focus(); return; }
     var rows = P.map(function (p, i) {
-      var two = (G.type === 'count' || G.type === 'web' || G.type === 'clue') ? p.tag : G.type === 'spot' ? G.places[p.place] : G.type === 'clean' ? p.ok : G.type === 'fly' ? L.tag : G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
+      var two = (G.type === 'count' || G.type === 'web' || G.type === 'clue' || G.type === 'dial') ? p.tag : G.type === 'spot' ? G.places[p.place] : G.type === 'clean' ? p.ok : G.type === 'fly' ? L.tag : G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
       var three = p.place ? (st.p[i] ? esc(G.places[p.place]) : '<i>not picked yet</i>') : '';
       return '<tr><td>' + esc(p.name) + '</td><td>' + (st.m[i] ? esc(two) : '<i>not matched yet</i>') + '</td>' + (L.cols.length > 2 ? '<td>' + three + '</td>' : '') + '</tr>';
     }).join('');
