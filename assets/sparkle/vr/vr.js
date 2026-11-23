@@ -93,7 +93,7 @@
       var f = $('.vr-frame[data-f="' + i + '"]'); if (!f) return;
       var lit = st.m[i] && st.p[i];
       f.classList.toggle('lit', !!lit);
-      $('.pl', f).textContent = lit ? (G.framePl === 'bin' ? G.bins[p.bin] : G.framePl === 'cousin' ? cz(p.cousin).name : G.places[p.place]) : '';
+      $('.pl', f).textContent = lit ? (G.framePl === 'tag' ? L.tag : G.framePl === 'bin' ? G.bins[p.bin] : G.framePl === 'cousin' ? cz(p.cousin).name : G.places[p.place]) : '';
     });
   }
   function cur() { for (var i = 0; i < P.length; i++) if (!(st.m[i] && st.p[i])) return i; return -1; }
@@ -105,6 +105,7 @@
       $('#vr-write').hidden = false; checkStamp(); return;
     }
     $('#vr-write').hidden = true;
+    if (G.type === 'fly') { renderFly(); return; }
     if (G.type === 'sort') { renderSort(i, P[i]); return; }
     var p = P[i], h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
       '<div class="vr-fossil"' + (G.dragOpts ? '' : ' draggable="true"') + ' id="vr-fos"><img src="' + p.img + '" alt="' + esc(p.alt) + '">' + esc(p.name) + (p.facts ? '<small>' + esc(p.facts) + '</small>' : '') + '</div><div>';
@@ -148,6 +149,41 @@
           setTimeout(render, 650); frames();
         } else { b.classList.add('no'); fb.className = 'vr-fb no'; fb.textContent = p.placeMiss; }
       });
+    });
+  }
+
+  /* fly game (week 21): tap a flower to pick up pollen, then tap or drag to another flower of the same kind */
+  var flyCarry = null, flyMsg = null, flyCls = '';
+  function fill(t, a, b) { return String(t).split('{from}').join(a || '').split('{to}').join(b || '').split('{kind}').join(a || ''); }
+  function renderFly() {
+    var F = G.flowers || [], n = P.filter(function (p, i) { return st.m[i]; }).length;
+    function kindOf(id) { return F.filter(function (f) { return f.id === id; })[0].kind; }
+    function kIdx(k) { for (var i = 0; i < P.length; i++) if (P[i].key === k) return i; return -1; }
+    var h = '<div class="vr-gstep">' + esc(L.flight) + ' ' + (n + 1) + ' of ' + P.length + '</div>' +
+      '<div class="vr-fb ' + flyCls + '" id="vr-fb" aria-live="polite">' + esc(flyMsg || L.start) + '</div><div class="vr-fly">' +
+      F.map(function (f) {
+        var done = st.m[kIdx(f.kind)];
+        return '<button type="button" class="vr-flower' + (done ? ' ok' : '') + (flyCarry === f.id ? ' on' : '') + '" data-id="' + f.id + '"' + (done ? ' disabled' : ' draggable="true"') + '>' +
+          '<img src="' + f.img + '" alt="' + esc(f.alt) + '">' + esc(f.name) + (flyCarry === f.id ? '<i class="bee" aria-hidden="true">🐝</i>' : '') + (done ? '<em>' + esc(L.tag) + '</em>' : '') + '</button>';
+      }).join('') + '</div>';
+    game.innerHTML = h;
+    function act(id) {
+      var k = kindOf(id), i = kIdx(k);
+      if (st.m[i]) return;
+      if (!flyCarry) { flyCarry = id; flyMsg = fill(L.pick, P[i].kind); flyCls = ''; }
+      else if (id === flyCarry) { flyMsg = L.same; flyCls = 'no'; }
+      else if (k === kindOf(flyCarry)) { st.m[i] = true; st.p[i] = true; save(); flyCarry = null; flyMsg = P[i].ok; flyCls = 'ok'; }
+      else { flyMsg = fill(L.miss, P[kIdx(kindOf(flyCarry))].kind, P[i].kind); flyCls = 'no'; }
+      render();
+    }
+    var dragId = null;
+    $$('.vr-flower', game).forEach(function (b) {
+      var id = b.getAttribute('data-id');
+      b.addEventListener('click', function () { act(id); });
+      b.addEventListener('dragstart', function (e) { dragId = id; try { e.dataTransfer.setData('text/plain', id); } catch (x) {} });
+      b.addEventListener('dragover', function (e) { e.preventDefault(); b.classList.add('drop'); });
+      b.addEventListener('dragleave', function () { b.classList.remove('drop'); });
+      b.addEventListener('drop', function (e) { e.preventDefault(); if (dragId && dragId !== id) { flyCarry = dragId; act(id); } dragId = null; });
     });
   }
 
@@ -235,9 +271,9 @@
     var name = (st.name || '').trim();
     if (!name) { nmMsg.textContent = 'Type your first name first.'; nm.focus(); return; }
     var rows = P.map(function (p, i) {
-      var two = G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
+      var two = G.type === 'fly' ? L.tag : G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
       var three = p.place ? (st.p[i] ? esc(G.places[p.place]) : '<i>not picked yet</i>') : '';
-      return '<tr><td>' + esc(p.name) + '</td><td>' + (st.m[i] ? esc(two) : '<i>not matched yet</i>') + '</td><td>' + three + '</td></tr>';
+      return '<tr><td>' + esc(p.name) + '</td><td>' + (st.m[i] ? esc(two) : '<i>not matched yet</i>') + '</td>' + (L.cols.length > 2 ? '<td>' + three + '</td>' : '') + '</tr>';
     }).join('');
     var sents = tas.map(function (t, i) { return '<p><b>' + esc(G.frames[i]) + '</b><br>' + (t.value ? esc(t.value) : '<i>(not written yet)</i>') + '</p>'; }).join('');
     var h = '<!doctype html><html><head><meta charset="utf-8"><title>' + esc(V.canvas) + ' · ' + esc(name) + '</title><style>body{font:16px/1.5 Arial,sans-serif;max-width:720px;margin:24px auto;padding:0 16px;color:#222}h1{font-size:22px;margin:4px 0}.k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7A5F2C}table{border-collapse:collapse;width:100%}th{background:#14110D;color:#fff;text-align:left;padding:5px 8px;font-size:13px}td{border:1px solid #ddd;padding:6px 8px}.st{display:inline-block;border:3px solid #1B4332;color:#1B4332;font-weight:900;letter-spacing:2px;padding:3px 12px;border-radius:8px;transform:rotate(-3deg);text-transform:uppercase}@media print{button{display:none}}</style></head><body>' +
