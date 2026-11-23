@@ -48,7 +48,19 @@ const path = require('path'), fs = require('fs');
   const gtype = await page.evaluate(() => window.VR.game.type);
   const bins = await page.evaluate(() => window.VR.game.pairs.map(p => p.bin));
   const binKeys = await page.evaluate(() => Object.keys(window.VR.game.bins || {}));
-  if (gtype === 'path') {
+  if (gtype === 'cascade') {
+    const C = await page.evaluate(() => window.VR.game.chain.map(x => x.dir));
+    const cl = await page.evaluate(() => [Object.keys(window.VR.game.claim.options), window.VR.game.claim.right]);
+    for (const [n, dir] of C.entries()) {
+      const pick = n === 0 ? (dir === 'up' ? 'down' : 'up') : dir;   // first prediction wrong on purpose
+      await page.click(`.vr-casc button[data-p="${pick}"]`); await page.click('#vr-run');
+      if (n === 0) await shot('08-miss', '#vr-game');
+      if (n === 1) await shot('09b-next', '#vr-game');
+      await page.click('#vr-next'); g++;
+    }
+    await page.click(`.vr-place button[data-a="${cl[0].find(k => k !== cl[1])}"]`); await shot('09-place-miss', '#vr-game');
+    await page.click(`.vr-place button[data-a="${cl[1]}"]`); await page.waitForTimeout(800); g++;
+  } else if (gtype === 'path') {
     const M = await page.evaluate(() => window.VR.game.maps.map(m => m.grid));
     const cl = await page.evaluate(() => [Object.keys(window.VR.game.claim.options), window.VR.game.claim.right]);
     const solve = g => { // shortest crossing by BFS (0-cost through forest)

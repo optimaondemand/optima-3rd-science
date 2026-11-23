@@ -115,6 +115,7 @@
     if (G.type === 'meter') { renderMeter(i, P[i]); return; }
     if (G.type === 'season') { renderSeason(); return; }
     if (G.type === 'build') { renderBuild(i, P[i]); return; }
+    if (G.type === 'cascade') { renderCascade(i); return; }
     if (G.type === 'path') { if (i >= G.maps.length) renderClaim(P.length, G.allBuilt); else renderPath(i); return; }
     if (G.type === 'sort') { renderSort(i, P[i]); return; }
     var p = P[i], h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
@@ -673,6 +674,34 @@
     var nx = $('#vr-next'); if (nx) nx.addEventListener('click', function () { st.p[i] = true; flyMsg = null; flyCls = ''; save(); render(); });
   }
 
+  /* cascade game (week 32): predict up or down for each living thing, run the model, read the bars, then the claim */
+  function renderCascade(i) {
+    st.c = st.c || {}; st.c.pr = st.c.pr || {}; st.c.run = st.c.run || {};
+    if (i >= G.chain.length) { renderClaim(P.length, G.allRun); return; }
+    var C = G.chain[i], pr = st.c.pr[i], ran = st.c.run[i], W = G.wolves, mx = Math.max.apply(null, C.vals);
+    var h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(C.name) + '</div>' +
+      '<div class="vr-wolves"><img src="' + W.img + '" alt="' + esc(W.alt) + '"><span>' + esc(W.line) + '</span></div>' +
+      '<div class="vr-fb ' + flyCls + '" id="vr-fb" aria-live="polite">' + esc(flyMsg || C.q) + '</div>' +
+      '<div class="vr-casc"><figure class="vr-dial-pic"><img src="' + C.img + '" alt="' + esc(C.alt) + '"><figcaption>' + esc(C.name) + '</figcaption></figure><div>' +
+      '<div class="vr-place">' + [['up', L.up], ['down', L.down]].map(function (o) {
+        return '<button type="button" class="' + (pr === o[0] ? 'on' : '') + '" data-p="' + o[0] + '"' + (ran ? ' disabled' : '') + ' aria-pressed="' + (pr === o[0]) + '">' + esc(o[1]) + '</button>'; }).join('') + '</div>';
+    if (pr && !ran) h += '<button type="button" class="vr-next" id="vr-run">' + esc(L.run) + '</button>';
+    if (ran) h += '<div class="vr-bars" role="img" aria-label="' + esc(C.name + ': ' + G.years.map(function (y, k) { return y + ' ' + C.vals[k]; }).join(', ')) + '">' +
+      G.years.map(function (y, k) { return '<div class="vr-bar"><div class="vr-bcol"><i style="height:' + Math.round(100 * C.vals[k] / mx) + '%"></i></div><span>' + esc(y) + '</span></div>'; }).join('') + '</div>' +
+      '<button type="button" class="vr-next" id="vr-next">' + esc(L.next) + '</button>';
+    h += '</div></div>';
+    game.innerHTML = h;
+    $$('.vr-casc .vr-place button', game).forEach(function (b) {
+      b.addEventListener('click', function () { st.c.pr[i] = b.getAttribute('data-p'); save(); flyMsg = null; flyCls = ''; render(); });
+    });
+    var rb = $('#vr-run');
+    if (rb) rb.addEventListener('click', function () {
+      st.c.run[i] = 1; st.m[i] = true; save();
+      flyCls = pr === C.dir ? 'ok' : ''; flyMsg = (pr === C.dir ? L.match : L.nomatch) + ' ' + C.why; frames(); render();
+    });
+    var nx = $('#vr-next'); if (nx) nx.addEventListener('click', function () { st.p[i] = true; save(); flyMsg = null; flyCls = ''; render(); });
+  }
+
   /* sort game (week 19): one card at a time goes into one of two bins; an IN card then asks which part takes it in */
   function renderSort(i, p) {
     var h = '<div class="vr-gstep">Step ' + (i + 1) + ' of ' + P.length + ' · ' + esc(p.name) + '</div><div class="vr-q">' +
@@ -757,7 +786,7 @@
     var name = (st.name || '').trim();
     if (!name) { nmMsg.textContent = 'Type your first name first.'; nm.focus(); return; }
     var rows = P.map(function (p, i) {
-      var two = (G.type === 'count' || G.type === 'web' || G.type === 'clue' || G.type === 'dial' || G.type === 'meter' || G.type === 'season' || G.type === 'build' || G.type === 'path') ? p.tag : G.type === 'spot' ? G.places[p.place] : G.type === 'clean' ? p.ok : G.type === 'fly' ? L.tag : G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
+      var two = (G.type === 'count' || G.type === 'web' || G.type === 'clue' || G.type === 'dial' || G.type === 'meter' || G.type === 'season' || G.type === 'build' || G.type === 'path' || G.type === 'cascade') ? p.tag : G.type === 'spot' ? G.places[p.place] : G.type === 'clean' ? p.ok : G.type === 'fly' ? L.tag : G.type === 'sort' ? G.bins[p.bin] : cz(p.cousin).name;
       var three = p.place ? (st.p[i] ? esc(G.places[p.place]) : '<i>not picked yet</i>') : '';
       return '<tr><td>' + esc(p.name) + '</td><td>' + (st.m[i] ? esc(two) : '<i>not matched yet</i>') + '</td>' + (L.cols.length > 2 ? '<td>' + three + '</td>' : '') + '</tr>';
     }).join('');

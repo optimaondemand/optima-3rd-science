@@ -116,6 +116,12 @@ if S.get('type') == 'path':
         if best is None: F('path game: no crossing possible in ' + m['name'])
         elif best > m['max']: F('path game: shortest crossing %d > max %d in %s' % (best, m['max'], m['name']))
     if S['claim']['right'] not in S['claim']['options']: F('path game: claim.right is not one of the options')
+if S.get('type') == 'cascade':
+    for x in S['chain']:
+        if len(x['vals']) != len(S['years']): F('cascade game: vals and years differ for ' + x['name'])
+        up = x['vals'][-1] > x['vals'][0]
+        if (x['dir'] == 'up') != up: F('cascade game: bars do not match dir for ' + x['name'])
+    if S['claim']['right'] not in S['claim']['options']: F('cascade game: claim.right is not one of the options')
 if S.get('type') == 'spot':
     for s in S['spots']:
         if s.get('pollute') and s.get('kind') not in S['places']: F('spot game: kind missing for ' + s['id'])

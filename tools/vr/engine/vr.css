@@ -302,3 +302,17 @@ main.vr{padding:18px 22px 30px}
 @media (max-width:600px){.vr-tile{font-size:15px;border-radius:3px}.vr-grid{gap:2px;padding:4px}}
 .vr-tile[disabled]{opacity:1;color:inherit}
 .vr-grid{max-width:620px}
+
+/* cascade game (week 32): predict, run, read the bars */
+.vr-wolves{display:flex;align-items:center;gap:10px;margin:6px 0;padding:6px 12px 6px 6px;border-radius:12px;background:#14110D;color:#F6E7C1;font:800 16px Nunito,Arial,sans-serif}
+.vr-wolves img{width:84px;height:60px;object-fit:cover;border-radius:8px}
+.vr-casc{display:grid;grid-template-columns:1fr 1.2fr;gap:14px;align-items:start;margin:6px 0}
+.vr-casc .vr-dial-pic figcaption{color:var(--wl-ink)}
+.vr-bars{display:flex;align-items:flex-end;gap:10px;height:170px;margin:10px 0;padding:8px 10px 0;border-left:3px solid var(--wl-ink);border-bottom:3px solid var(--wl-ink)}
+.vr-bar{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center}
+.vr-bar i{display:block;width:70%;background:#E3B04B;border-radius:6px 6px 0 0;animation:vrgrow .7s ease-out}
+.vr-bar span{font:800 13px Nunito,Arial,sans-serif;margin-top:4px}
+@keyframes vrgrow{from{transform:scaleY(0);transform-origin:bottom}to{transform:scaleY(1);transform-origin:bottom}}
+@media (max-width:600px){.vr-casc{grid-template-columns:1fr}.vr-bars{height:130px}}
+.vr-bcol{flex:1;width:100%;position:relative}
+.vr-bcol i{position:absolute;bottom:0;left:15%;width:70%!important}

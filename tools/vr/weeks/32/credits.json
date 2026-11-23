@@ -1,0 +1,56 @@
+{
+ "hook": {
+  "title": "File:Bison using his head to plow snow (23527006829).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Bison_using_his_head_to_plow_snow_(23527006829).jpg",
+  "license": "Public domain",
+  "artist": "Yellowstone National Park from Yellowstone NP, USA"
+ },
+ "bison": {
+  "title": "File:Bison grazing in Lamar Valley (51484623103).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Bison_grazing_in_Lamar_Valley_(51484623103).jpg",
+  "license": "Public domain",
+  "artist": "YellowstoneNPS"
+ },
+ "elk": {
+  "title": "File:Bull elk grazing along the Yellowstone River (49924218897).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Bull_elk_grazing_along_the_Yellowstone_River_(49924218897).jpg",
+  "license": "Public domain",
+  "artist": "YellowstoneNPS"
+ },
+ "wolf": {
+  "title": "File:Wolf moving through fresh snow (38346213996).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Wolf_moving_through_fresh_snow_(38346213996).jpg",
+  "license": "Public domain",
+  "artist": "Yellowstone National Park"
+ },
+ "willow": {
+  "title": "File:Lamar River and colorful cottonwoods and willow (ebf37b2e-5a0b-46e3-ade7-35144020e67a).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Lamar_River_and_colorful_cottonwoods_and_willow_(ebf37b2e-5a0b-46e3-ade7-35144020e67a).jpg",
+  "license": "Public domain",
+  "artist": "NPS"
+ },
+ "beaver": {
+  "title": "File:Beaver, Yellowstone River (32977426504).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Beaver,_Yellowstone_River_(32977426504).jpg",
+  "license": "Public domain",
+  "artist": "Yellowstone National Park"
+ },
+ "flowers": {
+  "title": "File:Fringed gentian - Gentianopsis detonsa (461af512-16c9-4368-aabb-e09a36835464).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Fringed_gentian_-_Gentianopsis_detonsa_(461af512-16c9-4368-aabb-e09a36835464).jpg",
+  "license": "Public domain",
+  "artist": "NPS/Diane Renkin"
+ },
+ "bear": {
+  "title": "File:Grizzly bear in Hayden Valley (32060795064).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Grizzly_bear_in_Hayden_Valley_(32060795064).jpg",
+  "license": "Public domain",
+  "artist": "Yellowstone National Park"
+ },
+ "eagle": {
+  "title": "File:USFWS bald eagle (23770875811).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:USFWS_bald_eagle_(23770875811).jpg",
+  "license": "Public domain",
+  "artist": "USFWS - Pacific Region"
+ }
+}

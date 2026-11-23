@@ -1,0 +1,268 @@
+{
+ "id": "g3sci-vr-32",
+ "week": 32,
+ "lesson": "32.01",
+ "lessonTitle": "Researching a National Park Ecosystem",
+ "title": "Park Passport",
+ "emoji": "🎬",
+ "canvasName": "32.01 VR · Park Passport",
+ "details": [
+  "📅 Q4 · Unit 11 · National Park Capstone",
+  "📖 Week 32 · goes with Lesson 32.01",
+  "🌎 CPALMS SC.3.N.1.4, SC.3.N.1.7",
+  "⏱ About 15 minutes"
+ ],
+ "map": "Tranquil Forest",
+ "mapWord": "Tranquil",
+ "badge": {
+  "emoji": "📘",
+  "name": "Golden Passport",
+  "line": "Only VR crews earn this one. Your shot goes in Opti's film."
+ },
+ "stamp": "Studio Day · Wonder Films",
+ "hook": {
+  "look": "This is a <b>boarding pass</b>. You show it to get on a plane.",
+  "head": "Scene 32 · Park Passport",
+  "sub": "Wonder Films · Boarding pass",
+  "rows": [
+   [
+    "Flight",
+    "To Yellowstone"
+   ],
+   [
+    "Park",
+    "Yellowstone National Park"
+   ],
+   [
+    "Seat",
+    "Window, of course"
+   ]
+  ],
+  "img": "hook",
+  "alt": "A bison with a snowy face pushing through deep snow",
+  "cap": "A bison uses its head to plow through snow to find grass in Yellowstone. NPS photo.",
+  "note": "Yellowstone became the first national park in 1872. What lives there, and what does each living thing need?"
+ },
+ "opti": {
+  "brief": "Welcome to the park, crew. We film Scene 32, Park Passport. Show me how the living things here need each other.",
+  "studio": "No headset today? Come to the studio. Predict what happens when wolves come home. Then run it and see."
+ },
+ "vr": {
+  "look": "A <b>model</b> is a copy of something real. An <b>ecosystem</b> is all the living things in a place, plus the water, soil and sunlight they need.",
+  "groups": [
+   {
+    "title": "🦬 Big animals",
+    "models": [
+     {
+      "name": "Grazing Buffalo",
+      "word": "Buffalo",
+      "img": "bison",
+      "alt": "A herd of bison eating grass in a wide valley",
+      "trait": "A bison. Eats grass."
+     },
+     {
+      "name": "Bear",
+      "word": "Bear",
+      "img": "bear",
+      "alt": "A brown grizzly bear walking across a grassy hill",
+      "trait": "Eats plants and animals."
+     },
+     {
+      "name": "Animated Deer",
+      "word": "Deer",
+      "img": "elk",
+      "alt": "A young elk standing in shallow water by tall willows",
+      "trait": "Stands in for an elk."
+     }
+    ]
+   },
+   {
+    "title": "🌸 Sky and ground",
+    "models": [
+     {
+      "name": "Eagle",
+      "word": "Eagle",
+      "img": "eagle",
+      "alt": "Bald eagle with a white head perched on a dead branch",
+      "trait": "Hunts fish and small animals."
+     },
+     {
+      "name": "Flower Set",
+      "word": "Flower Set",
+      "img": "flowers",
+      "alt": "A meadow full of blue wildflowers",
+      "trait": "Needs sun, water and soil."
+     }
+    ]
+   }
+  ],
+  "steps": [
+   {
+    "where": "🖥️ Before your headset",
+    "title": "Know your models",
+    "clip": "step1",
+    "html": "<p>Type each gray word in the <b>Filter models</b> box.</p>@MODELS@<p>This list is also on the <b>Canvas</b> tab in VR.</p>"
+   },
+   {
+    "where": "🥽 In VR",
+    "title": "Go on location",
+    "clip": "step2",
+    "html": "<div class=\"vr-how\">🔗 <b>First time only:</b> connect Canvas at <a href=\"https://xr.optimaed.com\" target=\"_blank\" rel=\"noopener\">xr.optimaed.com</a>. See <b>Having trouble in VR?</b> below.</div><p>Open the <b>On-Demand</b> app. Click <b>Explore</b>. Type <b>Playground</b> in <b>Filter environments</b>. Click <b>Playground</b>, then <b>Begin Solo</b>.</p>"
+   },
+   {
+    "title": "Build the scene",
+    "clip": "step3",
+    "html": "<p>Press the <b>top button on your right controller</b>, then click <b>Models</b>. Set the Buffalo, Bear, Deer, Eagle and Flower Set in the park.</p><div class=\"vr-how\">✋ Grab a model with the <b>palm trigger</b>. Use <b>both</b> palm triggers to make it bigger or smaller.</div><div class=\"vr-say\">🗣 <b>Say it out loud:</b> “The ___ needs the ___. They both need ___ (water, sunlight or soil).”</div>"
+   },
+   {
+    "title": "Take the shot and send it",
+    "clip": "step4",
+    "html": "<p>Stand back so the whole scene fits. Open your menu, click <b>Library</b>, then <b>Camera</b>. Click <b>Take photo</b>.</p><p>Click the <b>Canvas</b> tab and pick <b>@CANVAS@</b>. Click <b>Choose from My Files</b>, pick your photo, click <b>Use this file</b>, then <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.</p><div class=\"vr-how\">🔁 Want to fix it? Move the models, take a new photo and send it again.</div>"
+   },
+   {
+    "where": "✅ After",
+    "title": "Check and leave",
+    "clip": "step5",
+    "html": "<p>Press the <b>Meta button</b>, then click <b>Quit</b>. Check that your photo is in the Canvas assignment. Not there? Open <b>Having trouble in VR?</b></p>"
+   }
+  ],
+  "extra": {
+   "after": 3,
+   "clip": "extra",
+   "html": "Add a big cat that hunts in the mountains: <span class=\"vr-word\">Mountain Lion</span>"
+  },
+  "full": "Your photo shows the Buffalo, Bear, Deer, Eagle and Flower Set together in the park."
+ },
+ "studio": {
+  "kicker": "Studio Day · no headset",
+  "title": "Chain reaction",
+  "type": "cascade",
+  "framePl": "ptag",
+  "labels": {
+   "up": "⬆ More",
+   "down": "⬇ Fewer",
+   "run": "▶ Run it",
+   "next": "Next ▶",
+   "match": "Your prediction matched!",
+   "nomatch": "Not this time.",
+   "step3": "Pick your claim",
+   "done": "You followed the chain from wolves to elk to willows to beavers. Nice work, crew!",
+   "pdfTitle": "Chain reaction",
+   "cols": [
+    "Living thing",
+    "What scientists saw"
+   ]
+  },
+  "look": "Real photos of living things in Yellowstone. When one thing changes in an <b>ecosystem</b>, other things can change too. The bars are a <b>model</b>: simple numbers that show what scientists saw. Taller means more. Scientists still study how much the wolves caused.",
+  "do": "Read the question. Tap More or Fewer to predict. Then tap Run it and read the bars.",
+  "write": {
+   "min": 20,
+   "frames": [
+    {
+     "lead": "1. How are the living things connected?",
+     "starter": "When the wolves came back, ___, so ___."
+    },
+    {
+     "lead": "2. What does this park need to stay healthy?",
+     "starter": "This park needs ___ because ___."
+    }
+   ],
+   "chips": [
+    "ecosystem",
+    "habitat",
+    "organism",
+    "wolves",
+    "elk",
+    "willows",
+    "beavers",
+    "depends",
+    "conservation",
+    "because"
+   ]
+  },
+  "full": "You predicted and ran all 3 charts and picked the claim. Your 2 sentences have at least 20 words.",
+  "claim": {
+   "name": "My claim",
+   "img": "wolf",
+   "alt": "A gray wolf walking through deep snow",
+   "tag": "Everything connects",
+   "q": "What does the chain reaction show?",
+   "options": {
+    "one": "🔗 One kind of animal can change a whole ecosystem.",
+    "wolves": "🐺 Wolves only change elk.",
+    "none": "➖ Nothing else changed."
+   },
+   "right": "one",
+   "miss": "Look at all three bar charts. Did only the elk change?"
+  },
+  "wolves": {
+   "img": "wolf",
+   "alt": "A gray wolf walking through deep snow",
+   "line": "🐺 Wolves came back to Yellowstone in 1995."
+  },
+  "years": [
+   "1995",
+   "2000",
+   "2005",
+   "2010"
+  ],
+  "chain": [
+   {
+    "name": "Elk",
+    "img": "elk",
+    "alt": "A young elk standing in shallow water by tall willows",
+    "q": "Wolves hunt elk. When wolves come back, will there be more elk or fewer?",
+    "dir": "down",
+    "vals": [
+     100,
+     75,
+     55,
+     45
+    ],
+    "why": "In the north part of the park, there were fewer elk, and elk moved around more to stay safe.",
+    "tag": "Fewer elk"
+   },
+   {
+    "name": "Willows",
+    "img": "willow",
+    "alt": "Yellow willows and trees growing by a river",
+    "q": "Elk eat young willows by the rivers. With fewer elk, will there be more willows or fewer?",
+    "dir": "up",
+    "vals": [
+     20,
+     28,
+     40,
+     50
+    ],
+    "why": "In some places by the rivers, willows grew taller because fewer elk ate them.",
+    "tag": "More willows"
+   },
+   {
+    "name": "Beavers",
+    "img": "beaver",
+    "alt": "A beaver eating plants on a snowy riverbank",
+    "q": "Beavers eat willows and build with them. With more willows, will there be more beavers or fewer?",
+    "dir": "up",
+    "vals": [
+     1,
+     3,
+     6,
+     9
+    ],
+    "why": "More beaver families moved in once the willows came back.",
+    "tag": "More beavers"
+   }
+  ],
+  "allRun": "Elk went down. Willows and beavers went up. One change led to another."
+ },
+ "voice": {
+  "brief": "Welcome to the park, crew. We film Scene 32, Park Passport. Show me how the living things here need each other.",
+  "step1": "Before your headset goes on, meet your five models. Learn each gray search word. You will type it in VR.",
+  "step2": "Put on your headset. Click Explore, type Tranquil, and pick Tranquil Forest. Then click Begin Solo.",
+  "step3": "Set the bison, the bear, the deer, the eagle and the flowers in the park. Then tell me who needs whom, and what.",
+  "extra": "Got time? Add a big cat that hunts in the mountains. That shot is just for VR crews.",
+  "step4": "Step back so the whole scene fits. Click Library, then Camera, and take the shot. Then send it to Canvas.",
+  "step5": "Press the Meta button and click Quit. Then open Canvas. Your photo should be waiting there.",
+  "studio": "No headset today? Come to the studio. Predict what happens when wolves come home. Then run it and see."
+ }
+}
