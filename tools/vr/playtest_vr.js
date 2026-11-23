@@ -48,7 +48,18 @@ const path = require('path'), fs = require('fs');
   const gtype = await page.evaluate(() => window.VR.game.type);
   const bins = await page.evaluate(() => window.VR.game.pairs.map(p => p.bin));
   const binKeys = await page.evaluate(() => Object.keys(window.VR.game.bins || {}));
-  if (gtype === 'clue') {
+  if (gtype === 'dial') {
+    const R = await page.evaluate(() => window.VR.game.rounds.map(r => [r.start, r.min, r.max, r.right]));
+    const keys = await page.evaluate(() => Object.keys(window.VR.game.changes));
+    for (const [n, [start, mn, mx, right]] of R.entries()) {
+      const target = mn > start ? mn : mx;
+      if (n === 0) { await page.click('.vr-dial-btns button[data-d="5"]'); await shot('08-miss', '#vr-game'); }
+      await page.$eval('#vr-slide', (el, v) => { el.value = v; el.dispatchEvent(new Event('change')); }, target);
+      if (n === 0) { await page.click(`.vr-place button[data-ch="${keys.find(k => k !== right)}"]`); await shot('09-place-miss', '#vr-game'); }
+      if (n === 1) await shot('09b-next', '#vr-game');
+      await page.click(`.vr-place button[data-ch="${right}"]`); await page.waitForTimeout(800); g++;
+    }
+  } else if (gtype === 'clue') {
     const C = await page.evaluate(() => ({ clues: window.VR.game.clues, props: window.VR.game.props.map(p => p.id) }));
     const out = C.clues.flatMap(c => c.out), keep = C.props.find(p => !out.includes(p));
     for (const [n, c] of C.clues.entries()) {

@@ -71,6 +71,13 @@ if S.get('type') == 'clue':
     if any(i not in ids for i in outs): F('clue game: a clue removes a missing prop')
     if len(set(outs)) != len(outs): F('clue game: a prop is removed by two clues')
     if len(set(ids) - set(outs)) != 1: F('clue game: exactly one prop must be left')
+if S.get('type') == 'dial':
+    D = S['dial']
+    for r in S['rounds']:
+        if r['right'] not in S['changes'] or r['right'] not in S['tags']: F('dial game: right change missing for ' + r['name'])
+        if not D['min'] <= r['start'] <= D['max'] or r['min'] > r['max']: F('dial game: bad range in ' + r['name'])
+        if r['min'] <= r['start'] <= r['max']: F('dial game: a round starts already done: ' + r['name'])
+        if [x['upTo'] for x in r['states']] != sorted(x['upTo'] for x in r['states']): F('dial game: states must go up in order')
 if S.get('type') == 'spot':
     for s in S['spots']:
         if s.get('pollute') and s.get('kind') not in S['places']: F('spot game: kind missing for ' + s['id'])

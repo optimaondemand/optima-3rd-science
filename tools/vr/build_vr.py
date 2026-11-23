@@ -157,6 +157,8 @@ def build(week_path, out_path, repo=False):
         S['pairs'].append({'card': {'img': C2['img'], 'name': C2['name'], 'alt': C2['alt']}, 'ok': C2['options'][C2['right']], 'tag': C2['tag']})
     if S.get('type') == 'clue':   # week 26: one round per clue
         S['pairs'] = [{'card': {'img': c['img'], 'name': '%s %d: %s' % (S['labels'].get('clue', 'Clue'), n + 1, c['text']), 'alt': c['alt']}, 'ok': c['done'], 'tag': c['tag']} for n, c in enumerate(S['clues'])]
+    if S.get('type') == 'dial':   # week 27: one round per change of state
+        S['pairs'] = [{'card': {'img': r['done_img'], 'name': r['name'], 'alt': r['done_alt']}, 'ok': r['ok'], 'tag': S['tags'][r['right']]} for r in S['rounds']]
     # each round's card: a fossil (week 17) or a place card (week 18, key "card")
     for p in S['pairs']:
         p['fossil'] = p.get('card') or p['fossil']
@@ -200,6 +202,8 @@ def build(week_path, out_path, repo=False):
         'snip': ({k: S['snip'][k] for k in ('gone', 'q', 'hit', 'ok', 'safe')} if S.get('snip') else None),
         'props': [{'id': x['id'], 'name': x['name'], 'alt': x['alt'], 'img': img(x['img'])} for x in S.get('props', [])],
         'clues': [{k: c[k] for k in ('text', 'out', 'gone', 'keep', 'done')} for c in S.get('clues', [])],
+        'rounds': [{'name': r['name'], 'q': r['q'], 'start': r['start'], 'min': r['min'], 'max': r['max'], 'ok': r['ok'], 'right': r['right'], 'miss': r['miss'], 'states': [{'upTo': x['upTo'], 'label': x['label'], 'alt': x['alt'], 'img': img(x['img'])} for x in r['states']]} for r in S.get('rounds', [])],
+        'dial': S.get('dial'), 'changes': S.get('changes', {}),
         'cousins': [{'key': c['key'], 'name': c['name'], 'alt': c['alt'], 'img': cousin_imgs[c['key']]} for c in S.get('cousins', [])],
         'places': S.get('places', {}), 'miss': S.get('miss', ''), 'min': wr['min'], 'frames': [f['lead'] for f in wr['frames']],
     }

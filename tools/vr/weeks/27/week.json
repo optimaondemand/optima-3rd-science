@@ -1,0 +1,342 @@
+{
+ "id": "g3sci-vr-27",
+ "week": 27,
+ "lesson": "27.01",
+ "lessonTitle": "How Does Matter Change?",
+ "title": "The Puddle Case",
+ "emoji": "🎬",
+ "canvasName": "27.01 VR · The Puddle Case",
+ "details": [
+  "📅 Q4 · Unit 9 · Matter & Energy",
+  "📖 Week 27 · goes with Lesson 27.01",
+  "🌎 CPALMS SC.3.P.9.1",
+  "⏱ About 15 minutes"
+ ],
+ "map": "Ice Caverns",
+ "mapWord": "Ice",
+ "badge": {
+  "emoji": "❄️",
+  "name": "Silver Snowflake",
+  "line": "Only VR crews earn this one. Your shot goes in Opti's film."
+ },
+ "stamp": "Studio Day · Wonder Films",
+ "hook": {
+  "look": "This is a <b>case file</b>. Detectives keep their notes about a case in it.",
+  "head": "Scene 27 · The Puddle Case",
+  "sub": "Wonder Films · Case file",
+  "rows": [
+   [
+    "Case",
+    "A puddle that changed"
+   ],
+   [
+    "Clue",
+    "The night got very cold"
+   ],
+   [
+    "Suspect",
+    "Temperature"
+   ]
+  ],
+  "img": "hook",
+  "alt": "A puddle frozen into white ice with dark rings on top",
+  "cap": "A frozen puddle in Brastad, Sweden.",
+  "note": "Yesterday this was a puddle of water. What changed it? Can it change back?"
+ },
+ "opti": {
+  "brief": "Welcome to the ice cave, crew. We film Scene 27, The Puddle Case. Show me how heat changes water, then take the shot.",
+  "studio": "No headset today? Come to the studio. Turn the heat dial and watch the water change. Then tell me what you think."
+ },
+ "vr": {
+  "look": "A <b>model</b> is a copy of something real. Water can be a <b>solid</b> (ice), a <b>liquid</b> (water) or a <b>gas</b> (water vapor).",
+  "groups": [
+   {
+    "title": "❄️ Cold side",
+    "models": [
+     {
+      "name": "Ice Berg",
+      "word": "Ice Berg",
+      "img": "iceberg",
+      "alt": "Big flat iceberg floating in a gray sea",
+      "trait": "Frozen water. A solid."
+     },
+     {
+      "name": "Thermometer 31F",
+      "word": "Thermometer",
+      "img": "thcold",
+      "alt": "A gloved hand holds up a thermometer in the snow",
+      "trait": "Colder than freezing."
+     }
+    ]
+   },
+   {
+    "title": "☀️ Warm side",
+    "models": [
+     {
+      "name": "Sun",
+      "word": "Sun",
+      "img": "sun",
+      "alt": "Bright sun shining in a blue sky",
+      "trait": "Adds heat."
+     },
+     {
+      "name": "Thermometer 85F",
+      "word": "Thermometer",
+      "img": "thwarm",
+      "alt": "Thermometer hanging on a sunny wall",
+      "trait": "A warm day."
+     },
+     {
+      "name": "Glass Jar Tall",
+      "word": "Jar",
+      "img": "jar",
+      "alt": "Glass jar filled with clear liquid",
+      "trait": "Holds liquid water."
+     }
+    ]
+   }
+  ],
+  "steps": [
+   {
+    "where": "🖥️ Before your headset",
+    "title": "Know your models",
+    "clip": "step1",
+    "html": "<p>Type each gray word in the <b>Filter models</b> box.</p>@MODELS@<p>This list is also on the <b>Canvas</b> tab in VR.</p>"
+   },
+   {
+    "where": "🥽 In VR",
+    "title": "Go on location",
+    "clip": "step2",
+    "html": "<div class=\"vr-how\">🔗 <b>First time only:</b> connect Canvas at <a href=\"https://xr.optimaed.com\" target=\"_blank\" rel=\"noopener\">xr.optimaed.com</a>. See <b>Having trouble in VR?</b> below.</div><p>Open the <b>On-Demand</b> app. Click <b>Explore</b>. Type <b>Ice</b> in <b>Filter environments</b>. Click <b>Ice Caverns</b>, then <b>Begin Solo</b>.</p>"
+   },
+   {
+    "title": "Build the scene",
+    "clip": "step3",
+    "html": "<p>Press the <b>top button on your right controller</b>, then click <b>Models</b>. Make a cold side with the Ice Berg and the Thermometer 31F. Make a warm side with the Sun, the Thermometer 85F and the Glass Jar.</p><div class=\"vr-how\">✋ Grab a model with the <b>palm trigger</b>. Use <b>both</b> palm triggers to make it bigger or smaller.</div><div class=\"vr-say\">🗣 <b>Say it out loud:</b> “On the cold side, water is a ___. On the warm side, it is a ___ because ___.”</div>"
+   },
+   {
+    "title": "Take the shot and send it",
+    "clip": "step4",
+    "html": "<p>Stand back so the whole scene fits. Open your menu, click <b>Library</b>, then <b>Camera</b>. Click <b>Take photo</b>.</p><p>Click the <b>Canvas</b> tab and pick <b>@CANVAS@</b>. Click <b>Choose from My Files</b>, pick your photo, click <b>Use this file</b>, then <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.</p><div class=\"vr-how\">🔁 Want to fix it? Move the models, take a new photo and send it again.</div>"
+   },
+   {
+    "where": "✅ After",
+    "title": "Check and leave",
+    "clip": "step5",
+    "html": "<p>Press the <b>Meta button</b>, then click <b>Quit</b>. Check that your photo is in the Canvas assignment. Not there? Open <b>Having trouble in VR?</b></p>"
+   }
+  ],
+  "extra": {
+   "after": 3,
+   "clip": "extra",
+   "html": "Add a model of one tiny piece of water: <span class=\"vr-word\">H20 Molecule</span>"
+  },
+  "full": "Your photo shows a cold side and a warm side, with all five models."
+ },
+ "studio": {
+  "kicker": "Studio Day · no headset",
+  "title": "Turn the heat dial",
+  "type": "dial",
+  "framePl": "ptag",
+  "labels": {
+   "start": "Change the temperature and watch the photo.",
+   "dial": "Temperature",
+   "up": "🔥 Warmer",
+   "down": "❄️ Cooler",
+   "key": "0 °C: water freezes. 100 °C: water boils.",
+   "tooHot": "Too hot for this job. Cool it a little.",
+   "tooCold": "Not yet. Keep going.",
+   "q2": "What is this change called?",
+   "done": "Melting, boiling, condensation and freezing. Heat and cold changed the water every time. Nice work, crew!",
+   "pdfTitle": "Turn the heat dial",
+   "cols": [
+    "Job",
+    "Change of state"
+   ]
+  },
+  "look": "A <b>temperature</b> dial and a photo of water. Temperature is how hot or cold something is. Water freezes at 0 °C and boils at 100 °C. The photo shows what the water looks like at that temperature.",
+  "do": "Read the job. Drag the slider, or tap Warmer and Cooler. When the water changes, tap the name of the change.",
+  "write": {
+   "min": 20,
+   "frames": [
+    {
+     "lead": "1. What does heat do to water?",
+     "starter": "When water gets warmer, ___ because ___."
+    },
+    {
+     "lead": "2. What does cooling do to water?",
+     "starter": "When water gets colder, ___, like when ___."
+    }
+   ],
+   "chips": [
+    "solid",
+    "liquid",
+    "gas",
+    "melting",
+    "freezing",
+    "boiling",
+    "condensation",
+    "water vapor",
+    "heat",
+    "because"
+   ]
+  },
+  "full": "You turned the dial for all 4 jobs and named each change. Your 2 sentences have at least 20 words.",
+  "dial": {
+   "min": -20,
+   "max": 100
+  },
+  "changes": {
+   "melting": "🧊 to 💧 Melting",
+   "boiling": "💧 to 🫧 Boiling",
+   "condensation": "💨 to 💧 Condensation",
+   "freezing": "💧 to 🧊 Freezing"
+  },
+  "tags": {
+   "melting": "Melting",
+   "boiling": "Boiling",
+   "condensation": "Condensation",
+   "freezing": "Freezing"
+  },
+  "rounds": [
+   {
+    "name": "Melt the ice",
+    "q": "The ice is very cold. Warm it up until it melts.",
+    "start": -10,
+    "min": 1,
+    "max": 99,
+    "ok": "The ice melted into liquid water!",
+    "right": "melting",
+    "miss": "Look at the photos. Ice turned into water. What is that called?",
+    "states": [
+     {
+      "img": "ice",
+      "alt": "Ice cubes in a glass",
+      "upTo": 0,
+      "label": "Solid: ice"
+     },
+     {
+      "img": "water",
+      "alt": "A glass of water on a table",
+      "upTo": 99,
+      "label": "Liquid: water"
+     },
+     {
+      "img": "boil",
+      "alt": "Water boiling in a pot, full of bubbles",
+      "upTo": 100,
+      "label": "Boiling: bubbles of water vapor"
+     }
+    ],
+    "done_img": "water",
+    "done_alt": "A glass of water on a table"
+   },
+   {
+    "name": "Boil the water",
+    "q": "Now heat the water until it boils.",
+    "start": 20,
+    "min": 100,
+    "max": 100,
+    "ok": "The water is boiling! Bubbles of water vapor rise up.",
+    "right": "boiling",
+    "miss": "The water is so hot that bubbles of gas form all through it. What is that called?",
+    "states": [
+     {
+      "img": "ice",
+      "alt": "Ice cubes in a glass",
+      "upTo": 0,
+      "label": "Solid: ice"
+     },
+     {
+      "img": "water",
+      "alt": "A glass of water on a table",
+      "upTo": 99,
+      "label": "Liquid: water"
+     },
+     {
+      "img": "boil",
+      "alt": "Water boiling in a pot, full of bubbles",
+      "upTo": 100,
+      "label": "Boiling: bubbles of water vapor"
+     }
+    ],
+    "done_img": "boil",
+    "done_alt": "Water boiling in a pot, full of bubbles"
+   },
+   {
+    "name": "Cool the vapor",
+    "q": "Water vapor rises from the pot and hits a cold lid. Cool the vapor down.",
+    "start": 100,
+    "min": 1,
+    "max": 99,
+    "ok": "The vapor cooled and turned into drops on the lid!",
+    "right": "condensation",
+    "miss": "A gas cooled and turned back into a liquid. What is that called?",
+    "states": [
+     {
+      "img": "ice",
+      "alt": "Ice cubes in a glass",
+      "upTo": 0,
+      "label": "Solid: ice"
+     },
+     {
+      "img": "drops",
+      "alt": "Many small water drops on a smooth glass lid",
+      "upTo": 99,
+      "label": "Liquid: drops on the lid"
+     },
+     {
+      "img": "boil",
+      "alt": "Water boiling in a pot, full of bubbles",
+      "upTo": 100,
+      "label": "Gas: water vapor rising"
+     }
+    ],
+    "done_img": "drops",
+    "done_alt": "Many small water drops on a smooth glass lid"
+   },
+   {
+    "name": "Freeze it again",
+    "q": "Put the water in the freezer. Cool it until it freezes.",
+    "start": 20,
+    "min": -20,
+    "max": 0,
+    "ok": "The water froze into solid ice!",
+    "right": "freezing",
+    "miss": "A liquid got so cold it turned into a solid. What is that called?",
+    "states": [
+     {
+      "img": "ice",
+      "alt": "Ice cubes in a glass",
+      "upTo": 0,
+      "label": "Solid: ice"
+     },
+     {
+      "img": "water",
+      "alt": "A glass of water on a table",
+      "upTo": 99,
+      "label": "Liquid: water"
+     },
+     {
+      "img": "boil",
+      "alt": "Water boiling in a pot, full of bubbles",
+      "upTo": 100,
+      "label": "Boiling: bubbles of water vapor"
+     }
+    ],
+    "done_img": "ice",
+    "done_alt": "Ice cubes in a glass"
+   }
+  ]
+ },
+ "voice": {
+  "brief": "Welcome to the ice cave, crew. We film Scene 27, The Puddle Case. Show me how heat changes water, then take the shot.",
+  "step1": "Before your headset goes on, meet your five models. Learn each gray search word. You will type it in VR.",
+  "step2": "Put on your headset. Click Explore, type Ice, and pick Ice Caverns. Then click Begin Solo.",
+  "step3": "Build a cold side and a warm side. Put the ice berg where it stays frozen. Then tell me what water is on each side.",
+  "extra": "Got time? Add a model of one tiny piece of water. That shot is just for VR crews.",
+  "step4": "Step back so the whole scene fits. Click Library, then Camera, and take the shot. Then send it to Canvas.",
+  "step5": "Press the Meta button and click Quit. Then open Canvas. Your photo should be waiting there.",
+  "studio": "No headset today? Come to the studio. Turn the heat dial and watch the water change. Then tell me what you think."
+ }
+}
