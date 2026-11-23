@@ -48,7 +48,10 @@ S = W['studio']
 if S['write']['min'] < 20: F('Studio writing minimum is 20 words')
 if len(S['write']['frames']) != 2: F('Studio needs exactly 2 sentence frames')
 keys = {c['key'] for c in S.get('cousins', [])}
-for p in S['pairs']:
+if S.get('type') == 'fly':
+    for k in S['kinds']:
+        if len([f for f in S['flowers'] if f['kind'] == k['key']]) != 2: F('fly game: each kind needs exactly 2 flowers: ' + k['key'])
+for p in S.get('pairs', []):
     if S.get('type') == 'sort':
         if p.get('bin') not in S.get('bins', {}): F('pair bin missing: ' + str(p.get('bin')))
         if p.get('place') and p['place'] not in S['places']: F('pair place missing: ' + p['place'])

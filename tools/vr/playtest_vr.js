@@ -48,7 +48,17 @@ const path = require('path'), fs = require('fs');
   const gtype = await page.evaluate(() => window.VR.game.type);
   const bins = await page.evaluate(() => window.VR.game.pairs.map(p => p.bin));
   const binKeys = await page.evaluate(() => Object.keys(window.VR.game.bins || {}));
-  for (const [cousin, place] of pairs) {
+  if (gtype === 'fly') {
+    const fl = await page.evaluate(() => window.VR.game.flowers.map(f => [f.id, f.kind]));
+    for (const k of [...new Set(fl.map(f => f[1]))]) {
+      const mine = fl.filter(f => f[1] === k), other = fl.filter(f => f[1] !== k).pop();
+      await page.click(`.vr-flower[data-id="${mine[0][0]}"]`);
+      if (g === 0) { await page.click(`.vr-flower[data-id="${other[0]}"]`); await shot('08-miss', '#vr-game'); }
+      await page.click(`.vr-flower[data-id="${mine[1][0]}"]`);
+      if (g === 0) await shot('09-place-miss', '#vr-game');
+      g++;
+    }
+  } else for (const [cousin, place] of pairs) {
     if (gtype === 'sort') {
       await page.click(`.vr-bin[data-b="${binKeys.find(k => k !== bins[g])}"]`);
       if (g === 0) await shot('08-miss', '#vr-game');

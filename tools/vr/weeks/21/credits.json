@@ -1,0 +1,74 @@
+{
+ "hook": {
+  "title": "File:Bumblebee-Echinacea-Pollen.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Bumblebee-Echinacea-Pollen.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "Johan"
+ },
+ "bee": {
+  "title": "File:Apis mellifera - Brassica napus - Valingu.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Apis_mellifera_-_Brassica_napus_-_Valingu.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "Ivar Leidus"
+ },
+ "monarch": {
+  "title": "File:Monarch butterfly on butterfly milkweed (53069280718).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Monarch_butterfly_on_butterfly_milkweed_(53069280718).jpg",
+  "license": "Public domain",
+  "artist": "U.S. Fish and Wildlife Service - Midwest Region"
+ },
+ "sun2": {
+  "title": "File:Looks like a nice place to eat up ahead (4892472520).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Looks_like_a_nice_place_to_eat_up_ahead_(4892472520).jpg",
+  "license": "CC BY 2.0",
+  "artist": "Dwight Sipler from Stow, MA, USA"
+ },
+ "squash1": {
+  "title": "File:Squash Blossoms.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Squash_Blossoms.jpg",
+  "license": "CC BY 2.0",
+  "artist": "Tim Roth"
+ },
+ "squash2": {
+  "title": "File:Cucurbita pepo Squash blossom.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Cucurbita_pepo_Squash_blossom.jpg",
+  "license": "CC BY-SA 2.0",
+  "artist": "AllieKF from Royal Oak, MI, USA"
+ },
+ "straw1": {
+  "title": "File:Spring-strawberry-blossom-flower - West Virginia - ForestWander.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Spring-strawberry-blossom-flower_-_West_Virginia_-_ForestWander.jpg",
+  "license": "CC BY-SA 3.0 us",
+  "artist": "ForestWander"
+ },
+ "straw2": {
+  "title": "File:Beautiful May Strawberry Blossom (8807880733).jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Beautiful_May_Strawberry_Blossom_(8807880733).jpg",
+  "license": "CC BY 2.0",
+  "artist": "James Mann from Moncton, New Brunswick, Canada"
+ },
+ "set1": {
+  "title": "File:A flower bed Gibberd Garden Essex England 01.JPG",
+  "url": "https://commons.wikimedia.org/wiki/File:A_flower_bed_Gibberd_Garden_Essex_England_01.JPG",
+  "license": "CC BY-SA 4.0",
+  "artist": "Acabashi"
+ },
+ "set2": {
+  "title": "File:Prague Praha 2014 Holmstad Flowers at the Royal Garden, Hradcany.JPG",
+  "url": "https://commons.wikimedia.org/wiki/File:Prague_Praha_2014_Holmstad_Flowers_at_the_Royal_Garden,_Hradcany.JPG",
+  "license": "CC BY-SA 3.0",
+  "artist": "Øyvind Holmstad"
+ },
+ "sun1": {
+  "title": "File:Sonnenblume Helianthus 1.JPG",
+  "url": "https://commons.wikimedia.org/wiki/File:Sonnenblume_Helianthus_1.JPG",
+  "license": "CC BY-SA 2.5",
+  "artist": "böhringer friedrich"
+ },
+ "seeds": {
+  "title": "File:Sunflower seeds. img 002.jpg",
+  "url": "https://commons.wikimedia.org/wiki/File:Sunflower_seeds._img_002.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "Dmitry Makeev"
+ }
+}

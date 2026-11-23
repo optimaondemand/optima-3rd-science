@@ -166,3 +166,14 @@ main.vr{padding:18px 22px 30px}
 .vr-stripcap{font-size:14.5px;margin:6px 2px 0;color:#5b5140}
 @media (max-width:560px){.vr-bins.n4,.vr-strip{grid-template-columns:repeat(2,1fr)}}
 .vr-fossil img[src*="svg"]{aspect-ratio:4/3}
+
+/* week 21+: fly game */
+.vr-fly{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:8px 0}
+.vr-flower{position:relative;border:3px solid var(--wl-line);background:#fff;border-radius:12px;padding:6px;cursor:pointer;font:800 15px/1.3 Nunito,Arial,sans-serif;color:var(--wl-ink);text-align:center}
+.vr-flower img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;margin-bottom:4px;pointer-events:none}
+.vr-flower:hover,.vr-flower.drop{border-color:#E3B04B}
+.vr-flower.on{border-color:#E3B04B;background:#FFF9EA;box-shadow:0 0 0 3px #E3B04B55}
+.vr-flower.ok{border-color:#2E7D32;background:#F3F8F4;cursor:default;opacity:.92}
+.vr-flower .bee{position:absolute;top:8px;right:10px;font-size:30px;font-style:normal}
+.vr-flower em{display:block;font-style:normal;font-size:13px;color:#2E7D32}
+@media (max-width:560px){.vr-fly{grid-template-columns:repeat(2,1fr)}}

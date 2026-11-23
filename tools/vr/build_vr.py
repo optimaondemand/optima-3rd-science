@@ -139,6 +139,8 @@ def build(week_path, out_path, repo=False):
 
     # ---------- Studio pane ----------
     S = W['studio']
+    if S.get('type') == 'fly':   # week 21: each kind of flower is one round; the flower cards come from studio.flowers
+        S['pairs'] = [{'card': {'img': k['img'], 'name': k['plural'], 'alt': k['alt']}, 'ok': k['ok'], 'key': k['key'], 'kind': k['name']} for k in S['kinds']]
     # each round's card: a fossil (week 17) or a place card (week 18, key "card")
     for p in S['pairs']:
         p['fossil'] = p.get('card') or p['fossil']
@@ -174,11 +176,11 @@ def build(week_path, out_path, repo=False):
               % (E(S['kicker']), E(S['title']), opti(W['opti']['studio'], 'studio'), S['look'], E(S['do']), frames, chips, wframes, wr['min'], E(W['stamp']), E(S['full'])))
 
     game = {
-        'pairs': [{'name': p['fossil']['name'], 'alt': p['fossil']['alt'], 'img': fossil_imgs[i], 'cousin': p.get('cousin', ''), 'place': p.get('place', ''), 'bin': p.get('bin', ''), 'q': p.get('q', ''), 'proof': ({'img': img(p['proof']['img']), 'alt': p['proof']['alt'], 'cap': p['proof']['cap']} if p.get('proof') else None), 'miss': p.get('miss', ''),
-                   'ok': p['ok'], 'placeMiss': p.get('placeMiss', ''), 'facts': p['fossil'].get('facts', '')} for i, p in enumerate(S['pairs'])],
-        'labels': labels, 'dragOpts': cast, 'framePl': S.get('framePl', S.get('frameImg', '')), 'type': S.get('type', ''), 'bins': S.get('bins', {}),
+        'pairs': [{'name': p['fossil']['name'], 'alt': p['fossil']['alt'], 'img': fossil_imgs[i], 'cousin': p.get('cousin', ''), 'place': p.get('place', ''), 'bin': p.get('bin', ''), 'key': p.get('key', ''), 'kind': p.get('kind', ''), 'q': p.get('q', ''), 'proof': ({'img': img(p['proof']['img']), 'alt': p['proof']['alt'], 'cap': p['proof']['cap']} if p.get('proof') else None), 'miss': p.get('miss', ''),
+                   'ok': p.get('ok', ''), 'placeMiss': p.get('placeMiss', ''), 'facts': p['fossil'].get('facts', '')} for i, p in enumerate(S['pairs'])],
+        'labels': labels, 'dragOpts': cast, 'framePl': S.get('framePl', S.get('frameImg', '')), 'type': S.get('type', ''), 'flowers': [{'id': f['id'], 'kind': f['kind'], 'name': f['name'], 'alt': f['alt'], 'img': img(f['img'])} for f in S.get('flowers', [])], 'bins': S.get('bins', {}),
         'cousins': [{'key': c['key'], 'name': c['name'], 'alt': c['alt'], 'img': cousin_imgs[c['key']]} for c in S.get('cousins', [])],
-        'places': S.get('places', {}), 'miss': S['miss'], 'min': wr['min'], 'frames': [f['lead'] for f in wr['frames']],
+        'places': S.get('places', {}), 'miss': S.get('miss', ''), 'min': wr['min'], 'frames': [f['lead'] for f in wr['frames']],
     }
     cfg = {'pre': W['id'], 'clips': clips, 'game': game, 'canvas': W['canvasName'], 'title': W['title'], 'week': wk,
            'lesson': W['lesson'], 'stamp': W['stamp'], 'video': 'assets/video/teacher/g3sci-vr-%s.mp4' % wk if repo else ''}

@@ -1,0 +1,264 @@
+{
+ "id": "g3sci-vr-21",
+ "week": 21,
+ "lesson": "21.01",
+ "lessonTitle": "How Do Plants Reproduce?",
+ "title": "Special Delivery",
+ "emoji": "🎬",
+ "canvasName": "21.01 VR · Special Delivery",
+ "details": [
+  "📅 Q3 · Unit 7 · Plants & Environmental Interactions",
+  "📖 Week 21 · goes with Lesson 21.01",
+  "🌎 CPALMS SC.3.L.15.2 · NGSS 3-LS1-1",
+  "⏱ About 15 minutes"
+ ],
+ "map": "Farm Town (Micro)",
+ "mapWord": "Farm Town",
+ "badge": {
+  "emoji": "🐝",
+  "name": "Bee Line",
+  "line": "Only VR crews earn this one. Your shot goes in Opti's film."
+ },
+ "stamp": "Studio Day · Wonder Films",
+ "hook": {
+  "look": "This is a <b>job ad</b>. It tells what work needs doing. <b>Pollen</b> is a powder that flowers make.",
+  "head": "Help wanted",
+  "sub": "Wonder Films · Job board",
+  "rows": [
+   [
+    "Job",
+    "Move pollen from flower to flower"
+   ],
+   [
+    "Pay",
+    "Sweet nectar"
+   ],
+   [
+    "Apply",
+    "At any flower"
+   ]
+  ],
+  "img": "hook",
+  "alt": "Fuzzy bumblebee dusted with yellow pollen on a pink and orange flower",
+  "cap": "A bumblebee on a coneflower. Pollen sticks to its fuzzy body.",
+  "note": "A flower cannot walk to the next flower. Who carries its pollen?"
+ },
+ "opti": {
+  "brief": "Welcome to the farm, crew. We film Scene 21, Special Delivery. Show me how pollen gets from flower to flower, then take the shot.",
+  "studio": "No headset today? Come to the studio. Fly the bee between flowers of the same kind. Then tell me what you think."
+ },
+ "vr": {
+  "look": "A <b>model</b> is a copy of something real. A <b>pollinator</b> is an animal that carries pollen from flower to flower.",
+  "groups": [
+   {
+    "title": "🌸 The flowers",
+    "models": [
+     {
+      "name": "Flower Set 1",
+      "word": "Flower Set 1",
+      "img": "set1",
+      "alt": "Garden bed full of purple, pink and yellow flowers",
+      "trait": "Flowers make pollen."
+     },
+     {
+      "name": "Flower Set 2",
+      "word": "Flower Set 2",
+      "img": "set2",
+      "alt": "Curving flower bed of pink and white flowers on a lawn",
+      "trait": "The pollen has to get here."
+     }
+    ]
+   },
+   {
+    "title": "🐝 The pollinators and the seeds",
+    "models": [
+     {
+      "name": "Bee",
+      "word": "Bee",
+      "img": "bee",
+      "alt": "Honey bee on a yellow flower",
+      "trait": "A pollinator."
+     },
+     {
+      "name": "Monarch Butterfly",
+      "word": "Monarch",
+      "img": "monarch",
+      "alt": "Orange and black monarch butterfly on orange flowers",
+      "trait": "A pollinator too."
+     },
+     {
+      "name": "Plant Seeds",
+      "word": "Plant Seeds",
+      "img": "seeds",
+      "alt": "Pile of black sunflower seeds",
+      "trait": "Seeds form after pollination."
+     }
+    ]
+   }
+  ],
+  "steps": [
+   {
+    "where": "🖥️ Before your headset",
+    "title": "Know your models",
+    "clip": "step1",
+    "html": "<p>Type each gray word in the <b>Filter models</b> box.</p>@MODELS@<p>This list is also on the <b>Canvas</b> tab in VR.</p>"
+   },
+   {
+    "where": "🥽 In VR",
+    "title": "Go on location",
+    "clip": "step2",
+    "html": "<div class=\"vr-how\">🔗 <b>First time only:</b> connect Canvas at <a href=\"https://xr.optimaed.com\" target=\"_blank\" rel=\"noopener\">xr.optimaed.com</a>. See <b>Having trouble in VR?</b> below.</div><p>Open the <b>On-Demand</b> app. Click <b>Explore</b>. Type <b>Farm Town</b> in <b>Filter environments</b>. Click <b>Farm Town (Micro)</b>, then <b>Begin Solo</b>.</p>"
+   },
+   {
+    "title": "Build the scene",
+    "clip": "step3",
+    "html": "<p>Press the <b>top button on your right controller</b>, then click <b>Models</b>. Set Flower Set 1 and Flower Set 2 a few steps apart. Put the Bee on one and the Monarch Butterfly on the other. Put the Plant Seeds on the ground.</p><div class=\"vr-how\">✋ Grab a model with the <b>palm trigger</b>. Use <b>both</b> palm triggers to make it bigger or smaller.</div><div class=\"vr-say\">🗣 <b>Say it out loud:</b> “The bee carries ___ from flower to flower. Then the plant can make ___.”</div>"
+   },
+   {
+    "title": "Take the shot and send it",
+    "clip": "step4",
+    "html": "<p>Stand back so the whole scene fits. Open your menu, click <b>Library</b>, then <b>Camera</b>. Click <b>Take photo</b>.</p><p>Click the <b>Canvas</b> tab and pick <b>@CANVAS@</b>. Click <b>Choose from My Files</b>, pick your photo, click <b>Use this file</b>, then <b>Submit to Canvas</b>. Look for the green <b>Submitted</b> tag.</p><div class=\"vr-how\">🔁 Want to fix it? Move the models, take a new photo and send it again.</div>"
+   },
+   {
+    "where": "✅ After",
+    "title": "Check and leave",
+    "clip": "step5",
+    "html": "<p>Press the <b>Meta button</b>, then click <b>Quit</b>. Check that your photo is in the Canvas assignment. Not there? Open <b>Having trouble in VR?</b></p>"
+   }
+  ],
+  "extra": {
+   "after": 3,
+   "clip": "extra",
+   "html": "Add one more flower for your pollinators: <span class=\"vr-word\">Passion Flower</span>"
+  },
+  "full": "Your photo shows both flower sets, the Bee, the Monarch Butterfly and the Plant Seeds."
+ },
+ "studio": {
+  "kicker": "Studio Day · no headset",
+  "title": "Fly the bee",
+  "type": "fly",
+  "framePl": "tag",
+  "labels": {
+   "done": "Three deliveries made. Seeds are on the way. Nice work, crew!",
+   "flight": "Flight",
+   "start": "Tap any flower. The bee lands there and picks up pollen.",
+   "pick": "The bee is dusted with {kind} pollen. Now fly to the other {kind}.",
+   "same": "That is the same flower. Fly to a different one.",
+   "miss": "Pollen from a {from} cannot make seeds in a {to}. Find the other {from}.",
+   "tag": "Pollen delivered",
+   "pdfTitle": "Fly the bee",
+   "cols": [
+    "Flowers",
+    "What happened"
+   ]
+  },
+  "look": "Six real flowers, two of each kind. <b>Pollination</b> is when pollen gets from one flower to another flower of the same kind. Then that flower can make seeds.",
+  "do": "Tap a flower to pick up pollen. Then tap another flower of the same kind, or drag the first flower onto it.",
+  "kinds": [
+   {
+    "key": "sun",
+    "name": "sunflower",
+    "plural": "Sunflowers",
+    "img": "sun1",
+    "alt": "Big yellow sunflower with green leaves",
+    "ok": "Delivered! Now this sunflower can fill up with seeds."
+   },
+   {
+    "key": "squash",
+    "name": "squash flower",
+    "plural": "Squash flowers",
+    "img": "squash1",
+    "alt": "Orange squash flowers",
+    "ok": "Delivered! Now this flower can grow into a squash with seeds inside."
+   },
+   {
+    "key": "straw",
+    "name": "strawberry flower",
+    "plural": "Strawberry flowers",
+    "img": "straw1",
+    "alt": "White strawberry flower with a yellow middle",
+    "ok": "Delivered! Now this flower can grow into a strawberry with seeds."
+   }
+  ],
+  "flowers": [
+   {
+    "id": "f1",
+    "kind": "sun",
+    "name": "Sunflower",
+    "img": "sun1",
+    "alt": "Big yellow sunflower with green leaves"
+   },
+   {
+    "id": "f2",
+    "kind": "straw",
+    "name": "Strawberry flower",
+    "img": "straw1",
+    "alt": "White strawberry flower with a yellow middle"
+   },
+   {
+    "id": "f3",
+    "kind": "squash",
+    "name": "Squash flower",
+    "img": "squash1",
+    "alt": "Orange squash flowers"
+   },
+   {
+    "id": "f4",
+    "kind": "straw",
+    "name": "Strawberry flower",
+    "img": "straw2",
+    "alt": "White strawberry flower among green leaves"
+   },
+   {
+    "id": "f5",
+    "kind": "squash",
+    "name": "Squash flower",
+    "img": "squash2",
+    "alt": "Open orange squash flower on a vine"
+   },
+   {
+    "id": "f6",
+    "kind": "sun",
+    "name": "Sunflower",
+    "img": "sun2",
+    "alt": "Yellow sunflower with a small bee flying toward it"
+   }
+  ],
+  "write": {
+   "min": 20,
+   "frames": [
+    {
+     "lead": "1. Why does a flower need a pollinator?",
+     "starter": "I think a flower needs a pollinator because ___."
+    },
+    {
+     "lead": "2. What happened after the bee's delivery?",
+     "starter": "I saw the bee carry ___ to ___, so the flower can ___."
+    }
+   ],
+   "chips": [
+    "pollen",
+    "pollinator",
+    "pollination",
+    "bee",
+    "flower",
+    "same kind",
+    "seeds",
+    "reproduce",
+    "nectar",
+    "because"
+   ]
+  },
+  "full": "You made all 3 deliveries. Your 2 sentences have at least 20 words."
+ },
+ "voice": {
+  "brief": "Welcome to the farm, crew. We film Scene 21, Special Delivery. Show me how pollen gets from flower to flower, then take the shot.",
+  "step1": "Before your headset goes on, meet your five models. Learn each gray search word. You will type it in VR.",
+  "step2": "Put on your headset. Click Explore, type Farm Town, and pick Farm Town Micro. Then click Begin Solo.",
+  "step3": "Set the two flower sets apart. Put the bee on one and the butterfly on the other. Then tell me what the bee carries.",
+  "extra": "Got time? Add one more flower for your pollinators. That shot is just for VR crews.",
+  "step4": "Step back so the whole scene fits. Click Library, then Camera, and take the shot. Then send it to Canvas.",
+  "step5": "Press the Meta button and click Quit. Then open Canvas. Your photo should be waiting there.",
+  "studio": "No headset today? Come to the studio. Fly the bee between flowers of the same kind. Then tell me what you think."
+ }
+}
