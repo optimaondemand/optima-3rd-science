@@ -195,6 +195,7 @@
     document.body.appendChild(o); var cv = o.querySelector('canvas'), x = cv.getContext('2d'), bar = o.querySelector('.st-bar2 i'), msg = o.querySelector('.st-mkt'), stop = false, mr = null, AC = null;
     o.querySelector('[data-x]').onclick = function () { stop = true; if (mr && mr.state === 'recording') mr.stop(); o.remove(); try { AC && AC.close(); } catch (e) {} };
     var AudioC = window.AudioContext || window.webkitAudioContext; AC = AudioC ? new AudioC() : null; var dest = AC ? AC.createMediaStreamDestination() : null;
+    if (AC && dest) { try { var hum = AC.createOscillator(), hz = AC.createGain(); hz.gain.value = 0; hum.connect(hz); hz.connect(dest); hum.start(); } catch (e) {} }
     Promise.all(CR.map(function (c, i) { return loadImg(c.k === 'web' ? '' : picSrc(d[i])); })).then(function (ims) {
       return Promise.all(CR.map(function (c, i) { var r = (REC[p.k] || {})[i]; return r && AC ? r.blob.arrayBuffer().then(function (b) { return AC.decodeAudioData(b); }).catch(function () { return null; }) : Promise.resolve(null); })).then(function (bufs) { return [ims, bufs]; });
     }).then(function (res) { if (stop) return; var ims = res[0], bufs = res[1];
